@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-openai-2",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e19a2c": "17fe709b3927b80d8aceb3b71d8ed22a69bae0007c7b311cfd00571203c1b411"
+ },
+ "started_at": "2026-11-11T19:42:04Z",
+ "completed_at": "2026-11-11T19:42:20Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly endorses the GPT-2-to-GPT-3 comparison and explicitly leaves InstructGPT's improvement uncertain."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation preserves the retrospective capability comparison and InstructGPT qualification. Correct-answer probability is the asserted metric, not a hedge about the claim's truth."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the statement as general improvement across examples is ordinary in context. Distinguishing benchmark accuracy from correct-answer probability fairly preserves both assertions; treating accuracy alone as sufficient would change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The dated comparative results support broad task-performance improvement. Selected-answer accuracy does not establish increased correct-answer probability across matched prompts."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "TruthfulQA qualifies the breadth of improvement, showing that larger models did worse on some evaluations. It does not establish a general failure of matched-example correct-answer probability to improve."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The methods distinguish greedy-decoding accuracy from answer likelihood. No supplied matched GPT-2/GPT-3 probability results settle the contract's probability requirement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Broad performance improvement is supported, but the packet does not settle the separate assertion that correct-answer probability generally increased for matched examples. TruthfulQA's greedy-decoding results do not contradict that probability assertion. The combined claim therefore remains unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16783,
+  "output_tokens": 498,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": 60
+ },
+ "cost_usd": null
+}

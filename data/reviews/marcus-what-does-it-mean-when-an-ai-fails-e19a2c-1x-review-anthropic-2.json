@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e19a2c": "17fe709b3927b80d8aceb3b71d8ed22a69bae0007c7b311cfd00571203c1b411"
+ },
+ "started_at": "2026-11-11T19:42:04Z",
+ "completed_at": "2026-11-11T19:42:27Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote these words in his own Substack post and asserts them in his own voice. He agrees with SlateStarCodex's point but states it himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The drafter kept the firm claims as stated: GPT-3 is better than GPT-2, and per-example probability of a correct answer went up. Here 'I do think' is emphatic, not hedged. The InstructGPT comparison is correctly kept as uncertain and is not scored. In context, the probability claim is scoped to GPT-2 to GPT-3."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'any given example' as a general tendency is fair to the speaker. Asking for a measure of per-example probability, not just accuracy, follows his own word 'probability' and is not stretched against him. The result does turn on whether benchmark accuracy is allowed to stand in for that probability claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Holtzman et al., available Sept 2021, before the post. Under the same LM scoring rule, GPT-3 175B beats GPT-2 1.6B on COPA, StoryCloze and HellaSwag. This supports broad improvement. It measures selected-answer accuracy, not matched per-example probability under sampling."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "TruthfulQA v2, dated before the post. Larger models were less truthful there, so improvement was not universal. It does not show that GPT-3 generally assigns lower probability to correct answers than GPT-2."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Same paper, methods section. Its main results use greedy decoding, so they give no matched GPT-2 vs GPT-3 repeated-sampling comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e1 supports the claim that GPT-3 is broadly better than GPT-2. The contract's support condition also needs matched-prompt probability or repeated-sampling evidence that correct-answer probability rose. The packet has none, and the stated gaps admit this. TruthfulQA (e2) qualifies the improvement but does not meet the contradiction condition. The broad-improvement part holds; the probability part is not settled, so the claim as a whole is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12700,
+  "output_tokens": 2496,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

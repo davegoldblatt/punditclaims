@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-seven-lies-in-four-sentences-ac13d1-a2",
+ "claim_revision_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-ac13d1",
+  "version": 1,
+  "content_hash": "6de46350d2d695f3045da47aecd3a8b646679ee3a4b7ef6890444a6cbb6dddea"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-ac13d1",
+  "version": 2,
+  "content_hash": "f6af661fc25fc4303e695bb7ac9a5ddc99acc14f663a476a6943b6dc0587fca8"
+ },
+ "packet_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-ac13d1-p2",
+  "content_hash": "1e169055b1116502025a2afeaa2f12658f983a948c7a02ad6aaa05342fe4b931"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2023-10-04",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence supports the practical reliability claim. HaluEval directly tested recognition of generated falsehoods and found substantial errors, including when ChatGPT received retrieved knowledge. This goes beyond showing that models sometimes generate mistakes. Counterevidence matters: ChatGPT and GPT-4 could recognize many of their own errors in separate checks, and SelfCheckGPT could assess factuality through repeated sampling. Those findings establish useful checking ability, but not dependable general discrimination. The supported conclusion is that contemporary LLMs were unreliable factual judges, not that they could never distinguish a true statement from a false one.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The result depends on interpreting the claim as practical unreliability rather than absolute inability.",
+  "HaluEval deliberately includes difficult generated examples; its error rates should not be treated as rates for ordinary user traffic.",
+  "Some hallucination labels concern unsupported or irrelevant content rather than literal factual falsity.",
+  "The studies cover selected models, tasks and prompting methods, not every contemporary deployment.",
+  "Exact experiment dates are not supplied in the cited passages; event dates retain year precision, and the cited versions were public before the post."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-seven-lies-in-four-sentences-ac13d1-1x-review-anthropic-2",
+  "marcus-seven-lies-in-four-sentences-ac13d1-1x-review-openai-2"
+ ],
+ "final_text_run_id": "marcus-seven-lies-in-four-sentences-ac13d1-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-seven-lies-in-four-sentences-ac13d1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs cannot distinguish facts from fiction.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Gary Marcus still thinks LLMs are too dumb to distinguish facts from fiction",
+   "locator": "paragraph 22",
+   "url": "https://garymarcus.substack.com/p/seven-lies-in-four-sentences",
+   "date": "2023-10-04",
+   "document_title": "Seven lies in four sentences",
+   "observed_at": "2026-10-29T00:03:08Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs",
+    "too dumb to distinguish facts from fiction",
+    "being able to compare what they say with the world"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that contemporary LLMs cannot reliably distinguish factual assertions from plausible falsehoods, especially in their own output. It does not require complete inability or performance at chance.",
+    "Reliable means dependable across varied factual checking tasks. Occasional mistakes alone would not establish the claim; substantial, recurring errors would. Marcus supplied no numerical cutoff, and none is attributed to him.",
+    "The claim concerns capabilities at publication, not all future LLMs. Because no reporting period is specified, the observation window is the current year through the post: January 1–October 4, 2023.",
+    "Prompting, retrieval and repeated-sampling results count, with their testing conditions preserved. Generating false statements alone does not establish inability to recognize them."
+   ],
+   "support_condition": "Controlled evaluations of contemporary models show substantial, recurring failures to distinguish factual from false or fabricated assertions across varied tasks, including checking model-generated text. Successful methods do not establish dependable general factual checking.",
+   "contradiction_condition": "Controlled evaluations of contemporary models demonstrate consistently dependable factual discrimination across varied tasks, including plausible falsehoods and their own generated assertions. Merely performing above chance or succeeding on a narrow task is insufficient."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports the practical reliability claim. HaluEval directly tested recognition of generated falsehoods and found substantial errors, including when ChatGPT received retrieved knowledge. This goes beyond showing that models sometimes generate mistakes. Counterevidence matters: ChatGPT and GPT-4 could recognize many of their own errors in separate checks, and SelfCheckGPT could assess factuality through repeated sampling. Those findings establish useful checking ability, but not dependable general discrimination. The supported conclusion is that contemporary LLMs were unreliable factual judges, not that they could never distinguish a true statement from a false one.",
+  "limitations": [
+   "The result depends on interpreting the claim as practical unreliability rather than absolute inability.",
+   "HaluEval deliberately includes difficult generated examples; its error rates should not be treated as rates for ordinary user traffic.",
+   "Some hallucination labels concern unsupported or irrelevant content rather than literal factual falsity.",
+   "The studies cover selected models, tasks and prompting methods, not every contemporary deployment.",
+   "Exact experiment dates are not supplied in the cited passages; event dates retain year precision, and the cited versions were public before the post."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "poor at identifying hallucination",
+    "locator": "Section 3.2.1, Hallucination Recognition",
+    "url": "https://arxiv.org/html/2305.11747v2",
+    "publisher": "arXiv; Junyi Li and colleagues",
+    "event_date": "2023",
+    "available_at": "2023-05-22",
+    "explanation": "HaluEval directly tests recognition of generated hallucinations: ChatGPT achieved 62.59% accuracy in question answering, rising to 76.83% with retrieved knowledge. These substantial remaining errors support unreliable factual checking; the summarization results are less direct because their labels also concern faithfulness to a source."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "67% and 87%",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2305.13534v1",
+    "publisher": "arXiv; Muru Zhang and colleagues",
+    "event_date": "2023",
+    "available_at": "2023-05-22",
+    "explanation": "This is material counterevidence to complete inability: both models recognized many errors when claims were presented separately. The three constructed tasks and conditional error-detection rates do not establish dependable general checking, so this does not meet the contract's contradiction condition."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "detect non-factual and factual sentences",
+    "locator": "Abstract; experimental scope in Section 9, Limitations",
+    "url": "https://arxiv.org/html/2303.08896v2",
+    "publisher": "arXiv; Potsawee Manakul, Adian Liusie and Mark J. F. Gales",
+    "event_date": "2023",
+    "available_at": "2023-05-08",
+    "explanation": "Repeated sampling enabled useful factuality assessment of GPT-3 output without an external database. This qualifies Marcus's wording, but the evaluation covered 238 biographical passages and reported ranking performance, rather than dependable classification across general factual tasks."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0a24720b818f080659cb6da17941791a7a2e327567a596e70025854052fa88f2",
+ "supersedes_assessment_id": "marcus-seven-lies-in-four-sentences-ac13d1-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-11T19:42:01Z"
+}

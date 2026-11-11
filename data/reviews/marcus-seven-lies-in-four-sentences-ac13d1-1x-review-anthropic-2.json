@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-seven-lies-in-four-sentences-ac13d1-1x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-seven-lies-in-four-sentences-ac13d1": "a5c8068e76e657e17ea74fda7a9b3c28e1bd906bf6d952f98f3a904b5017a5e2"
+ },
+ "started_at": "2026-11-11T19:41:17Z",
+ "completed_at": "2026-11-11T19:41:37Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this sign-off about himself, in the third person, on his own Substack. It states his own view and is not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Too dumb to distinguish facts from fiction' is a firm statement about current LLM capability. The drafter's 'cannot distinguish' captures it. The separate 'ought to build' recommendation is normative and is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus named no measure. The plain reading (cannot reliably tell fact from plausible falsehood, not total inability) fits the post's point about comparing output with the world. It is ordinary and is not stretched either way. The result turns on this reading, because an absolute reading would be weakened by e2 and e3."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "HaluEval preprint (May 2023), on models of the period. It tests recognition of generated hallucinations: ChatGPT is near chance on summaries and about 63% on QA, and GPT-3 is at chance. This shows substantial, recurring failures across three tasks."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Preprint from May 2023. ChatGPT and GPT-4 caught 67% and 87% of their own errors on three constructed QA datasets. This counts against total inability, but it is narrow and does not show dependable general checking."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "SelfCheckGPT version from May 2023. Repeated sampling gives useful ranking of factuality for GPT-3 biography passages. This is a narrow task measured by ranking metrics, so it falls short of the contract's contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the fair reliability reading, e1 shows contemporary LLMs failing substantially and repeatedly to recognise factual versus hallucinated content across QA, dialogue and summarisation. The counterevidence in e2 and e3 shows partial success on narrow, constructed tasks. It does not show consistently dependable discrimination across varied tasks, so the contradiction condition is not met and the support condition is.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-lies-in-four-sentences-ac13d1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11080,
+  "output_tokens": 2026,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}
