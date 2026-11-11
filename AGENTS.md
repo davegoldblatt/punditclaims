@@ -23,4 +23,5 @@ Read `README.md`, `docs/policy.md` (the editorial rules), and the Linear project
 
 - One ticket per branch and pull request. Record the commands you ran and their results on the ticket.
 - `npm test` (rules, schema, loader, policy), `npm run validate` (the data tree), `npm run build` (the site).
+- Tests and the synthetic preview builds read `fixtures/register.yaml`, never `config/register.yaml`, so a copy of this code for other people still passes them. A change to the configuration schema updates both files and `config/register.example.yaml`.
 - Decisions go in `docs/adr/`. Reused Because of AI code is listed in `docs/reuse.md`.

@@ -1,0 +1,56 @@
+# A starter configuration for your own register. Copy it over
+# config/register.yaml and replace every value. The README's "Set it up for
+# other pundits" section walks through the rest. tests/policy.test.ts checks
+# that this file stays valid.
+site:
+  # The site's name, shown in the header and in page titles.
+  name: Economy Claims
+  # The topic of the claims you record, used in page copy and in the
+  # reviewers' instructions ("economy claims"). Keep it short.
+  topic: the economy
+  description: "A source-backed register of selected economy claims by Jane Doe: the exact words, the dated evidence, the assessment, and what changed."
+  # Your public GitHub repository. Each claim page links to its dispute form.
+  repository: https://github.com/your-name/economy-claims
+  # Your name, shown on the About page.
+  editor: Your Name
+  # Optional public pages of yours for the About page. [] for none.
+  editor_links:
+    - { label: Website, text: example.com, url: "https://example.com" }
+  # A private address for privacy, rights, or safety problems with a quote.
+  # null until you have one. The About page then says one will be listed.
+  private_contact: null
+  # Optional: earlier work this register grew out of, shown on the About page.
+  provenance: null
+
+subjects:
+  # One entry per person. Copy the block to add more.
+  - id: jane-doe                 # a lowercase slug, also the data/subjects file name
+    name: Jane Doe
+    # Optional photo, saved as public/people/<id>.jpg, with the credit its
+    # licence requires. Leave it out to show no photo.
+    # photo:
+    #   file: /people/jane-doe.jpg
+    #   credit: Photographer name
+    #   license: CC BY 2.0
+    #   license_url: https://creativecommons.org/licenses/by/2.0/
+    #   source_url: https://commons.wikimedia.org/wiki/File:Example.jpg
+    publications:
+      - name: Doe Weekly
+        # The newsletter's home page: a name.substack.com address, or a Ghost
+        # site. A Substack newsletter on its own domain does not work yet.
+        origin: https://doe-weekly.substack.com
+        platform: substack       # substack or ghost
+        prefix: doe              # a short slug for this publication's document ids
+    windows:
+      # The date range to cover. A rolling window starts at `from` and its end
+      # moves to today on every daily update, so new posts are picked up.
+      - id: doe-ongoing
+        publication: Doe Weekly  # must match a publication name above
+        origin: https://doe-weekly.substack.com
+        from: "2026-01-01"
+        to: "2026-01-01"         # the daily update moves this forward
+        basis: Posts discovered from the publication's archive listing. The end date moves forward with each update.
+        rolling: true
+
+# The last day of discovery. The daily update moves it to the run date.
+retrieval_cutoff: "2026-01-01"

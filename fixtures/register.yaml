@@ -1,0 +1,98 @@
+# The configuration the tests and the synthetic preview builds run against
+# (npm test, npm run build:fixture, npm run build:scale set PC_CONFIG to this
+# file). It is a frozen copy of the first deployment's configuration, because
+# the synthetic records in fixtures/ are about its two people. Keeping it
+# separate means a copy of this code for other people still passes its tests
+# after config/register.yaml changes. Never deployed, never edited by the
+# daily update.
+site:
+  name: Pundit Claims
+  # The domain of claims this register records, used in page copy and in the
+  # reviewers' instructions ("AI claims").
+  topic: AI
+  description: "A source-backed register of selected AI claims by Gary Marcus and Ed Zitron: the exact words, the dated evidence, the assessment, and what changed."
+  # The public repository that receives dispute issues. Not created yet.
+  repository: https://github.com/davegoldblatt/punditclaims
+  editor: Dave Goldblatt
+  # The editor's public pages (from his GitHub profile, 2026-10-29).
+  editor_links:
+    - { label: Website, text: davegoldblatt.com, url: "https://davegoldblatt.com" }
+    - { label: X, text: "@davegoldblatt", url: "https://x.com/davegoldblatt" }
+  # The private route for privacy, rights, or safety problems. null until decided;
+  # pages then say an address will be listed before launch. Never guess one.
+  private_contact: dave@davegoldblatt.com
+  provenance:
+    title: The most expensive kind of correct
+    url: https://davesquickhits.substack.com/p/the-most-expensive-kind-of-correct
+    note: "and its dataset of 2,218 claims from Gary Marcus’s writing (snapshot of 2026-03-02), which we used only as a cross-check"
+
+subjects:
+  - id: gary-marcus
+    name: Gary Marcus
+    photo:
+      file: /people/gary-marcus.jpg
+      credit: Web Summit
+      license: CC BY 2.0
+      license_url: https://creativecommons.org/licenses/by/2.0/
+      source_url: https://commons.wikimedia.org/wiki/File:Gary_Marcus_at_Web_Summit_2022.jpeg
+      note: cropped
+    publications:
+      - name: Marcus on AI
+        origin: https://garymarcus.substack.com
+        platform: substack
+        prefix: marcus
+    windows:
+      - id: marcus-legacy
+        publication: Marcus on AI
+        origin: https://garymarcus.substack.com
+        from: "2022-05-01"
+        to: "2026-03-02"
+        basis: Every post in the window, re-captured from the publication's archive listing. The legacy dataset (474 posts, snapshot 2026-03-02) is used only as a cross-check list.
+        evaluate_as_of: "2026-10-28"
+        discover: true
+      - id: marcus-current
+        publication: Marcus on AI
+        origin: https://garymarcus.substack.com
+        from: "2026-03-03"
+        to: "2026-10-28"
+        basis: Posts published after the legacy snapshot, discovered from the publication's archive listing.
+        evaluate_as_of: "2026-10-28"
+      - id: marcus-ongoing
+        publication: Marcus on AI
+        origin: https://garymarcus.substack.com
+        from: "2026-10-29"
+        to: "2026-11-11"
+        basis: New posts since the first full run, discovered from the publication's archive listing. The end date moves forward with each update.
+        rolling: true
+  - id: ed-zitron
+    name: Ed Zitron
+    photo:
+      file: /people/ed-zitron.jpg
+      credit: Web Summit
+      license: CC BY 2.0
+      license_url: https://creativecommons.org/licenses/by/2.0/
+      source_url: https://commons.wikimedia.org/wiki/File:Ed_Zitron_speaking_at_the_Web_Summit_(cropped).jpg
+      note: cropped
+    publications:
+      - name: Where's Your Ed At
+        origin: https://www.wheresyoured.at
+        platform: ghost
+        prefix: wyea
+        aliases: [wheresyoured.at]
+    windows:
+      - id: zitron-wyea
+        publication: Where's Your Ed At
+        origin: https://www.wheresyoured.at
+        from: "2023-01-01"
+        to: "2026-10-28"
+        basis: Posts discovered from the publication's sitemap. Premium posts behind a paywall are counted and not read.
+        evaluate_as_of: "2026-10-28"
+      - id: zitron-ongoing
+        publication: Where's Your Ed At
+        origin: https://www.wheresyoured.at
+        from: "2026-10-29"
+        to: "2026-11-11"
+        basis: New posts since the first full run, discovered from the publication's sitemap. Premium posts behind a paywall are counted and not read. The end date moves forward with each update.
+        rolling: true
+
+retrieval_cutoff: "2026-11-11"

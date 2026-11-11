@@ -2,42 +2,41 @@
 
 This code is not specific to Gary Marcus and Ed Zitron. It records what any set of public figures said, what the statement commits them to, what dated evidence arrived, and what assessment the evidence supports, with two independent AI reviews and a code-decided publication gate. Everything that names the people lives in one configuration file and the data tree.
 
-## 1. Copy the code, not the data
+The step-by-step setup is in the README, under "Set it up for other pundits". This page covers what to think about before and after.
 
-Fork or copy the repository, then start with an empty data tree:
+## What a copy changes
 
-```sh
-rm -rf data/sources data/source-fetches data/occurrences data/claims data/contracts data/evidence \
-       data/reviews data/assessments data/events data/invalidations data/releases data/activations \
-       data/current-release.json research/coverage research/selection research/runs
-```
+- `config/register.yaml`: the site and the people. Start from `config/register.example.yaml`.
+- `data/subjects/<id>.yaml`: one sourced identification per person. Start from `config/subject.example.yaml`. `npm run validate` checks that the subjects and windows match the configuration.
+- `public/people/<id>.jpg`: an optional photo per person, with the credit its licence requires.
+- The site address: `PC_SITE_ORIGIN` in the Pages project and as a repository variable for the daily job, and `FEED_REPOSITORY` in the Pages project.
 
-Keep `policy/`, `docs/policy.md`, `src/`, `scripts/`, `tests/`, and `fixtures/`. The tests use synthetic records only.
-
-## 2. Describe your register
-
-Edit `config/register.yaml`:
-
-- `site`: the name, the topic of the claims (for example `AI`, `climate`, `the economy`), a one-sentence description, the public repository that will receive disputes, the editor's name, a private contact address for takedown requests (or `null` until you have one), and optional provenance.
-- `subjects`: one entry per person. Each has an `id` (a kebab-case slug), a `name`, the `publications` where their statements appear (origin URL, platform `substack`, `ghost`, or `generic`, and a short `prefix` for document ids), and the collection `windows` (date ranges you will cover, with a sentence on how posts are discovered).
-- `retrieval_cutoff`: the last day of discovery.
-
-Then add one file per person in `data/subjects/<id>.yaml` with a sourced one-line identification (copy the shape of an existing one). `npm run validate` checks that the subjects and windows match the configuration.
+A copy does not change the tests. `npm test`, `npm run build:fixture`, and `npm run build:scale` read `fixtures/register.yaml`, a frozen copy of the first deployment's configuration that matches the synthetic records in `fixtures/`. So the tests pass whoever the copy covers.
 
 A subject is anyone who makes public claims. The rules treat every person the same way, and the site never computes a score, ranking, or verdict on a person.
 
-## 3. Decide the editorial policy
+## Windows
 
-`policy/policy.yaml` and `docs/policy.md` are the rules: claim kinds, what can be scored, how confidence language is read, financial and hindsight rules, selection order, and quoting limits. They are written to be general. If you change a rule, bump the version and add a line to `changes`; existing assessments keep the version they passed. `tests/policy.test.ts` keeps the code, the YAML, and the prose in step.
+A window is a date range of one publication to cover. A `rolling: true` window starts at `from`, and the daily update moves its `to`, and `retrieval_cutoff`, to the run date, so new posts are found. Claims are checked against evidence up to the date they were first checked (`scripts/lib/evaluation.ts`). A new register needs only one rolling window per publication.
 
-## 4. Credentials and costs
+The daily update finds and extracts posts only in rolling windows. A fixed window (no `rolling`) is for a back catalogue run by hand (`docs/running-a-corpus.md`).
 
-Reviews need two providers so no record is published on one model's say-so. Put `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in `.env` (never committed). The reviewers run through the APIs with no tools. A full review of one record costs roughly $0.20 to $0.50 at list prices; every run takes a spend ceiling and stops before crossing it. Prices are in `ops/prices.yaml`.
+Substack publications are listed from their public archive. Substack refuses GitHub's servers, so on the daily update its listing and post pages come through the site's own functions (`functions/feeds/`), and those read only `name.substack.com` addresses. A Substack publication on its own domain therefore does not work on the daily update yet. Ghost publications are listed from `sitemap-posts.xml`. Another kind of site needs its own listing in `scripts/discover.ts`.
 
-## 5. Run it
+## Decide the editorial policy
 
-Follow `docs/operations.md`: discover posts, freeze a selection, draft, ingest, review, release, build, promote. To grade every claim in a corpus on Claude and ChatGPT subscriptions instead of the APIs, follow `docs/running-a-corpus.md`. Read its lessons first. `npm run build:fixture` shows every page state with synthetic data before you have any records.
+`policy/policy.yaml` and `docs/policy.md` are the rules: claim kinds, what can be scored, how confidence language is read, financial and hindsight rules, selection order, and quoting limits. They are written to be general. If you change a rule, bump the version and add a line to `changes`. Existing assessments keep the version they passed. `tests/policy.test.ts` keeps the code, the YAML, and the prose in step.
+
+## Costs and limits
+
+The daily update runs on a Claude subscription and a ChatGPT subscription, through their command-line tools. Reviews run with no shell and no tools, and a probe proves that fence before every run. ChatGPT drafts the evidence. Drafting may search the web and read pages, but only through a page reader that captures each page, so code can check every quotation (`scripts/mcp-read-page.ts`). Both providers review every claim. When a subscription hits its usage limit, the run keeps its finished work and continues the next day. `docs/running-a-corpus.md` has the measured rates from the first deployment and the lessons behind each design choice.
+
+A hand-picked selection can instead run through the paid APIs, with `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in `.env` and a spend ceiling on every run. See `docs/operations.md`. Prices are in `ops/prices.yaml`.
+
+## Private storage
+
+Full post text, full quotations, drafts, and raw model answers never go to git. The daily update keeps them in a private Cloudflare R2 bucket named `robots-private`: the store as one bundle at `pundit/private-sources.tar.zst`, and the ChatGPT login at `logins/pundit/auth.json`. A new register starts with an empty store. From the first save on, the store is required: a run refuses to start without it, because a rebuild without it would drop claims. See `docs/adr/0002-private-source-retention.md` for what losing it means.
 
 ## What stays the same for everyone
 
-Exact quotations checked by code against a captured copy of the source. Public excerpts capped per quote and per source. Criteria frozen before grading. Two independent reviews from different providers and a final check of the public text by a provider other than the drafter's. A deterministic gate that holds anything missing, malformed, stale, or disputed, with the holds public. No grandfathered records. A correction and withdrawal path that cannot add a verdict.
+Exact quotations checked by code against a captured copy of the source. Public excerpts capped per quote. Criteria frozen before grading. Two independent reviews from different providers and a final check of the public text by a provider other than the drafter's. A deterministic gate that holds anything missing, malformed, stale, or disputed, with the holds public. No grandfathered records. A correction and withdrawal path that cannot add a verdict.

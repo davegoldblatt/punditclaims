@@ -45,7 +45,9 @@ jobs:
     timeout-minutes: 340
     env:
       MODE: ${{ inputs.mode || 'full' }}
-      PC_SUBSTACK_VIA: https://punditclaims.ai
+      # The site whose functions relay Substack pages. A copy of this register
+      # sets the repository variable PC_SITE_ORIGIN to its own site.
+      PC_SUBSTACK_VIA: ${{ vars.PC_SITE_ORIGIN || 'https://punditclaims.ai' }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -90,12 +92,25 @@ jobs:
         run: |
           set -euo pipefail
           export AWS_RETRY_MODE=standard AWS_MAX_ATTEMPTS=10
-          aws s3 cp s3://robots-private/pundit/private-sources.tar.zst "$RUNNER_TEMP/ps.tar.zst" --endpoint-url "$R2_ENDPOINT" --only-show-errors
           mkdir -p .cache
-          zstd -d -q -c "$RUNNER_TEMP/ps.tar.zst" | tar -x -C .cache
-          rm -f "$RUNNER_TEMP/ps.tar.zst"
-          # Keep the bundle this run started from (best effort; R2 has no object tagging).
-          aws s3 cp s3://robots-private/pundit/private-sources.tar.zst s3://robots-private/pundit/private-sources.prev.tar.zst --endpoint-url "$R2_ENDPOINT" --only-show-errors --copy-props none || echo "::warning::could not keep the previous bundle"
+          # A brand-new register (no ledger in git yet) has no store until its
+          # first save. Start it empty only when storage says the bundle is not
+          # there. Any other answer stops the run. A register with a ledger
+          # always needs its store: the copy below fails without one.
+          fresh=0
+          if [ ! -f research/corpus/ledger.jsonl ] && ! aws s3api head-object --bucket robots-private --key pundit/private-sources.tar.zst --endpoint-url "$R2_ENDPOINT" >/dev/null 2>"$RUNNER_TEMP/head.err"; then
+            if grep -qE '\(404\)|Not Found' "$RUNNER_TEMP/head.err"; then fresh=1; else cat "$RUNNER_TEMP/head.err"; echo "::error::could not check the private store"; exit 1; fi
+          fi
+          if [ "$fresh" = 1 ]; then
+            echo "a new register: no private store yet, starting an empty one"
+            mkdir -p .cache/private-sources
+          else
+            aws s3 cp s3://robots-private/pundit/private-sources.tar.zst "$RUNNER_TEMP/ps.tar.zst" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+            zstd -d -q -c "$RUNNER_TEMP/ps.tar.zst" | tar -x -C .cache
+            rm -f "$RUNNER_TEMP/ps.tar.zst"
+            # Keep the bundle this run started from (best effort; R2 has no object tagging).
+            aws s3 cp s3://robots-private/pundit/private-sources.tar.zst s3://robots-private/pundit/private-sources.prev.tar.zst --endpoint-url "$R2_ENDPOINT" --only-show-errors --copy-props none || echo "::warning::could not keep the previous bundle"
+          fi
           find .cache/private-sources -type f | wc -l | tr -d ' ' > "$RUNNER_TEMP/ps-count"
           echo "private store: $(cat "$RUNNER_TEMP/ps-count") files, $(du -sh .cache/private-sources | cut -f1)"
       - name: Fetch the robot's ChatGPT login (Dave's personal ChatGPT)
@@ -148,12 +163,20 @@ jobs:
           npm run -s validate
           git pull -q --rebase origin main || true
           changed=$(git diff --name-only "$START_SHA" HEAD)
-          if [ -z "$changed" ]; then echo "nothing new today"; exit 0; fi
+          # A new register has no release yet. Once it has any assessment, it
+          # gets its first release, even when an earlier run saved those
+          # records and stopped before publishing.
+          first=0
+          if [ ! -f data/current-release.json ] && [ -n "$(ls -A data/assessments 2>/dev/null)" ]; then first=1; fi
+          if [ -z "$changed" ] && [ "$first" = 0 ]; then echo "nothing new today"; exit 0; fi
           # A release (about 50 MB) only when a record a release is built from
           # changed, or the last release is a week old (deadline states and
           # coverage dates move with time even when nothing else does).
-          age=$(( ( $(date -u +%s) - $(date -u -d "$(jq -r .updated_at data/current-release.json)" +%s) ) / 86400 ))
-          if grep -E '^data/(assessments|events|claims|reviews|contracts|evidence|occurrences|invalidations)/' <<<"$changed" >/dev/null || [ "$age" -ge 7 ]; then
+          age=0
+          if [ -f data/current-release.json ]; then
+            age=$(( ( $(date -u +%s) - $(date -u -d "$(jq -r .updated_at data/current-release.json)" +%s) ) / 86400 ))
+          fi
+          if [ "$first" = 1 ] || grep -E '^data/(assessments|events|claims|reviews|contracts|evidence|occurrences|invalidations)/' <<<"$changed" >/dev/null || [ "$age" -ge 7 ]; then
             node --no-warnings scripts/release.ts
             git add -A data
             git commit -q -m "Release $(jq -r .release_id data/current-release.json)"

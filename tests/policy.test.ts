@@ -7,7 +7,9 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import YAML from "yaml";
 import * as P from "../src/policy.ts";
+import { z } from "zod";
 import { CONFIG, RegisterConfig } from "../src/config.ts";
+import { Subject } from "../src/schema.ts";
 
 test("the configuration is the only place a deployment names its people", () => {
   assert.ok(RegisterConfig.safeParse(CONFIG).success);
@@ -20,6 +22,20 @@ test("the configuration is the only place a deployment names its people", () => 
   const walk = (d: string) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = `${d}/${e.name}`; if (e.isDirectory()) walk(p); else if (/\.(ts|astro|mjs)$/.test(p) && /Gary Marcus|Ed Zitron|gary-marcus|ed-zitron|wheresyoured|garymarcus/.test(fs.readFileSync(p, "utf8"))) offenders.push(p); } };
   for (const d of ["src", "scripts"]) walk(d);
   assert.deepEqual(offenders, [], "code is generic; the people live in config/register.yaml");
+});
+
+test("the starter files for a new register are valid and agree with each other", () => {
+  const reg = RegisterConfig.parse(YAML.parse(fs.readFileSync("config/register.example.yaml", "utf8")));
+  // The subject id is an enum of this deployment's people, so check the example's shape with any slug.
+  const subj = Subject.extend({ id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/) }).parse(YAML.parse(fs.readFileSync("config/subject.example.yaml", "utf8")));
+  const person = reg.subjects.find((s) => s.id === subj.id);
+  assert.ok(person, "the subject example is a person in the register example");
+  assert.equal(subj.name, person.name);
+  const windows = new Set(person.windows.map((w) => w.id));
+  for (const w of subj.collection_windows) assert.ok(windows.has(w), `window ${w} is in the register example`);
+  for (const w of person.windows) assert.ok(person.publications.some((p) => p.name === w.publication && p.origin === w.origin), `window ${w.id} names one of its publications`);
+  // The tests and preview builds never read the deployment's own configuration.
+  assert.match(process.env.PC_CONFIG ?? "", /fixtures\/register\.yaml$/, "npm test sets PC_CONFIG to fixtures/register.yaml");
 });
 
 const policy = YAML.parse(fs.readFileSync("policy/policy.yaml", "utf8"));

@@ -12,10 +12,10 @@
     "build": "astro build && pagefind --site dist && node --no-warnings scripts/check-dist.ts",
     "preview": "astro preview",
     "validate": "node --no-warnings scripts/validate.ts",
-    "test": "node --test --test-reporter=spec tests/*.test.ts",
+    "test": "PC_CONFIG=fixtures/register.yaml node --test --test-reporter=spec tests/*.test.ts",
     "astro": "astro",
-    "build:fixture": "PC_RELEASE=fixture npm run build",
-    "build:scale": "PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} node --no-warnings fixtures/release/build.ts && PC_RELEASE=fixture PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} npm run build"
+    "build:fixture": "PC_CONFIG=fixtures/register.yaml PC_RELEASE=fixture npm run build",
+    "build:scale": "PC_CONFIG=fixtures/register.yaml PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} node --no-warnings fixtures/release/build.ts && PC_CONFIG=fixtures/register.yaml PC_RELEASE=fixture PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.137.0",

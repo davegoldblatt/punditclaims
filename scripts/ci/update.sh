@@ -42,7 +42,9 @@ step() {
 must n -e '
   const fs = require("node:fs");
   const dir = ".cache/private-sources/extractions";
-  const posts = fs.readFileSync("research/corpus/ledger.jsonl", "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)).filter((l) => l.kind === "post" && l.status === "extracted");
+  // No ledger yet means a new register with nothing extracted to protect.
+  const ledger = "research/corpus/ledger.jsonl";
+  const posts = (fs.existsSync(ledger) ? fs.readFileSync(ledger, "utf8") : "").split("\n").filter(Boolean).map((l) => JSON.parse(l)).filter((l) => l.kind === "post" && l.status === "extracted");
   const bad = posts.filter((p) => { try { return !Array.isArray(JSON.parse(fs.readFileSync(`${dir}/${p.id}.json`, "utf8")).claims); } catch { return true; } });
   console.log(`private store: ${posts.length - bad.length} of ${posts.length} extracted posts have a readable extraction`);
   if (bad.length) { console.error(`missing or unreadable: ${bad.slice(0, 10).map((p) => p.id).join(", ")}${bad.length > 10 ? ", ..." : ""}`); process.exit(1); }'
@@ -53,8 +55,13 @@ windows=$(n -e 'import("./src/config.ts").then((m) => console.log(m.CONFIG.subje
 must n scripts/roll-windows.ts
 # A failed discovery writes nothing (the window keeps yesterday's manifest), so
 # it does not stop the run: pending work on earlier posts still goes ahead.
+# A check run (--no-calls) is the setup test, so there a failed discovery
+# fails the run, and nothing is saved.
+if [ "$calls" = 0 ]; then
+  for w in $windows; do must n scripts/discover.ts "$w"; done
+  echo "no model calls (--no-calls)"; exit 0
+fi
 for w in $windows; do step n scripts/discover.ts "$w"; done
-[ "$calls" = 1 ] || { echo "no model calls (--no-calls)"; exit 0; }
 
 for w in $windows; do step n scripts/extract.ts --window "$w" --concurrency 3; done
 must n scripts/corpus.ts

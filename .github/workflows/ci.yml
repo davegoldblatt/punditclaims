@@ -19,7 +19,7 @@ jobs:
       - run: npm run validate
       # The fixture build proves every page renders every state; the real
       # build proves the current release renders and leaks nothing.
-      - run: PC_RELEASE=fixture npm run build
+      - run: npm run build:fixture
       - run: npm run build
       - name: Upload the built site
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
