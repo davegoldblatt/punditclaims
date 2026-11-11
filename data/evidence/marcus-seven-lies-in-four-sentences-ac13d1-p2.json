@@ -1,0 +1,146 @@
+{
+ "packet_id": "marcus-seven-lies-in-four-sentences-ac13d1-p2",
+ "claim_revision_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-ac13d1",
+  "version": 1,
+  "content_hash": "6de46350d2d695f3045da47aecd3a8b646679ee3a4b7ef6890444a6cbb6dddea"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-ac13d1",
+  "version": 2,
+  "content_hash": "f6af661fc25fc4303e695bb7ac9a5ddc99acc14f663a476a6943b6dc0587fca8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "HaluEval 2023 ChatGPT hallucination recognition accuracy GPT-4",
+   "SelfCheckGPT 2023 hallucination detection own output results limitations",
+   "2023 \"Can ChatGPT\" \"fact-check\" accuracy claims GPT-4",
+   "\"How Language Model Hallucinations Can Snowball\" 2023",
+   "2023 ChatGPT fact checking 4770 claims study accuracy"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2305.11747",
+    "used": true,
+    "why": "Read to establish version history; the May version supplies the outcome evidence."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.11747v2",
+    "used": true,
+    "why": "Direct pre-post evaluation of hallucination recognition, including ChatGPT checking generated text."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.08896",
+    "used": true,
+    "why": "Read to establish version history; used the May version rather than the October revision."
+   },
+   {
+    "url": "https://arxiv.org/html/2303.08896v2",
+    "used": true,
+    "why": "Material counterevidence showing successful factuality assessment through repeated sampling."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.13534v1",
+    "used": true,
+    "why": "Dated primary report of ChatGPT and GPT-4 recognizing their own errors."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.13534v1",
+    "used": true,
+    "why": "Read the experimental setup to establish that recognition occurred in separate interactions on three constructed tasks."
+   },
+   {
+    "url": "https://arxiv.org/abs/2304.08979v1",
+    "used": false,
+    "why": "Primarily evaluates answering questions. That is less direct evidence of distinguishing truth from falsehood."
+   },
+   {
+    "url": "https://arxiv.org/html/2304.08979v1",
+    "used": false,
+    "why": "Inspected for direct factual recognition evidence; the selected studies address the claim more closely."
+   }
+  ],
+  "performed_at": "2026-11-11T19:16:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-11747v2",
+   "source_snapshot_id": "d6f6fb2d8854fa5622308dfbb7f7862bcbe70a40dd445ee0d7207cde4431e810",
+   "publisher": "arXiv; Junyi Li and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.11747v2",
+   "locator": "Section 3.2.1, Hallucination Recognition",
+   "receipt": {
+    "public_excerpt": "poor at identifying hallucination",
+    "quote_hash": "4bcad478f0191b287fa0fe9dca40b4b3926f5f8a59eb9369e141fe17150b8020",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-05-22",
+   "retrieved_at": "2026-10-29T18:06:36Z",
+   "relation": "supports",
+   "explanation": "HaluEval directly tests recognition of generated hallucinations: ChatGPT achieved 62.59% accuracy in question answering, rising to 76.83% with retrieved knowledge. These substantial remaining errors support unreliable factual checking; the summarization results are less direct because their labels also concern faithfulness to a source.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2305-13534v1",
+   "source_snapshot_id": "4c29e0f06933cc1323f6d639102be00acc9a33118f4977201cd227122a0f0d4f",
+   "publisher": "arXiv; Muru Zhang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2305.13534v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "67% and 87%",
+    "quote_hash": "8400c336aef645a09b84499d9171a34eb14e327ab003e8850e7e1bd65d93a9e9",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-05-22",
+   "retrieved_at": "2026-10-29T07:46:32Z",
+   "relation": "context",
+   "explanation": "This is material counterevidence to complete inability: both models recognized many errors when claims were presented separately. The three constructed tasks and conditional error-detection rates do not establish dependable general checking, so this does not meet the contract's contradiction condition.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2303-08896v2",
+   "source_snapshot_id": "cdbd2c548349f56f92e1243b768cc02e8286f58c3e821ef5c61234fa66fedf35",
+   "publisher": "arXiv; Potsawee Manakul, Adian Liusie and Mark J. F. Gales",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2303.08896v2",
+   "locator": "Abstract; experimental scope in Section 9, Limitations",
+   "receipt": {
+    "public_excerpt": "detect non-factual and factual sentences",
+    "quote_hash": "1f11859f3439eeda8ea6a48e0fb8e43f70478fb4fb844b570118e6b5480c5c14",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-05-08",
+   "retrieved_at": "2026-11-11T19:13:06Z",
+   "relation": "context",
+   "explanation": "Repeated sampling enabled useful factuality assessment of GPT-3 output without an external database. This qualifies Marcus's wording, but the evaluation covered 238 biographical passages and reported ranking performance, rather than dependable classification across general factual tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The selected evaluations do not establish performance for every model or the exact Bing configuration discussed in the post.",
+  "Marcus supplied no numerical definition of reliability; the assessment necessarily uses the stated ordinary-language reading."
+ ],
+ "packet_hash": "1e169055b1116502025a2afeaa2f12658f983a948c7a02ad6aaa05342fe4b931"
+}

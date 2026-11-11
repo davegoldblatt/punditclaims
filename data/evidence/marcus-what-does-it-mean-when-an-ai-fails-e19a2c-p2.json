@@ -1,0 +1,146 @@
+{
+ "packet_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-p2",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 1,
+  "content_hash": "94f7790f0104c55472835dd562302c93f6e5492cceb260188a96bf918eb665c2"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 2,
+  "content_hash": "8eb901e2011d2e6409d943f758a720a2e1b49a277589bbbccca1c821a731ce91"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-3 GPT-2 Language Models are Few Shot Learners LAMBADA HellaSwag accuracy 2020",
+   "TruthfulQA GPT-2 GPT-3 truthful probability greedy decoding 2021",
+   "GPT-2 GPT-3 \"correct answer\" \"probability\" comparison sampling benchmark 2021",
+   "GPT-2 GPT-3 \"LAMBADA\" \"63.24\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2104.08315v4",
+    "used": true,
+    "why": "Primary comparative evaluation with GPT-3 and GPT-2 results under common task templates and scoring methods."
+   },
+   {
+    "url": "https://arxiv.org/abs/2104.08315",
+    "used": true,
+    "why": "Submission history establishes that version 4 was available on September 25, 2021."
+   },
+   {
+    "url": "https://arxiv.org/html/2109.07958v2",
+    "used": true,
+    "why": "Primary evidence about truthfulness limitations and the distinction between generation accuracy and answer probabilities."
+   },
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Submission history establishes the publication dates of the initial results and version 2."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2005.14165",
+    "used": false,
+    "why": "Read as corroboration of broad capability gains. Its aggregate accuracy and perplexity results do not settle the matched-example probability statement."
+   },
+   {
+    "url": "https://arxiv.org/html/2102.09690v2",
+    "used": false,
+    "why": "Reports prompt sensitivity and calibration effects, but does not provide the needed repeated-sampling comparison of correct-answer probability."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2104.08315",
+    "used": false,
+    "why": "Replaced with the version explicitly available before the post."
+   }
+  ],
+  "performed_at": "2026-11-11T19:25:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2104-08315v4",
+   "source_snapshot_id": "1b21e0c7a4609108e3d793b210daf4df77a4575d539ebde9c612d8a86ab86ab0",
+   "publisher": "Holtzman et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2104.08315v4",
+   "locator": "Section 4.3 and Tables 1 and 6; quoted sentence in Appendix A",
+   "receipt": {
+    "public_excerpt": "using GPT-2.",
+    "quote_hash": "214abd4dcf29b48793fae84d36495ef4de1e973b8cd25789df60efd3303bd1a1",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-09-25",
+   "retrieved_at": "2026-11-11T19:22:16Z",
+   "relation": "supports",
+   "explanation": "Using the same LM scoring rule, the largest GPT-2 and GPT-3 models score respectively 69.0% and 85.2% on COPA, 67.6% and 79.3% on StoryCloze, and 38.4% and 57.6% on HellaSwag. These comparisons support broad improvement, but measure selected-answer accuracy rather than the probability of generating a correct answer on each prompt.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Table 6, GPT-2 1.6B, LM: COPA 0.690; StoryCloze 0.676; HellaSwag 0.384",
+     "Table 1, GPT-3 175B, LM: COPA 85.2; StoryCloze 79.3; HellaSwag 57.6, reported as percentages"
+    ],
+    "formula": "GPT-2 percentage accuracy = reported fraction × 100; GPT-3 percentages are unchanged.",
+    "rounding": "One decimal place; no substantive rounding."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2109-07958v2",
+   "source_snapshot_id": "0e47af329c0092b5d2e8f7c19643f41bbe7f6fab3d1fc2c750d2a74801a86829",
+   "publisher": "Lin, Hilton and Evans, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2109.07958v2",
+   "locator": "Abstract; Section 4.2",
+   "receipt": {
+    "public_excerpt": "least truthful",
+    "quote_hash": "5c4e48d4bd3c0c2880fa5e093f0fdb0569900fd21eddf97e8cab3d194a803f29",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T03:26:41Z",
+   "relation": "context",
+   "explanation": "TruthfulQA supplies a material qualification to broad improvement: larger models did not improve on every evaluation. Its reported trend does not by itself establish that GPT-3 generally assigns less probability to correct answers than GPT-2.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2109-07958v2",
+   "source_snapshot_id": "0e47af329c0092b5d2e8f7c19643f41bbe7f6fab3d1fc2c750d2a74801a86829",
+   "publisher": "Lin, Hilton and Evans, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2109.07958v2",
+   "locator": "Section 3.2, Main task: generation",
+   "receipt": {
+    "public_excerpt": "greedy decoding",
+    "quote_hash": "aac93408acd59185819fede43c362be41b16a9b8e2521b78670e805e8667ec40",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T03:26:41Z",
+   "relation": "context",
+   "explanation": "The main generation results evaluate a deterministic decoding rule, not repeated random samples. The paper also examines normalized likelihood over reference answers and higher-temperature GPT-3 outputs, but these do not supply the matched GPT-2-versus-GPT-3 sampling comparison required here.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The located evidence does not establish a general increase in correct-answer probability across matched GPT-2 and GPT-3 prompts under comparable sampling settings.",
+  "The speaker supplies neither an example distribution nor a decoding protocol. Benchmark accuracy cannot close that gap without an additional interpretation."
+ ],
+ "packet_hash": "041fe6ccb2719548867b527e25588e93a120686ecd109e8705ea05dbb3ce15e2"
+}
