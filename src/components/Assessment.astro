@@ -1,0 +1,92 @@
+---
+// One assessment as recorded: the axis question, the outcome, the horizon,
+// the evidence cutoff, the rationale, the limitations, and every evidence
+// item as a receipt disclosure. Then the AI disclosure. The same component
+// renders the current assessment and every older version. A screened-out
+// claim (policy .7) shows the screens' reasons instead of evidence.
+import type { PublicAssessment, PublicClaim, ReleaseManifest } from "../lib/manifest.ts";
+import { AXIS_LABEL, HORIZON_LABEL, OUTCOME_DESCRIPTION, OUTCOME_LABEL } from "../policy.ts";
+import { assessmentAnchor, day, isScreenedOut, RELATION_ORDER, RELATION_TEXT, uncheckableReasons } from "../lib/view.ts";
+import AiNote from "./AiNote.astro";
+
+interface Props { claim: PublicClaim; a: PublicAssessment; m: ReleaseManifest; heading?: string; withdrawn?: boolean }
+const { claim: c, a, m, heading = "Assessment", withdrawn = false } = Astro.props;
+const p = a.payload;
+const screened = isScreenedOut(a);
+const reasons = screened ? uncheckableReasons(a) : [];
+const ev = RELATION_ORDER.map((rel) => ({ rel, items: p.evidence.filter((e) => e.relation === rel) })).filter((g) => g.items.length);
+const ungraded = p.axis === "not_applicable";
+const meta = (id: string) => a.evidence_meta.find((x) => x.id === id) ?? null;
+const SOURCE_TYPE: Record<string, string> = {
+  filing: "Regulatory filing", company_disclosure: "Company disclosure: the company describing itself, not an independent finding",
+  official_statistics: "Official statistics", independent_measurement: "Independent measurement", peer_reviewed: "Peer-reviewed paper",
+  preprint: "Preprint, not peer reviewed", benchmark: "Benchmark result", demonstration: "Demonstration", news_report: "News report",
+  secondary_summary: "Secondary summary", author_statement: "The author's own statement (context only, never proof)",
+};
+---
+<section class="section" id={assessmentAnchor(a.assessment_id)} aria-labelledby="assess-h">
+  <h2 id="assess-h">{heading}</h2>
+  <div class="assessment" data-o={withdrawn ? undefined : p.outcome}>
+    <p class="axis-q">{AXIS_LABEL[p.axis]}</p>
+    <p class="verdict">
+      {withdrawn
+        ? <><span class="flag label-lg">Withdrawn</span><span>We no longer stand by this verdict: {OUTCOME_LABEL[p.outcome]}</span></>
+        : <span class="label label-lg" data-o={p.outcome}><span class="sr-only">Outcome: </span>{OUTCOME_LABEL[p.outcome]}</span>}
+      {a.status === "under_review" && <span class="flag">Under review</span>}
+    </p>
+    {!withdrawn && <p class="outcome-desc">{screened
+      ? "Both AIs found that public evidence can’t settle this. Listed, not scored."
+      : OUTCOME_DESCRIPTION[p.outcome]}</p>}
+    {screened && (
+      <>
+        <h3>Why it can’t be checked</h3>
+        <ul>{reasons.map((t) => <li>{t}</li>)}</ul>
+      </>
+    )}
+    {p.plain_reading && <p class="flag-note"><strong>Judged on a plain reading.</strong> They named no measure, so we used the reading a typical informed reader would take. It is spelled out under “How we judged it”.</p>}
+    {!screened && <p class="small soft">Evidence up to <time datetime={p.evaluation_as_of}>{p.evaluation_as_of}</time>. Checked <time datetime={a.recorded_at}>{day(a.recorded_at)}</time>.</p>}
+
+    <h3>Why</h3>
+    <p>{p.rationale}</p>
+
+    {p.limitations.length > 0 && (
+      <>
+        <h3>Caveats</h3>
+        <ul>{p.limitations.map((l) => <li>{l}</li>)}</ul>
+      </>
+    )}
+
+    <h3>Evidence <span class="soft small">({p.evidence.length} {p.evidence.length === 1 ? "item" : "items"})</span></h3>
+    {screened ? (
+      <p class="small">We didn’t look for evidence, because this can’t be checked.</p>
+    ) : ungraded ? (
+      <p class="small">Claims like this aren’t scored, so there is no evidence to show.</p>
+    ) : p.evidence.length === 0 ? (
+      <p class="small">Nothing we found settles this yet.</p>
+    ) : (
+      <ul class="receipts">
+        {ev.flatMap((g) => g.items.map((e) => (
+          <li>
+            <details class="rcpt" id={`ev-${e.id}`}>
+              <summary><span class="rcpt-head"><span class="rcpt-rel">{RELATION_TEXT[e.relation]}</span>: {e.publisher}, <time datetime={e.event_date}>{e.event_date}</time></span></summary>
+              <div class="rcpt-body">
+                <blockquote cite={e.url}><p>{e.excerpt}</p></blockquote>
+                <p class="small"><span class="k">Why it matters: </span>{e.explanation}</p>
+                <dl class="facts facts-2">
+                  <div><dt>Where</dt><dd><a href={e.url} rel="noopener">{e.locator}</a></dd></div>
+                  <div><dt>Publisher</dt><dd>{e.publisher}</dd></div>
+                  {meta(e.id) && <div><dt>Kind of source</dt><dd>{SOURCE_TYPE[meta(e.id)!.source_type]}{meta(e.id)!.audited === true ? ", audited" : meta(e.id)!.audited === false ? ", unaudited" : ""}</dd></div>}
+                  {meta(e.id)?.metric && <div><dt>Measures</dt><dd>{meta(e.id)!.metric!.company}, {meta(e.id)!.metric!.metric.replace(/_/g, " ")}{meta(e.id)!.metric!.currency ? `, ${meta(e.id)!.metric!.currency}` : ""}{meta(e.id)!.metric!.units ? ` ${meta(e.id)!.metric!.units}` : ""}, {meta(e.id)!.metric!.accounting_basis.replace(/_/g, " ")}, {meta(e.id)!.metric!.period_start ?? "?"} to {meta(e.id)!.metric!.period_end ?? "?"}</dd></div>}
+                  {meta(e.id)?.derived && <div><dt>Math</dt><dd>{meta(e.id)!.derived!.formula} (inputs: {meta(e.id)!.derived!.inputs.join("; ")}; {meta(e.id)!.derived!.rounding})</dd></div>}
+                  <div><dt>About events on</dt><dd><time datetime={e.event_date}>{e.event_date}</time></dd></div>
+                  <div><dt>Published</dt><dd><time datetime={e.available_at}>{day(e.available_at)}</time></dd></div>
+                </dl>
+              </div>
+            </details>
+          </li>
+        )))}
+      </ul>
+    )}
+    <AiNote claim={c} a={a} />
+  </div>
+</section>

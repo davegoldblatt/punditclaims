@@ -1,0 +1,145 @@
+{
+ "assessment_id": "wyea-ai-is-really-weird-f687a1-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-f687a1",
+  "version": 1,
+  "content_hash": "bf4ac5cc5af89fccb5903c235dc665f4f8763e812ae9fb9947cbccf1e3e0539d"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-f687a1",
+  "version": 1,
+  "content_hash": "ee89e0d6234ea791ccb90f91e931cef5961488bc93c64e5ceb47ddcda514cea1"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-is-really-weird-f687a1-p1",
+  "content_hash": "11bd2f17bdbe1f502dd80d710e89d93d24bb657b8a70c06e90da5f6d30d59ff9"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-01-01",
+  "end": "2026-03-31",
+  "precision": "quarter"
+ },
+ "public_rationale": "The architecture component is well supported: both products use language models to direct work through tools. An OpenClaw experiment also documented false completion reports. The full claim remains unsettled because the records do not measure the asserted compute intensity across comparable workflows or establish the error characterization for both products.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Repeated model calls do not alone quantify computational inefficiency.",
+  "Adversarial case studies cannot establish typical failure rates.",
+  "The meaning of compute-intensive materially affects the assessment."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-is-really-weird-f4104c-3x-review-anthropic-1",
+  "wyea-ai-is-really-weird-f4104c-3x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ai-is-really-weird-f4104c-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-is-really-weird-f687a1",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Agent products are compute-intensive attempts to make hallucination-prone chatbots do actual work.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But in reality, it’s just further compute-intensive ways of trying to fit a square peg in a round hole, by which I mean having a hallucination-prone chatbot do actual work.",
+   "locator": "paragraph 78",
+   "url": "https://www.wheresyoured.at/ai-is-really-weird",
+   "date": "2026-04-08",
+   "document_title": "AI Is Really Weird",
+   "observed_at": "2026-10-28T22:26:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "further compute-intensive ways",
+    "having a hallucination-prone chatbot do actual work"
+   ],
+   "our_interpretation": [
+    "Use 2026 Q1, the latest completed quarter before publication.",
+    "The immediate referents are OpenClaw and Perplexity Computer, rather than every product described as an agent.",
+    "Read 'chatbot' as an LLM generating responses and action decisions within a tool-using system.",
+    "Read 'compute-intensive' as materially greater inference and orchestration work than an ordinary single-response interaction.",
+    "Read 'hallucination-prone' as a demonstrated tendency to invent facts or report actions that did not occur, not a claim that every task fails.",
+    "The square-peg metaphor is rhetorical and adds no separate measurable condition."
+   ],
+   "support_condition": "Product architecture, resource measurements, and error evaluations establish LLM-driven work, substantial additional inference, and hallucination failures in the named products.",
+   "contradiction_condition": "Reliable evidence shows that the named systems do not use LLM-generated action decisions, or representative matched evaluations refute the added-compute or hallucination characterization."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The architecture component is well supported: both products use language models to direct work through tools. An OpenClaw experiment also documented false completion reports. The full claim remains unsettled because the records do not measure the asserted compute intensity across comparable workflows or establish the error characterization for both products.",
+  "limitations": [
+   "Repeated model calls do not alone quantify computational inefficiency.",
+   "Adversarial case studies cannot establish typical failure rates.",
+   "The meaning of compute-intensive materially affects the assessment."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "actions and a final reply",
+    "locator": "Agent Loop (OpenClaw), opening paragraph",
+    "url": "https://raw.githubusercontent.com/openclaw/openclaw/v2026.3.31/docs/concepts/agent-loop.md",
+    "publisher": "OpenClaw",
+    "event_date": "2026-03-31",
+    "available_at": "2026-03-31",
+    "explanation": "The documented loop combines model inference, tool execution, and replies. It supports the LLM-driven-work component, but does not quantify resource intensity or reliability."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "every run",
+    "locator": "How the system prompt is built",
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.3.31/docs/reference/token-use.md",
+    "publisher": "OpenClaw",
+    "event_date": "2026-03-31",
+    "available_at": "2026-03-31",
+    "explanation": "The documentation describes repeated prompt construction, history, tool results, and caching. This explains additional inference inputs, but supplies no matched measurement showing how much extra compute typical completed tasks require."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "Opus 4.6",
+    "locator": "19モデルを統合するマルチモデル設計",
+    "url": "https://prtimes.jp/main/html/rd/p/000000020.000157647.html",
+    "publisher": "Perplexity AI, Inc., via PR TIMES",
+    "event_date": "2026-02-27",
+    "available_at": "2026-02-27",
+    "explanation": "The Japanese announcement says Opus 4.6 handles overall reasoning and selects models according to the task. This supports LLM-based orchestration, not a measured claim about compute intensity or hallucination rates."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "agents reported task completion",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2602.20021",
+    "publisher": "Shapira et al., arXiv",
+    "event_date": "2026-02",
+    "available_at": "2026-02-23",
+    "explanation": "The February OpenClaw experiment documents false completion reports, supporting the hallucination-risk component for that system. Its exploratory and partly adversarial design does not estimate ordinary-use prevalence or evaluate Perplexity Computer."
+   }
+  ],
+  "what_would_resolve": "Target-period workflow evaluations for both products reporting model calls, tokens or compute, verified completion, and fabricated outputs against a stated baseline.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "8acd6a3db86d53045e43f0bb6f80c0afe74a00b4992cf9b7ecb8fbcedfc91dbb",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:21:33Z"
+}

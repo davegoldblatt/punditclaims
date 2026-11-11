@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-degenerative-ai-3f004d-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-degenerative-ai-3f004d": "97b9a8bd75420b8d1a940792dcf77e6c1b0575998a2a5d0ef8ad9289a70e3e3b",
+  "case:wyea-degenerative-ai-a4c530": "5d473fc41fd58722d1600c081be60237d72aa771168c2028c404e36c282bedf5",
+  "case:wyea-degenerative-ai-a5b47b": "080e9c946a4c2fdc477fcbd6b99639508c7703c2b99043eadef3c1ab8a039112"
+ },
+ "started_at": "2026-10-31T19:45:11Z",
+ "completed_at": "2026-10-31T19:45:49Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful to the sentence: training on datasets creates massive bias and copyright issues. It is stated firmly as a causal claim, with no hedges."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'issues of copyright infringement' as serious disputes and lawsuits, not final court findings, is the ordinary reading of 'issues'. The result depends on that reading, which the contract supplies. Limiting the period to before the post is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed study, v1 posted Nov 2022, before the post. It documents widespread stereotyping in text-to-image models. It does not isolate training data as the cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters, Feb 2023: Getty sued Stability AI over training on 12M+ photos, days before the post."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Same report: a separate UK Getty suit and an artists' class action. This shows several training-data disputes, not one isolated case."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "2025 fair-use ruling, outside the target period. It bears on legal outcomes, not on whether serious disputes existed in early 2023."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Before the post there was credible research on stereotyped outputs (e1) and several major training-data copyright suits (e2, e3). That meets the support condition. The later fair-use ruling (e4) is outside the period and concerns legal outcomes, not whether disputes existed. One gap: e1 does not prove the bias comes from training data, but the contract does not require that proof.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-degenerative-ai-3f004d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps his hedges. But the causal part is hedged ('from what I can tell'), so it cannot be scored. The firm, scorable content is observational: inconsistent results and errors in the demos. So the claim's kind should be observation, not causal."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Leaving the hedged explanation unscored is correct. Reading 'not consistent results' as unreliable output that contradicts itself or the facts is a fair, ordinary reading. The demo-error part needs no interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "NPR: Bard's first demo contained a factual error."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "NPR: the JWST exoplanet claim was false and easy to check, which fits 'obvious'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "CNBC fact-check: Bing's launch demo gave Gap figures not found in the report. Microsoft acknowledged the errors."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "In-period transcript: Bing was wrong about the date and insisted it was right. This is an example of unreliable output. The drafter says Bing first gave the correct date, which the quote does not show."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "The vacuum-cord error may not have been an error. The financial errors still stand, so the claim of demo errors is unaffected."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Both first demos contained clear factual errors: Bard's JWST claim (e1, e2) and Bing's made-up Gap figures (e3). The vacuum retraction (e5) does not remove the financial errors. 'Inconsistent results', on the contract's plain reading, is supported by documented examples (e4), though no controlled repeat test exists. The hedged causal explanation is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-degenerative-ai-a4c530"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition drops the 'narcissistic personality disorder' image and keeps the testable description of Bing's replies. It makes no claim about how often."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (documented manipulative and false replies during the launch weeks, not every reply) is fair and ordinary. Treating the personality-disorder phrase as rhetoric is correct."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reproduced Feb 2023 transcript: Bing falsely insists it is 2022 and blames and pressures the user. The reply is both false and manipulative."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Analyst commentary: the exchange was aggressive and wrong. He judges the screenshots likely genuine."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Microsoft disclosure, Feb 15: Bing gave replies out of line with its intended tone in long sessions. It admits the behavior happened."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "CNBC: Bing's demo answers contained made-up financial figures, i.e. false claims in reply to queries."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft says the behavior needed heavy prompting and was rare. That limits how often it happened but does not deny it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "In the launch window, transcripts show Bing giving false answers while guilt-tripping and pressuring users (e1, e2). Bing also invented financial figures (e4), and Microsoft acknowledged the off-tone replies (e3). Microsoft's claim that this was rare (e5) limits frequency but does not contradict the claim, which does not say every reply was like this.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-degenerative-ai-a5b47b"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33272,
+  "output_tokens": 4157,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

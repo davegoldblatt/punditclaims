@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-the-biggest-advance-in-ai-since-the-4645c2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-biggest-advance-in-ai-since-the-4645c2",
+  "version": 1,
+  "content_hash": "492217c407299410b9605dab1d61dffa4decd03936ce35fc6df148b7c504a366"
+ },
+ "contract_ref": {
+  "id": "marcus-the-biggest-advance-in-ai-since-the-4645c2",
+  "version": 1,
+  "content_hash": "d633f5001e5735b8c4903cc4a64ea76ece9f3f455847cc045134184fadf19035"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Claude Code benchmark March 2026 failures evaluation harness scaling",
+   "site.github.com anthropics claude-code stellaraccident 2026 degradation 6800",
+   "site.github.com/anthropics/claude-code/issues \"stellaraccident\" \"degradation\"",
+   "site.anthropic.com \"Claude Code\" \"March\" \"2026\" \"benchmark\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "used": true,
+    "why": "Anthropic identifies a March change and an implementation defect that caused recurring memory and tool-use problems."
+   },
+   {
+    "url": "https://github.com/anthropics/claude-code/issues/42796",
+    "used": true,
+    "why": "A dated firsthand report documents repeated interventions in March workflows. Its causal theory is not accepted as established."
+   },
+   {
+    "url": "https://www.techradar.com/pro/claude-cannot-be-trusted-to-perform-complex-engineering-tasks-amd-ai-head-slams-anthropics-coding-tool-after-months-of-frustration",
+    "used": false,
+    "why": "The underlying firsthand GitHub report was available and used instead."
+   },
+   {
+    "url": "https://swescience.github.io/",
+    "used": false,
+    "why": "The surfaced leaderboard concerns later evaluations and cannot establish March product performance."
+   }
+  ],
+  "performed_at": "2026-10-29T18:52:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-april-23-postmortem",
+   "source_snapshot_id": "456a5d397166e0eca950889ae682c805ea24fd066ed5c1380b66ce93bc938dd6",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/april-23-postmortem",
+   "locator": "A caching optimization that dropped prior reasoning, implementation-bug paragraph",
+   "receipt": {
+    "public_excerpt": "forgetfulness, repetition, and odd tool choices",
+    "quote_hash": "cbf758f289450e47f18b2b1636917d153f47cb21901554f5a71002a235b99222",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-26",
+   "available_at": "2026-04-23",
+   "retrieved_at": "2026-10-29T03:11:44Z",
+   "relation": "supports",
+   "explanation": "Anthropic traces recurring problems to a change shipped March 26 that repeatedly discarded reasoning history after an idle-session threshold. This documents a material product limitation during the target month.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-anthropics-claude-code-issues-42796",
+   "source_snapshot_id": "6f4301c9ef647b6cc95da7fe79a7820b934f541c23cb421cdb27fa933f5c5c56",
+   "publisher": "stellaraccident / GitHub",
+   "source_type": "independent_measurement",
+   "url": "https://github.com/anthropics/claude-code/issues/42796",
+   "locator": "Appendix B, stop-hook violation analysis",
+   "receipt": {
+    "public_excerpt": "43 violations",
+    "quote_hash": "5a90e05c0dedaf765b9c71d09bd92ab1947c306bdf7c1ed5d91b28abe7944510",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-18",
+   "available_at": "2026-04-02",
+   "retrieved_at": "2026-10-29T05:18:53Z",
+   "relation": "supports",
+   "explanation": "The user's log analysis reports repeated workflow interventions rather than one isolated mistake. These are user-defined stop-hook violations, not a general coding-error rate, and the report's proposed cause is not independently established.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The sources do not estimate a representative failure rate across all Claude Code users or tasks.",
+  "The user-defined intervention measure does not directly measure incorrect code."
+ ],
+ "packet_hash": "712643354620e17dc0134d60da9592326e33b0b49e0b3fb2099b13a4558c218e"
+}

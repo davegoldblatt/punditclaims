@@ -1,0 +1,132 @@
+{
+ "assessment_id": "marcus-please-dont-trust-your-chatbot-for-f290cb-a1",
+ "claim_revision_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-f290cb",
+  "version": 1,
+  "content_hash": "dcada445f2975e882609bc8fba663fe8fc7641716cea2d16a864fad3c2ffd6f6"
+ },
+ "contract_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-f290cb",
+  "version": 1,
+  "content_hash": "afb4dba8dcf23704a7c0b2ef2d6c3dd7e49190fb16640f3a717a5de6d490f3f0"
+ },
+ "packet_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-f290cb-p1",
+  "content_hash": "565507ae9a80a80b1005a6772bde83041ade4a23620c8f545e6eea926559777f"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Supported on the ordinary reading that apparent certainty can misleadingly suggest correctness and that training contributes. Controlled comparisons found greater verbalized overconfidence after preference training, reward models favored higher confidence for otherwise identical answers, and changes to reward training reduced the mismatch. Further experiments separated harmful instruction-tuning effects from chat-format effects. The wording is broader than the evidence if 'illusion' means that every confidence signal is meaningless: other experiments elicited informative, better-calibrated confidence estimates.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The result depends on reading 'illusion' as misleading certainty rather than complete absence of information.",
+  "Most direct experiments concern prompted confidence scores and benchmark answers, not the tone of medical conversations.",
+  "Training methods and models differ; the finding is not universal.",
+  "The June 2026 paper was available by the evaluation date but after the post; the earlier training experiments independently support the assessment."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-please-dont-trust-your-chatbot-for-bf86d4-2x-review-anthropic-1",
+  "marcus-please-dont-trust-your-chatbot-for-bf86d4-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-please-dont-trust-your-chatbot-for-bf86d4-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-please-dont-trust-your-chatbot-for-f290cb",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The apparent confidence of LLMs is an illusion that comes from how they are trained.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "we should not take the apparent “confidence” of large language models — itself an illusion of how they are trained — to mean",
+   "locator": "paragraph 15",
+   "url": "https://garymarcus.substack.com/p/please-dont-trust-your-chatbot-for",
+   "date": "2026-04-21",
+   "document_title": "Please don’t trust your chatbot for medical advice",
+   "observed_at": "2026-10-28T22:30:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "apparent “confidence” of large language models",
+    "itself an illusion",
+    "of how they are trained"
+   ],
+   "our_interpretation": [
+    "Read apparent confidence as expressed certainty, including verbalized confidence scores, rather than a claim about consciousness.",
+    "In the surrounding warning, read 'illusion' as confidence that can misleadingly suggest correctness. Do not interpret it as asserting that every confidence signal contains zero information.",
+    "Read training as a contributing cause of this mismatch, not necessarily its sole cause.",
+    "Assess the causal parenthesis separately from the normative recommendation about trusting medical advice."
+   ],
+   "support_condition": "Controlled comparisons show that training increases expressed confidence beyond what correctness warrants, with interventions on training or rewards supporting a causal contribution.",
+   "contradiction_condition": "Comparable experiments show that the claimed training-induced mismatch is absent or reversed across the relevant tested scope. Merely finding some informative confidence estimates does not refute the ordinary reading, but limits a universal interpretation."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Supported on the ordinary reading that apparent certainty can misleadingly suggest correctness and that training contributes. Controlled comparisons found greater verbalized overconfidence after preference training, reward models favored higher confidence for otherwise identical answers, and changes to reward training reduced the mismatch. Further experiments separated harmful instruction-tuning effects from chat-format effects. The wording is broader than the evidence if 'illusion' means that every confidence signal is meaningless: other experiments elicited informative, better-calibrated confidence estimates.",
+  "limitations": [
+   "The result depends on reading 'illusion' as misleading certainty rather than complete absence of information.",
+   "Most direct experiments concern prompted confidence scores and benchmark answers, not the tone of medical conversations.",
+   "Training methods and models differ; the finding is not universal.",
+   "The June 2026 paper was available by the evaluation date but after the post; the earlier training experiments independently support the assessment."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "greater verbalized overconfidence",
+    "locator": "Section 1, Introduction; experimental details in sections 2.1–2.2 and appendix D.3",
+    "url": "https://arxiv.org/html/2410.09724v2",
+    "publisher": "ICLR 2025; author manuscript on arXiv",
+    "event_date": "2025",
+    "available_at": "2025-02-28",
+    "explanation": "Before-and-after comparisons found increased expressed overconfidence after preference training. Reward experiments favored higher confidence for otherwise identical responses, while modified reward training reduced calibration error, supporting training as a contributing cause."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "better-calibrated than conditional probabilities",
+    "locator": "Section 4, Discussion",
+    "url": "https://arxiv.org/html/2305.14975v2",
+    "publisher": "EMNLP 2023; author manuscript on arXiv",
+    "event_date": "2023",
+    "available_at": "2023-10-24",
+    "explanation": "Elicited confidence can track correctness better than token probabilities, with results varying by model and prompt. This limits the stronger interpretation that confidence is always meaningless; it does not establish that ordinary confident wording guarantees accuracy."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "this miscalibration",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2606.03437",
+    "publisher": "arXiv; manuscript marked accepted to ACL 2026 Findings",
+    "event_date": "2026-06",
+    "available_at": "2026-06-02",
+    "explanation": "Experiments across six open-weight models found that instruction tuning harmed calibration and chat formatting further increased confidence in models' own answers. This supports training as one cause while identifying an additional cause in how the interaction is presented."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ecf967f288f9b9e6e99cd76ba88022949420e03b9688e754c3d1087453f22d72",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:05:29Z"
+}

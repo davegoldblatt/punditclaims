@@ -1,0 +1,134 @@
+{
+ "assessment_id": "wyea-deep-impact-117a45-a2",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-117a45",
+  "version": 1,
+  "content_hash": "d4792616b279c72ee2be6c1607a6fd28fb06f56c146cda0322249d155d5ce45d"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-117a45",
+  "version": 1,
+  "content_hash": "408926aa3692a3c7bbead62e46a4b13afeb16701bea579704735eaf814a3f1ee"
+ },
+ "packet_ref": {
+  "id": "wyea-deep-impact-117a45-p1",
+  "content_hash": "1e99435b6173c52be8b25b255d0cdd30dcc183621477673c17790f7cebd846a9"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-12-01",
+  "end": "2025-01-29",
+  "precision": "day"
+ },
+ "public_rationale": "DeepSeek's December 2024 V3 report describes training on 2,048 NVIDIA H800 GPUs and software optimizations that improved training efficiency [e8]. On January 27, 2025, Unsloth demonstrated inference with a quantized version of the full 671B R1 model using existing hardware and CPU offloading [e9]. Together, these support the release-period claim that development, operation and efficiency improvements could use existing hardware without requiring the next GPU generation or a new massive facility for the demonstrated deployment [e8, e9].",
+ "evidence_ids": [
+  "e8",
+  "e9",
+  "e10"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "V3's training hardware is company-reported; the report does not establish the facility's construction history [e8].",
+  "The R1 demonstration concerns quantized inference, with speed and quality tradeoffs, rather than original-precision inference or training on modest hardware [e9].",
+  "These records do not establish infrastructure requirements for mass-market demand or unlimited future frontier progress [e8, e9]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-deep-impact-110800-4x-review-anthropic-1",
+  "wyea-deep-impact-110800-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-deep-impact-117a45-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-deep-impact-117a45",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "DeepSeek's models do not require massive new data centers or ever-bigger NVIDIA GPUs to progress.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "DeepSeek's models don't require massive new data centers (they run on the GPUs currently used to run services like ChatGPT, and can even work on more austere hardware), nor do they require an endless supply of bigger, faster NVIDIA GPUs every year to progress.",
+   "locator": "paragraph 20",
+   "url": "https://www.wheresyoured.at/deep-impact",
+   "date": "2025-01-29",
+   "document_title": "Deep Impact",
+   "observed_at": "2026-10-28T22:30:27Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "don't require massive new data centers",
+    "run on the GPUs currently used",
+    "can even work on more austere hardware",
+    "nor do they require an endless supply of bigger, faster NVIDIA GPUs every year to progress"
+   ],
+   "our_interpretation": [
+    "The subject is the V3/R1 generation discussed in the post.",
+    "The ordinary present-tense reading concerns technical necessity: these models can be built, run, and improved using existing hardware.",
+    "Progress includes software and model-efficiency improvements. It does not require replacement by a newer GPU generation.",
+    "I do not interpret the sentence as guaranteeing unlimited future frontier progress on a permanently fixed hardware budget.",
+    "The target period covers the December 2024 and January 2025 releases and their contemporary deployment evidence."
+   ],
+   "support_condition": "Technical records establish development on existing GPU hardware and functioning deployment or efficiency improvements that do not require constructing a new massive data center or obtaining the next GPU generation.",
+   "contradiction_condition": "The relevant models or demonstrated improvements technically require a new massive facility or newer GPU generation, rather than merely benefiting from them."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "DeepSeek's December 2024 V3 report describes training on 2,048 NVIDIA H800 GPUs and software optimizations that improved training efficiency [e8]. On January 27, 2025, Unsloth demonstrated inference with a quantized version of the full 671B R1 model using existing hardware and CPU offloading [e9]. Together, these support the release-period claim that development, operation and efficiency improvements could use existing hardware without requiring the next GPU generation or a new massive facility for the demonstrated deployment [e8, e9].",
+  "limitations": [
+   "V3's training hardware is company-reported; the report does not establish the facility's construction history [e8].",
+   "The R1 demonstration concerns quantized inference, with speed and quality tradeoffs, rather than original-precision inference or training on modest hardware [e9].",
+   "These records do not establish infrastructure requirements for mass-market demand or unlimited future frontier progress [e8, e9]."
+  ],
+  "evidence": [
+   {
+    "id": "e8",
+    "relation": "supports",
+    "excerpt": "2048 NVIDIA H800 GPUs",
+    "locator": "Section 3.1, Compute Clusters",
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "publisher": "DeepSeek-AI",
+    "event_date": "2024-12",
+    "available_at": "2024-12-27",
+    "explanation": "The report identifies the hardware actually used and describes training-efficiency improvements and deployment on H800s. It supports the existing-hardware route, although it is a company report and does not document the construction history of the facility."
+   },
+   {
+    "id": "e9",
+    "relation": "supports",
+    "excerpt": "but it works.",
+    "locator": "Section 'Running Dynamic R1 Quants'; introductory hardware requirements and benchmark sections",
+    "url": "https://www.unsloth.ai/blog/deepseekr1-dynamic",
+    "publisher": "Unsloth",
+    "event_date": "2025-01-27",
+    "available_at": "2025-01-27",
+    "explanation": "Unsloth demonstrated quantization of full 671B R1, supplied executable deployment instructions, and documented use with existing GPUs or CPU offloading. This establishes practical operation and an efficiency improvement without a newly built large facility, with speed and quality tradeoffs."
+   },
+   {
+    "id": "e10",
+    "relation": "context",
+    "excerpt": "comparable to o1-mini",
+    "locator": "Section 1.1, discussion of distilled models",
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "publisher": "DeepSeek-AI",
+    "event_date": "2025-01",
+    "available_at": "2025-01-22",
+    "explanation": "The report describes improved smaller models produced through distillation. This supports an algorithmic route to progress, but those models are distinct from full R1 and their results alone do not establish full-model hardware requirements."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "32289c9322b19c7f9cd4c68bbaf807433a34629d40b49c7cb979b71dd617feae",
+ "supersedes_assessment_id": "wyea-deep-impact-117a45-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:49:43Z"
+}

@@ -1,0 +1,116 @@
+---
+// /changes and /changes/<n>: every substantive event in the release, newest
+// first, CHANGES_PAGE_SIZE to a page. When they all fit on one page, person
+// and event-type filters work in the URL; on a longer list they would only
+// see one page, so they are left out. Copy edits are listed apart, on the
+// first page, and never read as findings.
+import Base from "../../layouts/Base.astro";
+import Pager from "../../components/Pager.astro";
+import { release } from "../../lib/published.ts";
+import { EVENT_LABEL, EVENT_TYPES } from "../../policy.ts";
+import { byNewest, claimPath, day, EVENT_GROUP_LABEL, eventGroup, plainEventReason, type EventGroup } from "../../lib/view.ts";
+import { CHANGES_PAGE_SIZE, changesPath } from "../../lib/listing.ts";
+
+export function getStaticPaths() {
+  const r = release();
+  const n = r.events.filter((e) => e.substantive).length;
+  const pages = Math.max(1, Math.ceil(n / CHANGES_PAGE_SIZE));
+  return Array.from({ length: pages }, (_, i) => ({ params: { page: i === 0 ? undefined : String(i + 1) }, props: { page: i + 1, pages } }));
+}
+const { page, pages } = Astro.props as { page: number; pages: number };
+const r = release();
+const m = r.manifest;
+const subst = r.events.filter((e) => e.substantive).sort(byNewest);
+const shown = subst.slice((page - 1) * CHANGES_PAGE_SIZE, page * CHANGES_PAGE_SIZE);
+const edits = page === 1 ? r.events.filter((e) => !e.substantive).sort(byNewest) : [];
+const name = (id: string | null) => (id ? r.subject(id)?.name ?? id : "");
+const groups: EventGroup[] = ["speaker", "evidence", "site", "dispute", "source"];
+const typeCounts = new Map<string, number>();
+const personCounts = new Map<string, number>();
+for (const e of subst) { typeCounts.set(e.type, (typeCounts.get(e.type) ?? 0) + 1); if (e.subject_id) personCounts.set(e.subject_id, (personCounts.get(e.subject_id) ?? 0) + 1); }
+const typeCount = (t: string) => typeCounts.get(t) ?? 0;
+const personCount = (s: string) => personCounts.get(s) ?? 0;
+const heldById = new Map(r.held.map((h) => [h.id, h]));
+const total = subst.length;
+const fmt = (n: number) => n.toLocaleString("en-US");
+const filterable = pages === 1;
+const from = (page - 1) * CHANGES_PAGE_SIZE + 1;
+---
+<Base title={pages > 1 ? `Changes, page ${page} of ${pages}` : "Changes"} description="Everything Pundit Claims published, changed, or held back, newest first.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Changes{pages > 1 ? `, page ${page} of ${pages}` : ""}</h1>
+      <p class="lede">Everything we published, changed, or held back, newest first.</p>
+    </header>
+    {m ? (
+      <section class="section" aria-labelledby="changes-h" data-filter-root data-noun="changes">
+        <h2 id="changes-h">All changes <span class="count">(<span data-count="events.substantive" data-n={total}>{fmt(total)}</span>)</span></h2>
+        {filterable && (
+          <form class="filters" data-filters hidden aria-label="Filter the changes">
+            <div class="field">
+              <label for="ch-person">Person</label>
+              <select id="ch-person" name="person" data-facet="one" data-title="person">
+                <option value="" data-label="Both people" data-count="events.substantive" data-n={total}>Both people ({total})</option>
+                {r.subjects.map((s) => <option value={s.id} data-label={s.name} data-count={`events.subject.${s.id}`} data-n={personCount(s.id)}>{s.name} ({personCount(s.id)})</option>)}
+              </select>
+            </div>
+            <div class="field">
+              <label for="ch-type">Kind of change</label>
+              <select id="ch-type" name="type" data-facet="one" data-title="kind of change">
+                <option value="" data-label="All kinds of change" data-count="events.substantive" data-n={total}>All kinds of change ({total})</option>
+                {groups.map((g) => (
+                  <optgroup label={EVENT_GROUP_LABEL[g]}>
+                    {EVENT_TYPES.filter((t) => eventGroup(t) === g).map((t) => <option value={t} data-label={EVENT_LABEL[t]} data-count={`events.type.${t}`} data-n={typeCount(t)}>{EVENT_LABEL[t]} ({typeCount(t)})</option>)}
+                  </optgroup>
+                ))}
+              </select>
+            </div>
+            <div class="field field-actions"><button class="btn" type="button" data-clear>Clear filters</button></div>
+          </form>
+        )}
+        {filterable
+          ? <p class="result-line" aria-live="polite">Showing <b data-shown>{total}</b> of {total} changes, newest first.</p>
+          : <p class="result-line">Changes {fmt(from)} to {fmt(from + shown.length - 1)} of {fmt(total)}, newest first. Page {page} of {pages}.</p>}
+        {filterable && <p class="filter-note notice" data-note hidden></p>}
+        <ol class="timeline" data-list>
+          {shown.map((e) => {
+            const g = eventGroup(e.type);
+            const c = e.claim_id ? r.claim(e.claim_id) : null;
+            const h = !c && e.claim_id ? heldById.get(e.claim_id) : undefined;
+            return (
+              <li id={`event-${e.event_id}`} data-item data-id={e.event_id} data-person={e.subject_id ?? ""} data-type={e.type}>
+                <time datetime={e.recorded_at}>{day(e.recorded_at)}</time>
+                <div>
+                  <p class="ev-type"><strong>{EVENT_LABEL[e.type]}</strong><span class:list={["group", `group-${g}`]}>{EVENT_GROUP_LABEL[g]}</span>{e.subject_id && <span class="soft small">{name(e.subject_id)}</span>}</p>
+                  {c && <p><a href={claimPath(c.claim_id)}>{c.normalized_proposition}</a></p>}
+                  {h && <p><a href={`/held#held-${h.id}`}>{h.proposition ?? h.source.title}</a></p>}
+                  <p class="small">{plainEventReason(e, "It didn’t pass every check")}</p>
+                  {e.effective_at && <p class="small soft">Effective {day(e.effective_at)}.</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+        {filterable && (
+          <div class="empty" data-empty hidden>
+            <p><strong>No changes match.</strong> Remove a filter, or clear both.</p>
+            <p><button class="btn" type="button" data-clear>Clear filters</button></p>
+          </div>
+        )}
+        <Pager page={page} pages={pages} href={changesPath} label="Pages of changes" />
+        {edits.length > 0 && (
+          <details class="rcpt">
+            <summary>Wording fixes ({edits.length}). These never change a verdict.</summary>
+            <ul class="small">{edits.map((e) => <li><time datetime={e.recorded_at}>{day(e.recorded_at)}</time>: {e.reason}{e.claim_id && r.claim(e.claim_id) && <> (<a href={claimPath(e.claim_id)}>{e.claim_id}</a>)</>}</li>)}</ul>
+          </details>
+        )}
+      </section>
+    ) : (
+      <div class="notice" role="note"><p>Nothing is published yet.</p></div>
+    )}
+  </div>
+</Base>
+<script>
+  import { initFilters } from "../../scripts/filters.ts";
+  for (const root of document.querySelectorAll<HTMLElement>("[data-filter-root]")) initFilters(root);
+</script>

@@ -1,0 +1,130 @@
+{
+ "packet_id": "wyea-wherere-all-the-ai-chips-3939b3-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-3939b3",
+  "version": 2,
+  "content_hash": "c0a750b7e1ffa832dc4ecedcdff7c138cb6e3ce9b9019c901efcc3c2ea0e09a7"
+ },
+ "contract_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-3939b3",
+  "version": 1,
+  "content_hash": "622bcec05069f3e913ffca1a0871ff426a2e4716d6cfcf7f0076189cc5d67a47"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2027 second quarter results August 2026 revenue deployment GPUs",
+   "OpenAI Anthropic 2026 losses compute spending financial September 2026 Reuters",
+   "\"2026\" \"72%\" \"Anthropic\" compute Wells Fargo UBS",
+   "AI cloud revenue 2026 second quarter excluding OpenAI Anthropic Microsoft Google Amazon AI revenue"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "used": true,
+    "why": "Read with read_page. Primary disclosure of indirect customer concentration, but no allocation matching the claimed causal shares."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. Used NVIDIA’s hosted filing instead."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Read with read_page. Primary evidence of Anthropic’s loss history and stated profitability risk; it does not establish inevitable financial failure."
+   },
+   {
+    "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+    "used": false,
+    "why": "Read with read_page. Management discussed financing and future demand, but its projections do not measure the claimed current causal shares."
+   },
+   {
+    "url": "https://www.axios.com/2026/08/10/ai-cloud-profit-spending-earnings",
+    "used": false,
+    "why": "read_page returned HTTP 403; search snippets were not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T22:14:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "investor-nvidia-com-files-doc-financials-2027-nvda-2027-q2-10q-fina-b4ea8829627f",
+   "source_snapshot_id": "7fba94c628877867e1770c7f8d657ca15965536cb1bdac6b21fbe0dd5e0ae506",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+   "locator": "Management discussion, Indirect Customers",
+   "receipt": {
+    "public_excerpt": "We generate a significant amount of our revenue from a limited number of indirect customers",
+    "quote_hash": "21322ff814e247d8535e31ac4896725ef0b7e05e3bd0b804df4fb7163198acf0",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-27",
+   "retrieved_at": "2026-10-29T05:34:35Z",
+   "relation": "context",
+   "explanation": "This establishes customer concentration. It does not identify the portion of revenue growth attributable to speculative purchases or quantify OpenAI and Anthropic’s combined contribution.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Indirect customer concentration in total revenue",
+    "currency": null,
+    "units": "percent of revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-04-27",
+    "period_end": "2026-07-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk factors, page 64, profitability risk heading",
+   "receipt": {
+    "public_excerpt": "We have a history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "Anthropic acknowledges historical losses and uncertain future profitability. This covers a different financial period and only one lab; a risk of failing to become profitable does not establish unsustainability.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Net loss",
+    "currency": "USD",
+    "units": "loss status",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No verified allocation of NVIDIA’s revenue growth between speculative purchases and purchases supported by established workloads.",
+  "No matching measurement of the two labs’ combined share of the prospective compute spending behind those purchases.",
+  "No comparable financial analysis establishing that both labs could not sustain their spending.",
+  "The accounting basis of the claimed causal allocation is unspecified."
+ ],
+ "packet_hash": "9379063a178627e305b198f643c9960e976a1a09b53d892cb816aa51d354dc19"
+}

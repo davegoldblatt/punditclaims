@@ -1,0 +1,124 @@
+{
+ "assessment_id": "wyea-degenerative-ai-f9efee-a1",
+ "claim_revision_ref": {
+  "id": "wyea-degenerative-ai-f9efee",
+  "version": 2,
+  "content_hash": "7fb255852622b2db1c8e6fb6208dd20cd55be0f35d7b3b1dc9a8bca33c925302"
+ },
+ "contract_ref": {
+  "id": "wyea-degenerative-ai-f9efee",
+  "version": 1,
+  "content_hash": "b65579a83961dab32c4961b39d880390297273308d067de3ef6932929fb7d344"
+ },
+ "packet_ref": {
+  "id": "wyea-degenerative-ai-f9efee-p1",
+  "content_hash": "7fdd37b18d77ded98ca6e0fbae7758fd6ac28aa8f8de98d672e2b28d395aacfe"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Research supports the concern that selective unlearning can be difficult and can damage other capabilities. Other experiments show that some measured bias can be reduced. Neither result settles the specific assertion that consuming more training data makes existing bias harder to remove. MUSE's removal-size experiment tests a different quantity. The comparative causal claim remains unresolved.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Later studies test the general mechanism, not the historical ChatGPT implementation.",
+  "The statement does not define difficulty or successful unlearning.",
+  "Partial bias reduction does not contradict a claim of difficulty."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-degenerative-ai-72e357-4x-review-anthropic-1",
+  "wyea-degenerative-ai-72e357-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-degenerative-ai-72e357-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-degenerative-ai-f9efee",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "The author can't imagine it is easy for ChatGPT or similar models to 'unlearn' something once learned, and the more a model consumes, the more difficult it will be to untangle the bias of what it has already learned.",
+  "kind": "causal",
+  "conditions": [
+   "I can't imagine",
+   "ChatGPT or any of these models"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "And I can’t imagine it’s easy for ChatGPT or any of these models to “unlearn” something once they’ve learned it - and the more it consumes, the more difficult it will be to untangle the bias of something it has already learned.",
+   "locator": "paragraph 23",
+   "url": "https://www.wheresyoured.at/degenerative-ai",
+   "date": "2023-02-16",
+   "document_title": "Degenerative AI",
+   "observed_at": "2026-10-28T22:35:39Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "I can’t imagine it’s easy",
+    "ChatGPT or any of these models",
+    "“unlearn” something once they’ve learned it",
+    "the more it consumes",
+    "the more difficult it will be to untangle the bias"
+   ],
+   "our_interpretation": [
+    "Assess a general causal relationship between training-data consumption and subsequent bias-removal difficulty, not a dated forecast of a particular event.",
+    "The opening clause is a qualified belief, but the following comparative assertion is empirically testable.",
+    "Unlearning means removing learned information or its influence while preserving useful capabilities; merely suppressing an answer is insufficient.",
+    "More consumes means more training data or additional training exposure, not ordinary inference-time conversation.",
+    "Greater difficulty can mean greater compute cost, more residual bias, or greater damage to other capabilities under a matched removal objective."
+   ],
+   "support_condition": "Experiments establish substantial selective-unlearning difficulties and show that increased training-data consumption causes greater bias-removal difficulty under otherwise comparable conditions.",
+   "contradiction_condition": "Well-matched experiments demonstrate reliably easy removal and refute the proposed increase in difficulty as training-data consumption grows."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Research supports the concern that selective unlearning can be difficult and can damage other capabilities. Other experiments show that some measured bias can be reduced. Neither result settles the specific assertion that consuming more training data makes existing bias harder to remove. MUSE's removal-size experiment tests a different quantity. The comparative causal claim remains unresolved.",
+  "limitations": [
+   "Later studies test the general mechanism, not the historical ChatGPT implementation.",
+   "The statement does not define difficulty or successful unlearning.",
+   "Partial bias reduction does not contradict a claim of difficulty."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "severe privacy leakage",
+    "locator": "Section 7, Conclusion; scaling experiment in section 5.2, C5",
+    "url": "https://arxiv.org/html/2407.06460v2",
+    "publisher": "arXiv; Shi and colleagues",
+    "event_date": "2024-07",
+    "available_at": "2024-07-14",
+    "explanation": "MUSE finds practical failures in tested language-model unlearning methods. Its scaling experiment varies the amount to be removed, which does not establish the claimed effect of total training-data consumption on bias removal."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "reduces the bias score by 11.8%",
+    "locator": "Abstract, final sentence",
+    "url": "https://arxiv.org/abs/2406.13551",
+    "publisher": "arXiv; Dige and colleagues",
+    "event_date": "2024-06",
+    "available_at": "2024-06-19",
+    "explanation": "The study reports measurable bias reduction, limiting an interpretation that learned bias cannot be changed. It does not demonstrate complete removal or test whether additional training data makes removal harder."
+   }
+  ],
+  "what_would_resolve": "Controlled experiments varying training-data consumption while holding the target bias and removal objective constant, measuring removal cost, residual bias, and retained capabilities.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "62f9d02f7580d4c5d3ed4a68beadc8526bff5318e9945bd7228e27c8637f6eed",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:42:42Z"
+}

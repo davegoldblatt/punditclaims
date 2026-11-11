@@ -1,0 +1,83 @@
+{
+ "run_id": "wyea-dont-look-up-0e8993-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-dont-look-up-0e8993": "8678a250a1ec03190314d11e4c26d26dc78b6a88c5552f8ec8963b54ef7481d1"
+ },
+ "started_at": "2026-10-29T22:06:17Z",
+ "completed_at": "2026-10-29T22:06:40Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own newsletter post, not a quote of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalised wording matches his framing: the labs can only pay if capex continues, because the needed capacity doesn't exist yet. It is a firm 'must' with no hedge. Causal is a fair kind, since it ties a present capacity shortfall to the need for more investment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: delivering the contracted compute needs capacity not yet built, plus further capital spending. It sensibly rules out the reading that the labs can make no payment at all. The split between funded and unfunded capacity is the drafter's addition, but it is a reasonable test of 'must continue'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic disclosure, April 2026. Up to 5GW of new capacity, with only about 1GW due online by end-2026, so most of the contracted capacity did not exist in August. Company disclosure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Amazon disclosure, Feb 2026. OpenAI's 2GW commitment includes Trainium4, with delivery expected to begin in 2027, so that capacity did not exist at publication. Company disclosure."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Amazon Q2 2026 call transcript from before publication. Capital is spent before capacity can earn money, servers are bought months before service, and capex is planned at $200B or more. This ties future deliveries to further spending. Company statement via a transcript site."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft says efficiency gains get more out of existing infrastructure. That softens the necessity claim, but Microsoft also says it is still adding capacity, and nothing here shows existing capacity could meet the lab commitments."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Amazon's disclosures show that capacity contracted by both labs (Trainium3/4, up to 5GW for Anthropic) was largely not built by August 2026. Amazon management says it spends capital before capacity earns money, buys servers just ahead of demand, and plans continued high capex. Together these support the claim that fulfilling the contracts depends on further capex. Microsoft's efficiency point does not show existing capacity is enough. Caveat: the evidence covers Amazon only and does not split funded from unfunded capacity.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dont-look-up-0e8993"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 13533,
+  "output_tokens": 2390,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

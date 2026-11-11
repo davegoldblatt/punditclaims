@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-ai-is-slowing-down-241c1d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-slowing-down-241c1d",
+  "version": 1,
+  "content_hash": "a3c881f6d27dd2782d17bba810903f6195afc32cdbea8a4050f74a355e3c88f2"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-slowing-down-241c1d",
+  "version": 1,
+  "content_hash": "10e73b91bc95d02c2be927f88ef4f261864c2fc6e9a36b93c03b8f789a01add6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Sightline Climate February 2026 190 GW data centers planned",
+   "Jensen Huang \"80 billion\" \"100 billion\" gigawatt 2026",
+   "Sightline Climate \"190GW\" \"2026\" report",
+   "site.nvidia.com \"80 billion\" \"100 billion\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+    "used": true,
+    "why": "Primary documentation of the pipeline capacity."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/nvda/transcripts/660260-gtc-taipei-2026-keynote/",
+    "used": true,
+    "why": "Quartr's transcript reproduces Huang's statement. An official text containing the passage was not located."
+   }
+  ],
+  "performed_at": "2026-10-29T10:10:34Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sightlineclimate-com-research-data-center-outlook",
+   "source_snapshot_id": "2a1dc4bfb79434e7da0d79a24eb049b9493a7ca2f27568ff0ce239ef28f61d54",
+   "publisher": "Sightline Climate, now Currence",
+   "source_type": "independent_measurement",
+   "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+   "locator": "Opening discussion, paragraph beginning “We’re tracking”",
+   "receipt": {
+    "public_excerpt": "We’re tracking 190GW",
+    "quote_hash": "4cf941a6cdb71020ae6e863b21a65bb1c1400f8711f9b3e57b423bd6147996d4",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-24",
+   "retrieved_at": "2026-10-29T10:02:15Z",
+   "relation": "context",
+   "explanation": "Documents the 190GW input. Announced capacity is not completed capacity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "stockanalysis-com-stocks-nvda-transcripts-660260-gtc-taipei-2026-keynote",
+   "source_snapshot_id": "5b43325c218cfd36feddbf8d9bacdf71d9017c51194d57c9da09b9f29bfa0500",
+   "publisher": "Stock Analysis / Quartr",
+   "source_type": "secondary_summary",
+   "url": "https://stockanalysis.com/stocks/nvda/transcripts/660260-gtc-taipei-2026-keynote",
+   "locator": "Jensen Huang, AI factory ecosystem discussion",
+   "receipt": {
+    "public_excerpt": "$80 billion",
+    "quote_hash": "6a295402662e1029d619231f8e2997b531994c657640cdc9cb407773f4ab07ec",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-01",
+   "available_at": "2026-06-01",
+   "retrieved_at": "2026-10-29T10:01:34Z",
+   "relation": "contradicts",
+   "explanation": "The aggregate calculated from this unit-cost range and e1 is USD 15.2–19 trillion. This is an evaluator calculation, not an aggregate figure reported by Huang.",
+   "metric_scope": {
+    "company": "Developers of the 190GW data-center pipeline tracked by Sightline Climate",
+    "metric": "Estimated aggregate buildout cost under the stipulated per-GW assumptions",
+    "currency": "USD",
+    "units": "trillion",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "190GW from e1 and the claim",
+     "USD 80 billion/GW lower endpoint",
+     "USD 100 billion/GW upper endpoint"
+    ],
+    "formula": "[190 × 80 / 1000, 190 × 100 / 1000] = [15.2, 19] trillion USD",
+    "rounding": "Exact arithmetic on the stated inputs; no additional rounding."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "5e60ba524e89846b9e4db436d55b5eb5041bb7e0d8cc9eac1745fb1b9856b788"
+}

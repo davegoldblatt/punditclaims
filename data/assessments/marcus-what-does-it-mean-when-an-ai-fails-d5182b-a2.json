@@ -1,0 +1,120 @@
+{
+ "assessment_id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b-a2",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b",
+  "version": 1,
+  "content_hash": "b9dfdced78e090cdd40a5e8e7de0ef73a053f60e58e3ef6dee26ad333124f65c"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b",
+  "version": 1,
+  "content_hash": "8a68b545dadb8b75050fccc05ac4e9b2866060ceee40d5a0fe352250073faac1"
+ },
+ "packet_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b-p1",
+  "content_hash": "6ab944ead0acf15879e7d24d7f2296e8893eb2905e2c454a1bbf6609b5932b48"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-08-22",
+  "end": "2022-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "TruthfulQA's 2021 results document factual errors in GPT-3-era models; the best tested model was truthful on 58% of its misconception-focused questions [e1]. The report published March 4, 2022 documents InstructGPT fabricating facts, failing instructions and accepting false premises, alongside improved instruction following [e2]. This supports continued fallibility, but only partially addresses the behavioral claim: neither report measures how readily ordinary users could find failures across the relevant models [e1, e2]. Neither independently measures comprehension or establishes its absence as the cause of those failures, leaving the causal claim unresolved [e1, e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Benchmark scores and qualitative examples do not establish that anyone could easily elicit failures across all relevant models [e1, e2].",
+  "The evidence does not distinguish missing comprehension from competing explanations for the errors [e1, e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-review-anthropic-1",
+  "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-does-it-mean-when-an-ai-fails-204104-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Newer LLMs still lack genuine comprehension and are therefore still very easy for anyone to break.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But they still don’t convey genuine comprehension, and so they are still very easy for Ernie and me (or anyone else who cares to try) to break.",
+   "locator": "paragraph 38",
+   "url": "https://garymarcus.substack.com/p/what-does-it-mean-when-an-ai-fails",
+   "date": "2022-06-07",
+   "document_title": "What does it mean when an AI fails? A Reply to SlateStarCodex’s riff on Gary Marcus",
+   "observed_at": "2026-10-29T00:05:19Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "still don’t convey genuine comprehension",
+    "and so",
+    "very easy",
+    "anyone else who cares to try",
+    "to break"
+   ],
+   "our_interpretation": [
+    "The ordinary behavioral reading is that interested users could readily elicit clear factual or commonsense errors from the contemporary models.",
+    "The words 'and so' additionally attribute those failures to missing comprehension. Demonstrating errors alone does not establish that explanation.",
+    "The historical scope is the continuation of the problems identified on August 22, 2020 through the post date, including the successors discussed in the post.",
+    "No numerical failure rate, testing budget, or independent measure of comprehension is supplied."
+   ],
+   "support_condition": "Independent tests show readily reproducible failures in contemporary models, and evidence distinguishes absent comprehension as their cause from alternative explanations.",
+   "contradiction_condition": "Representative tests show robust performance against ordinary attempts to elicit these failures, or controlled evidence undermines the proposed explanation that missing comprehension causes them."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "TruthfulQA's 2021 results document factual errors in GPT-3-era models; the best tested model was truthful on 58% of its misconception-focused questions [e1]. The report published March 4, 2022 documents InstructGPT fabricating facts, failing instructions and accepting false premises, alongside improved instruction following [e2]. This supports continued fallibility, but only partially addresses the behavioral claim: neither report measures how readily ordinary users could find failures across the relevant models [e1, e2]. Neither independently measures comprehension or establishes its absence as the cause of those failures, leaving the causal claim unresolved [e1, e2].",
+  "limitations": [
+   "Benchmark scores and qualitative examples do not establish that anyone could easily elicit failures across all relevant models [e1, e2].",
+   "The evidence does not distinguish missing comprehension from competing explanations for the errors [e1, e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "truthful on 58% of questions",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2109.07958",
+    "publisher": "Stephanie Lin, Jacob Hilton and Owain Evans / arXiv",
+    "event_date": "2021",
+    "available_at": "2022-05-08",
+    "explanation": "The benchmark documents substantial factual fallibility in the tested GPT-3-era models. It supports the behavioral component, but measures neither users' effort to discover failures nor their proposed cognitive cause."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "InstructGPT still makes simple mistakes.",
+    "locator": "Section 4.3, Qualitative results",
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "publisher": "OpenAI researchers / arXiv",
+    "event_date": "2022",
+    "available_at": "2022-03-04",
+    "explanation": "The report describes false-premise acceptance and failures under multiple constraints, extending the behavioral evidence to InstructGPT. It also reports improved instruction following and generalization, without establishing whether comprehension is absent."
+   }
+  ],
+  "what_would_resolve": "Reproducible tests of the contemporary model versions measuring ordinary users' attempts and time needed to find failures, plus controlled studies using an independent measure of comprehension to test whether its absence explains those failures rather than competing causes.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3d9dd00d6dd3781f3ecccb16d59c73add9bb3d599a0bf630a1b62e0d0402191a",
+ "supersedes_assessment_id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:56:44Z"
+}

@@ -1,0 +1,144 @@
+{
+ "packet_id": "marcus-what-exactly-are-the-economics-of-62834f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-exactly-are-the-economics-of-62834f",
+  "version": 1,
+  "content_hash": "cf617999583e3c2b7743d095c796030eb93742876b4b8254af6ccf6c2be42211"
+ },
+ "contract_ref": {
+  "id": "marcus-what-exactly-are-the-economics-of-62834f",
+  "version": 1,
+  "content_hash": "9c6ccd607a663d0394df9955d6a61dfc25cc4acd248d5ac9e8fcaad98ccf85aa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "How is ChatGPT behavior changing over time July 2023 code formatting downstream integration",
+   "2023 Why Johnny can’t prompt large language models end users prompt brittle reliability",
+   "OpenAI June 13 2023 pinned models stable outputs model updates",
+   "site.openai.com \"June 13, 2023\" \"stable\"",
+   "site.arxiv.org \"Why Johnny\" \"Prompt\"",
+   "site.arxiv.org \"Lost in the Middle\" \"2023\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2307.09009v1",
+    "used": false,
+    "why": "Read the original abstract, then used the expanded August 1 version, which was also available before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.09009v2",
+    "used": true,
+    "why": "Read to verify the revised paper's publication date and model comparison."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.09009v2",
+    "used": true,
+    "why": "Primary experiments connect model behavior to code execution and LangChain integration failures, while also reporting improvements and mitigations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.03172v1",
+    "used": true,
+    "why": "Read to verify the original paper's July 6 publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.03172v1",
+    "used": true,
+    "why": "Controlled experiments across several model families test sensitivity to the placement and amount of supplied information."
+   },
+   {
+    "url": "https://openai.com/index/function-calling-and-other-api-updates/",
+    "used": true,
+    "why": "Contemporaneous primary disclosure documents version pinning, application disruption, and integration improvements."
+   },
+   {
+    "url": "https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2",
+    "used": false,
+    "why": "Search located a later published version; the pre-post preprint was sufficient and preserved the contemporary record."
+   }
+  ],
+  "performed_at": "2026-10-29T19:17:24Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2307-09009v2",
+   "source_snapshot_id": "7bdd227bd95db4691d3908ec13fcb763fe86804309968dd2b3d0aaa5e90afd65",
+   "publisher": "arXiv; Lingjiao Chen, Matei Zaharia, and James Zou",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2307.09009v2",
+   "locator": "Section 3.6, LangChain HotpotQA Agent: Poor Prompt Stability; accompanying code-generation results in section 3.5",
+   "receipt": {
+    "public_excerpt": "manually debugging such issues",
+    "quote_hash": "de233575e78a6126a3d951a0bc636dd970f19f2a6edb911a4f8a5a218b9e337e",
+    "verified": "exact"
+   },
+   "event_date": "2023-06",
+   "available_at": "2023-08-01",
+   "retrieved_at": "2026-10-29T19:07:59Z",
+   "relation": "supports",
+   "explanation": "Comparisons of March and June model versions document formatting failures that prevented code execution and caused a LangChain parser to fail, directly connecting model behavior to integration difficulty. The results also limit the claim: GPT-4's agent performance improved, and removing non-code wrappers increased its code-test success from 52% to 70%, so behavioral change did not imply declining underlying capability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2307-03172v1",
+   "source_snapshot_id": "017848ec6968dc4ef09d3559aa4621c1e3298cc99cf3367e31bcb4c12c59d8fa",
+   "publisher": "arXiv; Nelson F. Liu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2307.03172v1",
+   "locator": "Abstract; experimental methods and results in sections 3–5",
+   "receipt": {
+    "public_excerpt": "performance substantially decreases",
+    "quote_hash": "a2934ed35c7b1553339a25b79a67a3bb3e63f29bdb7ae652ec9a80dc81488e95",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-07-06",
+   "retrieved_at": "2026-10-29T19:07:59Z",
+   "relation": "supports",
+   "explanation": "Controlled changes to document order and context length impaired question answering across several model families, supporting consequential input sensitivity in a setup resembling retrieval-based products. Mitigations were task-dependent: placing the query before and after the data fixed the tested synthetic retrieval task but made little difference to the question-answering pattern.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-function-calling-and-other-api-updates",
+   "source_snapshot_id": "ed1dbd570f258339db9a39afa965bb41fcbbe71f9e1d1eabeafe840a9b05bf75",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/function-calling-and-other-api-updates",
+   "locator": "July 20, 2023 update, paragraph discussing evaluation metrics and model pinning",
+   "receipt": {
+    "public_excerpt": "Each individually pinned model",
+    "quote_hash": "d358fcbf30309c01adf61d525477598b543e251ae52caf92264c6795b09093fc",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-20",
+   "available_at": "2023-07-20",
+   "retrieved_at": "2026-10-29T09:17:16Z",
+   "relation": "context",
+   "explanation": "Version pinning was an available mitigation, so changes between releases do not establish unavoidable month-to-month drift within a fixed version. The same disclosure acknowledged application disruption from model changes; its stability statement concerns provider updates, not guaranteed correctness on every input.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not establish a universal instability level across all foundation models or product categories.",
+  "The studies demonstrate failure mechanisms but do not measure the total engineering effort required to achieve a specified production reliability target.",
+  "The long-context paper does not provide exact experiment dates; its event date is recorded only at year precision."
+ ],
+ "packet_hash": "98f5f965927245f2ae5c33c2326064365a6546886c08ab25a1c678540c886b9d"
+}

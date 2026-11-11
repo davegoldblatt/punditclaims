@@ -1,0 +1,110 @@
+{
+ "packet_id": "marcus-a-temporary-pause-on-training-extra-a62fb3-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-temporary-pause-on-training-extra-a62fb3",
+  "version": 1,
+  "content_hash": "a2fe87955d7edc687a11cd7b1b965e05bb1a876d4432089ff8072aa0078fc730"
+ },
+ "contract_ref": {
+  "id": "marcus-a-temporary-pause-on-training-extra-a62fb3",
+  "version": 1,
+  "content_hash": "83f269b684c81330af7499c9c50b628537241b08b1108b6fd67f0d6ff1e1746a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report scope and limitations no further details architecture dataset"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+    "used": true,
+    "why": "Primary source. The GPT-4 technical report's 'Scope and Limitations' section says what OpenAI chose to disclose and what it withheld."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.08774v1",
+    "used": true,
+    "why": "Confirms the report's publication date (2023-03-15) and that the abstract gives only a generic description of the architecture."
+   }
+  ],
+  "performed_at": "2026-10-29T02:03:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-papers-gpt-4-pdf",
+   "source_snapshot_id": "593e02d16902f4a27f7e71a15cf6d6341464b56e4121a0424b01499ae3030762",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+   "locator": "Section 2, Scope and Limitations of this Technical Report",
+   "receipt": {
+    "public_excerpt": "this report\ncontains no further details about the architecture (including model size), hardware, training compute,\ndataset construction, training method, or similar.",
+    "quote_hash": "654ca90c2609820800d6d2cdbd70d7bbe0d0d3830d68ffbce12c8130e05f4866",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:03:05Z",
+   "relation": "supports",
+   "explanation": "OpenAI itself says it withheld architecture details, including model size, and dataset construction. This matches the substance of Marcus's claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-papers-gpt-4-pdf",
+   "source_snapshot_id": "593e02d16902f4a27f7e71a15cf6d6341464b56e4121a0424b01499ae3030762",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+   "locator": "Section 2, Scope and Limitations of this Technical Report",
+   "receipt": {
+    "public_excerpt": "GPT-4 is a\nTransformer-style model [39] pre-trained to predict the next token in a document, using both publicly\navailable data (such as internet data) and data licensed from third-party providers.",
+    "quote_hash": "65f9e1edab405f19d1a0e826a897b11cde01078df50478647582208c687f23d5",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:03:05Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI did give a few generic facts: a Transformer-style architecture, a broad description of the data sources, and RLHF fine-tuning. Strictly, these are details, so a literal reading of 'no details' would be overstated.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2303-08774v1",
+   "source_snapshot_id": "814038d13c1ede4974b98b86b57895a1b718f288de11e2e2532eef03950ec8c6",
+   "publisher": "arXiv / OpenAI",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2303.08774v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "GPT-4 is a Transformer-based model pre-trained to predict the next token in a document.",
+    "quote_hash": "596a14c27e5aa9614fdbd263469669f6495d95b78a3b1e6a59fe6517c2b0d281",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-15",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:03:05Z",
+   "relation": "context",
+   "explanation": "The arXiv abstract, submitted 2023-03-15, gives only a generic architecture label. This shows how little was disclosed before the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "I did not check every OpenAI blog post or interview from 2023-03-14 to 2023-03-29 for informal disclosures. The technical report is OpenAI's authoritative statement, and it says it withheld these details."
+ ],
+ "packet_hash": "90e52a1c429d872bdc151b27c18008a1597ad6d0ae7e3ff154f3fe448d9c2918"
+}

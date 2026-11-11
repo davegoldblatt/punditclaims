@@ -1,0 +1,178 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-606c23-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-606c23",
+  "version": 1,
+  "content_hash": "5e2b651e339c3ac9028e8f0b8aa072e7cd24610a56f9e4becf81046f7457f1d7"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-606c23",
+  "version": 1,
+  "content_hash": "2aac5574d5f3c16f6ee5f6d5c2ff3b9b527c776e55a6e427bd7b8827ca18b87a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Zitron\" \"5.19\" margin",
+   "\"Zitron\" \"depreciation\" \"principal\" April 2026",
+   "\"Zitron\" \"649\" \"margin\"",
+   "\"AI’s Economics Don’t Make Sense\" gross margin loan",
+   "\"zitron\" \"principal\" \"margin\" -site:wheresyoured.at -site:morerss.com -site:scribd.com",
+   "\"AI's Economics Don't Make Sense\" depreciation -site:wheresyoured.at",
+   "\"Zitron\" \"double counting\" depreciation",
+   "site.sec.gov beginners guide financial statements gross profit interest cash flows financing principal"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense",
+    "used": true,
+    "why": "Used only to document model inputs and attach transparent evaluator calculations, not as independent evidence that the speaker was right."
+   },
+   {
+    "url": "https://faculty.haas.berkeley.edu/yaniv/files/Fintech/SEC_Beginners_Guide_to_Financial_Statements.pdf",
+    "used": true,
+    "why": "Readable university-hosted copy of SEC accounting guidance. Context for distinguishing financing cash flows from profit."
+   },
+   {
+    "url": "https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.sec.gov/investor/pubs/begfinstmtguide.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://news.ycombinator.com/item?id=47936867",
+    "used": false,
+    "why": "The discussion did not provide an identifiable independent reconciliation of this specific loan-and-margin model."
+   }
+  ],
+  "performed_at": "2026-10-29T10:20:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "wyea-ais-economics-dont-make-sense",
+   "source_snapshot_id": "f17a8300e94748f48ee74df24138593b598ee16eabd715066e028d8866870dc2",
+   "publisher": "Where's Your Ed At",
+   "source_type": "secondary_summary",
+   "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense",
+   "locator": "The Broken Economics of a 100MW Data center, interest-only grace-period paragraph",
+   "receipt": {
+    "public_excerpt": "Your bank, in its eternal generosity, offered you a deal — a 12-month-long grace period where you’re only paying interest…which works out to around $168 million, which brings our total costs (excluding the month of delay for fairness) for the first year to around $1.005 billion…on $1.06 billion of revenue.",
+    "quote_hash": "ef42d6d416ed3ceda657535593260c4534a776392e2e4003d43c94fc071d3766",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-28",
+   "available_at": "2026-04-28",
+   "retrieved_at": "2026-10-28T22:25:44Z",
+   "relation": "context",
+   "explanation": "This records the inputs, not independent confirmation. Evaluator arithmetic reproduces 5.19% using the rounded totals; retaining the earlier $837.4 million cost subtotal gives 5.15%.",
+   "metric_scope": {
+    "company": "Hypothetical operator of a 100 MW AI data center",
+    "metric": "Modeled first-year margin after interest",
+    "currency": "USD",
+    "units": "percent; USD millions for calculation inputs",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Annual revenue: USD 1,060 million.",
+     "Rounded first-year costs: USD 1,005 million.",
+     "Earlier annual cost subtotal: USD 837.4 million.",
+     "First-year interest: USD 168 million."
+    ],
+    "formula": "Rounded margin = 100*(1060-1005)/1060 = 5.188679%; margin retaining the subtotal = 100*(1060-837.4-168)/1060 = 5.150943%.",
+    "rounding": "Percentages rounded to two decimal places: 5.19% and 5.15%."
+   }
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "wyea-ais-economics-dont-make-sense",
+   "source_snapshot_id": "f17a8300e94748f48ee74df24138593b598ee16eabd715066e028d8866870dc2",
+   "publisher": "Where's Your Ed At",
+   "source_type": "secondary_summary",
+   "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense",
+   "locator": "The Broken Economics of a 100MW Data center, depreciation paragraph",
+   "receipt": {
+    "public_excerpt": "That’s $837.4 million a year, leaving you with around $168.6 million in yearly profit, or around a 16.7% gross margin…",
+    "quote_hash": "aef5f1df46009ae2739ae33ba5117aca7d470281eb9c6fa9e1aac1f833209a73",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-28",
+   "available_at": "2026-04-28",
+   "retrieved_at": "2026-10-28T22:25:44Z",
+   "relation": "context",
+   "explanation": "The published cost subtotal includes depreciation. Independent evaluator arithmetic reproduces roughly −40% only when full loan payments are also subtracted; this does not establish a conventional gross margin.",
+   "metric_scope": {
+    "company": "Hypothetical operator of a 100 MW AI data center",
+    "metric": "Modeled annual residual after depreciation and full debt service",
+    "currency": "USD",
+    "units": "percent; USD millions for calculation inputs",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Loan principal: USD 2,800 million.",
+     "Annual interest rate: 6%; assumed monthly rate: 0.005.",
+     "Repayment term after grace period: 60 months.",
+     "Annual revenue: USD 1,060 million.",
+     "Annual costs including depreciation: USD 837.4 million.",
+     "Annual costs before depreciation: USD 316.4 million."
+    ],
+    "formula": "Monthly payment = 2800*0.005/(1-(1.005)^(-60)) = 54.131844 million. Annual payments = 649.582131 million. Stated-method residual = 100*(1060-837.4-649.582131)/1060 = -40.281333%. Removing depreciation from that cash calculation gives 100*(1060-316.4-649.582131)/1060 = 8.869610%, before other cash uses.",
+    "rounding": "Monthly payment: USD 54.1 million. Annual payment: USD 649.6 million. Residual percentages: −40.28% and 8.87%."
+   }
+  },
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "faculty-haas-berkeley-edu-yaniv-files-fintech-sec-beginners-guide-t-30ad538e376c",
+   "source_snapshot_id": "c3d26192b9632e30e765c797a9c0ced7dae2d30f41be361a2a38ee907e947f61",
+   "publisher": "U.S. Securities and Exchange Commission; copy hosted by UC Berkeley",
+   "source_type": "secondary_summary",
+   "url": "https://faculty.haas.berkeley.edu/yaniv/files/Fintech/SEC_Beginners_Guide_to_Financial_Statements.pdf",
+   "locator": "Cash Flow Statements, Financing Activities",
+   "receipt": {
+    "public_excerpt": "Likewise, paying back a bank loan\nwould show up as a use of cash flow.",
+    "quote_hash": "d20b054f00bf4c7214d427c3c01fd6f0202a1321949e50c6f40a733c614bad4c",
+    "verified": "exact"
+   },
+   "event_date": "2014-01-12",
+   "available_at": "2014-01-12",
+   "retrieved_at": "2026-10-29T10:12:25Z",
+   "relation": "context",
+   "explanation": "The guide distinguishes financing cash flows from income-statement profit. It supplies accounting context, not a dated measurement of this hypothetical model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "No independent source assessing this specific model was found; the speaker's inputs and evaluator calculations are retained as context rather than self-corroborating outcome evidence.",
+  "The claim combines reproducible arithmetic with an unreconciled gross-margin label.",
+  "The published revenue and asset-value assumptions are not fully consistent."
+ ],
+ "packet_hash": "f728424702dd2232f96087acf9c7a32d8d6a73a70feee40e4f87db83143021ba"
+}

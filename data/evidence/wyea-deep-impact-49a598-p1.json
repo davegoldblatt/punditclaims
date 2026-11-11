@@ -1,0 +1,152 @@
+{
+ "packet_id": "wyea-deep-impact-49a598-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-49a598",
+  "version": 1,
+  "content_hash": "ef20f015ee07af15930575d9a33dc279729a50c74eac6685d52e1ee193ded8a6"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-49a598",
+  "version": 1,
+  "content_hash": "01833f06a4f7bf2ca58e5f5b3147b025b5aa607b105b5f952e979b8d9478bdb2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.groq.com DeepSeek R1 January 2025 0.75 0.99 distilled",
+   "DeepSeek February 2025 inference profit margin theoretical 545%",
+   "site.together.ai/blog \"DeepSeek-R1\" \"2025\" pricing",
+   "DeepSeek inference SGLang reproduction February 2025 cost throughput"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://console.groq.com/docs/legacy-changelog",
+    "used": true,
+    "why": "Dated primary record establishes Groq's deployment and identifies the distilled variant."
+   },
+   {
+    "url": "https://www.together.ai/blog/deploy-deepseek-r1-and-distilled-models-securely-on-together-ai",
+    "used": true,
+    "why": "Primary announcement distinguishes full R1 hosting from distilled models and reports its advertised price."
+   },
+   {
+    "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+    "used": true,
+    "why": "Primary operating disclosure provides an assumed GPU cost and explicitly hypothetical revenue calculation."
+   },
+   {
+    "url": "https://lmsys.org/blog/2025-05-05-large-scale-ep/",
+    "used": false,
+    "why": "Relevant favorable evidence for V3 inference efficiency, assessed in the related conditional claim. It does not independently settle both models' commercial pricing or subsidy dependence."
+   },
+   {
+    "url": "https://groq.com/groqcloud-makes-deepseek-r1-distill-llama-70b-available",
+    "used": false,
+    "why": "read_page returned HTTP 404; replaced with Groq's changelog."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "console-groq-com-docs-legacy-changelog",
+   "source_snapshot_id": "31122b9c9cc0c097837d00ddbbef0ff9dd8fa11ddec9f94c3714d893ba020553",
+   "publisher": "Groq",
+   "source_type": "company_disclosure",
+   "url": "https://console.groq.com/docs/legacy-changelog",
+   "locator": "January 26, 2025 entry",
+   "receipt": {
+    "public_excerpt": "Released deepseek-r1-distill-llama-70b.",
+    "quote_hash": "3a58f3458232965a40f023db7afd9f0cc15272d48440eba1cec16d93c0a0053c",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-26",
+   "available_at": "2025-01-26",
+   "retrieved_at": "2026-10-29T16:11:41Z",
+   "relation": "supports",
+   "explanation": "Groq did host a DeepSeek-branded model. The recorded release was a distilled Llama variant, so it cannot directly establish full V3 or R1 serving costs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "together-ai-blog-deploy-deepseek-r1-and-distilled-models-securely-on-together-ai",
+   "source_snapshot_id": "85bd897a03ed650101e19144d5d597b3328b90f9f2b419f8b46150076ebdf3dc",
+   "publisher": "Together AI",
+   "source_type": "company_disclosure",
+   "url": "https://www.together.ai/blog/deploy-deepseek-r1-and-distilled-models-securely-on-together-ai",
+   "locator": "Section: Other providers only offer the R1 distilled – not DeepSeek-R1",
+   "receipt": {
+    "public_excerpt": "offering both",
+    "quote_hash": "b7916f36c97eaaef79ae57a4908c777b1fd1f12e3982582ffa7a6a5a9dd56438",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-31",
+   "available_at": "2025-01-31",
+   "retrieved_at": "2026-10-29T05:36:39Z",
+   "relation": "context",
+   "explanation": "Together announced full R1 hosting at an advertised $7 per million tokens. This establishes an external offering, but its retail price neither measures DeepSeek's costs nor identifies subsidies.",
+   "metric_scope": {
+    "company": "Together AI",
+    "metric": "Advertised full DeepSeek-R1 serverless API price",
+    "currency": "USD",
+    "units": "dollars per million tokens",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-31",
+    "period_end": "2025-01-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "github-com-deepseek-ai-open-infra-index-blob-main-202502opensourcew-63ded4e06c93",
+   "source_snapshot_id": "723a24ee8fb9ca2ae3270fec3cf2d814875e58f9f915b808d3c001aeecf91d67",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+   "locator": "Service statistics for the 24 hours ending February 28, 2025",
+   "receipt": {
+    "public_excerpt": "the total daily cost",
+    "quote_hash": "c6752070ed40be3fbae00a0cf0bb6bd242010d745589fc6e6f0ce13e48f6f16d",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-28",
+   "available_at": "2025-03-01",
+   "retrieved_at": "2026-10-29T05:35:53Z",
+   "relation": "context",
+   "explanation": "DeepSeek disclosed a cost model favorable to cheap inference. Its revenue comparison assumes all tokens receive R1 pricing, while the disclosure says actual revenue is substantially lower; it is not third-party confirmation.",
+   "metric_scope": {
+    "company": "DeepSeek",
+    "metric": "Estimated daily GPU leasing cost for combined V3 and R1 inference",
+    "currency": "USD",
+    "units": "dollars per day",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-02-27",
+    "period_end": "2025-02-28",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No cited third-party disclosure establishes comparable commercial cost coverage for both original full models.",
+  "The evidence does not determine the extent of subsidies.",
+  "The timing phrase cannot be converted into a failure deadline without adding one."
+ ],
+ "packet_hash": "da8932bb6122ffbad9fb1fd487002b0099f9001aea8404bcaa042b13b1a66754"
+}

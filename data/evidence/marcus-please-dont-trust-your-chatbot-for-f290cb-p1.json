@@ -1,0 +1,137 @@
+{
+ "packet_id": "marcus-please-dont-trust-your-chatbot-for-f290cb-p1",
+ "claim_revision_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-f290cb",
+  "version": 1,
+  "content_hash": "dcada445f2975e882609bc8fba663fe8fc7641716cea2d16a864fad3c2ffd6f6"
+ },
+ "contract_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-f290cb",
+  "version": 1,
+  "content_hash": "afb4dba8dcf23704a7c0b2ef2d6c3dd7e49190fb16640f3a717a5de6d490f3f0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM confidence calibration RLHF training overconfidence controlled experiments",
+   "\"Taming Overconfidence\" \"RLHF\" \"ICLR 2025\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2410.09724",
+    "used": true,
+    "why": "Primary paper and version history establish the experiments and their availability."
+   },
+   {
+    "url": "https://arxiv.org/html/2410.09724v2",
+    "used": true,
+    "why": "Read training comparisons, reward-model experiments and controlled training details."
+   },
+   {
+    "url": "https://arxiv.org/html/2410.09724v3",
+    "used": false,
+    "why": "Nonexistent version returned HTTP 404; used version 2."
+   },
+   {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/29fb6e1456b3d8b57ede5c45aa2c6537-Abstract-Conference.html",
+    "used": false,
+    "why": "Search confirmed the conference publication; quotations use the read_page-accessible author manuscript."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.14975",
+    "used": true,
+    "why": "Primary calibration paper and version history provide relevant counterevidence to an absolute interpretation."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.14975v2",
+    "used": true,
+    "why": "Read results and discussion distinguishing elicited confidence from token probabilities."
+   },
+   {
+    "url": "https://arxiv.org/abs/2606.03437",
+    "used": true,
+    "why": "Additional experiments available before the freeze separate instruction tuning from chat-format effects."
+   }
+  ],
+  "performed_at": "2026-10-29T07:46:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2410-09724v2",
+   "source_snapshot_id": "f1c4279b363c3e0a347eed67df4826223a1f4595b12d1cc9fd02d9391ec238e8",
+   "publisher": "ICLR 2025; author manuscript on arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2410.09724v2",
+   "locator": "Section 1, Introduction; experimental details in sections 2.1–2.2 and appendix D.3",
+   "receipt": {
+    "public_excerpt": "greater verbalized overconfidence",
+    "quote_hash": "04ba9acaeacc1554f3f9334a03c8b5c5824e603a2031655cac9fe5d4d1e922db",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-02-28",
+   "retrieved_at": "2026-10-29T07:41:27Z",
+   "relation": "supports",
+   "explanation": "Before-and-after comparisons found increased expressed overconfidence after preference training. Reward experiments favored higher confidence for otherwise identical responses, while modified reward training reduced calibration error, supporting training as a contributing cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2305-14975v2",
+   "source_snapshot_id": "91f290e7d13eb452b7bccffc799d02697154ccea6af3ca82e55ef2bb69e88fb0",
+   "publisher": "EMNLP 2023; author manuscript on arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2305.14975v2",
+   "locator": "Section 4, Discussion",
+   "receipt": {
+    "public_excerpt": "better-calibrated than conditional probabilities",
+    "quote_hash": "930fb57130824e8e6d6ad6ce02a5b05ef873825f8c6ca241874196428319fbae",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-24",
+   "retrieved_at": "2026-10-29T07:41:28Z",
+   "relation": "context",
+   "explanation": "Elicited confidence can track correctness better than token probabilities, with results varying by model and prompt. This limits the stronger interpretation that confidence is always meaningless; it does not establish that ordinary confident wording guarantees accuracy.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2606-03437",
+   "source_snapshot_id": "e6e2ba6420eb49e8fb0a9ddc85c1eaa7c7f448338c2599ce2eb346c9e9f4be9f",
+   "publisher": "arXiv; manuscript marked accepted to ACL 2026 Findings",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2606.03437",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "this miscalibration",
+    "quote_hash": "782e0477367b3fab39ad3730e49ae76da1782f9deecf2774bac70b84656bd5be",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-06-02",
+   "retrieved_at": "2026-10-29T07:42:18Z",
+   "relation": "supports",
+   "explanation": "Experiments across six open-weight models found that instruction tuning harmed calibration and chat formatting further increased confidence in models' own answers. This supports training as one cause while identifying an additional cause in how the interaction is presented.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The experiments do not isolate the training causes of confident medical prose in every proprietary chatbot available when Marcus wrote.",
+  "The evidence establishes a contributing mechanism, not that all confidence is uninformative or that training is its sole cause."
+ ],
+ "packet_hash": "565507ae9a80a80b1005a6772bde83041ade4a23620c8f545e6eea926559777f"
+}

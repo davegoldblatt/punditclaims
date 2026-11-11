@@ -1,0 +1,224 @@
+{
+ "packet_id": "marcus-openais-code-red-97a216-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-code-red-97a216",
+  "version": 1,
+  "content_hash": "2f3d6805ada403bd5bc3679def1f9b6453f57bcd92b339f96f6af59a59d013cc"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-code-red-97a216",
+  "version": 1,
+  "content_hash": "bf15e71bf049e965672e8933f38f0f67ad8a86171349e27afea60f9edebe719f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI net loss 2025 Microsoft filing equity method OpenAI losses",
+   "OpenAI cash burn 2025 projected losses through 2029 not profitable until 2030 report",
+   "OpenAI 2025 net loss audited financials revenue $13 billion Financial Times",
+   "OpenAI closes funding round 2026 valuation billion",
+   "Microsoft 10-Q September 30 2025 sec.gov msft-20250930 \"net losses from investments in OpenAI\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theregister.com/2025/10/29/microsoft_earnings_q1_26_openai_loss/",
+    "used": true,
+    "why": "Quotes Microsoft's 10-Q on its share of OpenAI losses and derives an implied quarterly OpenAI loss."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+    "used": false,
+    "why": "Primary filing, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://fortune.com/2025/11/12/openai-cash-burn-rate-annual-losses-2028-profitable-2030-financial-documents/",
+    "used": true,
+    "why": "Reports OpenAI investor documents (via WSJ) projecting a 2025 net loss and says the strategy needs near-constant fundraising. Also has the CFO's counterpoint."
+   },
+   {
+    "url": "https://gizmodo.com/openai-is-growing-fast-so-are-its-losses-2000772616",
+    "used": true,
+    "why": "Reports the FT-verified 2025 audited loss and the FT's roughly $8B underlying-loss estimate."
+   },
+   {
+    "url": "https://qz.com/openai-leaked-financials-losses-revenue-ipo-061626",
+    "used": false,
+    "why": "Same fact as Gizmodo but shorter; Gizmodo adds the FT's adjusted figure."
+   },
+   {
+    "url": "https://openai.com/index/scaling-ai-for-everyone/",
+    "used": false,
+    "why": "Shows the 2026 raise, which falls after the target period; used under other claims."
+   }
+  ],
+  "performed_at": "2026-10-29T07:37:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "theregister-com-2025-10-29-microsoft-earnings-q1-26-openai-loss",
+   "source_snapshot_id": "457e133f2824670e1fe09f9c7cd8a1daa12d040d47bcc08c1eedfc76c4623ff4",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/2025/10/29/microsoft_earnings_q1_26_openai_loss",
+   "locator": "paragraph 8",
+   "receipt": {
+    "public_excerpt": "Microsoft’s admission that it shaved $3.1 billion off its net income to account for its share of OpenAI losses therefore suggests OpenAI lost about $11.5 billion during the quarter.",
+    "quote_hash": "59af02eb19af4159ac8479930d4b1fff47b55e07b4c286c7c81f14b2885eb231",
+    "verified": "exact"
+   },
+   "event_date": "2025-09",
+   "available_at": "2025-10-29",
+   "retrieved_at": "2026-10-29T00:52:58Z",
+   "relation": "supports",
+   "explanation": "Microsoft's filing shows a large share of OpenAI losses for July–September 2025, implying an OpenAI loss of about $11.5 billion that quarter.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "net income (loss), implied from Microsoft's equity-method share",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-07-01",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Microsoft after-tax reduction in net income from OpenAI losses: $3.1 billion (quarter ended 2025-09-30)",
+     "Microsoft stake in OpenAI: 27 percent"
+    ],
+    "formula": "3.1 / 0.27",
+    "rounding": "about $11.5 billion, as stated by The Register"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "fortune-com-2025-11-12-openai-cash-burn-rate-annual-losses-2028-pro-474ff2ee6a60",
+   "source_snapshot_id": "ee747100db0e328bdaeb75ea6f17998e6bafc0db55f15bcd9b2350b61c49ef99",
+   "publisher": "Fortune (citing documents obtained by The Wall Street Journal)",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2025/11/12/openai-cash-burn-rate-annual-losses-2028-profitable-2030-financial-documents",
+   "locator": "paragraph 2",
+   "receipt": {
+    "public_excerpt": "The company anticipates total spending of roughly $22 billion this year against $13 billion in sales, resulting in a net loss of $9 billion",
+    "quote_hash": "cffc8d8e0b6de438ff19814cf032c5caecbee5344de6515a22079bfcd9a50def",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T00:51:33Z",
+   "relation": "supports",
+   "explanation": "OpenAI's own investor documents, as reported, projected a 2025 net loss of about $9 billion.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "net income (loss), projected",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "fortune-com-2025-11-12-openai-cash-burn-rate-annual-losses-2028-pro-474ff2ee6a60",
+   "source_snapshot_id": "ee747100db0e328bdaeb75ea6f17998e6bafc0db55f15bcd9b2350b61c49ef99",
+   "publisher": "Fortune",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2025/11/12/openai-cash-burn-rate-annual-losses-2028-profitable-2030-financial-documents",
+   "locator": "paragraph 8",
+   "receipt": {
+    "public_excerpt": "Altman’s strategy for OpenAI requires near-constant fundraising to keep the startup alive",
+    "quote_hash": "0dcdb20e242ad167d2e85174858a0f90b85f1af25a05e7afaa6897842fc44038",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T00:51:33Z",
+   "relation": "supports",
+   "explanation": "Supports the dependence half of the claim: the business needed continual outside funding to keep going.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "gizmodo-com-openai-is-growing-fast-so-are-its-losses-2000772616",
+   "source_snapshot_id": "cd857930a26e10178a908a4a3fe6af94d400826b8e34f051744218a19a3681e9",
+   "publisher": "Gizmodo (reporting Financial Times)",
+   "source_type": "news_report",
+   "url": "https://gizmodo.com/openai-is-growing-fast-so-are-its-losses-2000772616",
+   "locator": "paragraph 4",
+   "receipt": {
+    "public_excerpt": "OpenAI’s losses for 2025 were closer to $8 billion once you strip out all of the stuff that should be one-time costs.",
+    "quote_hash": "81e34a3e9d71704915b4e1315d5586bd80bb53b94383a943fea5405028e16e76",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-17",
+   "retrieved_at": "2026-10-29T07:33:17Z",
+   "relation": "supports",
+   "explanation": "Even on the friendliest reading, without one-time conversion charges, OpenAI lost about $8 billion in 2025. The headline audited loss was $38.5 billion.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "net loss excluding one-time charges",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "fortune-com-2025-11-12-openai-cash-burn-rate-annual-losses-2028-pro-474ff2ee6a60",
+   "source_snapshot_id": "ee747100db0e328bdaeb75ea6f17998e6bafc0db55f15bcd9b2350b61c49ef99",
+   "publisher": "Fortune",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2025/11/12/openai-cash-burn-rate-annual-losses-2028-profitable-2030-financial-documents",
+   "locator": "paragraph 11",
+   "receipt": {
+    "public_excerpt": "OpenAI Chief Financial Officer Sarah Friar said last week the company has healthy margins and could break even if it wanted to.",
+    "quote_hash": "5adc07b207d7372c92fdfb8dc60e37cbbc4369f492897e7b87dcdebb8e1bbfce",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T00:51:33Z",
+   "relation": "contradicts",
+   "explanation": "The company's counterpoint: it says its losses are a choice to invest, not a sign it cannot stand alone. This is a claim, not a result.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "Microsoft's 10-Q could not be read directly (HTTP 403); its figures come via The Register.",
+  "No public OpenAI cash-flow statement for 2025 was available; the audited figures come from leaked documents verified by the FT."
+ ],
+ "packet_hash": "b6657dc879ed3ce1a0142a31556d70de1e80256c3d98d2404cdeb71def8b9278"
+}

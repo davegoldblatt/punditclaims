@@ -1,0 +1,53 @@
+{
+ "run_id": "marcus-one-genai-image-ten-errors-6f376d-4x-probable-anthropic-1",
+ "kind": "batch_probable",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "probable-1",
+ "prompt_hash": "cdeb8d9aae33fcf8709a1620a5ab1dabfb6036924afc91c61246217973495ee7",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "cdeb8d9aae33fcf8709a1620a5ab1dabfb6036924afc91c61246217973495ee7",
+  "case:marcus-one-genai-image-ten-errors-6f376d": "8d75d0b4914d12d47bc3367c8bc29d9e3003cab0b6d003c08286709ebe2ff0fe",
+  "case:marcus-one-genai-image-ten-errors-9a822a": "6d6af04554ce0a534bf3efbbde6306c2036ade304d1c7ee05cea6ed15946fa78",
+  "case:marcus-one-genai-image-ten-errors-ce7373": "a9535745407d6a42ec30675625a19c0ad8b91fd55678cab2ad96fadc23d4c53a",
+  "case:marcus-one-genai-image-ten-errors-f09bb8": "dc510842cc174c717a17204df487e592289d524587dc9e853de383527e8223a5"
+ },
+ "started_at": "2026-10-29T23:54:45Z",
+ "completed_at": "2026-10-29T23:54:55Z",
+ "status": "ok",
+ "output": {
+  "calls": [
+   {
+    "claim_id": "marcus-one-genai-image-ten-errors-6f376d",
+    "call": "too_early",
+    "reason": "No one could inspect the image or the full prompt, and no independent audit counted the errors. That leaves only Marcus's own answer key, which cannot prove itself."
+   },
+   {
+    "claim_id": "marcus-one-genai-image-ten-errors-9a822a",
+    "call": "probably_right",
+    "reason": "T2I-CompBench (July 2023) and GenEval (Oct 2023) show that high-quality image generators still fail often at spatial relations and attribute binding. In GenEval the best model got only 15% of relative-position prompts right."
+   },
+   {
+    "claim_id": "marcus-one-genai-image-ten-errors-ce7373",
+    "call": "too_early",
+    "reason": "Chain-of-Verification shows that checking reduces hallucinations, and Kalai and Vempala give a different statistical account. Neither tests Marcus's fragment-reconstruction explanation, so the causal claim stays unsettled."
+   },
+   {
+    "claim_id": "marcus-one-genai-image-ten-errors-f09bb8",
+    "call": "too_early",
+    "reason": "Carlini et al. and Somepalli et al. show that diffusion models memorize and copy training data. Neither tests whether a missing originality check explains the copying, so the causal claim is unresolved."
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23474,
+  "output_tokens": 676,
+  "cached_input_tokens": 1417,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

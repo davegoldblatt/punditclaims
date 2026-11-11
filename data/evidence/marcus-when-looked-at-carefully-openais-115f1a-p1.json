@@ -1,0 +1,116 @@
+{
+ "packet_id": "marcus-when-looked-at-carefully-openais-115f1a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-115f1a",
+  "version": 2,
+  "content_hash": "680c1b3958c3eb478d0d5a0458f439cfafc679668896b8058cc07bdc5019d0f4"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-115f1a",
+  "version": 1,
+  "content_hash": "1a4f2a259e3f5b73edf4e7856bf58d9514183dfed3a4391d137ac0451cca9e97"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI biological study 2024 experts threshold \"all five\"",
+   "OpenAI bioweapon study threshold 8 experts ideation acquisition 2024 counts"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation",
+    "used": true,
+    "why": "Read the original report and followed its data-download links. Its extracted prose does not enumerate all five threshold counts."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+    "used": true,
+    "why": "read_page supplied the complete participant assignments."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "used": true,
+    "why": "read_page supplied all response scores, permitting direct calculation."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/accuracy_summary.csv",
+    "used": false,
+    "why": "Read successfully, but its means and other summary statistics do not directly establish threshold-success counts."
+   },
+   {
+    "url": "https://www.nationalacademies.org/cdn/materials/9fba0921-297f-4446-96ec-75757b3bf540",
+    "used": false,
+    "why": "read_page could not read the oversized document."
+   }
+  ],
+  "performed_at": "2026-10-29T09:38:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-ffa4b5bf338f",
+   "source_snapshot_id": "88ae786663ed69ce7c4b423d6c5f27d2ba8a265bf18d16bc8423f04f485882ba",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+   "locator": "Header and first two records; calculation uses the complete file",
+   "receipt": {
+    "public_excerpt": "0,expert,llm_internet,Used a few times\n1,expert,internet_only,Use at least once every few weeks",
+    "quote_hash": "92f8ddb2ae4d9798aefa0e8f69ae54017fa39754dcf1706819cadaf5a5416127",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:28Z",
+   "relation": "context",
+   "explanation": "The participant file identifies cohort and treatment assignment. Counting its expert records gives 25 participants in each arm.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "All records in participants.csv",
+     "cohort = expert",
+     "assignment = internet_only or llm_internet"
+    ],
+    "formula": "Count expert records by assignment: internet_only = 25; llm_internet = 25.",
+    "rounding": "Exact integer counts."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-6f5ca4856018",
+   "source_snapshot_id": "73215b822d45956b98b3cb752f8bc1002b27fa7816e4b53b25a94089811eb734",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+   "locator": "Header and first two records; calculation uses all five task blocks",
+   "receipt": {
+    "public_excerpt": "0,ideation,7,2,1,6,0,23,2075\n1,ideation,8,4,1,4,0,11,727",
+    "quote_hash": "f576d7f6e2be478bf5b0ccff0011614625935335f6cd74312f101fb23ba7de30",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:29Z",
+   "relation": "supports",
+   "explanation": "Joining the complete response file to e1 confirms higher expert threshold-success rates with model access on every task. The date identifies the published dataset being assessed, not an inferred experiment date.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "All records in responses.csv",
+     "Participant cohort and assignment from e1, joined by id",
+     "Accuracy threshold >= 8",
+     "25 experts per arm"
+    ],
+    "formula": "For each stage and assignment, count expert responses with accuracy >= 8. Model-access versus internet-only counts: ideation 18 versus 16; acquisition 7 versus 4; magnification 3 versus 0; formulation 4 versus 1; release 5 versus 1. Dividing by 25 gives 72% versus 64%, 28% versus 16%, 12% versus 0%, 16% versus 4%, and 20% versus 4%.",
+    "rounding": "Exact integer counts and exact whole-number percentages."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "23cd1b2b1d6ae52b922bfbdcf298070e85c659452e950ac5ac986a4e7375c0b4"
+}

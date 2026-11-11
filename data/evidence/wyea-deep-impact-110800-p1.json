@@ -1,0 +1,141 @@
+{
+ "packet_id": "wyea-deep-impact-110800-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-110800",
+  "version": 1,
+  "content_hash": "177478a9168fb003b846f4c566e63aeb33a2b4c8c1a58a50cc1198d7ff79b9f9"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-110800",
+  "version": 1,
+  "content_hash": "f8242a6ae627086071f6d13074fbee94280fbe80c0373561f3f4eb01a760b75d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic 2024 product gross profit margins inference costs Sora hallucinations SimpleQA",
+   "\"SimpleQA\" \"Claude\" \"40%\" paper"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2411.04368v1",
+    "used": true,
+    "why": "Primary research on factuality, including evaluations of OpenAI and Anthropic models."
+   },
+   {
+    "url": "https://openai.com/index/sora-is-here/",
+    "used": true,
+    "why": "The launch announcement directly acknowledges limitations of the original Sora product."
+   },
+   {
+    "url": "https://futuresearch.ai/openai-api-profit/",
+    "used": true,
+    "why": "Provides contrary product-margin estimates, with a later acknowledgment that those estimates remain unverified."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/openai-compute-spend",
+    "used": false,
+    "why": "Useful financial context, but inference margins and company spending do not establish the claimed product-level net profitability."
+   },
+   {
+    "url": "https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+    "used": false,
+    "why": "read_page could not read the document because it exceeded the tool's size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T11:01:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2411-04368v1",
+   "source_snapshot_id": "5ee6a4147ef5617690a24749219ed8a209d392237ecb717a664ebbf063277b62",
+   "publisher": "OpenAI researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2411.04368v1",
+   "locator": "Section 1, Introduction; model evaluations in section 3",
+   "receipt": {
+    "public_excerpt": "Current frontier models sometimes produce false outputs or answers that are not substantiated by evidence, a problem known as “hallucinations.”",
+    "quote_hash": "767259d1a8f98cbbc0914986b37bb0399a674b6c107c66d186412c0eab20f75d",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-11-07",
+   "retrieved_at": "2026-10-29T01:00:59Z",
+   "relation": "supports",
+   "explanation": "The study evaluates models from both companies and documents factuality limitations. It supports the hallucination component, while its deliberately challenging short-answer tasks do not establish unreliability across all uses.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-sora-is-here",
+   "source_snapshot_id": "2dbefa6fe8b1c135b1afcfa2fc7fadef8e605c725e5d9c0605601142cd5f8360",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/sora-is-here",
+   "locator": "Our approach to deployment",
+   "receipt": {
+    "public_excerpt": "It often generates unrealistic physics and struggles with complex actions over long durations.",
+    "quote_hash": "3fcc50df735d13b963db77a2f9f50d8164201b0743bf997d201b5b369b9de4fb",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-09",
+   "available_at": "2024-12-09",
+   "retrieved_at": "2026-10-29T01:09:18Z",
+   "relation": "supports",
+   "explanation": "OpenAI acknowledged concrete limitations in the released Sora model. This supports the quality concern but supplies neither training costs nor a cost-per-useful-output comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "futuresearch-ai-openai-api-profit",
+   "source_snapshot_id": "aa7360dd9aa40cb12e99082504186c9a751f432ec2143127207ec1bef826da27",
+   "publisher": "FutureSearch",
+   "source_type": "independent_measurement",
+   "url": "https://futuresearch.ai/openai-api-profit",
+   "locator": "Original August 2024 analysis, following Key Takeaways",
+   "receipt": {
+    "public_excerpt": "OpenAI's API gross margins were around 75% in June 2024, decreasing to approximately 55% at August pricing.",
+    "quote_hash": "0218ace4392b1215b9a850c409882ac582694cd8b4bbfc2ae2a3fec4385237f6",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2026-08-07",
+   "retrieved_at": "2026-10-29T10:54:54Z",
+   "relation": "context",
+   "explanation": "This estimate cautions against inferring product losses from company losses. The page's August 2026 review acknowledges that the margin estimates remain unverified, and gross margins omit costs relevant to the claim's broader profitability reading.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Estimated API gross profit margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-06-01",
+    "period_end": "2024-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No matched product-level profitability records for both companies were established.",
+  "The claim supplies no accounting basis.",
+  "Sora training and serving costs were not linked to a defined useful-output measure.",
+  "The qualitative language does not establish a universal reliability or value threshold."
+ ],
+ "packet_hash": "8ead9d42ebfb71c4be2967626f11b88d4c098b51be11c4022699ce7666a33008"
+}

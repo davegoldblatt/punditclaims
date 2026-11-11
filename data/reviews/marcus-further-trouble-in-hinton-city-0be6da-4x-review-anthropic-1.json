@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-further-trouble-in-hinton-city-0be6da-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-further-trouble-in-hinton-city-0be6da": "6f3337f7e7e74d2e5243b1f91deb53f621a01b310a954587753595cf2bb0dd44",
+  "case:marcus-further-trouble-in-hinton-city-1fb335": "74dbb9f0e71b68f7d249df0eb28de81987e6fcc80f2e6267f46550c45b1a8f88",
+  "case:marcus-further-trouble-in-hinton-city-7f00e5": "39b445991b9f96584d224318fc376baf4f359fd66af01e630bfd63246dd8acc7",
+  "case:marcus-further-trouble-in-hinton-city-860962": "8e21c50e8e9daa6e0df5d7f64fc4cf2be8bf9f590cd22b819cb61acd755a9006"
+ },
+ "started_at": "2026-10-29T07:08:23Z",
+ "completed_at": "2026-10-29T07:09:16Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post, summarising a study he endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the types of perturbation he lists and the effect on leaderboard rankings. It is a present-tense report of a study's findings."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading a ranking reversal among tested models as the test is a plain, ordinary reading. Limiting the target to the study record before publication is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Alzahrani et al. preprint, available 2024-02-01, before the post. Shuffling answer choices changed the ranking of 5 of 11 models, and symbol and scoring changes also shifted rankings."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A controlled study available before the post found that minor, meaning-preserving changes (shuffled choices, swapped symbols, different scoring) reordered model rankings. This meets the support condition. Nothing in the packet shows that the changes altered what the questions meant.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-further-trouble-in-hinton-city-0be6da"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to his words. Note that the proposition takes Marcus's account of Hinton's claims as given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on reading 'evidence against' as empirical findings that challenge categorical claims, rather than proof that AI lacks understanding. That reading is ordinary and fair, but whether the findings bear on 'understanding' is contested. Hinton's original statements are not verified in the packet."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Sclar et al., Oct 2023: high sensitivity to meaning-preserving changes in prompt format. Available before the post."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Nasr et al., Nov 2023: large amounts of training data extracted from production models. Bears directly on the claim that models don't store things."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's plain reading, separate studies before February 2024 documented extractable memorization and fragility to meaning-preserving changes. This meets the support condition. Caveat: the findings do not settle what 'understanding' means, and the packet does not check what Hinton actually said.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-further-trouble-in-hinton-city-1fb335"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post, interpreting NLeseul's example."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. He puts 'understand' in scare quotes, and his footnote admits that successful outputs are possible."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Measuring understanding by whether outputs meet the functional requirement, and using a target period of Feb 1–8, 2024, are choices the evaluator made. Both are reasonable, and the contract does not demand that every output fail."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "GenEval, Oct 2023: weaknesses in spatial and attribute binding for earlier open models. Different tasks and period, and it does not test one-handed design."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "DEsignBench, Oct 2023: strong text alignment for DALL-E 3. Does not test whether designs work one-handed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no original or independent record of the controller tests and no representative evaluation of one-handed design for contemporary systems. The related benchmarks are context only, so neither the support nor the contradiction condition can be checked.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-further-trouble-in-hinton-city-7f00e5"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps both the general storage claim and the controller example."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract uses Marcus's own footnote definition of effective storage: easy, near-identical reconstruction. Requiring the controller example to meet that definition is fair, since he presents it as a factual instance."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Carlini et al., Jan 2023: diffusion models memorize training images and emit them. Supports the general part only, not the controller example."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The general claim that generative image models effectively store training images is supported by the extraction research. The controller example is not verified: the packet has no source images, prompts, or comparison, so the support condition as a whole is not met. Nothing contradicts the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-further-trouble-in-hinton-city-860962"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 52731,
+  "output_tokens": 6498,
+  "cached_input_tokens": 26986,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

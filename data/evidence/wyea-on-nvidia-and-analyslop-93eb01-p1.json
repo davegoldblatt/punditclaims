@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-on-nvidia-and-analyslop-93eb01-p1",
+ "claim_revision_ref": {
+  "id": "wyea-on-nvidia-and-analyslop-93eb01",
+  "version": 1,
+  "content_hash": "db193286138858ef54a6929001f968b56ce26f10575f0f8cb8f509dda61f5bfb"
+ },
+ "contract_ref": {
+  "id": "wyea-on-nvidia-and-analyslop-93eb01",
+  "version": 1,
+  "content_hash": "61d55f3402fd6b0e9614982d0ae9918863b2749f450d20dda2aa0099a1302c89"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2026 10-K two customers 22% 14% 17.5 billion guarantees 3.5",
+   "\"nvidia\" \"2026\" \"10-k\" \"0001045810\"",
+   "site.investor.nvidia.com/files/doc_financials/2026/Q4 CFO Commentary"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the issuer-hosted filing was readable."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q4/10K-NVDA.pdf",
+    "used": true,
+    "why": "Primary filing provides the direct-customer shares and annual revenue."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/Q426/Q4FY26-CFO-Commentary.pdf",
+    "used": true,
+    "why": "Primary financial summary independently presents the annual revenue denominator."
+   },
+   {
+    "url": "https://mbiz.heraldcorp.com/article/10872762",
+    "used": false,
+    "why": "Read successfully, but the primary filing was available and preferable."
+   }
+  ],
+  "performed_at": "2026-10-29T12:11:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "s201-q4cdn-com-141608511-files-doc-financials-2026-q4-10k-nvda-pdf",
+   "source_snapshot_id": "8caaee3837655507765ce07c743e0a197f94a316dad85d77fe711525f1ca3a9c",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q4/10K-NVDA.pdf",
+   "locator": "Note 16, direct-customer concentration disclosure; consolidated income statement",
+   "receipt": {
+    "public_excerpt": "Our revenue is concentrated among a limited number of direct and indirect customers and this trend may continue.",
+    "quote_hash": "d6ddf6031a9e65b524a3cbc43d3afb654d5b036ed2a0c0f78821868cc49fa0ab",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T11:59:58Z",
+   "relation": "supports",
+   "explanation": "The following direct-customer disclosure reports shares of 22% and 14%. Applied to reported annual revenue of $215.938 billion, these imply approximately $77.7 billion.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "FY2026 consolidated revenue attributable to two direct customers",
+    "currency": "USD",
+    "units": "billions and percentage of total revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "First direct customer: 22% of FY2026 revenue",
+     "Second direct customer: 14% of FY2026 revenue",
+     "FY2026 consolidated revenue: $215.938 billion"
+    ],
+    "formula": "(22% + 14%) × $215.938 billion = $77.73768 billion",
+    "rounding": "36% combined; implied dollars rounded to one decimal billion, $77.7 billion. Customer percentages are themselves rounded."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s201-q4cdn-com-141608511-files-doc-financials-2026-q426-q4fy26-cfo-040230d43bdc",
+   "source_snapshot_id": "c98c2ca7f186a78cc1aaa0e5cce6a78719fcca530c4809571682696e46e85f3d",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/Q426/Q4FY26-CFO-Commentary.pdf",
+   "locator": "Revenue section and Fiscal 2026 Summary table",
+   "receipt": {
+    "public_excerpt": "Fiscal year revenue was a record $215.9 billion, up 65% from a year ago.",
+    "quote_hash": "edd5b78835d42566ad023c9eff67fd8dbe5a74750fa2168111d3da1b85700f0e",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T11:17:16Z",
+   "relation": "context",
+   "explanation": "The summary table gives annual revenue as $215,938 million. This corroborates the denominator but does not itself disclose the two customers’ shares.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Total consolidated revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "106e443c8535e7a3b50aa170235408026325becb6caff449462cb032d77eb3fe"
+}

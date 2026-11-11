@@ -1,0 +1,128 @@
+{
+ "packet_id": "marcus-the-race-for-ai-supremacy-is-over-44f477-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-race-for-ai-supremacy-is-over-44f477",
+  "version": 1,
+  "content_hash": "32e9f3d2afec33c30a0800a2416128bceb2dbf750909985f1fdfdd6fbb7911fa"
+ },
+ "contract_ref": {
+  "id": "marcus-the-race-for-ai-supremacy-is-over-44f477",
+  "version": 1,
+  "content_hash": "eb1a4c255709e37eb959a3bdccc9c577e315cfb8796d4fe2c09e8ff5cbd039f3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek V3 technical report H800 GPU cluster 2048 competitive GPT-4o",
+   "Nvidia H800 H100 bandwidth 400 900 DeepSeek January 2025 primary",
+   "site.nvidia.com H200 November 2024 nearly double H100 memory bandwidth"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "used": true,
+    "why": "Original V3 report provides training hardware and comparative evaluations."
+   },
+   {
+    "url": "https://arxiv.org/html/2505.09343v1",
+    "used": true,
+    "why": "Later technical account explains the hardware restrictions shaping the V3 design."
+   },
+   {
+    "url": "https://www.congress.gov/119/meeting/house/118111/witnesses/HMTG-119-SY15-Wstate-AllenG-20250408.pdf",
+    "used": true,
+    "why": "Public testimony discusses contrary inventory reports and distinguishes those from the V3 training claim."
+   },
+   {
+    "url": "https://developer.nvidia.com/blog/deploying-nvidia-h200-nvl-at-scale-with-new-enterprise-reference-architecture/",
+    "used": false,
+    "why": "Useful background on newer hardware, but does not directly establish V3's training hardware."
+   },
+   {
+    "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF12899/IF12899.1.pdf",
+    "used": false,
+    "why": "Readable corroborating summary; the original technical reports supply more direct evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T08:42:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2412-19437v1",
+   "source_snapshot_id": "134c7e306cb10e2d0bda4db09372b1afd89fba1e37bdfa9a36dab05ccab3ec88",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.19437v1",
+   "locator": "Section 3.1: Compute Clusters",
+   "receipt": {
+    "public_excerpt": "2048 NVIDIA H800 GPUs",
+    "quote_hash": "d88e26c6da63042c6d33d8df538d2f8ea186cb94dc53004231c8670bdc6d663c",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-27",
+   "retrieved_at": "2026-10-29T05:34:38Z",
+   "relation": "supports",
+   "explanation": "The original report identifies H800 training hardware and presents evaluations showing V3 broadly competitive with GPT-4o and Claude 3.5 Sonnet. These are developer-reported results, sufficient to support the cautious claim that the results suggest feasibility.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2505-09343v1",
+   "source_snapshot_id": "6a8dd91895dbc450c8193d1fbf785ebc2909322692eaba3b7ca8b83862188f27",
+   "publisher": "DeepSeek researchers / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2505.09343v1",
+   "locator": "Section 4.1: Current Hardware Architecture",
+   "receipt": {
+    "public_excerpt": "400 GB/s",
+    "quote_hash": "71ae704e54ac443efdbcc513b6825310b8cb7932e66ea9a5da543d4b7b953873",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-14",
+   "available_at": "2025-05-14",
+   "retrieved_at": "2026-10-29T08:30:31Z",
+   "relation": "context",
+   "explanation": "This later account identifies H800's reduced interconnect bandwidth relative to H100 and explains how V3's design addressed that constraint. It clarifies the hardware distinction but is classified as context because the account describes the architecture in May.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "congress-gov-119-meeting-house-118111-witnesses-hmtg-119-sy15-wstat-fb7e6ef7343b",
+   "source_snapshot_id": "2ee2ac6b3d2b558865724975b28d607a402fe35e15ef524d5918171981e9e578",
+   "publisher": "Gregory C. Allen, testimony published by the U.S. House Committee on Science, Space, and Technology",
+   "source_type": "secondary_summary",
+   "url": "https://www.congress.gov/119/meeting/house/118111/witnesses/HMTG-119-SY15-Wstate-AllenG-20250408.pdf",
+   "locator": "Written testimony, discussion of DeepSeek's computing infrastructure",
+   "receipt": {
+    "public_excerpt": "exclusively uses H800s",
+    "quote_hash": "1c65cf985173e68f6de7885deb97a1e9cb2474f25a5dec6fecd33e6ec87caff0",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-08",
+   "available_at": "2025-04-08",
+   "retrieved_at": "2026-10-29T07:23:47Z",
+   "relation": "context",
+   "explanation": "The testimony reports allegations of H100 ownership and possible use for R1, while also explaining why V3's design supports the feasibility of H800-only training. This limits broader claims about DeepSeek's inventory without decisively refuting Marcus's narrower possibility claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The V3 hardware disclosure was not independently audited in the selected records.",
+  "The evidence does not establish that every DeepSeek development activity, or R1 specifically, avoided more powerful chips."
+ ],
+ "packet_hash": "f0c60d9df3b8a54428c85360c56e1a94069842d72e67f8892b1428a0935cb441"
+}

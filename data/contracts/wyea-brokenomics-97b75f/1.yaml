@@ -1,0 +1,54 @@
+claim_id: wyea-brokenomics-97b75f
+version: 1
+claim_revision_ref:
+  id: wyea-brokenomics-97b75f
+  version: 1
+  content_hash: 3a36475d8b1faf5056c82f8dcb401d1c0c1c348ad6b3f9edfcb809dec2cc2b87
+assessment_axis: historical_observation
+explicit_source_elements:
+  - gross margin of at best negative 25%
+  - 25% of their rate limit
+  - 75% gross margin on their tokens
+  - current subsidies
+evaluator_interpretation:
+  - This is a claim about the stated model's arithmetic, not a disclosure of actual company margins.
+  - A 75% API gross margin implies serving costs equal to 25% of API-price-equivalent consumption.
+  - At best means that the highest modeled subscription margin among the tested tiers is no greater than -25%.
+  - Utilization is assumed to scale API-equivalent consumption proportionally, with a constant workload mix.
+  - The target is the current month through publication, June 1–15, 2026.
+support_condition: Applying the assumed serving-cost ratio to 25% utilization produces margins of -25% or lower across the cited tiers.
+contradiction_condition: Under the same model and inputs, at least one cited tier produces a margin above -25% at 25% utilization.
+measurement_requirements: For each tier, obtain monthly subscription revenue and maximum monthly API-equivalent usage. Compute gross margin as revenue minus modeled serving cost, divided by revenue.
+source_requirements: The original margin model or a transparent reproduction of its inputs. Actual company margins cannot substitute for the expressly assumed 75% margin.
+metric_scope:
+  company: Anthropic and OpenAI
+  metric: Modeled subscription gross margin at 25% utilization assuming 75% API gross margin
+  currency: null
+  units: percent of subscription revenue
+  accounting_basis: estimate
+  fiscal_or_calendar: calendar
+  period_start: 2026-06-01
+  period_end: 2026-06-15
+  stock_or_flow: flow
+  annualized_or_realized: not_applicable
+  gross_or_net: gross
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2026-06-01
+  end: 2026-06-15
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - No explicit observation period; current month through publication selected.
+  - Rate-limit utilization requires a fixed token and model mix.
+  - The 75% figure is a modeling assumption, not an observed antecedent of a forecast.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: true
+written_at: 2026-10-29T10:37:43Z
+frozen_at: 2026-10-29T10:37:43Z
+policy_version: 2026-10-28.7
+content_hash: 02e3a33c415070e4dc15a356dac477b3de98e8ce7da4ba26a6abc371c8f6d640

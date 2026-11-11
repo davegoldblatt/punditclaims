@@ -1,0 +1,41 @@
+claim_id: marcus-rumors-of-agis-arrival-have-been-6f5c93
+version: 1
+claim_revision_ref:
+  id: marcus-rumors-of-agis-arrival-have-been-6f5c93
+  version: 1
+  content_hash: 3865395e86e52745f2c7ef1bfd58560f00c098848d77408610b616c23165384d
+assessment_axis: causal_assessment
+explicit_source_elements:
+  - As a result
+  - optimized for benchmark success
+  - degrade in real-world settings that differ only modestly
+  - remain accurate despite missing key inputs
+  - unstable under minor distribution shifts
+  - fluent but flawed reasoning
+evaluator_interpretation:
+  - The claim attributes a generalization gap to benchmark-focused training and data curation.
+  - The medical examples are testable manifestations of fragility, but observing them alone does not identify their training cause.
+  - Degrade means performance falls when relevant task conditions change modestly. It need not mean benchmark optimization makes the model worse than its own untrained baseline.
+  - Real-world settings require evidence beyond altered benchmark questions, or a justified connection between those alterations and deployed use.
+support_condition: Controlled comparisons or other credible causal evidence show that benchmark-focused optimization creates or materially contributes to the claimed generalization gap, with medical studies corroborating the stated failure modes.
+contradiction_condition: Relevant causal comparisons show that benchmark-focused optimization does not produce the claimed gap, and adequately powered robustness evaluations fail to reproduce the described degradation.
+measurement_requirements: Compare training or curation choices while controlling model capability, training resources and evaluation difficulty. Separate benchmark stress tests from observed clinical deployment.
+source_requirements: Primary experimental papers, including Gu et al. (2025), with disclosed methods and suitable comparison conditions.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period: null
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - Modestly different settings and minor distribution shifts have no stated magnitude.
+  - The sentence combines a causal explanation with observational examples.
+  - Real-world settings could mean deployed clinical practice or realistic benchmark perturbations.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T18:18:10Z
+frozen_at: 2026-10-29T18:18:10Z
+policy_version: 2026-10-28.7
+content_hash: 50b9e6b00f0085e238c1e4b5592f90cba19553bd8ef1d66a1e8f06dbfda1d4e8

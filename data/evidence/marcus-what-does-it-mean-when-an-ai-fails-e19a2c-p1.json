@@ -1,0 +1,124 @@
+{
+ "packet_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 1,
+  "content_hash": "94f7790f0104c55472835dd562302c93f6e5492cceb260188a96bf918eb665c2"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 1,
+  "content_hash": "1af58dc5f16139e656edde0a14b4ce87c6d6c62f2d541d5facf6e02ee02ded5c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-3 GPT-2 LAMBADA 76.2 52.66 accuracy paper Language Models few shot learners",
+   "GPT-3 GPT-2 TruthfulQA larger models less truthful 2021"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c.pdf",
+    "used": true,
+    "why": "Independent, peer-reviewed experiments report GPT-3 accuracy using testing methods also applied to GPT-2."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c-supp.pdf",
+    "used": true,
+    "why": "Table 4 supplies the corresponding GPT-2 results, including both gains and exceptions when compared with the main paper."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v139/zhao21c.html",
+    "used": true,
+    "why": "Read to verify authorship, publication venue, and the July 18–24, 2021 publication period."
+   },
+   {
+    "url": "https://arxiv.org/html/2005.14165v4",
+    "used": false,
+    "why": "The original GPT-3 paper provides useful background, but the independent study offers a more direct comparison under shared testing methods."
+   },
+   {
+    "url": "https://arxiv.org/abs/2005.14165",
+    "used": false,
+    "why": "Read to verify the original GPT-3 paper's version dates; not needed for the decisive comparison."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2005.14165",
+    "used": false,
+    "why": "Read for benchmark details; superseded here by the independent comparison."
+   },
+   {
+    "url": "https://arxiv.org/html/2109.07958v2",
+    "used": false,
+    "why": "TruthfulQA documents exceptions to improvement with model size, but its truthfulness measure allows uninformative answers. The selected accuracy comparison is more directly relevant."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2109.07958v2",
+    "used": false,
+    "why": "Read to check TruthfulQA methods and figures; not used as decisive evidence for correct-answer rates."
+   },
+   {
+    "url": "https://aclanthology.org/2022.acl-long.229/",
+    "used": false,
+    "why": "Read to verify the TruthfulQA publication and abstract; the selected comparison avoids its different definition of truthfulness."
+   }
+  ],
+  "performed_at": "2026-10-29T19:15:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "proceedings-mlr-press-v139-zhao21c-zhao21c-pdf",
+   "source_snapshot_id": "2e348c7369c5116a1d449e4edd72150d90fa8aa704e0262242de18fd402ff115",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c.pdf",
+   "locator": "Table 1, baseline columns; compare supplementary Table 4 in e2",
+   "receipt": {
+    "public_excerpt": "Contextual calibration improves accuracy across a range of tasks.",
+    "quote_hash": "4516f9c0ff5ba1384671b002157bd8adeea43711d7218c9c5b249251fa4054eb",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-07-24",
+   "retrieved_at": "2026-10-29T19:07:36Z",
+   "relation": "supports",
+   "explanation": "Using the uncalibrated eight-shot baseline columns, GPT-3 175B scores 79.1% on AGNews, 95.6% on SST-2, and 63.8% on LAMA; the corresponding GPT-2 results in e2 are 57.1%, 54.5%, and 42.5%. These matched comparisons support broad gains across classification and factual retrieval; the quoted caption describes the study's main intervention, but this comparison uses its baseline results.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "proceedings-mlr-press-v139-zhao21c-zhao21c-supp-pdf",
+   "source_snapshot_id": "a868588ac59b7df336da3357338c71b6af57fcdb5bf73dd9b277a7b5a9c15bec",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c-supp.pdf",
+   "locator": "Appendix A, Table 4, zero-shot baseline columns; compare Table 1 in e1",
+   "receipt": {
+    "public_excerpt": "This table is analogous to Table 1 but shows results for GPT-2 XL.",
+    "quote_hash": "68c7611a9a90e85b493a976226df190055d56f7f0c05e234495259d27bbf2ffe",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-07-24",
+   "retrieved_at": "2026-10-29T19:08:14Z",
+   "relation": "contradicts",
+   "explanation": "The uncalibrated zero-shot baseline scores GPT-2 at 64.3% on DBPedia and 44.6% on CB, versus GPT-3 175B at 22.0% and 30.4% in e1. These exceptions contradict an unrestricted claim of higher observed correctness in every setting, while the same table supplies the GPT-2 baselines supporting broad gains.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The selected experiments measure accuracy using greedy decoding, not repeated-sampling probabilities for each individual prompt.",
+  "The speaker does not specify whether 'any given example' is universal or describes a general tendency."
+ ],
+ "packet_hash": "eb55d8bd12f3224b3f67a9682c7c0560c105637df0b018449b0b0afe9c9c317a"
+}

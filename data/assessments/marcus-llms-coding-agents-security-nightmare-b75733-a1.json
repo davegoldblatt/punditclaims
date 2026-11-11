@@ -1,0 +1,147 @@
+{
+ "assessment_id": "marcus-llms-coding-agents-security-nightmare-b75733-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-b75733",
+  "version": 2,
+  "content_hash": "a306d0b9365999a983f70db62435078063b9dbdb1917f9df14ccc6b2ccf80f6f"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-b75733",
+  "version": 1,
+  "content_hash": "ece53add93a06ddb837a8746e9a2dae8dc9c0ef3452489e6d8c8e1190fbba698"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-b75733-p1",
+  "content_hash": "060ab51ccdbb183043b40a78e9047d3c5c62a206f63d9a036d88b6828828b475"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Original reports demonstrate the mechanism in mainstream coding tools: file and command authority let injected instructions produce unauthorized execution and data exposure. That supports the qualitative causal warning. Default restrictions, unsuccessful attacks against other tools, and patches show substantial variation. Support therefore depends on reading often as recurring ordinary product configurations, not as an established population frequency.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "limitations": [
+  "The frequency of broad permissions in actual installations remains unmeasured.",
+  "The specific Copilot and Gemini CLI flaws cited were reported fixed before publication.",
+  "Controlled demonstrations establish exploitable capability, not widespread victimization."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-coding-agents-security-nightmare-147dcd-4x-review-anthropic-1",
+  "marcus-llms-coding-agents-security-nightmare-147dcd-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-coding-agents-security-nightmare-147dcd-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-coding-agents-security-nightmare-b75733",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The authors are particularly worried about agents that software developers are starting to use, because these agents are often given considerable authority and access to far-ranging tools, which opens up immense security vulnerabilities.",
+  "kind": "causal",
+  "conditions": [
+   "agents that software developers are starting to use",
+   "often granted considerable authority and access to far-ranging tools"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "We are particularly worried about agents that software developers are starting to use, because they are often granted considerable authority and access to far-ranging tools, opening up immense security vulnerabilities.",
+   "locator": "paragraph 7",
+   "url": "https://garymarcus.substack.com/p/llms-coding-agents-security-nightmare",
+   "date": "2025-08-17",
+   "document_title": "LLMs + Coding Agents = Security Nightmare",
+   "observed_at": "2026-10-28T23:55:47Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "agents that software developers are starting to use",
+    "often granted considerable authority and access to far-ranging tools",
+    "opening up immense security vulnerabilities"
+   ],
+   "our_interpretation": [
+    "The factual claim concerns coding agents available by the post, not the authors' personal feeling of worry.",
+    "Considerable authority means capabilities such as persistent file changes, shell execution, or access to developer data.",
+    "Often is read as a recurring feature of ordinary configurations across mainstream products, not a measured majority of installations.",
+    "Immense security vulnerabilities means serious consequences such as unauthorized command execution or credential exposure."
+   ],
+   "support_condition": "Primary configuration evidence and exploit demonstrations across mainstream coding tools connect their granted capabilities to serious unauthorized actions.",
+   "contradiction_condition": "Representative evidence shows that ordinary configurations lack the asserted capabilities or reliably prevent their misuse, or that the demonstrated harms do not depend on those capabilities."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Original reports demonstrate the mechanism in mainstream coding tools: file and command authority let injected instructions produce unauthorized execution and data exposure. That supports the qualitative causal warning. Default restrictions, unsuccessful attacks against other tools, and patches show substantial variation. Support therefore depends on reading often as recurring ordinary product configurations, not as an established population frequency.",
+  "limitations": [
+   "The frequency of broad permissions in actual installations remains unmeasured.",
+   "The specific Copilot and Gemini CLI flaws cited were reported fixed before publication.",
+   "Controlled demonstrations establish exploitable capability, not widespread victimization."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Remote Code Execution",
+    "locator": "Exploit Chain Explained",
+    "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection",
+    "publisher": "Embrace The Red — Johann Rehberger",
+    "event_date": "2025-06-29",
+    "available_at": "2025-08-12",
+    "explanation": "The researcher reported that Copilot could persistently edit workspace files without approval, then demonstrated injected instructions changing its approval configuration and executing commands. June 29 is the documented disclosure date by which the exploit existed."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "arbitrary code execution",
+    "locator": "Research — Setting the stage",
+    "url": "https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack",
+    "publisher": "Tracebit",
+    "event_date": "2025-06-27",
+    "available_at": "2025-07-28",
+    "explanation": "The demonstrated Gemini CLI chain combined injected repository text, shell access, an approved innocuous command, and faulty command validation to exfiltrate environment variables in its default unsandboxed mode. The report also says this specific attack failed against tested alternatives and was fixed in Gemini CLI before the post."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "limited internet",
+    "locator": "Opening paragraph",
+    "url": "https://github.blog/changelog/2025-07-15-configure-internet-access-for-copilot-coding-agent",
+    "publisher": "GitHub",
+    "event_date": "2025-07-16",
+    "available_at": "2025-07-16",
+    "explanation": "A mainstream cloud coding agent had default network restrictions, qualifying any suggestion that broad authority always means unrestricted access. This is a different configuration from the local VS Code exploit."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "now fixed",
+    "locator": "Responsible Disclosure",
+    "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection",
+    "publisher": "Embrace The Red — Johann Rehberger",
+    "event_date": "2025-08-12",
+    "available_at": "2025-08-12",
+    "explanation": "The researcher reported remediation before Marcus's post. The exploit establishes the causal risk in that design, but cannot establish that patched installations retained this particular vulnerability."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3deeb208a9fa98a80ff4a6292bbaae6b4e4e0476dcfd9817c48a848eba7dde34",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:46:44Z"
+}

@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-horse-rides-astronaut-f165b1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-horse-rides-astronaut-f165b1",
+  "version": 2,
+  "content_hash": "d6f4e432e46904bd160d632028428fd8b076dc63d3c6e48cafb1e3cb40022ce6"
+ },
+ "contract_ref": {
+  "id": "marcus-horse-rides-astronaut-f165b1",
+  "version": 1,
+  "content_hash": "fab5394e79270d18443ef63afdf467b838c4c8f1bee0f9b830c51ec80c898faf"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Imagen photorealistic text image diffusion models deep language understanding compositionality limitations 2022",
+   "Hierarchical Text Conditional Image Generation CLIP Latents 2022 limitations binding attributes relations",
+   "syntax attention structural probe Hewitt Manning 2019 linear transformation syntax",
+   "John Hewitt structural probe blog syntax trees \"2019\"",
+   "Clark Jaini 2023 Imagen discriminative generative diffusion models compositional visual reasoning"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2205.11487v1",
+    "used": true,
+    "why": "Documents pretrained text encoders and diffusion conditioning, without an explicit syntactic-tree construction stage."
+   },
+   {
+    "url": "https://arxiv.org/html/2204.06125v1",
+    "used": false,
+    "why": "Documents binding failures and offers a hypothesis about CLIP representations, but does not isolate the claimed causal mechanism."
+   },
+   {
+    "url": "https://www.cs.columbia.edu/~johnhew/structural-probe.html",
+    "used": true,
+    "why": "The research author's dated demonstration shows why explicit parsing and implicit syntactic information must be distinguished."
+   },
+   {
+    "url": "https://aclanthology.org/N19-1419/",
+    "used": true,
+    "why": "The underlying peer-reviewed research corroborates the author's demonstration and its limited scope."
+   },
+   {
+    "url": "https://arxiv.org/html/2303.15233v1",
+    "used": false,
+    "why": "Later classification experiments are informative about binding, but do not isolate the cause of the original generation failures."
+   }
+  ],
+  "performed_at": "2026-10-29T17:13:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2205-11487v1",
+   "source_snapshot_id": "1434af5e99e0f7b3c2fb1026938fbf54eb1c00fc592e59066ff4f8b78cd4f6d8",
+   "publisher": "Google Research researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2205.11487v1",
+   "locator": "Section 2.1; conditioning architecture in sections 2 and 2.5",
+   "receipt": {
+    "public_excerpt": "Imagen explores pretrained text encoders:",
+    "quote_hash": "5326cf4627191901148ef07c727feefa57060ab2931cfef636f4bb0fd38087b7",
+    "verified": "exact"
+   },
+   "event_date": "2022-05",
+   "available_at": "2022-05-23",
+   "retrieved_at": "2026-10-29T04:12:24Z",
+   "relation": "context",
+   "explanation": "The documented pipeline uses text embeddings to condition diffusion models and specifies no explicit tree-building stage. That supports the architectural premise under the explicit-parser reading, but does not establish its claimed causal consequence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cs-columbia-edu-johnhew-structural-probe-html",
+   "source_snapshot_id": "6bb74d7f40a836ea79161579ec9d5f31e12f7d50b2bdb1228a1c76c7ca6d7980",
+   "publisher": "John Hewitt",
+   "source_type": "demonstration",
+   "url": "https://www.cs.columbia.edu/~johnhew/structural-probe.html",
+   "locator": "A brief example on subject-verb number agreement",
+   "receipt": {
+    "public_excerpt": "subjects and verbs close",
+    "quote_hash": "4b0ae1a5f0eafdfe848ceedc898aa8199641201c395b1bde820bc081cde4f465",
+    "verified": "exact"
+   },
+   "event_date": "2019",
+   "available_at": "2019-04-04",
+   "retrieved_at": "2026-10-29T17:05:06Z",
+   "relation": "context",
+   "explanation": "The author demonstrates recoverable syntactic relationships in learned BERT representations without an explicit parser in the underlying model. This cautions against inferring absence of syntactic information from architecture alone, but concerns a different system and does not prove full semantic reliability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No inspected experiment isolates the absence of explicit syntactic-tree derivation as the cause of the named systems' failures.",
+  "Implicit syntactic information is not equivalent to its reliable use during image generation.",
+  "The claim does not specify a finite domain over which full sensitivity could be measured."
+ ],
+ "packet_hash": "0817be9b3bf8ed8bc030ccea767fbad49b8aee83d0ea8985454cb383a120db22"
+}

@@ -1,0 +1,124 @@
+{
+ "packet_id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd-p1",
+ "claim_revision_ref": {
+  "id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd",
+  "version": 1,
+  "content_hash": "24ee39346e5b8c085a3c1710425b17ccfd1a0754cf89edf17cd65fd7eccfc8cc"
+ },
+ "contract_ref": {
+  "id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd",
+  "version": 1,
+  "content_hash": "96a2e6a367ab5a04e8545cf3c876242019e73137596ba0b55cecc637dcb5cb5e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Carlini quantifying memorization neural language models model size training data size 2022",
+   "large language model memorization training dataset size decreases controlled study",
+   "Scalable Extraction of Training Data from Production Language Models 2311.17035"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2202.07646v3",
+    "used": true,
+    "why": "Primary study of extractable memorization, parameter count, duplication and prompt length."
+   },
+   {
+    "url": "https://arxiv.org/html/2311.17035v1",
+    "used": true,
+    "why": "Primary extraction experiments, including the November 2023 work invoked in the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2505.24832",
+    "used": true,
+    "why": "Later controlled work distinguishes generalization from memorization and examines data volume; its measure differs from passage extraction."
+   },
+   {
+    "url": "https://arxiv.org/html/2505.24832v3",
+    "used": false,
+    "why": "Inspected for methods, but its rendered date differs from the abstract's version history. The dated abstract supplies the contextual finding used here."
+   }
+  ],
+  "performed_at": "2026-10-29T04:03:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2202-07646v3",
+   "source_snapshot_id": "9fb2d27fabda07f81a5790475c742583d57bbdece6cb5f13ac9eec2b84fc4a01",
+   "publisher": "ICLR 2023; arXiv manuscript",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2202.07646v3",
+   "locator": "Figure 1 caption, panel a; section 4.1",
+   "receipt": {
+    "public_excerpt": "Larger models memorize",
+    "quote_hash": "a0432f38ad9abc7c1806add4faf8f5a640c3a75640551b53127d31d90ecc5a5f",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2023-03-06",
+   "retrieved_at": "2026-10-29T03:55:53Z",
+   "relation": "supports",
+   "explanation": "Supports the parameter-count contribution using exact training-text completion. The study separately measures duplication and prompt length; neither is equivalent to total corpus volume.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2311-17035v1",
+   "source_snapshot_id": "8a1e56e114d738c79981fb75b28d2cd6afefb0ac09809b347b81c2d55f778ce8",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2311.17035v1",
+   "locator": "Section 5.3, Main Experimental Results",
+   "receipt": {
+    "public_excerpt": "memorized outputs",
+    "quote_hash": "c6b9373d28f7cc3378e3146353319729a8478aea129893b7796c2a21631030b0",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-11-28",
+   "retrieved_at": "2026-10-29T03:55:34Z",
+   "relation": "supports",
+   "explanation": "The extraction experiments establish that contemporary models can emit long training passages. Cross-family observations about longer training do not independently isolate the effect of total training-data volume.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2505-24832",
+   "source_snapshot_id": "ad27211ad846126d146202f2bcd9eb0ea8476e33a3e959200d90af0fdf2be4df",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2505.24832",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "memorization from generalization.",
+    "quote_hash": "2f2cfb80b1e54714fea45e4092cc1510e63741eb6304e77acd6773832bee0f43",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-06-18",
+   "retrieved_at": "2026-10-29T03:56:06Z",
+   "relation": "context",
+   "explanation": "The authors report that unintended memorization can decrease as dataset size grows and models generalize. This complicates a simple data-volume explanation, but its information-based measure and later experiments do not directly contradict the post's passage-reproduction claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The cited extraction studies do not independently establish the claimed contribution of total corpus volume.",
+  "Repeated exposure, training duration and unique data volume are not interchangeable.",
+  "Later counterevidence measures unintended information retention rather than the same passage-reproduction outcome."
+ ],
+ "packet_hash": "93f12a5a59cf649362adcce4579d65c84d82fc46742ba16606c12448d15663c5"
+}

@@ -1,0 +1,119 @@
+{
+ "run_id": "marcus-is-chatgpt-really-a-code-red-for-e753d6-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-is-chatgpt-really-a-code-red-for-e753d6": "a07b8b4d50433058bb6f4444f87c2afdfc79fbaa67e29ba7d693360e3260c506",
+  "case:marcus-is-chatgpt-really-a-code-red-for-ea00b4": "e040aadd91450da3dfd26ca65dcdd70d6e3ed8931a08fe0a8d51ab04e5176291"
+ },
+ "started_at": "2026-10-29T07:35:07Z",
+ "completed_at": "2026-10-29T07:35:28Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, restating his earlier view in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The paraphrase keeps both parts: LLMs are not databases, and they combine bits that don't always belong together. It is stated as a present-tense description."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'database' the way the post itself defines it (store, update and retrieve records) and treats 'don't always' as satisfied by documented cases. Both are ordinary readings an informed reader would take, not stretched either way."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "BLOOM technical paper, Nov 2022, describes generation as predicting the next token one step at a time. That is distinct from looking up stored records."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Galactica paper, Nov 2022, reports hallucinated paper titles when the model predicts citations: documented wrong associations. Its 'implicit knowledge base' framing is context but does not make the model a conventional record database."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Technical papers from the target period describe LLMs as next-token predictors rather than record-retrieval systems. Galactica documents hallucinated citations, which fits the failure mode Marcus describes. Galactica's knowledge-base language only counts against a looser sense of 'database' than the post uses, so it does not meet the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-chatgpt-really-a-code-red-for-e753d6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The checkable core is that both products were search/LLM hybrids. 'Interesting' is opinion, and 'possibly allowing swifter updates' is hedged, so neither is scored. The paraphrase keeps that hedge as 'may'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Scoring only the factual hybrid description, for December 2022, is fair. It does not treat the hedged update-speed remark as a commitment."
+    },
+    "evidence": [
+     {
+      "id": "e9",
+      "fits": true,
+      "relation": "supports",
+      "note": "Perplexity's own launch post, 7 Dec 2022, says the product uses GPT-3.5 together with Bing search. It is a company disclosure, but it is primary documentation of the product's features."
+     },
+     {
+      "id": "e10",
+      "fits": true,
+      "relation": "supports",
+      "note": "You.com's own 2025 retrospective, published before the evaluation date, says it connected LLMs to live web data in December 2022. A company disclosure."
+     },
+     {
+      "id": "e11",
+      "fits": true,
+      "relation": "supports",
+      "note": "The founder's launch post, 23 Dec 2022, describes YouChat as conversational AI for search with recent events and source citations. That fits a search/LLM hybrid."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Launch records dated December 2022 show that both Perplexity Ask and YouChat combined LLM answers with web search or live web data before the post was published. Only the factual hybrid description is scored; the opinion and the hedged 'possibly swifter updates' are not.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-chatgpt-really-a-code-red-for-ea00b4"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15881,
+  "output_tokens": 2063,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

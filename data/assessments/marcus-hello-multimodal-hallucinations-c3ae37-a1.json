@@ -1,0 +1,138 @@
+{
+ "assessment_id": "marcus-hello-multimodal-hallucinations-c3ae37-a1",
+ "claim_revision_ref": {
+  "id": "marcus-hello-multimodal-hallucinations-c3ae37",
+  "version": 1,
+  "content_hash": "fa2242f3f22e29ebf8ed0a20994d5d6bb4ef37b274527cc0cfb888b5ca6b2d03"
+ },
+ "contract_ref": {
+  "id": "marcus-hello-multimodal-hallucinations-c3ae37",
+  "version": 1,
+  "content_hash": "3279233f28bb6e768279861b6579d61533698cd1d2e4c100974250b4a57cc65a"
+ },
+ "packet_ref": {
+  "id": "marcus-hello-multimodal-hallucinations-c3ae37-p1",
+  "content_hash": "621e71613b7efdae39d9d9b82f6ddc5c034956c9b77a2dafee47475c48db9b23"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2023-10-21",
+  "precision": "day"
+ },
+ "public_rationale": "The planning study supports Marcus's concern about unreliable autonomous planning. It does not establish his causal explanation. The Othello study demonstrates learned representations in a narrower model, while RAP improves planning by changing world-state prediction, search, and rewards together. These findings neither establish nor decisively refute the broad causal claim.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "Evidence supporting the behavioral component is not sufficient to score the entire causal proposition supported.",
+  "Specialized synthetic models and externally assisted systems are not direct substitutes for standalone conversational LLMs.",
+  "No numerical reliability threshold was supplied."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-hello-multimodal-hallucinations-1c3721-4x-review-anthropic-1",
+  "marcus-hello-multimodal-hallucinations-1c3721-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-hello-multimodal-hallucinations-1c3721-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-hello-multimodal-hallucinations-c3ae37",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs lack stable world models, which makes them poor at planning and unable to reason reliably.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But in other ways, large language models are a profound step backwards; they lack stable models of the world, which means that they are poor at planning, and unable to reason reliably; everything becomes hit or miss..",
+   "locator": "paragraph 24",
+   "url": "https://garymarcus.substack.com/p/hello-multimodal-hallucinations",
+   "date": "2023-10-21",
+   "document_title": "Hello, Multimodal Hallucinations",
+   "observed_at": "2026-10-29T00:02:54Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "lack stable models of the world",
+    "which means that",
+    "poor at planning",
+    "unable to reason reliably",
+    "everything becomes hit or miss"
+   ],
+   "our_interpretation": [
+    "Assess the causal proposition about LLMs available when the post appeared, rather than treating 'a profound step backwards' as a measurable ranking.",
+    "A stable world model means a representation that consistently tracks relevant entities, relations, and changes across tasks and equivalent descriptions.",
+    "Reliable reasoning means dependable performance across relevant variations, not perfection on every possible problem.",
+    "Use 2023 through the post date for contemporary evaluations. Later model improvements cannot settle this historical causal claim.",
+    "Planning failures alone establish a behavioral limitation, not the proposed cause."
+   ],
+   "support_condition": "Representative models show unstable or absent relevant world representations, and controlled interventions establish that this deficiency causes their planning and reasoning failures.",
+   "contradiction_condition": "Representative models exhibit stable relevant world representations and dependable planning and reasoning, or controlled studies show that the asserted causal explanation fails."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The planning study supports Marcus's concern about unreliable autonomous planning. It does not establish his causal explanation. The Othello study demonstrates learned representations in a narrower model, while RAP improves planning by changing world-state prediction, search, and rewards together. These findings neither establish nor decisively refute the broad causal claim.",
+  "limitations": [
+   "Evidence supporting the behavioral component is not sufficient to score the entire causal proposition supported.",
+   "Specialized synthetic models and externally assisted systems are not direct substitutes for standalone conversational LLMs.",
+   "No numerical reliability threshold was supplied."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "approximately 34% in the Blocksworld dataset.",
+    "locator": "Section 4, Evaluation of LLMs on the Blocksworld domain",
+    "url": "https://arxiv.org/html/2305.15771v1",
+    "publisher": "Valmeekam and colleagues via arXiv",
+    "event_date": "2023-05",
+    "available_at": "2023-05-25",
+    "explanation": "The study supports the planning-reliability concern and reports severe deterioration after renaming domain elements. It also finds benefits from external verification; neither result directly measures the absence of stable internal world models."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "an emergent world representation.",
+    "locator": "Section 1.1, discussion of probing and intervention",
+    "url": "https://arxiv.org/html/2210.13382v3",
+    "publisher": "Li and colleagues via arXiv",
+    "event_date": "2022-10",
+    "available_at": "2023-01-25",
+    "explanation": "The researchers identify a board-state representation and intervene on it to change predictions. This challenges a blanket architectural absence claim, but the synthetic Othello model does not establish stable general world models in contemporary conversational LLMs."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "33% relative improvement",
+    "locator": "Abstract, final sentence",
+    "url": "https://arxiv.org/abs/2305.14992v1",
+    "publisher": "Hao and colleagues via arXiv",
+    "event_date": "2023-05",
+    "available_at": "2023-05-24",
+    "explanation": "The framework uses an LLM for world-state prediction alongside tree search and rewards, improving planning performance. This is relevant to the proposed mechanism, but the combined intervention does not isolate world-model stability as the cause."
+   }
+  ],
+  "what_would_resolve": "Controlled studies of representative 2023 models that measure world-state stability and independently manipulate it, then test whether planning and reasoning reliability changes while search, feedback, and computation are held comparable.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "7e32aa4f487c8dbe8ffe49be824a59cbf3d76b1cf23beab6be1a101f0c323224",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:29:34Z"
+}

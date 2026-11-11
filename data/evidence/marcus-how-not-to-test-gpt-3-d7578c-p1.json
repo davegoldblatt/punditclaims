@@ -1,0 +1,158 @@
+{
+ "packet_id": "marcus-how-not-to-test-gpt-3-d7578c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-d7578c",
+  "version": 1,
+  "content_hash": "1d1c41b02adb0d0902a4a65215bcea7564db824810ad359485b0138562048f0a"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-d7578c",
+  "version": 1,
+  "content_hash": "9bb4452fe7a86ac5611f76e56e5d6c969d18affb8404e6b7a037231a5d1626be"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 February language models benchmarks English centric bias multilingual evaluation ChatGPT",
+   "GPT-3 training dataset English 93% 2022 model card",
+   "BIG bench paper 2022 English language majority tasks limitations",
+   "HELM 2022 English scenarios language limitations",
+   "site.crfm.stanford.edu/2022/11/17/helm \"English\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "used": true,
+    "why": "Developer documentation quantifies the English predominance of InstructGPT's instruction dataset."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.09110v1",
+    "used": true,
+    "why": "HELM's authors explicitly describe English-only evaluation coverage."
+   },
+   {
+    "url": "https://arxiv.org/html/2206.04615v1",
+    "used": true,
+    "why": "Documents both model training-language imbalance and limited coverage of lower-resource languages."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.05100v1",
+    "used": true,
+    "why": "Important counterweight: contemporary multilingual models and datasets existed."
+   },
+   {
+    "url": "https://github.com/openai/gpt-3/blob/master/model-card.md?plain=1",
+    "used": false,
+    "why": "The original GPT-3 training description predates the selected observation window; contemporaneous documentation supplies more direct evidence."
+   },
+   {
+    "url": "https://arxiv.org/html/2204.02311v1",
+    "used": false,
+    "why": "Additional model documentation was considered, but the selected sources already cover model development, benchmarks, and multilingual exceptions."
+   }
+  ],
+  "performed_at": "2026-10-29T07:12:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2203-02155v1",
+   "source_snapshot_id": "acf509b6f0a50af240e00d3d1a92e7fa656bee807312df45692a68d280b39be9",
+   "publisher": "Ouyang et al., OpenAI, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.02155v1",
+   "locator": "Section 5, limitations of data collection; Appendix A.4",
+   "receipt": {
+    "public_excerpt": "almost entirely of English instructions",
+    "quote_hash": "ed265ceda3085ce90812ba351e8d34ac3cdfa0ca0361afa5513d114e707d9502",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-03-04",
+   "retrieved_at": "2026-10-29T04:12:12Z",
+   "relation": "supports",
+   "explanation": "The developer reports that roughly 96% of its instruction dataset was classified as English, possibly more because of classifier errors. This directly supports English predominance in instruction tuning, without treating that percentage as the pretraining distribution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-09110v1",
+   "source_snapshot_id": "3a3247cb6984d7dbecab2f7e44c876f7ccc9c748cd811bf562263d3d132f421d",
+   "publisher": "Liang et al., Stanford CRFM, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.09110v1",
+   "locator": "Section 3.1, Languages; introduction's description of the 16 core scenarios",
+   "receipt": {
+    "public_excerpt": "English varieties and dialects",
+    "quote_hash": "7e4cd8c81a9a3a1b4fcaca7b9c403750f641db2e16ebe9036880db7c9071921c",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-11-16",
+   "retrieved_at": "2026-10-29T02:56:32Z",
+   "relation": "supports",
+   "explanation": "HELM's initial core scenarios covered only English, including different English varieties. The authors explicitly say that even multilingual BLOOM was evaluated only for English.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2206-04615v1",
+   "source_snapshot_id": "0eb8b632986e1300e44db4286a38f29b17eed9ba17694db64a98bec20922dae1",
+   "publisher": "Srivastava et al., BIG-bench collaboration, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2206.04615v1",
+   "locator": "Section 3.7; model description for BIG-G",
+   "receipt": {
+    "public_excerpt": "a handful also target lower-resource languages",
+    "quote_hash": "290bc2a894d5466961f443cb85318112dc1470cce5878b8b81e04be8a8f99e00",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-06-09",
+   "retrieved_at": "2026-10-29T04:48:23Z",
+   "relation": "supports",
+   "explanation": "BIG-bench documents limited lower-resource-language coverage and reports that its BIG-G training mixture contained about 6% non-English text. Its multilingual tasks also show that English predominance coexisted with deliberate efforts to test other languages.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-05100v1",
+   "source_snapshot_id": "030a6f08154c2092491ea18be6e2ac5c7b0286b8ac77a3bc9bce03a32829bcfa",
+   "publisher": "BigScience collaboration, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.05100v1",
+   "locator": "Section 3.1, Multitask Prompted Finetuning; abstract",
+   "receipt": {
+    "public_excerpt": "covering 46 languages",
+    "quote_hash": "ee1d87462e0e389a8002c182cf5d437a4901283fc3788c3e58f6e04a57ecc8c5",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-11-09",
+   "retrieved_at": "2026-10-29T07:03:54Z",
+   "relation": "context",
+   "explanation": "BLOOM was trained on 46 natural languages, and the project developed a multilingual prompted dataset collection. These are substantial exceptions to an English-only description, but do not negate predominance in other prominent systems and evaluations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The selected sources do not provide a census of every model or benchmark.",
+  "Dataset composition alone does not establish the size of a cross-language reasoning-performance gap."
+ ],
+ "packet_hash": "9175400228eedbe71922c9c33fa5afba25096c6b1185bc0d6b3adfd55c67c01c"
+}

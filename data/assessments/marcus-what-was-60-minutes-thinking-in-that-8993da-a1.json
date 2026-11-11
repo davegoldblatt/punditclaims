@@ -1,0 +1,124 @@
+{
+ "assessment_id": "marcus-what-was-60-minutes-thinking-in-that-8993da-a1",
+ "claim_revision_ref": {
+  "id": "marcus-what-was-60-minutes-thinking-in-that-8993da",
+  "version": 1,
+  "content_hash": "a1f61e2ee272c67830c256ec800677a8b2aceb3a3e553e9a5f5992b564ca96eb"
+ },
+ "contract_ref": {
+  "id": "marcus-what-was-60-minutes-thinking-in-that-8993da",
+  "version": 1,
+  "content_hash": "80f4d788b4a3c5f02178f9cac91901cc8c652076a8ab9dd549ed2ed7021cfa3e"
+ },
+ "packet_ref": {
+  "id": "marcus-what-was-60-minutes-thinking-in-that-8993da-p1",
+  "content_hash": "1a69409eedc41d2af07f893ed84e940865fb8aca811a8a964979f11b5f7e9ee2"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2023-10-10",
+  "precision": "day"
+ },
+ "public_rationale": "Repeated elementary errors are supported by controlled reversal tests. Utter incapacity to fact-check is contradicted by a pre-post study showing that models could verify and improve their own draft answers using learned knowledge. That ability was prompted and imperfect. Neither finding settles whether the systems should be called intelligent.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "Both cited versions were preprints.",
+  "The contradiction depends on including structured prompting within a system's capabilities.",
+  "The evaluation window is an explicit interpretation of an undated ongoing claim."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-was-60-minutes-thinking-in-that-77bf3b-4x-review-anthropic-1",
+  "marcus-what-was-60-minutes-thinking-in-that-77bf3b-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-was-60-minutes-thinking-in-that-77bf3b-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-was-60-minutes-thinking-in-that-8993da",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs are not intelligent, partly because they cannot fact-check their outputs and repeatedly make silly errors in careful tests.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But the reason I don’t think the systems are intelligent isn’t just because these systems are next word predictors (which they are) but also because, for example, they are utterly incapable of fact checking what they say, even against their own databases, and because in careful tests over and over they make silly errors over and over again.",
+   "locator": "paragraph 83",
+   "url": "https://garymarcus.substack.com/p/what-was-60-minutes-thinking-in-that",
+   "date": "2023-10-10",
+   "document_title": "What was 60 Minutes thinking, in that interview with Geoff Hinton?",
+   "observed_at": "2026-10-29T00:03:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "I don’t think the systems are intelligent",
+    "utterly incapable of fact checking what they say",
+    "even against their own databases",
+    "in careful tests over and over they make silly errors"
+   ],
+   "our_interpretation": [
+    "Assess the two factual grounds: inability to check generated claims and repeated elementary errors. The personal judgment about intelligence has no separate scoring threshold.",
+    "Utterly incapable means an absence of demonstrated ability, rather than imperfect reliability.",
+    "Fact-checking includes a prompted model checking and correcting its own draft against knowledge available to that model. This does not require autonomous checking during every ordinary response.",
+    "Own databases is read as the model's learned information; the wording does not identify a particular searchable database.",
+    "For the ongoing claim about contemporary systems, use the 2023 evaluation record available before the post. There is no standardized reporting period, so the target is the current calendar year through October 10."
+   ],
+   "support_condition": "Controlled evaluations show repeated elementary errors, and appropriately scoped tests establish the asserted inability to check generated factual claims.",
+   "contradiction_condition": "A contemporary LLM demonstrably checks and improves the factual accuracy of its own generated answers, contradicting utter incapacity. Reliable absence of the alleged repeated errors would separately contradict that component."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Repeated elementary errors are supported by controlled reversal tests. Utter incapacity to fact-check is contradicted by a pre-post study showing that models could verify and improve their own draft answers using learned knowledge. That ability was prompted and imperfect. Neither finding settles whether the systems should be called intelligent.",
+  "limitations": [
+   "Both cited versions were preprints.",
+   "The contradiction depends on including structured prompting within a system's capabilities.",
+   "The evaluation window is an explicit interpretation of an undated ongoing claim."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "CoVe brings improvements in general QA problems",
+    "locator": "Section 4.3, CoVe improves performance on closed book QA",
+    "url": "https://arxiv.org/html/2309.11495v1",
+    "publisher": "arXiv; Shehzaad Dhuliawala and coauthors",
+    "event_date": "2023-09",
+    "available_at": "2023-09-20",
+    "explanation": "The method generates verification questions about a draft and uses the same model's answers to revise it. Reported improvements in closed-book factual tasks contradict total incapacity, although errors remain and the checking requires a designed prompting procedure."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "a surprising failure of generalization",
+    "locator": "Abstract, opening sentence; experimental details in sections 2.1 and 2.2",
+    "url": "https://arxiv.org/abs/2309.12288v1",
+    "publisher": "arXiv; Lukas Berglund and coauthors",
+    "event_date": "2023-09",
+    "available_at": "2023-09-21",
+    "explanation": "Controlled experiments found failures to reverse learned identity relations across model families and settings. This supports repeated elementary errors, but the authors caution that the phenomenon does not establish an inability to understand logical deduction."
+   }
+  ],
+  "what_would_resolve": "The factual grounds receive a mixed assessment. Scoring the intelligence judgment would additionally require a specified definition and test.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a479ee291c2e377f1b561690552d47778018ed2450de608831acea58427ea049",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:50:50Z"
+}

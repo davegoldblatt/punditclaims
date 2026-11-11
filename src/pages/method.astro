@@ -1,0 +1,184 @@
+---
+// /method: the rules in docs/policy.md, for readers, in plain words. Labels come from
+// src/policy.ts; the version history comes from policy/policy.yaml, the
+// machine-readable copy of the policy. If this page and docs/policy.md
+// disagree, docs/policy.md wins and this page is the bug.
+import fs from "node:fs";
+import YAML from "yaml";
+import Base from "../layouts/Base.astro";
+import { release } from "../lib/published.ts";
+import { PRIVATE_CONTACT, SITE } from "../site.ts";
+import {
+  AXES, AXIS_LABEL, CLAIM_KINDS, HELD_LABEL, HELD_REASONS, HORIZON_LABEL, HORIZON_STATES, KIND_LABEL, MAX_EXCERPT_WORDS,
+  MAX_SHARE_OF_DOCUMENT, MAX_WORDS_PER_DOCUMENT, OUTCOMES, OUTCOME_DESCRIPTION, OUTCOME_LABEL, POLICY_VERSION, UNCHECKABLE_LABEL, UNCHECKABLE_REASONS,
+} from "../policy.ts";
+import { versionsOf } from "../lib/view.ts";
+
+const r = release();
+const m = r.manifest;
+const policy = YAML.parse(fs.readFileSync("policy/policy.yaml", "utf8")) as { changes: { version: string; date: string; note: string }[] };
+const current = m?.policy_version ?? POLICY_VERSION;
+const inUse = new Map<string, number>();
+for (const c of r.claims) for (const a of versionsOf(c)) inUse.set(a.policy_version, (inUse.get(a.policy_version) ?? 0) + 1);
+
+const KIND_TEXT: Record<string, string> = {
+  observation: "how things are or were.",
+  forecast: "what will happen.",
+  conditional_forecast: "what will happen if something else happens first. We keep that condition.",
+  causal: "that one thing caused another.",
+  normative: "what should happen, or a value judgment. A date inside a recommendation doesn’t make it a prediction.",
+  rhetoric: "a turn of phrase that commits to nothing testable.",
+};
+const AXIS_TEXT: Record<string, string> = {
+  historical_observation: "The evidence has to cover the period the claim describes. Evidence about a later period is only context.",
+  forecast_outcome: "Judged against the original conditions and deadline.",
+  causal_assessment: "Needs evidence that can actually show a cause. The limits are spelled out.",
+  not_applicable: "Recommendations, value judgments, rhetoric, hedged predictions, and claims too vague to test. Listed, not scored.",
+};
+const HORIZON_TEXT: Record<string, string> = {
+  not_applicable: "The claim isn’t about a deadline.",
+  open_horizon: "They gave no deadline, and we don’t add one.",
+  not_due: "The deadline hasn’t passed. Not having happened yet isn’t a miss.",
+  elapsed: "The deadline has passed. That means a fresh check, never an automatic verdict.",
+  conclusive_event: "Something settled it before the deadline. The claim page names what and when.",
+};
+const pct = MAX_SHARE_OF_DOCUMENT === null ? null : Math.round(MAX_SHARE_OF_DOCUMENT * 100);
+import { ANSWER_BANDS, MIN_SETTLED, TOO_EARLY } from "../lib/answer.ts";
+---
+<Base title="Method" description="How Pundit Claims picks claims, checks them with AI, and decides what to publish.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Method</h1>
+      <p class="lede">How we pick claims, check them, and decide what to publish, and what the checks can’t do.</p>
+    </header>
+    <article class="prose" data-pagefind-body>
+      <span data-pagefind-meta="page:Method"></span>
+      <nav aria-label="On this page">
+        <ul class="small">
+          <li><a href="#scope">What this is</a></li>
+          <li><a href="#sources">What we read</a></li>
+          <li><a href="#selection">Which claims we cover</a></li>
+          <li><a href="#records">Their words, our reading, the verdict</a></li>
+          <li><a href="#criteria">We set the test before grading</a></li>
+          <li><a href="#outcomes">What a verdict says</a></li>
+          <li><a href="#review">How the AIs check a claim</a></li>
+          <li><a href="#screen">Claims that can’t be checked</a></li>
+          <li><a href="#answer">How the answer on the home page works</a></li>
+          <li><a href="#probable">Probable calls</a></li>
+          <li><a href="#held">Held back</a></li>
+          <li><a href="#disputes">Corrections and disputes</a></li>
+          <li><a href="#privacy">Privacy and rights</a></li>
+          <li><a href="#policy">Rule versions</a></li>
+          <li><a href="#origin">Where this started</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="scope">What this is</h2>
+      <p>A public record of what {SITE.subjects} said about {SITE.topic}, and what happened. For each claim you get their exact words, our reading of what they committed to, the evidence, the verdict, and every change since.</p>
+      <p>It doesn’t rank anyone or guess at motives. The answer on the home page covers the claims in the newsletters we read, not everything a person has said. Leaving a statement out says nothing about whether it was right, wrong, or important.</p>
+      <p>Other people show up as sources or as the subject of a claim. Only {SITE.subjects} are graded.</p>
+
+      <h2 id="sources">What we read</h2>
+      <p>We read the public posts in {SITE.publications.join(" and ")}, for the date ranges on the <a href="/coverage">coverage page</a>. We don’t read paywalled posts, and we never treat a paywall preview as the whole post.</p>
+      <p>Each quote shows the date we read it. Posts can be edited, so we don’t claim older wording unless an archived copy shows it.</p>
+      <p>Every claim shows their words in full (up to {MAX_EXCERPT_WORDS} words) with a link to the original. We quote for commentary and criticism, and the words remain theirs.{MAX_WORDS_PER_DOCUMENT !== null && pct !== null ? ` From any one post we quote no more than ${MAX_WORDS_PER_DOCUMENT} words or ${pct}% of it, whichever is less.` : ""}</p>
+
+      <h2 id="selection">Which claims we cover</h2>
+      <p>Every claim in every public post in those date ranges. We don’t pick claims because of how they turned out, and we never drop one because of its verdict.</p>
+
+      <h2 id="records">Their words, our reading, the verdict</h2>
+      <p>We keep three things apart: what they said (the quote), what it commits them to (our reading, in one sentence), and our dated verdict on that sentence.</p>
+      <p>Only their own claims count. Quoting a critic or reporting what someone else said isn’t their claim.</p>
+      <p>One statement can hold several claims, so we split it. A recommendation and the fact behind it become two claims. Topics are for browsing and never affect a verdict.</p>
+      <p>If they make the same claim in another post, it’s listed again for now. Linking repeats is planned and won’t change any verdict. If they change what they’re committing to, such as a new deadline, number, or condition, that’s a new claim, and the old one keeps its own deadline.</p>
+      <h3>Kinds of claim</h3>
+      <ul>{CLAIM_KINDS.map((k) => <li><strong>{KIND_LABEL[k]}</strong>: {KIND_TEXT[k]}</li>)}</ul>
+
+      <h2 id="criteria">We set the test before grading</h2>
+      <p>Before grading, we write down what would make the claim right and what would make it wrong. On each claim page this shows as “Right if” and “Wrong if”.</p>
+      <p>Their words and our additions stay apart. Anything we had to add to make a claim testable shows under “Where we had to interpret”. Only dates and numbers they gave count. If they gave no deadline, we don’t add one. If our reading would decide the verdict, we don’t score the claim.</p>
+      <p>Most tests were written after the outcome was known, and the claim page says so. A test counts as written in advance only for a prediction whose test was fixed before its deadline, while the outcome was unknown. Changing a test makes a new version that has to pass every check again.</p>
+
+      <h2 id="outcomes">What a verdict says</h2>
+      <p>Each verdict answers one question:</p>
+      <ul>{AXES.map((x) => <li><strong>{AXIS_LABEL[x]}</strong> {AXIS_TEXT[x]}</li>)}</ul>
+      <p>And gives one of five results:</p>
+      <ul>{OUTCOMES.map((o) => <li><strong>{OUTCOME_LABEL[o]}</strong>: {OUTCOME_DESCRIPTION[o]}</li>)}</ul>
+      <p>Deadlines are shown separately, as of the last update{m ? ` (${m.reference_date})` : ""}, not the day you read the page.</p>
+      <ul>{HORIZON_STATES.map((h) => <li><strong>{HORIZON_LABEL[h]}</strong>: {HORIZON_TEXT[h]}</li>)}</ul>
+      <h3>Rules that decide verdicts</h3>
+      <ul>
+        <li>A deadline passing doesn’t make a prediction wrong. It means we check it again.</li>
+        <li>A prediction that depends on something else happening is scored only if that thing happened. If it didn’t, or nobody can tell, the prediction is neither right nor wrong.</li>
+        <li>Hedged predictions aren’t scored, because one outcome can’t grade a probability. That covers words like “may”, “might”, “could”, “likely”, and “probably”, and predictions the author marked as medium or low confidence. Firm ones (“I expect”, “I predict”, “will”, “won’t”) are scored.</li>
+        <li>Only evidence about what happened decides a verdict. Their own words prove what they said, not that it was true.</li>
+        <li>A prediction settled before its deadline names the event that settled it and when.</li>
+        <li>Money claims need evidence about the same number for the same period: the same measure, currency, units, accounting, and dates. If the claim names no accounting basis, it isn’t scored. Revenue isn’t annualized run rate. Funding isn’t revenue. Operating income isn’t net income. A better 2026 doesn’t contradict a true statement about 2025. Any math shows its inputs.</li>
+        <li>No hindsight: a verdict uses only evidence that was public when it was made.</li>
+      </ul>
+
+      <h2 id="review">How the AIs check a claim</h2>
+      <p>We follow the automated method of <a href="https://becauseofai.org" rel="noopener">Because of AI</a>. One AI writes up the claim. Then two AIs from different companies, Anthropic and OpenAI, each review it on their own. Neither sees the other’s answer. An AI from a different company than the writer then checks the final text you see.</p>
+      <p>The reviewers have no tools: no web, no files, no shell. They run in each company’s own app with every tool switched off, and we test that before each run. Each claim page says which AI did what.</p>
+      <p>If both reviewers agree with each other but not with the write-up, it gets rewritten to match them and checked again. The verdict is always the reviewers’.</p>
+      <p>A fixed rule in code, not a person or an AI, decides what gets published. It requires all of these:</p>
+      <ul>
+        <li>the quote appears word for word in the post, and the right person said it;</li>
+        <li>enough of the surrounding context, and evidence that was public at the time;</li>
+        <li>a test that keeps their conditions, deadline, numbers, and scope;</li>
+        <li>two separate reviews, one from each company, that agree;</li>
+        <li>a check of the final text by a different company than the writer’s;</li>
+        <li>no edits after that check.</li>
+      </ul>
+      <p><strong>Two AIs agreeing is a check, not proof.</strong> No person approves each claim before it goes up. AIs can be wrong, and two can make the same mistake. Code can check that a quote matches and that nothing changed after review. It can’t check judgment.</p>
+      <p>Anthropic and OpenAI make these AIs, and some claims are about those companies. Those claim pages say so. A company’s statements about itself are labeled as such, never treated as independent evidence. Any math is shown so you can redo it.</p>
+
+      <h2 id="screen">Claims that can’t be checked</h2>
+      <p>First, an AI reads each post and lists its claims. Then one AI from each company looks at every claim separately and answers four questions. Did they really claim this? Does our sentence match their words? Is it the right kind of claim? Could public evidence settle it at all?</p>
+      <p>If both AIs agree on the first three and both say evidence can’t settle it, the claim is listed as “{OUTCOME_LABEL.not_adjudicable}” with their reasons. Each reason is one of these:</p>
+      <ul>{UNCHECKABLE_REASONS.map((x) => <li>{UNCHECKABLE_LABEL[x].charAt(0).toUpperCase()}{UNCHECKABLE_LABEL[x].slice(1)}.</li>)}</ul>
+      <p>These claims aren’t checked against evidence, and no AI writes their text. Code still checks the quote and who said it. If either AI thinks a claim can be checked, or they disagree about anything, it gets the full check described above.</p>
+
+      <h2 id="answer">How the answer on the home page works</h2>
+      <p>Each person’s answer counts only claims with a clear outcome: supported, mixed, or contradicted. Mixed counts as half right. With fewer than {MIN_SETTLED} of those, the answer is “{TOO_EARLY}” Otherwise the share picks the words: {ANSWER_BANDS.slice(0, -1).map((b) => `“${b.words.replace(/\.$/, "")}” at ${Math.round(b.from * 100)}% or more`).join(", ")}, and “{ANSWER_BANDS.at(-1)!.words.replace(/\.$/, "")}” below that.</p>
+      <p>Unresolved, can’t-be-checked, and held-back claims are left out of the answer. You can turn the first two on above the pictures, or see them on <a href="/explore">Explore</a> and in the lists. A claim that can’t be checked never counts as wrong. The topic and year lines use the same counts and show a group only once it has {MIN_SETTLED} clear outcomes. The percentages show the share supported, while the answer’s words count a mixed claim as half right.</p>
+      <p>The answer covers claims and predictions together, and two lines under it split them. On the page, “claims” then means claims about how things are or were, and the “What kind” switch shows either one alone. A prediction is settled by what happened after it was made. A claim about the present or past is settled by evidence about that time, which often comes from before the claim was written. Evidence that a prediction’s condition was met can also come from earlier.</p>
+
+      <h2 id="probable">Probable calls</h2>
+      <p>The strict answer sets a high bar: two AIs from different companies must agree the evidence meets a test fixed in advance. Plenty of claims miss that bar even though a reasonable reader would still call them. So both AIs also answer a looser question about claims left unresolved, and about held-back claims whose quote isn’t in doubt: on the evidence already gathered, would a reasonable, informed reader call this today?</p>
+      <p>Each AI answers “probably right”, “probably wrong”, or “too early”, without seeing the other’s answer and without searching again. Predictions not yet due, hedged claims, and opinions stay “too early”.</p>
+      <p>The “How sure?” switch sets what counts. <b>Strict</b>, the default, counts only clear outcomes. <b>Reasonable</b> adds claims where both AIs make the same call, shown as lighter squares. <b>Speculative</b> also adds claims where only one AI makes a call, lighter still. If the two AIs make opposite calls, the claim counts at no level. A probable call never changes a verdict.</p>
+
+      <h2 id="held">Held back</h2>
+      <p>A claim goes up only if it passes every check. Otherwise it’s held back for one of these reasons, and <a href="/held">the held-back list</a> is public:</p>
+      <ul>{HELD_REASONS.map((h) => <li>{HELD_LABEL[h]}.</li>)}</ul>
+      <p>Being held back isn’t a verdict, and it doesn’t mean the claim was wrong. An outage never turns into “unresolved”. A carefully checked claim with too little evidence can go up as unresolved, but an unchecked one can’t go up at all.</p>
+      <p>Every published verdict passed the checks under the rule version it names.</p>
+
+      <h2 id="disputes">Corrections and disputes</h2>
+      <p>Every change gets a date and a reason. Changes by the speaker (a clarification, a revision, a retraction) and changes by us (a correction, a new verdict, a withdrawal) are labeled differently. Formatting fixes aren’t counted as changes.</p>
+      <p>You can tell us we got something wrong on GitHub. Each claim page has a link that fills in the claim for you. You need a free account, and what you write is public. The editor reads each one and upholds it, rejects it, or keeps it open, with a reason. A dispute can’t change the site by itself.</p>
+      <p>A real problem can put a verdict under review. A misquote, the wrong person, or a bad extraction can get it withdrawn. Neither adds a new verdict. A withdrawn verdict comes back only by passing every check again. Old versions stay readable at their own addresses.</p>
+
+      <h2 id="privacy">Privacy and rights</h2>
+      <p>For privacy, rights, or safety problems with a quote, don’t post publicly. {PRIVATE_CONTACT
+        ? <>Write to <a href={`mailto:${PRIVATE_CONTACT}`}>{PRIVATE_CONTACT}</a>.</>
+        : <>A private contact address will be listed here.</>}</p>
+      <p>The editor can remove the text from every current and past page, with a dated note and no new verdict. Copies already shared elsewhere can’t be recalled.</p>
+
+      <h2 id="policy">Rule versions</h2>
+      <p>The rules are versioned. The current version is <strong>{current}</strong>. Each verdict names the version it passed under. If a rule change could change a verdict, that verdict is flagged and checked again.</p>
+      <details class="rcpt">
+        <summary>Version history</summary>
+        <div class="rcpt-body">
+          <ul class="small">{[...policy.changes].reverse().map((c) => <li><strong>{c.version}</strong> ({c.date}){c.version === current ? ", current" : ""}: {c.note}</li>)}</ul>
+          {inUse.size > 0 && <p class="small">Verdicts by the version they passed under: {[...inUse].map(([v, n]) => `${v} (${n.toLocaleString("en-US")})`).join(", ")}.</p>}
+        </div>
+      </details>
+
+      <h2 id="origin">Where this started</h2>
+      {SITE.essay && <p>The project grew out of the essay <a href={SITE.essay.url} rel="noopener">{SITE.essay.title}</a>{SITE.provenanceNote ? ` ${SITE.provenanceNote}.` : "."}</p>}
+      <p>No corrections to the original analysis have been recorded yet. Any will be listed here.</p>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,134 @@
+{
+ "packet_id": "marcus-seven-replies-to-the-viral-apple-b26773-p1",
+ "claim_revision_ref": {
+  "id": "marcus-seven-replies-to-the-viral-apple-b26773",
+  "version": 2,
+  "content_hash": "770259094cef55a0a1383f6853325d2b1a32c54065f5fae9c4170a9741be0efa"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-replies-to-the-viral-apple-b26773",
+  "version": 1,
+  "content_hash": "8de8917461b8413122f08fb710700af0dac5aef48a3b7df36d348154dd214c08"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Apple The Illusion of Thinking 2025 paper 8 discs 255 token limits",
+   "\"The Illusion of\" \"Lawsen\" arxiv",
+   "\"The Illusion of Thinking\" \"8\" \"255\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2506.06941v1",
+    "used": false,
+    "why": "Read to check the original setup; the later author discussion provides a more explicit account of the original eight-disc failures."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.06941v3",
+    "used": true,
+    "why": "Retrospective discussion explicitly identifies eight-disc failures and their location within the move sequence."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v1",
+    "used": false,
+    "why": "Its token-growth calculation was subsequently corrected."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "used": true,
+    "why": "Corrected rebuttal acknowledges collapse before theoretical output limits and provides a token estimate."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.01231v1",
+    "used": true,
+    "why": "Later independent experiments supply an important limit on interpreting the overall puzzle results."
+   }
+  ],
+  "performed_at": "2026-10-29T18:14:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2506-06941v3",
+   "source_snapshot_id": "1c4741e69a25a724a22888bec44da0b3da4fb041de0d22337911c878cea3b648",
+   "publisher": "arXiv; Shojaee and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.06941v3",
+   "locator": "Appendix discussion of context limits, paragraph describing N=8 and 255 moves",
+   "receipt": {
+    "public_excerpt": "failures",
+    "quote_hash": "10a64bdfcc9b4ac50b4927d63667709471efac2087bbca216976b9e1cfdb8b70",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-11-20",
+   "retrieved_at": "2026-10-29T01:04:48Z",
+   "relation": "supports",
+   "explanation": "The authors’ retrospective account of the original study reports errors around move 40 for eight-disc puzzles requiring 255 moves. This directly supports failures occurring before the required answer approaches the output ceiling.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2506-09250v2",
+   "source_snapshot_id": "bb12d07c62a73d23ad0dce718206b5a0ce388c2db14fcae65e48b39bee4e6305",
+   "publisher": "arXiv; A. Lawsen",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.09250v2",
+   "locator": "Section 4, corrected final-sequence token calculation and equations 2–4",
+   "receipt": {
+    "public_excerpt": "well before these theoretical limits.",
+    "quote_hash": "68449ccf0270aafa60478886c0b1c6757823a103c53575a520e9542d2133cd77",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-16",
+   "retrieved_at": "2026-10-29T01:02:32Z",
+   "relation": "supports",
+   "explanation": "The corrected rebuttal estimates ten tokens per move and discusses budgets of 64,000 and 100,000 tokens. Its own calculation places the required eight-disc move list comfortably below those budgets, while retaining premature stopping as an alternative explanation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Eight discs",
+     "Minimum move count: 2^N - 1",
+     "Approximately 10 tokens per move",
+     "64,000-token budget"
+    ],
+    "formula": "2^8 - 1 = 255 moves; 255 × 10 ≈ 2,550 answer tokens, excluding setup and reasoning; 2,550 / 64,000 ≈ 3.98%.",
+    "rounding": "Move count is exact. Token count is an estimate; budget percentage is rounded to two decimal places."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2507-01231v1",
+   "source_snapshot_id": "2f379633d72dbd0eaf58b400bdf38749343930c7dbe30eb5ddb5e4a1d0af3ede",
+   "publisher": "arXiv; Dellibarda Varela and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2507.01231v1",
+   "locator": "Abstract, River Crossing results",
+   "receipt": {
+    "public_excerpt": "strictly to solvable problems",
+    "quote_hash": "a06965a440dcf48f66d4d62b3ea176b223527956f8e5e3c2f802e902d7620c65",
+    "verified": "exact"
+   },
+   "event_date": "2025-07",
+   "available_at": "2025-07-01",
+   "retrieved_at": "2026-10-29T01:03:00Z",
+   "relation": "context",
+   "explanation": "Later experiments identify a solvability problem in another puzzle family. This limits broad conclusions about the entire study, but does not negate the original eight-disc Hanoi failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "618257072d953a93a76646915656a17e94cb3143b8d11045de90d0cc1d93def8"
+}

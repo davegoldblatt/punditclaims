@@ -1,0 +1,139 @@
+{
+ "packet_id": "marcus-the-hottest-new-programming-language-a7b060-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-hottest-new-programming-language-a7b060",
+  "version": 1,
+  "content_hash": "f456a2cc304b560f3af2fdf77be759c97e9685494c358f9ebf7e0e8be5bc44ff"
+ },
+ "contract_ref": {
+  "id": "marcus-the-hottest-new-programming-language-a7b060",
+  "version": 1,
+  "content_hash": "3b4074fddd86b79fe44b287a3c371b9dbd472a3626dfb77fbfed001c0880d8f9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.docs.python.org 3.12 reference introduction syntax semantics",
+   "site.w3.org TR wasm core 2 2022 deterministic execution semantics",
+   "site.arxiv.org \"LLMs\" \"prompt\" \"semantically equivalent\" \"2023\" code generation",
+   "site.arxiv.org Evaluating Large Language Models Trained on Code 2021 incorrect code docstrings",
+   "\"WebAssembly Core Specification\" \"5 December 2019\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html",
+    "used": true,
+    "why": "Read relevant passages. Provides concrete, normative arithmetic and evaluation rules."
+   },
+   {
+    "url": "https://docs.oracle.com/javase/specs/jls/se21/html/index.html",
+    "used": true,
+    "why": "Read to establish the Java SE 21 specification's 2023-08-23 edition date."
+   },
+   {
+    "url": "https://arxiv.org/abs/2107.03374v1",
+    "used": true,
+    "why": "Read the original dated abstract. Reports functional-correctness testing and the benefit of generating multiple solutions from prompts."
+   },
+   {
+    "url": "https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/",
+    "used": true,
+    "why": "Read execution-semantics passages, including explicitly permitted nondeterminism."
+   },
+   {
+    "url": "https://www.w3.org/standards/history/wasm-core-1/",
+    "used": true,
+    "why": "Read to verify the specification's publication date."
+   },
+   {
+    "url": "https://docs.python.org/3.12/reference/",
+    "used": false,
+    "why": "Search returned a later maintained documentation version. A dated Java edition provides cleaner historical evidence."
+   },
+   {
+    "url": "https://www.w3.org/TR/2024/WD-wasm-core-2-20240217/",
+    "used": false,
+    "why": "Published after the post; the earlier specification was used."
+   }
+  ],
+  "performed_at": "2026-10-29T18:44:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "docs-oracle-com-javase-specs-jls-se21-html-jls-15-html",
+   "source_snapshot_id": "8f66fd0bd18a99c183603be4b1634fe23274612d1e6ac5b3c1d5c6611c804b40",
+   "publisher": "Oracle",
+   "source_type": "company_disclosure",
+   "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html",
+   "locator": "Section 15.17.2, Division Operator /",
+   "receipt": {
+    "public_excerpt": "Integer division rounds toward 0.",
+    "quote_hash": "76bc249275e0c7fc766cac8fb90e7ef421f6867de7d865a9348feda17349c9c7",
+    "verified": "exact"
+   },
+   "event_date": "2023-08-23",
+   "available_at": "2023-08-23",
+   "retrieved_at": "2026-10-29T08:16:33Z",
+   "relation": "supports",
+   "explanation": "Java specifies a concrete arithmetic result rather than leaving rounding to an interpreter's guess about intent. The same chapter specifies evaluation order and exceptional cases, supporting the claimed capacity for precise behavior.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2107-03374v1",
+   "source_snapshot_id": "eb09b15e9bba425abf1c960a62190bc3be8209731fbd2e65172d7ecdc77efd1d",
+   "publisher": "arXiv; Mark Chen and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2107.03374v1",
+   "locator": "Abstract, sentence beginning 'Furthermore'",
+   "receipt": {
+    "public_excerpt": "repeated sampling",
+    "quote_hash": "608df49ea5857ca4439548b05bdcd109b1fe0a70b98dc46c7baf05016bc037e4",
+    "verified": "exact"
+   },
+   "event_date": "2021-07",
+   "available_at": "2021-07-07",
+   "retrieved_at": "2026-10-29T08:51:12Z",
+   "relation": "supports",
+   "explanation": "The study evaluates programs generated from task descriptions for functional correctness and reports incomplete success, improved by multiple samples. This supports the contextual distinction between a prompt and guaranteed execution semantics; the reporting month is used because experiment dates are not separately given.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "w3-org-tr-2019-rec-wasm-core-1-20191205",
+   "source_snapshot_id": "b352f1a3f460e6d9febbcd5043770c64d3374c2b180d567a89e1a9381991efc9",
+   "publisher": "World Wide Web Consortium",
+   "source_type": "company_disclosure",
+   "url": "https://www.w3.org/TR/2019/REC-wasm-core-1-20191205",
+   "locator": "Section 4.4.4, memory.grow instruction note",
+   "receipt": {
+    "public_excerpt": "The memory.grow instruction is non-deterministic.",
+    "quote_hash": "15027be01901dfb4ee735b08b71f36f63f7007ae7e65bd8576d4246195eda6ce",
+    "verified": "exact"
+   },
+   "event_date": "2019-12-05",
+   "available_at": "2019-12-05",
+   "retrieved_at": "2026-10-29T18:38:32Z",
+   "relation": "context",
+   "explanation": "This official specification explicitly permits a nondeterministic operation and describes its allowed outcomes. It qualifies any blanket claim that formal languages make every program deterministic, while remaining consistent with precise specification of permitted behavior.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The evidence supplies concrete examples, not an exhaustive comparison of all formal languages and all English prompts."
+ ],
+ "packet_hash": "91accad0047235c36a2e8e412703b7d60247c67c4bdceffb3321b55b0c8c67be"
+}

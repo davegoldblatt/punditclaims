@@ -1,0 +1,112 @@
+{
+ "packet_id": "wyea-expectations-versus-reality-474ae0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-474ae0",
+  "version": 1,
+  "content_hash": "091f6a9487599ddfdfbd9b483018108ea77844a6b18a339332012adadd9ff7f6"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-474ae0",
+  "version": 1,
+  "content_hash": "3ad78a3c797b2d2905d33c86e9b563c3fc7051bb1bbeed29abe662ef87e5ce3a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 inference A100 GPU 10000 cost 2024",
+   "site.microsoft.com GPT-4 Azure NVIDIA A100 H100 inference March 2023",
+   "site.cnbc.com 2023 Nvidia A100 \"$10,000\"",
+   "site.cnbc.com/2023/02/ \"10000\" \"A100\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2023/02/23/nvidias-a100-is-the-10000-chip-powering-the-race-for-ai-.html",
+    "used": true,
+    "why": "Readable contemporaneous market-price reporting. No matching primary purchase record was found; the report concerns 2023 market prices, not OpenAI's May 2024 purchases."
+   },
+   {
+    "url": "https://news.microsoft.com/source/features/ai/how-microsofts-bet-on-azure-unlocked-an-ai-revolution/",
+    "used": true,
+    "why": "Primary infrastructure-provider explanation connects GPU networking and serving efficiency."
+   },
+   {
+    "url": "https://arxiv.org/html/2303.08774v6",
+    "used": false,
+    "why": "Read in full-text passage form, but the report withholds hardware details and does not disclose matching serving costs."
+   },
+   {
+    "url": "https://docs.osmarks.net/binary/gpt-4",
+    "used": false,
+    "why": "Search surfaced a secondary copy of infrastructure estimates. It was not used as verified evidence of actual deployment costs."
+   }
+  ],
+  "performed_at": "2026-10-29T11:23:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cnbc-com-2023-02-23-nvidias-a100-is-the-10000-chip-powering-the-race-for-ai-html",
+   "source_snapshot_id": "61cf843a9a608afa67535a864eb99e81b8c40595ef2782b7b4e602d35a768ea6",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2023/02/23/nvidias-a100-is-the-10000-chip-powering-the-race-for-ai-.html",
+   "locator": "Cost discussion immediately before the DGX A100 server-price paragraph",
+   "receipt": {
+    "public_excerpt": "These GPUs aren't cheap.",
+    "quote_hash": "3e20380aa1538fac0ba2964e73859e24acca659a54845e27f6b2f03e2fe0c7e1",
+    "verified": "exact"
+   },
+   "event_date": "2023-02-23",
+   "available_at": "2023-02-23",
+   "retrieved_at": "2026-10-29T11:05:32Z",
+   "relation": "context",
+   "explanation": "The article reports an approximate $10,000 market price for NVIDIA A100 GPUs. That makes the price plausible as background, but does not establish OpenAI's purchase price or GPT-4 serving configuration in May 2024.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Reported market acquisition price of an A100 GPU",
+    "currency": "USD",
+    "units": "USD per GPU",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-02-23",
+    "period_end": "2023-02-23",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "news-microsoft-com-source-features-ai-how-microsofts-bet-on-azure-u-f942da2e0326",
+   "source_snapshot_id": "b75cbf6160a29d2625c5fb32c9d7d1f72e1344d92bfeb2dc14d5a3d21208050f",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://news.microsoft.com/source/features/ai/how-microsofts-bet-on-azure-unlocked-an-ai-revolution",
+   "locator": "Discussion of deploying trained models and Azure inference infrastructure",
+   "receipt": {
+    "public_excerpt": "optimized for inferencing",
+    "quote_hash": "20af83c1b4d6371e9ed44d76e99917074a70a31393c66fcee80d3cb158225239",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-13",
+   "available_at": "2023-03-13",
+   "retrieved_at": "2026-10-29T11:06:12Z",
+   "relation": "context",
+   "explanation": "Microsoft describes GPU-based serving and explains how networking and optimization affect cost. It does not disclose GPT-4's cost per simple prompt or a matching GPU acquisition price.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matching disclosure of GPT-4's May 2024 serving hardware and actual GPU acquisition prices was found.",
+  "No specified accounting basis or expense threshold permits a matched financial comparison.",
+  "General infrastructure expense does not establish the cost of serving a simple prompt."
+ ],
+ "packet_hash": "58d1f4ced5da9fa75e6ca8c01b2afc41ab3e363c75d5cde786ad859d1d85bc7f"
+}

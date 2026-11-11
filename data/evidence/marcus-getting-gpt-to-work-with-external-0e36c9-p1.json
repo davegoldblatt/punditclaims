@@ -1,0 +1,93 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-0e36c9-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0e36c9",
+  "version": 2,
+  "content_hash": "08fb44cf6999df3db3a2f5301462969f9f22317f309ac67d3994fe8fd9aaa65e"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0e36c9",
+  "version": 1,
+  "content_hash": "19c8ced0dac04df2bbac3d17ea9a27c153183c6fbbb2d11c3b753e71af76a321"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Code Interpreter Wolfram plugin spatial reasoning confident incorrect answers 2023 evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/CalculationFreeOutput.pdf",
+    "used": true,
+    "why": "Contains answer keys and confidently stated wrong answers."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+    "used": true,
+    "why": "Contains explicit qualifications attached to a substantive numerical result."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "used": false,
+    "why": "Also contains apologies and uncertainty, but the selected numerical-result example is a clearer counterexample."
+   }
+  ],
+  "performed_at": "2026-10-29T06:51:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-calculationfreeoutput-pdf",
+   "source_snapshot_id": "c7e4743543db695c33f4f6629b7c86a0dd93ac9ac2008aee583062417ccb8465",
+   "publisher": "New York University; Ernest Davis and Scott Aaronson",
+   "source_type": "independent_measurement",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/CalculationFreeOutput.pdf",
+   "locator": "Eclipse problem 3, GPT4+WA answer; surrounding eclipse problems",
+   "receipt": {
+    "public_excerpt": "The correct answer is H.",
+    "quote_hash": "93a675ebacdb2e5c4bd6ba3215c027a657b702d70285c435bc7ebe59b500ee95",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-08-10",
+   "retrieved_at": "2026-10-29T06:36:55Z",
+   "relation": "supports",
+   "explanation": "The answer key for problem 3 is F, while the output confidently selects H. Problems 1 and 4–7 also contain incorrect declarative answers, supporting the recurring confident-error component.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-motivatedoutput-pdf",
+   "source_snapshot_id": "aaa1b477e93b3b6af31409fed7e823222827e93bad33be830e34654e7afa9f68",
+   "publisher": "New York University; Scott Aaronson and Ernest Davis",
+   "source_type": "independent_measurement",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+   "locator": "Problem 7, GPT4+CI output, page 10",
+   "receipt": {
+    "public_excerpt": "these are estimates",
+    "quote_hash": "2cf63fa7ea423c114e9f9399d001c94c24b408f053aadb985f2aa7a71de6bf41",
+    "verified": "exact"
+   },
+   "event_date": "2023-08",
+   "available_at": "2023-08-15",
+   "retrieved_at": "2026-10-29T06:36:54Z",
+   "relation": "contradicts",
+   "explanation": "The life-in-the-universe calculation explicitly warns about uncertainty in its estimates and repeats that qualification after reporting percentages. This contradicts the absolute assertion that results invariably appear as unqualified facts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No user study measures how often inexperienced readers accepted these answers.",
+  "The published outputs are edited selections, not a complete confidence-coded dataset."
+ ],
+ "packet_hash": "dc4a3e2680854d22ce43d9c4b44b68adec06279d98456152c74b410bc2f40c48"
+}

@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-why-do-large-language-models-hallucinate-fc26ca-p1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-fc26ca",
+  "version": 2,
+  "content_hash": "3039c4e8e008b3db1b6c05c1a8acc624baa3ce7a7e4bde75ebe544f5227989f0"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-fc26ca",
+  "version": 1,
+  "content_hash": "96fc10fe374835f068b53cc5df02251a7c493086836f53fda94f7430d0003144"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM self fact checking own output 2025 SelfCheckGPT intrinsic verification",
+   "2025 \"language models\" \"self-correction\" factual knowledge January April",
+   "site.arxiv.org \"self\" \"factual\" \"2025\" \"verification\" before:2025-05-06 after:2025-01-01"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2503.18293v1",
+    "used": true,
+    "why": "Direct evaluation of models checking their own generated news claims, including a setting without retrieval."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2503.18293",
+    "used": true,
+    "why": "Read Tables 3 and 5 to distinguish self-evaluation, false-claim detection, errors, and abstentions."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.03149v1",
+    "used": true,
+    "why": "Relevant controlled work on detecting and correcting generated factual errors, but it adds trained probing heads."
+   },
+   {
+    "url": "https://arxiv.org/abs/2506.01369",
+    "used": false,
+    "why": "Postdates the observation period and concerns mathematical answer verification."
+   }
+  ],
+  "performed_at": "2026-10-29T09:48:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-18293v1",
+   "source_snapshot_id": "e84227c0c2b0f6868c337decbd2309089a1b371851f1c9b5eecf9a00c5abeb97",
+   "publisher": "Jiayi Yao, Haibo Sun and Nianwen Xue / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.18293v1",
+   "locator": "Sections 4.1–4.2.2; Tables 3 and 5 in PDF",
+   "receipt": {
+    "public_excerpt": "correct and incorrect assessments",
+    "quote_hash": "2f20e5e8c9c692d50181af2435e4e61b9aa9b6bf418bb5a73321b3957dbeb5c1",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-03-24",
+   "retrieved_at": "2026-10-29T09:38:08Z",
+   "relation": "contradicts",
+   "explanation": "In the no-retrieval self-evaluation setting, Table 5 reports correct assessments for 201 of 532 false GPT-generated claims and 229 of 537 false GLM-generated claims. Substantial abstention remains, but identifying these errors contradicts the claimed absence of meaningful self-fact-checking ability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2503-03149v1",
+   "source_snapshot_id": "f719d34d0d0c3c055b35f00b9680665b0055e7faaf35d6c219160a50d0918559",
+   "publisher": "YiQiu Guo and colleagues / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.03149v1",
+   "locator": "Section 4.2, long-form factuality results; sections 3.1–3.2",
+   "receipt": {
+    "public_excerpt": "reducing factual hallucinations",
+    "quote_hash": "3ad601cc6cecff4dfa06aa0c49ed4af09ef7fa7df7c634b616c10a831c8ceb45",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-03-05",
+   "retrieved_at": "2026-10-29T09:40:33Z",
+   "relation": "context",
+   "explanation": "DSVD reports improved factuality using internal-state probes and rollback. Because the detector receives additional training using known answers, this is context about available internal signals rather than decisive evidence of an unaided model’s self-checking ability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The studies do not operationalize or isolate superficial understanding as the causal explanation.",
+  "Exact experiment dates are not disclosed; event dates use the report year.",
+  "The direct study covers a limited set of models and generated news claims."
+ ],
+ "packet_hash": "606110774b2109bdb929f9fd9fa3eb3b8006da334d078b2a45906979ea79f946"
+}

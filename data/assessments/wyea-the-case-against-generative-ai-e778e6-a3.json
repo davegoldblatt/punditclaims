@@ -1,0 +1,120 @@
+{
+ "assessment_id": "wyea-the-case-against-generative-ai-e778e6-a3",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-e778e6",
+  "version": 1,
+  "content_hash": "346c4cde09afd31da59ab2b936282327a9ac90f4820e9b22dc66c832a70c9fc7"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-e778e6",
+  "version": 1,
+  "content_hash": "18df1be3b95c355d2373b9f7ebe9099f5906cc1a4f6c511d3f906ce66f8126e8"
+ },
+ "packet_ref": {
+  "id": "wyea-the-case-against-generative-ai-e778e6-p1",
+  "content_hash": "3f01601d703163fb0d5a49c021b16339e0ef5ee42b54019fdafabe4259a2c608"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The practical warning holds: sampling can give different outputs for the same prompt. The categorical causal implication does not hold. Before the post, researchers demonstrated identical completions by controlling decoding and inference. Probabilistic modeling does not by itself make repetition impossible.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The result depends on distinguishing normal sampling from an assertion of inherent impossibility.",
+  "Repeatable output is not the same as correct or useful output.",
+  "The experiment concerns text generation, not the accompanying image-consistency example."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-case-against-generative-ai-cf5032-4x-review-anthropic-1",
+  "wyea-the-case-against-generative-ai-cf5032-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-the-case-against-generative-ai-de9e15-4x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-case-against-generative-ai-e778e6",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Because LLMs are probabilistic, they cannot be relied upon to do the same thing every time.",
+  "kind": "causal",
+  "conditions": [
+   "because they are probabilistic"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "They also immediately had one glaring, obvious problem: because they’re probabilistic, these models can’t actually be relied upon to do the same thing every single time.",
+   "locator": "paragraph 12",
+   "url": "https://www.wheresyoured.at/the-case-against-generative-ai",
+   "date": "2025-09-29",
+   "document_title": "The Case Against Generative AI",
+   "observed_at": "2026-10-28T22:26:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "because they’re probabilistic",
+    "can’t actually be relied upon",
+    "the same thing every single time"
+   ],
+   "our_interpretation": [
+    "The ordinary practical reading concerns repeated generation from the same prompt under normal sampling settings.",
+    "The categorical causal wording also suggests that probabilistic models inherently prevent repeatable outputs. That stronger implication is assessed separately.",
+    "Repeatability means reproducing an output, not necessarily producing a correct answer.",
+    "The assessment concerns mechanisms and capabilities available by publication, not later model improvements."
+   ],
+   "support_condition": "Documentation or controlled experiments show that probabilistic sampling can produce different outputs for identical prompts and therefore does not guarantee repetition.",
+   "contradiction_condition": "A probabilistic language model demonstrably produces repeatable outputs under controlled decoding and inference, showing that its probabilistic nature does not inherently prevent repetition."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The practical warning holds: sampling can give different outputs for the same prompt. The categorical causal implication does not hold. Before the post, researchers demonstrated identical completions by controlling decoding and inference. Probabilistic modeling does not by itself make repetition impossible.",
+  "limitations": [
+   "The result depends on distinguishing normal sampling from an assertion of inherent impossibility.",
+   "Repeatable output is not the same as correct or useful output.",
+   "The experiment concerns text generation, not the accompanying image-consistency example."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "language generation using sampling is not\ndeterministic anymore.",
+    "locator": "Sampling section",
+    "url": "https://huggingface.co/blog/how-to-generate",
+    "publisher": "Hugging Face",
+    "event_date": "2020-03-01",
+    "available_at": "2020-03-01",
+    "explanation": "The decoding guide explains why sampling can change generated text and demonstrates controls for reproducibility. It supports the practical warning about unconstrained sampling, not an impossibility applying to every inference configuration."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "all of our 1000 completions are identical.",
+    "locator": "Experiments: How nondeterministic are completions?",
+    "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference",
+    "publisher": "Thinking Machines Lab",
+    "event_date": "2025-09-10",
+    "available_at": "2025-09-10",
+    "explanation": "The researchers obtained identical completions with controlled inference, while their default implementation produced variation even at temperature zero. This contradicts the implication that probabilistic modeling itself makes repeatability impossible."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "24dcebfa0fc739d38a341da34a73eb53b4a83b79234537d0c809118def57ea9f",
+ "supersedes_assessment_id": "wyea-the-case-against-generative-ai-e778e6-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T19:15:50Z"
+}

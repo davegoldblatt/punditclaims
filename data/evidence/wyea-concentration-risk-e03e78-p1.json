@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-concentration-risk-e03e78-p1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-e03e78",
+  "version": 1,
+  "content_hash": "b63d7ee7f9d00b21ea8916eead9b023bab858756b8a6e3c5602b1726ee22c14f"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-e03e78",
+  "version": 1,
+  "content_hash": "e7c47b418079e00da8d43fd22883ce5a559cfa7405f3629f286b889dbce46295"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA second quarter fiscal 2027 results customer revenue August 2026",
+   "site.nvidianews.nvidia.com 2026 Meta recommendation millions GPUs",
+   "OpenAI Anthropic 70% AI revenues Google Microsoft Amazon Oracle SpaceX Cerebras Lambda"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "used": true,
+    "why": "Readable primary filing addresses direct and indirect customer concentration."
+   },
+   {
+    "url": "https://about.fb.com/news/2026/06/what-is-compute-power-meta-ai-infrastructure/",
+    "used": true,
+    "why": "Primary target-period description of Meta's own compute uses and NVIDIA supply relationship."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the company-hosted filing was read instead."
+   },
+   {
+    "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+    "used": false,
+    "why": "Read, but broad customer categories and model compatibility do not quantify ultimate dependence on the two labs."
+   }
+  ],
+  "performed_at": "2026-10-29T10:47:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "investor-nvidia-com-files-doc-financials-2027-nvda-2027-q2-10q-fina-b4ea8829627f",
+   "source_snapshot_id": "7fba94c628877867e1770c7f8d657ca15965536cb1bdac6b21fbe0dd5e0ae506",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+   "locator": "Management's Discussion and Analysis, 'Concentration of Revenue'",
+   "receipt": {
+    "public_excerpt": "Our revenue is concentrated among a limited number of direct and indirect customers",
+    "quote_hash": "b533e10efed112b52449992110e8452c9201dd719daa4198c51d5d60341028e9",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-27",
+   "retrieved_at": "2026-10-29T05:34:35Z",
+   "relation": "context",
+   "explanation": "The filing establishes concentration and discusses purchases through intermediaries. It does not identify the combined ultimate share attributable to OpenAI and Anthropic.",
+   "metric_scope": null,
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "about-fb-com-news-2026-06-what-is-compute-power-meta-ai-infrastructure",
+   "source_snapshot_id": "bd214af5dc7b935eae511fcb6ed6b9b1f0a3c8a4ae0c607b8e3722df8670b7c9",
+   "publisher": "Meta",
+   "source_type": "company_disclosure",
+   "url": "https://about.fb.com/news/2026/06/what-is-compute-power-meta-ai-infrastructure",
+   "locator": "Section 'How Does Compute Power Meta’s AI?'",
+   "receipt": {
+    "public_excerpt": "We’ve also announced partnerships with industry leaders AWS, AMD, and NVIDIA to supply chips for our compute portfolio.",
+    "quote_hash": "4f950ffedd20b3552bd94e4ee8965923cb5d09785bff33cc894f6edbc02e2377",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T10:40:18Z",
+   "relation": "context",
+   "explanation": "Meta describes infrastructure serving its own models and applications, providing material countercontext to dependence on only the two labs. It does not quantify NVIDIA demand attributable to those uses.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No target-quarter allocation of ultimate NVIDIA demand to the two labs was located.",
+  "Independent uses are documented but their share is not established by these records.",
+  "The qualitative threshold in 'effectively' prevents a clean numerical test."
+ ],
+ "packet_hash": "7c093f01b0227d187d19cfc8b51562b97191bb8ba82fee4da3b4857189e67126"
+}

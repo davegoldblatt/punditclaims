@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-whats-wrong-with-googles-new-robot-ce5b2a-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-whats-wrong-with-googles-new-robot-ce5b2a": "05fe11b3bc8ca8988d1e5d9f5841678ce4270c006c767eda6d898c7f2a595424"
+ },
+ "started_at": "2026-11-10T02:00:10Z",
+ "completed_at": "2026-11-10T02:00:24Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, stated in his own voice and not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation matches the statement: a firm present-tense claim that LLMs fall well short of near-100% clarity on user intentions. The threshold wording is kept and nothing is added."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary: it limits the claim to models of the time and asks for recurring, material misinterpretation, short of near-perfect. It also separates misunderstanding from execution and feasibility failures. The period ending at the post date is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The SayCan paper (2022-08-16, within the period) says vanilla SayCan does not handle negation, a limitation inherited from the underlying LLMs. That is a language-interpretation failure. Chain-of-thought prompting improved it but does not show near-perfect reliability."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed workshop paper, May 2022: GPT-3 performed mostly at chance on tests of implied meaning and presupposition. It is an indirect probe, but it supports material shortfalls in grasping intended meaning."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure: 84% planning success and examples where requests were interpreted correctly. This shows partial success but not near-perfect interpretation, and the planning rate mixes in non-language factors. It qualifies the claim but does not contradict it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Supported. Two 2022 evaluations show recurring language-interpretation failures: SayCan's negation limitation inherited from the LLM (e1), and GPT-3 near chance on implied meaning (e2). The best counterevidence, e3, reports 84% planning success, which is well short of near-perfect. Nothing in the packet meets the contradiction condition of broad, near-perfect interpretation.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-whats-wrong-with-googles-new-robot-ce5b2a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11624,
+  "output_tokens": 1354,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

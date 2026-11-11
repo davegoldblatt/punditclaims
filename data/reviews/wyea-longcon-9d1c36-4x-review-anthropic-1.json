@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-longcon-9d1c36-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-longcon-9d1c36": "62a7ff5e82567a592c0096ae39cff6e29b3e3f25e8565b6869344ecf45bcacdd",
+  "case:wyea-longcon-aa8385": "10c45256ea80e80b709fd632b00467daa0950d45e19f9be72b39aaab01b31c23",
+  "case:wyea-longcon-aba9b6": "dd3979d35388751fc77b24060c85cb98d71b720909c060bf08230c3991bc0504",
+  "case:wyea-longcon-cc3598": "bf15c07c66fc6654f06e3654668c4e91f92b8ce735cc5ca940e074c44ec2c82e"
+ },
+ "started_at": "2026-10-29T22:09:28Z",
+ "completed_at": "2026-10-29T22:10:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, written in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 'these companies' scope and the 'doesn't appear' qualifier. That qualifier describes how things look now. It is not a probability about a future outcome, so the claim is still a scorable observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'these companies' as OpenAI and Anthropic, using calendar 2024 and net income is an ordinary reading of the passage. The second clause needs evidence about the effect of inference costs, and the speaker gave no measure for that, so the interpretation shapes the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ars Technica reports leaked documents showing OpenAI's 2024 net loss of about $5B. This supports only the clause that OpenAI was not profitable. It says nothing on whether cheaper inference helped."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's S-1, filed before the cutoff, reports an $8.3B net loss for 2024. This supports only the clause that Anthropic was not profitable. It has no breakdown of inference costs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The first clause holds: both companies had net losses in 2024 (e1, e2). The second clause, that falling inference costs were not helping, needs evidence linking inference costs to margins or losses. The packet has none, and the drafter lists this as a gap. Nothing contradicts the claim, but the joint support condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-longcon-9d1c36"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures the firm comparison ('significantly more so'). The o3 $1,000 aside is left out, but Zitron himself says that figure does not apply to Deep Research, so the core claim is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Comparing OpenAI's serving cost per request, and reading 'significantly' as materially higher with no invented multiplier, is a fair and ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own launch post calls Deep Research very compute intensive. That is consistent with the claim but is a company statement about itself, and it gives no cost comparison with regular queries."
+     },
+     {
+      "id": "e8",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch's energy estimate for a typical GPT-4o query is about 0.3 Wh. It has no matching dollar cost for Deep Research requests."
+     },
+     {
+      "id": "e9",
+      "fits": true,
+      "relation": "context",
+      "note": "ARC's per-task cost figures are a benchmark proxy for an o3 configuration, from a different period and workload. Not Deep Research serving costs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The claim is plausible, and OpenAI's own disclosure points that way. But the contract needs matched launch-period cost estimates for both products, and the packet has none. Nothing shows the costs were similar. The evidence available by the cutoff does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-longcon-aa8385"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Fairly captures both sentences: AI is not a separate reported part of the business, and the $13B run rate is an aggregate of anything labelled AI. 'Literally' is partly rhetorical."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'no AI part' as no separate reporting segment is fair, because the passage itself acknowledges the run rate. Scoring the aggregation sentence depends on evidence of how Microsoft calculated the run rate, and the speaker did not specify that."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Microsoft's FY25 Q2 segment table lists three segments and no AI segment. This supports the narrow first part only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft discloses the $13B AI run rate but not how it is calculated. It neither proves nor disproves indiscriminate aggregation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The no-separate-segment part holds (e1). The claim that the run rate counts anything labelled AI needs Microsoft's calculation method, which the packet lacks. e2 confirms the figure exists but does not contradict the aggregation claim. The support condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-longcon-aba9b6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words closing his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I believe it will' plus 'there will be' is an unqualified expectation, not a graded hedge. The speaker predicts both the collapse and the reckoning, so this is a joint forecast with no deadline."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'falls apart' as a broad, sustained breakdown of the boom, followed by a reckoning tied to it, is an ordinary reading. The contract correctly says that missing proceedings by an arbitrary date cannot count against an undated prediction."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "KPMG's Q3 2026 report shows venture investment remaining robust and concentrated in AI. So no collapse yet, but with no deadline this cannot contradict the forecast."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Hawley's Senate hearing on AI cyberattacks shows scrutiny of AI harms, not a reckoning that follows a financial collapse."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was stated. By the cutoff the packet shows no broad collapse, and the scrutiny it shows (e5) is about other harms. Continued investment (e4) cannot contradict an open-ended forecast. Neither the support condition nor the early-resolution rule is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-longcon-cc3598"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 68400,
+  "output_tokens": 7764,
+  "cached_input_tokens": 35187,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

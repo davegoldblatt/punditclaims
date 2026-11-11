@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-seven-replies-to-the-viral-apple-367767-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-seven-replies-to-the-viral-apple-367767": "ec5accb10a5588fcbdc53d67af1338832fc4890605370bd05d02e53cdcc66e04",
+  "case:marcus-seven-replies-to-the-viral-apple-a5c0a8": "c88a69bf7b0a1b119c8a298d410a0a4c9f37db0d635aac506b071e43d56cf682",
+  "case:marcus-seven-replies-to-the-viral-apple-dbeb5a": "660c151b50cf6133e35025b48dfcd1363e564294c0e0e76bfdfdaf2242b86a71",
+  "case:marcus-seven-replies-to-the-viral-apple-ff7c91": "167f1c8a323670127489a7bd8f4eb336ebb5ee8bcf19836b537f6dd558348cb9"
+ },
+ "started_at": "2026-10-29T12:22:02Z",
+ "completed_at": "2026-10-29T12:22:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, written in the first person ('I am confident')."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I am confident... will be uncovered' is a firm forecast with no deadline. Reading the examples as analogous algorithm-application failures matches the next sentence of the post."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Many' has no number. The contract reads it as a substantial collection across several independent studies and task families, counting examples rather than papers. That is an ordinary reading, and it pushes neither for nor against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 2026 preprint testing nine tasks with controlled complexity. Several are new task families (SAT, cryptarithmetic, graph coloring, Sudoku, and others), and accuracy collapses past complexity thresholds."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "June 2026 preprint varying sequential depth on state tracking, pointer binding and transitive closure. Failures grow with depth, sharply for transitive closure, though some models hold up in some domains."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "October 15, 2026 preprint (before the cutoff). A benchmark of eight explicit-rule spatial operation families, where exact accuracy falls sharply as event histories get longer."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "Three separate dated preprints from after June 2025 report rule-following failures that grow with complexity, across more than a dozen distinct task families. That meets the contract's early-resolution rule: a substantial collection from multiple studies. The packet lists no material counterevidence, and the mechanism caveat does not matter because the claim counts examples, not causes.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-replies-to-the-viral-apple-367767"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, in a parenthetical aside in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "A general claim that a lack of understanding limits how much retrieved code helps on new problems or changing environments. The normalised wording is a little awkward but faithful, and both qualifiers are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus left the comparator and the meaning of 'conceptual understanding' undefined. Requiring understanding to be measured separately from the outcome avoids circular reasoning, so the standard is demanding but fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CodeRAG-Bench (v2, February 2025) shows retrieval gains and retrieval failures, but has no novel-versus-familiar comparison and no measure of understanding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "April 2026 study of API changes. Models keep using outdated patterns even when updates are supplied. It does not isolate understanding, and it tests later systems."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither item gives the matched comparison the contract requires, with understanding measured on its own terms. e2 shows models struggling with changing APIs, which fits the claim loosely but does not establish the cause. Nothing contradicts it either. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-replies-to-the-viral-apple-a5c0a8"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words ('Mark my words'), in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "A firm forecast with no deadline ('in time'). 'Scores of papers' is kept as the threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Taking 'scores' to mean at least forty is a conservative, ordinary reading. Counting partial corroboration is fair to the speaker. The result here turns on the missing bibliography, not on the reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "July 2025 replication. It confirms the Hanoi difficulties but disputes the River Crossing result. At most it is one partial entry toward the count."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "June 2025 critique arguing tool use reverses the failure. It cites Apple but does not reinforce its results, and it does not settle the count."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The packet contains no verified list of forty qualifying papers, so the early-resolution rule is not met. With no deadline, a shortfall so far is not a failure. The two items are context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-replies-to-the-viral-apple-dbeb5a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'We need to' is normative, but 'haven't yet crossed that threshold' is a factual statement about the present. The normalised wording captures that observation correctly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus set no threshold for 'reliable' or 'general'. The contract's reading, dependable integration across varied unfamiliar tasks, is ordinary and fair. Anchoring the claim to the publication date is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "May 2025 preprint. Neurosymbolic training generalizes poorly under small shifts, while prompting transfers better. This is narrow and pre-publication, not a survey of the field."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AlphaGeometry2 (February 2025) shows strong integration, but only in geometry. That is a specialized success, not general integration, so it does not contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither item is the broad, representative evaluation of integrated systems that the contract requires. e1 shows narrow generalization weaknesses and e2 a single-domain success. Neither establishes or refutes that general, reliable integration was missing in June 2025.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-replies-to-the-viral-apple-ff7c91"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30769,
+  "output_tokens": 4629,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

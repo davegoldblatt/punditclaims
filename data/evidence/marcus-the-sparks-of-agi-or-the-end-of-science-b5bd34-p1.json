@@ -1,0 +1,134 @@
+{
+ "packet_id": "marcus-the-sparks-of-agi-or-the-end-of-science-b5bd34-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-sparks-of-agi-or-the-end-of-science-b5bd34",
+  "version": 1,
+  "content_hash": "7024ea3a914900870f848de0753a7039da1a2c9f26c4f84669336339327b55dc"
+ },
+ "contract_ref": {
+  "id": "marcus-the-sparks-of-agi-or-the-end-of-science-b5bd34",
+  "version": 1,
+  "content_hash": "4a8adb2bc729672fcacf4442e7cbb1dc1658022f8ea818e992ccdd88a0de2012"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com March 2023 API data training default March 1 2023",
+   "site.openai.com March 2023 ChatGPT conversations improve models training data",
+   "GPT-4 March 2023 independent novel tasks generalization contamination tests",
+   "\"March 1, 2023\" \"Data submitted through the API is no longer\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "The original March report documents production-data use in safety training."
+   },
+   {
+    "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis/",
+    "used": true,
+    "why": "Primary announcement documents the API training exclusion. The retrieved page carries an April 2024 update."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "The March 14 announcement documents developer access and the option to pin GPT-4's March version."
+   },
+   {
+    "url": "https://techcrunch.com/2023/03/01/addressing-criticism-openai-will-no-longer-use-customer-data-to-train-its-models-by-default/",
+    "used": true,
+    "why": "Read to corroborate that the API policy change was announced on March 1, 2023."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2305.12196v1",
+    "used": false,
+    "why": "The unpublished-formal-language experiment is relevant in principle, but the passages inspected did not establish testing within the claim's March window."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2307.09009v1",
+    "used": false,
+    "why": "Testing a March model version later does not establish that the experiments occurred during March."
+   }
+  ],
+  "performed_at": "2026-10-29T08:49:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Appended GPT-4 System Card, section 3.1, rule-based reward models",
+   "receipt": {
+    "public_excerpt": "production traffic",
+    "quote_hash": "c96a255fcfa5ed9a953e4cae96ef8d284f1b830f278f8880cd31ff8535fc8e7c",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "context",
+   "explanation": "The launch documentation confirms reuse of production material for safety training. It does not identify particular scientific experiments or show that all future testing becomes contaminated.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-chatgpt-and-whisper-apis",
+   "source_snapshot_id": "3d49ad972362ef5b1536abd3ef6ea61fa74ed0788702fc9f7e3d848bd7e693e1",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis",
+   "locator": "Developer focus, first policy-change bullet",
+   "receipt": {
+    "public_excerpt": "unless the organization opts in",
+    "quote_hash": "4c8e7234a4bb6e13334001c97199647ebc6256998c68790ecd227feed8f8aa68",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-01",
+   "available_at": "2024-04-24",
+   "retrieved_at": "2026-10-29T04:12:29Z",
+   "relation": "contradicts",
+   "explanation": "This policy supplies a route for submitting experiments without authorizing their use in training. The availability date conservatively uses the retrieved page's update date; the March 1 policy announcement was also corroborated in the contemporaneous TechCrunch report.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "API section; the following paragraph documents gpt-4-0314 version pinning",
+   "receipt": {
+    "public_excerpt": "We will start inviting some developers today",
+    "quote_hash": "8e1066e0a6bb2250fd5b2dda01e73ebb17e956109d070fdc69a6b8939caf3547",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "contradicts",
+   "explanation": "The same section explicitly permits callers to pin gpt-4-0314 instead of following automatic model updates. Combined with e2, this supports the inference that researchers with access could test newly created private cases against a fixed version.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The public record does not identify which independent user experiments entered training.",
+  "The cited testing route rests on documented company practices, not an independent audit of the training corpus."
+ ],
+ "packet_hash": "969ff4e65798af325cbb4c3940c5fa2ab839ea6c7fbb2928d95605658a1ac208"
+}

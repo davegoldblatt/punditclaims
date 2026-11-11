@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-why-do-large-language-models-hallucinate-c011a7-p1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-c011a7",
+  "version": 2,
+  "content_hash": "67527c3fdbafd280c3551d10b10c3e737e3803954e5210302d86fce77e52c1dc"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-c011a7",
+  "version": 1,
+  "content_hash": "c4d029ab49d401d226aaf843bbde8d074454cdfc33d4cc1907223be37195a3e7"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM chess illegal moves 2025 paper world model",
+   "site.arxiv.org \"chess\" \"world model\" 2024 2025 emergent",
+   "\"chess\" \"illegal\" \"language models\" \"2025\" \"April\"",
+   "\"LLM\" \"chess\" \"illegal moves\" \"2024\" GPT-3.5-turbo-instruct",
+   "site.arxiv.org \"chess\" \"illegal\" before:2025-05-06 after:2025-01-01"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.com/kagisearch/llm-chess-puzzles",
+    "used": true,
+    "why": "Contemporary reproducible puzzle benchmark reports illegal moves, but does not measure full-game reliability or establish causes."
+   },
+   {
+    "url": "https://arxiv.org/html/2403.15498v1",
+    "used": true,
+    "why": "Earlier controlled chess-language-model research provides material counterevidence to the proposed abstraction deficit."
+   },
+   {
+    "url": "https://dynomight.substack.com/p/more-chess",
+    "used": false,
+    "why": "Read as a lead on prompting and legal play; the controlled primary chess study provides stronger evidence."
+   },
+   {
+    "url": "https://time.com/7259395/ai-chess-cheating-palisade-research/",
+    "used": false,
+    "why": "Deliberate tool-assisted exploitation is a different behavior from unaided inability to follow chess rules."
+   }
+  ],
+  "performed_at": "2026-10-29T09:48:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "github-com-kagisearch-llm-chess-puzzles",
+   "source_snapshot_id": "80021af6bec2f3c2aa2e073ec05fe86d58ebbf218f3eacc0d923dbf530c1fc92",
+   "publisher": "Kagi",
+   "source_type": "benchmark",
+   "url": "https://github.com/kagisearch/llm-chess-puzzles",
+   "locator": "Results, updated April 26, 2025; Methodology",
+   "receipt": {
+    "public_excerpt": "1000 chess puzzles",
+    "quote_hash": "25dafdf66796795f8eeb525db30a3bcc1ce698995cd05912a7ca7b55be40eedb",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-26",
+   "available_at": "2025-04-26",
+   "retrieved_at": "2026-10-29T06:21:01Z",
+   "relation": "context",
+   "explanation": "The table reports illegal-move rates of 8.9% for GPT-4o, 7.6% for GPT-4.1, and 0.9% for GPT-4.5-preview. These results show errors and substantial model differences, but puzzle responses cannot establish full-game reliability or the asserted cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2403-15498v1",
+   "source_snapshot_id": "afce03a67618d64a1d4f735ba2610ceb914fab6742f294fcf5d54ef5fb878275",
+   "publisher": "Adam Karvonen / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2403.15498v1",
+   "locator": "Section 2, model training and performance; sections 3–4",
+   "receipt": {
+    "public_excerpt": "legal move rate of 99.8%",
+    "quote_hash": "24113c6701c87359990e1b6fb5775333c1095de8a00635eb397d5e8779dd3aa2",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-03-21",
+   "retrieved_at": "2026-10-29T07:16:27Z",
+   "relation": "context",
+   "explanation": "Specialized next-character models trained on chess games achieved high move legality and learned board representations that researchers could manipulate. This challenges the general inference from statistical training to absent abstractions, but predates the target window and does not test the contemporary general-purpose models.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No qualifying representative full-game evaluation was established for the target period.",
+  "The claimed rules-and-millions-of-games exposure was not verified for the models in the contemporary benchmark.",
+  "No controlled study ties their illegal moves specifically to absent abstractions rather than prompting, state tracking, or other causes.",
+  "High per-move legality does not by itself establish complete-game reliability."
+ ],
+ "packet_hash": "8f5be008b38873f73d7ebfb696e325a44fd16c9244754560b66818ca08b20c49"
+}

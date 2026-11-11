@@ -1,0 +1,90 @@
+{
+ "run_id": "wyea-exclusive-openai-financials-a0c028-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:wyea-exclusive-openai-financials-a0c028": "4487c5b41a38d9f5962a3580c1b301ed811f6db455cf32501905e3f70ddb7ee1",
+  "payload:wyea-exclusive-openai-financials-a0c028": "a823b3b95c786b7f9e8b4c37f5ec9b5780d8c15befdaaf0d524e59689c30a0ef",
+  "case:wyea-exclusive-openai-financials-b0474e": "4e9b1ff6064946194af10dce0cb639e7b31e2ceae83d41e7db9638d685a7a587",
+  "payload:wyea-exclusive-openai-financials-b0474e": "d6153c5575aacf74ac8d2f6fed90f27e425651c87bc24cebc2d035f2bcef75c3",
+  "case:wyea-exclusive-openai-financials-b1159f": "b5386edf308e1b5cfc1e84e62f5abb19fc5200739ebd56e5a563465d3b1c3ed9",
+  "payload:wyea-exclusive-openai-financials-b1159f": "5086d02371ebf465d4993d0313e8be0b772a824030a669b889f5e90374c4252f",
+  "case:wyea-exclusive-openai-financials-b8a1c6": "4678dedaa6399d93899ffeee26ca3880f8d32bc33740874dc0ecf495a9db7b01",
+  "payload:wyea-exclusive-openai-financials-b8a1c6": "7df2e39d63d1af11c162a74ec87823d31fc47d9de09b05e2cfb848b86e334819"
+ },
+ "started_at": "2026-10-29T17:43:48Z",
+ "completed_at": "2026-10-29T17:44:24Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The figures are repeated in coverage of Zitron's report, but repetition does not independently verify the underlying expenses.",
+     "The independently checked Financial Times article supplies broader totals without the Microsoft breakdown."
+    ],
+    "verdict": "fail",
+    "note": "Excerpt is verbatim. The $6.047B component comes from the preceding sentence and is in the contract. The evidence array is empty, but the rationale makes factual claims about sources: that coverage repeats the figures (Tech Times) and what the FT-verified report contains. Neither source is cited, so a reader cannot check either claim. 'Independently checked Financial Times article' is also unclear wording: the FT verified the documents. Cite the sources or remove these sentences.",
+    "claim_id": "wyea-exclusive-openai-financials-a0c028"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [],
+    "verdict": "fail",
+    "note": "Excerpt, proposition, criteria and outcome are fine. The e4 excerpt is cut to the fragment 'Microsoft paid OpenAI', which drops both amounts. As published it does not show the sentence the rationale relies on ('Reports repeat both amounts'). Use the full sentence: 'By comparison, Microsoft paid OpenAI $303 million in 2025. SoftBank, another major backer, paid OpenAI $867 million.' Also, 'Reports' is plural but only one report is cited.",
+    "claim_id": "wyea-exclusive-openai-financials-b0474e"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": false,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "Search results repeating the speaker were not treated as independent confirmation."
+    ],
+    "verdict": "fail",
+    "note": "The proposition adds '$3.74 billion was attributed to noncontrolling members'. That figure comes from the next sentence, is not in the excerpt or from_speaker, and is not tested by the support condition, so the proposition says more than the statement. The limitation implies some search results repeated the $8.84B figure, but the packet shows none of the sources considered reported it except the speaker's own article. The evidence array is empty.",
+    "claim_id": "wyea-exclusive-openai-financials-b1159f"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. Reading 'losses' as operating loss follows the contract and is shown in the criteria. The e1 excerpt, publisher, dates and context relation match. The rationale correctly treats Quartz's repetition as partial secondary corroboration, not independent verification. 'Available reports' is plural with only one cited, but this is minor because the claim is stated cautiously.",
+    "claim_id": "wyea-exclusive-openai-financials-b8a1c6"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24628,
+  "output_tokens": 3826,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

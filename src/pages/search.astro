@@ -1,0 +1,31 @@
+---
+// /search: Pagefind over every claim, the method, and the about page. The
+// index reads the source post pages, where each claim is a section of its own,
+// so a result is one claim with a link to its page. The index is built from
+// the same release as every other page, and the browser only loads this
+// site's own index files.
+import Base from "../layouts/Base.astro";
+import { OUTCOME_LABEL } from "../policy.ts";
+---
+<Base title="Search" description="Search the claims, the method, and the about page." noindex>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Search</h1>
+      <p class="lede">Search every claim by its words. To filter by person, company, topic, or outcome, use <a href="/explore">Explore</a>.</p>
+    </header>
+    <form class="search-form" action="/search" method="get" role="search" data-search-form>
+      <div class="field">
+        <label for="sq">Search</label>
+        <input id="sq" type="search" name="q" autocomplete="off" />
+      </div>
+      <button class="btn" type="submit">Search</button>
+    </form>
+    <p class="result-line" aria-live="polite" data-search-status></p>
+    <ol class="results" data-search-results data-labels={JSON.stringify([...Object.values(OUTCOME_LABEL), "Assessment withdrawn"])}></ol>
+    <noscript><p>Search needs JavaScript. You can browse <a href="/register/checked">every claim</a> instead.</p></noscript>
+  </div>
+</Base>
+<script>
+  import { runSearchPage } from "../scripts/search.ts";
+  runSearchPage();
+</script>

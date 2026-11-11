@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd-a1",
+ "claim_revision_ref": {
+  "id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd",
+  "version": 1,
+  "content_hash": "24ee39346e5b8c085a3c1710425b17ccfd1a0754cf89edf17cd65fd7eccfc8cc"
+ },
+ "contract_ref": {
+  "id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd",
+  "version": 1,
+  "content_hash": "96a2e6a367ab5a04e8545cf3c876242019e73137596ba0b55cecc637dcb5cb5e"
+ },
+ "packet_ref": {
+  "id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd-p1",
+  "content_hash": "93f12a5a59cf649362adcce4579d65c84d82fc46742ba16606c12448d15663c5"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Training-text reproduction is established, as is a strong relationship with parameter count. The compound causal claim goes further by attributing reproduction to the amount of training data. The strongest cited extraction research measures duplication and training exposure, which do not isolate total corpus volume. Later research complicates that explanation but uses a different memorization measure. The whole claim is therefore unresolved; its memorization and model-size components are supported.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "This outcome concerns the full causal sentence, not whether LLMs memorize.",
+  "Reading 'amounts of data' as repeated exposure would make the evidence more favorable.",
+  "A missing causal link is not contradictory evidence, so a mixed verdict is not warranted."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-deconstructing-geoffrey-hintons-weakest-530eb6-4x-review-anthropic-1",
+  "marcus-deconstructing-geoffrey-hintons-weakest-530eb6-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-deconstructing-geoffrey-hintons-weakest-530eb6-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-deconstructing-geoffrey-hintons-weakest-9041dd",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because of their huge training data and parameter counts, LLM reconstruction of inputs sometimes comes very close to memorization.",
+  "kind": "causal",
+  "conditions": [
+   "due to immense training data and parameter counts"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Because of the immense amounts of data they are now trained on, and because of the immense number of parameters on which they are trained, that reconstruction can in fact sometimes come very close to memorization.",
+   "locator": "paragraph 19",
+   "url": "https://garymarcus.substack.com/p/deconstructing-geoffrey-hintons-weakest",
+   "date": "2024-02-05",
+   "document_title": "Deconstructing Geoffrey Hinton’s weakest argument",
+   "observed_at": "2026-10-29T00:01:38Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Because of the immense amounts of data",
+    "because of the immense number of parameters",
+    "sometimes",
+    "come very close to memorization"
+   ],
+   "our_interpretation": [
+    "Read memorization as near-verbatim or verbatim reproduction of training passages, not reproduction of an arbitrary current prompt.",
+    "The claim includes both the existence of such reproduction and a causal contribution from training-data scale and parameter count.",
+    "Distinguish total corpus size, repeated exposure to a passage and number of training steps.",
+    "Do not require memorization to increase monotonically under every possible training configuration."
+   ],
+   "support_condition": "Extraction research establishes reproduction of training passages, and controlled evidence establishes contributions from parameter count and training-data scale under relevant conditions.",
+   "contradiction_condition": "Evidence rules out the claimed reproduction or materially refutes the alleged causal contributions. Failure to isolate one contribution leaves the compound claim unresolved."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Training-text reproduction is established, as is a strong relationship with parameter count. The compound causal claim goes further by attributing reproduction to the amount of training data. The strongest cited extraction research measures duplication and training exposure, which do not isolate total corpus volume. Later research complicates that explanation but uses a different memorization measure. The whole claim is therefore unresolved; its memorization and model-size components are supported.",
+  "limitations": [
+   "This outcome concerns the full causal sentence, not whether LLMs memorize.",
+   "Reading 'amounts of data' as repeated exposure would make the evidence more favorable.",
+   "A missing causal link is not contradictory evidence, so a mixed verdict is not warranted."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Larger models memorize",
+    "locator": "Figure 1 caption, panel a; section 4.1",
+    "url": "https://arxiv.org/html/2202.07646v3",
+    "publisher": "ICLR 2023; arXiv manuscript",
+    "event_date": "2022",
+    "available_at": "2023-03-06",
+    "explanation": "Supports the parameter-count contribution using exact training-text completion. The study separately measures duplication and prompt length; neither is equivalent to total corpus volume."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "memorized outputs",
+    "locator": "Section 5.3, Main Experimental Results",
+    "url": "https://arxiv.org/html/2311.17035v1",
+    "publisher": "arXiv",
+    "event_date": "2023",
+    "available_at": "2023-11-28",
+    "explanation": "The extraction experiments establish that contemporary models can emit long training passages. Cross-family observations about longer training do not independently isolate the effect of total training-data volume."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "memorization from generalization.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2505.24832",
+    "publisher": "arXiv",
+    "event_date": "2025",
+    "available_at": "2025-06-18",
+    "explanation": "The authors report that unintended memorization can decrease as dataset size grows and models generalize. This complicates a simple data-volume explanation, but its information-based measure and later experiments do not directly contradict the post's passage-reproduction claim."
+   }
+  ],
+  "what_would_resolve": "Controlled passage-extraction experiments varying unique corpus volume and parameter count separately while accounting for duplication, training duration and prompting.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "296e5ae312d4f2610a2959b0049c99021532c11fd0a3654d071b202c16fd0c7d",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:58:14Z"
+}

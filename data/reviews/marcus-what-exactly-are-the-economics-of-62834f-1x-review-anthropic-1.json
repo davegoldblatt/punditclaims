@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-what-exactly-are-the-economics-of-62834f-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-exactly-are-the-economics-of-62834f": "495b0f8d8eef7fb588b4ff53ac703f4df19818e0048dcd31dc54c895972ee1e3"
+ },
+ "started_at": "2026-10-29T22:01:56Z",
+ "completed_at": "2026-10-29T22:02:10Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack essay, stated as his view in a list of reasons generative AI might struggle."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "An unhedged causal claim: instability makes reliable product engineering difficult. The 'might struggle' framing applies to the financial conclusion, not to this premise. Context limits it to LLMs, and the contract handles that."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading is fair and ordinary: material obstacles, not impossibility. Restricting to language models matches context. It uses evidence available before publication, and the speaker's month-to-month example is covered by the version-change part."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Preprint dated before the post. March-to-June GPT-4/3.5 changes caused formatting and parser failures in code execution and a LangChain agent, which directly links instability to integration problems. It also notes some improvements and mitigations."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Controlled tests in July 2023 found that position and length of input context materially degraded QA across model families. This is consequential input sensitivity in a retrieval-like setup, though the link to integration is less direct."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI describing its own models. Version pinning was a mitigation for version drift, but OpenAI also admitted behavior changes disrupt applications and that some tasks get worse. Mixed context, not an independent finding."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the fair plain reading, evidence from before the post shows consequential instability across model versions (e1) and across inputs (e2), and e1 ties it to concrete integration failures. Pinning and prompt fixes reduce but don't remove the difficulty, and OpenAI itself acknowledged the disruption. 'Deeply' has no threshold, but material engineering obstacles are shown.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-exactly-are-the-economics-of-62834f"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11592,
+  "output_tokens": 1282,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

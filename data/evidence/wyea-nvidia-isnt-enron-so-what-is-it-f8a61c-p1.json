@@ -1,0 +1,111 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-f8a61c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-f8a61c",
+  "version": 1,
+  "content_hash": "8901b62a90821a9dbee516be3125050215adc9d111e720548ab158157f9ae9f5"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-f8a61c",
+  "version": 1,
+  "content_hash": "2823bf8dba60bc8388c890fde56ae11bbe012e45a69fd6e566325af99e4b984c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft 2023 annual report change useful life servers net income 3.0 billion",
+   "Alphabet 2023 annual report useful life net income 3.9 billion servers six years",
+   "\"longer useful life\" \"net income\" depreciation",
+   "Alphabet 2023 10-k 2024 0001652044 goog-20231231 January 30"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001652044/000165204424000022/goog-20231231.htm",
+    "used": true,
+    "why": "Readable copy of Alphabet's primary filing, with explicit depreciation and net-income effects."
+   },
+   {
+    "url": "https://openstax.org/books/principles-finance/pages/4-4-when-should-a-company-capitalize-or-expense-an-item",
+    "used": true,
+    "why": "Explains the general accounting relationship directly."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar23/index.html",
+    "used": false,
+    "why": "The page reader did not expose the relevant financial-statement passage."
+   },
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872425000004/amzn-20241231.htm",
+    "used": false,
+    "why": "Also describes useful-life changes, but does not resolve the claim's unspecified basis or isolate GPUs."
+   }
+  ],
+  "performed_at": "2026-10-29T12:05:55Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001652044-000165204424000022-348670db8123",
+   "source_snapshot_id": "9d0d5a73834d621215db4b5239557fe10a95a53138127a45cb95e610ae97c6a7",
+   "publisher": "Alphabet Inc., filing mirrored by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001652044/000165204424000022/goog-20231231.htm",
+   "locator": "Financial Results overview; Note 1, Use of Estimates",
+   "receipt": {
+    "public_excerpt": "Operating expenses benefited",
+    "quote_hash": "13d1335f9ac9cf3c05094bfcfb8084c2b0197a902017f33a7449a2a061f3e5f2",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T11:59:07Z",
+   "relation": "context",
+   "explanation": "Note 1 attributes a $3.9 billion depreciation reduction and $3.0 billion net-income increase to longer server and networking lives. This corroborates the mechanism, but measures broader assets under GAAP rather than a separately identified GPU effect on the claim's unspecified basis.",
+   "metric_scope": {
+    "company": "Alphabet Inc.",
+    "metric": "Net-income increase attributable to extending server and networking equipment useful lives",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2023-01-01",
+    "period_end": "2023-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openstax-org-books-principles-finance-pages-4-4-when-should-a-compa-2285f522f3dd",
+   "source_snapshot_id": "17515bfba85541b026692fa4f59c3aff1ef3b9d491f432ffddfe0afb09cca4c2",
+   "publisher": "OpenStax, Rice University",
+   "source_type": "secondary_summary",
+   "url": "https://openstax.org/books/principles-finance/pages/4-4-when-should-a-company-capitalize-or-expense-an-item",
+   "locator": "Concepts In Practice: Estimating Useful Life and Salvage Value",
+   "receipt": {
+    "public_excerpt": "increase annual net income.",
+    "quote_hash": "aeb0206600fa9b0d3ce462c2cc2aa0d0149ea813eee0a6e6a37f29020cc1219a",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-03-24",
+   "retrieved_at": "2026-10-29T11:55:05Z",
+   "relation": "context",
+   "explanation": "The textbook directly corroborates the ordinary accounting mechanism. It is not a measurement of any hyperscaler's GPU-specific financial results.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis; the required rules prohibit a supported or contradicted money grade with unknown basis.",
+  "The inspected company disclosure does not isolate GPUs from other server and networking assets."
+ ],
+ "packet_hash": "68e7cbf4d23987132355b3e8ce92d20e5f6318bb861ea1f17543cb9b04a1dedd"
+}

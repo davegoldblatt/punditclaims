@@ -1,0 +1,144 @@
+{
+ "packet_id": "wyea-exit-liquidity-5da7bd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-exit-liquidity-5da7bd",
+  "version": 1,
+  "content_hash": "3d62b942848bddc4aa2b84b0142b6eaa64912cd49aa547b113bc5233a2ae2019"
+ },
+ "contract_ref": {
+  "id": "wyea-exit-liquidity-5da7bd",
+  "version": 1,
+  "content_hash": "289562836809efa04eda022cf97a69349034f3dc448e709a8d83c9a70e9824fd"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic Q3 2026 revenue 16.8 billion compute 1.70 11.5",
+   "Anthropic Q2 2026 compute infrastructure costs 5.5 5.6 billion",
+   "site.sec.gov/Archives/edgar Anthropic 2026 S-1 161.2",
+   "Anthropic Q3 2026 omitted S-1 financial statements reason compute costs",
+   "site.ft.com \"Anthropic\" \"16.8bn\" \"2026\"",
+   "site.reuters.com Anthropic \"1.70\" \"2026\"",
+   "Anthropic \"Q3\" \"76.3%\" compute"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b",
+    "used": false,
+    "why": "Original reporting was located, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-jumps-46-16-085753440.html",
+    "used": true,
+    "why": "Readable reporting of the Q3 revenue and revenue-per-compute-dollar figures. No public primary Q3 financial statement was located."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary source for Q2 reported revenue and compute-and-infrastructure expense. Its basis and period are distinguished from the Q3 estimates."
+   },
+   {
+    "url": "https://www.midgardfinance.com/research/anthropic/",
+    "used": false,
+    "why": "The retrieved page says it was updated October 29, after the evaluation cutoff."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-tells-investors-q3-revenue-030140226.html",
+    "used": false,
+    "why": "Read as a cross-check; it repeats the same underlying Q3 reporting and provides no independent evidence of the omission's cause."
+   }
+  ],
+  "performed_at": "2026-10-29T11:23:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "finance-yahoo-com-technology-ai-articles-anthropic-revenue-jumps-46-96aa7f022d62",
+   "source_snapshot_id": "c3d5bc4e167318cb3fcd8ccfbc1b6b6d63e8f36d4a3f0fd4a25ba0aa3b6e39ee",
+   "publisher": "Yahoo Finance / Euronews",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-jumps-46-16-085753440.html",
+   "locator": "Paragraph following the discussion of adjusted profitability and operating margin",
+   "receipt": {
+    "public_excerpt": "$1.70 of revenue",
+    "quote_hash": "9bdb7fb1d7b9d75c643e7b3aa7f692cab940c9675fa3aa94b21f1c447099bf5d",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-10-15",
+   "retrieved_at": "2026-10-29T11:04:54Z",
+   "relation": "context",
+   "explanation": "The report gives Q3 revenue of $16.8 billion and the quoted compute ratio. Combining that estimate with e4 suggests faster compute growth, but neither establishes matching cost definitions or the reason for omitting financial figures.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Q3 revenue and inferred spending on computing power",
+    "currency": "USD",
+    "units": "billions; revenue dollars per compute dollar",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e3: Q3 revenue = USD 16.8 billion",
+     "e3: Q3 revenue per compute dollar = 1.70",
+     "e4: Q2 revenue = USD 11.555 billion",
+     "e4: Q2 compute and infrastructure expense = USD 5.558 billion"
+    ],
+    "formula": "Implied Q3 compute = 16.8 / 1.70 = 9.882352941 billion. Conditional on matching definitions, compute growth = ((16.8 / 1.70) / 5.558 - 1) × 100 = 77.804119%; revenue growth = (16.8 / 11.555 - 1) × 100 = 45.391605%.",
+    "rounding": "USD 9.88 billion; 77.8% compute growth and 45.4% revenue growth. These are illustrative comparisons, not verified like-for-like results."
+   }
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Quarterly Results of Operations; Quarterly Consolidated Statements of Operations, June 30, 2026 column",
+   "receipt": {
+    "public_excerpt": "unaudited quarterly consolidated statements",
+    "quote_hash": "b741555f1879a1360a6d2326c5393a728e6fa1506a9d8781f1ec07b04007c228",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The table reports Q2 revenue of $11.555 billion and compute-and-infrastructure expense of $5.558 billion. These are historical company-reported figures, not a matching Q3 estimate or evidence of management's motive.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Quarterly revenue and compute and infrastructure expense",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No evidence establishes that deteriorating compute economics was a main reason for omitting Q3 figures.",
+  "No reconciled Q3 financial disclosure confirms that computing power and compute-and-infrastructure expense measure the same costs.",
+  "The retrieved inputs do not reproduce the stated 76.3% growth rate."
+ ],
+ "packet_hash": "d661c699fe48e3bc1486cfcb0ac0ce39ca797f405b12f3616aca6e34858143b3"
+}

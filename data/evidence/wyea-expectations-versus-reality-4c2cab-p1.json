@@ -1,0 +1,74 @@
+{
+ "packet_id": "wyea-expectations-versus-reality-4c2cab-p1",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-4c2cab",
+  "version": 1,
+  "content_hash": "32b7336944af25a50cc97a56b6191f3060021d90a434c6b2e0efb2153ad878fa"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-4c2cab",
+  "version": 1,
+  "content_hash": "7695fc6133f5fc3bf8f956710aaf7c0e036cd0fd09d15356ade46385bdd7535d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "rabbit r1 security credentials cookies May 2024 rabbit response",
+   "site.rabbit.tech \"cookies\" \"passwords\"",
+   "rabbit r1 Joseph Thacker security May 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.obscuritylabs.com/resources/blog/rabbit_pentest",
+    "used": true,
+    "why": "Firsthand source-code and infrastructure inspection conducted April 29–May 10 directly addresses stored passwords versus session cookies."
+   },
+   {
+    "url": "https://www.rabbit.tech/LAM-security-architecture-overview",
+    "used": false,
+    "why": "Read in full and consistent with token storage, but the dated firsthand inspection is stronger evidence for the target period."
+   },
+   {
+    "url": "https://www.rabbit.tech/support/article/rabbit-r1-information-security",
+    "used": false,
+    "why": "The search result describes a later OS version and cannot establish the launch-period implementation."
+   },
+   {
+    "url": "https://www.rabbit.tech/newsroom/security-pentest",
+    "used": false,
+    "why": "Read in full. It summarizes the same commissioned test rather than providing independent additional evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T11:20:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "obscuritylabs-com-resources-blog-rabbit-pentest",
+   "source_snapshot_id": "ce16c7d190ae0116b94ffb3d522643bef64523e7ccbcd3139c79d76ef6369903",
+   "publisher": "Obscurity Labs",
+   "source_type": "independent_measurement",
+   "url": "https://www.obscuritylabs.com/resources/blog/rabbit_pentest",
+   "locator": "Act 0: The Leaky Minion, paragraph explaining authentication-token collection",
+   "receipt": {
+    "public_excerpt": "isn’t what is being collected and stored.",
+    "quote_hash": "a0aa7f0822e3e7b481aad39d75f6956f6758d4b3d29b0ee0df7da35312c80b36",
+    "verified": "exact"
+   },
+   "event_date": "2024-05-10",
+   "available_at": "2024-07-30",
+   "retrieved_at": "2026-10-29T11:05:23Z",
+   "relation": "contradicts",
+   "explanation": "The report describes inspection during April 29–May 10; the event date marks that testing window's end. It found that service-issued session cookies, rather than entered usernames and passwords, were collected for storage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "290bea4ba4e34142707b0ed0ec49c6621464600f08f5e27967fcf7115376dc3f"
+}

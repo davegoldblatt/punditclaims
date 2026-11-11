@@ -1,0 +1,126 @@
+{
+ "packet_id": "marcus-dario-amodei-hype-ai-safety-and-the-94a2a8-p1",
+ "claim_revision_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-94a2a8",
+  "version": 1,
+  "content_hash": "fb23840340b71cfdee10d9be2c5cc39c47dff601faf1e7aebb84c250067a5a4b"
+ },
+ "contract_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-94a2a8",
+  "version": 1,
+  "content_hash": "77f1391ca4c4fc09164d374567c114c2490bc8a0a5c4b4163980106b77a0f9a2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "April 2026 Cursor PocketOS database backups deleted",
+   "site.railway.com PocketOS April 2026 backups",
+   "\"Jeremy\" \"Crane\" \"x.com\" \"April\" \"2026\" database",
+   "\"PocketOS\" \"x.com\" \"Crane\"",
+   "site.railway.com/changelog/2026 \"delete\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://x.com/lifeof_jer/status/2048103471019434248",
+    "used": true,
+    "why": "Firsthand company account includes the destructive API operation and the initial backup situation."
+   },
+   {
+    "url": "https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/",
+    "used": true,
+    "why": "Original reporting includes direct correspondence with both the founder and infrastructure provider."
+   },
+   {
+    "url": "https://x.com/JustJake/status/2048858437342355868",
+    "used": true,
+    "why": "Provider response acknowledges additional backup layers and includes the founder's recovery update."
+   },
+   {
+    "url": "https://ai-incident.org/incidents/pocketos-agent-deletes-production-database-and-volume-backups",
+    "used": false,
+    "why": "Secondary incident listing was superseded by the firsthand account and provider response."
+   }
+  ],
+  "performed_at": "2026-10-29T03:22:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "x-com-lifeof-jer-status-2048103471019434248",
+   "source_snapshot_id": "6d684bebfbbe26e38921f68ac70ac9d3cf64a0b0810dde3d45bc130350ea987c",
+   "publisher": "Jer Crane, PocketOS",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/lifeof_jer/status/2048103471019434248",
+   "locator": "What happened — paragraph following the deletion command",
+   "receipt": {
+    "public_excerpt": "three months old",
+    "quote_hash": "1dfaca3aca20e5d04bbcbeab4ec1c1b770d03a5e15635ba989265707f0460767",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-24",
+   "available_at": "2026-04-25",
+   "retrieved_at": "2026-10-29T03:13:10Z",
+   "relation": "supports",
+   "explanation": "The founder reports that Cursor deleted the production volume and its volume-level backups without confirmation, leaving only an old known recovery copy. This supports a safeguard failure, not the stronger claim that no independent backup existed anywhere.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "theregister-com-2026-04-27-cursoropus-agent-snuffs-out-pocketos",
+   "source_snapshot_id": "e26ccb9bd0eb164d194c1ab772760ff7d4539f5449dd985d2e93a7125d28dfdb",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos",
+   "locator": "Railway CEO Jake Cooper's response",
+   "receipt": {
+    "public_excerpt": "called delete",
+    "quote_hash": "eaa8823b470af5c37a85bb9073f1f3744607e3584fb996b0d1a3c2f4422a2e05",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-24",
+   "available_at": "2026-04-27",
+   "retrieved_at": "2026-10-29T03:12:15Z",
+   "relation": "supports",
+   "explanation": "The provider corroborates the destructive operation; the article also documents restoration and an API safeguard change. Its original interviews help verify the firsthand report beyond the agent's purported confession.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "x-com-justjake-status-2048858437342355868",
+   "source_snapshot_id": "e0a9566e06cb31b12762e62c40d8ff661f631489096149d21e99006182f55810",
+   "publisher": "Jake Cooper, Railway, quoting Jer Crane",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/JustJake/status/2048858437342355868",
+   "locator": "Embedded April 27 recovery update from Jer Crane",
+   "receipt": {
+    "public_excerpt": "They have recovered the data",
+    "quote_hash": "8618426d198060983f4886d2cdba15e5b14ae4a1078fcb0928fef1fcaf5d3bf4",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-26",
+   "available_at": "2026-04-27",
+   "retrieved_at": "2026-10-29T03:15:03Z",
+   "relation": "context",
+   "explanation": "The update confirms recovery, which The Register dates to Sunday evening. Railway also states that it maintains disaster-recovery backups, limiting any inference that the incident permanently destroyed every copy.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The complete agent execution trace and configuration were not independently audited.",
+  "The incident does not establish how frequently agents omit safeguards.",
+  "An old independent backup and provider disaster backups existed; absence of all backups is not established."
+ ],
+ "packet_hash": "81591bc7c6c9a285a1e460af0a19e1d812e63a27db8190f063277b969f5dbdd8"
+}

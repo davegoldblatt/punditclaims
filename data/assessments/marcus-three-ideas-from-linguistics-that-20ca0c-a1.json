@@ -1,0 +1,131 @@
+{
+ "assessment_id": "marcus-three-ideas-from-linguistics-that-20ca0c-a1",
+ "claim_revision_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-20ca0c",
+  "version": 1,
+  "content_hash": "c37b3b78c26510d74e259269ce03d6dd8eddc8d50426262fea7c6c303744d94a"
+ },
+ "contract_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-20ca0c",
+  "version": 1,
+  "content_hash": "e6793b2e5f27f6d851d711e04b5702e7ca2abf737f56a07cdd5848892c474a3e"
+ },
+ "packet_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-20ca0c-p1",
+  "content_hash": "d7ff25ecf02dc66fa4bcdee44ae91acd1006017543cd6a7fb010ba07c0e41f50"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Scaling studies show that data quantity matters, and the GPT-3 paper shows benefits from model size. Neither establishes that corpus size contributes more than referential or world-state representations. Experiments on BART and T5 show that learned state representations can affect predictions, but they do not settle GPT-3's mechanisms or the comparative contribution. The required causal comparison remains missing.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "Results from smaller transformers, BART, and T5 are context only.",
+  "Prediction benchmarks alone do not identify the mechanism producing successful answers.",
+  "Data quantity and learned representations need not be competing explanations."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-three-ideas-from-linguistics-that-0eeecb-4x-review-anthropic-1",
+  "marcus-three-ideas-from-linguistics-that-0eeecb-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-three-ideas-from-linguistics-that-0eeecb-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-three-ideas-from-linguistics-that-20ca0c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT-3's good word predictions come more from its huge training corpus than from any real mapping of sentences onto reference and cognitive models.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The fact that its word sequence predictions are often so good tempts many into ascribing meaning, but this is more a reflection of the tremendous size of the input corpus than of a system that genuinely maps sentence onto reference and cognitive models.",
+   "locator": "paragraph 66",
+   "url": "https://garymarcus.substack.com/p/three-ideas-from-linguistics-that",
+   "date": "2022-06-22",
+   "document_title": "Three ideas from linguistics that everyone in AI should know",
+   "observed_at": "2026-10-29T00:05:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "its word sequence predictions are often so good",
+    "more a reflection of the tremendous size of the input corpus",
+    "than of a system that genuinely maps sentence onto reference and cognitive models"
+   ],
+   "our_interpretation": [
+    "The target is GPT-3 as discussed in June 2022.",
+    "The ordinary reading is a comparative causal claim: training-corpus size explains more of GPT-3's successful word prediction than representations connecting sentences to referents and changing world states.",
+    "Prediction quality can be tested with held-out next-word loss and completion accuracy; these measures are supplied by the evaluator.",
+    "Corpus size and learned representations can contribute jointly. Evidence that one matters does not by itself establish that it matters more than the other.",
+    "No observation reporting period or forecast deadline is imposed on this causal assessment."
+   ],
+   "support_condition": "Controlled experiments on GPT-3 or validated faithful replications attribute a greater contribution to training-corpus size than to referential or world-state representations on held-out word prediction.",
+   "contradiction_condition": "Comparable controlled experiments establish that referential or world-state representations contribute at least as much as corpus size to GPT-3's held-out word prediction."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Scaling studies show that data quantity matters, and the GPT-3 paper shows benefits from model size. Neither establishes that corpus size contributes more than referential or world-state representations. Experiments on BART and T5 show that learned state representations can affect predictions, but they do not settle GPT-3's mechanisms or the comparative contribution. The required causal comparison remains missing.",
+  "limitations": [
+   "Results from smaller transformers, BART, and T5 are context only.",
+   "Prediction benchmarks alone do not identify the mechanism producing successful answers.",
+   "Data quantity and learned representations need not be competing explanations."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "empirical scaling laws",
+    "locator": "Abstract; dataset-size experiments in Section 3.3",
+    "url": "https://arxiv.org/html/2001.08361v1",
+    "publisher": "arXiv; Jared Kaplan and colleagues",
+    "event_date": "2020",
+    "available_at": "2020-01-23",
+    "explanation": "The paper varies training-data quantity and reports predictable relationships with prediction loss. This supports corpus size as a relevant factor, but the experiments use smaller models and do not compare its contribution with referential representations in GPT-3."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "few-shot performance improves strongly with model size.",
+    "locator": "Section 3.1.2, LAMBADA",
+    "url": "https://arxiv.org/html/2005.14165v4",
+    "publisher": "arXiv; Tom B. Brown and colleagues",
+    "event_date": "2020",
+    "available_at": "2020-07-22",
+    "explanation": "The GPT-3 study reports better completion performance with larger models. Model capacity is distinct from corpus size, and this result does not separate statistical learning from internal representations of reference or world state."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "align with this prediction.",
+    "locator": "Section 4.4, Results",
+    "url": "https://arxiv.org/html/2106.00737v1",
+    "publisher": "arXiv; Belinda Z. Li, Maxwell Nye, and Jacob Andreas",
+    "event_date": "2021",
+    "available_at": "2021-06-01",
+    "explanation": "Intervening on entity-state representations changed BART and T5 generations in the predicted direction, showing a causal contribution in these experimental settings. This challenges a general separation between text training and state representations, but does not establish their relative contribution in GPT-3."
+   }
+  ],
+  "what_would_resolve": "A controlled GPT-3 study or validated replication that varies corpus size and independently disrupts or supplies referential and world-state representations, then compares their contributions on the same held-out prediction tasks.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "32cde7535cb9d23b0cda6ad91997626ccc69a827f50aeda352e261a330b5376b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:39:18Z"
+}

@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-ezra-kleins-new-take-on-agi-and-why-2015b9-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ezra-kleins-new-take-on-agi-and-why-2015b9": "7e9d82e813c92de99404a3928ee430b3bd09600a9078901b2285b0648832b21b",
+  "case:marcus-ezra-kleins-new-take-on-agi-and-why-21d48a": "97c0e38f43393773339d9bcd37b9486807d10561ba70627464d05aaf4692adda",
+  "case:marcus-ezra-kleins-new-take-on-agi-and-why-236597": "8570826a238d552468e8b7ec2b449f63a7d90135dfb047444554fab3e42b4892",
+  "case:marcus-ezra-kleins-new-take-on-agi-and-why-2ee494": "f5e14984e7657751350f7ca6eaf100ac2cc59dbfb63a5c751c10d88575a9fe19"
+ },
+ "started_at": "2026-10-29T07:04:21Z",
+ "completed_at": "2026-10-29T07:05:09Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. He endorses the guest's AGI definition as his own threshold."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The proposition keeps the definition, the horizon and the 'almost zero chance' wording. It is a forward-looking claim, but it is stated as a probability ('I think there is almost zero chance'), not as a definite 'will not'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The deadline and definition are reasonable, and the contract itself flags the claim as probabilistic. Under policy, probability language is not scored, so the occurrence-based support and contradiction conditions should not be applied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure of GPT-6 Astra's benchmark results (Sept 2026). These are selected benchmarks from the developer, not an independent showing that it can do almost any cognitive task."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "ARC Prize says saturating its benchmark does not establish AGI and explicitly does not claim Astra is AGI. So there is no conclusive early event."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim is a probability statement ('almost zero chance'), which policy does not score. Even on a forecast reading, the March 2028 deadline has not passed, and the packet has no independently substantiated AGI demonstration that would resolve it early. Astra's benchmark results are context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ezra-kleins-new-take-on-agi-and-why-2015b9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own parenthetical in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition matches the statement: hallucinations persist in the latest models. It does not claim any rate and does not deny improvement."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (frontier models still sometimes invent facts) is ordinary and fair. Using early-2025 evaluations up to the post date is a reasonable choice of period."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-4.5 system card (27 Feb 2025) reports a nonzero PersonQA hallucination rate for GPT-4.5 (0.19), a then-latest model. It is a company disclosure, but it is a primary evaluation reporting against the company's own interest."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A dated primary evaluation inside the target period shows that a then-latest frontier model still hallucinated at a nonzero rate. The packet has nothing suggesting hallucinations had been eliminated. The claim holds on its plain reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ezra-kleins-new-take-on-agi-and-why-21d48a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own bullet point in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normative 'AGI should' clause is rightly left unscored. The empirical part (ongoing unpredictable errors show LLMs lack reliable reasoning over abstractions) is captured fairly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'reliable' as dependable across variations and 'unpredictable' as unexpected individual failures is ordinary and fair. The result does depend on that reading, not on a literal claim that aggregate error rates cannot be predicted."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "MIR-Bench (Feb 2025) finds substantial failures inferring and applying rules from examples across 15 frontier models."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "GSM-∞ (Feb 2025) shows accuracy collapsing as reasoning complexity grows, after success on easier cases. The aggregate decline follows a predictable curve."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Same study finds robustness to erroneous examples. This is real reasoning success, but it does not show dependable rule reasoning."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "o3's ARC-AGI-1 result (Dec 2024) predates the target period and shows strong but not reliable novel-task performance."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Controlled evaluations from February 2025 document recurring failures in inferring and applying abstract rules, alongside success on easier cases, which meets the support condition. The counterevidence shows real capability but not dependable reliability, so it does not meet the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ezra-kleins-new-take-on-agi-and-why-236597"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The firm causal core (imminent-AGI rhetoric is motivating many bets) is kept, along with the hedge 'may not make sense'. 'Dodgy' is evaluative."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'dodgy' as depending on near-term AGI, and 'words like his' as similar advocacy in general, is reasonable. The bets are unnamed, so the result depends on which commitments are counted."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The Stargate announcement (Jan 2025) ties the project to AGI. It does not show the project was caused by imminent-AGI advocacy or that its economics depend on near-term AGI."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft gives demand as its reason for expanding capacity. This is an alternative explanation from one company, not a refutation of a claim about many bets."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows AGI-framed investment and an alternative demand rationale, but no decision records establishing that imminent-AGI advocacy motivated many commitments that depend on near-term AGI. The causal claim is neither established nor refuted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ezra-kleins-new-take-on-agi-and-why-2ee494"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30604,
+  "output_tokens": 5301,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

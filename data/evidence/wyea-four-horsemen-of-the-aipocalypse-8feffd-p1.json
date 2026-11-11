@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-8feffd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-8feffd",
+  "version": 1,
+  "content_hash": "a714a5f51b16bcd0fab8c380d339cd5832b590a951c38ef6c3c3e712d48a0516"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-8feffd",
+  "version": 1,
+  "content_hash": "c7898cf3562d0cb754f462f3737609160c6cbf784e102bbfb362001f4231a57e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic Claude degradation April 2026 Stella Laurenzo demand denial",
+   "site.anthropic.com engineering April 23 2026 postmortem Claude quality",
+   "site.github.com/anthropics/claude-code \"6,852\"",
+   "Anthropic \"degrade\" \"serve demand\"",
+   "\"trq212\" \"we don't degrade our models\" April 11 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://x.com/trq212/status/2043023892579766290",
+    "used": true,
+    "why": "The original dated statement establishes the precise scope of the denial."
+   },
+   {
+    "url": "https://github.com/anthropics/claude-code/issues/42796",
+    "used": true,
+    "why": "Original complaint with session-log analysis and contemporaneous supporting comments."
+   },
+   {
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "used": true,
+    "why": "Retrospective primary account of the pre-publication quality problems and their reported causes."
+   },
+   {
+    "url": "https://venturebeat.com/technology/is-anthropic-nerfing-claude-users-increasingly-report-performance",
+    "used": false,
+    "why": "read_page returned HTTP 429, so the article could not be cited."
+   },
+   {
+    "url": "https://texxr.com/1166989/anthropic-denies-nerfing-claude-opus-46-code",
+    "used": false,
+    "why": "Used to locate statements; the original denial was subsequently readable."
+   }
+  ],
+  "performed_at": "2026-10-29T20:00:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "x-com-trq212-status-2043023892579766290",
+   "source_snapshot_id": "a4f6d14fdb1a1a681fc8d259109593b17785746f75b3bea01efd360ad6a4a318",
+   "publisher": "Thariq Shihipar, Anthropic, via X",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/trq212/status/2043023892579766290",
+   "locator": "Thariq Shihipar post, April 11, 2026",
+   "receipt": {
+    "public_excerpt": "don't degrade our models",
+    "quote_hash": "9444f4b4c6c57913e8ab994a4423dba28304c9b6d69d30624f4b1306de9e13b1",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-11",
+   "available_at": "2026-04-11",
+   "retrieved_at": "2026-10-29T16:19:13Z",
+   "relation": "context",
+   "explanation": "The denial concerns degradation undertaken to serve demand. It does not deny that users could experience regressions from bugs or other product changes.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "github-com-anthropics-claude-code-issues-42796",
+   "source_snapshot_id": "6f4301c9ef647b6cc95da7fe79a7820b934f541c23cb421cdb27fa933f5c5c56",
+   "publisher": "stellaraccident via GitHub",
+   "source_type": "independent_measurement",
+   "url": "https://github.com/anthropics/claude-code/issues/42796",
+   "locator": "Issue opened April 2, 2026; What You Asked Claude to Do",
+   "receipt": {
+    "public_excerpt": "Claude has regressed",
+    "quote_hash": "83c80648c16df3bed4109cf6675a67a2d4d85ebdcebf7a1d61b11cf7ba38287b",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-02",
+   "available_at": "2026-04-02",
+   "retrieved_at": "2026-10-29T05:18:53Z",
+   "relation": "context",
+   "explanation": "The original report and accompanying log analysis substantiate that users reported serious degradation. The observational analysis does not establish why Anthropic made changes or isolate demand as the cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "anthropic-com-research-april-23-postmortem",
+   "source_snapshot_id": "456a5d397166e0eca950889ae682c805ea24fd066ed5c1380b66ce93bc938dd6",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/april-23-postmortem",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "API",
+    "quote_hash": "22d8eafe4b8dd9b508f9f6eaa6e478b2b01fab2c66e4c2edf920c5fa6dde255b",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-20",
+   "available_at": "2026-04-23",
+   "retrieved_at": "2026-10-29T03:11:44Z",
+   "relation": "context",
+   "explanation": "The retrospective account identifies reasoning-default, caching, and prompt changes affecting Claude products before publication, while distinguishing the API. Its stated causes concern latency, software errors, and verbosity; this is relevant counterevidence to demand attribution but is not an independent audit.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No independently verified deployment or decision record establishes that the relevant regressions were introduced to serve demand.",
+  "The company account does not independently exclude additional causes or establish the experience of every affected user.",
+  "The documented complaints are not a representative survey of the user base."
+ ],
+ "packet_hash": "81760c96193f40fd65f3acbaf9240974322a7b713c69d29f654a3ace23b7fcce"
+}

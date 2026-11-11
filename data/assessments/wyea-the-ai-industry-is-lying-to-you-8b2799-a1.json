@@ -1,0 +1,121 @@
+{
+ "assessment_id": "wyea-the-ai-industry-is-lying-to-you-8b2799-a1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "version": 2,
+  "content_hash": "3b9a7a0b1003f3ec9c3d9fe3e86a4fbcb3226449f276ce8c3badf0048f5f308c"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "version": 1,
+  "content_hash": "5629cf378a51d24dc9d173710a9851fe4e417ed631ce6c346118422aa11f21eb"
+ },
+ "packet_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799-p1",
+  "content_hash": "ec2f945d71f4d229f5847e7f39f7ddaeaf119c483d90dc5b662e9b60d0623aa7"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The evidence supports concerns about review effort, but not the full causal chain. Sonar found differing experiences, including developers reporting less effort. Meta measured a slowdown in one workflow and no detectable regression after changing it. Those results caution against 'guaranteeing', but their scope does not settle how commonly contemporary generated code violates company standards or causes skimming and delegated review.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "The survey measures reported effort, not controlled review time.",
+  "The Meta experiment concerns suggested fixes to review comments.",
+  "No single study tests all links in the asserted chain."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-ai-industry-is-lying-to-you-505dbd-4x-review-anthropic-1",
+  "wyea-the-ai-industry-is-lying-to-you-505dbd-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-the-ai-industry-is-lying-to-you-505dbd-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLM-based code is often verbose and rarely aligns with in-house coding guidelines and standards, guaranteeing it takes far longer to review, which means reviewers will either skim-read it or feed it into another LLM.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "LLM-based code is often verbose, and rarely aligns with in-house coding guidelines and standards, guaranteeing that it’ll take far longer to chew through, which naturally means that those burdened with reviewing it will either skim-read it or feed it into another LLM to work out what the hell to do.",
+   "locator": "paragraph 127",
+   "url": "https://www.wheresyoured.at/the-ai-industry-is-lying-to-you",
+   "date": "2026-03-24",
+   "document_title": "The AI Industry Is Lying To You",
+   "observed_at": "2026-10-28T22:26:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "often verbose",
+    "rarely aligns with in-house coding guidelines and standards",
+    "guaranteeing that it’ll take far longer to chew through",
+    "reviewing it will either skim-read it or feed it into another LLM"
+   ],
+   "our_interpretation": [
+    "The plain reading is a broad causal claim about professional review of LLM-generated code as of publication.",
+    "'Often' requires recurring prevalence, and 'rarely aligns' means compliance is uncommon. Neither supplies a precise frequency.",
+    "'Far longer' concerns materially greater review time for comparable work, not simply more total review work because more code is produced.",
+    "The proposed causal chain must connect verbosity and standards failures to review time and then to skimming or LLM delegation.",
+    "A small study of targeted patches can test inevitability in that setting, but cannot establish the prevalence of problems across contemporary generated code."
+   ],
+   "support_condition": "Representative comparisons must find frequent verbosity, uncommon compliance with actual local standards and substantially longer review for comparable changes, with evidence that these problems cause reviewers to skim or delegate review.",
+   "contradiction_condition": "Representative comparisons showing ordinary compliance and no substantial review penalty would contradict the general claim. Comparable observed workflows preserving thorough human review would rebut the claimed inevitable downstream behavior."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports concerns about review effort, but not the full causal chain. Sonar found differing experiences, including developers reporting less effort. Meta measured a slowdown in one workflow and no detectable regression after changing it. Those results caution against 'guaranteeing', but their scope does not settle how commonly contemporary generated code violates company standards or causes skimming and delegated review.",
+  "limitations": [
+   "The survey measures reported effort, not controlled review time.",
+   "The Meta experiment concerns suggested fixes to review comments.",
+   "No single study tests all links in the asserted chain."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "regressions",
+    "locator": "Abstract, Safety Trial; full paper section VII-A",
+    "url": "https://arxiv.org/abs/2507.13499",
+    "publisher": "arXiv; Meta researchers",
+    "event_date": "2024-12-18",
+    "available_at": "2025-07-17",
+    "explanation": "Meta's initial experiment found longer reviews; a second trial ending December 18, 2024 found no statistically significant regression after changing how suggested patches appeared. This challenges inevitability, but concerns targeted patches and an earlier workflow rather than the full March 2026 claim."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "less effort",
+    "locator": "Page 10, comparison of AI-generated and human-written code review; page 4, fieldwork dates",
+    "url": "https://www.sonarsource.com/state-of-code-developer-survey-report.pdf",
+    "publisher": "Sonar",
+    "event_date": "2025-10",
+    "available_at": "2026-01-08",
+    "explanation": "The survey reports greater review effort for 38% of developers and less effort for 27%. It supports review burdens for a substantial group while showing variation; self-reported effort does not establish review duration or the claimed causal mechanism."
+   }
+  ],
+  "what_would_resolve": "Representative workplace studies measuring generated-code verbosity, local-rule compliance, matched review time and resulting reviewer behavior.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9238db158a26666314bbb99508c57dd3443107a141680a8bd392706a84e8b8a5",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:21:15Z"
+}

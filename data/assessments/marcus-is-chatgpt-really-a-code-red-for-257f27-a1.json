@@ -1,0 +1,130 @@
+{
+ "assessment_id": "marcus-is-chatgpt-really-a-code-red-for-257f27-a1",
+ "claim_revision_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-257f27",
+  "version": 1,
+  "content_hash": "917fc948e12b5cca1a7d9abd1394a8657b50f3ad279bda209c91fa5ec453a17e"
+ },
+ "contract_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-257f27",
+  "version": 1,
+  "content_hash": "3613c063a095feb39553a6460d0617929915b0b59e1ef174d1497bc122465c48"
+ },
+ "packet_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-257f27-p1",
+  "content_hash": "2e6751a5616f51dbdf021f2d53cef9b298e289dfd978fbc032b34ba1b9386cd3"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Research supports the observation that generated text can contain recurring factual and entity errors. It does not fully settle the proposed explanation. Some errors reproduce existing misconceptions, and models can also distinguish consistent from inconsistent summaries. A narrower observation about factual errors would receive stronger support; the causal claim remains unresolved.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "Summarization and truthfulness benchmarks cover different tasks and model populations.",
+  "Benchmark scoring preferences do not directly measure the frequency of errors in ordinary generated answers.",
+  "The causal interpretation materially affects the assessment."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-is-chatgpt-really-a-code-red-for-257f27-4x-review-anthropic-1",
+  "marcus-is-chatgpt-really-a-code-red-for-257f27-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-is-chatgpt-really-a-code-red-for-257f27-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-is-chatgpt-really-a-code-red-for-257f27",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "When LLMs paraphrase and combine text, they often lose track of which pieces truly belong together, producing errors.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But as they do so, as they glom stuff together, something often gets lost in translation: which bits of text do and do not truly belong together.",
+   "locator": "paragraph 49",
+   "url": "https://garymarcus.substack.com/p/is-chatgpt-really-a-code-red-for",
+   "date": "2022-12-30",
+   "document_title": "Is ChatGPT Really a “Code Red” for Google Search?",
+   "observed_at": "2026-10-29T00:04:40Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "as they glom stuff together",
+    "something often gets lost in translation",
+    "which bits of text do and do not truly belong together"
+   ],
+   "our_interpretation": [
+    "The plain reading is that generating paraphrases and combining learned textual associations recurrently produces incorrect factual relationships.",
+    "The claim concerns the model class discussed in December 2022. The metaphor does not require literal copying and pasting.",
+    "Often means a recurring problem, without an invented numerical threshold.",
+    "Evidence of factual errors alone establishes the observed problem, but does not fully establish the proposed cause."
+   ],
+   "support_condition": "Controlled evaluations show recurring incorrect factual combinations and connect those errors to combining or paraphrasing textual associations.",
+   "contradiction_condition": "Comparable evaluations show that factual relationships are reliably preserved, or controlled interventions establish that the proposed process does not explain the alleged recurring errors."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Research supports the observation that generated text can contain recurring factual and entity errors. It does not fully settle the proposed explanation. Some errors reproduce existing misconceptions, and models can also distinguish consistent from inconsistent summaries. A narrower observation about factual errors would receive stronger support; the causal claim remains unresolved.",
+  "limitations": [
+   "Summarization and truthfulness benchmarks cover different tasks and model populations.",
+   "Benchmark scoring preferences do not directly measure the frequency of errors in ordinary generated answers.",
+   "The causal interpretation materially affects the assessment."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "factually consistent with the input text",
+    "locator": "Abstract, opening sentence",
+    "url": "https://aclanthology.org/2022.emnlp-main.623",
+    "publisher": "Association for Computational Linguistics",
+    "event_date": "2022",
+    "available_at": "2022-12-07",
+    "explanation": "The study documents factual inconsistency and investigates removing erroneous entities from summaries. It supports the observed problem but does not isolate Marcus's proposed causal explanation across LLMs."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "mimic popular misconceptions",
+    "locator": "Abstract, results",
+    "url": "https://arxiv.org/abs/2109.07958v1",
+    "publisher": "arXiv",
+    "event_date": "2021",
+    "available_at": "2021-09-08",
+    "explanation": "This establishes recurring false answers in earlier models. Its focus on imitating misconceptions also shows why false answers cannot automatically be attributed to combining otherwise correct facts."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "factually consistent summaries",
+    "locator": "Abstract, principal findings",
+    "url": "https://arxiv.org/abs/2211.08412v1",
+    "publisher": "arXiv",
+    "event_date": "2022",
+    "available_at": "2022-11-15",
+    "explanation": "The models demonstrated meaningful factual discrimination, although the study also found failures when inconsistent summaries appeared verbatim in the input. This qualifies a blanket account of lost factual relationships without disproving recurring errors."
+   }
+  ],
+  "what_would_resolve": "Controlled studies of relevant models that vary the combination or paraphrasing of factual information and measure resulting misattributions, while separating inherited misinformation from newly incorrect combinations.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a2a49c8a692ca9261cc589eaa1cd570ec4c56193acb5233109857afb8ac09a5c",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:37:04Z"
+}

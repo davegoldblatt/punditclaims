@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-three-ideas-from-linguistics-that-5fa9f3-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-three-ideas-from-linguistics-that-5fa9f3": "62c00239210e18ce75d0f12e261d2237aff10dad3f7ca3b03aea2e3962521cb4",
+  "case:marcus-three-ideas-from-linguistics-that-612dd3": "e7cfb90f4096a458d8acbbe0780cfb7b6899a659cb1017429c327c45d1d4f2f7",
+  "case:marcus-three-ideas-from-linguistics-that-638e77": "61875e5801504ba02227503d702d5abc411ca4540353cd01efb689a8b6a4df7d",
+  "case:marcus-three-ideas-from-linguistics-that-76a3c8": "8154c3a84ddbc558f3d0268e66481fb44c0e1204d115b97963e6167a09254a3b"
+ },
+ "started_at": "2026-10-29T12:38:01Z",
+ "completed_at": "2026-10-29T12:38:59Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own post, co-signed with Elliot Murphy; not a quotation of others."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Unhedged present-tense capability denial; normalisation matches the words."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The output-capability reading is broad but an ordinary reading of a categorical 'do not produce'; the post's own footnote frames it as GPT not outputting evaluable meaning representations. The narrower internal-representation reading is untested here."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Pre-post study: GPT-3/Codex map utterances to meaning representations via in-context prompting."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Unconstrained GPT-3 directly outputs meaning representations on held-out test items, 0.39-0.66 denotation accuracy."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "Under the contract's output reading, pre-post GPT-3 produced interpretable structured meaning representations for held-out utterances with no grammar constraint (e2), which meets the contradiction condition. Nobody disputes the prose fluency. The result depends on the reading; the internal-representation reading is unsettled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-5fa9f3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'As likely as not' states an approximate output rate (about half), not the speaker's confidence; treated as a frequency observation. The denominator (outputs with both cubes) is implied."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading it as about half or more is ordinary. The version (likely DALL-E 2), prompt and denominator are evaluator choices, as flagged."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "DALL-E 2 paper shows two-cube binding trouble, but for the opposite colour order and with no reversal rate."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence confirms qualitative attribute-binding failures in DALL-E 2. It gives no unselected sample or reversal frequency for the stated prompt, so the approximately-half rate can be neither confirmed nor refuted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-612dd3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Footnote in Marcus's co-authored post, in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Causal: lack of reference/cognitive model leads to fabrication, and it is hard to remedy. Faithful."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Requiring controlled tests of the mechanism and of remediation is a fair reading; 'not so remediable' is rightly not read as impossible."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "TruthfulQA shows GPT-3 false answers but attributes them to imitating misconceptions; it does not test the proposed cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "WebGPT partly reduces falsehoods; several factors changed at once, so the mechanism is not isolated."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "InstructGPT halves closed-domain hallucination without a world model; partial fix, not reliable remediation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Evidence confirms GPT-3 produced falsehoods and that partial remediation was possible. No controlled study isolates missing reference or world-state as the cause, and partial gains neither establish nor refute 'not so remediable'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-638e77"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'In our view' marks opinion, not probability; the causal link from neglect of the three factors is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'over time' as within a generation and requiring a causal test is fair."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "GPT-3 authors report loss of coherence over long passages; this confirms the symptom, not the cause."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "Planner scaffolding improved GPT-J story coherence; limited evaluation, does not isolate the three factors or test grounding."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "Later Re3 study; bundled interventions, does not isolate the mechanism; fiction only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The coherence-loss symptom is documented, and planning scaffolds help somewhat, but no controlled experiment ties the deficits to the three named factors or tests connection to reality. The causal claim is not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-76a3c8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30079,
+  "output_tokens": 6360,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

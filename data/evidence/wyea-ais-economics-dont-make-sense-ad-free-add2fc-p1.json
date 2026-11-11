@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-ad-free-add2fc-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-add2fc",
+  "version": 2,
+  "content_hash": "955947650c7fa5b2ca66229fbf64d53f12cb6526466c58a4be81ea6aff0f8f15"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-add2fc",
+  "version": 1,
+  "content_hash": "e5637b2a7a18e713c51205c0ce08548119ee6db519256e94be8ccee9c40106e3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI data centers \"15.2\" \"114\" 2026",
+   "data centers \"15.2\" \"GW\" 2026 construction",
+   "\"15.2GW\" data centers",
+   "\"15.2 GW\" \"2028\"",
+   "\"GPU\" \"$14 million\" revenue megawatt",
+   "site.sightlineclimate.com \"15.2\"",
+   "site.currence.ai \"114GW\"",
+   "GPU cloud revenue per megawatt economics 2026 14 million",
+   "site.energy.gov power usage effectiveness total facility energy IT equipment energy PUE"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+    "used": true,
+    "why": "Read in full after redirect. The published tracker discusses the 2026 cohort, not independent confirmation of the asserted 2028 cohort."
+   },
+   {
+    "url": "https://www.energy.gov/cmei/femp/cooling-water-efficiency-opportunities-federal-data-centers",
+    "used": true,
+    "why": "Read in full. Provides the PUE definition used to check the conditional arithmetic."
+   },
+   {
+    "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense-ad-free",
+    "used": false,
+    "why": "Read to trace references and clarify scope; not used as evidence of truth."
+   },
+   {
+    "url": "https://www.wheresyoured.at/four-horsemen-of-the-aipocalypse/",
+    "used": false,
+    "why": "Reference tracing located Zitron's attribution of 15.2 GW to private correspondence. His own account cannot independently verify the figure."
+   },
+   {
+    "url": "https://panteracapital.com/ai-compute-unit-economics/",
+    "used": false,
+    "why": "Read in full, but the extracted interactive model omitted numerical inputs and did not establish a comparable April revenue requirement."
+   },
+   {
+    "url": "https://www.energy.gov/sites/default/files/2024-07/best-practice-guide-data-center-design.pdf",
+    "used": false,
+    "why": "Read relevant passages. Confirms the PUE framework but adds no verification of the construction cohort or financial threshold."
+   }
+  ],
+  "performed_at": "2026-10-29T10:24:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sightlineclimate-com-research-data-center-outlook",
+   "source_snapshot_id": "2a1dc4bfb79434e7da0d79a24eb049b9493a7ca2f27568ff0ce239ef28f61d54",
+   "publisher": "Sightline Climate / Currence",
+   "source_type": "independent_measurement",
+   "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+   "locator": "Paragraph beginning 'We’re tracking 190GW'",
+   "receipt": {
+    "public_excerpt": "about 5GW",
+    "quote_hash": "8241c1c00b85af4a365a6a2b7a89f50def991d7dfc02fa787ef961af390e051d",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-24",
+   "available_at": "2026-02-24",
+   "retrieved_at": "2026-10-29T10:02:15Z",
+   "relation": "context",
+   "explanation": "This figure concerns projects scheduled for 2026 in the published February outlook. It neither confirms nor contradicts 15.2 GW across the larger cohort scheduled through 2028.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "energy-gov-cmei-femp-cooling-water-efficiency-opportunities-federal-data-centers",
+   "source_snapshot_id": "340039bc72c6034cbf345efa21dc97cbd9b196141151f25a8a24f95b7bdf6126",
+   "publisher": "U.S. Department of Energy",
+   "source_type": "official_statistics",
+   "url": "https://www.energy.gov/cmei/femp/cooling-water-efficiency-opportunities-federal-data-centers",
+   "locator": "Low-Cost/No-Cost Water-Saving Opportunities at Existing Data Centers",
+   "receipt": {
+    "public_excerpt": "the ratio of the total annual facility energy use to the annual energy use of all of the IT equipment",
+    "quote_hash": "01cbd64883a2e9ba79849b7c7360b8579faf324a90d71f5243f8efec6002b7a4",
+    "verified": "exact"
+   },
+   "event_date": "2019-01-09",
+   "available_at": "2019-01-09",
+   "retrieved_at": "2026-10-29T10:16:44Z",
+   "relation": "context",
+   "explanation": "The official definition supports dividing facility energy by PUE; applying it to capacity additionally assumes comparable loading. Using the claim's inputs produces approximately the stated revenue, but does not establish an economic break-even requirement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "15.2 GW facility capacity, stipulated in the claim",
+     "PUE 1.35, stipulated in the claim",
+     "USD 14 million per MW per year, stipulated in the claim",
+     "1 GW = 1,000 MW"
+    ],
+    "formula": "IT capacity = 15.2 / 1.35 = 11.259259... GW. Annual revenue = (15.2 / 1.35) × 1,000 × USD 14,000,000 = USD 157.629629... billion. Using the claim's approximate 11.2 GW gives USD 156.8 billion.",
+    "rounding": "Unrounded inputs give USD 157.63 billion, about 0.53% above USD 156.8 billion. The difference is immaterial to 'around'; 11.2 GW is a downward approximation rather than ordinary rounding to one decimal."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independently readable confirmation of the 15.2 GW cohort and its facility-power basis was found.",
+  "The private tracker clarification attributed by Zitron was not independently available.",
+  "No matching model established $14 million per MW per year as the revenue required for an adequate return."
+ ],
+ "packet_hash": "d91caa089a4ac8b24e34ff0be944917a75963f9290bbb32112c9385a2f50182b"
+}

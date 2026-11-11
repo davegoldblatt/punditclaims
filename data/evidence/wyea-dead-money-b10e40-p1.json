@@ -1,0 +1,143 @@
+{
+ "packet_id": "wyea-dead-money-b10e40-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-b10e40",
+  "version": 1,
+  "content_hash": "49c2e36cf5ddde02e9d511c6198ff0bf0cf6309bf02007df5e846d811a72ce81"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-b10e40",
+  "version": 1,
+  "content_hash": "e148f8188f391b31be60956c480cd3e8758edb6542ba466e3c7e2cf478d3def1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Canopy Wave\" \"Catalyst\" B300",
+   "\"Sharon AI\" \"B300\" \"Dubai\" contract",
+   "\"SharonAI\" \"8,208\" agreement 2026 capex",
+   "\"SharonAI\" \"capex\" \"B300\" ESDS",
+   "\"Catalyst Compute\" \"purchase\" \"million\" GPU 2026",
+   "\"SharonAI\" \"720.0 million\" \"2026\"",
+   "\"B300\" \"$550,000\" 2026 server price",
+   "\"Catalyst Compute\" \"capex\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://markets.financialcontent.com/worldnow/article/marketersmedia-2026-7-21-kidz-ai-enters-into-446-million-definitive-gpu-compute-services-agreement-with-canopy-wave",
+    "used": true,
+    "why": "Readable company release establishes the Catalyst contract's stated value and GPU count."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2068385/000149315226030363/form424b3.htm",
+    "used": false,
+    "why": "Original filing returned HTTP 403 through read_page."
+   },
+   {
+    "url": "https://www.stocktitan.net/sec-filings/SHAZW/10-q-sharon-ai-holdings-inc-quarterly-earnings-report-7c64553afe2e.html",
+    "used": false,
+    "why": "Search exposed a relevant capex disclosure, but read_page returned HTTP 403. A readable filing reproduction was located."
+   },
+   {
+    "url": "https://www.companiesmarketcap.com/nzd/sharonai-holdings/sec-reports-10q/0001493152-26-036377/",
+    "used": true,
+    "why": "Readable reproduction of SharonAI's quarterly filing provides a project-specific equipment and infrastructure budget."
+   },
+   {
+    "url": "https://www.otcmarkets.com/filing/html?guid=Dwp-keWSJ-LBB3h&id=19674020",
+    "used": false,
+    "why": "Alternative filing reproduction timed out."
+   }
+  ],
+  "performed_at": "2026-10-29T10:58:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "markets-financialcontent-com-worldnow-article-marketersmedia-2026-7-98b3c9964ca4",
+   "source_snapshot_id": "f3dca20199c7ac58abe88009301b3b16ea203741984bfbce8706175e85dbaeb4",
+   "publisher": "KIDZ AI, distributed through FinancialContent",
+   "source_type": "company_disclosure",
+   "url": "https://markets.financialcontent.com/worldnow/article/marketersmedia-2026-7-21-kidz-ai-enters-into-446-million-definitive-gpu-compute-services-agreement-with-canopy-wave",
+   "locator": "Opening summary",
+   "receipt": {
+    "public_excerpt": "$44.6 million",
+    "quote_hash": "c63cf5365d3124db6891e3dce12012208bd3567b100f97e62d663ecf7e44bf19",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-17",
+   "available_at": "2026-07-21",
+   "retrieved_at": "2026-10-29T10:51:01Z",
+   "relation": "context",
+   "explanation": "The release corroborates the Catalyst contract's stated five-year receipts and GPU count. It supplies no complete project capex figure, so it cannot establish the remaining cushion.",
+   "metric_scope": {
+    "company": "Catalyst Compute, subsidiary of KIDZ AI",
+    "metric": "Five-year gross contractual service fees",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "companiesmarketcap-com-nzd-sharonai-holdings-sec-reports-10q-000149-40ba4d0763b9",
+   "source_snapshot_id": "05be7bfc486261ab1a3eb22f4dbfda8fbb28648921f50544d56251c830eb63ee",
+   "publisher": "SharonAI Holdings, reproduced by CompaniesMarketCap",
+   "source_type": "filing",
+   "url": "https://www.companiesmarketcap.com/nzd/sharonai-holdings/sec-reports-10q/0001493152-26-036377",
+   "locator": "Note 20, Commitments, Hardware Procurement",
+   "receipt": {
+    "public_excerpt": "equipment to be procured",
+    "quote_hash": "f353822e34293d0151bf79f9ac17f379925ca56d192ba69909f294c2f86c7b26",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-06",
+   "retrieved_at": "2026-10-29T10:52:12Z",
+   "relation": "context",
+   "explanation": "The preceding sentences give approximately $720 million of equipment and related infrastructure capex for the $1.26 billion ESDS arrangement, a nominal 75% excess of receipts over that budget. This is material counterevidence to the assumed $1.1 billion capex, but predates the target period and requires reconciliation with the post's full-project cost scope.",
+   "metric_scope": {
+    "company": "SharonAI",
+    "metric": "Contract value relative to expected equipment and related infrastructure capex for ESDS arrangement",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Contract value: approximately USD 1,260 million",
+     "Expected equipment and related infrastructure capex: approximately USD 720 million"
+    ],
+    "formula": "(1260 - 720) / 720 × 100 = 75%",
+    "rounding": "Approximate percentage, reflecting rounded company inputs."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No complete Catalyst project capital budget was recovered.",
+  "The assumed matching infrastructure allowance has not been independently established.",
+  "SharonAI's equipment and infrastructure budget needs reconciliation with the post's full-project capex estimate.",
+  "A modest positive pre-opex cushion alone does not prove that any positive operating expense prevents recovery."
+ ],
+ "packet_hash": "dc15f84d5c589f93d4ab6a21284df71dcdcc26d9de9f6b62071d9219989c1162"
+}

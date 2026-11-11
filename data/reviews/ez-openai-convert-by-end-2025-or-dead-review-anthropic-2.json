@@ -1,0 +1,63 @@
+{
+ "run_id": "ez-openai-convert-by-end-2025-or-dead-review-anthropic-2",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-4",
+ "prompt_hash": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+ "rubric_version": "policy-2026-10-28.5",
+ "input_hashes": {
+  "claim": "e1eb41d350dac24c0ecc691f1c0aea54fa2c9385da133466c9b3831686be2689",
+  "contract": "83a9afc006b968a96c79d0ae0243b67e09f14aaa6ff8581431c1104312987852",
+  "packet": "45293b0e7afc06749428f379b20fb9f4499c20df1d332fccaec46abb238f66d0",
+  "prompt": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+  "case": "c9ea7d018578f0e097b78e590206359e9d0b470d5daea0a9524bafa9c9af679e"
+ },
+ "started_at": "2026-10-28T23:53:10Z",
+ "completed_at": "2026-10-28T23:53:25Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron's own words in his own newsletter, written in his voice and endorsed."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "conditional_forecast",
+   "note": "'Needs to convert by the end of the year or it's effectively dead' is an unhedged conditional: no conversion by end-2025 means effectively dead. Reading the company as OpenAI fits the context. The separate 'even if it does' claim about continual funding is correctly left out."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "Both the support and contradiction conditions require the antecedent (no conversion by 2025-12-31). Reading 'convert' as finishing the for-profit restructuring is reasonable. 'Effectively dead' is undefined, but that never matters because the antecedent failed."
+  },
+  "evidence": [
+   {
+    "id": "openai-recapitalization-complete",
+    "fits": true,
+    "relation": "context",
+    "note": "OpenAI's own disclosure dated 2025-10-28 says its recapitalization was complete, before the deadline. It bears on the antecedent, not the outcome, so it cannot contradict the conditional. The drafter's 'contradicts' label is wrong; this is context. It is a company statement, not an independent finding."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "forecast_outcome",
+  "horizon_state": "elapsed",
+  "outcome": "not_adjudicable",
+  "rationale": "This is a conditional forecast whose antecedent is no for-profit conversion by end-2025. The packet's only item, a company disclosure, says OpenAI finished its recapitalization on 2025-10-28, so the antecedent apparently did not happen. Under policy, a conditional whose antecedent failed or is unknown is not scored. Either way the 'effectively dead' consequent is never tested. The horizon has passed, and the outcome is not_adjudicable.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 6997,
+  "output_tokens": 1319,
+  "cached_input_tokens": 2607,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,143 @@
+{
+ "packet_id": "wyea-concentration-risk-a6d73c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-a6d73c",
+  "version": 2,
+  "content_hash": "2ebb9d7cc945165e1f8ef08cb7c5dab4c1ea7d7137b23197d97a295ae93dd16b"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-a6d73c",
+  "version": 1,
+  "content_hash": "6502691f7115f7c4ce6e136305b8c7a009b354b55f9bf8dd17f15e416aef20c5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Bloomberg Microsoft FY2026 AI revenue 33.33 billion 10 billion OpenAI",
+   "\"Microsoft\" \"$33.33 billion\" \"2026\"",
+   "\"Microsoft\" \"AI\" \"$10 billion\" \"Bloomberg\" \"August\" \"2026\"",
+   "\"Microsoft’s AI Sales Mostly Come From OpenAI\" Bloomberg August 2026",
+   "\"Microsoft’s AI Sales\" \"yahoo\"",
+   "\"Microsoft\" \"33.3\" \"AI revenue\" \"2026\"",
+   "\"Microsoft\" \"OpenAI\" \"24.1\" \"10 billion\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q3/press-release-webcast",
+    "used": true,
+    "why": "Readable primary disclosure explicitly identifies an annualized run rate, which cannot substitute for the claimed annual revenue."
+   },
+   {
+    "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+    "used": true,
+    "why": "Accessible reporting on the annual OpenAI amount; used because the corresponding filing passage could not be retrieved with read_page."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/artificial-intelligence/microsofts-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "Although labelled FULL TEXT, the returned text stops mid-sentence and requires login. It is an incomplete paywall preview and is not cited."
+   },
+   {
+    "url": "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-ai-sales-mostly-come-180651710.html",
+    "used": false,
+    "why": "Located as a syndicated Bloomberg copy, but read_page returned HTTP 404."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar26/",
+    "used": false,
+    "why": "read_page returned the shareholder letter but did not retrieve the financial-note passage found by search."
+   },
+   {
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/MSFT_FY26Q4_10K.docx",
+    "used": false,
+    "why": "read_page did not retrieve the requested financial-note passage."
+   }
+  ],
+  "performed_at": "2026-10-29T10:47:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-earnings-fy-2026-q3-press-release-webcast",
+   "source_snapshot_id": "f2a7a7e12ece9003d087b73a8decff85dbbd96c371ccb331e9825ea82a7fd8bb",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q3/press-release-webcast",
+   "locator": "Opening CEO statement",
+   "receipt": {
+    "public_excerpt": "annual revenue run rate",
+    "quote_hash": "bcbaa2ba89bdc4a1d322f322e5d7cff1bb5f7172de3aaa51b42c88ea580e61b5",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T10:06:22Z",
+   "relation": "context",
+   "explanation": "This is an annualized sales rate at the March-quarter reporting point. It neither establishes nor disproves realized FY2026 AI revenue or its split by customer.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "AI business annual revenue run rate",
+    "currency": "USD",
+    "units": "billions per year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-03-31",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "techcrunch-com-2026-10-28-microsoft-recorded-10-billion-in-revenue-from-openai",
+   "source_snapshot_id": "a2f09a8fb90779e3ca3fa163f497c6febdc61237065263668290a85e97988244",
+   "publisher": "TechCrunch",
+   "source_type": "news_report",
+   "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai",
+   "locator": "Paragraph following the fiscal-year explanation",
+   "receipt": {
+    "public_excerpt": "$24.1 billion.",
+    "quote_hash": "2fec3ccceb6d533bdb38383a3fc3aa6609b1825d4ddd86d1277a5f3e0f6fe6df",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-28",
+   "retrieved_at": "2026-10-29T10:09:15Z",
+   "relation": "context",
+   "explanation": "Reports annual OpenAI sales, without the claimed denominator.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Revenue from commercial arrangements with OpenAI",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The complete Bloomberg report was not accessible through read_page.",
+  "No retrieved source establishes $33.33 billion of realized FY2026 AI revenue.",
+  "No matching breakdown establishes approximately $10 billion from customers other than OpenAI.",
+  "The annualized company disclosure and annual customer disclosure cannot be combined to infer the missing breakdown."
+ ],
+ "packet_hash": "a4ec197bc1c8d42fc8e07980a31a1ae6fa6645c973589785e8b35957a0f19d60"
+}

@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-gpt-5-overdue-overhyped-and-underwhelming-9ec934-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-gpt-5-overdue-overhyped-and-underwhelming-9ec934": "aa1f0c7a8cd2084cbf21fadae4c4702af95b5175423a5251452814432dab5cb5"
+ },
+ "started_at": "2026-10-29T23:25:30Z",
+ "completed_at": "2026-10-29T23:25:52Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He cites the ASU study and Hsu, but the causal inference about GPT-5-level efforts is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful causal claim: the OOD generalization failure explains why efforts to build GPT-5-level models keep missing. 'The principled reason' reads slightly stronger than 'tells us why', but the contract makes clear it need not be the only cause."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary and fair. Marcus never defines 'GPT-5 level', the efforts, or their targets, so the result turns on how those are read. Asking for a link between the mechanism and the actual development shortfalls is fair to a causal claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "ASU preprint, available before the post. Controlled synthetic tasks show CoT gets worse as distribution shift grows. This backs the mechanism in that setting, but nothing links it to the development efforts or their targets."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "MIT/Brown preprint finding much better generalization in recent reasoning models on mutated or OOD code tasks. Partial counterevidence to a blanket generalization failure, but it does not explain or rule out the claimed cause of missed targets."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple preprint showing accuracy collapse as puzzle complexity rises. It does not isolate distribution mismatch as the cause or connect the collapse to the development efforts."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has mixed controlled evidence on the mechanism: e1 supports it, e2 cuts against it on code tasks, and e3 is ambiguous. No item names the development efforts, documents their targets, or ties their shortfalls to distribution shift, so neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-gpt-5-overdue-overhyped-and-underwhelming-9ec934"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26029,
+  "output_tokens": 2173,
+  "cached_input_tokens": 15196,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

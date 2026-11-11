@@ -1,0 +1,122 @@
+{
+ "assessment_id": "marcus-no-virginia-agi-is-not-imminent-b7e604-a1",
+ "claim_revision_ref": {
+  "id": "marcus-no-virginia-agi-is-not-imminent-b7e604",
+  "version": 1,
+  "content_hash": "af39555bc1b099b776caaf564951c35215035e1c486d7c3a31dc05ad9755d915"
+ },
+ "contract_ref": {
+  "id": "marcus-no-virginia-agi-is-not-imminent-b7e604",
+  "version": 1,
+  "content_hash": "6999d7a54f91729364fe0b37e834316ab011fd0afc34fb7d7e8e88df92093999"
+ },
+ "packet_ref": {
+  "id": "marcus-no-virginia-agi-is-not-imminent-b7e604-p1",
+  "content_hash": "2aaea5edb553b6b61f2e98aeebe982754fd6f34efa1b6fb1cfa1ac6b0c43a386"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-08-01",
+  "end": "2023-08-20",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence establishes neither broad reliability nor broad unreliability for the target period. Earlier human evaluations found strong news-summary faithfulness, while a later Vectara snapshot found residual hallucinations. Neither should be relabeled an August measurement. A nonzero error rate alone also does not settle what Marcus meant by reliably.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "The inferred monthly observation window is narrower than a general review of 2023 models.",
+  "News benchmarks do not represent every summarization use.",
+  "Automated hallucination scores and human factuality judgments are not interchangeable."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-no-virginia-agi-is-not-imminent-5387d8-4x-review-anthropic-1",
+  "marcus-no-virginia-agi-is-not-imminent-5387d8-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-no-virginia-agi-is-not-imminent-5387d8-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-no-virginia-agi-is-not-imminent-b7e604",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs cannot reliably write summaries without hallucinating.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Humans can write summaries of things without hallucination; LLMs cannot do so reliably.",
+   "locator": "paragraph 19",
+   "url": "https://garymarcus.substack.com/p/no-virginia-agi-is-not-imminent",
+   "date": "2023-08-20",
+   "document_title": "No, Virginia, AGI is not imminent",
+   "observed_at": "2026-10-29T00:03:26Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Humans can write summaries of things without hallucination",
+    "LLMs cannot do so reliably"
+   ],
+   "our_interpretation": [
+    "The plain reading concerns dependable factual faithfulness in ordinary summarization, not an inability to produce any correct summary.",
+    "Hallucination means adding factual content unsupported by, or inconsistent with, the material being summarized.",
+    "For this ongoing observation, I use August 2023 through publication as the latest reporting window. The monthly boundary is an evaluator convention because model evaluations have no fixed reporting cycle.",
+    "No numerical reliability threshold, document distribution, prompting method, or model list is supplied. I do not substitute a requirement of perfect accuracy."
+   ],
+   "support_condition": "Representative evaluations of then-current LLMs show recurring unsupported factual content across ordinary summarization tasks, sufficient to undermine dependable use.",
+   "contradiction_condition": "Representative evaluations show that then-current LLMs dependably produce factually faithful summaries across ordinary tasks, including suitable comparisons with human summaries."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence establishes neither broad reliability nor broad unreliability for the target period. Earlier human evaluations found strong news-summary faithfulness, while a later Vectara snapshot found residual hallucinations. Neither should be relabeled an August measurement. A nonzero error rate alone also does not settle what Marcus meant by reliably.",
+  "limitations": [
+   "The inferred monthly observation window is narrower than a general review of 2023 models.",
+   "News benchmarks do not represent every summarization use.",
+   "Automated hallucination scores and human factuality judgments are not interchangeable."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "Instruction tuned models have strong summarization ability.",
+    "locator": "Section 3.2, Evaluation Results",
+    "url": "https://arxiv.org/html/2301.13848v1",
+    "publisher": "arXiv; Tianyi Zhang and colleagues",
+    "event_date": "2023-01",
+    "available_at": "2023-01-31",
+    "explanation": "The study reports an XSUM faithfulness score of 0.97 for zero-shot Instruct Davinci, falling to 0.77 with five reference examples. This is material counterevidence to sweeping incapacity, but concerns earlier evaluations and a limited news-summary setting."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "hallucinations when summarizing a document.",
+    "locator": "Introduction and leaderboard table, snapshot last updated November 1, 2023",
+    "url": "https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard/blob/d3f8463fea4f7a0c900dee7b432b0c5992e315f4/leaderboard.md?code=true",
+    "publisher": "Vectara",
+    "event_date": "2023-11-01",
+    "available_at": "2023-11-06",
+    "explanation": "The snapshot reports a 3.0% hallucination rate for GPT-4 and 3.5% for GPT-3.5 using Vectara's automated evaluator. These later measurements illustrate both substantial factual consistency and residual errors; they are not August outcome evidence."
+   }
+  ],
+  "what_would_resolve": "Dated evaluations of August 2023 model versions across ordinary summary tasks, with human-checked unsupported-content rates and comparable human baselines. Borderline results would still require an explicit reliability threshold.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e1e27921e96527d8cb61ff29ce9b627af7adff5e7497e23482b35e51a2e5523b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:00:15Z"
+}

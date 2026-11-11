@@ -1,0 +1,109 @@
+{
+ "packet_id": "marcus-no-virginia-agi-is-not-imminent-b7e604-p1",
+ "claim_revision_ref": {
+  "id": "marcus-no-virginia-agi-is-not-imminent-b7e604",
+  "version": 1,
+  "content_hash": "af39555bc1b099b776caaf564951c35215035e1c486d7c3a31dc05ad9755d915"
+ },
+ "contract_ref": {
+  "id": "marcus-no-virginia-agi-is-not-imminent-b7e604",
+  "version": 1,
+  "content_hash": "6999d7a54f91729364fe0b37e834316ab011fd0afc34fb7d7e8e88df92093999"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 evaluating factual consistency ChatGPT GPT-4 summarization human evaluation hallucination May 2023",
+   "2023 summarization GPT-4 factual consistency 95% May June Zhang Goyal",
+   "\"2023\" \"summarization\" \"Goyal\" \"factual\" ChatGPT",
+   "\"Language Models\" \"summarization\" \"Goyal\" \"2023\" \"human\"",
+   "Vectara hallucination leaderboard launched November 2023 summarization 3 percent GPT-4"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2301.13848v1",
+    "used": true,
+    "why": "Primary human evaluation supplies important counterevidence, but predates the target window."
+   },
+   {
+    "url": "https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard/blob/d3f8463fea4f7a0c900dee7b432b0c5992e315f4/leaderboard.md?code=true",
+    "used": true,
+    "why": "A fixed historical leaderboard snapshot avoids silently using current models. Its November measurements cannot establish August performance."
+   },
+   {
+    "url": "https://aclanthology.org/2023.findings-acl.322/",
+    "used": false,
+    "why": "Primarily measures preference between consistent and inconsistent summaries, rather than hallucination rates in freely generated summaries."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41746-023-00896-7",
+    "used": false,
+    "why": "The accessible text describes medical-summary errors, but does not date the experiments sufficiently to place them inside the target window."
+   },
+   {
+    "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
+    "used": false,
+    "why": "Useful earlier disclosure about hallucinations, but not an August summarization-specific reliability measurement."
+   }
+  ],
+  "performed_at": "2026-10-29T07:38:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2301-13848v1",
+   "source_snapshot_id": "94c6e87091fef2aad7a29d590c39965779cae311c89165f4bbc3b3c9b58e25b7",
+   "publisher": "arXiv; Tianyi Zhang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2301.13848v1",
+   "locator": "Section 3.2, Evaluation Results",
+   "receipt": {
+    "public_excerpt": "Instruction tuned models have strong summarization ability.",
+    "quote_hash": "a08e14cd2f294137c106d78a9769ecb223f3909c8a77944ca64d8cb35ede73de",
+    "verified": "exact"
+   },
+   "event_date": "2023-01",
+   "available_at": "2023-01-31",
+   "retrieved_at": "2026-10-29T07:27:29Z",
+   "relation": "context",
+   "explanation": "The study reports an XSUM faithfulness score of 0.97 for zero-shot Instruct Davinci, falling to 0.77 with five reference examples. This is material counterevidence to sweeping incapacity, but concerns earlier evaluations and a limited news-summary setting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "huggingface-co-spaces-vectara-hallucination-evaluation-leaderboard-9a7931a0e45c",
+   "source_snapshot_id": "4839a6c970e1ac8c1d5f95977179b55bcd28cb17356c1bb4467fe8f8cab22b75",
+   "publisher": "Vectara",
+   "source_type": "benchmark",
+   "url": "https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard/blob/d3f8463fea4f7a0c900dee7b432b0c5992e315f4/leaderboard.md?code=true",
+   "locator": "Introduction and leaderboard table, snapshot last updated November 1, 2023",
+   "receipt": {
+    "public_excerpt": "hallucinations when summarizing a document.",
+    "quote_hash": "292119749564c3c6f28a1c0b8e9665307c8cc2ed76f21f7c9476c866fbdc641c",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-01",
+   "available_at": "2023-11-06",
+   "retrieved_at": "2026-10-29T07:33:42Z",
+   "relation": "context",
+   "explanation": "The snapshot reports a 3.0% hallucination rate for GPT-4 and 3.5% for GPT-3.5 using Vectara's automated evaluator. These later measurements illustrate both substantial factual consistency and residual errors; they are not August outcome evidence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved representative evaluation dates its summarization observations to August 1–20, 2023.",
+  "The claim supplies no threshold for deciding when a nonzero error rate becomes unreliable.",
+  "The retrieved evidence does not establish the proposed human–LLM contrast across ordinary summarization tasks."
+ ],
+ "packet_hash": "2aaea5edb553b6b61f2e98aeebe982754fd6f34efa1b6fb1cfa1ac6b0c43a386"
+}

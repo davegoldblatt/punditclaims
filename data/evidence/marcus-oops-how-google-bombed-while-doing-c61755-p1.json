@@ -1,0 +1,118 @@
+{
+ "packet_id": "marcus-oops-how-google-bombed-while-doing-c61755-p1",
+ "claim_revision_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-c61755",
+  "version": 1,
+  "content_hash": "785e3b91f0387e00e60201fbc961d08db3264dee5b259fae0ac7b7ef22d24ddd"
+ },
+ "contract_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-c61755",
+  "version": 1,
+  "content_hash": "4cf573b451452b9be3940cc5887d762aeb7cf89b750c0bda3e82e1e4a3953f83"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "TruthfulQA larger models least truthful 2021 PaLM scaling truthfulness 2022",
+   "PaLM 540B TruthfulQA scaling 8B 62B truthfulness",
+   "Gopher TruthfulQA \"larger\" \"truthful\"",
+   "\"Gopher\" \"TruthfulQA\" \"scale\"",
+   "\"PaLM\" \"truthfulness\" \"scaling\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Original TruthfulQA research directly reports inverse scaling in the tested model families."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2112.11446",
+    "used": true,
+    "why": "Original Gopher research reports positive scaling on the multiple-choice version of the same benchmark, with evaluation variants checked."
+   },
+   {
+    "url": "https://arxiv.org/abs/2112.11446",
+    "used": true,
+    "why": "Read to verify the Gopher report's submission and revision dates."
+   },
+   {
+    "url": "https://truthful.ai/papers/truthfulqa/",
+    "used": false,
+    "why": "Readable author summary corroborates the early inverse-scaling result; the original research record is cited instead."
+   },
+   {
+    "url": "https://arxiv.org/html/2005.14165",
+    "used": false,
+    "why": "Its news-generation study measures detection of machine-written text, not perceived authority directly. It cannot close that measurement gap."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2204.02311",
+    "used": false,
+    "why": "The targeted TruthfulQA passage was not found; no claim rests on this source."
+   },
+   {
+    "url": "https://arxiv.org/abs/2203.02155",
+    "used": false,
+    "why": "Search results concerned changes from human-feedback training, which alone do not isolate the effect of increasing model size."
+   }
+  ],
+  "performed_at": "2026-10-29T18:04:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2109-07958",
+   "source_snapshot_id": "223855e8ead0b33318f2f1cb1369b15a3b6f01b4293f03c0706241535264358a",
+   "publisher": "arXiv; Stephanie Lin, Jacob Hilton, and Owain Evans",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2109.07958",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "The largest models were generally the least truthful.",
+    "quote_hash": "5c4e48d4bd3c0c2880fa5e093f0fdb0569900fd21eddf97e8cab3d194a803f29",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-09-08",
+   "retrieved_at": "2026-10-29T02:20:23Z",
+   "relation": "supports",
+   "explanation": "TruthfulQA found the claimed absence of truthfulness gains in its initial model-family comparisons. This supports a restricted version of Marcus's statement, not a universal scaling rule or the separate authority claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2112-11446",
+   "source_snapshot_id": "fc8b94e69189432c12e8dc021752ea24d53ca248d38fbdcb6f9097ed848f0470",
+   "publisher": "arXiv; Jack W. Rae and colleagues, DeepMind",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2112.11446",
+   "locator": "Appendix D.10, TruthfulQA, paragraph preceding Figure A17",
+   "receipt": {
+    "public_excerpt": "find scale consistently improves\nperformance in all settings.",
+    "quote_hash": "373d0b509548a21c125196340a3fd34d4e39e51448490aa83e44542f597ff126",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-01-21",
+   "retrieved_at": "2026-10-29T07:32:37Z",
+   "relation": "contradicts",
+   "explanation": "Gopher's within-family tests found improved TruthfulQA multiple-choice accuracy with increasing size, including alternative evaluation setups. This contradicts a general absence of truthfulness gains, although answer selection does not directly measure the truthfulness of freely generated prose.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No directly matched size-controlled measurement of perceived authoritativeness was established.",
+  "The cited studies do not supply a common aggregate measure of truthfulness across ordinary writing tasks.",
+  "Generated-answer and multiple-choice results cannot be treated as identical measurements."
+ ],
+ "packet_hash": "b206bdc57b17e701ffd93915a2b5ee127270ca71ee1e17bade6154b9f115c644"
+}

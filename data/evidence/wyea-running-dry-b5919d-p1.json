@@ -1,0 +1,142 @@
+{
+ "packet_id": "wyea-running-dry-b5919d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-running-dry-b5919d",
+  "version": 2,
+  "content_hash": "d742ba59e15e2e5d30450d9303a60a6fd653952f0145a83613d32af5f3637f64"
+ },
+ "contract_ref": {
+  "id": "wyea-running-dry-b5919d",
+  "version": 1,
+  "content_hash": "7210ba27c3f8274d39c43a5fafc755c42fa9e3c024ed9208dfc3b16a2e73774d"
+ },
+ "evaluation_as_of": "2026-11-09",
+ "search_record": {
+  "queries": [
+   "Anthropic IPO November 2026 valuation \"1.5 trillion\"",
+   "Anthropic October 2026 IPO valuation 2 trillion 1.4 1.5 Bloomberg",
+   "OpenAI \"positive return\" \"1.25\" IPO investor terms",
+   "\"OpenAI\" \"1.25 trillion\" \"liquidation\" October 2026",
+   "OpenAI October 2026 funding UAE MGX 1.25 trillion Reuters October 23"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html",
+    "used": true,
+    "why": "Full text identifies the reported entry valuation as excluding new capital; useful for exposing a material comparability issue."
+   },
+   {
+    "url": "https://live.euronext.com/en/financial-news/investors-temper-anthropic-ipo-valuation-expectations-over-revenue-growth-slowdown",
+    "used": true,
+    "why": "Full Reuters report documents lower Anthropic expectations within the target period."
+   },
+   {
+    "url": "https://uk.finance.yahoo.com/news/anthropic-ipo-valuation-expectations-pressured-131257414.html/",
+    "used": false,
+    "why": "Read in full, but the earlier Reuters report more directly documents the pre-post change; subsequent November declines are outside the target period."
+   },
+   {
+    "url": "https://www.wsj.com/tech/ai/openai-raises-less-than-half-of-30-billion-target-in-latest-round-91aecdc5",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   }
+  ],
+  "performed_at": "2026-11-10T01:23:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "cnbc-com-2026-10-22-openai-funding-round-uae-investors-html",
+   "source_snapshot_id": "0f0a7655527bb9989b64dbd94cf9743d5bdb07d0c117efa51b28eb4b414b3b13",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html",
+   "locator": "Body, paragraph describing the $1.25 trillion valuation",
+   "receipt": {
+    "public_excerpt": "does not include new capital",
+    "quote_hash": "8d3c95c78c7a6ae5c0ec2c15aad812b20a7f79ce98d3521fd9cfb8b7f35bd374",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-22",
+   "available_at": "2026-10-23",
+   "retrieved_at": "2026-10-29T13:10:51Z",
+   "relation": "context",
+   "explanation": "CNBC described the proposed $1.25 trillion valuation as pre-money. Simple valuation ratios illustrate possible gains but cannot establish the actual investors' necessary exit valuation.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "proposed pre-money equity valuation",
+    "currency": "USD",
+    "units": "trillions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-10-22",
+    "period_end": "2026-10-22",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Claim's assumed comparable entry valuation: USD 1.25 trillion",
+     "Claim's proposed exit valuations: USD 1.5 trillion and USD 2 trillion",
+     "Illustrative assumptions only: unchanged ownership, comparable valuation bases, no fees or preferences"
+    ],
+    "formula": "Hypothetical gross gain = exit valuation / entry valuation - 1. Thus 1.5 / 1.25 - 1 = 20%, and 2 / 1.25 - 1 = 60%. Under these assumptions, any comparable exit valuation above 1.25 gives a positive gain.",
+    "rounding": "Exact percentages; these are illustrative calculations, not observed investor returns."
+   }
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "live-euronext-com-en-financial-news-investors-temper-anthropic-ipo-868655064656",
+   "source_snapshot_id": "c8e8c7518d760faaace4af477889cf288ef0d12d0ec9e23fb162aae01f363c5d",
+   "publisher": "Reuters, syndicated by Euronext",
+   "source_type": "news_report",
+   "url": "https://live.euronext.com/en/financial-news/investors-temper-anthropic-ipo-valuation-expectations-over-revenue-growth-slowdown",
+   "locator": "BELLWETHER IPO section; numerical comparison appears in the second body paragraph",
+   "receipt": {
+    "public_excerpt": "considering a lower valuation",
+    "quote_hash": "a5d432667d4b0eb9ba18da52dd456612e5366437d5685cb44d69b8ea64dc7c95",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-14",
+   "available_at": "2026-10-16",
+   "retrieved_at": "2026-11-10T01:18:11Z",
+   "relation": "context",
+   "explanation": "Reuters reports discussion of about $1.5 trillion at the October investor meeting against earlier expectations of roughly $2 trillion. That documents the Anthropic component but cannot establish OpenAI investors' return requirements.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "expected IPO equity valuation",
+    "currency": "USD",
+    "units": "trillions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-10-01",
+    "period_end": "2026-10-14",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Earlier expected valuation: approximately USD 2 trillion",
+     "October 14 investor discussion: approximately USD 1.5 trillion"
+    ],
+    "formula": "2.0 - 1.5 = 0.5 trillion USD, equivalent to 500 billion USD.",
+    "rounding": "Approximate, reflecting rounded reported expectations."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "The latest investors' definitive investment and conversion terms were not found.",
+  "No stated minimum return explains why the necessary threshold would be $1.5 trillion or $2 trillion.",
+  "Comparable entry and exit capitalization figures are unavailable."
+ ],
+ "packet_hash": "a62f1190768313dc32ce6782dc1ae1655f205fe48ba972d5dca6d310c30947a9"
+}

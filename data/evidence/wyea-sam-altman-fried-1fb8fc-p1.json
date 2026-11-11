@@ -1,0 +1,144 @@
+{
+ "packet_id": "wyea-sam-altman-fried-1fb8fc-p1",
+ "claim_revision_ref": {
+  "id": "wyea-sam-altman-fried-1fb8fc",
+  "version": 1,
+  "content_hash": "46063dcbd891616a551a1b851d19c7ad9ee8b914c38293855225f07815d4a5c1"
+ },
+ "contract_ref": {
+  "id": "wyea-sam-altman-fried-1fb8fc",
+  "version": 1,
+  "content_hash": "75421257ebce08f4f8bedba73bf7f5f75d8fa11312be2e03ef8b27809ff20528"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI image generators hands fingers still wrong 2024 Midjourney v6 DALL-E 3"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2311.17957",
+    "used": true,
+    "why": "November 2023 research paper stating diffusion models still produce malformed hands and giving the cause."
+   },
+   {
+    "url": "https://openai.com/index/sora/",
+    "used": true,
+    "why": "OpenAI's February 2024 Sora page lists failures such as the model not treating a chair as a rigid object."
+   },
+   {
+    "url": "https://hyperallergic.com/ai-image-generators-finally-figured-out-hands",
+    "used": true,
+    "why": "Counterevidence and context: March 2023 report that Midjourney v5 largely fixed hands, though not perfectly."
+   },
+   {
+    "url": "https://arxiv.org/abs/2403.01693",
+    "used": true,
+    "why": "CVPR 2024 paper (March 2024) describing common hand artifacts. Just after the target period, so context only."
+   }
+  ],
+  "performed_at": "2026-10-31T20:50:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2311-17957",
+   "source_snapshot_id": "7ceb41c2286d9f69a1da366c31f32c25db4b88f868e4a68c2dc7e4a5006b5b41",
+   "publisher": "arXiv (Lu et al., HandRefiner)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2311.17957",
+   "locator": "abstract, sentences 1-2",
+   "receipt": {
+    "public_excerpt": "Diffusion models have achieved remarkable success in generating realistic images but suffer from generating accurate human hands, such as incorrect finger counts or irregular shapes. This difficulty arises from the complex task of learning the physical structure and pose of hands from training images",
+    "quote_hash": "19aa7478b945fc1e7e128c217823335f437bab6575e925028c5d6f5782e0d2f8",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-29",
+   "available_at": "2023-11-29",
+   "retrieved_at": "2026-10-31T20:44:01Z",
+   "relation": "supports",
+   "explanation": "Researchers state that diffusion image models still produce wrong finger counts and shapes. They trace this to the difficulty of learning the physical structure of hands from images, which fits the claim's mechanism.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-sora",
+   "source_snapshot_id": "fa086305cd84c9e3bcd903638f262e10de5af24e0d654559f0a8ed44843c57c6",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/sora",
+   "locator": "weakness examples section",
+   "receipt": {
+    "public_excerpt": "Weakness: In this example, Sora fails to model the chair as a rigid object, leading to inaccurate physical interactions.",
+    "quote_hash": "5f6e963f0eb2bff1b6eb4393ad6cddf339bbe5ba502312cbe94859918be4a7df",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-15",
+   "available_at": "2024-02-15",
+   "retrieved_at": "2026-10-29T07:58:45Z",
+   "relation": "supports",
+   "explanation": "OpenAI's own launch page admits its newest model mishandled a basic object. This supports 'still fail' for objects and tools in February 2024.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "hyperallergic-com-ai-image-generators-finally-figured-out-hands",
+   "source_snapshot_id": "bf65b92e6028a6e62b0e7d5588de6fa9fde76dfa67ae59c5de0b4602a4c48fef",
+   "publisher": "Hyperallergic",
+   "source_type": "news_report",
+   "url": "https://hyperallergic.com/ai-image-generators-finally-figured-out-hands",
+   "locator": "paragraph 2",
+   "receipt": {
+    "public_excerpt": "While Version 5 still churns out a fair number of anatomically impossible arms and fingers, the update has rendered the hand discourse largely obsolete.",
+    "quote_hash": "908c43cade3a80066e09b4ca4792ce4713dd15f3a6220520fe1baf6f0df61a7d",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-16",
+   "available_at": "2023-03-17",
+   "retrieved_at": "2026-10-29T12:20:18Z",
+   "relation": "context",
+   "explanation": "Shows that a leading model had greatly improved hands about a year before the post, while still making errors. This weakens a strong 'still fail' reading. It falls outside the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2403-01693",
+   "source_snapshot_id": "2d93b5624f5b48548237cf85bd2e969ace270818d4265f3695974892a5f1e280",
+   "publisher": "arXiv / CVPR 2024 (Narasimhaswamy et al., HanDiffuser)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2403.01693",
+   "locator": "abstract, sentences 1-2",
+   "receipt": {
+    "public_excerpt": "Text-to-image generative models can generate high-quality humans, but realism is lost when generating hands. Common artifacts include irregular hand poses, shapes, incorrect numbers of fingers",
+    "quote_hash": "42013d453cb89db136adf3ba22ecc980f89d81c0327ccbc63b5e88df7130cfc2",
+    "verified": "exact"
+   },
+   "event_date": "2024-03-04",
+   "available_at": "2024-03-04",
+   "retrieved_at": "2026-10-31T20:44:01Z",
+   "relation": "context",
+   "explanation": "Two weeks after the post, a peer-reviewed paper still describes hand artifacts as common. Context only, because it falls just outside the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No benchmark from the period was found that measures error rates for hands, eyes or tools in specific commercial models such as DALL-E 3 or Midjourney v6.",
+  "The deeper claim that models 'do not know anything' is philosophical and is not tested. Only the narrower structural-learning reading is."
+ ],
+ "packet_hash": "9057a1e142538f9de69959b981250568556f0ef484f763fd816e9212e5352f94"
+}

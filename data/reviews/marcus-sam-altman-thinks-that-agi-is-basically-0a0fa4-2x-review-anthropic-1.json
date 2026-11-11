@@ -1,0 +1,137 @@
+{
+ "run_id": "marcus-sam-altman-thinks-that-agi-is-basically-0a0fa4-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-0a0fa4": "6bc89ec63658d3df9c6ab5cdc64bc96eacf9d76516f1f8f387b87b2249ee59a9",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-b66b53": "d3a64a2f22084eb8c21ac1411c6f932c9103299ec701329f6feec8bad13c1cd2"
+ },
+ "started_at": "2026-10-29T12:20:07Z",
+ "completed_at": "2026-10-29T12:20:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post, stated in the first person."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps both the causal claim and the 2001 attribution without adding scope. Calling it causal is right."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'leads to' as a contributing cause is the ordinary, fair reading. Using retrieval as a stand-in for database-style records is the evaluator's own choice, and the contract flags it. Requiring a 2001 passage on the causal idea is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed RAG comparison: external memory gives more factual output. Indirect support for a contributing mechanism. It mixes retrieval with training."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2001 book passage on separate database records for individuals. Related idea, but the located passages do not link it to hallucinations."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows retrieval can make hallucination worse with long contexts. This limits the mechanism but does not reject a contributing-cause reading."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The support condition needs both mechanism evidence and a 2001 passage stating the causal argument. e1 gives only indirect mechanism support. The 2001 passages in e2 discuss individual records but not hallucinations, so the attribution is not established. Nothing meets the contradiction condition. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-0a0fa4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, following on from his previous sentence."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Linking 'this' back to missing records and hallucinations is faithful. 'Routinely' and 'many promises' are kept, and 'leads to' makes it causal."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The ordinary readings of 'routinely' and 'defamation' are fair. Asking for a causal link to missing records follows from his 'this', but it decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Stanford 2024: legal RAG tools keep giving wrong legal information despite vendor claims. It traces errors to retrieval and sycophancy, not cleanly to missing records."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "BBC, 3 Jan 2025: repeated false Apple news summaries just before the post. Shows recurring incidents, not the cause or a rate."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "2023 study of fabricated citations, with GPT-4 much improved. Background only, not prevalence in Jan 2025."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own brief on the 2023 Walters output. A disputed party filing; it shows one false accusation, not routine defamation."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Google's own disclosure admitting misleading advice. It blames satire and forum sources, not absent records."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Recurring wrong news summaries and wrong legal advice around the post are documented (e1, e2). Routine defamation and fictional sources in early 2025 are not shown. None of the evidence connects the failures to missing database-style records, which the support condition requires. Nothing meets the contradiction condition, so the claim stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-b66b53"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22679,
+  "output_tokens": 2883,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

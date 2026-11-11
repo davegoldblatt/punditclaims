@@ -1,0 +1,157 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-f687a1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-f687a1",
+  "version": 1,
+  "content_hash": "bf4ac5cc5af89fccb5903c235dc665f4f8763e812ae9fb9947cbccf1e3e0539d"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-f687a1",
+  "version": 1,
+  "content_hash": "ee89e0d6234ea791ccb90f91e931cef5961488bc93c64e5ceb47ddcda514cea1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Perplexity Computer February 2026 multi model compute credits hallucinations",
+   "site.perplexity.ai \"Introducing Perplexity Computer\" February 2026",
+   "OpenClaw benchmark March 2026 hallucination tasks evaluation cost",
+   "\"OpenClaw\" \"hallucination\" site:arxiv.org before:2026-04-01",
+   "\"Agents of Chaos\" February 2026 OpenClaw hallucination arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://raw.githubusercontent.com/openclaw/openclaw/v2026.3.31/docs/concepts/agent-loop.md",
+    "used": true,
+    "why": "Versioned primary description of model inference and tool execution."
+   },
+   {
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.3.31/docs/reference/token-use.md",
+    "used": true,
+    "why": "Primary explanation of repeated prompt construction and token accounting."
+   },
+   {
+    "url": "https://prtimes.jp/main/html/rd/p/000000020.000157647.html",
+    "used": true,
+    "why": "Readable official Perplexity announcement describing its model orchestration."
+   },
+   {
+    "url": "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://arxiv.org/abs/2602.20021",
+    "used": true,
+    "why": "Primary exploratory study documents false completion reports."
+   },
+   {
+    "url": "https://arxiv.org/html/2602.20021v1",
+    "used": true,
+    "why": "Read to verify the OpenClaw setting and February timing of the experiment."
+   }
+  ],
+  "performed_at": "2026-10-29T10:07:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-openclaw-openclaw-v2026-3-31-docs-concept-fee95c4a8651",
+   "source_snapshot_id": "f7a3648d6d880d9bf0fdb74597f3ffa27844c9d5b2ae3535d40cf34ae4f525eb",
+   "publisher": "OpenClaw",
+   "source_type": "company_disclosure",
+   "url": "https://raw.githubusercontent.com/openclaw/openclaw/v2026.3.31/docs/concepts/agent-loop.md",
+   "locator": "Agent Loop (OpenClaw), opening paragraph",
+   "receipt": {
+    "public_excerpt": "actions and a final reply",
+    "quote_hash": "8ebf3b5ce8415e7b733e9dec4ef858d8c2d4904aca8b7e06f5ce27baac52d495",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-03-31",
+   "retrieved_at": "2026-10-29T09:59:49Z",
+   "relation": "supports",
+   "explanation": "The documented loop combines model inference, tool execution, and replies. It supports the LLM-driven-work component, but does not quantify resource intensity or reliability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-openclaw-openclaw-blob-v2026-3-31-docs-reference-token-use-md",
+   "source_snapshot_id": "31c6f13d3b9840ebe6686e83e2aadc3a216c81e7e47d7e6a311552ec76add4d8",
+   "publisher": "OpenClaw",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/openclaw/openclaw/blob/v2026.3.31/docs/reference/token-use.md",
+   "locator": "How the system prompt is built",
+   "receipt": {
+    "public_excerpt": "every run",
+    "quote_hash": "d53fee916ca574e25f724283f0db5e994e31e658356b2273cc20e4c3995ff6ff",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-03-31",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "supports",
+   "explanation": "The documentation describes repeated prompt construction, history, tool results, and caching. This explains additional inference inputs, but supplies no matched measurement showing how much extra compute typical completed tasks require.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "prtimes-jp-main-html-rd-000000020-000157647-html",
+   "source_snapshot_id": "77fe4c4a428bd16152a259aa909d6095f8b090fcbd399309f3f829e103e682a1",
+   "publisher": "Perplexity AI, Inc., via PR TIMES",
+   "source_type": "company_disclosure",
+   "url": "https://prtimes.jp/main/html/rd/p/000000020.000157647.html",
+   "locator": "19モデルを統合するマルチモデル設計",
+   "receipt": {
+    "public_excerpt": "Opus 4.6",
+    "quote_hash": "aff5b81278a2c4a0575a19ea30bb3b4f0610171b0459d6dbc4f3c363c170319a",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-27",
+   "available_at": "2026-02-27",
+   "retrieved_at": "2026-10-29T10:00:25Z",
+   "relation": "supports",
+   "explanation": "The Japanese announcement says Opus 4.6 handles overall reasoning and selects models according to the task. This supports LLM-based orchestration, not a measured claim about compute intensity or hallucination rates.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2602-20021",
+   "source_snapshot_id": "b883f4c9b6abf89696031c7ef23497303c7d6e0036fac420a8ac2168fe3c8401",
+   "publisher": "Shapira et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2602.20021",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "agents reported task completion",
+    "quote_hash": "cec35e97ca801705a9d00309b1ec092ad7497b1773465dee4426c7d4404bc490",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-23",
+   "retrieved_at": "2026-10-29T07:39:34Z",
+   "relation": "supports",
+   "explanation": "The February OpenClaw experiment documents false completion reports, supporting the hallucination-risk component for that system. Its exploratory and partly adversarial design does not estimate ordinary-use prevalence or evaluate Perplexity Computer.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matched measurement establishes substantial extra compute across representative workflows in both named products.",
+  "No directly verified target-period hallucination evaluation for Perplexity Computer was obtained.",
+  "OpenClaw failure cases establish possibility, not ordinary-use frequency."
+ ],
+ "packet_hash": "11bd2f17bdbe1f502dd80d710e89d93d24bb657b8a70c06e90da5f6d30d59ff9"
+}

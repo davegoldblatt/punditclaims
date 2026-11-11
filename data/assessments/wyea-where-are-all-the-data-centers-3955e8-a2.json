@@ -1,0 +1,122 @@
+{
+ "assessment_id": "wyea-where-are-all-the-data-centers-3955e8-a2",
+ "claim_revision_ref": {
+  "id": "wyea-where-are-all-the-data-centers-3955e8",
+  "version": 1,
+  "content_hash": "253977332565307095508edc5a173e5f0aee541c9b84dd83a4b5652a27a46f1c"
+ },
+ "contract_ref": {
+  "id": "wyea-where-are-all-the-data-centers-3955e8",
+  "version": 1,
+  "content_hash": "022e2eedbbec91f09d3bb2d0048c163c7f324627445ca27504087e9a64cd2945"
+ },
+ "packet_ref": {
+  "id": "wyea-where-are-all-the-data-centers-3955e8-p1",
+  "content_hash": "cb9c902cbaf7140903883503d120037f57875c445abe78a78c5e2e022851a57d"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-05-01",
+  "end": "2026-05-12",
+  "precision": "day"
+ },
+ "public_rationale": "Epoch AI's October 21, 2026 methodology says delivered chips may still await installation and operation [e5]. American Compute models roughly 10% of Blackwell packages as in staging or transit at December 31, 2025, assuming earlier shipment cohorts had fully deployed [e6]. That estimate weighs against a warehouse majority for its own period, but does not measure May 2026 inventory [e6]. Neither item reconciles cumulative shipments with warehouse storage during May 1–12, 2026 [e5, e6].",
+ "evidence_ids": [
+  "e5",
+  "e6"
+ ],
+ "counterevidence_ids": [
+  "e6"
+ ],
+ "limitations": [
+  "The packet lacks a reconciled May 2026 inventory of shipped, stored, and deployed physical Blackwell packages.",
+  "The end-2025 model assumes deployment of earlier shipments rather than verifying every installation.",
+  "Staging, transit, installation, and unused warehouse storage are distinct categories."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-where-are-all-the-data-centers-3955e8-4x-review-anthropic-1",
+  "wyea-where-are-all-the-data-centers-3955e8-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-where-are-all-the-data-centers-067294-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-where-are-all-the-data-centers-3955e8",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Most shipped NVIDIA Blackwell GPUs are sitting unused in warehouses rather than installed.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But I no longer believe that the majority of Blackwell GPUs are doing anything other than collecting dust in a warehouse.",
+   "locator": "paragraph 143",
+   "url": "https://www.wheresyoured.at/where-are-all-the-data-centers",
+   "date": "2026-05-12",
+   "document_title": "Where Are All The Data Centers?",
+   "observed_at": "2026-10-28T22:25:32Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the majority of Blackwell GPUs",
+    "collecting dust in a warehouse"
+   ],
+   "our_interpretation": [
+    "Read the belief statement as a factual estimate that more than half of shipped data center Blackwell GPUs are unused in storage.",
+    "Count physical GPU packages consistently, rather than counting each silicon die separately. Exclude consumer Blackwell graphics cards.",
+    "Use the current May 2026 observation window through publication, consistent with the surrounding May status checks. Earlier deployment estimates are context unless they establish the May state.",
+    "Installed but lightly utilized GPUs are not equivalent to GPUs sitting unused in warehouses.",
+    "The roughly three-million shipment figure in the context refers to an earlier shipment statement; it is not automatically the cumulative denominator for May 2026."
+   ],
+   "support_condition": "A reconciled inventory shows that more than 50% of the relevant shipped Blackwell packages were unused in storage during the target period.",
+   "contradiction_condition": "A reconciled inventory shows that at least 50% of those shipped packages were in service or otherwise demonstrably outside unused warehouse inventory."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Epoch AI's October 21, 2026 methodology says delivered chips may still await installation and operation [e5]. American Compute models roughly 10% of Blackwell packages as in staging or transit at December 31, 2025, assuming earlier shipment cohorts had fully deployed [e6]. That estimate weighs against a warehouse majority for its own period, but does not measure May 2026 inventory [e6]. Neither item reconciles cumulative shipments with warehouse storage during May 1–12, 2026 [e5, e6].",
+  "limitations": [
+   "The packet lacks a reconciled May 2026 inventory of shipped, stored, and deployed physical Blackwell packages.",
+   "The end-2025 model assumes deployment of earlier shipments rather than verifying every installation.",
+   "Staging, transit, installation, and unused warehouse storage are distinct categories."
+  ],
+  "evidence": [
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "delivered chips may take additional time",
+    "locator": "FAQ: Do you track deployed, delivered, or just produced compute?",
+    "url": "https://epoch.ai/data/ai-chip-sales",
+    "publisher": "Epoch AI",
+    "event_date": "2026-10-21",
+    "available_at": "2026-10-21",
+    "explanation": "The dataset's methodology makes clear that chip deliveries do not measure operational installations. It supplies neither a May warehouse inventory nor the fraction of shipped Blackwell packages in storage."
+   },
+   {
+    "id": "e6",
+    "relation": "context",
+    "excerpt": "deployed fully.",
+    "locator": "Calculations, subsection 10 percent in staging",
+    "url": "https://www.amcompute.com/blog/blackwell-gpu-market-size-and-fragmentation",
+    "publisher": "American Compute",
+    "event_date": "2025-12-31",
+    "available_at": "2026-04-20",
+    "explanation": "The model estimates a roughly 10% staging share by assuming earlier shipment cohorts had deployed. This weighs against the warehouse-majority account, but it is not a verified May inventory and does not independently establish that assumption."
+   }
+  ],
+  "what_would_resolve": "A reconciliation for May 1–12, 2026 of cumulative shipped data center Blackwell packages with documented storage, transit, installation, and operational status, sufficient to determine whether more than half were unused in warehouses.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "150f6862d5a10073537e31faf5d5fe7c3c59f55b5863de23890b1a598edc756b",
+ "supersedes_assessment_id": "wyea-where-are-all-the-data-centers-3955e8-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T19:46:09Z"
+}

@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-why-do-large-language-models-hallucinate-c011a7-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-why-do-large-language-models-hallucinate-c011a7": "224fd26b64b5c7fdd7e2479c56612e481c43a2e0235be2f973ba209b1203c0f6",
+  "case:marcus-why-do-large-language-models-hallucinate-edbb3e": "f55ee61bb092ed803d660e88cce37d850b8bee814c031ab182b39b3fbce45465",
+  "case:marcus-why-do-large-language-models-hallucinate-f05689": "b4d9647ccef4f539a81c87bd8f67744a9a2382af7402dd60f3e3d1b6f5aa0b16",
+  "case:marcus-why-do-large-language-models-hallucinate-f1b4a6-2": "0a4128654b3fb0bf227c1994729852b9e034e51d5c7d9452c24a6a46e5d6d828"
+ },
+ "started_at": "2026-10-29T12:52:37Z",
+ "completed_at": "2026-10-29T12:53:51Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. He quotes no one else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps 'reliably', the claimed exposure to rules and games, and the 'manifestation of' link. Treating it as causal fits, since the chess failure is explained by an underlying deficit."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'database' as training data and judging full-game legality are ordinary readings. Requiring controlled interventions for the causal part is demanding but matches the causal commitment. The pre-publication window is the evaluator's convention."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Kagi puzzle benchmark, April 2025, inside the window. It shows illegal-move rates from 0.9% to 83% by model, but on single puzzle moves, not full games. It does not verify training exposure or show a cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2024 study of a small chess-trained model: 99.8% legal moves and a board-state representation that can be probed. It predates the window and tests a specialized model, so it only weighs against the abstraction-deficit explanation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no full-game evaluation from the window, no verified training exposure, and no controlled test linking illegal moves to missing abstractions. The puzzle results show recurring errors in some models but cannot meet the support condition. The earlier specialized-model work is context, not contradiction.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-c011a7"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures the core claim and its training-exposure premise. It drops the minor alternative 'or justify their occasional deviations', which the contract keeps. Correctly treated as an observation of the current state."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (recurring unsupported Wikipedia facts despite training exposure, judged by consistency rather than zero errors) is ordinary. Requiring documented exposure tests Marcus's own premise, so it is fair, though strict."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "HalluLens, April 2025, inside the window. Wikipedia-grounded QA shows hallucination rates of about 27% to 45% when models answer. This supports the reliability part. Training exposure is assumed by the authors, not documented."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e1 strongly supports the reliability part: representative models often give answers that conflict with Wikipedia. But the support condition requires documented Wikipedia training exposure, and the benchmark only presumes it. Justified deviations are not assessed. Nothing contradicts the claim, but the frozen support condition is not fully met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-edbb3e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. He names LeCun and Pearl as holding a similar view of world models but does not quote them."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Restores 'like any proper business would' and the qualification tying 'world model' to how the named researchers use it. The parenthetical about databases is left out, which is fine."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading LLMs as the bare models and a database as an explicit record store is ordinary. The world-model part depends on definitions the speaker did not supply in operational form, so interpretation decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Gemma 3 report, March 2025: a decoder-only transformer with no record store. This is a company disclosure about one model family and cannot establish a claim about all LLMs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A reproduction of LeCun's 2022 paper, giving his definition of a world model as an action-conditioned predictor. It is definitional only and tests no models."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Othello-GPT study, before the window, finds a board representation that causally affects outputs. It concerns a specialized model and does not show the named researchers' standard is met."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The architecture evidence covers one model family. The world-model part lacks a shared operational standard, and no contemporary test shows either that LLMs lack such a model or that one qualifies. The Othello work is earlier and on a specialized model. The packet does not settle either part.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-f05689"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'We will eventually get to something better' is an unqualified 'will' with no deadline, so it is a scored forecast. The rhetorical second clause is rightly excluded. 'We' read as the AI field is fair."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'better' as better factual reliability fits the context. Requiring independently corroborated gains across varied tasks is the evaluator's own threshold, and the contract says so. Failure by a finite date is correctly not counted as contradiction."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "NICD, July 2026: graph-based retrieval reduced hallucinations, but with one benchmark and one model. It is self-reported and too narrow for the support condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AWS, August 2025: Automated Reasoning checks are generally available. This vendor announcement shows availability, not proven general superiority."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "FactCheck, February 2026: retrieval and multi-model consensus give inconsistent gains. This limits generalization but cannot refute an 'eventually' forecast."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The forecast has no deadline, and the early-resolution rule is not met. The hybrid demonstrations are narrow, self-reported, or vendor announcements, with no independent corroboration across varied tasks. An open-ended forecast cannot be contradicted by its absence so far, so it stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-f1b4a6-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 65748,
+  "output_tokens": 7667,
+  "cached_input_tokens": 33998,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

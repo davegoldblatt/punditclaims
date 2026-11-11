@@ -1,0 +1,109 @@
+{
+ "packet_id": "marcus-report-from-the-vatican-afa29b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-report-from-the-vatican-afa29b",
+  "version": 1,
+  "content_hash": "285822928c46c5cf0ede0498be7be14cc7f08a3bb8c68791316dd7d1e0c98ade"
+ },
+ "contract_ref": {
+  "id": "marcus-report-from-the-vatican-afa29b",
+  "version": 1,
+  "content_hash": "dc409f291bcd933d307d3ac4fef58857f534252016fee320633b8c07542b0ab1"
+ },
+ "evaluation_as_of": "2026-11-09",
+ "search_record": {
+  "queries": [
+   "LLM instruction following benchmark October 2026 IFBench",
+   "\"October 2026\" \"instruction\" \"IFEval\"",
+   "\"October 2026\" \"instruction following\" benchmark models -site:reddit.com -site:garymarcus.substack.com",
+   "\"instruction following\" \"October 2026\" \"benchmark\" \"Claude\"",
+   "site:liquid.ai \"LFM2.5-24B-A2B\" \"96.8\"",
+   "\"LFM2.5-24B-A2B\" \"IFEval\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://agentif.github.io/",
+    "used": true,
+    "why": "Primary benchmark with an explicitly dated October 23, 2026 leaderboard and disclosed scoring methods."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.02833v1",
+    "used": true,
+    "why": "Primary research documenting stronger performance on familiar instruction constraints; historical context only."
+   },
+   {
+    "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+    "used": false,
+    "why": "Search returned potentially relevant high instruction-following scores, but read_page did not expose the benchmark passage."
+   },
+   {
+    "url": "https://huggingface.co/blog/liquidai/lfm25-24b-a2b",
+    "used": false,
+    "why": "read_page returned only a model listing, so the reported benchmark results could not be verified."
+   },
+   {
+    "url": "https://llmguides.ai/lab/llm-instruction-following-test/",
+    "used": false,
+    "why": "read_page did not expose the experiments or results."
+   }
+  ],
+  "performed_at": "2026-11-10T00:04:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "agentif-github-io-root",
+   "source_snapshot_id": "31455075f98f4d59329b0d4af74d27c93959046f1373a98f41ff4bb145b88e89",
+   "publisher": "AgentIF research team",
+   "source_type": "benchmark",
+   "url": "https://agentif.github.io/",
+   "locator": "Leaderboard, current setting; table last updated 2026-10-23",
+   "receipt": {
+    "public_excerpt": "all constraints are satisfied.",
+    "quote_hash": "ba4ad2097b1330f12266c42b7c6e57e5b2fa0fa383642b6c8322138db937bcce",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-23",
+   "available_at": "2026-10-23",
+   "retrieved_at": "2026-11-09T20:24:08Z",
+   "relation": "supports",
+   "explanation": "The dated leaderboard reports DeepSeek-V4-Pro satisfying 67.44% of individual constraints and all constraints on 31.27% of instructions; Qwen3.8-27B scores 65.77% and 31.35%, respectively. Across the listed open-weight models, these results show recurring failures on instructions drawn from real agent applications, supporting the reliability reading of the claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2507-02833v1",
+   "source_snapshot_id": "ff479fea08c855aa83da993539fe26ea16f0546255e8e8d2ec9657e56e0f04d8",
+   "publisher": "Pyatkin and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2507.02833v1",
+   "locator": "Section 2, IFBench & IFTrain",
+   "receipt": {
+    "public_excerpt": "models display good accuracy on IFEval.",
+    "quote_hash": "eafbc179e98766a76637347cae880a37306811a754b0e85bd97a2aba5a517bf2",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-07-03",
+   "retrieved_at": "2026-10-29T02:32:26Z",
+   "relation": "context",
+   "explanation": "This study reports strong performance on familiar IFEval constraints alongside much weaker generalization to new constraints. It limits any interpretation that instruction following is uniformly poor, but its earlier model evaluations cannot settle October 2026 performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The October AgentIF leaderboard covers open-weight models, not the contemporary proprietary frontier.",
+  "The benchmark emphasizes long, complex instructions and does not estimate the failure rate of ordinary single-instruction requests.",
+  "No evidence establishes the comparative danger ranking."
+ ],
+ "packet_hash": "1b8e3d3210a531060e2e5d68d227208d2cfd0de08fdcb402c1aad240eb5cfa36"
+}

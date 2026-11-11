@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-a-spate-of-outages-including-incidents-520def-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-spate-of-outages-including-incidents-520def",
+  "version": 2,
+  "content_hash": "abf6a0d00b3d2fc1d9f5e20a8485ade1560459f5f42a5d02f5f74bc2874b81b3"
+ },
+ "contract_ref": {
+  "id": "marcus-a-spate-of-outages-including-incidents-520def",
+  "version": 1,
+  "content_hash": "66b4721a47d0eafdccfcf8da640fbe493b4f4afb9f88bf0bd728916ecf32ad05"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "software maintenance percentage of total lifecycle cost study",
+   "Lehman laws of software evolution increasing complexity \"declining quality\" maintenance",
+   "Xia Bao Lo \"Measuring program comprehension\" developers spend 58% of time",
+   "Sun Yat-sen University Alibaba benchmark AI coding agents long-term maintainability 100 codebases 233 days arXiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2603.03823v1",
+    "used": true,
+    "why": "Preprint by Sun Yat-sen University and Alibaba. It summarizes the classic literature on maintenance cost and Lehman's laws and reports agent results."
+   },
+   {
+    "url": "https://www.oreilly.com/library/view/97-things-every/9780596805425/ch34.html",
+    "used": false,
+    "why": "Could not read it (HTTP 403)."
+   },
+   {
+    "url": "https://www.ifi.uzh.ch/dam/jcr:00000000-5852-3622-0000-00002e60ff8e/lehman-metrics-97.pdf",
+    "used": false,
+    "why": "Primary Lehman paper stating the Increasing Complexity law. The two-column table text was too jumbled to quote reliably."
+   },
+   {
+    "url": "https://xin-xia.github.io/publication/TSE17.pdf",
+    "used": false,
+    "why": "Program comprehension study (58% of developer time). It is indirect, its text extraction is jumbled, and it reports that project age has limited effect on comprehension time."
+   }
+  ],
+  "performed_at": "2026-10-29T01:05:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2603-03823v1",
+   "source_snapshot_id": "f5e8e3f1f2a2fca6b776771c22093bc57059e57f2417cb5b6b2e0da7405bc4cf",
+   "publisher": "arXiv (Chen et al., Sun Yat-sen University and Alibaba Group)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2603.03823v1",
+   "locator": "Section 1 Introduction, paragraph 3",
+   "receipt": {
+    "public_excerpt": "Lehman’s Laws reveal that software quality inherently degrades as maintenance progresses [7], while classic literature has established that maintenance activities account for 60% to 80% of total software lifecycle costs [2].",
+    "quote_hash": "2e2a04654fa104055213688c2e7db11e63cd465665747b398066c98c77356573",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-04",
+   "available_at": "2026-03-04",
+   "retrieved_at": "2026-10-29T01:03:07Z",
+   "relation": "supports",
+   "explanation": "Summarizes established software-engineering findings: maintenance is most of lifecycle cost, and quality degrades as maintenance goes on. This fits the plain reading that long-term maintenance is the larger, harder task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2603-03823v1",
+   "source_snapshot_id": "f5e8e3f1f2a2fca6b776771c22093bc57059e57f2417cb5b6b2e0da7405bc4cf",
+   "publisher": "arXiv (Chen et al., Sun Yat-sen University and Alibaba Group)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2603.03823v1",
+   "locator": "Section 4.2 Results, Observation 3",
+   "receipt": {
+    "public_excerpt": "although LLMs have shown significant improvements in snapshot-based code modification tasks, they still face substantial challenges in fully automated, long-term, and multi-round software development and maintenance scenarios.",
+    "quote_hash": "64f42c19e60d35df88fac412603a87e6bd9bae7d6574a9b4dc17d55f2cabd2bf",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-04",
+   "available_at": "2026-03-04",
+   "retrieved_at": "2026-10-29T01:03:07Z",
+   "relation": "context",
+   "explanation": "For AI agents, long-term maintenance proved harder than one-shot code changes. This fits the claim but concerns AI, not coders in general, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "I could not quote a primary source for the 60-80% maintenance cost figure (Brooks, Lientz and Swanson). It comes through a 2026 preprint's summary.",
+  "Cost share is not the same as per-task difficulty. No direct measurement of 'harder' was found.",
+  "No survey shows what competent coders believe."
+ ],
+ "packet_hash": "6d1ee27739406d19b19997870e74b04926bf50ecde657a5805ff0d314401690f"
+}

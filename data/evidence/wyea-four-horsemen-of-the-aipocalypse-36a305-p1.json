@@ -1,0 +1,205 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-36a305-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-36a305",
+  "version": 1,
+  "content_hash": "6868c78f74bcb67f08b384addf137fcdb72cdf9de26f264c236874a1f333ebf8"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-36a305",
+  "version": 1,
+  "content_hash": "50cbc71073890ecbec7ad6bf1a7888c83fe5837578e9e10bbfa6d7ea251ca9f6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Quanta 4Q 2025 financial results inventory 16.3 billion 7.0 2026",
+   "site.quantatw.com 2025 4Q25 inventory 2026 pdf",
+   "Quanta Computer 2025 inventory 16.3 billion 10.54",
+   "\"Quanta\" \"4Q25\" \"Inventory\"",
+   "\"Quanta\" \"2025\" \"512,946\" \"331\"",
+   "\"Quanta\" \"4Q25\" \"512,946\"",
+   "\"Quanta Computer\" \"2025\" \"Financial Results\" \"March 5\"",
+   "廣達 2025 第四季 法說會 簡報 512946",
+   "Quanta Computer 4Q25 presentation March 2026 inventory",
+   "\"Quanta\" \"inventory\" \"334,618\" 2025 dollars",
+   "\"Quanta\" \"inventory\" \"16.3 billion\" -services",
+   "\"Quanta\" \"inventory\" \"10.54 billion\" -services"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.quantatw.com/quanta/english/investment/financials_qr3.aspx",
+    "used": false,
+    "why": "The index did not expose the financial statement contents through read_page."
+   },
+   {
+    "url": "https://www.quantatw.com/quanta/english/investment/financials_icp.aspx",
+    "used": false,
+    "why": "Located the relevant presentation category, but the original presentation was obtained from the Taiwan Stock Exchange."
+   },
+   {
+    "url": "https://doc.twse.com.tw/nas/STR/238220260302E001.pdf",
+    "used": true,
+    "why": "Original company presentation contains the Q3/Q4 inventory comparison and separate quarterly and annual income statements."
+   },
+   {
+    "url": "https://links.sgx.com/1.0.0/corporate-announcements/NFAOD8R6FJADGZ4T/877483_2025%20annual%20audit%20report_Quanta%20Computer%20Inc._Chinese%20veresion.pdf",
+    "used": true,
+    "why": "Audited consolidated statements contain the year-end inventory comparison, composition and valuation policy."
+   },
+   {
+    "url": "https://quartr.com/events/quanta-computer-2382-q4-2025_F9DxSxkF",
+    "used": true,
+    "why": "Provides a readable sentence identifying the quoted percentages as annual margins; checked against the original presentation."
+   },
+   {
+    "url": "https://financialfilings.com/filings/qci-2382/annual-report/2026/36123927/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the original filing was obtained elsewhere."
+   },
+   {
+    "url": "https://www.financecharts.com/stocks/QUCCF/balance-sheet/inventory-annual",
+    "used": false,
+    "why": "Search results showed translated balances but did not establish the historical exchange-rate convention or publication date needed for the claimed USD amounts."
+   },
+   {
+    "url": "https://investors.quantaservices.com/news-events/press-releases/detail/390/quanta-services-reports-fourth-quarter-and-full-year-2025-results",
+    "used": false,
+    "why": "Different company: Quanta Services."
+   }
+  ],
+  "performed_at": "2026-10-29T20:02:43Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "doc-twse-com-tw-nas-str-238220260302e001-pdf",
+   "source_snapshot_id": "428aa14db4fad3914cc344055938c2c0d48c250ee491a3dfa61a02a7ee31ad11",
+   "publisher": "Quanta Computer Inc., hosted by Taiwan Stock Exchange",
+   "source_type": "company_disclosure",
+   "url": "https://doc.twse.com.tw/nas/STR/238220260302E001.pdf",
+   "locator": "Pages 3–5: quarterly income statement, annual income statement and balance sheet; quoted sentence is the accounting-basis footnote",
+   "receipt": {
+    "public_excerpt": "Financial figures were Taiwan IFRSs based.",
+    "quote_hash": "a2f058c040847b2e54692e50d5d761c9380ed862cf814cb88c0ec4443ea9d113",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T19:55:02Z",
+   "relation": "context",
+   "explanation": "The balance-sheet table reports inventory of NT$512,946 million versus NT$334,618 million at September 30, a 53.3% increase; these are not USD figures. The income tables give Q4 margins of 6.33% versus 7.45%, while 7.0% versus 7.9% belongs to the annual comparison.",
+   "metric_scope": {
+    "company": "Quanta Computer Inc. and subsidiaries",
+    "metric": "Consolidated inventory carrying value",
+    "currency": "TWD",
+    "units": "millions",
+    "accounting_basis": "ifrs",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-09-30",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "December 31, 2025 inventory: NT$512,946 million",
+     "September 30, 2025 inventory: NT$334,618 million"
+    ],
+    "formula": "(512946 / 334618 - 1) * 100",
+    "rounding": "53.3%, rounded to one decimal place"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "links-sgx-com-1-0-0-corporate-announcements-nfaod8r6fjadgz4t-877483-1529f9922418",
+   "source_snapshot_id": "538a9ff178c0ab0b2c2e9b97057c0feed074aa4e26afdbb6df2c579c0faee253",
+   "publisher": "Quanta Computer Inc., hosted by Singapore Exchange",
+   "source_type": "filing",
+   "url": "https://links.sgx.com/1.0.0/corporate-announcements/NFAOD8R6FJADGZ4T/877483_2025%20annual%20audit%20report_Quanta%20Computer%20Inc._Chinese%20veresion.pdf",
+   "locator": "Note 4(8), inventory valuation policy; Note 6(7), page 35, inventory composition and comparative balances",
+   "receipt": {
+    "public_excerpt": "存貨係以成本與淨變現價值孰低衡量。",
+    "quote_hash": "be79814afa9b508f4db7fc5e09a428ffc11e2cf87c32c0db6c23a9919a676ee1",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-03-05",
+   "retrieved_at": "2026-10-29T19:54:18Z",
+   "relation": "context",
+   "explanation": "The quoted policy measures inventory at the lower of cost and net realizable value; Note 6(7) reports NT$512,945,798 thousand versus NT$261,886,319 thousand, a 95.9% increase. Raw materials increased while finished goods decreased, but the note does not identify GPUs separately.",
+   "metric_scope": {
+    "company": "Quanta Computer Inc. and subsidiaries",
+    "metric": "Consolidated inventory carrying value",
+    "currency": "TWD",
+    "units": "thousands",
+    "accounting_basis": "ifrs",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-12-31",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "December 31, 2025 inventory: NT$512,945,798 thousand",
+     "December 31, 2024 inventory: NT$261,886,319 thousand"
+    ],
+    "formula": "(512945798 / 261886319 - 1) * 100",
+    "rounding": "95.9%, rounded to one decimal place"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "quartr-com-events-quanta-computer-2382-q4-2025-f9dxsxkf",
+   "source_snapshot_id": "a53971f4d22d161f3e75ea527227f108079ee70781504d7dd510d8b3a62e5c0d",
+   "publisher": "Quartr",
+   "source_type": "secondary_summary",
+   "url": "https://quartr.com/events/quanta-computer-2382-q4-2025_F9DxSxkF",
+   "locator": "Key financial ratios and metrics",
+   "receipt": {
+    "public_excerpt": "FY2025 gross margin was 7.0%, compared to 7.9% in FY2024.",
+    "quote_hash": "e70ba682080612154518dc41dd5af4ff44eba70e0678b2095ce09e641e9e47e2",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-04-24",
+   "retrieved_at": "2026-10-29T19:53:23Z",
+   "relation": "context",
+   "explanation": "This correctly identifies the percentages as annual margins, consistent with the original presentation. It establishes a period-label problem in the ancillary margin assertion, not a contradiction of the inventory metric.",
+   "metric_scope": {
+    "company": "Quanta Computer Inc. and subsidiaries",
+    "metric": "Annual consolidated gross margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The exchange rates and conversion dates behind $10.54 billion, $16.3 billion and $8.33 billion were not established.",
+  "No GPU-specific inventory valuation, aging schedule or installation-delay disclosure was found.",
+  "The exact wording combines an inventory assertion with a quarterly margin comparison, while the normalized proposition emphasizes GPU accumulation."
+ ],
+ "packet_hash": "f073e688a926df23ae87b1e71163610ac50d56d3f7acd4b5757f4f0e5be631dd"
+}

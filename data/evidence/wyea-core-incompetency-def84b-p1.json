@@ -1,0 +1,93 @@
+{
+ "packet_id": "wyea-core-incompetency-def84b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-def84b",
+  "version": 1,
+  "content_hash": "8a841a6053b0edd7925248280508b476da56a3cdf15a3c745d773028f8f96f35"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-def84b",
+  "version": 1,
+  "content_hash": "3589802fedaf61a78aafdd072efb2c567a96b0a732189be09a8e82aec4185d91"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "CoreWeave S-1 2025 2024 revenue net loss 863 1.9 billion sec",
+   "CoreWeave March 2025 S1 \"revenue\" \"440\"",
+   "CoreWeave S1 2025 \"net loss\" \"revenue\" prospectus pdf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525052207/d899798ds1a.htm",
+    "used": false,
+    "why": "The required reader returned HTTP 403."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001769628/e457c010-2495-4883-928a-99e646799464.pdf",
+    "used": false,
+    "why": "The original registration statement exceeded the reader's file-size limit."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "used": true,
+    "why": "Readable company-hosted filing containing audited 2024 comparative revenue and customer concentration. Only its 2024 figures are used."
+   }
+  ],
+  "performed_at": "2026-10-29T10:49:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q4-coreweave-inc-096f28cdd102",
+   "source_snapshot_id": "0f75b4e603c8f8d12b89623bdef8865f4f4c6d0ac2301f9eb0465aa000f9c270",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+   "locator": "Business overview; consolidated statements of operations, page 87; Customer Concentration, page 95",
+   "receipt": {
+    "public_excerpt": "$1.9 billion",
+    "quote_hash": "ed0527225fb22a10dae048a680bd91000348bb4ad60dde9fadaeaba2256db2a0",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T10:13:39Z",
+   "relation": "context",
+   "explanation": "The filing's tables report 2024 revenue of $1,915 million and customer shares of 62% and 15%, implying approximately $440 million from the remaining customers. This confirms the numerical premise but does not settle whether that amount was commercially adequate for the scale discussed.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Revenue excluding the two largest customers",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "2024 revenue: $1,915 million, consolidated statements of operations.",
+     "2024 largest customer share: 62%, Customer Concentration table.",
+     "2024 second-largest customer share: 15%, Customer Concentration table."
+    ],
+    "formula": "1915 × (1 − 0.62 − 0.15) = 440.45 million USD",
+    "rounding": "Approximately $440 million; customer percentages are rounded, so $440.45 million is not an exact disclosed residual."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "The financial figures establish substantial absolute sales but do not establish the contextual standard of commercial adequacy.",
+  "No verified utilization or customer-level demand evidence was obtained for the residual customer group.",
+  "No comparison establishes whether those sales were sufficient for the operating scale invoked in the post."
+ ],
+ "packet_hash": "4b57e0117d1e4c3eed491ba8de4798c8d7cf62a4eef1f11b7e24cf492665c728"
+}

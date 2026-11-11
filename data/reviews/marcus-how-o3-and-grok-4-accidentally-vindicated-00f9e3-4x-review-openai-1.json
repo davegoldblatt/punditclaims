@@ -1,0 +1,202 @@
+{
+ "run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3": "d75f90e069af636714d0637a21d94fa7048398a9fdab5b927cd2da21fdd25773",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-229359": "09e6e9c1f1f72bec79c4e32b3434e92029b4aded7dc57d11a272aa7d2f714b09",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f": "3fd5989112fbb3fb038041a30b626f411b1224d8d208d1881abdc0f4134c9a17",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-666e04": "160a7eb39cf231667ebcfab5a57c86d331ee52d06c0ef180942440f925b5d675"
+ },
+ "started_at": "2026-10-29T07:31:13Z",
+ "completed_at": "2026-10-29T07:32:46Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly asserts the comparison based on his informal experiments."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Preserves code use, the specified grid task, and Marcus's personal baseline without programming. This is an observed capability claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Valid comparable grids and a substantial timing advantage are ordinary readings. The missing timing records prevent resolution regardless of the precise speed threshold."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The search found no inspectable o3 timing records, measured Marcus baseline, or common validation protocol. Marcus's assertion cannot establish its own accuracy. An empty outcome-evidence packet does not make the case broken.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states and endorses the assessment himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful when failure means the named problems remained at publication, rather than that scaling produced no improvements."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The next sentence fairly bounds the assertion to unresolved reliability problems. This ordinary reading permits gains and does not assert a causal or permanent scaling limit."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's contemporaneous company disclosure reports remaining GPT-4.5 hallucinations alongside improvement."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic reports misaligned behavior across leading models in controlled simulations. It does not establish deployed incidents."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The timely primary study reports continuing puzzle and exact-computation failures. Methodological criticism limits stronger conclusions about reasoning."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI reports gains from scaling. These constrain a broader no-progress interpretation but do not contradict persistence of the named problems."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "The timely critique identifies confounds in Apple's experiments. It weakens fundamental-limit conclusions without establishing that reasoning errors were overcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporaneous evaluations document remaining hallucinations, simulated misalignment, and reasoning-task failures. Scaling gains and the Apple critique limit broader interpretations, but do not overturn the bounded observation that these problems persisted. The evidence does not isolate scaling's causal contribution.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The assessment is Marcus's own statement, separate from the surrounding quotation of his earlier work."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Preserves contemporary adoption and comparative gains, read as demonstrated examples rather than universal superiority."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Including executable tools and requiring task-specific neural-only comparisons fairly reflects the context. Neither universal superiority nor equal total compute was asserted."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The timely ToRL study reports mathematical gains over tool-free baselines from the same base-model family. Training and tool integration form a combined approach."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The timely study reports gains when Python invocation is elicited in QwQ with unchanged weights. Prompting and inference effort also change."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "xAI's company disclosure supports the adoption component by confirming implemented tool use. It does not independently establish comparative performance gains."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The research documents implemented neural-plus-code systems achieving gains over relevant neural-only baselines on specified mathematical tasks. The company announcement additionally supports contemporary adoption. These findings establish the bounded observation without proving universal or compute-matched superiority.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus endorses both the product history and the asserted correspondence with Hinton's criticism."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Preserves the year, qualified integration claim, Python execution, and asserted correspondence with Hinton's remarks."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading integration at the overall workflow level follows the described interpreter calls. Requiring verification of the Hinton correspondence fairly preserves a substantive part of the statement."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's dated company announcement supports the 2023 introduction and Python-execution functionality. It provides no evidence about Hinton's criticism."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The launch record supports the timing and interpreter functionality. No verified original recording or adequate independent transcript establishes whether Hinton condemned this form of integration. The complete proposition remains unresolved; the missing corroboration is an evidentiary gap, not a broken case.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-666e04"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28449,
+  "output_tokens": 2143,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 357
+ },
+ "cost_usd": null
+}

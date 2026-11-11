@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-power-cut-948e45-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-power-cut-948e45": "149dc6d8af0eff62d1ab215541763cd8d937f2e3249b7299cff21e6084140771",
+  "case:wyea-power-cut-9873c9-2": "75d24d220f453e14b9c17fdc59124c9ee7b014b46eae0a287402db3d321896f0",
+  "case:wyea-power-cut-d70623-2": "0a1deacf83e07e91d35f351ae99b4ff468a3ada8db271b7eaaac61cd347b0a90",
+  "case:wyea-power-cut-e4e59d": "527afe3fab571c6866fdf800b002fae63f67268f8e0534a7cd7eac6b13888521"
+ },
+ "started_at": "2026-10-29T17:59:54Z",
+ "completed_at": "2026-10-29T18:01:03Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The phrase 'cast-iron guarantee that it will need more money within a year' is a firm forecast, not a hedge. The proposition keeps the $40B round as background and the one-year horizon."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading, that seeking or raising major new outside funding beyond the $40B round shows need, is an ordinary reading. The clock runs from the post (2025-03-03). Starting it at the round's close would not change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters report dated 2026-02-27: OpenAI is raising $110B, a new round beyond the $40B, before the 2026-03-03 deadline."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reporter's description of what the cash is for (compute it needs). It frames the purpose but is not a separate outcome event."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "supported",
+    "rationale": "The deadline (2026-03-03) passed before the evaluation date. Inside the window, OpenAI announced a $110B round separate from the $40B round, which meets the support condition of seeking or raising substantial new outside funding. Amazon's tranches are partly conditional, but 'seeks' is enough under the contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-power-cut-948e45"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will continue burning money in perpetuity' is a firm forecast with no end date. The hedged 'will likely burn $11B' is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'burning money' as negative free cash flow, with a full year of positive FCF as the contradiction test, is an ordinary and fair reading. Support is impossible over an unlimited horizon, which the contract says openly."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Reuters, 2025-09-29: OpenAI burned $2.5B in H1 2025 and has an $8.5B full-year burn target. This is continued burn, not a positive-FCF year, and cannot prove perpetuity."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary summary dated 2026-09-19, before the cutoff, of FT-reported projections of negative FCF for 2026-2030. These are projections, not realized results."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was stated. The evidence shows no full year of positive free cash flow, so the contradiction condition is not met. A finite history of cash burn cannot establish burn in perpetuity, so the claim stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-power-cut-9873c9-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The demand for disclosure is normative and is not scored. The assessable part is the observation that revenues are small and profits non-existent. 'Becoming increasingly obvious' frames the claim but does not hedge it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker named no period, provider universe, threshold for 'small', or profit measure. Calendar 2024 and 'relative to investment' are fair readings given his capex comparison, but they are the evaluator's choices and they drive the result."
+    },
+    "evidence": [
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's own disclosure: a $13B annualized AI run rate. It is not realized 2024 revenue and has no profit figure."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "CNBC, 2024-09: OpenAI expected about a $5B loss on $3.7B revenue. That is a forecast for one firm, not sector-wide realized results."
+     },
+     {
+      "id": "e8",
+      "fits": true,
+      "relation": "context",
+      "note": "TIME: Midjourney was profitable by about 2022 and reportedly made $300M by 2024. The profit is from an earlier period, and the 2024 figure is revenue only, so it cannot contradict claims about 2024 profit."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no comparable 2024 revenue and profit data for a defined set of providers. OpenAI's losses fit the claim, but they are projected figures for one firm. The Midjourney profitability counterpoint is from another period. 'Small' has no threshold. The evidence does not settle the claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-power-cut-d70623-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The wording is faithful. But the claim is mainly about what is necessary for survival (record raises are required; SoftBank must borrow) plus one dependence fact. That fits a causal assessment, as the contract's axis says, better than a plain observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'only from SoftBank' as indispensable backing, rather than as the only source of every dollar, is charitable and fits his acknowledgment of a syndicate. The startup-record benchmark and the duration of the survival requirement are undefined, so interpretation drives any result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure of a $122B round dated 2026-03-31, anchored by Amazon, NVIDIA and SoftBank. This is a later period and does not show what funding was available without SoftBank, or what OpenAI needed to survive."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish how much financing OpenAI needed to survive. It does not show whether alternatives to SoftBank were adequate in 2025, or whether SoftBank had to borrow rather than simply chose to. The 2026 round with many backers is from a later period and does not settle the necessity claims.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-power-cut-e4e59d"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 63776,
+  "output_tokens": 7534,
+  "cached_input_tokens": 32880,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

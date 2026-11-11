@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-openais-lies-and-half-truths-abda62-a1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-lies-and-half-truths-abda62",
+  "version": 2,
+  "content_hash": "cbc76aca5c0ca8f54de3200805b2d0312e4f6d80a77cef014c03393ae77d9b63"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-lies-and-half-truths-abda62",
+  "version": 1,
+  "content_hash": "2c9c4660bbc426a864aa78b57dc904b4780a55e03a2f65a40f0f86255edb73cb"
+ },
+ "packet_ref": {
+  "id": "marcus-openais-lies-and-half-truths-abda62-p1",
+  "content_hash": "180ba62b2d8dd626342f08b42de3013644237208af516107544b1c32b14999f3"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2019-10",
+  "end": "2019-10",
+  "precision": "month"
+ },
+ "public_rationale": "The technical description is supported: Kociemba supplied solution moves, neural networks learned manipulation, and experiments used a customized cube with internal sensors and Bluetooth communication. The description is incomplete because the paper also reports vision-only experiments. OpenAI disclosed these distinctions itself, so this finding does not establish misleading publicity.",
+ "evidence_ids": [
+  "e7",
+  "e8"
+ ],
+ "counterevidence_ids": [
+  "e8"
+ ],
+ "limitations": [
+  "Support applies to the stated use of instrumented hardware, not exclusive reliance on it.",
+  "The controller was trained in simulation before physical deployment.",
+  "The claim's technical accuracy does not establish the surrounding allegation of evasion."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-openais-lies-and-half-truths-671370-4x-review-anthropic-1",
+  "marcus-openais-lies-and-half-truths-671370-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-openais-lies-and-half-truths-671370-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-openais-lies-and-half-truths-abda62",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "In practice, OpenAI's 2019 claim of 'solving a Rubik's cube with one hand' meant using a well-known algorithm OpenAI didn't invent to choose which faces to turn, and teaching a robot motor control on a specially instrumented Rubik's cube with Bluetooth sensors inside.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Translation: Using a well-known algorithm that we didn’t invent to decide which faces of the cube to turn, we taught a robot to do motor control on a specially instrumented Rubik’s cube with bluetooth sensors inside.",
+   "locator": "paragraph 18",
+   "url": "https://garymarcus.substack.com/p/openais-lies-and-half-truths",
+   "date": "2024-03-15",
+   "document_title": "OpenAI’s Lies and Half-Truths",
+   "observed_at": "2026-10-29T00:00:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "well-known algorithm that we didn’t invent",
+    "decide which faces of the cube to turn",
+    "taught a robot to do motor control",
+    "specially instrumented Rubik’s cube",
+    "bluetooth sensors inside",
+    "October 2019"
+   ],
+   "our_interpretation": [
+    "The claim describes the division between an existing move-planning algorithm and learned robotic manipulation.",
+    "Bluetooth sensors means internal sensors whose readings are communicated through Bluetooth.",
+    "Teaching the robot includes training in simulation and transferring the learned controller to physical hardware.",
+    "The wording asserts use of an instrumented cube; it does not explicitly assert that every experiment used one or that OpenAI concealed these details."
+   ],
+   "support_condition": "The October 2019 documentation identifies an existing external solver for move selection, learned manipulation, and use of a customized cube with internal sensing and Bluetooth communication.",
+   "contradiction_condition": "The documentation shows that OpenAI's learned system originated the solution algorithm, or that the described instrumented Bluetooth cube was not used in the reported work."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The technical description is supported: Kociemba supplied solution moves, neural networks learned manipulation, and experiments used a customized cube with internal sensors and Bluetooth communication. The description is incomplete because the paper also reports vision-only experiments. OpenAI disclosed these distinctions itself, so this finding does not establish misleading publicity.",
+  "limitations": [
+   "Support applies to the stated use of instrumented hardware, not exclusive reliance on it.",
+   "The controller was trained in simulation before physical deployment.",
+   "The claim's technical accuracy does not establish the surrounding allegation of evasion."
+  ],
+  "evidence": [
+   {
+    "id": "e7",
+    "relation": "supports",
+    "excerpt": "We therefore train our neural networks to achieve the required face rotations and cube flips as generated by Kociemba’s algorithm.",
+    "locator": "Footnote A",
+    "url": "https://openai.com/blog/solving-rubiks-cube",
+    "publisher": "OpenAI",
+    "event_date": "2019-10-15",
+    "available_at": "2019-10-15",
+    "explanation": "The announcement explicitly separates Kociemba's move sequence from the neural networks' learned manipulation. Its approach section states that training occurred in simulation."
+   },
+   {
+    "id": "e8",
+    "relation": "supports",
+    "excerpt": "This cube is equipped with a Bluetooth module and allows us to sense the state of the Rubik’s cube.",
+    "locator": "Section 3.2, Giiker Cube; related qualifications in sections 2 and 7",
+    "url": "https://arxiv.org/html/1910.07113v1",
+    "publisher": "OpenAI, published on arXiv",
+    "event_date": "2019-10",
+    "available_at": "2019-10-16",
+    "explanation": "The paper describes customized internal encoders and Bluetooth transmission, and identifies Kociemba as an existing solver. It also reports a vision-only variant using altered center stickers, so the instrumented cube does not describe every experiment."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "496f8c3aaf775346c96e93a833dab0868ce43e48d66b0c4c38cbb1f2969a852c",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:50:59Z"
+}

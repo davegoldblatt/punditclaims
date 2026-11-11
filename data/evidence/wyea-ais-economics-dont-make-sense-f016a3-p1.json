@@ -1,0 +1,98 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-f016a3-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-f016a3",
+  "version": 2,
+  "content_hash": "d3783f3b8d26477a568fb1000e1fe96e932867b437064c32162c30cc0a2bbdb6"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-f016a3",
+  "version": 1,
+  "content_hash": "95ec7ac6a71ac8cbf3085068206b56bbf82d19c649952ad69dc363148d8685f6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "CoreWeave 2025 results gross margin depreciation six years 2026",
+   "site.coreweave.com \"2025\" \"Cost of revenue\" \"1,453\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.macrotrends.net/stocks/charts/CRWV/coreweave/gross-margin",
+    "used": false,
+    "why": "A secondary ratio prompted inspection of the underlying filing; the ratio does not resolve the claim's cost boundary."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000094/coreweave4q25earningspress.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "used": true,
+    "why": "Audited financial statements and depreciation policies reveal why different margin calculations cannot be treated as interchangeable."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-4Q25-Earnings-Presentation-vF.pdf",
+    "used": false,
+    "why": "Read and considered. Its adjusted EBITDA and operating margins are different measures from the provisional gross-margin reading."
+   }
+  ],
+  "performed_at": "2026-10-29T19:52:02Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q4-coreweave-inc-096f28cdd102",
+   "source_snapshot_id": "0f75b4e603c8f8d12b89623bdef8865f4f4c6d0ac2301f9eb0465aa000f9c270",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+   "locator": "Note 2, Property and Equipment; Results of Operations",
+   "receipt": {
+    "public_excerpt": "estimated useful\nlives",
+    "quote_hash": "c644849131f6ce62c09fcda3ce699434ff2fea185e91109313c4d7b6cda9ceea",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T10:13:39Z",
+   "relation": "context",
+   "explanation": "The filing lists a six-year technology-equipment life, but records server depreciation in technology and infrastructure expense. Subtracting only reported cost of revenue produces a 71.68% annual ratio; that excludes relevant costs and covers a different period, so it is not a decisive counterexample.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Derived revenue-minus-cost-of-revenue ratio, excluding separately classified technology and infrastructure expense",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "FY2025 revenue: $5,131 million",
+     "FY2025 cost of revenue: $1,453 million",
+     "Both inputs appear in CoreWeave's audited financial statements; the derived ratio is an evaluator calculation."
+    ],
+    "formula": "(5,131 - 1,453) / 5,131 × 100",
+    "rounding": "71.68%, rounded to two decimal places."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis or sufficiently precise margin definition.",
+  "No matching industry-wide evidence establishes a 70% ceiling.",
+  "A six-year depreciation policy does not establish the claimed break-even requirement.",
+  "The claim gives no measurable obsolescence threshold."
+ ],
+ "packet_hash": "eb44396bb517fd0457d38b96ff2db232e1cb20a7d111211e855714eb8addf699"
+}

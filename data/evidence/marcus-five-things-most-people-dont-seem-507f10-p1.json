@@ -1,0 +1,155 @@
+{
+ "packet_id": "marcus-five-things-most-people-dont-seem-507f10-p1",
+ "claim_revision_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-507f10",
+  "version": 1,
+  "content_hash": "00b251e05972fa47089d522e44dface3851e984117a4bb6786ff73c3d3c90d5b"
+ },
+ "contract_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-507f10",
+  "version": 1,
+  "content_hash": "491863383d87dec1d8348672d2bce1908625ecff999ff52b4dcbec64d0a95f75"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek R1 inference cost January 2025 H800 running longer reasoning tokens",
+   "DeepSeek R1 inference January 2025 cost 8 H100 longer tokens Fireworks",
+   "DeepSeek R1 Fireworks inference cost launch $8 million tokens January 2025",
+   "DeepSeek R1 inference long reasoning tokens January 2025 site.together.ai/blog",
+   "DeepSeek R1 inference long reasoning tokens January 2025 site.fireworks.ai/blog"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://blogs.nvidia.com/blog/deepseek-r1-nim-microservice/",
+    "used": true,
+    "why": "Primary serving-performance disclosure shortly after the post; useful engineering context."
+   },
+   {
+    "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+    "used": true,
+    "why": "Primary operating-cost estimate, but for a later period and V3/R1 combined."
+   },
+   {
+    "url": "https://epoch.ai/gradient-updates/what-went-into-training-deepseek-r1",
+    "used": true,
+    "why": "Documents the substantial distinction between customer pricing and underlying operating expense."
+   },
+   {
+    "url": "https://fireworks.ai/blog/deepseek-r1-deepdive",
+    "used": false,
+    "why": "Reports customer pricing rather than provider costs; publication timing was not established in the extracted page."
+   },
+   {
+    "url": "https://api-docs.deepseek.com/news/news250120/",
+    "used": false,
+    "why": "The reader returned current API documentation rather than the historical release announcement."
+   }
+  ],
+  "performed_at": "2026-10-29T05:40:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "blogs-nvidia-com-blog-deepseek-r1-nim-microservice",
+   "source_snapshot_id": "773e11a8f1df405ae4d714393011907ba166371a3cae57cf90de779ae6b08a38",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://blogs.nvidia.com/blog/deepseek-r1-nim-microservice",
+   "locator": "Introduction; DeepSeek-R1 — a Perfect Example of Test-Time Scaling",
+   "receipt": {
+    "public_excerpt": "The DeepSeek-R1 NIM microservice can deliver up to 3,872 tokens per second on a single NVIDIA HGX H200 system.",
+    "quote_hash": "f3c86014f79e16503d67aff034ef7ebba4d847d3ea99c53fc7770d97ca20e24a",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-30",
+   "available_at": "2025-01-30",
+   "retrieved_at": "2026-10-29T05:36:28Z",
+   "relation": "context",
+   "explanation": "NVIDIA describes an eight-H200 deployment and explains that extended reasoning generates more tokens and longer generation cycles. This supports the resource mechanism, but neither measures monetary expense nor falls inside the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "github-com-deepseek-ai-open-infra-index-blob-main-202502opensourcew-63ded4e06c93",
+   "source_snapshot_id": "723a24ee8fb9ca2ae3270fec3cf2d814875e58f9f915b808d3c001aeecf91d67",
+   "publisher": "DeepSeek-AI",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+   "locator": "Inference-service statistics for the 24 hours ending February 28, 2025",
+   "receipt": {
+    "public_excerpt": "Assuming the leasing cost of one H800 GPU is $2 per hour, the total daily cost amounts to $87,072.",
+    "quote_hash": "c6752070ed40be3fbae00a0cf0bb6bd242010d745589fc6e6f0ce13e48f6f16d",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-28",
+   "available_at": "2025-03-01",
+   "retrieved_at": "2026-10-29T05:35:53Z",
+   "relation": "context",
+   "explanation": "This is a rental-equivalent daily compute estimate for V3 and R1 together. It cannot establish January R1-only operating expense or the incremental cost of longer reasoning.",
+   "metric_scope": {
+    "company": "DeepSeek",
+    "metric": "Combined V3 and R1 inference GPU cost at assumed rental rates",
+    "currency": "USD",
+    "units": "dollars per day",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-02-27",
+    "period_end": "2025-02-28",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "epoch-ai-gradient-updates-what-went-into-training-deepseek-r1",
+   "source_snapshot_id": "b4cfd14397b422f9406a18737c5caf1c5ba1ef312ae80a2f6fdfe33600addc34",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/gradient-updates/what-went-into-training-deepseek-r1",
+   "locator": "Performance and pricing",
+   "receipt": {
+    "public_excerpt": "However, while the performance difference between the two models is small, the pricing difference is definitely not.",
+    "quote_hash": "6277affd0643528b57e483c0112d37d09812a62dd244c1f584906b6ad16f76c9",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-31",
+   "available_at": "2025-01-31",
+   "retrieved_at": "2026-10-29T05:34:14Z",
+   "relation": "context",
+   "explanation": "The analysis reports much lower customer output-token pricing for R1 than o1. This cautions against interpreting expensive as a relative API-price claim, but retail prices do not disclose provider costs.",
+   "metric_scope": {
+    "company": "DeepSeek",
+    "metric": "Customer API output-token price for R1",
+    "currency": "USD",
+    "units": "dollars per million output tokens",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-31",
+    "period_end": "2025-01-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No target-period R1-only operating-cost measurement with a specified workload was established.",
+  "No matched monetary comparison of short and long reasoning was established.",
+  "The claim gives neither an accounting basis nor a threshold for expensive."
+ ],
+ "packet_hash": "61def0c8cccec364941c3dcb768dbcbe7f62670d505ec0df84b3163f9374a9f3"
+}

@@ -1,0 +1,139 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-a020bc-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-a020bc",
+  "version": 2,
+  "content_hash": "e03a48359aed791ebec3501c37fece34c56bfcba49cb267848d731bc66166046"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-a020bc",
+  "version": 1,
+  "content_hash": "e7653fda3a06b52bf3afae685b8db915912823905f9f6ed74ec32f1ad6b36dad"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Claude Opus Sonnet 4.6 4.5 tokens benchmark OpenRouter twice March 2026",
+   "site.openrouter.ai \"March\" \"2026\" \"tokens\" users",
+   "site.artificialanalysis.ai Claude Sonnet 4.6 tokens 4.5 2026",
+   "site.artificialanalysis.ai \"Opus 4.6\" \"tokens\"",
+   "site.artificialanalysis.ai/articles \"Sonnet 4.6\" tokens",
+   "site.openrouter.ai \"2026\" \"users\" \"growth\" February March"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://artificialanalysis.ai/articles/opus-4-6-everything-you-need-to-know",
+    "used": true,
+    "why": "Dated independent benchmark analysis directly compares output-token use."
+   },
+   {
+    "url": "https://artificialanalysis.ai/articles/sonnet-4-6-everything-you-need-to-know",
+    "used": true,
+    "why": "Dated independent analysis provides the corresponding Sonnet comparison and its settings."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-6",
+    "used": true,
+    "why": "Primary launch documentation describes longer reasoning and configurable effort."
+   },
+   {
+    "url": "https://openrouter.ai/rankings",
+    "used": false,
+    "why": "read_page returned navigation but no historical traffic series or cohort decomposition."
+   },
+   {
+    "url": "https://openrouter.ai/state-of-ai",
+    "used": false,
+    "why": "The report describes December 2025 and cannot establish the February–March 2026 causal explanation."
+   },
+   {
+    "url": "https://openrouter.ai/blog/insights/dinner-is-served",
+    "used": false,
+    "why": "The later article discusses adoption but the returned text does not isolate the claimed February–March traffic increase."
+   }
+  ],
+  "performed_at": "2026-10-29T10:11:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "artificialanalysis-ai-articles-opus-4-6-everything-you-need-to-know",
+   "source_snapshot_id": "a1224701cb748f6d81c5366a60f1f7d41f3e579486edcac6139e0429434a23f1",
+   "publisher": "Artificial Analysis",
+   "source_type": "benchmark",
+   "url": "https://artificialanalysis.ai/articles/opus-4-6-everything-you-need-to-know",
+   "locator": "Paragraph immediately before Intelligence vs Output Tokens",
+   "receipt": {
+    "public_excerpt": "~2x the number",
+    "quote_hash": "7e69f000375bf268445192009aaa42b1044a723de1bffca6fcaa383b7df232bf",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-06",
+   "retrieved_at": "2026-10-29T02:25:38Z",
+   "relation": "supports",
+   "explanation": "This supports approximately doubled output-token use on the benchmark suite for the tested Opus configurations. It does not measure total OpenRouter tokens or explain their increase.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "artificialanalysis-ai-articles-sonnet-4-6-everything-you-need-to-know",
+   "source_snapshot_id": "70777995cd6b060cb14831caaa36acb43e4167a809700abbd3b297f08cf1b96d",
+   "publisher": "Artificial Analysis",
+   "source_type": "benchmark",
+   "url": "https://artificialanalysis.ai/articles/sonnet-4-6-everything-you-need-to-know",
+   "locator": "Key takeaways, paragraph reporting output-token totals",
+   "receipt": {
+    "public_excerpt": "less token efficient",
+    "quote_hash": "29cb1c057390f1aff2729560069d0a7e7a5aadb558bae087ee670bf5913266c4",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-18",
+   "retrieved_at": "2026-10-29T10:01:59Z",
+   "relation": "context",
+   "explanation": "The accompanying results report 74 million output tokens for Sonnet 4.6 at maximum effort versus 25 million for Sonnet 4.5 reasoning, approximately threefold. This supports increased token use but qualifies a uniform near-doubling claim and does not establish the platform-wide cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "anthropic-com-news-claude-opus-4-6",
+   "source_snapshot_id": "ea1bbe92cfd82cebadc69d164cbc8bcd47c74bd540f39b20da5850d397ce898d",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-opus-4-6",
+   "locator": "First impressions, paragraph on deeper reasoning and effort settings",
+   "receipt": {
+    "public_excerpt": "can add cost and latency",
+    "quote_hash": "b517f65fd70bc8c42a72396865c4229fa7abbd8eb650affdc2912246e2ff3dfe",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-05",
+   "available_at": "2026-02-05",
+   "retrieved_at": "2026-10-29T00:44:49Z",
+   "relation": "context",
+   "explanation": "Anthropic describes deeper reasoning and advises reducing effort when the model overthinks. This makes settings and task difficulty relevant to any per-task comparison; it does not quantify OpenRouter adoption.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No dated OpenRouter cohort or request decomposition was located for the claimed increase.",
+  "Benchmark output-token counts do not measure all token categories in OpenRouter totals.",
+  "The tested reasoning configurations may differ from actual OpenRouter usage.",
+  "The benchmarks cannot exclude more users, more tasks per user, or a changing task mix."
+ ],
+ "packet_hash": "e24cbd787a1cfd029207ff433c7889511c0f0225550a1a916ff86303fd7879e3"
+}

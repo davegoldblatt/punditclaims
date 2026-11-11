@@ -1,0 +1,90 @@
+{
+ "packet_id": "wyea-the-beginning-of-history-25250e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-beginning-of-history-25250e",
+  "version": 1,
+  "content_hash": "125cbaa53b6a03e24469b0a03ad26ac2e0b731a19906e9cfd8f2eac691e12d09"
+ },
+ "contract_ref": {
+  "id": "wyea-the-beginning-of-history-25250e",
+  "version": 1,
+  "content_hash": "07ce2fd54e2549cc56f1e21f2178099a3d8c70eba0e1bf9fb7063eea6ebb9fbc"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.sec.gov/Archives/edgar/data Anthropic \"2026\" \"4,585\"",
+   "Anthropic Krishna Rao declaration March 9 2026 exceeding 5 billion pdf",
+   "site.anthropic.com \"2025\" \"4.5 billion\"",
+   "\"Anthropic\" \"revenue\" \"4.5 billion\" \"2025\" Reuters January February March 2026",
+   "Anthropic \"2025 revenue\" \"said\" \"4.5\" -site:wheresyoured.at -site:reddit.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing reports audited 2025 GAAP revenue of $4.585 billion. Retained as context under the required exact-basis rule."
+   },
+   {
+    "url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.465515/gov.uscourts.cand.465515.6.5.pdf",
+    "used": true,
+    "why": "Read paragraph 8. It gives lifetime revenue exceeding $5 billion as of March 9, 2026, not a 2025 revenue total or upper bound."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-hikes-2026-revenue-forecast-20-delays-will-go-cash-flow-positive",
+    "used": false,
+    "why": "read_page returned HTTP 403; search snippets were not used as evidence."
+   },
+   {
+    "url": "https://www.midgardfinance.com/research/anthropic/",
+    "used": false,
+    "why": "The page was updated October 29, after the evaluation cutoff. The underlying SEC filing was examined instead."
+   }
+  ],
+  "performed_at": "2026-10-29T12:53:41Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "MD&A, Comparison of the Years Ended December 31, 2024 and 2025, Revenue table and following paragraph; auditor's report at F-2",
+   "receipt": {
+    "public_excerpt": "$4.2 billion",
+    "quote_hash": "7e0ae56ce03acc4f6ac9f7ddc344de10331092f20395c94e76309a85d37cd150",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The adjacent table reports 2025 revenue of $4,585 million, above the claimed threshold, and the auditor identifies U.S. GAAP. This strongly opposes the ordinary revenue allegation but is retained as context because the contract's accounting basis is company_reported.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "total revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No explicit reconciliation was found between the affidavit's unspecified company-reported measure and the audited GAAP revenue figure."
+ ],
+ "packet_hash": "11076a1955222922d64a9181fd9214fd06bfa10792bf72c0ce1eec0ac4868924"
+}

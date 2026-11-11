@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-234762-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-234762",
+  "version": 1,
+  "content_hash": "f822e26b1529c54ab86352f6fd91f3f6eac26d229003a175ad308c7438516d3d"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-234762",
+  "version": 1,
+  "content_hash": "d2c4227d44f5cfbc08a7130dc74c2eeb3b0b4491a3e86ac99edf452fa5c81eb9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI compute revenue venture capital debt dependence CoreWeave 2026 customer concentration",
+   "site:sec.gov/Archives/edgar/data/1769628/ \"2025\" \"67%\" \"2026\"",
+   "CoreWeave 2025 10-k 67% Microsoft investor relations",
+   "site:openai.com March 2026 funding 122 billion",
+   "site:anthropic.com February 2026 funding 30 billion"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
+    "used": true,
+    "why": "Readable primary disclosure of financing. It does not measure compute-provider revenue dependence."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "used": true,
+    "why": "Readable primary filing showing customer concentration, but for one provider and an earlier period."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the company's PDF was readable."
+   },
+   {
+    "url": "https://fintel.io/doc/sec-coreweave-inc-1769628-10k-2026-march-02-20514-4608",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T10:22:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-accelerating-the-next-phase-ai",
+   "source_snapshot_id": "28ca40431b2d913e1703dbf2813f05b42f277545ff8348b76208c73b45ccc3bb",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/accelerating-the-next-phase-ai",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "Today, we closed our latest funding round with $122 billion in committed capital at a post money valuation of $852 billion.",
+    "quote_hash": "df138ccadb0465e2e575ef18afe9ccd724afd1b79d20f0afff4de8a633a6f35f",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-03-31",
+   "retrieved_at": "2026-10-29T07:36:11Z",
+   "relation": "context",
+   "explanation": "This establishes substantial external financing at one compute customer. Committed financing is neither realized compute revenue nor a measurement of dependence on future financing.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Committed capital in funding round",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-03-31",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q4-coreweave-inc-096f28cdd102",
+   "source_snapshot_id": "0f75b4e603c8f8d12b89623bdef8865f4f4c6d0ac2301f9eb0465aa000f9c270",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+   "locator": "Risk factors, customer concentration",
+   "receipt": {
+    "public_excerpt": "We recognized an aggregate of\napproximately 67% of our revenue from our top customer, Microsoft, for the year ended December 31, 2025.",
+    "quote_hash": "25af5d59625306e135c4bbf35a53a87a34d4c49816afbdb09d5642d51d8d5179",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T10:13:39Z",
+   "relation": "context",
+   "explanation": "The largest direct customer was Microsoft, which cautions against treating all provider revenue as direct startup spending. This earlier, single-provider disclosure does not establish the ultimate funding source of those payments.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Revenue share attributable to Microsoft",
+    "currency": null,
+    "units": "percent of revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative, revenue-weighted estimate of the financing-dependent share was found.",
+  "The records do not trace hyperscaler payments through to ultimate customers and their funding sources.",
+  "The claim supplies neither a numerical materiality threshold nor an accounting basis."
+ ],
+ "packet_hash": "ce81d898d7a9071c862a495130ec27170a5e721de5d8faa9d6b17a342c803543"
+}

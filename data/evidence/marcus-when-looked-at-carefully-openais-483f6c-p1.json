@@ -1,0 +1,126 @@
+{
+ "packet_id": "marcus-when-looked-at-carefully-openais-483f6c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-483f6c",
+  "version": 2,
+  "content_hash": "25fde81ff57960fa171bf288234b5eee80a798b82a27f308ac8630670c91a2a8"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-483f6c",
+  "version": 1,
+  "content_hash": "6c227852ad88a019390303b3ca133130ffad2d0f2c027a3914af1c9b4f063e03"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com building an early warning system LLM aided biological threat creation 2024 0.88",
+   "OpenAI biological threat accuracy study 4.84 0.88 discrepancy"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation",
+    "used": true,
+    "why": "Read the statistical methods and Footnote C, which addresses unadjusted total accuracy."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+    "used": true,
+    "why": "Complete participant assignments were read and joined to accuracy records."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "used": true,
+    "why": "Complete raw results permit a participant-level reanalysis."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/accuracy_summary.csv",
+    "used": true,
+    "why": "Published expert total-accuracy statistics cross-check the calculation."
+   }
+  ],
+  "performed_at": "2026-10-29T09:37:29Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-6f5ca4856018",
+   "source_snapshot_id": "73215b822d45956b98b3cb752f8bc1002b27fa7816e4b53b25a94089811eb734",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+   "locator": "Header and first record; calculation uses all 500 accuracy records",
+   "receipt": {
+    "public_excerpt": "id,stage,accuracy,completeness,innovation,difficulty,n_user_messages,n_internet_resources,time_to_complete_sec\n0,ideation,7,2,1,6,0,23,2075",
+    "quote_hash": "a62b461bd83b2715b2179a38b32f178eb854edd389e5898b16c08b411defb1c5",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:29Z",
+   "relation": "supports",
+   "explanation": "Summing within participants and comparing the two assignment groups gives a positive difference with two-sided p = 0.01908. This remains significant while respecting repeated measurements.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "All 500 accuracy records from responses.csv",
+     "All 100 assignment records from participants.csv, joined by id",
+     "LLM group: n = 50, mean total = 22.98, sample SD = 6.523083032194053",
+     "Internet-only group: n = 50, mean total = 19.94, sample SD = 6.228342066550229"
+    ],
+    "formula": "Sum five accuracy scores per participant. Welch t = (22.98 - 19.94) / sqrt(6.523083032194053^2 / 50 + 6.228342066550229^2 / 50) = 2.383410643; Welch-Satterthwaite df = 97.791234; two-sided Student-t p = 0.01908457.",
+    "rounding": "Displayed p rounded to five decimal places; calculations used unrounded participant totals."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-ffa4b5bf338f",
+   "source_snapshot_id": "88ae786663ed69ce7c4b423d6c5f27d2ba8a265bf18d16bc8423f04f485882ba",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+   "locator": "Header and first two records; all participant records used for joining",
+   "receipt": {
+    "public_excerpt": "id,cohort,assignment,llm_experience\n0,expert,llm_internet,Used a few times\n1,expert,internet_only,Use at least once every few weeks",
+    "quote_hash": "92f8ddb2ae4d9798aefa0e8f69ae54017fa39754dcf1706819cadaf5a5416127",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:28Z",
+   "relation": "context",
+   "explanation": "This supplies the cohort and assignment labels needed for e1's calculation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-590e5d23a1c3",
+   "source_snapshot_id": "497691d692f467650522f5f7a9a475a39e6b0ae923ba29dae98bb67d631d4734",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/accuracy_summary.csv",
+   "locator": "T-test p-value row, Student Total and Expert Total columns",
+   "receipt": {
+    "public_excerpt": ",T-test p-value,0.3998,0.9584,0.0445,0.0683,0.3170,0.2399,0.2165,0.0721,0.0073,0.0160,0.1042,0.0027",
+    "quote_hash": "28760172f56b5317497d9a921be32e58a9fe29933fb435659cc9ed9ae63805d4",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:30Z",
+   "relation": "context",
+   "explanation": "The published one-sided expert total test has p = 0.0027, whereas the student total has p = 0.2399. The expert-only reading also supports significance, but a claim of significance within both cohorts separately would not hold.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "9019e4fba278ccde431f8ffe8946b6811e66e1db4496979b89504e4a97a4fcd6"
+}

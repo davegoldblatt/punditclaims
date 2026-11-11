@@ -1,0 +1,103 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-1338f2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-1338f2",
+  "version": 1,
+  "content_hash": "d2a6385beb39db67afeb695b55596ab719f54ac5290d2f41440892507ee17180"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-1338f2",
+  "version": 1,
+  "content_hash": "2eec03523e2b4e8891034528cd92165632bcc2ff2ecae1fec527ca082e417e67"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia six million Blackwell GPUs shipped 2025 powered data centers",
+   "site.microsoft.com \"Blackwell\" \"tens of thousands\" 2025",
+   "site.coreweave.com 2025 Blackwell 2496 operational MLPerf",
+   "Nvidia GTC October 28 2025 six million Blackwell dies shipped 500 billion"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.coreweave.com/blog/coreweave-nvidia-and-ibm-set-mlperf-record-with-largest-nvidia-gb200-blackwell-cluster-achieving-over-2x-faster-training",
+    "used": true,
+    "why": "Read successfully. It documents actual Blackwell computation, but only for one earlier deployment."
+   },
+   {
+    "url": "https://www.amcompute.com/blog/blackwell-gpu-market-size-and-fragmentation",
+    "used": true,
+    "why": "Read successfully. Used only to flag the shipment-unit issue; its modeled deployment estimates are not commissioning records."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/nvda/transcripts/405017-gtc-october-2025-keynote/",
+    "used": false,
+    "why": "Read relevant passages. The shipment statement does not establish operating deployment totals."
+   },
+   {
+    "url": "https://azure.microsoft.com/en-us/blog/microsoft-azure-delivers-the-first-large-scale-cluster-with-nvidia-gb300-nvl72-for-openai-workloads/",
+    "used": false,
+    "why": "read_page returned the title and date but not the substantive deployment passage."
+   }
+  ],
+  "performed_at": "2026-10-29T12:02:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "coreweave-com-blog-coreweave-nvidia-and-ibm-set-mlperf-record-with-60055ea265a4",
+   "source_snapshot_id": "c1bf2b83ede7fc3f6d4da5cb0224c05ecbaaced543420ba576a4b69318b13278",
+   "publisher": "CoreWeave",
+   "source_type": "company_disclosure",
+   "url": "https://www.coreweave.com/blog/coreweave-nvidia-and-ibm-set-mlperf-record-with-largest-nvidia-gb200-blackwell-cluster-achieving-over-2x-faster-training",
+   "locator": "The largest-ever NVIDIA Blackwell submission, Carina cluster paragraph",
+   "receipt": {
+    "public_excerpt": "multiple training runs",
+    "quote_hash": "b2b869320060a0944f396ca9928f9936714a26bba19ceb24dee1edde2ffcb17b",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-04",
+   "available_at": "2025-06-04",
+   "retrieved_at": "2026-10-29T11:53:29Z",
+   "relation": "context",
+   "explanation": "The surrounding paragraph identifies the operating Carina cluster as using 2,496 Blackwell GPUs. This counters a literal zero-deployment reading, but neither covers the November target period nor reconciles the shipment cohort.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "amcompute-com-blog-blackwell-gpu-market-size-and-fragmentation",
+   "source_snapshot_id": "b7217c0e06ae8b5f6fd0f313cb52924d802a5d9e01891c1b1a205b261de4a1d5",
+   "publisher": "American Compute",
+   "source_type": "secondary_summary",
+   "url": "https://www.amcompute.com/blog/blackwell-gpu-market-size-and-fragmentation",
+   "locator": "3.2 million Blackwell packages, first paragraph",
+   "receipt": {
+    "public_excerpt": "approximately three million",
+    "quote_hash": "a39934a2d1b6f6855b53c8f220927331db34770920f2a420d54ec3365e142e0e",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-28",
+   "available_at": "2026-04-20",
+   "retrieved_at": "2026-10-29T11:55:57Z",
+   "relation": "context",
+   "explanation": "This retrospective analysis interprets the six-million announcement as a die count corresponding to approximately three million packages. It flags a material counting issue but supplies no complete November commissioning census.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No comprehensive shipment-to-installation reconciliation was found.",
+  "The public records reviewed do not quantify the cohort's powered and unpowered shares during November 2025.",
+  "The later market analysis contains modeled allocations rather than complete operator inventories."
+ ],
+ "packet_hash": "e9eb41c065273b98e4bab2a6921ac5610d8aa7b0d6ad49f6d5af08d1424e54bf"
+}

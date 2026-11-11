@@ -1,0 +1,191 @@
+{
+ "run_id": "marcus-sam-altman-thinks-that-agi-is-basically-3a4d5f-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-3a4d5f": "483e11cb556a3b27ba16cc3c85bc4ae936ac11fa228e4300a602cbe772a1a3a6",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-467fc6": "c47196befc5464228a709f5d4a64fb70d8df339a144c18c943923f4acdaaeec2",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-6e0341": "c2798905ce60761a0d9ecd62dd73bdc588e95c21a560cdfdc744c4e50f7e93bd",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-95ab84": "f9e44f62a21c9bb35140aeef4e67a2ccec8c5a680f2e474fc9951bfa4ac312fa"
+ },
+ "started_at": "2026-10-29T21:51:11Z",
+ "completed_at": "2026-10-29T21:51:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, written as his own description of a paper's result."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Correctly framed as a report of what a recent paper showed: an approx. 30% decline for o1 on Putnam variants, with variable names given as an example."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 30% as a relative decline and requiring the o1 vs o1-preview difference to be made explicit are both fair. The outcome depends on whether an o1-preview result counts as 'o1' and on showing a version that existed before the post."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Jan 16, 2025 reproduction of the abstract: o1-preview had about a 30% reduction on variations. This matches the figure, but it postdates the post, concerns o1-preview, and does not establish what version existed before the post."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence is a reproduction from 10 days after the post. It matches the approx. 30% figure but attributes it to o1-preview. The contract requires a securely dated version from before the post, and the packet says none was verified. On this evidence the claim looks plausibly accurate, but the contract's conditions are not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-3a4d5f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Continues' is fairly rendered as still unsolved. The target is LLMs, and the 1998 reference is attribution only."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'continues' as ongoing reliability failures under task-preserving changes is ordinary and fair. It does not require every model to fail."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Oct 2024 Apple GSM-Symbolic study: all models declined when only numbers were changed, and large drops followed from adding an irrelevant clause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2026 reassessment, available before the cutoff. It weakens blanket claims but still finds significant failures specific to some models. It does not show the pattern was an artifact."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Controlled 2024 evaluations show performance falling under task-preserving changes. The later reassessment narrows how widespread the effect is, but it confirms continuing failures in some models. That does not meet the contract's bar for contradiction (artifact plus reliable handling).",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-467fc6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion. His referenced review with Davis is not used as evidence."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Still dodgy' is fairly rendered as remaining unreliable, with the long-standing history kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as substantial, repeatable everyday-reasoning failures across leading models, not total failure, is an ordinary plain reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "SimpleToM, Oct 2024: GPT-4o, Claude 3.5 and Llama 405B scored 10–25% on behavior judgments, and o1-preview 59.5%. Mental-state accuracy was high, and prompting helped."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2019 PIQA paper: background for 'as it has long been'. Older models, so it cannot speak to the 2024–25 state."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Oct 2024 study showing o1 gains. Its 'commonsense' tasks differ from everyday reasoning, so it does not overturn the failures."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A contemporary independent evaluation shows repeatable everyday-reasoning failures across several leading models, and earlier work documents similar limits. The progress shown by o1 and by prompting qualifies the claim but does not establish reliable commonsense reasoning.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-6e0341"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 'sometimes' qualifier and the contrast between familiar and unfamiliar inputs. Omitting 'like their predecessors' is immaterial."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as a tendency, with 'break' meaning incorrect answers, is fair and ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GSM-Plus, July 2024: 25 models solve the original questions accurately but struggle on variations. They are relatively resilient to some changes, which fits 'sometimes'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A controlled paired evaluation in the target period shows competent baseline performance with reduced reliability on perturbed variants. That meets the support condition. Partial resilience is consistent with the speaker's hedge.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-95ab84"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27319,
+  "output_tokens": 3601,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

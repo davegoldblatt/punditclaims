@@ -1,0 +1,94 @@
+{
+ "packet_id": "marcus-there-must-be-some-misunderstanding-781f39-p1",
+ "claim_revision_ref": {
+  "id": "marcus-there-must-be-some-misunderstanding-781f39",
+  "version": 1,
+  "content_hash": "bfe9bf8040b78dd53c307418c53320fdd9f05ccf2a4d0eec9a4573b31ad3e640"
+ },
+ "contract_ref": {
+  "id": "marcus-there-must-be-some-misunderstanding-781f39",
+  "version": 1,
+  "content_hash": "a4b33f4662613e1e0b1a866336055b7a52255dca37e3224a59fac3648532da5e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "large language models compositional reasoning January 2024 GPT-4 failures benchmark",
+   "site.arxiv.org \"Instruction-Following Evaluation\" 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2311.07911",
+    "used": true,
+    "why": "Original IFEval results directly measure compliance with verifiable instructions."
+   },
+   {
+    "url": "https://arxiv.org/abs/2311.07911",
+    "used": true,
+    "why": "Establishes the paper's November 14, 2023 publication date."
+   },
+   {
+    "url": "https://www.research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/",
+    "used": true,
+    "why": "Reports a contemporary evaluation of models' ability to locate reasoning errors."
+   }
+  ],
+  "performed_at": "2026-10-29T08:54:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2311-07911",
+   "source_snapshot_id": "860d21fb3f9454c4c6b5e2a5e52508e3b08fa723721f1dd127fee2d3a0de7e30",
+   "publisher": "arXiv; Jeffrey Zhou and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2311.07911",
+   "locator": "Section 3 and Table 3",
+   "receipt": {
+    "public_excerpt": "overall accuracy scores of each model in Table 3",
+    "quote_hash": "684f6a09dd2704e4e90f131f5c53779e1885343f1300d80dcb60e1c0f85486d8",
+    "verified": "exact"
+   },
+   "event_date": "2023-11",
+   "available_at": "2023-11-14",
+   "retrieved_at": "2026-10-29T08:45:03Z",
+   "relation": "supports",
+   "explanation": "Table 3 reports GPT-4 prompt-level accuracy of 76.89% under strict checking and 79.30% under loose checking. The November tests therefore show frequent instruction failures, while also showing that most tested prompts succeeded.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "research-google-blog-can-large-language-models-identify-and-correct-1543f2e1e0bf",
+   "source_snapshot_id": "d0982abffdebb48c9bb86fb67ba79344d27262404b321ed34d76bf54bed5bf0d",
+   "publisher": "Google Research",
+   "source_type": "company_disclosure",
+   "url": "https://www.research.google/blog/can-large-language-models-identify-and-correct-their-mistakes",
+   "locator": "Core questions about mistake identification, question 1",
+   "receipt": {
+    "public_excerpt": "the best model achieving 52.9% accuracy overall.",
+    "quote_hash": "11691714ca24afe18c789c7e22c00abbc94fd2dec288a0ef525603111f4f640c",
+    "verified": "exact"
+   },
+   "event_date": "2024-01",
+   "available_at": "2024-01-11",
+   "retrieved_at": "2026-10-29T03:28:16Z",
+   "relation": "supports",
+   "explanation": "The January report describes poor performance at identifying logical mistakes across prompting methods. This supports a specific reliability limitation, but the deliberately error-rich benchmark does not measure the frequency of errors in ordinary use.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "Neither evaluation supplies a representative error rate for all real-world requests.",
+  "The January research report does not give exact experiment collection dates."
+ ],
+ "packet_hash": "bd12a690e90b7a1d4ad10040822ed157a8c582f7103e1fc1a7dda85bd86f3edb"
+}

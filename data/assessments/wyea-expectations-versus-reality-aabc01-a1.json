@@ -1,0 +1,103 @@
+{
+ "assessment_id": "wyea-expectations-versus-reality-aabc01-a1",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-aabc01",
+  "version": 1,
+  "content_hash": "a96ea4a3e86b0f323f4edc4d451d75c7195e02c2d9649a113134e502f6f5a497"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-aabc01",
+  "version": 1,
+  "content_hash": "83db17021025b08def5687a20fac88200c58ed6984627240303a6cdd1626c422"
+ },
+ "packet_ref": {
+  "id": "wyea-expectations-versus-reality-aabc01-p1",
+  "content_hash": "9e312ab0a953bf5db7eebf730b4ec29be4f3ca6980fd44fef8671545addefd03"
+ },
+ "axis": "forecast_outcome",
+ "outcome": "not_adjudicable",
+ "horizon_state": "open_horizon",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Failures were reported, but the required antecedent was not established: a supported website changing its relevant interface. The failure report does not identify that cause. Under the conditional-forecast rule, an unknown antecedent prevents scoring the prediction. This does not establish that the integrations were robust.",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Public incident reports may omit causes or repairs.",
+  "One owner's failure report cannot establish service-wide behavior."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-expectations-versus-reality-a59892-4x-review-anthropic-1",
+  "wyea-expectations-versus-reality-a59892-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-expectations-versus-reality-aabc01",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "If an app like Uber changes its website layout or flows, the corresponding Rabbit R1 functionality would break.",
+  "kind": "conditional_forecast",
+  "conditions": [
+   "if a supported app like Uber changes its layout or flow"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "If, say, Uber changes the layout of its website, or changes the flow of certain actions (like booking a cab, or changing the pickup location), it would effectively break that entire part of the service.",
+   "locator": "paragraph 47",
+   "url": "https://www.wheresyoured.at/expectations-versus-reality",
+   "date": "2024-05-13",
+   "document_title": "Expectations Versus Reality",
+   "observed_at": "2026-10-28T22:31:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "If, say, Uber changes the layout of its website",
+    "changes the flow of certain actions",
+    "it would effectively break that entire part of the service"
+   ],
+   "our_interpretation": [
+    "This concerns the website-driven integrations described in the post, rather than every later version of Rabbit's software.",
+    "A qualifying change affects a supported task's interface or sequence of steps. Breaking means that the affected integration can no longer complete that task.",
+    "A failure must be linked to the interface change. An outage, authentication problem, or retired integration alone does not establish that link."
+   ],
+   "support_condition": "A documented supported-site interface change causes the corresponding R1 integration to stop completing the affected task, with recovery requiring changes to Rabbit's integration.",
+   "contradiction_condition": "A documented relevant interface change leaves the affected integration working without an integration-specific repair, contradicting the categorical prediction for that case."
+  },
+  "axis": "forecast_outcome",
+  "outcome": "not_adjudicable",
+  "horizon_state": "open_horizon",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Failures were reported, but the required antecedent was not established: a supported website changing its relevant interface. The failure report does not identify that cause. Under the conditional-forecast rule, an unknown antecedent prevents scoring the prediction. This does not establish that the integrations were robust.",
+  "limitations": [
+   "Public incident reports may omit causes or repairs.",
+   "One owner's failure report cannot establish service-wide behavior."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "Uber is not working with my R1",
+    "locator": "Opening post by KarimGouda04, November 1, 2024",
+    "url": "https://forum.rabbitcommunity.tech/t/uber-does-not-work-on-my-r1/14214",
+    "publisher": "KarimGouda04 on Rabbit Community",
+    "event_date": "2024-11-01",
+    "available_at": "2024-11-01",
+    "explanation": "An owner reports an unsuccessful Uber task and maintenance messages. The report neither identifies a website change nor establishes that such a change caused the failure."
+   }
+  ],
+  "what_would_resolve": "A dated supported-site interface change, the affected Rabbit integration version, and task results or repair records establishing whether that change broke the integration.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "2dfcdc0a0281f9ff90441f75b2b6e0324ac73629894872078a36f85cb3e64388",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:46:19Z"
+}

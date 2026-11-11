@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-dario-amodei-hype-ai-safety-and-the-7c8513-p1",
+ "claim_revision_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-7c8513",
+  "version": 1,
+  "content_hash": "9eb36a156af12b532cfe43709f86029aba7b8954a8f5944e8e4e4cb3b19ecf80"
+ },
+ "contract_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-7c8513",
+  "version": 1,
+  "content_hash": "9fa942be5cf91da49799d58cfae97f2c3b7013fdf3d106fecbdc5aa4ec7ee5c5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com April 2026 Claude Code engineers review productivity",
+   "site.anthropic.com \"April\" \"2026\" \"Claude Code\" \"tools\"",
+   "site.anthropic.com \"April\" \"2026\" \"engineers\" \"review\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "used": true,
+    "why": "Dated engineering report documents a concrete successful bug-finding test and also discloses important product failures."
+   },
+   {
+    "url": "https://claude.com/resources/articles/best-practices-for-using-claude-opus-4-7-with-claude-code",
+    "used": true,
+    "why": "Dated documentation explicitly distinguishes model reasoning from tool calls inside Claude Code."
+   },
+   {
+    "url": "https://claude.com/resources/articles/introducing-routines-in-claude-code",
+    "used": true,
+    "why": "Dated product announcement documents programmed scheduling, API triggers, authentication, and repository integrations."
+   },
+   {
+    "url": "https://www.anthropic.com/research/claude-code-expertise",
+    "used": false,
+    "why": "Its aggregate historical session statistics do not isolate the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T03:15:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-april-23-postmortem",
+   "source_snapshot_id": "456a5d397166e0eca950889ae682c805ea24fd066ed5c1380b66ce93bc938dd6",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/april-23-postmortem",
+   "locator": "Section “A caching optimization that dropped prior reasoning,” retrospective Code Review test",
+   "receipt": {
+    "public_excerpt": "Opus 4.7 found the bug, while Opus 4.6 didn't.",
+    "quote_hash": "b42afe372ee11589561f018efba10c3643f8187aea34f506aa2b18bb2349cfb0",
+    "verified": "exact"
+   },
+   "event_date": "2026-04",
+   "available_at": "2026-04-23",
+   "retrieved_at": "2026-10-29T03:11:44Z",
+   "relation": "supports",
+   "explanation": "A retrospective test found a real product bug when the review system received sufficient repository context, demonstrating practical usefulness. The same report discloses failures that escaped human and automated checks, so it does not establish dependable autonomous engineering.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "claude-com-resources-articles-best-practices-for-using-claude-opus-535230fc8ed6",
+   "source_snapshot_id": "ca343925da2439252a685b9b245edf5241e2309bf2042577f7d7f1cf91fb76e5",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://claude.com/resources/articles/best-practices-for-using-claude-opus-4-7-with-claude-code",
+   "locator": "Section “Behavior changes worth knowing”",
+   "receipt": {
+    "public_excerpt": "The model calls tools less often and reasons more.",
+    "quote_hash": "c9f39a7290da4713d710f7c862cce5a6163772599d171f0428e22398da5482ac",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-16",
+   "available_at": "2026-04-16",
+   "retrieved_at": "2026-10-29T03:11:50Z",
+   "relation": "supports",
+   "explanation": "The product documentation describes model reasoning and external tool use as distinct parts of Claude Code's operation. This supports the claim that the complete product is more than a standalone LLM.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "claude-com-resources-articles-introducing-routines-in-claude-code",
+   "source_snapshot_id": "f7c1b71e0631674cf4870768d16df058c25c82d314ea7f4880197f2d8ef77523",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://claude.com/resources/articles/introducing-routines-in-claude-code",
+   "locator": "Section “API routines”",
+   "receipt": {
+    "public_excerpt": "Every routine gets its own endpoint and auth token.",
+    "quote_hash": "b054a3886a5e68b8deccd6695b3d128d0a9b1ae3ec9ad745ac6d81383e0453ae",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-14",
+   "available_at": "2026-04-14",
+   "retrieved_at": "2026-10-29T03:12:10Z",
+   "relation": "supports",
+   "explanation": "API triggers and authenticated execution are programmed components around the model. Calling this combination neurosymbolic follows the contract's broad interpretation; the source does not itself establish that technical label.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The cited documentation does not establish a formal symbolic reasoning architecture.",
+  "The concrete usefulness result is a vendor-reported retrospective test."
+ ],
+ "packet_hash": "b1b5dde289e62678587c2d9e04827218b4b92edfca88147e6b34577c4b3f183f"
+}

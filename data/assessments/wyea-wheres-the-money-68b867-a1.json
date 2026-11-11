@@ -1,0 +1,137 @@
+{
+ "assessment_id": "wyea-wheres-the-money-68b867-a1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-68b867",
+  "version": 2,
+  "content_hash": "98a22805918075876f74c8a4f94d0f9c17eea71207bca46fbf4689f9b7c4dcab"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-68b867",
+  "version": 1,
+  "content_hash": "ef1c930891d7ce0ccb852d34ff797e8e282273c7eadfcb273e9e0cbb723d9a76"
+ },
+ "packet_ref": {
+  "id": "wyea-wheres-the-money-68b867-p1",
+  "content_hash": "9f83900aaebde68ff869019e41c6bed4c1eb0565172da17ee7dffdfca79f1c75"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-10-01",
+  "end": "2024-12-31",
+  "precision": "day"
+ },
+ "public_rationale": "The sources support a computational mechanism: advanced model responses require computation. They do not establish the full comparative claim about how OpenAI's operating costs scale with users. Caching also shows that repeated requests can reuse work. Without matched usage, cost and comparator data, the causal assertion remains unresolved.",
+ "evidence_ids": [
+  "e3",
+  "e4",
+  "e5"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "Compute requirements are not a monetary cost curve.",
+  "Customer prices are not provider costs.",
+  "Efficiency improvements can coexist with increasing total costs.",
+  "The monetary accounting basis is unknown."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-wheres-the-money-6293b2-4x-review-anthropic-1",
+  "wyea-wheres-the-money-6293b2-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-wheres-the-money-6293b2-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-wheres-the-money-68b867",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "OpenAI's products do not scale like traditional software, in that the more users it gets, the more expensive its services are to run, because its models are so compute-intensive.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Its products do not scale like traditional software, in that the more users it gets, the more expensive its services are to run because its models are so compute-intensive.",
+   "locator": "paragraph 8",
+   "url": "https://www.wheresyoured.at/wheres-the-money",
+   "date": "2025-02-24",
+   "document_title": "There Is No AI Revolution",
+   "observed_at": "2026-10-28T22:30:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Its products do not scale like traditional software",
+    "the more users it gets, the more expensive its services are to run",
+    "because its models are so compute-intensive"
+   ],
+   "our_interpretation": [
+    "Its refers to OpenAI.",
+    "The ordinary reading concerns total serving costs as active usage grows, assuming comparable usage per user and product mix. It does not say that cost per request necessarily rises.",
+    "The comparison implies materially heavier incremental computation than conventional software services, not merely that operating a service has some cost.",
+    "Use Q4 2024, the latest completed calendar quarter before publication, as the reporting proxy for the ongoing operating relationship.",
+    "The claim gives no monetary accounting basis."
+   ],
+   "support_condition": "Matched operating evidence shows that additional active usage materially increases OpenAI's serving costs through inference computation, with a materially heavier incremental cost relationship than comparable conventional software.",
+   "contradiction_condition": "Matched evidence shows that the asserted cost relationship or comparative difference does not hold, or that the observed increase is attributable to another cause rather than additional inference workload."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The sources support a computational mechanism: advanced model responses require computation. They do not establish the full comparative claim about how OpenAI's operating costs scale with users. Caching also shows that repeated requests can reuse work. Without matched usage, cost and comparator data, the causal assertion remains unresolved.",
+  "limitations": [
+   "Compute requirements are not a monetary cost curve.",
+   "Customer prices are not provider costs.",
+   "Efficiency improvements can coexist with increasing total costs.",
+   "The monetary accounting basis is unknown."
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "significantly more compute",
+    "locator": "Opening paragraph",
+    "url": "https://openai.com/index/introducing-chatgpt-pro",
+    "publisher": "OpenAI",
+    "event_date": "2024-12-05",
+    "available_at": "2024-12-05",
+    "explanation": "OpenAI acknowledges substantial computation for advanced capabilities. This supports the proposed mechanism, but does not measure costs as user numbers grow or compare conventional software."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "Cached prompts",
+    "locator": "Prompt Caching Availability & Pricing",
+    "url": "https://openai.com/index/api-prompt-caching",
+    "publisher": "OpenAI",
+    "event_date": "2024-10-01",
+    "available_at": "2024-10-01",
+    "explanation": "The announcement describes reusing previously computed prompt prefixes. This limits any inference that each additional request requires identical new work; customer discounts themselves do not establish provider cost savings."
+   },
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "More transparency",
+    "locator": "Discussion, paragraph on deployment data",
+    "url": "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
+    "publisher": "Epoch AI",
+    "event_date": "2025-02-07",
+    "available_at": "2025-02-07",
+    "explanation": "The analysis models inference energy but explicitly lacks actual data-center measurements. It is later-period context and cannot establish the claimed Q4 operating-cost comparison."
+   }
+  ],
+  "what_would_resolve": "A target-period comparison connecting active workload to OpenAI serving costs, controlling for model mix and utilization, alongside similarly measured conventional software and a specified accounting basis.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "928be184ed6971f187acc7e04fbedd998fbd11f0645e0adffd10dab804acbf04",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:45:51Z"
+}

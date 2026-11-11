@@ -1,0 +1,49 @@
+---
+// /about: editor, purpose, provenance, conflicts, limitations. Only verified
+// facts: no funding, affiliation, or contact details beyond what is configured
+// (the editor's public pages come from config/register.yaml).
+import Base from "../layouts/Base.astro";
+import { PRIVATE_CONTACT, SITE } from "../site.ts";
+---
+<Base title="About" description="Who edits Pundit Claims, why it exists, its conflicts, and its limits.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>About</h1>
+      <p class="lede">What {SITE.subjects} said about {SITE.topic}, and what actually happened.</p>
+    </header>
+    <article class="prose" data-pagefind-body>
+      <span data-pagefind-meta="page:About"></span>
+      <h2>Why it exists</h2>
+      <p>Two widely read writers make a lot of claims about AI. This site keeps them on the record: their exact words, what happened next, and the evidence for each verdict. Every change is visible.</p>
+      <p>It covers claims by {SITE.subjects}, and no one else. It doesn’t rank anyone or guess at motives. The answer on the home page comes from a fixed rule applied to the claims with a clear outcome. <a href="/method#answer">Here is the rule</a>.</p>
+
+      <h2>Editor</h2>
+      <p>{SITE.editor}.{SITE.editorLinks.map((l) => <> {l.label}: <a href={l.url} rel="noopener">{l.text}</a>.</>)}</p>
+
+      <h2>Where it started</h2>
+      {SITE.essay && <p>The project grew out of the essay <a href={SITE.essay.url} rel="noopener">{SITE.essay.title}</a>. Every claim here was checked again from scratch. See <a href="/method#origin">the method</a>.</p>}
+      <p>The code is open. Anyone can run their own version for other public figures by changing one settings file. See <a href={`${SITE.repo}#run-your-own-register`} rel="noopener">the code</a>.</p>
+
+      <h2>Conflicts</h2>
+      <p>AI models from Anthropic and OpenAI write up and check every claim. Some claims are about those two companies, and those claim pages say so. The models can be wrong, even when they agree.</p>
+      <p>If you know of a conflict that is not listed here, open an issue.</p>
+
+      <h2>Limits</h2>
+      <ul>
+        <li>It covers claims from two newsletters, for set date ranges. See <a href="/coverage">coverage</a>.</li>
+        <li>We don’t read paywalled posts.</li>
+        <li>AI models do the checking. They can be wrong, and two of them can make the same mistake.</li>
+        <li>Each verdict uses the evidence available at the time. Later evidence can change it, and we record the change.</li>
+      </ul>
+
+      <h2>Corrections and disputes</h2>
+      <p>Each claim page has a link to tell us we got it wrong. It opens a GitHub form with the claim filled in. You need a free GitHub account, and what you write is public. The editor reads every one.</p>
+      <p>For privacy, rights, or safety problems with a quote, don’t post publicly. {PRIVATE_CONTACT
+        ? <>Write to <a href={`mailto:${PRIVATE_CONTACT}`}>{PRIVATE_CONTACT}</a>.</>
+        : <>A private contact address will be listed here before launch.</>}</p>
+
+      <h2>License</h2>
+      <p>Code is MIT licensed. Data and text are CC BY 4.0. The source is at <a href={SITE.repo} rel="noopener">{SITE.repo.replace(/^https:\/\//, "")}</a>.</p>
+    </article>
+  </div>
+</Base>

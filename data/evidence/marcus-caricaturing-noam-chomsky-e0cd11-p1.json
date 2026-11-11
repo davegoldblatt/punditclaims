@@ -1,0 +1,118 @@
+{
+ "packet_id": "marcus-caricaturing-noam-chomsky-e0cd11-p1",
+ "claim_revision_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-e0cd11",
+  "version": 2,
+  "content_hash": "a4ea53ccfd1c1072c88750095b6226bc05f2969449b768b44996197e671b70a4"
+ },
+ "contract_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-e0cd11",
+  "version": 1,
+  "content_hash": "a2a245851a97593bfa54db2e46920a7aa2a001e800e5657d9816c3b8aa8d0480"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Minerva language model 4-digit multiplication accuracy",
+   "Minerva PaLM multiplication accuracy drops digits \"Minerva\" arithmetic figure multiplication"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2302.00093",
+    "used": true,
+    "why": "Google study (Jan 2023) showing LLM math accuracy drops sharply when irrelevant context is added: a direct test of brittleness under a small shift."
+   },
+   {
+    "url": "https://arxiv.org/abs/2202.07206",
+    "used": true,
+    "why": "Shows performance depends on term frequency in pretraining, which suggests weak generalization beyond the training data."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2206.14858",
+    "used": true,
+    "why": "Minerva's addition results show fairly robust generalization to long, rare inputs. A partial counterexample."
+   }
+  ],
+  "performed_at": "2026-10-29T03:05:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2302-00093",
+   "source_snapshot_id": "ecd32ed35d2d9ac2951cdabbd616cc5d427921bd2c92156ba3154373e90ff93c",
+   "publisher": "arXiv (Shi et al., Google; ICML 2023)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2302.00093",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "find that the model performance is dramatically decreased when irrelevant information is included.",
+    "quote_hash": "04b11d0820e363d86e8aa7506d1949c316895e1ef55a6af3189340ed8eebea3c",
+    "verified": "exact"
+   },
+   "event_date": "2023-01-31",
+   "available_at": "2023-01-31",
+   "retrieved_at": "2026-10-29T03:02:22Z",
+   "relation": "supports",
+   "explanation": "Shows a generalization (grade-school math) broken by a small, irrelevant change to the input. It supports brittleness in one domain, and the authors also report ways to reduce it.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2202-07206",
+   "source_snapshot_id": "5b1e2e9187bdf21c1d2008f0390a83124365260fb501ee511fcbe685c5f1ab35",
+   "publisher": "arXiv (Razeghi et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2202.07206",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "our results raise the question of how much models actually generalize beyond pretraining data",
+    "quote_hash": "64ff5092dcd47e99c00051e0055432e695417923de30e28ab00a0090eb3f6da1",
+    "verified": "exact"
+   },
+   "event_date": "2022-02-15",
+   "available_at": "2022-02-15",
+   "retrieved_at": "2026-10-29T02:30:39Z",
+   "relation": "supports",
+   "explanation": "Consistent with generalization limited to cases like the training data, but limited to numerical tasks in GPT-style models trained on the Pile.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2206-14858",
+   "source_snapshot_id": "acd3dac95e6dc293751fc5ace637384a878e47338a7ea2523b74e1043c3e8d67",
+   "publisher": "arXiv (Lewkowycz et al., Google)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2206.14858",
+   "locator": "Section 3.1 Basic arithmetic",
+   "receipt": {
+    "public_excerpt": "The model achieves over 80% accuracy on 10-digit addition and over 20% accuracy on 18-digit addition.",
+    "quote_hash": "2625e92550e612982895b74a9670c8c86459fdb697b9f3de751e80b5d0a948e1",
+    "verified": "normalized"
+   },
+   "event_date": "2022-06-29",
+   "available_at": "2022-06-29",
+   "retrieved_at": "2026-10-29T02:30:00Z",
+   "relation": "contradicts",
+   "explanation": "Minerva held over 80% accuracy on 10-digit addition, far from typical training examples. That is generalization that did not break easily, though it fell off at 18 digits.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No study before March 2023 covered 'essentially everything' LLMs talk about, so the near-universal scope cannot be checked.",
+  "'Easily broken' has no agreed threshold for how small a change must be.",
+  "The evidence I found is mostly arithmetic and math reasoning, which is a narrow slice of domains."
+ ],
+ "packet_hash": "c3cf5a0de75d28b1bd07df9975ccd1e8bb2bf7066fa10939073ffba9d6c7f3ce"
+}

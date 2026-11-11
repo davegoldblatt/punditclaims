@@ -1,0 +1,129 @@
+{
+ "assessment_id": "wyea-ai-is-too-expensive-54f878-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-54f878",
+  "version": 1,
+  "content_hash": "3362cd5787413ab5bb34d46a1a7d9ee00f6dc85d91b92cb3dcf2970d7a9cdda6"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-54f878",
+  "version": 1,
+  "content_hash": "9ec3eec16f7296e7fce70a76f69b40356b867f5d65cf16182969b545c888159e"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-is-too-expensive-54f878-p1",
+  "content_hash": "15e0c47af32e62e34e1128ff0aba49fb59e97e384a153d4f0d22e7b4a2ec4b65"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2026-05-19",
+  "precision": "day"
+ },
+ "public_rationale": "The repeated-run code-review study found different assessments despite identical prompts, cleared context, and temperature zero. That supports the stated possibility of different behavior with fixed user inputs. Deterministic configurations also exist, so the evidence does not support a stronger claim that variation is inevitable. This assessment does not establish the surrounding claims about token-budget accuracy or a required sample count.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The decisive study is a preprint covering selected models and code-review tasks.",
+  "It did not test a literal Claude.MD file or every current agent workflow.",
+  "The study's exact experiment dates are unspecified; its results were public in February 2025.",
+  "Observed variability does not by itself establish unpredictable costs or unsuccessful task completion."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-is-too-expensive-54f878-4x-review-anthropic-1",
+  "wyea-ai-is-too-expensive-54f878-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-is-too-expensive-54f878",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLMs can behave differently on the same task even with identical prompts and context.",
+  "kind": "observation",
+  "conditions": [
+   "even with identical inputs"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Because LLMs can randomly do things differently even with the same prompt and same Claude.MD file and same strictures and same data sources.",
+   "locator": "paragraph 154",
+   "url": "https://www.wheresyoured.at/ai-is-too-expensive",
+   "date": "2026-05-19",
+   "document_title": "AI Is Too Expensive",
+   "observed_at": "2026-10-28T22:25:26Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs can randomly do things differently",
+    "the same prompt",
+    "same Claude.MD file",
+    "same strictures",
+    "same data sources"
+   ],
+   "our_interpretation": [
+    "'Can' asserts a possibility, not that every model or every repeated run must differ.",
+    "The plain reading is that holding user-provided instructions, task data, and context constant does not guarantee identical outputs from the same deployed model.",
+    "The reference to Claude.MD describes fixed project instructions; it does not restrict the proposition to a particular file name or Claude Code version.",
+    "This is a general technical capability without a reporting cycle. I assess behavior established for LLMs available by May 19, 2026, with no lower date boundary stated.",
+    "Different outputs or task assessments count as different behavior. The claim does not specify a minimum frequency or a required financial impact."
+   ],
+   "support_condition": "Controlled repeated runs of the same deployed model with identical prompts, instructions, and task inputs produce different outputs or assessments.",
+   "contradiction_condition": "Evidence establishes that identical user inputs necessarily produce identical behavior across the deployed LLM systems covered by the claim. Consistency in a particular configuration alone does not contradict a possibility claim."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The repeated-run code-review study found different assessments despite identical prompts, cleared context, and temperature zero. That supports the stated possibility of different behavior with fixed user inputs. Deterministic configurations also exist, so the evidence does not support a stronger claim that variation is inevitable. This assessment does not establish the surrounding claims about token-budget accuracy or a required sample count.",
+  "limitations": [
+   "The decisive study is a preprint covering selected models and code-review tasks.",
+   "It did not test a literal Claude.MD file or every current agent workflow.",
+   "The study's exact experiment dates are unspecified; its results were public in February 2025.",
+   "Observed variability does not by itself establish unpredictable costs or unsuccessful task completion."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "LLM responses varied to different degrees.",
+    "locator": "Abstract, results sentence",
+    "url": "https://arxiv.org/abs/2502.20747",
+    "publisher": "arXiv",
+    "event_date": "2025",
+    "available_at": "2025-02-28",
+    "explanation": "The authors tested four models, including Claude 3.5 Sonnet, on 70 Java commits, clearing context and repeating identical prompts five times at temperature zero. The reported variation in code-review assessments supports the possibility asserted; the precise experiment dates are not supplied."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "completions are identical.",
+    "locator": "Experiments: How nondeterministic are completions?",
+    "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference",
+    "publisher": "Thinking Machines Lab",
+    "event_date": "2025-09",
+    "available_at": "2025-09-10",
+    "explanation": "This experiment shows that changes to the serving implementation can make repeated completions identical. It counters an interpretation that variation is unavoidable, but does not contradict Zitron's narrower statement that variation can occur."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6ca309e61bf6ad196dec8af3512aec1993dc4ecc939bea99b20d786b5a9a6674",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:05:59Z"
+}

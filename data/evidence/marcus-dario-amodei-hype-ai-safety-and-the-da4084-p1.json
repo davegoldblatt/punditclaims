@@ -1,0 +1,109 @@
+{
+ "packet_id": "marcus-dario-amodei-hype-ai-safety-and-the-da4084-p1",
+ "claim_revision_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-da4084",
+  "version": 1,
+  "content_hash": "16a03e6a420a21169801470faf28f638dcaebc88aeef98cc91a940ef3ae6eb5a"
+ },
+ "contract_ref": {
+  "id": "marcus-dario-amodei-hype-ai-safety-and-the-da4084",
+  "version": 1,
+  "content_hash": "175fdbc39884ebc93cc7f78b1d49887a344c4a41e2f65420fa8dd41385aa3767"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "coding agents instruction following rules benchmark April 2026 prompt injection",
+   "\"ManyIH-Bench\"",
+   "site.anthropic.com \"April\" \"2026\" \"Claude Code\" \"tools\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2604.09443v1",
+    "used": true,
+    "why": "The fixed April version reports multi-model instruction-conflict failures, avoiding reliance on later revisions."
+   },
+   {
+    "url": "https://arxiv.org/html/2604.09443v1",
+    "used": true,
+    "why": "Read to check methodology, task construction, and the difference between many-tier conflicts and conventional instruction hierarchies."
+   },
+   {
+    "url": "https://jhu-clsp.github.io/ManyIH/",
+    "used": false,
+    "why": "The live project page may reflect later revisions; the dated first paper version is preferable."
+   },
+   {
+    "url": "https://ukgovernmentbeis.github.io/inspect_evals/evals/ipi_coding_agent/",
+    "used": true,
+    "why": "Provides countervailing April results with substantial injection resistance, but its small sample and documented scoring changes limit its weight."
+   },
+   {
+    "url": "https://arxiv.org/abs/2608.11727",
+    "used": false,
+    "why": "August evaluation falls outside the historical target period."
+   }
+  ],
+  "performed_at": "2026-10-29T03:15:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2604-09443v1",
+   "source_snapshot_id": "f4599473268dd6f32bf96043c566a49cc0af801089b0f9a32f9e273f84600948",
+   "publisher": "Jingyu Zhang and coauthors, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2604.09443v1",
+   "locator": "Abstract, results sentence",
+   "receipt": {
+    "public_excerpt": "current frontier models perform poorly (~40% accuracy) when instruction conflict scales.",
+    "quote_hash": "bf141779d6453254d5a23d437659bd853cdb6c2076dd21acc588e39ab472873f",
+    "verified": "exact"
+   },
+   "event_date": "2026-04",
+   "available_at": "2026-04-10",
+   "retrieved_at": "2026-10-29T03:12:08Z",
+   "relation": "supports",
+   "explanation": "The April capability report documents substantial failures across tested models when many instruction priorities conflict. It supports the narrower concern about prompt-rule enforcement, but its constructed tasks do not establish failure rates across most generative AI uses.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "ukgovernmentbeis-github-io-inspect-evals-evals-ipi-coding-agent",
+   "source_snapshot_id": "d88719ab7e7e70fe631f0f08ad9f427f790ca7f551eff8662c1f9a66a13a0d7d",
+   "publisher": "Inspect Evals, contributed by debu-sinha",
+   "source_type": "benchmark",
+   "url": "https://ukgovernmentbeis.github.io/inspect_evals/evals/ipi_coding_agent",
+   "locator": "Evaluation Report, Key Findings",
+   "receipt": {
+    "public_excerpt": "GPT-4.1 has the strongest injection resistance at 97.1%.",
+    "quote_hash": "0b561acaf0d19f3bd4af521866ad2d0cad06d15872d8d628f4a9281a6ea834b9",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-09",
+   "available_at": "2026-04-09",
+   "retrieved_at": "2026-10-29T03:11:56Z",
+   "relation": "context",
+   "explanation": "The reported April test shows that a model can resist most attacks in a particular coding-agent setup, qualifying a blanket unreliability reading. It covers only 35 injected samples, and the page records a later exfiltration-scoring fix, so the percentage is not decisive.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative denominator establishes what counts as most generative AI.",
+  "The speaker supplies no reliability threshold tied to a task or consequence.",
+  "ManyIH tests constructed instruction conflicts rather than representative deployment failure rates.",
+  "The exact experiment dates behind the April ManyIH capability report are not stated.",
+  "The small CodeIPI evaluation has documented scoring changes and cannot establish broad reliability.",
+  "Neither benchmark establishes the categorical conclusion that these systems cannot be trusted for any purpose."
+ ],
+ "packet_hash": "32ac1a2503a9a430cd31a254b7baf47dd50a77bf1e90d09b816c8521973f8453"
+}

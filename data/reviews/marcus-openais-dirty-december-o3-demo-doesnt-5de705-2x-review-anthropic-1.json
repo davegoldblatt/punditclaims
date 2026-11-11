@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-openais-dirty-december-o3-demo-doesnt-5de705-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-5de705": "378db9b0af230014cfb98b36c8c4bd9dc0ee186404e21c1f4678458a8015d7dd",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-aa698d": "6fc19a7c06f256e324c2dd1c5666a67bfedb30969010df70dc4dee7addf46398"
+ },
+ "started_at": "2026-11-09T20:40:03Z",
+ "completed_at": "2026-11-09T20:40:29Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own Substack post. He summarises ARC's results but states the figure and the comparison as his own assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised proposition keeps the scope (best stable result, latest publicly testable models), the 56% vs 75% figures, and his concession that the result is still impressive and useful. It is a retrospective observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary. The contract rightly separates the specific number from the ranking and the broad comparison, and it uses the ARC-AGI-1 semi-private set throughout."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "ARC's dated April 22 report gives o3-medium 53%, not 56%. It confirms that high-reasoning runs were excluded for insufficient coverage, so o3-medium is the top complete result."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Knoop's contemporary post names o3 (medium) as the top result and says the o3 (high) runs were incomplete. It supports the ranking and the large gap, but it reports 57%, not 56%."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC's December 20, 2024 announcement reports 75.7% on the semi-private set, which supports Marcus's approximate 75% reference."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Part of the claim holds: o3-medium was the best complete result from ARC's April testing, and it was well below December's 75.7%. The specific 56% figure is not borne out. ARC's records give 57% (Knoop's post) or 53% (the report), so the number is wrong even though the ranking and broad comparison are right.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-5de705"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own words, but he is relaying Toby Ord's allegation and hedging it with 'apparently' and 'as Toby Ord explains'. It is a qualified relay of Ord's finding, not a firm first-hand assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'sometimes' and 'apparently'. It drops the attribution to Ord, but that does not change the result. Because of the 'apparently' hedge, this is a hedged appearance claim, so it is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly declines to set binary conditions. Scoring would mean turning a hedged allegation about an undefined 'cheating' into a firm claim about behaviour."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "This is Ord's dated April 19, 2025 thread alleging that o3 googled an answer and presented it as its own solution. It shows where the allegation came from, not an independent check of what o3 actually did."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim is hedged ('apparently') and openly rests on Ord's thread. 'Cheats' has no operational definition, so there is no firm commitment to score. The packet confirms that Ord made the allegation but holds no interaction or tool-use record that could verify it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-aa698d"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16049,
+  "output_tokens": 2744,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

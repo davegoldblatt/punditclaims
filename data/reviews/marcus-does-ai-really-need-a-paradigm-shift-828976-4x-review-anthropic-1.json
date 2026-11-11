@@ -1,0 +1,191 @@
+{
+ "run_id": "marcus-does-ai-really-need-a-paradigm-shift-828976-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-does-ai-really-need-a-paradigm-shift-828976": "98c3552c4d919b2fa4b6ec5a155c1213304f189adc627c143a40215106b22409",
+  "case:marcus-does-ai-really-need-a-paradigm-shift-991cdc": "814057b0484aea6cf1a27cf21670f72a21bbaf0b1ccf8206d1a0547d05373b58",
+  "case:marcus-does-ai-really-need-a-paradigm-shift-b5bb62": "14f93e8790d6b20fb456f6057344ca956222c5b821c5c4cfc807d9c4a0a9a15e",
+  "case:marcus-does-ai-really-need-a-paradigm-shift-c220b8": "c9503c6f1ed66b7676c688fffa6cbf6251b4e0738d31957599ade9eccd54e7c2"
+ },
+ "started_at": "2026-10-29T06:58:35Z",
+ "completed_at": "2026-10-29T06:59:17Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own tweet, which he re-quotes in his post and says he stands by."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I think ... will fail', backed by 'stand by', is a firm expectation rather than graded low confidence. The architecture scope is kept. No deadline was given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading of passing the challenge is fair. A qualifying pass contradicts the forecast. Support needs an impossibility result, which is suitable for a forecast with no deadline. The flagged ambiguities do not change the result here."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Sets the architecture definition Marcus adopted. Says nothing about the outcome."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "SagaScale is a related benchmark on novel QA. It shows progress, but it is not a pass on the challenge and does not check the architecture restriction."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A movie-comprehension benchmark from before the cutoff. It shows a gap to human performance, but failures by particular models cannot show permanent failure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a forecast with no deadline. The packet shows no reproducible qualifying pass by an eligible architecture, and no impossibility result. The related benchmarks are only context. Under the contract the forecast is not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-does-ai-really-need-a-paradigm-shift-828976"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "forecast",
+     "note": "'Headroom left' means LLMs can still improve, so it can only be tested by later gains. 'In no way doubt' signals high confidence, so this is a forecast, as the contract treats it, not an observation. The 'whether that's enough' sentence is framing."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'headroom' as some measurable capability gain over a baseline from before the post is fair and matches the modest 'at least a little'. Gains are not limited to scaling."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated April 2022, it confirms PaLM as a baseline from before the post."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "A Google technical report, so a company disclosure, but it gives original evaluations with stated settings. PaLM 2 beats PaLM on one-shot TyDi QA in both settings, published 2023-05-17."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "The early-resolution rule is met. A dated original evaluation (May 2023) shows a later LLM, PaLM 2, clearly beating a baseline from before the post, PaLM, under comparable one-shot settings. That shows at least a little headroom existed. The drafter's 'observation' label should be 'forecast'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-does-ai-really-need-a-paradigm-shift-991cdc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own description of the BIG-bench findings."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "It is limited to what BIG-bench reported, and 'wall' is kept as Marcus's own label. It does not claim permanence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is that the original paper reports some task scores rising with scale and others flat. That is a fair and ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "In Section 3.4, the original v1 paper says some tasks improve reliably with scale and others show no improvement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The original BIG-bench report (2022-06-09) says performance improves with scale on some tasks and not on others. That is the pattern Marcus described. Calling the flat measures the 'wall' is his label, not a separate factual claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-does-ai-really-need-a-paradigm-shift-b5bb62"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own tweet, which he re-quotes in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "'Whenever AGI comes' is kept as the antecedent. 'Will be crucial' is firm, not hedged."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "AGI, 'crucial', and 'variables' are undefined, so the result depends on evaluator readings Marcus did not supply. The safeguards chosen are reasonable and not stretched."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A DeepMind company disclosure announcing a framework for measuring AGI progress. It does not show that AGI has arrived or say anything about variable operations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The antecedent, AGI arriving and being broadly accepted, is not established in the packet. Under policy, a conditional forecast whose antecedent is unknown is not scored. No deadline was given, so the claim stays open.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-does-ai-really-need-a-paradigm-shift-c220b8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29136,
+  "output_tokens": 4730,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

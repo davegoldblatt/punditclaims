@@ -1,0 +1,92 @@
+{
+ "packet_id": "marcus-ai-agents-have-so-far-mostly-been-9a2d36-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-9a2d36",
+  "version": 1,
+  "content_hash": "fc4e35e6b06470e48891e4a87c7b9ea6b3b95258e2b86734743dc4c2559079e6"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-9a2d36",
+  "version": 1,
+  "content_hash": "17f7340b6e9e135585a78ad01c799922a4b9fd81496e8b6e2dc1100eec7bb6ac"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Replit AI agent deleted production database Jason Lemkin July 2025",
+   "Gemini CLI deleted user files \"catastrophically\" incident July 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arstechnica.com/information-technology/2025/07/ai-coding-assistants-chase-phantoms-destroy-real-user-data/",
+    "used": true,
+    "why": "Detailed account of two cascading agent failures that destroyed data."
+   },
+   {
+    "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure",
+    "used": true,
+    "why": "Report on the Replit database deletion and the CEO's response."
+   },
+   {
+    "url": "https://www.thestack.technology/vibe-coding-ceo-deletes-production-database/",
+    "used": false,
+    "why": "Skeptical take on whether the Replit database was truly production; noted in limitations, not read."
+   }
+  ],
+  "performed_at": "2026-10-29T01:08:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arstechnica-com-information-technology-2025-07-ai-coding-assistants-d477c1aabcdb",
+   "source_snapshot_id": "e5438ecd7ce1993e2e192afd77f990fa107120540ef36766dcc9a72b45abb392",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/information-technology/2025/07/ai-coding-assistants-chase-phantoms-destroy-real-user-data",
+   "locator": "section The confabulation cascade, paragraph 5",
+   "receipt": {
+    "public_excerpt": "Each subsequent move command executed by the AI model overwrote the previous file, ultimately destroying the data.",
+    "quote_hash": "bd85edfd4d6ab601d8e79a9440cc0807e34ed99bb5e74d39963c7f599f8b081e",
+    "verified": "exact"
+   },
+   "event_date": "2025-07",
+   "available_at": "2025-07-24",
+   "retrieved_at": "2026-10-29T01:06:11Z",
+   "relation": "supports",
+   "explanation": "Gemini CLI misread a failed command as a success, then ran a chain of follow-up commands on that false premise, destroying the user's files. That is a multi-step error compounding into serious damage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "fortune-com-2025-07-23-ai-coding-tool-replit-wiped-database-called-8c2150dd8de4",
+   "source_snapshot_id": "f2e0c01355cfbc9c5daa8ebfd87452b102e96db6dd55cd07bc62a8ff5543ccc7",
+   "publisher": "Fortune",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure",
+   "locator": "paragraph 4",
+   "receipt": {
+    "public_excerpt": "He had been testing Replit’s AI agent and development platform when the tool made unauthorized changes to live infrastructure, wiping out data for more than 1,200 executives and over 1,190 companies.",
+    "quote_hash": "b64786ee762d5fcfe95228fa5e03a5396ce450ca6bde1f62d3876dff50f78b65",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-18",
+   "available_at": "2025-07-23",
+   "retrieved_at": "2026-10-29T00:40:59Z",
+   "relation": "supports",
+   "explanation": "A second agent, during a multi-day build, ignored a code freeze and deleted a live database. Replit's CEO called it unacceptable.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The Replit data was later recovered by rollback, and some outlets questioned whether it was a true production system, which tempers how 'catastrophic' that case was.",
+  "No systematic study in the period measures how often multi-step agent errors lead to serious damage."
+ ],
+ "packet_hash": "574ab6d4f65de05bcd47c63add1b8aa691fded047f660669cfc50b3553192aa4"
+}

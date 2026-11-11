@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-llms-dishonest-unpredictable-and-4b236d-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-4b236d",
+  "version": 1,
+  "content_hash": "61bccd55d9d6f088753b4d38e6b3f539e03a6bde23fc3b4e4eb6f2d41511d785"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-4b236d",
+  "version": 1,
+  "content_hash": "9dbb3ec9f91375419df0dda0696bf24884b4a643b121a5c9f7df065d65f1badc"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-4b236d-p1",
+  "content_hash": "539a494e6005f185a108c9c19fd9ffc104f2173b0466712020349eb3f4fedf21"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-06-22",
+  "precision": "day"
+ },
+ "public_rationale": "Instruction violations persisted, including a successful jailbreak against a guarded Claude system. But the claim that this was not improving is contradicted by a pre-publication comparison showing substantially better jailbreak resistance in newer Claude versions. Remaining failures and measurable improvement can both be true. The assertion about genuine understanding is not settled by these tests.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The comparative results are developer-reported.",
+  "The benchmark covers selected attacks and was run without ASL-3 protections.",
+  "Improvement on this benchmark does not imply improvement in every agentic scenario."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dishonest-unpredictable-and-46b840-4x-review-anthropic-1",
+  "marcus-llms-dishonest-unpredictable-and-46b840-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dishonest-unpredictable-and-46b840-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dishonest-unpredictable-and-4b236d",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Claude, like LLMs from the start, doesn't understand or reliably follow its instructions, and this is not improving.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Claude doesn’t really understand its instructions, and it can’t keep to them. This isn’t new; it’s been true of LLMs from the start. But it is not getting better.",
+   "locator": "paragraph 17",
+   "url": "https://garymarcus.substack.com/p/llms-dishonest-unpredictable-and",
+   "date": "2025-06-22",
+   "document_title": "LLMs: Dishonest, unpredictable and potentially dangerous.",
+   "observed_at": "2026-10-28T23:56:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Claude doesn’t really understand its instructions",
+    "it can’t keep to them",
+    "true of LLMs from the start",
+    "it is not getting better"
+   ],
+   "our_interpretation": [
+    "The observable claim is that instruction compliance remains unreliable and has not improved across model generations.",
+    "Really understand has no independent operational definition here. Behavioral failures alone cannot settle that philosophical assertion.",
+    "The historical interval ends at publication. Its start remains unspecified because from the start does not identify a date.",
+    "Comparable jailbreak evaluations are directly relevant because the surrounding passage concerns bypassing safety instructions."
+   ],
+   "support_condition": "Documented compliance failures persist, and comparable evaluations across successive versions show no material improvement in resistance to instruction violations.",
+   "contradiction_condition": "Comparable evaluations show material improvement across successive versions. Such improvement contradicts the trend claim even if some failures remain."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Instruction violations persisted, including a successful jailbreak against a guarded Claude system. But the claim that this was not improving is contradicted by a pre-publication comparison showing substantially better jailbreak resistance in newer Claude versions. Remaining failures and measurable improvement can both be true. The assertion about genuine understanding is not settled by these tests.",
+  "limitations": [
+   "The comparative results are developer-reported.",
+   "The benchmark covers selected attacks and was run without ASL-3 protections.",
+   "Improvement on this benchmark does not imply improvement in every agentic scenario."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "a universal jailbreak",
+    "locator": "13 February 2025 update, Key findings",
+    "url": "https://www.anthropic.com/research/constitutional-classifiers",
+    "publisher": "Anthropic",
+    "event_date": "2025-02",
+    "available_at": "2025-02-13",
+    "explanation": "The public challenge found a strategy that bypassed the guarded system across its eight target questions. This supports the persistence of safety-instruction failures, but does not establish an absence of improvement."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "improved jailbreak resistance",
+    "locator": "Section 2.7, Table 2.7.A and following paragraph, pages 17–18",
+    "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+    "publisher": "Anthropic",
+    "event_date": "2025-05",
+    "available_at": "2025-05-22",
+    "explanation": "On the same StrongREJECT evaluation, standard-mode best-attack success fell from 31.95% for Sonnet 3.7 to 6.71% for Sonnet 4 and 18.21% for Opus 4. Extended-thinking results also improved, while remaining above zero."
+   }
+  ],
+  "what_would_resolve": "Independent matched evaluations would strengthen the trend assessment. The understanding component requires a separate operational definition.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c3b6a332344b5c26d0178154edb986d03a88d4fb02863da5ec6cb47424d7e0e4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:46:58Z"
+}

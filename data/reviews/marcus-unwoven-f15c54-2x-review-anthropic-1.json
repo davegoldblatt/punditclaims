@@ -1,0 +1,131 @@
+{
+ "run_id": "marcus-unwoven-f15c54-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-unwoven-f15c54": "c1b2b720f13571f44f5072ce5bc271558b6ed91ac7a6c8f24e9b10b1fc8eef8e",
+  "case:marcus-unwoven-f9a60a": "556cd413ab32ef7de5ddc1b6baaec3040c75d082087fcd6f00f715234b83bd0f"
+ },
+ "started_at": "2026-10-29T22:01:30Z",
+ "completed_at": "2026-10-29T22:01:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. The $32B comparison comes from his own sentence just before it, not from the quoted Information excerpt."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A faithful statement of a past fact: the IPO valued CoreWeave at about $23B, down from roughly $32B. Marcus's hedge 'maybe' on the $32B figure is reasonably rendered as 'roughly'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Using the fully diluted basis is the ordinary reading and matches the press figures Marcus relied on. The share-count basis matters, because on outstanding shares the valuation is about $19B. 'A few weeks' against a one-week-old target is a minor looseness."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A Reuters report dated for the pricing gives about $23B fully diluted, against the earlier $32B target. That is about a 28% cut."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company pricing release: $40 per share, 37.5M shares, March 27. It confirms the event, but the release alone does not give a total valuation."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Reuters, March 20: an upper-end target of $32B on a fully diluted basis. This confirms the earlier expectation existed."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "CNBC gives about $19B on an outstanding-share basis and notes the fully diluted figure would be higher. Different basis, so it does not contradict."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reuters reports a fully diluted IPO valuation of about $23B against an earlier fully diluted target of $32B, a cut of about 28%. That fairly counts as a major retreat. CNBC's $19B figure uses a different share basis and does not undercut the claim. The only looseness is that the target appeared about a week before pricing, not 'a few weeks'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-unwoven-f15c54"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus restating, in his own words, a position he has 'emphasized often'. It is not the quoted survey or the Information excerpt."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "He states as a premise that LLMs lack a moat. Leaving out the 'I think overvalued' opinion is correct. The claim is a broad economic judgment with no measure, period or set of suppliers named."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'moat' as a durable competitive advantage is the ordinary economic sense. However, the contract asks for proof of durability within a single quarter chosen by the evaluator, which may be impossible to observe. The result depends on that interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "DeepSeek reports, about its own model, reasoning performance comparable to o1. It shows capabilities can be matched, but says nothing about switching, pricing power or durability."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "An OpenRouter usage study suggests Claude users switch mostly within the Claude line, hinting at some differentiation. It covers one platform and its sample runs past the target period."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The FTC finds possible switching costs between AI developers and cloud providers. That is a different market from customers switching between LLMs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item measures what the contract requires: durable model-level advantage, customer switching or sustained pricing power in Q1 2025. DeepSeek's claim of comparable performance is self-reported and narrow. The OpenRouter differentiation evidence is limited and runs past the window. The FTC report concerns cloud switching costs. The evidence leans neither way decisively.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-unwoven-f9a60a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23232,
+  "output_tokens": 2649,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,141 @@
+{
+ "assessment_id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f-a1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f",
+  "version": 2,
+  "content_hash": "7790982245bf1d6e94b257e4f79fd67a996fdc84d25a5cd4ccc0d519cc063251"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f",
+  "version": 1,
+  "content_hash": "eea3e52820968a45e8aae9cf10ec3e2283aca7a712936424b1849acd9aded8d0"
+ },
+ "packet_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f-p1",
+  "content_hash": "1956d718211398f75526061e4d6626837614b09267c5a3bf018377b427bbbe0a"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-01-01",
+  "end": "2022-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "More training data clearly contributed to progress. The scaling studies also identify parameter count and compute as important, while InstructGPT demonstrates gains from changing the training procedure. These findings pull in different directions for particular improvements. They do not establish which factor primarily explains the whole progression Marcus describes, so they do not settle his causal claim.",
+ "evidence_ids": [
+  "e9",
+  "e10",
+  "e11"
+ ],
+ "counterevidence_ids": [
+  "e10",
+  "e11"
+ ],
+ "limitations": [
+  "An optimal scaling prescription is not a decomposition of historical progress.",
+  "The Chinchilla comparison changes more than data quantity.",
+  "Instruction-following preference is not interchangeable with factual accuracy.",
+  "Evidence for and against individual components does not settle the dominant-cause assertion."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-review-anthropic-1",
+  "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The newer models' improvements, such as they are, come primarily from their larger and larger sets of data about how humans use word sequences, which are certainly helpful for pattern-matching machines.",
+  "kind": "causal",
+  "conditions": [
+   "such as they are",
+   "primarily"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The improvements, such as they are, come, primarily because the newer models have larger and larger sets of data about how human beings use word sequences, and bigger word sequences are certainly helpful for pattern matching machines.",
+   "locator": "paragraph 38",
+   "url": "https://garymarcus.substack.com/p/what-does-it-mean-when-an-ai-fails",
+   "date": "2022-06-07",
+   "document_title": "What does it mean when an AI fails? A Reply to SlateStarCodex’s riff on Gary Marcus",
+   "observed_at": "2026-10-29T00:05:19Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The improvements, such as they are",
+    "come, primarily because",
+    "larger and larger sets of data",
+    "how human beings use word sequences"
+   ],
+   "our_interpretation": [
+    "The claim concerns the main cause of improvements from GPT-2 through GPT-3 and the successors discussed by June 2022.",
+    "Primarily means that increasing the quantity of training text was the leading explanation, rather than merely one useful contributor.",
+    "The ordinary reading concerns training-data quantity. It does not automatically include model parameter count, different training objectives, human feedback or prompting changes.",
+    "The sentence about pattern matching is not treated as a separately established theory of the models' internal representations."
+   ],
+   "support_condition": "Controlled comparisons and a cross-generation accounting show that larger text datasets explain the dominant share of the relevant gains after accounting for model size, compute, data quality, prompting and training methods.",
+   "contradiction_condition": "Controlled comparisons and a cross-generation accounting establish that another factor, or factors other than data quantity together, predominantly explain those gains."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "More training data clearly contributed to progress. The scaling studies also identify parameter count and compute as important, while InstructGPT demonstrates gains from changing the training procedure. These findings pull in different directions for particular improvements. They do not establish which factor primarily explains the whole progression Marcus describes, so they do not settle his causal claim.",
+  "limitations": [
+   "An optimal scaling prescription is not a decomposition of historical progress.",
+   "The Chinchilla comparison changes more than data quantity.",
+   "Instruction-following preference is not interchangeable with factual accuracy.",
+   "Evidence for and against individual components does not settle the dominant-cause assertion."
+  ],
+  "evidence": [
+   {
+    "id": "e9",
+    "relation": "supports",
+    "excerpt": "equal proportions.",
+    "locator": "Section 1, Introduction; sections 3 and 4",
+    "url": "https://arxiv.org/html/2203.15556v1",
+    "publisher": "DeepMind researchers / arXiv",
+    "event_date": "2022-03-29",
+    "available_at": "2022-03-29",
+    "explanation": "The experiments support a substantial role for more training data, including a smaller model trained on more tokens outperforming larger predecessors. They do not establish that data quantity predominantly caused the entire set of gains Marcus discusses; the paper also reports changes in the final model's training setup."
+   },
+   {
+    "id": "e10",
+    "relation": "context",
+    "excerpt": "capacity-limited.",
+    "locator": "Section 4.1; section 1.1 summary of scaling results",
+    "url": "https://arxiv.org/html/2001.08361v1",
+    "publisher": "OpenAI researchers / arXiv",
+    "event_date": "2020-01-23",
+    "available_at": "2020-01-23",
+    "explanation": "The study identifies model size, dataset size and compute as distinct contributors to language-model loss. It cautions against a data-only explanation, but does not apportion the downstream gains of the full model sequence in Marcus's claim."
+   },
+   {
+    "id": "e11",
+    "relation": "contradicts",
+    "excerpt": "better at following instructions",
+    "locator": "Opening explanation of reinforcement learning from human feedback; Methods",
+    "url": "https://openai.com/index/instruction-following",
+    "publisher": "OpenAI",
+    "event_date": "2022-01-27",
+    "available_at": "2022-01-27",
+    "explanation": "OpenAI attributes these gains to supervised demonstrations and preference-based reinforcement learning applied to GPT-3, using little additional data relative to pretraining. This challenges the proposed explanation for this particular successor, but cannot determine the primary cause of all the improvements under discussion."
+   }
+  ],
+  "what_would_resolve": "Matched ablations and a clearly scoped comparison of the relevant model generations that quantify the contributions of data quantity, model size, compute and training methods to the same performance measures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "979522e47f6216084175fa45daf1c416304ab4680e6af3c1e94b5d4c2657c306",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:47:03Z"
+}

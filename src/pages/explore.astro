@@ -1,0 +1,38 @@
+---
+// /explore: cut every published claim by person, company, topic, kind,
+// outcome, and year, with the answer for the cut (the Explore tool,
+// src/components/ExploreTool.astro). The saved cuts and
+// company links below are plain links with their filters in the address, so
+// they work as shareable starting points. Under the results, the whole
+// record week by week.
+import Base from "../layouts/Base.astro";
+import RecordTimeline from "../components/RecordTimeline.astro";
+import ExploreTool from "../components/ExploreTool.astro";
+import ConfidenceSwitch from "../components/ConfidenceSwitch.astro";
+import KindSwitch from "../components/KindSwitch.astro";
+import { release } from "../lib/published.ts";
+import { ENTITIES, entitiesOf } from "../lib/entities.ts";
+import { SAVED_CUTS } from "../lib/cuts.ts";
+
+const r = release();
+const m = r.manifest;
+const n = new Map<string, number>();
+for (const c of r.live) for (const e of entitiesOf(c)) n.set(e, (n.get(e) ?? 0) + 1);
+const companies = ENTITIES.filter((e) => (n.get(e.id) ?? 0) >= 10).sort((a, b) => (n.get(b.id) ?? 0) - (n.get(a.id) ?? 0));
+---
+<Base title="Explore" description="Filter every claim by person, company, topic, kind, outcome, and year.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Explore the claims</h1>
+      <p class="lede">Filter every claim by person, company, topic, kind, outcome, and year. Each person’s answer updates as you go.</p>
+    </header>
+    <nav class="cuts" aria-label="Starting points">
+      <p class="cuts-row"><span class="k">Start with </span>{SAVED_CUTS.map((s) => <a href={s.href}>{s.label}</a>)}</p>
+      <p class="cuts-row"><span class="k">Or a company </span>{companies.map((e) => <a href={`/explore?company=${e.id}`}>{e.name}</a>)}</p>
+    </nav>
+    <ConfidenceSwitch />
+    <KindSwitch />
+    <ExploreTool />
+    {m && <section class="section" aria-labelledby="when-h"><h2 id="when-h">When they said it</h2><RecordTimeline live={r.live} subjects={r.subjects} referenceDate={m.reference_date} /></section>}
+  </div>
+</Base>

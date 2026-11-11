@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-new-are-yann-lecuns-new-ideas-058eb1": "482803149d64123b617b1961e673db80f48b7e5b8b1178ca8425534168deaa28"
+ },
+ "started_at": "2026-10-29T21:41:53Z",
+ "completed_at": "2026-10-29T21:42:12Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, summarising his earlier argument. It is not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'The problem ... is a lack of cognitive models' is an unhedged causal diagnosis. 'Core problem' fairly renders 'the problem'. Adding 'of the world' matches the surrounding text about explicit cognitive models of the world."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the claim as naming an important underlying cause (not the only one), tied to robust representations of unfolding events, is a fair, ordinary reading. The support and contradiction conditions demand controlled causal evidence, which suits a causal claim. The vagueness of 'cognitive models' is flagged but does not decide the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed NeurIPS 2021 paper. Adding a symbolic world model and consistency checks improved coherence in two narrow domains. This gives limited support only: the intervention also adds reasoning and search, so it does not isolate missing cognitive models as the cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "ACL 2021 paper: BART and T5 encode simple, editable state representations. This weakly cuts against a literal 'lack'. The authors say the representations are imperfect and leave open whether errors come from them, so it does not meet the contradiction condition."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "ICML 2025 paper on GPTs trained on Othello and chess, linking illegal moves to a missing causal structure. These are different systems and tasks from 2022 language models, so it is context only. It was published before the evaluation date."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "This is a firm causal claim by Marcus. The packet does not settle it. e1 shows narrow gains from adding a symbolic world model, but it does not control for the extra reasoning and search. e2 shows simple internal state representations exist, but leaves open whether they cause the models' errors. e3 covers different systems. Neither the support condition nor the contradiction condition is met, so the claim is checked but unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12111,
+  "output_tokens": 1617,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

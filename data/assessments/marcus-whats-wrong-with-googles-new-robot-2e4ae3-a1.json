@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-whats-wrong-with-googles-new-robot-2e4ae3-a1",
+ "claim_revision_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-2e4ae3",
+  "version": 2,
+  "content_hash": "2a4494dabffa62c8c50db19c4e01e08bb4983f45ca9de68701cd35a4e2fb4d58"
+ },
+ "contract_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-2e4ae3",
+  "version": 1,
+  "content_hash": "e82fdfebf5e819c2d8eece8ac8a54770a77664a2b80cc0110ca6a2073e1f2a12"
+ },
+ "packet_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-2e4ae3-p1",
+  "content_hash": "3d15778d6260004eddfa669b9ac3415b966f4bd0153d3851c964b728cf0bb5a4"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-01-01",
+  "end": "2022-08-18",
+  "precision": "day"
+ },
+ "public_rationale": "The ordinary susceptibility claim is supported. SayCan's authors report instruction-handling limitations, and robotics research explicitly identifies forgetting during sequential learning as a problem requiring mitigation. This does not establish that PaLM-SayCan itself forgot previously mastered exceptions. The same research also shows that mitigation is possible.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence supports lack of immunity, not universal failure or impossibility of improvement.",
+  "The forgetting evidence concerns a robotic localization component, not the PaLM-SayCan language model.",
+  "AirLoop's research originated in 2021; its March 2022 version documents the technical state used here."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-whats-wrong-with-googles-new-robot-1cbb4b-4x-review-anthropic-1",
+  "marcus-whats-wrong-with-googles-new-robot-1cbb4b-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-whats-wrong-with-googles-new-robot-1cbb4b-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-whats-wrong-with-googles-new-robot-2e4ae3",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "There is no reason to think that robots, including robots with natural language interfaces like Google's new system, are exempt from the problems of infinite edge cases that deep nets easily forget.",
+  "kind": "observation",
+  "conditions": [
+   "robots with natural language interfaces (a la Google's new system)"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "There is no reason on earth to think that robots, or robots with natural language interfaces (a la Google’s new system) are exempt from these problems.",
+   "locator": "paragraph 32",
+   "url": "https://garymarcus.substack.com/p/whats-wrong-with-googles-new-robot",
+   "date": "2022-08-18",
+   "document_title": "What’s wrong with Google’s new robot project",
+   "observed_at": "2026-10-29T00:05:08Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "robots",
+    "robots with natural language interfaces",
+    "a la Google’s new system",
+    "exempt from these problems"
+   ],
+   "our_interpretation": [
+    "Read this as a claim of susceptibility: adding a robot body or language interface does not remove unfamiliar-situation failures or forgetting during further training.",
+    "Do not interpret it as saying every robot necessarily forgets every exception, or that a frozen network forgets merely as time passes.",
+    "Use the 2022 research record through the post as the latest public technical reporting window. Robotics research has no fixed quarterly reporting cycle.",
+    "The language-interface phrase identifies included systems; it is not a conditional forecast."
+   ],
+   "support_condition": "Contemporaneous robot evaluations show failures outside reliably handled instructions or situations, and robotics research establishes that learned components can suffer forgetting when updated.",
+   "contradiction_condition": "Evidence establishes that the relevant robotic architecture or language interface removes these vulnerabilities across unfamiliar situations and subsequent learning, rather than merely reducing them on selected tests."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The ordinary susceptibility claim is supported. SayCan's authors report instruction-handling limitations, and robotics research explicitly identifies forgetting during sequential learning as a problem requiring mitigation. This does not establish that PaLM-SayCan itself forgot previously mastered exceptions. The same research also shows that mitigation is possible.",
+  "limitations": [
+   "The evidence supports lack of immunity, not universal failure or impossibility of improvement.",
+   "The forgetting evidence concerns a robotic localization component, not the PaLM-SayCan language model.",
+   "AirLoop's research originated in 2021; its March 2022 version documents the technical state used here."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "doesn’t handle tasks that involves negation.",
+    "locator": "Section 5, Chain of Thought Reasoning",
+    "url": "https://arxiv.org/html/2204.01691v2",
+    "publisher": "arXiv; Michael Ahn and colleagues",
+    "event_date": "2022",
+    "available_at": "2022-08-16",
+    "explanation": "The system's own evaluation identifies an instruction-handling failure inherited from its language component. This supports the absence of general immunity, although it is not a test of forgetting a previously mastered exception."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "take measures against the catastrophic forgetting issue.",
+    "locator": "Section II-B, discussion of incremental deep loop closure detection",
+    "url": "https://arxiv.org/html/2109.08975v3",
+    "publisher": "arXiv; Dasong Gao, Chen Wang, and Sebastian Scherer",
+    "event_date": "2022-03",
+    "available_at": "2022-03-09",
+    "explanation": "The March 2022 account identifies forgetting as a live problem when robotic localization models learn sequentially. It also presents mitigation, so it supports susceptibility rather than inevitable or incurable forgetting."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6fa7090b7c47791f3f08f78f3311b4d6aef3bf12770dc0866d05a4ae13896680",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:04:19Z"
+}

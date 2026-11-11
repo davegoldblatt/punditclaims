@@ -1,0 +1,20 @@
+---
+// One open prediction on /watchlist: their words, the window as they wrote
+// it, our reading, and the criteria fixed before grading that would settle it.
+import type { PublicClaim } from "../lib/manifest.ts";
+import { claimPath, personPath } from "../lib/view.ts";
+
+interface Props { c: PublicClaim; name: string }
+const { c, name } = Astro.props;
+const p = c.current!.payload;
+const window = (c.original_horizon_text ?? "").replace(/\s*\([^)]*\)\s*$/, "");
+const k = p.criteria as { support_condition?: string; contradiction_condition?: string } | undefined;
+---
+<li>
+  <blockquote cite={p.statement.url}><p><span>“{p.statement.excerpt}”</span></p></blockquote>
+  <p class="call-meta"><a href={personPath(c.subject_id)}>{name}</a>, <time datetime={c.first_statement_date}>{c.first_statement_date}</time>{window && <>. Deadline: “{window}”</>}.</p>
+  {c.conditions.length > 0 && <p class="small"><span class="k">Only if: </span>{c.conditions.map((x) => x.text).join("; ")}</p>}
+  <p class="small"><span class="k">Our reading: </span><a href={claimPath(c.claim_id)}>{c.normalized_proposition}</a></p>
+  {k?.support_condition && <p class="small"><span class="k">Right if: </span>{k.support_condition}</p>}
+  {k?.contradiction_condition && <p class="small"><span class="k">Wrong if: </span>{k.contradiction_condition}</p>}
+</li>

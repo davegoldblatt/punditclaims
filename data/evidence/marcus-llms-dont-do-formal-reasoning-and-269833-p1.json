@@ -1,0 +1,124 @@
+{
+ "packet_id": "marcus-llms-dont-do-formal-reasoning-and-269833-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-269833",
+  "version": 2,
+  "content_hash": "68d17a9a241b3da8d0b9ae246510ae1500c456a662cc80caf17d83020ff731a1"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-269833",
+  "version": 1,
+  "content_hash": "2577af056b5b26aee9bc9dcd26c6830963d033685d02ff0a9e77955acc64417a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GSM-Symbolic replication irrelevant information distractor LLM reasoning follow-up study 2025",
+   "GSM-Symbolic arXiv 2410.05229 GSM-NoOp performance drop"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2505.18761",
+    "used": true,
+    "why": "Independent 2025 benchmark finding LLM sensitivity to irrelevant context."
+   },
+   {
+    "url": "https://www.lesswrong.com/posts/Ze4C99Dasj74YKCFh/revisiting-gsm-symbolic-do-2026-frontier-models-still-fail",
+    "used": true,
+    "why": "Independent 2026 replication of GSM-Symbolic/NoOp with released code and data."
+   },
+   {
+    "url": "https://arxiv.org/abs/2605.28700",
+    "used": true,
+    "why": "Peer-reviewed (EMNLP 2026) statistical re-analysis of GSM-Symbolic."
+   },
+   {
+    "url": "https://arxiv.org/abs/2410.05229",
+    "used": false,
+    "why": "The original study; it cannot show its own robustness."
+   }
+  ],
+  "performed_at": "2026-10-29T07:20:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2505-18761",
+   "source_snapshot_id": "56b75fd1f28350488dac03260c9af0ecd5dbbbc7527e16f347dea5bbd5943756",
+   "publisher": "arXiv (Yang et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2505.18761",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Our experiments demonstrate that LLMs are significantly sensitive to IC, affecting both reasoning path selection and arithmetic accuracy.",
+    "quote_hash": "3beb782a99a393032ca68b4edf3c07890471d0735bb9405c7e2bae72f17f98fb",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-24",
+   "available_at": "2025-05-24",
+   "retrieved_at": "2026-10-29T07:17:35Z",
+   "relation": "supports",
+   "explanation": "An independent team built a controlled benchmark with irrelevant context (IC) and found LLMs significantly sensitive to it. This reproduces the core GSM-NoOp-style finding.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2605-28700",
+   "source_snapshot_id": "f9db0437c08e0e3e275c38b17a955f67cfe326fe74e222dcc6f20ca624dc7f8b",
+   "publisher": "arXiv (Długosz, Oliveira, Díaz-Rodríguez; accepted EMNLP 2026)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2605.28700",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "we find that only 8 exhibit statistically significant performance changes under the original prompt format. Moreover, we identify a previously unacknowledged factor: the distribution of integers in problem texts of the main GSM-Symbolic dataset is systematically shifted towards larger values",
+    "quote_hash": "54d4e1bc62ec0abdd5cf84b4fef10b74449fbac9d1a24a5d7cd29b1f1d8e86c8",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-27",
+   "available_at": "2026-05-27",
+   "retrieved_at": "2026-10-29T07:17:18Z",
+   "relation": "contradicts",
+   "explanation": "A peer-reviewed re-analysis found the GSM-Symbolic drop significant for only 8 of 20 models, and partly explained by larger numbers in the new dataset. That cuts against the robustness of that headline result.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "lesswrong-com-posts-ze4c99dasj74ykcfh-revisiting-gsm-symbolic-do-20-3f04beca1b47",
+   "source_snapshot_id": "a78dfa2fe4bcab2d786baf7bf5cf5f9a2d9407ed83e484022f1aad87d592adbe",
+   "publisher": "LessWrong (author 'Sturb')",
+   "source_type": "independent_measurement",
+   "url": "https://www.lesswrong.com/posts/Ze4C99Dasj74YKCFh/revisiting-gsm-symbolic-do-2026-frontier-models-still-fail",
+   "locator": "TL;DR",
+   "receipt": {
+    "public_excerpt": "we precisely replicate the original findings only when we do not audit out examples that may actually be ambiguous for the model. When we carefully remove samples that may genuinely impact the calculation, the effect is drastically reduced.",
+    "quote_hash": "acdbed463595a880b599f3c43848b49d10a06d70403363fd082cd966c44dae7a",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-06-05",
+   "retrieved_at": "2026-10-29T07:17:24Z",
+   "relation": "contradicts",
+   "explanation": "An independent replication, including the original GPT-4o snapshot, reproduced the NoOp drop with unfiltered distractors. The drop largely disappeared once ambiguous distractors were removed, so the NoOp effect is sensitive to test construction. This is a non-peer-reviewed blog post, and it had to rebuild the NoOp data because Apple did not release it.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "Apple did not release the GSM-NoOp dataset, so no exact replication of NoOp exists.",
+  "Robustness of the other cited results (planning, multiplication, chess) was not checked against later replications.",
+  "The LessWrong replication is not peer reviewed and uses LLM-generated distractors."
+ ],
+ "packet_hash": "f06e7765437e8dbc3da07c7459526ad32d8f66eb66e025119f9db5281b43300d"
+}

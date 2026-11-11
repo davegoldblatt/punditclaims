@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-how-not-to-test-gpt-3-f4f449-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-not-to-test-gpt-3-f4f449": "fa5a2e3041f02df98d1684ed5c7982e1e56d81b40907de072f3257540e9bbf13"
+ },
+ "started_at": "2026-10-31T19:14:18Z",
+ "completed_at": "2026-10-31T19:14:39Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post, in his own voice. It is not a quote of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the wide scope (LLMs and other ML systems like MT), the release qualifier, and the claim that improvement is not uniform. It is a flat present-tense generalization, so it is an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading of overall versus uniform improvement is ordinary. Treating the release aside as a real selection rule is strict, since he may have meant it loosely, but he stated it without exceptions. Whether the claim can be scored depends on that reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own disclosure that InstructGPT broadly beats GPT-3 and was deployed. Supports overall improvement for one family only. Says nothing on withheld candidates."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's primary evaluation, available Mar 2022. It shows no significant gain on two bias benchmarks and regressions on some NLP datasets during RLHF, alongside overall preference gains. Supports nonuniform improvement."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google's own disclosure of an average +5 BLEU gain in Translate. Supports overall MT improvement. Does not show unimproved cases or a release rule."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "For the sampled LLM and MT families, the evidence supports overall gains with uneven improvement (e1-e3). Under the contract, the claim also needs the release qualifier to hold, i.e. versions without improvement are withheld. No item documents release criteria or rejected candidates, and none contradicts the rule either. Coverage is limited to two companies, set against a broad general claim. Because the support condition is only partly met, the case is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-not-to-test-gpt-3-f4f449"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12045,
+  "output_tokens": 1803,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

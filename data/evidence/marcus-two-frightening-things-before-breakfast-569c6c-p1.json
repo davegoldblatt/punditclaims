@@ -1,0 +1,130 @@
+{
+ "packet_id": "marcus-two-frightening-things-before-breakfast-569c6c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-two-frightening-things-before-breakfast-569c6c",
+  "version": 1,
+  "content_hash": "43d67b7347cd888167794e281d049aa9e44a543ea4174e05a237d5b789fbe9e5"
+ },
+ "contract_ref": {
+  "id": "marcus-two-frightening-things-before-breakfast-569c6c",
+  "version": 1,
+  "content_hash": "3964d7b26502f772fa1476e7ca29df053895573253acaa1f937e0cb0286c907c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com Introducing ChatGPT 2022 bias",
+   "ChatGPT political bias training corpus reinforcement learning human feedback causal experiment 2023 paper",
+   "site.openai.com How should AI systems behave 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/how-should-ai-systems-behave/?trk=article-ssr-frontend-pulse_little-text-block",
+    "used": true,
+    "why": "Same-day primary disclosure directly describes training, learned biases, and reviewer influence."
+   },
+   {
+    "url": "https://openai.com/index/chatgpt/",
+    "used": true,
+    "why": "Original ChatGPT announcement describes human-feedback training and response variability."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2402.01789",
+    "used": true,
+    "why": "Includes experiments varying political fine-tuning data and explicitly discusses causal limitations. The tested models are later than the target."
+   },
+   {
+    "url": "https://arxiv.org/abs/2402.01789",
+    "used": false,
+    "why": "Read to verify version history; the full paper supplies the substantive evidence item."
+   },
+   {
+    "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF12426/IF12426.1.pdf",
+    "used": false,
+    "why": "Readable general overview, but it adds no direct causal evidence about the target ChatGPT."
+   }
+  ],
+  "performed_at": "2026-10-29T09:11:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-how-should-ai-systems-behave",
+   "source_snapshot_id": "ccf8ae36a886d16829537c27e6f7c38b2a91c5fba0b92391ac9b049fb4ef2431",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/how-should-ai-systems-behave?trk=article-ssr-frontend-pulse_little-text-block",
+   "locator": "A two step process: Pre-training and fine-tuning, first paragraph",
+   "receipt": {
+    "public_excerpt": "They also learn some of the biases present in those billions of sentences.",
+    "quote_hash": "9e5793c318cc1229ed888aa6234b4fbc6ca91af4a3ab44ae02d1923088b02049",
+    "verified": "exact"
+   },
+   "event_date": "2023-02-16",
+   "available_at": "2023-02-16",
+   "retrieved_at": "2026-10-29T09:03:54Z",
+   "relation": "supports",
+   "explanation": "This directly supports the training-data influence component. The surrounding account also describes reviewer-guided fine-tuning, so it does not establish that political responses simply reproduce the pretraining corpus.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-chatgpt",
+   "source_snapshot_id": "743b566fdd173180503f6a3b1fbdc638508c7b593090cef011f2ea8d8da84ce2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/chatgpt",
+   "locator": "Limitations",
+   "receipt": {
+    "public_excerpt": "ChatGPT is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times.",
+    "quote_hash": "2cfbdf08f6a800b12cf368af74b3b4b75287c2551256d3474378862360f02101",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-30",
+   "available_at": "2022-11-30",
+   "retrieved_at": "2026-10-29T04:11:28Z",
+   "relation": "context",
+   "explanation": "The original release documents response variability and, elsewhere on the page, supervised and human-feedback training. Variability is consistent with the claim but is not a controlled explanation of political outputs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2402-01789",
+   "source_snapshot_id": "f79ce4c34314813a1c5674b600822c51e4e7027f294b1599060231d080800750",
+   "publisher": "arXiv; David Rozado",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2402.01789",
+   "locator": "Discussion, paragraph preceding the limitation on separating pretraining and fine-tuning",
+   "receipt": {
+    "public_excerpt": "This provides evidence for the potential role of\nsupervised fine-tuning in the emergence of political preferences within LLMs.",
+    "quote_hash": "a8c447b9fed3931b59592c1606cca59601e57cf5f8f7550dc86b681a77131008",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-06-02",
+   "retrieved_at": "2026-10-29T09:05:24Z",
+   "relation": "context",
+   "explanation": "Political fine-tuning data steered later models, supporting a causal role for training data in related systems. The author also says the analysis cannot conclusively separate pretraining from fine-tuning as the source of observed preferences; it does not test the original ChatGPT.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The retrieved experiments do not vary the training corpus of the February 2023 ChatGPT while holding other influences fixed.",
+  "The contemporaneous disclosure establishes learned biases but does not isolate the causes of political responses.",
+  "Neither literal copying nor an exclusive pretraining-corpus explanation is established, and neither is unambiguously asserted."
+ ],
+ "packet_hash": "bd3064e160de6179657756d0f5edd32417579d0897cc43654a33a7ec2e2be549"
+}

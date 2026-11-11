@@ -1,0 +1,190 @@
+{
+ "run_id": "marcus-muddles-about-models-2243c5-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-muddles-about-models-2243c5": "6d3a720a1a4c15376c32028028c9ee6d0bed899f89ae75956c3c06b6f801b6de",
+  "case:marcus-muddles-about-models-81f2cc": "2e27be10adc13d2d9cd6219801a1d91e0fd23c9a2ed68bcdc30c6ec045f62fda",
+  "case:marcus-muddles-about-models-a9cd0f": "7b21e18963e8f52311a4d0872e0c39d7cd6918a816208b8258d89310e1ac11c4",
+  "case:marcus-muddles-about-models-b5604c": "9069cb5c8e7614ed7d39328e38867d06262fe48be19b956f0f9e4778030b5a51"
+ },
+ "started_at": "2026-10-29T21:46:17Z",
+ "completed_at": "2026-10-29T21:47:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The illegal-move reports come from others, but he presents them as reliably true and adopts them."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Fair overall. The drafter took 'regularly makes illegal moves' from the sentence before, which Marcus endorses. The proposition loses the 'even when it does' framing: the claim covers GPT's decent games too, not only its bad ones."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim by behaviour is fair. 'GPT' gives no model scope, so the result depends on which variants count. The internal-model part cannot be tested by behaviour, as the contract notes."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Aug 2023 study: gpt-3.5-turbo chat across 1,000 games, roughly one illegal move in every four moves. Recurring failure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Sept 2023: gpt-3.5-turbo-instruct played decently with under 0.1% illegal moves across 8,205 moves. The author admits recording gaps. The same source says most GPT-4 losses came from illegal moves, so it partly supports the claim too."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "July 2023 GPT-4 demo: one fully legal 38-move game, but an illegal move under another prompt. Shows variability, not a failure rate."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The claim holds for chat GPT-3.5, which made frequent illegal moves (e1), and for GPT-4 under some prompts (e2, e3). It fails for gpt-3.5-turbo-instruct, which played decent games with almost no illegal moves (e2). That is exactly the 'even when it plays well' case Marcus describes. Because 'GPT' is broad, different variants meet the support and contradiction conditions.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-muddles-about-models-2243c5"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own parenthetical remark."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The drafter correctly reads 'this' as recovering geography from text. The claim is about the state of evidence ('not even clear'), not that LLMs perform worse."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating the claim as a statement about public evidence is fair. To support it, the contract requires enough coverage of all available comparisons, which is hard to show."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "2021 study: BERT-era contextual models were not significantly better than Word2Vec at geography. These are earlier models, not the 2023 LLMs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The Gurnee and Tegmark paper under discussion. It compares Llama-2 sizes only and has no matched test against the 2017 methods. It reports that larger models hold more geographic information."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No matched comparison between 2023 LLMs and the 2017 methods was found, which leans toward Marcus. But the packet admits its search may have missed one. The contract needs enough coverage to conclude superiority was unestablished, so the evidence does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-muddles-about-models-81f2cc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "rhetoric",
+     "note": "Partly a judgement about terms ('scarcely worthy of the name') and partly a near-circular assertion. It is not a testable observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly finds no support or contradiction condition can be set without adding definitions the speaker never gave."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim names no task, reliability threshold, or meaning for 'can't be used downstream'. Read broadly it is true by definition; the first clause is a judgement about terms. It cannot be tested.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-muddles-about-models-a9cd0f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. He takes the 2017 example from an X thread and adopts it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding text narrows 'not new' to inferring geography from language corpora, citing 2009 and 2017 work. The drafter captures this correctly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Fair, ordinary reading. It does not require earlier work to match the 2023 paper's other contributions."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "2009 Cognitive Science paper: latent semantic analysis of newspaper text gave city coordinates that correlated with real latitude and longitude."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "2017 IJCNLP paper: compared city positions recovered from word embeddings with their real positions."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Both named earlier studies recovered approximate geography from text-derived representations, years before 2023. That meets the support condition. Nothing in the packet contradicts it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-muddles-about-models-b5604c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24930,
+  "output_tokens": 4622,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

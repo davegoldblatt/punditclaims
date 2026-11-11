@@ -1,0 +1,180 @@
+{
+ "packet_id": "marcus-ais-jurassic-park-moment-38e673-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ais-jurassic-park-moment-38e673",
+  "version": 1,
+  "content_hash": "3700ec65a0ba4d70287395a33449484fc48396584005a4376d794769356af86e"
+ },
+ "contract_ref": {
+  "id": "marcus-ais-jurassic-park-moment-38e673",
+  "version": 1,
+  "content_hash": "279c63b84d9369cfe84b8daa14c63e76fa558a6b1aa5ebc6a0431c61fdcaea32"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "MosaicML MPT-7B trained cost $200k",
+   "MosaicML \"GPT-3 quality for <$500k\" blog",
+   "Karpathy llm.c reproduce GPT-2 1.6B cost $672 24 hours"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.databricks.com/blog/gpt-3-quality-for-500k",
+    "used": true,
+    "why": "Source of the roughly $450K baseline from September 2022."
+   },
+   {
+    "url": "https://www.databricks.com/blog/mpt-7b",
+    "used": true,
+    "why": "Primary MosaicML report that MPT-7B was trained from scratch for about $200k in May 2023."
+   },
+   {
+    "url": "https://www.databricks.com/blog/mpt-30b",
+    "used": true,
+    "why": "Primary MosaicML report from June 2023: an open model that beats GPT-3 can be fully fine-tuned for a few hundred dollars."
+   },
+   {
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/former-tesla-ai-director-reproduces-gpt-2-in-24-hours-for-only-672",
+    "used": false,
+    "why": "GPT-2-scale model, well below the baseline quality; not needed."
+   }
+  ],
+  "performed_at": "2026-10-29T02:15:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "databricks-com-blog-gpt-3-quality-for-500k",
+   "source_snapshot_id": "c20080db9b645778393db03775543128f052d65f1e7390e4d710937312e8b988",
+   "publisher": "MosaicML (Databricks blog)",
+   "source_type": "company_disclosure",
+   "url": "https://www.databricks.com/blog/gpt-3-quality-for-500k",
+   "locator": "Introduction, paragraph beginning 'Today, we are announcing'",
+   "receipt": {
+    "public_excerpt": "it costs about $450K to train a model that reaches GPT-3 quality*",
+    "quote_hash": "c8c72bb43440dd39399c53cf73f9939a6a51b11f836cea82f819bb531c0022a5",
+    "verified": "exact"
+   },
+   "event_date": "2022-09-29",
+   "available_at": "2022-09-29",
+   "retrieved_at": "2026-10-29T02:11:32Z",
+   "relation": "context",
+   "explanation": "Sets the pre-post baseline of about $450K that the '$500,000' figure matches.",
+   "metric_scope": {
+    "company": "MosaicML",
+    "metric": "price to obtain a custom-trained LLM (GPT-3-quality pretraining cost)",
+    "currency": "USD",
+    "units": "USD",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2022-09-29",
+    "period_end": "2022-09-29",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "databricks-com-blog-mpt-30b",
+   "source_snapshot_id": "eea754549f41ceebdae0a3c38758ef7eecd75353b07eb5aac5ddf5854531b71d",
+   "publisher": "MosaicML (Databricks blog)",
+   "source_type": "company_disclosure",
+   "url": "https://www.databricks.com/blog/mpt-30b",
+   "locator": "section Training Times + Costs",
+   "receipt": {
+    "public_excerpt": "you can perform full fine-tuning of MPT-30B models without worrying about system memory constraints—and it only costs a few hundred dollars!",
+    "quote_hash": "0ed90876647454e22c913a2fb8ead7a0ba1e293f95f20ef94d4f54132946ec9e",
+    "verified": "exact"
+   },
+   "event_date": "2023-06-22",
+   "available_at": "2023-06-22",
+   "retrieved_at": "2026-10-29T02:12:45Z",
+   "relation": "supports",
+   "explanation": "By June 2023 a person could own a custom fine-tuned copy of an open model for a few hundred dollars, far below $500K. The same post says this model beats the original GPT-3.",
+   "metric_scope": {
+    "company": "MosaicML",
+    "metric": "price to obtain a custom-trained LLM (fine-tuning MPT-30B)",
+    "currency": "USD",
+    "units": "USD",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-06-22",
+    "period_end": "2023-06-22",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "databricks-com-blog-mpt-30b",
+   "source_snapshot_id": "eea754549f41ceebdae0a3c38758ef7eecd75353b07eb5aac5ddf5854531b71d",
+   "publisher": "MosaicML (Databricks blog)",
+   "source_type": "company_disclosure",
+   "url": "https://www.databricks.com/blog/mpt-30b",
+   "locator": "paragraph 3",
+   "receipt": {
+    "public_excerpt": "MPT-30B, a new, open-source model licensed for commercial use that is significantly more powerful than MPT-7B and outperforms the original GPT-3.",
+    "quote_hash": "3c03728e439d5de393e35a81afcafc333ea4099f9fbe71717238bb5f8715e6ed",
+    "verified": "exact"
+   },
+   "event_date": "2023-06-22",
+   "available_at": "2023-06-22",
+   "retrieved_at": "2026-10-29T02:12:45Z",
+   "relation": "context",
+   "explanation": "Shows the fine-tuned base model in e2 is at least GPT-3 class, so the comparison with the baseline holds.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "databricks-com-blog-mpt-7b",
+   "source_snapshot_id": "30630998b9b91209cb6611bf3ce80822de7893ce49f68edf51d9502177d06537",
+   "publisher": "MosaicML (Databricks blog)",
+   "source_type": "company_disclosure",
+   "url": "https://www.databricks.com/blog/mpt-7b",
+   "locator": "paragraph 1",
+   "receipt": {
+    "public_excerpt": "MPT-7B was trained on the MosaicML platform in 9.5 days with zero human intervention at a cost of ~$200k.",
+    "quote_hash": "6d7f01dd5baaa75e89a72da34fd155717f6b633282194994ebcd1ea4f068993f",
+    "verified": "exact"
+   },
+   "event_date": "2023-05-05",
+   "available_at": "2023-05-05",
+   "retrieved_at": "2026-10-29T02:10:59Z",
+   "relation": "supports",
+   "explanation": "Training a capable LLM from scratch cost about $200k by May 2023, below $500K. It is a smaller model, though, matched to LLaMA-7B rather than GPT-3.",
+   "metric_scope": {
+    "company": "MosaicML",
+    "metric": "price to obtain a custom-trained LLM (MPT-7B pretraining compute cost)",
+    "currency": "USD",
+    "units": "USD",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-05-05",
+    "period_end": "2023-05-05",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The table of from-scratch MPT-30B training costs did not appear in the page text, so the from-scratch cost of a GPT-3-beating model in 2023 is not documented here.",
+  "Costs are MosaicML's own figures at its reserved GPU prices, not audited."
+ ],
+ "packet_hash": "88dfc6b63e97fdab5da7605b06dc141d475fe93e919ec44ab3ffa1cc21ae61f4"
+}

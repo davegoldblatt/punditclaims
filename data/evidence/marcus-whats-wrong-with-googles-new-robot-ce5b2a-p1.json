@@ -1,0 +1,168 @@
+{
+ "packet_id": "marcus-whats-wrong-with-googles-new-robot-ce5b2a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-ce5b2a",
+  "version": 1,
+  "content_hash": "ac1f72440d1e96809f31b3e248b2d6842c304e8ec6e1f3891d6867d518c1d606"
+ },
+ "contract_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-ce5b2a",
+  "version": 1,
+  "content_hash": "08327328b13a964e2abdf48f9576c2d7aa0b8c9af351b22bae516bf48eba950a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SayCan 2022 84% planning success natural language instructions ambiguous",
+   "2022 language models user intent misunderstanding instructions InstructGPT limitations",
+   "2022 language models pragmatic implicature accuracy user intent \"2022\" benchmark"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://ar5iv.labs.arxiv.org/html/2204.01691",
+    "used": true,
+    "why": "Full paper identifies language interpretation failures and distinguishes them from affordance failures."
+   },
+   {
+    "url": "https://arxiv.org/abs/2204.01691",
+    "used": true,
+    "why": "Confirms that the PaLM revision was available on 2022-08-16."
+   },
+   {
+    "url": "https://say-can.github.io/assets/palm_saycan.pdf",
+    "used": false,
+    "why": "read_page could not read the oversized PDF; the HTML paper was read instead."
+   },
+   {
+    "url": "https://say-can.github.io/",
+    "used": true,
+    "why": "Dated primary results document successful interpretation and improvements, qualifying the negative assessment."
+   },
+   {
+    "url": "https://aclanthology.org/2022.csrr-1.3/",
+    "used": true,
+    "why": "Independent contemporary evaluation of implied meaning provides corroborating evidence."
+   },
+   {
+    "url": "https://aclanthology.org/2022.csrr-1.3.pdf",
+    "used": true,
+    "why": "Methods explain the indirect measurement of pragmatic understanding; the PDF gives the publication date."
+   },
+   {
+    "url": "https://openai.com/index/instruction-following/",
+    "used": false,
+    "why": "Reports instruction-following improvements, but safety and preference measures do not directly isolate misunderstanding."
+   },
+   {
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "used": false,
+    "why": "Useful corroborating discussion, but its broad alignment measures mix understanding with other behaviors."
+   },
+   {
+    "url": "https://arxiv.org/abs/2203.02155",
+    "used": false,
+    "why": "Checked publication timing; the paper was not needed as decisive evidence."
+   },
+   {
+    "url": "https://ar5iv.labs.arxiv.org/html/2203.02155",
+    "used": false,
+    "why": "Duplicate rendering of the instruction-following paper."
+   },
+   {
+    "url": "https://aclanthology.org/2022.naacl-main.167/",
+    "used": false,
+    "why": "Prompt sensitivity findings are relevant but less direct than the selected evidence."
+   },
+   {
+    "url": "https://arxiv.org/abs/2109.01247",
+    "used": false,
+    "why": "Checked the prompt study's revision history; some findings originated before the target period."
+   },
+   {
+    "url": "https://arxiv.org/abs/2212.06801",
+    "used": false,
+    "why": "Search surfaced a later pragmatic evaluation; it does not directly establish performance during the target period."
+   }
+  ],
+  "performed_at": "2026-11-10T00:53:55Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "ar5iv-labs-arxiv-org-html-2204-01691",
+   "source_snapshot_id": "ce14d70bd8cd67f07046db95b94b2946c71f7e428dbceef2d3d83f1a979ceaae",
+   "publisher": "Ahn et al., Robotics at Google and Everyday Robots",
+   "source_type": "preprint",
+   "url": "https://ar5iv.labs.arxiv.org/html/2204.01691",
+   "locator": "Section 5.3, Chain of Thought Reasoning; related error analysis in Section 5.1",
+   "receipt": {
+    "public_excerpt": "it doesn’t handle tasks that involves negation.",
+    "quote_hash": "a29f1eff685a6d5edebad5eb473506d654047b76cdca7c78c5631a5441427021",
+    "verified": "exact"
+   },
+   "event_date": "2022-08-16",
+   "available_at": "2022-08-16",
+   "retrieved_at": "2026-10-29T09:29:24Z",
+   "relation": "supports",
+   "explanation": "The August evaluation identifies recurring problems with negation and ambiguous references, supporting the ordinary reading that interpretation remained unreliable. The paper also reports improvements from chain-of-thought prompting, so this does not establish an unavoidable limitation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "aclanthology-org-2022-csrr-1-3",
+   "source_snapshot_id": "102b9dfbf3f02a5487ce8344173cec3928fad1438b8e532bdb93444efb589af2",
+   "publisher": "Association for Computational Linguistics",
+   "source_type": "peer_reviewed",
+   "url": "https://aclanthology.org/2022.csrr-1.3",
+   "locator": "Abstract; paper Sections 3–5 explain the tasks and results",
+   "receipt": {
+    "public_excerpt": "GPT-3’s performance was mostly at chance",
+    "quote_hash": "55115f9370fab84f3d3158ed84e429ecab9f5d302eaecdf26408c99f5f5dd346",
+    "verified": "exact"
+   },
+   "event_date": "2022-05",
+   "available_at": "2022-05-27",
+   "retrieved_at": "2026-10-29T04:11:15Z",
+   "relation": "supports",
+   "explanation": "Tests of presuppositions and implied meanings found substantial weaknesses in GPT-3, corroborating the interpretation failures in SayCan. These are controlled linguistic probes using model probabilities, not a direct estimate of misunderstanding rates in everyday user conversations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "say-can-github-io-root",
+   "source_snapshot_id": "2d15cc8c0f261be0584ebeee3a115b7e47e7d360f813912dfa9dad9a5dfb0891",
+   "publisher": "Robotics at Google and Everyday Robots",
+   "source_type": "company_disclosure",
+   "url": "https://say-can.github.io/",
+   "locator": "Results; dated update of 2022-08-16",
+   "receipt": {
+    "public_excerpt": "performance can be improved",
+    "quote_hash": "54921043b5c35934647e2fa96c1454991dbb3d27480f2e0496c5772acc96496c",
+    "verified": "exact"
+   },
+   "event_date": "2022-08-16",
+   "available_at": "2022-08-16",
+   "retrieved_at": "2026-10-29T07:01:18Z",
+   "relation": "context",
+   "explanation": "The project reports 84% planning success across 101 tasks and demonstrates correctly distinguishing a request for cleanup from one for a replacement drink. This qualifies the criticism: models often interpreted requests successfully, although aggregate planning success is not a pure measure of understanding.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No cited evaluation supplies a representative, model-wide percentage for correctly understanding everyday user intentions.",
+  "The speaker gives no precise threshold for near-perfect clarity."
+ ],
+ "packet_hash": "930cddb9b201a90f0b098589b18fb3f88239aa27f5ec94da9cbf0c681292655a"
+}

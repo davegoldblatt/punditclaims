@@ -1,0 +1,89 @@
+{
+ "packet_id": "marcus-caricaturing-noam-chomsky-4fe53c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-4fe53c",
+  "version": 2,
+  "content_hash": "e9a3043d378a6a419db02e637602ffe26f8eade56f2c06c10ff7168122c83243"
+ },
+ "contract_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-4fe53c",
+  "version": 1,
+  "content_hash": "565b7f1d304c0417b5b3f9347fe4c31f2ce82617f82a463746befcd4cb790be0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Minerva language model 4-digit multiplication accuracy",
+   "\"Minerva\" \"4-digit multiplication\" OR \"four-digit multiplication\" language model fails"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2202.07206",
+    "used": true,
+    "why": "Shows LM accuracy on numerical reasoning tracks how often terms appear in pretraining. This fits reliance on stored patterns."
+   },
+   {
+    "url": "https://arxiv.org/abs/2210.13382",
+    "used": true,
+    "why": "Shows a GPT-style model building an internal board-state representation. It is a possible counterexample, but the model was trained on game moves, not natural language."
+   }
+  ],
+  "performed_at": "2026-10-29T03:05:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2202-07206",
+   "source_snapshot_id": "5b1e2e9187bdf21c1d2008f0390a83124365260fb501ee511fcbe685c5f1ab35",
+   "publisher": "arXiv (Razeghi et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2202.07206",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "models are more accurate on instances whose terms are more prevalent, in some cases above $70\\%$ (absolute) more accurate on the top 10\\% frequent terms in comparison to the bottom 10\\%.",
+    "quote_hash": "73cb4bc431e8219c8f37979f61b6bd91e49e179a741ce81bf98af6d811ae4029",
+    "verified": "exact"
+   },
+   "event_date": "2022-02-15",
+   "available_at": "2022-02-15",
+   "retrieved_at": "2026-10-29T02:30:39Z",
+   "relation": "supports",
+   "explanation": "Shows correct numerical answers depend heavily on how common the terms were in pretraining. That is consistent with pattern use rather than a human-like rule. It covers only some GPT-style models on numerical tasks, not 'rarely if ever' across tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2210-13382",
+   "source_snapshot_id": "5de4f85547064b2d216baee385eb0d8861006a80a6dcca80a2fedde107f70493",
+   "publisher": "arXiv / ICLR 2023 (Li et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2210.13382",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Although the network has no a priori knowledge of the game or its rules, we uncover evidence of an emergent nonlinear internal representation of the board state.",
+    "quote_hash": "d68ce7f583f7c5872cdbc9ff3dfcc4c0c5356f996e231692a451890a37bf465e",
+    "verified": "exact"
+   },
+   "event_date": "2022-10-24",
+   "available_at": "2022-10-24",
+   "retrieved_at": "2026-10-29T03:02:26Z",
+   "relation": "contradicts",
+   "explanation": "A transformer sequence model formed a world-state abstraction like the one a human uses. It is a synthetic Othello model, not a natural-language LLM, so it is only context against the claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No study before March 2023 measured, across tasks, how often correct LLM outputs rest on human-like or symbolic abstractions.",
+  "Interpretability of full-scale natural-language LLMs was immature at the time, so the internal basis of most correct outputs was simply unknown."
+ ],
+ "packet_hash": "058329730c56958bc57b675f83f0233723153df31fc38d6440636e638ff1e47e"
+}

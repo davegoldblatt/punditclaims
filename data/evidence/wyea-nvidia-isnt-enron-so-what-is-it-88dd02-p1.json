@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-88dd02-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-88dd02",
+  "version": 2,
+  "content_hash": "63648298ffe17539898a32b2bfe9ed0b58a755acadd40a46924d68f4468717e0"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-88dd02",
+  "version": 1,
+  "content_hash": "380d34df9af6e9876907f15b61e3b6d8435ef370d6dcb74204b35dcbc3b26e99"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"AI\" \"two\" \"revenue\" \"capex\" \"50%\" Sequoia 600 billion",
+   "site.sequoiacap.com \"600B\" \"50%\"",
+   "\"2025\" \"AI\" \"$2\" \"$1\" \"capex\" costs revenue",
+   "site.microsoft.com investor FY 2026 Q1 earnings AI gross margin capital expenditures October 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://sequoiacap.com/article/ais-600b-question",
+    "used": true,
+    "why": "An independently authored revenue-requirement model makes its cost and margin assumptions explicit, but covers a different period and population."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/FY-2026/earnings-fy-2026-q1",
+    "used": true,
+    "why": "Primary disclosure establishes that reported capex serves cloud and AI purposes and includes different asset types."
+   },
+   {
+    "url": "https://sequoiacap.com/article/ais-200b-question",
+    "used": false,
+    "why": "The page reader returned HTTP 404."
+   },
+   {
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q3/2025q3-alphabet-earnings-release.pdf",
+    "used": false,
+    "why": "Readable financial results, but no matching AI-only cost and margin calculation establishing the proposed ratio."
+   }
+  ],
+  "performed_at": "2026-10-29T12:05:55Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sequoiacap-com-article-ais-600b-question",
+   "source_snapshot_id": "6b7ab3b4a1f8e91ec0b015f61dc97b6cd7f28cc22e3d82711ceba7ffd6d04526",
+   "publisher": "Sequoia Capital",
+   "source_type": "secondary_summary",
+   "url": "https://sequoiacap.com/article/ais-600b-question",
+   "locator": "Footnote 1; calculation note near the beginning",
+   "receipt": {
+    "public_excerpt": "my 50% assumption",
+    "quote_hash": "d949fed1b30834ed1cadf831ab4fda118bf5fba9ff1c0ff7e2fbc03116837aaa",
+    "verified": "exact"
+   },
+   "event_date": "2024-06-20",
+   "available_at": "2024-06-20",
+   "retrieved_at": "2026-10-29T02:12:15Z",
+   "relation": "context",
+   "explanation": "Sequoia's model uses separate assumptions about total infrastructure costs and end-user gross margins. Its multipliers are modeling assumptions for an ecosystem revenue estimate, not measurements validating Zitron's four-company recovery ratio.",
+   "metric_scope": {
+    "company": "AI ecosystem, including compute providers and their customers",
+    "metric": "Modeled revenue requirement based on NVIDIA revenue run rate and assumed costs and margins",
+    "currency": "USD",
+    "units": "dollars and assumed multipliers",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q1",
+   "source_snapshot_id": "eb142c9aa3bdfa5b432328bfaf72ffc962906db55788b2917560ba4277e3a5a4",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/events/FY-2026/earnings-fy-2026-q1",
+   "locator": "Amy Hood's prepared remarks, capital expenditures",
+   "receipt": {
+    "public_excerpt": "our cloud and AI offerings",
+    "quote_hash": "e4e5852c139b6895f2811491bfaad1627cd42852c5cdd3fda6c148a0485ae333",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2025-10-29",
+   "retrieved_at": "2026-10-29T02:54:35Z",
+   "relation": "context",
+   "explanation": "Microsoft describes spending serving cloud and AI, including short-lived equipment and longer-lived facilities. This does not supply an AI-only investment denominator or the attributable margin needed to validate a universal recovery ratio.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Total capital expenditures including finance leases",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independently supported recovery period or attributable AI margin establishes the proposed ratio.",
+  "The inspected disclosures do not isolate all AI-only capital and operating costs for the four firms.",
+  "The treatment of savings, existing-business improvements, financing, and residual assets is unspecified."
+ ],
+ "packet_hash": "7a1d431dde78bcf6cd5327b19e771d72eb389e80efcf71519b3ba13a0c309120"
+}

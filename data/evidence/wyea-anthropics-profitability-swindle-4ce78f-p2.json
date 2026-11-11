@@ -1,0 +1,216 @@
+{
+ "packet_id": "wyea-anthropics-profitability-swindle-4ce78f-p2",
+ "claim_revision_ref": {
+  "id": "wyea-anthropics-profitability-swindle-4ce78f",
+  "version": 1,
+  "content_hash": "11d91bd472bebcab65782f4b1fc577311675bad4034b5c9fc50bf5e2f92e00f2"
+ },
+ "contract_ref": {
+  "id": "wyea-anthropics-profitability-swindle-4ce78f",
+  "version": 2,
+  "content_hash": "1c02c43b340907bf54befcd02476d0a8d4018982d3142fa104bf657f649eeef0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic first operating profit second quarter $10.9 billion revenue $559 million Wall Street Journal",
+   "Anthropic quarterly costs revenue 2025 2026 operating loss quarter chart",
+   "Anthropic S-1 sec.gov quarterly results of operations cost of revenue",
+   "WSJ Anthropic chart quarterly revenue expenses first quarter 2026 operating loss $4.8 billion costs",
+   "Anthropic first quarter 2026 operating loss WSJ May 20 projections costs compute spending quarter"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "This is the primary S-1, but read_page returned HTTP 403, so it could not be quoted."
+   },
+   {
+    "url": "https://sec-api.io/insights/anthropic-ant-s-1-ipo-sec-filing-analysis",
+    "used": true,
+    "why": "Reproduces the S-1 quarterly table, including revenue, expenses, compute and the quarter-on-quarter changes, for Q1 2025 to Q2 2026."
+   },
+   {
+    "url": "https://kepler.ai/research/financial/s1-anthropic/",
+    "used": true,
+    "why": "Cites S-1 page 158 for compute and infrastructure as a percentage of revenue in each quarter."
+   },
+   {
+    "url": "https://www.alpha-sense.com/api/html-embed/file-4c88b5685d7120f5cdcdc99545773cca679d25fd-html/",
+    "used": true,
+    "why": "Summarises the S-1's quarterly revenue and shows that Q2 2026 was the first profitable quarter."
+   },
+   {
+    "url": "https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million",
+    "used": false,
+    "why": "A secondary blog paraphrasing the WSJ projections. It calls Q1 2026 'near break-even', which conflicts with the filed $1.67bn loss. Not reliable enough to cite."
+   },
+   {
+    "url": "https://feedbagel.com/post/anthropic-says-its-about-to-have-its-first-profitable-quarter-techcrunch",
+    "used": false,
+    "why": "An aggregator stub with no cost data."
+   }
+  ],
+  "performed_at": "2026-10-31T19:31:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "sec-api-io-insights-anthropic-ant-s-1-ipo-sec-filing-analysis",
+   "source_snapshot_id": "cf5857e9c9ab74a91b7769cec5202d34e7391d83a7c6a47027dc8b1d708ee6b6",
+   "publisher": "sec-api.io (analysis of Anthropic S-1)",
+   "source_type": "secondary_summary",
+   "url": "https://sec-api.io/insights/anthropic-ant-s-1-ipo-sec-filing-analysis",
+   "locator": "Table 2.9 Quarterly operating leverage (columns: revenue $bn, expenses $bn, expenses % revenue, revenue change, expense change, incremental margin %)",
+   "receipt": {
+    "public_excerpt": "Q2 2025 0.79 1.99 252.5 0.41 0.68 (64.5)\n\nQ3 2025 1.38 2.97 215.0 0.60 0.98 (65.4)\n\nQ4 2025 2.04 4.88 239.0 0.66 1.91 (189.5)",
+    "quote_hash": "8d6855915fa776e1dc2f79d9fe3a3de4e4cc92ca6d834760a6de05ced7cbfca1",
+    "verified": "exact"
+   },
+   "event_date": "2025-12",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T12:49:46Z",
+   "relation": "supports",
+   "explanation": "In every 2025 quarter, operating expenses rose by at least as much as revenue (negative incremental margins) and stayed at 2 to 3.5 times revenue. This fits the 'costs scale with revenue' part of the claim for last year.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Quarterly operating expenses vs revenue",
+    "currency": "USD",
+    "units": "USD billions per quarter",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "sec-api-io-insights-anthropic-ant-s-1-ipo-sec-filing-analysis",
+   "source_snapshot_id": "cf5857e9c9ab74a91b7769cec5202d34e7391d83a7c6a47027dc8b1d708ee6b6",
+   "publisher": "sec-api.io (analysis of Anthropic S-1)",
+   "source_type": "secondary_summary",
+   "url": "https://sec-api.io/insights/anthropic-ant-s-1-ipo-sec-filing-analysis",
+   "locator": "Table 2.9 Quarterly operating leverage, Q4 2025 to Q2 2026 rows",
+   "receipt": {
+    "public_excerpt": "Q4 2025 2.04 4.88 239.0 0.66 1.91 (189.5)\n\nQ1 2026 4.73 6.40 135.2 2.69 1.52 43.4\n\nQ2 2026 11.56 10.58 91.6 6.82 4.18 38.7",
+    "quote_hash": "8d6855915fa776e1dc2f79d9fe3a3de4e4cc92ca6d834760a6de05ced7cbfca1",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T12:49:46Z",
+   "relation": "contradicts",
+   "explanation": "The break from the 2025 pattern began in Q1 2026, not Q2. Revenue rose 132% that quarter while expenses rose 31%, and expenses fell from 239% to 135% of revenue. In Q2, expenses still rose 65%, by $4.18bn.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Quarterly operating expenses vs revenue",
+    "currency": "USD",
+    "units": "USD billions per quarter",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-10-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Q4 2025 revenue 2.04, expenses 4.88",
+     "Q1 2026 revenue 4.73, expenses 6.40",
+     "Q2 2026 expenses 10.58"
+    ],
+    "formula": "Growth = later / earlier - 1. Revenue Q4 2025 to Q1 2026: 4.73/2.04 - 1. Expenses Q4 2025 to Q1 2026: 6.40/4.88 - 1. Expenses Q1 to Q2 2026: 10.58/6.40 - 1.",
+    "rounding": "Nearest whole percent: revenue +132%, expenses +31% (Q1 2026); expenses +65% (Q2 2026)"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "kepler-ai-research-financial-s1-anthropic",
+   "source_snapshot_id": "b7454fc898cf59a89426b80b53b36aab5f9102ac848005a5e4faf78a84368007",
+   "publisher": "Kepler (citing Anthropic S-1)",
+   "source_type": "secondary_summary",
+   "url": "https://kepler.ai/research/financial/s1-anthropic",
+   "locator": "Citation of S-1 page 158, quarterly statements as a percentage of revenue",
+   "receipt": {
+    "public_excerpt": "Q1 2025 Q2 2025 Q3 2025 Q4 2025 Q1 2026 Q2 2026\n\nCompute and infrastructure\n\n251 177 148 144 72 48",
+    "quote_hash": "283176f06452365f1150d910f4dbe8f3976568387b682271db27030710139de0",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T10:02:34Z",
+   "relation": "contradicts",
+   "explanation": "Compute and infrastructure fell from 144% of revenue in Q4 2025 to 72% in Q1 2026, a bigger drop than the later fall to 48% in Q2. Compute had already stopped keeping pace with revenue before the second quarter.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Compute and infrastructure expense as % of revenue, quarterly",
+    "currency": "USD",
+    "units": "percent of revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "alpha-sense-com-api-html-embed-file-4c88b5685d7120f5cdcdc99545773cc-0aaca13b745a",
+   "source_snapshot_id": "d7fa04f35b0d8bd4fe7a3b13618f1ea7c43ec7f8c0cfce38f6eb006286605525",
+   "publisher": "AlphaSense (company primer on the public S-1)",
+   "source_type": "secondary_summary",
+   "url": "https://www.alpha-sense.com/api/html-embed/file-4c88b5685d7120f5cdcdc99545773cca679d25fd-html",
+   "locator": "section 'Quarterly cadence'",
+   "receipt": {
+    "public_excerpt": "Q2 2026 is the first profitable quarter: operating income of $1.0B, an 8% operating margin, and adjusted operating income of $2.2B at a 19% adjusted margin.",
+    "quote_hash": "06cc35c7dfccf232f3363d7d8a4532a52244486fb1ae776b4fbd9f7dbb8e0dad",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-31T19:28:13Z",
+   "relation": "context",
+   "explanation": "Confirms that Q2 2026 was the first quarter with an operating profit. The 'Q2 was different' part of the claim is accurate as far as profit goes.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Quarterly revenue and operating income",
+    "currency": "USD",
+    "units": "USD",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The WSJ chart the speaker described is paywalled and could not be inspected. It may have shown only some quarters or different series, which would bear on how reasonable his reading of it was.",
+  "The primary S-1 on sec.gov returned HTTP 403, so the quarterly figures are quoted from secondary analyses that reproduce the filing's table.",
+  "The quarterly figures are reported as unaudited, and the sources do not state their audit status in the cited passages."
+ ],
+ "packet_hash": "e804e1852484f2cedef57c8a3f8e36d5ee5e48b80b37fdd33a0033ffb82fde0e"
+}

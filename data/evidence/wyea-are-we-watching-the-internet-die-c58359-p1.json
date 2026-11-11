@@ -1,0 +1,119 @@
+{
+ "packet_id": "wyea-are-we-watching-the-internet-die-c58359-p1",
+ "claim_revision_ref": {
+  "id": "wyea-are-we-watching-the-internet-die-c58359",
+  "version": 2,
+  "content_hash": "543120b97ba125c719035be5d3965c3150c3e144628b0b3962a135c42ef2b80e"
+ },
+ "contract_ref": {
+  "id": "wyea-are-we-watching-the-internet-die-c58359",
+  "version": 1,
+  "content_hash": "4da4f7321c5894ecb531d3b7935ffa9a0de32f6c11c3701f22d31fc54305ba87"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI paraphrasing detection DIPPER 2023 evading detectors instruction following language models",
+   "site.arxiv.org 2023 instruction following evaluation large language models IFEval"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "used": true,
+    "why": "Primary demonstration of generating an instruction-following dataset at substantial scale, with explicit model limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.13408",
+    "used": false,
+    "why": "Read the abstract and version history, then used the versioned full paper for exact result passages."
+   },
+   {
+    "url": "https://arxiv.org/html/2303.13408v2",
+    "used": true,
+    "why": "The 2023 paper reports controlled paraphrasing attacks and a retrieval-based defense."
+   },
+   {
+    "url": "https://arxiv.org/html/2311.07911v1",
+    "used": false,
+    "why": "Relevant instruction-following benchmark, but the returned text omitted the numerical results table; the directly documented generation demonstration was clearer evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T10:34:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "crfm-stanford-edu-2023-03-13-alpaca-html",
+   "source_snapshot_id": "a807478ee53e8ccd0acf70127a66b80e10998e5e95a0af9e22804b833f02af78",
+   "publisher": "Stanford Center for Research on Foundation Models",
+   "source_type": "demonstration",
+   "url": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+   "locator": "Overview",
+   "receipt": {
+    "public_excerpt": "52K instruction-following demonstrations",
+    "quote_hash": "7f356f6446427c41c05fe51893611436a1ded3880541abb13e130602d41b4675",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-13",
+   "retrieved_at": "2026-10-29T03:13:08Z",
+   "relation": "supports",
+   "explanation": "The researchers generated tens of thousands of instruction-following examples, establishing repeatable production at scale. Their accompanying evaluation and limitations do not establish flawless adherence or universal content quality.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2303-13408v2",
+   "source_snapshot_id": "2cc36a9a94ef0a1c772f49fb28d24a438bb5149cea251813d1caa61bc94d756b",
+   "publisher": "NeurIPS 2023; version hosted by arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2303.13408v2",
+   "locator": "Section 4.3, Attacking AI-generated text detectors",
+   "receipt": {
+    "public_excerpt": "lowers detection accuracy",
+    "quote_hash": "37a1572eab6974b38aa10697ae2a8cfe41de0914db802d2f7f11b9026ce914d1",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-18",
+   "retrieved_at": "2026-10-29T10:24:27Z",
+   "relation": "supports",
+   "explanation": "Controlled evaluations show that automated rewriting can make generated text substantially harder to identify without simply destroying its meaning. This directly supports the classifier-evasion reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2303-13408v2",
+   "source_snapshot_id": "2cc36a9a94ef0a1c772f49fb28d24a438bb5149cea251813d1caa61bc94d756b",
+   "publisher": "NeurIPS 2023; version hosted by arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2303.13408v2",
+   "locator": "Section 5.3, Is retrieval an effective detector with a large retrieval corpus?",
+   "receipt": {
+    "public_excerpt": "Retrieval",
+    "quote_hash": "34785de85ecf5bc33c2dcbfb38c80d5a886be158141bf1d1ce759318fc75d2e1",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-18",
+   "retrieved_at": "2026-10-29T10:24:27Z",
+   "relation": "context",
+   "explanation": "The same paper demonstrates a defense that compares candidate text against stored model outputs. It limits any stronger interpretation that modification makes detection impossible, but does not negate the demonstrated ability to evade other detectors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "c5a0ccb8b9b566929a53b75cdf8088a0308a9e3ff986964afcbed26dda3a9e1a"
+}

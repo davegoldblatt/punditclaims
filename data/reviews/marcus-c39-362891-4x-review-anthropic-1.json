@@ -1,0 +1,184 @@
+{
+ "run_id": "marcus-c39-362891-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-c39-362891": "2227b7bd286fcd3c322a722cb6bb24d439b5d37e569d7fcb6e76c40ce8debf0e",
+  "case:marcus-c39-41d678": "2e6e67b588e5605e8a5641c67c2a6d3132d1998d9e76d6180eaab57199f12954",
+  "case:marcus-c39-66ca37": "38028792dcfacb60c1adce0286e1b204b74c0e52980bb8874340e81b8aedbbf2",
+  "case:marcus-c39-cf55b9": "849ed47bbba23f9f99a785061eb3ae30c14c74be28f0a728c7d596cc089cb239"
+ },
+ "started_at": "2026-10-29T02:38:03Z",
+ "completed_at": "2026-10-29T02:38:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post. He cites Chollet nearby, but the sufficiency judgment is his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful wording. 'At most necessary' is a hedge and is rightly left unscored. The firm part, 'certainly isn't sufficient', is a checkable claim about what the ARC-AGI-1 benchmark can show."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "AGI is undefined, so the result depends on the reading. Treating 'not sufficient' as 'passing does not show AGI' is an ordinary reading, and checking it against the designers' view plus a high scorer's remaining failures is fair to both sides."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dated Dec 2024. The benchmark's creator says passing does not equal AGI and that o3, despite scoring high, still fails very easy tasks. This meets the support condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Same Dec 2024 post. The designers call ARC-AGI a research tool and say it is not an acid test for AGI, which is consistent with 'not sufficient'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Both parts of the support condition are met. The ARC designers say passing ARC-AGI does not equal AGI, and a system that scored up to 87.5% was judged not to be AGI and still failed easy tasks. The packet has no evidence that passing would be enough to show AGI. The 'at most necessary' hedge is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-362891"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'wrongly' and 'necessarily'. It leaves out the descriptive 'for many people' part. The core is a judgment that an inference is invalid, which is factual in form but cannot be tested."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reasonably finds that 'step to AGI' has no agreed measure and that 'necessarily' makes this a claim about logical validity. Calling it not adjudicable is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Chollet says passing is not AGI but also calls o3 a breakthrough. This neither settles whether o3 is a 'step to AGI' nor whether that inference was necessary."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "Whether people were wrong to conclude that o3 is necessarily a step to AGI turns on an undefined notion and on the logic of an inference. No dated evidence could confirm or refute it. The 'many people' description has no measure attached. It is an argument, not a scorable fact.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-41d678"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The absolute 'aren't even addressed' is kept and applies to each of the three items."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is to judge each item against ARC's design documents, which is fair. Counting basic physical intuitions as common sense is an ordinary reading, consistent with Marcus's own usage. Since 'not even addressed' is absolute, shallow coverage counts against it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The official ARC page says the benchmark is restricted to core-knowledge priors and excludes acquired knowledge. This supports the factuality part."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The 2019 design paper builds ARC on priors such as objectness and elementary physics. That is basic common sense, so 'common sense not even addressed' is undercut, though only the basic layer is covered."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "May 2025 paper by the ARC authors, before the evaluation date. It says ARC-AGI-2 probes 'deeper' compositional generalization and that most, not all, ARC-AGI-1 tasks needed a single rule. So ARC-AGI-1 addressed compositionality, but weakly."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The factuality part holds: ARC deliberately excludes acquired factual knowledge. The other two parts fail on the absolute 'not even addressed': ARC-AGI-1 draws on basic commonsense priors (objectness, elementary physics) and included some compositional, multi-rule tasks, though coverage of both was shallow.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-66ca37"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own conclusion bullet in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "normative",
+     "note": "A 'should' recommendation hedged with 'probably'. The revision keeps 'people in the media' and the qualifier."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Treating this as normative and unscorable is correct. The contract's mention of 'journalists' is harmless."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a hedged normative recommendation about media conduct. No evidence can make it true or false.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-cf55b9"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23916,
+  "output_tokens": 4386,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

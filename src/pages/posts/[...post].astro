@@ -1,0 +1,74 @@
+---
+// /posts/<host>/<path>: every claim this register recorded from one source
+// post, in the order they appear in it, each with its outcome and the words
+// from this post. Records held from the same post are listed after them.
+// These pages are what the search index reads: each claim is a section whose
+// anchor is c-<claim id>, so a search finds the claim and links to its page.
+// One index entry per post, not per claim, keeps the build under Cloudflare
+// Pages' file limit.
+import Base from "../../layouts/Base.astro";
+import ClaimRow from "../../components/ClaimRow.astro";
+import { release } from "../../lib/published.ts";
+import { HELD_LABEL, OUTCOME_LABEL } from "../../policy.ts";
+import { personPath, standingOf } from "../../lib/view.ts";
+import { postsFor, type Post } from "../../lib/listing.ts";
+
+export function getStaticPaths() {
+  const r = release();
+  if (!r.manifest) return [];
+  return postsFor(r.claims, r.held).map((p) => ({ params: { post: p.path.slice("/posts/".length) }, props: { post: p } }));
+}
+const { post: p } = Astro.props as { post: Post };
+const r = release();
+const person = r.subject(p.subject_id);
+const items = p.items;
+const live = items.filter((i) => standingOf(i.claim) !== "withdrawn");
+const checked = live.filter((i) => i.claim.current!.payload.outcome !== "not_adjudicable").length;
+const cannot = live.length - checked;
+const withdrawn = items.length - live.length;
+const noun = (n: number) => (n === 1 ? "claim" : "claims");
+---
+<Base title={`Claims from “${p.title}”`} description={`Every claim this register recorded from “${p.title}”${person ? ` by ${person.name}` : ""}, with the outcome of each.`}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/register/checked">All claims</a></li>
+        {person && <li><a href={personPath(person.id)}>{person.name}</a></li>}
+        <li aria-current="page">Post</li>
+      </ol>
+    </nav>
+    <header class="page-head">
+      <p class="byline">{person && <a href={personPath(person.id)}>{person.name}</a>}{" "}{p.publisher && <span>{p.publisher}</span>}{" "}{p.date && <span>Published <time datetime={p.date}>{p.date}</time></span>}</p>
+      <h1>{p.title}</h1>
+      <p class="lede">
+        We recorded {items.length} {noun(items.length)} from this post.
+        {checked > 0 && <> {checked} {checked === 1 ? "was" : "were"} checked against evidence.</>}
+        {cannot > 0 && <> {cannot} can’t be checked.</>}
+        {withdrawn > 0 && <> {withdrawn} {withdrawn === 1 ? "has its assessment" : "have their assessments"} withdrawn.</>}
+        {p.held.length > 0 && <> {p.held.length} more {p.held.length === 1 ? "is" : "are"} held.</>}
+        {" "}<a href={p.url} rel="noopener">Read the post at its source</a>.
+      </p>
+    </header>
+    <section class="section" aria-labelledby="post-claims-h" data-pagefind-body>
+      <span data-pagefind-meta={`title:${p.title}`}></span>
+      {person && <span data-pagefind-meta={`person:${person.name}`}></span>}
+      {p.date && <span data-pagefind-meta={`said:${p.date}`}></span>}
+      <h2 id="post-claims-h">Claims from this post <span class="count">({items.length})</span></h2>
+      <p class="small" data-pagefind-ignore>In the order they appear in the post. Each quotation is the speaker’s words in this post. A label such as “{OUTCOME_LABEL.supported}” or “{OUTCOME_LABEL.not_adjudicable}” is the claim’s current assessment; its page has the evidence and the reasons.</p>
+      <ol class="register">
+        {items.map((i) => (
+          <ClaimRow claim={i.claim} personName={person?.name ?? i.claim.subject_id} showPerson={false} quote={standingOf(i.claim) === "withdrawn" ? null : i.excerpt} anchor showSource={false} />
+        ))}
+      </ol>
+    </section>
+    {p.held.length > 0 && (
+      <section class="section" aria-labelledby="post-held-h" data-pagefind-ignore>
+        <h2 id="post-held-h">Held from this post <span class="count">({p.held.length})</span></h2>
+        <p class="small">These records did not pass every check, so nothing about them is published. Held is not a finding.</p>
+        <ul class="small">
+          {p.held.map((h) => <li><a href={`/held#held-${h.id}`}>{HELD_LABEL[h.held_reason]}</a>{h.proposition && <>. Our reading, not assessed: {h.proposition}</>}</li>)}
+        </ul>
+      </section>
+    )}
+  </div>
+</Base>

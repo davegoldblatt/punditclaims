@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-subprimeai-79c5cb-p1",
+ "claim_revision_ref": {
+  "id": "wyea-subprimeai-79c5cb",
+  "version": 1,
+  "content_hash": "2fb73adf5b5714f6b99e45eb10a78bde157372f50baa32a77d6b2bf9c6d6db8c"
+ },
+ "contract_ref": {
+  "id": "wyea-subprimeai-79c5cb",
+  "version": 1,
+  "content_hash": "b49578a39056bd531ddedea9eeb01d2f87ef2c3157151140f1a7037569ce1750"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com \"o1\" \"hallucinations\" \"2024\" system card",
+   "\"o1-preview\" \"hallucinate\" \"September 12, 2024\"",
+   "o1-preview hallucination cause verifier component ablation self correction 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/o1-preview-system-card-20240917.pdf",
+    "used": true,
+    "why": "Primary archived card for the relevant preview models, containing both benchmark results and contrary anecdotal feedback."
+   },
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "used": true,
+    "why": "Primary launch description of learned reasoning and self-correction."
+   },
+   {
+    "url": "https://openai.com/index/openai-o1-system-card/",
+    "used": false,
+    "why": "Full text read, but the current card covers the December release. Used to locate the archived preview card, not to substitute later model performance."
+   },
+   {
+    "url": "https://techcrunch.com/2024/09/12/openai-unveils-a-model-that-can-fact-check-itself/?9cfe0a40_page=2",
+    "used": false,
+    "why": "Search result identified the anecdotal-feedback report; the underlying primary card was obtained instead."
+   }
+  ],
+  "performed_at": "2026-10-29T12:33:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-o1-preview-system-card-20240917-pdf",
+   "source_snapshot_id": "bfa67b4aa94fa08bfd4da0417815a402ec285eb088e8d0d0088086adb8a04cb2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/o1-preview-system-card-20240917.pdf",
+   "locator": "Section 3.1.4, paragraph following Table 2",
+   "receipt": {
+    "public_excerpt": "According to these evaluations, o1-preview hallucinates less frequently than GPT-4o, and o1-mini\nhallucinates less frequently than GPT-4o-mini.",
+    "quote_hash": "37eaa254573ef6c0ea359df5946ec4857c0a227800ff91be19ab6b72ddbc4770",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-17",
+   "retrieved_at": "2026-10-29T06:06:27Z",
+   "relation": "contradicts",
+   "explanation": "The preview card's tests challenge the comparative premise, but the same paragraph acknowledges anecdotal feedback in the opposite direction. Neither establishes the proposed cause; the later file date is used conservatively for availability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms",
+   "locator": "Chain of Thought section",
+   "receipt": {
+    "public_excerpt": "It learns to recognize and correct its mistakes.",
+    "quote_hash": "b860089fae4f0367d39129a6b38c162cb126b85aef526b07673da9792f095f63",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "context",
+   "explanation": "The launch description identifies learned self-correction through reinforcement learning. It does not establish a separately identifiable checking component whose hallucinations cause a comparative increase.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No controlled experiment isolating the asserted checking mechanism was located.",
+  "Public documentation does not establish the speaker's two-part architectural account.",
+  "Limited benchmarks and anecdotal feedback do not establish a representative comparative hallucination rate."
+ ],
+ "packet_hash": "6aa8fddbc327c9ed797bd899e13f52a366d387b2450d9772e079d9af86d74f80"
+}

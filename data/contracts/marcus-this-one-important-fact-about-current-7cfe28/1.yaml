@@ -1,0 +1,42 @@
+claim_id: marcus-this-one-important-fact-about-current-7cfe28
+version: 1
+claim_revision_ref:
+  id: marcus-this-one-important-fact-about-current-7cfe28
+  version: 1
+  content_hash: de161158da7e82e87e66c60a24064ae27705c709ec2fb4fc7bc5b4718a95a940
+assessment_axis: causal_assessment
+explicit_source_elements:
+  - LLMs often stumble
+  - large multiplication problems
+  - because such problems are effectively outliers
+  - relative to a training set that can’t sample them all
+evaluator_interpretation:
+  - The plain reading is that multiplication problems poorly represented in training materially contribute to frequent errors by the LLMs available when the post appeared.
+  - Large multiplication means multiplication of multi-digit integers. Marcus supplies no minimum digit count or numerical error threshold.
+  - Assess unaided model calculations. Calculator or code execution would test a different mechanism.
+  - A previously unseen problem is not necessarily outside the training distribution. Establishing the proposed cause requires more than showing errors on unfamiliar operand pairs.
+  - The claim need not identify the only cause of errors. The calculator comparison is background to the supplied normalized proposition, not a separate claim being graded.
+  - The scope is models available by 2024-08-01. This is a causal assessment, so no reporting-period target is imposed.
+support_condition: Experiments show frequent multi-digit multiplication errors and establish that inadequate coverage of the relevant problem distribution materially causes those errors, through controlled changes in training coverage or comparable causal evidence.
+contradiction_condition: Representative controlled experiments show that the proposed training-distribution mismatch does not materially explain the errors, or that relevant LLMs reliably solve large multiplication problems across the supposedly problematic distributions.
+measurement_requirements: Exact-product accuracy across operand lengths and model families; documented training and test distributions; controls for problem complexity, prompting, representation, and generation procedure. Unseen examples must be distinguished from distribution shifts.
+source_requirements: Primary experimental papers with methods and results. Evidence about specialized small transformers can inform the mechanism but cannot alone settle a claim about general-purpose LLMs.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period: null
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - No minimum size for large multiplication.
+  - No numerical threshold for often.
+  - Outlier could mean an unseen example, a rare example, or an example outside the training distribution.
+  - Model families and prompting methods are unspecified.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T08:49:24Z
+frozen_at: 2026-10-29T08:49:24Z
+policy_version: 2026-10-28.7
+content_hash: db000df5f0ab63682d2c09fb6ae2f06e9c4b9cf34c377118dc4dee515b31492e

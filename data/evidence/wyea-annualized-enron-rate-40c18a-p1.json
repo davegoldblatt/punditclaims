@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-40c18a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-40c18a",
+  "version": 2,
+  "content_hash": "da3c273ea23cdc52d9d5a930f4686e515c80dd325f91d5f7a554be73ed821d57"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-40c18a",
+  "version": 1,
+  "content_hash": "5722202199f41e95c54fc8095fe7eb7fdeb555d701c9858dbbf067e7c0b44e1d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SiliconData GPU index methodology spot long term weighting rental term length",
+   "site.silicondata.com \"methodology\" \"weight\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.silicondata.com/documents/silicon-data-index-methodology.pdf",
+    "used": true,
+    "why": "Read successfully. Dated primary methodology explains normalization and provider aggregation but does not disclose the information needed to establish spot dominance."
+   },
+   {
+    "url": "https://www.silicondata.com/blog/building-a-robust-gpu-index",
+    "used": true,
+    "why": "Read successfully. Dated primary explanation describes multiple rental types and proprietary normalization."
+   },
+   {
+    "url": "https://www.silicondata.com/products/silicon-index",
+    "used": false,
+    "why": "Read successfully, but the current product page lacks a publication date establishing its exact contents at the freeze."
+   },
+   {
+    "url": "https://www.compute-desk.com/index-methodology",
+    "used": false,
+    "why": "Describes a different publisher's index."
+   }
+  ],
+  "performed_at": "2026-10-29T10:34:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "silicondata-com-documents-silicon-data-index-methodology-pdf",
+   "source_snapshot_id": "9d5c3866b41d1c4020a2f1e7be16a1aa80f86875d5910d2a971ab71f8dc9bb21",
+   "publisher": "Silicon Data",
+   "source_type": "company_disclosure",
+   "url": "https://www.silicondata.com/documents/silicon-data-index-methodology.pdf",
+   "locator": "Section 2.4, Step 4: Index Calculation",
+   "receipt": {
+    "public_excerpt": "provider level",
+    "quote_hash": "7663078c4d683f8da3112fc19a52a9f5a57f2b5df8d091af2a231cd9a097c923",
+    "verified": "exact"
+   },
+   "event_date": "2026-08-27",
+   "available_at": "2026-08-27",
+   "retrieved_at": "2026-10-29T10:24:00Z",
+   "relation": "context",
+   "explanation": "The methodology adjusts for on-demand, reserved and interruptible rental types, then weights provider-level prices. It does not disclose rental-type weights or adjustment coefficients, so it cannot establish the claimed dominance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "silicondata-com-blog-building-a-robust-gpu-index",
+   "source_snapshot_id": "5e818a191685b149cf741d4e741ba07f033e733c722285571be6cf27c0787e1a",
+   "publisher": "Silicon Data",
+   "source_type": "company_disclosure",
+   "url": "https://www.silicondata.com/blog/building-a-robust-gpu-index",
+   "locator": "Section The critical step of normalization",
+   "receipt": {
+    "public_excerpt": "a proprietary framework",
+    "quote_hash": "d299a8ea9baf0ba7f0ea8ffbd1f6dab9018d55656e53a7088830f7821ce83247",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-12",
+   "available_at": "2026-03-12",
+   "retrieved_at": "2026-10-29T10:21:50Z",
+   "relation": "context",
+   "explanation": "The article describes coverage of on-demand, interruptible and reserved rentals, including commitments lasting up to 60 months. That cautions against treating the index as exclusively spot-based, but does not settle which inputs dominate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No effective weighting by rental term was obtained.",
+  "The proprietary normalization coefficients and benchmark-equivalent contract specification were not disclosed in the retrieved methodology.",
+  "No dated input audit establishes the composition of the relevant index on October 13."
+ ],
+ "packet_hash": "c38257d3aa64bec7b569ee6468ae98fcbf63b1f1c007d94df17aeee3b10cf26b"
+}

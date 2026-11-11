@@ -1,0 +1,83 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-ab5931-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-ab5931",
+  "version": 2,
+  "content_hash": "1501c1525a73cbd641130d7e9049c8ade7f091e413eda263899cf0ad5c71dd54"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-ab5931",
+  "version": 1,
+  "content_hash": "4825dad5035a6cdd724317227cd61d6e36c3d0e56fa2aa469cd2fbd4e28f65a4"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Sightline Climate 15.2 GW under construction 2028 April 2026 data centers",
+   "Sightline \"15.2\" data center 2026",
+   "site.sightlineclimate.com data centers 2026 construction 2028",
+   "\"15.2GW\" \"Sightline\" -site:wheresyoured.at",
+   "site.nvidia.com GB200 NVL72 NVIDIA revenue rack price OEM 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+    "used": true,
+    "why": "Readable primary research explains the public dataset's coverage, but does not independently establish the April 15.2GW figure."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/wolfe-lifts-nvidia-target-by-25-on-rackscale-growth-4476379",
+    "used": false,
+    "why": "Potentially relevant reporting about NVIDIA's share of rack prices, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.wheresyoured.at/four-horsemen-of-the-aipocalypse",
+    "used": false,
+    "why": "Read to clarify that 15.2GW came from the speaker's correspondence with Sightline. Not used as evidence of its correctness."
+   }
+  ],
+  "performed_at": "2026-10-29T11:26:45Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sightlineclimate-com-research-data-center-outlook",
+   "source_snapshot_id": "2a1dc4bfb79434e7da0d79a24eb049b9493a7ca2f27568ff0ce239ef28f61d54",
+   "publisher": "Sightline Climate, now Currence",
+   "source_type": "independent_measurement",
+   "url": "https://www.sightlineclimate.com/research/data-center-outlook",
+   "locator": "Paragraph describing the 2026 delivery pipeline",
+   "receipt": {
+    "public_excerpt": "about 5GW",
+    "quote_hash": "8241c1c00b85af4a365a6a2b7a89f50def991d7dfc02fa787ef961af390e051d",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-24",
+   "retrieved_at": "2026-10-29T10:02:15Z",
+   "relation": "context",
+   "explanation": "This February report concerns the pipeline scheduled for 2026 and cannot confirm April's capacity through 2028. The attached calculation is the evaluator's recomputation from the supplied claim assumptions, not a figure reported by Sightline.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "15.2GW facility capacity: supplied claim premise, not independently verified",
+     "1.35 PUE: stated assumption",
+     "90% GPU allocation: stated assumption",
+     "140kW per rack: stated assumption",
+     "$4,000,000 per rack: stated assumption"
+    ],
+    "formula": "GPU allocation = 15.2 / 1.35 × 0.90 = 10.133333 GW; racks = 15.2 × 1,000,000 / 1.35 × 0.90 / 140 = 72,380.952381; gross rack value = racks × $4,000,000 = $289,523,809,523.81.",
+    "rounding": "Approximately 72,381 racks and $289.5 billion, 1.34% above $285.7 billion. Rounding the GPU allocation to 10GW reproduces approximately 71,429 racks and $285.7 billion."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The independently readable Sightline publication does not establish the April 15.2GW construction snapshot.",
+  "No readable evidence establishes that the entire assumed $4 million rack purchase price accrues to NVIDIA.",
+  "The source does not specify when the hypothetical hardware revenue would be recognized."
+ ],
+ "packet_hash": "8ec0d7bc88515f8b522f6322f9c509f5720098c183f1fb6007385e719e55142e"
+}

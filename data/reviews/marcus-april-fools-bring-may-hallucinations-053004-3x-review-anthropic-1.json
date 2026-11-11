@@ -1,0 +1,161 @@
+{
+ "run_id": "marcus-april-fools-bring-may-hallucinations-053004-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-april-fools-bring-may-hallucinations-053004": "57585d92d7f607066706388119ad3e7c99b47be30776450587062b713f7611cb",
+  "case:marcus-april-fools-bring-may-hallucinations-0df5fc": "ca932f70ba25e04b7f40d6661212d9892fb36141240a48b06abc7a6dbdd8c1d1",
+  "case:marcus-april-fools-bring-may-hallucinations-eb3ae3": "ee692dea39e5d3732c669936161ff3b10a7d5e719f4e2b09caa2a88b74974b8c"
+ },
+ "started_at": "2026-10-29T06:42:49Z",
+ "completed_at": "2026-10-29T06:43:24Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, not a quotation of Oppenheim or Gowers."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition restates the sentence and keeps the 'sometimes in transmogrified form' qualifier. It is an unhedged present-tense claim about what LLMs do."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (output limited to reproducing or reworking material the model has seen) is the ordinary one. The contradiction condition, which requires training overlap to be excluded, is demanding but follows from the speaker's own claim. The observation window is the evaluator's choice."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated January 2025, inside the window. It shows RL transfer to rules withheld from post-training, but pretraining overlap is not excluded and the setup uses verifier feedback, so it does not meet the contradiction condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated March 2025. It documents memorization failures in code generation but does not show that all LLM output is reproduction, so it does not meet the support condition."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The v2 revision is dated December 2024, before the window. Its fully controlled experiments use small synthetic transformers rather than deployed LLMs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item in the packet meets either condition. The generalization results do not exclude training overlap or external verification, and the memorization results do not show an exclusive mechanism. The evidence available does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-april-fools-bring-may-hallucinations-053004"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. It comes after a quote from Oppenheim but is his own conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps both the human comparison and its 'usually, if well-motivated' qualifier, and states the claimed absence of ability in current AI."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as about treating satire or fiction as fact fits the context, and occasional errors are rightly not counted as proof of the claimed absence. The window is the evaluator's choice."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated December 2024, before the window. It covers satire classification with possible pretraining exposure and has no human comparison or test of factual treatment."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated January 2025, inside the window, but it measures humor explanation, not whether models treat satirical claims as real."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No controlled evaluation in the packet compares contemporary AI with attentive humans on telling satire or fiction from fact. Both items are indirect, and the Gowers incident is not independently documented. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-april-fools-bring-may-hallucinations-0df5fc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition restates the sentence faithfully. In context, 'it' means the data the AI absorbs, such as web search results."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract treats 'reflecting critically about data' as the model self-verifying its own answers under a prompted procedure. That moves the object from source data (judging whether content is credible) to the model's own outputs, and it ignores the 'absorb and mimic' clause. The reading is stretched against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated January 2025, inside the window. It shows prompted self-verification and self-correction improving accuracy, which would contradict the claim under the contract's reading. It does not address critical evaluation of source data, which is what the statement is about."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A Google Research post (company disclosure) from January 2024, before the window. It reports weak error-finding but does not address the target period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Under the contract's broad behavioral reading, e1 would contradict the claim. That reading replaces judging absorbed data with checking one's own answers, so the contract is unfair. Under a fair reading, nothing in the packet tests whether contemporary AI critically evaluates source material, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-april-fools-bring-may-hallucinations-eb3ae3"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23691,
+  "output_tokens": 3421,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

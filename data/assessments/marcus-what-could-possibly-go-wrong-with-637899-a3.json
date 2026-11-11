@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-what-could-possibly-go-wrong-with-637899-a3",
+ "claim_revision_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-637899",
+  "version": 1,
+  "content_hash": "d8a4e03fd85457f1d8bb3bc7692461cbad5be2de1bd8a237366bd1a04bf9a051"
+ },
+ "contract_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-637899",
+  "version": 1,
+  "content_hash": "af380e60c30a7a29a91c386869580f575b04db1d23d50d21e55b2af3c9376123"
+ },
+ "packet_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-637899-p1",
+  "content_hash": "8805e67eca8dc21f9a5208cc9690cfc4c66a59b9263914d9648a30e7d33e6244"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-02-01",
+  "end": "2024-02-09",
+  "precision": "day"
+ },
+ "public_rationale": "The February 23, 2023 paper demonstrated indirect prompt injection through poisoned external content in synthetic LLM applications [e1]. The December 21, 2023 BIPIA study reported that its tested prompt-based defenses could not completely prevent these attacks [e2]. This pre-post evidence supports the claim that indirect prompt injection remained an unresolved general attack class, within the limits of the tested applications and defenses [e1][e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The February demonstrations used synthetic applications and do not establish vulnerability in every LLM or deployment [e1].",
+  "BIPIA reported mitigation progress with fine-tuning, but its benchmark used simulated samples, excluded multi-turn dialogue and did not cover all possible attacks [e2].",
+  "The latest supplied study dates to December 21, 2023; it does not directly establish the state of defenses on February 9, 2024 [e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-could-possibly-go-wrong-with-619211-4x-review-anthropic-1",
+  "marcus-what-could-possibly-go-wrong-with-619211-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-could-possibly-go-wrong-with-637899-1x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-could-possibly-go-wrong-with-637899",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs' vulnerability to indirect prompt injection attacks remains unresolved as of February 2024.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In February 2023, a team of European researchers showed how LLMs were vulnerable to “indirect prompt injection attacks,” in which a sneaky prompt could “trick” a machine into doing undesired things, an ongoing problem that has still not be resolved.",
+   "locator": "paragraph 14",
+   "url": "https://garymarcus.substack.com/p/what-could-possibly-go-wrong-with",
+   "date": "2024-02-09",
+   "document_title": "What Could Possibly Go Wrong with Sam Altman’s New Ambitions?",
+   "observed_at": "2026-10-29T00:01:32Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "In February 2023",
+    "a team of European researchers",
+    "indirect prompt injection attacks",
+    "trick",
+    "an ongoing problem that has still not be resolved"
+   ],
+   "our_interpretation": [
+    "The passage describes the initial February 2023 demonstration and the vulnerability's persistence through the February 9, 2024 post.",
+    "The ordinary reading of unresolved is that indirect prompt injection remained a viable general attack class, not that no useful mitigation existed.",
+    "The relevant systems are LLM applications that ingest external content; the claim need not hold for every model in every configuration."
+   ],
+   "support_condition": "A February 2023 research demonstration establishes indirect prompt injection, and research available before the post shows continuing vulnerability despite incomplete or limited defenses.",
+   "contradiction_condition": "The cited discovery did not occur as described, or evidence establishes that reliable defenses had generally eliminated the vulnerability by February 9, 2024."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The February 23, 2023 paper demonstrated indirect prompt injection through poisoned external content in synthetic LLM applications [e1]. The December 21, 2023 BIPIA study reported that its tested prompt-based defenses could not completely prevent these attacks [e2]. This pre-post evidence supports the claim that indirect prompt injection remained an unresolved general attack class, within the limits of the tested applications and defenses [e1][e2].",
+  "limitations": [
+   "The February demonstrations used synthetic applications and do not establish vulnerability in every LLM or deployment [e1].",
+   "BIPIA reported mitigation progress with fine-tuning, but its benchmark used simulated samples, excluded multi-turn dialogue and did not cover all possible attacks [e2].",
+   "The latest supplied study dates to December 21, 2023; it does not directly establish the state of defenses on February 9, 2024 [e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "an attacker can indirectly perform",
+    "locator": "Abstract, second paragraph",
+    "url": "https://arxiv.org/abs/2302.12173v1",
+    "publisher": "arXiv; Kai Greshake and colleagues",
+    "event_date": "2023-02-23",
+    "available_at": "2023-02-23",
+    "explanation": "The original February submission demonstrates attacks delivered through retrieved, poisoned content. It describes demonstrations in synthetic applications, so the initial result should not be overstated as a comprehensive production-system test."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "indirect prompt injection attacks.",
+    "locator": "VII Discussion and Limitations, Defense Limitations",
+    "url": "https://arxiv.org/html/2312.14197v1",
+    "publisher": "arXiv; Jingwei Yi and colleagues",
+    "event_date": "2023-12-21",
+    "available_at": "2023-12-21",
+    "explanation": "The study documents continuing vulnerability with the tested prompt-based defenses. It also supplies material qualification: fine-tuning defenses drove attack success close to zero on tested Vicuna models, while the authors acknowledged limited benchmark coverage and simulated samples."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "163b120b0414ea759120e23b11bfd1ec795a5c0f9014b5e1c927e41b78884dc3",
+ "supersedes_assessment_id": "marcus-what-could-possibly-go-wrong-with-637899-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:44:43Z"
+}

@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-the-revenge-of-the-business-idiot-0d6f3d-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-revenge-of-the-business-idiot-0d6f3d": "d026d9fe3f473982a80359d721808698cd8b8cb250d8624ed46a3fc15fad4995",
+  "case:wyea-the-revenge-of-the-business-idiot-a0d1f2": "87168e69878b81338d86d6dee9ef27579882a17756e54b4a9d43b069a9941215"
+ },
+ "started_at": "2026-11-10T02:07:32Z",
+ "completed_at": "2026-11-10T02:08:09Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post. No quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'sometimes', the acceptance condition, the need for vigilant oversight, and both loss clauses (the subsidised product and enterprise payments). The enterprise clause is correctly read as Anthropic still losing money overall. It is a present-tense observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Choosing Q1 2026 is reasonable but is the evaluator's choice. The plain reading of the quality language and the company-wide loss is ordinary. Requiring delivery-cost evidence for 'subsidised' is fair. The loss basis is unknown. The S-1 shows a GAAP net loss and an operating loss for Q1, but adjusted figures for H1 2026 are positive, so the result depends on which basis is used."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "S-1 filed before the cutoff. It shows a Q1 2026 GAAP net loss and an apparent operating loss. Adjusted net income for H1 2026 is positive, and the contract requires a matched basis that the claim does not supply. It says nothing about subscription delivery costs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "METR results on a specialised task suite show strong autonomous capability. They are not a representative workplace audit and do not measure required oversight, so they do not contradict the claim on their own."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Compares subscription allowances with API retail prices only. It has no delivery-cost data, so it cannot establish the claimed subsidy."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Preprint finding that reliability decays on long tasks and some runs melt down. Relevant to reliability, but not representative of practical work and silent on oversight burden."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The quality clause has no representative evaluation of practical-work defects or oversight; e2 and e4 point in different directions and neither is representative. The subsidy clause has no cost evidence. Q1 2026 shows a GAAP loss, but the contract requires a known matched basis, and positive adjusted figures in H1 2026 show the basis matters. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-revenge-of-the-business-idiot-0d6f3d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post, endorsed in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The proposition is faithful, and the NVIDIA framing comes from the preceding sentence. Both the 'appears' hedge and the 2028 date are preserved. The core assertion is a requirement chain: $1T revenue is necessary, which would require more than 30GW. That is a causal or necessity claim, not a plain observation, which matches the contract's causal axis."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "It is fair to require models of the revenue and capacity necessity, because the speaker gave none. Whose revenue counts (NVIDIA or downstream), the annual period, and the scope of construction are all unspecified, so interpretation drives the result. The contract treats 'appears' properly as a qualified estimate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Sightline report (Feb 2026), likely the source of the ~5GW figure. That figure covers only capacity slated to come online in 2026. It does not cover all construction relevant to a 2028 buildout and does not address either asserted requirement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no financial or engineering model showing that $1T in annual revenue is necessary or that it implies more than 30GW. The only item supports a ~5GW figure for the 2026 delivery cohort, which may not match the intended scope. Nothing contradicts the argument either, so the packet does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-revenge-of-the-business-idiot-a0d1f2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20893,
+  "output_tokens": 3744,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

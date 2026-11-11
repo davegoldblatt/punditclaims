@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-dall-es-new-guardrails-fast-furious-37170d-p2",
+ "claim_revision_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-37170d",
+  "version": 2,
+  "content_hash": "03c3fa5a80c6194790a22f5450c3c4029ecf80154473e0b65de2b900e9531111"
+ },
+ "contract_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-37170d",
+  "version": 2,
+  "content_hash": "010367895f45a1fa6ed449fb625b30d4f0949e17d3c6e2e030b3c55491844135"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com January 8 2024 New York Times training fair use licensing",
+   "OpenAI House Lords submission impossible train without copyrighted materials December 2023",
+   "site.committees.parliament.uk OpenAI \"impossible\" \"2023\" copyrighted written evidence",
+   "site.axelspringer.com December 13 2023 OpenAI partnership training",
+   "\"OpenAI\" \"LLM0113\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/openai-and-journalism/",
+    "used": true,
+    "why": "Read successfully with read_page. Primary statement of the training position discussed in the post."
+   },
+   {
+    "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2024/01/09/chatgpt-maker-braces-for-fight-with-new-york-times-and-authors-on-fair-use-of-copyrighted-works",
+    "used": true,
+    "why": "Read successfully with read_page. Accessible Associated Press reporting, including its own paid licensing arrangement."
+   },
+   {
+    "url": "https://apnews.com/article/69f78c404ace42c0070fdfb9dd4caeb7",
+    "used": false,
+    "why": "read_page returned HTTP 403. Used the accessible syndicated AP report instead."
+   },
+   {
+    "url": "https://committees.parliament.uk/writtenevidence/126981/html/",
+    "used": false,
+    "why": "Potentially relevant primary submission, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://committees.parliament.uk/writtenevidence/126981/pdf/",
+    "used": false,
+    "why": "The PDF alternative also returned HTTP 403 through read_page."
+   },
+   {
+    "url": "https://publications.parliament.uk/pa/ld5804/ldselect/ldcomm/54/5411.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the committee's later summary was not used."
+   },
+   {
+    "url": "https://openai.com/index/axel-springer-partnership/",
+    "used": false,
+    "why": "Read successfully. The December 2023 announcement describes a training partnership but does not state payment terms; the AP report addresses payment directly."
+   },
+   {
+    "url": "https://www.axelspringer.com/en/ax-press-release/axel-springer-and-openai-partner-to-deepen-beneficial-use-of-ai-in-journalism",
+    "used": false,
+    "why": "read_page returned HTTP 404."
+   }
+  ],
+  "performed_at": "2026-10-29T23:43:18Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-openai-and-journalism",
+   "source_snapshot_id": "a1fa403bc287eaa13af007d6fffa7800f0cc577c77967384fce149359ceeaada",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/openai-and-journalism",
+   "locator": "Section 2, first sentence",
+   "receipt": {
+    "public_excerpt": "Training AI models using publicly available internet materials",
+    "quote_hash": "7e3ff69e7764e8b144dc0ebec058af81c3bb5632ebbb28c6172f8426a8b2dd84",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-08",
+   "available_at": "2024-01-08",
+   "retrieved_at": "2026-10-29T07:55:03Z",
+   "relation": "context",
+   "explanation": "OpenAI expressly defended training on public internet material under fair use. This corroborates the firm policy component, but does not establish payment arrangements or turn Marcus’s tentative allegation into a categorical one.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "ny1-com-nyc-all-boroughs-ap-top-news-2024-01-09-chatgpt-maker-brace-77ac14139f13",
+   "source_snapshot_id": "ee20dc97a9fe7c5cb24174c5e002fbf5389733be6409f84c0c2c54749ca977e4",
+   "publisher": "Associated Press, republished by Spectrum News NY1",
+   "source_type": "news_report",
+   "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2024/01/09/chatgpt-maker-braces-for-fight-with-new-york-times-and-authors-on-fair-use-of-copyrighted-works",
+   "locator": "Paragraph discussing OpenAI's licensing agreements, sentence beginning 'OpenAI is paying'",
+   "receipt": {
+    "public_excerpt": "paying an undisclosed fee",
+    "quote_hash": "c03fc52672026b7f5f4382752cd88a546bb687bf42eb8167e3dd67f6a67b915c",
+    "verified": "exact"
+   },
+   "event_date": "2024-01",
+   "available_at": "2024-01-10",
+   "retrieved_at": "2026-10-29T23:25:44Z",
+   "relation": "context",
+   "explanation": "AP reported an ongoing payment for its own archive. This is material counterevidence to a blanket nonpayment reading, but selective payment does not establish that OpenAI wanted to license every copyrighted training source.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The speaker supplies no definite scope or confidence threshold for the tentative payment allegation.",
+  "The cited records do not provide a comprehensive account of training-data licenses and payments.",
+  "The parliamentary submission could not be verified through read_page."
+ ],
+ "packet_hash": "7a596ec1eed305d60c0b714c2031e627b269d00f92be56f503364cfe9b345f60"
+}

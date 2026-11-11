@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-sic-588112-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-sic-588112": "0364f78f2ae19d48d254749020e876a24ba0c4547f7ad0527f3326502ac9c7fe"
+ },
+ "started_at": "2026-11-10T02:06:11Z",
+ "completed_at": "2026-11-10T02:06:26Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, in his own aside on software engineering. Not a quotation of Ptacek or Brown."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Accurate paraphrase of a present-tense description. The 'some software engineers' scope is kept, and 'never trust' is a firm, unhedged statement about current practice."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'trust' as unchecked reliance fits the context ('under the watchful eye of an actual person'). Reading 'much faster' as substantial net gains is an ordinary reading. The unspecified group makes the result turn on that interpretation, but the reading is not stretched for or against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A vendor survey released 2025-06-12. Gains are self-reported (78%). It shows caution but also some developers merging code without review. It never ties measured gains to withheld production trust within one group, so it does not meet the support or contradiction condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2024 RCT using summer-2024 Google tooling, with about 21% faster task time. It covers a different period and does not measure production-trust practice, so it is context only."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The METR February–June 2025 RCT found a 19% slowdown among experienced open-source developers. It warns that perceived gains may not be real, but it covers a narrow sample and a window that runs past the claim date. It cannot falsify gains for 'some' engineers."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item links substantial measured speed gains with a consistent refusal of unchecked production use in an identifiable group, as the contract requires. Qodo offers self-reports and shows mixed review practice. The Google RCT predates the period, and METR's slowdown concerns a specific sample. The packet does not settle the observation either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-sic-588112"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11253,
+  "output_tokens": 1411,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

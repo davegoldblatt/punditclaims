@@ -1,0 +1,107 @@
+{
+ "packet_id": "wyea-godot-isnt-making-it-bedfc0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-godot-isnt-making-it-bedfc0",
+  "version": 1,
+  "content_hash": "d9e338f8a40fdfc8b11967f5618fa878c837aa73f03098ff1a6fba91002af426"
+ },
+ "contract_ref": {
+  "id": "wyea-godot-isnt-making-it-bedfc0",
+  "version": 1,
+  "content_hash": "a351764f95abcb383d25cfe8abe885d102634352022323e1c665aef5becc2028"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia Blackwell thermal throttling customer cooling problems 2025 2026",
+   "Blackwell GB200 thermal throttling cooling Microsoft CoreWeave 2025 problems",
+   "site.coreweave.com GB200 cooling throttling 2025",
+   "GB200 \"thermal throttling\" customer 2025 2026 -RTX -Spark"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.techspot.com/news/106338-nvidia-best-customers-postponing-blackwell-chip-orders-due.html",
+    "used": true,
+    "why": "Readable reporting of cooling shortcomings during initial GB200 deployments. Used for the antecedent only."
+   },
+   {
+    "url": "https://www.coreweave.com/blog/why-you-need-liquid-cooling-for-ai-performance-at-scale",
+    "used": true,
+    "why": "Primary operator explanation of its GB200 cooling approach; it does not provide throttling telemetry."
+   },
+   {
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-gb200-production-ramps-up-after-suppliers-tackle-ai-server-overheating-and-liquid-cooling-leaks",
+    "used": false,
+    "why": "Later reporting concerns supplier fixes and shipment ramp-up, without measuring customer thermal throttling."
+   },
+   {
+    "url": "https://signal65.com/wp-content/uploads/2025/09/Signal65-Insights_Analyzing-Microsoft-Azure-ND-GB200-v6-VMs-Inference-Performance.pdf",
+    "used": false,
+    "why": "read_page could not read the PDF because it exceeded the size limit."
+   },
+   {
+    "url": "https://forums.developer.nvidia.com/t/dgx-spark-gb10-thermal-throttling-after-ec-uefi-updates-acpi-zones-96-97c-fans-not-ramping/377044",
+    "used": false,
+    "why": "DGX Spark/GB10 is outside the data-center rack scope of the claim."
+   }
+  ],
+  "performed_at": "2026-10-29T20:01:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "techspot-com-news-106338-nvidia-best-customers-postponing-blackwell-93eadfa66612",
+   "source_snapshot_id": "a5fe31b4a067304eda653f42786498377344860072c8c5ff52f56491965f3217",
+   "publisher": "TechSpot",
+   "source_type": "news_report",
+   "url": "https://www.techspot.com/news/106338-nvidia-best-customers-postponing-blackwell-chip-orders-due.html",
+   "locator": "Paragraph beginning 'As deployments scale'",
+   "receipt": {
+    "public_excerpt": "The current server rack designs have proven insufficient to handle the extreme thermal output",
+    "quote_hash": "ff5998ee10c35f688280fcd9d31c6eeeedbdf9c4b0afe01040d7979a31b2200d",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-14",
+   "retrieved_at": "2026-10-29T19:54:21Z",
+   "relation": "supports",
+   "explanation": "The report describes inadequate cooling during initial GB200 deployments, satisfying the antecedent on that deployment-level reading. It supplies no measured thermal-throttling outcome; no primary customer operating record was located.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "coreweave-com-blog-why-you-need-liquid-cooling-for-ai-performance-at-scale",
+   "source_snapshot_id": "a43cd9c08495f65907373ff917cc364f76daaef803fc39ca74c06257fc738ba0",
+   "publisher": "CoreWeave",
+   "source_type": "company_disclosure",
+   "url": "https://www.coreweave.com/blog/why-you-need-liquid-cooling-for-ai-performance-at-scale",
+   "locator": "Section 'What will it take to bring liquid cooling to data centers in 2025?', item 'Air cooling'",
+   "receipt": {
+    "public_excerpt": "85% liquid-cooled and 15% air-cooled.",
+    "quote_hash": "120e1d8c076315a09eed610263b510ecb03d039011a071f3946635bdf6f9a2be",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-25",
+   "available_at": "2025-04-25",
+   "retrieved_at": "2026-10-29T19:55:54Z",
+   "relation": "context",
+   "explanation": "The operator describes a specific cooling approach, cautioning against assuming all Blackwell deployments retained the same cooling problems. It neither establishes nor rules out throttling in the affected initial deployments.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved customer operating record links the reported unresolved rack cooling problems to thermal-throttling indicators or measured clock reductions.",
+  "The antecedent rests on secondary deployment reporting rather than primary engineering records.",
+  "Public descriptions of cooling designs do not establish operating performance across affected customers."
+ ],
+ "packet_hash": "e1b433e67d7a2174e7efde7114bcb440a11a7ac6272da3e5b04ef71d8f221f8a"
+}

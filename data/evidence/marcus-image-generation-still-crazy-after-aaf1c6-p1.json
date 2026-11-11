@@ -1,0 +1,120 @@
+{
+ "packet_id": "marcus-image-generation-still-crazy-after-aaf1c6-p1",
+ "claim_revision_ref": {
+  "id": "marcus-image-generation-still-crazy-after-aaf1c6",
+  "version": 2,
+  "content_hash": "dd5d13456b4f39437015874c3493eaa5fb7e68805eb4f688bf60792dae3c66e8"
+ },
+ "contract_ref": {
+  "id": "marcus-image-generation-still-crazy-after-aaf1c6",
+  "version": 1,
+  "content_hash": "f5be5dcd57a3add828836454a25485407d86a5af14715b396091e0104e0681de"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Imagen 4 prompt adherence compositional benchmark failures",
+   "\"Imagen 4\" GenEval OR \"T2I-CompBench\" OR \"OneIG\" score evaluation",
+   "Imagen 4 clock watch time test fails \"Imagen 4\"",
+   "AI image generators can't draw clock showing time other than 10:10 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2506.07977v2",
+    "used": true,
+    "why": "OneIG-Bench evaluated Imagen 4. It ranks Imagen 4 near the top on alignment and notes that models in general confuse attributes. The score table could not be read as text."
+   },
+   {
+    "url": "https://officechai.com/ai/ai-image-models-still-cant-create-clocks-that-show-the-right-time",
+    "used": true,
+    "why": "Independent clock tests on other models. It blames training-data bias and describes a model that stated the right time in text but drew it wrong."
+   },
+   {
+    "url": "https://garymarcus.substack.com/p/image-generation-still-crazy-after",
+    "used": false,
+    "why": "Speaker's own post; it cannot show he was right."
+   }
+  ],
+  "performed_at": "2026-10-29T07:07:41Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2506-07977v2",
+   "source_snapshot_id": "9c34d3279654710e30bc901476bca6a7a69444da44ab6fa206b04247945473e1",
+   "publisher": "arXiv / NeurIPS 2025 Datasets and Benchmarks (OneIG-Bench)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2506.07977v2",
+   "locator": "section 4.2.1 Semantic Alignment and Diversity",
+   "receipt": {
+    "public_excerpt": "In the alignment dimension shown in Table 2, Imagen4 [17], GPT-4o [45] and Imagen3 [36] consistently outperform other models, with Imagen4 and GPT-4o showing superior alignment performance.",
+    "quote_hash": "b3babcffacc3067718fdc72587453f1800bf81ed40457b9e5170dbdb97187f9f",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-06-09",
+   "retrieved_at": "2026-10-29T07:05:20Z",
+   "relation": "context",
+   "explanation": "Imagen 4 was among the best models at following prompts on this benchmark. That shows it was strong compared with its peers, but the readable text does not give its absolute failure rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2506-07977v2",
+   "source_snapshot_id": "9c34d3279654710e30bc901476bca6a7a69444da44ab6fa206b04247945473e1",
+   "publisher": "arXiv / NeurIPS 2025 Datasets and Benchmarks (OneIG-Bench)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2506.07977v2",
+   "locator": "Appendix, discussion of Figure 7",
+   "receipt": {
+    "public_excerpt": "in multi-person generation tasks, many methods struggle to accurately fulfill requirements at the individual level and often exhibit confusion in assigning attributes to the correct subjects.",
+    "quote_hash": "515505136dfd44af23807d78ff7e3e0a026a3cb8d1fadf6c7be2b768dc34b275",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-06-09",
+   "retrieved_at": "2026-10-29T07:05:20Z",
+   "relation": "context",
+   "explanation": "This fits the attribute-binding failures Marcus describes, but it is about 'many methods' and does not name Imagen 4.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "officechai-com-ai-ai-image-models-still-cant-create-clocks-that-sho-9ed6026e8e3f",
+   "source_snapshot_id": "862265287fcc5f087100862ca64068dfa907c4d7e4162881ca6904996e2f5a7a",
+   "publisher": "OfficeChai",
+   "source_type": "news_report",
+   "url": "https://officechai.com/ai/ai-image-models-still-cant-create-clocks-that-show-the-right-time",
+   "locator": "paragraph 6",
+   "receipt": {
+    "public_excerpt": "while the image generated had the hour hand placed perfectly, the minute hand was at 12, instead of the 6 that Google itself had specified.",
+    "quote_hash": "b483f4e37776be719d80439b30271554adc16ef2251e791070624737afea74a7",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-18",
+   "retrieved_at": "2026-10-29T07:05:39Z",
+   "relation": "context",
+   "explanation": "A Google image model wrote out the right time in text but still drew the clock wrong. This suggests some failures come from drawing, not from misreading the prompt, which complicates the causal part. It is a different model (Gemini Flash image generation), so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The OneIG-Bench text does not give Imagen 4's absolute alignment failure rate.",
+  "I found no controlled test of Imagen 4 on unusual prompts such as role reversals or clock times.",
+  "No source separates language-understanding failures from rendering or training-data-bias failures for Imagen 4."
+ ],
+ "packet_hash": "6ec34fc25c5c58c8860be556c0ed99832ed0a39e1471f54cfc24258772b7a150"
+}

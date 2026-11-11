@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-a4d0a8-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-a4d0a8",
+  "version": 1,
+  "content_hash": "447faf217846638d1f48972699694858ea54c7aa0aa900a98b11428f98bba928"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-a4d0a8",
+  "version": 1,
+  "content_hash": "4984e8439973b35c088c1bd152f7124322a65ffe9a5e398abed66ecffc4d077b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com introducing GPT-4.5 hallucinations reasoning pretraining scaling 2025",
+   "2025 Gemini 2.5 technical report hallucination SimpleQA alignment base model",
+   "site.anthropic.com claude 4 system card hallucinations May 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": true,
+    "why": "Primary release evaluations report hallucinations in three leading reasoning models."
+   },
+   {
+    "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+    "used": true,
+    "why": "A second developer reports hallucinations during testing of its released model family."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.06261v1",
+    "used": false,
+    "why": "The inspected factuality passages emphasize benchmark accuracy, which alone does not distinguish hallucinations from abstentions."
+   },
+   {
+    "url": "https://openai.com/index/why-language-models-hallucinate/?faq=5",
+    "used": false,
+    "why": "The search result discusses later models and was not used to establish the July 2025 state."
+   }
+  ],
+  "performed_at": "2026-10-29T07:09:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-2221c875-02dc-4789-800b-e7758f3722c1-o3-and-o4-m-13538e7fc907",
+   "source_snapshot_id": "9fbc1e73c72b62c114bcdb288387a014320e349c9b08f04b016b1ba74e485b51",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "locator": "Section 3.3, Hallucinations; paragraph preceding Table 4",
+   "receipt": {
+    "public_excerpt": "more inaccurate/hallucinated claims.",
+    "quote_hash": "15aadf5efc7cf59ac06420b773a4803a5a05bbc1f928e794fbfbf853a5799616",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:00:32Z",
+   "relation": "supports",
+   "explanation": "The release evaluation reports SimpleQA hallucination rates of 51%, 79%, and 44% for o3, o4-mini, and o1, respectively; PersonQA rates are 33%, 48%, and 16%. These are substantial benchmark failure rates across several models, not estimates of everyday usage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "www-cdn-anthropic-com-4263b940cabb546aa0e3283f35b686f4f3b2ff47-pdf",
+   "source_snapshot_id": "b7ee8075d403c34a688fd24a146dffae3715b5557bf2f9d7913614c6770eb28f",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+   "locator": "Section 4.2.2, Whole-model testing exercise, page 46",
+   "receipt": {
+    "public_excerpt": "sycophancy, hallucination",
+    "quote_hash": "63052e69e9c7431549e986f8595832abd725971002d253249625863ffa5c5bdb",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-22",
+   "retrieved_at": "2026-10-29T06:21:20Z",
+   "relation": "supports",
+   "explanation": "Testing of approximately final Claude Opus 4 and Sonnet 4 models also found hallucinations. The card reports successful mitigation of one specific hallucination pattern elsewhere, but says that mitigation did not completely eliminate it.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These evaluations do not establish a population-wide hallucination rate across all neural systems or ordinary user requests."
+ ],
+ "packet_hash": "2c21d0d4683c4bac71e903640125f4d547db2dbc84088171cc20f75b676db255"
+}

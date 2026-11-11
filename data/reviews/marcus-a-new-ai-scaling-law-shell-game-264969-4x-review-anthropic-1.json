@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-a-new-ai-scaling-law-shell-game-264969-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-new-ai-scaling-law-shell-game-264969": "0e02ddb501e9a3a8a06874da1bc7bca1da0fa9cd7f5ebeda8b2dde9a9ede7cbb",
+  "case:marcus-a-new-ai-scaling-law-shell-game-72c4f1": "44cec317696e772e41fae50250c9c585c0325d0c43dab3a2f900a77c8f9f4b16",
+  "case:marcus-a-new-ai-scaling-law-shell-game-cd23c8": "34f52ad2dd342c1f56f4c5a9a860b967343e902c76e1ab8992e4d7075dcee473",
+  "case:marcus-a-new-ai-scaling-law-shell-game-fd7eda": "3f07ae6fb125721d75e3560031a4a41813c8d610d98ca0f4581dcfad4c85a914"
+ },
+ "started_at": "2026-10-29T02:17:41Z",
+ "completed_at": "2026-10-29T02:18:22Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, written in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'almost every way' and 'far less uniform' without adding a comparison group. It is an unhedged description of the past."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the comparator as the GPT-4 family (GPT-4o) fits his remark that o1 sometimes doesn't beat GPT-4. Keeping GPT-3 separate from GPT-3.5 and using a qualitative test of uniformity is an ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-Fathom tests the original GPT-3 models against GPT-4 under the same settings and reports a large leap in every capability category. Published 2023, before the post."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own disclosure: raters strongly preferred o1-preview on reasoning tasks but not on some natural-language tasks. The admission works against OpenAI's interest, and it is dated 2024-09-12."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Independent ARC test shows o1 beating GPT-4o on abstract reasoning. This widens the area where o1 improved but doesn't show the gains were uniform."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "e1 shows GPT-4 improved on GPT-3 across every tested category. e2 shows o1-preview had big reasoning gains but was not preferred to GPT-4o on some natural-language tasks. That is the uneven pattern Marcus described. e3 adds a domain where o1 improved but does not contradict the unevenness. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-new-ai-scaling-law-shell-game-264969"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post. The Nadella reference only names the idea he is criticising."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'by definition', both parts (expensive, unreliable) and the scope. The 'because' clause explains a definition rather than making a separate causal claim, so observation is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'expensive' as added inference cost fits 'by definition burns up more GPU time'. Reading 'unreliable' as extra compute not guaranteeing gains matches his next sentence, that it works for some problems and not others. Both readings are ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporary preprint (2024-11-06): o1-preview costs more, and ensembling uses a lot of resources. It also finds steady ensembling gains on medical tests, which slightly limits the unreliability point."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Same-model experiment on o1-mini (2024-09-23): majority-vote accuracy stops improving after early gains even with 16x more samples. This meets the requirement to test different budgets within one model."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The experimenter found the absolute cost modest. That argues against reading 'expensive' as prohibitive, but the extra compute still costs more."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Both sources show more inference compute costs more (e1, e2), so 'expensive' holds in the contract's sense. e2 shows an o1-family run where a bigger budget stopped improving accuracy, which meets the 'unreliable' condition. Neither e1's steady ensembling gains nor e3's modest absolute cost meets the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition captures the description. The following sentence, 'will eventually run out', is a separate forecast and is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Contrasting empirical with physical laws is a plain, ordinary reading, and it does not treat 'empirical' as worthless."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The original Kaplan et al. scaling-law paper calls its own laws empirical."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Snell et al. (August 2024) base inference-scaling strategy on experimental observations, not derived laws."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own announcement describes training observations and benchmark results. It doesn't address whether a scaling law is empirical or physical, so it is only weakly relevant."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The primary research describes both the original and the newer scaling relationships as fitted or observed results from experiments (e1, e2). Nothing in the packet presents them as physical laws. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-new-ai-scaling-law-shell-game-cd23c8"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps his comparative wording ('vastly weaker', 'much more'). This is an evaluative comparison of the past rather than a forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'weaker' as weaker advance prediction fits the paragraph before it ('predict pretty much exactly'). That is a fair, ordinary reading. Treating the dollar figure as illustrative is also fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-4 report: a fitted scaling law predicted the final loss accurately in advance. This supports the old approach's specificity, but no dollar-denominated investment decision is shown."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI said some capabilities were still hard to predict, which limits how precise the older formulation really was."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "October 2024 RAG inference-scaling work makes quantitative predictions. It is a different method from o1, but it cuts against calling all new scaling trial and error."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e1 partly supports the older approach's predictive specificity, and e2 qualifies it. No evidence compares the old approach with the newer o1-style approach on matching terms, and e3 shows some newer work did make quantitative predictions. The packet itself says no matched comparison exists. Whether the new framing is 'vastly weaker' is not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-new-ai-scaling-law-shell-game-fd7eda"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34469,
+  "output_tokens": 4644,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

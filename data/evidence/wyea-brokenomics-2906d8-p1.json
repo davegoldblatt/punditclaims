@@ -1,0 +1,174 @@
+{
+ "packet_id": "wyea-brokenomics-2906d8-p1",
+ "claim_revision_ref": {
+  "id": "wyea-brokenomics-2906d8",
+  "version": 1,
+  "content_hash": "e439c734013c7d0349f18ad9fca36b3a184351af658ef1f3e6b041489caa7cfb"
+ },
+ "contract_ref": {
+  "id": "wyea-brokenomics-2906d8",
+  "version": 1,
+  "content_hash": "dd9efad77718567e43eda91f9a46fa802fabef9ee7ecb755a1cd79112ba07083"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic 2026 inference costs training costs profitability gross margin",
+   "OpenAI Anthropic Q1 2026 revenue training inference expenses",
+   "site.anthropic.com 2026 \"S-1\" training costs",
+   "\"OpenAI\" \"Q1 2026\" \"revenue\" costs training",
+   "Reuters June 2026 OpenAI burned 3.7 billion first quarter 8.6 research"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://the-decoder.com/openai-tripled-revenue-to-5-7-billion-in-q1-but-burned-through-3-7-billion-to-get-there/",
+    "used": true,
+    "why": "Readable reporting about Q1 financial records, used only as context because gross margin does not settle the counterfactual."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available before the evaluation cutoff; its expense definitions clarify why inference and training cannot be inferred from broad categories alone."
+   },
+   {
+    "url": "https://samaritan-research.org/data-insights/company-spending-breakdown",
+    "used": true,
+    "why": "Transparent summary of earlier estimates; the 2025 period prevents decisive use for Q1 2026."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-burned-3-7-billion-first-three-months-2026",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.marketscreener.com/news/openai-burned-3-7-billion-in-first-quarter-of-2026-the-information-reports-ce7f5cdcd888ff2d",
+    "used": false,
+    "why": "The Reuters republication returned HTTP 403."
+   },
+   {
+    "url": "https://thenextweb.com/news/openai-burned-3-7-billion-q1-2026",
+    "used": false,
+    "why": "Readable but adds no training-only expense reconciliation; cash-burn reporting does not answer the profit question."
+   }
+  ],
+  "performed_at": "2026-10-29T10:39:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "the-decoder-com-openai-tripled-revenue-to-5-7-billion-in-q1-but-bur-1438764df8ca",
+   "source_snapshot_id": "c4ace23dfca281b1baa245dab3dde0bbf52e7941ee4311cf7a20ba949630480b",
+   "publisher": "The Decoder",
+   "source_type": "secondary_summary",
+   "url": "https://the-decoder.com/openai-tripled-revenue-to-5-7-billion-in-q1-but-burned-through-3-7-billion-to-get-there",
+   "locator": "First financial-results paragraph",
+   "receipt": {
+    "public_excerpt": "Gross margin did climb from 33 to 39 percent.",
+    "quote_hash": "10394bb37cb2761253c26194a866380a1b7bb21e995f1c42eb011d5e51041f41",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-06-20",
+   "retrieved_at": "2026-10-29T00:50:10Z",
+   "relation": "context",
+   "explanation": "The reported positive gross margin cautions against equating company losses with loss-making inference. It does not establish profit after all non-training expenses; no primary OpenAI financial statement was obtained.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Gross profit margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Note 8, Supplemental Operating Expense Information, footnote 1",
+   "receipt": {
+    "public_excerpt": "personnel-related costs and allocated overhead costs",
+    "quote_hash": "bf1a001fb774c218bb374f57a59eebe55ac9bd6b1ef094eb0e37191e95bc37eb",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing's functional expense notes distinguish customer-serving costs from broader research expenses. The cited presentation covers annual and half-year periods and does not supply the required Q1 training-only counterfactual.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Definition of cost of revenue in functional expense presentation",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "samaritan-research-org-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "112930bc2dee1aaf299b632a603e7bafe1441bec9f5071c32b9b46c0e66a7700",
+   "publisher": "Samaritan Research",
+   "source_type": "secondary_summary",
+   "url": "https://samaritan-research.org/data-insights/company-spending-breakdown",
+   "locator": "Data, Anthropic discussion",
+   "receipt": {
+    "public_excerpt": "$4.1B",
+    "quote_hash": "3d029172d004301ded2059164de888eda57d196bf9abf243c366843ab98a2de9",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T09:47:30Z",
+   "relation": "context",
+   "explanation": "This supplies an explicitly interpreted training-cost estimate from reporting on 2025. It is a different period and cannot establish either company's Q1 2026 profit after training is removed.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Estimated model-training compute expense",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis.",
+  "No complete, comparable Q1 reconciliation isolates training expenses for both companies.",
+  "Positive gross margin does not establish whole-company profit without training.",
+  "Earlier estimates and later half-year totals cannot substitute for the selected quarter.",
+  "Management's decision to continue training does not establish what profit would have been without it."
+ ],
+ "packet_hash": "dd87a2e5abd1726cd7b344dd53ae48cf889c52eeba5fcc8d8a7f3051417f7883"
+}

@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-05ddec": "d7012c6f39b995c3050bb80e1198a2ee99af9b01d9dac86af6977688957420ea",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-075246": "214a49212cbfc46a09cfdc082c5f70a3cc17d180e44269a69ad6ad9e842a2e11",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-1335b1": "7969a91d41aa8d5aa8f3dd3dd3ec13c708a5c5f16121c9788ad9347314270e5e",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-172c71": "8cf48b2af8c0aa4ad0822d851ce91a0edcf10bf49944759f7f53e66ea303bb30"
+ },
+ "started_at": "2026-10-29T12:47:38Z",
+ "completed_at": "2026-10-29T12:48:14Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post. He says the text was reused from his GPT-4 essay, but he republished it and endorses it as his GPT-5 prediction."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'May be in place' concedes that guardrails will exist; it doesn't hedge the prediction. 'Will teeter' is firm, so this is a scored forecast about GPT-5's guardrails failing in both directions."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'teeter' as both failure types existing side by side is an ordinary, fair reading. It doesn't require oscillation over time or a set failure rate. The result does depend on that reading and on how benign requests are judged."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI system card, Aug 2025. It describes deployed classifier and monitor safeguards on GPT-5-thinking, so the guardrails-present condition is met. This is a company disclosure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "System card reports UK AISI found jailbreaks of GPT-5-thinking, one of which evaded every mitigation layer. A company disclosure against its own interest, citing an outside red team. It shows the too-weak failure exists."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent preprint, Jan 2026: GPT-5 refused most prompts labelled benign on a hard health boundary set. Limits: generated prompts, benign labels from model majority vote, keyword-based refusal detection. It shows the too-strong failure exists."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI paper: GPT-5 Thinking beat o3 on both safety and helpfulness for biorisk prompts. That is relative improvement; it doesn't show either failure type is absent."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "The early-resolution rule is met. Dated evidence shows guardrails were in place, a jailbreak bypassed all of GPT-5-thinking's layers (e2), and GPT-5 refused benign-labelled prompts in an independent study (e3). That settles that both failures exist, not how common they are. e4 shows improvement but doesn't negate either failure type.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence, marked 'I predict', in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'We will, I predict, need' is a firm forecast about what trustworthy AI requires. The normalised wording keeps the explicit-knowledge, world-model and 'at the core' elements. No horizon was given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract asks for proof of necessity for support, and a qualifying trustworthy system without these features for contradiction. That follows the necessity claim fairly, though neither outcome is likely to be shown soon."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "ARC Prize, Sep 2026: GPT-6 Astra built symbolic world models on ARC-AGI-3. It doesn't validate broadly trustworthy AI and doesn't reveal the model's core architecture."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Google disclosure on Project Genie, a world-model prototype. It shows the technique is in use, not that it is necessary for trustworthy AI."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a firm forecast with no deadline. No evidence in the packet shows a broadly trustworthy general AI, with or without these core features, and nothing shows the features are necessary. Neither the support nor the contradiction condition is met by the cutoff.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-075246"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words among his endorsed GPT-5 predictions."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "A firm 'will find that they cannot' forecast about builders using GPT-5. In context, limiting it to GPT-5 is faithful. 'Reliably enough' has no threshold, and no horizon was given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'reliably enough' as meeting practical deployment needs, and separating intent errors from execution errors, is a fair, ordinary reading. The speaker gave no threshold, so the reading shapes the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own claim of 97% on tau2-bench telecom. An aggregate task score that doesn't isolate intent mapping. Company disclosure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "METR found GPT-5 weaker on naturally specified tasks that required inferring intent. Its failures mix understanding with execution, and the sample was small."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Apr 2026 preprint: GPT-5 struggles zero-shot with ambiguous SQL interpretations, and examples help. A narrow generated task set with no deployment threshold."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No evaluation in the packet separates intent-mapping errors, checks them against confirmed user intent, and applies a practical threshold. The evidence points in both directions (strong agent scores, weaknesses with ambiguity), so it doesn't settle the forecast. No deadline was stated.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-1335b1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, the first of his seven endorsed GPT-5 predictions."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "A firm 'will still' forecast. The normalised version drops the bull-in-a-china-shop metaphor but keeps the literal 'reckless and hard to control' and 'like its predecessors'. No threshold or horizon was given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (recurring, practically consequential unsafe or unintended behaviour that is hard to direct) is ordinary. Requiring broad evidence rather than isolated failures is fair to such a sweeping characterisation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "METR found 18 confirmed reward hacks, about 2% of runs. Evidence of recurring unintended behaviour, though only in an artificial task suite."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "System card shows gpt-5-main regressed on instruction-hierarchy tests. A specific control weakness under adversarial tests; it doesn't measure how common the problem is in ordinary use."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "With mitigations on, gpt-5-thinking refused every SecureBio agent biorisk prompt. Effective control in one specialised setting; it doesn't refute the broad claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The documented failures (reward hacking, instruction-hierarchy regressions) are specific or adversarial. Effective safeguards in other settings point the other way. No broad, representative evaluation settles the general claim either way, and no deadline was stated.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-172c71"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34958,
+  "output_tokens": 4002,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

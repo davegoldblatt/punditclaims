@@ -1,0 +1,96 @@
+{
+ "packet_id": "marcus-llms-coding-agents-security-nightmare-fedd64-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-fedd64",
+  "version": 1,
+  "content_hash": "b8f9e45ef4e0a5cd9dfa2c8d46e5c2d0589b504541fc882356b58d9ba47448a4"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-fedd64",
+  "version": 1,
+  "content_hash": "9760042343388fd5c05a1f5b0c2016a7a0ca41948e99b29983925c4750836f1b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI coding agents prompt injection vulnerabilities patches 2026 2025 IDEsaster",
+   "\"IDEsaster\" \"maccari\"",
+   "IDEsaster Maccari 24 CVEs December 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://maccarita.com/posts/idesaster/",
+    "used": true,
+    "why": "Original cross-product research with attack descriptions, vulnerability identifiers, and remediation information."
+   },
+   {
+    "url": "https://maccarita.com/posts/idesaster2/",
+    "used": true,
+    "why": "Original follow-up research explicitly examining new attack paths after earlier mitigations."
+   },
+   {
+    "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-assistant-attack-surface-2026040/",
+    "used": false,
+    "why": "Search result summarizes research for which original sources were available."
+   }
+  ],
+  "performed_at": "2026-10-29T07:25:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "maccarita-com-posts-idesaster",
+   "source_snapshot_id": "bfee578561471813a43e5de077a05509cf9af7de58a57509dd7f4c28a62d68c3",
+   "publisher": "Ari Marzouk / MaccariTA",
+   "source_type": "independent_measurement",
+   "url": "https://maccarita.com/posts/idesaster",
+   "locator": "Key Statistics",
+   "receipt": {
+    "public_excerpt": "were vulnerable to IDEsaster.",
+    "quote_hash": "1f1b8d4b6565e8253049a6a248bbfd73bedc15d08e533bb0a3108a1266fabab1",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-12-06",
+   "retrieved_at": "2026-10-29T07:18:11Z",
+   "relation": "supports",
+   "explanation": "The researcher reports more than 30 vulnerabilities and 24 assigned CVEs across multiple coding products. This supports the existence of numerous attack paths, but the selected test set does not represent every product or establish a thousand-patch threshold.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "maccarita-com-posts-idesaster2",
+   "source_snapshot_id": "43d203790fd1fffe96ed31aca99dccf9a9cbb4c3264634a9c92fcab982a3ad7b",
+   "publisher": "Ari Marzouk / MaccariTA",
+   "source_type": "independent_measurement",
+   "url": "https://maccarita.com/posts/idesaster2",
+   "locator": "Summary; Language Server Gadgets Catalog",
+   "receipt": {
+    "public_excerpt": "this mitigation is structurally insufficient.",
+    "quote_hash": "ba233ae140f11547c58e1e3f6f5aad53d58fdba427c596d755763c984304ae62",
+    "verified": "exact"
+   },
+   "event_date": "2026",
+   "available_at": "2026-05-11",
+   "retrieved_at": "2026-10-29T07:17:07Z",
+   "relation": "supports",
+   "explanation": "The follow-up reports new extension-based attack paths after nearly 30 vulnerabilities were patched across 12 vendors. It supports recurring vulnerabilities after remediation, while the successful earlier patching is material evidence that particular attacks can be stopped.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "No retrieved record tests the assertion about a thousand patches or defines a comparable patch count.",
+  "Controlled demonstrations do not establish how many malicious attacks succeeded in deployed systems.",
+  "No decisive event establishes either permanent inadequacy of remediation or a general solution across the claimed scope."
+ ],
+ "packet_hash": "0e2595722c5f3948e265e8a80c770c081538a253fb54c5e42c737ec354bfc23c"
+}

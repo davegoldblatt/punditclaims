@@ -1,0 +1,122 @@
+{
+ "packet_id": "wyea-exit-liquidity-237c33-p1",
+ "claim_revision_ref": {
+  "id": "wyea-exit-liquidity-237c33",
+  "version": 2,
+  "content_hash": "239f9a72526bc3b9742da29295d96d3251d2b8c4f3656a973605ff6727ca7dd6"
+ },
+ "contract_ref": {
+  "id": "wyea-exit-liquidity-237c33",
+  "version": 1,
+  "content_hash": "12426743be6d6b661840750c62f38bb194df3517a1b803811fe783471e40a5cd"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "US household wealth 37% equities 2026 Federal Reserve second quarter",
+   "site.federalreserve.gov releases z1 2026 September household net worth",
+   "Federal Reserve corporate equities household 2026 37 percent foreign privately held stock wealth",
+   "AI stock market critics skeptics cynics ignorant bubble October 2026",
+   "site.federalreserve.gov releases z1 20260911 household corporate equities",
+   "read_page searches: Corporate equities; Last Update; B.101"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.federalreserve.gov/releases/z1/current/recent_developments.htm",
+    "used": true,
+    "why": "Primary Q2 balance-sheet figures, definitions of indirect holdings, release date, and next-release timing."
+   },
+   {
+    "url": "https://www.federalreserve.gov/releases/z1/preview/html/table_desc_instruments.htm",
+    "used": true,
+    "why": "Primary definitions distinguish corporate equities from a domestic listed-stock measure."
+   },
+   {
+    "url": "https://www.federalreserve.gov/releases/z1/Current/z1.pdf",
+    "used": false,
+    "why": "The B.101 search returned no match; the readable release discussion supplied the relevant figures."
+   },
+   {
+    "url": "https://www.thetrading.tools/household-equity-allocation",
+    "used": false,
+    "why": "Search result uses financial assets as its denominator, which differs from household net worth."
+   },
+   {
+    "url": "https://www.axios.com/2026/10/01/ai-wealth-stocks-economy",
+    "used": false,
+    "why": "Secondary search result; the underlying Federal Reserve release was available directly."
+   },
+   {
+    "url": "https://www.washingtonexaminer.com/op-eds/4774756/foolish-ai-stock-freak-out/",
+    "used": false,
+    "why": "An individual opinion article cannot establish how frequently critics receive the claimed characterizations."
+   }
+  ],
+  "performed_at": "2026-10-29T11:17:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "federalreserve-gov-releases-z1-current-recent-developments-htm",
+   "source_snapshot_id": "1f0e3ca260a07e3210f13e21394a048004f4e3ffcc35303ad4e304fa0ab1803f",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "source_type": "official_statistics",
+   "url": "https://www.federalreserve.gov/releases/z1/current/recent_developments.htm",
+   "locator": "Household net worth; Table 1, 2026:Q2 column and accompanying notes",
+   "receipt": {
+    "public_excerpt": "household wealth",
+    "quote_hash": "be5a93ecc1ec2ce35f48184088f99f71de32b23457da7bd4886a5211e0b2417b",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-09-11",
+   "retrieved_at": "2026-10-29T11:02:57Z",
+   "relation": "context",
+   "explanation": "The table reports $74 trillion in direct and indirect corporate equities and $195.9 trillion in household-and-nonprofit net worth, yielding 37.8%. This reproduces the numerical threshold for a broader category but does not isolate household exposure to US-listed stocks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Table 1, Q2 2026 corporate equities: $74.0 trillion",
+     "Table 1, Q2 2026 net worth: $195.9 trillion"
+    ],
+    "formula": "100 × 74.0 / 195.9 = 37.77437468%",
+    "rounding": "37.8% to one decimal place, calculated from the release's rounded trillion-dollar figures."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "federalreserve-gov-releases-z1-preview-html-table-desc-instruments-htm",
+   "source_snapshot_id": "391b5b1caa3c26d265157c1bb98c8fc70f799a14b761e3a1099c04aa9d179d69",
+   "publisher": "Board of Governors of the Federal Reserve System",
+   "source_type": "official_statistics",
+   "url": "https://www.federalreserve.gov/releases/z1/preview/html/table_desc_instruments.htm",
+   "locator": "F51.1.t/F51.1.s: Corporate equities",
+   "receipt": {
+    "public_excerpt": "Corporate equities",
+    "quote_hash": "7e0ae0e4a4bd897014931e51dcddb046754e3c8eedd34d26c84e0a369cd5ea1b",
+    "verified": "exact"
+   },
+   "event_date": "2026-08-28",
+   "available_at": "2026-08-28",
+   "retrieved_at": "2026-10-29T11:03:59Z",
+   "relation": "context",
+   "explanation": "The definition includes domestic and foreign corporate shares and covers both exchange-listed and closely held corporations. Consequently, the broad equity total cannot be treated as an exact domestic stock-market numerator.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved calculation isolates the claimed US stock-market exposure using the same household population and net-worth denominator.",
+  "The broad Fed measure includes nonprofits and equity outside the specified listed-stock scope.",
+  "Portfolio concentration does not establish overvaluation.",
+  "No representative coverage sample establishes the frequency of the claimed treatment of critics."
+ ],
+ "packet_hash": "1df8b91f07d59e7a4f2a79c6c10a89c63c32b5c32d269d419678069f183104f9"
+}

@@ -1,0 +1,142 @@
+{
+ "packet_id": "wyea-the-haters-gui-0d346e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-haters-gui-0d346e",
+  "version": 1,
+  "content_hash": "a8d35050248dfa64902dcac5e1b077a58b7c75ab580bba7b4f268a732bced579"
+ },
+ "contract_ref": {
+  "id": "wyea-the-haters-gui-0d346e",
+  "version": 1,
+  "content_hash": "17f996380ab37aac96d02a2936e414a3f6412c1e8618de87794c8c3353d229d0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.investor.atmeta.com 2025 first quarter capital expenditures 64 72 billion",
+   "site.abc.xyz 2025 Q1 \"75 billion\"",
+   "Alphabet 2025 Q1 earnings transcript 75 billion capex April 24",
+   "site.microsoft.com \"2025\" \"80 billion\" datacenters",
+   "site.aboutamazon.com \"2025\" \"100 billion\" capital expenditures",
+   "site.prnewswire.com \"Meta Reports First Quarter 2025 Results\"",
+   "\"meta-20250331\" \"64 billion\"",
+   "Meta April 30 2025 capital expenditures 64 72 July 21 unchanged"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001326801/000132680125000054/meta-20250331.htm",
+    "used": true,
+    "why": "Read successfully. Mirror of Meta's primary filing supplies the annual budget used to derive a data-center spending upper bound."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000054/meta-20250331.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the readable filing mirror was used."
+   },
+   {
+    "url": "https://www.prnewswire.com/news-releases/meta-reports-first-quarter-2025-results-302443250.html",
+    "used": false,
+    "why": "Read successfully and corroborates the filing's budget. A duplicate evidence item was unnecessary."
+   },
+   {
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q1/2025-q1-earnings-transcript.pdf",
+    "used": true,
+    "why": "Read successfully. Alphabet's contemporaneous company transcript provides additional context about the size of annual total capex."
+   },
+   {
+    "url": "https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/",
+    "used": false,
+    "why": "read_page could not retrieve the redirected page. Search text was not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T21:50:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001326801-000132680125000054-a99bdb22f92e",
+   "source_snapshot_id": "873de5762bfec3b7b409133cad7128f524b2d6ed3699d1f63f3e2b1a1968a3ec",
+   "publisher": "Meta Platforms, filing mirrored by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001326801/000132680125000054/meta-20250331.htm",
+   "locator": "Management's Discussion and Analysis; Liquidity and Capital Resources; Cash Used in Investing Activities",
+   "receipt": {
+    "public_excerpt": "$72 billion",
+    "quote_hash": "4414c4d4a571826234dd04bf2b1bd9d43b35bb0c0a1c8a762acb585d2ed676bd",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-01",
+   "available_at": "2025-05-01",
+   "retrieved_at": "2026-10-29T11:48:46Z",
+   "relation": "contradicts",
+   "explanation": "Meta's entire annual capital budget was $64–72 billion. On the same capital-spending definition, the data-center component cannot exceed the $72 billion total-budget ceiling, contradicting the ordinary reading of nearly $100 billion each.",
+   "metric_scope": {
+    "company": "Meta Platforms",
+    "metric": "Upper bound on 2025 annual capital expenditure budget for data-center infrastructure",
+    "currency": "USD",
+    "units": "Billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Meta's disclosed total 2025 capital expenditure budget: $64–72 billion.",
+     "Data-center capital expenditure is a component of total capital expenditure on the same definition."
+    ],
+    "formula": "Budgeted data-center capex <= budgeted total capex <= USD 72 billion.",
+    "rounding": "No additional rounding; retain the company's billion-dollar guidance."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s206-q4cdn-com-479360582-files-doc-financials-2025-q1-2025-q1-earni-2d982173956b",
+   "source_snapshot_id": "6619157710795ab93512a3c92f53273513c1c3ebf035121fb6c20cd05e3d4a59",
+   "publisher": "Alphabet",
+   "source_type": "company_disclosure",
+   "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q1/2025-q1-earnings-transcript.pdf",
+   "locator": "Page 10; CFO remarks on full-year 2025 investments",
+   "receipt": {
+    "public_excerpt": "$75 billion in CapEx",
+    "quote_hash": "5f43415a1462c8cd76526f17155fcf94ef3fda0f6b9e8ddf230071b7f37fd690",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-24",
+   "available_at": "2025-04-24",
+   "retrieved_at": "2026-10-29T21:34:04Z",
+   "relation": "context",
+   "explanation": "Alphabet's total annual capex guidance was also below $100 billion. It is retained as context because it does not separately measure data-center spending.",
+   "metric_scope": {
+    "company": "Alphabet",
+    "metric": "Total annual capital expenditure budget",
+    "currency": "USD",
+    "units": "Billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The passage does not define nearly or expressly specify an annual rather than multiyear spending window.",
+  "These disclosures do not settle generative AI profitability or whether the investments were worthwhile."
+ ],
+ "packet_hash": "a7e4d0e48509624d87f7fa01b4b884d7f6db916a29c0b20e1fe1eccbdafbbcb4"
+}

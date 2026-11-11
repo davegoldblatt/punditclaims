@@ -1,0 +1,122 @@
+{
+ "assessment_id": "marcus-dear-elon-musk-here-are-five-things-d1f821-a1",
+ "claim_revision_ref": {
+  "id": "marcus-dear-elon-musk-here-are-five-things-d1f821",
+  "version": 2,
+  "content_hash": "63f0fc406a4670dbad93f488de9833a508771d8870bcd0216fc136933981fbf9"
+ },
+ "contract_ref": {
+  "id": "marcus-dear-elon-musk-here-are-five-things-d1f821",
+  "version": 1,
+  "content_hash": "d413d0cbc6155d33006c4852ab8b52e4cb2db9826e65ad651842d12a1f455cc1"
+ },
+ "packet_ref": {
+  "id": "marcus-dear-elon-musk-here-are-five-things-d1f821-p1",
+  "content_hash": "9ad384e7d37210bedb7d8dfef91046e2f36d13fae9530bd68465da42d456d5f5"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2022-05-31",
+  "precision": "day"
+ },
+ "public_rationale": "Contemporary research supports Marcus's point that opacity makes debugging harder. But the stronger explanation overstates the limits of existing methods: before the post, ROME demonstrated causal investigation of factual recall and targeted edits to model weights. The difficulty claim holds in this narrower sense; the assertion that useful understanding and targeted remedies were absent does not.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence concerns neural language models, not every deep learning application.",
+  "The supporting survey gives a qualitative assessment, not a controlled estimate of the causal contribution of opacity.",
+  "The mixed verdict depends on treating the assertion about absent remedies as a substantive commitment rather than loose rhetoric."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-dear-elon-musk-here-are-five-things-acced4-4x-review-anthropic-1",
+  "marcus-dear-elon-musk-here-are-five-things-acced4-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-dear-elon-musk-here-are-five-things-acced4-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-dear-elon-musk-here-are-five-things-d1f821",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Debugging deep learning is wicked hard because nobody really understands how it works or knows how to fix problems other than collecting more data, adding more layers and so forth.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Debugging with deep learning is wicked hard, because nobody (a) really understands how it works, and (b) knows how to fix problems other to collect more data and add more layers and so forth.",
+   "locator": "paragraph 29",
+   "url": "https://garymarcus.substack.com/p/dear-elon-musk-here-are-five-things",
+   "date": "2022-05-31",
+   "document_title": "Dear Elon Musk, here are five things you might want to consider about AGI",
+   "observed_at": "2026-10-28T22:49:04Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Debugging with deep learning is wicked hard",
+    "nobody (a) really understands how it works",
+    "knows how to fix problems other to collect more data and add more layers and so forth"
+   ],
+   "our_interpretation": [
+    "Assess the state of knowledge available when the post appeared, on 2022-05-31. The target period has no lower bound because established earlier methods remain relevant to that state.",
+    "The ordinary reading is that limited understanding makes diagnosis and repair difficult, and that practitioners lack effective targeted remedies beyond broadly changing data, training, or model size.",
+    "Assess the difficulty and its proposed explanation separately. A targeted repair need not solve debugging generally to count against the assertion that such remedies were unknown.",
+    "Do not interpret 'understands' as requiring complete mathematical understanding, or 'and so forth' as automatically encompassing every possible repair."
+   ],
+   "support_condition": "Contemporaneous research or engineering evidence shows that model opacity materially obstructed diagnosis and repair, and that effective remedies were generally limited to broad data or training changes.",
+   "contradiction_condition": "Contemporaneous work demonstrates useful understanding of internal mechanisms and effective targeted repairs beyond collecting more data or enlarging models. Evidence that debugging was routinely straightforward would also contradict the difficulty claim."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Contemporary research supports Marcus's point that opacity makes debugging harder. But the stronger explanation overstates the limits of existing methods: before the post, ROME demonstrated causal investigation of factual recall and targeted edits to model weights. The difficulty claim holds in this narrower sense; the assertion that useful understanding and targeted remedies were absent does not.",
+  "limitations": [
+   "The evidence concerns neural language models, not every deep learning application.",
+   "The supporting survey gives a qualitative assessment, not a controlled estimate of the causal contribution of opacity.",
+   "The mixed verdict depends on treating the assertion about absent remedies as a substantive commitment rather than loose rhetoric."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "opaque deep learning models.",
+    "locator": "Abstract, second sentence",
+    "url": "https://arxiv.org/abs/2104.15135v1",
+    "publisher": "arXiv; Piyawat Lertvittayakumjorn and Francesca Toni",
+    "event_date": "2021-04",
+    "available_at": "2021-04-30",
+    "explanation": "The survey supports the narrower causal point that opacity makes locating and repairing problems harder. Its review of explanation-based debugging also shows that researchers were already developing remedies."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "editing facts stored in model weights.",
+    "locator": "Abstract, fourth sentence",
+    "url": "https://arxiv.org/abs/2202.05262v1",
+    "publisher": "arXiv; Kevin Meng, David Bau, Alex Andonian and Yonatan Belinkov",
+    "event_date": "2022-02",
+    "available_at": "2022-02-10",
+    "explanation": "The authors used causal interventions to investigate factual recall and evaluated targeted factual edits on CounterFact. This supplies a concrete pre-post example of useful mechanistic understanding and repair without adding data or layers."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "204f8a6d91b7a4e2f1ab3067cf06e0a35ca013c6d6b0cb883ac8cd961bf2fe63",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:56:13Z"
+}

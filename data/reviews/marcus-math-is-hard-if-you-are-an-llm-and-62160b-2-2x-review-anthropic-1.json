@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-math-is-hard-if-you-are-an-llm-and-62160b-2-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-62160b-2": "bf81af41a112dc30e9040093f963589ffdd967f74b521dfa68003b488828c857",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-f68a3d": "90c733f8d54433b934b9edb17bef28eac28fdf5e38cbb7b7c2c9fef1be6ccbbc"
+ },
+ "started_at": "2026-10-29T07:54:24Z",
+ "completed_at": "2026-10-29T07:54:46Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The hedge ('may well work') applies only to hybrids. 'LLMs on their own remain stuck' is a firm present-tense observation, and the context ties it to reliable abstraction of multiplication. 'On their own' is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (tool-free LLMs lacked dependable multiplication that generalised beyond training sizes, as of 2023) is ordinary and fits the post's context. It tests demonstrated reliability, not permanent impossibility, which is fair to the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dziri et al., May 2023: GPT-3 fine-tuned on multiplication is near-perfect in distribution but transfers poorly as complexity grows; ChatGPT and GPT-4 are unreliable on three-digit multiplication. Within the period and on point."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Jelassi et al., June 2023: small specialised transformers reach length generalisation on multiplication only with priming examples at the target lengths. They are not general LLMs, and this does not meet the unseen-length contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary 2023 studies show tool-free LLMs failing at exact multiplication beyond training complexity. The best counterevidence relies on target-length priming in specialised small models, so it does not show reliable generalisation to unseen sizes. The support condition is met and the contradiction condition is not.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-62160b-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in the postscript of his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim that the weakness in learning abstract, similarity-independent rules, identified in the early 1990s, persists in deep learning matches the postscript's meaning. It is a firm observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as a persistent weakness in transferring rules beyond familiar examples, not an absolute inability, is ordinary and fair. Treating isolated successes as qualifications rather than refutations matches the word 'weakness'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "MathGLM, Sept 2023: accuracy falls as digit range grows, even after training on longer examples. Mixed operations make this an imperfect test of unseen lengths, but it does show a continuing reliability weakness."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Jelassi et al., June 2023: relative-position models trained on five-digit addition generalise to 15 digits but fall to 21% at 20 digits. This is a real but bounded success: it qualifies an absolute reading without showing broadly dependable transfer."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Studies from 2023 document accuracy that degrades with problem size beyond familiar cases. The strongest counterexample still breaks down at longer lengths and depends on architecture choices, so it does not show the weakness was overcome. The support condition is met; the claim says nothing about whether the mechanisms are the same.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-f68a3d"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15602,
+  "output_tokens": 2150,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

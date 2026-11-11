@@ -1,0 +1,95 @@
+{
+ "packet_id": "wyea-power-cut-18fc4f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-power-cut-18fc4f",
+  "version": 1,
+  "content_hash": "b3cdb106cb67dde9f319d4784181b31c85b1d82addbd4649fda6b4e2e1b8d20d"
+ },
+ "contract_ref": {
+  "id": "wyea-power-cut-18fc4f",
+  "version": 1,
+  "content_hash": "17a73d90576a912a6108a77e49c8d9114f7b852d17205a343a57ecf5b5a27e02"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.microsoft.com investor FY 2025 Q2 earnings AI demand capacity 13 billion",
+   "Microsoft February 2025 cancels leases capacity TD Cowen demand",
+   "site.reuters.com February 24 2025 Microsoft leases TD Cowen"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+    "used": true,
+    "why": "Primary operating commentary for the latest reported quarter."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/microsoft-cancels-leases-ai-data-055952585.html",
+    "used": true,
+    "why": "Full Bloomberg reporting supplies the cancellation evidence and its uncertainty."
+   },
+   {
+    "url": "https://www.datacenterdynamics.com/en/news/microsoft-cancels-200mw-of-ai-data-center-leases-report/",
+    "used": false,
+    "why": "read_page returned unrelated page text rather than the article."
+   }
+  ],
+  "performed_at": "2026-10-29T20:52:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2025-earnings-fy-2025-q2",
+   "source_snapshot_id": "2244e1ed7564476daa6c4ecb3147f376269d37ebbda331a07f4dfba702927a39",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+   "locator": "Questions and answers, Amy Hood's response to Keith about Q2 Azure results",
+   "receipt": {
+    "public_excerpt": "capacity constrained",
+    "quote_hash": "347a1a6bcce205e24c8d6884d1f537f7e7ab7043d992d15d26045ba0bc8c1bb0",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T05:19:46Z",
+   "relation": "contradicts",
+   "explanation": "Hood attributes better Q2 AI results to bringing capacity delivery forward. The prepared remarks also explicitly describe AI demand exceeding available capacity, contradicting an overall usable-capacity surplus in that quarter.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-microsoft-cancels-leases-ai-data-055952585-html",
+   "source_snapshot_id": "e74eaa7385adced086d1eaef69ca0a46cf0feebc1d7a7569bcf6b28cd4eb9a5e",
+   "publisher": "Bloomberg, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/microsoft-cancels-leases-ai-data-055952585.html",
+   "locator": "Article body, paragraph discussing possible shifts from Microsoft to Oracle",
+   "receipt": {
+    "public_excerpt": "is unclear.",
+    "quote_hash": "3af3b1bcb4e8441b9ecfd1b86d6de90110ff995df78c3ede9d2dd04766632991",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-24",
+   "retrieved_at": "2026-10-29T17:49:54Z",
+   "relation": "context",
+   "explanation": "Reports lease cancellations and analysts' possible-oversupply explanation. These later changes to commitments are relevant contrary indications, but do not measure existing utilization in the target quarter.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No independent fleet-wide utilization dataset was obtained.",
+  "The evidence does not establish demand and capacity for every location or for household customers separately."
+ ],
+ "packet_hash": "97ead9fa68a4ecf24e8ffad2c2a37c92b3cd80800685d7e3f1a9bfe7d3911c26"
+}

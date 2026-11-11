@@ -1,0 +1,157 @@
+{
+ "packet_id": "wyea-dead-money-9182e2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-9182e2",
+  "version": 1,
+  "content_hash": "a3758957693f6bb2daf9903796019c8538284b6ac8cacbcbf43d34a77dc91179"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-9182e2",
+  "version": 1,
+  "content_hash": "7452cdaff5bb9cfe8803c5f0562961c6d910dad0a2de642fc412aa5d7b08ea40"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Sharon AI 8208 B300 3.30 five year contract 2026",
+   "Catalyst Compute Canopy Wave Kidz AI 256 B300 4.30 3.50",
+   "SiliconData H100 hyperscale September 2026 price",
+   "\"Silicon Data\" \"H100\" \"hyperscaler\" \"September\" \"2026\"",
+   "\"H100 Rental Prices by Region (Q3 2026)\"",
+   "\"Sharon\" \"8,208\" \"3.30\"",
+   "site.sec.gov \"kidz_ex101\" \"2026\" \"Canopy\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2022308/000147793226004422/kidz_ex101.htm",
+    "used": false,
+    "why": "Search located the contract, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://contracts.justia.com/companies/classover-holdings-inc-103287/contract/1378911/",
+    "used": false,
+    "why": "The contract mirror also returned HTTP 403 through read_page."
+   },
+   {
+    "url": "https://ccir.io/research/b300-contract-prices",
+    "used": true,
+    "why": "Readable secondary compilation identifies both cited contracts and explains its rate calculations; original contracts were not readable."
+   },
+   {
+    "url": "https://www.silicondata.com/blog/h100-rental-prices-by-region-q3-2026",
+    "used": true,
+    "why": "Primary regional hyperscaler observations provide material counterevidence, but cover July rather than the target September reading."
+   },
+   {
+    "url": "https://www.silicondata.com/products/silicon-index/h100",
+    "used": true,
+    "why": "Primary documentation distinguishes the publicly displayed neo-cloud series from the required hyperscaler series."
+   }
+  ],
+  "performed_at": "2026-10-29T10:58:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "ccir-io-research-b300-contract-prices",
+   "source_snapshot_id": "cb073e1d2ee6303e223951e5b96b5b30f0aa30a2d1304dde1daf385b5bd67cb7",
+   "publisher": "Compute Credit Index Research",
+   "source_type": "secondary_summary",
+   "url": "https://ccir.io/research/b300-contract-prices",
+   "locator": "Section 01; contract details in section 03",
+   "receipt": {
+    "public_excerpt": "11 B300 rental contracts",
+    "quote_hash": "422375eec548bbf6a167046488b16a9c404ded16656f5817c1b1649a5b52e862",
+    "verified": "exact"
+   },
+   "event_date": "2026-08",
+   "available_at": "2026-09-24",
+   "retrieved_at": "2026-10-29T10:22:06Z",
+   "relation": "context",
+   "explanation": "The table lists SharonAI–ESDS at $3.30 and KIDZ AI–Canopy Wave at a derived five-year average of $3.98 per GPU-hour. This corroborates the general contract-price scale, but does not verify the September H100 comparator or every contractual pricing phase.",
+   "metric_scope": {
+    "company": "SharonAI and KIDZ AI",
+    "metric": "Disclosed or calculated B300 contract rental rates",
+    "currency": "USD",
+    "units": "per GPU-hour",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-03",
+    "period_end": "2026-08",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "silicondata-com-blog-h100-rental-prices-by-region-q3-2026",
+   "source_snapshot_id": "7d917064cbc51e00a4ef42fbf7734e1cc25cdb5914f1b6f4d2258984a744f9c4",
+   "publisher": "Silicon Data",
+   "source_type": "independent_measurement",
+   "url": "https://www.silicondata.com/blog/h100-rental-prices-by-region-q3-2026",
+   "locator": "Opening paragraph; regional dollar values in Region by Region and FAQ",
+   "receipt": {
+    "public_excerpt": "roughly 2 to 2.5 times.",
+    "quote_hash": "00791f26f205f17c6ddfaa94aa67bf82915263980f7f40888c62990f8c9e845a",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-07-31",
+   "retrieved_at": "2026-10-29T10:51:01Z",
+   "relation": "context",
+   "explanation": "The page reports partial-quarter H100 hyperscaler regional medians of approximately $4.80–$6.10 per GPU-hour. Even the lowest cited B300 rate, $3.30, exceeds half that range; however, July regional medians cannot settle the unspecified September benchmark.",
+   "metric_scope": {
+    "company": "Silicon Data hyperscaler provider panel",
+    "metric": "Regional median H100 hyperscaler rental rate",
+    "currency": "USD",
+    "units": "per GPU-hour",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-07-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "silicondata-com-products-silicon-index-h100",
+   "source_snapshot_id": "36056d5313f0a36ea893cd07b690a51b4002626e7b171fea776e8a32dc4b3319",
+   "publisher": "Silicon Data",
+   "source_type": "company_disclosure",
+   "url": "https://www.silicondata.com/products/silicon-index/h100",
+   "locator": "About this index",
+   "receipt": {
+    "public_excerpt": "published separately",
+    "quote_hash": "e511ea49bc89ef26e589f1b01bcb37dc622e0dc0fc01c882747f5075734db9c4",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-28",
+   "available_at": "2026-10-28",
+   "retrieved_at": "2026-10-29T10:50:03Z",
+   "relation": "context",
+   "explanation": "The readable page supplies September 29 neo-cloud history, but not the corresponding hyperscaler value. Its explicit separation of the series prevents using that neo-cloud observation to grade this claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The exact contemporaneous Silicon Data H100 hyperscaler reading was not recovered.",
+  "The original cited contracts were discoverable but could not be read through read_page.",
+  "The relevant hyperscaler aggregation and bundled-service scope remain unspecified."
+ ],
+ "packet_hash": "5c043442ecb514ef13707ed58e5678100467920aa40b10743dfbe157b5c65ec0"
+}

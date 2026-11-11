@@ -1,0 +1,93 @@
+{
+ "packet_id": "wyea-core-incompetency-172b49-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-172b49",
+  "version": 1,
+  "content_hash": "024a3d0092d6a0e03e6befad7df2edfd65ae0eff097fcad211168dc2ff077b60"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-172b49",
+  "version": 1,
+  "content_hash": "53e6d147d23a8860963162f86c2f11325632da048c40258de8aa0b38278c4296"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.sec.gov CoreWeave \"2024\" \"863\" \"1,915\"",
+   "CoreWeave 2024 revenue net loss 863 1915 S-1 March 2025",
+   "CoreWeave 2024 \"$1.43\" \"$1.45\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001769628/000119312525058309/d899798ds1a.htm",
+    "used": true,
+    "why": "Readable filing mirror containing 2024 revenue, net loss, operating expenses and the percentage-of-revenue presentation."
+   },
+   {
+    "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2025-Results/default.aspx",
+    "used": false,
+    "why": "Read and checked the 2024 comparative figures; the earlier filing provides more precise inputs."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525058309/d899798ds1a.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the readable filing mirror."
+   },
+   {
+    "url": "https://www.wheresyoured.at/core-incompetency",
+    "used": false,
+    "why": "Read to confirm the claim's surrounding calculation; not used as evidence of its truth."
+   }
+  ],
+  "performed_at": "2026-10-29T10:49:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001769628-000119312525058309-f4e459cd39b8",
+   "source_snapshot_id": "42e8b3951b0ec7a4dcf6ef8bf0250ea52e982a9087de680cb0295d6cab2cd4a6",
+   "publisher": "CoreWeave, filing mirrored by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001769628/000119312525058309/d899798ds1a.htm",
+   "locator": "MD&A, Results of Operations, percentage-of-revenue table, final 2024 column; dollar inputs in the adjacent statements",
+   "receipt": {
+    "public_excerpt": "Net loss\n\n(196\n)%\n\n(259\n)%\n\n(45\n)%\n\nNote:\nTotals may not sum due to rounding.",
+    "quote_hash": "9da2f8da8ca886f2473b938167f063d7b1b2fc87aeb8eac389e33c426bc61fe3",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2025-03-20",
+   "retrieved_at": "2026-10-29T10:41:58Z",
+   "relation": "supports",
+   "explanation": "The filing reports 2024 revenue of $1,915.426 million and net loss of $863.448 million, giving approximately $1.45 per revenue dollar. This supports the approximate loss-inclusive comparison, while correcting its arithmetic and leaving cash spending unmeasured.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Revenue plus net loss, divided by revenue",
+    "currency": "USD",
+    "units": "USD of net accounting charges per USD of revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "2024 revenue: $1,915,426 thousand.",
+     "2024 net loss: $863,448 thousand."
+    ],
+    "formula": "(1,915,426 + 863,448) / 1,915,426 = 1.4507864. Using the surrounding rounded figures gives (2,000 + 863) / 2,000 = 1.4315.",
+    "rounding": "Precise-input ratio rounds to $1.45 per dollar; the coarse-input calculation rounds to $1.43."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e6"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "7b9c2f6a35f54fe6f4fde1a8ed3ecfa9a575a173d1e070bf9225424b782fb596"
+}

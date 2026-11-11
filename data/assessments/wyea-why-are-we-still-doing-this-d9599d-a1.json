@@ -1,0 +1,134 @@
+{
+ "assessment_id": "wyea-why-are-we-still-doing-this-d9599d-a1",
+ "claim_revision_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d9599d",
+  "version": 2,
+  "content_hash": "045479a9cb54f3203dc93a4f56304467c40906d1638bcdd34decfe895992866b"
+ },
+ "contract_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d9599d",
+  "version": 1,
+  "content_hash": "34c391f392a2544dd639a6f3364c2c1c55975efd54e2d7fa3a4b94634f44202e"
+ },
+ "packet_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d9599d-p1",
+  "content_hash": "aa51761d18b1a459bc11d82b4b50613d5500d68ac780c9805ed2280eca9c0ddd"
+ },
+ "axis": "causal_assessment",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The categorical conclusion that token uncertainty makes any budgeting impossible is contradicted. Before the post, Anthropic documented monthly spending limits and controllable thinking budgets. BAMAS also tested advance cost estimates and reported useful work within budgets, including no overruns on its GSM8K tasks. The narrower concern remains valid: exact task costs can be uncertain, and the same paper reports overruns on other datasets. Budgeting is possible without guaranteeing either an exact token count or successful completion at a fixed cost.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The result depends on reading budgeting in its ordinary practical sense, rather than as an exact price guarantee.",
+  "Spending limits can stop work before completion.",
+  "The research covers selected benchmark tasks and reports some budget overruns.",
+  "Provider documentation establishes available controls, not their usability for every consumer."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-why-are-we-still-doing-this-cfce1f-4x-review-anthropic-1",
+  "wyea-why-are-we-still-doing-this-cfce1f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-why-are-we-still-doing-this-cfce1f-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-why-are-we-still-doing-this-d9599d",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "There is no way to anticipate how many tokens a prompt will actually burn, which makes any kind of budgeting for metered usage a non-starter.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "First, there’s no way to anticipate how many tokens a prompt will actually burn, which makes any kind of budgeting a non-starter.",
+   "locator": "paragraph 41",
+   "url": "https://www.wheresyoured.at/why-are-we-still-doing-this",
+   "date": "2026-03-17",
+   "document_title": "Why Are We Still Doing This?",
+   "observed_at": "2026-10-28T22:28:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "no way to anticipate",
+    "how many tokens a prompt will actually burn",
+    "any kind of budgeting",
+    "a non-starter"
+   ],
+   "our_interpretation": [
+    "The plain reading is that uncertainty about total token consumption prevents practical budgeting for metered LLM use.",
+    "Total consumption includes generated reasoning and repeated calls, rather than only the initial prompt's input tokens.",
+    "Practical budgeting can use estimates, spending limits, and a chosen trade-off between cost and completed work. It does not require knowing every request's exact final token count.",
+    "The relevant capabilities must have existed by the March 17, 2026 post. Later improvements cannot retrospectively contradict this claim.",
+    "This is assessed as a causal assertion, so no reporting-period target is imposed."
+   ],
+   "support_condition": "Evidence shows that token uncertainty prevents workable advance estimates or spending controls for useful metered LLM activity, even with available budgeting methods.",
+   "contradiction_condition": "Pre-post documentation and measured results demonstrate that users can estimate or constrain metered consumption sufficiently to carry out useful work within planned budgets, despite imperfect per-request prediction."
+  },
+  "axis": "causal_assessment",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The categorical conclusion that token uncertainty makes any budgeting impossible is contradicted. Before the post, Anthropic documented monthly spending limits and controllable thinking budgets. BAMAS also tested advance cost estimates and reported useful work within budgets, including no overruns on its GSM8K tasks. The narrower concern remains valid: exact task costs can be uncertain, and the same paper reports overruns on other datasets. Budgeting is possible without guaranteeing either an exact token count or successful completion at a fixed cost.",
+  "limitations": [
+   "The result depends on reading budgeting in its ordinary practical sense, rather than as an exact price guarantee.",
+   "Spending limits can stop work before completion.",
+   "The research covers selected benchmark tasks and reports some budget overruns.",
+   "Provider documentation establishes available controls, not their usability for every consumer."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "Implement monthly spend limits",
+    "locator": "Managing multiple deployments; first capability",
+    "url": "https://claude.com/resources/articles/workspaces",
+    "publisher": "Anthropic",
+    "event_date": "2024-09-10",
+    "available_at": "2024-09-10",
+    "explanation": "Anthropic documented a way to constrain monthly API expenditure before the post. This contradicts the claim that every form of budgeting is unavailable, but does not guarantee that a task finishes before its budget is exhausted."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "“thinking budget”",
+    "locator": "Introduction, following the description of extended thinking mode",
+    "url": "https://www.anthropic.com/research/visible-extended-thinking",
+    "publisher": "Anthropic",
+    "event_date": "2025-02-24",
+    "available_at": "2025-02-24",
+    "explanation": "A pre-post model exposed a developer-controlled reasoning budget. This provides control over one source of variable consumption, rather than exact prediction of an entire multi-call task."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "BAMAS incurs no OOB tasks.",
+    "locator": "RQ1; Budget adherence of BAMAS, discussion of Table 3",
+    "url": "https://arxiv.org/html/2511.21572v1",
+    "publisher": "arXiv; Liming Yang and coauthors",
+    "event_date": "2025-11",
+    "available_at": "2025-11-26",
+    "explanation": "The study uses advance token-cost estimates and reports useful task performance with no budget overruns on this dataset. It also reports overruns on MBPP and MATH, supporting the narrower concern about uncertainty while contradicting the impossibility of practical budgeting."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e03950470703ad9024a964a33cba1c43cbb1a082dccbeaccbec07580d14049ec",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:48:35Z"
+}

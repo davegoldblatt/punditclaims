@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-a-knockout-blow-for-llms-753c69-4x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-knockout-blow-for-llms-753c69": "084280b845a75a945f80425be4fc2787dd20e6bc782ceccfba92eef2661f5080",
+  "case:marcus-a-knockout-blow-for-llms-c79e0c": "9fc48a5385169ba39587f0e7809109a309d90db37a4b3699e85b8f00a876c188",
+  "case:marcus-a-knockout-blow-for-llms-e0245c": "898110a24f193e38bb6434777a74dae71c0d933370a7ab5ac1d21e57ad340cff",
+  "case:marcus-a-knockout-blow-for-llms-ebeec8": "06af2cf4d25cd3a789620ed06f41f744c004bc37efb801aa5ce10ee7b4fe7a99"
+ },
+ "started_at": "2026-10-29T02:01:35Z",
+ "completed_at": "2026-10-29T02:02:27Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own parenthetical in his post, not a quotation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A present-tense capability claim across three domains, worded in line with the original. Dropping 'neurosymbolic' does not change the commitment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "A plain reading comparing general-purpose LLMs doing the tasks themselves against specialist systems is fair and ordinary. Assessing each domain separately is reasonable. The 2025 window is the evaluator's choice but a neutral one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Jan 2025 preprint on a fine-tuned ChessLLM (~1788 Elo) against weakened Stockfish. It is not a general-purpose LLM against a full-strength engine and says nothing about proteins or databases."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only usable item is chess context about a specialised model, not a comparable test. No readable protein or database-execution comparison is in the packet. The evidence cannot establish support in all three domains, or a contradiction in any one.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-753c69"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The nearby Mirzadeh DM is separate quoted material."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Leaving out 'truly embarrassing' (opinion) is correct. The factual core is that reliability fails, not that no LLM can ever solve Hanoi."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as direct move generation decides the result. It is fair: the passage discusses Apple's direct-output results and treats Python code separately in a later sentence. The June 2025 snapshot matches the post."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Apple primary study, available on the post date. It reports collapse to zero accuracy beyond a complexity threshold, persisting even when the algorithm is given. Near-perfect results on small N limit scope but fit 'not reliably'."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Later preprint with a different task: models write a Lua program instead of listing moves. It is preliminary, after the post, and does not address direct-generation reliability."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The primary evaluation shows repeated complete-solution failures as disc count grows, including collapse to zero, under direct generation. That meets the support condition. Program-generation success is a different task and does not contradict it. Scope: the result covers the reasoning models evaluated, not every configuration.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-c79e0c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the core commitment that code-writing as a supplement is not reliable. 'Best case (not always reached)' is softened but not distorted."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (executed Python does not make solutions dependably correct; recurring material errors count) is ordinary and fair. The bar is modest, but so is the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "May 2025 primary benchmark. Code interpreter use helped localisation but worsened tracking, and o3-mini showed severe error spikes from generated code. These are material, recurring errors."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Preliminary Lua code-generation success on Hanoi, after the window and in a different language. Too narrow to show broad dependable correctness."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A contemporary execution-based evaluation shows generated, executed Python sometimes degrading results and producing severe errors. That meets the support condition. The counterevidence is narrow, preliminary and outside the window, so it does not show broad dependable correctness. The evidence covers spatiotemporal tasks only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-e0245c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own bracketed aside in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to both clauses, though 'struggle heavily' is softened to 'struggle'. The 'models like o3' class is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Requiring a matched human baseline for 'more than attentive humans' and correctness tests for diagrams is a fair, ordinary reading of firm language."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own system card (a company disclosure) gives o3 hallucination rates on SimpleQA and PersonQA against other models only. With no human baseline, it cannot settle the comparison, and it says nothing about diagrams."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no matched o3-versus-attentive-human hallucination comparison and no contemporary o3 diagram-correctness evaluation. The model-to-model rates in the system card are context only. Neither clause can be settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-ebeec8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 54435,
+  "output_tokens": 5720,
+  "cached_input_tokens": 28914,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

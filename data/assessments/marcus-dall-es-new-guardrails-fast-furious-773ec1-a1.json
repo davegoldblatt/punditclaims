@@ -1,0 +1,120 @@
+{
+ "assessment_id": "marcus-dall-es-new-guardrails-fast-furious-773ec1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-773ec1",
+  "version": 1,
+  "content_hash": "deaa6f32a6284914d661d56fd8c5e4543e4f3ad70c06cb41ab59cc02f5761961"
+ },
+ "contract_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-773ec1",
+  "version": 1,
+  "content_hash": "d530fee32b044faf810391dad7cd0ada21267611ace93c105d09bb20e1507671"
+ },
+ "packet_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-773ec1-p1",
+  "content_hash": "428c337bfe01eccad22b07f03b0f574b3834fa1a70b0b8fceeb8b6cd60d4b333"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-12-01",
+  "end": "2024-01-10",
+  "precision": "day"
+ },
+ "public_rationale": "The sources establish vulnerabilities and show that broader defenses can reduce them without eliminating them. They do not settle the claimed explanation that excessive example diversity and erratic responses cause the unreliability. Treating jailbreak success alone as proof would collapse a causal claim into a weaker observation.",
+ "evidence_ids": [
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "The controlled defense study is contextual because its experiments predate the target period.",
+  "The causal terms and reliability threshold remain underspecified."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-dall-es-new-guardrails-fast-furious-6241ce-4x-review-anthropic-1",
+  "marcus-dall-es-new-guardrails-fast-furious-6241ce-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-dall-es-new-guardrails-fast-furious-6241ce-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-dall-es-new-guardrails-fast-furious-773ec1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because there are too many examples and current systems are too erratic, guardrails cannot reliably get things right even though any single example can be filtered.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Any one example can be filtered out, but there are too many examples, and current systems are too erratic to reliably get things right.",
+   "locator": "paragraph 12",
+   "url": "https://garymarcus.substack.com/p/dall-es-new-guardrails-fast-furious",
+   "date": "2024-01-10",
+   "document_title": "DALL-E’s New Guardrails: Fast, Furious, and Far from Airtight",
+   "observed_at": "2026-10-29T00:01:51Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Any one example can be filtered out",
+    "too many examples",
+    "current systems are too erratic",
+    "reliably get things right"
+   ],
+   "our_interpretation": [
+    "The claim attributes unreliable safeguards to the diversity of possible inputs and inconsistent system responses, despite the ability to block a known example.",
+    "Reliability means consistently enforcing intended restrictions across varied prompts and repeated trials. No numerical reliability threshold is supplied.",
+    "Current systems refers to systems around the post date. I use December 2023 through January 10, 2024 as the recent observation window."
+   ],
+   "support_condition": "Controlled evaluations show that prompt diversity and response variability cause continuing safeguard failures despite successful filtering of individual examples.",
+   "contradiction_condition": "Controlled evaluations establish reliable generalization under diverse prompts and repeated trials, or show that the asserted causal factors do not explain the failures."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The sources establish vulnerabilities and show that broader defenses can reduce them without eliminating them. They do not settle the claimed explanation that excessive example diversity and erratic responses cause the unreliability. Treating jailbreak success alone as proof would collapse a causal claim into a weaker observation.",
+  "limitations": [
+   "The controlled defense study is contextual because its experiments predate the target period.",
+   "The causal terms and reliability threshold remain underspecified."
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "bad or toxic information",
+    "locator": "Apostol Vassilev quotation in discussion of chatbot vulnerabilities",
+    "url": "https://www.nist.gov/news-events/news/2024/01/nist-identifies-types-cyberattacks-manipulate-behavior-ai-systems",
+    "publisher": "National Institute of Standards and Technology",
+    "event_date": "2024-01-04",
+    "available_at": "2024-01-04",
+    "explanation": "NIST's contemporary assessment recognizes vulnerabilities to carefully constructed prompts. It does not experimentally separate prompt diversity and response inconsistency as causes of unreliable safeguards."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "from 67.21% to 19.34%.",
+    "locator": "Page 1, abstract",
+    "url": "https://xyq7.github.io/papers/NMI-JailbreakDefense.pdf",
+    "publisher": "Nature Machine Intelligence; author-hosted copy",
+    "event_date": "2023",
+    "available_at": "2023-12-12",
+    "explanation": "A general defense substantially reduced attacks while leaving residual failures. This qualifies any reading that safeguards could only block individual examples, but the experiments predate the target window and do not isolate Marcus's full causal explanation."
+   }
+  ],
+  "what_would_resolve": "Contemporaneous controlled tests comparing individual fixes with general defenses, varying prompt diversity and repeated sampling, with a stated reliability criterion.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0d18b3849df7fa1123a6d25284976d3592ba93c380ae619bf8d1ed4d3a71828f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:54:42Z"
+}

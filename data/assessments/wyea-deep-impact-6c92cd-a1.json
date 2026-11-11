@@ -1,0 +1,148 @@
+{
+ "assessment_id": "wyea-deep-impact-6c92cd-a1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-6c92cd",
+  "version": 1,
+  "content_hash": "7a3cf56a836215731511d4794ce02f8c7b6351fc269e6ad07c17add48a21870c"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-6c92cd",
+  "version": 1,
+  "content_hash": "d70234b4e0ea16956add5f0bb50fb16ab369cab2731643a18ba29298a016d4a4"
+ },
+ "packet_ref": {
+  "id": "wyea-deep-impact-6c92cd-p1",
+  "content_hash": "c28fb5da42e9cf2391346584197fc21ced0096ade0f122631566b1a16049f085"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-01-29",
+  "precision": "day"
+ },
+ "public_rationale": "Under the ordinary API-price reading, the comparison holds. R1's published uncached-input and output rates were approximately 96.3% below o1's. The original benchmark report supports broadly competitive reasoning performance, and official documentation supports self-hosting full R1. This does not verify a 96% reduction in underlying compute costs or benchmark-equivalent performance on a MacBook.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The benchmark evidence is developer-reported, not an independent replication.",
+  "Per-token savings do not guarantee the same savings per completed task.",
+  "The official repository is mutable; the versioned report anchors the original model comparison."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-deep-impact-26b61f-4x-review-anthropic-1",
+  "wyea-deep-impact-26b61f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-deep-impact-26b61f-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-deep-impact-6c92cd",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "DeepSeek R1 is competitive with OpenAI's o1 while being roughly 96% cheaper to run, and can run locally.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "On top of all of that, DeepSeek's biggest, ugliest insult is that its model, DeepSeek R1, is competitive with OpenAI's incredibly expensive o1 \"reasoning\" model, yet significantly (96%~) cheaper to run, and can even be run locally.",
+   "locator": "paragraph 9",
+   "url": "https://www.wheresyoured.at/deep-impact",
+   "date": "2025-01-29",
+   "document_title": "Deep Impact",
+   "observed_at": "2026-10-28T22:30:27Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "DeepSeek R1",
+    "competitive with",
+    "o1",
+    "96%~ cheaper to run",
+    "can even be run locally"
+   ],
+   "our_interpretation": [
+    "I compare the original full R1 with released o1, rather than substituting an R1 distillation or o1-mini.",
+    "Competitive means broadly comparable performance across relevant reasoning benchmarks, not superiority on every task.",
+    "The surrounding pricing discussion makes standard API charges per matching token category the ordinary reading of the approximate 96% figure.",
+    "Local means self-hostable. This sentence supplies no hardware ceiling; the nearby MacBook anecdote does not establish that full R1 retains its benchmark performance on that machine.",
+    "I use January 2025 through publication as the reporting period for this ongoing comparison.",
+    "These are API product prices, not company financial-accounting measures; metric_scope is null."
+   ],
+   "support_condition": "Contemporaneous benchmarks show broadly comparable R1 and o1 performance, matching standard API token rates are approximately 96% lower for R1, and the full R1 model can be self-hosted.",
+   "contradiction_condition": "Comparable benchmarks show a substantial general performance deficit, matching API rates materially fail the approximate discount, or the full model cannot be self-hosted."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Under the ordinary API-price reading, the comparison holds. R1's published uncached-input and output rates were approximately 96.3% below o1's. The original benchmark report supports broadly competitive reasoning performance, and official documentation supports self-hosting full R1. This does not verify a 96% reduction in underlying compute costs or benchmark-equivalent performance on a MacBook.",
+  "limitations": [
+   "The benchmark evidence is developer-reported, not an independent replication.",
+   "Per-token savings do not guarantee the same savings per completed task.",
+   "The official repository is mutable; the versioned report anchors the original model comparison."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "comparable",
+    "locator": "Abstract; sections 1.2 and 3.1",
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "publisher": "DeepSeek-AI via arXiv",
+    "event_date": "2025-01",
+    "available_at": "2025-01-22",
+    "explanation": "The original report places R1 close to o1 across mathematics, coding and knowledge tests. It also reports weaknesses, including lower factual-question performance, so the evidence supports competitiveness rather than universal equivalence."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "API",
+    "locator": "Launch announcement; API Access & Pricing",
+    "url": "https://deepseek.com/en/news/deepseek-r1",
+    "publisher": "DeepSeek",
+    "event_date": "2025-01-20",
+    "available_at": "2025-01-20",
+    "explanation": "The pricing section lists R1 at $0.55 per million uncached input tokens and $2.19 per million output tokens. These are the customer prices used in the comparison with e3."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "use",
+    "locator": "Pricing introduction; OpenAI o1 standard pricing rows and output-token footnote",
+    "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing",
+    "publisher": "OpenAI, preserved by the Internet Archive",
+    "event_date": "2025-01-29",
+    "available_at": "2025-01-29",
+    "explanation": "OpenAI lists o1 at $15 per million uncached input tokens and $60 per million output tokens, including internal reasoning tokens. Against e2, R1's corresponding rates are about 96.3% lower."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "locally.",
+    "locator": "Section 6, How to Run Locally — DeepSeek-R1 Models",
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+    "publisher": "DeepSeek",
+    "event_date": "2025-01-20",
+    "available_at": "2025-01-20",
+    "explanation": "The official release provides a local deployment route for full R1 and separately documents the smaller distilled models. This establishes self-hostability, without establishing the nearby MacBook anecdote."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "55bc2a89ac64a21116dcdadb45380ce635f4f088814bd18f56b463d68b091593",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:07:54Z"
+}

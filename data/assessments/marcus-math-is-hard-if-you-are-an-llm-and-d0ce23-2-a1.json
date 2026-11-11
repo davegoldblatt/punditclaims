@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2-a1",
+ "claim_revision_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 1,
+  "content_hash": "08b99c88390200b95937949c74eefbac026362aec7a27f93406ec756af285007"
+ },
+ "contract_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 1,
+  "content_hash": "351abb9c2902527657da24ca3e568a787206a885e9bf01e3a3c84ada6605f99d"
+ },
+ "packet_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2-p1",
+  "content_hash": "2a010bb3caf69358e4dd0844de60b6b27b05c1df92b55345f1237724e69b1cd2"
+ },
+ "axis": "historical_observation",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-10-19",
+  "precision": "day"
+ },
+ "public_rationale": "On the ordinary empirical meaning of learning, the blanket assertion is contradicted. Before the post, Goat demonstrated near-perfect held-out addition and subtraction after extensive arithmetic training, without an external calculator. Its declining performance outside the training distribution remains a material limitation. The evidence does not refute a narrower claim that such models lack guaranteed correctness at arbitrary lengths.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The result depends on distinguishing successful learning from perfect unrestricted generalization.",
+  "The decisive study is an authors' experimental report, not an independent replication.",
+  "This does not assess the recommendation about whether users should trust LLMs."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-math-is-hard-if-you-are-an-llm-and-4f12b3-4x-review-anthropic-1",
+  "marcus-math-is-hard-if-you-are-an-llm-and-4f12b3-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Even with controlled conditions and massive relevant data, pure LLMs never truly learn even the most basic linear functions.",
+  "kind": "observation",
+  "conditions": [
+   "even under carefully controlled circumstances with massive directly relevant data"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "That, in a nutshell, is why we should never trust pure LLMs; even under carefully controlled circumstances with massive amounts of directly relevant data, they still never really get even the most basic linear functions.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/math-is-hard-if-you-are-an-llm-and",
+   "date": "2023-10-19",
+   "document_title": "“Math is hard” — if you are an LLM – and why that matters",
+   "observed_at": "2026-10-29T00:02:57Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "pure LLMs",
+    "even under carefully controlled circumstances",
+    "massive amounts of directly relevant data",
+    "never really get even the most basic linear functions"
+   ],
+   "our_interpretation": [
+    "Assess the empirical assertion about learning, excluding the normative recommendation about trust.",
+    "Read learning ordinarily as reliable performance on unseen examples, not a proof of correctness for every possible input.",
+    "Basic linear functions include addition and subtraction as functions of their numeric inputs. Multiplication by a fixed constant is also linear; unrestricted two-input multiplication is not jointly linear.",
+    "Pure LLM means the model produces the answer without executing an external calculator or program. Arithmetic training data do not make the model a hybrid.",
+    "Use the latest public research snapshot before the post, ending 2023-10-19. This field has no regular reporting interval, so the start is unspecified rather than an invented quarter.",
+    "The training circumstances describe the claimed scope, not a forecast antecedent."
+   ],
+   "support_condition": "Controlled evidence establishes failure to learn basic linear functions reliably across the claimed class of pure LLMs despite extensive relevant training.",
+   "contradiction_condition": "At least one contemporaneous pure LLM trained on extensive relevant data reliably evaluates a basic linear function on unseen examples without external computation."
+  },
+  "axis": "historical_observation",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "On the ordinary empirical meaning of learning, the blanket assertion is contradicted. Before the post, Goat demonstrated near-perfect held-out addition and subtraction after extensive arithmetic training, without an external calculator. Its declining performance outside the training distribution remains a material limitation. The evidence does not refute a narrower claim that such models lack guaranteed correctness at arbitrary lengths.",
+  "limitations": [
+   "The result depends on distinguishing successful learning from perfect unrestricted generalization.",
+   "The decisive study is an authors' experimental report, not an independent replication.",
+   "This does not assess the recommendation about whether users should trust LLMs."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "The model successfully captures the underlying patterns of the arithmetic operations.",
+    "locator": "Section 3.3, Addition and Subtraction; training details in Introduction and Appendix F",
+    "url": "https://arxiv.org/html/2305.14201v1",
+    "publisher": "arXiv; Liu and Low",
+    "event_date": "2023-05",
+    "available_at": "2023-05-23",
+    "explanation": "Goat, a LLaMA model fine-tuned on approximately one million synthetic examples, produces direct addition and subtraction answers with near-perfect accuracy on unseen test data. These are basic linear operations performed without an external calculator."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "The results reveal that the model has limited extrapolation capabilities.",
+    "locator": "Section 5.2, Extrapolation",
+    "url": "https://arxiv.org/html/2305.14201v1",
+    "publisher": "arXiv; Liu and Low",
+    "event_date": "2023-05",
+    "available_at": "2023-05-23",
+    "explanation": "Addition accuracy declines as test numbers move beyond the training distribution. This supports Marcus's concern about unrestricted reliability, but does not erase the demonstrated learning on unseen examples within the tested domain."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Transformers can in-context learn linear functions.",
+    "locator": "Introduction, summary of findings; Sections 3.1 and 4",
+    "url": "https://arxiv.org/html/2208.01066v3",
+    "publisher": "arXiv; Garg et al.",
+    "event_date": "2022",
+    "available_at": "2023-08-11",
+    "explanation": "A purpose-trained transformer learns unseen linear functions with performance comparable to least squares and tolerates several distribution shifts. Its different model and training setup make it contextual rather than decisive evidence about pure LLMs."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "2bf2d84afb8f2610aadc17df34458a08af2fb3fd92c72c8d5225b926df684a66",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:46:58Z"
+}

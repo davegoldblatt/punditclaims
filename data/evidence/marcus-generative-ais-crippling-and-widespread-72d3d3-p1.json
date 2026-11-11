@@ -1,0 +1,95 @@
+{
+ "packet_id": "marcus-generative-ais-crippling-and-widespread-72d3d3-p1",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-72d3d3",
+  "version": 1,
+  "content_hash": "408811d9aa32edd171fa199ec88ea446ed4ec5d809a0d65944463d27e3642b41"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-72d3d3",
+  "version": 1,
+  "content_hash": "4b4484a37b4080d6c9d5136888ed1154e617c457a9f8d46990e7b4eafed0fc38"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com Claude 4 jailbreak world model instruction adherence June 2025",
+   "Claude world model jailbreak causal representations refusal Anthropic 2025 Gleave",
+   "Jiahai Feng Stuart Russell Jacob Steinhardt propositions encoded decoded faithfully 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+    "used": true,
+    "why": "Primary Claude 4 safety evaluation. It measures jailbreak susceptibility but does not establish Marcus's proposed cause."
+   },
+   {
+    "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+    "used": true,
+    "why": "Primary mechanistic research supplies a competing explanation in an earlier Claude model."
+   },
+   {
+    "url": "https://arxiv.org/abs/2510.26418",
+    "used": false,
+    "why": "Search results describe later jailbreak experiments. Attack success does not by itself establish the claimed representational cause."
+   }
+  ],
+  "performed_at": "2026-10-29T06:29:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "www-cdn-anthropic-com-4263b940cabb546aa0e3283f35b686f4f3b2ff47-pdf",
+   "source_snapshot_id": "b7ee8075d403c34a688fd24a146dffae3715b5557bf2f9d7913614c6770eb28f",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+   "locator": "Section 2.7, discussion following Table 2.7.A",
+   "receipt": {
+    "public_excerpt": "jailbreak success rates were very low",
+    "quote_hash": "cc7161d727e2d86a12dcff6035ec36745b0042dc52c5a88a1a41dfa5d5ce0c9b",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-22",
+   "retrieved_at": "2026-10-29T06:21:20Z",
+   "relation": "context",
+   "explanation": "Table 2.7.A reports nonzero jailbreak success for Claude Opus 4 and Sonnet 4, with better resistance under extended thinking. These results document susceptibility and variation in resistance, but do not identify a missing world model as the cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-tracing-thoughts-language-model",
+   "source_snapshot_id": "00f05e90650c3fd585f1cd3beabb36307386c906e07448535f1f012f7e977fea",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+   "locator": "Section Jailbreaks",
+   "receipt": {
+    "public_excerpt": "a tension between grammatical coherence and safety mechanisms",
+    "quote_hash": "1da9f92a90c089ee62c6030faa37ae6cc67751fe5dd0484f0c4fe8615c04de53",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-27",
+   "retrieved_at": "2026-10-29T06:21:06Z",
+   "relation": "context",
+   "explanation": "The Claude 3.5 Haiku case study describes safety recognition competing with pressure to finish a coherent sentence. This is a material alternative explanation, but its earlier model and narrow experiment prevent a decisive conclusion about the Claude generation discussed in the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No located study isolates the proposed biological or discourse-model deficit as the cause of instruction failures in the relevant Claude generation.",
+  "Neither jailbreak success nor the existence of some internal representations establishes how robustly instructions connect to those representations."
+ ],
+ "packet_hash": "991e2f42eae2f006f1c410eee5a5a877ad510138dfb9e957c8923bd0c3546592"
+}

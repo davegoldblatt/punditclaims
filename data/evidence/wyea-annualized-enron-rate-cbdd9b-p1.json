@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-cbdd9b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-cbdd9b",
+  "version": 2,
+  "content_hash": "187512f219a362c60c6810dbc5c706c9170876ce68b564b8d8843bdeaae21b85"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-cbdd9b",
+  "version": 1,
+  "content_hash": "3b89543b7ab591f45e34c16d974192e73f040f42857866d4f1c7c6687bd1e0af"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic revenue model releases startup customers revenue concentration 2026",
+   "Anthropic S-1 October 2026 sec.gov 80% model versions revenue",
+   "site.ramp.com/data \"September\" \"2026\" \"Cracks\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing provides customer-growth and model-release discussion, but no complete causal breakdown by release and startup financing source."
+   },
+   {
+    "url": "https://ramp.com/data/ai-index-sept-2026",
+    "used": true,
+    "why": "Independent transaction sample provides a relevant spending slowdown, with explicit sampling and revision limitations."
+   },
+   {
+    "url": "https://anthropic.soundcast.cc/filing/management-discussion-and-analysis/",
+    "used": false,
+    "why": "Read, but the original SEC filing was available and preferred."
+   },
+   {
+    "url": "https://www.axios.com/2026/09/29/scoop-openais-annual-recurring-revenue-nears-70b",
+    "used": false,
+    "why": "read_page returned HTTP 403. Annualized revenue would also be insufficient for the requested attribution."
+   }
+  ],
+  "performed_at": "2026-10-29T10:30:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, paragraph immediately before Customer Usage Patterns",
+   "receipt": {
+    "public_excerpt": "record high.",
+    "quote_hash": "bd4fb529deab26d08d117e401f28e915e8f1612639ed659362fbcebb336d22eb",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "This establishes growth among Anthropic's largest customers. It does not identify their financing sources or show incremental revenue caused by every release.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Revenue from each of the five largest customers",
+    "currency": null,
+    "units": null,
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "ramp-com-data-ai-index-sept-2026",
+   "source_snapshot_id": "e98a557e77a747ef9c4b6fbc22aa29dfcea7f6096b3ed7c60ae83ccbb8747a2a",
+   "publisher": "Ramp Economics Lab",
+   "source_type": "independent_measurement",
+   "url": "https://ramp.com/data/ai-index-sept-2026",
+   "locator": "Per employee AI spend declines, paragraph discussing the top 1%",
+   "receipt": {
+    "public_excerpt": "fell 9.7%",
+    "quote_hash": "7093c6163985a9c0416576e4df327e2d1fcf81ec25f5bcdfbc51d9697876a470",
+    "verified": "exact"
+   },
+   "event_date": "2026-08",
+   "available_at": "2026-09-09",
+   "retrieved_at": "2026-10-29T09:51:13Z",
+   "relation": "context",
+   "explanation": "The surrounding passage identifies this as median monthly AI spending per employee among the highest-spending 1% of sampled firms. The decline cautions against assuming constant spending increases, but cannot isolate a particular release or either provider's total revenue.",
+   "metric_scope": {
+    "company": "Businesses in Ramp's top 1% AI-spending cohort",
+    "metric": "Median monthly AI spending per employee",
+    "currency": "USD",
+    "units": "USD per employee per month",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-08-01",
+    "period_end": "2026-08-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No complete release-by-release revenue series for both companies was located.",
+  "No matched records trace incremental provider revenue to startup subsidies and venture funding.",
+  "The sources do not distinguish incremental demand from migration between models."
+ ],
+ "packet_hash": "41f38d0e15a4959f43607e5e8e4600bf683f76665d6a0a6811fd5ee20dc89796"
+}

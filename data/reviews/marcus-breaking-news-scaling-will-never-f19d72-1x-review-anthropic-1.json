@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-breaking-news-scaling-will-never-f19d72-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-news-scaling-will-never-f19d72": "f504c8c787440914f131adabe5cd9cf79af93d7253f1bf3f68abb5cc087c451b"
+ },
+ "started_at": "2026-10-29T06:44:55Z",
+ "completed_at": "2026-10-29T06:45:10Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post. The 'That' refers back to his previous sentence about trouble generalizing, so reading the two sentences together is correct."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalised claim keeps the 'dominant configurations' scope and the causal link from trouble generalizing to unreliable reasoning and planning. The wording is firm, not hedged, and the claim is causal."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: weak generalization to unfamiliar cases contributes to reasoning and planning errors in common models. It rightly does not read the claim as saying improvement is impossible. Separating ordinary models from specially trained ones also fits the speaker's scope."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed NeurIPS 2023 study, published before the post. Renaming actions and predicates while keeping the planning problem the same made GPT-4's performance collapse. That ties planning failure to dependence on familiar patterns."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed NeurIPS 2023 study. GPT-3 was near-perfect on familiar cases but failed on deeper or wider reasoning graphs, even with step-by-step scratchpad training. This directly links reasoning failure to out-of-distribution generalization."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Nature 2023 study. Targeted meta-learning gave a standard architecture systematic generalization. This is a specially trained alternative, not an ordinary dominant setup, so it limits any 'impossible' reading but does not contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two controlled peer-reviewed studies of the common LLMs of the time (GPT-3, GPT-4) show reasoning and planning accuracy dropping sharply on unfamiliar variants and out-of-distribution cases. Both tie the failures to weak generalization, which meets the support condition. The meta-learning result concerns specially trained models, not the dominant configurations, so it is context only. The claim is supported for common configurations, not as a claim of architectural impossibility.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scaling-will-never-f19d72"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10660,
+  "output_tokens": 1589,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-brokenomics-97b75f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-brokenomics-97b75f",
+  "version": 1,
+  "content_hash": "3a36475d8b1faf5056c82f8dcb401d1c0c1c348ad6b3f9edfcb809dec2cc2b87"
+ },
+ "contract_ref": {
+  "id": "wyea-brokenomics-97b75f",
+  "version": 1,
+  "content_hash": "02e3a33c415070e4dc15a356dac477b3de98e8ce7da4ba26a6abc371c8f6d640"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.semianalysis.com June 2026 subscriptions gross margin 25%",
+   "\"SemiAnalysis\" \"25%\" \"June\" \"2026\" subscriptions",
+   "\"SemiAnalysis\" \"75%\" \"25%\" \"2026\" \"subscription\"",
+   "\"SemiAnalysis\" \"The margin on a subscription plan\"",
+   "\"SemiAnalysis\" \"25%\" \"-25%\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://dive.vladyslavpodoliako.com/research-notes/",
+    "used": true,
+    "why": "The dated June 10 note reproduces all six plan inputs and explicitly states the assumed cost ratio."
+   },
+   {
+    "url": "https://testingcatalog.net/heavy-ai-users-could-cost-openai-and-anthropic-16x-their-subscription-fee/",
+    "used": false,
+    "why": "Corroborates the model, but its prose does not present all six tier inputs together."
+   },
+   {
+    "url": "https://x.com/SemiAnalysis_/status/2064815044085318040",
+    "used": false,
+    "why": "Original methodology is accessible, but the numerical image tables are absent from reader output."
+   },
+   {
+    "url": "https://theinformationmachine.fyi/items/28472/",
+    "used": false,
+    "why": "Search found the original margin statement, but reading the page returned an unrelated archive."
+   }
+  ],
+  "performed_at": "2026-10-29T10:37:43Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "dive-vladyslavpodoliako-com-research-notes",
+   "source_snapshot_id": "09a57ad29e173c59e412c7f20a74375d7c4c37224df3fb817cfa58278cd7a61c",
+   "publisher": "Vlad's Playbook",
+   "source_type": "secondary_summary",
+   "url": "https://dive.vladyslavpodoliako.com/research-notes",
+   "locator": "June 10, 2026 note, The finding; associated plan table and utilization display",
+   "receipt": {
+    "public_excerpt": "75%",
+    "quote_hash": "2b790fc9edbfa57c80d84c80c07aef15ed1e30dee37ad0eee62de7a7ad713a11",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-10",
+   "available_at": "2026-06-10",
+   "retrieved_at": "2026-10-29T10:28:05Z",
+   "relation": "supports",
+   "explanation": "The reproduced inputs yield -25% for the two lower Anthropic tiers and lower margins for every other listed tier. This supports the arithmetic under the specified assumption, not actual profitability.",
+   "metric_scope": {
+    "company": "Anthropic and OpenAI",
+    "metric": "Modeled subscription gross margin at 25% utilization assuming 75% API gross margin",
+    "currency": null,
+    "units": "percent of subscription revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-15",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Claude Pro: monthly price $20; maximum API-equivalent usage $400.",
+     "Claude Max 5x: monthly price $100; maximum API-equivalent usage $2,000.",
+     "Claude Max 20x: monthly price $200; maximum API-equivalent usage $8,000.",
+     "ChatGPT Plus: monthly price $20; maximum API-equivalent usage $700.",
+     "ChatGPT Pro 5x: monthly price $100; maximum API-equivalent usage $3,500.",
+     "ChatGPT Pro 20x: monthly price $200; maximum API-equivalent usage $14,000.",
+     "Utilization u = 0.25; assumed API gross margin g = 0.75."
+    ],
+    "formula": "For monthly price P and maximum API-equivalent usage V: margin = 100 × [P − u × V × (1 − g)] / P. Results in listed order: −25%, −25%, −150%, −118.75%, −118.75%, −337.5%.",
+    "rounding": "Exact arithmetic on the source's rounded usage estimates; results shown to at most two decimal places."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The numerical inputs were checked through a secondary reproduction, not original test logs.",
+  "Actual serving costs and subscriber workload mixtures are not established by this model."
+ ],
+ "packet_hash": "e5083e1d4df2ca0b8cd7e9a137877a7c47c86e19f6839625e0e08205c7f57ed7"
+}

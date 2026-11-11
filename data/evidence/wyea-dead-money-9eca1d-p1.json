@@ -1,0 +1,130 @@
+{
+ "packet_id": "wyea-dead-money-9eca1d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-9eca1d",
+  "version": 1,
+  "content_hash": "cee11229a335ebf467d3a5428c231f9b3b2ffe3907f7e7cfec93d46b5e78ef35"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-9eca1d",
+  "version": 1,
+  "content_hash": "343202cad30932f8d3d15825ebc048d1336c7651572f297bfb25352f0829f433"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic Reuters September 28 2026 S-1 12.65 4.6 billion operating expenses",
+   "\"Anthropic\" \"12.65 billion\" \"revenue\" -site:wheresyoured.at -site:reddit.com -site:podcastrex.com -site:simplicity.finance",
+   "site.sec.gov/Archives/edgar Anthropic 2026 \"12,65\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://whbl.com/2026/09/28/exclusive-anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs/",
+    "used": true,
+    "why": "Full Reuters report based on a prospectus its reporters saw."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial statements supply more precise figures and identify the rounding issue; retained as accounting-basis context."
+   },
+   {
+    "url": "https://www.kiplinger.com/investing/ipos/anthropic-to-seek-trillion-ipo-valuation",
+    "used": false,
+    "why": "Read in full, but its further-rounded Reuters summary adds no stronger evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "whbl-com-2026-09-28-exclusive-anthropics-ipo-prospectus-shows-sweep-d3bb4fc41356",
+   "source_snapshot_id": "756b11d900bd579b112f2906bdd84547944580dc2b9e5d2590e8cbd00388d49f",
+   "publisher": "Reuters, syndicated by WHBL",
+   "source_type": "news_report",
+   "url": "https://whbl.com/2026/09/28/exclusive-anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs",
+   "locator": "Opening financial discussion; revenue paragraph and paragraph beginning “The AI lab spent”",
+   "receipt": {
+    "public_excerpt": "cost",
+    "quote_hash": "ebe083be66590cfc0ddddeae55817bfa8c9ad46254a7d6f2700f72969c444163",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-28",
+   "retrieved_at": "2026-10-29T16:11:49Z",
+   "relation": "supports",
+   "explanation": "Reuters reports nearly $4.6 billion of 2025 revenue and $12.65 billion of total operating expenses from the prospectus. Their ratio is exactly 2.75 using the speaker’s rounded inputs.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual operating expenses, revenue and operating expenses per revenue dollar",
+    "currency": "USD",
+    "units": "billions; USD expenses per USD revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Reuters: 2025 operating expenses approximately USD 12.65 billion.",
+     "Reuters: 2025 revenue nearly USD 4.6 billion."
+    ],
+    "formula": "12.65 / 4.6 = 2.75",
+    "rounding": "Uses the published rounded inputs; ratio displayed to two decimal places."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Auditor report F-3; consolidated statements of operations F-7",
+   "receipt": {
+    "public_excerpt": "auditor",
+    "quote_hash": "dd906e5bf1e27bcc10ea7134f5c85a89324c96f244ad113929ffd4813d878b1a",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The audited statement reports $12.645 billion of expenses and $4.585 billion of revenue. These corroborate the rounded amounts, although their unrounded ratio rounds to $2.76.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual operating expenses, revenue and operating expenses per revenue dollar",
+    "currency": "USD",
+    "units": "billions; USD expenses per USD revenue",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "F-7: 2025 total operating expenses USD 12,645 million.",
+     "F-7: 2025 revenue USD 4,585 million."
+    ],
+    "formula": "12645 / 4585 = 2.757906...",
+    "rounding": "Nearest cent: USD 2.76 per revenue dollar."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "f4563c56561d3b5e4d89cd02b4a33c600a7b0441b511cf85af4f8ea260afb855"
+}

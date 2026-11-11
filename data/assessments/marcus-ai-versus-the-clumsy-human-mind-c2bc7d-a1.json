@@ -1,0 +1,132 @@
+{
+ "assessment_id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-a1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d",
+  "version": 1,
+  "content_hash": "324b3214d8f8b5e8c2c2e78c04fa51330a89e1184912bc1cfcf6eb2e3d7e42cf"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d",
+  "version": 1,
+  "content_hash": "bf5df32786c4a319bd6f7a739c8987dd7e35e90ff5cf2a54819ab71ac9e1a631"
+ },
+ "packet_ref": {
+  "id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-p1",
+  "content_hash": "dcda6e86baccd6d1160e14eb49b491c812217669e0ca9159c297727ffda9b4e3"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01",
+  "end": "2023-11-25",
+  "precision": "day"
+ },
+ "public_rationale": "Both halves hold for 2023 LLMs used without tools. In a NeurIPS 2023 study, GPT-4 got only 59% of 3-digit by 3-digit multiplications right, and ChatGPT 55%. The authors found that accuracy falls further as problems grow, and that the models rely on matching learned sub-patterns. GPT-4's technical report shows human-level scores on many exams and benchmarks, so LLMs were strong at some pattern-heavy tasks. The tests use integers rather than floating point numbers specifically, but the plain sense of the claim, unreliable exact arithmetic without a calculator, is borne out.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "'Floating point' is read loosely as exact numeric arithmetic.",
+  "LLMs paired with code tools could compute exactly in 2023. The claim is read as being about LLMs on their own.",
+  "Strong word-problem results with chain of thought (GSM-8K) show the weakness was less severe for small numbers."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-1x-review-anthropic-1",
+  "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-1x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs are good at some kinds of pattern matching but poor at floating point arithmetic.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "LLMs are great at some kinds of pattern matching, but lousy at floating point arithmetic.",
+   "locator": "paragraph 26",
+   "url": "https://garymarcus.substack.com/p/ai-versus-the-clumsy-human-mind",
+   "date": "2023-11-25",
+   "document_title": "AI versus The Clumsy Human Mind",
+   "observed_at": "2026-10-29T00:02:17Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs are great at some kinds of pattern matching",
+    "but lousy at floating point arithmetic"
+   ],
+   "our_interpretation": [
+    "Read as a claim about leading 2023 LLMs (for example GPT-4) used on their own, without a calculator or code tool.",
+    "'Floating point arithmetic' is read in the ordinary sense he uses in contrast with calculators: exact multi-digit numeric calculation. Integer multi-digit multiplication counts as a fair test.",
+    "'Lousy' means error rates on routine multi-digit arithmetic far worse than a calculator, and worse than a careful human with pencil and paper.",
+    "'Great at some kinds of pattern matching' holds if LLMs score highly on some tasks that reward recognising learned patterns.",
+    "No period is named. I use 2023-01 to the post date of 2023-11-25."
+   ],
+   "support_condition": "2023 evaluations show leading LLMs doing well on some pattern-heavy tasks, while failing often at routine multi-digit arithmetic without tools.",
+   "contradiction_condition": "2023 evaluations show leading LLMs doing multi-digit arithmetic reliably without tools, or doing poorly at pattern-based tasks generally."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Both halves hold for 2023 LLMs used without tools. In a NeurIPS 2023 study, GPT-4 got only 59% of 3-digit by 3-digit multiplications right, and ChatGPT 55%. The authors found that accuracy falls further as problems grow, and that the models rely on matching learned sub-patterns. GPT-4's technical report shows human-level scores on many exams and benchmarks, so LLMs were strong at some pattern-heavy tasks. The tests use integers rather than floating point numbers specifically, but the plain sense of the claim, unreliable exact arithmetic without a calculator, is borne out.",
+  "limitations": [
+   "'Floating point' is read loosely as exact numeric arithmetic.",
+   "LLMs paired with code tools could compute exactly in 2023. The claim is read as being about LLMs on their own.",
+   "Strong word-problem results with chain of thought (GSM-8K) show the weakness was less severe for small numbers."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Yet, off-the-shelf ChatGPT and GPT4 achieve only 55% and 59% accuracies on this task, respectively (§3).",
+    "locator": "Section 1 (Introduction), paragraph 1",
+    "url": "https://arxiv.org/html/2305.18654",
+    "publisher": "arXiv / NeurIPS 2023 (Dziri et al.)",
+    "event_date": "2023-05",
+    "available_at": "2023-10-31",
+    "explanation": "GPT-4, tested from January to May 2023, got 3-digit by 3-digit multiplication wrong about 41% of the time, a task a calculator never misses. This supports 'lousy' at arithmetic."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "transformer LLMs solve compositional tasks by reducing multi-step compositional reasoning into linearized subgraph matching, without necessarily developing systematic problem-solving skills.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2305.18654",
+    "publisher": "arXiv / NeurIPS 2023 (Dziri et al.)",
+    "event_date": "2023-05",
+    "available_at": "2023-10-31",
+    "explanation": "The authors find LLMs succeed by matching learned sub-patterns rather than by running systematic procedures. That matches the claim's contrast between pattern matching and arithmetic."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2303.08774v4",
+    "publisher": "OpenAI (arXiv)",
+    "event_date": "2023-03",
+    "available_at": "2023-03-15",
+    "explanation": "Human-level scores on many text benchmarks show that LLMs were strong at some pattern-based tasks in 2023. This supports the 'great at some kinds of pattern matching' half."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a4df7bbe0a2b8c9c3d6f2e7aaaf0c5456b109c0032cb2ea94b6095c8568fd9a2",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:22:22Z"
+}

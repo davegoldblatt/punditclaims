@@ -1,0 +1,138 @@
+{
+ "assessment_id": "marcus-when-looked-at-carefully-openais-483f6c-a2",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-483f6c",
+  "version": 2,
+  "content_hash": "25fde81ff57960fa171bf288234b5eee80a798b82a27f308ac8630670c91a2a8"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-483f6c",
+  "version": 1,
+  "content_hash": "6c227852ad88a019390303b3ca133130ffad2d0f2c027a3914af1c9b4f063e03"
+ },
+ "packet_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-483f6c-p1",
+  "content_hash": "9019e4fba278ccde431f8ffe8946b6811e66e1db4496979b89504e4a97a4fcd6"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-01-31",
+  "end": "2024-02-04",
+  "precision": "day"
+ },
+ "public_rationale": "A reanalysis of OpenAI's data released January 31, 2024 sums five accuracy scores per participant and combines the expert and student cohorts [e1][e2]. Mean totals were 22.98 with model access and 19.94 with internet alone, with 50 participants per group [e1][e2]. The unadjusted, two-sided Welch t-test gives p = 0.01908, supporting the aggregate significance claim at p < 0.05 [e1]. OpenAI's published summary separately reports a one-sided expert-total p-value of 0.0027 [e3].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The result does not establish that this analysis was uniquely appropriate or that multiple-comparison adjustment was unnecessary.",
+  "The published student-total one-sided p-value is 0.2399; significance is not established for both cohorts separately [e3].",
+  "The supplied evidence items do not reproduce Footnote C, so its wording is not independently verified here."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-when-looked-at-carefully-openais-02bc2d-4x-review-anthropic-1",
+  "marcus-when-looked-at-carefully-openais-02bc2d-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-when-looked-at-carefully-openais-04e71c-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-when-looked-at-carefully-openais-483f6c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "If all the accuracy measurements in OpenAI's study were collapsed and tested with a simple t-test, the results would be statistically significant, as Footnote C implies.",
+  "kind": "observation",
+  "conditions": [
+   "if all accuracy measurements were collapsed",
+   "using a simple t-test",
+   "as Footnote C implies"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In fact, if you simply collapsed all the measurements of accuracy, and did the single most obvious test here, a simple t-test, the results would (as Footnote C implies) be significant.",
+   "locator": "paragraph 15",
+   "url": "https://garymarcus.substack.com/p/when-looked-at-carefully-openais",
+   "date": "2024-02-04",
+   "document_title": "Diving deep into OpenAI’s new study on LLM’s and bioweapons",
+   "observed_at": "2026-10-29T00:01:39Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "collapsed all the measurements of accuracy",
+    "a simple t-test",
+    "would ... be significant",
+    "as Footnote C implies"
+   ],
+   "our_interpretation": [
+    "This is a testable statement about an existing dataset, not a conditional forecast.",
+    "Collapse means sum the five accuracy scores within each participant, preserving participants as independent observations.",
+    "The primary test combines both cohorts and compares the 50 LLM-assigned participants with the 50 internet-only participants.",
+    "Use an unadjusted, two-sided Welch t-test with significance at p < 0.05; also check the expert-only interpretation suggested by the preceding discussion.",
+    "This assesses the numerical significance claim, not whether this was the uniquely correct analysis."
+   ],
+   "support_condition": "A participant-level t-test of total accuracy produces p < 0.05 for the combined sample, with a positive LLM-group difference.",
+   "contradiction_condition": "The specified participant-level t-test produces p >= 0.05."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "A reanalysis of OpenAI's data released January 31, 2024 sums five accuracy scores per participant and combines the expert and student cohorts [e1][e2]. Mean totals were 22.98 with model access and 19.94 with internet alone, with 50 participants per group [e1][e2]. The unadjusted, two-sided Welch t-test gives p = 0.01908, supporting the aggregate significance claim at p < 0.05 [e1]. OpenAI's published summary separately reports a one-sided expert-total p-value of 0.0027 [e3].",
+  "limitations": [
+   "The result does not establish that this analysis was uniquely appropriate or that multiple-comparison adjustment was unnecessary.",
+   "The published student-total one-sided p-value is 0.2399; significance is not established for both cohorts separately [e3].",
+   "The supplied evidence items do not reproduce Footnote C, so its wording is not independently verified here."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "id,stage,accuracy,completeness,innovation,difficulty,n_user_messages,n_internet_resources,time_to_complete_sec\n0,ideation,7,2,1,6,0,23,2075",
+    "locator": "Header and first record; calculation uses all 500 accuracy records",
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "publisher": "OpenAI",
+    "event_date": "2024-01-31",
+    "available_at": "2024-01-31",
+    "explanation": "Summing within participants and comparing the two assignment groups gives a positive difference with two-sided p = 0.01908. This remains significant while respecting repeated measurements."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "id,cohort,assignment,llm_experience\n0,expert,llm_internet,Used a few times\n1,expert,internet_only,Use at least once every few weeks",
+    "locator": "Header and first two records; all participant records used for joining",
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+    "publisher": "OpenAI",
+    "event_date": "2024-01-31",
+    "available_at": "2024-01-31",
+    "explanation": "This supplies the cohort and assignment labels needed for e1's calculation."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": ",T-test p-value,0.3998,0.9584,0.0445,0.0683,0.3170,0.2399,0.2165,0.0721,0.0073,0.0160,0.1042,0.0027",
+    "locator": "T-test p-value row, Student Total and Expert Total columns",
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/accuracy_summary.csv",
+    "publisher": "OpenAI",
+    "event_date": "2024-01-31",
+    "available_at": "2024-01-31",
+    "explanation": "The published one-sided expert total test has p = 0.0027, whereas the student total has p = 0.2399. The expert-only reading also supports significance, but a claim of significance within both cohorts separately would not hold."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "db907b54ce479d04f7af297aaea8aa333fde77ecfe2e33a0463fa5cb22d70ebc",
+ "supersedes_assessment_id": "marcus-when-looked-at-carefully-openais-483f6c-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T16:47:38Z"
+}

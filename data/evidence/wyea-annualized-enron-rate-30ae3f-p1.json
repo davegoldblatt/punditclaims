@@ -1,0 +1,138 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-30ae3f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-30ae3f",
+  "version": 2,
+  "content_hash": "b2a3a49454d6e91906c172c123a9a4ef578c7cef0dc80ea7061bc1da16294941"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-30ae3f",
+  "version": 1,
+  "content_hash": "a5af5f3a3ccf0a0f7344bcd36aa220150324e26ea35611d38138aa3425a48e76"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic OpenAI revenue AI startups share 2026 hyperscaler",
+   "\"Anthropic\" \"OpenAI\" \"revenues\" \"startups\" Ramp 80% 2026",
+   "site:ramp.com \"80%\" \"OpenAI\" \"Anthropic\"",
+   "site:ramp.com/data \"Cracks in the AI\" \"September\"",
+   "\"hyperscaler\" \"AI revenue\" \"70%\" \"2026\" OpenAI Microsoft",
+   "\"Microsoft\" \"2026\" \"24.1 billion\" \"July 29\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://ramp.com/data/ai-index-oct-2026",
+    "used": true,
+    "why": "Original spending research reports concentration but does not identify the revenue share attributable to funding-dependent AI startups."
+   },
+   {
+    "url": "https://ramp.com/data/ai-index-sept-2026",
+    "used": true,
+    "why": "Pre-post report confirms concentration analysis concerns business spending observed through Ramp."
+   },
+   {
+    "url": "https://edgar-mirror.sec-api.io/789019/000119312526323660/msft-20260630.htm",
+    "used": true,
+    "why": "Readable mirror of Microsoft's filing provides actual OpenAI-related revenue, but not the claimed sector-wide ratio."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "used": false,
+    "why": "Direct read returned HTTP 403; the filing mirror was read instead."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-openais-share-ai-startup-revenues-rises-89",
+    "used": false,
+    "why": "Search result concerns the labs' share of startup-sector revenue, not the share of lab revenue paid by startups. These are different denominators."
+   },
+   {
+    "url": "https://aiweekly.co/alerts/zitron-70-of-ai-revenue-traces-to-openai-and-anthropic",
+    "used": false,
+    "why": "Repeats Zitron's own argument and cannot independently establish it."
+   }
+  ],
+  "performed_at": "2026-10-29T10:32:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "ramp-com-data-ai-index-oct-2026",
+   "source_snapshot_id": "d8d6533515fd14aef56eb2f8295ea7a0abc9353ca5d25633759481c1437d9f24",
+   "publisher": "Ramp Economics Lab",
+   "source_type": "independent_measurement",
+   "url": "https://ramp.com/data/ai-index-oct-2026",
+   "locator": "Per employee AI spend stutters, opening paragraph",
+   "receipt": {
+    "public_excerpt": "80% of spend",
+    "quote_hash": "78936d2e8b82e62dfddbaadca89ea38ba10a1ad6dae925abb43196e23f5aeedb",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-10-14",
+   "retrieved_at": "2026-10-29T09:52:07Z",
+   "relation": "context",
+   "explanation": "This supports substantial concentration within observed business spending. It does not classify the largest spenders as AI startups, measure all lab revenue, or establish their need for continuing financing.",
+   "metric_scope": {
+    "company": "OpenAI and Anthropic within Ramp's observed business-spending sample",
+    "metric": "Share of observed spending attributable to the top 1% of firms",
+    "currency": null,
+    "units": "percent of observed spending",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-09-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "edgar-mirror-sec-api-io-789019-000119312526323660-msft-20260630-htm",
+   "source_snapshot_id": "96b47462a972ae8bacc8b18ae5a1ab916ac32130b9b986a2a2a8bd8950ab4e38",
+   "publisher": "Microsoft; SEC filing reproduced by sec-api.io",
+   "source_type": "filing",
+   "url": "https://edgar-mirror.sec-api.io/789019/000119312526323660/msft-20260630.htm",
+   "locator": "Part II, Item 8 — OpenAI related-party disclosure",
+   "receipt": {
+    "public_excerpt": "transactions with OpenAI.",
+    "quote_hash": "2415c46808c479a433097d99651d02da58d88ee97c748c5cdae54a9b164f1394",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-29",
+   "retrieved_at": "2026-10-29T10:25:27Z",
+   "relation": "context",
+   "explanation": "The adjoining disclosure reports $24.1 billion of fiscal-2026 OpenAI-related revenue, including revenue-sharing payments. It supplies neither a pure compute-spending numerator nor a matching denominator for all hyperscaler AI revenue.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Revenue from commercial arrangements with OpenAI, including revenue-sharing payments",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No comparable sector-wide hyperscaler AI revenue denominator was established.",
+  "No complete lab revenue breakdown identifies the share paid by AI startups.",
+  "Ramp customer concentration does not establish customer type or represent all revenue.",
+  "No matched cash-flow dataset establishes continuing financing dependence among the customers responsible for the asserted overwhelming share.",
+  "Available evidence uses different financial periods and revenue-recognition scopes."
+ ],
+ "packet_hash": "3861f36a8c2a6e1e0644929e81703f2a00a2a0d8d64c07696b45bc3c9b3546e2"
+}

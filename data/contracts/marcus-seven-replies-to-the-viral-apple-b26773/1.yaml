@@ -1,0 +1,40 @@
+claim_id: marcus-seven-replies-to-the-viral-apple-b26773
+version: 1
+claim_revision_ref:
+  id: marcus-seven-replies-to-the-viral-apple-b26773
+  version: 2
+  content_hash: 770259094cef55a0a1383f6853325d2b1a32c54065f5fae9c4170a9741be0efa
+assessment_axis: historical_observation
+explicit_source_elements:
+  - The LRMs failed on Tower of Hanoi with 8 discs
+  - the optimal solution is 255 moves
+  - well within so-called token limits
+evaluator_interpretation:
+  - Failed means the tested models exhibited execution failures at eight discs; it does not require every model to fail every sampled attempt.
+  - Within token limits refers to the required complete answer fitting the configured output budget. It does not guarantee that every possible reasoning trace fits.
+  - The contextual conclusion is that a hard output ceiling cannot explain all reported failures, not that output constraints never matter.
+  - The target is the original Apple experiment reported in June 2025.
+support_condition: The original results show eight-disc failures, and a valid 255-move answer fits comfortably within the tested output budgets.
+contradiction_condition: The original results show no eight-disc failures, the optimal move count differs, or the required answer necessarily exceeds the applicable output budgets.
+measurement_requirements: Check the original failure results, three-peg Hanoi move count, answer format, and configured token budgets. Distinguish answer length from optional reasoning length.
+source_requirements: Original experimental results and methods, supplemented by explicit token calculations or a documented methodological correction.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2025-06
+  end: 2025-06
+  precision: month
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - Failed does not specify an exact failure rate.
+  - Token limits could mean the final answer budget or the combined reasoning and answer budget.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: true
+written_at: 2026-10-29T18:14:26Z
+frozen_at: 2026-10-29T18:14:26Z
+policy_version: 2026-10-28.7
+content_hash: 8de8917461b8413122f08fb710700af0dac5aef48a3b7df36d348154dd214c08

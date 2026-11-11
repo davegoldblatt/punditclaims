@@ -1,0 +1,143 @@
+{
+ "run_id": "marcus-this-week-in-ai-doublespeak-7f68c2-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-this-week-in-ai-doublespeak-7f68c2": "bbeb403b774d89935aae3a0a660658ce73cb892c890e5648f80955c018c9aad8",
+  "case:marcus-this-week-in-ai-doublespeak-d79f2e": "582cf90538579aa20072cdfef11d6ecabdd847712d088600047967c76d7a4c2c",
+  "case:marcus-this-week-in-ai-doublespeak-f02594": "a6b7267869b5e77090a79471a2ae3b05d6f129bf68b6e0e64c8d4a3c4ea6f38c"
+ },
+ "started_at": "2026-10-29T12:36:57Z",
+ "completed_at": "2026-10-29T12:37:31Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post, following quoted tweets; not a paraphrase of others."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful two-part observation. 'Essentially every' is softened to 'none' in the normalisation, but the scope is the broad warned-of harms either way."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading of 'nothing' as no substantive technical disclosure is ordinary, and splitting the two components is reasonable. Result depends on treating generic architecture, objective, data source and RLHF disclosure as substantive."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "March 2023 system card describes broad risks as needing further research and mitigations as reducing, not eliminating, harms. Supports the 'none are solved' part."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Technical report discloses Transformer architecture, next-token pretraining, data sources and RLHF fine-tuning, while withholding further detail. Contradicts the literal 'told nothing' part."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The unsolved-harms component holds: the launch materials present the risks as mitigated, not eliminated. The disclosure component fails on the plain reading, because OpenAI did publish basic but substantive facts about architecture, training objective, data and RLHF, though it withheld most details. So the claim is mixed: harms part supported, 'nothing' part contradicted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-this-week-in-ai-doublespeak-7f68c2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own commentary sentence in the post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'if' clause fixes a definition rather than a forecast antecedent; preserved as a qualifier. 'Frequently' kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Requiring recurring invalid inferences on supplied premises, tied to the launch-period model, is a fair reading. 'Frequently' has no threshold, so interpretation matters."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "April 2023 preprint finds logical reasoning remains challenging for GPT-4, but its GPT-4 test dates and snapshot are unestablished and it gives no frequency of invalid inference."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only item is context: it suggests reasoning difficulties but is not tied to the March 14–18 model and does not quantify how often valid conclusions fail from known premises. The packet does not settle 'frequently'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-this-week-in-ai-doublespeak-d79f2e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus writes 'true that', endorsing the point in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures the lousy-database claim and the hallucination rationale; the memorisation concession is rightly treated as background."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading — models cannot reliably serve as standalone factual stores — is ordinary and fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's March 14, 2023 launch page admits GPT-4 still hallucinates facts and advises human review for high-stakes use; improved factuality does not establish reliability."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenAI's own launch disclosure, an admission against interest, says the model still fabricates facts and needs verification. That meets the support condition. Reduced hallucination relative to GPT-3.5 does not meet the contradiction condition of reliable fabrication-free retrieval.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-this-week-in-ai-doublespeak-f02594"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 18907,
+  "output_tokens": 3495,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

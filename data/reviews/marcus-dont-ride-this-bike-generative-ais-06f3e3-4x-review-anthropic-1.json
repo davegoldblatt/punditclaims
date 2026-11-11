@@ -1,0 +1,179 @@
+{
+ "run_id": "marcus-dont-ride-this-bike-generative-ais-06f3e3-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-dont-ride-this-bike-generative-ais-06f3e3": "c70beb1301cd721efb2ce02e86f67352b1058acaee3e4ccef800ab7857a30ada",
+  "case:marcus-dont-ride-this-bike-generative-ais-0a0215": "be74dc77dce8f9e5001583e9d576a33651505e3bd09c5cd788fe0b1df07c68b3",
+  "case:marcus-dont-ride-this-bike-generative-ais-306395": "5c5879699be950617a954095fb0635a8c774c074d62a0125709d2d17cb777a64",
+  "case:marcus-dont-ride-this-bike-generative-ais-347ba6": "c97e47b8b1193a05c33c5704fa8657e73b81a6a1c438fbc5ff3af5358aa27fc1"
+ },
+ "started_at": "2026-10-29T07:00:04Z",
+ "completed_at": "2026-10-29T07:00:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his co-authored post, endorsed. The claim summarises the violin-bridge example."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The small-sample caveat is kept as a qualifier. The 'with that caveat' framing does not turn the observation into a probabilistic statement."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (generating the object with a named part left out, including retries after feedback) matches the violin example. Setting the target period to November 2024 is ordinary and fair."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Bridge-free violin failures are dated to January 2025, outside the target month. Its November statement just cites the authors' own Davis record, so it does not independently confirm November."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only item is a later preprint describing failures in January 2025. Its November reference goes back to the authors' own experiment record, so it is not independent. No verified November 2024 omission outputs or evaluation is in the packet, so the evidence does not settle the claim for the target period.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-06f3e3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his co-authored post, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The claim keeps 'difficulty associating user feedback with parts of images'. It loses the link to the three examples, but the contract restores it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "A behavioural reading (repeated failure to apply corrections about specific parts) with November 2024 as the period is ordinary and fair. 'Difficulty' allows occasional successes."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A custom automated workflow (GPT-4V refining prompts for DALL-E 3) on Winoground relation prompts, with undated experiments. It is not ordinary ChatGPT part-specific feedback, so it cannot contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no verified November 2024 before-and-after images for the three interactions, and no comparable ordinary-ChatGPT test. The CVPR workflow tests a different setup and task. It is context only, so the evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-0a0215"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in the post he co-wrote with Davis, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An exact count, 13 of 17 cases failing all three attempts, from the November 10, 2024 informal experiment. Faithful."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Checking the count against the authors' own linked record and its accepted outcomes is fair. It needs no visual rescoring, only internal consistency."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The record marks as Correct the glass-top table on umbrellas, as well as the deer and the wooden-legged table (first try), the cat (second try) and the airplane (third try). That is five successes, leaving at most 12 failures."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The post counts four successes. The linked record, dated before the post, marks five cases correct, including the umbrella table, which the tally leaves out. That leaves at most twelve cases failing all three attempts, not thirteen. This meets the contract's contradiction condition, though the error is off by one. One caveat: no archived version shows the annotation was unchanged since the post.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-306395"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored 'bottom line' statement, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The 'as far as these experiments go' scope is kept, and so is the comparison window from October 2022 to November 2024."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Slightly' has no threshold, so the result depends on the evaluator's sense of how big a small gain is. Asking for matched, independently scored audits is a fair, ordinary reading but a demanding one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports a large DALL-E 2 to DALL-E 3 gain on relation prompts. These are different prompts and a different task from the authors' part experiments."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The authors' own record. It shows a tally inconsistency and the mixing of feedback across attempts, but it offers no independent matched scoring of the 2022 and 2024 outputs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No independent, consistently scored comparison of matched 2022 and 2024 outputs is in the packet. The relations study covers different prompts. The authors' own record cannot confirm itself, and its one-case tally discrepancy does not show whether the improvement was slight or substantial. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-347ba6"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24147,
+  "output_tokens": 3738,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

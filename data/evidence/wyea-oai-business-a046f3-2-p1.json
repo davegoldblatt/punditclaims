@@ -1,0 +1,151 @@
+{
+ "packet_id": "wyea-oai-business-a046f3-2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-business-a046f3-2",
+  "version": 1,
+  "content_hash": "a55ba986696cc634ecdf7eeddd4bf1d9f1b24af85a0179409c648dcc42915c0a"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-business-a046f3-2",
+  "version": 1,
+  "content_hash": "46d73e40b5209ddb7171ba47b86ad2cef2b9ded5ab53fd923eab5c213114080e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI revenue monthly August September December 2024 January February 2025 growth",
+   "OpenAI revenue first quarter 2025 monthly January March 2024",
+   "site.reuters.com OpenAI revenue 2025 \"December\" \"5.5\"",
+   "OpenAI revenue \"January 2025\" \"February 2025\" monthly revenue",
+   "OpenAI \"monthly revenue\" \"$300 million\" September 2024 Reuters",
+   "OpenAI \"revenue\" \"first quarter of 2025\" \"2024\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+    "used": true,
+    "why": "Full text read. Fortune's report, republished by Yahoo, supplies an August realized-revenue observation attributed to documents reviewed by The New York Times."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openais-annualized-revenue-hits-10-194345858.html",
+    "used": true,
+    "why": "Full text read. Reuters reports company-confirmed run-rate growth, but its metric and June endpoint do not settle the specified early-2025 revenue trend."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/ai-companies-revenue",
+    "used": true,
+    "why": "Full text read. Its reconstructed revenue trajectory uses fitted growth trends, not a complete series of observed monthly revenue."
+   },
+   {
+    "url": "https://www.cnbc.com/2025/06/09/openai-hits-10-billion-in-annual-recurring-revenue-fueled-by-chatgpt.html",
+    "used": false,
+    "why": "read_page returned HTTP 404; no evidence was taken from this address."
+   }
+  ],
+  "performed_at": "2026-10-29T12:04:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-sees-5-billion-loss-170306927-html",
+   "source_snapshot_id": "a6b55647389acc1c597b73b58fad8f63aae5fa820be691e9569ce71349ac3b65",
+   "publisher": "Fortune, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+   "locator": "Paragraph beginning 'The losses come despite'",
+   "receipt": {
+    "public_excerpt": "$300 million",
+    "quote_hash": "09eb14ded8b00c74c774ede1860add6e8e63544d71a047ce737fd950e77ed5ec",
+    "verified": "exact"
+   },
+   "event_date": "2024-08",
+   "available_at": "2024-09-30",
+   "retrieved_at": "2026-10-29T11:19:24Z",
+   "relation": "context",
+   "explanation": "This supplies a contemporaneously available monthly revenue level. One level and a long-period increase do not establish whether the recent growth rate was declining.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Monthly realized revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-08-01",
+    "period_end": "2024-08-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openais-annualized-revenue-hits-10-194345858-html",
+   "source_snapshot_id": "d6312d900b75f142b6671a3f62b3f8e0eed63d87cfeeb163f737d6168b428c72",
+   "publisher": "Reuters, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openais-annualized-revenue-hits-10-194345858.html",
+   "locator": "Paragraph 4",
+   "receipt": {
+    "public_excerpt": "$10 billion",
+    "quote_hash": "e777c9d90b842256db59680a143376551a5bb2f234138b70ed1d117a0833e934",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-09",
+   "retrieved_at": "2026-10-29T06:45:05Z",
+   "relation": "context",
+   "explanation": "The article reports annualized revenue rising from approximately $5.5 billion in December to $10 billion in June. This is relevant contrary context, but the later endpoint, annualized measure, and stated exclusions prevent a direct test of the contracted monthly revenue trend.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Revenue run rate excluding Microsoft licensing and large one-time deals",
+    "currency": "USD",
+    "units": "billions per year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-06-01",
+    "period_end": "2025-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-ai-companies-revenue",
+   "source_snapshot_id": "a8208f236b962de405395f481858fbc532a342ad89454d70c4dfebbbc7e03d5e",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/ai-companies-revenue",
+   "locator": "Section 'Learn more about this graph'",
+   "receipt": {
+    "public_excerpt": "fit exponential trends",
+    "quote_hash": "53d6413729b03bd25d34aea4ad3040790807cd16c9aa10d91f9ce6c594a84ab8",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-03",
+   "available_at": "2025-04-03",
+   "retrieved_at": "2026-10-29T06:36:56Z",
+   "relation": "context",
+   "explanation": "The methodology explains why a smooth reconstructed trajectory cannot independently settle a claim about a change in growth rate. Its early-2025 trajectory is a projection rather than the missing actual monthly observations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No consistent series of actual monthly revenue was located that establishes the growth rate before the post and across late 2024 and early 2025.",
+  "The available run-rate milestones do not isolate growth around the beginning of 2025.",
+  "The speaker did not specify a metric, comparison interval, or threshold for a dramatic slowdown."
+ ],
+ "packet_hash": "7487904a6d3b258818f3123418047ca1e2a156db52b2086955b3857ed367a2e4"
+}

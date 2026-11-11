@@ -1,0 +1,151 @@
+{
+ "packet_id": "marcus-chatgpt-has-gone-berserk-e2f41e-p2",
+ "claim_revision_ref": {
+  "id": "marcus-chatgpt-has-gone-berserk-e2f41e",
+  "version": 1,
+  "content_hash": "8511671ef48c698919276bfb0f0a9096de1598449af8a50182b8824514ed7faf"
+ },
+ "contract_ref": {
+  "id": "marcus-chatgpt-has-gone-berserk-e2f41e",
+  "version": 2,
+  "content_hash": "a671f377aef79d8953ee21e1aa86f198f54fb9a084ceecf90e69368ec685cd3f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"large language models\" \"safety guarantees\" \"2023\"",
+   "\"certified\" \"erase-and-check\" February 2024 safety",
+   "GPT-4 system card 2023 safety reliability limitations",
+   "\"language models\" \"safety guarantees\" before:2024-02-22",
+   "\"generative AI\" \"formal\" \"guarantees\" safety 2023 verification",
+   "\"language models\" \"safety guarantees\" before:2024-02-22 -site:reddit.com",
+   "\"2023\" \"language models\" \"guarantee\" \"alignment\" impossibility",
+   "\"safety chip\" \"language\" 2023 guarantees",
+   "\"LLMs\" \"safety guarantees\" \"2024\" \"January\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Read with read_page. Contemporaneous primary disclosure of remaining safety failures in a relevant deployed model."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.02705",
+    "used": false,
+    "why": "Read with read_page, but the current version was revised in 2025. Used the pre-post version instead."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.02705v3",
+    "used": true,
+    "why": "Read with read_page to establish the February 12, 2024 version date and inspect the abstract."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.02705v3",
+    "used": true,
+    "why": "Read with read_page. Examined the actual certificate and its dependence on the base filter detecting the original harmful prompt."
+   },
+   {
+    "url": "https://openreview.net/pdf?id=INvxF4iQ34",
+    "used": false,
+    "why": "read_page returned a browser verification screen, not the paper."
+   },
+   {
+    "url": "https://h2r.cs.brown.edu/wp-content/uploads/yang2023plug.pdf",
+    "used": false,
+    "why": "Read with read_page, but its interleaved PDF columns impeded reliable quotation. Used the versioned HTML paper instead."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.09919v1",
+    "used": true,
+    "why": "Read with read_page. Established the paper's September 2023 submission and November 2023 revision history."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.09919v3",
+    "used": true,
+    "why": "Read with read_page. Examined a stronger candidate involving constraints enforced around an LLM-driven robot, including its assumptions."
+   }
+  ],
+  "performed_at": "2026-10-29T23:42:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Risks & mitigations, paragraph beginning “Overall”",
+   "receipt": {
+    "public_excerpt": "still possible.",
+    "quote_hash": "e80f4edfd3b9adeacbd612dcc215f9cd3de2bec1aefe95487ada1642bbd66c5b",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "context",
+   "explanation": "OpenAI acknowledged that its interventions did not prevent all bad behavior in GPT-4. This is consistent with Marcus's concern, but one model's limitations cannot establish that nobody had engineered qualifying assurance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2309-02705v3",
+   "source_snapshot_id": "52a854fd3f7daa56c15881c843e95d9dc0deacf4f1fcde0ed5aa83bacf208b4d",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.02705v3",
+   "locator": "Introduction, paragraph introducing erase-and-check; scope explained under adversarial attack modes",
+   "receipt": {
+    "public_excerpt": "verifiable safety guarantees.",
+    "quote_hash": "64a328d9c4c9262022fe20fb1ad98167696ae9393c554692451a0bdfc1bb7ec4",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-12",
+   "available_at": "2024-02-12",
+   "retrieved_at": "2026-10-29T02:58:19Z",
+   "relation": "context",
+   "explanation": "This is a genuine candidate against an unrestricted reading of “safety guarantees.” Its certificate concerns bounded token additions and depends on the original harmful prompt being detected by the safety filter; it does not establish overall safe behavior.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2309-09919v3",
+   "source_snapshot_id": "c6f99ec503c03d0a2627deccba71bac76510343026090694666f746e6804e05c",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.09919v3",
+   "locator": "Section III-B, Overview; assumptions in Sections III-A, III-E, and V-A",
+   "receipt": {
+    "public_excerpt": "The human specifies safety constraints in English.",
+    "quote_hash": "248ed63cfba1087073e72f135fc334ebff13fd0ca61ca89522f58053f69bc98b",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-28",
+   "available_at": "2023-11-28",
+   "retrieved_at": "2026-10-29T23:25:33Z",
+   "relation": "context",
+   "explanation": "The proposed safety module enforces human-verified formal constraints around an LLM-driven robot, making it a more relevant candidate than a prompt certificate alone. Its assurance assumes perfect state predicates and a transition model; the examined evidence does not establish coverage of the hazards needed for the broader assurance meant here.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The search did not establish a comprehensive historical finding that no qualifying system existed.",
+  "The candidate guarantees demonstrate narrower engineering achievements, but the examined records do not establish system-level safety assurance under justified real-use assumptions.",
+  "Marcus did not specify which hazards or operating scope a guarantee must cover, preventing a precise boundary between a qualifying system and a limited certificate."
+ ],
+ "packet_hash": "2ab34bb80693b54de32ce738550c24cb05a1b36ba0d73f88db83e2043289c3a0"
+}

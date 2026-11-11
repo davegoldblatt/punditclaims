@@ -1,0 +1,95 @@
+{
+ "packet_id": "marcus-what-if-generative-ai-turned-out-f20765-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-if-generative-ai-turned-out-f20765",
+  "version": 1,
+  "content_hash": "b5638654ff0589493e9e9c09073a9d9f6e87629d1a6213327871e2186245d75c"
+ },
+ "contract_ref": {
+  "id": "marcus-what-if-generative-ai-turned-out-f20765",
+  "version": 1,
+  "content_hash": "767ead26f9193d632defd8b84990b594c40f7a851b69151750c84bb733223cfa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 GPT-4 technical report hallucinations next token prediction limitations",
+   "Llama 2 2023 safety limitations hallucinations next token prediction",
+   "2023 retrieval augmented language models hallucination RARR research May 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2303.08774v1",
+    "used": true,
+    "why": "Explicitly identifies next-token pretraining and separately describes factuality improvements from post-training."
+   },
+   {
+    "url": "https://arxiv.org/abs/2210.08726",
+    "used": true,
+    "why": "Primary example of retrieval and revision augmenting language-model generation."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.09288v2",
+    "used": false,
+    "why": "Additional documentation of factuality-oriented data selection and fine-tuning; the selected evidence already establishes the distinction."
+   }
+  ],
+  "performed_at": "2026-10-29T09:24:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2303-08774v1",
+   "source_snapshot_id": "814038d13c1ede4974b98b86b57895a1b718f288de11e2e2532eef03950ec8c6",
+   "publisher": "OpenAI, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2303.08774v1",
+   "locator": "Abstract, third sentence",
+   "receipt": {
+    "public_excerpt": "predict the next token in a document",
+    "quote_hash": "596a14c27e5aa9614fdbd263469669f6495d95b78a3b1e6a59fe6517c2b0d281",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:03:05Z",
+   "relation": "supports",
+   "explanation": "The report explicitly identifies predictive completion as GPT-4’s base objective. It separately reports factuality gains from post-training, supporting the foundation reading while qualifying a literal denial of factuality work.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2210-08726",
+   "source_snapshot_id": "63750b002cb0803274349b7f98bd83df4f5957381888987d4cccc1f66da8924a",
+   "publisher": "Luyu Gao and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2210.08726",
+   "locator": "Abstract, final sentence; May 31, 2023 revision",
+   "receipt": {
+    "public_excerpt": "standard web search",
+    "quote_hash": "ea9edd9266171fa55c7b2fe62750ee0f4e1a3739d31ec66a932d43115d63b1a5",
+    "verified": "exact"
+   },
+   "event_date": "2022-10",
+   "available_at": "2023-05-31",
+   "retrieved_at": "2026-10-29T09:20:36Z",
+   "relation": "context",
+   "explanation": "RARR retrieves evidence and revises unsupported generated content, showing that factual grounding could augment an underlying language model before Marcus wrote. The method predates the observation window and is contextual evidence against an overly broad reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evidence supports the language-model foundation reading, not a claim about every kind of generative AI.",
+  "It does not establish that predictive training prevents factual knowledge or that factuality can never improve."
+ ],
+ "packet_hash": "c37caaa44c610e78e55bb6d4e54acf790aa8c29dc2d9d039bc5715317a0976dd"
+}

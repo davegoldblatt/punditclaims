@@ -1,0 +1,133 @@
+{
+ "packet_id": "marcus-gpt-45-is-no-gpt-5-3e4ea6-p1",
+ "claim_revision_ref": {
+  "id": "marcus-gpt-45-is-no-gpt-5-3e4ea6",
+  "version": 1,
+  "content_hash": "0ec07913fcbde9f8ac122068a763c5ce5124bb8a16e25385d54199900f3cf769"
+ },
+ "contract_ref": {
+  "id": "marcus-gpt-45-is-no-gpt-5-3e4ea6",
+  "version": 1,
+  "content_hash": "58b63ca537a9d8551facb4ba9c50f7a3760b8c4ee1f8551d0f09ac17ce170ea3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com claude 3.7 sonnet system card February 2025 hallucination reasoning",
+   "site.openai.com o3-mini system card hallucination February 2025",
+   "Humanity Last Exam January 2025 models accuracy hallucination arxiv 2501.14249"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf",
+    "used": true,
+    "why": "Primary system card documenting hallucinated facts and references in the model released immediately before the post."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.14249v5",
+    "used": true,
+    "why": "The February 21, 2025 version documents unreliable, overconfident answers across frontier models."
+   },
+   {
+    "url": "https://arxiv.org/abs/2501.14249v1",
+    "used": true,
+    "why": "The submission history establishes the dates of the January and February paper versions."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.14249v1",
+    "used": false,
+    "why": "Read the initial evaluation and its limitations, then used the later pre-post version for the quoted finding."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+    "used": true,
+    "why": "Establishes the February 24 release and provides material context about improvements despite remaining limitations."
+   },
+   {
+    "url": "https://cdn.openai.com/o3-mini-system-card.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 404. No finding relies on this inaccessible source."
+   }
+  ],
+  "performed_at": "2026-10-29T06:40:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "www-cdn-anthropic-com-9ff93dfa8f445c932415d335c88852ef47f1201e-pdf",
+   "source_snapshot_id": "9439a4619045fa820bfc5c985dd1e9c79a2c71c933dae7879d6a918fc8070dff",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf",
+   "locator": "Section 5.2, page 19, paragraph introducing Figure 13",
+   "receipt": {
+    "public_excerpt": "hallucinating facts or sources",
+    "quote_hash": "81e41e92c667e68f31efc68590acb419d19b010f01f1f668fb034d7c9e8b3c62",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-24",
+   "retrieved_at": "2026-10-29T06:36:23Z",
+   "relation": "supports",
+   "explanation": "The launch evaluation documents fabricated facts and citations in Claude 3.7 Sonnet, including a worked example. This directly establishes that hallucination persisted in a current frontier model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2501-14249v5",
+   "source_snapshot_id": "6e450d37a884b322811e1e4b8db83ffc8de7348db4429355fd9412503773e901",
+   "publisher": "arXiv; Center for AI Safety and Scale AI researchers",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.14249v5",
+   "locator": "Section 4.2, Calibration Error",
+   "receipt": {
+    "public_excerpt": "incorrect answers",
+    "quote_hash": "ecee59192906a2fefde456cc1eec8debcbdf55e0966d13bff3146a50b4a9c9df",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-21",
+   "retrieved_at": "2026-10-29T06:37:48Z",
+   "relation": "supports",
+   "explanation": "The contemporary evaluation reports unreliable, overconfident answers on difficult academic problems across frontier models. It supports persistent reliability limitations, although it does not isolate reasoning errors from missing knowledge or estimate everyday failure rates.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "anthropic-com-news-claude-3-7-sonnet",
+   "source_snapshot_id": "d0cd6a845a029eccbe32d3666791830dbeb7594632ce6fdd6aa0e4a304a25b94",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+   "locator": "Section Working with Claude on your codebase",
+   "receipt": {
+    "public_excerpt": "best coding model",
+    "quote_hash": "87aec932b98a673a25696a8cca1a7310f4b2d2350028405f817eaaef08dd7063",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-24",
+   "available_at": "2025-02-24",
+   "retrieved_at": "2026-10-29T01:07:45Z",
+   "relation": "context",
+   "explanation": "Anthropic reported improved coding capabilities and better performance with extended thinking. These improvements constrain any stronger reading that AI had made no progress, but do not contradict the persistence of hallucination and unreliable answers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These sources do not establish the frequency of failures across all ordinary uses.",
+  "The benchmark combines knowledge and reasoning demands, so it does not separately quantify reasoning failures."
+ ],
+ "packet_hash": "78d77e01829528176a11d09f15d3b34fe384faa1e2435d4ef419b2dd30715300"
+}

@@ -1,0 +1,164 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-losing-e77e7f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-losing-e77e7f",
+  "version": 1,
+  "content_hash": "dc7ef3893819a2e1e3270501a9f5eaf6776331065d2419a82a82accdd72d89c4"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-losing-e77e7f",
+  "version": 1,
+  "content_hash": "7b250314f4fe307a2fbcebc24cb966f61a3dfe600278bb0821fa96269848f0cb"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Amazon Q1 2026 18.94 billion depreciation amortization 10-Q",
+   "Microsoft March 31 2026 depreciation 10.1 billion",
+   "Alphabet Q1 2026 depreciation 4.4 billion",
+   "Amazon 2026 Q1 \"depreciation expense\"",
+   "site.microsoft.com \"2026\" \"Depreciation expense was\" \"9.0\"",
+   "\"goog-20260331\" depreciation \"6.5\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001652044/000165204426000048/goog-20260331.htm",
+    "used": true,
+    "why": "Readable copy of Alphabet's primary quarterly filing; distinguishes 2025 from 2026 depreciation."
+   },
+   {
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf",
+    "used": true,
+    "why": "Company disclosure supplies the unrounded $6.482 billion quarterly figure."
+   },
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872426000014/amzn-20260331.htm",
+    "used": true,
+    "why": "Readable primary filing distinguishes $12.834 billion of property-and-equipment depreciation and amortization from the broader $18.945 billion adjustment."
+   },
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0000789019/000119312526191507/msft-20260331.htm",
+    "used": true,
+    "why": "Note 6 reports $9.0 billion of depreciation for the quarter."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q3/press-release-webcast",
+    "used": true,
+    "why": "The cash-flow statement identifies $10.167 billion as depreciation, amortization, and other, rather than depreciation alone."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; a readable filing mirror was used."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; a readable filing mirror was used."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; a readable filing mirror was used."
+   }
+  ],
+  "performed_at": "2026-10-29T12:48:45Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001652044-000165204426000048-2337e0ebfc58",
+   "source_snapshot_id": "3f1d37d6df437886b35ce10360c4824c1ff8f161e6bc396380f03a9005e9ff5f",
+   "publisher": "Alphabet Inc.; filing reproduced by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001652044/000165204426000048/goog-20260331.htm",
+   "locator": "Management’s Discussion and Analysis, Capital Expenditures",
+   "receipt": {
+    "public_excerpt": "our depreciation on property and equipment was $4.5 billion and $6.5 billion, respectively.",
+    "quote_hash": "c475a2ccc840b90e1a37ae0d608a3ced379f6927fe07f2fba72e057cb2cd0579",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-30",
+   "retrieved_at": "2026-10-29T12:39:58Z",
+   "relation": "contradicts",
+   "explanation": "Alphabet alone disagrees materially with the stated $4.4 billion. Combining the comparable disclosures produces approximately $28.3 billion, rather than $33.44 billion.",
+   "metric_scope": {
+    "company": "Amazon, Microsoft and Alphabet (Google)",
+    "metric": "Combined property-and-equipment depreciation expense, including finance-lease asset amortization",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Amazon: $12.834 billion, property-and-equipment depreciation and amortization, segment disclosure, https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872426000014/amzn-20260331.htm",
+     "Microsoft: $9.0 billion, quarterly depreciation expense, Note 6, https://cdn.yahoofinance.com/prod/sec-filings/0000789019/000119312526191507/msft-20260331.htm",
+     "Alphabet: $6.482 billion, depreciation of property and equipment, quarterly cash-flow statement, https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf"
+    ],
+    "formula": "12.834 + 9.0 + 6.482 = 28.316 billion USD",
+    "rounding": "Report approximately $28.3 billion because Microsoft's input is disclosed to one decimal place."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001018724-000101872426000014-b317dea8cb64",
+   "source_snapshot_id": "7cf1b4c7d05e3918c9b9d8fe75c487493b0e7ae7b0158b51e9d1e8cfc75fdf6f",
+   "publisher": "Amazon.com, Inc.; filing reproduced by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001018724/000101872426000014/amzn-20260331.htm",
+   "locator": "Note 10, Segment Information, property-and-equipment depreciation and amortization table",
+   "receipt": {
+    "public_excerpt": "Depreciation and amortization expense on property and equipment",
+    "quote_hash": "f56283c971482c6e4f8c441197c3bd4f18242f6cb29294993f055e8f8ffd5910",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-30",
+   "retrieved_at": "2026-10-29T12:39:58Z",
+   "relation": "supports",
+   "explanation": "The comparable aggregate exceeds $25 billion, supporting that component of the claim. These are company-wide property expenses, so the result does not establish that AI-specific depreciation exceeded AI revenue.",
+   "metric_scope": {
+    "company": "Amazon, Microsoft and Alphabet (Google)",
+    "metric": "Combined property-and-equipment depreciation expense, including finance-lease asset amortization",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Amazon quarterly property-and-equipment depreciation and amortization: $12.834 billion, table immediately following the quoted passage.",
+     "Microsoft quarterly depreciation: $9.0 billion, Note 6, https://cdn.yahoofinance.com/prod/sec-filings/0000789019/000119312526191507/msft-20260331.htm",
+     "Alphabet quarterly property-and-equipment depreciation: $6.482 billion, https://s206.q4cdn.com/479360582/files/doc_financials/2026/q1/2026q1-alphabet-earnings-release.pdf",
+     "Claim's comparison threshold: $25 billion."
+    ],
+    "formula": "12.834 + 9.0 + 6.482 = 28.316; 28.316 > 25",
+    "rounding": "Approximately $28.3 billion; Microsoft's rounding does not threaten the greater-than-$25-billion comparison."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The disclosures do not identify an equivalent combined AI-only depreciation amount.",
+  "The $25 billion AI revenue estimate was treated as the quoted threshold, not independently verified."
+ ],
+ "packet_hash": "5f349b03d347fdc9ac56d512647b7f8c6e4a80ebf175a4c6776ab1ae02309a98"
+}

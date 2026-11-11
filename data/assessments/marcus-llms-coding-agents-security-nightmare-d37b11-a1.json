@@ -1,0 +1,119 @@
+{
+ "assessment_id": "marcus-llms-coding-agents-security-nightmare-d37b11-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-d37b11",
+  "version": 1,
+  "content_hash": "50812f7b736e56b175c598b36b811d3f012b3896fbbfb3ab34eb5ed324482449"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-d37b11",
+  "version": 1,
+  "content_hash": "ab03f8e7c9d5a9d99dfa1028e6d0dcfada0decfb977a7b4255af143df7a9b4f9"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-d37b11-p1",
+  "content_hash": "f92afff0c75d8ef9880ba737f5c7b54841cda93556cac5e809f7ab87c5a0ac59"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-08-17",
+  "precision": "day"
+ },
+ "public_rationale": "Project rule files and public GitHub issues both carried instructions that redirected developer-agent behavior in original demonstrations. The latter worked through otherwise trusted tools. This supports the ordinary warning that content entering model context can become an attack route. It does not establish that every input succeeds or that permissions and approval controls are ineffective.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The conclusion concerns possible injection routes, not universal exploitability.",
+  "Tool permissions, approval choices, and human review affect whether manipulation produces harm."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-coding-agents-security-nightmare-147dcd-4x-review-anthropic-1",
+  "marcus-llms-coding-agents-security-nightmare-147dcd-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-coding-agents-security-nightmare-d37b11",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Any content that might enter an LLM coding agent's prompt can be a security risk.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Anything that might get into a prompt can spell trouble.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/llms-coding-agents-security-nightmare",
+   "date": "2025-08-17",
+   "document_title": "LLMs + Coding Agents = Security Nightmare",
+   "observed_at": "2026-10-28T23:55:47Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Anything that might get into a prompt",
+    "can spell trouble"
+   ],
+   "our_interpretation": [
+    "The plain reading is a warning that attacker-controlled content entering an agent's context can carry instructions, including content presented as development data.",
+    "Can expresses a possible attack route, not successful exploitation of every string, input channel, or protected system.",
+    "The scope includes coding assistants and agents performing repository-development workflows through tools.",
+    "For this ongoing technological state, use the current calendar year through 2025-08-17 as the observation window."
+   ],
+   "support_condition": "Primary demonstrations show malicious instructions reaching development agents through distinct ordinary content channels and causing unauthorized behavior.",
+   "contradiction_condition": "Evidence establishes a general separation of external content from actionable instructions that rules out the claimed risk across the scoped agents and channels."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Project rule files and public GitHub issues both carried instructions that redirected developer-agent behavior in original demonstrations. The latter worked through otherwise trusted tools. This supports the ordinary warning that content entering model context can become an attack route. It does not establish that every input succeeds or that permissions and approval controls are ineffective.",
+  "limitations": [
+   "The conclusion concerns possible injection routes, not universal exploitability.",
+   "Tool permissions, approval choices, and human review affect whether manipulation produces harm."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "a malicious script",
+    "locator": "Real-World Demonstration: Compromising AI-Generated Code in Cursor — Step 3",
+    "url": "https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents",
+    "publisher": "Pillar Security",
+    "event_date": "2025-02-26",
+    "available_at": "2025-03-18",
+    "explanation": "A poisoned rule file caused Cursor to add an attacker-selected script while responding to an ordinary HTML-generation request. February 26 is the documented initial disclosure date for the Cursor finding; the report also demonstrates the route in GitHub Copilot."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "does not require",
+    "locator": "Detecting Toxic Agent Flows",
+    "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability",
+    "publisher": "Invariant Labs",
+    "event_date": "2025-05",
+    "available_at": "2025-05-26",
+    "explanation": "In a repository-management demonstration, malicious public-issue content caused a Claude Desktop agent connected to GitHub to retrieve private information and publish it in a public pull request. The report notes default tool confirmations and recommends restricting repository access, so the result depends on permissions and approval choices."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "12e4e0d51cbea4fb682fb7b14bf4261eca5a664cb6195c6dd0402832ece02676",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:46:45Z"
+}

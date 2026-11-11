@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-on-nvidia-and-analyslop-93eb01-2x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-on-nvidia-and-analyslop-93eb01": "836d4b1773f83b760965195b023842935d44ff71a976f712dc880842b6cff463",
+  "case:wyea-on-nvidia-and-analyslop-f746c2": "208a13bf575cc343f3f01aafee5e912749a362b681d57f6a90ba22b8d43e19fa"
+ },
+ "started_at": "2026-10-29T17:56:23Z",
+ "completed_at": "2026-10-29T17:57:48Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly asserts the customer-concentration figures and expresses his own judgment."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the numerical observation and accompanying subjective judgment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Assessing direct-customer concentration matches the surrounding discussion. Separating the subjective judgment and allowing rounding are fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "NVIDIA's filing reports direct-customer shares of 22% and 14%, totaling 36%. This is a company disclosure, not an independent finding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The company disclosure corroborates annual revenue of $215.938 billion but does not establish customer concentration."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The disclosed shares total 36%; multiplying by $215.938 billion yields approximately $77.7 billion. The packet supports the numerical assertion. Whether that concentration is peculiar or worrying remains a subjective judgment.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-on-nvidia-and-analyslop-93eb01"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": false,
+     "endorsed": true,
+     "note": "Zitron uses the finding approvingly, but explicitly paraphrases what METR's study said. Under the stated attribution rule, this is another source's claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the attributed study report, including its wording about the developers' belief."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Restricting engineers to study participants is fair. However, substituting an expected future speedup for believing they were already faster changes the timing of the measured belief and determines whether 24% is correct."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Supports the contract's 19% slowdown and 24% prior expectation. It also exposes the wording problem: the post-task perceived speedup was 20%."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Limits the finding to the studied developers and repositories; it does not establish an effect across engineers generally."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The later experiment concerns a different period and tools. Its uncertain speedup estimates do not overturn the historical study result."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The attribution rule excludes this explicit paraphrase of METR's finding from scoring as Zitron's own claim. Separately, the study supports the 19% slowdown, but 24% was the prior expectation; post-task belief was 20%. The contract materially substitutes one for the other.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-on-nvidia-and-analyslop-f746c2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20136,
+  "output_tokens": 1703,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 956
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-why-do-large-language-models-hallucinate-65b7e1-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-why-do-large-language-models-hallucinate-65b7e1": "e70bc8c3c6de1d228cbda13e43fcf29b0a73d468c46d69f365364b433e0e647d",
+  "case:marcus-why-do-large-language-models-hallucinate-d33a88": "e7e9e33caf6b992e344e5a5de6b1c96e1d20c905c4ae5f1f506280b64ea2f3c6",
+  "case:marcus-why-do-large-language-models-hallucinate-df0a1b": "e0bd51b411f74792cf50c2747895b317a1ecfcd7bbfb135ea6d69ef2d37bac1f",
+  "case:marcus-why-do-large-language-models-hallucinate-e6e804": "569b950b789bdc4f4a0cb5ed5bfaa4bbbfb01884996cb4e47bcc2c3124507edf"
+ },
+ "started_at": "2026-10-29T17:13:43Z",
+ "completed_at": "2026-10-29T17:14:33Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, published 2025-05-05."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to his description of how LLMs operate. The categorical 'don't ever fact check' is the only part that can be tested. 'Don't operate like people' and 'essentially all they do' have no measure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The functional reading of fact-checking, applied to LLM-based systems with retrieval, fits his own context: he faults Google AI Overviews for not checking against Wikipedia. The result depends on counting a prompted-LLM pipeline as the LLM checking its output. The contract says so."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "RARR (ACL 2023, before the post) has prompted PaLM compare its claims with retrieved evidence and revise them when they disagree. It was evaluated, with attribution gains reported. This is a documented counterexample to 'never fact check' under the contract's reading."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The testable core says LLMs never fact-check. RARR is a peer-reviewed system from before the post in which an LLM checks assertions against evidence and edits them. That meets the contradiction condition under the functional reading, which is fair to the context. Nothing here tests the broader claims about mechanism and mimicry.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-65b7e1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful observation: LLMs are often right but also routinely wrong, with no threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading of substantial correct output alongside recurring errors is ordinary and fair. Using the month before the post as the window is reasonable, and no arbitrary threshold is added."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI system card, April 2025, a company disclosure that runs against the company's interest. On SimpleQA and PersonQA, o3, o4-mini and o1 show substantial accuracy alongside hallucination rates of 16–79%. Only one developer, and the benchmarks are designed to be hard."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary benchmark results from the target period show several current models answering many factual questions correctly while hallucinating on a large share. That matches 'often right, but also routinely wrong'. Limits: one developer, and adversarial benchmarks. The claim names no rate, so these limits do not undercut it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-d33a88"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Causal claim: fabricated citations and legal cases come from imitating structure without checking against available sources. The paraphrase is adequate, though it omits the detail 'often make up titles, page numbers'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as a material, not sole, cause is fair. The contract rightly separates the documented occurrences from proof of the shared mechanism."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed 2023 study: GPT citations are well formatted but often fabricated. This confirms the symptom, not the cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Mata v. Avianca order: fake cases generated by ChatGPT were filed in court. This shows the legal incident happened, with no causal analysis."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenScholar (2024): retrieval and feedback improve citation accuracy compared with GPT-4o. Consistent with the claim, but it does not isolate verification or cover legal citations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows fabricated scholarly and legal citations occur, and that grounding can reduce them. No controlled evidence isolates the proposed shared cause, structural mimicry without verification, across both settings, and none refutes it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-df0a1b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The revision correctly narrows the claim to the Shearer 'British actor' example and keeps his wording. He states it firmly ('So out comes'), unlike the hedged Henrietta case."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as learned associations materially causing the error is ordinary and fair. Requiring evidence specific to this example is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic interpretability post (March 2025) on hallucination circuits in Claude. It covers a different model and example and does not address the Shearer output."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No analysis of the model, prompt or retrieval behind the Shearer output was found. General evidence on hallucination mechanisms cannot confirm or rule out the proposed association-based cause for this particular completion.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-e6e804"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26838,
+  "output_tokens": 5313,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

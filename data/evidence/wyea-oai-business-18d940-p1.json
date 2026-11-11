@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-oai-business-18d940-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-business-18d940",
+  "version": 2,
+  "content_hash": "f48d82f679f5581c25e24905fab112e88f0f233e64d278ed2aa70d300123e8f8"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-business-18d940",
+  "version": 1,
+  "content_hash": "7db9bbd0cf4612989410dc99556b7683a8462b8c21ce020224c708b648b7851c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 revenue total expenses 2026 13 billion 8 billion",
+   "OpenAI losses 5 billion revenue 3.7 billion September 2024 CNBC Reuters NYTimes",
+   "OpenAI 2025 revenue expenses 34 billion Financial Times June 2026 audited"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+    "used": true,
+    "why": "Documents the contemporaneous estimates underlying the spending ratio."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-spending-hit-34bn-last-032859173.html",
+    "used": true,
+    "why": "Readable Financial Times reporting independently confirmed with people familiar with audited figures. It establishes annual revenue but does not reconcile expenses to the original forecast basis."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/openai-sees-compute-spend-of-around-600-billion-by-2030-cnbc-reports-4517341",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T12:04:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cnbc-com-2024-09-27-openai-sees-5-billion-loss-this-year-on-3point7-9437e7cf32e6",
+   "source_snapshot_id": "5dcdb740be1dafcb832346f53fc5568d66e42583be24be25dd264b625eb5a6ba",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+   "locator": "First paragraph of article body",
+   "receipt": {
+    "public_excerpt": "expects about $5 billion in losses on $3.7 billion in revenue this year",
+    "quote_hash": "8df5b2fd936ead1e27b965c519b87880eeb5628f8e83cef4706b8033347f3343",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-27",
+   "retrieved_at": "2026-10-29T02:03:27Z",
+   "relation": "context",
+   "explanation": "These projections explain the baseline calculation. The derived amount is hypothetical and does not establish actual 2025 expenses or persistence of the ratio.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual losses",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "CNBC: projected 2024 revenue of $3.7 billion",
+     "CNBC: projected 2024 losses of $5 billion",
+     "Claim's stipulated 2025 revenue target of $11.6 billion"
+    ],
+    "formula": "Implied scenario expenses = ((3.7 + 5) / 3.7) × 11.6 = 27.2756756757 billion USD, assuming losses equal expenses minus revenue on the stated basis.",
+    "rounding": "Approximately $27.28 billion; the input estimates are themselves rounded."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_condition",
+   "document_id": "finance-yahoo-com-technology-ai-articles-openai-spending-hit-34bn-l-8b6a3a98fdf7",
+   "source_snapshot_id": "459e87806555caef20cf10d482251333515b08fc72985ab11e527215e9ffabde",
+   "publisher": "Financial Times, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-spending-hit-34bn-last-032859173.html",
+   "locator": "Paragraph beginning with annual revenue",
+   "receipt": {
+    "public_excerpt": "OpenAI booked about $13bn in revenue last year.",
+    "quote_hash": "17200756bf9864d93ff5950b7016f2786808a8f8fbcc2bd6053bb80be973f9c2",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-15",
+   "retrieved_at": "2026-10-29T10:34:17Z",
+   "relation": "supports",
+   "explanation": "Reported realized revenue exceeded the target. This establishes the revenue component of the antecedent, but not the unchanged cost ratio.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Annual revenue",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No reconciliation establishes that the original estimated expense basis and cost ratio persisted in 2025.",
+  "Reaching the annual revenue target does not establish the cost incurred at the point the target was reached."
+ ],
+ "packet_hash": "a0c9526ab44089b277505e3c8d7dd2e7370cc36275c903e276619a2a580f9b9f"
+}

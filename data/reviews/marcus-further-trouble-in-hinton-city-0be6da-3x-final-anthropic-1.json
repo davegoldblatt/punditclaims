@@ -1,0 +1,73 @@
+{
+ "run_id": "marcus-further-trouble-in-hinton-city-0be6da-3x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-further-trouble-in-hinton-city-0be6da": "d4809f4efab095d41f43019a30bfb2cbc696513db5b69e5d81188a37a6b58263",
+  "payload:marcus-further-trouble-in-hinton-city-0be6da": "6c696c1d4dee6a01fa80299e4afa49426a0a9848380a0ea63324defaebe0321c",
+  "case:marcus-further-trouble-in-hinton-city-c753c3": "5ea0642fff739c1dac76c4a4c8e6a3b4c226c61b622c9714f75d1f0ba0e7fbb9",
+  "payload:marcus-further-trouble-in-hinton-city-c753c3": "7c4b7a955cc51bbc3fd5a629b507699ef3a6b13f907390ebfc85d5d38daec52d",
+  "case:marcus-further-trouble-in-hinton-city-ebe684": "a88797a0426f03c1b18f623c05ad0f36bf746932c9f990363ad7365741d18c97",
+  "payload:marcus-further-trouble-in-hinton-city-ebe684": "6b709c23769c337961c0fc218d5fdb17286bf8e9e82148c8e61cde42bc051b8a"
+ },
+ "started_at": "2026-10-29T07:23:33Z",
+ "completed_at": "2026-10-29T07:24:10Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "Its methods address questions whose answer options would otherwise become invalid when reordered."
+    ],
+    "verdict": "fail",
+    "note": "The excerpt, proposition, rationale, limitations and the supported outcome all hold up: 5 of 11 models changed rank under answer shuffling (kτ 0.564), and other perturbations were more benign. But the second sentence of the e1 explanation, about the study's methods handling answer options that become invalid when reordered, is not in the supplied evidence text. It also does the work of meeting the 'questions preserved' part of the support condition. Remove it or support it from the evidence.",
+    "claim_id": "marcus-further-trouble-in-hinton-city-0be6da"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is exact. The proposition says 'poor' where Marcus wrote 'mediocre', which is slightly stronger, but the causal claim is unchanged. The rationale accurately describes e1 (frequent triads go with worse flipped-triad generation in SD 2.1) and e2 (SeedSelect, no retraining), with correct dates. The limitations are supported. The unresolved causal outcome matches the reviews and contract. Calling it 'the February 1–8, 2024 claim' is loose: the claim was made Feb 8 and Feb 1–8 is the target period. Not material.",
+    "claim_id": "marcus-further-trouble-in-hinton-city-c753c3"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is exact and 'often' is shown. The rationale correctly states what HRS-Bench reports (counts, visual text, emotions; available 2023-11-23) and what NLeseul's 2023-02-04 demonstration shows (partial successes). It does not overstate frequency. The limitations restate the packet's stated gaps. The unresolved historical_observation outcome matches the reviews. Citations are accurate. The one-word excerpt 'better' is thin but not misleading, given the explanation.",
+    "claim_id": "marcus-further-trouble-in-hinton-city-ebe684"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23184,
+  "output_tokens": 4216,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,173 @@
+{
+ "run_id": "marcus-big-news-at-the-un-4a65b4-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-big-news-at-the-un-4a65b4": "f0c39fc060a850c71576c42f4a3bd7ee8f3c9edaac9379a607c018372d05c1f5",
+  "case:marcus-big-news-at-the-un-5f3666": "7c75e4f441c2333a9c1c4de3e403f009f7fc9363f21fda25752faad11804c98f",
+  "case:marcus-big-news-at-the-un-b520f6": "c32c5d28232a19cb9a173e5654433dea1838c8416b67dbff77fea6054723e1ee"
+ },
+ "started_at": "2026-10-29T01:00:06Z",
+ "completed_at": "2026-10-29T01:00:52Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, describing the call in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Treats the garbled 'more than the 20 countries' as 'more than 20 countries', which is reasonable. The 'written in the last week' aside is hedged and rightly left out. The proposition keeps the count and the content judgment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'countries' as sovereign states, with the EU excluded, is the ordinary reading. The verdict depends on that reading and on the possible typo. Counting the EU would give 21, but calling the EU a country is not a plain reading. The cutoff at the time of the post is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Official text from a signatory government. The asks match Marcus's steps, but the list has 22 signatures from 20 countries (Finland twice) plus the European Commission. That is not more than 20 countries."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Reputable report dated the day after launch: twenty countries and the EU signed. This is exactly the contract's contradiction condition."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Explains that the '22' figure counts Finland twice and includes the Commission. It also confirms the content: pre-deployment testing, independent evaluation, an international institution."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Op-ed saying 20 countries signed at the start of the week and 30 by its end. The growth came after the post, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The call existed, and its content matches what Marcus has urged, so that part holds. But the official list and Al Jazeera both show 20 countries plus the EU when he posted, not more than 20. Under the contract's plain reading (the EU is not a country), the contradiction condition is met. The miss is narrow and may come from the garbled wording or from counting the EU or the 22 signatures.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-big-news-at-the-un-4a65b4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own remarks at the UN, published in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'Could have been largely avoided' is a counterfactual causal claim, not a probabilistic hedge. The context shows he means the UK hospitals, and the proposition keeps the condition about keeping up with cybersecurity procedures."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'hospitals' as NHS trusts and organisations, and the procedures as patching and firewall management, is ordinary. Using the NAO as the source is apt. The shared blame on central oversight is flagged and does not undo the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The NAO head says the attack was relatively unsophisticated and could have been prevented by basic IT security practice."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The NAO reports that all infected organisations shared one vulnerability and that patching or firewall management would have protected them."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Patch alerts went out before the attack. The NAO also faults the Department of Health for weak oversight, so the blame is shared."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The official NAO investigation found the NHS WannaCry infections preventable by simple local action: patching unsupported or unpatched Windows systems, or managing internet-facing firewalls. That meets the support condition. The NAO's criticism of central oversight shares the blame but does not change the finding that local practice would largely have avoided the damage.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-big-news-at-the-un-5f3666"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own framing remarks at the UNGA event, published in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'We should expect... will try' is unhedged expectation of a definite outcome, so it is a scorable forecast. It has no deadline. 'Current AI' is ambiguous, and the contract flags this."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Counting any documented attempt after the post, with no deadline, is fair to an open 'will try' forecast. The contract rightly notes that silence cannot contradict it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A US joint advisory says AI-generated code was used against energy and water controllers. It is dated August 2026, before the post, so it cannot resolve the forecast."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Post-dated, but Trend Micro only infers AI use, and the targets are firms, including financial-services companies, not the financial system itself. Too weak to meet the early-resolution rule."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The forecast has no deadline. The packet holds no readable report dated after the post that confirms malicious actors using AI against financial systems or critical infrastructure. The August advisory predates the forecast, and the October Trend Micro item only infers AI use. The early-resolution rule is not met, and no outcome is due yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-big-news-at-the-un-b520f6"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25572,
+  "output_tokens": 4664,
+  "cached_input_tokens": 25233,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

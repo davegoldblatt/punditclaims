@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-china-has-all-but-caught-up-the-us-834d70-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-china-has-all-but-caught-up-the-us-834d70": "307614e1c0e8c204cd863403db2b9e054870abcc663da0cf7a54979858ef1d9b"
+ },
+ "started_at": "2026-11-09T19:50:22Z",
+ "completed_at": "2026-11-09T19:51:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. The claim is the factual clause given as the reason for his buyout recommendation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The drafter correctly separated the factual reason from the normative buyout proposal. The proposition keeps both parts as he wrote them: 'mostly' money-losing companies, and an industry that has not 'convincingly' shown profitability."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary and fair: company-wide net results over 2025 to H1 2026, with the industry clause tested separately. The period and the meaning of 'industry' are the evaluator's choices, not Marcus's, so interpretation affects the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's S-1, filed before the cutoff, reports GAAP net losses of $42.0B for 2025 and $80.7B for H1 2026. Most of this is noncash revaluation, but even without it 2025 was a loss and H1 2026 was an operating loss. This fits the 'mostly money-losing' part for Anthropic."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reputable reporting on audited statements: OpenAI's 2025 net loss was nearly $39B, about $8B without a one-off charge, and its operating loss was $20.9B. This supports the loss characterisation for 2025. H1 2026 is not covered."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's non-GAAP adjusted net income of $2.67B for H1 2026 qualifies the loss picture. It is a different measure and one half-year, so it does not overturn 'mostly' under the contract."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A March 2026 central-bank paper says AI-lab finances are opaque and not separately disclosed. That shows a measurement gap. It is not broad evidence that sector-wide profitability has gone undemonstrated."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The company part holds. Anthropic (e1) had net losses in 2025 and H1 2026, and OpenAI (e2) had large losses in 2025. Anthropic's adjusted profit (e3) does not change 'mostly'. The industry clause is a separate condition the contract requires, and the packet does not settle it: e4 only shows the sector's finances are opaque, and a possible profitable counterexample (Midjourney) could not be verified. OpenAI's H1 2026 results are also missing.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-china-has-all-but-caught-up-the-us-834d70"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14924,
+  "output_tokens": 3615,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

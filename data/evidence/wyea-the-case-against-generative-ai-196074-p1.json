@@ -1,0 +1,100 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-196074-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-196074",
+  "version": 1,
+  "content_hash": "c88eff64637031da407227bb3d63ce21fb756a8ca32a254886a8bcaa2ce2d7e7"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-196074",
+  "version": 1,
+  "content_hash": "67b375a4852b7fe14b9d05b0c5e905359677ceb7ddc5b26689a2ef138863e9d9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI GPUs non AI HPC revenue H100 2025 rendering",
+   "site:nvidia.com 2025 September HPC non AI simulation GPU Blackwell",
+   "site:developer.nvidia.com/blog \"2025\" \"H100\" \"molecular dynamics\"",
+   "\"non-AI\" \"GPU\" revenue 2025 HPC",
+   "site:hyperionresearch.com 2025 HPC market non AI revenues GPUs",
+   "site:developer.nvidia.com/blog \"2025\" \"cuPQC 0.4\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://developer.nvidia.com/blog/maximizing-openmm-molecular-dynamics-throughput-with-nvidia-multi-process-service/",
+    "used": true,
+    "why": "Primary benchmark evidence of molecular dynamics on H100 hardware. It predates the target interval and supplies no commercial revenue, so it is context."
+   },
+   {
+    "url": "https://developer.nvidia.com/blog/improve-data-integrity-and-security-with-accelerated-hash-functions-and-merkle-trees-in-cupqc-0-4/",
+    "used": true,
+    "why": "Primary documentation of GPU cryptography during the target interval. It demonstrates an alternative use but does not measure workload prevalence or revenue."
+   },
+   {
+    "url": "https://developer.nvidia.com/blog/?p=102930",
+    "used": false,
+    "why": "The search result described quantum simulation, but read_page returned a different article. The inconsistent page could not be used."
+   }
+  ],
+  "performed_at": "2026-10-29T12:56:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "developer-nvidia-com-blog-maximizing-openmm-molecular-dynamics-thro-3b278376437a",
+   "source_snapshot_id": "b88fffe64a7253c3d463592c41ba1ba4afe205ff30fdddd1f33d5842e60999c7",
+   "publisher": "NVIDIA",
+   "source_type": "benchmark",
+   "url": "https://developer.nvidia.com/blog/maximizing-openmm-molecular-dynamics-throughput-with-nvidia-multi-process-service",
+   "locator": "Section Benchmarking MPS, paragraph describing the DHFR test",
+   "receipt": {
+    "public_excerpt": "NVIDIA H100 Tensor Core",
+    "quote_hash": "73703af5de48270a81f71aa87ca79eb1f2d42adf1dbf99b1c2c53efcc6cf8f50",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-04",
+   "available_at": "2025-06-04",
+   "retrieved_at": "2026-10-29T12:47:21Z",
+   "relation": "context",
+   "explanation": "The benchmark documents molecular dynamics simulations on an AI-relevant GPU. It predates the target period and does not establish the number or commercial scale of alternative workloads.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "developer-nvidia-com-blog-improve-data-integrity-and-security-with-3ffb994fa653",
+   "source_snapshot_id": "2ae98fa023ee325b4314fe999a3442e0ba7f0ed419550e6aff5dea2ce0bf57e6",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://developer.nvidia.com/blog/improve-data-integrity-and-security-with-accelerated-hash-functions-and-merkle-trees-in-cupqc-0-4",
+   "locator": "Introduction, paragraph describing cuPQC APIs",
+   "receipt": {
+    "public_excerpt": "cryptographic circuits",
+    "quote_hash": "575112b449ee4a51809d619c912db8d6708f15636aa808a2cdce7d064cfc820e",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-21",
+   "available_at": "2025-08-21",
+   "retrieved_at": "2026-10-29T12:48:43Z",
+   "relation": "context",
+   "explanation": "GPU cryptography is a documented non-AI application. Its existence alone neither disproves very few use cases nor establishes hyperscale revenue.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No revenue breakdown isolating non-AI workloads on the relevant data-center GPUs was found.",
+  "The documented examples do not establish a representative count or prevalence of alternative workloads.",
+  "The source provides no numerical meaning for hyperscale revenue or very few."
+ ],
+ "packet_hash": "3b1ae41651e1c23291eb98cd734a6a6160339338b308ec110830e483f10d5356"
+}

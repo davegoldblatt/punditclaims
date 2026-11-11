@@ -1,0 +1,215 @@
+{
+ "run_id": "wyea-the-subprime-data-center-crisis-2f4397-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-subprime-data-center-crisis-2f4397": "afa009afe3c5a18cc1fcba722d0c828f71611beff3c2aa9ceb8aabdfb1df597a",
+  "case:wyea-the-subprime-data-center-crisis-3d818f": "6c45a9efc4ee0c1d65899dae1684404f1c153e315b0bee2d2feb7f43e4181ad0",
+  "case:wyea-the-subprime-data-center-crisis-65d5a2": "ea5e3a078a3306904d5288c494eb18b959cf5cef9646fe20125fc397a961d43b",
+  "case:wyea-the-subprime-data-center-crisis-768d14": "67afa247fdaf9b1c19384897f28a63f8e2dae44a2e47aba8521013287a1f4f74"
+ },
+ "started_at": "2026-10-31T21:44:19Z",
+ "completed_at": "2026-10-31T21:45:19Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post, stated as his description of how the SPVs work."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalisation matches the claimed dependence of SPV repayment on customer revenue, construction speed and customer ability to pay. It reads like a structural description, but causal is acceptable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Using CoreWeave's DDTLs as the test is fair, since the post names them as the main example. Leaving out the interest reserve and parent guarantee follows the post's own caveats. This is an ordinary plain reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "CoreWeave term sheet: amortization starts only after stabilization triggers. This is a company disclosure, and the contract accepts that source type."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "After customer acceptance, the debt is governed by a DSCR test, so it is sized against the customer contract's cash flows."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The debt is non-recourse to the parent apart from a limited installation guarantee. The collateral row in the same sheet lists the customer contract as security."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A secondary report published after the post, before the evaluation date. The CEO's description of offtaker-backed SPV debt is consistent with the claim but is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "CoreWeave's DDTL 4.0 term sheet meets all three parts of the support condition. The debt is ring-fenced (non-recourse), secured by the customer contract, and repaid only after stabilization or customer acceptance, under a DSCR test tied to contract cash flow. The packet shows nothing for the contradiction condition. Only CoreWeave was checked, which is acceptable under this contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-data-center-crisis-2f4397"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "His own estimate and his own report of his analysis."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The revision keeps 'I estimate', the non-hyperscale scope and the 'struggled to find' wording. 'Struggled to find' is a report of his own search, not a flat claim that no such customer exists."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract turns 'struggled to find' into a test of whether any such customer was publicly known, and the meanings of 'them' and 'compute capacity' are left open. The result depends on readings the speaker did not supply."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Jane Street's roughly $6B CoreWeave commitment is multi-year. Its annual spend before the post is not shown, so it does not settle the $50M test."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's share of CoreWeave's 2025 revenue. This is a different period and metric, and it says nothing about OpenAI and Anthropic's share of hyperscaler capacity."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no data on what share of Microsoft, Google or Amazon capacity goes to OpenAI and Anthropic. On the $50M test, the Jane Street figure is a multi-year commitment with no disclosed annual spend before the post. The evidence does not settle either part.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-data-center-crisis-3d818f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "He asserts the OpenAI figure himself and cites the trial as his source. The figure is endorsed as his claim, not merely quoted."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'appears to be' hedge on the total and the 'likely' on Anthropic are kept. The OpenAI figure is firm and sourced."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Scoring only the firm, sourced OpenAI figure is fair. Treating a full-year 2026 expectation as 'annual compute spend' is an ordinary reading of 'right now'. The contract's metric_scope says 'realized', which is slightly inconsistent but immaterial."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters, May 2026: Brockman testified in the Musk trial that OpenAI expects about $50B in compute spending this year."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Same testimony: compute costs reached tens of billions this year. Consistent with e1."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The Reuters report confirms that OpenAI's president told the Musk trial OpenAI expects about $50B in compute spend in 2026. That is inside the contract's $40B to $60B band. The hedged $100B total and the Anthropic estimate are not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-data-center-crisis-65d5a2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "His own characterisation in the post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Mostly faithful, but it drops 'flimsy information and hype-driven mania' and the subprime analogy. 'Extremely low likelihoods of repayment' is a probability judgement, and 'poorly-underwritten' is an evaluation with no stated measure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Accepting an economic reading of 'virtually-uncollateralized' is generous to the speaker, though the next paragraph of the post supports it. Not scoring the repayment judgement is correct. The result depends on the evaluator's readings."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure: one large neocloud loan was formally secured and rated investment grade. This cuts against the literal reading for that one deal only, not for the whole class."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Private credit is lending pre-lease on a demand thesis, but under equity and covenant requirements. It points both ways."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "After the target period. It shows lenders tightening, not that earlier debt was poorly underwritten."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "This is a class-wide claim, and the packet has no representative data on security, ratings or terms across AI data center debt. One investment-grade, secured deal does not refute the class-wide claim, and the remaining items point both ways or postdate the period. The repayment part is a probability judgement and is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-data-center-crisis-768d14"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 37351,
+  "output_tokens": 6285,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

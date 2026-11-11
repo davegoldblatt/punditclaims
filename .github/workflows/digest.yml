@@ -1,0 +1,53 @@
+# The morning email's facts. Gathers them with no model (scripts/digest.ts)
+# and commits them to the `digest` branch. At 16:00 UTC a scheduled Claude
+# routine reads them there, writes the note, and sends the email from Dave's
+# Gmail. Runs on GitHub so the email does not depend on the Mac being awake.
+#
+# No GitHub schedule: GitHub started scheduled runs 4 to 10 hours late
+# (2026-10-28..11-03), after the 16:00 UTC email. A Claude routine
+# ("Morning emails: start the three fact gathers", 14:10 UTC) starts this
+# by hand with check_today, and a run started by hand begins within seconds.
+# With check_today the run skips itself when today's facts (Pacific date)
+# are already on the branch. The email routine refuses facts that are not
+# from today rather than resend an old day.
+name: morning email facts
+on:
+  workflow_dispatch:
+    inputs:
+      check_today:
+        description: "Skip if today's facts exist, as a scheduled run does"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: digest
+  cancel-in-progress: false
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Skip if today's facts already exist
+        id: today
+        if: inputs.check_today
+        run: |
+          git fetch -q origin digest || { echo "skip=false" >> "$GITHUB_OUTPUT"; exit 0; }
+          gen=$(git show FETCH_HEAD:digest/latest.json | jq -r .generated_at)
+          have=$(TZ=America/Los_Angeles date -d "$gen" +%F)
+          today=$(TZ=America/Los_Angeles date +%F)
+          echo "facts on the branch are from $have (Pacific), today is $today"
+          if [ "$have" = "$today" ]; then echo "skip=true" >> "$GITHUB_OUTPUT"; else echo "skip=false" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.today.outputs.skip != 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - if: steps.today.outputs.skip != 'true'
+        run: npm ci
+      - name: Gather the facts and commit them to the digest branch
+        if: steps.today.outputs.skip != 'true'
+        env:
+          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: node --no-warnings scripts/digest.ts --push

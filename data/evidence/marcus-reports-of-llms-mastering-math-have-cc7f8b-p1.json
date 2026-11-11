@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-reports-of-llms-mastering-math-have-cc7f8b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-cc7f8b",
+  "version": 2,
+  "content_hash": "e3dc3c42697466f7012c4e49d3744ba5ac802a59e607f12ef7983f3dbec594aa"
+ },
+ "contract_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-cc7f8b",
+  "version": 1,
+  "content_hash": "d23a481e669ff1d6a85715b4db0bdbdaa77876ab57cdab2006b78f24abf0053c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AlphaProof AlphaGeometry 2024 formal verification symbolic engine Lean proofs",
+   "site.deepmind.google \"AI achieves silver-medal\" \"2024\"",
+   "AlphaGeometry \"symbolic\" \"rules\" \"human\" proof 2024 nature",
+   "AlphaProof \"Lean\" \"correctness\" 2025 Nature",
+   "\"AlphaGeometry2\" \"sound\" \"2025\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nature.com/articles/s41586-025-09833-y_reference.pdf",
+    "used": true,
+    "why": "Read with read_page. The primary technical paper explains AlphaProof's Lean environment and retrospectively describes its 2024 IMO system."
+   },
+   {
+    "url": "https://arxiv.org/html/2502.03544v1",
+    "used": true,
+    "why": "Read with read_page. The contemporaneous technical paper describes AlphaGeometry's programmed deduction engine and experiments generating proofs without it."
+   },
+   {
+    "url": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+    "used": false,
+    "why": "Search found the announcement, but read_page returned unrelated page text. No quotation or outcome evidence was taken from it."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41586-023-06747-5.pdf",
+    "used": false,
+    "why": "read_page could not read the PDF because it exceeded the size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T18:09:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "nature-com-articles-s41586-025-09833-y-reference-pdf",
+   "source_snapshot_id": "c8c411b476852a67476f9bb436dbf2e2032cfedc0439e9801c617577dfa38191",
+   "publisher": "Nature",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-025-09833-y_reference.pdf",
+   "locator": "Introduction, page 1; further detail in section 5.1, Lean Environment",
+   "receipt": {
+    "public_excerpt": "Lean’s kernel",
+    "quote_hash": "c5c7cbbf6109074725571d9e90ac73529020ca7bfef2a9a5e9ea4df9b5216c7a",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T02:54:54Z",
+   "relation": "supports",
+   "explanation": "The paper describes AlphaProof's use of Lean and attributes proof correctness to kernel verification. It also explains that informal LLM reasoning lacks guaranteed correctness; this supports the mechanism behind Marcus's comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2502-03544v1",
+   "source_snapshot_id": "deb4fdf193769689f833c07d9a7fd10801b3a2a06e7ae9b7e1e7ea8dc5bdac63",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2502.03544v1",
+   "locator": "Section 4, Stronger and faster symbolic engine; sections 4.2–4.3 and Appendix E",
+   "receipt": {
+    "public_excerpt": "Deductive Database Arithmetic Reasoning.",
+    "quote_hash": "5bc16bc8774402bf00cfaec660f8d9d3e9f39ee47b39d33d939ad6f4aa2a2ccc",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-05",
+   "retrieved_at": "2026-10-29T01:09:39Z",
+   "relation": "supports",
+   "explanation": "The authors describe fixed deduction rules and a programmed implementation, rather than trusting language-model assertions. Appendix E separately evaluates model-generated proof steps and documents checks for invalid steps, supporting the distinction between learned proposals and symbolic validation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "These descriptions do not establish an unconditional guarantee against implementation defects or incorrectly formalized problem statements.",
+  "They describe programmed symbolic components but do not provide a complete audit of code authorship."
+ ],
+ "packet_hash": "e08f1ce32706f2a035dfaf14e41b5edcb7a82fc8cfb9e9bc3f3f8f395dfa748b"
+}

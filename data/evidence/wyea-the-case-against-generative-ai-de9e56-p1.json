@@ -1,0 +1,130 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-de9e56-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-de9e56",
+  "version": 2,
+  "content_hash": "8dc4c44b596ebfead8a5066af8b8a87c97fe1de98a7fb570400115d82382b582"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-de9e56",
+  "version": 1,
+  "content_hash": "806938441631d74f936360cf95e3462a1ff5a5fc5f671de14c933fb84be55f15"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "H100 GPU resale prices 2026 used prices increase failure rates study",
+   "GPU failure rates study H100 A100 2025 2026 paper lifespan",
+   "\"NVIDIA Blackwell Architecture Sweeps\" \"2025\" MLPerf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2503.11901v4",
+    "used": true,
+    "why": "Primary operational study distinguishes hardware replacement from ordinary errors."
+   },
+   {
+    "url": "https://developer.nvidia.com/blog/nvidia-blackwell-architecture-sweeps-mlperf-training-v5-1-benchmarks/",
+    "used": true,
+    "why": "Primary account of dated successor-system benchmark results."
+   },
+   {
+    "url": "https://www.amcompute.com/gpu-resale-index",
+    "used": true,
+    "why": "A dated resale index reports completed-sale trends, including declines and rebounds."
+   },
+   {
+    "url": "https://www.silicondata.com/use-cases/h100-gpu-market-value-trends",
+    "used": false,
+    "why": "Uses listing prices and contains inconsistent observation-window descriptions; insufficient for decisive transaction-price evidence."
+   },
+   {
+    "url": "https://gpupoet.com/gpu/market-report/gpu-market-report-october-2026",
+    "used": false,
+    "why": "Consumer GPU listings are not a matched measure of the data-center AI GPU claim."
+   }
+  ],
+  "performed_at": "2026-10-29T12:59:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2503-11901v4",
+   "source_snapshot_id": "42f47c8277c10c315472fce4fbc5247a497ddb75fbf1bdfd9cb20399ec8eafca",
+   "publisher": "Cui and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.11901v4",
+   "locator": "Section 4.1, GPU Failure and Replacement",
+   "receipt": {
+    "public_excerpt": "four A100 GPUs were replaced",
+    "quote_hash": "0ba95f57d4108b791d9258499738e902c84c14b49f4594fadb786e4571fe4783",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-12-10",
+   "retrieved_at": "2026-10-29T12:50:36Z",
+   "relation": "context",
+   "explanation": "The observation window ended in March 2025 and documents actual replacements. It establishes that failures occur, but does not follow the forecast’s hardware cohorts through five or more years of service.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "developer-nvidia-com-blog-nvidia-blackwell-architecture-sweeps-mlpe-606a157eedb3",
+   "source_snapshot_id": "75229f89a066d881eb89e389b40fef564d54d425a06893453aa77cc97dd9e65b",
+   "publisher": "NVIDIA",
+   "source_type": "benchmark",
+   "url": "https://developer.nvidia.com/blog/nvidia-blackwell-architecture-sweeps-mlperf-training-v5-1-benchmarks",
+   "locator": "Section NVIDIA Blackwell sets new Llama 3.1 405B training record",
+   "receipt": {
+    "public_excerpt": "3x faster",
+    "quote_hash": "3ecdbf90dbd23c01075bf9e83bf784f45214a963fb122420d8d587e054c69c4e",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-12",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T12:51:15Z",
+   "relation": "supports",
+   "explanation": "Supports the successor-performance component on a specified training benchmark. The comparison includes software and precision changes and does not establish hardware lifespan or resale depreciation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "amcompute-com-gpu-resale-index",
+   "source_snapshot_id": "ee07ec118d5674fcccecffe2cdbac38aaf077b9d82f4745c8aef6f5d83a7df26",
+   "publisher": "American Compute",
+   "source_type": "independent_measurement",
+   "url": "https://www.amcompute.com/gpu-resale-index",
+   "locator": "Monthly readings, August 2026; Every month table",
+   "receipt": {
+    "public_excerpt": "servers held their price",
+    "quote_hash": "d3b361371dc0a9bcdf8b433f6b8fb48b8330735cc2ddc57c8efdfec48d44b5d5",
+    "verified": "exact"
+   },
+   "event_date": "2026-08",
+   "available_at": "2026-10-01",
+   "retrieved_at": "2026-10-29T12:48:33Z",
+   "relation": "context",
+   "explanation": "The October report’s fixed-basket index fell overall but also records rebounds, including a spring peak. This challenges strictly one-way depreciation, while neither its limited window nor its mixed hardware basket establishes full lifecycle outcomes.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative forecast-era cohort followed through its complete operating and resale lifecycle.",
+  "No specified car-depreciation comparison, age interval or magnitude.",
+  "Resale indices do not track the same physical cards under identical conditions.",
+  "The available operational study predates the forecast and has a shorter observation window."
+ ],
+ "packet_hash": "7e14a96292f3263c11dcc8c425803193c5dbf1c64a29a79d8eed7ea6cff3f2bd"
+}

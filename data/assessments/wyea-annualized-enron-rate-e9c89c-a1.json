@@ -1,0 +1,127 @@
+{
+ "assessment_id": "wyea-annualized-enron-rate-e9c89c-a1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-e9c89c",
+  "version": 2,
+  "content_hash": "2b48975fbbe2d05291181a62fe81d31a1e772d6a61917f83b2cf58bf98041c91"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-e9c89c",
+  "version": 1,
+  "content_hash": "e39c92d22f193bd572067e4d0a15548eb781a91004d7fafcac49ef9e7a442028"
+ },
+ "packet_ref": {
+  "id": "wyea-annualized-enron-rate-e9c89c-p1",
+  "content_hash": "056a390d7d7da0465875f6abe836e6ea445c4d41cb1d2537970e7c1b636bb21e"
+ },
+ "axis": "historical_observation",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2026-10-13",
+  "precision": "day"
+ },
+ "public_rationale": "Under the cost assumption carried into this example, six-year depreciation is about $1.28 per GPU-hour, not $1.54. The latter figure results from depreciating over five years. The reported contract rates average $3.98, making six-year depreciation about 32.3% of contracted revenue during the five-year term. Even $1.54 is 38.7% of that rate. The contradiction rests on the hourly arithmetic, not a rigid definition of 'nearly half.' This does not establish the provider's actual profitability.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The assessment is conditional arithmetic under the stated cost assumption, not a finding about actual company accounts.",
+  "Carrying the preceding cost assumption into this example is an evaluator interpretation.",
+  "A five-year contract does not establish sixth-year revenue.",
+  "The contract rates were verified through reporting because the primary filing was inaccessible to read_page."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-annualized-enron-rate-db120f-4x-review-anthropic-1",
+  "wyea-annualized-enron-rate-db120f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-annualized-enron-rate-db120f-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-annualized-enron-rate-e9c89c",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "In the Canopy Wave B300 contract, depreciation of about $1.54 per GPU-hour means the provider loses nearly half its revenue over the first six years of what is only a five-year contract.",
+  "kind": "observation",
+  "conditions": [
+   "over the first six years of a five-year contract"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Your depreciation costs here work out to about $1.54-per-GPU-per-hour, meaning that you’re losing nearly half of your revenue for the first six years…of a five year long contract.",
+   "locator": "paragraph 105",
+   "url": "https://www.wheresyoured.at/annualized-enron-rate",
+   "date": "2026-10-13",
+   "document_title": "Annualized Enron Rate",
+   "observed_at": "2026-10-28T22:23:53Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "depreciation costs here",
+    "about $1.54-per-GPU-per-hour",
+    "losing nearly half of your revenue",
+    "the first six years",
+    "a five year long contract"
+   ],
+   "our_interpretation": [
+    "Assess the calculation attached to the existing contract, not a forecast that six years of business results have already occurred.",
+    "Carry forward the immediately preceding assumption of $540,000 per eight-GPU B300 node.",
+    "Use straight-line depreciation over six years, zero residual value and 8,760 hours per year. These are an interpretation of the illustrative calculation, not verified company accounting policies.",
+    "Read losing revenue as depreciation expense relative to gross contractual revenue, not as a claim of net loss.",
+    "The target covers the contract terms discussed retrospectively by the post; its service commencement date is unspecified."
+   ],
+   "support_condition": "The stated cost and six-year assumptions yield approximately $1.54 per GPU-hour, and the contract rates make that expense approximately half of revenue.",
+   "contradiction_condition": "The stated assumptions produce a materially different hourly depreciation charge or revenue share. An error in the numerical calculation can settle this without knowing the provider's actual acquisition cost."
+  },
+  "axis": "historical_observation",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Under the cost assumption carried into this example, six-year depreciation is about $1.28 per GPU-hour, not $1.54. The latter figure results from depreciating over five years. The reported contract rates average $3.98, making six-year depreciation about 32.3% of contracted revenue during the five-year term. Even $1.54 is 38.7% of that rate. The contradiction rests on the hourly arithmetic, not a rigid definition of 'nearly half.' This does not establish the provider's actual profitability.",
+  "limitations": [
+   "The assessment is conditional arithmetic under the stated cost assumption, not a finding about actual company accounts.",
+   "Carrying the preceding cost assumption into this example is an evaluator interpretation.",
+   "A five-year contract does not establish sixth-year revenue.",
+   "The contract rates were verified through reporting because the primary filing was inaccessible to read_page."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "US$4.30 per GPU-hour",
+    "locator": "Section The most precise number is not the first receipt",
+    "url": "https://btw.media/en/kidz-ai-gpu-price-room-remained-non-binding",
+    "publisher": "BTW Media",
+    "event_date": "2026-07",
+    "available_at": "2026-09-07",
+    "explanation": "The reported contract rates supply the revenue denominator; applying the speaker's assumed cost and six-year life gives $1.284 per GPU-hour and 32.3% of blended revenue. This is a derived check of his illustrative arithmetic, not evidence of the provider's actual depreciation expense."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "will be ordered and deployed",
+    "locator": "Announcement paragraph following the description of the planned deployment",
+    "url": "https://classover.com/en/press-releases/kidz-ai-signs-data-center-mou-with-limestone-networks-to-deploy-inference-compute-infrastructure-for-open-weight-ai-models-advancing-its-44-6-million-canopy-wave-agreement",
+    "publisher": "KIDZ AI / Classover",
+    "event_date": "2026-08-03",
+    "available_at": "2026-08-03",
+    "explanation": "The company still described deployment prospectively. This supports evaluating the statement as an illustrative contract calculation rather than six years of realized financial results."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "28201497548212f35d2b0f68f67a41e9e5a64982cd7bcb24b3001c134beb94a8",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:29:02Z"
+}

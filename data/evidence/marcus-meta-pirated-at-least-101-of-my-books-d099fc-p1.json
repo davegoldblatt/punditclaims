@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-meta-pirated-at-least-101-of-my-books-d099fc-p1",
+ "claim_revision_ref": {
+  "id": "marcus-meta-pirated-at-least-101-of-my-books-d099fc",
+  "version": 1,
+  "content_hash": "b0d5a121b42fabac2ee9ab085b7ec16b78af4df4afce2189bfbda9f85f98f633"
+ },
+ "contract_ref": {
+  "id": "marcus-meta-pirated-at-least-101-of-my-books-d099fc",
+  "version": 1,
+  "content_hash": "24fc466278c6529a061150d32a7984e4620775ecf7def03114015a6f856473e6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Llama training data extraction regurgitation 2024 scalable extraction language models paper",
+   "\"Scalable Extraction\" \"LLaMA\" 2023 memorization",
+   "arxiv 2407.21783 submitted 2024 July 31"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2311.17035v1",
+    "used": true,
+    "why": "Reports systematic extraction experiments including LLaMA models."
+   },
+   {
+    "url": "https://arxiv.org/html/2407.21783v1",
+    "used": true,
+    "why": "Meta's own Llama 3 evaluation reports nonzero verbatim memorization and characterizes the measured rates as low."
+   },
+   {
+    "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+    "used": false,
+    "why": "Earlier peer-reviewed GPT-2 extraction research corroborates the general phenomenon, but the selected papers more directly address Meta models."
+   },
+   {
+    "url": "https://www.loeb.com/-/media/files/pdfs/2025-pdfs/ip-entertainment-pdfs/kadrey-v-meta-order-on-summary-judgment.pdf",
+    "used": false,
+    "why": "Discusses limited reproduction of particular plaintiffs' books. The selected pre-post research directly measures the broader claim."
+   }
+  ],
+  "performed_at": "2026-10-29T07:30:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2311-17035v1",
+   "source_snapshot_id": "8a1e56e114d738c79981fb75b28d2cd6afefb0ac09809b347b81c2d55f778ce8",
+   "publisher": "Nasr and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2311.17035v1",
+   "locator": "Section 4.3, Results",
+   "receipt": {
+    "public_excerpt": "all models emit memorized training data",
+    "quote_hash": "b118d77df4324ba80b6089a22065a9f351baea77c8268d80a070ec5aba41ac66",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-11-28",
+   "retrieved_at": "2026-10-29T03:55:34Z",
+   "relation": "supports",
+   "explanation": "The experiments include LLaMA 7B and 65B and find repeated matching passages. For models with undisclosed training corpora, the researchers use an auxiliary corpus, which limits certainty about individual passages' training provenance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2407-21783v1",
+   "source_snapshot_id": "93deb5364e331acbf2d6fabb49705c5da389cd85201c59d22fc167562e49cdc6",
+   "publisher": "Meta, The Llama 3 Herd of Models",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/html/2407.21783v1",
+   "locator": "Section 5.4.2, Safety Pre-training",
+   "receipt": {
+    "public_excerpt": "low memorization rates",
+    "quote_hash": "e6af657e0bead338e59d3d06864cebdff5abf5df5b5f6ff256d91e7182ff3faf",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-07-31",
+   "retrieved_at": "2026-10-29T02:36:49Z",
+   "relation": "supports",
+   "explanation": "Meta directly measures exact reproduction of training continuations and reports nonzero rates, supporting a recurring phenomenon in relevant models. Its description of those rates as low limits any stronger inference that regurgitation dominates ordinary use; duplicated mathematical notation is preserved from read_page.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These studies do not measure the frequency of regurgitation during representative everyday conversations.",
+  "They do not establish reproduction of Marcus's particular books or articles."
+ ],
+ "packet_hash": "41a2ed643ea8c669c23833bd074daef67b4bb2373c9910e67fbf879e11713e09"
+}

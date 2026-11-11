@@ -1,0 +1,71 @@
+{
+ "run_id": "wyea-sam-altman-is-full-of-shit-2d6d39-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-sam-altman-is-full-of-shit-2d6d39": "01c609dac2f2cc894fdd494b143b75c64b75e113ae5eb2450152925363be17d0"
+ },
+ "started_at": "2026-10-29T22:16:44Z",
+ "completed_at": "2026-10-29T22:17:03Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, endorsed. Not a quote of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The factual clause sits inside a normative sentence, but the descriptive part ('continually gets things wrong') is a checkable present-tense assertion. The normalisation keeps it without adding a frequency or a future claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Firm language with no metric. Reading 'continually' as errors that recur across repeated use, not that every answer is wrong, is an ordinary reading. The April 2024 snapshot just before the post is reasonable. The result depends on this frequency reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Vectara leaderboard snapshot dated 2024-04-30, inside the target period. It shows nonzero hallucination rates on summarization (about 2.5–7.4%) across many widely used models, using repeated tests with a disclosed method. That meets the support condition. It is task-specific and auto-scored."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Preprint from April 2024 with examples of factual errors, mostly from small models (Bloom-560m, Llama-2-7b), while larger models answered correctly. It illustrates the mechanism but does not cover several widely used contemporary systems."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the plain reading (errors recur across repeated use), the dated April 2024 benchmark shows measurable hallucination rates across many widely used models. That meets the support condition. The low single-digit rates on one task are not 'absent or isolated' as the contradiction condition requires, though they would not support a claim that most outputs are wrong.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-sam-altman-is-full-of-shit-2d6d39"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9837,
+  "output_tokens": 1610,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

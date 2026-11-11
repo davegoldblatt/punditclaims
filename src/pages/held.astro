@@ -1,0 +1,54 @@
+---
+// /held: one sanitized list of held records. The reason label, the source
+// link and date, and the code-written detail. A proposition appears only
+// when the release carries one (quotation and attribution verified).
+import Base from "../layouts/Base.astro";
+import { release } from "../lib/published.ts";
+import { HELD_LABEL, HELD_REASONS } from "../policy.ts";
+import { day, plainHeld } from "../lib/view.ts";
+import { PROBABLE_LABEL } from "../lib/probable.ts";
+const COMPANY_AI: Record<string, string> = { anthropic: "Anthropic’s AI", openai: "OpenAI’s AI" };
+
+const r = release();
+const m = r.manifest;
+const held = [...r.held].sort((a, b) => b.since.localeCompare(a.since) || a.id.localeCompare(b.id));
+const name = (id: string) => r.subject(id)?.name ?? id;
+const reasons = HELD_REASONS.map((h) => [h, held.filter((x) => x.held_reason === h).length] as const).filter(([, n]) => n > 0);
+---
+<Base title="Held back" description="Claims that didn’t pass every check, and why.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Held back</h1>
+      <p class="lede">These claims didn’t pass every check, so we don’t show a verdict. Being held back says nothing about whether the claim was right.</p>
+    </header>
+    {m ? (
+      <section class="section" aria-labelledby="held-h">
+        <h2 id="held-h">Held back <span class="count">(<span data-count="counts.held" data-n={held.length}>{held.length}</span>)</span></h2>
+        {reasons.length > 0 && (
+          <ul class="tally held-reasons" aria-label="Held back, by reason">{reasons.map(([h, n]) => <li><span>{HELD_LABEL[h]}</span><span class="num" data-count={`held.reason.${h}`} data-n={n}>{n}</span></li>)}</ul>
+        )}
+        {held.length ? (
+          <ul class="held-list">
+            {held.map((h) => (
+              <li id={`held-${h.id}`}>
+                <h3>{HELD_LABEL[h.held_reason]}</h3>
+                <p class="small soft">{name(h.subject_id)}. Held since <time datetime={h.since}>{day(h.since)}</time>.</p>
+                {plainHeld(h.detail, HELD_LABEL[h.held_reason]) !== `${HELD_LABEL[h.held_reason]}.` && <p>{plainHeld(h.detail, HELD_LABEL[h.held_reason])}</p>}
+                {h.excerpt && <blockquote cite={h.source.url}><p><span>“{h.excerpt}”</span></p></blockquote>}
+                {h.proposition && (
+                  <p><span class="k">Our reading: </span>{h.proposition}</p>
+                )}
+                {h.probable && (
+                  <p class="small"><span class="k">{PROBABLE_LABEL[h.probable.call]}, per {h.probable.level === "reasonable" ? "both AIs" : "one AI"}: </span>{(h.probable.reasons ?? []).map((x) => `${COMPANY_AI[x.provider] ?? x.provider}: ${x.reason}`).join(" ")}</p>
+                )}
+                <p class="small"><span class="k">Source: </span><a href={h.source.url} rel="noopener">{h.source.title}</a>{h.source.date ? <>, <time datetime={h.source.date}>{h.source.date}</time></> : ", date not known"}.</p>
+              </li>
+            ))}
+          </ul>
+        ) : <p class="soft">Nothing is held back.</p>}
+      </section>
+    ) : (
+      <div class="notice" role="note"><p>Nothing is published yet.</p></div>
+    )}
+  </div>
+</Base>

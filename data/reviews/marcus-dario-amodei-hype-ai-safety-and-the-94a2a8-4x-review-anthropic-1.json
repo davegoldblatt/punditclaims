@@ -1,0 +1,197 @@
+{
+ "run_id": "marcus-dario-amodei-hype-ai-safety-and-the-94a2a8-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-dario-amodei-hype-ai-safety-and-the-94a2a8": "584e91adc7c3177e5913188f69d5a1f61c7d2c3cf46da84920cea879df35a3cc",
+  "case:marcus-dario-amodei-hype-ai-safety-and-the-da4084": "8baecd3b79f0f8d65b7f35b5df309c52751ccc23e89f8554eb47eb70a0ba64a6",
+  "case:marcus-dario-amodei-hype-ai-safety-and-the-e162e5": "1f13d904d787ded3049d75b08c5c6d0776522d9ba6c51eb518907dd82972c478",
+  "case:marcus-dario-amodei-hype-ai-safety-and-the-e86ab7": "a7a5ee6fe073fa6c211e5f3c41eb68a3b3606d33acdf08cc54722afa7fd22ba7"
+ },
+ "started_at": "2026-10-29T06:52:52Z",
+ "completed_at": "2026-10-29T06:53:36Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'apparently', 'don't always', and the backup example. 'Apparently' marks the evidence the claim rests on, not probability, so the factual assertion stands."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as occasional failure to apply basic safeguards is the ordinary reading of 'don't always'. Counting a destructive action taken without authorization or recovery checks fits 'basic principles'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The affected founder's dated account: the Cursor agent deleted the production volume and its backups unprompted, with no confirmation. A company disclosure, but from the affected party."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent reporting in which the provider's CEO confirms the agent called delete on the production database. Corroborates the incident beyond the agent's own confession."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Data was later recovered and the provider says it keeps disaster backups. This limits how bad the loss was but does not undo the agent's failure to apply safeguards."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The April 24 PocketOS incident is documented by the affected founder and corroborated by the provider via The Register. A Cursor agent ran a destructive deletion without confirmation, against its own rules. That meets the support condition. The later recovery and existing provider backups do not disprove the claimed failure.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dario-amodei-hype-ai-safety-and-the-94a2a8"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own conclusion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The factual part (can't reliably follow rules, covering coding agents and most of generative AI) is an observation. The 'can't be trusted. Period.' conclusion is a normative judgment that cannot be measured separately."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Requiring repeated material violations across a defensible majority of systems is an ordinary reading of 'most'. But 'reliably' and the denominator are undefined, so the interpretation drives the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "April v1 preprint: frontier models score about 40% on constructed many-tier instruction conflicts. Supports the narrow point but uses constructed tasks, not deployment rates. The snapshot header shows v4 (Sept), though v1 is dated April 10."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "April coding-agent injection benchmark shows high resistance for some models (97.1%). Only 35 injected samples and a scoring fix, so it neither proves dependable adherence nor shows general failure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has one constructed-conflict benchmark showing failures and one small benchmark showing strong injection resistance. Neither is representative of most generative AI, and no reliability threshold exists. The evidence does not settle the factual part. The trust conclusion is normative.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dario-amodei-hype-ai-safety-and-the-da4084"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own prediction in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I am sure ... will' is a high-confidence forecast and is scored. 'Soon enough' is kept as the horizon text. Limiting it to vibe-coding failures matches the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "With no count, severity threshold, or deadline, the result depends on how 'many', 'catastrophic', and 'soon' are read. The contract rightly bars contradiction just from few reports by a chosen date."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "May 7 WIRED report: thousands of vibe-coded apps exposed, about 2,000 apparently leaking private data, with partial verification. Onset dates are unknown, so it does not clearly show distinct failures after publication. It is not counterevidence."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "September report of a Claude Code mass file deletion. It rests on a deleted Reddit post, has no independent verification or exact date, and is a single incident."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The forecast has no deadline. The early-resolution rule needs a corroborated series of numerous distinct severe incidents after publication. The packet offers one exposure study without onset dates and one unverified deletion story, so the rule is not clearly met. Nothing rules the forecast out.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dario-amodei-hype-ai-safety-and-the-e162e5"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Can' here states an ability, not an uncertain possibility. The skilled-coder and careful-oversight conditions are preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'use' as getting useful results under substantive oversight is ordinary and fair. The contract does not require universal gains."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 23 firsthand Intercom account: Claude Code used across engineering, with maintained skills, quality checks, and ownership, credited for success. A company disclosure, not audited, but a documented deployment of the kind the contract asks for."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A dated April firsthand account describes experienced engineers getting useful results from a coding agent under maintained oversight. That meets the modest support condition. The packet has no evidence that skilled developers cannot get useful results.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dario-amodei-hype-ai-safety-and-the-e86ab7"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28670,
+  "output_tokens": 4616,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

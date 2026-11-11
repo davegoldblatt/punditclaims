@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-come-gpt-can-seem-so-brilliant-8671b3": "5fcede7a15ac3443d2e8bddd90555c3c062092463740ad3b8315f09d5e605733"
+ },
+ "started_at": "2026-10-29T23:25:47Z",
+ "completed_at": "2026-10-29T23:26:01Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, in his own explanatory voice. He is not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The wording is faithful and keeps both 'over the course of training' and 'sometimes'. 'Sometimes' limits how often, not how confident he is, so the claim can still be scored. In context it is his mechanistic explanation of why GPT errs ('how GPT works'), so it is causal rather than a plain observation. The contract treats it the same way."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as being about training, not about errors at inference time, follows from his explicit training clause, and the contract does not stretch it. The support bar (direct evidence about GPT-3's training) is demanding but matches the claim. The contradiction rule rightly says that examples of successful binding cannot refute 'sometimes'. The result depends on choosing the training reading over a loose behavioural one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed study from 2023, before the cutoff. It shows GPT-3 davinci tracking entities poorly at inference time, but it does not trace these failures to training. It is consistent with the claim but cannot establish the mechanism."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Studies a binding mechanism in Pythia and LLaMA models, not GPT-3. It shows successful binding inside the context window, which neither refutes occasional failures caused by training nor addresses GPT-3's training."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Controlled OLMo pretraining experiments show injected facts being forgotten during training. This makes forgetting during training plausible in general, but it is a different model and concerns factual knowledge rather than GPT-3's entity-property bindings."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "This is a causal claim about GPT-3's training. The packet has no study tracing GPT-3's entity-property associations through its training. e1 shows inference failures without a cause, and e2 and e3 concern other models. Nothing confirms or rules out the training explanation, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11726,
+  "output_tokens": 1437,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

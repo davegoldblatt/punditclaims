@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-please-dont-trust-your-chatbot-for-352372-a1",
+ "claim_revision_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-352372",
+  "version": 2,
+  "content_hash": "7a6197e60a9d6d59ff1861d0a9144dd651fc52ece8926abb63c958b8ae975eaf"
+ },
+ "contract_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-352372",
+  "version": 1,
+  "content_hash": "a800219b0a713be9d5b89f4ad9b21b91e17e5ed5bbbc5a7e8d6189aca3e318ba"
+ },
+ "packet_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-352372-p1",
+  "content_hash": "6c76c6ef174aca9823b7b3cc78ae8e099f446bf520bf3d90c14a51e8be363842"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The study supports incomplete information as a plausible contributor, but it does not isolate missed questions as the cause of the performance gap. Other interaction failures also occurred. AMIE further limits any universal claim that LLMs cannot conduct clinical interviews. The broad causal explanation remains unsettled.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "The qualitative transcript sample is small.",
+  "Simulated scenarios do not reproduce all pressures of real medical decisions.",
+  "Specialized research systems and consumer chatbots are not interchangeable."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-anthropic-1",
+  "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-please-dont-trust-your-chatbot-for-352372",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs don't know what they don't know: they work decently well with the information they've got but don't know how to conduct clinical interviews, and in the hands of the lay public they can easily give bad advice because the proper questions never get asked, either by the patient or the LLM.",
+  "kind": "causal",
+  "conditions": [
+   "in the hands of the lay public",
+   "work decently well with the information they've got",
+   "can easily give bad advice"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In a recurring theme, we see that LLMs don’t know what they don’t know; they work decently well with the information they’ve got but don’t know how to conduct clinical interviews, and in the hands of the lay public can easily give bad advice because the proper questions never get asked, either by the patient or the LLMs.",
+   "locator": "paragraph 10",
+   "url": "https://garymarcus.substack.com/p/please-dont-trust-your-chatbot-for",
+   "date": "2026-04-21",
+   "document_title": "Please don’t trust your chatbot for medical advice",
+   "observed_at": "2026-10-28T22:30:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "don’t know what they don’t know",
+    "work decently well with the information they’ve got",
+    "don’t know how to conduct clinical interviews",
+    "in the hands of the lay public",
+    "can easily give bad advice because the proper questions never get asked"
+   ],
+   "our_interpretation": [
+    "The testable mechanism is that failures to elicit relevant missing information materially cause inaccurate advice during lay-user interactions, despite better performance with complete case information.",
+    "I do not interpret the wording as requiring that a model never asks any useful question.",
+    "A performance gap alone does not identify its cause. The assessment must distinguish missing information from reasoning errors, communication failures and users disregarding correct advice.",
+    "The claim concerns systems relevant to public medical use at publication; older experiments can inform the mechanism but cannot alone establish unchanged behavior in newer systems."
+   ],
+   "support_condition": "Controlled elicitation comparisons, or sufficiently detailed matched interaction analyses, show that omitted relevant questions or information cause otherwise avoidable advice errors across the relevant models.",
+   "contradiction_condition": "Comparable lay-user studies show reliable elicitation of missing information, or establish that the observed errors persist independently of information elicitation and are explained by other mechanisms."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The study supports incomplete information as a plausible contributor, but it does not isolate missed questions as the cause of the performance gap. Other interaction failures also occurred. AMIE further limits any universal claim that LLMs cannot conduct clinical interviews. The broad causal explanation remains unsettled.",
+  "limitations": [
+   "The qualitative transcript sample is small.",
+   "Simulated scenarios do not reproduce all pressures of real medical decisions.",
+   "Specialized research systems and consumer chatbots are not interchangeable."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "sufficient information",
+    "locator": "Results, analysis of 30 interaction transcripts; Methods, Participants",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12920132/fullTextXML",
+    "publisher": "Nature Medicine",
+    "event_date": "2024",
+    "available_at": "2026-02-09",
+    "explanation": "Complete-case performance exceeded lay-user performance, and 16 of 30 inspected interactions began with incomplete information. However, later information sometimes corrected omissions or introduced new errors; the experiment randomized access to a chatbot, not whether missing facts were elicited."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "similar amount",
+    "locator": "Results, Efficiency of information acquisition",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12158756/fullTextXML",
+    "publisher": "Nature",
+    "event_date": "2025-04-09",
+    "available_at": "2025-04-09",
+    "explanation": "The published AMIE evaluation demonstrates useful history-taking by a specialized LLM system in simulated consultations. This is counterevidence to universal incapacity, but its patient-actors and research system differ from ordinary public chatbot use; the date identifies publication, not verified trial dates."
+   }
+  ],
+  "what_would_resolve": "A controlled study of relevant consumer models that holds cases and users comparable, varies reliable elicitation of missing clinical information, and measures the resulting change in expert-rated advice accuracy.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "24fabf1e02e7394b65ba151ae886a18e32e76aa1e51d55e6f73d3d2a5cd9bca6",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:06:52Z"
+}

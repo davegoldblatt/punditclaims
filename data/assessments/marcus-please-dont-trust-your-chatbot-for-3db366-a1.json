@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-please-dont-trust-your-chatbot-for-3db366-a1",
+ "claim_revision_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-3db366",
+  "version": 1,
+  "content_hash": "9e72fb76dcca2f641aa94fde919c118d9323e359c218703c3b10639407fe11a0"
+ },
+ "contract_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-3db366",
+  "version": 1,
+  "content_hash": "67967bf0849f0262de9c1319ce3a6569826802794749ca403a8835e189dfa688"
+ },
+ "packet_ref": {
+  "id": "marcus-please-dont-trust-your-chatbot-for-3db366-p1",
+  "content_hash": "e56f98b29da775b84a26813ce6566202a5a5c423869500fdec106c1269195199"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2026-04-21",
+  "precision": "day"
+ },
+ "public_rationale": "The ordinary warning has empirical support: tested chatbots produced recurring medical errors with confident wording, and a newer health product missed consequential emergencies. This supports caution about unverified reliance. It does not establish that every answer is wrong, every model is equally unreliable, or every medical application lacks value.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "Support depends on the contextual evidence-period reading.",
+  "Confidence in the BMJ audit was assessed descriptively, not through a calibrated numerical measure.",
+  "Marcus's surrounding description overstates the highly problematic share: it was 19.6%, not nearly half.",
+  "Stress-test results cannot be treated as population-wide error rates."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-anthropic-1",
+  "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-please-dont-trust-your-chatbot-for-3db366",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Large language models are still frequently wrong yet confident, producing authoritative bullshit that shouldn't be trusted, and this applies strongly in medicine.",
+  "kind": "observation",
+  "conditions": [
+   "in medicine"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "That’s still true – and it very much applies in medicine.",
+   "locator": "paragraph 2",
+   "url": "https://garymarcus.substack.com/p/please-dont-trust-your-chatbot-for",
+   "date": "2026-04-21",
+   "document_title": "Please don’t trust your chatbot for medical advice",
+   "observed_at": "2026-10-28T22:30:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "frequently wrong, never in doubt",
+    "That’s still true",
+    "very much applies in medicine",
+    "about one year ago"
+   ],
+   "our_interpretation": [
+    "The testable core is that commonly used LLMs repeatedly give materially incorrect medical answers with unjustified confidence.",
+    "I read the language as a warning against unverified reliance, not a claim that every answer is wrong or that medical applications have no value.",
+    "The context explicitly invokes approximately year-old testing. I interpret the observation as covering the 2025-to-publication evidence period; extending those findings to every model available on publication day is a separate inference."
+   ],
+   "support_condition": "Independent evaluations across commonly used models document recurring medical errors together with confident presentation, with additional evidence that errors can affect consequential medical decisions.",
+   "contradiction_condition": "Comparable evaluations find medical errors exceptional and show that models reliably communicate uncertainty when wrong."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The ordinary warning has empirical support: tested chatbots produced recurring medical errors with confident wording, and a newer health product missed consequential emergencies. This supports caution about unverified reliance. It does not establish that every answer is wrong, every model is equally unreliable, or every medical application lacks value.",
+  "limitations": [
+   "Support depends on the contextual evidence-period reading.",
+   "Confidence in the BMJ audit was assessed descriptively, not through a calibrated numerical measure.",
+   "Marcus's surrounding description overstates the highly problematic share: it was 19.6%, not nearly half.",
+   "Stress-test results cannot be treated as population-wide error rates."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "amplifying misinformation.",
+    "locator": "Abstract, Conclusions; Methods; Results, General trends",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13158598/fullTextXML",
+    "publisher": "BMJ Open",
+    "event_date": "2025-02-01",
+    "available_at": "2026-04-14",
+    "explanation": "Across five chatbots, 49.6% of answers were problematic, including 19.6% highly problematic; researchers observed confident presentation even when answers were incorrect. These were misinformation-oriented stress prompts, not a representative sample of patient conversations."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "51.6% (33/64) were undertriaged",
+    "locator": "Main results, paragraph preceding Figure 1; Methods, response collection",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13190235/fullTextXML",
+    "publisher": "Nature Medicine",
+    "event_date": "2026-01",
+    "available_at": "2026-02-23",
+    "explanation": "Testing on January 9–11 documents consequential errors in a newer consumer health system. Performance varied substantially: semi-urgent cases achieved 93.0% accuracy, and a supplementary set of textbook emergencies had no undertriage."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "final diagnosis, management",
+    "locator": "Abstract, Design and Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41973425",
+    "publisher": "JAMA Network Open",
+    "event_date": "2025",
+    "available_at": "2026-04-13",
+    "explanation": "The 21-model evaluation found substantial differences between reasoning stages, including strong final-diagnosis performance. This limits a blanket reading of medical incompetence but does not negate recurring confident errors."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3ff98d98e335b3c3617e4e7e1f0c08f8deb6bce47d7ae24fab7a0f992e10abf5",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:06:52Z"
+}

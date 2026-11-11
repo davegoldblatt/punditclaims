@@ -1,0 +1,107 @@
+{
+ "packet_id": "marcus-llms-are-not-like-you-and-meand-never-b5e141-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-b5e141",
+  "version": 1,
+  "content_hash": "c98a8ef05be6df1ef4582c18debce4ad5f20c005693734e7942261e3a4e0a551"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-b5e141",
+  "version": 1,
+  "content_hash": "9626ea0f1dad43b6ed6ac44039615d1479f25977e5bcd57d866e4690fcc19bee"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM chess world models rules legal moves 2025 benchmark",
+   "LLM chess \"rules\" \"prompt\" \"2025\" \"illegal\" benchmark July",
+   "LLMs explicit rules world models reliable rule following benchmark 2025 paper",
+   "\"RuleArena\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.08972v2",
+    "used": true,
+    "why": "Directly evaluates models supplied with reference rules and documents failures."
+   },
+   {
+    "url": "https://arxiv.org/html/2410.02426v1",
+    "used": true,
+    "why": "Reports strong legal-move performance after specialist fine-tuning, a relevant limitation on sweeping incapacity claims."
+   },
+   {
+    "url": "https://aclanthology.org/2025.naacl-short.1.pdf",
+    "used": false,
+    "why": "The headline chess rating uses repeated sampling and legality selection, so it is not a clean test of unaided rule application."
+   },
+   {
+    "url": "https://arxiv.org/abs/2512.01992",
+    "used": false,
+    "why": "Published after the post; the search result does not establish that its evaluated state falls within the target period."
+   },
+   {
+    "url": "https://chessbench.org/methodology",
+    "used": false,
+    "why": "The search result describes legal-move provision, and no dated pre-post result was established."
+   }
+  ],
+  "performed_at": "2026-10-29T07:22:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2412-08972v2",
+   "source_snapshot_id": "af9edf278edadc39877118b6c2865c8bcb2081a2f80c0f8a00d4ae0f1d3788d8",
+   "publisher": "arXiv; Ruiwen Zhou and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.08972v2",
+   "locator": "Section 5, Conclusions; supplied-rule protocol in Section 1 and Appendix D.2.4",
+   "receipt": {
+    "public_excerpt": "prone to irrelevant distractions.",
+    "quote_hash": "e4f561880722209781c8e10f7fb594d34ad36b61b370792a27e427bad1ab215a",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-30",
+   "available_at": "2025-05-30",
+   "retrieved_at": "2026-10-29T07:17:17Z",
+   "relation": "supports",
+   "explanation": "RuleArena supplies domain rules in the prompt and finds failures in combining and applying them. This supports the unreliability component in its tested settings, but does not establish that the models lack abstract representations; the date identifies the documented experimental record in version 2.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2410-02426v1",
+   "source_snapshot_id": "4a9794f36dc37b7417bc144222ac9f7bafcde0f872bdba795fe09d75e575602b",
+   "publisher": "arXiv; Ben Fauber",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2410.02426v1",
+   "locator": "Section 4.2, Increasing Dataset Size Improves Performance",
+   "receipt": {
+    "public_excerpt": "nearly always proposed a legal move.",
+    "quote_hash": "2d67a4c557051a243425b10a3cc9bd0c15e18934c8e56bb9c1f061e38cd8b1c4",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-03",
+   "available_at": "2024-10-03",
+   "retrieved_at": "2026-10-29T07:15:58Z",
+   "relation": "context",
+   "explanation": "A specialized small language model demonstrates substantial legal-move competence, limiting any blanket conclusion that language models cannot learn rules. Fine-tuning on examples differs from supplying rules in a prompt, and legal moves alone do not prove an abstract internal world model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The supplied-rule failures do not identify absence of an abstract model as their cause.",
+  "The positive specialist result does not test the same supplied-rule setting.",
+  "No stated reliability threshold allows these differing settings to be reduced to one categorical verdict."
+ ],
+ "packet_hash": "fbff782f74f0989b74f7b82133dc8f7c57e799fc4b0fdc28dd13f8ddbe3d9616"
+}

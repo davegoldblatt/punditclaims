@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-seven-replies-to-the-viral-apple-b26773-a1",
+ "claim_revision_ref": {
+  "id": "marcus-seven-replies-to-the-viral-apple-b26773",
+  "version": 2,
+  "content_hash": "770259094cef55a0a1383f6853325d2b1a32c54065f5fae9c4170a9741be0efa"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-replies-to-the-viral-apple-b26773",
+  "version": 1,
+  "content_hash": "8de8917461b8413122f08fb710700af0dac5aef48a3b7df36d348154dd214c08"
+ },
+ "packet_ref": {
+  "id": "marcus-seven-replies-to-the-viral-apple-b26773-p1",
+  "content_hash": "618257072d953a93a76646915656a17e94cb3143b8d11045de90d0cc1d93def8"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-06",
+  "end": "2025-06",
+  "precision": "month"
+ },
+ "public_rationale": "The original study’s authors explicitly document eight-disc failures. The optimal answer requires 255 moves, and the corrected rebuttal’s token estimate puts that answer far below the configured budgets. Thus a hard output ceiling cannot explain all the failures. This does not establish their precise cause or validate every other experiment in the paper.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The token estimate excludes optional reasoning and formatting overhead.",
+  "Premature stopping and prompting effects remain possible explanations.",
+  "Support does not mean every tested model failed every eight-disc attempt."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-seven-replies-to-the-viral-apple-055cba-4x-review-anthropic-1",
+  "marcus-seven-replies-to-the-viral-apple-055cba-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-seven-replies-to-the-viral-apple-055cba-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-seven-replies-to-the-viral-apple-b26773",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The LRMs failed Tower of Hanoi with 8 discs, whose optimal solution of 255 moves is well within so-called token limits, so the token-limit objection does not explain the overall pattern of results.",
+  "kind": "observation",
+  "conditions": [
+   "Tower of Hanoi in the Apple paper",
+   "the overall pattern of results"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The LRMs failed on Tower of Hanoi with 8 discs, where the optimal solution is 255 moves, well within so-called token limits;",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/seven-replies-to-the-viral-apple",
+   "date": "2025-06-12",
+   "document_title": "Seven replies to the viral Apple reasoning paper – and why they fall short",
+   "observed_at": "2026-10-28T23:56:18Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The LRMs failed on Tower of Hanoi with 8 discs",
+    "the optimal solution is 255 moves",
+    "well within so-called token limits"
+   ],
+   "our_interpretation": [
+    "Failed means the tested models exhibited execution failures at eight discs; it does not require every model to fail every sampled attempt.",
+    "Within token limits refers to the required complete answer fitting the configured output budget. It does not guarantee that every possible reasoning trace fits.",
+    "The contextual conclusion is that a hard output ceiling cannot explain all reported failures, not that output constraints never matter.",
+    "The target is the original Apple experiment reported in June 2025."
+   ],
+   "support_condition": "The original results show eight-disc failures, and a valid 255-move answer fits comfortably within the tested output budgets.",
+   "contradiction_condition": "The original results show no eight-disc failures, the optimal move count differs, or the required answer necessarily exceeds the applicable output budgets."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The original study’s authors explicitly document eight-disc failures. The optimal answer requires 255 moves, and the corrected rebuttal’s token estimate puts that answer far below the configured budgets. Thus a hard output ceiling cannot explain all the failures. This does not establish their precise cause or validate every other experiment in the paper.",
+  "limitations": [
+   "The token estimate excludes optional reasoning and formatting overhead.",
+   "Premature stopping and prompting effects remain possible explanations.",
+   "Support does not mean every tested model failed every eight-disc attempt."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "failures",
+    "locator": "Appendix discussion of context limits, paragraph describing N=8 and 255 moves",
+    "url": "https://arxiv.org/html/2506.06941v3",
+    "publisher": "arXiv; Shojaee and colleagues",
+    "event_date": "2025-06",
+    "available_at": "2025-11-20",
+    "explanation": "The authors’ retrospective account of the original study reports errors around move 40 for eight-disc puzzles requiring 255 moves. This directly supports failures occurring before the required answer approaches the output ceiling."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "well before these theoretical limits.",
+    "locator": "Section 4, corrected final-sequence token calculation and equations 2–4",
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "publisher": "arXiv; A. Lawsen",
+    "event_date": "2025-06",
+    "available_at": "2025-06-16",
+    "explanation": "The corrected rebuttal estimates ten tokens per move and discusses budgets of 64,000 and 100,000 tokens. Its own calculation places the required eight-disc move list comfortably below those budgets, while retaining premature stopping as an alternative explanation."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "strictly to solvable problems",
+    "locator": "Abstract, River Crossing results",
+    "url": "https://arxiv.org/html/2507.01231v1",
+    "publisher": "arXiv; Dellibarda Varela and colleagues",
+    "event_date": "2025-07",
+    "available_at": "2025-07-01",
+    "explanation": "Later experiments identify a solvability problem in another puzzle family. This limits broad conclusions about the entire study, but does not negate the original eight-disc Hanoi failures."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3df5bc24a050c31e46b5b7f3971ecd49fc26e498f7a9365400774da72c0870bc",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:54:36Z"
+}

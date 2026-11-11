@@ -1,0 +1,183 @@
+{
+ "packet_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340-p1",
+ "claim_revision_ref": {
+  "id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340",
+  "version": 2,
+  "content_hash": "26ef2dc23633893881602c3bfb0994c770c21e2364a909f666b383c20a8a6467"
+ },
+ "contract_ref": {
+  "id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340",
+  "version": 1,
+  "content_hash": "ff9f1839d5be24d0e3f93621d2e1b750b4c499eb3d482d423f3a06aaeeb169b5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft FY 2026 \"24.1\" OpenAI revenue \"331.8\"",
+   "Bloomberg August 2026 Microsoft OpenAI 70% 34 billion AI revenue",
+   "Microsoft OpenAI Bloomberg August 5 2026 \"34 billion\"",
+   "Microsoft OpenAI August 5 2026 Bloomberg \"123%\" \"34\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www1.folha.uol.com.br/tec/2026/08/microsoft-gera-a-maior-parte-de-sua-receita-em-ia-pela-openai-mostra-documento.shtml",
+    "used": true,
+    "why": "Full Bloomberg republication, read successfully. Contains the estimated denominator, disclosed numerator, growth assumption, and confirmation of the revenue category's scope."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar26/index.html",
+    "used": true,
+    "why": "The readable shareholder letter supplies the fiscal-year total-revenue denominator."
+   },
+   {
+    "url": "https://www.windowscentral.com/artificial-intelligence/microsoft-filings-suggest-around-70-percent-of-its-ai-revenue-is-concentrated-entirely-on-openai",
+    "used": true,
+    "why": "Considered as a material qualification: its summary gives a range rather than a firm minimum."
+   },
+   {
+    "url": "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/artificial-intelligence/microsofts-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "Although labeled FULL TEXT, the returned content visibly ends at a subscription preview. Excluded."
+   },
+   {
+    "url": "https://uk.finance.yahoo.com/news/microsoft-ai-sales-mostly-come-180651710.html",
+    "used": false,
+    "why": "read_page returned HTTP 404."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "used": false,
+    "why": "The filing was located, but read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T12:01:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "www1-folha-uol-com-br-tec-2026-08-microsoft-gera-a-maior-parte-de-s-cdf26969fa45",
+   "source_snapshot_id": "03e9f4030f482df82455286d68d194bb5a72a3a7631c2037c7c2f30b4ba2f407",
+   "publisher": "Bloomberg, republished by Folha de S.Paulo",
+   "source_type": "news_report",
+   "url": "https://www1.folha.uol.com.br/tec/2026/08/microsoft-gera-a-maior-parte-de-sua-receita-em-ia-pela-openai-mostra-documento.shtml",
+   "locator": "Paragraph defining AI revenue; calculation appears in the preceding Bloomberg-analysis paragraphs",
+   "receipt": {
+    "public_excerpt": "a OpenAI",
+    "quote_hash": "fd3a31a4d8e4520c4bda0aa71ce0e0aa852a787be7335e583527bc66d3a163a7",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-06",
+   "retrieved_at": "2026-10-29T11:52:13Z",
+   "relation": "supports",
+   "explanation": "The article reports $24.1 billion from OpenAI and estimates $34 billion of fiscal-year AI revenue by assuming continued 123% growth. Those inputs, together with e2, support both percentages as point estimates.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "OpenAI commercial-arrangement revenue as a percentage of AI revenue and total revenue",
+    "currency": "USD",
+    "units": "percent; underlying amounts in billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "FY2026 revenue from OpenAI: USD 24.1 billion, reported in this article",
+     "Estimated FY2026 AI revenue: USD 34 billion, from Bloomberg's calculation",
+     "FY2026 total revenue: USD 331.8 billion, from e2"
+    ],
+    "formula": "AI share = 100 × 24.1 / 34 = 70.88235%; total-revenue share = 100 × 24.1 / 331.8 = 7.26341%.",
+    "rounding": "70.88% and 7.26%, respectively; the underlying figures are rounded."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "microsoft-com-investor-reports-ar26-index-html",
+   "source_snapshot_id": "8533bb4f7ccae8c32f683457ac5058ff3216c35ca555e4447c375ef5a552133d",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/investor/reports/ar26/index.html",
+   "locator": "Shareholder letter, financial-performance paragraph",
+   "receipt": {
+    "public_excerpt": "Revenue was $331.8 billion",
+    "quote_hash": "5150582184d137e7a2f9af599bc3238e4c97bd62a28cea0599cc0d782f5fbf8e",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-14",
+   "retrieved_at": "2026-10-29T07:33:33Z",
+   "relation": "context",
+   "explanation": "Supplies the company-reported total-revenue input for e1's second ratio.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Total revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "windowscentral-com-artificial-intelligence-microsoft-filings-sugges-4e4940b02c47",
+   "source_snapshot_id": "b1a46b7b19bd90b14b795fef8c5c29469adfde12fffd18c5165537ab92b47627",
+   "publisher": "Windows Central",
+   "source_type": "news_report",
+   "url": "https://www.windowscentral.com/artificial-intelligence/microsoft-filings-suggest-around-70-percent-of-its-ai-revenue-is-concentrated-entirely-on-openai",
+   "locator": "Article body, Bloomberg discussion and following paragraph",
+   "receipt": {
+    "public_excerpt": "Analysis from Bloomberg",
+    "quote_hash": "239a7b691964b1b8aee7b1ec04c4966ea722c829682906bb267d9b373b40c38a",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-06",
+   "retrieved_at": "2026-10-29T11:51:25Z",
+   "relation": "context",
+   "explanation": "This summary describes roughly 70% and also a 65–70% range for infrastructure consumption. It qualifies a firm minimum but does not provide a competing calculation with the same inclusive revenue numerator.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Estimated OpenAI infrastructure consumption as a share of AI business",
+    "currency": "USD",
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No directly reported FY2026 AI revenue total was obtained.",
+  "Bloomberg's estimate does not establish 70% as a certain lower bound."
+ ],
+ "packet_hash": "65d9931c57eab8cfeb28bd665fd4167c6e186ed74e7c202f256d77363383cf8c"
+}

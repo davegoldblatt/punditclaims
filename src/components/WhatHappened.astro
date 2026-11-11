@@ -1,0 +1,250 @@
+---
+// "Were they right?" for one person. The answer in words is chosen by code
+// from the claims the evidence settled (src/lib/answer.ts, rule on the method
+// page), then one square per settled claim and the split in numbers. Only
+// settled claims show by default (owner decision 2026-10-31: red, yellow, and
+// green). The page's outcome chips (OutcomeChips.astro) can add unresolved and
+// uncheckable claims to the grid, plus a line linking to each list.
+//
+// The page's kind switch (KindSwitch.astro) re-cuts everything here: all
+// claims, predictions only, or claims about the present or past only
+// (docs/plans/predictions-vs-claims.md; Dave 2026-10-31: the switch "should live
+// up here"). Each kind gets its own answer, stats, and topic sentences, inside
+// a .k-<kind> wrapper the stylesheet shows. The square grid is shared: each
+// square carries its group and the stylesheet hides the others. Wrappers keep
+// the kind and the confidence level on separate elements, so their CSS rules
+// never fight over one element.
+import type { HeldRecord, PublicClaim } from "../lib/manifest.ts";
+import { PROBABLE_LABEL, type ProbableCall, type ProbableLevel } from "../lib/probable.ts";
+import { OUTCOME_LABEL, type ClaimKind, type Outcome } from "../policy.ts";
+import { answerFor, MIN_SETTLED } from "../lib/answer.ts";
+import { claimPath, personPath, topicLabel } from "../lib/view.ts";
+import { PHOTOS } from "../site.ts";
+import { listPath } from "../lib/listing.ts";
+import { GROUP_OF, GROUPS, LEVELS, pcts, settledTotal, splitCounts, type Group } from "../lib/split.ts";
+
+// heading replaces the name as the title, for a page that already names the person.
+// heldRecords: this person's held records, for their probable calls.
+interface Props { subjectId: string; name: string; live: PublicClaim[]; heldRecords?: HeldRecord[]; link?: boolean; heading?: string }
+const { subjectId: s, name, live, heldRecords = [], link = true, heading } = Astro.props;
+const fmt = (n: number) => n.toLocaleString("en-US");
+type Split = { supported: number; mixed: number; contradicted: number };
+const SETTLED: (keyof Split)[] = ["supported", "mixed", "contradicted"];
+const isSettled = (o: Outcome): o is keyof Split => (SETTLED as string[]).includes(o);
+const outcomeOf = (c: PublicClaim) => c.current!.payload.outcome;
+const add = (m: Map<string, Split>, k: string, o: keyof Split) => { const x = m.get(k) ?? { supported: 0, mixed: 0, contradicted: 0 }; x[o]++; m.set(k, x); };
+const tag = (key: string, v: number) => ({ "data-count": key, "data-n": v });
+// A quotation in a tooltip, cut at a word boundary.
+const clip = (t: string, max = 180) => (t.length <= max ? t : `${t.slice(0, t.lastIndexOf(" ", max))}…`);
+// A topic inside a sentence: lower case, except a leading acronym ("AGI timelines").
+const inSentence = (t: string) => { const l = topicLabel(t); return /^[A-Z]{2,}\b/.test(l) ? l : l.charAt(0).toLowerCase() + l.slice(1); };
+const groupOf = (kind: ClaimKind | undefined): Group | null => (kind ? GROUP_OF[kind] : null);
+
+type Kind = "all" | Group;
+const KINDS: Kind[] = ["all", ...GROUPS];
+const NOUN: Record<Kind, { many: string; one: string }> = {
+  all: { many: "claims", one: "claim" },
+  prediction: { many: "predictions", one: "prediction" },
+  present: { many: "claims", one: "claim" },
+};
+const KICKER: Record<Kind, string | null> = { all: null, prediction: "Predictions only", present: "Claims only, not predictions" };
+
+// Probable calls (docs/adr/0006), by confidence level. The page's confidence
+// switch (ConfidenceSwitch.astro) shows one level at a time, strict first.
+// Strict is the answer from settled claims alone. Reasonable adds the calls
+// both AIs made, drawn lighter. Speculative also adds the calls one AI made
+// while the other said "too early", drawn lighter still. A probable call counts
+// as supported or contradicted only at the level that shows it.
+type Tier = { id: string; call: ProbableCall; level: ProbableLevel; href: string; date: string; title: string; held: boolean; group: Group | null };
+const not = (l: ProbableLevel) => (l === "reasonable" ? "both AIs agree, but the evidence isn’t conclusive" : "only one AI makes this call");
+const allTiers: Tier[] = [
+  ...live.filter((c) => c.probable).map((c) => ({ id: c.claim_id, ...c.probable!, held: false, group: groupOf(c.kind), href: claimPath(c.claim_id), date: c.first_statement_date, title: `“${clip(c.current!.payload.statement.excerpt)}” ${c.first_statement_date}. ${PROBABLE_LABEL[c.probable!.call]}: ${not(c.probable!.level)}.` })),
+  ...heldRecords.filter((h) => h.probable).map((h) => ({ id: h.id, ...h.probable!, held: true, group: groupOf(h.kind), href: `/held#held-${h.id}`, date: h.source.date ?? "", title: `${h.excerpt ? `“${clip(h.excerpt)}”` : (h.proposition ?? h.source.title)} (held back). ${PROBABLE_LABEL[h.probable!.call]}: ${not(h.probable!.level)}.` })),
+].sort((a, b) => (a.call === b.call ? 0 : a.call === "probably_right" ? -1 : 1) || a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+
+// Everything one kind needs, from the same rules for every kind.
+function viewOf(k: Kind) {
+  const inK = (g: Group | null) => k === "all" || g === k;
+  const lv = live.filter((c) => inK(groupOf(c.kind)));
+  const tiers = allTiers.filter((t) => inK(t.group));
+  const all: Split = { supported: 0, mixed: 0, contradicted: 0 };
+  const byTopic = new Map<string, Split>();
+  const byYear = new Map<string, Split>();
+  for (const c of lv) {
+    const o = outcomeOf(c);
+    if (!isSettled(o)) continue;
+    all[o]++;
+    for (const t of c.topic_tags) add(byTopic, t, o);
+    add(byYear, c.first_statement_date.slice(0, 4), o);
+  }
+  const n = settledTotal(all);
+  const calls = (l: ProbableLevel) => ({ right: tiers.filter((t) => t.level === l && t.call === "probably_right").length, wrong: tiers.filter((t) => t.level === l && t.call === "probably_wrong").length });
+  const R = calls("reasonable"), SP = calls("speculative");
+  const at = (right: number, wrong: number) => ({ answer: answerFor({ supported: all.supported + right, mixed: all.mixed, contradicted: all.contradicted + wrong }), total: n + right + wrong });
+  const topTwo = (o: keyof Split) => [...byTopic].filter(([t, x]) => x[o] > 0 && t !== "other").sort((a, b) => b[1][o] - a[1][o] || a[0].localeCompare(b[0])).slice(0, 2);
+  const years = [...byYear].filter(([, x]) => settledTotal(x) >= MIN_SETTLED).map(([y, x]) => [y, pcts(x).supported] as const).sort((a, b) => a[0].localeCompare(b[0]));
+  // Count keys that check-dist recomputes: the release's own counts for all
+  // claims, and the group counts (scripts/check-dist.ts) for each group.
+  const key = {
+    settled: (o: keyof Split) => (k === "all" ? `counts.by_subject_outcome.${s}.${o}` : `split.${s}.${k}.strict.${o}`),
+    out: (o: "unresolved" | "not_adjudicable") => (k === "all" ? `counts.by_subject_outcome.${s}.${o}` : `kindout.${s}.${k}.${o}`),
+    call: (l: ProbableLevel, c: ProbableCall) => (k === "all" ? `probable.${s}.${l}.${c}` : `kindcall.${s}.${k}.${l}.${c}`),
+  };
+  return {
+    k, all, n, answer: answerFor(all), p: n ? pcts(all) : null, R, SP,
+    atReasonable: at(R.right, R.wrong), atSpeculative: at(R.right + SP.right, R.wrong + SP.wrong),
+    hits: topTwo("supported"), misses: topTwo("contradicted"), years,
+    low: years.length ? years.reduce((a, b) => (b[1] < a[1] ? b : a)) : null,
+    high: years.length ? years.reduce((a, b) => (b[1] > a[1] ? b : a)) : null,
+    unresolved: lv.filter((c) => outcomeOf(c) === "unresolved").length,
+    cannot: lv.filter((c) => outcomeOf(c) === "not_adjudicable").length,
+    key,
+  };
+}
+const views = KINDS.map(viewOf);
+const everything = views[0];
+const listTopics = (rows: [string, Split][], o: keyof Split) => rows.map(([t, x]) => `${inSentence(t)} (${fmt(x[o])})`).join(" and ");
+
+// One square per claim in one grid: supported, then mixed, then
+// contradicted, oldest first in each. Probable calls sit inside their color
+// block, lighter, right after the settled ones: probably right with the
+// supported, probably wrong with the contradicted. The page's switches show or
+// hide them, and the grid closes up around what is hidden. Every person's grid
+// has the same number of columns, so side by side the squares are the same
+// size and the size of each record shows. A square links to its claim and
+// shows the speaker's words on hover. It is a mouse aid: the numbers under it
+// carry the same counts and link to the lists.
+type Cell = { href: string; color: keyof Split; level: ProbableLevel | null; title: string; group: Group | null };
+const squares = live
+  .filter((c) => isSettled(outcomeOf(c)))
+  .sort((a, b) => SETTLED.indexOf(outcomeOf(a) as keyof Split) - SETTLED.indexOf(outcomeOf(b) as keyof Split) || a.first_statement_date.localeCompare(b.first_statement_date) || a.claim_id.localeCompare(b.claim_id));
+const settledCell = (c: PublicClaim): Cell => ({ href: claimPath(c.claim_id), color: outcomeOf(c) as keyof Split, level: null, group: groupOf(c.kind), title: `“${clip(c.current!.payload.statement.excerpt)}” ${c.first_statement_date}. ${OUTCOME_LABEL[outcomeOf(c)]}.` });
+const tierCell = (t: Tier): Cell => ({ href: t.href, color: t.call === "probably_right" ? "supported" : "contradicted", level: t.level, title: t.title, group: t.group });
+const tiersOf = (call: ProbableCall) => (["reasonable", "speculative"] as ProbableLevel[]).flatMap((l) => allTiers.filter((t) => t.call === call && t.level === l)).map(tierCell);
+const cells: Cell[] = [
+  ...squares.filter((c) => outcomeOf(c) === "supported").map(settledCell), ...tiersOf("probably_right"),
+  ...squares.filter((c) => outcomeOf(c) === "mixed").map(settledCell),
+  ...squares.filter((c) => outcomeOf(c) === "contradicted").map(settledCell), ...tiersOf("probably_wrong"),
+];
+// Unresolved and uncheckable claims, drawn only when their chip is on. They
+// are plain squares (no link, no hover text) to keep the page light. An
+// unresolved claim with a probable call already shows as a lighter square at
+// that level, so its plain square carries the level and hides there.
+const unresolvedClaims = live.filter((c) => outcomeOf(c) === "unresolved");
+const cannotClaims = live.filter((c) => outcomeOf(c) === "not_adjudicable");
+const g = (group: Group | null) => `sq-g-${group ?? "none"}`;
+
+// Under the all-claims answer: one line per group and confidence level, so a
+// reader sees predictions apart from claims about the present or past. The
+// unresolved count sits behind the Unresolved switch.
+const GROUP_LABEL: Record<Group, string> = { prediction: "Predictions", present: "Claims" };
+const GROUP_KINDS: Record<Group, string> = { prediction: "prediction", present: "observation,causal" };
+const splitLines = LEVELS.flatMap((level) => GROUPS.map((gr) => {
+  const x = splitCounts(live, heldRecords, gr, level);
+  const total = settledTotal(x);
+  const key = (k: string) => `split.${s}.${gr}.${level}.${k}`;
+  const open = `/explore?person=${s}&kind=${GROUP_KINDS[gr]}&outcome=unresolved${level === "strict" ? "" : `&sure=${level}`}`;
+  return { level, g: gr, x, total, pct: pcts(x).supported, words: answerFor(x), key, open };
+}));
+const lower = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
+---
+<section class="wh" aria-labelledby={`wh-${s}`}>
+  <h3 id={`wh-${s}`} class="wh-name">{!heading && PHOTOS[s] && <img class="wh-photo" src={PHOTOS[s].file} width="44" height="44" alt="" />}{heading ?? (link ? <a href={personPath(s)}>{name}</a> : name)}</h3>
+  {views.map((v) => (
+    <div class={`kv k-${v.k}`}>
+      {KICKER[v.k] && <p class="wh-level wh-kind">{KICKER[v.k]}</p>}
+      <p class="wh-answer lvl-strict">{v.answer}</p>
+      <p class="wh-level lvl-reasonable">At reasonable confidence</p>
+      <p class="wh-answer lvl-reasonable">{v.atReasonable.answer}</p>
+      <p class="wh-level lvl-speculative">Speculative</p>
+      <p class="wh-answer lvl-speculative">{v.atSpeculative.answer}</p>
+      {v.n === 0 ? (
+        <p class="wh-lead">None of {name}’s {NOUN[v.k].many} has a clear outcome yet.</p>
+      ) : v.n < MIN_SETTLED ? (
+        <p class="wh-lead">Only {fmt(v.n)} of {name}’s {v.n === 1 ? NOUN[v.k].one : NOUN[v.k].many} {v.n === 1 ? "has" : "have"} a clear outcome so far: <span {...tag(v.key.settled("supported"), v.all.supported)}>{fmt(v.all.supported)}</span> supported, <span {...tag(v.key.settled("mixed"), v.all.mixed)}>{fmt(v.all.mixed)}</span> mixed, and <span {...tag(v.key.settled("contradicted"), v.all.contradicted)}>{fmt(v.all.contradicted)}</span> contradicted.</p>
+      ) : (
+        <>
+          <p class="wh-lead lvl-strict">Of <b>{fmt(v.n)}</b> {NOUN[v.k].many} with a clear outcome:</p>
+          <p class="wh-lead lvl-reasonable">Of <b>{fmt(v.atReasonable.total)}</b> {NOUN[v.k].many}, adding the ones that are probably right or wrong (lighter squares):</p>
+          <p class="wh-lead lvl-speculative">Of <b>{fmt(v.atSpeculative.total)}</b> {NOUN[v.k].many}, adding every guess (lighter squares):</p>
+        </>
+      )}
+    </div>
+  ))}
+  {everything.n > 0 && (
+    <div class="sqgrid" aria-hidden="true">
+      {cells.map((x) => <a href={x.href} tabindex="-1" class={`sq sq-${x.color}${x.level ? ` sq-${x.level}` : ""} ${g(x.group)}`} title={x.title}></a>)}
+      {unresolvedClaims.map((c) => <i class={`sq sq-unresolved${c.probable ? ` sq-call-${c.probable.level}` : ""} ${g(groupOf(c.kind))}`}></i>)}
+      {cannotClaims.map((c) => <i class={`sq sq-not_adjudicable ${g(groupOf(c.kind))}`}></i>)}
+    </div>
+  )}
+  {views.map((v) => (
+    <div class={`kv k-${v.k}`}>
+      {everything.n > 0 && (
+        <>
+          <p class="wh-extra x-unresolved"><a href={v.k === "all" ? listPath(s, "unresolved") : `/explore?person=${s}&kind=${GROUP_KINDS[v.k]}&outcome=unresolved`}><b {...tag(v.key.out("unresolved"), v.unresolved)}>{fmt(v.unresolved)}</b> unresolved</a>: we checked, but the evidence doesn’t settle them yet.</p>
+          <p class="wh-extra x-not_adjudicable"><a href={v.k === "all" ? listPath(s, "uncheckable") : `/explore?person=${s}&kind=${GROUP_KINDS[v.k]}&outcome=not_adjudicable`}><b {...tag(v.key.out("not_adjudicable"), v.cannot)}>{fmt(v.cannot)}</b> can’t be checked</a>: opinions, rhetoric, or too vague to test.</p>
+        </>
+      )}
+      {v.p && v.n >= MIN_SETTLED && (
+        <>
+          <ul class="stats lvl-strict">
+            {SETTLED.map((o) => (
+              <li data-o={o}>
+                <b>{v.p![o]}%</b>
+                <span>{o}</span>
+                <small><span {...tag(v.key.settled(o), v.all[o])}>{fmt(v.all[o])}</span> {v.all[o] === 1 ? NOUN[v.k].one : NOUN[v.k].many}</small>
+              </li>
+            ))}
+          </ul>
+          {([["reasonable", v.R], ["speculative", { right: v.R.right + v.SP.right, wrong: v.R.wrong + v.SP.wrong }]] as [ProbableLevel, { right: number; wrong: number }][]).map(([l, x]) => {
+            const at: Split = { supported: v.all.supported + x.right, mixed: v.all.mixed, contradicted: v.all.contradicted + x.wrong };
+            const pa = pcts(at);
+            const extra: Record<keyof Split, number> = { supported: x.right, mixed: 0, contradicted: x.wrong };
+            return (
+              <ul class={`stats lvl-${l}`}>
+                {SETTLED.map((o) => (
+                  <li data-o={o}>
+                    <b>{pa[o]}%</b>
+                    <span>{o === "supported" ? "right" : o === "mixed" ? "mixed" : "wrong"}</span>
+                    <small>{fmt(v.all[o])} clear{extra[o] ? ` + ${fmt(extra[o])} probable` : ""}</small>
+                  </li>
+                ))}
+              </ul>
+            );
+          })}
+        </>
+      )}
+      {v.n > 0 && (
+        <>
+          <p class="wh-level-line lvl-reasonable">Lighter squares: <b {...tag(v.key.call("reasonable", "probably_right"), v.R.right)}>{fmt(v.R.right)}</b> probably right and <b {...tag(v.key.call("reasonable", "probably_wrong"), v.R.wrong)}>{fmt(v.R.wrong)}</b> probably wrong. Both AIs agree, but the evidence isn’t conclusive.</p>
+          <p class="wh-level-line lvl-speculative">Lighter squares: {fmt(v.R.right)} probably right and {fmt(v.R.wrong)} probably wrong, where both AIs agree. Lightest: <b {...tag(v.key.call("speculative", "probably_right"), v.SP.right)}>{fmt(v.SP.right)}</b> probably right and <b {...tag(v.key.call("speculative", "probably_wrong"), v.SP.wrong)}>{fmt(v.SP.wrong)}</b> probably wrong, where only one AI makes the call.</p>
+        </>
+      )}
+      {v.k === "all" && v.n > 0 && (
+        <div class="wh-split">
+          {splitLines.map((l) => (
+            <p class={`lvl-${l.level}`}>
+              <b>{GROUP_LABEL[l.g]}:</b>{" "}
+              {l.total < MIN_SETTLED
+                ? <>too early to say. Only <span {...tag(l.key("total"), l.total)}>{fmt(l.total)}</span> with a clear outcome so far{l.x.probable ? <>, including <span {...tag(l.key("probable"), l.x.probable)}>{fmt(l.x.probable)}</span> probable</> : null}.</>
+                : l.level === "strict"
+                  ? <>{lower(l.words)} <span {...tag(l.key("pct"), l.pct)}>{l.pct}</span>% supported across <span {...tag(l.key("total"), l.total)}>{fmt(l.total)}</span> with a clear outcome. <span {...tag(l.key("mixed"), l.x.mixed)}>{fmt(l.x.mixed)}</span> mixed, <span {...tag(l.key("contradicted"), l.x.contradicted)}>{fmt(l.x.contradicted)}</span> contradicted.</>
+                  : <>{lower(l.words)} <span {...tag(l.key("pct"), l.pct)}>{l.pct}</span>% right across <span {...tag(l.key("total"), l.total)}>{fmt(l.total)}</span>, including <span {...tag(l.key("probable"), l.x.probable)}>{fmt(l.x.probable)}</span> probable. <span {...tag(l.key("mixed"), l.x.mixed)}>{fmt(l.x.mixed)}</span> mixed, <span {...tag(l.key("contradicted"), l.x.contradicted)}>{fmt(l.x.contradicted)}</span> wrong.</>}
+              {l.x.open > 0 && <span class="x-open"> Plus <a href={l.open}><span {...tag(l.key("open"), l.x.open)}>{fmt(l.x.open)}</span> still unresolved</a>.</span>}
+            </p>
+          ))}
+        </div>
+      )}
+      {v.n >= MIN_SETTLED && (
+        <div class="wh-more">
+          {v.hits.length > 0 && <p>Most supported {NOUN[v.k].many} were about {listTopics(v.hits, "supported")}.</p>}
+          {v.misses.length > 0 && <p>Most contradicted {NOUN[v.k].many} were about {listTopics(v.misses, "contradicted")}.</p>}
+          {v.low && v.high && v.years.length > 1 && (v.high[1] - v.low[1] <= 10
+            ? <p>The share supported held steady from year to year, between {v.low[1]}% and {v.high[1]}%.</p>
+            : <p>The share supported ranged from {v.low[1]}% for {NOUN[v.k].many} made in {v.low[0]} to {v.high[1]}% for {NOUN[v.k].many} made in {v.high[0]}.</p>)}
+        </div>
+      )}
+    </div>
+  ))}
+</section>

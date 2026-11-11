@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-core-incompetency-b9e949-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-b9e949",
+  "version": 1,
+  "content_hash": "1bf971823984242a157b14f77b79f1f6b49afbf3d75acab306fafe6a0eaa6eb4"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-b9e949",
+  "version": 1,
+  "content_hash": "df7afbbf0948f7bb769d215ef0e1c203c1d7e960ea02c7e790b2857c7b1e25b3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft Amazon Google AI cloud profit separately reported 2024 AI revenue profitability",
+   "site.ir.aboutamazon.com 2024 financial results fourth quarter 2025 AWS operating income 10.6",
+   "site.microsoft.com investor FY 2025 Q2 AI business annual revenue run rate 13 billion",
+   "Amazon 2024 fourth quarter 2025 earnings site.aboutamazon.com/news/company-news"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+    "used": true,
+    "why": "Primary disclosure of an AI revenue run rate, useful for distinguishing revenue from profit."
+   },
+   {
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q4-2025-report",
+    "used": true,
+    "why": "Primary disclosure containing a retrospective fourth-quarter 2024 AWS operating-income comparison."
+   },
+   {
+    "url": "https://ir.aboutamazon.com/news-release/news-release-details/2025/Amazon-com-Announces-Fourth-Quarter-Results/default.aspx",
+    "used": false,
+    "why": "read_page did not expose the financial passage."
+   },
+   {
+    "url": "https://www.axios.com/2026/08/10/ai-cloud-profit-spending-earnings",
+    "used": false,
+    "why": "Potential discussion of disclosure gaps, but read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T10:48:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2025-earnings-fy-2025-q2",
+   "source_snapshot_id": "2244e1ed7564476daa6c4ecb3147f376269d37ebbda331a07f4dfba702927a39",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+   "locator": "Satya Nadella's opening remarks",
+   "receipt": {
+    "public_excerpt": "$13 billion",
+    "quote_hash": "39eab988e444f3d95da670c6e085e23b00b1a3b7764f36af23fea2318fa2327d",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T05:19:46Z",
+   "relation": "context",
+   "explanation": "Microsoft disclosed substantial AI revenue on an annualized basis. This does not measure realized quarterly profit or isolate AI-compute services.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "AI business annual revenue run rate",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-10-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "aboutamazon-com-news-company-news-amazon-earnings-q4-2025-report",
+   "source_snapshot_id": "26dab0ddd3513030586d0393b75638aea1ee86261ebabe4dda3044d3b22103be",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q4-2025-report",
+   "locator": "Fourth Quarter 2025, operating income comparison",
+   "receipt": {
+    "public_excerpt": "$10.6 billion in fourth quarter 2024",
+    "quote_hash": "ed21f8aebbea1bab268ad08cf36d4bba84e81d3a3747cd4da1ae48dd68c8a022",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2026-02-05",
+   "retrieved_at": "2026-10-29T10:43:05Z",
+   "relation": "context",
+   "explanation": "AWS had substantial operating income in the target quarter, limiting any broader claim that cloud providers made little money overall. AWS includes services beyond AI compute, so this cannot decide the narrower proposition.",
+   "metric_scope": {
+    "company": "Amazon Web Services",
+    "metric": "cloud segment operating income",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-10-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The search did not identify comparable AI-compute profit and cost disclosures for the relevant providers and quarter.",
+  "CoreWeave's company-wide annual loss cannot establish hyperscalers' AI-compute profitability.",
+  "The claim gives neither a numerical profitability threshold nor an accounting basis."
+ ],
+ "packet_hash": "6ba2f2222eec2cd018935eef4d22c46160659673ad22edb051a1ec487c11031a"
+}

@@ -1,0 +1,128 @@
+{
+ "assessment_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-a2",
+ "claim_revision_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-3f9d5d",
+  "version": 1,
+  "content_hash": "ebdad5a92e382c542703c6059661187ca9510f266290b0b9f5b61e6e15c2b4b3"
+ },
+ "contract_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-3f9d5d",
+  "version": 1,
+  "content_hash": "de64da1810b2be7b0bcf1519b22b8081f14f96d3f826578c8fb47f03977ce059"
+ },
+ "packet_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-p1",
+  "content_hash": "474a4bc25c2b5320dca41f153a7d1ac7379d0217f96d72d1824eb719ffb2c22e"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-10",
+  "end": "2024-10",
+  "precision": "month"
+ },
+ "public_rationale": "The Imprompter paper, archived on October 19, 2024, demonstrates that obfuscated prompts made tested LLM agents extract personal information and transmit it externally through Markdown image requests [e1]. WIRED disclosed the research on October 17, 2024, and reported that Mistral had blocked external image loading to address the vulnerability [e2]. This supports the claimed capability in tested systems; the reported remediation does not negate the experimental demonstration [e1, e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence does not establish that every LLM is vulnerable or that tested products remain vulnerable after remediation [e1, e2].",
+  "The demonstration does not establish a real-world criminal breach [e1, e2].",
+  "Using a short prompt does not establish that constructing the optimized prompt was simple [e2].",
+  "Exact experiment dates are unspecified; October 2024 identifies the research disclosure, and the archived paper appeared two days after the post [e1, e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-when-it-comes-to-security-llms-are-3f9d5d-3x-review-anthropic-1",
+  "marcus-when-it-comes-to-security-llms-are-3f9d5d-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Simple obfuscated prompts can get LLMs to gather and leak users' personal information.",
+  "kind": "observation",
+  "conditions": [
+   "per UCSD and Nanyang research"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "A new article from UCSD and Nanyang shows that simple prompts, like the one below (reprinted in WIRED), can get LLMs to collate and report information in a seriously nefarious way.",
+   "locator": "paragraph 4",
+   "url": "https://garymarcus.substack.com/p/when-it-comes-to-security-llms-are",
+   "date": "2024-10-17",
+   "document_title": "When it comes to security, LLMs are like Swiss cheese — and that’s going to cause huge problems",
+   "observed_at": "2026-10-28T23:59:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "A new article from UCSD and Nanyang",
+    "simple prompts",
+    "can get LLMs to collate and report information",
+    "in a seriously nefarious way"
+   ],
+   "our_interpretation": [
+    "The referenced result is the Imprompter research disclosed in October 2024.",
+    "The surrounding passage identifies the behavior as extracting personal information from a conversation and transmitting it to an attacker-controlled destination.",
+    "Can is an existence claim about tested systems, not a claim that every LLM is vulnerable.",
+    "Simple describes using a prompt to trigger the behavior; it does not imply that constructing the optimized prompt requires little expertise or computation.",
+    "The target month identifies the newly disclosed research. Exact laboratory experiment dates are not supplied."
+   ],
+   "support_condition": "The named research demonstrates that obfuscated prompts induce an LLM agent to extract personal information and transmit it through its tools or interface.",
+   "contradiction_condition": "The named research does not demonstrate personal-information extraction and exfiltration, or the reported behavior is only hypothetical."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The Imprompter paper, archived on October 19, 2024, demonstrates that obfuscated prompts made tested LLM agents extract personal information and transmit it externally through Markdown image requests [e1]. WIRED disclosed the research on October 17, 2024, and reported that Mistral had blocked external image loading to address the vulnerability [e2]. This supports the claimed capability in tested systems; the reported remediation does not negate the experimental demonstration [e1, e2].",
+  "limitations": [
+   "The evidence does not establish that every LLM is vulnerable or that tested products remain vulnerable after remediation [e1, e2].",
+   "The demonstration does not establish a real-world criminal breach [e1, e2].",
+   "Using a short prompt does not establish that constructing the optimized prompt was simple [e2].",
+   "Exact experiment dates are unspecified; October 2024 identifies the research disclosure, and the archived paper appeared two days after the post [e1, e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "the PII Exfiltration task.",
+    "locator": "Section 5.2, Results on the Real Product",
+    "url": "https://arxiv.org/html/2410.14923v1",
+    "publisher": "arXiv; UC San Diego and Nanyang Technological University researchers",
+    "event_date": "2024-10",
+    "available_at": "2024-10-19",
+    "explanation": "The paper demonstrates extraction of personal information and transmission through Markdown image requests in tested agents. Its archived version appeared October 19; contemporaneous reporting in e2 establishes that this research had already been disclosed on October 17."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "implemented the proper remediation",
+    "locator": "Hidden Meanings, Mistral response",
+    "url": "https://www.wired.com/story/ai-imprompter-malware-llm",
+    "publisher": "WIRED",
+    "event_date": "2024-10-17",
+    "available_at": "2024-10-17",
+    "explanation": "The article documents the research's public disclosure and reports that Mistral blocked external image loading, with researcher confirmation. This limits any implication of continuing vulnerability in that product; a separately accessible primary remediation notice was not found."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9ffae15393e60bab50d1231770f052230ac2bb9aada69f377b5cf8500110545b",
+ "supersedes_assessment_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:19:08Z"
+}

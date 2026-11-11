@@ -1,0 +1,149 @@
+{
+ "run_id": "wyea-ai-is-too-expensive-391c4e-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ai-is-too-expensive-391c4e": "bcf747a441feedf975a5ae77739549b40cbf91d71ad62b2f39e4865fc25e7b1e",
+  "case:wyea-ai-is-too-expensive-8e234e": "d2b0207240415d779988b16c4ea793f44cefd73889c2b7f737d19a986b3a0583",
+  "case:wyea-ai-is-too-expensive-9dba55": "9e582484f0ec46e22c7f738579a913cb208b9b063266f2a5554da04ab13c6853"
+ },
+ "started_at": "2026-10-31T19:29:23Z",
+ "completed_at": "2026-10-31T19:29:58Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, presented as his reading of the Rao declaration."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the named source, 'appears', the compute basis and the 'before other costs' qualifier. Here 'appears' marks an inference from a document, not a probability hedge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Testing the inference against the document he names is a fair, ordinary reading. 'Compute basis' as training plus inference matches the affidavit's category. Allowing a 2.5+ ratio is generous to him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The cited declaration gives over $10B training and inference spend against more than $5B revenue, which is about 2:1, not 3:1. Both are floors, but nothing in it points to 3:1."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "S-1 audited 2023–2025 figures add up to the affidavit totals: $10.28B compute and infrastructure vs $5.01B revenue, about 2.05:1. Filed 2026-10-26, before the evaluation date. Company filing."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The document he relies on, and his own restated figures ($10B spent, $5B revenue), give about $2 of compute per $1 of revenue. The S-1's annual figures match those totals and give 2.05. Any pre-2023 compute is excluded by the 'over $10B' total and could not plausibly reach 3:1. The ratio he inferred does not match his source.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-391c4e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own arithmetic in his own post. The inputs come from a deck he says he viewed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Monthly' is fair: the sentence before gives 29,000 hours 'each month'. 29,000/1,500 is about 19. Ties the added load to LLM code, as he does."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (deck reviewer-load hours divided by engineering headcount) is ordinary and fair. Choosing a 2026 period is flagged but does not change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Zillow company post (June 2026). Confirms humans review AI-generated code but gives no hour totals or headcount, so it cannot test the 19-hour figure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The arithmetic follows from his inputs, but the 29,000-hour figure and the ~1,500 headcount appear only in his post. The deck is not public, and no independent or Zillow source in the packet confirms the inputs or that the load comes from LLM code. The packet does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-8e234e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words and his own estimate in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'I estimate' on the in-service share and states the $800B base as he did. 'I estimate' gives a quantitative estimate, not a probability hedge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reasonable readings, drawn from context (the earlier passage on $900B including lab investments), but the scope ('you'), the meaning of 'in the hole', and the cut-off date are supplied by the evaluator and would decide any result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's Jan–Mar 2026 capex mix (two thirds short-lived assets). One company, quarterly flow, no in-service share of cumulative spend."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft outlook: capacity still coming online. Fits the idea that some spend is not yet in service but gives no share. Company disclosure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item measures what share of the firms' cumulative AI investment was in-service capacity, and the $800B base is not reconciled. The Microsoft remarks cover one firm's quarterly flow only. The evidence by the cutoff does not settle the estimate.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-9dba55"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22912,
+  "output_tokens": 3404,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,133 @@
+{
+ "packet_id": "marcus-a-tale-of-two-liars-356862-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-tale-of-two-liars-356862",
+  "version": 1,
+  "content_hash": "9e047db5c886a3418ea56ede9c17a349ed446b3792ea35b84dcdcc437bdb796b"
+ },
+ "contract_ref": {
+  "id": "marcus-a-tale-of-two-liars-356862",
+  "version": 1,
+  "content_hash": "5e509e3cffb8668f0e33bda7bfccd960e9074a3661018fb9003550a4bbf84887"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report hallucinations not fully reliable next token prediction",
+   "language models training data frequency factual knowledge GPT 2023 Kandpal large language models struggle long tail knowledge",
+   "TruthfulQA 2021 imitative falsehoods larger models less truthful",
+   "GPT hallucinations known facts training data coverage causal 2025 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2303.08774v3",
+    "used": true,
+    "why": "A version published before the post directly documents GPT-4’s prediction objective."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v202/kandpal23a.html",
+    "used": true,
+    "why": "Primary research connects factual coverage with question-answering accuracy."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v202/kandpal23a/kandpal23a.pdf",
+    "used": true,
+    "why": "The full paper identifies the controlled experiment and explains the uncertainty in its GPT-3 training-data estimates."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41586-026-10549-w",
+    "used": true,
+    "why": "Research available before the evaluation date provides a theoretical account of sparse factual support and incentives to guess."
+   },
+   {
+    "url": "https://aclanthology.org/2022.acl-long.229/",
+    "used": false,
+    "why": "Imitating falsehoods is a relevant alternative mechanism, but does not refute the narrower claim that incomplete coverage causes some errors."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the accessible technical report was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T02:08:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2303-08774v3",
+   "source_snapshot_id": "30e472d652f81ebb5a068a1c96fe5e479fe6f6b5a40e3e2488e7a70f55ea7514",
+   "publisher": "OpenAI, arXiv",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/abs/2303.08774v3",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "predict the next token",
+    "quote_hash": "596a14c27e5aa9614fdbd263469669f6495d95b78a3b1e6a59fe6517c2b0d281",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-27",
+   "retrieved_at": "2026-10-29T02:03:14Z",
+   "relation": "supports",
+   "explanation": "This supports the next-token prediction component. It does not establish why particular completions are true or false.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "proceedings-mlr-press-v202-kandpal23a-html",
+   "source_snapshot_id": "525e2a8e19bd85992cfe499d1245ed1dcbc6f6fadd5a0ba0042583c1b61ed541",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v202/kandpal23a.html",
+   "locator": "Abstract, final sentence; full paper Sections 3.1–3.2 and Appendix A",
+   "receipt": {
+    "public_excerpt": "reduce the dependence",
+    "quote_hash": "50f576d0de8756522325e75d649f021626f6f2fa67fd9f3fa3b4fba49c3c5da0",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-07-29",
+   "retrieved_at": "2026-10-29T02:03:24Z",
+   "relation": "context",
+   "explanation": "The study supports a role for factual coverage, including a controlled removal experiment on a separate model. Its GPT-3 results use estimated training-data counts, so they do not directly isolate the claimed cause in GPT.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "nature-com-articles-s41586-026-10549-w",
+   "source_snapshot_id": "02c9fe212f8bf5c8655e026da3886fae9f3b81e1004ea0769ef4bb82975df428",
+   "publisher": "Nature",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-026-10549-w",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "reward unwarranted guessing.",
+    "quote_hash": "1ac7864bf4ce2061dad2a8a99e08cc0fd9b8eaf1ed00eade5bbe7eb1c95c8f1a",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-22",
+   "available_at": "2026-04-22",
+   "retrieved_at": "2026-10-29T02:04:52Z",
+   "relation": "context",
+   "explanation": "The paper explains how sparse factual support can produce errors and how evaluation incentives can preserve guessing. This supports the plausibility of a coverage mechanism without directly establishing its contribution in the GPT systems discussed in 2023.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The examined records do not provide controlled training-coverage interventions on the relevant proprietary GPT models.",
+  "The GPT-3 coverage study estimates the unavailable training corpus rather than measuring it directly.",
+  "Next-token prediction is documented, but that does not settle the combined causal proposition."
+ ],
+ "packet_hash": "df7e416ca1ff67f592edf1349cf099dbbdd76c56293e5648be95ce411227ae90"
+}

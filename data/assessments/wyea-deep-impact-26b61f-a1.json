@@ -1,0 +1,150 @@
+{
+ "assessment_id": "wyea-deep-impact-26b61f-a1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-26b61f",
+  "version": 1,
+  "content_hash": "8d08316bba371b9c4495e7e97ee471269519abece960a6254c1915f4f9d23889"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-26b61f",
+  "version": 1,
+  "content_hash": "ab08f4df496e385e97fcddbccf8517ac471ee7c3fac79e3964ee5d93d4772aed"
+ },
+ "packet_ref": {
+  "id": "wyea-deep-impact-26b61f-p1",
+  "content_hash": "705b86365860eb8b6ce48106f1e5f46cf3d5c7fa68067962e1236a0f90813207"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-01-29",
+  "precision": "day"
+ },
+ "public_rationale": "Important parts hold: R1 had MIT-licensed weights, API token prices about 27 times below o1, and a documented route to running compressed full R1 locally. But these facts do not establish the broader claim about DeepSeek's models and computational efficiency. V3 also had different licensing terms. The available evidence supports a narrower statement, without settling the whole sentence.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "Lower selling prices do not measure provider operating costs.",
+  "The local demonstration uses aggressive quantization and warns of slow execution.",
+  "The hardware article is maintained and contains a later update; only its original R1 deployment result is used."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-deep-impact-26b61f-4x-review-anthropic-1",
+  "wyea-deep-impact-26b61f-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-deep-impact-26b61f",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "DeepSeek's models are open source, about 30 times cheaper to run, and can run locally on modest hardware.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "DeepSeek’s models are both open source and significantly more efficient — 30 times cheaper to run — and can even be run locally on relatively modest hardware.",
+   "locator": "paragraph 5",
+   "url": "https://www.wheresyoured.at/deep-impact",
+   "date": "2025-01-29",
+   "document_title": "Deep Impact",
+   "observed_at": "2026-10-28T22:30:27Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "DeepSeek’s models",
+    "open source",
+    "significantly more efficient",
+    "30 times cheaper to run",
+    "locally on relatively modest hardware"
+   ],
+   "our_interpretation": [
+    "The surrounding discussion identifies R1 and V3 as the principal models.",
+    "I use January 2025 through publication as the reporting period for this ongoing product claim.",
+    "The ordinary reading promises substantially cheaper access and feasible consumer-hardware deployment. The surrounding API comparisons make customer token prices relevant, but those prices do not establish the providers' operating costs or computational efficiency.",
+    "I treat 30 times as an approximate, one-significant-figure comparison with corresponding OpenAI models.",
+    "The post acknowledges missing training data. I therefore assess the practical rights to download, modify and commercially use the releases, while recording differences between their licenses.",
+    "API tariffs are product prices, not company revenue, spending or other financial-accounting measures; metric_scope is null."
+   ],
+   "support_condition": "Identified releases have the stated reuse rights, comparable API charges are approximately thirtyfold lower, and identified consumer hardware can run them. Any claimed computational efficiency must also have a comparable measurement rather than merely a lower selling price.",
+   "contradiction_condition": "The identified licenses prohibit the promised reuse, comparable charges materially fail the claimed ratio, or reproducible hardware and inference measurements contradict the stated deployment or efficiency claims."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Important parts hold: R1 had MIT-licensed weights, API token prices about 27 times below o1, and a documented route to running compressed full R1 locally. But these facts do not establish the broader claim about DeepSeek's models and computational efficiency. V3 also had different licensing terms. The available evidence supports a narrower statement, without settling the whole sentence.",
+  "limitations": [
+   "Lower selling prices do not measure provider operating costs.",
+   "The local demonstration uses aggressive quantization and warns of slow execution.",
+   "The hardware article is maintained and contains a later update; only its original R1 deployment result is used."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "MIT",
+    "locator": "Opening announcement; API Access & Pricing",
+    "url": "https://deepseek.com/en/news/deepseek-r1",
+    "publisher": "DeepSeek",
+    "event_date": "2025-01-20",
+    "available_at": "2025-01-20",
+    "explanation": "R1's code and weights carry the stated permissive license. The pricing section lists $0.55 per million uncached input tokens and $2.19 per million output tokens."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "use",
+    "locator": "Pricing introduction; OpenAI o1 standard pricing rows",
+    "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing",
+    "publisher": "OpenAI, preserved by the Internet Archive",
+    "event_date": "2025-01-29",
+    "available_at": "2025-01-29",
+    "explanation": "The o1 rows list $15 per million uncached input tokens and $60 per million output tokens. Against e1, both ratios are about 27-fold, reasonably described as approximately thirtyfold for R1 API access."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "very slow.",
+    "locator": "Opening deployment discussion",
+    "url": "https://unsloth.ai/blog/deepseekr1-dynamic",
+    "publisher": "Unsloth",
+    "event_date": "2025-01-27",
+    "available_at": "2025-01-27",
+    "explanation": "The developers describe compressing the full 671-billion-parameter R1 to 131GB and running it with limited RAM. This supports technical local feasibility, while explicitly qualifying speed and leaving broad benchmark parity unestablished."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "restricted uses.",
+    "locator": "Section III, paragraph 5",
+    "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/LICENSE-MODEL",
+    "publisher": "DeepSeek",
+    "event_date": "2024-12-26",
+    "available_at": "2024-12-26",
+    "explanation": "The original V3 release uses a model license with use restrictions. Its licensing cannot simply be equated with R1's MIT terms; this is background from before the target period."
+   }
+  ],
+  "what_would_resolve": "A model-specific comparison identifying the licenses, matching workloads and API categories, plus reproducible inference measurements and consumer-hardware speed and quality results.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "cf30c64893b5c5f9f442ee83fc9cb7b2b96cb9b07f281b5a2d4a4cc9ed48220b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:07:54Z"
+}

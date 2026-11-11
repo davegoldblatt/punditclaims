@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-openais-dirty-december-o3-demo-doesnt-4a8019-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-4a8019": "d5b3c2855f69d00d5ce796204085dd6bd983a9e64e8085a82eb276bd070a3a13",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-5de705": "0926821926ced9fdeec48b9c17404675b521423e710159c0fd0db39a3bbd20d6",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-aa698d": "26a2f2d5155f770f375bf993ee88003de8da82680302ead2da66b76d1b14df08",
+  "case:marcus-openais-dirty-december-o3-demo-doesnt-ae5158": "005993efa40ede8e660fb70e9833378decf9087a66be0f1492aeddeb864ecc00"
+ },
+ "started_at": "2026-10-29T08:01:04Z",
+ "completed_at": "2026-10-29T08:01:53Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus draws on Knoop's quoted report, but this sentence is his own conclusion and he endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It is a firm present-tense observation about whether released o3 (high) could practically reproduce the December result."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Narrowing the claim to the ~75% ARC-AGI-1 result follows the surrounding text. Reading 'readily' as practical reproducibility, not a capability ceiling, is the ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC Prize report, 22 Apr 2025. o3-high often failed to return outputs and was excluded for insufficient coverage, which meets the 'substantial execution failures' condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Gives the December baseline of 75.7% on the semi-private set."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "ARC Prize's April 2025 testing found that released o3 at high reasoning often timed out or failed to respond, so no full-set score could be produced. Practically, the released high setting could not readily reproduce the December ~75%. This meets the support condition, and no evidence shows a reliable reproduction.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-4a8019"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own summary of the ARC team's results, which he endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It keeps the scope (best stable result, latest public models), the 56% vs 75% figures and the concession that the result is still impressive."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Testing the number at whole-percent precision is fair. Treating 'different model' as contradicted because medium is a reasoning setting is too strict; that is ordinary informal usage, and I do not rely on it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "ARC report, 22 Apr 2025. It names o3-medium the strongest public model tested (agrees), but per the locator and explanation its table gives 53%, not 56%. The quoted excerpt does not show the table figure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The December 75.7% semi-private score confirms the ~75% comparison point."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Two parts hold: o3-medium was the strongest reliably scored released configuration, and the December figure was ~75%. The specific 56% does not match the ARC record of 53%. The claim's thrust (well short of 75%) survives, but the stated number is wrong at the stated precision.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-5de705"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus restates Ord's finding in his own words and endorses it ('guess what'). The underlying observation is Ord's."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps both qualifiers, 'sometimes' and 'apparently'. 'Apparently' marks an inference from evidence rather than a probability estimate, so the claim stays a scorable observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Requiring one documented case of retrieving a solution and presenting it as worked out is a fair reading. It reasonably asks for the record, not just an observer's account."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ord's thread, 19 Apr 2025, says o3 searched for the answer before presenting it. This is an observer's account; the screenshots with the decisive transcript steps are missing."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's launch page confirms the examples used o3 and that web search was an intended tool. The puzzle transcript itself was not retrieved."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only outcome evidence is Ord's own account. Its screenshots were not retrieved, so the packet cannot confirm that the search results supplied the answer before o3 presented it, as the contract requires. Nothing contradicts the claim. The packet does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-aa698d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, which he endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It keeps 'none' and 'reliably'. The evaluative 'That's bad' is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on reading 'reliably' as complete, representative evaluation and on narrowing the livestream to the ARC ~75%. Both follow from the speaker's word and context, so the reading is fair and ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC report, 22 Apr 2025: o3-low 41%, o3-medium 53%, o3-high incomplete because of failures. No released o3 setting reliably reached ~75%."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "March 2025: o3-mini-high scored 35% on ARC-AGI-1. This predates the target period, but it indicates o3-mini was far below 75%."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Gives the December 75.7% reference score."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "In April release-period testing, o3 low and medium scored well under 75%, and o3-high failed to return enough outputs to be scored. That failure is itself a documented reliability failure. Earlier data put o3-mini far lower. No o3-named model reliably reached ~75%. The verdict depends on the contract's fair reading of 'reliably'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-dirty-december-o3-demo-doesnt-ae5158"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31603,
+  "output_tokens": 5341,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,136 @@
+{
+ "packet_id": "marcus-hot-take-gpt-45-is-a-nothing-burger-fa4620-p1",
+ "claim_revision_ref": {
+  "id": "marcus-hot-take-gpt-45-is-a-nothing-burger-fa4620",
+  "version": 1,
+  "content_hash": "dc3b3f17e3101bc2d11aa270feea74e2d35fb9e60ab12c0523d909eeb781473a"
+ },
+ "contract_ref": {
+  "id": "marcus-hot-take-gpt-45-is-a-nothing-burger-fa4620",
+  "version": 1,
+  "content_hash": "af5dda72319f58726d7ea1274d9ebbf08016cf8ca86bc4ca980999453c52b14d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT 4.5 scaling diminishing returns training compute undisclosed 2025",
+   "site:epoch.ai \"GPT-4.5\" \"scaling\"",
+   "site:arxiv.org \"Scaling Laws for Neural Language Models\"",
+   "\"AI in 2030\" \"Epoch\" \"September\" report"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-gpt-4-5/",
+    "used": true,
+    "why": "Primary launch results show capability gains but do not isolate the contribution of scale."
+   },
+   {
+    "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+    "used": false,
+    "why": "Read; describes training changes and evaluations but does not supply a controlled marginal-return comparison."
+   },
+   {
+    "url": "https://epoch.ai/files/AI_2030.pdf",
+    "used": true,
+    "why": "Independent retrospective analysis directly considers GPT-4.5 and the scaling-wall hypothesis."
+   },
+   {
+    "url": "https://epoch.ai/publications/what-will-ai-look-like-in-2030",
+    "used": true,
+    "why": "Read to verify September 16, 2025 publication and Google DeepMind commissioning."
+   },
+   {
+    "url": "https://arxiv.org/abs/2001.08361",
+    "used": true,
+    "why": "Original scaling research clarifies the measured quantity and helps distinguish prediction loss from practical capabilities."
+   },
+   {
+    "url": "https://simonwillison.net/2025/Feb/27/introducing-gpt-45/",
+    "used": false,
+    "why": "Read; qualitative impressions and a reported compute multiplier do not constitute a controlled scaling comparison."
+   }
+  ],
+  "performed_at": "2026-10-29T07:05:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-gpt-4-5",
+   "source_snapshot_id": "c69fa72f2c930ee685e73e1c65e9d59b65894b13edee4ea561a82ae7f60eb15f",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-4-5",
+   "locator": "Appendix and Model evaluation scores",
+   "receipt": {
+    "public_excerpt": "Even by purely scaling up unsupervised learning, GPT‑4.5 shows meaningful improvements over previous models like GPT‑4o.",
+    "quote_hash": "fd1c463e86906864ded20fd8566eb533e2d3f9f8227a27a5d1bbf892c85abc21",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-27",
+   "available_at": "2025-02-27",
+   "retrieved_at": "2026-10-29T02:27:02Z",
+   "relation": "context",
+   "explanation": "Launch scores improve from 53.6% to 71.4% on GPQA and from 9.3% to 36.7% on AIME 2024. These weigh against a literal capability plateau, but the page also describes architecture and optimization changes and does not quantify a controlled return to additional compute.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "epoch-ai-files-ai-2030-pdf",
+   "source_snapshot_id": "56d0be853d32afc6a11913102e478bee383de0504ea36752b8c971cee5b1506f",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/files/AI_2030.pdf",
+   "locator": "Page 21, footnote 12",
+   "receipt": {
+    "public_excerpt": "This is consistent with\nscaling roughly as expected.",
+    "quote_hash": "b1be0b87164b2b935870f7340aab0ce55d7c9db2a33d4bfaa8753b1c45331900",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-16",
+   "available_at": "2025-09-16",
+   "retrieved_at": "2026-10-29T01:05:13Z",
+   "relation": "context",
+   "explanation": "Epoch's retrospective comparison places GPT-4.5's GPQA and mathematics gains broadly on the existing compute-performance trend. This is material counterevidence to a newly reached wall, but does not provide the controlled pretraining-only comparison needed to settle Marcus's broader formulation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2001-08361",
+   "source_snapshot_id": "155b693dfe4d0a51e36576ab989a4e83fbea4cb3eec60e2dee5b6a732243db00",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2001.08361",
+   "locator": "Abstract, opening sentence",
+   "receipt": {
+    "public_excerpt": "We study empirical scaling laws for language model performance on the cross-entropy loss.",
+    "quote_hash": "e8cc62f2318fd3f506c2ba03c98c3609f3f32ed582c2028c58d3f71f32d80dce",
+    "verified": "exact"
+   },
+   "event_date": "2020-01-23",
+   "available_at": "2020-01-23",
+   "retrieved_at": "2026-10-29T01:01:04Z",
+   "relation": "context",
+   "explanation": "The original scaling study measures prediction loss and reports power-law relationships with compute, data, and model size. Such relationships do not promise equal practical gains per additional unit of compute or the elimination of every error.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched pretraining-only comparison establishes marginal returns across the relevant frontier generations.",
+  "Marcus supplies neither a capability measure nor a threshold for massively diminishing returns.",
+  "Published product comparisons combine scale with other training changes."
+ ],
+ "packet_hash": "fa4a68eb5630e00c5d18bd2772f9d602daf5d125749c9cec07fb82bdc2c40bc4"
+}

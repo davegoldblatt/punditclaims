@@ -1,0 +1,124 @@
+{
+ "assessment_id": "marcus-three-reasons-to-think-that-the-claude-cd7207-a3",
+ "claim_revision_ref": {
+  "id": "marcus-three-reasons-to-think-that-the-claude-cd7207",
+  "version": 1,
+  "content_hash": "a37c7b29d6ae5c2a5dd2b038d8596ae3f0100d3dd5831639350874d359b26a1f"
+ },
+ "contract_ref": {
+  "id": "marcus-three-reasons-to-think-that-the-claude-cd7207",
+  "version": 1,
+  "content_hash": "6d863fb9461fcd5aeba4c1a05dc70cf53dc6dd2ddd9e035f8f3c66f422bce978"
+ },
+ "packet_ref": {
+  "id": "marcus-three-reasons-to-think-that-the-claude-cd7207-p1",
+  "content_hash": "e1e9934767046680ebbd2b99758e6256c0a686aa05cadf45de4acdf01fe80e7d"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-04-07",
+  "end": "2026-04-09",
+  "precision": "day"
+ },
+ "public_rationale": "AISLE's April 2026 tests support the claim in the simplified setting: models given isolated relevant code recovered substantial vulnerability analysis [e1]. All eight tested models, including several open-weight models, identified the FreeBSD vulnerability; an open-weight model also recovered the core OpenBSD vulnerability chain [e1]. None reproduced Mythos's specific multi-round RPC delivery method, and proposed alternatives were not executed [e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "No independent rerun was verified in the evidence packet.",
+  "The tests do not establish autonomous vulnerability discovery or successful end-to-end exploitation [e2].",
+  "The April 9 update reported frequent false positives on patched code, limiting conclusions about practical reliability [e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-three-reasons-to-think-that-the-claude-2f8697-2-3x-review-anthropic-1",
+  "marcus-three-reasons-to-think-that-the-claude-2f8697-2-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-three-reasons-to-think-that-the-claude-cd7207-1x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-three-reasons-to-think-that-the-claude-cd7207",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "In a simplified setup, open-weight models can already do a fair amount of what Mythos can do.",
+  "kind": "observation",
+  "conditions": [
+   "in a simplified preparation"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Open-weight models can already do a fair amount of what Mythos can do, in a simplified preparation.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/three-reasons-to-think-that-the-claude",
+   "date": "2026-04-09",
+   "document_title": "Three reasons to think that the Claude Mythos announcement from Anthropic was overblown",
+   "observed_at": "2026-10-28T22:30:28Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Open-weight models",
+    "can already do a fair amount",
+    "what Mythos can do",
+    "in a simplified preparation"
+   ],
+   "our_interpretation": [
+    "The surrounding quotation identifies the task as recovering vulnerability analysis from isolated code taken from Anthropic's showcases.",
+    "The plain reading is that available open-weight models can reproduce substantial useful analysis in that simplified setting. It does not require autonomous discovery across a repository or a working exploit.",
+    "The target period is the announcement and immediate response, April 7–9, 2026. This is the latest publicly observable state before the post."
+   ],
+   "support_condition": "Published tests show open-weight models recovering substantial vulnerability identification, causal analysis, or exploitability reasoning for the showcased cases when given the relevant code.",
+   "contradiction_condition": "Comparable isolated-code tests show that open-weight models generally cannot recover substantive analysis, or that the reported successes do not identify the actual vulnerabilities."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "AISLE's April 2026 tests support the claim in the simplified setting: models given isolated relevant code recovered substantial vulnerability analysis [e1]. All eight tested models, including several open-weight models, identified the FreeBSD vulnerability; an open-weight model also recovered the core OpenBSD vulnerability chain [e1]. None reproduced Mythos's specific multi-round RPC delivery method, and proposed alternatives were not executed [e2].",
+  "limitations": [
+   "No independent rerun was verified in the evidence packet.",
+   "The tests do not establish autonomous vulnerability discovery or successful end-to-end exploitation [e2].",
+   "The April 9 update reported frequent false positives on patched code, limiting conclusions about practical reliability [e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Those models recovered much of the same analysis.",
+    "locator": "The announcement; detailed results in Tests 2 and 3",
+    "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+    "publisher": "AISLE",
+    "event_date": "2026-04-07",
+    "available_at": "2026-04-07",
+    "explanation": "AISLE reports successful FreeBSD vulnerability detection by all eight tested models, including several open-weight models; the eight were not all open-weight. GPT-OSS-120b also recovered the core OpenBSD chain, supporting substantial analysis in the expressly simplified setting."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "None of the models arrived at the specific multi-round RPC approach.",
+    "locator": "Test 2, The payload-size constraint, and how models solved it differently",
+    "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+    "publisher": "AISLE",
+    "event_date": "2026-04-07",
+    "available_at": "2026-04-07",
+    "explanation": "The models did not reproduce Mythos's particular exploit-delivery solution, and proposed alternatives were not executed. The April 9 update also found frequent false positives on patched code, limiting broader claims of practical equivalence."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f3827b2edd6a773ff63ce1ed8464808e8b88b2a956f58201df01b56525c4e1d8",
+ "supersedes_assessment_id": "marcus-three-reasons-to-think-that-the-claude-cd7207-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:44:34Z"
+}

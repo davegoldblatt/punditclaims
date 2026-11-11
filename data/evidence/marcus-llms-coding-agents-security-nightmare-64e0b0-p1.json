@@ -1,0 +1,66 @@
+{
+ "packet_id": "marcus-llms-coding-agents-security-nightmare-64e0b0-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-64e0b0",
+  "version": 1,
+  "content_hash": "121a3eaff95b8e2e877717955384c8af80a9865edabeaa169a928cb9d7862437"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-64e0b0",
+  "version": 1,
+  "content_hash": "d806a63dab4bef228d3703d72f46d6c4b9c05da78b0e07f8cc51cbe8d73cd7a9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA Black Hat 2025 coding agents prompt injection Lynch Harang",
+   "2025 Cursor rules file backdoor prompt injection exploit July August"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://developer.nvidia.com/blog/from-assistant-to-adversary-exploiting-agentic-ai-developer-tools/",
+    "used": true,
+    "why": "NVIDIA's own technical account of the August 2025 demonstrations discussed in the post; includes successful attacks, a blocked attempt, and mitigation conditions."
+   },
+   {
+    "url": "https://expertinsights.com/news/nvidia-demonstrates-ai-exploits-bh25",
+    "used": false,
+    "why": "Secondary coverage was unnecessary once the researchers' technical account was available."
+   }
+  ],
+  "performed_at": "2026-10-29T17:40:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "developer-nvidia-com-blog-from-assistant-to-adversary-exploiting-ag-c8a6b06cc24e",
+   "source_snapshot_id": "2556a80373b864af375724cc6ed439d5d88950b170f41371db37bf4070ac7f82",
+   "publisher": "NVIDIA",
+   "source_type": "demonstration",
+   "url": "https://developer.nvidia.com/blog/from-assistant-to-adversary-exploiting-agentic-ai-developer-tools",
+   "locator": "How to plant the prompt injection — Anthropic Computer Use Agent demonstration",
+   "receipt": {
+    "public_excerpt": "reverse shell",
+    "quote_hash": "b51afaf220af2829965a38d4a1571202567d3865cbc30cbd15376d5cf0c28f52",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-10-09",
+   "retrieved_at": "2026-10-29T07:16:21Z",
+   "relation": "supports",
+   "explanation": "NVIDIA describes an August Black Hat demonstration in which a malicious issue redirected a computer-use agent into executing an attacker command, and a separate Cursor dependency-installation route that also granted remote control. Cursor blocked the initial direct injection, and the report makes autonomous execution and insufficient isolation central conditions of the successful attacks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The report does not provide a representative attack-success rate or a controlled estimate of how much each additional level of autonomy increases risk.",
+  "It demonstrates severe compromise capability, not industry-wide chaos or a count of destructive incidents."
+ ],
+ "packet_hash": "e3c95cb4ef04369e23f27824783f4912693c7a378f40bd46814ef894e346245d"
+}

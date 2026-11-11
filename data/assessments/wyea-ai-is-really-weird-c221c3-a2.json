@@ -1,0 +1,103 @@
+{
+ "assessment_id": "wyea-ai-is-really-weird-c221c3-a2",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-c221c3",
+  "version": 1,
+  "content_hash": "f1d839ad11593aafec4e263c2d7ba8674fbc3c495826747bc8ef9ee28c5d7475"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-c221c3",
+  "version": 1,
+  "content_hash": "9f9bea385e874d11c1114dabf1423d3269a5382e9c1ef6d838859d10ca67ff8a"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-is-really-weird-c221c3-p1",
+  "content_hash": "061f5ac3f7f56d0fcf2f990675d6d6790fbd7d3e176fd82411b284c94c4d67d9"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Anthropic's March 13, 2026 announcement made the 1-million-token window generally available for Opus 4.6 and Sonnet 4.6 at standard per-token pricing [e1]. It also said eligible Claude Code users could automatically use the larger window with Opus 4.6, retaining more conversation history with fewer compactions [e1]. The announcement provides no representative before-and-after measurement showing whether this change substantially increased billed token consumption through April 8, 2026 [e1]. It establishes the product change but leaves its effect on token spending unresolved [e1].",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "The announcement does not establish that every request contains one million tokens [e1].",
+  "It provides no controlled comparison accounting for caching, compaction, model choice, and equivalent completed work [e1]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-is-really-weird-bbb6d0-4x-review-anthropic-1",
+  "wyea-ai-is-really-weird-bbb6d0-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ai-is-really-weird-294793-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-is-really-weird-c221c3",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Anthropic's default 1 million token context window causes context bloat that greatly raises token spend.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "This leads to context bloat that absolutely rinses your token budget.",
+   "locator": "paragraph 186",
+   "url": "https://www.wheresyoured.at/ai-is-really-weird",
+   "date": "2026-04-08",
+   "document_title": "AI Is Really Weird",
+   "observed_at": "2026-10-28T22:26:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "This leads to context bloat",
+    "absolutely rinses your token budget",
+    "one million tokens of context"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that making the larger context window the default materially increases token consumption through accumulated conversation history.",
+    "The relevant comparison is equivalent work before and after the default changed, accounting for caching, compaction, model choice, and task completion.",
+    "The assessment concerns the rollout discussed in the post through April 8, 2026. Capacity alone does not establish actual consumption."
+   ],
+   "support_condition": "Representative usage data or controlled comparisons show a substantial increase in billed token consumption attributable to the default context-window change.",
+   "contradiction_condition": "Comparable measurements show that the change generally leaves billed token consumption materially unchanged or reduces it."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Anthropic's March 13, 2026 announcement made the 1-million-token window generally available for Opus 4.6 and Sonnet 4.6 at standard per-token pricing [e1]. It also said eligible Claude Code users could automatically use the larger window with Opus 4.6, retaining more conversation history with fewer compactions [e1]. The announcement provides no representative before-and-after measurement showing whether this change substantially increased billed token consumption through April 8, 2026 [e1]. It establishes the product change but leaves its effect on token spending unresolved [e1].",
+  "limitations": [
+   "The announcement does not establish that every request contains one million tokens [e1].",
+   "It provides no controlled comparison accounting for caching, compaction, model choice, and equivalent completed work [e1]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "There's no multiplier:",
+    "locator": "Opening pricing paragraph",
+    "url": "https://claude.com/blog/1m-context-ga",
+    "publisher": "Anthropic",
+    "event_date": "2026-03-13",
+    "available_at": "2026-03-13",
+    "explanation": "The announcement distinguishes request size from window capacity and says longer Claude Code histories can remain intact with fewer compactions. It also includes customer reports of improved token efficiency, but neither those testimonials nor unchanged per-token pricing establish the typical effect on spending."
+   }
+  ],
+  "what_would_resolve": "Representative rollout data or reproducible comparisons through April 8, 2026 measuring input, output, cache-write, and cache-read tokens for equivalent completed tasks, while isolating the default-window change and separating API charges from subscription limits.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "fdd0a42e32b838173313aec94a9fbc3e8675f24cb6719f4475ddbbeefdb71b67",
+ "supersedes_assessment_id": "wyea-ai-is-really-weird-c221c3-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:32:22Z"
+}

@@ -1,0 +1,179 @@
+{
+ "run_id": "marcus-c39-2d2868-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-c39-2d2868": "ed69c561b52c57a262dd7b4c15cd293ea4962e72fc31861701881c496d7ab7f8",
+  "case:marcus-c39-73750f": "ecb46bb981923f0f1d41ec52ac8b0b0fbd0a724652043e438ad1a82ebd868b5f",
+  "case:marcus-c39-a0bac4": "6d68eca959894a9a1ed0adcf9ffd507d86f670c739a3ea486f5b99ab7c6a4c29",
+  "case:marcus-c39-aff2ef": "ddd50cfeb00afb1e0cd1285a93a7f4ac23ad97bc4f420d4f101b6766b9b43a27"
+ },
+ "started_at": "2026-10-29T02:53:03Z",
+ "completed_at": "2026-10-29T02:53:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in point 3 of his post, stated as his own view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps his weaker 'not uncommon' wording and both parts of the claim: the practice was not unusual, and the video did not disclose it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'not uncommon' as an established practice and 'made clear' as an understandable disclosure is ordinary and fair. Telling preparatory training apart from test-time adaptation is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated before the video. It shows ARC systems commonly pretrained on ARC or ARC-like data, which bears on the practice part only. It says nothing about what the video disclosed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The practice part looks plausible from e1, but the claim's core is that the video did not disclose the training. No reliable transcript or slide record was recovered. The packet admits this gap, so the conjunction cannot be scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-2d2868"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus says in his own words that the OpenAI graph had the same flaw. The DeepMind credit applies to the Chollet graph point."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful. It keeps the MIT result, the 'halfway' detail, the 'many other results', and the claimed effect on how big the advance looked."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Rebuilding the comparison to test whether omitted results shrink the apparent gap is a fair, ordinary reading. 'Halfway' is read loosely."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The MIT paper reports 61.9% on public validation for the ensemble. It does not show the OpenAI graph's contents, what was left out, or matched o1/o3 positions."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The original OpenAI graph was not recovered, so neither the omission nor the 'halfway' placement can be checked under matched conditions. e1 only shows that a strong earlier MIT result existed.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-73750f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own emphatic statement in point 3."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'What I believe' hedges only the example count. The main claim, 'NOT comparable', is firm, so it is scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "In context ('took the test cold... like a human would'), reading 'comparable' as ARC-specific preparation is the ordinary reading. Excluding lifetime experience is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC Prize, which ran the evaluation, reports OpenAI saying the tested o3 trained on 75% of the public training set, about 300 tasks. This is relayed company disclosure, but it is an admission against interest and reported by the evaluator."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "In the human study, people got one tutorial task and a quiz before attempting ARC tasks. That is far less ARC-specific preparation than hundreds of training tasks."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The tested o3 was trained on about 300 public ARC tasks, which fits 'hundreds'. Humans in the published study prepared with one tutorial task. Under the contract's preparation reading, the two are not comparable. The packet contains no contrary evidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-a0bac4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The opening sentence of point 5 is Marcus's own judgement, though he cites a DeepMind researcher for the Chollet graph detail."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. 'Misleading' is evaluative, but the surrounding text gives it a checkable meaning: results were omitted, which exaggerated the advance."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Tying 'misleading' to the omission mechanism he describes and requiring comparable settings is fair. It rightly infers no intent."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated 6 Dec 2024. It lists earlier results such as MARA(BARC)+MIT (47.5% semi-private, 62.8% public) but does not show what either graph plotted or left out."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither graph was recovered in readable form, so their scope, labels and omissions cannot be checked. e1 shows relevant earlier results existed but cannot establish that either graph was misleading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-aff2ef"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25431,
+  "output_tokens": 3984,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,83 @@
+{
+ "packet_id": "wyea-costs-5ec17c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-costs-5ec17c",
+  "version": 2,
+  "content_hash": "f2e3e64d8c6e562d4e685eb3af944ceaa623072989c876fa8659d574d8f3c248"
+ },
+ "contract_ref": {
+  "id": "wyea-costs-5ec17c",
+  "version": 1,
+  "content_hash": "4c9149b0bdb0d79072706344eb80f9f1e3ddc334e838a151183050c250ac7bf6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Cursor AWS monthly spending 2025 January September bills independent",
+   "Anthropic AWS spend 2025 September 2.66 billion revenue 2.55 billion",
+   "Anthropic S-1 2026 October 26 site:sec.gov"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary context on increasing compute expenses, but it measures a broader expense category rather than monthly AWS cash payments."
+   },
+   {
+    "url": "https://www.osnews.com/story/143599/this-is-how-much-anthropic-and-cursor-spend-on-amazon-web-services/",
+    "used": false,
+    "why": "Read in full; it repeats Zitron's reporting without supplying independent monthly records."
+   },
+   {
+    "url": "https://www.wheresyoured.at/costs",
+    "used": false,
+    "why": "Read to establish the companies' distinct reporting windows. Its figures cannot independently authenticate themselves."
+   }
+  ],
+  "performed_at": "2026-10-29T19:55:19Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, annual comparison, 'Compute and Infrastructure', page 152",
+   "receipt": {
+    "public_excerpt": "expenses increased accordingly.",
+    "quote_hash": "9a15246f12ad8d86e3e8975e85302d51c94c42b62f9b0972d6f0d22cc6e2dfb2",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing describes increasing compute expenses as contracted capacity became available. This concerns full-year expenses across providers, so it does not settle either company's monthly net AWS payment trend through September.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Compute and infrastructure expenses across providers",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independently authenticated complete monthly AWS payment series was found for either company.",
+  "The filing's broader expense disclosures cannot establish the specified AWS cash-payment trends.",
+  "Independent evidence of Cursor's trend is particularly limited."
+ ],
+ "packet_hash": "e1d92c06e6249d75577f4a62b1850168277de56dfab8f12708fb020ea45020ac"
+}

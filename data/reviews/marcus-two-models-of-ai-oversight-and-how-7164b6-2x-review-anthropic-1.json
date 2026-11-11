@@ -1,0 +1,119 @@
+{
+ "run_id": "marcus-two-models-of-ai-oversight-and-how-7164b6-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-two-models-of-ai-oversight-and-how-7164b6": "b15dc21dd60d7801e8cfc1a654e3a32fda309ec2767ee3328f6adcf9e1f479d4",
+  "case:marcus-two-models-of-ai-oversight-and-how-8173bb": "44f84511e96db6ce9d421aaa0bebae7d00c780b00332bf162965ee01a71b2ce7"
+ },
+ "started_at": "2026-10-29T22:01:05Z",
+ "completed_at": "2026-10-29T22:01:30Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He states this himself and is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithfully captures the claim that scientists lacked access to GPT-4's workings and training data. The superlative is kept, and the contract treats it as rhetorical emphasis."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'how GPT-4 works' as detailed architecture and training rather than broad principles is the ordinary reading. Treating the superlative as rhetorical is fair to the speaker. The window from March 2023 to the post is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A dated, contemporaneous advocacy filing (CAIDP to the FTC, 30 Mar 2023). It says OpenAI did not disclose architecture, size, training methods or dataset construction. It is corroboration, not a regulatory finding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's technical report (v3, 27 Mar 2023). The quoted text gives only a broad description (Transformer, next-token pretraining). The cited Section 2 withholds details. This is consistent with the support condition: high-level study allowed, details withheld."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporaneous records show that OpenAI disclosed only broad facts about GPT-4. Architecture, model size, training methods and dataset construction were withheld from the scientific community. Broad descriptions do not meet the contradiction condition. The superlative is rhetorical and not scored literally.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-two-models-of-ai-oversight-and-how-7164b6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He states this himself and is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Preserves both parts of the claim, including the hedge 'at least in some ways' on safety. In context, the target is Microsoft's AI products, principally Bing Chat."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Narrowing the claim to Bing Chat and Edge follows the examples in the post and is fair. Requiring at least one demonstrated harmful behaviour or exploit matches 'in some ways'. Defining transparency as outsiders being able to examine the system is an ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "An independent preprint (v2, 5 May 2023) treats Bing Chat as a black box and says full details of how it works are unavailable."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The same preprint shows indirect prompt injection succeeding on the deployed Bing Chat through the Edge sidebar, bypassing filters that block direct input. This is a demonstrated security weakness within the window."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's own disclosure (April 2023) describing Bing's design and safeguards. It gives high-level information but no access to the system's internals, and it does not rebut the demonstrated exploit."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent researchers in May 2023 found Bing Chat's internals unavailable and showed working indirect prompt injection against the deployed product. Microsoft's high-level responsible-AI document does not give outsiders access to the underlying system. Both parts of the claim hold for Bing within the window.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-two-models-of-ai-oversight-and-how-8173bb"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17689,
+  "output_tokens": 2581,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,154 @@
+{
+ "packet_id": "marcus-no-rag-is-probably-not-going-to-rescue-c4dc42-p1",
+ "claim_revision_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-c4dc42",
+  "version": 1,
+  "content_hash": "d88c40303573b9eb274de8deca7909b3b4ffdea5ba73d85939deaddfc642ee19"
+ },
+ "contract_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-c4dc42",
+  "version": 1,
+  "content_hash": "3595407b92fde7706ac68cebcb90e753721e659265340f9b8e9a965b47312cb3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "RAG hallucinations August 2024 benchmark CRAG reliable",
+   "site.arxiv.org \"CRAG\" \"2024\" \"hallucination\"",
+   "\"KDD\" \"CRAG\" \"August\" \"2024\" winners hallucination",
+   "\"hallucination-free\" \"2024\" RAG achieved",
+   "site:discourse.aicrowd.com \"Final Evaluation Process & Team Scores\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2406.04744v1",
+    "used": true,
+    "why": "Version fixed before the forecast deadline; evaluates broad factual RAG capabilities."
+   },
+   {
+    "url": "https://discourse.aicrowd.com/t/final-evaluation-process-team-scores/10785",
+    "used": true,
+    "why": "Official July 2024 competition results extend the evidence beyond the initial benchmark."
+   },
+   {
+    "url": "https://www.webdisclosure.com/press-release/acurai-inc-nasdaq-100-accurate-ai-service-unveiled-by-acurai-inc-WZtmbdIYr2V",
+    "used": true,
+    "why": "A potentially contrary company announcement made before the deadline."
+   },
+   {
+    "url": "https://arxiv.org/html/2412.05223v1",
+    "used": true,
+    "why": "The company's later technical paper clarifies the restricted test behind its claimed hallucination elimination."
+   },
+   {
+    "url": "https://arxiv.org/abs/2410.00005",
+    "used": false,
+    "why": "Read the winning team's report; the official dated competition results provide the more direct record."
+   }
+  ],
+  "performed_at": "2026-10-29T17:47:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2406-04744v1",
+   "source_snapshot_id": "3c6d34cf53e1873632af0e87cffa2ba6b0515f8171e94ed88947620fb34abec5",
+   "publisher": "Yang et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2406.04744v1",
+   "locator": "Abstract, version 1",
+   "receipt": {
+    "public_excerpt": "63% questions",
+    "quote_hash": "600943397965790a06d14db16313824dde5be28ce60aedb7971658673f492bc9",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2024-06-07",
+   "retrieved_at": "2026-10-29T07:28:28Z",
+   "relation": "supports",
+   "explanation": "CRAG tests diverse factual questions across domains and question types. Its reported industry-system performance falls well short of broadly reliable query answering; the remaining percentage should not automatically be treated as a hallucination rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "discourse-aicrowd-com-t-final-evaluation-process-team-scores-10785",
+   "source_snapshot_id": "71c0861c8bab771a15a016e2040a1508bca52609c2ba73199931a86fd0911075",
+   "publisher": "Meta and AIcrowd",
+   "source_type": "benchmark",
+   "url": "https://discourse.aicrowd.com/t/final-evaluation-process-team-scores/10785",
+   "locator": "Main task scores table",
+   "receipt": {
+    "public_excerpt": "28.40%",
+    "quote_hash": "ace59364d1b4b62cd78ef5896afff31628dd151f9b56da3d08c208ba4ac0820b",
+    "verified": "exact"
+   },
+   "event_date": "2024-07-30",
+   "available_at": "2024-07-30",
+   "retrieved_at": "2026-10-29T17:32:55Z",
+   "relation": "supports",
+   "explanation": "The winning task scores were 28.40%, 42.7% and 47.8%, showing that broad RAG challenge performance remained incomplete shortly before the deadline. These are competition scores, not percentages of hallucinated answers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "webdisclosure-com-press-release-acurai-inc-nasdaq-100-accurate-ai-s-4f59c0cb145d",
+   "source_snapshot_id": "4b11f5e00f716fa496469243d7dc8f8547b4448c0a1c5975f894193d5c36e336",
+   "publisher": "Acurai Inc., distributed through ACCESSWIRE",
+   "source_type": "company_disclosure",
+   "url": "https://www.webdisclosure.com/press-release/acurai-inc-nasdaq-100-accurate-ai-service-unveiled-by-acurai-inc-WZtmbdIYr2V",
+   "locator": "100% Accurate AI is Finally Here",
+   "receipt": {
+    "public_excerpt": "RAGTruth Corpus.",
+    "quote_hash": "b21770c499064c967db1162566d86be08ae1494db4e360388479bf94da2b6543",
+    "verified": "exact"
+   },
+   "event_date": "2024-07-30",
+   "available_at": "2024-07-30",
+   "retrieved_at": "2026-10-29T17:31:57Z",
+   "relation": "context",
+   "explanation": "Acurai announced a hallucination-free service before the deadline. The stated validation concerned RAGTruth, so the announcement is material counterevidence but does not establish reliable answering across Marcus's broader scope.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arxiv-org-html-2412-05223v1",
+   "source_snapshot_id": "1a60fc603c1983d497f595b8b9a79f574f8acb0b45885a41940701668aa7d3e6",
+   "publisher": "Wood and Forbes, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.05223v1",
+   "locator": "Section 5, Limitations; section 4.3, Confidence Interval",
+   "receipt": {
+    "public_excerpt": "three passages.",
+    "quote_hash": "d1c0d998ef0750d4461ba3b92becf26175da3d11ee78e70d3c8a2d06e89dca69",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-06",
+   "retrieved_at": "2026-10-29T17:31:28Z",
+   "relation": "context",
+   "explanation": "The later paper reports a sample of 37 and limits its finding to factual input passages and small contexts. This clarifies why the company's result does not demonstrate the broad capability at issue; it is not treated as an August outcome.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The reviewed evaluations are not a census of every system available on August 23.",
+  "The competition thread describes manual grading in its main post but contains a later reply referring to automatic scores; grading details should not be overstated."
+ ],
+ "packet_hash": "f1959580772d1c8acc77b890e4bdf39e0b36220c426a37153ef8b0c913100ffb"
+}

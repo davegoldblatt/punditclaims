@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-we-urgently-need-a-federal-law-forbidding-f324e2-a1",
+ "claim_revision_ref": {
+  "id": "marcus-we-urgently-need-a-federal-law-forbidding-f324e2",
+  "version": 1,
+  "content_hash": "ea9a370a449905023b851ad60a71e145b00891c3c62fc5805b12f6cb98e8e04d"
+ },
+ "contract_ref": {
+  "id": "marcus-we-urgently-need-a-federal-law-forbidding-f324e2",
+  "version": 1,
+  "content_hash": "c253a693bad467313f8ae9a11a5cb54cc6922d0a855785ef20f7e9e4b6c3995c"
+ },
+ "packet_ref": {
+  "id": "marcus-we-urgently-need-a-federal-law-forbidding-f324e2-p1",
+  "content_hash": "988c5efdd4c7405c981b65d52bc952d02e4ed1f101c3b7ec3fae9fe8f72db685"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-02-01",
+  "end": "2026-02-14",
+  "precision": "day"
+ },
+ "public_rationale": "The February 9 release supports outbound telephone calls and operator-selected spoken messages. Its code can speak a supplied human introduction without adding an AI disclosure, and conversational prompts are configurable. This supports Marcus's claim that OpenClaw can be used to call people while presenting itself as human. It does not establish that impersonation is the default or that recipients invariably believe it.",
+ "evidence_ids": [
+  "e3",
+  "e4",
+  "e5"
+ ],
+ "counterevidence_ids": [
+  "e5"
+ ],
+ "limitations": [
+  "Requires installation, configuration and a telephony provider.",
+  "Human-persona capability is inferred from the documented message and prompt controls.",
+  "Recipient deception rates were not measured."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-we-urgently-need-a-federal-law-forbidding-a81599-4x-review-anthropic-1",
+  "marcus-we-urgently-need-a-federal-law-forbidding-a81599-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-we-urgently-need-a-federal-law-forbidding-a81599-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-we-urgently-need-a-federal-law-forbidding-f324e2",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "OpenClaw can be used to phone people while pretending to be human, a new security risk.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Well here’s a new one, you can have OpenClaw call people, and pretend to be human.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/we-urgently-need-a-federal-law-forbidding",
+   "date": "2026-02-14",
+   "document_title": "We URGENTLY need a federal law forbidding AI from impersonating humans",
+   "observed_at": "2026-10-28T23:53:55Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "you can have OpenClaw call people",
+    "pretend to be human"
+   ],
+   "our_interpretation": [
+    "OpenClaw can be configured with integrations to make outbound calls and speak under a human persona.",
+    "Pretending means presenting itself as human; the sentence does not require proof that every recipient is deceived.",
+    "'Here’s a new one' introduces a risk and is not treated as a claim that OpenClaw invented telephone impersonation.",
+    "The ongoing capability is assessed for February 2026 through the post date."
+   ],
+   "support_condition": "Pre-post documentation, code or demonstrations establish outbound calling and operator-controlled speech capable of presenting a human identity.",
+   "contradiction_condition": "The applicable OpenClaw version cannot make such calls, or an unavoidable disclosure mechanism prevents it from presenting itself as human."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The February 9 release supports outbound telephone calls and operator-selected spoken messages. Its code can speak a supplied human introduction without adding an AI disclosure, and conversational prompts are configurable. This supports Marcus's claim that OpenClaw can be used to call people while presenting itself as human. It does not establish that impersonation is the default or that recipients invariably believe it.",
+  "limitations": [
+   "Requires installation, configuration and a telephony provider.",
+   "Human-persona capability is inferred from the documented message and prompt controls.",
+   "Recipient deception rates were not measured."
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "Supports outbound notifications",
+    "locator": "Voice Call (plugin), opening paragraph; CLI and Agent tool sections",
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.2.9/docs/plugins/voice-call.md",
+    "publisher": "OpenClaw project",
+    "event_date": "2026-02-09",
+    "available_at": "2026-02-09",
+    "explanation": "The released documentation provides outbound telephony, speech providers and message arguments. It establishes the calling component of the claim before publication."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "speak message and hang up",
+    "locator": "generateNotifyTwiml method; initiateCall and speak methods",
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.2.9/extensions/voice-call/src/manager.ts",
+    "publisher": "OpenClaw project",
+    "event_date": "2026-02-09",
+    "available_at": "2026-02-09",
+    "explanation": "The method speaks operator-supplied text, escaping XML but adding no AI-identification statement. Together with outbound calling, this supports the inference that an operator can supply a human introduction."
+   },
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "a helpful voice assistant",
+    "locator": "generateVoiceResponse, basePrompt assignment",
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.2.9/extensions/voice-call/src/response-generator.ts",
+    "publisher": "OpenClaw project",
+    "event_date": "2026-02-09",
+    "available_at": "2026-02-09",
+    "explanation": "The default prompt describes an assistant, so human impersonation is not established as default behavior. The surrounding code permits a configured responseSystemPrompt to replace that default."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "dec46b8341c5d0c7fe8452b934bc27ac3cbda7eedaab7a5f4822011b93ff5033",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:45:09Z"
+}

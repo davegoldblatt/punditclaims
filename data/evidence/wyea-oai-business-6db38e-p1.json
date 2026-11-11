@@ -1,0 +1,137 @@
+{
+ "packet_id": "wyea-oai-business-6db38e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-business-6db38e",
+  "version": 1,
+  "content_hash": "b78a9221f699c45de1141cf0d8b4388e3ef436183e4c57b3050099f4ac474fcd"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-business-6db38e",
+  "version": 1,
+  "content_hash": "6af0af9ee8b608a2f309c8587c6343e62550267a8ff7890306fabb45dca010a2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI September 2024 revenue projections ChatGPT 2.7 billion API 1 billion 2025 11.6 billion",
+   "OpenAI September 2024 revenue 2025 API ChatGPT projections \"billion\"",
+   "OpenAI projections October 2024 \"API\" \"2029\"",
+   "OpenAI revenue ChatGPT 2.7 billion September 2024 before:2024-10-03"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+    "used": true,
+    "why": "Full Fortune report syndicated by Yahoo. It describes the 2024 product mix, but does not isolate Plus or establish causal dependence."
+   },
+   {
+    "url": "https://www.businesstimes.com.sg/companies-markets/openai-growing-fast-and-burning-through-piles-money",
+    "used": true,
+    "why": "Readable New York Times reporting establishes the contemporaneous 2025 revenue target."
+   },
+   {
+    "url": "https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-projections-imply-losses-tripling-to-14-billion-in-2026",
+    "used": false,
+    "why": "Potentially relevant product-level projections, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.bayareatimes.com/p/openai-projects-101b-in-revenue-in-2029-losses-reaching-16b-by-2026",
+    "used": false,
+    "why": "The October 10 summary describes a broader future product mix. It does not establish which projections were operative before this post, and the underlying report could not be read."
+   }
+  ],
+  "performed_at": "2026-10-29T12:17:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-sees-5-billion-loss-170306927-html",
+   "source_snapshot_id": "a6b55647389acc1c597b73b58fad8f63aae5fa820be691e9569ce71349ac3b65",
+   "publisher": "Fortune, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+   "locator": "Opening financial projections paragraph",
+   "receipt": {
+    "public_excerpt": "revenue of $3.7 billion in 2024.",
+    "quote_hash": "d31722613b9165afbb9c48ac426338ba1572a7f333888ceb205e8b20c9fbc799",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-30",
+   "retrieved_at": "2026-10-29T11:19:24Z",
+   "relation": "context",
+   "explanation": "The paragraph also assigns $2.7 billion to ChatGPT and $1 billion to other businesses, implying approximately 73% from ChatGPT. This aggregates ChatGPT plans and therefore cannot establish Plus-specific dependence.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual revenue from all ChatGPT plans and other businesses",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected 2024 ChatGPT revenue: USD 2.7 billion",
+     "Projected 2024 total revenue: USD 3.7 billion"
+    ],
+    "formula": "2.7 / 3.7 * 100",
+    "rounding": "72.97%, approximately 73%"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "businesstimes-com-sg-companies-markets-openai-growing-fast-and-burn-2ea49534cf3c",
+   "source_snapshot_id": "886445475a9c3bb11618c6ce02663f30a193e20148187fc06726b70f404839c1",
+   "publisher": "The New York Times, syndicated by The Business Times",
+   "source_type": "news_report",
+   "url": "https://www.businesstimes.com.sg/companies-markets/openai-growing-fast-and-burning-through-piles-money",
+   "locator": "Paragraph reporting revenue projections",
+   "receipt": {
+    "public_excerpt": "US$11.6 billion",
+    "quote_hash": "f2901a928f7c5a0944ab0523092b27a7e3e7959a0f4ff22838410b42e920ae24",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-28",
+   "retrieved_at": "2026-10-29T11:55:06Z",
+   "relation": "context",
+   "explanation": "This establishes the 2025 target being discussed. It supplies neither a Plus-specific forecast nor the product contributions needed to reach that target.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected total annual revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No accessible contemporaneous plan separates Plus revenue from Team and Enterprise revenue.",
+  "The reported revenue mix does not measure how much incremental revenue each product needed to contribute.",
+  "No documented scenario establishes whether the targets could be reached without continued Plus growth.",
+  "The original financial documents were unavailable; the financial evidence is news reporting."
+ ],
+ "packet_hash": "e42798a442b747998674546dc2bcb27f8dad53482afb88c3ec0bda1eefbcdcce"
+}

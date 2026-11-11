@@ -1,0 +1,136 @@
+{
+ "assessment_id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae-a1",
+ "claim_revision_ref": {
+  "id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae",
+  "version": 1,
+  "content_hash": "f4c30c22b006ab5c26407285e7fc877ff77d0fd2565473fa68164a869f780a31"
+ },
+ "contract_ref": {
+  "id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae",
+  "version": 1,
+  "content_hash": "967f38f22e37dffe8ccc66974195e316b655d6e5e9e9121e8ad42ec59161fb44"
+ },
+ "packet_ref": {
+  "id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae-p1",
+  "content_hash": "3eebb7379791cd5c4df4f75bdced519fab6c69ae13e56224f706a3969ac2638c"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-01-01",
+  "end": "2026-01-31",
+  "precision": "day"
+ },
+ "public_rationale": "On the immediate security reading, the claim is supported. Cisco describes malicious skill instructions causing unauthorized behavior in OpenClaw, and the January release documentation confirms the relevant host tool access. Optional sandboxes and security hardening qualify the scope: this establishes susceptibility in exposed configurations, not universal compromise or the absence of all operating-system protections.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The result depends on reading these weaknesses as the prompt-injection and access risks in the immediate context.",
+  "A malicious installed skill is a particular attack path; it does not demonstrate every hidden-webpage or email attack.",
+  "The primary demonstration is described by its researchers rather than independently replayed here."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-openclaw-aka-moltbot-is-everywhere-1c0361-4x-review-anthropic-1",
+  "marcus-openclaw-aka-moltbot-is-everywhere-1c0361-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-openclaw-aka-moltbot-is-everywhere-1c0361-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "OpenClaw inherits the prompt-injection and security weaknesses of LLM agents.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "OpenClaw inherits all these weaknesses.",
+   "locator": "paragraph 20",
+   "url": "https://garymarcus.substack.com/p/openclaw-aka-moltbot-is-everywhere",
+   "date": "2026-02-01",
+   "document_title": "OpenClaw (a.k.a. Moltbot) is everywhere all at once, and a disaster waiting to happen",
+   "observed_at": "2026-10-28T23:54:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "OpenClaw",
+    "inherits all these weaknesses",
+    "prompt injection attacks",
+    "malicious prompts"
+   ],
+   "our_interpretation": [
+    "Read these weaknesses in its immediate security context: malicious instructions can redirect the language-model agent and exploit the tools or data access granted to it.",
+    "This does not require every installation to be compromised or every possible attack to succeed.",
+    "For the ongoing observation, assess January 2026, the latest complete calendar month before the post.",
+    "The subsequent quotation about operating-system and browser protections is not treated as a literal assertion that OpenClaw bypasses every operating-system permission."
+   ],
+   "support_condition": "Contemporaneous OpenClaw-specific testing demonstrates malicious instructions redirecting agent behavior or abusing its authorized capabilities, with project documentation confirming the relevant access.",
+   "contradiction_condition": "Contemporaneous architecture and representative tests establish that the claimed instruction-to-action weakness is prevented in the relevant OpenClaw configurations."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "On the immediate security reading, the claim is supported. Cisco describes malicious skill instructions causing unauthorized behavior in OpenClaw, and the January release documentation confirms the relevant host tool access. Optional sandboxes and security hardening qualify the scope: this establishes susceptibility in exposed configurations, not universal compromise or the absence of all operating-system protections.",
+  "limitations": [
+   "The result depends on reading these weaknesses as the prompt-injection and access risks in the immediate context.",
+   "A malicious installed skill is a particular attack path; it does not demonstrate every hidden-webpage or email attack.",
+   "The primary demonstration is described by its researchers rather than independently replayed here."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "functionally malware",
+    "locator": "“A very particular set of skills,” now scanned by Cisco",
+    "url": "https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare",
+    "publisher": "Cisco AI Threat and Security Research",
+    "event_date": "2026-01",
+    "available_at": "2026-01-28",
+    "explanation": "Cisco describes invoking a third-party skill against OpenClaw, finding silent data exfiltration and instructions that bypassed the assistant's safety guidelines. This is direct evidence of the specified instruction-to-action weakness in the tested setup."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "tools run on the host",
+    "locator": "Security model (important)",
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.1.30/README.md",
+    "publisher": "OpenClaw project",
+    "event_date": "2026-01-31",
+    "available_at": "2026-01-31",
+    "explanation": "The documented default gives the main session host-level tool execution, explaining why malicious instructions can have consequences beyond generated text. The same section offers Docker sandboxes for non-main sessions, so exposure depends on configuration."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "machine-checkable security models",
+    "locator": "What’s New in This Release",
+    "url": "https://openclaw.ai/blog/introducing-openclaw",
+    "publisher": "Peter Steinberger, OpenClaw project",
+    "event_date": "2026-01",
+    "available_at": "2026-01-29",
+    "explanation": "The announcement documents active security hardening while acknowledging that prompt injection remains unsolved. It qualifies an interpretation that OpenClaw had no protections, without disproving susceptibility."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "91f06ca76860b8cef837c1aa50b47e00a31e3d94a5cef54c378966936fd7aee4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:51:25Z"
+}

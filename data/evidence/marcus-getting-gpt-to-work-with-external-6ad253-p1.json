@@ -1,0 +1,106 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-6ad253-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-6ad253",
+  "version": 1,
+  "content_hash": "241e2c82670d5f24e22ee624f4b92f588c50bcb8d0ee00a47fcdab22019195dd"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-6ad253",
+  "version": 1,
+  "content_hash": "a1cc08d46cd3276b6843c1faee188a972547fb6240f1782a9c5a7b2bb2ef0416"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Code Interpreter Wolfram Alpha comparison without plugins math benchmark 2023",
+   "\"ChatGPT-4 with Code Interpreter\" \"Kumar\" arxiv",
+   "\"Solving Challenging Math Word Problems\" arxiv",
+   "\"Wolfram\" \"GPT-4\" \"without\" benchmark 2023 accuracy plugins",
+   "GPT-4 Wolfram plugin benchmark baseline SciBench 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": false,
+    "why": "Section 7 acknowledges insufficient baseline testing to establish the claimed improvement experimentally."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.08155v2",
+    "used": true,
+    "why": "Contemporaneous primary comparison includes both commercial plug-ins and a vanilla GPT-4 baseline on the same math problems."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.08881v1",
+    "used": true,
+    "why": "Primary repeated-trial comparison of ChatGPT-4 with and without Code Interpreter on math and electromagnetism problems."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.07921v1",
+    "used": false,
+    "why": "Additional Code Interpreter evidence, but the selected studies more directly cover both plug-ins and science problems."
+   },
+   {
+    "url": "https://openreview.net/pdf?id=u6jbcaCHqO",
+    "used": false,
+    "why": "SciBench uses custom tool prompting rather than the named commercial plug-ins; it cannot directly settle this claim."
+   }
+  ],
+  "performed_at": "2026-10-29T16:54:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2308-08155v2",
+   "source_snapshot_id": "5c87eb770b5fe523286a41e0b7550c0aef94b1cdd46689b0eb7579302fa0f68f",
+   "publisher": "Qingyun Wu and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2308.08155v2",
+   "locator": "Section 3, application A1; figure 4(a); appendix D, A1",
+   "receipt": {
+    "public_excerpt": "120 randomly selected level-5 problems",
+    "quote_hash": "3763dcc0d99f4fe5deb67b4432e84bf1294081ad4d8300edee51ad94ea2079a2",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-03",
+   "retrieved_at": "2026-10-29T06:23:05Z",
+   "relation": "supports",
+   "explanation": "On the matched 120-problem subset, figure 4(a) reports 48.33% success for ChatGPT with Code Interpreter, 45.0% with Wolfram Alpha, and 30.0% for vanilla GPT-4. These are substantial practical gains for both plug-ins, although the comparison does not fully isolate differences between the web products and baseline configuration.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2309-08881v1",
+   "source_snapshot_id": "0ad56c12a3624673ecf66e30b88423bf401d675d477e06e199907c05c3f9d42c",
+   "publisher": "Tanuj Kumar and Mikhail A. Kats, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2309.08881v1",
+   "locator": "Executive summary; section 3, problem-solving performance table",
+   "receipt": {
+    "public_excerpt": "accurate symbolic manipulations and numerical calculations.",
+    "quote_hash": "ddf4bd148216866688cc9e347d70153b41c8fc618bc1a2c3b6b0e0d482e699e5",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-09-16",
+   "retrieved_at": "2026-10-29T06:37:16Z",
+   "relation": "supports",
+   "explanation": "Repeated trials on the same 13 math and electromagnetism problems show clear gains: the line-charge problem improves from 0/10 correct to 6/10, and the two-charge force problem from 1/10 to 10/10. These are individual-trial results, separate from the paper's additional consensus-answer procedure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evaluations do not hold every hidden model and product setting constant.",
+  "They do not establish a universal improvement across all mathematics and science subjects.",
+  "The selected sources do not report exact experiment dates; the results were public before the post."
+ ],
+ "packet_hash": "028abea77ee93672fb9b5b90f210a46bd6273e5fefe34b51453993f63b74102d"
+}

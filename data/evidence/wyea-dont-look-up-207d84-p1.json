@@ -1,0 +1,109 @@
+{
+ "packet_id": "wyea-dont-look-up-207d84-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dont-look-up-207d84",
+  "version": 1,
+  "content_hash": "377384bb9394f4addd54e2ae4298b6159a85923668a298b890b5e1f5d3e93c6b"
+ },
+ "contract_ref": {
+  "id": "wyea-dont-look-up-207d84",
+  "version": 1,
+  "content_hash": "d886960e7945327cacea86473b3056c661b08fce6238b9f02ba47baf87f73d69"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft 2023 fourth quarter earnings AI services 1 point Azure",
+   "2023 Microsoft shares fell July AI spending earnings capital expenditures Reuters",
+   "\"July 26, 2023\" \"Microsoft\" \"3.6%\" \"Reuters\"",
+   "hyperscaler GPU spending cumulative AI revenue 2026 Wells Fargo 14.86 billion"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2023/earnings-fy-2023-q4",
+    "used": true,
+    "why": "Primary disclosure of AI's contribution to Azure growth, but without the required customer split."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/us-stocks-futures-slip-big-112331269.html",
+    "used": true,
+    "why": "Readable Reuters reporting provides a contemporaneous market reaction. It does not establish the overall causal effect."
+   },
+   {
+    "url": "https://www.reuters.com/technology/big-tech-under-pressure-microsoft-results-put-ai-costs-spotlight-2023-07-26/",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   }
+  ],
+  "performed_at": "2026-10-29T16:19:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2023-earnings-fy-2023-q4",
+   "source_snapshot_id": "e560a8cf85595fe8fea37b9c19939bacced2dc77c631fc49d7e17174caa09c83",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2023/earnings-fy-2023-q4",
+   "locator": "Amy Hood prepared remarks, Intelligent Cloud results",
+   "receipt": {
+    "public_excerpt": "roughly 1 point",
+    "quote_hash": "8cd66bc471015fc741808c078f978863eef602ee33435ca6a1ed9b50639b91ee",
+    "verified": "exact"
+   },
+   "event_date": "2023-06-30",
+   "available_at": "2023-07-25",
+   "retrieved_at": "2026-10-29T16:10:35Z",
+   "relation": "context",
+   "explanation": "The disclosed AI contribution was small relative to Azure's overall growth. This does not isolate GPU purchases, distinguish OpenAI from other customers, or establish the claim across three companies.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "AI-services contribution to Azure and other cloud services revenue growth",
+    "currency": null,
+    "units": "percentage points",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2023-04-01",
+    "period_end": "2023-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-us-stocks-futures-slip-big-112331269-html",
+   "source_snapshot_id": "b6be99cbd8b711759175e4da613779710a6c113289ea10cdb1f9eec73c6b8886",
+   "publisher": "Reuters, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/us-stocks-futures-slip-big-112331269.html",
+   "locator": "Paragraph beginning Microsoft eased",
+   "receipt": {
+    "public_excerpt": "eased 3.6%",
+    "quote_hash": "41b3ebfba6bd270113df140861a26a9ecbc81888867c8e726037d3f7b867842e",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-26",
+   "available_at": "2023-07-26",
+   "retrieved_at": "2026-10-29T16:12:18Z",
+   "relation": "context",
+   "explanation": "This is material counterevidence to an uncomplicated story of markets rewarding increased AI spending. One earnings-day reaction cannot establish or reject the cumulative valuation effect.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched revenue series separating OpenAI and Anthropic purchases from other GPU-related revenue.",
+  "No identified causal estimate of the effect of GPU purchases on hyperscaler valuations.",
+  "The claim does not specify an accounting basis or the transition date."
+ ],
+ "packet_hash": "9e6259487d183fdaedb275ed1cf3512fecb6b9aa837153e7f1f37a8b3cce9ced"
+}

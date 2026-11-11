@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-lying-to-you-e3ab4b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-e3ab4b",
+  "version": 1,
+  "content_hash": "af978981e20210bacd9d9e5ebfc58c19fb33462c3099eba3cd94ecfe64cb47fa"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-e3ab4b",
+  "version": 1,
+  "content_hash": "712e7d81d11a59ac92217151472e0532c6442bf97d0c26c8d459eb7c7252e79b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2026 fourth quarter revenue GPUs installed inventory February 2026",
+   "Nvidia Megaspeed 2.4 billion Bianca boards warehouses Bloomberg March 2026",
+   "Nvidia GPUs installed uninstalled inventory fiscal 2026 Blackwell 2025 deployments",
+   "NVIDIA Q4 2026 CFO commentary February 25 2026 deployed Blackwell",
+   "Nvidia hundreds billions GPUs warehouses installed September 2026 report",
+   "Nvidia fiscal 2026 annual report January 25 2026 pdf investor",
+   "site.microsoft.com October 2025 first GB300 production cluster"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907/",
+    "used": true,
+    "why": "Readable primary financial disclosure. Establishes total annual revenue, but does not isolate revenue from uninstalled chips."
+   },
+   {
+    "url": "https://blogs.nvidia.com/blog/microsoft-azure-worlds-first-gb300-nvl72-supercomputing-cluster-openai/",
+    "used": true,
+    "why": "Readable primary deployment announcement. Relevant context against an inference that sales generally imply no installations."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q4/NVDA-Q4-2026-Earnings-Call-25-February-2026-5_00-PM-ET.pdf",
+    "used": false,
+    "why": "Read with read_page. Deployment capacity is a different measure from revenue attributable to uninstalled chips and does not provide a reconciliation."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/1ec0832c-5ef8-451d-91f6-267559b1e528.html",
+    "used": false,
+    "why": "Read the revenue-recognition passages. They explain accounting policy but do not quantify customers' uninstalled purchases."
+   },
+   {
+    "url": "https://archive.ph/f3Id1",
+    "used": false,
+    "why": "Potentially relevant Bloomberg reporting about Megaspeed. read_page returned HTTP 429; search snippets were not admitted as evidence."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+    "used": false,
+    "why": "read_page returned only a page shell. The readable PDF was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T12:50:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-699f6ab43d6332ccaa689907",
+   "source_snapshot_id": "aa3a4b784cf45a02bbb6c7afb432ea1d842cd26c85a346c9af410dbf33a043aa",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907",
+   "locator": "Opening paragraph, fiscal 2026 results",
+   "receipt": {
+    "public_excerpt": "$215.9 billion",
+    "quote_hash": "ff37c7e5fe1547aabad9fd53d38b8a60b3fa3da29115d8b2576e32dd75b50b63",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T12:39:07Z",
+   "relation": "context",
+   "explanation": "This is consolidated annual revenue. It supplies neither the revenue attributable to uninstalled chips nor a customer inventory reconciliation, and its annual period differs from the observation's quarterly reference period.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Consolidated revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "blogs-nvidia-com-blog-microsoft-azure-worlds-first-gb300-nvl72-supe-aa293bf5d440",
+   "source_snapshot_id": "65fac7a64128d662945d47c8754ae3da521509553baa437e3e3d6b00d28e65a9",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://blogs.nvidia.com/blog/microsoft-azure-worlds-first-gb300-nvl72-supercomputing-cluster-openai",
+   "locator": "Opening section, second paragraph",
+   "receipt": {
+    "public_excerpt": "over 4,600 NVIDIA Blackwell Ultra GPUs",
+    "quote_hash": "e82d9b3443f58384238a672796ffa850f821842c0d5074dc56556a4d7cc0d7d4",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-09",
+   "available_at": "2025-10-09",
+   "retrieved_at": "2026-10-29T11:18:09Z",
+   "relation": "context",
+   "explanation": "A documented production deployment cautions against treating NVIDIA sales as universally uninstalled. It predates the reference quarter and gives a GPU count, not the aggregate revenue measure needed to contradict the claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No comprehensive public reconciliation between NVIDIA chip revenue and customer installation status was found.",
+  "The speaker supplies neither an accumulation period nor an accounting basis.",
+  "Total annual revenue cannot be treated as revenue from uninstalled chips."
+ ],
+ "packet_hash": "d9c57ce51ff9993dc0b27d45a2ec865cc506743398417dfcff4a9f551ce40144"
+}

@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-two-years-later-deep-learning-is-105e61-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-two-years-later-deep-learning-is-105e61": "898d1cc8ec91f8abd57f045fe2f92906914ea788f5a99c7df1191c3b3b40e0dc",
+  "case:marcus-two-years-later-deep-learning-is-dee1ae": "89b30d2616705d2bfc8db2b6ac4769bec474eba9c72c19bcd1d403096e7b23a9"
+ },
+ "started_at": "2026-11-10T01:59:02Z",
+ "completed_at": "2026-11-10T01:59:27Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own comment in his 2024 post, assessing his 2022 essay. The RAG remark is in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Matches the RAG assertion and correctly leaves out the 'conjecture still open' part. 'As I urged' claims the idea matches his earlier advice, not that RAG's developers followed it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus never defined 'symbolic techniques' or named a RAG system. The contract fairly uses his 2022 essay for meaning and avoids both a strict logic-engine reading and a rule that every lookup counts as symbolic. The result depends on where symbolic operations end and neural retrieval begins."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Marcus's 2022 Nautilus essay, which counts representing and querying large databases among the strengths of symbols. It shows what he recommended, not whether RAG does it."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The original RAG paper shows dense neural retrieval (DPR bi-encoder, inner-product search) over a fixed document index. That is a hybrid memory, but it does not show explicit symbolic operations. It is one system and cannot speak for every RAG-like technique."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The original RAG system retrieves from an external text index using neural embedding search. The packet does not show whether that counts as the database-style symbolic querying Marcus recommended, and it does not document other RAG systems as of March 2024. Neither the support nor the contradiction condition is clearly met, so the outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-two-years-later-deep-learning-is-105e61"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus quotes his own 2022 essay, then calls it still true and adds the Altman point in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the hedge 'might not hold forever' and the attribution to Altman. The central part is a possibility statement with no deadline. The Altman part is a separate factual claim about what he said."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly keeps the possibility wording as it is and treats the Altman attribution separately. Whether Altman 'acknowledged' the point depends on whether doubt about GPT-5's capabilities counts as conceding that scaling laws are not universal."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Kaplan et al. describe scaling laws as empirical relationships for cross-entropy loss. This does not test whether they might stop holding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reporting from November 2023 has Altman calling GPT-5's capabilities a guessing game until the model is trained. That matches Marcus's paraphrase, but Altman does not say scaling laws might stop holding."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The core claim is that scaling laws 'might not hold forever'. That is a possibility with no deadline, so under policy it is not scored. Marcus's paraphrase of Altman is accurate, but Altman spoke about capability uncertainty, not about whether scaling laws hold. Whether that counts as acknowledging Marcus's point depends on interpretation. The combined claim cannot get a single verdict.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-two-years-later-deep-learning-is-dee1ae"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15864,
+  "output_tokens": 2685,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

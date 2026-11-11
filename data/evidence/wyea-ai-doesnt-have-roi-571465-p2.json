@@ -1,0 +1,159 @@
+{
+ "packet_id": "wyea-ai-doesnt-have-roi-571465-p2",
+ "claim_revision_ref": {
+  "id": "wyea-ai-doesnt-have-roi-571465",
+  "version": 1,
+  "content_hash": "26487910d57cd23c61118cd02c0b5de8d8509336637fe4b96761d0f6173e66df"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-doesnt-have-roi-571465",
+  "version": 2,
+  "content_hash": "54a0dc7dcefd0dae0a446e8f833c41e87af92043e16ded42bc3e02e4e6111832"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI compute margin paying users subscriptions 2026",
+   "Anthropic S-1 subscription gross margin Claude Pro Max consumer compute cost per subscriber",
+   "Anthropic S-1 subscription revenue $3.2 billion first half 2026 API revenue breakdown"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ipo-filing-shows-most-of-its-compute-goes-to-r-and-d-not-serving-customers-company-details-massive-usd800-billion-in-tpu-and-gpu-contracts",
+    "used": true,
+    "why": "Reports Anthropic's S-1 cost of serving paying customers in the first half of 2026."
+   },
+   {
+    "url": "https://www.mostlymetrics.com/p/anthropic-ipo-s1-breakdown",
+    "used": true,
+    "why": "Reports the S-1 subscription revenue figure for the first half of 2026."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "Primary S-1. The page returned HTTP 403 and could not be read."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-hits-70-compute-margins-154356502.html",
+    "used": false,
+    "why": "OpenAI's compute margin for paying users is from October 2025, outside the target period, and was not confirmed by OpenAI."
+   },
+   {
+    "url": "https://techjacksolutions.com/ai-brief/a-200-subscription-costs-openai-up-to-14000-in-compute-semia/",
+    "used": false,
+    "why": "Uses API-equivalent token value for heavy users, not actual serving cost. Not read."
+   }
+  ],
+  "performed_at": "2026-10-31T19:16:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "tomshardware-com-tech-industry-artificial-intelligence-anthropics-i-0a14b4446137",
+   "source_snapshot_id": "20900c2d91a2da02d6bb50c7a98ef70b20e3d8a6051783bcd979e9f88ae6c20e",
+   "publisher": "Tom's Hardware",
+   "source_type": "news_report",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ipo-filing-shows-most-of-its-compute-goes-to-r-and-d-not-serving-customers-company-details-massive-usd800-billion-in-tpu-and-gpu-contracts",
+   "locator": "paragraph 4",
+   "receipt": {
+    "public_excerpt": "it spent $2.4 billion serving customers in the first half of the year, versus $16.3 billion in revenue.",
+    "quote_hash": "4092deaccd75f870c2aa49548858d0791d9d4964924eb3c7cf2c9e70267a7f84",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-29",
+   "retrieved_at": "2026-10-31T19:12:36Z",
+   "relation": "contradicts",
+   "explanation": "From the S-1: Anthropic's cost of serving all paying customers (API and subscriptions together) was about $2.4 billion in H1 2026. That is less than subscription revenue alone ($3.2 billion, e3). So subscribers as a group paid more than the cost of serving them, and not every subscriber was subsidized.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Cost of revenue (serving paying customers)",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: cost of serving all paying customers, H1 2026, about $2.38 billion",
+     "e3: subscription revenue, H1 2026, about $3.2 billion"
+    ],
+    "formula": "Subscriber serving cost is at most total paying-customer serving cost ($2.38B), which is less than subscription revenue ($3.2B). So aggregate subscriber payments exceeded their serving cost by at least about $0.8B.",
+    "rounding": "billions, one decimal"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "tomshardware-com-tech-industry-artificial-intelligence-anthropics-i-0a14b4446137",
+   "source_snapshot_id": "20900c2d91a2da02d6bb50c7a98ef70b20e3d8a6051783bcd979e9f88ae6c20e",
+   "publisher": "Tom's Hardware",
+   "source_type": "news_report",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ipo-filing-shows-most-of-its-compute-goes-to-r-and-d-not-serving-customers-company-details-massive-usd800-billion-in-tpu-and-gpu-contracts",
+   "locator": "paragraph 6",
+   "receipt": {
+    "public_excerpt": "the cost of revenue, which is the inference cost of running Claude for paying customers",
+    "quote_hash": "59ab6fbebd72ec74559c122a3c75c920fd96c46a3cb7d9701ec6e93bf50ab3cf",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-29",
+   "retrieved_at": "2026-10-31T19:12:36Z",
+   "relation": "context",
+   "explanation": "Defines cost of revenue as the inference cost of serving paying customers. That is the token-serving cost the claim's 'subsidized' refers to.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "mostlymetrics-com-anthropic-ipo-s1-breakdown",
+   "source_snapshot_id": "a1495ea72e57edc1d6180ae979d809532c0eaa2cba074d5dfba1493f5d98db1d",
+   "publisher": "Mostly Metrics (CJ Gustafson)",
+   "source_type": "secondary_summary",
+   "url": "https://www.mostlymetrics.com/p/anthropic-ipo-s1-breakdown",
+   "locator": "section Key Stats, revenue mix",
+   "receipt": {
+    "public_excerpt": "Subscriptions were $3.2 billion, up from 17% of revenue in 2025",
+    "quote_hash": "78b52009e147669d545cd2a8966afa189cba28c7fae594d5327200b73e06990a",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T12:54:27Z",
+   "relation": "contradicts",
+   "explanation": "Reports the S-1 figure for Anthropic subscription revenue in H1 2026. It is larger than the total cost of serving all paying customers in e1.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Subscription revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "I could not read the S-1 directly (HTTP 403). The figures come from news and newsletter summaries of it.",
+  "Some analysts argue part of serving compute sits in R&D rather than cost of revenue. If much of subscribers' serving cost is booked there, the margin would be smaller.",
+  "There is no per-user data, and the 'obfuscated' half of the claim was not tested on its own.",
+  "I have no comparable verified data for OpenAI, GitHub Copilot or other services in the period."
+ ],
+ "packet_hash": "2abfe5b474d4a076fe3a962ded54fa94629d11d9baa9911689ee2e670a93b6e3"
+}

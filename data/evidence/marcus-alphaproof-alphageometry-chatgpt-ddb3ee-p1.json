@@ -1,0 +1,133 @@
+{
+ "packet_id": "marcus-alphaproof-alphageometry-chatgpt-ddb3ee-p1",
+ "claim_revision_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-ddb3ee",
+  "version": 2,
+  "content_hash": "d4199d8bedbe780c2fe82ae0a5e535d315408f5b0c35b64fa9051381c2c726e0"
+ },
+ "contract_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-ddb3ee",
+  "version": 1,
+  "content_hash": "d4261fffe3439f634bce47b8ed72ddf9d1ceb84ce5b7573ac13e33372f122f7f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "language models counterfactual tasks default task 2024 2023 reasoning memorization Wu",
+   "site.arxiv.org \"GSM1k\" \"2024\"",
+   "site.arxiv.org \"GSM-Symbolic\" 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2307.02477v3",
+    "used": true,
+    "why": "Controlled comparisons across task variants, in a version available before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.02477v3",
+    "used": true,
+    "why": "Establishes the study's original and revised publication dates."
+   },
+   {
+    "url": "https://arxiv.org/html/2402.08955v1",
+    "used": true,
+    "why": "Separate study tests unfamiliar analogy variants and includes a human comparison."
+   },
+   {
+    "url": "https://arxiv.org/html/2405.00332v1",
+    "used": true,
+    "why": "Contemporaneous counterevidence shows that unfamiliar examples do not reliably produce a performance gap in every model family."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.00332",
+    "used": false,
+    "why": "The current abstract reflects a later revision; the pre-post version was used instead."
+   },
+   {
+    "url": "https://arxiv.org/abs/2410.05229",
+    "used": false,
+    "why": "GSM-Symbolic was first reported after the target period and is unnecessary to establish the historical observation."
+   }
+  ],
+  "performed_at": "2026-10-29T03:31:29Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2307-02477v3",
+   "source_snapshot_id": "24800a035439bb7fdd5897170acceee4aa9652c2cf9c2c6410bafc5466be6a0a",
+   "publisher": "Wu and colleagues; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2307.02477v3",
+   "locator": "Figure 1 caption",
+   "receipt": {
+    "public_excerpt": "substantially underperforms on counterfactual variants",
+    "quote_hash": "e909f9ceb61d12e5e5fa97256319ea616a36784d8b0b512f4a51ee7b8d4c680e",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2024-03-28",
+   "retrieved_at": "2026-10-29T03:27:32Z",
+   "relation": "supports",
+   "explanation": "The study, first reported in 2023, compares familiar task settings with controlled changes and finds recurring degradation. It supports the claimed tendency without establishing exact training exposure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2402-08955v1",
+   "source_snapshot_id": "fd661dd84671efb570b579dae75a196006b7219c4f3743d07719e9d9b6acb683",
+   "publisher": "Martha Lewis and Melanie Mitchell; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2402.08955v1",
+   "locator": "Results, Counterfactual Analogy Problems: Comparisons Between Humans and GPT Models",
+   "receipt": {
+    "public_excerpt": "a more dramatic drop for the counterfactual problems.",
+    "quote_hash": "59addb7205ed663a6e4234fc4be12b281416e83cd97aec81085b034544c9a61a",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-02-14",
+   "retrieved_at": "2026-10-29T03:25:20Z",
+   "relation": "supports",
+   "explanation": "Changing the alphabets used in analogy problems reduced GPT performance while human performance stayed comparatively stable. This provides a separate example of sensitivity to changes in otherwise familiar tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "arxiv-org-html-2405-00332v1",
+   "source_snapshot_id": "5a4b405ec06e0c8049557203c01be3c97af2b4cd94e048552dc62227b3529858",
+   "publisher": "Zhang and colleagues, Scale AI; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2405.00332v1",
+   "locator": "Section 5.2, Lesson 2",
+   "receipt": {
+    "public_excerpt": "show minimal signs of being overfit.",
+    "quote_hash": "8615ebe5325968c270fa47d85e55379d93b3f1c87016acb6d4633a406dd60528",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-05-01",
+   "retrieved_at": "2026-10-29T03:25:18Z",
+   "relation": "context",
+   "explanation": "The matched arithmetic evaluation found little evidence of overfitting in frontier models, although other families showed gaps. This limits the generalization that unfamiliarity itself always causes poor performance, without negating the recurring pattern in the other studies.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "Private training data prevent direct confirmation that each familiar item was encountered and each variant was absent.",
+  "The studies do not establish the prevalence of this weakness across all real-world tasks."
+ ],
+ "packet_hash": "7eb1d951781c6722656db1954967ddc436490a3be7486654e9ffdac2f70c2641"
+}

@@ -1,0 +1,165 @@
+# The daily update (DAV-467). Finds new posts from both newsletters, checks
+# every new claim the same way as the first full run, and publishes a new
+# release when anything on the site changed. Runs on Dave's personal Claude
+# and ChatGPT subscriptions, never an API key, and nothing runs on the Mac.
+#
+# Dave's go: 2026-11-09 ("fix this", then yes to the robot login, private
+# storage, and reading Gary's posts through the site).
+#
+# What lives where:
+#   - Claude: CLAUDE_CODE_OAUTH_TOKEN, Dave's personal subscription token.
+#   - ChatGPT: the robot's own login to Dave's personal ChatGPT, kept in
+#     private Cloudflare R2 storage and saved back after every run (it refreshes
+#     itself about every ten days). See scripts/ci/codex-login.sh.
+#   - Private source text, drafts, and raw answers: the same private storage,
+#     synced down before the run and up after it. Never in git.
+#   - Substack refuses GitHub's runners, so Substack listings and public post
+#     pages come through the site's own functions (PC_SUBSTACK_VIA).
+#
+# GitHub starts scheduled runs late (hours, measured 2026-10-28..11-03).
+# That is fine here: nothing waits on this run at a set hour.
+name: daily update
+on:
+  # Switched on 2026-11-09 after the Mac's catch-up was committed and its
+  # private store uploaded. From here the Mac does not run the pipeline.
+  schedule:
+    - cron: "23 8 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full: the whole run and a release. check: logins, storage, roll and discovery only, nothing committed."
+        type: choice
+        options: [full, check]
+        default: full
+permissions:
+  contents: write
+  # A short-lived identity token: the site's page relay answers only a run
+  # from this repository (functions/feeds/_middleware.js).
+  id-token: write
+concurrency:
+  group: pundit-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      MODE: ${{ inputs.mode || 'full' }}
+      PC_SUBSTACK_VIA: https://punditclaims.ai
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - run: echo "START_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Let the run ask GitHub for its identity token (scripts/lib/feed-auth.ts)
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            core.exportVariable("PC_OIDC_URL", process.env.ACTIONS_ID_TOKEN_REQUEST_URL || "");
+            core.exportVariable("PC_OIDC_TOKEN", process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN || "");
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install the two clients and pdftotext
+        run: |
+          set -euo pipefail
+          # The runner's package mirror sometimes fails to resolve (2026-11-11:
+          # the whole run stopped here). Try three times before giving up.
+          for i in 1 2 3; do
+            if sudo apt-get update -q && sudo apt-get install -y -q poppler-utils; then break; fi
+            if [ "$i" = 3 ]; then echo "::error::could not install pdftotext"; exit 1; fi
+            sleep 30
+          done
+          npm install -g @anthropic-ai/claude-code@2.1.321 @openai/codex@0.166.0
+          {
+            echo "CLAUDE_BIN=$(command -v claude)"
+            echo "CODEX_BIN=$(command -v codex)"
+            echo "PC_CLAUDE_CONFIG_DIR=$RUNNER_TEMP/claude-config"
+          } >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/claude-config"
+      - name: Fetch the private store
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        # One compressed bundle (about 200 MB): a file-by-file sync of 80,000
+        # small files took 23 minutes on 2026-11-09.
+        run: |
+          set -euo pipefail
+          export AWS_RETRY_MODE=standard AWS_MAX_ATTEMPTS=10
+          aws s3 cp s3://robots-private/pundit/private-sources.tar.zst "$RUNNER_TEMP/ps.tar.zst" --endpoint-url "$R2_ENDPOINT" --only-show-errors
+          mkdir -p .cache
+          zstd -d -q -c "$RUNNER_TEMP/ps.tar.zst" | tar -x -C .cache
+          rm -f "$RUNNER_TEMP/ps.tar.zst"
+          # Keep the bundle this run started from (best effort; R2 has no object tagging).
+          aws s3 cp s3://robots-private/pundit/private-sources.tar.zst s3://robots-private/pundit/private-sources.prev.tar.zst --endpoint-url "$R2_ENDPOINT" --only-show-errors --copy-props none || echo "::warning::could not keep the previous bundle"
+          find .cache/private-sources -type f | wc -l | tr -d ' ' > "$RUNNER_TEMP/ps-count"
+          echo "private store: $(cat "$RUNNER_TEMP/ps-count") files, $(du -sh .cache/private-sources | cut -f1)"
+      - name: Fetch the robot's ChatGPT login (Dave's personal ChatGPT)
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          set -euo pipefail
+          bash scripts/ci/codex-login.sh fetch pundit
+          echo "PC_CODEX_HOME=$RUNNER_TEMP/codex-pundit" >> "$GITHUB_ENV"
+      - name: Prove both clients are fenced (no tools, no leaks) before any real call
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node --no-warnings scripts/probe-subscription.ts
+      - name: The update (saves the store and the records after every stage)
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          git config user.name "punditclaims update"
+          git config user.email "update@punditclaims.ai"
+          if [ "$MODE" = check ]; then bash scripts/ci/update.sh --no-calls; else bash scripts/ci/update.sh; fi
+      - name: Save the robot's ChatGPT login if the run refreshed it
+        if: always()
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        run: bash scripts/ci/codex-login.sh save pundit
+      - name: Final save of the store and the records (also after a failure or a cancel)
+        if: always() && env.MODE == 'full'
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          git config user.name "punditclaims update"
+          git config user.email "update@punditclaims.ai"
+          bash scripts/ci/checkpoint.sh "the run"
+      - name: Commit, release when the site changed, build, push
+        if: env.MODE == 'full'
+        run: |
+          set -euo pipefail
+          git config user.name "punditclaims update"
+          git config user.email "update@punditclaims.ai"
+          day=$(date -u +%F)
+          npm run -s validate
+          git pull -q --rebase origin main || true
+          changed=$(git diff --name-only "$START_SHA" HEAD)
+          if [ -z "$changed" ]; then echo "nothing new today"; exit 0; fi
+          # A release (about 50 MB) only when a record a release is built from
+          # changed, or the last release is a week old (deadline states and
+          # coverage dates move with time even when nothing else does).
+          age=$(( ( $(date -u +%s) - $(date -u -d "$(jq -r .updated_at data/current-release.json)" +%s) ) / 86400 ))
+          if grep -E '^data/(assessments|events|claims|reviews|contracts|evidence|occurrences|invalidations)/' <<<"$changed" >/dev/null || [ "$age" -ge 7 ]; then
+            node --no-warnings scripts/release.ts
+            git add -A data
+            git commit -q -m "Release $(jq -r .release_id data/current-release.json)"
+            npm run -s build
+          else
+            echo "no change a reader sees: no release"
+          fi
+          for i in 1 2 3; do git push -q origin HEAD:main && exit 0; git pull -q --rebase origin main; done
+          exit 1

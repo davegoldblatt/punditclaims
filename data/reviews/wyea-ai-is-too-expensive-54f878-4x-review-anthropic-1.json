@@ -1,0 +1,215 @@
+{
+ "run_id": "wyea-ai-is-too-expensive-54f878-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ai-is-too-expensive-54f878": "673541a1ad59af0505657edef0b3239bcba9a4a95194997383b48402a2495f46",
+  "case:wyea-ai-is-too-expensive-744eed": "d300a871dd3f798ea8330c4daaec0710e60fba27d0a0b5f753dff749437760e7",
+  "case:wyea-ai-is-too-expensive-7e93aa": "5df97c2c8f079ef73c2bf78e3d003198b0b8e1c1a8f5484e119b9786828719c8",
+  "case:wyea-ai-is-too-expensive-834bfc": "64126b4ec879bd5f8b1f658f091b4844f70699cb1a2533dbe4e9d53a983bc2a1"
+ },
+ "started_at": "2026-10-29T22:03:57Z",
+ "completed_at": "2026-10-29T22:04:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Here 'can' describes what LLMs are able to do now, not a hedged prediction. The normalised version keeps the identical-inputs condition."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary: identical inputs do not guarantee identical outputs. The claim only requires that variation can occur, so a setup that is deterministic does not refute it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A repeated-run study published before the post. It used identical prompts with temperature at zero and cleared context, including on Claude 3.5 Sonnet, and found that responses varied."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Default serving gave 80 different completions from identical prompts, which also shows variation. Special batch-invariant kernels removed it. That limits any claim that variation is unavoidable, but not this narrower claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Controlled runs with the same model and identical inputs, published before May 2026, show different outputs (e1; e2's default setup). A deterministic serving setup shows that variation can be avoided, but that does not contradict a claim that it can happen.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-54f878"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own claim. He cites The Information's reporting as support, but the conclusion is his."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The core claim is rising losses. The added phrase 'as shown by falling gross margins' goes further than he did: for Anthropic he cited margins below its projection, not a year-on-year fall. The contract rightly treats margins as supporting argument only."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as higher annual net losses in 2025 than in 2024 is fair and ordinary. However, the contract requires press estimates, so audited or company-reported figures count only as context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The audited GAAP filing shows Anthropic's net loss rising from $8.3B to $42.0B, and it still rises after fair-value charges are removed. It points the same way as the claim, but it is GAAP, not the estimate basis the contract requires."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's net loss rose from about $5B to about $39B, and its operating loss also rose. The figures come from documents Zitron obtained, and they are not on the contract's estimate basis."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's gross margin improved from -94% to +40%. That undercuts the idea that margins fell, but it does not measure net losses."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both companies' 2025 losses were higher than in 2024 on GAAP and company-reported figures, so the direction is consistent with the claim. But the contract requires matched press estimates of net loss, and none were obtained. Under the policy, figures on a different accounting basis are context only, so the outcome stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-744eed"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own forecast in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unqualified 'will' forecast built on a premise he asserts as fact (a compute shortage). The normalised version keeps the shortage premise, the premium buying and the damage to margins."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'already-negative margins' as net margins is the evaluator's choice, because the gross margins he cited are positive. It is reasonable, and the contract flags it. There is no deadline, so only a conclusive event can resolve it early."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Supports the premise: chip supply was a binding constraint in 2026. Says nothing about these companies' purchase terms or margins."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Supports the premise: Anthropic limited usage because of capacity pressure (March 2026). Shows no premium buying and no effect on margins."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Company disclosure that OpenAI is compute-constrained. Supports the premise only, and gives no data on margins."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic eased usage limits after signing new compute deals, which suggests the shortage can ease. It gives no pricing or margin data."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The evidence supports the premise that compute is short. Nothing shows premium purchase terms, or margin damage caused by them, for either company, and no conclusive event has occurred. With no deadline, the forecast cannot yet be scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-7e93aa"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own statement in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to the three-part statement. The 'no answer' part is partly a value judgement ('do not appear')."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'mostly' as more than half of hyperscaler capacity is ordinary. Choosing Q1 2026 as the period is the evaluator's convention, but it is reasonable for an ongoing claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Estimates the two labs' share at 15–20% of world AI compute at the end of 2025. That is a different measure and period from their share of the hyperscalers' capacity, so it cannot settle the 'mostly' part."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own account of its cost and revenue strategy. It shows a plan exists, but not that the plan can end the losses."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "There is no capacity-allocation data for the named hyperscalers, no matched burn figures for Q1 2026, and no basis for judging whether the stated strategies could work. The available items cover a different measure or are company statements, so none of the three parts is settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-834bfc"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34073,
+  "output_tokens": 8,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

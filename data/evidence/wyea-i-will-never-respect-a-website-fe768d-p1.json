@@ -1,0 +1,203 @@
+{
+ "packet_id": "wyea-i-will-never-respect-a-website-fe768d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-i-will-never-respect-a-website-fe768d",
+  "version": 1,
+  "content_hash": "6a3d8dcbcfa56099a63e59fd22c2543fc4e3d8f66eefe8ab35b82213da8b611b"
+ },
+ "contract_ref": {
+  "id": "wyea-i-will-never-respect-a-website-fe768d",
+  "version": 1,
+  "content_hash": "4af0bef194fb89e61155a62a87deb66e7ccc760d0bb6160359a5d6de9528dd38"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic 2025 losses inference gross margin compute costs 2026 Reuters",
+   "Anthropic S-1 October 2026 2025 operating loss sec",
+   "OpenAI 2025 \"cash burn\" \"8 billion\" Reuters February 2026",
+   "site.cnbc.com/2026/02/20 OpenAI \"burn\" \"8 billion\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Read the net-loss discussion, quarterly operating-results explanation, accounting-basis section, and auditor reports. Primary evidence, but company-wide GAAP losses do not match the claim's unspecified service-loss measure."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+    "used": true,
+    "why": "Read successfully. Clearly identifies the estimated EBITDA basis and distinguishes inference expenses from training."
+   },
+   {
+    "url": "https://the-decoder.com/openai-adds-111-billion-to-its-cash-burn-forecast-as-ai-costs-spiral-beyond-projections/",
+    "used": true,
+    "why": "Read successfully. Accessible reporting of OpenAI's adjusted gross margin; used only as context because no matching primary financial statement was obtained."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-compute-spend-around-223950561.html/",
+    "used": false,
+    "why": "Read successfully. Its spending figure is insufficiently defined for comparison with losses, and its margin information does not establish marginal capacity economics."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-boost-revenue-forecasts-predicts-112-billion-cash-burn-2030",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search-preview information was not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T20:18:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; financial-statement auditor report at F-3",
+   "receipt": {
+    "public_excerpt": "We have a history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing documents historical company-wide net losses and audited 2025 GAAP accounts. Those losses cannot establish service-level marginal economics, and the claim does not specify GAAP net income.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Consolidated net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "the-decoder-com-openai-adds-111-billion-to-its-cash-burn-forecast-a-2a79a264d7ca",
+   "source_snapshot_id": "b3c4161093c61fcc8fca779c6280946fa4ea4875a0974506daf71b4f2c616fac",
+   "publisher": "The Decoder, citing The Information",
+   "source_type": "news_report",
+   "url": "https://the-decoder.com/openai-adds-111-billion-to-its-cash-burn-forecast-as-ai-costs-spiral-beyond-projections",
+   "locator": "Soaring inference costs squeeze profit margins",
+   "receipt": {
+    "public_excerpt": "OpenAI's adjusted gross margin dropped to 33 percent in 2025",
+    "quote_hash": "bab2baac37e9c6c5fb14190f529295ae45ecdfe5fbfcfece7f276dd45fde84d4",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-21",
+   "retrieved_at": "2026-10-29T00:49:38Z",
+   "relation": "context",
+   "explanation": "The reported positive adjusted gross margin cautions against equating company losses with losses on every unit of service. It neither establishes net profitability nor measures the contribution of an additional capacity purchase.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Adjusted gross margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "e7049142024e1b70c90091e2ba7efa34de5bf983ae05d86fd435fa3b2c36ff1a",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+   "locator": "Data, first Anthropic paragraph",
+   "receipt": {
+    "public_excerpt": "Anthropic’s “optimistic” projections were for $5.2 billion in EBITDA losses",
+    "quote_hash": "2fd79a0289424cb923ef32906665698e0030adae12ef11a932f68a7966c59d53",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "context",
+   "explanation": "Epoch identifies these as near-year-end projections based on press reporting, with an EBITDA loss measure. They support concern about losses but do not match an unspecified service-profitability measure or establish causation.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Projected EBITDA loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "e7049142024e1b70c90091e2ba7efa34de5bf983ae05d86fd435fa3b2c36ff1a",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+   "locator": "Data, second Anthropic paragraph",
+   "receipt": {
+    "public_excerpt": "It also reports a gross margin of 40%",
+    "quote_hash": "cc2663fc309fbd25931f65d5b85bba048dd051f40864c2b69ff900360689f79f",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "context",
+   "explanation": "The reported positive gross margin is material context against treating all service provision as inherently loss-making. Average gross margin does not establish incremental profitability or overall sustainability.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Reported gross margin estimate",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis, preventing a supported or contradicted money assessment under the required rules.",
+  "No matching service-level accounts establish the incremental revenue and costs of additional capacity for both companies.",
+  "Historical losses do not establish that the services cannot become sustainable.",
+  "Positive average gross margins do not settle the marginal effect of particular capacity purchases."
+ ],
+ "packet_hash": "9e4b1d284fc1ff9b4dd5d454638f3413004159069cf2f56daaa8f7fc57dc7c47"
+}

@@ -1,0 +1,169 @@
+{
+ "packet_id": "wyea-the-beginning-of-history-0cf31c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-beginning-of-history-0cf31c",
+  "version": 1,
+  "content_hash": "c712dbde6d55a6efbfc1fbf3e55859cddd955f86a1d2c43687bb6362e1218953"
+ },
+ "contract_ref": {
+  "id": "wyea-the-beginning-of-history-0cf31c",
+  "version": 1,
+  "content_hash": "f9f5827618653d9578b64ad840a0935d7bfea2d04f588d3ba69c834bc1f7ca80"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 revenue actual spending 2026 13 billion losses Anthropic 4.5 billion",
+   "OpenAI 2025 revenue 13 billion spending 8 billion February 2026 Reuters",
+   "OpenAI 2025 revenue 13 billion June 2026 financial times audited confirmed",
+   "\"OpenAI\" \"2025 revenue\" \"$13\" \"June 16, 2026\" Reuters",
+   "\"OpenAI\" \"600 billion\" \"February 20, 2026\" CNBC revenue"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html",
+    "used": true,
+    "why": "Independent pre-post reporting supplies a possible revenue baseline and explicitly identifies cash burn."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Reports later financial figures and attributes independent document review to the Financial Times; used with that sourcing limitation."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+    "used": true,
+    "why": "Explains the estimated Anthropic figures and their limitations, including the distinction between EBITDA and other losses."
+   },
+   {
+    "url": "https://www.ft.com/content/e15b0d7e-ff6b-4f16-ba7a-4068feddb828",
+    "used": false,
+    "why": "read_page returned HTTP 403; independent verification could not be inspected directly."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "The filing supplies Anthropic GAAP results, but cannot by itself settle the compound claim’s unspecified loss measure and OpenAI reporting discrepancies."
+   }
+  ],
+  "performed_at": "2026-10-29T12:55:15Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cnbc-com-2026-02-20-openai-resets-spend-expectations-targets-around-b20efd008e02",
+   "source_snapshot_id": "e9b7f5b786ff0c86a0dc434f438b7c69a3e9dec3da805d6a650f822d11c803d3",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html",
+   "locator": "Paragraph beginning OpenAI generated",
+   "receipt": {
+    "public_excerpt": "OpenAI generated $13.1 billion in revenue in 2025",
+    "quote_hash": "5577bf384bf475c4926a9bde7c83d227a317aa5ace6c69ff03b15fc77d35535c",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-20",
+   "retrieved_at": "2026-10-29T02:22:24Z",
+   "relation": "context",
+   "explanation": "This supplies a possible earlier realized-revenue baseline. The adjacent spending figure is explicitly cash burn, so it cannot be compared directly with total accounting expenses.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Annual revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section Gotta spend money to make money",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion in 2025.",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The report supports the OpenAI loss component and reports revenue near the earlier CNBC figure. It describes audited statements reviewed by the Financial Times, but this remains secondary access and does not reconcile the compound claim’s spending baseline.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "e7049142024e1b70c90091e2ba7efa34de5bf983ae05d86fd435fa3b2c36ff1a",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+   "locator": "Opening summary and Data section",
+   "receipt": {
+    "public_excerpt": "spending at each of these labs is 2-3x higher than revenue.",
+    "quote_hash": "be5bd33f952743fb4cfd9b8a559b5c61ba15b73a8c61fe6dd2682ac2dcbcf023",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "context",
+   "explanation": "For Anthropic, the article describes a projected $5.2 billion EBITDA loss, based on press reporting. That supports financial strain but is neither verified final net loss nor evidence about OpenAI’s spending discrepancy.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Projected annual EBITDA loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No uniquely identified earlier baseline for the claimed revenue and spending discrepancies.",
+  "No reconciliation of cash burn with total expenses.",
+  "No single defined loss measure across both companies.",
+  "The Financial Times verification was inaccessible through read_page."
+ ],
+ "packet_hash": "8abc4d978a3c1e502781f327abdb1ae21d34a60474edddb863ceee5897a508e1"
+}

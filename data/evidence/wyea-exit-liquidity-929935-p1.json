@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-exit-liquidity-929935-p1",
+ "claim_revision_ref": {
+  "id": "wyea-exit-liquidity-929935",
+  "version": 2,
+  "content_hash": "1eefa70e24deec92e0c94373866b789a7a762da1d90b9dace33b3653b1be6b9d"
+ },
+ "contract_ref": {
+  "id": "wyea-exit-liquidity-929935",
+  "version": 1,
+  "content_hash": "34a8167c8ef54aaee652f3f6ed0aa16d140ef5aef21a45e47c6426e5f44d99f2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic IPO October 2026 S-1 obligations 430 billion",
+   "OpenAI October 2026 obligations 1 trillion IPO commitments",
+   "OpenAI \"obligations\" \"October\" \"2026\" trillion",
+   "OpenAI October 2026 compute obligations 600 billion 1 trillion IPO",
+   "OpenAI \"October\" \"2026\" \"trillion\" \"commitments\" Reuters",
+   "OpenAI Anthropic October 28 2026 combined contractual obligations 1.3 trillion non cancellable schedule"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary public filing describes individual arrangements and cancellation exceptions, but leaves aggregate commitment and payment-schedule fields blank."
+   },
+   {
+    "url": "https://www.aol.com/articles/exclusive-openai-seeks-accelerate-fundraising-231819000.html",
+    "used": true,
+    "why": "Readable Reuters reporting provides current fundraising and IPO-planning context where an equivalent public OpenAI offering document was not located."
+   },
+   {
+    "url": "https://www.warren.senate.gov/imo/media/doc/letter_to_openai_from_senator_warren.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403; an earlier reported spending figure would not by itself establish current outstanding contractual obligations."
+   },
+   {
+    "url": "https://apnews.com/article/c7583994426b1b097120786d6a0b8308",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.anthropic.com/news/s1-sec",
+    "used": false,
+    "why": "Read the IPO announcement, but it supplies neither a combined obligations total nor payment commencement schedules."
+   }
+  ],
+  "performed_at": "2026-10-29T11:24:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, filed with the SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Prospectus Summary, compute commitments paragraph; also MD&A contractual-obligations discussion",
+   "receipt": {
+    "public_excerpt": "Approximately $",
+    "quote_hash": "f7beb2c36336382347428dc6dce13ec65929864f1f5326a2da0f240c6f4706d5",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-26",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The quoted blank is present in the retrieved filing, alongside blank aggregate and scheduling fields. The filing describes individual commitments, but does not supply the reconciled two-company total or schedule needed for this claim; disclosure gaps do not themselves prove deception.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Compute and infrastructure commitments due within twelve months; aggregate amount left blank",
+    "currency": "USD",
+    "units": "dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "aol-com-articles-exclusive-openai-seeks-accelerate-fundraising-231819000-html",
+   "source_snapshot_id": "fb31ea9e82896ea9da52965ff383a5bc3ac333f864a568bd3e7f15697b18c85e",
+   "publisher": "Reuters, reproduced by AOL",
+   "source_type": "news_report",
+   "url": "https://www.aol.com/articles/exclusive-openai-seeks-accelerate-fundraising-231819000.html",
+   "locator": "Opening fundraising discussion, fourth paragraph",
+   "receipt": {
+    "public_excerpt": "last week",
+    "quote_hash": "37cc55eef9e4a2f93cd8ffa19d7fa04c2fa92fe70a268e4eae31c263b717e7cf",
+    "verified": "exact"
+   },
+   "event_date": "2026-10",
+   "available_at": "2026-10-19",
+   "retrieved_at": "2026-10-29T11:05:23Z",
+   "relation": "context",
+   "explanation": "Reuters reports active fundraising and a planned 2027 OpenAI listing. It does not provide an outstanding contractual total, payment schedule, or evidence that retail investors were materially misled.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The combined figure's accounting basis is unknown, which prevents a supported or contradicted financial score.",
+  "No reconciled, non-overlapping outstanding-obligations schedule was established for both companies.",
+  "Cancellation exceptions and conditional capacity purchases prevent treating every announced amount as an unconditional liability.",
+  "No complete payment-commencement schedule establishes whether most obligations begin after the proposed IPOs.",
+  "No specific material misrepresentation or corroborated deceptive intent was established."
+ ],
+ "packet_hash": "008e86d0147f829384f5adbc4ecf822265d8be5e7b416eb23832b83909dd3b32"
+}

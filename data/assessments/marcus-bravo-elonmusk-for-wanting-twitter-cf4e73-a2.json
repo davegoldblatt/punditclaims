@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-a2",
+ "claim_revision_ref": {
+  "id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73",
+  "version": 2,
+  "content_hash": "161830649631db5cc80c65ef77ac855671eb087c0efd30a79abab4f28b401efd"
+ },
+ "contract_ref": {
+  "id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73",
+  "version": 2,
+  "content_hash": "202195ceef9ea2529b1ce8ce0f9f68697b0218c9e9db2152fa299d478cc3a0fe"
+ },
+ "packet_ref": {
+  "id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-p2",
+  "content_hash": "b2aaf02941faeb6fb4dfd803396f0287bc61ddda63b4b3aee940874104e34092"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2022-11-09",
+  "precision": "day"
+ },
+ "public_rationale": "The reference-standard clause holds in the ordinary evaluation sense: FEVER checks factual claims against external evidence and human judgments. The categorical absence of a way to reason against such a standard is contradicted by the pre-post ReAct evaluation. PaLM used Wikipedia retrieval and reasoning to assess claims, rather than relying solely on its internal beliefs. This is a limited finding. The results do not show that LLMs could reliably police Twitter or independently establish which sources deserve trust. RARR explicitly acknowledges that distinction. The result depends on including LLMs supplied with external evidence; it would not settle a narrower claim about an unaided model's built-in truth standard.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The decisive capability evidence is an original research preprint, not an independent replication.",
+  "Benchmark verification against Wikipedia is narrower than open-world misinformation detection.",
+  "The need for a reference standard is supported as an evaluation practice, not proved as a universal philosophical proposition.",
+  "The model-versus-tool-assisted-system ambiguity materially affects the result."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-1x-review-anthropic-1",
+  "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-1x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Accuracy depends on some reference standard of truth, and large language models have no way of reasoning about truth.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Accuracy depends on some reference standard of truth, and they have no way of reasoning about truth.",
+   "locator": "paragraph 16",
+   "url": "https://garymarcus.substack.com/p/bravo-elonmusk-for-wanting-twitter",
+   "date": "2022-11-09",
+   "document_title": "Bravo @ElonMusk for wanting Twitter to become the world’s “most accurate source of information”",
+   "observed_at": "2026-10-29T00:04:52Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Accuracy depends on some reference standard of truth",
+    "they have no way of reasoning about truth",
+    "Large language models"
+   ],
+   "our_interpretation": [
+    "The plain reading concerns the ability of then-existing LLMs to assess factual claims against an external reference standard. Merely producing inference chains from internal beliefs does not test this claim.",
+    "A reference standard means identified evidence against which factual claims can be checked. Agreement with an arbitrary source is not automatically truth.",
+    "An evaluated LLM that retrieves reference material and reasons about whether it supports or refutes factual claims counts as having a way to perform this task. This interpretation includes tools that supply evidence, provided the LLM performs the assessment.",
+    "The observation describes capabilities as of the post on 2022-11-09. There is no regular reporting period for this capability. The target therefore has that cutoff and no invented starting date; earlier evaluations are relevant only to capabilities already demonstrated by then.",
+    "The reference-standard clause and the asserted absence of capability are assessed separately. The adjacent prediction about scaling is outside this claim."
+   ],
+   "support_condition": "Evidence supports the reference-standard clause if factual accuracy is assessed against independently specified evidence or judgments. Supporting the capability clause requires evidence establishing that contemporary LLMs lacked a means of assessing factual claims against such standards; examples of hallucination or imperfect performance alone are insufficient.",
+   "contradiction_condition": "A contemporaneous evaluation demonstrates that an LLM makes successful, repeated support-or-refutation judgments using identified external factual evidence. Internal consistency, unsupported reasoning chains, and later models do not qualify. This contradicts the asserted absence of capability without disproving the need for a reference standard."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The reference-standard clause holds in the ordinary evaluation sense: FEVER checks factual claims against external evidence and human judgments. The categorical absence of a way to reason against such a standard is contradicted by the pre-post ReAct evaluation. PaLM used Wikipedia retrieval and reasoning to assess claims, rather than relying solely on its internal beliefs. This is a limited finding. The results do not show that LLMs could reliably police Twitter or independently establish which sources deserve trust. RARR explicitly acknowledges that distinction. The result depends on including LLMs supplied with external evidence; it would not settle a narrower claim about an unaided model's built-in truth standard.",
+  "limitations": [
+   "The decisive capability evidence is an original research preprint, not an independent replication.",
+   "Benchmark verification against Wikipedia is narrower than open-world misinformation detection.",
+   "The need for a reference standard is supported as an evaluation practice, not proved as a universal philosophical proposition.",
+   "The model-versus-tool-assisted-system ambiguity materially affects the result."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "necessary evidence",
+    "locator": "Abstract, sentence describing evidence for Supported and Refuted labels",
+    "url": "https://arxiv.org/abs/1803.05355v1",
+    "publisher": "arXiv; James Thorne and colleagues",
+    "event_date": "2018-03-14",
+    "available_at": "2018-03-14",
+    "explanation": "FEVER defines verification using Wikipedia evidence and human-assigned judgments. This supports the reference-standard clause in its ordinary evaluation sense; it does not establish that every reference source is true."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "ReAct outperforms CoT",
+    "locator": "Section 3.3, Results and Observations, ReAct vs. CoT; setup in Sections 3.1–3.2",
+    "url": "https://arxiv.org/html/2210.03629v1",
+    "publisher": "arXiv; Shunyu Yao and colleagues",
+    "event_date": "2022-10-06",
+    "available_at": "2022-10-06",
+    "explanation": "The original report evaluates PaLM-540B using reasoning and Wikipedia retrieval to classify claims against FEVER's external standard, reporting 60.9 performance versus 56.3 for chain-of-thought prompting. This demonstrates an externally grounded verification method by the report date, although it neither establishes general reliability nor independently validates Wikipedia."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "whether a source is trustworthy",
+    "locator": "Section 7, Ethical considerations",
+    "url": "https://arxiv.org/html/2210.08726v1",
+    "publisher": "arXiv; Luyu Gao and colleagues",
+    "event_date": "2022-10-17",
+    "available_at": "2022-10-17",
+    "explanation": "RARR supplies an important qualification: checking and revising text against retrieved sources does not establish those sources' trustworthiness. This cautions against treating external-evidence benchmarks as proof that Marcus's broader misinformation concern was solved."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "5ad1d3150e4818a30ede95760838741ebf36151e2fb6cd8fca83a8b88ffc45f2",
+ "supersedes_assessment_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:25:47Z"
+}

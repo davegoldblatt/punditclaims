@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-tss-bf5563-p1",
+ "claim_revision_ref": {
+  "id": "wyea-tss-bf5563",
+  "version": 2,
+  "content_hash": "5deb8b0605101c80f7d7f80dedeb1f0dde041fadea5082132815ddebe19090ca"
+ },
+ "contract_ref": {
+  "id": "wyea-tss-bf5563",
+  "version": 1,
+  "content_hash": "33eaac60700b5fe51e6574f1044898990cdde93735053065c1f574b83392bb37"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site:github.blog \"2024\" \"next token\"",
+   "Copilot next token prediction technical paper 2024",
+   "site:aws.amazon.com \"April 30, 2024\" \"Q Developer\" \"security\"",
+   "Amazon Q Developer generally available April 30 2024 security scans"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://proceedings.mlr.press/v238/li24f.html",
+    "used": true,
+    "why": "Primary research explaining the prediction objective; relevant context rather than a product capability audit."
+   },
+   {
+    "url": "https://press.aboutamazon.com/2024/4/aws-announces-general-availability-of-amazon-q-the-most-capable-generative-ai-powered-assistant-for-accelerating-software-development-and-leveraging-companies-internal-data",
+    "used": true,
+    "why": "Dated primary disclosure of a generative coding assistant with code-security scanning."
+   },
+   {
+    "url": "https://aws.amazon.com/blogs/training-and-certification/use-amazon-codewhisperer-to-advance-cloud-knowledge/",
+    "used": false,
+    "why": "Read in full; corroborates built-in scanning, but the dated launch disclosure supplies more direct evidence."
+   },
+   {
+    "url": "https://github.blog/ai-and-ml/generative-ai/prompt-engineering-guide-generative-ai-llms/",
+    "used": false,
+    "why": "read_page did not return the substantive passage surfaced by search."
+   }
+  ],
+  "performed_at": "2026-10-29T13:43:24Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "proceedings-mlr-press-v238-li24f-html",
+   "source_snapshot_id": "1fde2e4b6eedd36d36c9cfbc520672534af0b1c406a44cdbe793406043a1a06a",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v238/li24f.html",
+   "locator": "Abstract, first sentence",
+   "receipt": {
+    "public_excerpt": "predict the next token given an input sequence.",
+    "quote_hash": "09f99b908098c6f1cbc6e552519b6b1c570ab3dacd17c485b7c1536864dc357a",
+    "verified": "exact"
+   },
+   "event_date": "2024-05",
+   "available_at": "2024-05-04",
+   "retrieved_at": "2026-10-29T13:37:25Z",
+   "relation": "context",
+   "explanation": "This supports the narrower description of the model’s prediction objective. It does not establish that an entire coding assistant lacks analysis or verification components.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "press-aboutamazon-com-2024-4-aws-announces-general-availability-of-d130abe5046d",
+   "source_snapshot_id": "bed8e88998ab267d679fe7f5683f6e89808ddeb6cf9dbf1ba5e6d451cdd61484",
+   "publisher": "Amazon Web Services",
+   "source_type": "company_disclosure",
+   "url": "https://press.aboutamazon.com/2024/4/aws-announces-general-availability-of-amazon-q-the-most-capable-generative-ai-powered-assistant-for-accelerating-software-development-and-leveraging-companies-internal-data",
+   "locator": "Amazon Q Developer capabilities, security vulnerability scanning and remediation bullet",
+   "receipt": {
+    "public_excerpt": "Q scans code for hard-to-detect vulnerabilities",
+    "quote_hash": "296f63696be798b83a8ea849c4b06eed6cde70e6aff4c4d257425c0b065b790a",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-30",
+   "available_at": "2024-04-30",
+   "retrieved_at": "2026-10-29T13:37:25Z",
+   "relation": "contradicts",
+   "explanation": "A generative coding assistant available before the post included vulnerability analysis. This contradicts the complete-tool reading that such assistants only produce plausible code.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The wording does not distinguish a base language model from the surrounding product.",
+  "The cited release establishes scanning functionality, not its comprehensive accuracy."
+ ],
+ "packet_hash": "2b837bd30743e3d4003f52239908f1a3594505f1a3298591a4c3ebace56b0198"
+}

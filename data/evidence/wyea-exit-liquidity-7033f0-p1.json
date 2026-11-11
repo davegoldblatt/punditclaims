@@ -1,0 +1,182 @@
+{
+ "packet_id": "wyea-exit-liquidity-7033f0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-exit-liquidity-7033f0",
+  "version": 1,
+  "content_hash": "e0bd7d5beb6de7f5bd4abc403c81a49463fe18e97a4f77c3749399343feef61c"
+ },
+ "contract_ref": {
+  "id": "wyea-exit-liquidity-7033f0",
+  "version": 1,
+  "content_hash": "993d77951c9d2ae928e8d1f9aba845c6fa23a8b4785b882d159f3134ba773d3a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic S-1 September 30 2026 revenue 5% 7% customers",
+   "Anthropic Q3 2026 revenue \"16.8\"",
+   "\"Anthropic\" \"distillation\" \"revenue\" \"5%\" \"7%\" -site:reddit.com -site:wheresyoured.at",
+   "site.ft.com \"Anthropic\" \"distillation\" \"October\" \"2026\"",
+   "site.simonwillison.net/2026/Oct/ \"distillation\"",
+   "read_page: S-1; find: 5% to 7%",
+   "read_page: S-1; find: 16,286"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary source for first-half revenue and the nine-month estimate for policy-violating customers."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/article/anthropic-q3-revenue-climbs-to-168-billion-report-221619202.html",
+    "used": true,
+    "why": "Accessible reporting of the Q3 revenue figure, attributed to the Financial Times."
+   },
+   {
+    "url": "https://www.reuters.com/business/finance/anthropics-q3-revenue-surges-45-nearly-17-billion-2026-10-14/",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   },
+   {
+    "url": "https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b",
+    "used": false,
+    "why": "read_page returned HTTP 403; the original report could not be cited directly."
+   },
+   {
+    "url": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
+    "used": true,
+    "why": "Accessible reproduction of relevant Financial Times reporting specifically about distillation, with its period ambiguity preserved."
+   },
+   {
+    "url": "https://www.techupsider.com/articles/anthropic-s1-rule-breaking-revenue",
+    "used": false,
+    "why": "Read as a lead to the earlier reporting; the filing and the directly reproduced report were preferred."
+   }
+  ],
+  "performed_at": "2026-10-29T16:19:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "MD&A, Operating Results, revenue discussion, pages 145–146; first-half revenue in Consolidated Statements of Operations, F-8",
+   "receipt": {
+    "public_excerpt": "amounts from customers that we\n\nsubsequently determine are using our models, platform, and applications in violation of our usage policy or\n\ncommercial terms.",
+    "quote_hash": "15b5a3b99081046ee09a32490ce357226d4a3361f95c43b634a4322e3ea8b095",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The paragraph estimates 5–7% for this broader category over nine months. Using the filing’s $16.286 billion first-half revenue and e2 gives about $33.086 billion total and $2.316 billion at 7%, but does not identify distillation’s share.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Revenue from customers subsequently identified as violating usage policy or commercial terms",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "S-1 Consolidated Statements of Operations: first-half 2026 revenue $16,286 million",
+     "e2: press-reported Q3 revenue $16.8 billion",
+     "S-1 revenue discussion: approximately 5–7% from policy-violating customers for nine months"
+    ],
+    "formula": "(16.286 + 16.8) × 0.07 = 2.31602 billion",
+    "rounding": "Approximately $2.316 billion, or $2.32 billion to the nearest hundredth; input precision does not support an exact amount."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-technology-article-anthropic-q3-revenue-climbs-to-8e4f7269e108",
+   "source_snapshot_id": "d8370a1ce9c97cd3af5cf9ad826a0dbc002f3cc3200091007a6bea1085c74476",
+   "publisher": "Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/article/anthropic-q3-revenue-climbs-to-168-billion-report-221619202.html",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "Anthropic's (ANTH.PVT) Q3 revenue climbed to $16.8 billion, up from $11.5 billion in the second quarter.",
+    "quote_hash": "7576b59d6ccbd12fda0df04512283fbb4c5e207aa4132056ae1820b36be2aa40",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-14",
+   "retrieved_at": "2026-10-29T08:11:20Z",
+   "relation": "context",
+   "explanation": "Supports the reported Q3 input. This is total quarterly revenue reported through news coverage, not a filed nine-month distillation revenue measure.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Total revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "simonwillison-net-2026-oct-15-anthropic-tells-investors",
+   "source_snapshot_id": "d733479a9e103fa253df3610d94d56be5f5bad4b4265a58e7f7637d3d3525f5e",
+   "publisher": "Simon Willison’s Weblog, quoting the Financial Times",
+   "source_type": "secondary_summary",
+   "url": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors",
+   "locator": "Block quotation from the Financial Times",
+   "receipt": {
+    "public_excerpt": "When rival companies “distil” their models from Anthropic’s models, that involves heavy usage and spending.",
+    "quote_hash": "20804937865a69249a153557df12660bd80d84efcee4875164bed2fef8f68dd9",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-14",
+   "available_at": "2026-10-15",
+   "retrieved_at": "2026-10-29T16:12:19Z",
+   "relation": "context",
+   "explanation": "The reproduced report says Anthropic told investors distillation represented 5–7% of revenue and had been curtailed in Q3. This supports taking the distillation attribution seriously, but does not clearly identify January–September as the percentage’s denominator period.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Reported revenue share attributable to model distillation",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The filing does not break policy-violating revenue into distillation and other violations.",
+  "The accessible reproduction of the Financial Times report does not clearly attach its distillation percentage to the first nine months of 2026.",
+  "No comparable nine-month distillation dollar amount was found."
+ ],
+ "packet_hash": "b4bca4d4e75e18dbe7f189573add429661d2f5d020cf6c0ff0349f99eb30a771"
+}

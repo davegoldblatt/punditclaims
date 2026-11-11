@@ -1,0 +1,146 @@
+{
+ "assessment_id": "marcus-oops-how-google-bombed-while-doing-6726ff-a1",
+ "claim_revision_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-6726ff",
+  "version": 1,
+  "content_hash": "b093c8cb3ca221b2ba481d0faef5af5175eb2ae5b95af76b5992b1ad057b770b"
+ },
+ "contract_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-6726ff",
+  "version": 1,
+  "content_hash": "006184850522e892334c3ae0f1f5b6a0583e115c30b6c62ad6c1743f83610e9c"
+ },
+ "packet_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-6726ff-p1",
+  "content_hash": "733de6524aaa0d2bb5cf7bdf531805fd238d39e798a744c3753711c570731e49"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-02-09",
+  "end": "2026-10-28",
+  "precision": "day"
+ },
+ "public_rationale": "Marcus said hallucinations are built into neural language models and come partly from lossy compression that blurs facts and relations. Independent work since the post backs this. An ICML 2026 paper shows that under limited capacity, even optimal training leads to hallucination as 'a natural consequence of lossy compression' (e1). A formal paper argues hallucination cannot be fully eliminated in LLMs (e2). Controlled experiments trace reasoning hallucinations partly to learned relations being 'compressed' into shortcuts (e3). OpenAI disputes the strongest reading: it says hallucination is not inevitable because models can abstain (e4). But the same page calls hallucination a fundamental challenge for all LLMs and traces it to pretraining on arbitrary facts. That fits Marcus's point that the tendency is built in. On the plain reading, a built-in tendency linked to lossy storage of facts, the claim is supported.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "Much of the supporting work is theoretical or uses synthetic or controlled settings.",
+  "Under a strict 'can never be avoided' reading, OpenAI's abstention argument would make this mixed.",
+  "Compression is one of several proposed causes. The claim does not say it is the only one."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-oops-how-google-bombed-while-doing-6726ff-4x-review-anthropic-1",
+  "marcus-oops-how-google-bombed-while-doing-6726ff-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-oops-how-google-bombed-while-doing-6726ff-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-oops-how-google-bombed-while-doing-6726ff",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Hallucinations are inherent to neural network language models, a byproduct of how they compress inputs and lose track of factual relations.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Hallucinations are in their silicon blood, a byproduct of the way they compress their inputs, losing track of factual relations in the process.",
+   "locator": "paragraph 18",
+   "url": "https://garymarcus.substack.com/p/oops-how-google-bombed-while-doing",
+   "date": "2023-02-09",
+   "document_title": "Oops! How Google bombed, while doing pretty much exactly the same thing as Microsoft did, with similar results",
+   "observed_at": "2026-10-29T00:04:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Hallucinations are in their silicon blood",
+    "a byproduct of the way they compress their inputs",
+    "losing track of factual relations in the process",
+    "they = scaled neural network language models"
+   ],
+   "our_interpretation": [
+    "Plain reading: hallucination is a built-in tendency of neural language models that comes from how they learn, not a passing bug. One cause is that models compress their training data with some loss, so specific facts and relations get blurred.",
+    "The claim does not say compression is the only cause. It does not say a model can never be trained to abstain.",
+    "The claim describes a lasting property of this class of models. It is judged with research published from the post date to the evaluation date."
+   ],
+   "support_condition": "Independent research shows that hallucination is inherent or persistent in neural language models and links it to lossy compression or limited-capacity memorisation of facts.",
+   "contradiction_condition": "Research shows that hallucination is not tied to how these models store information, for example that it disappears with scale or simple fixes, or that its causes have nothing to do with compression or loss of factual detail."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Marcus said hallucinations are built into neural language models and come partly from lossy compression that blurs facts and relations. Independent work since the post backs this. An ICML 2026 paper shows that under limited capacity, even optimal training leads to hallucination as 'a natural consequence of lossy compression' (e1). A formal paper argues hallucination cannot be fully eliminated in LLMs (e2). Controlled experiments trace reasoning hallucinations partly to learned relations being 'compressed' into shortcuts (e3). OpenAI disputes the strongest reading: it says hallucination is not inevitable because models can abstain (e4). But the same page calls hallucination a fundamental challenge for all LLMs and traces it to pretraining on arbitrary facts. That fits Marcus's point that the tendency is built in. On the plain reading, a built-in tendency linked to lossy storage of facts, the claim is supported.",
+  "limitations": [
+   "Much of the supporting work is theoretical or uses synthetic or controlled settings.",
+   "Under a strict 'can never be avoided' reading, OpenAI's abstention argument would make this mixed.",
+   "Compression is one of several proposed causes. The claim does not say it is the only one."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "We validate this theory empirically on both synthetic and real-world data, showing that hallucinations persist as a natural consequence of lossy compression.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2602.00906",
+    "publisher": "arXiv (ICML 2026), Guo and Li",
+    "event_date": "2026-01-31",
+    "available_at": "2026-05-29",
+    "explanation": "This paper ties hallucination directly to lossy compression of facts under limited capacity. That is close to Marcus's stated mechanism."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "In this paper, we formalize the problem and show that it is impossible to eliminate hallucination in LLMs.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2401.11817",
+    "publisher": "arXiv, Xu, Jain and Kankanhalli (National University of Singapore)",
+    "event_date": "2024-01-22",
+    "available_at": "2025-02-13",
+    "explanation": "This paper supports the 'in their blood' part: under its formal definition, hallucination cannot be fully eliminated in LLMs."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "We show that reasoning hallucinations arise from two fundamental mechanisms",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2604.03557",
+    "publisher": "arXiv, Dai et al.",
+    "event_date": "2026-04-04",
+    "available_at": "2026-04-04",
+    "explanation": "In controlled experiments, part of reasoning hallucination comes from learned relations collapsing during training. This fits 'losing track of factual relations'."
+   },
+   {
+    "id": "e4",
+    "relation": "contradicts",
+    "excerpt": "Finding: They are not, because language models can abstain when uncertain.",
+    "locator": "section Conclusions",
+    "url": "https://openai.com/index/why-language-models-hallucinate",
+    "publisher": "OpenAI",
+    "event_date": "2025-09-05",
+    "available_at": "2025-09-05",
+    "explanation": "OpenAI pushes back on the strongest reading: models can avoid hallucinating by abstaining. Elsewhere on the same page it says hallucinations 'remain a fundamental challenge for all large language models' and come from pretraining on arbitrary facts."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0c0abe1a13a52660e680f391456607965b92adacc78cf5e5d24b168db8178168",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:02:30Z"
+}

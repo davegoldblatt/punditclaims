@@ -1,0 +1,161 @@
+{
+ "run_id": "marcus-ai-risk-agi-risk-bfbde1-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ai-risk-agi-risk-bfbde1": "84dc32cd06776b1f645b9974052e7ab308e318e2c7586b5293d313a1e92d7bd1",
+  "case:marcus-ai-risk-agi-risk-c1e258": "4bd195b48ce1787bfa0e51b1987df93261ac626f19a02245793c9d547dd5cb34",
+  "case:marcus-ai-risk-agi-risk-f92470": "6cb787856c3a80ccdbf1f6f21fed3bb07194d19516433b4fd1fdad2e7e72f710"
+ },
+ "started_at": "2026-10-29T02:20:41Z",
+ "completed_at": "2026-10-29T02:21:09Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim matches his words. 'Especially' is kept as an illustration, not a condition. 'Tons of controls' is loose, rhetorical-leaning wording."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading it as 'limited effective safeguards' is an ordinary reading. But the March 2023 window, the set of systems, and the threshold were all chosen by the evaluator, so the result depends on that interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's March 2023 company disclosure says jailbreaks are not fully solved. This supports imperfect model-level controls only, not control over external actions."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's March 23 plugin launch documentation describes sandboxing and network controls. This is a partial counterexample, from a company disclosure that only covers OpenAI's own integrations."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "ARC says a human supervised the TaskRabbit test. That shows human controls in a pre-release test, not ordinary deployed use."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence points both ways. e5 shows model safeguards could be bypassed, while e6 shows concrete controls on code execution. Neither is a representative assessment of how far effective controls reached across LLM integrations, which the contract requires. The packet itself admits this gap. The evidence does not establish the broad claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-risk-agi-risk-bfbde1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "This is a firm general claim that AI below superintelligence can cause serious harm. Leaving out the aside about the literature is acceptable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Asking for a documented case where limited AI contributed to serious harm is a fair, ordinary test. AI need not be the sole cause. One caveat: Marcus's context is LLMs, but his sentence is general."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The NTSB report documents a fatal crash in which Uber's self-driving system misclassified the pedestrian and its design ruled out emergency braking. The operator is named as probable cause, but the system's limits contributed materially."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An official NTSB investigation shows a clearly non-superintelligent self-driving system contributed to a death through its own limitations. Human and organisational failures also contributed. That meets the contract's support condition. No evidence suggests serious harm requires superintelligence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-risk-agi-risk-c1e258"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. Europol is quoted separately in the post, but this sentence is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The causal premises and the comparison with the lab-curiosity era are preserved. The drafter's modality 'could' is softer than the source's 'can', which is a firm claim about capability, so it is scorable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'can do more damage' as expanded harmful capability, rather than measured losses, is the ordinary reading and fair to the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "A February 2023 preprint demonstrates indirect prompt injection that becomes possible once LLMs are given retrieval and API access. These were synthetic demonstrations, not deployed attacks."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Europol's March 27, 2023 assessment says public ChatGPT lets people with no technical skill build basic malicious tools, and that safeguards were easy to get around."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2023 reporting, quoting a Check Point researcher, describes criminal-forum use of ChatGPT and a basic stealer tool confirmed to work. This shows criminal interest and uptake."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Evidence from the time shows criminal interest and uptake (e4), easier misuse because the tools were widely available (e3), and new attack routes created by external integrations (e2). Together these meet the support condition for expanded harmful capability. The packet contains no counterevidence. Realised aggregate harm is not established, but the contract does not require it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-risk-agi-risk-f92470"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24363,
+  "output_tokens": 3179,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

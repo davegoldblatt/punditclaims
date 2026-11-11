@@ -1,0 +1,122 @@
+{
+ "assessment_id": "wyea-ai-doesnt-have-roi-b117d4-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-doesnt-have-roi-b117d4",
+  "version": 1,
+  "content_hash": "e834e77c76bccf03c0226801f622594dd01b9148251a5d4116429e9f1c4e419d"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-doesnt-have-roi-b117d4",
+  "version": 1,
+  "content_hash": "1a5e2fda221d8051ad4df34d4fdb05d4bf6dd3211490a449bb5d27185fa79516"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-doesnt-have-roi-b117d4-p1",
+  "content_hash": "4a8a66ea9cc45802755b4decbb073f928051f3c63833396b2846dbcb6f893be4"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The mechanism is real: a model with cheaper tokens can cost more on the same tasks because it consumes more tokens or takes more turns. But that does not establish a general increase over time. Historical research finds both rising frontier costs and falling costs at fixed performance. The available evidence does not settle the broad current trend asserted here.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Cross-sectional price reversals do not establish a temporal trend.",
+  "Benchmark performance and practical task completion are not interchangeable.",
+  "The strongest historical comparison ends in November 2025."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-doesnt-have-roi-b117d4-4x-review-anthropic-1",
+  "wyea-ai-doesnt-have-roi-b117d4-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ai-doesnt-have-roi-b117d4-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-doesnt-have-roi-b117d4",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Although per-million-token prices are falling, models use far more tokens for the same task, so inference cost per task is rising.",
+  "kind": "causal",
+  "conditions": [
+   "even as per-million token prices fall"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Even with the “cost of intelligence” (the per-million token cost) of models coming down, models are using far, far more tokens for the same task, ultimately raising the cost of inference.",
+   "locator": "paragraph 24",
+   "url": "https://www.wheresyoured.at/ai-doesnt-have-roi",
+   "date": "2026-06-02",
+   "document_title": "AI Doesn't Have ROI",
+   "observed_at": "2026-10-28T22:25:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "per-million token cost",
+    "coming down",
+    "far, far more tokens for the same task",
+    "ultimately raising the cost of inference"
+   ],
+   "our_interpretation": [
+    "The plain reading is a general trend toward higher customer inference costs for comparable tasks, caused by increased token consumption outweighing lower token prices.",
+    "A comparison must count input, output, reasoning, cached tokens, and repeated calls under consistent task and completion rules.",
+    "Evidence that this mechanism sometimes occurs does not by itself establish a general trend across model generations.",
+    "The surrounding discussion concerns developments leading up to June 2, 2026. Older measurements can establish the mechanism but cannot alone establish its current prevalence.",
+    "This concerns the price of using models, not a particular company's financial statements."
+   ],
+   "support_condition": "Matched-task comparisons across representative model generations show substantially greater token consumption and higher total inference charges despite lower token prices, with token consumption explaining the increase.",
+   "contradiction_condition": "Representative matched-task comparisons show that lower token prices outweigh token growth, so total inference charges generally decline, or show that the claimed token-growth mechanism does not explain rising charges."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The mechanism is real: a model with cheaper tokens can cost more on the same tasks because it consumes more tokens or takes more turns. But that does not establish a general increase over time. Historical research finds both rising frontier costs and falling costs at fixed performance. The available evidence does not settle the broad current trend asserted here.",
+  "limitations": [
+   "Cross-sectional price reversals do not establish a temporal trend.",
+   "Benchmark performance and practical task completion are not interchangeable.",
+   "The strongest historical comparison ends in November 2025."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "ranking inversions between pricing and true expenditure",
+    "locator": "Section 3, The Pricing Reversal Phenomenon",
+    "url": "https://arxiv.org/html/2603.23971v2",
+    "publisher": "arXiv; Lingjiao Chen and colleagues",
+    "event_date": "2026-05",
+    "available_at": "2026-05-28",
+    "explanation": "Across eight reasoning models and twelve tasks, the study reports price reversals in 32% of model-pair comparisons and attributes differences to reasoning tokens and interaction turns. This supports the proposed mechanism, but the comparisons are between models rather than a representative time series."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Per-token inference",
+    "locator": "Section 5, Inference Prices for Frontier Models Are Increasing Rapidly; also Sections 2.1 and 2.3",
+    "url": "https://arxiv.org/html/2511.23455v2",
+    "publisher": "arXiv; Hans Gundlach and colleagues",
+    "event_date": "2025-11",
+    "available_at": "2026-03-23",
+    "explanation": "Using April 2024–November 2025 prices and benchmark token consumption, the paper finds rising costs for the best-performing models but falling costs at fixed performance. This supports a narrower frontier-cost claim and cautions against extending it to comparable useful output generally."
+   }
+  ],
+  "what_would_resolve": "A dated, representative comparison across model generations through May or early June 2026, reporting total task charges, token counts, success rates, and the contribution of token growth.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "d30375eafb4b55e2cdf1cfb4b1053a6df5f369e28e9aded5ae4a9c345cf12adb",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:57:29Z"
+}

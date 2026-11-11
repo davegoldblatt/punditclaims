@@ -1,0 +1,103 @@
+{
+ "packet_id": "wyea-wherere-all-the-ai-chips-1229a7-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-1229a7",
+  "version": 1,
+  "content_hash": "935cbcbb5ee720cd29dd306b82f5dda1afaff26503921ab95561a7555bd43363"
+ },
+ "contract_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-1229a7",
+  "version": 1,
+  "content_hash": "5f74530dbb6dbb2c78842f53db7a8363b395128b219a59c1633244c7c7dccf19"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft FY 2026 Q4 earnings capacity gigawatts assets not in service",
+   "site.abc.xyz \"2026\" \"Q2\" earnings",
+   "site.sec.gov Microsoft 2026 \"assets not yet\" \"June 30\"",
+   "Alphabet \"2026\" \"122,814\" \"months to years\"",
+   "Alphabet 2026 Q2 10-Q pdf July 23 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+    "used": true,
+    "why": "Readable primary investor statement about utilization. It does not quantify the installed share of all hardware sold."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001652044/513183d2-787c-48f5-8da7-8a897b1649e0.html",
+    "used": true,
+    "why": "Readable copy of Alphabet's Q2 filing expressly discloses delays between purchase and placement in service."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the readable filing copy was used instead."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar26/",
+    "used": false,
+    "why": "read_page returned the shareholder letter rather than the asset schedules needed for a deployment reconciliation."
+   }
+  ],
+  "performed_at": "2026-10-29T22:10:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "investor-nvidia-com-files-content-files-transcript-nvidia-corp-nvda-db40ed12fe8b",
+   "source_snapshot_id": "5174794585ec23e993d9ec96d6d41afdc164da62619b55e19589752bf0c61ed7",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+   "locator": "Page 3, prepared remarks on demand and utilization",
+   "receipt": {
+    "public_excerpt": "fully utilized",
+    "quote_hash": "a26294b20fbd6377f103c5d0a97e84fd50e7b5f2bb9bb4a3dbc3c438b42d6f2a",
+    "verified": "exact"
+   },
+   "event_date": "2026-08-26",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T03:05:23Z",
+   "relation": "context",
+   "explanation": "This is an identifiable investor-facing utilization assertion. It does not expressly say that every GPU sold has been installed, so a warehouse inventory would not by itself disprove it.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "d18rn0p25nwr6d-cloudfront-net-cik-0001652044-513183d2-787c-48f5-8da-de2ae418296c",
+   "source_snapshot_id": "ea3ec5fdb4bd21c587ca60d25f7c344a2f132f874f919e3a7451ec6e49731404",
+   "publisher": "Alphabet",
+   "source_type": "filing",
+   "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001652044/513183d2-787c-48f5-8da7-8a897b1649e0.html",
+   "locator": "Page 52, Capital Expenditures",
+   "receipt": {
+    "public_excerpt": "months to years",
+    "quote_hash": "21446b228c5665072d8cbc8a30f7f5249869b3112003dd3ea7b6394674b80cea",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-23",
+   "available_at": "2026-07-23",
+   "retrieved_at": "2026-10-29T07:54:05Z",
+   "relation": "context",
+   "explanation": "Alphabet's Q2 filing explicitly warned investors about purchase-to-service delays. This is material counterevidence to a blanket claim about the picture presented to investors, but it covers one company and does not resolve actual GPU deployment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matching inventory of installed and undeployed GPUs was found for the four hyperscalers.",
+  "No investor assertion was matched to a demonstrably inconsistent hardware cohort and date.",
+  "The available disclosures do not establish whether a material divergence existed across the named companies."
+ ],
+ "packet_hash": "069bc7be0cc97b4dd3872b78ea28c42c82e72fb9c0c5e2cfd0bd10c95ed81fbd"
+}

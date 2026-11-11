@@ -1,0 +1,26 @@
+---
+// Which outcomes the answer pictures show, as on Explore: supported, mixed,
+// and contradicted start on; unresolved and can't be checked start off
+// (owner decision 2026-10-31: "i still want them, just not checked").
+// Checkboxes and :has() in the stylesheet, so no script decides anything.
+// Without :has() the chips hide themselves and the page shows the default.
+import { OUTCOME_LABEL } from "../policy.ts";
+
+const CHIPS = [
+  { o: "supported", on: true }, { o: "mixed", on: true }, { o: "contradicted", on: true },
+  { o: "unresolved", on: false }, { o: "not_adjudicable", on: false },
+] as const;
+---
+<fieldset class="ochips">
+  <legend>Show</legend>
+  <ul class="chart-key ochip-list">
+    {CHIPS.map((x) => (
+      <li data-o={x.o}><input type="checkbox" id={`show-${x.o}`} checked={x.on} /><label for={`show-${x.o}`}><i aria-hidden="true"></i>{OUTCOME_LABEL[x.o]}</label></li>
+    ))}
+  </ul>
+</fieldset>
+<script>
+  if (typeof CSS === "undefined" || !CSS.supports("selector(:has(*))")) {
+    for (const f of document.querySelectorAll<HTMLElement>("fieldset.ochips")) f.hidden = true;
+  }
+</script>

@@ -1,0 +1,124 @@
+{
+ "assessment_id": "marcus-humans-versus-machines-the-hallucination-47c312-a1",
+ "claim_revision_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-47c312",
+  "version": 1,
+  "content_hash": "95b548571dacbe46c14c955bd3fa21ed4b00e8df8d90957aaec0a98cc77e21a8"
+ },
+ "contract_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-47c312",
+  "version": 1,
+  "content_hash": "19fd932d2723c691dacca9f3a0f3c28ca4abfa363ddee1669637bc319c48a7cb"
+ },
+ "packet_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-47c312-p1",
+  "content_hash": "0ea87a3fedd0bf130f6884e884a83bae3131ca2ef2030e91a3703cd254028167"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "A peer-reviewed STOC 2024 paper shows that pretrained models built to predict well must hallucinate certain facts at a minimum rate. This has nothing to do with architecture or data quality, and holds even with ideal training data (e1). OpenAI's 2025 write-up likewise says pattern-based next-word prediction cannot get arbitrary rare facts right, and so produces hallucinations (e2). Both match Marcus's claim that the process LLMs use to generalize also creates hallucinations, even with perfect data. One caveat: OpenAI says models can be trained to abstain when unsure, so hallucinations can be reduced (e3). That does not undercut the claim about where they come from.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The theory covers rare, arbitrary facts most clearly. Other kinds of hallucination may have other causes.",
+  "The supporting authors overlap (Kalai and Vempala are on both papers)."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-anthropic-1",
+  "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-humans-versus-machines-the-hallucination-47c312-3x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-humans-versus-machines-the-hallucination-47c312",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The same process LLMs use to generalize is what creates their hallucinations.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The very process that LLMs use to generalize also creates hallucinations.",
+   "locator": "paragraph 10",
+   "url": "https://garymarcus.substack.com/p/humans-versus-machines-the-hallucination",
+   "date": "2024-04-21",
+   "document_title": "Humans versus Machines: The Hallucination Edition",
+   "observed_at": "2026-10-29T00:00:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The very process that LLMs use to generalize",
+    "also creates hallucinations",
+    "even with perfect data, the stochastic reconstructive process would still produce some errors"
+   ],
+   "our_interpretation": [
+    "Plain reading: hallucinations are a byproduct of the same statistical learning and prediction that lets LLMs generalize, not a separate bug or a result of bad data.",
+    "The claim describes LLMs in general, so no target period is set."
+   ],
+   "support_condition": "Research shows that statistical pretraining and prediction produce hallucinations, including with error-free training data.",
+   "contradiction_condition": "Research shows hallucinations come mainly from a separate mechanism, such as bad data alone, and not from the generalizing prediction process."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "A peer-reviewed STOC 2024 paper shows that pretrained models built to predict well must hallucinate certain facts at a minimum rate. This has nothing to do with architecture or data quality, and holds even with ideal training data (e1). OpenAI's 2025 write-up likewise says pattern-based next-word prediction cannot get arbitrary rare facts right, and so produces hallucinations (e2). Both match Marcus's claim that the process LLMs use to generalize also creates hallucinations, even with perfect data. One caveat: OpenAI says models can be trained to abstain when unsure, so hallucinations can be reduced (e3). That does not undercut the claim about where they come from.",
+  "limitations": [
+   "The theory covers rare, arbitrary facts most clearly. Other kinds of hallucination may have other causes.",
+   "The supporting authors overlap (Kalai and Vempala are on both papers)."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "there is an inherent statistical lower-bound on the rate that pretrained language models hallucinate certain types of facts, having nothing to do with the transformer LM architecture or data quality.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2311.14648",
+    "publisher": "arXiv / STOC 2024 (Kalai and Vempala)",
+    "event_date": "2023-11-24",
+    "available_at": "2023-11-24",
+    "explanation": "Hallucination follows from statistical prediction itself, even with ideal data. That matches the claim that the generalizing process creates hallucinations."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Spelling and parentheses follow consistent patterns, so errors there disappear with scale. But arbitrary low-frequency facts, like a pet’s birthday, cannot be predicted from patterns alone and hence lead to hallucinations.",
+    "locator": "Section 'How hallucinations originate from next-word prediction'",
+    "url": "https://openai.com/index/why-language-models-hallucinate",
+    "publisher": "OpenAI",
+    "event_date": "2025-09-05",
+    "available_at": "2025-09-05",
+    "explanation": "OpenAI traces hallucinations to the pattern-based next-word prediction that makes models fluent, which supports the claim."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Claim: Hallucinations are inevitable.\nFinding: They are not, because language models can abstain when uncertain.",
+    "locator": "Section 'Conclusions'",
+    "url": "https://openai.com/index/why-language-models-hallucinate",
+    "publisher": "OpenAI",
+    "event_date": "2025-09-05",
+    "available_at": "2025-09-05",
+    "explanation": "This adds a caveat: post-training to abstain can reduce hallucinations. It does not deny that pretraining prediction creates them."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6a5626ba9638685db0c247ef5de5cef7b40063bd52aa4f7bd85f00612f6285c3",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:35:36Z"
+}

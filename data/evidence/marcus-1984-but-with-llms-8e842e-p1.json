@@ -1,0 +1,89 @@
+{
+ "packet_id": "marcus-1984-but-with-llms-8e842e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-1984-but-with-llms-8e842e",
+  "version": 1,
+  "content_hash": "f7201afe0c95b99fa924ef3472239ad4b926e007b97d054c7e233e0cead4111d"
+ },
+ "contract_ref": {
+  "id": "marcus-1984-but-with-llms-8e842e",
+  "version": 1,
+  "content_hash": "211f144725faa8f27e0a12bc0953f73d5ea76cd333ebe69794b53d9d931c0709"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Political Compass or Spinning Arrow LLM paraphrase robustness opinions",
+   "Rozado political preferences of LLMs PLOS ONE 2024 left-of-center"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2402.16786",
+    "used": true,
+    "why": "ACL 2024 paper testing how stable LLM opinions are."
+   },
+   {
+    "url": "https://arxiv.org/abs/2402.01789v1",
+    "used": true,
+    "why": "Notes that base models answer incoherently and points to post-training as a source of stated preferences, which bears on the cause."
+   }
+  ],
+  "performed_at": "2026-10-29T01:03:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2402-16786",
+   "source_snapshot_id": "d0576418ccc74b33cb80cb62131ff4f733d365b78106fdfa3f16ba82a64276bc",
+   "publisher": "arXiv (ACL 2024)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2402.16786",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "We show that models give substantively different answers when not forced; that answers change depending on how models are forced; and that answers lack paraphrase robustness.",
+    "quote_hash": "3b519ec20d12e0e6e1bbeec1fa7a8a275e6334aa079631a52dc5c2ff6a8ad851",
+    "verified": "exact"
+   },
+   "event_date": "2024-02",
+   "available_at": "2024-02-26",
+   "retrieved_at": "2026-10-29T01:01:14Z",
+   "relation": "context",
+   "explanation": "Supports the incoherence part for the models tested. It does not test whether conflicting training data is the cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2402-01789v1",
+   "source_snapshot_id": "79c095499ad66d12e2b4fcf08d832d3986981e5045d8b0dd820194ab731d919c",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2402.01789v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Though not conclusive, our results provide preliminary evidence for the intriguing hypothesis that the embedding of political preferences into LLMs might be happening mostly post-pretraining.",
+    "quote_hash": "c2512ea366321be390ca2d020d3a994026b59a758bb89fa6c34a76006eb1919b",
+    "verified": "exact"
+   },
+   "event_date": "2024-02",
+   "available_at": "2024-02-02",
+   "retrieved_at": "2026-10-29T01:01:09Z",
+   "relation": "context",
+   "explanation": "Suggests that stated views are shaped largely by fine-tuning, not only by pretraining data. That complicates the causal story, but it is preliminary and not about coherence directly.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No study found tests whether LLM inconsistency comes from conflicting training data rather than other causes.",
+  "No evaluation covers every LLM, so 'no LLM is fully coherent' cannot be confirmed for all of them."
+ ],
+ "packet_hash": "046304047333340e7c655db78cf34e6ede95f555f3071a875bc1ab5068fd5fe6"
+}

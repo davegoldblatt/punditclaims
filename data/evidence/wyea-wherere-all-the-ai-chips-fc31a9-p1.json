@@ -1,0 +1,112 @@
+{
+ "packet_id": "wyea-wherere-all-the-ai-chips-fc31a9-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-fc31a9",
+  "version": 2,
+  "content_hash": "dae8ef58bf4b68ef2b02df3692b0cbe88493c38f4c0c64b0a4bc65f9fe926742"
+ },
+ "contract_ref": {
+  "id": "wyea-wherere-all-the-ai-chips-fc31a9",
+  "version": 1,
+  "content_hash": "2c8cb38025b7076c11bb3568344878d3264d1db796fa290e7a9d20e43a6cc797"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2026 GPUs TPUs warehouses 234 billion inventory installed construction progress evidence",
+   "Alphabet 2026 Q2 \"assets not yet in service\" 122.8",
+   "\"IREN\" \"June 30, 2026\" \"Construction in progress\" 3,7",
+   "2026 Microsoft construction in progress 50 billion disclosure estimate",
+   "Amazon 2025 10-k \"71,745\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://edgar-mirror.sec-api.io/1878848/000187884826000052/iren-20260630.htm",
+    "used": true,
+    "why": "Primary disclosure illustrating that unfinished assets include data-center development costs."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001652044/513183d2-787c-48f5-8da7-8a897b1649e0.html",
+    "used": false,
+    "why": "Read; its asset and infrastructure categories do not directly measure the claimed aggregate warehoused GPU/TPU stock."
+   },
+   {
+    "url": "https://microsoft.gcs-web.com/static-files/8a9beeed-0e9e-48e6-b4fb-593d558e2693",
+    "used": false,
+    "why": "Read; no standalone CIP or warehoused-GPU balance validates the assumed Microsoft addition."
+   },
+   {
+    "url": "https://edgar-mirror.sec-api.io/1018724/000101872426000004/amzn-20251231.htm",
+    "used": false,
+    "why": "Read; the December 2025 CIP balance does not validate the assumed 2026 addition or hardware allocation."
+   },
+   {
+    "url": "https://blog.dshr.org/2026/10/dark-gpus.html?m=0",
+    "used": false,
+    "why": "Search result repeats Zitron's estimate; it was not treated as independent measurement."
+   },
+   {
+    "url": "https://www.wheresyoured.at/wherere-all-the-ai-chips",
+    "used": false,
+    "why": "Used only to identify the assumptions being tested, not as evidence that the physical inventory estimate is correct."
+   }
+  ],
+  "performed_at": "2026-10-29T22:12:24Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "edgar-mirror-sec-api-io-1878848-000187884826000052-iren-20260630-htm",
+   "source_snapshot_id": "0354ae5e993330547a925581e5866555bf04327c913a52db9bbe76eea98cde64",
+   "publisher": "IREN Limited",
+   "source_type": "filing",
+   "url": "https://edgar-mirror.sec-api.io/1878848/000187884826000052/iren-20260630.htm",
+   "locator": "Note 14, subsection Construction in progress",
+   "receipt": {
+    "public_excerpt": "retrofit and development",
+    "quote_hash": "8266a64c94839d852111895c7e94a88f72fe7d9b8f4d87ecc0122bcc3fd7eefc",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-27",
+   "retrieved_at": "2026-10-29T21:59:51Z",
+   "relation": "context",
+   "explanation": "The disclosure shows why CIP alone does not measure warehoused chips; it does not establish a different industry hardware total. The attached arithmetic check uses the claim's hypothetical inputs, not figures established by this IREN passage.",
+   "metric_scope": {
+    "company": "IREN",
+    "metric": "Composition of development assets within construction in progress",
+    "currency": "USD",
+    "units": "thousands",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-06-30",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Claim's assumed base CIP: USD 374 billion",
+     "Claim's assumed Microsoft addition: USD 50 billion",
+     "Claim's assumed Amazon addition: USD 20 billion",
+     "Claim's assumed Google portion: USD 120.8 billion",
+     "Claim's assumed Google hardware allocation: 60%",
+     "Claim's assumed remaining hardware allocation: 50%"
+    ],
+    "formula": "0.60 * 120.8 + 0.50 * (374 + 50 + 20 - 120.8) = 72.48 + 161.60 = 234.08 billion USD",
+    "rounding": "USD 234.08 billion rounds to USD 234 billion to the nearest billion. This verifies only the conditional arithmetic."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The base aggregate and the Microsoft and Amazon additions are not independently established.",
+  "No measurement validates a 60% hardware share of Google's unfinished assets or a 50% share elsewhere.",
+  "No comparable industry inventory measurement establishes approximately USD 234 billion of purchased but undeployed GPUs and TPUs.",
+  "A spending allocation does not automatically describe the composition of the accumulated unfinished-asset stock."
+ ],
+ "packet_hash": "b71955737d4d211c5981c4226349410297763ddd4843d4c63a29d9f280be071c"
+}

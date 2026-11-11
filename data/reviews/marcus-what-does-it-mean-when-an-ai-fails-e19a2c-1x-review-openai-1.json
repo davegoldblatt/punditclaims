@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e19a2c": "91567c3a2458ea910ee962ab6a954e62c2f72b15999d0ee7c31b4f762ce3f029"
+ },
+ "started_at": "2026-10-29T22:01:52Z",
+ "completed_at": "2026-10-29T22:02:36Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states and endorses the comparison in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the retrospective comparison and InstructGPT uncertainty. Correct-answer probability is the quantity discussed, not a probabilistic hedge on the broad improvement claim."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Assessing broad improvement through comparable accuracy is fair. However, treating lower greedy-decoding accuracy as disproving increased correct-answer probability changes the metric. Greedy outputs depend on answer rankings, not just the probability of the correct answer. The universal reading also determines the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The dated benchmark, paired with e2's GPT-2 baselines, supports broad task-accuracy gains. It does not establish increased correct-answer probability for every example."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Supplies comparison baselines and genuine exceptions in greedy-decoding accuracy. Those exceptions challenge uniform observed accuracy gains but do not establish decreases in individual correct-answer probabilities."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Broad improvement is supported. The packet does not settle the stronger per-example probability assertion: aggregate greedy-decoding results neither establish nor refute it. A mixed verdict would require treating those results as equivalent to individual answer probabilities. The InstructGPT qualification makes no firm superiority claim to score.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17128,
+  "output_tokens": 998,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 486
+ },
+ "cost_usd": null
+}

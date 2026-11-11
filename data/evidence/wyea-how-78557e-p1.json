@@ -1,0 +1,161 @@
+{
+ "packet_id": "wyea-how-78557e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-how-78557e",
+  "version": 1,
+  "content_hash": "28b2a91675f19e45506cbde0e1c72862734fd4632bfa083d8363ddd2aba97313"
+ },
+ "contract_ref": {
+  "id": "wyea-how-78557e",
+  "version": 1,
+  "content_hash": "e666a0df4aef2c9b589c456bc5e7759214691a65f7171e658dfcb4e41886a654"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Tesla 10-K 2023 annual report \"active driver supervision\" Full Self-Driving",
+   "Tesla Form 10-K fiscal 2023 \"does not make the vehicle autonomous\"",
+   "Tesla blog \"All Tesla Cars Being Produced Now Have Full Self-Driving Hardware\"",
+   "NHTSA recall 23V-838 Tesla Autosteer SAE Level 2 driver remains responsible December 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://web.archive.org/web/20240120000000/https://www.tesla.com/support/autopilot",
+    "used": true,
+    "why": "Archived Tesla support page from about January 2024. It states the supervision requirement."
+   },
+   {
+    "url": "https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V838-8276.PDF",
+    "used": true,
+    "why": "Tesla's December 2023 recall filing to NHTSA. It describes Autosteer as SAE Level 2, with the driver as the operator."
+   },
+   {
+    "url": "https://www.automotive-fleet.com/news/tesla-production-adds-self-driving-hardware",
+    "used": true,
+    "why": "Context on the October 2016 announcement that all new Teslas had full self-driving hardware."
+   },
+   {
+    "url": "https://www.nbcsandiego.com/news/business/money-report/waymo-reports-250000-paid-robotaxi-rides-per-week-in-u-s/3811293/?amp=1&os=f",
+    "used": true,
+    "why": "Later context: CNBC in April 2025 says Tesla still did not offer an unsupervised vehicle."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm",
+    "used": false,
+    "why": "Tesla FY2023 10-K. The page returned HTTP 403 and could not be read."
+   },
+   {
+    "url": "https://www.austinchronicle.com/daily/news/2023-12-13/tesla-recalls-nearly-all-vehicles-due-to-autopilot-failures/print",
+    "used": false,
+    "why": "The page returned unrelated 2010 content."
+   },
+   {
+    "url": "https://electrek.co/2016/10/19/tesla-fully-autonomous-self-driving-car/",
+    "used": false,
+    "why": "The page returned only an unrelated headline."
+   }
+  ],
+  "performed_at": "2026-10-31T19:59:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "web-archive-org-web-20240120000000-https-www-tesla-com-support-autopilot",
+   "source_snapshot_id": "02c083a5ef8bad245411b9522d92416a859fbb3a237424ede3e9d8bc8b0ede9c",
+   "publisher": "Tesla (archived by the Internet Archive)",
+   "source_type": "company_disclosure",
+   "url": "https://web.archive.org/web/20240120000000/https://www.tesla.com/support/autopilot",
+   "locator": "Section 'Full Self-Driving Capability', paragraph after the feature list",
+   "receipt": {
+    "public_excerpt": "The currently enabled Autopilot, Enhanced Autopilot and Full Self-Driving features require active driver supervision and do not make the vehicle autonomous.",
+    "quote_hash": "3bc54e125dfa61e1c1c8be8cc4fb68d6b6fdaed7db14ce721a545ae2d3e059ed",
+    "verified": "exact"
+   },
+   "event_date": "2024-01",
+   "available_at": "2024-01-20",
+   "retrieved_at": "2026-10-31T19:53:28Z",
+   "relation": "supports",
+   "explanation": "Tesla's own support page from about January 2024 says even its Full Self-Driving features need active supervision and do not make the car autonomous. So new Teslas could not drive themselves.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "static-nhtsa-gov-odi-rcl-2023-rclrpt-23v838-8276-pdf",
+   "source_snapshot_id": "e95e3abeed7d8ec417abcd4e3572a6c9c51a63366291a7e2f173abf9bbb61cc9",
+   "publisher": "Tesla, Inc. via NHTSA (Part 573 Safety Recall Report 23V-838)",
+   "source_type": "filing",
+   "url": "https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V838-8276.PDF",
+   "locator": "Page 3, Description of the Defect",
+   "receipt": {
+    "public_excerpt": "When Autosteer is engaged, as with all SAE Level 2\nadvanced driver-assistance features and systems, the driver is the operator of\nthe vehicle.",
+    "quote_hash": "71a66212366da9f1d21f0ad7b3f0fc80b0acc8e49c12bca74261932353220ef5",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-12",
+   "available_at": "2023-12-12",
+   "retrieved_at": "2026-10-31T19:53:18Z",
+   "relation": "supports",
+   "explanation": "In December 2023, Tesla's filing to the US safety regulator called its standard Autosteer a Level 2 driver-assistance feature, with the human as operator. The 2,031,220 vehicles in the recall include cars built through December 7, 2023.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "automotive-fleet-com-news-tesla-production-adds-self-driving-hardware",
+   "source_snapshot_id": "c1b596ed50adf8d1563d5f25e307188042793251aaa11f787e4509bcbd950e0f",
+   "publisher": "Automotive Fleet",
+   "source_type": "news_report",
+   "url": "https://www.automotive-fleet.com/news/tesla-production-adds-self-driving-hardware",
+   "locator": "Paragraph 1",
+   "receipt": {
+    "public_excerpt": "all of its vehicles, including Model 3, now include the hardware necessary for full self-driving capability, the company said.",
+    "quote_hash": "d02b05a9ea4ea2289d5e4df36d8b10051fe44e2a5cae933cd0f9eb2b44bc9e2c",
+    "verified": "exact"
+   },
+   "event_date": "2016-10-19",
+   "available_at": "2016-10-20",
+   "retrieved_at": "2026-10-31T19:55:20Z",
+   "relation": "context",
+   "explanation": "Background on the 2016 promise that all new Teslas were built for full self-driving. It does not state the end-2017 date.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "nbcsandiego-com-news-business-money-report-waymo-reports-250000-pai-39bad3164245",
+   "source_snapshot_id": "2c5cb1022f45399edda106ffc941ff9651289f67997ebd3a3fad28c0af1c2ff4",
+   "publisher": "CNBC (via NBC San Diego)",
+   "source_type": "news_report",
+   "url": "https://www.nbcsandiego.com/news/business/money-report/waymo-reports-250000-paid-robotaxi-rides-per-week-in-u-s/3811293?amp=1&os=f",
+   "locator": "Paragraph 13",
+   "receipt": {
+    "public_excerpt": "After about a decade of promises and missed deadlines, Tesla still does not offer a vehicle that's safe to use without a human at the wheel ready to steer or brake at all times.",
+    "quote_hash": "cab601543eb1d087fd420beab34409a2a79b4a71a4b61e3f832efa6fc2a4b991",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-24",
+   "available_at": "2025-04-24",
+   "retrieved_at": "2026-10-29T08:06:41Z",
+   "relation": "supports",
+   "explanation": "A later report saying the promise was still unmet in April 2025. It falls outside the target period, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "I could not read Tesla's FY2023 10-K (HTTP 403).",
+  "The exact Wayback snapshot date behind the January 20, 2024 request was not shown.",
+  "Musk's exact 'end of 2017' wording was not confirmed from a primary source. The finding does not depend on it."
+ ],
+ "packet_hash": "6e67d2defe36dcf60e8f23d0ff4019f89f997f00915948957b641efa4e531359"
+}

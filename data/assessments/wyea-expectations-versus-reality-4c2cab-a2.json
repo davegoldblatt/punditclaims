@@ -1,0 +1,107 @@
+{
+ "assessment_id": "wyea-expectations-versus-reality-4c2cab-a2",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-4c2cab",
+  "version": 1,
+  "content_hash": "32b7336944af25a50cc97a56b6191f3060021d90a434c6b2e0efb2153ad878fa"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-4c2cab",
+  "version": 1,
+  "content_hash": "7695fc6133f5fc3bf8f956710aaf7c0e036cd0fd09d15356ade46385bdd7535d"
+ },
+ "packet_ref": {
+  "id": "wyea-expectations-versus-reality-4c2cab-p1",
+  "content_hash": "290bea4ba4e34142707b0ed0ec49c6621464600f08f5e27967fcf7115376dc3f"
+ },
+ "axis": "historical_observation",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-04-23",
+  "end": "2024-05-13",
+  "precision": "day"
+ },
+ "public_rationale": "Obscurity Labs' source-code and infrastructure inspection during April 29–May 10, 2024 found that Rabbit collected and stored service-issued session tokens, rather than the usernames and passwords entered during login [e1]. This contradicts the claim that Rabbit needed to retain original passwords for subsequent operations [e1].",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "The inspection does not establish that every aspect of Rabbit's security was safe; testing the secrets vault itself was outside its scope [e1].",
+  "The inspection covered April 29–May 10, rather than every day of the April 23–May 13 target period, and the report became available on July 30, 2024 [e1]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-expectations-versus-reality-401cf2-4x-review-anthropic-1",
+  "wyea-expectations-versus-reality-401cf2-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-expectations-versus-reality-4c2cab-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-expectations-versus-reality-4c2cab",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Rabbit must store user credentials in original form, which is insanely dangerous.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Since Rabbit is acting as a third-party, and doesn’t use a standard like Oauth or SAML, it needs to keep user credentials in their original form. This is just insanely dangerous.",
+   "locator": "paragraph 34",
+   "url": "https://www.wheresyoured.at/expectations-versus-reality",
+   "date": "2024-05-13",
+   "document_title": "Expectations Versus Reality",
+   "observed_at": "2026-10-28T22:31:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "doesn’t use a standard like Oauth or SAML",
+    "needs to keep user credentials in their original form",
+    "insanely dangerous"
+   ],
+   "our_interpretation": [
+    "In the surrounding discussion of password hashing, original credentials means recoverable usernames and passwords, including reversibly encrypted passwords. It does not mean session cookies.",
+    "Assess the technical assertion about retention. The phrase insanely dangerous is an evaluative description without a separate measurable threshold.",
+    "Use the launch-period implementation from April 23 through May 13, the latest public operating period described by the post."
+   ],
+   "support_condition": "Implementation evidence shows that Rabbit retained recoverable original app passwords for subsequent operations.",
+   "contradiction_condition": "Implementation evidence shows that Rabbit retained session cookies or tokens instead of original app passwords, allowing subsequent operations without keeping those passwords."
+  },
+  "axis": "historical_observation",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Obscurity Labs' source-code and infrastructure inspection during April 29–May 10, 2024 found that Rabbit collected and stored service-issued session tokens, rather than the usernames and passwords entered during login [e1]. This contradicts the claim that Rabbit needed to retain original passwords for subsequent operations [e1].",
+  "limitations": [
+   "The inspection does not establish that every aspect of Rabbit's security was safe; testing the secrets vault itself was outside its scope [e1].",
+   "The inspection covered April 29–May 10, rather than every day of the April 23–May 13 target period, and the report became available on July 30, 2024 [e1]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "isn’t what is being collected and stored.",
+    "locator": "Act 0: The Leaky Minion, paragraph explaining authentication-token collection",
+    "url": "https://www.obscuritylabs.com/resources/blog/rabbit_pentest",
+    "publisher": "Obscurity Labs",
+    "event_date": "2024-05-10",
+    "available_at": "2024-07-30",
+    "explanation": "The report describes inspection during April 29–May 10; the event date marks that testing window's end. It found that service-issued session cookies, rather than entered usernames and passwords, were collected for storage."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0decf33e4ced05f1b1e1a86fdde51228b1a5933b62aea15dfa7b7a15b902384f",
+ "supersedes_assessment_id": "wyea-expectations-versus-reality-4c2cab-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T18:01:52Z"
+}

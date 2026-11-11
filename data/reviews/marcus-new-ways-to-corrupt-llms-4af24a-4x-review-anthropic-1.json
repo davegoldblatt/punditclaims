@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-new-ways-to-corrupt-llms-4af24a-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-new-ways-to-corrupt-llms-4af24a": "ccdee49856576f2f5af4c29276ba13002207de2e88f8245f13cf52b139cfff57",
+  "case:marcus-new-ways-to-corrupt-llms-4eedf4": "939d36337a0050a71497c976addaa038eededc2ae6bd62ba58f69fd9693c88da",
+  "case:marcus-new-ways-to-corrupt-llms-b7de94": "d1eaea6ad1578ef900f8a74c9fae3de8deaa19b1ab655ea363d0512f9a53f908",
+  "case:marcus-new-ways-to-corrupt-llms-fa808c": "33400478d8bc8d017d14c501be7babdbe4262d5b064c03aa59f9fc50002b220f"
+ },
+ "started_at": "2026-10-29T21:46:31Z",
+ "completed_at": "2026-10-29T21:47:11Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'A lot... borne of' is an unhedged causal claim. Rendering 'a lot' as 'many' keeps the vague quantity. 'This kind of overgeneralization' fairly covers semantic-leakage-style associations."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (a substantial, recurring share of hallucinations) is ordinary. Requiring more than proof that leakage exists is fair. 'A lot' has no threshold and the population of hallucinations is unspecified, so interpretation matters."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Genuine 2024 Gonen et al. preprint. It measures how often leakage occurs in sentence completions, not what share of factual hallucinations it causes."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows semantic leakage exists, but no study estimates how many hallucinations it causes. Nothing shows the mechanism is rare either. Under the contract the claim cannot be settled on this evidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-new-ways-to-corrupt-llms-4af24a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The cited researchers' work is only background to his claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Correctly limited to 'these kinds of errors' and keeps 'nth order' and 'words rather than concepts'. The 'probably' parentheticals are illustrations, not the core claim."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract limits the claim to June–August 2025 because the post says the paper came out 'this summer'. But his claim is a present-tense, general statement about how LLMs work, so that window is a stretch. 'Words rather than concepts' has no operational definition, so interpretation decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Genuine 2024 preprint showing the koala example of an unwarranted inference. It does not test word-level against concept-level mechanisms."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Preprint from 20 Oct 2026, before the evaluation date. It finds leakage is a broad associative tendency but does not isolate a word-only mechanism, so it neither supports nor refutes the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both studies confirm the errors are unwarranted associations. Neither separates word-level from concept-level explanations, so the core claim is unsettled. This holds whatever the target-period problem.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-new-ways-to-corrupt-llms-4eedf4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'No way... ever' is a firm forecast that the problems will never be patched. 'Likely' hedges only how long the list is, and the drafter keeps that. The drafter's 'from semantic leakage' is a little narrower than the contract's class, which also covers weird generalization and backdoors."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as fixing the whole class, not individual examples, fits 'an endless list'. The early-resolution rule (a validated full remedy or an impossibility proof) is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The Dec 2025 Betley et al. preprint describes the vulnerability class and says filtering may struggle. That is not proof the problem can never be fixed."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The 2026 replication finds weird generalization brittle and easy to mitigate in the cases studied. It weakens a sweeping reading but is not a validated full remedy."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was given, and neither resolving event has happened: no validated full remedy and no impossibility proof. Fixing selected examples does not meet the contract's rule, so the forecast stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-new-ways-to-corrupt-llms-b7de94"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own P.S. describing a demo he links to and endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An existence claim that adversarial prompts can get around Suno's copyright defenses. 'Meagre' is evaluative emphasis, not a separate claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'statistical correlates' to include sound-alike rewrites is ordinary, and requiring musical (not just stylistic) resemblance is fair. The period ending on the post date is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The v3 preprint was public 2025-10-29, before the post. It describes verbatim-lyric filters being bypassed by sound-alike rewrites, with high melody and rhythm matches. It calls Suno especially vulnerable and includes the Eminem example."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary research published before the post shows Suno blocking verbatim lyrics but accepting sound-alike rewrites, with output closely matching the originals' melody and rhythm. That meets the support condition. No independent replication was found, but the contract does not require one.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-new-ways-to-corrupt-llms-fa808c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24433,
+  "output_tokens": 4494,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

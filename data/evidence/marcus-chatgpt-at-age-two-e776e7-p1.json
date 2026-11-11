@@ -1,0 +1,130 @@
+{
+ "packet_id": "marcus-chatgpt-at-age-two-e776e7-p1",
+ "claim_revision_ref": {
+  "id": "marcus-chatgpt-at-age-two-e776e7",
+  "version": 1,
+  "content_hash": "dfd69686f8dd32eea7bf9882507699c7873dbd0a7df98de0278ae214cf250f77"
+ },
+ "contract_ref": {
+  "id": "marcus-chatgpt-at-age-two-e776e7",
+  "version": 1,
+  "content_hash": "89ca8262add7abe441589879d59fd8a9207467fb7240d0279abac471bc5464ec"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI GPT-4 hallucinations factuality evaluation vs GPT-3.5",
+   "OpenAI o1 system card hallucination evaluations SimpleQA PersonQA",
+   "SimpleQA benchmark GPT-4o",
+   "Tow Center ChatGPT search misattributes publisher content 2024 CJR study 200 quotes"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "OpenAI's own March 2023 statement that GPT-4 reduced hallucinations compared with GPT-3.5"
+   },
+   {
+    "url": "https://openai.com/index/openai-o1-system-card/",
+    "used": true,
+    "why": "OpenAI's 2024 hallucination-rate table for GPT-4o and o1"
+   },
+   {
+    "url": "https://www.cjr.org/tow_center/how-chatgpt-misrepresents-publisher-content.php",
+    "used": true,
+    "why": "Independent November 2024 audit of ChatGPT fabricating sources"
+   },
+   {
+    "url": "https://openai.com/index/introducing-simpleqa/",
+    "used": false,
+    "why": "Says hallucinations are an open problem, but the page text gives no model numbers; the o1 system card has them"
+   },
+   {
+    "url": "https://arxiv.org/html/2411.04368v1",
+    "used": false,
+    "why": "The SimpleQA paper; the results table did not come through in the text"
+   }
+  ],
+  "performed_at": "2026-10-29T03:05:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "section Limitations, paragraph 2",
+   "receipt": {
+    "public_excerpt": "While still a real issue, GPT‑4 significantly reduces hallucinations relative to previous models (which have themselves been improving with each iteration).",
+    "quote_hash": "6774937c39cb8fd009c9abab018b1ba35a1710efdef3d34eba22a2a0805fe174",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI reported a measurable drop in hallucinations from GPT-3.5 to GPT-4 in early 2023. This goes against a literal reading that hallucinations did not recede at all.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-openai-o1-system-card",
+   "source_snapshot_id": "4f162061601e08048985770518968260f4c2eab1439d4ec1e1717cd6cccc893a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/openai-o1-system-card",
+   "locator": "section Hallucination evaluations, text after Table 3",
+   "receipt": {
+    "public_excerpt": "According to these evaluations, o1‑preview and o1 hallucinate less frequently than GPT‑4o, and o1‑mini hallucinates less frequently than GPT‑4o‑mini.",
+    "quote_hash": "5c954b2e97551eeec44dec0652a8e2226c15f7614966dc271ba960c28799e96d",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-12-05",
+   "retrieved_at": "2026-10-29T02:06:22Z",
+   "relation": "contradicts",
+   "explanation": "Newer OpenAI models hallucinated less than GPT-4o on OpenAI's own tests, so rates kept falling in 2024. The same Table 3 still shows hallucination rates of 0.61 for GPT-4o and 0.44 for o1-preview on SimpleQA.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "cjr-org-tow-center-how-chatgpt-misrepresents-publisher-content-php",
+   "source_snapshot_id": "4712d14890b36ab6c4a378842fc58a747c7ef728c114489d712a8518514ccb3d",
+   "publisher": "Columbia Journalism Review (Tow Center)",
+   "source_type": "independent_measurement",
+   "url": "https://www.cjr.org/tow_center/how-chatgpt-misrepresents-publisher-content.php",
+   "locator": "section Confidently Wrong, paragraph 2",
+   "receipt": {
+    "public_excerpt": "In total, ChatGPT returned partially or entirely incorrect responses on a hundred and fifty-three occasions, though it only acknowledged an inability to accurately respond to a query seven times.",
+    "quote_hash": "cc904982846e654f4863dcfd4233ec19868bbae267f91604f402e2c627aa173f",
+    "verified": "exact"
+   },
+   "event_date": "2024-11",
+   "available_at": "2024-11-27",
+   "retrieved_at": "2026-10-29T03:02:52Z",
+   "relation": "supports",
+   "explanation": "In November 2024 an independent audit found ChatGPT gave wrong or partly wrong source answers 153 times out of 200, and rarely said it was unsure. So fabrication was still common two years after launch.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No single benchmark follows ChatGPT's hallucination rate on the same task from early 2023 to late 2024.",
+  "Whether a measured decline counts as 'receding' depends on a reading Marcus did not spell out."
+ ],
+ "packet_hash": "cc432c07524032a39bb5b3805433f6fa4dfdac14d1bad67b12a2aacd0a924e60"
+}

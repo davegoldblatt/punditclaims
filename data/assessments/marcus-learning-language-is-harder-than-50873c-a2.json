@@ -1,0 +1,122 @@
+{
+ "assessment_id": "marcus-learning-language-is-harder-than-50873c-a2",
+ "claim_revision_ref": {
+  "id": "marcus-learning-language-is-harder-than-50873c",
+  "version": 1,
+  "content_hash": "abb43362f2509607e9f7ecd9f8034b9969d3c7df0f12792b0e4f1e4f8e93bab4"
+ },
+ "contract_ref": {
+  "id": "marcus-learning-language-is-harder-than-50873c",
+  "version": 1,
+  "content_hash": "8cad1a1eccb125b4d6ce5aa5cf0d9d22c93bdca2a23a42c0631d72c75a89b2af"
+ },
+ "packet_ref": {
+  "id": "marcus-learning-language-is-harder-than-50873c-p1",
+  "content_hash": "db60cdb804e7f5516491799bc802daa0b86bfffeadfc99ecdd57c50e9af69228"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-01-01",
+  "end": "2022-07-20",
+  "precision": "day"
+ },
+ "public_rationale": "Findings reported in March 2022 show substantial RoBERTa deficits on subsets where negation mattered: macro F1 was 0.67 versus 0.92 on QNLI and 0.73 versus 0.92 on QQP, comparing important with unimportant negation [e1](https://aclanthology.org/2022.acl-short.81.pdf). These results support a recurring negation weakness in the tested model and tasks, although the comparisons use different dataset subsets rather than matched sentences [e1](https://aclanthology.org/2022.acl-short.81.pdf). A May 2022 study reports more optimistic results from pragmatic tests of transformer language models, limiting how broadly this weakness can be generalized [e2](https://aclanthology.org/2022.acl-long.315/).",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The supporting performance results concern RoBERTa and selected tasks; they do not establish a weakness in every contemporary neural network.",
+  "The important- and unimportant-negation subsets are not matched sentence pairs, so their score differences do not isolate negation's causal effect.",
+  "The evidence does not establish a population-wide negation penalty or uniform difficulty across linguistic contexts."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-learning-language-is-harder-than-35a722-2x-review-anthropic-1",
+  "marcus-learning-language-is-harder-than-35a722-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-learning-language-is-harder-than-50873c-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-learning-language-is-harder-than-50873c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Handling negation words like 'no' and 'not' is a major weak spot for current neural networks.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "it’s even less clear how it would work with words like no and not (a major sore spot for current neural networks).",
+   "locator": "paragraph 16",
+   "url": "https://garymarcus.substack.com/p/learning-language-is-harder-than",
+   "date": "2022-07-20",
+   "document_title": "Learning Language is Harder Than You Think",
+   "observed_at": "2026-10-29T00:05:10Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "words like no and not",
+    "a major sore spot",
+    "current neural networks"
+   ],
+   "our_interpretation": [
+    "The language-acquisition context makes neural language models the relevant class of networks.",
+    "A major sore spot means substantial, recurring difficulty interpreting negation. It does not mean every model fails whenever negation appears.",
+    "Because the statement describes an ongoing research state without a reporting interval, the target period is the current research year through publication: January 1 to July 20, 2022.",
+    "Comparisons must concern understanding negation, rather than merely detecting the presence of a negative word."
+   ],
+   "support_condition": "Contemporary evaluations show substantial, recurring errors when negation matters to the answer, with materially worse results than relevant affirmative or nonessential-negation comparisons.",
+   "contradiction_condition": "Representative contemporary models handle meaning-changing negation reliably across varied tasks, with little meaningful disadvantage against comparable cases without negation."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Findings reported in March 2022 show substantial RoBERTa deficits on subsets where negation mattered: macro F1 was 0.67 versus 0.92 on QNLI and 0.73 versus 0.92 on QQP, comparing important with unimportant negation [e1](https://aclanthology.org/2022.acl-short.81.pdf). These results support a recurring negation weakness in the tested model and tasks, although the comparisons use different dataset subsets rather than matched sentences [e1](https://aclanthology.org/2022.acl-short.81.pdf). A May 2022 study reports more optimistic results from pragmatic tests of transformer language models, limiting how broadly this weakness can be generalized [e2](https://aclanthology.org/2022.acl-long.315/).",
+  "limitations": [
+   "The supporting performance results concern RoBERTa and selected tasks; they do not establish a weakness in every contemporary neural network.",
+   "The important- and unimportant-negation subsets are not matched sentence pairs, so their score differences do not isolate negation's causal effect.",
+   "The evidence does not establish a population-wide negation penalty or uniform difficulty across linguistic contexts."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "substantially lower with important negations.",
+    "locator": "Table 4 caption; section 3, research question Q3",
+    "url": "https://aclanthology.org/2022.acl-short.81.pdf",
+    "publisher": "Association for Computational Linguistics",
+    "event_date": "2022-03",
+    "available_at": "2022-05-27",
+    "explanation": "The study reports substantial RoBERTa performance losses on subsets where negation matters: QNLI macro F1 is 0.67 for important negations versus 0.92 for unimportant negations. These are dataset-subset comparisons, not matched sentence pairs; the findings were already reported in the March preprint."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "adhered to the semantic view.",
+    "locator": "Abstract",
+    "url": "https://aclanthology.org/2022.acl-long.315",
+    "publisher": "Association for Computational Linguistics",
+    "event_date": "2022-05",
+    "available_at": "2022-05-27",
+    "explanation": "The authors report a substantially more optimistic assessment from pragmatic tests of transformer models. This is material counterevidence to a universal inability claim, but does not establish reliable performance across the tasks implicated by e1."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a960dae95ab1cc9495620d6cf078802564c9d194fd4f2625f1ec2bb92d322376",
+ "supersedes_assessment_id": "marcus-learning-language-is-harder-than-50873c-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:03:43Z"
+}

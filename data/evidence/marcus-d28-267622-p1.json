@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-d28-267622-p1",
+ "claim_revision_ref": {
+  "id": "marcus-d28-267622",
+  "version": 1,
+  "content_hash": "01685f5ac7e87c7142c2b4899053249dbae8f90f30ede4a39bfab2c9321ee69e"
+ },
+ "contract_ref": {
+  "id": "marcus-d28-267622",
+  "version": 1,
+  "content_hash": "bd7fcfa5a32438ee474cadccf917d6ea3a61666c49653b07316995a3a713a48a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Llama 2 paper 2023 hallucination factuality TruthfulQA 64.14",
+   "Llama 2 July 2023 \"hallucination\" \"4\"",
+   "Llama 2 \"factuality\" \"hallucination\" 2023 evaluation 70B July",
+   "site.about.fb.com July 18 2023 Llama 2 model card"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md",
+    "used": true,
+    "why": "Official model card reports the factuality benchmark results and their metric definition."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.09288v2",
+    "used": true,
+    "why": "Contemporaneous technical report corroborates the benchmark result, acknowledges hallucination limitations and supplies favorable peer comparisons."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.09288",
+    "used": true,
+    "why": "Submission history establishes that version 2 was public on July 19, 2023."
+   },
+   {
+    "url": "https://www.anyscale.com/blog/llama-2-is-about-as-factually-accurate-as-gpt-4-for-summaries-and-is-30x-cheaper",
+    "used": true,
+    "why": "Contemporaneous original experiment supplies favorable counterevidence, with a narrower factuality-recognition task."
+   },
+   {
+    "url": "https://arxiv.org/abs/2404.09785",
+    "used": false,
+    "why": "Later evaluation does not directly measure the selected July–August 2023 period."
+   }
+  ],
+  "performed_at": "2026-10-29T03:15:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-meta-llama-llama-blob-main-model-card-md",
+   "source_snapshot_id": "cca953c22461da3d4a67023d305260ca4c5f9296985505072cf74670d8f9063f",
+   "publisher": "Meta",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md",
+   "locator": "Evaluation Results, fine-tuned models safety table",
+   "receipt": {
+    "public_excerpt": "Llama-2-Chat\n70B\n64.14\n0.01",
+    "quote_hash": "c319a61daa33cf61cda6a19d55fb08810f29520e7132e786fb2a4bfce1dcfcd1",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-19",
+   "retrieved_at": "2026-10-29T03:11:36Z",
+   "relation": "supports",
+   "explanation": "The 70B chat model achieved 64.14% generations judged both truthful and informative on TruthfulQA, showing a substantial gap from reliable factual answering. This result is also present in the dated July technical report; unsuccessful answers cannot all be counted as hallucinations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2307-09288v2",
+   "source_snapshot_id": "d551f5df79b58e6395bd147787a16e880005d40cb42a5840dcce9279db592396",
+   "publisher": "Meta researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2307.09288v2",
+   "locator": "Section 4.2, Truthfulness, Toxicity, and Bias; section 5.2, Limitations and Ethical Considerations",
+   "receipt": {
+    "public_excerpt": "toxicity and truthfulness.",
+    "quote_hash": "d66a7734b270a0aecd686ece632fe26ce6a8a0865cd3ea1461c8b106ccf9f40b",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-19",
+   "retrieved_at": "2026-10-29T03:10:54Z",
+   "relation": "context",
+   "explanation": "The report ranks Llama 2-Chat favorably against these peers while separately acknowledging a propensity to hallucinate in section 5.2. It supports the reliability concern but weighs against reading Marcus as claiming inferior performance relative to competitors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "anyscale-com-blog-llama-2-is-about-as-factually-accurate-as-gpt-4-f-fcb3a97e84ba",
+   "source_snapshot_id": "c9366902675909f8c3a3d3d975567f13c72a66693b6a0cfa37184c231b0e9544",
+   "publisher": "Anyscale",
+   "source_type": "independent_measurement",
+   "url": "https://www.anyscale.com/blog/llama-2-is-about-as-factually-accurate-as-gpt-4-for-summaries-and-is-30x-cheaper",
+   "locator": "Results, Near human performance",
+   "receipt": {
+    "public_excerpt": "are almost on par.",
+    "quote_hash": "03b896b04fdf762e24ddc99a99928fb2ae5139b4cade8e62e74582c9264effbd",
+    "verified": "exact"
+   },
+   "event_date": "2023-08",
+   "available_at": "2023-08-23",
+   "retrieved_at": "2026-10-29T03:12:44Z",
+   "relation": "context",
+   "explanation": "Anyscale found strong performance by Llama-2-70b when choosing between correct and incorrect summaries. Recognizing a supplied factual summary differs from generating one without hallucinations, so this is material context rather than direct contradiction.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These sources do not establish a representative real-world hallucination rate across all Meta LLM uses."
+ ],
+ "packet_hash": "ebc238f5457d21a8fcefd211279aefecb23708ed45d40a818b470d7c3298a759"
+}

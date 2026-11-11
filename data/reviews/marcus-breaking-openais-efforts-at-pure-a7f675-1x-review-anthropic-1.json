@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-breaking-openais-efforts-at-pure-a7f675-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-openais-efforts-at-pure-a7f675": "dbaedcf630d4225b7ac3b282d38f3e2434fd78151e7ecc6b05132e800a5ee311"
+ },
+ "started_at": "2026-10-29T23:51:53Z",
+ "completed_at": "2026-10-29T23:52:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, giving his own inference about OpenAI's next steps."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will be throwing the kitchen sink... including test-time-compute' is a firm forecast. The synthetic-data part ('I suspect') and the domain remark ('appears') are kept as qualifiers and not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is ordinary and fair. 'Kitchen sink' means combining several approaches, and test-time compute means extra reasoning at inference. No latency threshold is invented. Leaving out the hedged parts follows the policy."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's dated launch documentation (2025-08-07) for developers describes adjustable thinking time via reasoning_effort in GPT-5. It is a company disclosure, but it documents a shipped feature."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "System card dated 2025-08-07: GPT-5 thinking models are trained with reinforcement learning to reason before answering, and there is a parallel test-time compute setting. Several methods beyond pure pretraining scaling."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Launch announcement dated 2025-08-07: a unified system with a router that decides when to think longer. This confirms extended inference-time reasoning, used selectively."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "GPT-5 was released on 2025-08-07 with documentation showing inference-time reasoning (reasoning_effort, thinking models, parallel test-time compute), RL-trained reasoning and a router. That meets the early-resolution rule, and the firm part of the forecast held. The sources are company disclosures, but they document features that actually shipped, and the packet has no counterevidence. The hedged synthetic-data part is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-openais-efforts-at-pure-a7f675"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11604,
+  "output_tokens": 1316,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

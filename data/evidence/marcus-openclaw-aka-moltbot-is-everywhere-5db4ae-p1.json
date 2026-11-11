@@ -1,0 +1,135 @@
+{
+ "packet_id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae",
+  "version": 1,
+  "content_hash": "f4c30c22b006ab5c26407285e7fc877ff77d0fd2565473fa68164a869f780a31"
+ },
+ "contract_ref": {
+  "id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae",
+  "version": 1,
+  "content_hash": "967f38f22e37dffe8ccc66974195e316b655d6e5e9e9121e8ad42ec59161fb44"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenClaw January 2026 prompt injection security audit proof of concept",
+   "OpenClaw Cisco January 2026 skill security nightmare",
+   "site:openclaw.ai/blog introducing openclaw January 30 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare",
+    "used": true,
+    "why": "Primary security researchers describe testing a malicious skill against OpenClaw."
+   },
+   {
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.1.30/README.md",
+    "used": true,
+    "why": "Versioned documentation describes host tool access and optional sandbox protections."
+   },
+   {
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.1.30",
+    "used": true,
+    "why": "Establishes the release's January 31 availability."
+   },
+   {
+    "url": "https://openclaw.ai/blog/introducing-openclaw",
+    "used": true,
+    "why": "The project describes contemporaneous security work, qualifying claims of entirely absent protections."
+   },
+   {
+    "url": "https://docs.openclaw.ai/gateway/security/prompt-injection",
+    "used": false,
+    "why": "Current documentation includes later developments and is not a reliable snapshot of January."
+   },
+   {
+    "url": "https://github.com/openclaw/openclaw/blob/v2026.1.30/docs/gateway/security.md",
+    "used": false,
+    "why": "The page reader returned HTTP 404."
+   }
+  ],
+  "performed_at": "2026-10-29T17:57:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "blogs-cisco-com-ai-personal-ai-agents-like-openclaw-are-a-security-nightmare",
+   "source_snapshot_id": "440e47879fbd01e445c458d74f9b024eee3db24d5c4f3690054074406c94cc52",
+   "publisher": "Cisco AI Threat and Security Research",
+   "source_type": "independent_measurement",
+   "url": "https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare",
+   "locator": "“A very particular set of skills,” now scanned by Cisco",
+   "receipt": {
+    "public_excerpt": "functionally malware",
+    "quote_hash": "e2c878f59ff85aed4202c843208bb4717695f7131cd19f08b7a092762bb30b4c",
+    "verified": "exact"
+   },
+   "event_date": "2026-01",
+   "available_at": "2026-01-28",
+   "retrieved_at": "2026-10-29T07:39:59Z",
+   "relation": "supports",
+   "explanation": "Cisco describes invoking a third-party skill against OpenClaw, finding silent data exfiltration and instructions that bypassed the assistant's safety guidelines. This is direct evidence of the specified instruction-to-action weakness in the tested setup.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-openclaw-openclaw-blob-v2026-1-30-readme-md",
+   "source_snapshot_id": "ff9d49773046351d2e6ccdb2719f0b5144b12defa619cbddd2a9e08eafdbf903",
+   "publisher": "OpenClaw project",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/openclaw/openclaw/blob/v2026.1.30/README.md",
+   "locator": "Security model (important)",
+   "receipt": {
+    "public_excerpt": "tools run on the host",
+    "quote_hash": "b8c5de66a66042b14841d5c0f51ceac7a6935991fed1b814699b088c45e2964f",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-31",
+   "available_at": "2026-01-31",
+   "retrieved_at": "2026-10-29T17:49:50Z",
+   "relation": "supports",
+   "explanation": "The documented default gives the main session host-level tool execution, explaining why malicious instructions can have consequences beyond generated text. The same section offers Docker sandboxes for non-main sessions, so exposure depends on configuration.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openclaw-ai-blog-introducing-openclaw",
+   "source_snapshot_id": "8d876fec8af3738a2fcdb4bd4b57e6081604d2b8606ea557875047e322135fc0",
+   "publisher": "Peter Steinberger, OpenClaw project",
+   "source_type": "company_disclosure",
+   "url": "https://openclaw.ai/blog/introducing-openclaw",
+   "locator": "What’s New in This Release",
+   "receipt": {
+    "public_excerpt": "machine-checkable security models",
+    "quote_hash": "45ec4d06dbaf17da8c37131452cea177b0c20578c0b9c3bb76820ea2bbf695a7",
+    "verified": "exact"
+   },
+   "event_date": "2026-01",
+   "available_at": "2026-01-29",
+   "retrieved_at": "2026-10-29T17:49:53Z",
+   "relation": "context",
+   "explanation": "The announcement documents active security hardening while acknowledging that prompt injection remains unsolved. It qualifies an interpretation that OpenClaw had no protections, without disproving susceptibility.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "Cisco's article does not provide a complete execution transcript or enough configuration detail to estimate prevalence.",
+  "The Cisco page uses updated project naming; its January date is the page's displayed publication date, not an independently archived text timestamp.",
+  "The evidence does not establish every weakness that a literal reading of all might include."
+ ],
+ "packet_hash": "3eebb7379791cd5c4df4f75bdced519fab6c69ae13e56224f706a3969ac2638c"
+}

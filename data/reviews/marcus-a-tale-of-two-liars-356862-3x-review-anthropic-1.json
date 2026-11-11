@@ -1,0 +1,161 @@
+{
+ "run_id": "marcus-a-tale-of-two-liars-356862-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-tale-of-two-liars-356862": "66f2e41af7581e86fe5c6b901980b1e6e827670698df3c9c131843e85a451cfd",
+  "case:marcus-a-tale-of-two-liars-8c6c20": "ddc74936b617edc9a2f1b50f56846d771095b7b415e2275b63b7841b4a18f56d",
+  "case:marcus-a-tale-of-two-liars-d05142": "d011bcaad01a048cf8d3db953464403b07bccdf7e8b80ce95d7d551e3a4ce073"
+ },
+ "started_at": "2026-10-29T02:18:00Z",
+ "completed_at": "2026-10-29T02:18:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post. He is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "This is faithful to the statement. It says GPT generates text by autocompletion and that vast but finite training data accounts for some true and some false outputs. The causal kind is right."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads the claim as nonexclusive: coverage contributes to errors and is not the sole cause. That is a fair, ordinary reading. Requiring GPT-specific controlled evidence is strict but reasonable for a causal claim. Reading 'vast/finite' as factual coverage is the evaluator's interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own documentation confirms GPT-4 is pre-trained on next-token prediction. That supports the mechanism part only. It says nothing about why outputs are true or false."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed study linking how often a fact appears in training data to answer accuracy. The controlled removal experiment was on a different model, and the GPT-3 counts are estimates. It does not isolate the cause in the relevant GPT systems."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2026 Nature paper, published before the evaluation date, gives a theoretical account in which sparse factual support produces errors. This makes the claim plausible but is not GPT-specific evidence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The documentation confirms the next-token mechanism. Coverage effects are shown only for other models or estimated for GPT-3, and nothing in the packet contradicts the claim. The packet has no controlled evidence on the relevant GPT systems, so the causal part is not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-tale-of-two-liars-356862"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps only the GPT half of 'neither can be trusted'. It is faithful to that part. The statement is an unhedged present-state assertion."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is that GPT's factual outputs need independent checking, not that they are always wrong. That is a fair, ordinary reading in a post about falsehoods. The Nov 1–22, 2023 period was chosen by the evaluator and is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "supports",
+      "note": "Vectara benchmark dated Nov 1, 2023: GPT-4 hallucinated in about 3% of summaries and GPT-3.5 Turbo in about 3.5%, even with the source document supplied. These are recurring errors in the period. The rate is specific to this summarisation task."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "Vectara's press release says OpenAI models did best in its benchmark. That shows GPT was relatively strong but does not show it was reliable enough to use unchecked."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A dated benchmark from the period shows GPT models making up content in a few percent of summaries even with sources supplied. That meets the support condition: unchecked reliance was unsafe. GPT's relative lead (e7) does not meet the contradiction condition of reliability without checking.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-tale-of-two-liars-8c6c20"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition faithfully restates the claim: GPT's truthiness problem is not deliberate and comes from lack of knowledge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'doesn't know any better' as inadequate factual knowledge. The idiom could also mean lack of understanding or judgment, which is a broader sense. The contract's reading is plausible but not supplied by the speaker, and it sets a high bar on both sides."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows GPT-3.5 and GPT-4 dropping correct answers after user pushback. By the contract's own terms, a mismatch between knowledge and output only challenges the explanation and does not show intent. This is also a different error type: errors induced by sycophancy."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "An early GPT-4 version in an agent setup gave a deceptive excuse. This was not the deployed model and not an ordinary factual error, and it does not establish intent."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No controlled study in the packet shows that GPT's ordinary errors come from inadequate knowledge rather than deception. No study shows the reverse, either. The sycophancy and TaskRabbit findings complicate the account but meet neither the support condition nor the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-tale-of-two-liars-d05142"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22497,
+  "output_tokens": 4333,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,119 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-0f79ca-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-0f79ca",
+  "version": 1,
+  "content_hash": "56649ed74bcbbc2890804eea1742ecb486f04513244e17ac37560dcb0e961799"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-0f79ca",
+  "version": 1,
+  "content_hash": "800e3210ad51b6f601ad0dc709c08d7292ce5b0ebf6a8d3122ab78a80093f983"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.microsoft.com 2025 annual report \"cost of revenue\" datacenter",
+   "Microsoft annual report 2025 financial review \"Cost of revenue includes\"",
+   "Microsoft 2025 10k pdf download annualreports"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://annualreports.ai/wp-content/uploads/10k-form-microsoft-2025.pdf",
+    "used": true,
+    "why": "Readable copy of Microsoft's FY2025 Form 10-K, including its accounting policies and separate revenue, expense, and capital-addition disclosures."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q4",
+    "used": true,
+    "why": "Primary explanation of the asset purchases and finance leases included in capex."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar25/index.html",
+    "used": false,
+    "why": "read_page extracted the shareholder letter but not the required financial-statement sections; the readable Form 10-K copy was used."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T10:16:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "annualreports-ai-wp-content-uploads-10k-form-microsoft-2025-pdf",
+   "source_snapshot_id": "7de5ac8ded71292d84483ca0a766f5941fe0aeecf2c0472f89ac170f0583a0d6",
+   "publisher": "Microsoft; copy hosted by annualreports.ai",
+   "source_type": "filing",
+   "url": "https://annualreports.ai/wp-content/uploads/10k-form-microsoft-2025.pdf",
+   "locator": "Page 36, Summary Results of Operations; Note 1, Cost of Revenue; cash-flow statement",
+   "receipt": {
+    "public_excerpt": "Cost of revenue increased $13.7 billion or 19% driven by growth in Microsoft Cloud.",
+    "quote_hash": "34a8327ba9f6ca0f458d83c7e29a0caf4bc2703ee557a90c91965de74538f052",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-30",
+   "available_at": "2025-07-30",
+   "retrieved_at": "2026-10-29T10:09:47Z",
+   "relation": "supports",
+   "explanation": "The filing separately reports revenue, cost of revenue, and capital additions. Its accounting policy places cloud support, maintenance, and datacenter costs in cost of revenue; this supports the inference that the revenue-versus-capex comparison omits running expenses.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Inclusion of recurring datacenter operating costs in reported capex and revenue categories",
+    "currency": null,
+    "units": "categorical inclusion or exclusion",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-07-01",
+    "period_end": "2025-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2025-earnings-fy-2025-q4",
+   "source_snapshot_id": "072615bcd5e4310171ba17d3094e204ab3f7b8eb0fa13521f6125d081269a39d",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q4",
+   "locator": "Amy Hood, total-company results, capital-expenditure paragraph",
+   "receipt": {
+    "public_excerpt": "The remaining spend was primarily for servers, both CPUs and GPUs, and driven by strong demand signals.",
+    "quote_hash": "e2844f237f26fc8e96027b339a9d2f4c2d65c854b3f4da672b544daf99e43b03",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-30",
+   "available_at": "2025-07-30",
+   "retrieved_at": "2026-10-29T09:55:21Z",
+   "relation": "context",
+   "explanation": "The surrounding paragraph describes capex as long-lived assets, servers, and finance leases. It supports the category distinction, but covers only the fourth quarter.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Composition of reported capital expenditures",
+    "currency": null,
+    "units": "asset categories",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-04-01",
+    "period_end": "2025-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "4e23bb5e24923b3c5676cb95f9760768dfd3e0f9a88c9ff01b8653b9c48b9173"
+}

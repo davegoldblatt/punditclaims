@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-annualized-enron-rate-2644d9-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-annualized-enron-rate-2644d9": "f34afae349b5405aee535d6562772d87d4f6abf5310b0e941aec0d43bb63cab5",
+  "case:wyea-annualized-enron-rate-6b5327": "ee25d2f6affd892ceb7263a7638263ed9cfa68551e2440d3f0a5feb29af1089b"
+ },
+ "started_at": "2026-10-31T19:44:23Z",
+ "completed_at": "2026-10-31T19:44:44Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post. The 5GW figure is credited to the NYT, but the scored part ('I can find no compelling evidence') is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The revised wording keeps the first-person 'I can find no' framing, credits the 5GW figure to investor statements reported by the NYT, and adds no conclusion of its own."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly treats this as a report on his own search, judged by his own 'compelling' standard, with no stated date. It does not swap in an objective test, so it is fair to him. Any score would depend on a reading he did not supply."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated summary of the NYT report, published before the evaluation date. It confirms the 5GW investor plan but says nothing about compute actually available."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's October 2025 statement that more than 1GW of Google TPU capacity was expected in 2026. It is a forward-looking company disclosure, not verified delivery."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's April 2026 statement on Trainium2 use and nearly 1GW from Amazon by end of 2026. It gives no verified gigawatt figure for current capacity."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim reports the speaker's own search, judged by his own 'compelling' standard, and says no date for when the gigawatt should have existed. Company forward-looking statements (e2, e3) are the kind of evidence he discounts, and no packet item gives independently verified operational gigawatts. The claim cannot be tested as true or false.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-2644d9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own framed thesis ('I posit') in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful enough. It drops 'I posit' and the collective 'we', but keeps both objects: the true price of GPUs and data-center economics writ large. It is a degree judgment with no threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly notes there is no threshold for 'little understanding' and that whose understanding is meant is unclear. Any score would depend on the evaluator's own reading of the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Silicon Data's methodology page shows a published, standardized rental-price index. It shows some price information is public, but it does not measure realized contract prices or how much people understand."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2025 IEEE Spectrum piece calling GPU costs opaque. It is from a different period and does not measure the state of knowledge in October 2026."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a framed opinion about how much the public or investors collectively understand. It has no threshold and no defined audience. The evidence shows that public indices exist and that opacity concerns are common, but nothing can measure 'little understanding'. The claim cannot be scored as true or false.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-6b5327"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16700,
+  "output_tokens": 1965,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

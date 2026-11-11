@@ -1,0 +1,115 @@
+{
+ "assessment_id": "wyea-the-case-against-generative-ai-7d6ff9-a2",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 2,
+  "content_hash": "f66f4b7b911207adf7c60d38c468c480a55927e50882e3a7c3465c3b2516e303"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 2,
+  "content_hash": "57e9cba6feb39de7f61bc69c484d8b08e1f99c311e47e458eec9000e3f2b8e3c"
+ },
+ "packet_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9-p2",
+  "content_hash": "3dc160cd9af64b30dc88821a98c4f4da1688aa59614843ec894e73a5c0aef275"
+ },
+ "axis": "not_applicable",
+ "outcome": "not_adjudicable",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The main claim is that LLMs 'can't do software engineering', with software engineering defined broadly as understanding, maintaining and executing code to produce functional software. He sets no task, threshold or reliability level, and 'learn' and 'adapt' are undefined. Any test I picked would decide the result rather than measure it. Earlier reviewers found that treating single repository tasks as a contradiction stretches his words. One sub-claim does have support: studies show performance drops as more input is supplied (e1). METR found models reliably finished only short software tasks in early 2025 (e2). But neither study measures software engineering as he defines it, so the claim as a whole cannot be graded.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The context sources measure retrieval and task length, not codebase maintenance.",
+  "Model capabilities changed between 2025 and the evaluation date; this assessment does not grade later models."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-case-against-generative-ai-437122-4x-review-anthropic-2",
+  "wyea-the-case-against-generative-ai-437122-4x-review-openai-2"
+ ],
+ "final_text_run_id": "wyea-the-case-against-generative-ai-437122-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLMs can write code but can't do software engineering, because software engineering is understanding, maintaining and executing code to produce functional software, and LLMs don't learn, can't adapt, and break down the more code and variables they are asked to look at at once.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In simple terms, LLMs are capable of writing code, but can’t do software engineering, because software engineering is the process of understanding, maintaining and executing code to produce functional software, and LLMs do not “learn,” cannot “adapt,” and (to paraphrase Brown), break down the more of your code and variables you ask them to look at at once.",
+   "locator": "paragraph 248",
+   "url": "https://www.wheresyoured.at/the-case-against-generative-ai",
+   "date": "2025-09-29",
+   "document_title": "The Case Against Generative AI",
+   "observed_at": "2026-10-28T22:26:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs are capable of writing code",
+    "can't do software engineering",
+    "software engineering is the process of understanding, maintaining and executing code to produce functional software",
+    "LLMs do not \"learn,\" cannot \"adapt\"",
+    "break down the more of your code and variables you ask them to look at at once"
+   ],
+   "our_interpretation": [
+    "The core claim is a capability judgment resting on the speaker's own definition of software engineering. That definition covers long-term maintenance, judgment and responsibility across a codebase.",
+    "He gives no threshold, task, benchmark or reliability level at which an LLM would count as 'doing software engineering'. Success on single repository tasks does not test his definition, and reviewers have said treating it that way would be unfair to him.",
+    "'Do not learn' and 'cannot adapt' have no stated meaning. They could refer to fixed weights after training, or to whether a model adapts in context. Choosing either would decide the result for him.",
+    "The narrower sub-claim, that performance degrades as more code and context is supplied, can be tested. It is shown here as context only, because it cannot settle the main claim on its own."
+   ],
+   "support_condition": "Would need an agreed test of 'doing software engineering' in his sense (sustained understanding and maintenance of functional software), showing LLMs fail it because they do not learn or adapt and they degrade as context grows.",
+   "contradiction_condition": "Would need reproducible evidence that LLMs, without human engineers supplying the judgment, sustain understanding and maintenance of real functional software over time, in his sense of the term, and do not degrade with larger codebases."
+  },
+  "axis": "not_applicable",
+  "outcome": "not_adjudicable",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The main claim is that LLMs 'can't do software engineering', with software engineering defined broadly as understanding, maintaining and executing code to produce functional software. He sets no task, threshold or reliability level, and 'learn' and 'adapt' are undefined. Any test I picked would decide the result rather than measure it. Earlier reviewers found that treating single repository tasks as a contradiction stretches his words. One sub-claim does have support: studies show performance drops as more input is supplied (e1). METR found models reliably finished only short software tasks in early 2025 (e2). But neither study measures software engineering as he defines it, so the claim as a whole cannot be graded.",
+  "limitations": [
+   "The context sources measure retrieval and task length, not codebase maintenance.",
+   "Model capabilities changed between 2025 and the evaluation date; this assessment does not grade later models."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "We demonstrate that even under these minimal conditions, model performance degrades as input length increases, often in surprising and non-uniform ways.",
+    "locator": "Introduction summary, paragraph 4",
+    "url": "https://research.trychroma.com/context-rot",
+    "publisher": "Chroma",
+    "event_date": "2025-07",
+    "available_at": "2025-07-14",
+    "explanation": "Consistent with the sub-claim that LLMs break down as they are given more input. The tasks are simple retrieval and replication, not code, so this cannot settle the software engineering claim."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "the best current models—such as Claude 3.7 Sonnet—are capable of some tasks that take even expert humans hours, but can only reliably complete tasks of up to a few minutes long.",
+    "locator": "Summary section, paragraph on current models",
+    "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks",
+    "publisher": "METR",
+    "event_date": "2025-03",
+    "available_at": "2025-03-19",
+    "explanation": "Shows models could reliably complete only short software tasks as of early 2025, while also reporting that this capability was growing fast. Neither finding tests the speaker's definition of software engineering."
+   }
+  ],
+  "what_would_resolve": "An agreed, reproducible evaluation of LLMs independently maintaining real production software over time, with a stated success threshold.",
+  "retrospective": true
+ },
+ "public_payload_hash": "199d6f5beb87b8611c6a597fbebf93ebd885bdfd24661b74f0df5aad9c78f020",
+ "supersedes_assessment_id": "wyea-the-case-against-generative-ai-7d6ff9-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T21:15:47Z"
+}

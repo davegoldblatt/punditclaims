@@ -1,0 +1,109 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-2644d9-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-2644d9",
+  "version": 2,
+  "content_hash": "6ef24e9a6536ac0852dc96dc012a77162004f7804f29155ffa38461f62d32884"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-2644d9",
+  "version": 1,
+  "content_hash": "9289deb54ed1157c334c967debe11cc99981b4552954a34a1cf560f807d58b4b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic \"5GW\" \"1.5\" 2026 New York Times",
+   "\"Anthropic\" \"1.5 gigawatts\" \"2026\"",
+   "\"Anthropic\" \"5 gigawatts\" \"2026\" \"Times\"",
+   "\"Anthropic\" \"gigawatt\" \"operational\" \"2025\" Rainier",
+   "site:aboutamazon.com \"Rainier\" \"fully operational\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://epoch.ai/data/ai-chip-users-documentation/methodology",
+    "used": true,
+    "why": "Provides an end-2025 estimate and explicitly describes its evidential weaknesses."
+   },
+   {
+    "url": "https://epoch.ai/data/ai-chip-users-documentation/changelog",
+    "used": true,
+    "why": "Confirms the methodology was released before the post."
+   },
+   {
+    "url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
+    "used": true,
+    "why": "Primary procurement announcement; its capacity was expected in 2026 rather than confirmed operational in 2025."
+   },
+   {
+    "url": "https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster",
+    "used": false,
+    "why": "Confirms operational infrastructure, but the retrieved page mixes updated chip counts with an earlier year-end expectation and does not establish a dated one-gigawatt allocation."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/capital-markets/anthropic-plans-to-have-5gw-worth-of-compute-by-year-end-nyt",
+    "used": false,
+    "why": "The retrieved text ends at a subscription gate. Excluded as an incomplete preview despite the tool's FULL TEXT label."
+   }
+  ],
+  "performed_at": "2026-10-29T10:32:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "epoch-ai-data-ai-chip-users-documentation-methodology",
+   "source_snapshot_id": "1b38bd5800b5591a3b7af272057731a20f33a87adbe04c0ff9a337463c998e53",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/data/ai-chip-users-documentation/methodology",
+   "locator": "Anthropic — Modeling",
+   "receipt": {
+    "public_excerpt": "OpenAI wrote a memo for its investors estimating Anthropic had 1.4 GW of data center capacity as of the end of 2025, about three-quarters of OpenAI’s claimed capacity. Since this is OpenAI’s potentially-biased estimate about another company, this is more uncertain than OpenAI’s disclosure of its own capacity.",
+    "quote_hash": "36953f013b303db89292a2d836f3db6aa67cfcb4e644cbbdb7701d5040cb658b",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-03",
+   "retrieved_at": "2026-10-29T09:50:18Z",
+   "relation": "context",
+   "explanation": "A documented estimate above one gigawatt existed before the post. Its reliance on a rival's estimate, and the methodology's separate discussion of conflicting spending evidence, prevent treating it as verified operational capacity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-expanding-our-use-of-google-cloud-tpus-and-services",
+   "source_snapshot_id": "f3c17629fecfe00360e0e73b01864603fc19aede2123e01ca0abbd4516f5497e",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
+   "locator": "Opening announcement paragraph",
+   "receipt": {
+    "public_excerpt": "in 2026.",
+    "quote_hash": "404643c325c4daaa1beebadc69fb2873bf5697f1a7ce175ba4f4dbb51b21c6bc",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-23",
+   "available_at": "2025-10-23",
+   "retrieved_at": "2026-10-29T03:08:32Z",
+   "relation": "context",
+   "explanation": "The agreement is evidence of prospective access exceeding one gigawatt. It does not establish that this capacity was operational by the end of 2025.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No reconciled operational inventory establishes Anthropic's year-end 2025 allocation in a consistent gigawatt measure.",
+  "No reliable upper bound establishes that less than one gigawatt was available.",
+  "The conclusion changes if future contracted capacity counts as compute available to buy."
+ ],
+ "packet_hash": "4495c89ff94d57d50ec0f03eea29246beb65035f30d5bf568c7ef48815725f50"
+}

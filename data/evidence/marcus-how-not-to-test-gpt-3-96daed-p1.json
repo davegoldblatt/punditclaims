@@ -1,0 +1,106 @@
+{
+ "packet_id": "marcus-how-not-to-test-gpt-3-96daed-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-96daed",
+  "version": 1,
+  "content_hash": "f9d82f3bd6c04aa55c17f08137c89cb6c63d9cf046aeac9fb6409e888690b95b"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-96daed",
+  "version": 1,
+  "content_hash": "962fb10bc36ab7dee86505a69f739d600189c30b43dedfa7bfd3b9b9b0ead042"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-3 training data Wikipedia 2020 Brown table 2.2",
+   "GPT-3 false belief experiments training data Wikipedia contamination Sally Anne corpus",
+   "\"Sally-Anne test\" \"2019\" Wikipedia",
+   "\"Sally-Anne test\" \"Wikipedia\" \"2018\"",
+   "\"GPT-3\" \"Sally-Anne\" \"training data\" contamination audit"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2005.14165v4",
+    "used": true,
+    "why": "Primary training report identifies Wikipedia and other corpora and reports repeated sampling."
+   },
+   {
+    "url": "https://arxiv.org/abs/2005.14165",
+    "used": true,
+    "why": "Checked the publication and revision dates of the cited training report."
+   },
+   {
+    "url": "https://github.com/openai/gpt-3/blob/master/model-card.md",
+    "used": false,
+    "why": "Read the training-cutoff information, but it supplies no experiment-specific inclusion records."
+   },
+   {
+    "url": "https://static.hlt.bme.hu/semantics/external/pages/t%C3%B6bbszerepl%C5%91s_tudatelm%C3%A9let/en.wikipedia.org/wiki/Theory_of_mind.html",
+    "used": true,
+    "why": "Preserves a January 2019 Wikipedia revision describing false-belief experiments, establishing their presence in a candidate source before GPT-3 training."
+   },
+   {
+    "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+    "used": false,
+    "why": "Excluded as independent evidence of training exposure."
+   }
+  ],
+  "performed_at": "2026-10-29T07:07:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2005-14165v4",
+   "source_snapshot_id": "7a28001e525959cdeb139aa2dde946bd12f149c71d06330ec6df40a9a85bd395",
+   "publisher": "arXiv; Tom B. Brown and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2005.14165v4",
+   "locator": "Section 2.2, Training Dataset; Table 2.2",
+   "receipt": {
+    "public_excerpt": "the final mixture of datasets",
+    "quote_hash": "3a30202c288a3b149b2564bc977b03118d1102ca166a7b869a14f5a78143e3c9",
+    "verified": "exact"
+   },
+   "event_date": "2020",
+   "available_at": "2020-07-22",
+   "retrieved_at": "2026-10-29T06:05:58Z",
+   "relation": "context",
+   "explanation": "The surrounding section and table identify English Wikipedia as training data, with 3.4 epochs of sampling, alongside web and book corpora. This makes repeated exposure plausible but does not identify retained descriptions of these experiments.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "static-hlt-bme-hu-semantics-external-pages-t-c3-b6bbszerepl-c5-91s-087352544f96",
+   "source_snapshot_id": "99726d311e6bd184b257037a510277b2d05957b8a6fd193bbafb653285cb83fe",
+   "publisher": "Wikipedia contributors; historical copy hosted by BME",
+   "source_type": "secondary_summary",
+   "url": "https://static.hlt.bme.hu/semantics/external/pages/t%C3%B6bbszerepl%C5%91s_tudatelm%C3%A9let/en.wikipedia.org/wiki/Theory_of_mind.html",
+   "locator": "False-belief task section; revision date in page footer",
+   "receipt": {
+    "public_excerpt": "Sally also has a marble",
+    "quote_hash": "f80d41022754d0da348198c38d3d525ba26c445a4c896e43f0a205f2e80c1739",
+    "verified": "exact"
+   },
+   "event_date": "2019-01-28",
+   "available_at": "2019-01-28",
+   "retrieved_at": "2026-10-29T07:02:20Z",
+   "relation": "context",
+   "explanation": "The preserved revision describes Sally–Anne and other false-belief tasks before GPT-3's training report. It is evidence of candidate training material, not proof that this passage survived preprocessing or was sampled.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No experiment-specific inclusion audit or training-sample record was located.",
+  "Corpus-level sampling rates do not establish how often particular passages were encountered.",
+  "The evidence supports plausibility but does not independently settle the claimed near-certainty."
+ ],
+ "packet_hash": "a225c292b7b1a94effbfe579c9ce65a9ca619c3a5a830d98e35d278ffc79f69a"
+}

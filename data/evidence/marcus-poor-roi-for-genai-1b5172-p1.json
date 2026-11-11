@@ -1,0 +1,126 @@
+{
+ "packet_id": "marcus-poor-roi-for-genai-1b5172-p1",
+ "claim_revision_ref": {
+  "id": "marcus-poor-roi-for-genai-1b5172",
+  "version": 1,
+  "content_hash": "5cae8e709c4c5011441a56b88c4d83611a3cb3936fe871e8e6d3a1e828e9844f"
+ },
+ "contract_ref": {
+  "id": "marcus-poor-roi-for-genai-1b5172",
+  "version": 1,
+  "content_hash": "8c9a39853fe90b4a59c4c058d8ec039f74f05a80df7a9cc9576e503d247649df"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia April 9 2025 \"23.4\" \"11.5\"",
+   "Nvidia April 10 2025 year to date 23.4 S&P",
+   "\"Nvidia\" \"23.4%\" \"April\" \"2025\"",
+   "\"S&P\" \"April 10, 2025\" \"11.5\"",
+   "\"How major US stock indexes fared\" \"4/10/2025\"",
+   "\"Nvidia\" \"April 10, 2025\" \"down\" \"year to date\"",
+   "\"Nvidia\" \"April 10, 2025\" \"year-to-date\" \"20\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theepochtimes.com/bright/how-major-us-stock-indexes-fared-april-10-post-5840078",
+    "used": true,
+    "why": "Accessible Associated Press report supplies the S&P 500's closing year-to-date change."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/nvidia-sinking-today-time-buy-174557911.html",
+    "used": true,
+    "why": "Dated Motley Fool report supplies an intraday NVIDIA year-to-date change."
+   },
+   {
+    "url": "https://apnews.com/article/d4fe7dd1a23df02b8e423536372344ee",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the accessible syndicated AP report instead."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/312070/000095010325004831/dp227613_424b2-7163ms.htm",
+    "used": false,
+    "why": "Potential index-price corroboration, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/83246/000110465925034587/tm2511073d93_424b2.pdf",
+    "used": false,
+    "why": "Potential NVIDIA closing-price corroboration, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/NVDA/history/?period1=1735603200&period2=1744329600",
+    "used": false,
+    "why": "The returned historical table covered different dates despite the requested parameters."
+   },
+   {
+    "url": "https://www.statmuse.com/money/ask/nvidia-stock-price-in-april-2025",
+    "used": false,
+    "why": "Daily prices did not establish a common intraday cutoff or a matching unadjusted price-return calculation."
+   },
+   {
+    "url": "https://www.zacks.com/stock/news/2443106/nvidia-nvda-moves-187-higher-will-this-strength-last",
+    "used": false,
+    "why": "read_page returned a bot-check page rather than the article."
+   }
+  ],
+  "performed_at": "2026-10-29T07:47:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "theepochtimes-com-bright-how-major-us-stock-indexes-fared-april-10-post-5840078",
+   "source_snapshot_id": "f646d8ace42d8dfb20903b04ae777ebfd9042399733bf90badb08000627a6e5d",
+   "publisher": "Associated Press, syndicated by The Epoch Times",
+   "source_type": "news_report",
+   "url": "https://www.theepochtimes.com/bright/how-major-us-stock-indexes-fared-april-10-post-5840078",
+   "locator": "For the year",
+   "receipt": {
+    "public_excerpt": "The S&P 500 is down 613.58 points, or 10.4 percent.",
+    "quote_hash": "a5779fb91cef158b21e42a41c3732c7bdcb306ea7ef95398ea842d7d2e4a9069",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-10",
+   "available_at": "2025-04-10",
+   "retrieved_at": "2026-10-29T07:43:28Z",
+   "relation": "context",
+   "explanation": "The closing year-to-date decline differs from Marcus's figure. It cannot contradict an unspecified earlier intraday quote. Accessible primary records were not obtained.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-nvidia-sinking-today-time-buy-174557911-html",
+   "source_snapshot_id": "d9677f6d3ea17ae160ce107b703268448c71e292adb6ed77370ec53755e652ac",
+   "publisher": "The Motley Fool, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/nvidia-sinking-today-time-buy-174557911.html",
+   "locator": "Paragraph immediately before 'Is Nvidia stock a buy right now?'",
+   "receipt": {
+    "public_excerpt": "down 21% year to date",
+    "quote_hash": "8101a90835744285d03a86baa3c93854fe321244f16a6bbefb9c545dacd45f75",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-10",
+   "available_at": "2025-04-10",
+   "retrieved_at": "2026-10-29T07:43:28Z",
+   "relation": "context",
+   "explanation": "The article describes trading around 1 p.m. ET and reports a different NVIDIA decline. Without the post's cutoff, this snapshot cannot settle its precise percentage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The post's market-data timestamp is unknown.",
+  "No verified pair of NVIDIA and S&P 500 year-to-date returns at the same publication-time cutoff was obtained.",
+  "The retrieved reports use different cutoffs and cannot establish or exclude the quoted pair."
+ ],
+ "packet_hash": "06287d12956c5679a573a2118584e5f2d7cac1912e048fadb17d62e8c25bf2df"
+}

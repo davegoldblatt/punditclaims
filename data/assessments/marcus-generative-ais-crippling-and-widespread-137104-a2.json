@@ -1,0 +1,119 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-137104-a2",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-137104",
+  "version": 1,
+  "content_hash": "f8c16ba5ec8b8ef4af1eb940a5be543c417f99735a4116717fee220a1c178f37"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-137104",
+  "version": 1,
+  "content_hash": "f0e62a4eb3821705ef8cc55668bc8a991a36a9bee9567ff264b2348fe85adde1"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-137104-p1",
+  "content_hash": "1ee46a4ee34f35509c7399c5475d86d532605bedc8ad9ac3d543a460792f3ed1"
+ },
+ "axis": "forecast_outcome",
+ "outcome": "unresolved",
+ "horizon_state": "open_horizon",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "SATBench's September 22, 2025 version varies clause counts and reports answer errors on logical puzzles, meeting the condition of larger and harder propositional inputs [e1]. These results do not isolate internal encoding failure [e1]. The December 6, 2024 probing study reports that its similarity measure misses distinctions in a three-entity example that interventions still detect; the authors suggest their methods may be too noisy for contexts with more than two entities [e2]. Neither item establishes systematic encoding failure or robust encoding across substantial increases in logical complexity [e1, e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Answer accuracy does not distinguish encoding errors from reasoning or decoding errors [e1].",
+  "The probing study does not establish encoding reliability at the larger logical complexity contemplated by the claim [e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-0e033f-4x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-0e033f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-137104-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-137104",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "As propositions become more numerous and complex, LLMs' encoding of them will also prove unreliable.",
+  "kind": "conditional_forecast",
+  "conditions": [
+   "as number and complexity of propositions increases"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As the number of propositions and the complexity of what is represented increases (e.g., to include logical quantifiers), I expect encoding too will turn out to be unreliable.",
+   "locator": "paragraph 99",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "As the number of propositions and the complexity of what is represented increases",
+    "e.g., to include logical quantifiers",
+    "I expect encoding too will turn out to be unreliable"
+   ],
+   "our_interpretation": [
+    "Encoding means the internal representation of the supplied propositions, distinguished from producing an answer or decoding that representation.",
+    "The antecedent is exposure to larger and more complex propositional inputs. Quantifiers are an example, not a required feature of every test.",
+    "Increasing the number of interacting Boolean clauses is an ordinary instance of increasing proposition count and represented logical complexity.",
+    "The forecast concerns systematic encoding failures, not an isolated mistake or a requirement that every model fail on every larger input.",
+    "No deadline is stated."
+   ],
+   "support_condition": "Controlled experiments with larger and more complex propositional inputs demonstrate systematic loss or corruption of their internal representation, with controls separating encoding failure from probe, reasoning, and decoding failure.",
+   "contradiction_condition": "Well-controlled experiments across substantial increases in proposition count and logical complexity establish robust internal encoding, including on cases where generated answers fail."
+  },
+  "axis": "forecast_outcome",
+  "outcome": "unresolved",
+  "horizon_state": "open_horizon",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "SATBench's September 22, 2025 version varies clause counts and reports answer errors on logical puzzles, meeting the condition of larger and harder propositional inputs [e1]. These results do not isolate internal encoding failure [e1]. The December 6, 2024 probing study reports that its similarity measure misses distinctions in a three-entity example that interventions still detect; the authors suggest their methods may be too noisy for contexts with more than two entities [e2]. Neither item establishes systematic encoding failure or robust encoding across substantial increases in logical complexity [e1, e2].",
+  "limitations": [
+   "Answer accuracy does not distinguish encoding errors from reasoning or decoding errors [e1].",
+   "The probing study does not establish encoding reliability at the larger logical complexity contemplated by the claim [e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "varying the number of clauses",
+    "locator": "Abstract, SATBench, version 2",
+    "url": "https://arxiv.org/abs/2505.14615",
+    "publisher": "arXiv",
+    "event_date": "2025",
+    "available_at": "2025-09-22",
+    "explanation": "SATBench tests models on logical puzzles with varying clause counts and difficulty, satisfying the antecedent under the stated reading. Its answer-level errors do not identify whether internal encoding, reasoning, or decoding failed."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "our current methods may be too noisy",
+    "locator": "Section 5.3, qualitative evaluation of binding similarity",
+    "url": "https://arxiv.org/html/2406.19501v2",
+    "publisher": "arXiv",
+    "event_date": "2024",
+    "available_at": "2024-12-06",
+    "explanation": "The authors distinguish shortcomings in their probe from shortcomings in the model's representation: interventions still capture binding differences that the similarity measure misses. Consequently, poorer probing performance on larger inputs cannot alone settle Marcus's prediction."
+   }
+  ],
+  "what_would_resolve": "Reproducible experiments that increase proposition count and logical complexity, measure internal representations with validated methods, and establish systematic encoding failure or robust encoding while separating probe, reasoning, and decoding errors.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9f4de1c68d8293c80c3e4104e47dca3eeef6a93b5ebd019bf3c1d43b75588c76",
+ "supersedes_assessment_id": "marcus-generative-ais-crippling-and-widespread-137104-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:25:17Z"
+}

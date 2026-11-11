@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-a-new-ai-scaling-law-shell-game-baa1e0-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-new-ai-scaling-law-shell-game-baa1e0": "72dae57629498f1de8a3b5594ab5e5fed2aacd7d0a9be22b3867a27bc491dc16"
+ },
+ "started_at": "2026-10-29T02:02:56Z",
+ "completed_at": "2026-10-29T02:03:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, given as one of his reasons. The Altman quote nearby is a separate passage and is not part of the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will eventually run out' is a firm, unhedged forecast with no deadline. The normalised wording correctly limits 'the new ones' to post-training and inference-time scaling."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'run out' as no longer giving meaningful gains is ordinary and fair. Requiring both approaches to plateau, and not counting finite gains as refutation, matches 'eventually'. What counts as running out is still up to the evaluator."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "arXiv v3, revised 2026-03-26, before the cutoff. Shows an accuracy ceiling for resampling with imperfect verifiers only. That is one inference method, not inference scaling as a whole and not post-training."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA blog post (the company describing its own work), 2025-11-19. A post-training plateau was overcome by using larger rollouts. This shows a local plateau is not exhaustion, but continued finite gains cannot rule out an eventual limit."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is an open-ended 'eventually' forecast. The packet shows a ceiling for one inference method (e1) and a post-training plateau that was later broken (e2). Neither shows both approaches have run out, and continued gains cannot disprove an eventual limit. The early-resolution rule is not met, so the outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-new-ai-scaling-law-shell-game-baa1e0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9836,
+  "output_tokens": 1000,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

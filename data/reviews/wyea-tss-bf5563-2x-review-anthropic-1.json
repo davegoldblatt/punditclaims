@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-tss-bf5563-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-tss-bf5563": "87c0849fb578ab427cae0737321be69665cb6c87dc0be2fa3918235818ad1f2f",
+  "case:wyea-tss-ec3515": "0da735f02045c51d7ff51be871aa316e246413bf3a10145adb97ae6e21d473df"
+ },
+ "started_at": "2026-11-10T02:08:25Z",
+ "completed_at": "2026-11-10T02:08:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his newsletter, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the sentence. The Copilot scope comes from the context. It is an unhedged present-tense description, so 'observation' is right."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (plausible code without real analysis of what it does; not random guessing) is an ordinary, fair reading of 'merely guesses'. The April–June 2024 window is an evaluator choice, and the result depends on how 'merely' is read."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "2021 Codex paper: next-token prediction and insecure suggestions. Earlier model and period, so background only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "CRUXEval (Jan 2024): GPT-4 predicts code inputs and outputs fairly well, which pushes against a blanket denial of code reasoning. It does not test the Copilot setup in the target period."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "SemCoder v1 (June 2024) is a research model trained on execution behaviour. It is not Copilot and is not matched to the target period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No evidence in the packet isolates the mid-2024 Copilot model and tests surface plausibility against real analysis of program behaviour. The 2021 Codex material is background. The 2024 papers show some code reasoning in other models, but they don't meet the contradiction condition for the relevant tools. The packet doesn't settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-tss-bf5563"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The wording is faithful. But 'so unprofitable and unreliable that firms are having to calm down salespeople' says the problems cause the sales restraint. The contract's causal axis fits that better than the drafter's 'observation'. 'Superficially-impressive doodad' is evaluative language."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain readings of 'unprofitable' (returns fail to cover attributable costs) and 'calm down' (tempering sales promises or expectations) are ordinary and fair. The window, the companies and the accounting basis are evaluator choices, which leaves the result dependent on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Oct 2023 report relaying WSJ estimates of Copilot losses. Earlier period and a single product. It doesn't show April–June 2024 losses or any sales restraint."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google's own May 2024 post admits some inaccurate AI Overviews. This supports only the unreliability part, and it is a company disclosure that also says the problems were uncommon. Nothing on profit or sales management."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Only the unreliability part has evidence from the period, Google's own admission. No matched product revenue and cost figures for April–June 2024 were obtained. No admissible evidence shows sales restraint or links it to profit or reliability problems; the key reports were paywalled. The packet doesn't settle the causal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-tss-ec3515"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 19160,
+  "output_tokens": 3329,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

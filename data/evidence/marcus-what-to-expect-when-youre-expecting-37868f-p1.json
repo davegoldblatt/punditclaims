@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-37868f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-37868f",
+  "version": 2,
+  "content_hash": "b7e19e70807c9a7020c7481b9fac235c76160aea1e520fa4178df2ad65f0bf5c"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-37868f",
+  "version": 1,
+  "content_hash": "b7dcc627d4423abd07a26ee82daf92db9f671a6ac91afdfaca047a63a7c44c62"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT4 world model accessible representations programmers knowledge graphs reliable benchmark",
+   "\"GPT-4\" \"PDDL\" \"world models\" planning reliable",
+   "site.arxiv.org/abs/2305.14909"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Primary launch documentation describing GPT-4's output and interface."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.14909v3",
+    "used": false,
+    "why": "The requested version did not exist; read_page returned HTTP 404."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.14909",
+    "used": true,
+    "why": "Verified the paper's version history and publication timing."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.14909v2",
+    "used": true,
+    "why": "Direct study of extracting explicit world models from GPT-4, correcting them, and using them for downstream planning."
+   }
+  ],
+  "performed_at": "2026-10-29T15:53:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Section Visual inputs",
+   "receipt": {
+    "public_excerpt": "it generates text outputs",
+    "quote_hash": "c84c04cf556687d2c38fabed1df81a4d3ccdfedf74e12e75698286443955b98a",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "context",
+   "explanation": "The launch interface exposes generated text, which can include code. That description does not establish either the presence or the absence of reliable representations obtainable through prompting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2305-14909v2",
+   "source_snapshot_id": "3c5b5bf98f5758259c7239fb62c5e3b753a53b9efdd78c5a4dc36109e2c9e842",
+   "publisher": "NeurIPS 2023; author manuscript on arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2305.14909v2",
+   "locator": "Section 5.2, Correcting PDDL with domain experts",
+   "receipt": {
+    "public_excerpt": "59 feedback messages",
+    "quote_hash": "1e41ba4f4ab12b552afc732c08c766a43204fb1e277830484fceed22fe57a299",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-11-02",
+   "retrieved_at": "2026-10-29T06:22:19Z",
+   "relation": "context",
+   "explanation": "Researchers extracted explicit action models from GPT-4 and used corrected models to solve downstream planning tasks. The substantial corrective feedback supports the reliability concern while the successful extraction and downstream use challenge a categorical absence of accessible representations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not determine whether the claim includes representations made reliable through external correction.",
+  "The planning study covers selected domains rather than the full range of things GPT-4 discusses.",
+  "Public interface documentation cannot establish the absence of every usable representation."
+ ],
+ "packet_hash": "87c4a3c737b43ad33d21a9242a382c652e97d48364a5f2ded7172fc5941f1ed8"
+}

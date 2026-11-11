@@ -1,0 +1,155 @@
+{
+ "run_id": "marcus-where-we-are-right-now-on-open-source-1c7741-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-where-we-are-right-now-on-open-source-1c7741": "16e5d7550734679ec0c4b4fa7adf157192a0cd1cb82103cd21e46c4957319fac",
+  "case:marcus-where-we-are-right-now-on-open-source-314303": "dff567ee0b8043bdeeea6ff1beaaec1bdd222d5762f1fc6f5f445154b10fbf9d",
+  "case:marcus-where-we-are-right-now-on-open-source-c2e824": "7603f4380b7d1cd432e7a38308bb7f3d939340b93bc363753472d04fce6d7708"
+ },
+ "started_at": "2026-10-29T12:51:44Z",
+ "completed_at": "2026-10-29T12:52:29Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own numbered point in his post. He cites Krier for support but makes the claim in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm claim about the state of knowledge. 'Possible' is part of what is claimed, not a hedge on Marcus's confidence. The examples are kept as examples."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'nobody knows' as 'established knowledge did not rule out serious harm' is the ordinary reading. The contradiction test is fair and is not stretched against him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Preprint from 31 Oct 2023, before the post. It says it was unclear whether safety training holds when attackers have the model weights, and it shows Llama 2's safeguards being removed cheaply."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporaneous account of a workshop on open models. An expert says releasing them is not costless and the panels discuss unresolved risks, which fits an unsettled state of knowledge."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Research available before the post (e1) and expert discussion (e2) show that serious misuse of open-weight models had not been ruled out. Nothing in the packet shows evidence conclusively excluding such harm. The support condition is met and the contradiction condition is not.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-where-we-are-right-now-on-open-source-1c7741"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own numbered point. Context makes Meta the subject."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Several claims joined together: speed, external oversight (qualified by 'apparently'), formal results, and scientific consensus. 'As quickly as possible' is close to rhetoric and has no measure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Counting model safety evaluations as 'anything like formal results' is a fair reading of a sweeping phrase. Still, Marcus may have meant evidence about the societal risks of open release. The result depends on that choice and on how 'oversight' is read."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Meta's own release post (company disclosure) says Meta commissioned outside red-teaming before release. That is outside testing, but not independent authority over the release."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Meta's technical report, published at release, presents quantitative safety evaluations and red-teaming. Those are formal results that existed before release. The excerpt does not show the claimed 34B delay."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Holds: the outside testers were commissioned by Meta, so no independent body had authority over the release. Fails: Meta's published safety evaluations and red-teaming contradict 'without anything like formal results'. Unresolved: the packet does not settle speed or scientific consensus.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-where-we-are-right-now-on-open-source-314303"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own numbered point. Meta is inferred from context."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'at least with respect to public profile' and 'apparently'. The motive is hedged with 'apparently', so it cannot be scored on its own. The scoreable parts are 'behind in profile' and 'aggressive promotion'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'behind' as public recognition, not benchmark scores, is fair and ordinary. The contract also treats the motive as tentative."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Meta's own post (company disclosure) records repeated Llama releases, partnerships, a keynote and workshops. This supports the promotion part only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reuters reports Zuckerberg's stated reason, innovation, and describes OpenAI's early market dominance. Market position is not the same as public profile, and the article does not rule out a motive of raising Meta's profile."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The promotion part is supported (e1). The central comparison, that Meta was behind in public AI profile, has no comparable measure in the packet, and the hedged motive cannot be scored. Nothing in the packet contradicts the claim, so it remains unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-where-we-are-right-now-on-open-source-c2e824"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20427,
+  "output_tokens": 4782,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

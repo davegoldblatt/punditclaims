@@ -1,0 +1,106 @@
+{
+ "packet_id": "marcus-dall-es-new-guardrails-fast-furious-773ec1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-773ec1",
+  "version": 1,
+  "content_hash": "deaa6f32a6284914d661d56fd8c5e4543e4f3ad70c06cb41ab59cc02f5761961"
+ },
+ "contract_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-773ec1",
+  "version": 1,
+  "content_hash": "d530fee32b044faf810391dad7cd0ada21267611ace93c105d09bb20e1507671"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Yi Zeng 40 persuasion jailbreak January 2024",
+   "chatbot jailbreak patched December 2023 attacks safety generalization",
+   "\"December 2023\" jailbreak \"tested\" GPT-4 Tree attacks pruning"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nist.gov/news-events/news/2024/01/nist-identifies-types-cyberattacks-manipulate-behavior-ai-systems",
+    "used": true,
+    "why": "Contemporary official research summary recognizes continuing vulnerabilities but does not isolate the claim's causal factors."
+   },
+   {
+    "url": "https://xyq7.github.io/papers/NMI-JailbreakDefense.pdf",
+    "used": true,
+    "why": "Accessible full research paper documents both residual failures and substantial gains from a general defense. Its experiments predate the target period."
+   },
+   {
+    "url": "https://www.nature.com/articles/s42256-023-00765-8",
+    "used": false,
+    "why": "The returned page contains a subscription preview. The accessible author-hosted paper was read and used instead."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.06373",
+    "used": false,
+    "why": "The persuasion paper was first submitted January 12, 2024. Earlier circulation is possible, but its experiments were not securely dated to the target window."
+   },
+   {
+    "url": "https://arxiv.org/html/2312.02119v1",
+    "used": false,
+    "why": "The paper dates its experiments to November 2023, outside the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T03:47:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "nist-gov-news-events-news-2024-01-nist-identifies-types-cyberattack-ebb8b2027c2f",
+   "source_snapshot_id": "184478bd0573a711cb8ab7f04467435ef0e92fe40a9787a91ce3cf1878de0502",
+   "publisher": "National Institute of Standards and Technology",
+   "source_type": "secondary_summary",
+   "url": "https://www.nist.gov/news-events/news/2024/01/nist-identifies-types-cyberattacks-manipulate-behavior-ai-systems",
+   "locator": "Apostol Vassilev quotation in discussion of chatbot vulnerabilities",
+   "receipt": {
+    "public_excerpt": "bad or toxic information",
+    "quote_hash": "14dd1dd45b400e99d4ed8746eed56e75bbcc706d3620e5106c265dc393d8fed3",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-04",
+   "available_at": "2024-01-04",
+   "retrieved_at": "2026-10-29T03:41:15Z",
+   "relation": "context",
+   "explanation": "NIST's contemporary assessment recognizes vulnerabilities to carefully constructed prompts. It does not experimentally separate prompt diversity and response inconsistency as causes of unreliable safeguards.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "xyq7-github-io-papers-nmi-jailbreakdefense-pdf",
+   "source_snapshot_id": "27936f17e7c7d58e11ab7f514fa26598210ea14cf0f38d6607f863e53ce659d6",
+   "publisher": "Nature Machine Intelligence; author-hosted copy",
+   "source_type": "peer_reviewed",
+   "url": "https://xyq7.github.io/papers/NMI-JailbreakDefense.pdf",
+   "locator": "Page 1, abstract",
+   "receipt": {
+    "public_excerpt": "from 67.21% to 19.34%.",
+    "quote_hash": "7b0deb0eaaed05c4cc1671d5aee3cad85e7ce1399729b0acda502c4e0074b4c7",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-12-12",
+   "retrieved_at": "2026-10-29T03:41:13Z",
+   "relation": "context",
+   "explanation": "A general defense substantially reduced attacks while leaving residual failures. This qualifies any reading that safeguards could only block individual examples, but the experiments predate the target window and do not isolate Marcus's full causal explanation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No target-period controlled study was established that separately measures the causal effects of prompt diversity and inconsistent responses after individual filtering.",
+  "The claim supplies no reliability threshold.",
+  "The identified persuasion paper's experimental dates were not established."
+ ],
+ "packet_hash": "428c337bfe01eccad22b07f03b0f574b3834fa1a70b0b8fceeb8b6cd60d4b333"
+}

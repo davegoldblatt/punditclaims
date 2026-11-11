@@ -1,0 +1,119 @@
+{
+ "run_id": "marcus-a-cern-for-ai-and-the-global-governance-bfbde1-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-cern-for-ai-and-the-global-governance-bfbde1": "3ded010e5d6b16a3d46160e371721add6abf5e6a767054f735aefeb64c26a323",
+  "case:marcus-a-cern-for-ai-and-the-global-governance-f505da": "b40f89d96e0fee93004f2f0e1f7578c62871b50571ebc6f3e43ab482587da25d"
+ },
+ "started_at": "2026-10-29T02:16:55Z",
+ "completed_at": "2026-10-29T02:17:23Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus quotes his own March essay and re-presents it approvingly in the October post. These are his own words and he endorses them."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful paraphrase of a present-tense claim that safeguards over current AI are inadequate. The emphasis on external-action integrations is kept. The aside about future machines is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'tons of controls' as adequacy of safeguards is ordinary and fair. Using the October window is reasonable because he re-presented the claim then. But the result depends on how deployment-wide adequacy is judged, which the speaker never defined."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "October 19, 2023 preprint, inside the window. It finds prevention defenses against prompt injection limited and detection insufficient on its own. That is partial support, but it is research on tested setups, not an assessment of deployed authorization controls."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Plugin study tested in June–July, outside the target period. It documents real OpenAI restrictions and review, and the authors judge them insufficient. Context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only in-window evidence (e1) shows prompt-injection defenses had real gaps in October 2023, and it also reports effective detection. The contract says model-output weaknesses alone don't show missing external controls, and the packet has no deployment-wide or TaskRabbit/API evaluation for October. e2 is outside the period. The packet doesn't settle whether safeguards across relevant deployments were materially inadequate.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-cern-for-ai-and-the-global-governance-bfbde1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his October 2023 post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures both parts: no guarantee against jailbreaks, and a just-published technique that jailbreaks current LLMs quickly and automatically. The scope 'unethical things' is slightly compressed but not distorted."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading is fair: 'no way of guaranteeing' means no general immunity, not no narrow certified defense of any kind. 'Quickly' is read as a modest number of queries or minutes, not success every time."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "PAIR, the October 12, 2023 preprint, is fully automated, often succeeds within about twenty queries or under a minute, and reaches about 60% on GPT-3.5/4. Success was lower on Llama-2 and Claude."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Erase-and-check (September 2023) certifies only bounded adversarial modifications through a safety filter. That is not general jailbreak immunity, and the paper predates the window."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "SmoothLLM gives a probabilistic guarantee only for k-unstable suffix attacks. It does not cover semantic jailbreaks like PAIR and does not establish general immunity."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "PAIR, published October 12, 2023, shows automated, fast jailbreaks across several current LLMs. That meets the support condition. The only guarantees available then (erase-and-check, SmoothLLM) were limited to particular attack types and did not establish immunity in general. Lower success on some models qualifies the claim but does not contradict it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-cern-for-ai-and-the-global-governance-f505da"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 18593,
+  "output_tokens": 2818,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,134 @@
+{
+ "assessment_id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6-a1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6",
+  "version": 1,
+  "content_hash": "45bfc35778dd793a209458a2b90826350ab7e068815d49df1f63a76b499a3809"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6",
+  "version": 1,
+  "content_hash": "4ee1fba0e1b6584fa047d756eeacaa4def36f4a621aaf2ebb706ee9fc4b80576"
+ },
+ "packet_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6-p1",
+  "content_hash": "dee78c4393aba679f121813dbe9498c8b0bd0eacb26fdc94b7fb2fb02c3d1d55"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-01-21",
+  "end": "2026-04-21",
+  "precision": "day"
+ },
+ "public_rationale": "Recurring interruptions are documented, and Anthropic acknowledged that demand-driven infrastructure strain impaired reliability. Reporting also attributes the March 2 outage specifically to exceptional demand. This supports capacity pressure as a contributing cause. The networking postmortem shows why the conclusion should not be expanded to every outage.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "No numerical meaning is assigned to constant.",
+  "Capacity is supported as a contributor, not the exclusive cause.",
+  "The March 2 causal explanation is available through attributed news reporting."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-four-horsemen-of-the-aipocalypse-ab5931-4x-review-anthropic-1",
+  "wyea-four-horsemen-of-the-aipocalypse-ab5931-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Anthropic's services appear to have constant uptime issues linked to a lack of compute capacity.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "This is a company that recently raised $30 billion dollars and gets talked about like somebody’s gifted child, yet Anthropic’s services seem to have constant uptime issues linked to a lack of capacity.",
+   "locator": "paragraph 16",
+   "url": "https://www.wheresyoured.at/four-horsemen-of-the-aipocalypse",
+   "date": "2026-04-21",
+   "document_title": "Four Horsemen of the AIpocalypse",
+   "observed_at": "2026-10-28T22:25:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Anthropic’s services",
+    "seem to have constant uptime issues",
+    "linked to a lack of capacity"
+   ],
+   "our_interpretation": [
+    "Constant means recurring interruptions, not uninterrupted failure.",
+    "Linked to means insufficient available serving capacity contributes to the reliability problems; it does not require every incident to share that cause.",
+    "Use the surrounding 90-day discussion to bound the recent operational period through publication.",
+    "Assess the supplied causal proposition. The preceding fundraising figure and description of public enthusiasm are background, not a separate financing assessment."
+   ],
+   "support_condition": "Records establish recurring service interruptions and credible operational evidence identifies demand exceeding available capacity as a contributing cause during the described period.",
+   "contradiction_condition": "Operational evidence establishes that the alleged recurring interruptions did not occur, or that capacity was adequate and did not contribute to the reliability problems."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Recurring interruptions are documented, and Anthropic acknowledged that demand-driven infrastructure strain impaired reliability. Reporting also attributes the March 2 outage specifically to exceptional demand. This supports capacity pressure as a contributing cause. The networking postmortem shows why the conclusion should not be expanded to every outage.",
+  "limitations": [
+   "No numerical meaning is assigned to constant.",
+   "Capacity is supported as a contributor, not the exclusive cause.",
+   "The March 2 causal explanation is available through attributed news reporting."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Significant Trainium2 capacity",
+    "locator": "Infrastructure at scale and Meeting record demand sections",
+    "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+    "publisher": "Anthropic",
+    "event_date": "2026-04-20",
+    "available_at": "2026-04-20",
+    "explanation": "The announcement's Meeting record demand section explicitly attributes reliability and performance problems across consumer and Team plans to growth straining infrastructure, especially at peak hours. Its planned expansion addresses that capacity pressure."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "“unprecedented demand”",
+    "locator": "What happened section",
+    "url": "https://www.tomsguide.com/ai/claude-crashes-under-unprecedented-demand-service-restored-as-surge-shows-explosive-growth",
+    "publisher": "Tom's Guide",
+    "event_date": "2026-03-02",
+    "available_at": "2026-03-02",
+    "explanation": "Reports a specific outage attributed by Anthropic to exceptional demand. This is secondary reporting of the company's explanation, rather than a published technical postmortem."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "networking performance degradation",
+    "locator": "Postmortem posted March 27, 2026, 17:37 UTC",
+    "url": "https://status.claude.com/incidents/b9802k1zb5l2",
+    "publisher": "Anthropic",
+    "event_date": "2026-03-27",
+    "available_at": "2026-03-27",
+    "explanation": "Documents another interruption affecting multiple Claude services, establishing recurrence alongside the March 2 event. Its networking explanation limits any stronger claim that every outage resulted from insufficient compute."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "adf6a3a917b3b8186a06303324c3f5131af4b2fdd1a68c91158a7b1b77b99b0d",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:49:01Z"
+}

@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f",
+  "version": 1,
+  "content_hash": "0fd63d4f8335e451b1ea18a79b7a37270dbcc1cef49cfdfef0d327d08b91a413"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f",
+  "version": 1,
+  "content_hash": "1bfd4de22c183dcc2095a4ed23305537c8dc8ddf9ecc2437ee36cbad7c818c92"
+ },
+ "packet_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f-p1",
+  "content_hash": "7d3671546ff7151537760222e1088ad64478c8d01ebf66dc6fbfc379e41b913c"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-07-13",
+  "precision": "day"
+ },
+ "public_rationale": "Primary studies available before the post show that combining neural reasoning models with executable tools improved results against relevant neural-only baselines. ToRL compares training with and without tools; START also tests tool-eliciting prompts on existing model weights. Grok 4's announcement confirms that tool use was being pursued in a model discussed by the post. Support applies to demonstrated task-specific gains under Marcus's broad, code-inclusive meaning of neurosymbolic.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The decisive studies were preprints reporting the authors' own experiments.",
+  "Training, prompting, and inference resources are not identical in every comparison.",
+  "The evidence does not establish historical priority, universal superiority, or the necessity of symbolic representations inside model weights."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-anthropic-1",
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Tool-driven neurosymbolic approaches are now being pursued and yield better results than pure neural networks.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As we will see in a moment, people are finally pursuing a tool-driven, neurosymbolic vision like this — and getting better results than they were able to get with pure neural networks.",
+   "locator": "paragraph 53",
+   "url": "https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated",
+   "date": "2025-07-13",
+   "document_title": "How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI",
+   "observed_at": "2026-10-28T23:56:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "people are finally pursuing",
+    "a tool-driven, neurosymbolic vision",
+    "getting better results",
+    "than they were able to get with pure neural networks"
+   ],
+   "our_interpretation": [
+    "In the supplied context, tool-driven neurosymbolic systems include neural models coupled to executable computer programs or symbolic tools.",
+    "Better results means demonstrated gains on specified tasks against corresponding neural-only baselines, not superiority on every task.",
+    "Finally expresses the speaker's view of the field's direction; it is not treated as a precise claim of historical priority.",
+    "Use current-year evaluations through the post date, since this technical field has no common quarterly reporting cycle."
+   ],
+   "support_condition": "Implemented systems combining neural models with executable tools outperform relevant neural-only baselines in matched task evaluations.",
+   "contradiction_condition": "Matched evaluations of the approaches at issue show no performance gains, or their claimed gains disappear when the relevant comparison is corrected."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Primary studies available before the post show that combining neural reasoning models with executable tools improved results against relevant neural-only baselines. ToRL compares training with and without tools; START also tests tool-eliciting prompts on existing model weights. Grok 4's announcement confirms that tool use was being pursued in a model discussed by the post. Support applies to demonstrated task-specific gains under Marcus's broad, code-inclusive meaning of neurosymbolic.",
+  "limitations": [
+   "The decisive studies were preprints reporting the authors' own experiments.",
+   "Training, prompting, and inference resources are not identical in every comparison.",
+   "The evidence does not establish historical priority, universal superiority, or the necessity of symbolic representations inside model weights."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "ToRL consistently outperforms baseline models across all tested benchmarks.",
+    "locator": "Section 3.2, Main Results; Figures 1 and 4",
+    "url": "https://arxiv.org/html/2503.23383v1",
+    "publisher": "Xuefeng Li, Haoyang Zou, and Pengfei Liu / arXiv",
+    "event_date": "2025-03",
+    "available_at": "2025-03-30",
+    "explanation": "The study compares tool-integrated reinforcement learning with a baseline without tools using Qwen2.5-Math base models. It reports 43.3% AIME24 accuracy for ToRL-7B and an advantage over the tool-free baseline, supporting gains from the combined approach on mathematical tasks."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "improvements across all benchmarks.",
+    "locator": "Section 4.5, analysis of Hint-infer; Table 6",
+    "url": "https://arxiv.org/html/2503.04625v1",
+    "publisher": "Chengpeng Li and colleagues / arXiv",
+    "event_date": "2025-03",
+    "available_at": "2025-03-06",
+    "explanation": "The authors activate Python tool use in the existing QwQ model through inference-time hints and report gains across their tested benchmarks. This preserves the model weights, although prompting and inference effort also change."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Grok 4 was trained with reinforcement learning to use tools.",
+    "locator": "Native Tool Use section, first sentence",
+    "url": "https://x.ai/news/grok-4",
+    "publisher": "xAI",
+    "event_date": "2025-07-09",
+    "available_at": "2025-07-09",
+    "explanation": "The announcement confirms contemporary pursuit of tool-using models and identifies code interpretation and web browsing. This passage establishes implementation, not a controlled performance advantage."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "274a1826a6c5c38d13869322004fcb70db0db7d42b6c2c2a0eab328125e6b451",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:33:28Z"
+}

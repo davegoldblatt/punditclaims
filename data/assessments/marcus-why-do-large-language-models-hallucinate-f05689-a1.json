@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-why-do-large-language-models-hallucinate-f05689-a1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-f05689",
+  "version": 2,
+  "content_hash": "c388b6ea52c1eef9efd497fe6c39bac3b584b69814657567ac9ef70c38c886d1"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-f05689",
+  "version": 1,
+  "content_hash": "49083e4e3a7fd0a86d35a2ff26e9771e9273ca77c7d829f197a1ce3a6c03f81e"
+ },
+ "packet_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-f05689-p1",
+  "content_hash": "f51e7a5867bcc07a94ac88c657231cba0b307e889cd2e26400d4185ac922f263"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-05-05",
+  "precision": "day"
+ },
+ "public_rationale": "The record-store distinction is consistent with the inspected architecture documentation. The world-model claim remains unsettled. Controlled research found causally useful internal board representations, but that does not establish the stronger kind of model Marcus invokes. Conversely, transformer architecture alone cannot establish the absence of such representations. The combined claim therefore lacks sufficient evidence for either verdict.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "One documented architecture cannot establish a claim about all LLMs.",
+  "The world-model qualification materially affects the result.",
+  "Earlier specialized-model studies are context, not contemporary outcome evidence."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-why-do-large-language-models-hallucinate-c011a7-4x-review-anthropic-1",
+  "marcus-why-do-large-language-models-hallucinate-c011a7-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-why-do-large-language-models-hallucinate-c011a7-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-why-do-large-language-models-hallucinate-f05689",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs don't have a database of records like any proper business would, and they don't have what people like Yann LeCun, Judea Pearl, or Marcus would call a world model.",
+  "kind": "observation",
+  "conditions": [
+   "'world model' in the sense used by LeCun, Pearl, or Marcus"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "They don’t have a database of records like any proper business would (which would be a strong basis to solve the problem); and they don’t have what people like Yann LeCun or Judea Pearl or I would call a world model.",
+   "locator": "paragraph 24",
+   "url": "https://garymarcus.substack.com/p/why-do-large-language-models-hallucinate",
+   "date": "2025-05-05",
+   "document_title": "Why DO large language models hallucinate?",
+   "observed_at": "2026-10-28T23:56:42Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "They don’t have a database of records",
+    "like any proper business would",
+    "they don’t have",
+    "what people like Yann LeCun or Judea Pearl or I would call a world model"
+   ],
+   "our_interpretation": [
+    "Read LLMs as the models themselves, without separately attached databases or retrieval systems.",
+    "A database of records means an explicit, addressable record store. Information encoded in model weights does not by itself qualify.",
+    "The world-model qualification matters: finding any internal representation does not automatically establish that it meets the named researchers’ requirements.",
+    "The claim describes an ongoing state at publication. Use the current year's reporting window, 2025-01-01 through 2025-05-05; earlier studies provide context. This reporting convention is an evaluator choice because scientific model evaluations have no standard reporting quarter."
+   ],
+   "support_condition": "Architecture documentation establishes the absence of an explicit record store across representative contemporary LLMs, and suitable tests establish that their internal representations do not meet the named world-model requirements.",
+   "contradiction_condition": "A model within the stated scope demonstrably contains an explicit record store or a world model meeting the named requirements. External components and narrower definitions of world model do not suffice."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The record-store distinction is consistent with the inspected architecture documentation. The world-model claim remains unsettled. Controlled research found causally useful internal board representations, but that does not establish the stronger kind of model Marcus invokes. Conversely, transformer architecture alone cannot establish the absence of such representations. The combined claim therefore lacks sufficient evidence for either verdict.",
+  "limitations": [
+   "One documented architecture cannot establish a claim about all LLMs.",
+   "The world-model qualification materially affects the result.",
+   "Earlier specialized-model studies are context, not contemporary outcome evidence."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "Grouped-Query Attention",
+    "locator": "Section 2, Model Architecture",
+    "url": "https://arxiv.org/html/2503.19786v1",
+    "publisher": "Google DeepMind / arXiv",
+    "event_date": "2025-03",
+    "available_at": "2025-03-25",
+    "explanation": "The section describes Gemma 3 as a decoder-only transformer with attention components, consistent with the narrow record-store distinction. It neither inventories all LLM architectures nor establishes the absence of learned world representations."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "predicts possible future world states",
+    "locator": "Figure 2 caption, page 6",
+    "url": "https://www.rivista.ai/wp-content/uploads/2025/10/10356_a_path_towards_autonomous_mach.pdf",
+    "publisher": "Yann LeCun; reproduced by Rivista AI",
+    "event_date": "2022-06-27",
+    "available_at": "2022-06-27",
+    "explanation": "LeCun describes action-conditioned prediction of future states. This supplies a relevant definition, not evidence that every contemporary LLM lacks such capabilities; the cited copy reproduces the paper dated June 27, 2022."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "control the output of the network",
+    "locator": "Abstract; sections 3–4",
+    "url": "https://arxiv.org/html/2210.13382v5",
+    "publisher": "Kenneth Li and colleagues / arXiv",
+    "event_date": "2022",
+    "available_at": "2024-06-26",
+    "explanation": "Othello experiments found an internal board representation with a causal role in predictions. This qualifies a blanket denial of learned representations, but concerns an earlier specialized model and does not demonstrate compliance with the claim’s named standards."
+   }
+  ],
+  "what_would_resolve": "Explicit criteria tied to the named researchers, followed by architecture inspection and controlled representation tests on model versions available at the post date.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "000589153ae1a91a9828350744c342625f1fcfdc57e8e29f5a2e9b598a78b34e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:54:59Z"
+}

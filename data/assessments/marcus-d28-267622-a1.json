@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-d28-267622-a1",
+ "claim_revision_ref": {
+  "id": "marcus-d28-267622",
+  "version": 1,
+  "content_hash": "01685f5ac7e87c7142c2b4899053249dbae8f90f30ede4a39bfab2c9321ee69e"
+ },
+ "contract_ref": {
+  "id": "marcus-d28-267622",
+  "version": 1,
+  "content_hash": "bd7fcfa5a32438ee474cadccf917d6ea3a61666c49653b07316995a3a713a48a"
+ },
+ "packet_ref": {
+  "id": "marcus-d28-267622-p1",
+  "content_hash": "ebc238f5457d21a8fcefd211279aefecb23708ed45d40a818b470d7c3298a759"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-07-01",
+  "end": "2023-08-27",
+  "precision": "day"
+ },
+ "public_rationale": "On the ordinary reading that Meta had not achieved reliable factual generation, the claim is supported. Its strongest Llama 2 chat model scored 64.14% on the combined truthful-and-informative measure, and the technical report acknowledged hallucination limitations. This does not establish that Meta lagged competitors: its report and Anyscale’s experiment contain favorable comparisons. The grade depends on the absolute reliability reading of poor.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "TruthfulQA measures a challenging question set, not typical user traffic.",
+  "The combined score does not imply a 35.86% hallucination rate.",
+  "Poor is qualitative, and a comparative interpretation would not receive this verdict.",
+  "Anyscale sold services running the models it evaluated."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-d28-076e39-4x-review-anthropic-1",
+  "marcus-d28-076e39-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-d28-076e39-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-d28-267622",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Meta is poor at making LLMs that do not hallucinate.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "When I think about how poor his company (Meta) is even at making LLMs that don’t hallucinate, I get worried.",
+   "locator": "paragraph 23",
+   "url": "https://garymarcus.substack.com/p/d28",
+   "date": "2023-08-27",
+   "document_title": "𝐩(𝐝𝐨𝐨𝐦)",
+   "observed_at": "2026-10-29T00:03:20Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "his company (Meta)",
+    "how poor",
+    "making LLMs that don’t hallucinate"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that Meta’s available LLMs remained materially unreliable at producing factual answers.",
+    "The claim does not expressly say Meta was worse than competing developers.",
+    "The target is the latest public model generation and its evaluations before the post: the July–August 2023 release period.",
+    "Hallucination means fabricated or factually unsupported output. A combined truthfulness-and-informativeness score is relevant evidence, but its complement is not a hallucination rate."
+   ],
+   "support_condition": "Evaluations of Meta’s then-current LLMs show substantial factual reliability limitations, corroborated by documented hallucination behavior or explicit technical limitations.",
+   "contradiction_condition": "Broad evaluations of those models demonstrate consistently reliable factual generation with only rare hallucinations under representative use."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "On the ordinary reading that Meta had not achieved reliable factual generation, the claim is supported. Its strongest Llama 2 chat model scored 64.14% on the combined truthful-and-informative measure, and the technical report acknowledged hallucination limitations. This does not establish that Meta lagged competitors: its report and Anyscale’s experiment contain favorable comparisons. The grade depends on the absolute reliability reading of poor.",
+  "limitations": [
+   "TruthfulQA measures a challenging question set, not typical user traffic.",
+   "The combined score does not imply a 35.86% hallucination rate.",
+   "Poor is qualitative, and a comparative interpretation would not receive this verdict.",
+   "Anyscale sold services running the models it evaluated."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Llama-2-Chat\n70B\n64.14\n0.01",
+    "locator": "Evaluation Results, fine-tuned models safety table",
+    "url": "https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md",
+    "publisher": "Meta",
+    "event_date": "2023-07",
+    "available_at": "2023-07-19",
+    "explanation": "The 70B chat model achieved 64.14% generations judged both truthful and informative on TruthfulQA, showing a substantial gap from reliable factual answering. This result is also present in the dated July technical report; unsuccessful answers cannot all be counted as hallucinations."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "toxicity and truthfulness.",
+    "locator": "Section 4.2, Truthfulness, Toxicity, and Bias; section 5.2, Limitations and Ethical Considerations",
+    "url": "https://arxiv.org/html/2307.09288v2",
+    "publisher": "Meta researchers via arXiv",
+    "event_date": "2023-07",
+    "available_at": "2023-07-19",
+    "explanation": "The report ranks Llama 2-Chat favorably against these peers while separately acknowledging a propensity to hallucinate in section 5.2. It supports the reliability concern but weighs against reading Marcus as claiming inferior performance relative to competitors."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "are almost on par.",
+    "locator": "Results, Near human performance",
+    "url": "https://www.anyscale.com/blog/llama-2-is-about-as-factually-accurate-as-gpt-4-for-summaries-and-is-30x-cheaper",
+    "publisher": "Anyscale",
+    "event_date": "2023-08",
+    "available_at": "2023-08-23",
+    "explanation": "Anyscale found strong performance by Llama-2-70b when choosing between correct and incorrect summaries. Recognizing a supplied factual summary differs from generating one without hallucinations, so this is material context rather than direct contradiction."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e341715e0a2fb2509c04bd7a5dc9a9e1982719be35e8d051d8385919c2f6d262",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:54:00Z"
+}

@@ -1,0 +1,115 @@
+# Machine-readable editorial policy. scripts/validate.ts and the release
+# builder read this file; tests/policy.test.ts checks it against src/policy.ts.
+# The prose rules are docs/policy.md. Changing anything here is a policy
+# change: bump `version`, add a line to `changes`, and follow the reassessment
+# rule below.
+version: "2026-10-28.7"
+schema_version: 1
+effective: "2026-10-28"
+changes:
+  - version: "2026-10-28.1"
+    date: "2026-10-28"
+    note: First policy. Two subjects, curated register, no aggregate score, two-provider review, no grandfathered verdicts.
+  - version: "2026-10-28.2"
+    date: "2026-10-28"
+    note: Fixes from the cross-vendor audit before any assessment existed. Conditionals score only on a demonstrated antecedent; hedged forecasts are not scored; only outcome evidence decides; financial evidence must match currency, units, basis, and the exact period; observation evidence must fall inside the period; early resolution names its event; prospective needs a pre-outcome freeze; selection order and stopping rule fixed; per-source quoting cap.
+  - version: "2026-10-28.3"
+    date: "2026-10-28"
+    note: Defines which confidence language is scored. Prompted by the first pilot review, where the two reviewers split on "I am more confident than ever that GPT-5 won't land this year". Expressed confidence or expectation about a definite outcome is a forecast and is scored; probability and possibility words are not. Decided before any record was published.
+  - version: "2026-10-28.4"
+    date: "2026-10-28"
+    note: Graded confidence is not a commitment. A forecast that its author files under "medium confidence" or "low confidence" is not scored, like "likely". Prompted by a pilot draft from Marcus's 2025 predictions, which he grouped by confidence level. Decided before any record was published.
+  - version: "2026-10-28.5"
+    date: "2026-10-28"
+    note: "Owner decision: every claim shows the speaker's full words (excerpts up to 80 words) and the per-source quoting cap is off. Also: when both reviews and the draft find a claim cannot be scored, either allowed axis label is accepted."
+  - version: "2026-10-28.6"
+    date: "2026-10-28"
+    note: "Owner decision: a firm claim that names no measure (for example 'the bubble will begin to burst within 12 months') is scored on the plain reading an informed reader would take. The reading is stated as our interpretation and the page says the record was scored on a plain reading. Hedged and probabilistic language is still not scored."
+  - version: "2026-10-28.7"
+    date: "2026-10-28"
+    note: "Full corpus. Every extracted claim is first screened by both providers, a post at a time, for attribution, faithfulness, kind, and whether public evidence could settle it at all. A claim both find uncheckable is published as not_adjudicable with the stated reasons, without an evidence search; its public text is composed by code from the screen, so no final-text check is needed. Every other claim is graded on its own: evidence, two full reviews, and a final-text check. Hedged claims are recorded and not scored; the page no longer promises to show what happened for each one."
+
+# The people covered, their publications, and the collection windows are
+# deployment settings: config/register.yaml.
+
+
+# Selection is frozen before any outcome is graded. The eligible inventory
+# for each subject is written to research/selection/<subject>.json with its
+# hash before grading. Each candidate belongs to the FIRST stratum below that it
+# qualifies for (the list order is the precedence). Per subject, candidates
+# are taken stratum by stratum in that order and, within a stratum, in order of
+# sha256(policy version + candidate id). Taking stops when 20 candidates per
+# subject are selected or the inventory runs out. Selected ids and every
+# disposition (published, held, rejected with reason) are published.
+selection:
+  per_subject_stop: 20
+  strata:
+    - id: matured-dated-forecast
+      rule: A forecast or conditional forecast with an explicit date or relative horizon that elapsed by the evaluation cutoff.
+    - id: open-dated-forecast
+      rule: A forecast with an explicit horizon that has not elapsed. It is prospective only if its outcome is not yet public when its contract freezes.
+    - id: central-recurring
+      rule: A proposition the author repeats in three or more posts in the window. Counted once, with its occurrences.
+    - id: evidence-changed
+      rule: A claim on which named new primary evidence arrived inside the window (a filing, a release, a measurement).
+    - id: declared-lead
+      rule: A statement named in the project's source inventory. The inventory is a lead list, not a verdict.
+  topic_spread: [capabilities, reliability, agi-timelines, scaling, agents, business-economics, financing, regulation-policy, labour]
+  never:
+    - Choosing a candidate because its outcome is already known to embarrass or flatter the author.
+    - Dropping a candidate after grading because of its outcome.
+
+targets: { target: 40, floor: 20, per_subject_floor: 8 }
+
+# Rules that code enforces. Each maps to a check in scripts/lib/rules.ts and a
+# fixture in fixtures/rules/.
+rules:
+  axes_for_kind:
+    observation: [historical_observation, not_applicable]
+    forecast: [forecast_outcome, not_applicable]
+    conditional_forecast: [forecast_outcome, not_applicable]
+    causal: [causal_assessment, not_applicable]
+    normative: [not_applicable]
+    rhetoric: [not_applicable]
+  not_applicable_axis_outcome: not_adjudicable
+  forecast_scored_only_when: [elapsed, conclusive_event]
+  conclusive_event_requires: contract.early_resolution_rule
+  conditional_not_met_blocks: [supported, contradicted, mixed]
+  observation_evidence_window: event dated precisely enough to fall inside the period the observation describes
+  financial_scope_must_match: [company, metric, currency, units, accounting_basis, exact period, fiscal_or_calendar, stock_or_flow, annualized_or_realized, gross_or_net]
+  hindsight: every evidence item available on or before the packet's evaluation_as_of
+  prospective_requires: a forecast whose contract froze before its deadline, with the outcome not yet public, and every decisive item published after the freeze
+  conditional_scored_only_when: antecedent met and shown by evidence_of_condition
+  hedged_modalities_not_scored: [may, could, likely, unlikely]
+  confidence_language: scored when it states unqualified expectation or high confidence in a definite outcome (I expect, I predict, I am confident or certain that, more confident than ever, high confidence, I bet, will, won't); not scored when it states a probability, a possibility, or graded medium or low confidence (may, might, could, likely, probably, a good chance, I suspect, I would not be surprised, medium confidence, low confidence)
+  screen: both providers screen every claim; both must confirm attribution, endorsement, faithfulness, and kind, and both must find it uncheckable, for it to publish as not_adjudicable without evidence; any doubt sends it to full grading
+  uncheckable_reasons: [value_judgment, rhetoric, probability_language, no_plain_reading, no_public_evidence]
+  plain_reading: a firm claim with no stated measure is scored on a stated plain reading, flagged on the page; never for hedged language
+  outcome_evidence_only: only evidence_of_outcome items that are not the author's own statements decide an outcome
+  conclusive_event_names: the evidence item, its date, and how it meets the early rule
+  quoting_cap_per_source: off
+  max_excerpt_words: 80
+  supported_requires: at least one supporting item
+  contradicted_requires: at least one contradicting item
+  mixed_requires: at least one supporting and one contradicting item
+  unresolved_requires: a search record and at least one stated gap
+  deadline_expiry: queues a review and never sets an outcome
+
+# Reassessment when this policy changes. Older assessments stay readable under
+# the policy they passed; they are never described as passing a newer one.
+reassessment:
+  trigger: A change to vocabulary, axes, or any rule above.
+  existing_assessments: Keep their policy_version. Flag for review when the change could alter their outcome; reaffirming runs the full gate under the new version.
+
+vocabulary:
+  claim_kinds: [observation, forecast, conditional_forecast, causal, normative, rhetoric]
+  axes: [historical_observation, forecast_outcome, causal_assessment, not_applicable]
+  outcomes: [supported, contradicted, mixed, unresolved, not_adjudicable]
+  horizon_states: [not_applicable, open_horizon, not_due, elapsed, conclusive_event]
+  workflow_states: [candidate, ready_for_review, held, published, withdrawn]
+  held_reasons: [source_unavailable, source_partial, attribution_uncertain, quote_mismatch, criteria_ambiguous, evidence_incomplete, semantic_disagreement, assessment_disagreement, verification_unavailable, malformed_review, stale_binding, budget_exhausted, disputed, policy_mismatch]
+  access_states: [full_public, authorized_full, public_preview, blocked, unavailable, deleted]
+  endorsements: [endorsed, quoted_other, reported_speech, ambiguous]
+  evidence_relations: [supports, contradicts, context]
+  invalidation_reasons: [attribution_failure, quote_mismatch, source_integrity_failure, verified_material_counterevidence, extraction_error]
+  providers: [anthropic, openai]

@@ -1,0 +1,23 @@
+# Cloudflare Pages response headers. Fonts, scripts, styles, and the search
+# index are all served from this site. The one outside origin is Cloudflare
+# Web Analytics, the cookieless visitor counter (Dave, 2026-11-01): its script
+# from static.cloudflareinsights.com and its beacon to cloudflareinsights.com.
+# 'wasm-unsafe-eval' is for Pagefind's WebAssembly search.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/og/*
+  Cache-Control: public, max-age=3600
+/api/*
+  Access-Control-Allow-Origin: *
+/api/schema.json
+  Content-Type: application/schema+json; charset=utf-8
+/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8

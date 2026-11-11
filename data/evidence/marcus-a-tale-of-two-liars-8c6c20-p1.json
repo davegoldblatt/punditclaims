@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-a-tale-of-two-liars-8c6c20-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-tale-of-two-liars-8c6c20",
+  "version": 1,
+  "content_hash": "7cfea93a8dc2d4d1673a29ad71d65f3ea087d1b0f6900d3fde7e6b5a4de9e6d2"
+ },
+ "contract_ref": {
+  "id": "marcus-a-tale-of-two-liars-8c6c20",
+  "version": 1,
+  "content_hash": "fe694125920505bff8a14210ca97faa94a525683e2ff7374632aaddeca013991"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT factual hallucination evaluation November 2023 Vectara November 6",
+   "Vectara November 2023 \"GPT-4\" \"3%\" hallucinations",
+   "site.github.com/vectara/hallucination-leaderboard \"2023\" \"3.0\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://raw.githubusercontent.com/vectara/hallucination-leaderboard/cacae658de39ddfd0ff4d6df9b150640142ab191/README.md",
+    "used": true,
+    "why": "An immutable November 2023 snapshot contains GPT-4 and GPT-3.5 results and the evaluation method."
+   },
+   {
+    "url": "https://www.vectara.com/blog/cut-the-bull-detecting-hallucinations-in-large-language-models",
+    "used": true,
+    "why": "The November 6 technical announcement dates the original benchmark computation to November 1 and explains its limits."
+   },
+   {
+    "url": "https://www.globenewswire.com/news-release/2023/11/06/2773799/0/en/vectara-unveils-open-source-hallucination-evaluation-model-to-detect-and-quantify-hallucinations-in-top-large-language-models.html",
+    "used": true,
+    "why": "The contemporaneous primary announcement supplies material context about OpenAI’s comparatively strong performance."
+   },
+   {
+    "url": "https://arxiv.org/html/2311.09410v1",
+    "used": false,
+    "why": "An additional contemporary study documents errors, but its precise experiment dates are unclear. The explicitly dated benchmark is preferable."
+   },
+   {
+    "url": "https://www.vectara.com/blog/measuring-hallucinations-in-rag-systems",
+    "used": false,
+    "why": "The extracted text omitted the numerical table; the preserved repository snapshot supplies it."
+   }
+  ],
+  "performed_at": "2026-10-29T02:08:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-vectara-hallucination-leaderboard-cacae65-ca3d1d86da81",
+   "source_snapshot_id": "1ca1ea0b344f6372ac2bae6d9daf7b097714dddf0485c0fb62d8b749713ade3d",
+   "publisher": "Vectara",
+   "source_type": "benchmark",
+   "url": "https://raw.githubusercontent.com/vectara/hallucination-leaderboard/cacae658de39ddfd0ff4d6df9b150640142ab191/README.md",
+   "locator": "Introduction; leaderboard GPT 4 and GPT 3.5 Turbo rows; Methodology",
+   "receipt": {
+    "public_excerpt": "introduces hallucinations",
+    "quote_hash": "292119749564c3c6f28a1c0b8e9665307c8cc2ed76f21f7c9476c866fbdc641c",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-01",
+   "available_at": "2023-11-22",
+   "retrieved_at": "2026-10-29T02:05:30Z",
+   "relation": "supports",
+   "explanation": "The preserved table reports hallucinations in 3.0% of GPT-4 summaries and 3.5% of GPT-3.5 Turbo summaries, despite providing source documents. These recurring errors support independent checking; the percentages apply to this summarization test, not all GPT answers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "globenewswire-com-news-release-2023-11-06-2773799-0-en-vectara-unve-f89ce796fc8d",
+   "source_snapshot_id": "716188f3370233993e5cdf0189f1a42379c4910c7d616da1afe8570ac9dbe21e",
+   "publisher": "Vectara via GlobeNewswire",
+   "source_type": "company_disclosure",
+   "url": "https://www.globenewswire.com/news-release/2023/11/06/2773799/0/en/vectara-unveils-open-source-hallucination-evaluation-model-to-detect-and-quantify-hallucinations-in-top-large-language-models.html",
+   "locator": "Paragraph immediately following Dynamic Leaderboard",
+   "receipt": {
+    "public_excerpt": "the strongest performance",
+    "quote_hash": "34e80947be4686fbcbdfa6fe26e58f0cc8d20d7c6ff891fa8805826d26c01c83",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-01",
+   "available_at": "2023-11-06",
+   "retrieved_at": "2026-10-29T02:03:13Z",
+   "relation": "context",
+   "explanation": "OpenAI’s models performed comparatively well in the same evaluation. This limits any interpretation that GPT was generally incapable or uniquely unreliable, but does not remove the observed errors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "The benchmark does not measure every domain or every GPT deployment.",
+  "Its automated hallucination detector can make classification errors."
+ ],
+ "packet_hash": "41ee7719b2a97c475048a5bffdfe243c0bbb292dd7894ba0bd02ced6756030d4"
+}

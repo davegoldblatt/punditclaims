@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-is-chatgpt-really-a-code-red-for-e753d6-p1",
+ "claim_revision_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-e753d6",
+  "version": 1,
+  "content_hash": "7d5792a2405e767284f16496fbe8f3b1ee679d8e64037073cb377994ee394840"
+ },
+ "contract_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-e753d6",
+  "version": 1,
+  "content_hash": "bdfb157a211c9c102a350d469f2c457496e9e4a78cf20e57ad744099f1c72e5f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "large language models December 2022 next token prediction hallucination paper",
+   "December 2022 ChatGPT factual errors evaluation arxiv",
+   "BLOOM 176B 2022 autoregressive language model arxiv",
+   "read_page: Galactica paper, find 'hallucinat', 'decoder', 'Limitations' and 'predict'",
+   "read_page: BLOOM paper, find 'next token' and 'autoregressive'"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2211.05100v1",
+    "used": true,
+    "why": "Read relevant passages of the original technical paper describing predictive generation."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.09085v1",
+    "used": true,
+    "why": "Read architecture, citation prediction, hallucination and knowledge-base passages from the original Galactica paper."
+   },
+   {
+    "url": "https://arxiv.org/html/2212.09292v1",
+    "used": false,
+    "why": "Read relevant passages, but the discussion of hallucinated connections is less direct than Galactica's reported citation experiment."
+   },
+   {
+    "url": "https://arxiv.org/html/2212.10526",
+    "used": false,
+    "why": "Read relevant passages; its retrieval and summarization task is less directly matched to the claim."
+   }
+  ],
+  "performed_at": "2026-10-29T07:18:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-05100v1",
+   "source_snapshot_id": "030a6f08154c2092491ea18be6e2ac5c7b0286b8ac77a3bc9bce03a32829bcfa",
+   "publisher": "BigScience collaboration / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.05100v1",
+   "locator": "Section 2.1, Language Modeling, immediately after equation 1",
+   "receipt": {
+    "public_excerpt": "the next token",
+    "quote_hash": "9eb0ee9148fa9da81962ea64ae21c5b5aed26f49f82dbd7a1d2b066e1a6329f1",
+    "verified": "exact"
+   },
+   "event_date": "2022-11",
+   "available_at": "2022-11-09",
+   "retrieved_at": "2026-10-29T07:03:54Z",
+   "relation": "supports",
+   "explanation": "The technical description identifies generation as successive probabilistic predictions. This supports the distinction from retrieving explicit records; the database comparison is the evaluator's inference from the described mechanism.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-09085v1",
+   "source_snapshot_id": "83f6fd9b5f18d635fb0e8b27d3a9290e96ca2c9157491c1c393171938f02706d",
+   "publisher": "Galactica research team / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.09085v1",
+   "locator": "Section 3.1.2, Citation Token",
+   "receipt": {
+    "public_excerpt": "hallucination error",
+    "quote_hash": "405a7bbe759dc7871f385fe9aee8059f3cf2f30a020c23dad291e18f577aef07",
+    "verified": "exact"
+   },
+   "event_date": "2022-11",
+   "available_at": "2022-11-16",
+   "retrieved_at": "2026-10-29T02:02:15Z",
+   "relation": "supports",
+   "explanation": "The authors report hallucinated citation titles in their experiments, supporting the claim of incorrect generated associations. Section 2 also describes models as implicit knowledge bases, which limits any broader reading that models cannot store knowledge.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "9bc55b6ef7c754be7d889a764e8b9a330d228fe80665a684deae42173e18a36d"
+}

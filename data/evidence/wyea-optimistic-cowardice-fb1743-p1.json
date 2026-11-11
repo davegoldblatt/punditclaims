@@ -1,0 +1,129 @@
+{
+ "packet_id": "wyea-optimistic-cowardice-fb1743-p1",
+ "claim_revision_ref": {
+  "id": "wyea-optimistic-cowardice-fb1743",
+  "version": 1,
+  "content_hash": "1950edad8c594cb6fda17b3e822e86d5315ce06b47d2bcde6b95cd56cbaeca00"
+ },
+ "contract_ref": {
+  "id": "wyea-optimistic-cowardice-fb1743",
+  "version": 1,
+  "content_hash": "7cdf9ccc346c2f7eeb9d29ee44cc533c4ba22f8e78b2e02a4d7b0b97f9ba931c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.group.softbank December 31 2024 cash position 2025 OpenAI",
+   "site.group.softbank \"December 31, 2024\" \"cash position\"",
+   "SoftBank March 2025 16 billion loan 30 billion cash 2024 31 December",
+   "site.group.softbank 2025 February 12 cash 5.0 trillion commitments OpenAI"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://group.softbank/system/files/pdf/ir/presentations/2024/investor-finance_q3fy2024_01_en.pdf",
+    "used": true,
+    "why": "Primary disclosure of the latest reported liquidity, undrawn borrowing facilities, and exchange rate before the post."
+   },
+   {
+    "url": "https://group.softbank/en/news/press/20250401",
+    "used": true,
+    "why": "Later definitive investment terms clarify syndication and payment timing, but are outside the observation period."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/softbanks-son-goes-on-a-new-borrowing-binge-to-fund-ai",
+    "used": false,
+    "why": "Relevant contemporary reporting, but read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T12:17:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "group-softbank-system-files-pdf-ir-presentations-2024-investor-fina-e3a18f42370c",
+   "source_snapshot_id": "a79359a5884f666dff0031c02ce6b3e849136359c5e316b23063a65190051c23",
+   "publisher": "SoftBank Group",
+   "source_type": "company_disclosure",
+   "url": "https://group.softbank/system/files/pdf/ir/presentations/2024/investor-finance_q3fy2024_01_en.pdf",
+   "locator": "Breakdown by Currency, footnote 1; Cash Position and Future Bond Redemptions; consolidated liquidity table",
+   "receipt": {
+    "public_excerpt": "Cash and cash equivalents",
+    "quote_hash": "b12b0531da1e9e7045e71869f793d594528081b016905ce70834d4866031a1b0",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2025-02-12",
+   "retrieved_at": "2026-10-29T12:06:13Z",
+   "relation": "context",
+   "explanation": "The presentation implies about $20.8 billion of stand-alone liquid resources excluding undrawn borrowing, including expected internal-transfer proceeds; consolidated liquidity was about $34.1 billion. Both are below $40 billion, but these balances do not establish funding needs over the commitments' payment schedule.",
+   "metric_scope": {
+    "company": "SoftBank Group",
+    "metric": "reported cash position excluding undrawn borrowing facilities",
+    "currency": "JPY",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-12-31",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Stand-alone cash position excluding undrawn borrowing: JPY 3,289.9 billion, including expected internal-transfer proceeds.",
+     "Consolidated cash position: JPY 5,392.1 billion.",
+     "Presentation exchange rate at December 31, 2024: JPY 158.18 per USD."
+    ],
+    "formula": "Stand-alone USD billions = 3289.9 / 158.18 = 20.7985; consolidated USD billions = 5392.1 / 158.18 = 34.0884.",
+    "rounding": "Rounded to one decimal place: USD 20.8 billion and USD 34.1 billion."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "group-softbank-en-news-press-20250401",
+   "source_snapshot_id": "5716871e80041212575e8822c6074a46e7e93c568fbb74237870151cfe88b32b",
+   "publisher": "SoftBank Group",
+   "source_type": "company_disclosure",
+   "url": "https://group.softbank/en/news/press/20250401",
+   "locator": "Opening announcement paragraph",
+   "receipt": {
+    "public_excerpt": "to co-investors.",
+    "quote_hash": "2ac8efc521e9cd419f8ed5f1b5dd2531babaa4508923fc8db6cb0452b80cb981",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-04-01",
+   "retrieved_at": "2026-10-28T22:40:59Z",
+   "relation": "context",
+   "explanation": "The later agreement distinguishes the total round from SoftBank's expected share and schedules separate closings. It also anticipates borrowing, but neither later terms nor a financing choice proves the necessity claimed on March 24.",
+   "metric_scope": {
+    "company": "SoftBank Group",
+    "metric": "gross OpenAI investment commitment before planned syndication",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-03-31",
+    "period_end": "2025-03-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No reconciled payment schedule for the full $40 billion-plus package described in the post.",
+  "No complete account of future cash receipts, other obligations, and liquidity transferable from subsidiaries.",
+  "Later borrowing establishes a chosen funding method, not that other funding methods were unavailable."
+ ],
+ "packet_hash": "4893f6b5b28913ef06dc918e548bcd89bd620878e5942af69a30561e9fb6a15e"
+}

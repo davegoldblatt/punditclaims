@@ -1,0 +1,152 @@
+{
+ "packet_id": "marcus-what-if-generative-ai-turned-out-30855d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-if-generative-ai-turned-out-30855d",
+  "version": 1,
+  "content_hash": "2094a430adccc5905539555ef62074bda5481f384890c57ca93b1cb29e770085"
+ },
+ "contract_ref": {
+  "id": "marcus-what-if-generative-ai-turned-out-30855d",
+  "version": 1,
+  "content_hash": "a68c616d04ef086e006e76f8096828293b46a071d9c25d20bd2e12ba5250b80d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 GPT-4 technical report hallucinations next token prediction limitations",
+   "How is ChatGPT behavior changing over time July 2023 March June",
+   "ToolLLM 2023 arxiv tool use limitations API",
+   "site.openai.com June 13 2023 function calling pinned models"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Primary disclosure of persistent factual errors and improvements."
+   },
+   {
+    "url": "https://arxiv.org/html/2304.08244v1",
+    "used": true,
+    "why": "Contemporary tool-use evaluation with explicit failures and benchmark limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.09009v2",
+    "used": true,
+    "why": "Latest revision available before the post; compares March and June versions."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.09009v1",
+    "used": false,
+    "why": "Superseded before publication by the August 1 revision."
+   },
+   {
+    "url": "https://openai.com/index/function-calling-and-other-api-updates",
+    "used": true,
+    "why": "Material qualification: developers could pin versions to limit upgrade-related disruption."
+   }
+  ],
+  "performed_at": "2026-10-29T09:24:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Limitations, first paragraph",
+   "receipt": {
+    "public_excerpt": "it still is not fully reliable",
+    "quote_hash": "4d64a687297ecb72a0ad1ae10cf17642ab6edae434cf2b1f255c96184ec61259",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "supports",
+   "explanation": "OpenAI explicitly acknowledged continuing factual errors in its released model. The same section reports improvements, so persistence should not be confused with lack of progress.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2304-08244v1",
+   "source_snapshot_id": "8877575d9d6fbbedbc4fb29c6495c32e41d2080d3f6629ddfbbb928d71e69e0f",
+   "publisher": "Minghao Li and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2304.08244v1",
+   "locator": "Section 1, summary of API-Bank results",
+   "receipt": {
+    "public_excerpt": "a 40% success rate",
+    "quote_hash": "a736d0bc8e5efe526922e30f8aab58f859b53e5fa572a4c77ecc7d1f47584346",
+    "verified": "exact"
+   },
+   "event_date": "2023-04",
+   "available_at": "2023-04-14",
+   "retrieved_at": "2026-10-29T09:17:17Z",
+   "relation": "supports",
+   "explanation": "The benchmark documents substantial failures in retrieving and using external APIs. This supports the general tool-reliability concern, but is not a Wolfram Alpha evaluation or a test of every August model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2307-09009v2",
+   "source_snapshot_id": "a526bd6d28fd46e283c284348fcb13a5bb7949458b2272f564a634674b853166",
+   "publisher": "Lingjiao Chen, Matei Zaharia and James Zou, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2307.09009v2",
+   "locator": "Abstract, March–June comparison",
+   "receipt": {
+    "public_excerpt": "can vary greatly over time",
+    "quote_hash": "eb7eaf17f1ce9eb321b46d92c9dd89ff32622b1ff5bfd307d63090826a0251ca",
+    "verified": "exact"
+   },
+   "event_date": "2023-06",
+   "available_at": "2023-08-01",
+   "retrieved_at": "2026-10-29T09:12:39Z",
+   "relation": "supports",
+   "explanation": "The study found task-dependent changes between March and June versions, including improvements and regressions. It establishes version-dependent behavior, not universal deterioration or drift within an unchanged model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "openai-com-index-function-calling-and-other-api-updates",
+   "source_snapshot_id": "ed1dbd570f258339db9a39afa965bb41fcbbe71f9e1d1eabeafe840a9b05bf75",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/function-calling-and-other-api-updates",
+   "locator": "July 20, 2023 update, paragraph about evaluation metrics and version pinning",
+   "receipt": {
+    "public_excerpt": "pin the model version",
+    "quote_hash": "491692a7a2f2cdb2b1996abc467579a0ce23c3a73b5179a16f74484953fcfcd9",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-20",
+   "available_at": "2023-07-20",
+   "retrieved_at": "2026-10-29T09:17:16Z",
+   "relation": "context",
+   "explanation": "OpenAI offered stable pinned versions while acknowledging regressions across upgrades. This limits the implication that every engineering integration necessarily faced uncontrolled monthly changes.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No direct Wolfram Alpha reliability evaluation is included.",
+  "The evidence covers selected leading language models and tasks, not every generative model or engineering application."
+ ],
+ "packet_hash": "27f8eeb452a92fd98cb0aebff0ec097ffb50a45b7fbda6840496c3c4830064f3"
+}

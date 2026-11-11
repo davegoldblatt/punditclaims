@@ -1,0 +1,155 @@
+{
+ "run_id": "marcus-no-rag-is-probably-not-going-to-rescue-b72e11-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-no-rag-is-probably-not-going-to-rescue-b72e11": "e82ad8ca05a8d8340fe4189964121eca40532881262d542345dac9410900a0c6",
+  "case:marcus-no-rag-is-probably-not-going-to-rescue-e0f14c": "9e782618737eca0e52d5cff9b02be2533748712afc1f43dc2224ebc70396e1ce",
+  "case:marcus-no-rag-is-probably-not-going-to-rescue-ee4809": "c3e0fa264318b27bc4e8a45ae570d2a8b440491b0f5d8d5b58ab338619cd4270"
+ },
+ "started_at": "2026-10-29T07:57:13Z",
+ "completed_at": "2026-10-29T07:57:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Davis suggested what tool would be needed, but this sentence is Marcus's own assessment in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Revision 2 keeps his weaker 'no reason to think' wording, both conjuncts, and the 'very high accuracy' threshold. The AGI comparison has no operational meaning."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract is fair, but the result depends on undefined terms: 'very high accuracy', how broad the comparison task is, and what AGI means. The contract openly flags all of these."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "AlignScore (May 2023) was a working comparator that beat earlier metrics, with acknowledged limits. It shows progress but cannot settle whether 'very high accuracy' was reached."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "TRUE (April 2022) found strong metrics alongside leftover errors on subtle inconsistencies. That supports caution but is not a comprehensive showing of unreliability, and it says nothing on the AGI comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Source-comparison tools existed before the post, with evaluated but imperfect performance. With no threshold for 'very high accuracy', the packet neither confirms nor refutes the first conjunct. The second conjunct, comparing the tool's difficulty to solving AGI, has no measurable standard. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-no-rag-is-probably-not-going-to-rescue-b72e11"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithfully paraphrases 'remains steep' as 'remains difficult', limited to RAG. It describes the state of things at the time; it is not a forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading, that dependable production RAG still needed substantial engineering and validation, is ordinary and fair. It also notes that difficulty does not mean useful deployments were impossible."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The January 2024 Seven Failure Points study draws on three firsthand implementations. It documents recurring failures and says testing best practices were still emerging."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "RAGTruth (v1, December 2023) manually annotated about 18,000 RAG responses that contained unsupported or contradictory claims. It is benchmark evidence rather than deployment evidence, but it is relevant."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Firsthand engineering reports and an annotated hallucination corpus from the period both document recurring retrieval and grounding failures that required substantial testing and mitigation. That meets the support condition. The packet has no evidence that dependable production RAG was routinely easy.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-no-rag-is-probably-not-going-to-rescue-e0f14c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. The review quotes that follow are separate and are not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Drops the comparison with LLMs and the 'can appear spectacular' concession. Both are minor. The core commitments are kept: immature, not guaranteed correct, no evidence it is a cure-all."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Fair, ordinary readings: 'infancy' as unresolved maturity, 'cure-all' as comprehensive correction, and 'no guarantee' as having no guarantee of correctness."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Primary case studies (January 2024) document seven failure points, including failure when the answer was already in the context."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The December 2023 survey credits RAG with real accuracy gains. That fits Marcus's concession and does not show comprehensive correction."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporary primary evidence documents material failures despite retrieval. The survey's reported benefits are task-specific improvements and offer no guarantee of correctness or comprehensive correction. The support condition is met and the contradiction condition is not.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 21841,
+  "output_tokens": 3091,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

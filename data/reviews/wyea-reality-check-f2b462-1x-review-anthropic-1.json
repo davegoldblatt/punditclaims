@@ -1,0 +1,71 @@
+{
+ "run_id": "wyea-reality-check-f2b462-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-reality-check-f2b462": "1f44e4092113b04adac46533985d74c2e42e976382e2aab68f2792a5e4a19032"
+ },
+ "started_at": "2026-10-29T22:15:07Z",
+ "completed_at": "2026-10-29T22:15:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron cites The Information's figures but the 75% conclusion and the cost-of-provision framing are his own words, which he endorses."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim keeps only the ratio of $6B to $8B. Zitron goes further: he says 75% of subscription revenue goes on the cost of providing subscriptions. That treats all company-wide inference spending as subscription serving cost. The normalisation drops this allocation claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract scores only the arithmetic and admits the cost-of-provision phrase goes further. That is lenient to the speaker, not unfair. But the result depends on the evaluator narrowing the claim to the ratio, which the speaker did not do."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GuruFocus/Yahoo article dated 2025-04-24 attributes to The Information a projection of about $8B in ChatGPT subscription revenue for 2025. This corroborates the denominator."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Economist piece (republished 2025-05-16, before the evaluation date) reports OpenAI expected about $6B in 2025 inference costs. This corroborates the numerator, and 6/8 gives 75%. It covers total inference spending, not subscription-specific serving cost."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The arithmetic holds: the packet corroborates the reported projections ($6B inference, $8B subscriptions), and $6B is 75% of $8B. The claim that 75% of subscription revenue goes on the cost of providing it is not established. The $6B is total inference spending, which also serves free users and the API, and the packet shows no subscription-specific allocation. So the ratio part holds and the cost-of-provision part is unverified.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-reality-check-f2b462"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10120,
+  "output_tokens": 2810,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

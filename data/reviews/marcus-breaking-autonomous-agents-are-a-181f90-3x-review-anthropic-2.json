@@ -1,0 +1,167 @@
+{
+ "run_id": "marcus-breaking-autonomous-agents-are-a-181f90-3x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-autonomous-agents-are-a-181f90": "e617ed30576edec867aab37004d29c8752ca3f4eab529e4f1d893c09da09f246",
+  "case:marcus-breaking-autonomous-agents-are-a-a07a65": "381cd002133e8d60a763427058bb502aa45e8add705c120d30a28def5de3de44",
+  "case:marcus-breaking-autonomous-agents-are-a-b1d87b": "16f874111bb83e4f872dfcdce393e5f7665d7c8451b4fe14729d2966526a969d"
+ },
+ "started_at": "2026-10-29T01:00:06Z",
+ "completed_at": "2026-10-29T01:00:39Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own post, reporting a study's findings in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps both figures, the ~30-step qualifier and the memory-augmented scope, and frames them as the new study's findings."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "An ordinary reading: the claim holds if the study reported these figures. Accepting a reputable report is reasonable because the paper could not be found."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ISMG, May 8, 2026, quotes a lead author. It reports 94% poisoning among memory-retaining agents and nearly 90% drift after roughly 30 steps, which fits 89.4%."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Wallstreetcn, May 6, gives the exact 89.4% and 94% figures. It may partly echo Marcus, but it adds paper details beyond his post. Its separate 67%-at-15-steps figure measures something else and is no conflict."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two reports that predate the cutoff give both figures as the study's findings. One of them, ISMG, quotes a lead author. The 67% figure is drift at 15 steps, not 30, so it does not contradict the claim. The primary paper is unavailable, but the contract accepts reliable reports.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-autonomous-agents-are-a-181f90"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, describing a study."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It keeps the sample of 847 deployments, the 91% rate and the framing that this is what the study found. The list of institutions is left out of the proposition but kept in the contract."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Fair. It is scored on what the study reported, not on whether 91% of all real-world agents are vulnerable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ISMG confirms the institutions, the 847 deployments and the four sectors. Its 'software development' matches code-generation."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "ISMG says 91% of tested deployments were susceptible to tool-chaining."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Wallstreetcn gives the same 847 and 91% figures plus a sector breakdown. It may partly draw on Marcus."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reports dated before the cutoff, one of which quotes a lead author, confirm the institutions, the 847 deployments, the four sectors and the 91% tool-chaining rate. No report gives conflicting figures.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-autonomous-agents-are-a-a07a65"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The proposition says 'reinforce' for 'amplifies', and the February timing and AWS/Berkeley authorship are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Counting the February 2026 v2 revision as 'February' is lenient, since STAC first appeared in Sept 2025. ISMG independently calls it a February paper, and the core claim about similar vulnerabilities holds either way."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "STAC v2, revised Feb 2, 2026. It reports that agents are highly vulnerable to tool-chaining attacks, with attack success above 90% in most cases."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "v3, July 2026, before the cutoff. Used only for affiliations: UC Berkeley and AWS AI Labs."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "ISMG links the new study to the February AWS/UC Berkeley paper and says both describe the same tool-chaining dynamic."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An AWS AI Labs and UC Berkeley paper, revised February 2026, documented tool-chaining vulnerabilities similar to the new study's 91% finding. ISMG draws the same link. One caveat: the paper first appeared in Sept 2025, so 'February' refers to its revision.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-autonomous-agents-are-a-b1d87b"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25977,
+  "output_tokens": 3098,
+  "cached_input_tokens": 25638,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

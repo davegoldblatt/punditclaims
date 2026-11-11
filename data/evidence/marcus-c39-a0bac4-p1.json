@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-c39-a0bac4-p1",
+ "claim_revision_ref": {
+  "id": "marcus-c39-a0bac4",
+  "version": 2,
+  "content_hash": "c6a414059eabb54e3f5df8b74fbf11ec2c9ac435ed34df1c5d4c69ab381ad808"
+ },
+ "contract_ref": {
+  "id": "marcus-c39-a0bac4",
+  "version": 1,
+  "content_hash": "967b4309655847aaf4c303bd102b3938e8d44673911f35e06e8899add0175b98"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arcprize.org blog o3 breakthrough high score 2024 tuned public training",
+   "ARC human study 2020 2024 participants practice tasks 64.2 training Johnson",
+   "human ARC study participants practice three tasks Johnson 2021 2024 400"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+    "used": true,
+    "why": "The evaluator reports what OpenAI disclosed about the tested system's training."
+   },
+   {
+    "url": "https://arxiv.org/html/2409.01374v1",
+    "used": true,
+    "why": "The original human study describes preparation, task allocation, dataset sizes, and results."
+   },
+   {
+    "url": "https://github.com/fchollet/ARC-AGI",
+    "used": false,
+    "why": "Corroborates the dataset structure, but the dated human paper already supplies the relevant counts."
+   }
+  ],
+  "performed_at": "2026-10-29T02:36:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arcprize-org-blog-oai-o3-pub-breakthrough",
+   "source_snapshot_id": "eb3c789e8bd202680f43628bc816534067e127e5f29f1fa976c461179d8082fd",
+   "publisher": "ARC Prize",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+   "locator": "OpenAI o3 ARC-AGI Results, note on tuned",
+   "receipt": {
+    "public_excerpt": "OpenAI shared they trained the o3 we tested on 75% of the Public Training set.",
+    "quote_hash": "48064142c68a184aa13a358e8c03183b2dc8989f6d02f469b38ff828b466fc9b",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-20",
+   "available_at": "2024-12-20",
+   "retrieved_at": "2026-10-29T01:02:26Z",
+   "relation": "supports",
+   "explanation": "The evaluator confirms substantial ARC-specific training for the system presented that day. Applying the disclosed fraction to the 400-task training set described in e2 gives 300 tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "75% of the public training set, disclosed in e1",
+     "400 public training tasks, described in e2"
+    ],
+    "formula": "0.75 × 400 = 300 training tasks",
+    "rounding": "None."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2409-01374v1",
+   "source_snapshot_id": "c027b4058f8aafe179d94a1a98d3fa4de18973dfd925d6a34c7fe26bbe73cf09",
+   "publisher": "Solim LeGris and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2409.01374v1",
+   "locator": "Sections 2.1 and 2.3, Design and Experiment",
+   "receipt": {
+    "public_excerpt": "After the tutorial, participants were asked to answer several comprehension questions to make sure they understood the instructions.",
+    "quote_hash": "194691bbd55dfcdc3cdc7c1847953aa666cf1ad94e95ecb0a28170c5776d1b15",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-02",
+   "retrieved_at": "2026-10-29T02:29:50Z",
+   "relation": "context",
+   "explanation": "The earlier human study describes one tutorial task followed by a short experimental session, rather than hundreds of preparatory tasks, and reports 64.2% average public-evaluation accuracy. It also identifies 400 training and 400 evaluation tasks; this is historical comparator evidence, not an experiment on the December o3 system.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The exact o3 training procedure and number of individual demonstration pairs were not disclosed.",
+  "There is no matched experiment establishing human preparation needed to reach the same accuracy as the tested o3."
+ ],
+ "packet_hash": "fbdac18cb785fae7ac30afc77268664c5750798c9513fccc57211acbd1adff16"
+}

@@ -1,0 +1,155 @@
+{
+ "run_id": "marcus-alphaproof-alphageometry-chatgpt-ddb3ee-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-alphaproof-alphageometry-chatgpt-ddb3ee": "7f19535d355158dcf54d1366fb7a9fee301f01c20b06347b816385f1930efee0",
+  "case:marcus-alphaproof-alphageometry-chatgpt-e5f129": "2d727bbb0b5faddc2429300ff89bdc7384278019e4565faf7706070531a42e28",
+  "case:marcus-alphaproof-alphageometry-chatgpt-ff00da": "c3fcf1981e548e5580afb8e6a6de65fc8260dbab5d9d9d8d27c8f8dea14e4472"
+ },
+ "started_at": "2026-10-29T06:42:49Z",
+ "completed_at": "2026-10-29T06:43:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own essay, given as his summary of the research literature."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'over and over' and 'important and subtle'. This is a general empirical observation about how LLMs behave, so observation is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading it as a recurring tendency, tested with controlled familiar vs. changed variants and ending at the post date, is an ordinary and fair reading. It neither demands universality nor waters the claim down."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "v3 posted 2024-03-28, before the essay. Across 11 tasks, GPT-4 does consistently and substantially worse on counterfactual variants than on default ones."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "supports",
+      "note": "Posted 2024-02-14. GPT models drop sharply on counterfactual alphabet analogies while humans stay stable. This is a separate controlled study."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "Posted 2024-05-01. Frontier models scored about the same on GSM1k and GSM8k, but some model families showed gaps. This limits the claim's universality without refuting the recurring tendency, and it tests contamination rather than subtly changed rules."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two independent controlled studies published before the post show materially lower accuracy on unfamiliar or subtly changed variants, which meets the support condition. The GSM1k result shows the gap is not universal (frontier models matched), but it does not meet the contradiction condition, because the claim is about a recurring tendency.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-ddb3ee"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The popularity clause is hedged ('may well') and is correctly kept as a possibility. 'New techniques will come' that work better and fix some failings is a firm 'will' forecast with no deadline. The nearby renaissance and collapse framing is itself hedged ('might') and does not formally condition the firm clause."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on reading 'new techniques' to include hybrids that keep LLMs (generator plus verifier), which fits the post's neurosymbolic theme. A stricter reading would require techniques that come after or replace generative AI following a collapse. The contract's reading is generous but ordinary given the essay."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Company disclosure dated 2025-05-14, after the post. It publicly introduces AlphaEvolve, which pairs Gemini with automated evaluators that check generated programs, addressing unchecked wrong outputs. It is self-reported."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "DeepMind technical report dated 2025-06-16. Ablations show that each added component, including evolution beyond plain LLM sampling, significantly improves results on matrix multiplication and kissing-number tasks. It is a developer report, not an independent replication."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "There is no deadline, but the early-resolution rule is met: in May 2025 DeepMind publicly demonstrated a hybrid method with a verification mechanism and comparative gains. That satisfies the firm clause under the contract's reading. Caveats: the evidence is developer-reported only, and nothing shows a post-collapse renaissance. The hedged popularity clause is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-e5f129"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "A bullet in Marcus's own list of reasons in his essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "It states a present condition (hallucinations still occur) as a reason for his bubble forecast. It is not a forecast itself."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Contemporary systems still sometimes fabricating facts, with no rate threshold and a window of July 2024 up to the post, is a fair plain reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "WildHallucinations, submitted 2024-07-24, tested 15 contemporary LLMs including GPT-4o and found consistent hallucination. Retrieval reduced it but did not eliminate it. Primary evaluation with stated methods."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A primary evaluation released in the target window documents factual hallucinations across 15 contemporary models, including ChatGPT's GPT-4o, and says retrieval does not eliminate them. The packet contains nothing showing hallucinations were eliminated.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-ff00da"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 46557,
+  "output_tokens": 5640,
+  "cached_input_tokens": 24775,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,120 @@
+{
+ "assessment_id": "marcus-an-unending-array-of-jailbreaking-052f07-a1",
+ "claim_revision_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 1,
+  "content_hash": "00b0a1270d2307fe048987872dccf38d9f8d07ea0634b231d1ec4bb5669c4f75"
+ },
+ "contract_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 1,
+  "content_hash": "8e29168270bfaf62817096542f5571c2b15ca7d3251f171da3b03a4a74823ff0"
+ },
+ "packet_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07-p1",
+  "content_hash": "e078e50d74ad240364b80ff9b6976aea3004cbeef5c8fcdfd15035440cce7d0f"
+ },
+ "axis": "causal_assessment",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Under the stated reading, the claimed impossibility is contradicted. Erase-and-check supplies a mathematical security certificate applicable to a Llama 2 filter without requiring complete understanding of its internal reasoning. Its guarantee covers bounded adversarial modifications and depends on the filter's baseline detection. Those limits matter, but do not erase the guarantee. This conclusion depends on counting meaningful, explicitly scoped protections around LLMs; it does not establish that an unrestricted model can be guaranteed safe in every circumstance.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The outcome depends on an interpretation Marcus did not explicitly supply.",
+  "The decisive source is a research certificate for a restricted attack model, not certification of an entire deployed assistant.",
+  "The assessment challenges the asserted causal necessity, not the separate statement that LLM behavior remains incompletely understood."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-an-unending-array-of-jailbreaking-052f07-2x-review-anthropic-1",
+  "marcus-an-unending-array-of-jailbreaking-052f07-2x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because nobody knows exactly how LLMs work, nobody can ever issue strong guarantees about them.",
+  "kind": "causal",
+  "conditions": [
+   "because nobody knows exactly how LLMs work"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Nobody knows exactly how LLMs work, and that means that nobody can ever issue strong guarantees around them.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/an-unending-array-of-jailbreaking",
+   "date": "2024-04-02",
+   "document_title": "An unending array of jailbreaking attacks could be the death of LLMs",
+   "observed_at": "2026-10-29T00:00:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Nobody knows exactly how LLMs work",
+    "that means",
+    "nobody can ever issue strong guarantees around them"
+   ],
+   "our_interpretation": [
+    "The claim asserts that incomplete understanding makes meaningful security guarantees impossible, rather than merely difficult.",
+    "In this security context, I read a strong guarantee as an enforceable assurance about a substantial security property under explicit assumptions and an identified threat model. A benchmark success rate alone does not qualify.",
+    "I include protections around an LLM because the surrounding passage discusses deployed systems and agents. Whether Marcus intended only guarantees intrinsic to an unrestricted model is a material ambiguity.",
+    "The causal premise is not a conditional forecast requiring a separate triggering event. A counterexample can challenge the asserted necessity without establishing complete understanding of LLMs."
+   ],
+   "support_condition": "A valid impossibility argument establishes that incomplete mechanistic understanding prevents meaningful security guarantees for LLMs and systems using them.",
+   "contradiction_condition": "Public technical work establishes a nontrivial security guarantee for an LLM or protected LLM system without requiring complete understanding of its internal reasoning."
+  },
+  "axis": "causal_assessment",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Under the stated reading, the claimed impossibility is contradicted. Erase-and-check supplies a mathematical security certificate applicable to a Llama 2 filter without requiring complete understanding of its internal reasoning. Its guarantee covers bounded adversarial modifications and depends on the filter's baseline detection. Those limits matter, but do not erase the guarantee. This conclusion depends on counting meaningful, explicitly scoped protections around LLMs; it does not establish that an unrestricted model can be guaranteed safe in every circumstance.",
+  "limitations": [
+   "The outcome depends on an interpretation Marcus did not explicitly supply.",
+   "The decisive source is a research certificate for a restricted attack model, not certification of an entire deployed assistant.",
+   "The assessment challenges the asserted causal necessity, not the separate statement that LLM behavior remains incompletely understood."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "Our safety certificates",
+    "locator": "Appendix 0.A, answer to 'Does the safety filter need to be deterministic?'; Theorem 4.1 and Appendix 0.G",
+    "url": "https://arxiv.org/html/2309.02705v3",
+    "publisher": "arXiv; Aounon Kumar and coauthors",
+    "event_date": "2024-02-12",
+    "available_at": "2024-02-12",
+    "explanation": "Erase-and-check certifies detection against bounded adversarial modifications, with performance bounded by the filter's detection of the original harmful prompts. The proof uses enumeration and filter behavior, without a complete mechanistic account of Llama 2; this is a counterexample under the stated reading of guarantees around LLMs."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "they do not provide guarantees.",
+    "locator": "Section 2, Existing Defenses, LLM-level defenses",
+    "url": "https://arxiv.org/html/2506.08837v1",
+    "publisher": "arXiv; Luca Beurer-Kellner and coauthors",
+    "event_date": "2025-06-10",
+    "available_at": "2025-06-10",
+    "explanation": "The authors distinguish heuristic model defenses from constrained system designs and caution against assuming reliable guarantees for general-purpose agents. This supports Marcus's practical concern but does not establish the categorical impossibility of scoped guarantees."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e0499fc1cdcb80596433a70c84136acffb5ea8c41e481b4a5cbb465270c3ff79",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T03:11:23Z"
+}

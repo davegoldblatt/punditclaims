@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-even-more-good-news-for-the-future-e79af0-a1",
+ "claim_revision_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-e79af0",
+  "version": 2,
+  "content_hash": "ad980a99864c6f61444790f599c80b7436ced93425ace97cb315ac509b70a11b"
+ },
+ "contract_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-e79af0",
+  "version": 1,
+  "content_hash": "c9432461d5c5dd420d09ef74d7c8315a32ea31cb9af5c5c7ea05f67da095a5ac"
+ },
+ "packet_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-e79af0-p1",
+  "content_hash": "31c02e6b28442c1a2509ea8ebe331cffed9fdc912eda8306245d397dee63238b"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-02-01",
+  "end": "2026-04-12",
+  "precision": "day"
+ },
+ "public_rationale": "Supported under the contextual reading that Claude Code remained a useful tool whose consequential output needed verification. A direct Opus 4.6 evaluation found repeated final task failures, and Anthropic separately confirmed operational problems during the period. The evidence does not support a stronger claim that every use is unreliable or that the tool cannot be useful. Successful benchmark tasks and the April 10 bug fix limit the conclusion.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The controlled evaluation covers one programming language and a particular task suite.",
+  "Some failed tasks were nearly correct.",
+  "The operational bug was fixed before publication of Marcus's post.",
+  "The result depends on interpreting trust as unattended reliability."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-even-more-good-news-for-the-future-d22342-3x-review-anthropic-1",
+  "marcus-even-more-good-news-for-the-future-d22342-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-even-more-good-news-for-the-future-d22342-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-even-more-good-news-for-the-future-e79af0",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Claude Code (in particular version 4.6), which seems genuinely impressive to Marcus and a number of friends he trusts, still makes plenty of mistakes and still can't be trusted.",
+  "kind": "observation",
+  "conditions": [
+   "in particular version 4.6",
+   "seems genuinely impressive to him and friends he trusts"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Claude Code (in particular version 4.6), which does seem genuinely impressive to me and a number of friends I trust, still makes plenty of mistakes, and still can’t be trusted.",
+   "locator": "paragraph 20",
+   "url": "https://garymarcus.substack.com/p/even-more-good-news-for-the-future",
+   "date": "2026-04-12",
+   "document_title": "Even more good news for the future of neurosymbolic AI",
+   "observed_at": "2026-10-28T22:30:25Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Claude Code",
+    "in particular version 4.6",
+    "still makes plenty of mistakes",
+    "still can’t be trusted"
+   ],
+   "our_interpretation": [
+    "Read 4.6 as the Claude model generation used through Claude Code, rather than the application's version number.",
+    "The plain reading of cannot be trusted, in the surrounding tool-versus-complete-solution discussion, is that consequential coding output still requires verification.",
+    "Plenty means recurring substantive failures, rather than an isolated mistake. Marcus supplies no numerical error threshold.",
+    "Assess the referenced generation's pre-post operating period, February 2026 through April 12, 2026.",
+    "Marcus's and his friends' favorable impressions are subjective context, not conditions that must occur before the reliability claim can be assessed."
+   ],
+   "support_condition": "Direct evaluations of Claude Code using a 4.6 model show repeated incorrect or incomplete coding results, corroborated where possible by documented operational failures.",
+   "contradiction_condition": "Representative evaluations show dependable completion of consequential coding work without recurring substantive errors or a continuing need for verification."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Supported under the contextual reading that Claude Code remained a useful tool whose consequential output needed verification. A direct Opus 4.6 evaluation found repeated final task failures, and Anthropic separately confirmed operational problems during the period. The evidence does not support a stronger claim that every use is unreliable or that the tool cannot be useful. Successful benchmark tasks and the April 10 bug fix limit the conclusion.",
+  "limitations": [
+   "The controlled evaluation covers one programming language and a particular task suite.",
+   "Some failed tasks were nearly correct.",
+   "The operational bug was fixed before publication of Marcus's post.",
+   "The result depends on interpreting trust as unattended reliability."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "claude-opus-4.6 solves 15/22 (68.2%)",
+    "locator": "Section 5, Conclusion; agent configuration in Section 3.1",
+    "url": "https://arxiv.org/html/2602.09447v1",
+    "publisher": "Zhang et al. / arXiv",
+    "event_date": "2026-02",
+    "available_at": "2026-02-10",
+    "explanation": "The study uses Claude Code with Opus 4.6 and finds multiple final submissions that fail its correctness tests. It also reports strong performance on easy tasks and notes that many failures are near-complete solutions, limiting how broadly the failure rate can be generalized."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "forgetfulness, repetition, and odd tool choices",
+    "locator": "Section A caching optimization that dropped prior reasoning",
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "publisher": "Anthropic",
+    "event_date": "2026-03-26",
+    "available_at": "2026-04-23",
+    "explanation": "Anthropic traces these behaviors to a Claude Code bug introduced March 26 that repeatedly discarded reasoning history and affected both Sonnet 4.6 and Opus 4.6. The company says it fixed this specific bug April 10, so it corroborates failures during the period rather than a continuing defect on the post date."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "81254c81661ee45d40115ccae3ef8259ad153a155d8acca52a43954b268035d3",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:04:27Z"
+}

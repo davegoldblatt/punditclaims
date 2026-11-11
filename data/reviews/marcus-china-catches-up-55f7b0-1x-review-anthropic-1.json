@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-china-catches-up-55f7b0-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-china-catches-up-55f7b0": "15e3f7977219b2e35a66657f053eeab30bd665d797908c7596b6a4d542f916c0"
+ },
+ "started_at": "2026-11-09T19:50:22Z",
+ "completed_at": "2026-11-09T19:50:53Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, stated in his own voice as the first of three flaws he lists."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The statement uses 'hence' and 'because': web-scale training causes high development cost, and internet derivation causes vast running costs. The normalised proposition drops these causal links and labels the claim an observation. The contract rightly treats it as causal."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary: 'entire internet' as web-scale data, and inefficiency as resources out of proportion to useful performance. It is not stretched either way. The result still turns on a comparator and capability threshold Marcus did not supply."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed and dated before the evaluation date. It supports substantial training and inference costs, with training compute driven by data and model size. It does not show inefficiency, or that internet derivation forces inference costs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Self-reported DeepSeek company disclosure about a historical model. It shows a large training workload but frames it as modest ('only' 2.788M GPU hours). It does not measure inefficiency."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Chinchilla used more data and fewer parameters, and needed less inference compute. This cuts against a simple data-to-running-cost mechanism. It does not show running costs are small."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Covers text classification only. LLMs used more energy without better accuracy there, but this narrow task scope cannot settle a claim about the whole general-purpose paradigm."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows LLMs have substantial training and inference costs (e1). It does not show these costs are excessive for the performance gained, so 'wildly inefficient' is not established. Nor does it show web-scale training forces vast running costs. Chinchilla (e3) partly cuts against that link. The remaining items are self-reported or limited to a narrow task. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-china-catches-up-55f7b0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29787,
+  "output_tokens": 2967,
+  "cached_input_tokens": 16632,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

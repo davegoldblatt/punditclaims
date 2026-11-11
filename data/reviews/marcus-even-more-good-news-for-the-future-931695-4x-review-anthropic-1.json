@@ -1,0 +1,191 @@
+{
+ "run_id": "marcus-even-more-good-news-for-the-future-931695-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-even-more-good-news-for-the-future-931695": "bcccb7d1c2fac858fa37e142307ee6a1a44fbad4a7b2fb2b3bf82077a8b5cf8b",
+  "case:marcus-even-more-good-news-for-the-future-b5a2ee": "5b0f29f24ac3d944f068ca0e745c4ceb38eba7ad5fabc630a8580859e22bcb09",
+  "case:marcus-even-more-good-news-for-the-future-bd8edb": "fd2b61ae2e1b095b0f96906e5d9acf044b0d088cad00a258d48ef978d66679a3",
+  "case:marcus-even-more-good-news-for-the-future-d1a541": "ccc9c7b120a87673becc2b0e17e2480ef9fdc9d7ede063cb64d87ffc45931375"
+ },
+ "started_at": "2026-10-29T07:02:32Z",
+ "completed_at": "2026-10-29T07:03:16Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post. It sums up his view rather than quoting the paper."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation keeps both halves and the 'perfect results not required' qualifier. It is a broad generalisation stated as present fact."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading efficiency as energy or compute fits the surrounding energy discussion. The quarter is chosen by the evaluator, but that is reasonable for an undated ongoing claim. Requiring evidence for both halves is fair."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2024 study, outside the target period, finding general-purpose models emit orders of magnitude more than task-specific ones on classification. It bears on the recognition half but does not settle it for 2026."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2025 preprint on LLM planning reliability. It does not measure energy or compute, and it predates the target period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither item gives matched energy-and-accuracy comparisons from the target period for both recognition and planning. e3 hints that LLMs may not be efficient even for recognition, but it is older and does not decide the question. e4 covers reliability, not efficiency. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-even-more-good-news-for-the-future-931695"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus describes the Tufts paper's findings in his own words and endorses them."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation keeps the Tower of Hanoi scope and both parts: works on small versions, breaks down as size grows."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating 'small versions of the problem' as complete small puzzles, not single moves, is the ordinary reading. A single pick-and-place is not a version of Hanoi."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Both VLAs completed zero games on the unseen 4-block task, so the breakdown at larger size is supported."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "On the 3-block task, which was in training, the VLAs succeeded 34% and 0% of the time. That is not working fine on the small version."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The breakdown half holds: both VLAs failed every 4-block game. The 'working fine on small versions' half fails: complete 3-block success was only 34% and 0%, even though that configuration was in training. Only single moves did reasonably well, at 87% and 60%.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-even-more-good-news-for-the-future-b5a2ee"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus summarises the Tufts energy result in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The threshold 'nearly two orders of magnitude' and the study scope are kept. The phase (training or execution) is left unspecified, as in the original."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus names no phase. Training is the only comparison in the study that approaches 100x, so it is the reading his number points to. Execution savings are about 4-13x, so the choice of phase decides the result. Taking roughly 76-81x as 'nearly two orders' is an ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Table I: total training energy was 68.5 and 64.9 MJ for the VLAs against 0.85 MJ for the hybrid, about 81x and 76x. Table II shows execution savings of only about 4-13x."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's training-energy reading, the hybrid used about 1/76 to 1/81 of the VLAs' energy, which fits 'nearly two orders of magnitude'. Per-episode execution savings are much smaller, at about 4-13x, so the claim holds only for the training comparison.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-even-more-good-news-for-the-future-bd8edb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own judgement of the Tufts paper in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An evaluative claim about how one paper bears on another. 'Very much' fairly becomes 'strongly'. Which Apple findings are meant is not specified."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Given the strong wording, reading 'vindicates' as independent corroboration of complexity-linked failure is fair. Requiring execution confounds to be separated is demanding but reasonable for 'very much vindicates'."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple's abstract defines the finding being compared: accuracy collapses beyond certain complexities. It is the comparison target, not evidence of the outcome."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "The VLAs fail as task size grows, but the planner-guided VLA failed even with correct instructions. That points to execution failures, not a shown reasoning collapse."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The Tufts failure pattern looks like Apple's. But the planner-guided VLA failed despite valid plans, which points to low-level execution rather than a comparable reasoning failure. The support condition is not met. Nothing overturns Apple's finding either, so the contradiction condition is not met. The packet does not settle strong vindication.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-even-more-good-news-for-the-future-d1a541"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27064,
+  "output_tokens": 4438,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

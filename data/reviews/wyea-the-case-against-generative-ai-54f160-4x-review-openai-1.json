@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-the-case-against-generative-ai-54f160-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-case-against-generative-ai-54f160": "a2bf2eff98dc85f0f10f2d0d6d79cc728d14163f34d778e29b81a992a48b2c2d",
+  "case:wyea-the-case-against-generative-ai-561c8b": "2db22d7c13cba815f39ce08b58907641136b67803fa7de957e0cb3140134972a",
+  "case:wyea-the-case-against-generative-ai-64900a": "2cf8a856ecae3a292bcad14d639777a7a9859c3b2589d2dad75ae9a6109fbe90",
+  "case:wyea-the-case-against-generative-ai-6e6e9c": "d91ac4c3cc586b678fdcda18573d97fc1679aec4b94bdc16fa585135723982c6"
+ },
+ "started_at": "2026-10-29T18:11:08Z",
+ "completed_at": "2026-10-29T18:12:05Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states this directly as his own assessment."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves code generation, declining reliability and increasing hallucination with task complexity."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Declining reliability is an ordinary reading of breakdown. Separately measuring hallucinations fairly tests the additional assertion. The observation window and complexity measures are evaluator choices."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The September preprint documents library hallucinations under prompt variations, but does not measure the claimed engineering-task complexity gradient."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet establishes that coding hallucinations occur, but supplies no comparable evaluation jointly measuring complexity, functional failures and hallucination rates. It therefore neither supports nor contradicts the asserted trend.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-54f160"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The funding-insufficiency conclusion is Zitron's own, although its premises cite others' estimates."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding discussion identifies a fully equipped 1 GW facility as the relevant project."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Total estimated project cost matches the surrounding argument. Distinguishing that cost from initial equity or financing capacity preserves its scope."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters applies Nvidia's approximately $50 billion per GW estimate to OpenAI, implying a $40 billion shortfall. This is a reported company estimate, not an audited budget."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The contemporaneous summary reports approximately $50 billion per GW. It corroborates the reported estimate without supplying an independent engineering assessment."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Additional financing could supplement the initial investment. That qualifies financing implications but does not show that $10 billion covers total project cost."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporaneous reporting places estimated total cost near $50 billion per GW, substantially above $10 billion. The financing qualification does not contradict this cost comparison. Support concerns estimates, not verified final expenditure.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-561c8b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The preceding sentence attributes an analogy to Carl Brown; Zitron directly asserts the subsequent slowdown claim himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The statement asserts that coding LLM use causes slower engineering work, without an explicit population or task restriction."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Actual completion time fairly operationalizes speed. The contract appropriately recognizes opposite causal effects across controlled settings."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The randomized METR study reports 19% longer completion times for experienced maintainers on familiar projects, supporting slowdown in that setting."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Google's own randomized study reports approximately 21% shorter task times. This is company-authored evidence with a large confidence interval and limited generalizability."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Experienced maintainers slowed down in the METR trial, while Google engineers sped up in a different controlled setting. Under the contract, these opposing effects warrant mixed: slowdown holds in one setting, but the unconditional denial of speedups does not. Neither study establishes an industry-wide average.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-64900a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron presents this outlook as his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The categorical exclusion of another future commits him to collapse. His personal framing is neither a probability hedge nor an antecedent."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Industry-wide financial collapse is an ordinary reading in this business context. The operational threshold is evaluator-supplied, and preserving the absent deadline is essential."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic discloses financing and compute expansion before the cutoff. This is company reporting, and finite continued activity cannot disprove eventual collapse."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic reports ongoing government adoption immediately before the cutoff. This does not independently establish sector health or settle the unlimited forecast."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish widespread business cessation accompanied by sector-wide financing collapse, so early resolution is unavailable. Continued activity cannot contradict a forecast with no deadline. The outcome remains unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-6e6e9c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26942,
+  "output_tokens": 1857,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 143
+ },
+ "cost_usd": null
+}

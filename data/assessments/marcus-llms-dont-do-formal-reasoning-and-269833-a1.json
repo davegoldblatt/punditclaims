@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-llms-dont-do-formal-reasoning-and-269833-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-269833",
+  "version": 2,
+  "content_hash": "68d17a9a241b3da8d0b9ae246510ae1500c456a662cc80caf17d83020ff731a1"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-269833",
+  "version": 1,
+  "content_hash": "2577af056b5b26aee9bc9dcd26c6830963d033685d02ff0a9e77955acc64417a"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-269833-p1",
+  "content_hash": "f06e7765437e8dbc3da07c7459526ad32d8f66eb66e025119f9db5281b43300d"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-10-07",
+  "end": "2026-10-28",
+  "precision": "day"
+ },
+ "public_rationale": "Read plainly, the claim is that the cited reasoning-failure findings, led by Apple's GSM-Symbolic study, would hold up. The record is split. An independent 2025 benchmark (GSM-DC) confirmed that LLMs are significantly thrown off by irrelevant context, which matches the core NoOp idea. But a peer-reviewed 2026 re-analysis found the GSM-Symbolic drop significant for only 8 of 20 open models, and partly explained by larger numbers in the new problems. A 2026 independent replication reproduced the NoOp drop with raw distractors. The drop mostly vanished once ambiguous distractors were removed. So the general sensitivity has replicated, but the size and meaning of the headline Apple results have not held up cleanly.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "'I strongly believe' is a statement of belief; only the robustness of the results is graded.",
+  "There is no exact NoOp replication, because the dataset was not released.",
+  "Only the math results were checked for replication."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-anthropic-1",
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dont-do-formal-reasoning-and-269833",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Marcus strongly believes that the current results on LLMs' reasoning failures, including the Apple study and the other work he cites, are robust.",
+  "kind": "observation",
+  "conditions": [
+   "strongly believe"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "I strongly believe the current results are robust.",
+   "locator": "paragraph 23",
+   "url": "https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and",
+   "date": "2024-10-11",
+   "document_title": "LLMs don’t do formal reasoning - and that is a HUGE problem",
+   "observed_at": "2026-10-28T23:59:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "I strongly believe",
+    "the current results",
+    "are robust"
+   ],
+   "our_interpretation": [
+    "The literal claim is a report of his own belief, which cannot be checked. The checkable part is that the results are robust.",
+    "Plain reading of 'robust': the reasoning-failure findings he cites, led by the Apple GSM-Symbolic/GSM-NoOp results, hold up when others re-test or re-analyse them.",
+    "Target period: from the Apple paper's release (2024-10-07) to the evaluation date. Robustness can only be shown by replications after the post, so the period covers the scrutiny window; this choice is flagged.",
+    "The test is replication of the findings on comparable setups, not whether newer models later improved. Later model improvement alone does not make the original findings fragile."
+   ],
+   "support_condition": "Independent studies reproduce the main effects, such as sensitivity to irrelevant context and drops on altered problems, with sound statistics.",
+   "contradiction_condition": "Independent re-analyses or replications find the main effects largely vanish under proper statistics or cleaner test data, even for the original models."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Read plainly, the claim is that the cited reasoning-failure findings, led by Apple's GSM-Symbolic study, would hold up. The record is split. An independent 2025 benchmark (GSM-DC) confirmed that LLMs are significantly thrown off by irrelevant context, which matches the core NoOp idea. But a peer-reviewed 2026 re-analysis found the GSM-Symbolic drop significant for only 8 of 20 open models, and partly explained by larger numbers in the new problems. A 2026 independent replication reproduced the NoOp drop with raw distractors. The drop mostly vanished once ambiguous distractors were removed. So the general sensitivity has replicated, but the size and meaning of the headline Apple results have not held up cleanly.",
+  "limitations": [
+   "'I strongly believe' is a statement of belief; only the robustness of the results is graded.",
+   "There is no exact NoOp replication, because the dataset was not released.",
+   "Only the math results were checked for replication."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Our experiments demonstrate that LLMs are significantly sensitive to IC, affecting both reasoning path selection and arithmetic accuracy.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2505.18761",
+    "publisher": "arXiv (Yang et al.)",
+    "event_date": "2025-05-24",
+    "available_at": "2025-05-24",
+    "explanation": "An independent team built a controlled benchmark with irrelevant context (IC) and found LLMs significantly sensitive to it. This reproduces the core GSM-NoOp-style finding."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "we find that only 8 exhibit statistically significant performance changes under the original prompt format. Moreover, we identify a previously unacknowledged factor: the distribution of integers in problem texts of the main GSM-Symbolic dataset is systematically shifted towards larger values",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2605.28700",
+    "publisher": "arXiv (Długosz, Oliveira, Díaz-Rodríguez; accepted EMNLP 2026)",
+    "event_date": "2026-05-27",
+    "available_at": "2026-05-27",
+    "explanation": "A peer-reviewed re-analysis found the GSM-Symbolic drop significant for only 8 of 20 models, and partly explained by larger numbers in the new dataset. That cuts against the robustness of that headline result."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "we precisely replicate the original findings only when we do not audit out examples that may actually be ambiguous for the model. When we carefully remove samples that may genuinely impact the calculation, the effect is drastically reduced.",
+    "locator": "TL;DR",
+    "url": "https://www.lesswrong.com/posts/Ze4C99Dasj74YKCFh/revisiting-gsm-symbolic-do-2026-frontier-models-still-fail",
+    "publisher": "LessWrong (author 'Sturb')",
+    "event_date": "2026-03",
+    "available_at": "2026-06-05",
+    "explanation": "An independent replication, including the original GPT-4o snapshot, reproduced the NoOp drop with unfiltered distractors. The drop largely disappeared once ambiguous distractors were removed, so the NoOp effect is sensitive to test construction. This is a non-peer-reviewed blog post, and it had to rebuild the NoOp data because Apple did not release it."
+   }
+  ],
+  "what_would_resolve": "An exact replication with Apple's released GSM-NoOp data, and replication checks on the planning and arithmetic results, would sharpen this verdict.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "4a325128b4cb9858ce690b0890716ea17bca8b4441aa18510a456b190a460661",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:40:09Z"
+}

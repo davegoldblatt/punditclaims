@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1",
+  "version": 2,
+  "content_hash": "b382a5f1a07f6500dec9e911f94ae96b4a78e4bd4a5bd3ef1d0c3acc555956e8"
+ },
+ "contract_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1",
+  "version": 1,
+  "content_hash": "76b0671ba69879ae5837477c5d4c85562fba0eb7e14d0801312c1edac00c7302"
+ },
+ "packet_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1-p1",
+  "content_hash": "9f185f8e14979c3d3dd4da5bd567ab5904a47d48d324ecefa8defa2a6e1a440d"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-09-12",
+  "end": "2024-11-24",
+  "precision": "day"
+ },
+ "public_rationale": "Under the stated reading, both parts hold: additional inference work costs resources, and additional sampling did not guarantee continuing accuracy gains in a contemporary o1-mini experiment. The qualification matters. Medical evaluations found useful, consistent gains, and the independent experimenter considered o1-mini affordable. The evidence supports added cost and non-guaranteed returns, not a claim that inference scaling is generally ineffective or prohibitively expensive.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e3"
+ ],
+ "limitations": [
+  "The result depends on the stated readings of expensive and unreliable.",
+  "A small math experiment cannot establish how often scaling fails across real-world tasks.",
+  "Sampling saturation does not establish that longer internal reasoning behaves identically."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-a-new-ai-scaling-law-shell-game-264969-4x-review-anthropic-1",
+  "marcus-a-new-ai-scaling-law-shell-game-264969-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-a-new-ai-scaling-law-shell-game-264969-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The alleged scaling law Nadella emphasized, inspired by OpenAI's o1 (the more time spent on a problem, the more accurate the result), is expensive because it by definition burns up more GPU time, and it is unreliable.",
+  "kind": "observation",
+  "conditions": [
+   "the alleged scaling law Nadella emphasized, inspired by o1"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Second, the alleged “scaling” law (inspired by OpenAI’s o1) that Nadella emphasized— the more time you spend on a problem, the more accurate you get —is (a) expensive, because it by definition burns up more GPU time and (b) unreliable.",
+   "locator": "paragraph 11",
+   "url": "https://garymarcus.substack.com/p/a-new-ai-scaling-law-shell-game",
+   "date": "2024-11-24",
+   "document_title": "The new AI scaling law shell game",
+   "observed_at": "2026-10-28T23:58:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the more time you spend on a problem, the more accurate you get",
+    "expensive",
+    "burns up more GPU time",
+    "unreliable"
+   ],
+   "our_interpretation": [
+    "The target is inference-compute scaling exemplified by the contemporary o1 family, including additional reasoning and repeated sampling.",
+    "Read expensive as additional computational and inference cost per problem. Marcus supplies no absolute price or affordability threshold.",
+    "Read unreliable as additional inference computation not assuring additional accuracy across tasks and budgets, rather than as a claim that it never helps.",
+    "Use the o1 release-to-post window for this ongoing observation: 2024-09-12 through 2024-11-24.",
+    "The reference to Nadella identifies the approach; it is not a forecast antecedent."
+   ],
+   "support_condition": "Contemporary measurements show added inference resource costs and an o1-family experiment in which increasing the inference budget fails to produce further accuracy gains.",
+   "contradiction_condition": "Matched experiments establish dependable accuracy improvements across the relevant tasks and budgets, or show that the claimed additional inference work has no resource cost."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Under the stated reading, both parts hold: additional inference work costs resources, and additional sampling did not guarantee continuing accuracy gains in a contemporary o1-mini experiment. The qualification matters. Medical evaluations found useful, consistent gains, and the independent experimenter considered o1-mini affordable. The evidence supports added cost and non-guaranteed returns, not a claim that inference scaling is generally ineffective or prohibitively expensive.",
+  "limitations": [
+   "The result depends on the stated readings of expensive and unreliable.",
+   "A small math experiment cannot establish how often scaling fails across real-world tasks.",
+   "Sampling saturation does not establish that longer internal reasoning behaves identically."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "resource-intensive",
+    "locator": "Abstract; sections 4.3–4.5",
+    "url": "https://arxiv.org/html/2411.03590v1",
+    "publisher": "Nori et al., Microsoft and OpenAI, arXiv",
+    "event_date": "2024-11",
+    "available_at": "2024-11-06",
+    "explanation": "The study measures token usage and inference costs and finds that additional ensembling raises costs. It also finds consistent ensembling gains on its medical benchmarks, limiting any interpretation that extra inference is generally ineffective."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "past the initial gains.",
+    "locator": "Majority Vote / Self Consistency",
+    "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/tree/5452b73",
+    "publisher": "Hugh Zhang, GitHub",
+    "event_date": "2024-09-23",
+    "available_at": "2024-09-23",
+    "explanation": "The experiment increases sampling within o1-mini on the same AIME questions and reports saturation after initial gains. This supports the limited claim that spending more inference compute does not assure continuing accuracy improvements."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "expensive!",
+    "locator": "Majority Vote / Self Consistency, cost discussion",
+    "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/tree/5452b73",
+    "publisher": "Hugh Zhang, GitHub",
+    "event_date": "2024-09-23",
+    "available_at": "2024-09-23",
+    "explanation": "The experimenter regarded the absolute expense as modest. This is material against reading Marcus as claiming prohibitive cost, but does not negate the added cost of additional computation."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a4d16efc3cd34a07912eae857a5f6b14c5c4349b7f0802c8ad13970eda1fc9ff",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:19:55Z"
+}

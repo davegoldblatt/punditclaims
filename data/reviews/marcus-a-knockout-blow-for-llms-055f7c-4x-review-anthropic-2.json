@@ -1,0 +1,178 @@
+{
+ "run_id": "marcus-a-knockout-blow-for-llms-055f7c-4x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-knockout-blow-for-llms-055f7c": "e894da85fb85dc983ae5edd9642fe0036114be15a6e4c6081047bfdaa9810f8f",
+  "case:marcus-a-knockout-blow-for-llms-25df94": "d9e51c9ba8ab3e2984206874f0232ad140f4a042be76ae58a6c1013f23525892",
+  "case:marcus-a-knockout-blow-for-llms-27f761": "6d097201be2e08bebc4c8d7bf3239c0bcf21b105c99c6a77e4583d6697daa8a6",
+  "case:marcus-a-knockout-blow-for-llms-3e2ec8": "b7f4fd872be6920de3d5f578b08d924ef2cb4624c07aa60846d7b14535d797e4"
+ },
+ "started_at": "2026-10-29T02:01:35Z",
+ "completed_at": "2026-10-29T02:02:13Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, giving his reading of the Apple paper."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the core claim. It drops the 'Apple paper shows' framing, but the contract restores it as the evidential basis. It is a present-state observation, not a forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'substitute' as a direct replacement that keeps dependable correctness is fair and ordinary. Excluding generated code matches the speaker's own next paragraph. The result depends on this reading, which the contract states openly."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Primary Apple study, dated June 2025. Accuracy collapses past a complexity threshold, and giving the model the Hanoi algorithm did not prevent the collapse. This directly meets the support condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Lawsen's critique blames output length and shows models writing recursive programs. That is generated code, not direct execution, and the results are preliminary. It does not show dependable direct execution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under a fair contract, the Apple study shows models failing exact algorithmic execution at scale, even when given the procedure. The code-generation counterpoint does not show direct replacement with dependable correctness. Supported for the June 2025 snapshot.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-055f7c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The quote from Rao that follows is a separate statement and is not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unhedged 'will' with a stated minimum horizon. The proposition leaves out 'with and without inference time reasoning', but the contract keeps that scope."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'uses' as practical usefulness through June 2035 is a fair plain reading. 'Especially' is correctly treated as emphasis, not a requirement."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's own disclosure about its usage in August 2025. It shows coding use soon after the post but cannot show persistence to 2035."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "The deadline is June 2035, after the evaluation date, and no event meets the early-resolution rule. Interim usage is only context, so the forecast cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-25df94"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Worded as a warning, but it asserts a present fact: these models do not work reliably when simply dropped into complex problems. Treating it as an observation is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (substantial failure rates on complex tasks without bespoke engineering) is ordinary and fair. The window from January to the post date is an evaluator choice but a reasonable one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent METR evaluation of o3, April 2025. It finds only a 50% success horizon at about 1.5 hours. Limits: a pre-release checkpoint and an agent scaffold."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "METR paper, March 2025. Claude 3.7 Sonnet's 80% success horizon is about 15 minutes against 59 minutes at 50%, which shows unreliability on moderately long tasks."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent measurements of o3 and of a Claude model current at the time show substantial failure rates on verifiable complex tasks under simple scaffolds. That fits the support condition. Later Claude 4 models are not covered, but the claim does not require them.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-27f761"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own description of the Apple figure, which he states as fact."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The numeric thresholds are kept. The proposition drops the panel reference, but the contract restores the scope to the Claude configuration in the Apple study."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Limiting the claim to the configuration in the cited figure, and reading 'pretty much' as near zero, is fair and ordinary."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. The values for 7 and 8 discs could not be recovered from the original figure or data, and the general collapse description does not test the under-80% threshold. Checked, but not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-knockout-blow-for-llms-3e2ec8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 23513,
+  "output_tokens": 3817,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

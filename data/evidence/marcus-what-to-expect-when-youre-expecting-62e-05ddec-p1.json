@@ -1,0 +1,162 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec",
+  "version": 2,
+  "content_hash": "716e1e95c4426e46aa16979c7185cebcf70dae5a8b4ac5c86e7a93f9fd701f59"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec",
+  "version": 1,
+  "content_hash": "5b33e031d52829c391c6a5e7912e21883f50c045ea518bf0f93135736322e7ca"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-5 system card jailbreak overrefusal August 2025",
+   "GPT-5 overrefusal XSTest benign requests safe completions 2025",
+   "GPT-5 jailbreak primary research NeuralTrust August 2025",
+   "GPT-5 \"overrefusal\" benign requests OR-Bench 2025 evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+    "used": true,
+    "why": "Dated primary disclosure documents deployed safeguards and an end-to-end jailbreak."
+   },
+   {
+    "url": "https://arxiv.org/html/2601.17642v1",
+    "used": true,
+    "why": "Versioned primary study directly evaluates GPT-5 refusals on prompts classified as benign."
+   },
+   {
+    "url": "https://arxiv.org/abs/2601.17642",
+    "used": true,
+    "why": "Submission history establishes that version 1 was public on January 25, 2026."
+   },
+   {
+    "url": "https://cdn.openai.com/pdf/be60c07b-6bc2-4f54-bcee-4141e1d6c69a/gpt-5-safe_completions.pdf",
+    "used": true,
+    "why": "Provides material context that safety and helpfulness improved together."
+   },
+   {
+    "url": "https://arxiv.org/abs/2508.09224",
+    "used": true,
+    "why": "Verifies the safe-completions paper's public submission date."
+   },
+   {
+    "url": "https://neuraltrust.ai/blog/gpt-5-jailbreak-with-echo-chamber-and-storytelling",
+    "used": false,
+    "why": "Read, but its October 2026 revision has no exact update day. The dated OpenAI disclosure provides a firmer record."
+   },
+   {
+    "url": "https://www.securityweek.com/red-teams-breach-gpt-5-with-ease-warn-its-nearly-unusable-for-enterprise/",
+    "used": false,
+    "why": "Contemporaneous reporting corroborates jailbreak reports, but primary evidence is available."
+   }
+  ],
+  "performed_at": "2026-10-29T09:31:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "cdn-openai-com-gpt-5-system-card-pdf",
+   "source_snapshot_id": "0e0a71ffd5c0a6839100bc095b99007b3fbfe71641e94369afa0e4633fff8b4a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "locator": "Section 5.3.2.2, System-level protections",
+   "receipt": {
+    "public_excerpt": "These system level protections are a form of defense in depth.",
+    "quote_hash": "337d694075df2eb9610a65eb3a6e6b7c04853746d93c37f1fcee7373530f9be4",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-13",
+   "retrieved_at": "2026-10-29T02:02:38Z",
+   "relation": "supports",
+   "explanation": "The surrounding section describes monitoring of GPT-5-thinking traffic alongside model refusals. The guardrails-present condition is met.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-gpt-5-system-card-pdf",
+   "source_snapshot_id": "0e0a71ffd5c0a6839100bc095b99007b3fbfe71641e94369afa0e4633fff8b4a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "locator": "Section 5.3.3.5, External government red teaming",
+   "receipt": {
+    "public_excerpt": "One of the jailbreaks evades all layers of mitigations and is being patched.",
+    "quote_hash": "a52570aa2310d44ed8de720c1d478f959a37495bf926afbba3ba8d6877e52241",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-13",
+   "retrieved_at": "2026-10-29T02:02:38Z",
+   "relation": "supports",
+   "explanation": "OpenAI reports that UK AISI found GPT-5-thinking jailbreaks, including one bypassing every mitigation layer. This establishes the bypass component without claiming that most attacks succeed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2601-17642v1",
+   "source_snapshot_id": "a923523142019ce23ecf8b44b833bd5aa474a9bf82d887e131cc0e0a9cc35aa4",
+   "publisher": "Zhihao Zhang and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2601.17642v1",
+   "locator": "Section 4.2.1, Over-Refusal Rate",
+   "receipt": {
+    "public_excerpt": "including GPT-5 and GPT-OSS achieve the highest safety for toxic prompt rejection but reject most benign prompts",
+    "quote_hash": "ba9d0e7eb0c6e7c05af14dd071c70b9c7dd69e2aa51054748dd7ac7d9cae387b",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-01-25",
+   "retrieved_at": "2026-10-29T09:20:35Z",
+   "relation": "supports",
+   "explanation": "The published finding establishes GPT-5 refusals on the study's benign health prompts. Benign labels come from majority agreement among seven moderation models; the event date marks publication of the finding because exact test dates are unstated.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "cdn-openai-com-pdf-be60c07b-6bc2-4f54-bcee-4141e1d6c69a-gpt-5-safe-374bdd89c9c5",
+   "source_snapshot_id": "4d90c8553fec8502db3ae61fb18ae08f8473294606e888f0d7ae989427aff136",
+   "publisher": "OpenAI",
+   "source_type": "preprint",
+   "url": "https://cdn.openai.com/pdf/be60c07b-6bc2-4f54-bcee-4141e1d6c69a/gpt-5-safe_completions.pdf",
+   "locator": "Biological-risk evaluation discussion following Figure 6",
+   "receipt": {
+    "public_excerpt": "substantially outperforms o3 on both safety and helpfulness metrics.",
+    "quote_hash": "3d4c3cf987db43c4186ac7863e524f314348517245eb49ef4b3964a6f2438301",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-12",
+   "retrieved_at": "2026-10-29T09:20:23Z",
+   "relation": "context",
+   "explanation": "This counters an interpretation that the trade-off prevented improvements in both dimensions. It does not negate the documented existence of either failure type.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not measure temporal oscillation or ordinary-user failure prevalence.",
+  "The over-refusal study uses generated boundary prompts, automated benignness judgments, and keyword-based refusal detection rather than human review of every refusal."
+ ],
+ "packet_hash": "44dd678fb2d648308ac504ee78c957af40ab9badc5eac3638bb2c0326f1cd728"
+}

@@ -1,0 +1,113 @@
+{
+ "run_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9-2x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9": "ca3f2b8306c1664f91413b40531148bc426914739b66bf39c269f9c03787afdd",
+  "case:wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340": "077b26e0437a404a169fa3119a0cc3db1a90be887e31a83f8aa48da0d2f75194"
+ },
+ "started_at": "2026-10-29T17:53:22Z",
+ "completed_at": "2026-10-29T17:53:51Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states the amount directly in his executive summary."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the amount, company, fiscal year, and retrospective assertion."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The revenue definition follows the disclosure quoted in the statement's context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reporting available by the cutoff identifies $24.1 billion of FY2026 revenue from OpenAI. It reports company disclosures, not an independent audit."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The packet's financial reporting gives the same amount for the same fiscal year and revenue category. The contract permits reliable reporting when the filing cannot be retrieved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron adopts both percentages as his own firm summary, although he attributes their basis to Microsoft and Bloomberg."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the firm thresholds, fiscal year, revenue categories, and attributed analytical basis."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Assessing the cited analysis as an estimate is fair given the explicit attribution and surrounding explanation. Support depends on that reading; the evidence does not establish a certain 70% lower bound."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Bloomberg's republished calculation gives $24.1 billion divided by an estimated $34 billion, implying 70.88%. The denominator depends on its stated growth assumption."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Microsoft's disclosure supplies the contract's total-revenue denominator. Combined with e1, $24.1 billion divided by $331.8 billion implies 7.26%. This is company-reported evidence."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The approximate share qualifies certainty. Its 65–70% infrastructure figure lacks the same inclusive numerator and defined period, so it does not contradict the contracted calculation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the contract's explicitly estimated basis, the cited figures imply 70.88% of AI revenue and 7.26% of total revenue, satisfying both thresholds. The qualification in e3 does not supply a comparable competing calculation. Support establishes what the cited analysis implies, not a verified minimum share of actual AI revenue.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 19315,
+  "output_tokens": 1039,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 112
+ },
+ "cost_usd": null
+}

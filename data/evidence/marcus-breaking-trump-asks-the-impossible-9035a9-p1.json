@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-breaking-trump-asks-the-impossible-9035a9-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-trump-asks-the-impossible-9035a9",
+  "version": 1,
+  "content_hash": "129a343657044c6df8e23672f87b42f93cfc4ae29d216e28633f30687fe1b4b0"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-trump-asks-the-impossible-9035a9",
+  "version": 1,
+  "content_hash": "dc4ddf7e09838f8fd804a31b7d65d4590a6bce6e5eef97a661e224f7d0f54e33"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "January 2024 guardrails over refusal jailbreak evaluation XSTest",
+   "XSTest exaggerated safety behaviours 2023 January 2024",
+   "XSTest exaggerated safety behaviours 2023",
+   "January 2024 LLM guardrails benchmark overrefusal safety evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2307.02483",
+    "used": true,
+    "why": "Primary research documents adversarial failures before January 2024, but cannot alone establish the January state."
+   },
+   {
+    "url": "https://arxiv.org/html/2308.01263v2",
+    "used": true,
+    "why": "The pre-January version measures both safe and unsafe requests and includes evidence against a blanket failure claim."
+   },
+   {
+    "url": "https://arxiv.org/abs/2308.01263v2",
+    "used": true,
+    "why": "Read to verify that the cited version was available on October 17, 2023."
+   },
+   {
+    "url": "https://docs.nvidia.com/nemo/guardrails/v0.24.1/evaluation/evaluate-guardrails",
+    "used": false,
+    "why": "Read_page identifies a January 8, 2024 evaluation, but the inspected version's publication date was not established. Its limited moderation tests would not settle the universal claim."
+   },
+   {
+    "url": "https://aclanthology.org/2024.naacl-long.301/",
+    "used": false,
+    "why": "The later conference version was unnecessary because a dated pre-January version was available."
+   }
+  ],
+  "performed_at": "2026-10-29T03:29:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2307-02483",
+   "source_snapshot_id": "8b2dcbfa062924a67463ca174e1400f9ba1f7e699948ea40e2464eda9bbf1b90",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2307.02483",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "vulnerabilities persist",
+    "quote_hash": "44f98a28c0d42291d06aeff9b3b1ad0cd852e470803dc306585369a479859b98",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-07-05",
+   "retrieved_at": "2026-10-29T03:25:22Z",
+   "relation": "context",
+   "explanation": "The study documents jailbreak failures in GPT-4 and Claude v1.3. It supports concern about permissiveness, but neither measures every guardrail nor establishes their January 2024 performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2308-01263v2",
+   "source_snapshot_id": "613680f7596192ecad46eea4757b91a7afede0647c5a7b69665df12177879573",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2308.01263v2",
+   "locator": "Section 3.2, discussion of unsafe contrast prompts",
+   "receipt": {
+    "public_excerpt": "not themselves a comprehensive evaluation",
+    "quote_hash": "143f97277ef1d77dd412753cc7a5dca2b4d52f4a8fe8fc33aef185a5e196c6a6",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-18",
+   "available_at": "2023-10-17",
+   "retrieved_at": "2026-10-29T03:25:04Z",
+   "relation": "context",
+   "explanation": "XSTest reports a comparatively strong GPT-4 balance on safe and unsafe prompts, which weighs against treating all safeguards as ineffective. Its stated coverage limitation and September test date prevent this from settling January robustness against jailbreaks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No sufficiently broad January 2024 joint evaluation was established.",
+  "Earlier model results cannot be assumed unchanged in January.",
+  "The speaker supplied no practical success threshold.",
+  "XSTest's unsafe contrast prompts are not a comprehensive adversarial evaluation."
+ ],
+ "packet_hash": "172617da6b02e2fe9bdf965365d4658f179a671e2db40eca1dc362b54ac8be24"
+}

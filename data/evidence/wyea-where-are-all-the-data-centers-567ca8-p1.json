@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-where-are-all-the-data-centers-567ca8-p1",
+ "claim_revision_ref": {
+  "id": "wyea-where-are-all-the-data-centers-567ca8",
+  "version": 1,
+  "content_hash": "09a930574a99af4e4f815c6929c0db7a535380f50c70d156920f3917094e7f8d"
+ },
+ "contract_ref": {
+  "id": "wyea-where-are-all-the-data-centers-567ca8",
+  "version": 1,
+  "content_hash": "0301f65a4c9f48123028aeabe72b14664e8d4d88a8a5068922d4dff36bd4ea02"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.microsoft.com 2026 \"added\" \"gigawatt\" capacity",
+   "site.microsoft.com \"FY 2026\" \"gigawatt\"",
+   "Microsoft FY26 Q3 earnings April 2026 added another gigawatt capacity"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q2",
+    "used": true,
+    "why": "Read with find. Primary evidence for the December-quarter statement and publication date."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+    "used": true,
+    "why": "Read with find. Primary evidence for the March-quarter statement and publication date."
+   },
+   {
+    "url": "https://epoch.ai/data/ai-data-centers/directory/microsoft-fairwater-wisconsin",
+    "used": false,
+    "why": "Read, but its estimated IT power cannot supply a directly comparable facility-capacity denominator."
+   },
+   {
+    "url": "https://epoch.ai/data/ai-data-centers/directory/microsoft-fairwater-atlanta",
+    "used": false,
+    "why": "Read, but its estimated IT power cannot validate the claimed 342 MW denominator."
+   }
+  ],
+  "performed_at": "2026-10-29T22:11:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q2",
+   "source_snapshot_id": "bbe4a93afea170ce5e09c86b5f65a8b65a70d3ac00f3cc7f8d77382a5ffaeb3f",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q2",
+   "locator": "Satya Nadella prepared remarks, infrastructure discussion",
+   "receipt": {
+    "public_excerpt": "nearly one gigawatt of total capacity",
+    "quote_hash": "2b17d72bfd6caa90465fb438d08f469b83e250f2f50057aedd28c6ff949b2eb2",
+    "verified": "exact"
+   },
+   "event_date": "2025-12",
+   "available_at": "2026-01-28",
+   "retrieved_at": "2026-10-29T10:00:03Z",
+   "relation": "context",
+   "explanation": "Confirms the first reported addition. The statement does not provide a site-by-site reconciliation or define the operational threshold.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q3",
+   "source_snapshot_id": "465c63e33d1a7815269f2a998162f799fc7d90151965fa606bd3c24f4a4e81a9",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+   "locator": "Satya Nadella prepared remarks, infrastructure discussion",
+   "receipt": {
+    "public_excerpt": "another gigawatt",
+    "quote_hash": "82f48c20352217213f8f3e1b5d8f2bd0066e1a30a60bf8526abe33d1ddbed80a",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T09:55:20Z",
+   "relation": "context",
+   "explanation": "Together with e1, this substantiates approximately 2 GW as Microsoft's reported total. Dividing that rounded amount by the claim's assumed denominator verifies only the arithmetic.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Approximately 2 GW reported across e1 and e2, rounded to 2,000 MW.",
+     "342 MW supplied by the claim as its denominator; not independently established."
+    ],
+    "formula": "2000 / 342 = 5.847953216",
+    "rounding": "5.85 times, to two decimal places; conditional arithmetic only."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No operational reconciliation of the two reported quarterly additions was verified.",
+  "The 342 MW denominator remains unverified on a comparable measurement basis."
+ ],
+ "packet_hash": "8a33957c974c8b878cbf90da6d11a45314c64f27200ac6f30133f06f837c9a11"
+}

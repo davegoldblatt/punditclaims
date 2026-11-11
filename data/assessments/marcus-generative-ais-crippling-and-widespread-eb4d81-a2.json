@@ -1,0 +1,122 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-eb4d81-a2",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-eb4d81",
+  "version": 2,
+  "content_hash": "bad59c5ac7a23c9040f1465bb001517bf5cb4b92f9aff8d0f88d670789b749ff"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-eb4d81",
+  "version": 1,
+  "content_hash": "636367336feffab2b45893fc120c63a8f257d8c99336a4403406acd6c64db767"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-eb4d81-p1",
+  "content_hash": "327c50495b649e5ba37b7228e4d149e618c60b35b4fda579203faed87d69da16"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-04-16",
+  "end": "2025-06-28",
+  "precision": "day"
+ },
+ "public_rationale": "Acher's report, available May 25, 2025, documents substantive illegal moves by o3 and an incorrect reconstruction of a chess position, separately identifying notation-only exceptions [e1]. This supports vulnerability to failures in tracking game states and applying rules, the behavioral reading of the claimed 'same overall issue' [e1]. The report also documents competent legal games, so the evidence supports vulnerability rather than inevitable failure [e2]. It does not establish that o3 lacks internal world models or test whether o3 might outperform Grok on the y/z tic-tac-toe variant [e1, e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Support is limited to behavioral vulnerability; these chess tests do not identify the internal mechanism or settle the hedged comparison with Grok [e1, e2].",
+  "Individual test dates are unspecified, and inconsistent sample descriptions prevent a reliable aggregate failure-rate estimate from this report [e1, e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-ea1d48-3x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-ea1d48-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-d23c04-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-eb4d81",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Other models like o3 might do better on this specific tic-tac-toe variant but are still vulnerable to the same overall issue of lacking world models.",
+  "kind": "observation",
+  "conditions": [
+   "might do better on this specific task"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "(Other models like o3 might do better on this specific task but are still vulnerable to the same overall issue.)",
+   "locator": "paragraph 72",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Other models like o3",
+    "might do better on this specific task",
+    "still vulnerable to the same overall issue"
+   ],
+   "our_interpretation": [
+    "The ordinary behavioral reading is that o3 can fail to maintain an accurate game state or apply its rules consistently. Losing a game alone would not establish this.",
+    "The comparison with Grok is a concession, not a conditional forecast.",
+    "The observation concerns the contemporary o3 release through the post date. I use its release-to-post interval because no observation window is specified.",
+    "Behavioral failures can establish vulnerability without establishing the complete absence of internal world representations."
+   ],
+   "support_condition": "Documented tests of contemporary o3 show substantive illegal moves or incorrect representations of an established game state.",
+   "contradiction_condition": "The alleged state and rule failures are shown to be evaluation artifacts, and sufficiently broad comparable testing demonstrates reliable state tracking under the challenged conditions."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Acher's report, available May 25, 2025, documents substantive illegal moves by o3 and an incorrect reconstruction of a chess position, separately identifying notation-only exceptions [e1]. This supports vulnerability to failures in tracking game states and applying rules, the behavioral reading of the claimed 'same overall issue' [e1]. The report also documents competent legal games, so the evidence supports vulnerability rather than inevitable failure [e2]. It does not establish that o3 lacks internal world models or test whether o3 might outperform Grok on the y/z tic-tac-toe variant [e1, e2].",
+  "limitations": [
+   "Support is limited to behavioral vulnerability; these chess tests do not identify the internal mechanism or settle the hedged comparison with Grok [e1, e2].",
+   "Individual test dates are unspecified, and inconsistent sample descriptions prevent a reliable aggregate failure-rate estimate from this report [e1, e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "clear illegal moves.",
+    "locator": "Section: Longest game and (false) illegal move?",
+    "url": "https://blog.mathieuacher.com/GPTReasoningO3O4miniAndChess-copy",
+    "publisher": "Mathieu Acher",
+    "event_date": "2025-05",
+    "available_at": "2025-05-25",
+    "explanation": "Acher describes substantive o3 rule violations and an incorrect reconstruction of a game state. He separately identifies two notation-related cases, so the substantive finding does not depend on counting those as failures."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "quite good.",
+    "locator": "Section: The only legal games",
+    "url": "https://blog.mathieuacher.com/GPTReasoningO3O4miniAndChess-copy",
+    "publisher": "Mathieu Acher",
+    "event_date": "2025-05",
+    "available_at": "2025-05-25",
+    "explanation": "The same report includes competent legal play and a winning o3-high game. This limits any interpretation that o3 invariably fails or has no chess competence, but does not contradict vulnerability."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "679e18df9928c2140ebe5f918e481069b5b3d91ef9372cfef04fc07c2b97b383",
+ "supersedes_assessment_id": "marcus-generative-ais-crippling-and-widespread-eb4d81-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:25:03Z"
+}

@@ -1,0 +1,125 @@
+{
+ "run_id": "marcus-an-open-letter-to-fei-fei-li-concerning-cee48a-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-an-open-letter-to-fei-fei-li-concerning-cee48a": "2b0f8c9cf8e38bddc6d0aaa15623b0349eb7ce5d7ce85f7b665c19d7871ac2ea",
+  "case:marcus-an-open-letter-to-fei-fei-li-concerning-d34f41": "315e407644d84253ddebb2cdf87abca231124eb53dfc3bdea38ed7a658d4e763"
+ },
+ "started_at": "2026-10-29T02:32:16Z",
+ "completed_at": "2026-10-29T02:32:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his signed open letter. The Bengio et al. quote that follows it is not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording keeps 'many industries', the three named examples and the evaluation-against-standards point. The revision correctly dropped the added 'reasonable' judgement."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary: established safety-evaluation requirements in the three named sectors, using US practice because the letter is about California policy. It rightly does not require identical approval procedures."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "FDA page from before the post: drug companies must test drugs and submit evidence that they are safe and effective before sale. Official agency explanation."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "FAA order from October 2023: applicants must show compliance with set airworthiness standards before a type certificate is issued."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "NHTSA notice from 2020: manufacturers certify compliance with federal safety standards, by testing or by analysis done with reasonable care. This is self-certification, but still evaluation against set standards."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Official FDA, FAA and NHTSA records, all published before the post, show that companies in each named industry must evaluate product safety against defined standards. The methods differ (premarket approval, type certification, self-certification), but the claim does not require them to be the same. Nothing in the packet contradicts it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-an-open-letter-to-fei-fei-li-concerning-cee48a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his signed open letter. He is rebutting Li's argument, not quoting her."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'much', the $100M+ threshold, the 'presumably' hedge and 'not exactly little-tech'. The valuation remark is hedged, so it is not scored. The factual core is the bill's threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on reading 'much' as the main developer obligations and '$100M+' as the statutory training-cost threshold. Both readings are ordinary and fair. Treating 'presumably valued in the billions' as unverified and hedged is correct."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Committee analysis of the version just before July 3. It shows the $100M training-cost threshold and a separate fine-tuning branch. The fine-tuning branch still depends on a $100M+ base model, so it does not defeat 'much'. Context only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dated legal commentary (July 9, 2024) on the July 3 amendment says the $100M training cost is the key threshold. Secondary source, used because the bill text was inaccessible."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Appropriations analysis of the July 3 version: risk assessment, testing, audit and certification duties all attach to developers of covered models."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Committee analyses and dated legal commentary show that the July 3 version tied its main developer obligations to covered models whose training cost exceeds $100M. Fine-tuned derivatives are a narrower branch and do not defeat 'much'. The hedged valuation remark is not scored. The factual core holds.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-an-open-letter-to-fei-fei-li-concerning-d34f41"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 21061,
+  "output_tokens": 2339,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

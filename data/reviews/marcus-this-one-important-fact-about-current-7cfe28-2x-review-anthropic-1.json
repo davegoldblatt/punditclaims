@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-this-one-important-fact-about-current-7cfe28-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-this-one-important-fact-about-current-7cfe28": "e5cd78264dd205b898929a176446a3533b934ec0aee265717448fa44d3284b3c",
+  "case:marcus-this-one-important-fact-about-current-d4d5f8": "97127943e4805639ecbbfee3444756903299025af5d1d0fc67e740559d085855"
+ },
+ "started_at": "2026-10-29T12:36:51Z",
+ "completed_at": "2026-10-29T12:37:13Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, stated as his view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful paraphrase. It keeps 'often' and the outlier-relative-to-training-data cause. Dropping 'can't sample them all' is minor. The calculator comparison is rightly treated as background."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is ordinary and fair. It scores unaided multi-digit multiplication by models available in 2024, and it does not require the outlier problem to be the only cause. The support bar (causal evidence about training coverage) matches the 'because' claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dziri et al.: fine-tuned GPT-3 models do well within the training splits and fail on splits not seen in training, including multiplication. This supports the mechanism only for fine-tuned GPT-3, not for the pretraining coverage of general-purpose LLMs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Jelassi et al.: adding a few long examples lets small specialized transformers handle much longer multiplications. This shows coverage matters but exhaustive sampling is not needed. It concerns small models, not general LLMs."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Gambardella et al.: Llama 2 often gets digits of a 3x3-digit product wrong, and does better when given the correct earlier digits. This documents errors but points to a different mechanism. It does not establish training-outlier causation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows LLMs often make multiplication errors, and that fine-tuned models fail outside their training splits. But no item establishes that training-distribution outliers materially cause the errors of general-purpose LLMs. e2 and e3 complicate the mechanism without refuting it. Neither the support nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-this-one-important-fact-about-current-7cfe28"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, presented as the correct understanding."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Doomed to fail' is firm, forecast-like language with a causal reason attached. The paraphrase drops 'current' before neural networks, a minor change. The 'either you understand…or you don't' framing is rhetorical, but the embedded proposition is a forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly finds that the promises, the meaning of 'many', what counts as current AI, and any deadline are all unspecified. Any scoring would depend on evaluator choices the speaker did not make."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The Morris et al. Levels-of-AGI framework (June 2024) shows how AGI could be operationalized. It does not supply Marcus's set of promises or any outcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "Firm but too vague to score: the 'lavish promises' are not identified, 'many' has no threshold, 'current AI' has no boundary, and there is no deadline. No fair support or contradiction condition exists. The case itself is intact, so this is not an abstention.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-this-one-important-fact-about-current-d4d5f8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15912,
+  "output_tokens": 2384,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

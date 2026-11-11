@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-deep-impact-117a45-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-117a45",
+  "version": 1,
+  "content_hash": "d4792616b279c72ee2be6c1607a6fd28fb06f56c146cda0322249d155d5ce45d"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-117a45",
+  "version": 1,
+  "content_hash": "408926aa3692a3c7bbead62e46a4b13afeb16701bea579704735eaf814a3f1ee"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek V3 technical report H800 2048 GPUs training 2.788 million",
+   "DeepSeek R1 January 2025 run full model 24GB unsloth 1.58 bit",
+   "DeepSeek R1 January 2025 hardware existing GPUs deployment"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "used": true,
+    "why": "Versioned primary description of V3's training hardware and deployment."
+   },
+   {
+    "url": "https://www.unsloth.ai/blog/deepseekr1-dynamic",
+    "used": true,
+    "why": "January 27 primary demonstration of quantizing and locally running the full R1 model."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": true,
+    "why": "Primary description of distillation into smaller models; useful context for software-based progress."
+   },
+   {
+    "url": "https://www.reddit.com/r/unsloth/comments/1ibcoqb",
+    "used": false,
+    "why": "read_page returned HTTP 403; the developers' own readable announcement was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T16:21:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e8",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2412-19437v1",
+   "source_snapshot_id": "134c7e306cb10e2d0bda4db09372b1afd89fba1e37bdfa9a36dab05ccab3ec88",
+   "publisher": "DeepSeek-AI",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.19437v1",
+   "locator": "Section 3.1, Compute Clusters",
+   "receipt": {
+    "public_excerpt": "2048 NVIDIA H800 GPUs",
+    "quote_hash": "d88e26c6da63042c6d33d8df538d2f8ea186cb94dc53004231c8670bdc6d663c",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-27",
+   "retrieved_at": "2026-10-29T05:34:38Z",
+   "relation": "supports",
+   "explanation": "The report identifies the hardware actually used and describes training-efficiency improvements and deployment on H800s. It supports the existing-hardware route, although it is a company report and does not document the construction history of the facility.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e9",
+   "role": "evidence_of_outcome",
+   "document_id": "unsloth-ai-blog-deepseekr1-dynamic",
+   "source_snapshot_id": "173b9e2337167518a03df1e2b61ad424eae22d9d8d79a1716b5c793d6eade7ba",
+   "publisher": "Unsloth",
+   "source_type": "demonstration",
+   "url": "https://www.unsloth.ai/blog/deepseekr1-dynamic",
+   "locator": "Section 'Running Dynamic R1 Quants'; introductory hardware requirements and benchmark sections",
+   "receipt": {
+    "public_excerpt": "but it works.",
+    "quote_hash": "cd53df2570eabfedb4d5a98dbfa12d12a2dea67ef300a58300bc3fe3cbd632fa",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-27",
+   "available_at": "2025-01-27",
+   "retrieved_at": "2026-10-29T16:09:44Z",
+   "relation": "supports",
+   "explanation": "Unsloth demonstrated quantization of full 671B R1, supplied executable deployment instructions, and documented use with existing GPUs or CPU offloading. This establishes practical operation and an efficiency improvement without a newly built large facility, with speed and quality tradeoffs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e10",
+   "role": "context",
+   "document_id": "arxiv-org-html-2501-12948v1",
+   "source_snapshot_id": "ca43eab91020a36e390e35d28edaedf2a6ac6bb407983bbcf88c3987c61e34c3",
+   "publisher": "DeepSeek-AI",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.12948v1",
+   "locator": "Section 1.1, discussion of distilled models",
+   "receipt": {
+    "public_excerpt": "comparable to o1-mini",
+    "quote_hash": "552b0700cacfa696c212cbb1c87432db7ded656efb43c75c6df4861355d32c49",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:10Z",
+   "relation": "context",
+   "explanation": "The report describes improved smaller models produced through distillation. This supports an algorithmic route to progress, but those models are distinct from full R1 and their results alone do not establish full-model hardware requirements.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evidence does not establish how much infrastructure would be required to serve arbitrarily large demand.",
+  "It cannot establish that every future frontier advance will avoid newer hardware."
+ ],
+ "packet_hash": "1e99435b6173c52be8b25b255d0cdd30dcc183621477673c17790f7cebd846a9"
+}

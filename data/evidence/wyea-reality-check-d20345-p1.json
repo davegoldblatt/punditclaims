@@ -1,0 +1,144 @@
+{
+ "packet_id": "wyea-reality-check-d20345-p1",
+ "claim_revision_ref": {
+  "id": "wyea-reality-check-d20345",
+  "version": 1,
+  "content_hash": "faac18810e97596c9b18d934c035f978f861b930b53f778fd06334d9a4977914"
+ },
+ "contract_ref": {
+  "id": "wyea-reality-check-d20345",
+  "version": 1,
+  "content_hash": "fe88a29b4628d37f7e730784f01353b329ba507a4469698981904d6cae1451ea"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI o3 o4-mini system card PersonQA hallucination rate o1",
+   "OpenAI o3 API pricing $10 per million input tokens $40 output April 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": true,
+    "why": "Primary OpenAI source with hallucination rates for o3 vs o1."
+   },
+   {
+    "url": "https://techcrunch.com/2025/04/16/openai-launches-a-pair-of-ai-reasoning-models-o3-and-o4-mini/",
+    "used": true,
+    "why": "Reports o3 launch pricing and calls it relatively low."
+   },
+   {
+    "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+    "used": true,
+    "why": "Context on o3-preview compute cost; it predates the release and the page was later edited."
+   },
+   {
+    "url": "https://anotherwrapper.com/llm-pricing/o3-2025-04-16",
+    "used": false,
+    "why": "Third-party aggregator; TechCrunch suffices."
+   }
+  ],
+  "performed_at": "2026-10-29T12:16:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-2221c875-02dc-4789-800b-e7758f3722c1-o3-and-o4-m-13538e7fc907",
+   "source_snapshot_id": "9fbc1e73c72b62c114bcdb288387a014320e349c9b08f04b016b1ba74e485b51",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "locator": "Section 3.3, Table 4",
+   "receipt": {
+    "public_excerpt": "PersonQA accuracy (higher is better) 0.59 0.36 0.47\nhallucination rate (lower is better) 0.33 0.48 0.16",
+    "quote_hash": "07bad0f3cbfa54958e872410f1269f7e1a02c8fab73ad8f3f800972aa73e1521",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:00:32Z",
+   "relation": "supports",
+   "explanation": "OpenAI's own table shows o3 hallucinating on 33% of PersonQA answers vs 16% for o1, and 51% vs 44% on SimpleQA. So o3 hallucinates more than its predecessor.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-2221c875-02dc-4789-800b-e7758f3722c1-o3-and-o4-m-13538e7fc907",
+   "source_snapshot_id": "9fbc1e73c72b62c114bcdb288387a014320e349c9b08f04b016b1ba74e485b51",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "locator": "Section 3.3, paragraph after evaluation list",
+   "receipt": {
+    "public_excerpt": "o3 tends to make more\nclaims overall, leading to more accurate claims as well as more inaccurate/hallucinated claims.",
+    "quote_hash": "60bed16318c674a71487ca01182f568248a4f9d93d9629d46baae28d770629f2",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:00:32Z",
+   "relation": "supports",
+   "explanation": "OpenAI says o3 makes more hallucinated claims and that the cause is unclear, which matches 'hallucinates more somehow'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "techcrunch-com-2025-04-16-openai-launches-a-pair-of-ai-reasoning-mo-6e1183d369a2",
+   "source_snapshot_id": "4eacf9bec3d097b86cdb6f3e351fc38532180bb8a4bea632e0e1125e04ed05e5",
+   "publisher": "TechCrunch",
+   "source_type": "news_report",
+   "url": "https://techcrunch.com/2025/04/16/openai-launches-a-pair-of-ai-reasoning-models-o3-and-o4-mini",
+   "locator": "paragraph on API availability and pricing",
+   "receipt": {
+    "public_excerpt": "OpenAI is charging developers a relatively low price for o3, given its improved performance, at $10 per million input tokens",
+    "quote_hash": "de822e0ace4356a9b47648660cff34e9438cd5e933688361a568090fb4f125b5",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T12:13:21Z",
+   "relation": "contradicts",
+   "explanation": "Gives o3's launch price of $10/$40 per million tokens. The reporter calls this relatively low given o3's performance, which cuts against 'extremely expensive'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arcprize-org-blog-oai-o3-pub-breakthrough",
+   "source_snapshot_id": "eb3c789e8bd202680f43628bc816534067e127e5f29f1fa976c461179d8082fd",
+   "publisher": "ARC Prize",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+   "locator": "section after results, paragraph beginning 'Of course'",
+   "receipt": {
+    "public_excerpt": "such generality comes at a steep cost, and wouldn't quite be economical yet",
+    "quote_hash": "c41a54d5241e52f8d4e68c4029800aa0d843cdb322d67130b12b0281b76a395f",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-20",
+   "available_at": "2024-12-20",
+   "retrieved_at": "2026-10-29T01:02:26Z",
+   "relation": "context",
+   "explanation": "The benchmark operator described the o3 preview as having a steep cost. This was before the April release, and the page was edited later, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "'Extremely expensive' has no agreed threshold. At $10/$40, o3 cost more per token than many non-reasoning models, but press called it relatively low for its performance."
+ ],
+ "packet_hash": "3c205851424c04cb321b968821677815139da02b394ec49f2c500c7031bdc02b"
+}

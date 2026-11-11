@@ -1,0 +1,106 @@
+{
+ "packet_id": "wyea-dead-money-ea8d8d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-ea8d8d",
+  "version": 1,
+  "content_hash": "5d4b426bccc8338fa3f6c4087e17800bc5bfce49dad75e64fa3cdbc7445c4182"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-ea8d8d",
+  "version": 1,
+  "content_hash": "25d69f6749cf3abd566f359d28e98f399463e62524ebbfba25ab1ffcc62f6980"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Cursor Cognition Perplexity September 2026 revenue 4 billion 750 million 1 billion",
+   "Cognition September 25 2026 billion revenue Cursor Perplexity",
+   "\"Anthropic\" \"2026\" \"36 billion\" revenue forecast OpenAI",
+   "\"Perplexity\" \"750 million\" \"2026\" revenue Reuters",
+   "\"AI Capex, Required Revenues\" \"425\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cognition.com/blog/1b-run-rate",
+    "used": true,
+    "why": "Primary announcement verifies the Cognition run-rate input, but not the aggregate hypothetical revenue or benchmark."
+   },
+   {
+    "url": "https://www.forbes.com/sites/richardnieva/2026/06/08/cursor-4-billion-annualized-revenue/",
+    "used": false,
+    "why": "The source linked for Cursor returned HTTP 403 in read_page."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/inside-cognitions-booming-growth-high-cash-burn",
+    "used": false,
+    "why": "Read_page returned HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-discusses-perplexity-investment-30-031804276.html",
+    "used": false,
+    "why": "Read in full. Reports a Perplexity annualized figure, but does not verify the aggregate annual-revenue scenario or its break-even benchmark."
+   },
+   {
+    "url": "https://www.gspublishing.com/content/research/en/reports/2026/09/24/17991761-4354-496a-bf3a-26b281c829fc.pdf",
+    "used": false,
+    "why": "The original benchmark report repeatedly timed out in read_page."
+   }
+  ],
+  "performed_at": "2026-10-29T10:55:49Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cognition-com-blog-1b-run-rate",
+   "source_snapshot_id": "7d4a2c4a284be968e03243a42f69b58e2b1d95b1cf053ed96fecfffbc6099fd4",
+   "publisher": "Cognition",
+   "source_type": "company_disclosure",
+   "url": "https://cognition.com/blog/1b-run-rate",
+   "locator": "First paragraph after the publication date",
+   "receipt": {
+    "public_excerpt": "annualized revenue",
+    "quote_hash": "a2605debf20ef968f9b9e3698ff45811086b0078befc336bd48d968c2dc2d3bb",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-25",
+   "available_at": "2026-09-25",
+   "retrieved_at": "2026-10-29T10:47:05Z",
+   "relation": "context",
+   "explanation": "This independently verifies only the Cognition input and explicitly labels it annualized. The accompanying calculation uses the other numbers solely as premises supplied in the claim, not as independently verified facts.",
+   "metric_scope": {
+    "company": "Cognition",
+    "metric": "Annualized revenue run rate",
+    "currency": "USD",
+    "units": "billions per year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": "2026-09-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Supplied hypothetical OpenAI baseline: $36 billion",
+     "Supplied hypothetical Anthropic baseline: $40 billion",
+     "Supplied Cursor input: $4 billion",
+     "Supplied Perplexity input: $0.75 billion",
+     "Cognition input: $1 billion annualized run rate, treated as annual revenue only under the stated hypothetical",
+     "Supplied, independently unverified break-even benchmark: $425 billion"
+    ],
+    "formula": "Hypothetical total = 2 × (36 + 40) + 4 + 0.75 + 1 = 157.75; hypothetical shortfall = 425 − 157.75 = 267.25, all in USD billions.",
+    "rounding": "Exact arithmetic on the supplied rounded inputs; nearest whole billions would be $158 billion and $267 billion."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The $425 billion benchmark and its matching scenario remain unverified.",
+  "Not all source inputs were independently verified through readable records.",
+  "The calculation does not establish an exhaustive industry revenue total."
+ ],
+ "packet_hash": "530b4123becd12ed0031410696eca026152c9361c2bd7165f84958f6c24376c8"
+}

@@ -1,0 +1,136 @@
+{
+ "assessment_id": "marcus-new-ways-to-corrupt-llms-4eedf4-a2",
+ "claim_revision_ref": {
+  "id": "marcus-new-ways-to-corrupt-llms-4eedf4",
+  "version": 2,
+  "content_hash": "31ccc078ec09451cea2228fd2fae1757365e312460f0d5a8f668cb3c9468d686"
+ },
+ "contract_ref": {
+  "id": "marcus-new-ways-to-corrupt-llms-4eedf4",
+  "version": 2,
+  "content_hash": "c76ed5e04cb3cd115f32073cdb61de9d7f6edac5d5d005e61776b55ed1536a29"
+ },
+ "packet_ref": {
+  "id": "marcus-new-ways-to-corrupt-llms-4eedf4-p2",
+  "content_hash": "a005eb1269ae0d9e09db7bbb5808cdbc6e9d98d072f73937f6d05f01da2522e8"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The research supports Marcus's narrower point that irrelevant associations can distort model outputs. The follow-up also finds leakage when the priming information is not attributed to the person being described. Neither result establishes his stronger explanation that the models learn associations between words rather than concepts. Research showing shared representations across languages cautions against that distinction, but concerns different tasks and cannot directly refute this claim. The mechanism remains unresolved under the stated criteria.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "A categorical verdict would depend on an operational meaning of 'words rather than concepts' that Marcus did not supply.",
+  "Support for the existence of leakage is not sufficient support for the proposed internal mechanism.",
+  "Evidence dates identify the years in which findings were reported; exact experiment dates were not established.",
+  "The 2026 follow-up is a preprint, and the contextual circuit study is research from the model's developer."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-new-ways-to-corrupt-llms-4eedf4-1x-review-anthropic-1",
+  "marcus-new-ways-to-corrupt-llms-4eedf4-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-new-ways-to-corrupt-llms-4eedf4-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-new-ways-to-corrupt-llms-4eedf4",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "In errors like semantic leakage, LLMs are not picking up on real correlations in the world; they are learning weird nth-order correlations between words rather than concepts.",
+  "kind": "observation",
+  "conditions": [
+   "in these kinds of errors (e.g., semantic leakage)"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "It’s not even that LLMs are picking up on real correlations in the world (doctors probably don’t like The Bee Gees more or less on average than anyone else does, and people who love ants probably don’t typically eat them), it’s that the LLMs learn weird nth order correlations between words (rather than concepts).",
+   "locator": "paragraph 4",
+   "url": "https://garymarcus.substack.com/p/new-ways-to-corrupt-llms",
+   "date": "2025-12-14",
+   "document_title": "“New Ways to Corrupt LLMs”",
+   "observed_at": "2026-10-28T23:54:42Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "These kinds of errors",
+    "not even that LLMs are picking up on real correlations in the world",
+    "learn weird nth order correlations between words (rather than concepts)"
+   ],
+   "our_interpretation": [
+    "This is a present-tense explanation of errors such as semantic leakage. The reference to research from 'this summer' does not restrict the mechanism claim to that season.",
+    "The plain reading is that these errors arise from learned associations among words, rather than genuine relationships between the attributes being inferred or their underlying meanings.",
+    "The claim concerns the mechanism behind these errors. It does not require proving that LLMs lack conceptual representations in every task.",
+    "'Nth order' is read as indirect associations through other words, without assigning a numerical order.",
+    "The words-versus-concepts distinction has no operational definition in the post. Experiments must distinguish these explanations rather than merely demonstrate erroneous outputs.",
+    "The assessment axis is causal because the contested assertion explains why the errors occur. No observation reporting window is imposed."
+   ],
+   "support_condition": "Controlled experiments on semantic-leakage errors show that learned word associations explain the erroneous inferences, independently of genuine relationships between the relevant attributes, and distinguish that explanation from one involving conceptual representations.",
+   "contradiction_condition": "Controlled experiments on the same kinds of errors show that conceptual representations causally explain the effect independently of word associations, or that the disputed inferences reliably track verified real-world relationships between the relevant attributes."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The research supports Marcus's narrower point that irrelevant associations can distort model outputs. The follow-up also finds leakage when the priming information is not attributed to the person being described. Neither result establishes his stronger explanation that the models learn associations between words rather than concepts. Research showing shared representations across languages cautions against that distinction, but concerns different tasks and cannot directly refute this claim. The mechanism remains unresolved under the stated criteria.",
+  "limitations": [
+   "A categorical verdict would depend on an operational meaning of 'words rather than concepts' that Marcus did not supply.",
+   "Support for the existence of leakage is not sufficient support for the proposed internal mechanism.",
+   "Evidence dates identify the years in which findings were reported; exact experiment dates were not established.",
+   "The 2026 follow-up is a preprint, and the contextual circuit study is research from the model's developer."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "semantic leakage",
+    "locator": "Section 4, Results, first paragraph",
+    "url": "https://arxiv.org/html/2408.06518v3",
+    "publisher": "arXiv; Hila Gonen and colleagues",
+    "event_date": "2025",
+    "available_at": "2025-05-15",
+    "explanation": "The controlled prompt comparisons support the narrower observation that irrelevant input associations influence generated answers. They do not separate word-level associations from conceptual representations as the cause."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "semantic leakage persists",
+    "locator": "Section 4, Conclusion, first sentence",
+    "url": "https://arxiv.org/html/2610.28944v1",
+    "publisher": "arXiv; Hazel Chen, Peter West, and Hila Gonen",
+    "event_date": "2026",
+    "available_at": "2026-10-20",
+    "explanation": "Leakage without attribution to the subject strengthens the associative explanation and weakens an explanation based on constructing a coherent personal profile. It still does not establish that the association operates between words rather than concepts."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "operation (i.e. antonym)",
+    "locator": "Section 5, Multilingual Circuits, introduction to the intervention experiments",
+    "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html",
+    "publisher": "Anthropic",
+    "event_date": "2025",
+    "available_at": "2025-03-27",
+    "explanation": "Interventions on Claude 3.5 Haiku distinguish an operation shared across languages from language-specific output, cautioning against equating all learned associations with word-only processing. These experiments address another task and do not directly contradict Marcus's explanation of semantic leakage."
+   }
+  ],
+  "what_would_resolve": "Controlled experiments on the cited leakage tasks that vary word associations while holding meaning fixed, vary meaning while controlling wording, and test the relevant internal representations. Any claim about actual human attribute correlations also needs independent population evidence.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "bcc1ab3fafbde157ba0e66e09d9e36768194839b0a4b7dae5ebd4a5c6a9a9c22",
+ "supersedes_assessment_id": "marcus-new-ways-to-corrupt-llms-4eedf4-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-09T20:40:19Z"
+}

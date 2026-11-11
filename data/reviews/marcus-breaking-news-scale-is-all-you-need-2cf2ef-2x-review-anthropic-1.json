@@ -1,0 +1,131 @@
+{
+ "run_id": "marcus-breaking-news-scale-is-all-you-need-2cf2ef-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-news-scale-is-all-you-need-2cf2ef": "e42a335f2b209c2e6ad2507a37b2789e5746b6b09c1505aaf69523491d280fdb",
+  "case:marcus-breaking-news-scale-is-all-you-need-59953e": "33f9ef60fbdf7cc09c8053137f16dc354a5c21f4db72c840c9327e04728fd94b"
+ },
+ "started_at": "2026-11-09T19:34:30Z",
+ "completed_at": "2026-11-09T19:35:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own words in his Substack post. The Altman quote they refer to is missing from the text, but the claim itself is Marcus's."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'The scaling notion he promoted' fairly stands in for 'this notion', since the Altman quote it points to is missing. The claim keeps 'the entire company' and is a retrospective evaluative observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'was wrong' as scaling being insufficient for reliable general intelligence is ordinary in context, given Marcus's surrounding points on reliability and generalization. The result still depends on that inferred reading, on what 'bet the company' means, and on the missing quote."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI disclosure: it leads operations on Stargate, which is tied to AGI. This partly supports the claim of a central bet on scale, but does not show dependence on scaling alone being sufficient."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI describes scaling two paradigms plus architecture changes. This complicates a pure 'scale only' bet and does not settle whether scaling is sufficient."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI admits hallucinations persist in GPT-5 and proposes training fixes. Under the contract, one model's errors do not show the strategy was wrong."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent benchmark: LLMs score near zero on ARC-AGI-2. This supports the generalization-limitation part, but it is one benchmark and does not prove scaling insufficient."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows OpenAI committed heavily to scale (e4) and that reliability and generalization gaps remained in 2025 (e6, e7). It does not establish that OpenAI's future rested on scaling alone being sufficient, and e5 shows a mixed strategy. Nor does it show that the scaling premise was wrong under the contract's standard. The missing Altman quote leaves the target notion uncertain. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-2cf2ef"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The causal clause ('has led us… into the apparent AI bubble') is in Marcus's own voice. The quoted phrase only describes the idea."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps the idea, the causal link and the 'apparent' qualifier on the bubble."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'led us into' as a material, not sole, contribution to the investment boom is an ordinary reading. 'Apparent' rightly means no crash has to be proven. Treating compute and data scaling together matches the context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Altman, Feb 2025: intelligence scales with resources, which justifies ever-growing investment. This documents the scaling rationale being promoted to investors."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "SoftBank's stated reason for a follow-on investment of up to $40B: OpenAI's models need massive compute to reach AGI. This is an investment decision motivated by scaling expectations."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's 2024 raise cites compute alongside existing commercial demand. It shows other motives existed but does not contradict a material contribution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The contract only requires documented investment decisions explicitly motivated by scaling expectations. SoftBank's disclosure (e2) ties a large commitment to the belief that massive compute will advance models toward AGI. Altman's essay (e1) promotes scaling laws as the reason investment should keep growing. e3 shows commercial motives too, but those do not contradict a material contribution. The size of the contribution is not quantified.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-59953e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20306,
+  "output_tokens": 3200,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

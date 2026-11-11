@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-e9c89c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-e9c89c",
+  "version": 2,
+  "content_hash": "2b48975fbbe2d05291181a62fe81d31a1e772d6a61917f83b2cf58bf98041c91"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-e9c89c",
+  "version": 1,
+  "content_hash": "e39c92d22f193bd572067e4d0a15548eb781a91004d7fafcac49ef9e7a442028"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Kidz AI Canopy Wave B300 4.30 3.50 contract",
+   "Canopy Wave Catalyst Compute contract B300 540000 2026 SEC",
+   "\"Canopy Wave\" \"$4.30\" \"$3.50\"",
+   "\"B300\" \"$540,000\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://btw.media/en/kidz-ai-gpu-price-room-remained-non-binding",
+    "used": true,
+    "why": "Read successfully. Dated reporting reproduces the contract's rate schedule and discusses its commencement conditions."
+   },
+   {
+    "url": "https://classover.com/en/press-releases/kidz-ai-signs-data-center-mou-with-limestone-networks-to-deploy-inference-compute-infrastructure-for-open-weight-ai-models-advancing-its-44-6-million-canopy-wave-agreement/",
+    "used": true,
+    "why": "Read successfully. Primary disclosure distinguishes the announced contract from subsequent hardware deployment."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2022308/000147793226004422/kidz_ex101.htm",
+    "used": false,
+    "why": "The primary contract was located, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://edgar.thetoddgray.com/filing/0001477932-26-004422",
+    "used": false,
+    "why": "Read successfully, but explicitly automated analysis was not used as decisive evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T10:34:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "btw-media-en-kidz-ai-gpu-price-room-remained-non-binding",
+   "source_snapshot_id": "2b5aa569294654a0719900779fd2025eb6a60743f1226df5936795b567e9e520",
+   "publisher": "BTW Media",
+   "source_type": "news_report",
+   "url": "https://btw.media/en/kidz-ai-gpu-price-room-remained-non-binding",
+   "locator": "Section The most precise number is not the first receipt",
+   "receipt": {
+    "public_excerpt": "US$4.30 per GPU-hour",
+    "quote_hash": "45b9039715e389f367be46504b5d7afad57844f9aa7ecd85b24d6387b454b464",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-09-07",
+   "retrieved_at": "2026-10-29T10:24:01Z",
+   "relation": "contradicts",
+   "explanation": "The reported contract rates supply the revenue denominator; applying the speaker's assumed cost and six-year life gives $1.284 per GPU-hour and 32.3% of blended revenue. This is a derived check of his illustrative arithmetic, not evidence of the provider's actual depreciation expense.",
+   "metric_scope": {
+    "company": "Catalyst Compute LLC / KIDZ AI, Canopy Wave contract",
+    "metric": "Illustrative B300 depreciation per GPU-hour and share of gross contractual revenue",
+    "currency": "USD",
+    "units": "USD per GPU-hour; percent of revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Speaker's supplied assumption: USD 540,000 per eight-GPU node.",
+     "Speaker's supplied depreciation life: six years.",
+     "Evaluator assumptions: straight-line depreciation, zero residual value and 8,760 hours per year.",
+     "Reported contract rates: USD 4.30 per GPU-hour for three years and USD 3.50 for two years."
+    ],
+    "formula": "Six-year depreciation = 540000 / (8 * 6 * 8760) = 1.284246575 USD/GPU-hour. Blended revenue rate = (4.30 * 3 + 3.50 * 2) / 5 = 3.98 USD/GPU-hour. Depreciation share = 1.284246575 / 3.98 = 32.2675%. Using five years instead gives 540000 / (8 * 5 * 8760) = 1.541095890 USD/GPU-hour. Even the asserted 1.54 / 3.98 is 38.6935%.",
+    "rounding": "Hourly results rounded to three decimals and revenue shares to one decimal place."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "classover-com-en-press-releases-kidz-ai-signs-data-center-mou-with-7992650462b0",
+   "source_snapshot_id": "69c13b218c2329585d91fdc7974af03f850460f4a2aab64e482f2a361506606a",
+   "publisher": "KIDZ AI / Classover",
+   "source_type": "company_disclosure",
+   "url": "https://classover.com/en/press-releases/kidz-ai-signs-data-center-mou-with-limestone-networks-to-deploy-inference-compute-infrastructure-for-open-weight-ai-models-advancing-its-44-6-million-canopy-wave-agreement",
+   "locator": "Announcement paragraph following the description of the planned deployment",
+   "receipt": {
+    "public_excerpt": "will be ordered and deployed",
+    "quote_hash": "46f2c8fedd305d7d9ea4a908ee8a263f82e17be1c40c095c7254033ba304369f",
+    "verified": "exact"
+   },
+   "event_date": "2026-08-03",
+   "available_at": "2026-08-03",
+   "retrieved_at": "2026-10-29T10:24:55Z",
+   "relation": "context",
+   "explanation": "The company still described deployment prospectively. This supports evaluating the statement as an illustrative contract calculation rather than six years of realized financial results.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The provider's actual acquisition cost, residual value and depreciation policy were not established.",
+  "No revenue or rental rate for a sixth year is specified by the five-year initial contract.",
+  "The primary contract could not be read with read_page; the rate schedule relies on secondary reporting."
+ ],
+ "packet_hash": "056a390d7d7da0465875f6abe836e6ea445c4d41cb1d2537970e7c1b636bb21e"
+}

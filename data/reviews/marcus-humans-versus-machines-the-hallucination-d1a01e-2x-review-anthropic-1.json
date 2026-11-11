@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-humans-versus-machines-the-hallucination-d1a01e-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-humans-versus-machines-the-hallucination-d1a01e": "a591d415cdc758551359e8fe4f7c8537d961c2d5685807605bbe353fb9d4b09d",
+  "case:marcus-humans-versus-machines-the-hallucination-d4af4a": "e7fe1c0ee7ba02fd53752907c3a82bc76f0c9d93d8d34278ff75751ec3e4125e"
+ },
+ "started_at": "2026-10-29T21:43:19Z",
+ "completed_at": "2026-10-29T21:43:47Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote these words in his own Substack post and endorsed them."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful. It keeps 'regularly', 'literally', the narrow guarantee wording and all three causes. It is a causal explanation stated without hedging."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'know the difference' as behavioural discrimination and counting prompted self-verification are ordinary readings, but Marcus did not supply them. They decide (a) and (c). The contract fairly asks for evidence of inability, not just imperfect performance, and judges each part separately."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Version 2 was posted 2024-03-14, before the post. Without oracle labels, intrinsic self-correction lowered accuracy, which supports (b) unreliable reasoning and self-judgement. These are reasoning tasks, not factual hallucination."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Posted 2023. With no external tools, CoVe had the same model verify and revise its own factual output and cut hallucinations. That challenges a categorical inability to fact-check its own work, though many errors remained."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Posted 2022. Larger models were well calibrated on true/false questions and judged their own answers with P(True). That challenges a literal inability to tell true from false in behaviour."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Part (b) holds: e1 shows models cannot reliably judge whether their own reasoning is correct. The categorical parts (a) and (c) are contradicted under the contract's behavioural reading. e3 shows calibrated truth discrimination, and e2 shows self-verification without tools that reduces hallucinations. None of the evidence measures how much each limitation contributes to hallucination.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-d1a01e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this sentence in his own post and endorsed it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "rhetoric",
+     "note": "The paraphrase is faithful. But the sentence is an argument that human error does not excuse LLM limitations. It is rhetoric or evaluation, not a testable observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly says no empirical support or contradiction condition fits the wording. It sets the axis to not_applicable and does not add an intervention Marcus never named."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "TruthfulQA (2021) shows that both models and humans make errors. It does not test whether human fallibility excuses or repairs model limitations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is an argument about how to weigh LLM limitations against human error, not an empirical claim. There is no measurable meaning for 'takes away from' or 'repairs', so no evidence can confirm or refute it. e4 is context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-d4af4a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33409,
+  "output_tokens": 3351,
+  "cached_input_tokens": 18688,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

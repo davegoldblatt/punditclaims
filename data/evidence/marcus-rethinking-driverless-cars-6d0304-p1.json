@@ -1,0 +1,131 @@
+{
+ "packet_id": "marcus-rethinking-driverless-cars-6d0304-p1",
+ "claim_revision_ref": {
+  "id": "marcus-rethinking-driverless-cars-6d0304",
+  "version": 2,
+  "content_hash": "e9adea64846cd440a6364d610f2924ef34fdb1257599b601a755806606b9bcb4"
+ },
+ "contract_ref": {
+  "id": "marcus-rethinking-driverless-cars-6d0304",
+  "version": 1,
+  "content_hash": "c2d7e1c7f3fdd36cb751af1716d1a0f3d85bbd883bacfe988ff6ac70b8d972df"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Waymo Swiss Re September 2023 insurance claims remote assistance safety study",
+   "site.waymo.com 2020 2023 fleet response remote assistance not driving safety",
+   "site.waymo.com \"2020\" \"fleet response\"",
+   "Waymo 2021 simulated fatal crashes remote assistance study human comparison"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2011.00054",
+    "used": true,
+    "why": "Read the operational description distinguishing remote assistance from remote driving."
+   },
+   {
+    "url": "https://waymo-blog.blogspot.com/2023/09/waymos-autonomous-vehicles-are.html",
+    "used": true,
+    "why": "Read the contemporaneous public announcement of the rider-only comparison."
+   },
+   {
+    "url": "https://waymo.com/blog/2021/03/replaying-real-life/",
+    "used": true,
+    "why": "Read a pre-post simulated comparison that provides a possible exception under a broader reading."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.01206",
+    "used": false,
+    "why": "Read its methods. It separates onboard supervision but does not specify a remote-assistance-free comparison; the accompanying announcement is included below."
+   },
+   {
+    "url": "https://arxiv.org/abs/2312.12675",
+    "used": false,
+    "why": "Published after the post and therefore cannot establish which comparisons were already public."
+   }
+  ],
+  "performed_at": "2026-10-29T18:19:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2011-00054",
+   "source_snapshot_id": "61faddc4d2c539e40925842d91f02c8ea8e09ce50e0d36040ac300ea59927a5d",
+   "publisher": "Waymo researchers, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2011.00054",
+   "locator": "Executive summary, Operations Layer; operational details on page 25",
+   "receipt": {
+    "public_excerpt": "provide remote assistance",
+    "quote_hash": "3aab384ec7d54c00a92906454978bf3230939dd32a34e27dc2e602085761aa04",
+    "verified": "exact"
+   },
+   "event_date": "2020-10",
+   "available_at": "2020-10-30",
+   "retrieved_at": "2026-10-29T03:07:22Z",
+   "relation": "context",
+   "explanation": "Waymo disclosed remote contextual guidance before the post while distinguishing it from teleoperation. This makes the absence of an onboard driver insufficient to establish the absence of every human operational contribution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "waymo-blog-blogspot-com-2023-09-waymos-autonomous-vehicles-are-html",
+   "source_snapshot_id": "e4a86ff4ebf54579705d4e7c75196d93b5977c3fd4b0ec6adf4485a0c65abf71",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo-blog.blogspot.com/2023/09/waymos-autonomous-vehicles-are.html",
+   "locator": "Opening discussion of the September 2023 Swiss Re comparison",
+   "receipt": {
+    "public_excerpt": "liability insurance claims data",
+    "quote_hash": "8dca756924064e0475431b9507c9e70c77ef7d163fea9a4c967c28837bb10bb1",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-06",
+   "available_at": "2023-09-06",
+   "retrieved_at": "2026-10-29T18:04:03Z",
+   "relation": "context",
+   "explanation": "The announcement describes a substantial comparison without onboard human drivers. Neither this announcement nor the original study establishes that the comparison excluded remote operational guidance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "waymo-com-blog-2021-03-replaying-real-life",
+   "source_snapshot_id": "ff9bb3c2ca892259bb3284b4a6531a4e4dda919b926b18de9e55377000ab22b3",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo.com/blog/2021/03/replaying-real-life",
+   "locator": "Study design preceding Figure 1",
+   "receipt": {
+    "public_excerpt": "each scenario.",
+    "quote_hash": "abba7da6f895e5e235a2edea56bf861cef1ea6048c37e225ea70e7d537b5999c",
+    "verified": "exact"
+   },
+   "event_date": "2021-03-08",
+   "available_at": "2021-03-08",
+   "retrieved_at": "2026-10-29T18:04:01Z",
+   "relation": "context",
+   "explanation": "The study replaced human crash participants with a simulated automated driver. This challenges an unrestricted claim about all comparisons, but is not an observed road-service dataset explicitly excluding remote assistance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The search did not establish a comprehensive denominator for 'essentially none.'",
+  "The examined road-service comparison does not quantify or exclude remote assistance.",
+  "Including simulated comparisons changes the relevant population and potentially the result."
+ ],
+ "packet_hash": "2615796e45bc728b915864824780f9644bce888e049aedde220fdbad3532ac2d"
+}

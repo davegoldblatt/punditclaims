@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-untitled-a86217-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-untitled-a86217": "08a9d057925a2e9c28d254411268fcea1933287380500e9c240ff4c452ccafe8",
+  "case:wyea-untitled-b8b9fc": "2bd79b09d72eee2a12c904b6a464103db8d9acc4d559d6f619deb2e43f01eac9",
+  "case:wyea-untitled-baa446": "b8bec7298090624d71c8c85d99e0e33d11740f8da9d6cec02031208a0a44e665",
+  "case:wyea-untitled-dc59a0": "edb4cb06d74248278d084057d1f93405374dea9f5bdd95564374573ab706fa94"
+ },
+ "started_at": "2026-10-29T23:34:06Z",
+ "completed_at": "2026-10-29T23:35:04Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own inference, written in his voice. It draws on Bloomberg's reporting that Apple was not paying."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The loss prediction uses a firm 'will', so it is a scored forecast. The hedged 'appear' attaches only to the premise about payment. The horizon of iOS 18 launch is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract takes the literal deadline, the iOS 18 public launch, and flags that the speaker assumed the integration would ship with it. Reading it as the integration's December launch instead would not change the result: no deal-level financial figures exist for either date."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple disclosure fixing the iOS 18 launch at 2024-09-16. It gives no OpenAI financial result."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple disclosure showing the ChatGPT integration arrived in December 2024. It bears on timing only and does not show a nonnegative financial contribution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "unresolved",
+    "rationale": "The deadline has passed, but the packet has no deal-specific revenue or cost account for the launch, so neither a loss nor a nonnegative contribution is shown. The integration launching later complicates the timing but proves nothing either way. Unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-a86217"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The no-payment part relays Gurman's reporting, but Zitron adopts it in his own voice. The every-transaction loss claim is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Both parts are kept: Apple paid no cash, and ChatGPT loses money on every transaction. The universal quantifier is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'every transaction' as covering all ChatGPT use is an ordinary reading of the sentence. The contract correctly notes that no accounting basis exists for per-transaction profit, so that part cannot be settled."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Bloomberg, via unnamed sources, reports Apple is not paying OpenAI. This backs the cash component but says nothing on per-transaction profit, the contract's metric."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Bloomberg's reporting is consistent with the no-payment component. But no transaction-level revenue and cost data is in the packet, so the universal loss assertion can be neither supported nor contradicted. The support condition needs both parts, so the claim stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-b8b9fc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The revenue figure is attributed to The Information and hedged, so it serves as context. The unprofitability and every-search assertions are Zitron's own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the attributed revenue context and the Apple-payment counterfactual. 'Deeply unprofitable' and 'every search' are preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Using Q1 2024, the latest completed quarter, is an evaluator choice but a reasonable stand-in for 'remains' as of June 2024. The query-level and counterfactual parts lack any allocation basis."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Annualized revenue of $3.4B in June 2024. This is the revenue context, not a measure of profitability."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Projected full-year 2024 loss of about $5B. Consistent with heavy losses, but it is a projection and not realized Q1 results."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Bloomberg says serving costs rise with usage. It gives no per-query revenue-versus-cost comparison."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Unverified estimate of positive API margins. Different product and metric, so it does not contradict ChatGPT per-search losses."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No realized Q1 2024 net-loss figure is in the packet; the $5B figure is a full-year projection and counts as context only. No query-level ChatGPT economics are present, and the counterfactual Apple payment has no amount or structure. Unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-baa446"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own prediction, in his voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "A firm 'will' with its antecedent kept: adoption by hundreds of millions of users. The hedged 'I imagine' subclause is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Requiring actual use of the integration, not mere device eligibility, matches the speaker's 'actually sees adoption'. Gross attributable cost is a fair reading of 'cost OpenAI'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Report from May 2026 that users preferred the standalone app. No count establishes or rules out adoption by hundreds of millions, and no cost figures are given."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The antecedent, adoption of the integration by hundreds of millions of users, is not established by the evidence, and no integration-specific cost account exists. A conditional with an unknown antecedent is not scored, so it stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-dc59a0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31898,
+  "output_tokens": 5157,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

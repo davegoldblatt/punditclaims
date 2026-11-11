@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-getting-gpt-to-work-with-external-0ab0f2-a1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0ab0f2",
+  "version": 2,
+  "content_hash": "99bde451cf48a64fc6269d9803fb1287b3e9a56f8564c9e633f7391a24d6cfe4"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0ab0f2",
+  "version": 1,
+  "content_hash": "8b329d8b14b583ccf80304454dcb5b2761894ff3a1c0418abbd59af396a34cae"
+ },
+ "packet_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0ab0f2-p1",
+  "content_hash": "5ea97cbef792dfcf8aeb0a7c146d551ea41828c29e70d900adbc169b557a6877"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-06",
+  "end": "2023-08",
+  "precision": "month"
+ },
+ "public_rationale": "The contemporary test records document recurring failures in how GPT-4 selected operations, invoked tools, and handled results. Examples involve both Wolfram Alpha and Code Interpreter. This supports the ordinary behavioral reading of the claim. It does not establish that tool use usually failed, or that GPT-4 lacked useful tool skills.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The main evidence comes from the study underlying the post, rather than an independent replication.",
+  "The study used a small, deliberately constructed collection and published edited outputs.",
+  "No numerical reliability threshold was specified."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-getting-gpt-to-work-with-external-0ab0f2-2x-review-anthropic-1",
+  "marcus-getting-gpt-to-work-with-external-0ab0f2-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-getting-gpt-to-work-with-external-0ab0f2-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-getting-gpt-to-work-with-external-0ab0f2",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT-4 does not reliably understand how to use the Code Interpreter and Wolfram Alpha plug-ins.",
+  "kind": "observation",
+  "conditions": [
+   "the Code Interpreter and Wolfram Alpha plug-ins"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Second, GPT-4 doesn’t reliably understand how to use the tools.",
+   "locator": "paragraph 4",
+   "url": "https://garymarcus.substack.com/p/getting-gpt-to-work-with-external",
+   "date": "2023-10-23",
+   "document_title": "Getting GPT to work with external tools is harder than you think",
+   "observed_at": "2026-10-29T00:02:53Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "GPT-4",
+    "doesn’t reliably understand how to use the tools",
+    "Code Interpreter",
+    "Wolfram Alpha",
+    "A couple of months ago"
+   ],
+   "our_interpretation": [
+    "Read 'understand how to use' behaviorally: choosing appropriate tool operations, making useful calls, and correctly handling their results.",
+    "Read 'doesn’t reliably' as recurring consequential failures, not an assertion that every call fails or that GPT-4 has no useful tool skills.",
+    "Anchor the observation to the recent 105-problem testing discussed in the post. The linked study dates that testing to June–August 2023."
+   ],
+   "support_condition": "Contemporaneous records show recurring avoidable failures in selecting, invoking, or interpreting the named tools, including examples involving both plug-ins.",
+   "contradiction_condition": "Comparable testing shows consistently appropriate tool use, with alleged failures attributable to unrelated problem-solving errors or incorrect grading rather than tool use."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The contemporary test records document recurring failures in how GPT-4 selected operations, invoked tools, and handled results. Examples involve both Wolfram Alpha and Code Interpreter. This supports the ordinary behavioral reading of the claim. It does not establish that tool use usually failed, or that GPT-4 lacked useful tool skills.",
+  "limitations": [
+   "The main evidence comes from the study underlying the post, rather than an independent replication.",
+   "The study used a small, deliberately constructed collection and published edited outputs.",
+   "No numerical reliability threshold was specified."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "GPT-4 also sometimes creates quite\nuseless calls to the plug-ins.",
+    "locator": "Section 1; detailed examples in section 7; experiment dates in table 2",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "publisher": "Ernest Davis and Scott Aaronson, hosted by New York University",
+    "event_date": "2023-08-02",
+    "available_at": "2023-08-14",
+    "explanation": "By completion of testing, the report documented repeated unsuccessful Wolfram queries, failure to request a usable numerical representation, and Code Interpreter bypasses that produced calculation errors. These distinguish tool-use failures from merely misunderstanding a science problem."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "It claimed that the relative error is 0.",
+    "locator": "Problem 21, GPT4+CI answer and comment; testing dates in introduction",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "publisher": "Ernest Davis and Scott Aaronson, hosted by New York University",
+    "event_date": "2023-07",
+    "available_at": "2023-08-10",
+    "explanation": "The recorded answer used Monte Carlo sampling for an extremely small nonzero probability, returned zero, and claimed zero relative error. This illustrates inappropriate computational-method selection and interpretation of the result, rather than a malfunction of Python."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3c46fa0dbf2f131998eb5e89ae93b887be29536da7fbf06de64244b2c16eae49",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:11:39Z"
+}

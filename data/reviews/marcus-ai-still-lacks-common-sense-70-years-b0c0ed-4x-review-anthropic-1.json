@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-ai-still-lacks-common-sense-70-years-b0c0ed-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ai-still-lacks-common-sense-70-years-b0c0ed": "942feb09645dbd22676da4f63a0afa7a125fa325f62b6acb118fec79a4f20714",
+  "case:marcus-ai-still-lacks-common-sense-70-years-c9a2f8": "fd09b50775e9bf26890131ec195dcd6f96ce396b3dc5ca4ba80c0ed73b2bfd29",
+  "case:marcus-ai-still-lacks-common-sense-70-years-d51afb": "ec0bb2fd6474013e7c647579eb7c80336ad2aee79b07affea136c2548ebf1b7c",
+  "case:marcus-ai-still-lacks-common-sense-70-years-da3ee2": "2dbf6b08415e3f08a10b3482ec74357066614bfdc1be3abad1d1d1eb7a305bba"
+ },
+ "started_at": "2026-10-29T02:07:11Z",
+ "completed_at": "2026-10-29T02:07:48Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in a post he co-authored with Davis, in his own voice ('we raised'). It is not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim keeps 'much', 'remains unsolved', the 2015 and 2019 scope, and the 'despite apparent progress' qualifier. It is correctly classed as an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'much' as substantial unresolved problems across several domains, rather than a numerical majority, is a fair, ordinary reading. Using 2024 as the window is reasonable for an ongoing-state claim made on Jan 5, 2025."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ContPhy (ICML 2024, independent) finds state-of-the-art models struggle with physical property and dynamics reasoning, a domain the earlier work raised. Available within the 2024 window."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "SimpleToM (Oct 2024, independent) shows frontier models, o1-preview included, failing to apply mental-state knowledge to behaviour judgments. This is a second relevant domain."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows GPT-4 doing well on higher-order theory-of-mind statements. This is real progress on a narrow benchmark, but it does not show broadly reliable commonsense across domains."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two independent 2024 evaluations document substantial unresolved reliability problems in two distinct domains the earlier work raised: physical reasoning and applied social reasoning. That meets the support condition. The counterevidence (e3) shows narrow progress, not broadly reliable solutions, so the contradiction condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-still-lacks-common-sense-70-years-b0c0ed"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are the authors' own descriptive words about Sora in a post Marcus endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim faithfully keeps all three parts: pure image streams, no object segmentation, and unreliable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (pixel output only, no explicit object scene, frequent physical errors) is ordinary and fair. OpenAI's technical documents are the natural primary source for the architecture, and its admissions of limitations go against its own interest."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI technical report: Sora generates latents that are decoded to pixels. This is a company disclosure about architecture, appropriate for this point."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI says Sora's capabilities emerge without explicit inductive biases for 3D or objects. This is consistent with no object segmentation."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "At the Dec 2024 release, OpenAI said the deployed Sora often generates unrealistic physics. This is an admission against interest supporting 'unreliable'."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI claims Sora often keeps objects persistent. This is implicit and partial, not an explicit object representation, so it does not contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenAI's own documents show that Sora outputs decoded pixel video with no explicit object or 3D structure, and that it often produces unrealistic physics. Both parts of the support condition are met. The object-permanence claims are partial and implicit, so they do not meet the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "This is the authors' own assessment in a post Marcus endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim keeps both conjuncts: the GPT-3 errors are fixed, and robust world understanding is still lacking. The odd 'two and a half years' chronology is flagged but is not material."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Requiring both conjuncts to be assessed matches the sentence. A behavioural reading of 'robust understanding' is ordinary and fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "PhysGame (Dec 2024) shows GPT-4o at about 56% on video physical-commonsense questions. This is relevant to the second conjunct but narrow (gameplay videos), and it contains no matched retest of the GPT-3 examples."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no matched retest showing that late-2024 models pass the specific GPT-3 failure cases, so the first conjunct is not established. PhysGame gives only narrow context on the second conjunct. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-still-lacks-common-sense-70-years-d51afb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "This is the authors' own causal assertion about o1 in a post Marcus endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The 'because' clause makes this a causal claim, and it is classed correctly. The normalised claim drops the clause that o1 can do geometry via Python, but it keeps the causal core and 'often very basic mistakes'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker asserted a mechanism, so requiring evidence about that mechanism is fair. Separating o1-preview from released o1 is reasonable, though strict."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows o1-preview planning limitations in spatially complex tasks (Sept 2024). This is a different version, the tasks are not elementary, it predates the window, and it does not isolate a cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Davis reports o1-preview often stumbling on spatial problems. Davis co-authored the post, so this is not independent, and it says nothing about the mechanism in released o1."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item evaluates released o1 within the target period, measures how often it makes elementary spatial errors, or shows the errors stem from deficient spatial representation. The o1-preview evidence suggests spatial weaknesses but does not settle the causal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-still-lacks-common-sense-70-years-da3ee2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31632,
+  "output_tokens": 4223,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

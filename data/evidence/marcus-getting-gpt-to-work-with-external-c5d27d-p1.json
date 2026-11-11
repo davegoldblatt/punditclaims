@@ -1,0 +1,84 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-c5d27d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-c5d27d",
+  "version": 1,
+  "content_hash": "8ca72971811a1c20fc02c24e1aad2a6d6931b942a79614e52e42c074f539b814"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-c5d27d",
+  "version": 1,
+  "content_hash": "505648372cbddbca52d34622ae173b7503119dd42b500bb83aaf18f474cee8ec"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"GPT-4\" \"commonsense\" \"plugins\" evaluation 2023 -site:garymarcus.substack.com -site:cs.nyu.edu",
+   "\"SciBench\" \"Wolfram\" 2023 GPT-4 reasoning errors",
+   "\"GPT-4\" \"Wolfram\" \"commonsense\" \"2023\" evaluation independent",
+   "\"Solving math word problems concerning systems\" arxiv 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2309.08881",
+    "used": true,
+    "why": "Independent solution traces include a spatial-formulation error and subsequent correction."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2307.10635v1",
+    "used": false,
+    "why": "The detailed error profiles primarily concern GPT-3.5 and custom tool integrations, not all the claimed GPT-4 plug-in configurations."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": false,
+    "why": "Davis coauthored the post; excluded as evidence that the speakers were right."
+   },
+   {
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666827023000592",
+    "used": false,
+    "why": "read_page returned HTTP 403, so neither quotations nor results are used."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.08155v2",
+    "used": false,
+    "why": "Tool-use failures on advanced competition problems do not isolate commonsense formulation failures on ordinary word problems."
+   }
+  ],
+  "performed_at": "2026-10-29T06:29:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2309-08881",
+   "source_snapshot_id": "0ad56c12a3624673ecf66e30b88423bf401d675d477e06e199907c05c3f9d42c",
+   "publisher": "arXiv; Tanuj Kumar and Mikhail A. Kats",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2309.08881",
+   "locator": "Appendix 5.1, Figures 9–10, Problem 8",
+   "receipt": {
+    "public_excerpt": "In this ﬁgure, the ﬁrst response from ChatGPT-4/CI (zero-shot) is shown.",
+    "quote_hash": "542660d3e5f395f546031ec617217769acace85197ba8bac887b7ea4245236f5",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-09-16",
+   "retrieved_at": "2026-10-29T06:20:53Z",
+   "relation": "context",
+   "explanation": "The trace shows Code Interpreter's GPT-4 failing to recognize that the distance from a hemisphere's center to its surface equals its radius, then correcting the mistake when questioned. This illustrates a formulation failure but cannot establish a general deficit across GPT-4 and both plug-ins.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No retrieved independent evaluation isolates commonsense formulation errors across all named configurations on representative ordinary word problems.",
+  "A spatial mistake followed by correction does not uniquely establish absent knowledge.",
+  "The word reliably lacks a specified threshold."
+ ],
+ "packet_hash": "d5db4e85bbf6f079168edfce712fa87b6016ffce6df287c00ab3be41de5f9efa"
+}

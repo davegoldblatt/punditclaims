@@ -1,0 +1,127 @@
+{
+ "packet_id": "marcus-the-race-for-ai-supremacy-is-over-44f477-p2",
+ "claim_revision_ref": {
+  "id": "marcus-the-race-for-ai-supremacy-is-over-44f477",
+  "version": 1,
+  "content_hash": "32e9f3d2afec33c30a0800a2416128bceb2dbf750909985f1fdfdd6fbb7911fa"
+ },
+ "contract_ref": {
+  "id": "marcus-the-race-for-ai-supremacy-is-over-44f477",
+  "version": 2,
+  "content_hash": "00247f2dda376f7ea99fa9b81dabd9adaafb90aee4d28fe1e823351eabce87df"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek V3 technical report H800 2048 December 2024",
+   "site.nvidia.com H800 H100 400 900 bandwidth",
+   "site.nvidia.com H200 November 2024 available performance H100",
+   "site.deepseek.com/en/news/ \"DeepSeek-V3\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "used": true,
+    "why": "The original report links V3's hardware configuration and competitive evaluation results."
+   },
+   {
+    "url": "https://lenovopress.lenovo.com/lp1814-thinksystem-nvidia-h800-pcie-gen5-gpu",
+    "used": true,
+    "why": "Primary system-vendor documentation distinguishes H800 from H100."
+   },
+   {
+    "url": "https://blogs.nvidia.com/blog/hopper-h200-nvl/",
+    "used": true,
+    "why": "Dated Nvidia documentation establishes the newer H200 offering before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2501.12948v1",
+    "used": false,
+    "why": "R1's performance does not by itself establish its complete training hardware; V3 provides the cleaner same-model test."
+   },
+   {
+    "url": "https://api-docs.deepseek.com/news/news1226",
+    "used": false,
+    "why": "The page reader returned current API documentation rather than the historical announcement."
+   }
+  ],
+  "performed_at": "2026-11-10T00:28:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2412-19437v1",
+   "source_snapshot_id": "134c7e306cb10e2d0bda4db09372b1afd89fba1e37bdfa9a36dab05ccab3ec88",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.19437v1",
+   "locator": "Section 3.1, Compute Clusters",
+   "receipt": {
+    "public_excerpt": "2048 NVIDIA H800 GPUs.",
+    "quote_hash": "d88e26c6da63042c6d33d8df538d2f8ea186cb94dc53004231c8670bdc6d663c",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-27",
+   "retrieved_at": "2026-10-29T05:34:38Z",
+   "relation": "supports",
+   "explanation": "The original report identifies the training hardware for the released V3 model. Its evaluation section also reports competitive results against GPT-4o and Claude 3.5 Sonnet, linking useful capabilities to this hardware configuration.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "lenovopress-lenovo-com-lp1814-thinksystem-nvidia-h800-pcie-gen5-gpu",
+   "source_snapshot_id": "5d06952e92ef13db0a73590afb7995a08aba95b51e7197ceaf9664247020d624",
+   "publisher": "Lenovo Press",
+   "source_type": "company_disclosure",
+   "url": "https://lenovopress.lenovo.com/lp1814-thinksystem-nvidia-h800-pcie-gen5-gpu",
+   "locator": "Introduction",
+   "receipt": {
+    "public_excerpt": "the NVLink interface speed and the FP64 performance.",
+    "quote_hash": "3cbe38e12045088e835d92ed103d9a02f1aa1a4b7a93cc01038ff1935cf921c1",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-31",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-11-10T00:24:38Z",
+   "relation": "context",
+   "explanation": "The product guide establishes that H800 and H100 are not interchangeable hardware specifications. It also cautions against portraying H800 as an unrelated low-end architecture; this guide concerns PCIe products, not an exact reconstruction of DeepSeek's cluster.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "blogs-nvidia-com-blog-hopper-h200-nvl",
+   "source_snapshot_id": "81e76ec11ab8e1c4c7ecddfc92f6d081b90f0095a92a19741ae43cc459b3745e",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://blogs.nvidia.com/blog/hopper-h200-nvl",
+   "locator": "H200 NVL Available Across Ecosystem",
+   "receipt": {
+    "public_excerpt": "beginning in December.",
+    "quote_hash": "30ed5a82d8715e7f96429a8d3baeba928df4d9809563c457e8034383da1d5b9e",
+    "verified": "exact"
+   },
+   "event_date": "2024-11-18",
+   "available_at": "2024-11-18",
+   "retrieved_at": "2026-11-10T00:25:11Z",
+   "relation": "context",
+   "explanation": "Nvidia's dated announcement describes a newer H200 product with memory and inference advantages over H100 NVL and availability planned before the post. Together with the hardware guide, it supports reading H800 as below Nvidia's highest offerings without calling it weak hardware.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The cited record does not independently audit DeepSeek's training hardware.",
+  "V3's reported training configuration does not establish the hardware used for every earlier experiment or for all R1 training."
+ ],
+ "packet_hash": "f0902bf1c0b63090e8cd1663c220d68f67c77306a9cd5e32f1b71f1f9e47d504"
+}

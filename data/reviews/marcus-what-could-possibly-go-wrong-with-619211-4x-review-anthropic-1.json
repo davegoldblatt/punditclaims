@@ -1,0 +1,178 @@
+{
+ "run_id": "marcus-what-could-possibly-go-wrong-with-619211-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-could-possibly-go-wrong-with-619211": "9edb2fd2b2239357b4141b2f311e74ff5fd125e22438710676f1c23fbfefcb3f",
+  "case:marcus-what-could-possibly-go-wrong-with-637899": "3a3c58e53b3da14ee0c3ca4129fc64f38b88fd97ea250511ee25a9632881536f",
+  "case:marcus-what-could-possibly-go-wrong-with-6b4c1c": "e31866c5ab7788aa0497f8332ee7c722858cac9b1f6d353e61b826d8d78ade25",
+  "case:marcus-what-could-possibly-go-wrong-with-796e20": "53cf6a91252e9cdc0c4d7f13dc25a2bb0d6f07980bf37a3d7d5e049a49497235"
+ },
+ "started_at": "2026-10-29T12:43:49Z",
+ "completed_at": "2026-10-29T12:44:17Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, closing his list of security issues."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will continue to grow' is a firm forecast with no deadline. The hedged 'probably not exhaustive' is correctly kept out of the scored part. The list's scope covers OpenAI and broader LLM security issues."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading: at least one new, distinct, publicly documented OpenAI/LLM security issue after the post counts as growth. That is an ordinary, fair reading of 'continue to grow'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Tenable's advisory, released 2025-03-24 (after the post, before the evaluation date), documents a new ChatGPT memory injection/exfiltration attack via SearchGPT. It is a distinct issue and not a repeat of a listed incident."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "The contract allows early resolution on a dated public disclosure of an additional distinct issue. Tenable's March 2025 advisory on a new ChatGPT memory exfiltration exploit, a researcher disclosure independent of OpenAI, meets that rule. The forecast is supported.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-could-possibly-go-wrong-with-619211"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post. He describes the research in his own words, so this is not quoting another person's claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition captures the core claim that the problem is still unresolved as of Feb 2024. It leaves out the Feb 2023 European demonstration, but the contract covers that part."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading: 'unresolved' means indirect injection was still a viable attack class, not that no mitigation existed. That is ordinary and fair to the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Greshake et al. v1 of 2023-02-23 demonstrates indirect prompt injection, matching the claimed February 2023 demonstration."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "BIPIA v1 of 2023-12-21 finds that black-box defenses cannot fully stop indirect injection. Fine-tuning gave near-zero attack success only on the tested models, with limited coverage, so this is not general elimination."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The February 2023 demonstration is confirmed. Research published before the post shows defenses were incomplete and the vulnerability persisted as an attack class. White-box fine-tuning results limited to a narrow benchmark do not show the problem was generally resolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-could-possibly-go-wrong-with-637899"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Revision 2 correctly keeps 'I don't see how', which states a personal plausibility judgment, not a firm financial outcome. The venture capital qualifier is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly refuses to turn this into 'investors cannot get $70T', which would be firmer than what Marcus said. Any resolution would depend on financial terms he did not supply."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a subjective statement that he does not see how the math works. It names no investment horizon, structure or return criterion, so no evidence could confirm or refute it without adding assumptions he did not make.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-could-possibly-go-wrong-with-6b4c1c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Has not shown a strong handle' is a reasonable paraphrase of the understated 'wouldn't say ... distinguished itself'. It is an evaluative appraisal with no threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "No standard for 'distinguished' security handling or comparison group is given. Scoring would require adding a benchmark the speaker never supplied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure of the March 2023 data exposure is a real incident, but it cannot set an undefined overall rating."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The same company disclosure reports the bug was patched. Remediation is context and does not settle the appraisal."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is an evaluative judgment with no stated standard, comparison or threshold. Incidents and remediation reports are relevant context but cannot score a subjective rating, and the specific incidents Marcus cites are assessed as separate claims.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-could-possibly-go-wrong-with-796e20"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22336,
+  "output_tokens": 3380,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

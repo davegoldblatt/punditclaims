@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-204262": "4fb90e80b0564e5db913bf9f4c779a433c2479c468940ec18af10e49f3c67096",
+  "case:marcus-llms-dont-do-formal-reasoning-and-269833": "89fd785b16b79cf614c9b447e83ff2322a13b8ffb890fc71a688412650fbd9e3",
+  "case:marcus-llms-dont-do-formal-reasoning-and-27cfda": "b62dee4c31ceb2b8982f315a4f6018a7ade254364005b14dfd6927f7e02351f7",
+  "case:marcus-llms-dont-do-formal-reasoning-and-4a617e": "dd614ce2def18e967939e9e5e0ab5a1345a22b5ea60f1645d48d9f28153168e3"
+ },
+ "started_at": "2026-10-29T07:38:05Z",
+ "completed_at": "2026-10-29T07:39:27Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states the empirical observation in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves repeated observations of size-related multiplication decline across older and newer models."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading larger problems as longer operands and repeated observations as multiple evaluations is ordinary and fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reports declining performance with problem size in an evaluation including multiplication and older models."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Supplies multiplication accuracy figures from the same evaluation as e1. It is neither a separate replication nor sufficient alone to establish a size trend."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "A separate, contemporaneous researcher evaluation reports size limits for GPT-4o and o1 across tests extending to 20-digit operands."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "Corroborates Deng's newer-model results with numerical accuracy figures; it does not constitute another independent evaluation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The Dziri and Deng evaluations predate the statement and together establish multiplication decline with operand size across older and newer models. Reported improvements from GPT-4o to o1 do not contradict decline within each model as problems grow.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-204262"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus explicitly endorses the robustness judgment."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves his strong belief and its reference to the cited results. This is a firm assessment of existing findings, not a probabilistic forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Independent replication and re-analysis reasonably test empirical robustness. The focus on Apple operationalizes a broader statement, so conclusions must retain the untested scope of the other cited findings."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "An independent controlled benchmark reproduces sensitivity to irrelevant context. It supports the general effect, without establishing exact replication of Apple's results."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Statistical re-analysis substantially reduces the breadth of significant effects and identifies a numerical-distribution confound, challenging robustness of the GSM-Symbolic result."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The reconstructed NoOp effect shrinks after ambiguous items are removed. This challenges robustness, although unavailable original data and the non-peer-reviewed reconstruction limit its force."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Independent work supports sensitivity to irrelevant context, but re-analysis challenges the breadth of GSM-Symbolic effects and reconstructed NoOp results depend strongly on item ambiguity. Robustness of the other cited planning, multiplication, and chess findings remains unchecked; the packet does not establish that all cited results fail.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-269833"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly asserts that the preceding multiplication observation also applies to o1."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The immediate antecedent identifies declining multiplication performance as operand size increases."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract fairly limits o1 to the contemporaneous models and tests size-related decline without inventing an accuracy threshold."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The researcher reports testing through 20-by-20 digits, with decent o1 accuracy extending only through 9-by-9. This supports a size-related limit despite the unavailable grid."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Corroborates the same evaluation with roughly half-correct performance around nine-digit operands. This numerical anchor does not independently establish the decline."
+     },
+     {
+      "id": "e3",
+      "fits": false,
+      "relation": "context",
+      "note": "The February 2025 comparison concerns a later evaluation outside the target period and cannot establish the September–October 2024 outcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Deng's contemporaneous report describes o1's multiplication accuracy reaching its limit as operand lengths increase, and the news report supplies a corresponding accuracy figure. The missing grid limits precision, but the contract permits researcher-reported evaluations and requires no exact decline threshold.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-27cfda"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus presents the performance judgment as his own endorsed assessment of the cited analysis."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding reference to the team's o1 analysis supports the planning interpretation and the small-to-large comparison."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The named study supplies the relevant model, task, and size comparison. Restricting the claim to contemporaneous o1-preview results is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The study reports 97.8% accuracy on 3–5-block problems and 23.63% on 6–20-block problems, directly establishing both parts of the claim."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Improvement over earlier models concerns a different comparison. It is compatible with the reported within-model decline as problem size increases."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The cited contemporaneous study directly documents strong small-problem performance and a steep decline on larger Blocksworld instances. Its acknowledgment of substantial progress over earlier models does not contradict this size-related decline.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-4a617e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29530,
+  "output_tokens": 2262,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 293
+ },
+ "cost_usd": null
+}

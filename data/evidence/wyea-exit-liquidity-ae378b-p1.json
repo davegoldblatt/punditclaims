@@ -1,0 +1,85 @@
+{
+ "packet_id": "wyea-exit-liquidity-ae378b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-exit-liquidity-ae378b",
+  "version": 1,
+  "content_hash": "ded84d4c6500ad584b2505c9a5d67fbf4f28286074dccef540e455b1ef10e891"
+ },
+ "contract_ref": {
+  "id": "wyea-exit-liquidity-ae378b",
+  "version": 1,
+  "content_hash": "3ed8fa0213bdb638dd5bab37454c58b05b4029205b3c60819806a00409762766"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic S-1 2026 June 11900 1900 customers revenue 23% receivable",
+   "site.sec.gov/Archives/edgar/data/ Anthropic \"2026\" \"11,900\"",
+   "Anthropic S-1 October 26 2026 sec.gov 23% accounts receivable"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Read the customer thresholds, revenue concentration, and receivables disclosures. They do not supply the claimed June TTM customer distribution."
+   },
+   {
+    "url": "https://kepler.ai/research/financial/s1-anthropic/",
+    "used": false,
+    "why": "Read as a cross-check; the primary filing was available."
+   },
+   {
+    "url": "https://www.stocktitan.net/sec-filings/ANT/s-1-anthropic-pbc-files-s-1-registration-statement-a0477b41760e.html",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T16:14:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, customer concentration; Enterprise Adoption of Claude; Note 2, Significant Customers",
+   "receipt": {
+    "public_excerpt": "a limited number of customers.",
+    "quote_hash": "6d8e76aec60777de04b215c9788e5cbf490e82447550f521426c497811c632a3",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing's customer thresholds concern September 30 TTM revenue, and its top-five revenue concentration concerns January–September. Its June receivables table measures outstanding balances; neither establishes the claimed June TTM revenue share.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Share of revenue attributable to the five largest customers",
+    "currency": "USD",
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No matched customer-spending distribution for the twelve months ended June 30, 2026 was located.",
+  "The September customer thresholds cannot be combined with June TTM revenue.",
+  "Receivables concentration does not establish the corresponding revenue concentration."
+ ],
+ "packet_hash": "e164441c5a2209ff8a63e08acf59b9de624a897d0ab5182ef615027e25b60497"
+}

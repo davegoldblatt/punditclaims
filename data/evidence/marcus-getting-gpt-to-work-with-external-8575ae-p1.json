@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-8575ae-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-8575ae",
+  "version": 1,
+  "content_hash": "cd8ec229b56e1f4b1cdb1b8ddeab5ea759358162013e05a27539920bb2ae570a"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-8575ae",
+  "version": 1,
+  "content_hash": "150210a079be8f34876a5d7cd5d8374a1a9a4750030aef2ec461faeed6517216"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Code Interpreter Wolfram Alpha Davis Aaronson 2023 word problems evaluation",
+   "\"GPT-4 Code Interpreter\" \"GSM8K\" 2023 errors",
+   "\"ChatGPT-4 with Code Interpreter\" Kumar Kats pdf",
+   "\"Solving Challenging Math Word Problems\" \"Code-based\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2308.07921",
+    "used": true,
+    "why": "Primary Code Interpreter evaluation with elementary-word-problem results; read alongside the full paper."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.07921",
+    "used": true,
+    "why": "Table 2 distinguishes baseline Code Interpreter from verification plus voting."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.08881",
+    "used": true,
+    "why": "Repeated trials document both successes and failures, but the problems include sophomore-level engineering material."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": false,
+    "why": "Excluded because Davis coauthored the post; it cannot independently establish that the speakers were right."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.08155v2",
+    "used": false,
+    "why": "Its level-5 competition-problem failures do not establish unreliability on simple word problems."
+   }
+  ],
+  "performed_at": "2026-10-29T06:29:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2308-07921",
+   "source_snapshot_id": "016ba5ce9dfe336711169030ab2eec4856d4561430efefb414dad318fa758068",
+   "publisher": "arXiv; Aojun Zhou and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2308.07921",
+   "locator": "Abstract; accompanying paper, section 4.2, Table 2",
+   "receipt": {
+    "public_excerpt": "In particular, OpenAI's latest version of GPT-4, known as GPT-4 Code Interpreter, shows remarkable performance on challenging math datasets.",
+    "quote_hash": "cad7fd01aea450ac6cca8a83e2ee4fcb153d23d185f038759f8824c04f8dda6b",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-08-15",
+   "retrieved_at": "2026-10-29T06:22:30Z",
+   "relation": "contradicts",
+   "explanation": "The paper reports 92.9% GSM8K accuracy for baseline Code Interpreter and 97.0% with verification and voting. This is material evidence against a sweeping claim of poor elementary-word-problem performance, but it does not establish reliability across scientific problems or Wolfram Alpha.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2309-08881",
+   "source_snapshot_id": "0ad56c12a3624673ecf66e30b88423bf401d675d477e06e199907c05c3f9d42c",
+   "publisher": "arXiv; Tanuj Kumar and Mikhail A. Kats",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2309.08881",
+   "locator": "Executive summary; section 3, performance table",
+   "receipt": {
+    "public_excerpt": "The performance of all versions of ChatGPT is somewhat stochastic.",
+    "quote_hash": "2d0a2c2fb585307503e5e9b63bf637061a38d90b495f37760e277cc42f0000ec",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-09-16",
+   "retrieved_at": "2026-10-29T06:20:53Z",
+   "relation": "context",
+   "explanation": "The repeated-trial study found uneven Code Interpreter accuracy, while its easiest problems were solved in every reported trial and consensus answers succeeded on all 13 problems. Its college engineering scope and lack of Wolfram Alpha testing prevent direct resolution of the broader simple-problem claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No accepted error threshold distinguishes reliable from unreliable.",
+  "The independent evidence retrieved does not cover representative simple science-and-math problems with both named plug-ins.",
+  "The most directly relevant bespoke test was conducted by a coauthor of the post."
+ ],
+ "packet_hash": "0a2e2c15341f43a5311ad6a90907736fa65139b3e79f6f72da4fd14067e7908b"
+}

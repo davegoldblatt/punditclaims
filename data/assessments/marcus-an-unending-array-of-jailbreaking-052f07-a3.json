@@ -1,0 +1,146 @@
+{
+ "assessment_id": "marcus-an-unending-array-of-jailbreaking-052f07-a3",
+ "claim_revision_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 1,
+  "content_hash": "00b0a1270d2307fe048987872dccf38d9f8d07ea0634b231d1ec4bb5669c4f75"
+ },
+ "contract_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 2,
+  "content_hash": "5c6288cdd9d7c0d85f2bef9ebe6b07a645708dff8fbaa4d77bdefe5dd6467026"
+ },
+ "packet_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07-p2",
+  "content_hash": "6bcce78e12be13f25e2bbdce9bdce363225e712cc659ca5bbe51ab4ee04fc446"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Anthropic's October 5, 2023 research documents limits of neuron-level interpretation, but does not establish that nobody understands any LLM [e1]. The June 3, 2024 alignment result establishes vulnerabilities under specified assumptions, without showing that incomplete understanding causes the claimed impossibility [e2]. CaMeL's June 24, 2025 version describes security protections enforced by surrounding software, with explicit exclusions and trust assumptions [e3]. CONTINUITY's September 4, 2026 version protects authenticated security facts and authorization decisions, but can preserve incorrect conclusions from trusted validators [e4]. These results neither establish the claimed causal barrier nor demonstrate the broad protection against open-ended attacks required to contradict it [e1, e2, e3, e4].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e3",
+  "e4"
+ ],
+ "limitations": [
+  "The interpretability evidence does not establish universal ignorance of LLM behavior [e1].",
+  "The vulnerability result depends on assumptions and does not establish impossibility caused by incomplete understanding [e2].",
+  "CaMeL excludes some manipulation attacks, and CONTINUITY depends on trusted validators; neither establishes the required broad security guarantee [e3, e4]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-an-unending-array-of-jailbreaking-052f07-1x-review-anthropic-1",
+  "marcus-an-unending-array-of-jailbreaking-052f07-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-an-unending-array-of-jailbreaking-052f07-2x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because nobody knows exactly how LLMs work, nobody can ever issue strong guarantees about them.",
+  "kind": "causal",
+  "conditions": [
+   "because nobody knows exactly how LLMs work"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Nobody knows exactly how LLMs work, and that means that nobody can ever issue strong guarantees around them.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/an-unending-array-of-jailbreaking",
+   "date": "2024-04-02",
+   "document_title": "An unending array of jailbreaking attacks could be the death of LLMs",
+   "observed_at": "2026-10-29T00:00:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Nobody knows exactly how LLMs work",
+    "that means",
+    "nobody can ever issue strong guarantees around them"
+   ],
+   "our_interpretation": [
+    "In this passage about jailbreaks, private information and agents with device access, 'strong guarantees' means dependable security assurances against open-ended adversarial inputs, including previously unknown attacks.",
+    "The claim concerns useful LLM deployments. An isolated guarantee about a restricted attack class does not by itself contradict it. Conversely, a relevant system-level guarantee is not excluded merely because external controls enforce it.",
+    "'Knows exactly how LLMs work' means a comprehensive understanding of their learned behavior, rather than knowledge of their architecture or execution rules.",
+    "The central assertion is that incomplete understanding makes strong security guarantees impossible. This is assessed as a causal impossibility claim, not as a forecast with an invented deadline.",
+    "Strong does not necessarily mean perfect protection against every conceivable risk. Marcus specifies neither a failure probability nor a precise security boundary."
+   ],
+   "support_condition": "Technical evidence establishes that incomplete understanding itself prevents dependable, broadly applicable security guarantees against open-ended jailbreaks in useful LLM deployments. Existing vulnerabilities or the absence of a comprehensive guarantee alone are insufficient.",
+   "contradiction_condition": "Technical evidence establishes a dependable, broadly applicable security guarantee for a useful LLM deployment against open-ended adversarial inputs despite incomplete understanding of the model. Its protection must address the security concerns in the passage; a restricted perturbation certificate, isolated property or favorable benchmark score alone is insufficient."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Anthropic's October 5, 2023 research documents limits of neuron-level interpretation, but does not establish that nobody understands any LLM [e1]. The June 3, 2024 alignment result establishes vulnerabilities under specified assumptions, without showing that incomplete understanding causes the claimed impossibility [e2]. CaMeL's June 24, 2025 version describes security protections enforced by surrounding software, with explicit exclusions and trust assumptions [e3]. CONTINUITY's September 4, 2026 version protects authenticated security facts and authorization decisions, but can preserve incorrect conclusions from trusted validators [e4]. These results neither establish the claimed causal barrier nor demonstrate the broad protection against open-ended attacks required to contradict it [e1, e2, e3, e4].",
+  "limitations": [
+   "The interpretability evidence does not establish universal ignorance of LLM behavior [e1].",
+   "The vulnerability result depends on assumptions and does not establish impossibility caused by incomplete understanding [e2].",
+   "CaMeL excludes some manipulation attacks, and CONTINUITY depends on trusted validators; neither establishes the required broad security guarantee [e3, e4]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "activations of individual neurons",
+    "locator": "Abstract, final sentence",
+    "url": "https://www.anthropic.com/research/towards-monosemanticity-decomposing-language-models-with-dictionary-learning",
+    "publisher": "Anthropic",
+    "event_date": "2023-10-05",
+    "available_at": "2023-10-05",
+    "explanation": "The research documents limits of interpreting individual neurons and a method for recovering interpretable features. It supports the narrower concern about incomplete understanding, but neither establishes that nobody understands any LLM nor proves that security guarantees are impossible."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Our framework makes several underlying assumptions.",
+    "locator": "Appendix A, Discussion of limitations, opening sentence",
+    "url": "https://arxiv.org/html/2304.11082v6",
+    "publisher": "Yotam Wolf and colleagues, arXiv",
+    "event_date": "2024-06-03",
+    "available_at": "2024-06-03",
+    "explanation": "The paper proves vulnerability to adversarial prompting under assumptions about distinguishable desirable and undesirable behavior components. This is a relevant limitation result, but its assumptions do not establish that incomplete human understanding prevents all strong system-level security guarantees."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "unintended actions and data exfiltration",
+    "locator": "Section 11, Conclusion; scope qualifications in section 3.1",
+    "url": "https://arxiv.org/html/2503.18813v2",
+    "publisher": "Edoardo Debenedetti and colleagues, arXiv",
+    "event_date": "2025-06-24",
+    "available_at": "2025-06-24",
+    "explanation": "CaMeL provides material counterevidence by enforcing security through system design around vulnerable models. However, it assumes trusted user prompts and uncompromised memory, and excludes text-only manipulation and phishing that leave protected flows unchanged; it therefore does not settle the broader claim under this contract."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "authenticated security facts",
+    "locator": "Section 12, Limitations, Integrity is not semantic correctness",
+    "url": "https://arxiv.org/html/2609.05269v1",
+    "publisher": "Chris Zheng and Geng Yang, arXiv",
+    "event_date": "2026-09-04",
+    "available_at": "2026-09-04",
+    "explanation": "This work extends formal protection across agent components, challenging the idea that security assurances must depend on understanding model internals. Its guarantee still depends on trusted validators and can preserve an incorrect conclusion, so it does not establish broad resistance to the open-ended manipulation discussed in the post."
+   }
+  ],
+  "what_would_resolve": "A rigorous result showing that incomplete model understanding itself prevents dependable security guarantees across the claim's scope would support it. A documented guarantee protecting a useful LLM deployment against open-ended adversarial inputs despite incomplete understanding would contradict it. Either result must state its security boundary, assumptions, residual risks, and retained usefulness.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6ec0fad723b232c37b59ed68180206a0ffd9c8dfb6c6241dd2fde956c6ef14aa",
+ "supersedes_assessment_id": "marcus-an-unending-array-of-jailbreaking-052f07-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T19:17:59Z"
+}

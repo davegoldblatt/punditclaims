@@ -1,0 +1,130 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-7d6ff9-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 2,
+  "content_hash": "f66f4b7b911207adf7c60d38c468c480a55927e50882e3a7c3465c3b2516e303"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 1,
+  "content_hash": "3cf5b7e5dd4c94731d556b04c34df56ef1bfa0bfe108e2b754490d7dd2cdc614"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SWE bench Pro September 2025 software engineering agents benchmark reliability",
+   "site.anthropic.com \"2026\" \"How AI is transforming\" engineers"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2509.16941v1",
+    "used": true,
+    "why": "The original September 2025 version reports reproducible repository-level engineering evaluations."
+   },
+   {
+    "url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+    "used": true,
+    "why": "Published later but explicitly reports August 2025 observations, within the target period."
+   },
+   {
+    "url": "https://arxiv.org/abs/2609.08149",
+    "used": true,
+    "why": "A later methodological examination identifies weaknesses in SWE-Bench Pro. Used as context limiting confidence, not as a measurement of September 2025 model performance."
+   },
+   {
+    "url": "https://research.trychroma.com/context-rot",
+    "used": false,
+    "why": "Read directly. Its controlled context-length tests concern retrieval and related tasks, not the claimed codebase-maintenance outcome."
+   },
+   {
+    "url": "https://scale.com/blog/advancing-agents",
+    "used": false,
+    "why": "The benchmark announcement offers less direct evidence than the original evaluation paper."
+   }
+  ],
+  "performed_at": "2026-10-29T12:56:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2509-16941v1",
+   "source_snapshot_id": "e44dee986e40560036d7a4a30bb4b6881b2beec69e5041c10a6819b6e68fae2a",
+   "publisher": "SWE-Bench Pro authors via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2509.16941v1",
+   "locator": "Section 5, Results, discussion of Table 2",
+   "receipt": {
+    "public_excerpt": "23.3% and 22.7%",
+    "quote_hash": "7d841b3fcbdaadfbf144da788d3c81e646fe1339094f46226e4f73a193af41ed",
+    "verified": "exact"
+   },
+   "event_date": "2025-09",
+   "available_at": "2025-09-21",
+   "retrieved_at": "2026-10-29T12:46:30Z",
+   "relation": "contradicts",
+   "explanation": "Agents successfully resolved a subset of repository-level maintenance and feature tasks under executable tests, contradicting literal inability to perform engineering tasks. The low success rates do not demonstrate reliable whole-job autonomy.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-how-ai-is-transforming-work-at-anthropic",
+   "source_snapshot_id": "4591a9971542f5dd35034959d247de2af1759132f70c190df636f15795328484",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+   "locator": "Key findings, Survey data",
+   "receipt": {
+    "public_excerpt": "“fully delegate” 0-20%",
+    "quote_hash": "db847d3832938826dc283b404e911fb95235040ca029fef8990af94aac1d180a",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-12-02",
+   "retrieved_at": "2026-10-29T12:48:15Z",
+   "relation": "supports",
+   "explanation": "The August survey supports the narrower concern that dependable delegation remained limited and human supervision mattered. It does not support categorical inability, inability to adapt, or an inherent permanent barrier.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2609-08149",
+   "source_snapshot_id": "693acc382b94f6d615bae03d04a1f0b35837619ca5d3da1cd0404be998dc5a7f",
+   "publisher": "SWE-Bench Pro Verified authors via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2609.08149",
+   "locator": "Abstract, following discussion of leakage and task-quality issues",
+   "receipt": {
+    "public_excerpt": "inflate benchmark performance",
+    "quote_hash": "915a381858a8516034bf6d04f94eeee38742be001b2fea2826e21c18f8bcae8a",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-10-09",
+   "retrieved_at": "2026-10-29T12:48:49Z",
+   "relation": "context",
+   "explanation": "The later analysis identifies leakage and task-quality problems in the benchmark. It limits confidence in interpreting reported scores, without supplying a corrected measurement of the particular September 2025 evaluations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not establish that observed unreliability is an inherent, unavoidable property preventing software engineering.",
+  "The categorical learning and adaptation assertions are not separately settled.",
+  "No admitted controlled codebase-size experiment establishes the claimed general relationship between increasing code, variables, and failure.",
+  "The later benchmark critique does not quantify corrections to the specific original scores."
+ ],
+ "packet_hash": "0ce8ee3127d1130f3d2c1097ecd1382613ddaf28bea16bd889d576f5e90a8dad"
+}

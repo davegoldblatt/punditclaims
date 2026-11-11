@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-the-threat-of-automated-misinformation-096c6e-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-threat-of-automated-misinformation-096c6e": "6efb8e1cd8d1774857b5eca8953116d6e6bc1efaa9820331aa4746df8c756429"
+ },
+ "started_at": "2026-11-10T01:57:26Z",
+ "completed_at": "2026-11-10T01:57:38Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus says this in his own voice on his Substack. It is based on Oakley's report, but Marcus adopts the observation as his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim matches the statement: the latest Bing has guardrails, so plain requests don't trivially produce misinformation. The 'latest version' qualifier is kept. The claim says nothing about jailbreaks, which the source treats separately."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (Bing Chat blocks straightforward requests for false narratives, but not bypass prompts) is ordinary and fair. Anchoring the claim to the live service on the publication day is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's own disclosure about chat-session limits, dated before the post. It shows Microsoft was changing safeguards but does not test plain requests for misinformation."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "News report on the version 96 update around Feb 28. It reports fewer refusals and fewer hallucinations, citing a Microsoft executive, but contains no test of requests for misinformation."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "PopSci's own March test, which used a 'truther' point-of-view framing and produced false narratives. It covers a later period, and the framing may count as a bypass, so it cannot contradict the Feb 28 observation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item in the packet independently tests how the Feb 28, 2023 deployment of Bing handled plain requests for misinformation. e1 and e2 describe deployment changes without testing this behaviour. e3 is a March test that used framing which may count as a bypass. Neither condition in the contract is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-threat-of-automated-misinformation-096c6e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10472,
+  "output_tokens": 1156,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

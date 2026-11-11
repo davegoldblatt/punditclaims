@@ -1,0 +1,63 @@
+{
+ "run_id": "ez-anthropic-2025-net-loss-42bn-review-anthropic-2",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-4",
+ "prompt_hash": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+ "rubric_version": "policy-2026-10-28.5",
+ "input_hashes": {
+  "claim": "723ea3ff1e707f6f2a4ee20cacb32aa4d1e93ecad5722d4786237255bc078e2d",
+  "contract": "f69d30776e3a8d78eec044ce2f526d3b1e80ce0c305de579df8b9a19e889f809",
+  "packet": "e69c69da72fe3abcb859a15cdcca6dd326e10aceadfb24e625430a07565dcd8b",
+  "prompt": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+  "case": "65446e356975a2117bfe9aadb229e53021e1eb1c05f95ea3109f50391a2abf7f"
+ },
+ "started_at": "2026-10-28T23:51:47Z",
+ "completed_at": "2026-10-28T23:52:02Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron states the figure himself in his own newsletter. He cites the Reuters S-1 leak as his source but asserts the number as fact, so he endorses it."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "observation",
+   "note": "Matches the statement: Anthropic's 2025 net loss was $42B. 'Technically' is not a hedge. The proposition rightly leaves out the 'stock-related, not a cash loss' description."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "Reading the loss as GAAP follows from the S-1 he names. Rounding to the nearest billion fits his round '$42 billion'. The 'not a cash loss' remark is excluded, which is fair."
+  },
+  "evidence": [
+   {
+    "id": "s1-2025-net-loss",
+    "fits": true,
+    "relation": "supports",
+    "note": "Anthropic's filed S-1 (available 2026-10-26, before the cutoff) shows a FY2025 net loss of $(41,965)M, which is $41.965B and rounds to $42B. The 2025 column is audited. The locator says page F-7, but the table appears on F-8. That page slip is minor."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "historical_observation",
+  "horizon_state": "not_applicable",
+  "outcome": "supported",
+  "rationale": "The audited S-1 statement of operations reports a GAAP net loss of $41,965M for the year ended 2025-12-31. 41,965 / 1,000 = $41.965B, which rounds to $42B. That meets the support condition. No contrary evidence is in the packet.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9928,
+  "output_tokens": 1502,
+  "cached_input_tokens": 2607,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,122 @@
+{
+ "packet_id": "wyea-news-openai-had-a-negative-122-operating-margin-in-q1-2026-and-dcffa979509f-bd9beb-p1",
+ "claim_revision_ref": {
+  "id": "wyea-news-openai-had-a-negative-122-operating-margin-in-q1-2026-and-dcffa979509f-bd9beb",
+  "version": 2,
+  "content_hash": "f8ce66d8674279f589acfd892db59ebd1bdae052766077649c4dfb38ae19277c"
+ },
+ "contract_ref": {
+  "id": "wyea-news-openai-had-a-negative-122-operating-margin-in-q1-2026-and-dcffa979509f-bd9beb",
+  "version": 1,
+  "content_hash": "f5bbc92fb7466c7e3b8e893d6aa493673e8f294e9a37cca6965235a45bdae868"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic May 2026 Q2 profit Musk two months compute Krishna Rao",
+   "Anthropic SpaceX waived fees May June 2026 operating profit 559 million",
+   "\"Anthropic\" \"559 million\" \"discount\"",
+   "\"Anthropic\" \"May 2026\" \"reduced\" \"SpaceX\" profit",
+   "Anthropic S-1 October 26 2026 sec cash flows Q1",
+   "site.sec.gov/Archives/edgar \"Space\" \"May 2026\" \"reduced fee\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://uk.finance.yahoo.com/news/anthropic-nears-first-quarterly-profit-000422401.html",
+    "used": true,
+    "why": "Readable Reuters report describes the expected profit, revenue growth, and reduced fees during compute ramp-up."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing describes compute efficiency and operating trends, but does not isolate the concessions' contribution to the May forecast."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm",
+    "used": false,
+    "why": "Relevant SpaceX filing identified, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.theinformation.com/briefings/anthropic-projects-turning-operating-profit-second-quarter",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.fidelity.com/news/article/default/202605202002RTRSNEWSCOMBINED_L6N41X1FW_1",
+    "used": false,
+    "why": "read_page returned the site template without the Reuters article body."
+   }
+  ],
+  "performed_at": "2026-10-29T20:27:18Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "uk-finance-yahoo-com-news-anthropic-nears-first-quarterly-profit-000422401-html",
+   "source_snapshot_id": "884634793ba59d1cb80e2637a914b0b8ff8b06514fdee2df3bb2ba18310ac377",
+   "publisher": "Reuters, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://uk.finance.yahoo.com/news/anthropic-nears-first-quarterly-profit-000422401.html",
+   "locator": "Third article paragraph",
+   "receipt": {
+    "public_excerpt": "$559 million",
+    "quote_hash": "f2f27bc6707687481fe2d07e924d7194ce046e2bdbc8c9d6976e82136c347538",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-20",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T20:17:10Z",
+   "relation": "context",
+   "explanation": "Reuters reports anticipated profit alongside sharply higher sales and reduced compute fees during ramp-up. It does not quantify how much of the expected profit comes from each factor or establish the precise non-GAAP reconciliation.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Forecast operating profit",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, filed with the SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, compute efficiency, “Training Efficiency”",
+   "receipt": {
+    "public_excerpt": "compute multipliers",
+    "quote_hash": "d9d185f2a3af774fba85cc5f2a89147de5ec1e803ecf795ec69816d3baf5292d",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-26",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "Anthropic describes algorithmic and engineering efficiency gains, providing a competing explanation to financial adjustments alone. This later description does not date or quantify their contribution to the forecast under assessment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The amount of the May–June compute concession and the corresponding capacity delivered were not established.",
+  "No reconciliation isolates temporary concessions, accounting exclusions, revenue growth, and efficiency gains in the May profit forecast.",
+  "Later descriptions of efficiency improvements do not establish when those improvements affected the forecast."
+ ],
+ "packet_hash": "53bf12a31c057689cf659cf27218b41f9d61ed982b7538cae6115f5b81460a29"
+}

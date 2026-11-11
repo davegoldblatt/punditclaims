@@ -1,0 +1,159 @@
+{
+ "packet_id": "marcus-a-few-words-about-bullshit-2db47c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-few-words-about-bullshit-2db47c",
+  "version": 1,
+  "content_hash": "1204cc998608ba0761c5373f0caa1c62aa56ee124775376bdc5e117429e26faf"
+ },
+ "contract_ref": {
+  "id": "marcus-a-few-words-about-bullshit-2db47c",
+  "version": 1,
+  "content_hash": "651cf7e8eeb890932cf66991ca0b3f91a6293c708550a37ee790c080e6898097"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Galactica Ernest Davis ExperimentWithGalactica November 16 2022",
+   "Galactica paper November 2022 hallucination references accuracy limitations",
+   "site.galactica.org \"Limitations\" \"confident\"",
+   "Galactica November 2022 \"references\" \"52\" hallucination",
+   "site.nasa.gov June 2012 Venus transit June 5 6 2012 last 2004"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/ExperimentWithGalactica.html",
+    "used": true,
+    "why": "Firsthand prompts, outputs, and factual checks dated November 15, 2022. The separately marked later discussion is not used to date the tests."
+   },
+   {
+    "url": "https://galactica.org/paper.pdf",
+    "used": false,
+    "why": "read_page failed with HTTP 530; the paper was read through arXiv instead."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2211.09085",
+    "used": true,
+    "why": "Primary model evaluation, including TruthfulQA results and limitations."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.09085v1",
+    "used": false,
+    "why": "Read as an alternate rendering; the PDF and abstract provide the cited passages."
+   },
+   {
+    "url": "https://arxiv.org/abs/2211.09085",
+    "used": true,
+    "why": "Establishes the paper's publication date and records positive benchmark findings relevant to a balanced assessment."
+   },
+   {
+    "url": "https://www.nasa.gov/image-article/sdos-high-def-view-of-2012-venus-transit/",
+    "used": true,
+    "why": "An authoritative observation independently verifies that a transit occurred after 1882."
+   }
+  ],
+  "performed_at": "2026-10-29T02:05:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-experimentwithgalactica-html",
+   "source_snapshot_id": "804c52a8654279624c83ebefc25b451baa815f38866915713d0ec2a5dc83d070",
+   "publisher": "Ernest Davis and Andrew Sundstrom, hosted by New York University",
+   "source_type": "demonstration",
+   "url": "https://cs.nyu.edu/~davise/papers/ExperimentWithGalactica.html",
+   "locator": "Second query, Galactica Output; see also first query and accompanying factual checks",
+   "receipt": {
+    "public_excerpt": "The last known transit of Venus was in 1882.",
+    "quote_hash": "eb5ed4a3ee6bdeccd9062bb53cdad84e461f8abba59e9de0ebfc48f815a8e60b",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-15",
+   "available_at": "2022-11-15",
+   "retrieved_at": "2026-10-29T02:01:53Z",
+   "relation": "supports",
+   "explanation": "The recorded responses to ordinary questions about the gravitational constant and Venus transits contain numerous factual errors, including false biographies, mission history, and transit dates. Additional invented-paradox prompts produce fabricated explanations, although those prompts provide weaker evidence about ordinary use.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2211-09085",
+   "source_snapshot_id": "438076fef5e1d988fb72b62155c8f3e8ac8a752878929cdd54dcffdfaae71abd",
+   "publisher": "Ross Taylor and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2211.09085",
+   "locator": "Section 6.2, TruthfulQA, and Table 21",
+   "receipt": {
+    "public_excerpt": "performance is still low.",
+    "quote_hash": "0e8f93b3756147722e9d6c0c1fecec35a3d08193ca82472b73d8e1d8c2dc2dc2",
+    "verified": "exact"
+   },
+   "event_date": "2022-11",
+   "available_at": "2022-11-16",
+   "retrieved_at": "2026-10-29T02:02:15Z",
+   "relation": "context",
+   "explanation": "The developers report 26% MC1 accuracy for the 120B model on TruthfulQA, while acknowledging low absolute performance. This corroborates reliability concerns but measures a specific benchmark, not the frequency of fabricated statements in public-demo responses; the exact testing dates are unspecified.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2211-09085",
+   "source_snapshot_id": "7c48d7668a33804df9426ad905238170a2eefd4b20f3c084d7afeed0b58e52ba",
+   "publisher": "Ross Taylor and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2211.09085",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "outperform existing models",
+    "quote_hash": "9507e25d9083fa53bdbca811820ecaa095a3c9403e45cf6987af4aaeadc1c507",
+    "verified": "exact"
+   },
+   "event_date": "2022-11",
+   "available_at": "2022-11-16",
+   "retrieved_at": "2026-10-29T02:02:07Z",
+   "relation": "context",
+   "explanation": "The paper reports useful scientific capabilities, including 77.6% on PubMedQA and 68.2% on LaTeX equation probes. These successes constrain any suggestion that Galactica was uniformly wrong, but do not contradict recurring fabrication.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "nasa-gov-image-article-sdos-high-def-view-of-2012-venus-transit",
+   "source_snapshot_id": "96c59db728aa60c421229671c0a3b36eb078ef2153ec7b0a8c37b9610ae9740a",
+   "publisher": "NASA",
+   "source_type": "independent_measurement",
+   "url": "https://www.nasa.gov/image-article/sdos-high-def-view-of-2012-venus-transit",
+   "locator": "Image caption, final sentence",
+   "receipt": {
+    "public_excerpt": "This NASA image was captured on June 5, 2012.",
+    "quote_hash": "efa396450383e3688ea6abe495c066b95a660111ad166c22c3400e8e40c24146",
+    "verified": "exact"
+   },
+   "event_date": "2012-06-05",
+   "available_at": "2012-06-06",
+   "retrieved_at": "2026-10-29T02:03:28Z",
+   "relation": "context",
+   "explanation": "NASA's image and accompanying description document the 2012 Venus transit, independently establishing that the recorded Galactica statement in e1 is false. This is scientific background outside the target period, not a separate observation of Galactica.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The firsthand examples are a small, selected set rather than a representative sample of public-demo usage.",
+  "No general fabrication rate or numerical interpretation of 'a lot' is established.",
+  "The paper's benchmark testing dates are not specified."
+ ],
+ "packet_hash": "e59ee6f122bc6bfbbe25f3c2a935f60e45b798b6cc766e874ccb430330d0541e"
+}

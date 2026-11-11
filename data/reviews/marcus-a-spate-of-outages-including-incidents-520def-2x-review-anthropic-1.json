@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-a-spate-of-outages-including-incidents-520def-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-spate-of-outages-including-incidents-520def": "80eae096e18c541c88ceb3acbf1b738ad96b92f7eee0cfc667e3c3e3302e7f16",
+  "case:marcus-a-spate-of-outages-including-incidents-9c31d2-2": "e1e237ca22bd569b41464236d5776363366aa206c89e335447179de78d872d80"
+ },
+ "started_at": "2026-10-29T02:03:22Z",
+ "completed_at": "2026-10-29T02:03:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition matches the sentence: three distinct tasks, with maintenance 'even harder'. One leftover inconsistency: the target field still says GenAI-written code even though the revision dropped that scope. The sentence is about coding in general."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary and fair: maintenance is a distinct and harder or costlier burden in software engineering. The contract rightly treats 'any coder with chops' as rhetoric. Using cost share as a stand-in for difficulty is a stretch the contract itself flags, but the degradation route (Lehman) covers difficulty."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Preprint dated before the post. It summarises the classic literature: maintenance is 60-80% of lifecycle cost (Brooks), and quality degrades as maintenance goes on (Lehman). This meets the support condition, though the figures come secondhand."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "These results are about AI agents' regressions, not software engineering in general, so this is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Established literature, as summarised in a pre-post preprint, treats maintenance as the majority of lifecycle cost and finds that code degrades as it evolves. That meets the support condition. The packet contains no counterevidence. One limit: the cost figures come through a secondary summary, and no direct measure of 'harder' was found.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-spate-of-outages-including-incidents-520def"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own closing sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'We are going to need' is firm, so this is a scored forecast. The 'may well' clause about AI writing most code is hedged and works as a concession, not an antecedent. The forecast holds either way, and the horizon 'for a long time to come' is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating this as an open-horizon forecast is fair. The early-contradiction rule (routine maintenance at industry scale with no humans) is a reasonable reading of the statement. Support correctly has to wait for a long time to pass."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "EASE 2026 study, mid-2026: humans did about 83% of maintenance on AI-generated files. This is consistent with the forecast so far and does not trigger early contradiction, but it cannot settle a 'long time to come' claim."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Early-2026 baseline: agents often cause regressions in long-term maintenance. It does not show the outcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is an open-horizon forecast with no deadline. As of the evaluation date, the evidence shows humans still do most repair of AI code, so the early-contradiction rule is not met. Support needs many years to pass, so the outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-spate-of-outages-including-incidents-9c31d2-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16606,
+  "output_tokens": 2081,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,87 @@
+{
+ "run_id": "marcus-one-genai-image-ten-errors-6f376d-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-one-genai-image-ten-errors-6f376d": "441628bd22a8e1985e979d51f463bf332743e2af81fc6440bde8b5055f56a2ca",
+  "payload:marcus-one-genai-image-ten-errors-6f376d": "07c773a4ebc8b9019c769f694248116ec83ae79f714692108b52821c32f3321c",
+  "case:marcus-one-genai-image-ten-errors-9a822a": "29efe333ad9b5bf7c8eb64313b872834c1b3ee22731d87b3db4b864944c155aa",
+  "payload:marcus-one-genai-image-ten-errors-9a822a": "316e1ae9b7e7d70f2364de21ed2bae7e64b26542d741007890bb391e6f85b518",
+  "case:marcus-one-genai-image-ten-errors-ce7373": "9a4cd1c101c05bc6de6687251205415f96bb119b927bd4ad90f58eb2a12cb5f9",
+  "payload:marcus-one-genai-image-ten-errors-ce7373": "166b45866d415cf46b3ac16a3b2425565299c909da780bc8262ea6271f61e6a5",
+  "case:marcus-one-genai-image-ten-errors-f09bb8": "7be1d7848539778a3da25532b46477ed49ab79b708b51c29ef8c2a2442e6aefa",
+  "payload:marcus-one-genai-image-ten-errors-f09bb8": "4d6798fa22615a734500469c919c937d7148762fb7d3798f90b584112dedba38"
+ },
+ "started_at": "2026-10-29T21:48:52Z",
+ "completed_at": "2026-10-29T21:49:38Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. Paragraph 4 is correct. The proposition matches the statement and the contract allows either kind of discrepancy. The rationale sticks to evidence access (image not inspectable, no independent audit), which matches the packet's sources and gaps. The rationale and limitations say this is not a finding against Marcus. Unresolved matches the reviews. There are no evidence items, so there are no citations to check.",
+    "claim_id": "marcus-one-genai-image-ten-errors-6f376d"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "T2I-CompBench documents convincing image quality alongside failures of scene composition and prompt adherence."
+    ],
+    "verdict": "fail",
+    "note": "The e1 excerpt 'fine-grained text-image correspondences' is cut from a sentence saying existing evaluation metrics fail to capture such correspondences. That is a point about metrics, not about models, but the payload cites it as support for model failures. Nothing shown from e1 establishes 'convincing image quality'. GenEval (e2) does support the failure half. Outcome and axis match the reviews.",
+    "claim_id": "marcus-one-genai-image-ten-errors-9a822a"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. The proposition is faithful. CoVe (2023-09-25) supports the points that verification reduces hallucinations without removing them and that such methods existed before the post. Kalai and Vempala (2023-11-24) give a statistical account. The excerpts, publishers, dates and 'context' relations are correct. The rationale stays within the evidence and treats the universal reading only as a possibility. Unresolved matches the reviews.",
+    "claim_id": "marcus-one-genai-image-ten-errors-ce7373"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. 'Without any mechanism' is slightly stronger than 'without having a mechanism like an originality-assessor', but the contract's interpretation shows the scope. Carlini (2023-01-30) supports memorization. Somepalli (2023-05-31) supports the effect of caption conditioning. Excerpts, dates and relations are correct. The rationale says the evidence supports only part of the claim. Unresolved matches the reviews.",
+    "claim_id": "marcus-one-genai-image-ten-errors-f09bb8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29234,
+  "output_tokens": 5187,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

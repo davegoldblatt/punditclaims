@@ -1,0 +1,110 @@
+{
+ "packet_id": "wyea-degenerative-ai-f9efee-p1",
+ "claim_revision_ref": {
+  "id": "wyea-degenerative-ai-f9efee",
+  "version": 2,
+  "content_hash": "7fb255852622b2db1c8e6fb6208dd20cd55be0f35d7b3b1dc9a8bca33c925302"
+ },
+ "contract_ref": {
+  "id": "wyea-degenerative-ai-f9efee",
+  "version": 1,
+  "content_hash": "b65579a83961dab32c4961b39d880390297273308d067de3ef6932929fb7d344"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "machine unlearning language models more training data bias removal difficult experiments",
+   "language model unlearning bias removal pretraining data size controlled experiment"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2407.06460",
+    "used": true,
+    "why": "Establishes the date and scope of the MUSE study."
+   },
+   {
+    "url": "https://arxiv.org/html/2407.06460v2",
+    "used": true,
+    "why": "Reports unlearning failures and explicitly distinguishes removal-set scaling from total training-data scaling."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.13551",
+    "used": true,
+    "why": "Dated experiments provide a counterweight: some measured social bias can be reduced through unlearning."
+   },
+   {
+    "url": "https://aclanthology.org/2024.emnlp-industry.71/",
+    "used": false,
+    "why": "Later conference version is relevant, but the explicitly dated preprint is used for the evidence record."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.12560",
+    "used": false,
+    "why": "Reports efficient debiasing methods but does not directly test the asserted relationship with total training-data consumption."
+   },
+   {
+    "url": "https://research.google/pubs/muse-machine-unlearning-six-way-evaluation-for-language-models/",
+    "used": false,
+    "why": "Duplicates MUSE; the dated paper version is used."
+   }
+  ],
+  "performed_at": "2026-10-29T11:05:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2407-06460v2",
+   "source_snapshot_id": "4a0f3e0964c6ad461a0a7fa7d6c1391da64464322798ab45dfc4f8fdaf8eb14a",
+   "publisher": "arXiv; Shi and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2407.06460v2",
+   "locator": "Section 7, Conclusion; scaling experiment in section 5.2, C5",
+   "receipt": {
+    "public_excerpt": "severe privacy leakage",
+    "quote_hash": "bfcb4ca03f3d4cf40aea260b9a3813c47e37f9be5a9052cc84115f830e62cd08",
+    "verified": "exact"
+   },
+   "event_date": "2024-07",
+   "available_at": "2024-07-14",
+   "retrieved_at": "2026-10-29T10:57:48Z",
+   "relation": "supports",
+   "explanation": "MUSE finds practical failures in tested language-model unlearning methods. Its scaling experiment varies the amount to be removed, which does not establish the claimed effect of total training-data consumption on bias removal.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2406-13551",
+   "source_snapshot_id": "250ce1a4d15e5283df563c9ac4fd9b387dabb8ce34e0e5175b301470b0341b86",
+   "publisher": "arXiv; Dige and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2406.13551",
+   "locator": "Abstract, final sentence",
+   "receipt": {
+    "public_excerpt": "reduces the bias score by 11.8%",
+    "quote_hash": "903ad834222b3f5b06ccd884121a4623f678d43a1a495b6c3763ddb31b1ee497",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2024-06-19",
+   "retrieved_at": "2026-10-29T10:57:22Z",
+   "relation": "context",
+   "explanation": "The study reports measurable bias reduction, limiting an interpretation that learned bias cannot be changed. It does not demonstrate complete removal or test whether additional training data makes removal harder.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No reviewed experiment isolates total training-data consumption as the cause of increased bias-removal difficulty.",
+  "The cited experiments do not directly evaluate the February 2023 ChatGPT model.",
+  "Successful reduction of a bias score is not proof that the underlying learned information has been removed."
+ ],
+ "packet_hash": "7fdd37b18d77ded98ca6e0fbae7758fd6ac28aa8f8de98d672e2b28d395aacfe"
+}

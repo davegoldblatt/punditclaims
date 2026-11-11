@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-6392ec-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-6392ec",
+  "version": 1,
+  "content_hash": "a2f1f056c54ec659e709d85c85ae5663a3956e55f97db2d913442752150f20dc"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-6392ec",
+  "version": 1,
+  "content_hash": "8cc4a3332bb75698ba3b91590f920dd20234b5fda5878497b8624d6314c93d01"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 longer complex scenarios reasoning length benchmark FOLIO ProntoQA 2023",
+   "GPT-4 reasoning complexity length \"longer\" \"ProntoQA\"",
+   "\"FANToM\" \"GPT-4\" theory mind",
+   "\"Lost in the Middle\" \"GPT-4\" longer"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "Versioned original GPT-4 report documents performance on established benchmarks."
+   },
+   {
+    "url": "https://arxiv.org/html/2310.15421v3",
+    "used": true,
+    "why": "Original GPT-4 evaluation compares short and full conversations and additional reasoning demands."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.03172",
+    "used": false,
+    "why": "GPT-4's evaluated subset mainly tests information position at a fixed document count; FANToM more directly compares context lengths."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": false,
+    "why": "Read as corroboration, but the versioned technical report supplies more precise benchmark provenance."
+   }
+  ],
+  "performed_at": "2026-10-29T09:29:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI via arXiv",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Section 3, text preceding Table 2; Table 2",
+   "receipt": {
+    "public_excerpt": "traditional benchmarks",
+    "quote_hash": "8ac2cc2468278ce79819ca80147a45d8cf948d83c4b254ab546b6056069b4186",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "supports",
+   "explanation": "The report gives GPT-4 scores of 86.4% on MMLU and 95.3% on HellaSwag, establishing that it solved many established benchmark items. These particular results concern the pretrained base model and do not independently establish deployed-model reliability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2310-15421v3",
+   "source_snapshot_id": "1c3c1ac17a0c255eaee507278f977bfe4da904b512c0b9cf6d6f9bb868344a4b",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2310.15421v3",
+   "locator": "Section 4.1: Chain-of-thought and Fine-tuning; Reasoning Complexity; Short vs. Full Conversations; Tables 2 and 9",
+   "receipt": {
+    "public_excerpt": "significant score gaps",
+    "quote_hash": "4a89057a18be8c17a3ab285213d6c1412a7aa12b17b91e3988de2f41ba2af14a",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T09:21:07Z",
+   "relation": "supports",
+   "explanation": "FANToM tested GPT-4-0314 and GPT-4-0613, finding remaining failures, worse performance with full conversations, and lower scores on binary questions requiring an additional reasoning step. Step-by-step prompting helped, and the complexity pattern was not consistent across every question format.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The studies do not establish a universal relationship between length, complexity and failure across all task families.",
+  "Established-benchmark scores and conversation experiments use different evaluation settings."
+ ],
+ "packet_hash": "6c7e3c9b3508f1aef47d1c816b75f841b8db16ec72960b1e8cd334b2cc3b6d6f"
+}

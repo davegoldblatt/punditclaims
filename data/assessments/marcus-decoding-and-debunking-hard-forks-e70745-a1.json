@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-decoding-and-debunking-hard-forks-e70745-a1",
+ "claim_revision_ref": {
+  "id": "marcus-decoding-and-debunking-hard-forks-e70745",
+  "version": 1,
+  "content_hash": "26e424961fd27ed0507bb5c0ac66f0e24b5362d1b369db04560dedc864f26a2d"
+ },
+ "contract_ref": {
+  "id": "marcus-decoding-and-debunking-hard-forks-e70745",
+  "version": 1,
+  "content_hash": "776b24c53ec850e536a2b68c2d60d94b3289ec197cd8d7e69de8582614c5d9a2"
+ },
+ "packet_ref": {
+  "id": "marcus-decoding-and-debunking-hard-forks-e70745-p1",
+  "content_hash": "efc7e515e6c550d7461ded4b7daf575c743c40a77f74f4c6bb51227eabea4e7c"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-03-02",
+  "precision": "day"
+ },
+ "public_rationale": "The listed general proposition is supported. A training-overlap study found a large familiarity-related correctness gap, while ReCode documented failures under modest, task-preserving variations. These establish that success on familiar code can coexist with substantial generalization limits. They do not establish that Roose's particular output was regurgitated.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Training similarity and robustness failures do not by themselves prove verbatim memorization.",
+  "ReCode's worst-case perturbation scores are not ordinary-use failure rates.",
+  "The conclusion applies to the normalized general proposition, not the passage's specific accusation about Roose.",
+  "The studies do not show that models cannot generalize."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-decoding-and-debunking-hard-forks-d3b5d0-2x-review-anthropic-1",
+  "marcus-decoding-and-debunking-hard-forks-d3b5d0-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-decoding-and-debunking-hard-forks-d3b5d0-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-decoding-and-debunking-hard-forks-e70745",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "AI systems can be good at regurgitating known code while still facing enormous challenges generalizing to new problems.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Here Roose has displayed the cardinal sin of looking only at regurgitation rather than generalization. History has told us over and over that systems can be good at the former and still face enormous challenges at the latter.",
+   "locator": "paragraph 15",
+   "url": "https://garymarcus.substack.com/p/decoding-and-debunking-hard-forks",
+   "date": "2025-03-02",
+   "document_title": "Decoding (and debunking) Hard Fork’s Kevin Roose",
+   "observed_at": "2026-10-28T23:57:27Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "History has told us over and over",
+    "systems can be good at the former",
+    "enormous challenges at the latter"
+   ],
+   "our_interpretation": [
+    "The listed proposition concerns whether strong performance on familiar code can coexist with substantial generalization failures.",
+    "Can is an existence claim, not a claim that every AI system only memorizes.",
+    "Enormous challenges means substantial failures on unfamiliar problems or modest task-preserving variations, rather than a specified numerical threshold.",
+    "History supplies a retrospective period ending at the post, with no stated beginning.",
+    "The separate accusation that Roose examined only regurgitation is not established by general benchmark results."
+   ],
+   "support_condition": "Published evaluations from the historical period demonstrate materially stronger performance on familiar or training-overlapping code alongside substantial failures on less familiar problems or controlled variations.",
+   "contradiction_condition": "The relevant evaluations fail to show this coexistence, or their apparent gaps are convincingly explained by invalid comparisons or changed task requirements."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The listed general proposition is supported. A training-overlap study found a large familiarity-related correctness gap, while ReCode documented failures under modest, task-preserving variations. These establish that success on familiar code can coexist with substantial generalization limits. They do not establish that Roose's particular output was regurgitated.",
+  "limitations": [
+   "Training similarity and robustness failures do not by themselves prove verbatim memorization.",
+   "ReCode's worst-case perturbation scores are not ordinary-use failure rates.",
+   "The conclusion applies to the normalized general proposition, not the passage's specific accusation about Roose.",
+   "The studies do not show that models cannot generalize."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Models perform significantly better when similar solutions are seen during training.",
+    "locator": "Section 4.1, Main Results; Table 2; Section 4.2, difficulty analysis",
+    "url": "https://arxiv.org/html/2403.04811v1",
+    "publisher": "Martin Riddell, Ansong Ni and Arman Cohan, arXiv",
+    "event_date": "2024-03",
+    "available_at": "2024-03-06",
+    "explanation": "StarCoderBase-15.5B achieved 72% accuracy on the most training-similar tenth of MBPP questions and 22% on the least similar tenth. The authors also investigated whether difficulty explained the association; these are familiarity comparisons, not proof of verbatim copying."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "fails when function name is perturbed",
+    "locator": "Figure 2; Section 4.1 and Table 3",
+    "url": "https://aclanthology.org/2023.acl-long.773.pdf",
+    "publisher": "Association for Computational Linguistics",
+    "event_date": "2023-07",
+    "available_at": "2023-07-09",
+    "explanation": "ReCode demonstrates failures after task-preserving prompt changes across several code-model families. Its worst-case perturbation results corroborate substantial robustness limits, although they do not independently identify memorization as the cause."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6720c02ed7e8fa7c92e0a8d45c19b4c4f45d4c8c185023e3e5b494622d55e2ef",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:56:34Z"
+}

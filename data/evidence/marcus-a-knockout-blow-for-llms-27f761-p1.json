@@ -1,0 +1,102 @@
+{
+ "packet_id": "marcus-a-knockout-blow-for-llms-27f761-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-27f761",
+  "version": 1,
+  "content_hash": "1cccc16ec235a5659cfb785314386f63518d9851ec44f829b3f6cb3a309251b5"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-27f761",
+  "version": 1,
+  "content_hash": "e46566c943f65a4809f0cc4c51b60252f2c10ae94d8ce67052fd834c7d78acde"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"o3\" \"Claude\" \"2025\" \"reliability\" benchmark May agent",
+   "site.metr.org \"o3\" \"2025-04\"",
+   "o3 o4 mini evaluation report [domain: metr.org]",
+   "Claude Opus 4 evaluation May 2025 [domain: metr.org]",
+   "\"Measuring AI ability to complete long tasks\" METR March 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://metr.org/evaluations/openai-o3-report/",
+    "used": true,
+    "why": "Read dated results and methodology passages. Independent pre-release evaluation of o3 using agent interfaces without o3-specific adaptation."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.14499v1",
+    "used": true,
+    "why": "Read the original paper's Claude results and limitations. Provides success-rate measurements for Claude 3.7 Sonnet."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.06941v1",
+    "used": false,
+    "why": "Read model and methodology passages. The Apple experiments use o3-mini rather than o3 and therefore cannot establish both named-model comparisons."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "used": false,
+    "why": "Read the methodological critique and successful Hanoi demonstrations. These limit conclusions from Apple's setup but do not overturn the broader task-completion measurements."
+   }
+  ],
+  "performed_at": "2026-10-29T01:08:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-evaluations-openai-o3-report",
+   "source_snapshot_id": "9663d7aee9f210ca24204d95045124ec3b795b2874207c8ed4b09cfdf243a8d8",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/evaluations/openai-o3-report",
+   "locator": "Summary of Results",
+   "receipt": {
+    "public_excerpt": "50% time-horizon score",
+    "quote_hash": "a67f58b8f0c724883a9b7995beccc39d89a63746fcdf893a0f184fe2eee46661",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:02:50Z",
+   "relation": "supports",
+   "explanation": "The evaluated o3 checkpoint reached only 50% predicted success at tasks taking humans about 1.5 hours, despite setting a new high in this evaluation. This supports caution about dependable complex-task completion, while the pre-release checkpoint and agent interface limit direct application to unassisted released o3.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-14499v1",
+   "source_snapshot_id": "a06b9216ef240a1912ea7483ce353d5bd43ae9932ea093d9b4bafbf347775fb9",
+   "publisher": "METR, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.14499v1",
+   "locator": "Section 4.2.1, Time horizons at 50% success rate vs 80% success rate",
+   "receipt": {
+    "public_excerpt": "cannot reliably perform",
+    "quote_hash": "fa1eca907f703b720965500c62aca2e8f6ba2b7782d4a59b63664c85beb1a3f4",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-18",
+   "retrieved_at": "2026-10-29T01:04:11Z",
+   "relation": "supports",
+   "explanation": "The section reports Claude 3.7 Sonnet's approximately 59-minute horizon at 50% success and approximately 15-minute horizon at 80% success. These substantial failure rates support the reliability warning for that Claude version.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The tests use agent scaffolds, not exclusively unassisted chat.",
+  "The o3 evaluation uses pre-release checkpoints.",
+  "The Claude evidence concerns 3.7 Sonnet and does not establish the same quantitative results for every Claude version.",
+  "Exact test dates are not reported; event months reflect the dated contemporary evaluations."
+ ],
+ "packet_hash": "a3d02003bd631839ed376cf8e295ab5a3b075399e383a38073f7032f9815f026"
+}

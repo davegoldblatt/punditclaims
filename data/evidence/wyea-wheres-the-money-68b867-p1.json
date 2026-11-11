@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-wheres-the-money-68b867-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-68b867",
+  "version": 2,
+  "content_hash": "98a22805918075876f74c8a4f94d0f9c17eea71207bca46fbf4689f9b7c4dcab"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-68b867",
+  "version": 1,
+  "content_hash": "ef1c930891d7ce0ccb852d34ff797e8e282273c7eadfcb273e9e0cbb723d9a76"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI inference costs users scaling traditional software 2024 study",
+   "site.openai.com 2024 inference cost batching caching compute",
+   "site.openai.com \"Prompt Caching\" \"October 1, 2024\"",
+   "site.epoch.ai February 2025 ChatGPT energy query 0.3 watt hours"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-chatgpt-pro/",
+    "used": true,
+    "why": "Primary disclosure read in full-text mode; establishes increased computation for more demanding capabilities, not a user-count cost curve."
+   },
+   {
+    "url": "https://openai.com/index/api-prompt-caching/",
+    "used": true,
+    "why": "Primary disclosure read in full-text mode; documents reuse and discounted processing, relevant to limits on a simple scaling inference."
+   },
+   {
+    "url": "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
+    "used": true,
+    "why": "Independent analysis read in full-text mode, including targeted passages. Explains both inference resources and the lack of actual deployment measurements."
+   },
+   {
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "used": false,
+    "why": "Current documentation mixes later models and features; the dated October 2024 announcement is better matched."
+   }
+  ],
+  "performed_at": "2026-10-29T22:17:46Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-chatgpt-pro",
+   "source_snapshot_id": "1b04f9b19b24f61e022a6f41632ca5b14d716d716da18d85713a983e5e72aae9",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-chatgpt-pro",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "significantly more compute",
+    "quote_hash": "ec937895a15594dc1f85e6fd54480f73ced084a1ce32798c460b48c9c2bd18a7",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-05",
+   "available_at": "2024-12-05",
+   "retrieved_at": "2026-10-29T02:08:11Z",
+   "relation": "context",
+   "explanation": "OpenAI acknowledges substantial computation for advanced capabilities. This supports the proposed mechanism, but does not measure costs as user numbers grow or compare conventional software.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "openai-com-index-api-prompt-caching",
+   "source_snapshot_id": "366f1c2f14b29c73f9b493d3fa1de943384ca17319542b673fc34646f6d8b629",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/api-prompt-caching",
+   "locator": "Prompt Caching Availability & Pricing",
+   "receipt": {
+    "public_excerpt": "Cached prompts",
+    "quote_hash": "563e34a086c642dd5ab1e9953d8746cc68123054c8845bad3ee69bf42fc11f02",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-01",
+   "available_at": "2024-10-01",
+   "retrieved_at": "2026-10-29T19:50:31Z",
+   "relation": "context",
+   "explanation": "The announcement describes reusing previously computed prompt prefixes. This limits any inference that each additional request requires identical new work; customer discounts themselves do not establish provider cost savings.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "epoch-ai-gradient-updates-how-much-energy-does-chatgpt-use",
+   "source_snapshot_id": "ed532f111505de0138b43580be27ddca825e2c6ab473ec9168812e70f88f874b",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
+   "locator": "Discussion, paragraph on deployment data",
+   "receipt": {
+    "public_excerpt": "More transparency",
+    "quote_hash": "5b799fb917a5f53a0436123f6c39d2460993782269a20db0020e2238fde6cdbb",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-07",
+   "available_at": "2025-02-07",
+   "retrieved_at": "2026-10-29T10:56:37Z",
+   "relation": "context",
+   "explanation": "The analysis models inference energy but explicitly lacks actual data-center measurements. It is later-period context and cannot establish the claimed Q4 operating-cost comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No matched OpenAI usage and serving-cost series for the target quarter.",
+  "No comparable conventional-software marginal-cost measurement.",
+  "No separation of user growth from model changes, utilization and efficiency improvements.",
+  "No specified monetary accounting basis."
+ ],
+ "packet_hash": "9f83900aaebde68ff869019e41c6bed4c1eb0565172da17ee7dffdfca79f1c75"
+}

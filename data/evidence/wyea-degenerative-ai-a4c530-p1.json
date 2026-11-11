@@ -1,0 +1,109 @@
+{
+ "packet_id": "wyea-degenerative-ai-a4c530-p1",
+ "claim_revision_ref": {
+  "id": "wyea-degenerative-ai-a4c530",
+  "version": 2,
+  "content_hash": "9dd02ff51a9be9a95e2ff914c5bd4e916eec7c3e0506db919f1c686a734424ec"
+ },
+ "contract_ref": {
+  "id": "wyea-degenerative-ai-a4c530",
+  "version": 1,
+  "content_hash": "9a73a9ed0cd318c27bee34a433f81d1e4355410491adf5eda860f2fb6c6fa6cb"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Bing Bard first demo errors February 2023 Dmitri Brereton",
+   "\"Bing AI Can’t Be Trusted\" Dmitri",
+   "Reuters February 8 2023 Bard first pictures planet solar system error"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://dkb.blog/p/bing-ai-cant-be-trusted",
+    "used": true,
+    "why": "Independent inspection compares Bing's demo outputs with the documents it purported to summarize."
+   },
+   {
+    "url": "https://whbl.com/2023/02/08/google-ai-chatbot-bard-offers-inaccurate-information-in-company-ad/",
+    "used": true,
+    "why": "Readable Reuters report documents the Bard advertisement and identifies the factual error."
+   },
+   {
+    "url": "https://blog.google/technology/ai/bard-google-ai-search-updates/",
+    "used": false,
+    "why": "Official launch page establishes the demonstration's setting, but read_page does not transcribe the erroneous visual answer."
+   },
+   {
+    "url": "https://www.euronews.com/2023/02/08/google-ai-bard",
+    "used": false,
+    "why": "read_page returned unrelated text; used another Reuters syndication."
+   },
+   {
+    "url": "https://blogs.bing.com/search/february-2023/The-new-Bing-Edge-Learning-from-our-first-week",
+    "used": false,
+    "why": "Discusses grounding and long-conversation problems but does not isolate the cause of the launch-demo errors."
+   },
+   {
+    "url": "https://simonwillison.net/2023/Feb/15/bing/",
+    "used": false,
+    "why": "Its correction about a corded vacuum variant makes that example unsuitable as decisive evidence; financial-summary errors provide firmer evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T11:05:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "dkb-blog-bing-ai-cant-be-trusted",
+   "source_snapshot_id": "bce11aff8e3aec5c5a2fddfe8c6b9c641d75f70b4d5cf58e6b7355acd1155533",
+   "publisher": "Dmitri Brereton, DKB",
+   "source_type": "independent_measurement",
+   "url": "https://dkb.blog/p/bing-ai-cant-be-trusted",
+   "locator": "Section comparing Gap and Lululemon",
+   "receipt": {
+    "public_excerpt": "Lululemon’s diluted earnings per share is $2.00 not $1.65.",
+    "quote_hash": "c04b557c9d14f44390f2cf7ccbf6898c5f0645760cfdd7f0c5a4ed4eb038298e",
+    "verified": "exact"
+   },
+   "event_date": "2023-02-07",
+   "available_at": "2023-02-13",
+   "retrieved_at": "2026-10-29T07:58:57Z",
+   "relation": "supports",
+   "explanation": "The independent inspection identifies an incorrect figure in Bing's initial demonstration. The assessed claim concerns the accuracy of Bing's answer, not a financial forecast about Lululemon.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "whbl-com-2023-02-08-google-ai-chatbot-bard-offers-inaccurate-inform-20c1d2738fee",
+   "source_snapshot_id": "8224122bf558757e982fb0f160bf3ee003bc9d9949e3e388cef7c1832111f353",
+   "publisher": "Reuters, syndicated by WHBL",
+   "source_type": "news_report",
+   "url": "https://whbl.com/2023/02/08/google-ai-chatbot-bard-offers-inaccurate-information-in-company-ad",
+   "locator": "Opening paragraph; error explained in paragraphs 3–5",
+   "receipt": {
+    "public_excerpt": "Bard delivered an inaccurate answer.",
+    "quote_hash": "5e0d427eb262f715c17fd3b6c13adb0167536783ad52714818ee3f76aea7d524",
+    "verified": "exact"
+   },
+   "event_date": "2023-02-06",
+   "available_at": "2023-02-08",
+   "retrieved_at": "2026-10-29T10:57:00Z",
+   "relation": "supports",
+   "explanation": "Reuters documents Bard's incorrect attribution of the first exoplanet pictures to JWST. News reporting is used because the official launch page's readable text does not preserve the displayed answer.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No reviewed investigation isolates the principal cause of these particular demo errors.",
+  "The demonstrations are not a controlled repeated-query evaluation.",
+  "Evidence of errors does not quantify the contribution of probabilistic generation relative to retrieval, grounding, or other system components."
+ ],
+ "packet_hash": "0e122170416e496de5da80296fbec53225c75f0d6745b1969997c5ff1c3e968f"
+}

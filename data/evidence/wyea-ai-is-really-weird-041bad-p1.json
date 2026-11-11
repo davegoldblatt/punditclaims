@@ -1,0 +1,140 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-041bad-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-041bad",
+  "version": 2,
+  "content_hash": "2079c2d5a851a046e6d2b005c8f030d08931067eb36a0f879c17bfc26e0fb9f9"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-041bad",
+  "version": 1,
+  "content_hash": "c6e39f902124154903999912f4b85c63ae151a345a13b115aa111cabdb99c8fe"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2026 fourth quarter results data center revenue",
+   "\"Nvidia\" \"April\" \"2026\" \"7.8%\" \"S&P\"",
+   "Nvidia S&P 500 weight April 8 2026 7.5 7.8 8 percent",
+   "NVIDIA February 25 2026 revenue 193.7 215.9 globenewswire",
+   "Amazon announces fourth quarter 2025 results AWS operating income 12.5 billion February 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.prod.nntech.io/company-events/reports/dcb43a60-15ee-34d7-8e95-683a7a286235/report.pdf",
+    "used": true,
+    "why": "Readable copy of NVIDIA’s dated earnings release; supplies annual and quarterly figures."
+   },
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2025/q4/earnings-result/AMZN-Q4-2025-Earnings-Release.pdf",
+    "used": true,
+    "why": "Readable primary disclosure provides a check against treating broad cloud operations as necessarily loss-making."
+   },
+   {
+    "url": "https://topforeignstocks.com/wp-content/uploads/2026/02/SP-500-Factsheet-as-of-Jan-30-2026.pdf",
+    "used": false,
+    "why": "Readable index-provider factsheet, but its January snapshot does not establish the publication-date weight, and its exact public release date was not established."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "The page reader returned HTTP 403."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+    "used": false,
+    "why": "The page reader did not retrieve the relevant release text; the readable PDF copy was used."
+   }
+  ],
+  "performed_at": "2026-10-29T19:44:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cdn-prod-nntech-io-company-events-reports-dcb43a60-15ee-34d7-8e95-6-8677a6ec4b13",
+   "source_snapshot_id": "a8e5c48c9ae8e4899ec6ac6c37fe1a13100dabf10d4c58ff0df0b39009fb1530",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.prod.nntech.io/company-events/reports/dcb43a60-15ee-34d7-8e95-683a7a286235/report.pdf",
+   "locator": "Opening results paragraph; Data Center highlights",
+   "receipt": {
+    "public_excerpt": "$215.9 billion",
+    "quote_hash": "b551e894117eb0aa4e5bb028338f716345e0be3df20727ecf8397fd686c0308c",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T19:28:37Z",
+   "relation": "context",
+   "explanation": "The release reports annual Data Center revenue of $193.7 billion, giving an annual share of about 89.7%. This supports the plausibility of the annual reading but does not resolve the complete claim or the contract’s unspecified accounting basis.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Data Center revenue as a share of consolidated revenue",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Fiscal 2026 Data Center revenue: USD 193.7 billion.",
+     "Fiscal 2026 consolidated revenue: USD 215.9 billion."
+    ],
+    "formula": "100 × 193.7 / 215.9",
+    "rounding": "89.7%, rounded to one decimal place using the release’s rounded figures."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s2-q4cdn-com-299287126-files-doc-earnings-2025-q4-earnings-result-a-8dc1a87a38f2",
+   "source_snapshot_id": "2aa165ce0dc51d8f9175ab6fef4a3a881fda8bccc2a42ef15d1d6b5db218e4a4",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2025/q4/earnings-result/AMZN-Q4-2025-Earnings-Release.pdf",
+   "locator": "Fourth Quarter 2025, operating-income bullets",
+   "receipt": {
+    "public_excerpt": "$12.5 billion",
+    "quote_hash": "ed21f8aebbea1bab268ad08cf36d4bba84e81d3a3747cd4da1ae48dd68c8a022",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-02-05",
+   "retrieved_at": "2026-10-29T12:24:53Z",
+   "relation": "context",
+   "explanation": "AWS reported positive segment operating income. This cautions against a broad loss-making-buyer interpretation, but segment income does not isolate returns on newly installed NVIDIA hardware.",
+   "metric_scope": {
+    "company": "Amazon — AWS segment",
+    "metric": "Segment operating income",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-10-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "A verified index weight at or immediately before publication was not obtained.",
+  "No installation-level evidence establishes the asserted generalization about buyers’ immediate losses.",
+  "The claim supplies no accounting basis.",
+  "The single metric_scope object describes the revenue component; the index-weight and buyer-loss components require separate measures."
+ ],
+ "packet_hash": "646545d52738aabb9c2cb3147233568ab2a205493c230543ab06e5547258bf39"
+}

@@ -1,0 +1,131 @@
+{
+ "packet_id": "marcus-will-tesla-ever-solve-full-self-driving-127663-p1",
+ "claim_revision_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-127663",
+  "version": 1,
+  "content_hash": "d2de6bbd48835e0c539d6a94a37cb0a40f7c86c8473c696712270d33e9cf2789"
+ },
+ "contract_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-127663",
+  "version": 1,
+  "content_hash": "d880c6d1983368f8855f02260df9d08f9efaccdc646b5497b0f1cb2bdae7a64f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "autonomous driving long tail corner cases principal challenge 2022 paper",
+   "2022 autonomous driving principal challenges long tail verification safety weather survey",
+   "site.waymo.com June 2022 fully autonomous service San Francisco Phoenix"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2203.07724v1",
+    "used": true,
+    "why": "Read successfully. Version 1 is a pre-publication-period experiment on unusual-object detection."
+   },
+   {
+    "url": "https://waymo.com/blog/2022/05/howwevebuiltascalableautonomousdriver/",
+    "used": true,
+    "why": "Read successfully. Describes rare encountered situations and training methods, qualifying the database assertion."
+   },
+   {
+    "url": "https://arxiv.org/abs/2206.05961v1",
+    "used": true,
+    "why": "Read successfully. Contemporary survey considers safety threats and testing across multiple ADS components."
+   },
+   {
+    "url": "https://arxiv.org/abs/2109.09607v3",
+    "used": false,
+    "why": "Read successfully. Supports the importance of corner cases but adds no comparative evidence establishing causal primacy."
+   },
+   {
+    "url": "https://arxiv.org/abs/2209.00342",
+    "used": false,
+    "why": "Published after the claimed state and identified no retrospective evaluation specifically establishing the June 2022 causal ranking."
+   }
+  ],
+  "performed_at": "2026-10-29T09:55:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2203-07724v1",
+   "source_snapshot_id": "e0cd79256256e8ce77cde3469cff182bc3b64d09fa6cfea138af53644224069d",
+   "publisher": "Li et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2203.07724v1",
+   "locator": "Abstract, CODA benchmark results",
+   "receipt": {
+    "public_excerpt": "significantly drops",
+    "quote_hash": "b5f7c3d1d65c1cedeb60b6a20d25cf4acc3a2fec86994a27a17689336124669e",
+    "verified": "exact"
+   },
+   "event_date": "2022-03-15",
+   "available_at": "2022-03-15",
+   "retrieved_at": "2026-10-29T09:44:25Z",
+   "relation": "context",
+   "explanation": "The experiment supports difficulty detecting unusual objects in the tested models. It predates the target window and neither tests complete commercial driving systems nor ranks outliers against other barriers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e8",
+   "role": "context",
+   "document_id": "waymo-com-blog-2022-05-howwevebuiltascalableautonomousdriver",
+   "source_snapshot_id": "7c7b9a63fb7787c0ef6187a478865ebae15204dd05ba72c2b8b358efae99fda6",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo.com/blog/2022/05/howwevebuiltascalableautonomousdriver",
+   "locator": "Using Machine Learning to Build a Generalizable System",
+   "receipt": {
+    "public_excerpt": "learn from each mile",
+    "quote_hash": "f13e4e55c48956e0628346889164e446645afbd5b3802b1b5b9d7f6e45af6a1d",
+    "verified": "exact"
+   },
+   "event_date": "2022-05-18",
+   "available_at": "2022-05-18",
+   "retrieved_at": "2026-10-29T03:57:23Z",
+   "relation": "context",
+   "explanation": "The disclosure describes training from fleet data and reports encounters with cyclists carrying stop signs, among other rare situations. This qualifies a literal absence-from-every-database reading, but does not demonstrate reliable handling of unseen situations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e9",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2206-05961v1",
+   "source_snapshot_id": "7737bbb03d42ac718e3105e40e82003876e200b0933024d2e511fc5ed44b092f",
+   "publisher": "Tang et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2206.05961v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "have made great achievements",
+    "quote_hash": "0ce0d278a2b0af89e787ff49dfef16ae2a7c0d2f2d5cbb8e6f8c21344cfe5ac6",
+    "verified": "exact"
+   },
+   "event_date": "2022-06-13",
+   "available_at": "2022-06-13",
+   "retrieved_at": "2026-10-29T09:45:25Z",
+   "relation": "context",
+   "explanation": "The survey examines safety threats across sensing, perception, planning, control, and interactions between components. It supplies a broader account of technical challenges but does not quantify whether unseen outliers dominate them.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e8",
+  "e9"
+ ],
+ "unresolved_gaps": [
+  "No representative causal comparison establishes outliers as the principal obstacle.",
+  "The contents and coverage of developers' private training databases are not established.",
+  "No matched human-versus-system evaluation supports the assertion that the relevant situations are obvious to humans.",
+  "The reviewed perception benchmark cannot establish the limitations of every complete driving system."
+ ],
+ "packet_hash": "992666c1c960d02d150a76da33762186508a8bf5618b6abfb043db6aa9ab07f8"
+}

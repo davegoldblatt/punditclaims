@@ -1,0 +1,152 @@
+{
+ "packet_id": "marcus-openais-got-99-problems-and-twitch-0200e7-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-got-99-problems-and-twitch-0200e7",
+  "version": 1,
+  "content_hash": "80b62f4c9921d5023d22c1452f6f37ae6d98b89ba0ebabae646e0e79590b4dac"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-got-99-problems-and-twitch-0200e7",
+  "version": 1,
+  "content_hash": "95cc9e323c9f01f663ae5b1949a69a036b6e7d4b3b4c4663eebb0097b7119925"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org 2023 scalable extraction language models ChatGPT personal information",
+   "site.law.stanford.edu January 2024 hallucinate 69 88 legal queries",
+   "ChatGPT repeat poem attack patched December 2023 OpenAI researchers",
+   "site.arxiv.org \"privacy\" \"January\" \"2024\" \"leakage\" ChatGPT"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2311.17035v1",
+    "used": true,
+    "why": "Original extraction paper. Its earlier experiments establish background, rather than being relabeled as late-2023 experiments."
+   },
+   {
+    "url": "https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html",
+    "used": true,
+    "why": "Researchers’ contemporaneous explanation of why blocking one exploit does not resolve the underlying vulnerability."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.01301v1",
+    "used": true,
+    "why": "Version-specific January 2024 evaluation avoids importing later revisions."
+   },
+   {
+    "url": "https://www.securityweek.com/simple-attack-allowed-extraction-of-chatgpt-training-data/",
+    "used": true,
+    "why": "Contemporaneous reporting of mitigation. No directly readable company disclosure of this patch was located."
+   },
+   {
+    "url": "https://www.theregister.com/software/2023/12/01/chatgpt-repeating-certain-words-can-expose-its-training-data/1325864",
+    "used": false,
+    "why": "Its contemporaneous test reported continued anomalous output, but did not independently verify that the emitted email address was genuine personal data."
+   }
+  ],
+  "performed_at": "2026-10-29T17:58:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2311-17035v1",
+   "source_snapshot_id": "8a1e56e114d738c79981fb75b28d2cd6afefb0ac09809b347b81c2d55f778ce8",
+   "publisher": "Nasr and coauthors, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2311.17035v1",
+   "locator": "Section 5, Qualitative analysis, PII; Ethics & Responsible Disclosure",
+   "receipt": {
+    "public_excerpt": "We recover personally identifiable information of dozens of individuals.",
+    "quote_hash": "199fd273e8e246f4e9185d3424de3e0c98de6232d5b25b75b57497fb3c87e4cd",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-11-28",
+   "retrieved_at": "2026-10-29T03:55:34Z",
+   "relation": "context",
+   "explanation": "The researchers verified extracted personal information against their comparison dataset. The attack was discovered and disclosed before the target period, so this is background evidence rather than a newly dated extraction outcome.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "not-just-memorization-github-io-extracting-training-data-from-chatgpt-html",
+   "source_snapshot_id": "3530044d6c1e6ff1ed6ae1aa2eb5672694e46808b23e2fc75553edb29a37a495",
+   "publisher": "Authors of Scalable Extraction of Training Data from (Production) Language Models",
+   "source_type": "demonstration",
+   "url": "https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html",
+   "locator": "Patching an exploit != Fixing the underlying vulnerability",
+   "receipt": {
+    "public_excerpt": "language models are subject to divergence",
+    "quote_hash": "7eb2ab7d8dbe1142a6bfa178d804057a80975d6cbb57ca5b13b9356ace4437b2",
+    "verified": "exact"
+   },
+   "event_date": "2023-11-28",
+   "available_at": "2023-11-28",
+   "retrieved_at": "2026-10-29T03:56:07Z",
+   "relation": "supports",
+   "explanation": "This is the researchers’ dated assessment of the continuing vulnerability, not a claim that their experiments occurred on publication day. They explain why a word-repetition filter would address one exploit without eliminating memorization and divergence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2401-01301v1",
+   "source_snapshot_id": "0d21150c682897dce358710e06354eb9c61531975e20dec558da86626b5cdc79",
+   "publisher": "Dahl, Magesh, Suzgun and Ho, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2401.01301v1",
+   "locator": "Abstract, version 1 submitted January 2, 2024",
+   "receipt": {
+    "public_excerpt": "unsupervised integration of popular LLMs",
+    "quote_hash": "1200ea1f412c7af8e4893265108f491ace214f4451a81ae9aaf818517768a5c2",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-02",
+   "available_at": "2024-01-02",
+   "retrieved_at": "2026-10-29T06:36:41Z",
+   "relation": "supports",
+   "explanation": "The January assessment reports legal hallucinations ranging from 69% for ChatGPT 3.5 to 88% for Llama 2 on the specified questions. The date identifies the published assessment of the problem; the abstract does not specify individual test dates.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "securityweek-com-simple-attack-allowed-extraction-of-chatgpt-training-data",
+   "source_snapshot_id": "925588731670cc22c4697daa9d18e8b540c13c2b79eb986be4b07fa06f65a3f1",
+   "publisher": "SecurityWeek",
+   "source_type": "news_report",
+   "url": "https://www.securityweek.com/simple-attack-allowed-extraction-of-chatgpt-training-data",
+   "locator": "Paragraph discussing OpenAI notification and the patch",
+   "receipt": {
+    "public_excerpt": "OpenAI has been notified and the attack no longer works.",
+    "quote_hash": "57a7ed80c60e5915276b693f4353393605badb26c69c9d8fe1729252bd9664e7",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-01",
+   "available_at": "2023-12-01",
+   "retrieved_at": "2026-10-29T17:48:49Z",
+   "relation": "context",
+   "explanation": "This materially limits any assertion that the original ChatGPT exploit remained usable. The same report distinguishes that mitigation from resolving the underlying vulnerabilities.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The cited extraction evidence does not establish disclosure of confidential ChatGPT user conversations.",
+  "The sources do not provide a comprehensive January 27 retest of every deployed model or mitigation."
+ ],
+ "packet_hash": "d08009d832b5ea55817f36bb2a219d3c52ed1ee95dde2a6a1231b3e128d862b8"
+}

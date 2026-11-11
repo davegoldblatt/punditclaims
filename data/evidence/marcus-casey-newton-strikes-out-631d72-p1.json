@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-casey-newton-strikes-out-631d72-p1",
+ "claim_revision_ref": {
+  "id": "marcus-casey-newton-strikes-out-631d72",
+  "version": 1,
+  "content_hash": "1f63761895717b95389592c56db8f9e3700058580ff9e19955649b52bae3557e"
+ },
+ "contract_ref": {
+  "id": "marcus-casey-newton-strikes-out-631d72",
+  "version": 1,
+  "content_hash": "cc07842bda43eb8b428d7d4ebaab13cf1fcecc47ea64b29560b8c064bc273b09"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Waymo 2024 recall telephone pole edge cases June software",
+   "autonomous driving long tail challenge 2024 generalization survey",
+   "site.waymo.com 2024 September safety 22 million miles injury crashes"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://static.nhtsa.gov/odi/rcl/2024/RCLRPT-24E049-1733.PDF",
+    "used": true,
+    "why": "Primary recall filing documents a specific collision hazard and the remedy."
+   },
+   {
+    "url": "https://arxiv.org/html/2404.07569v2",
+    "used": true,
+    "why": "A 2024 evaluation directly tests generalization to difficult driving scenarios."
+   },
+   {
+    "url": "https://waymo.com/blog/2024/09/safety-data-hub/",
+    "used": true,
+    "why": "Contemporaneous operator safety results provide material context against interpreting the claim as blanket failure."
+   },
+   {
+    "url": "https://apnews.com/article/17fa0372529d5d54502164912421148c",
+    "used": false,
+    "why": "The underlying NHTSA recall filing was accessible and preferred."
+   }
+  ],
+  "performed_at": "2026-10-29T03:11:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "static-nhtsa-gov-odi-rcl-2024-rclrpt-24e049-1733-pdf",
+   "source_snapshot_id": "a0a028204409e73d4aa33317e14d69667536ae5ca6305d66478672a16e148fd9",
+   "publisher": "National Highway Traffic Safety Administration",
+   "source_type": "filing",
+   "url": "https://static.nhtsa.gov/odi/rcl/2024/RCLRPT-24E049-1733.PDF",
+   "locator": "Page 2, Description of the Safety Risk",
+   "receipt": {
+    "public_excerpt": "collision.",
+    "quote_hash": "391e247b870c5d391c32684cb2c2c667983d4802736561ea6eb78477c396de5d",
+    "verified": "exact"
+   },
+   "event_date": "2024-05-21",
+   "available_at": "2024-06-10",
+   "retrieved_at": "2026-10-29T02:30:48Z",
+   "relation": "supports",
+   "explanation": "Waymo's filing documents a utility-pole collision under a particular combination of mapping and perception conditions. It also records a software and map remedy, showing that this specific defect was addressed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2404-07569v2",
+   "source_snapshot_id": "2c48be875abdef35eac6f48e7412f92a553414df75dddb9f8f86b7e5a403ad98",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2404.07569v2",
+   "locator": "Section IV-A, Generalization of state-of-the-art Planning Methods",
+   "receipt": {
+    "public_excerpt": "critical shortcomings",
+    "quote_hash": "83c85b57788a4687215b00c4703271ca28b2854b6f6e88253a379c233135ed14",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-04",
+   "retrieved_at": "2026-10-29T03:03:33Z",
+   "relation": "supports",
+   "explanation": "The interPlan study tests difficult scenarios and finds failures among both learned and rule-based planners. Its improved hybrid planner is evidence of progress, but the study does not demonstrate a broadly solved generalization problem.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "waymo-com-blog-2024-09-safety-data-hub",
+   "source_snapshot_id": "b31725de16ab4ffc0e6990d7547d92e3ad435c67ed128ac21e795d83e5396515",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo.com/blog/2024/09/safety-data-hub",
+   "locator": "Section How the Waymo Driver Reduces Crash Rates",
+   "receipt": {
+    "public_excerpt": "strong safety record.",
+    "quote_hash": "88589bc90b486c102dcce21d42ad90a4dfea0539b041187f926db9d334da448e",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2024-09-05",
+   "retrieved_at": "2026-10-29T02:31:35Z",
+   "relation": "context",
+   "explanation": "Waymo reports fewer injury and airbag-deployment crashes than its human benchmarks over more than 22 million driverless miles. These aggregate results show substantial practical success, but do not directly measure generalization to unfamiliar edge cases.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The technical evaluation does not cover every proprietary driving system.",
+  "No finite set of incidents or benchmarks proves the nonexistence of every possible general solution."
+ ],
+ "packet_hash": "34014cbb1b55a09c4106f740108329b6b89feff5cc8480a30c31c8cfe1b93d0e"
+}

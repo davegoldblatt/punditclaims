@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-deep-impact-d58a7f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-d58a7f",
+  "version": 1,
+  "content_hash": "5b72c13d7f9c64a5412b8ea6617f647d1bce1adfb03bf25bcb04cc3a1586763e"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-d58a7f",
+  "version": 1,
+  "content_hash": "0d4024a7ba86a693c523541652c0065aaf1cca7375562b55e91421429fde52c2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2024 net loss 5.6 billion cash burn 2024 Reuters",
+   "OpenAI 2024 loss 5 billion revenue 3.7 billion Reuters September",
+   "Anthropic 2024 net loss billions financial statements 2025 2026",
+   "site.reuters.com \"Anthropic\" \"2024\" \"loss\" \"2026\"",
+   "site.sec.gov/Archives/edgar/ OpenAI \"2024\" \"Net loss\"",
+   "OpenAI 2024 net loss 2025 5 billion revenue Reuters financial"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available before the freeze contains audited 2024 losses and distinguishes GAAP and adjusted measures."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Accessible reputable reporting on audited OpenAI statements, with separate Financial Times review noted. Used as context rather than treating the speaker's reporting as independent proof."
+   },
+   {
+    "url": "https://www.theinformation.com/briefings/anthropic-projected-to-burn-more-than-2-7-billion-in-cash-this-year",
+    "used": false,
+    "why": "The post links this cash-burn report, but read_page returned HTTP 403. It cannot supply an admissible quotation or establish realized net loss."
+   },
+   {
+    "url": "https://www.streetinsider.com/Reuters/Anthropic%2Bsees%2Brevenue%2Bpotentially%2Bsoaring%2Bto%2B%2434.5%2Bbillion%2Bin%2B2027%2C%2BThe%2BInformation%2Breports/24338509.html",
+    "used": false,
+    "why": "read_page returned HTTP 403; the search result concerned cash burn rather than net loss."
+   },
+   {
+    "url": "https://www.wheresyoured.at/deep-impact",
+    "used": false,
+    "why": "Read solely to establish the claim's 2024 context and linked reporting, never as outcome evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section: Gotta spend money to make money, opening sentence",
+   "receipt": {
+    "public_excerpt": "“net loss”",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The report identifies a 2024 net loss exceeding the claimed threshold and describes the underlying statements as audited. It reports company financial results rather than reconciling the earlier press-estimate basis.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Reported annual net loss",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk factors, page 64; Summary Consolidated Financial and Other Data, page 23",
+   "receipt": {
+    "public_excerpt": "net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing reports an audited 2024 GAAP net loss of $8.309 billion, including substantial financing-related fair-value charges. This is consistent with billions in losses, but is a different basis from the post's cash-burn estimate.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual GAAP net loss",
+    "currency": "USD",
+    "units": "millions of dollars",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The post's estimated losses and cash-burn figures are not reconciled to a common net-loss basis.",
+  "The later financial records are consistent with the numerical threshold, but their accounting bases differ from the contract's press-estimate basis.",
+  "A directly inspected independent OpenAI financial statement was not obtained."
+ ],
+ "packet_hash": "2310c334265791afe82910a5af3bda21b60e515e042ae56297297b9f96bc3ea0"
+}

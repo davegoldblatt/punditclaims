@@ -1,0 +1,151 @@
+{
+ "packet_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-p2",
+ "claim_revision_ref": {
+  "id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73",
+  "version": 2,
+  "content_hash": "161830649631db5cc80c65ef77ac855671eb087c0efd30a79abab4f28b401efd"
+ },
+ "contract_ref": {
+  "id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73",
+  "version": 2,
+  "content_hash": "202195ceef9ea2529b1ce8ce0f9f68697b0218c9e9db2152fa299d478cc3a0fe"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-3 fact verification evidence 2022 language models external evidence",
+   "RARR researching revising language models 2022 October fact verification",
+   "WebGPT 2021 truthfulness browsing sources limitations",
+   "ReAct 2022 FEVER fact verification PaLM October Wikipedia",
+   "2022 GPT-3 fact verification external evidence truth reference standard limitations"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/1803.05355v1",
+    "used": true,
+    "why": "Original FEVER description establishes the external evidence and human judgments used as the verification standard, with an exact publication date."
+   },
+   {
+    "url": "https://aclanthology.org/N18-1074/",
+    "used": false,
+    "why": "Read the published FEVER description; used the dated original preprint for the evidence item."
+   },
+   {
+    "url": "https://arxiv.org/abs/2210.03629v1",
+    "used": true,
+    "why": "Confirms that the original ReAct report was public on 2022-10-06."
+   },
+   {
+    "url": "https://arxiv.org/html/2210.03629v1",
+    "used": true,
+    "why": "Original evaluation directly tests LLM fact verification using external Wikipedia evidence."
+   },
+   {
+    "url": "https://arxiv.org/abs/2210.08726v1",
+    "used": true,
+    "why": "Confirms the original RARR report and its publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2210.08726v1",
+    "used": true,
+    "why": "Provides material limitations: attribution does not establish source trustworthiness or solve misinformation."
+   },
+   {
+    "url": "https://openai.com/index/webgpt/",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotation or conclusion relies on it."
+   },
+   {
+    "url": "https://link.springer.com/article/10.1007/s11023-022-09602-0",
+    "used": false,
+    "why": "Read its discussion of truthfulness limitations. Its argument about consistently truthful generation does not directly test externally grounded claim verification."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.14564",
+    "used": false,
+    "why": "Search result concerns later fact-verification research; excluded from the historical capability assessment."
+   }
+  ],
+  "performed_at": "2026-10-29T23:17:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-1803-05355v1",
+   "source_snapshot_id": "7852b26f8fb53ad2862a72d943b33f0ac59ed1e0672dc832772dd75c473cdf8e",
+   "publisher": "arXiv; James Thorne and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/1803.05355v1",
+   "locator": "Abstract, sentence describing evidence for Supported and Refuted labels",
+   "receipt": {
+    "public_excerpt": "necessary evidence",
+    "quote_hash": "d75b408b81cbecd4be5a87def4c7621452cd65a562d900f50822da952e5b2c8d",
+    "verified": "exact"
+   },
+   "event_date": "2018-03-14",
+   "available_at": "2018-03-14",
+   "retrieved_at": "2026-10-29T23:14:11Z",
+   "relation": "supports",
+   "explanation": "FEVER defines verification using Wikipedia evidence and human-assigned judgments. This supports the reference-standard clause in its ordinary evaluation sense; it does not establish that every reference source is true.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2210-03629v1",
+   "source_snapshot_id": "ea223628ee455813fb20d9ca753d2d82399299b1176a44a85492433874ffbd30",
+   "publisher": "arXiv; Shunyu Yao and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2210.03629v1",
+   "locator": "Section 3.3, Results and Observations, ReAct vs. CoT; setup in Sections 3.1–3.2",
+   "receipt": {
+    "public_excerpt": "ReAct outperforms CoT",
+    "quote_hash": "123e771fb749a9cf31dd0b671590834275bdf8fad586ccf315de3e70e68bb201",
+    "verified": "exact"
+   },
+   "event_date": "2022-10-06",
+   "available_at": "2022-10-06",
+   "retrieved_at": "2026-10-29T23:13:24Z",
+   "relation": "contradicts",
+   "explanation": "The original report evaluates PaLM-540B using reasoning and Wikipedia retrieval to classify claims against FEVER's external standard, reporting 60.9 performance versus 56.3 for chain-of-thought prompting. This demonstrates an externally grounded verification method by the report date, although it neither establishes general reliability nor independently validates Wikipedia.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2210-08726v1",
+   "source_snapshot_id": "45444d3d342f25e7fec0677c6b6efc577daf92c68aa0c3fb41d8f0bd5ae14a53",
+   "publisher": "arXiv; Luyu Gao and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2210.08726v1",
+   "locator": "Section 7, Ethical considerations",
+   "receipt": {
+    "public_excerpt": "whether a source is trustworthy",
+    "quote_hash": "155dd673a6229114bdb54c2e28a082279270093c4df12c7091f03d9feb2a7b77",
+    "verified": "exact"
+   },
+   "event_date": "2022-10-17",
+   "available_at": "2022-10-17",
+   "retrieved_at": "2026-10-29T23:12:58Z",
+   "relation": "context",
+   "explanation": "RARR supplies an important qualification: checking and revising text against retrieved sources does not establish those sources' trustworthiness. This cautions against treating external-evidence benchmarks as proof that Marcus's broader misinformation concern was solved.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The cited evaluations do not establish reliable verification of unrestricted Twitter misinformation.",
+  "They do not demonstrate independent determination of the trustworthiness of an external reference standard.",
+  "The wording leaves uncertain whether Marcus intended to exclude LLMs equipped with retrieval tools."
+ ],
+ "packet_hash": "b2aaf02941faeb6fb4dfd803396f0287bc61ddda63b4b3aee940874104e34092"
+}

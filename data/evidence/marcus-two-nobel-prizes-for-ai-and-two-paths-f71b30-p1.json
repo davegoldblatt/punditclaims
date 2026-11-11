@@ -1,0 +1,125 @@
+{
+ "packet_id": "marcus-two-nobel-prizes-for-ai-and-two-paths-f71b30-p1",
+ "claim_revision_ref": {
+  "id": "marcus-two-nobel-prizes-for-ai-and-two-paths-f71b30",
+  "version": 2,
+  "content_hash": "0899006b8a290a30d138f0e88812d334cc2cce662cd0929fb42458c85108a4d8"
+ },
+ "contract_ref": {
+  "id": "marcus-two-nobel-prizes-for-ai-and-two-paths-f71b30",
+  "version": 1,
+  "content_hash": "fc3b15ff41213b5bef6d9e3492db111f9d98fd63d9852daeaac4833b23756634"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "large language model de-identification clinical text 2024 99 sensitivity GPT-4 evaluation",
+   "large language models reliable text classification 2024 99 accuracy robustness",
+   "\"Larger and more instructable language models become less reliable\" 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nature.com/articles/s41586-024-07930-y",
+    "used": true,
+    "why": "Contemporaneous independent study directly examines reliability and sensitivity to question phrasing."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.08377v3",
+    "used": true,
+    "why": "Reports high classification accuracy and a domain-adaptation test; a material candidate counterexample."
+   },
+   {
+    "url": "https://arxiv.org/html/2405.10523v1",
+    "used": true,
+    "why": "The pre-post version reports high accuracy from fine-tuned LLMs on SMS classification."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.10523",
+    "used": false,
+    "why": "The current abstract describes a later revision. The May 2024 version was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T09:15:00Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "nature-com-articles-s41586-024-07930-y",
+   "source_snapshot_id": "6da82049672c5a7b7740e8a6cc33fff2e26586906bea812d146cd64d2ae8e109",
+   "publisher": "Nature",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-024-07930-y",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "may have become less reliable.",
+    "quote_hash": "71b9663f77cfd8070255092759431448ac79a47abf9603b00aaae8b7c28fc512",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-25",
+   "available_at": "2024-09-25",
+   "retrieved_at": "2026-10-29T02:05:51Z",
+   "relation": "context",
+   "explanation": "The study finds persistent errors and sensitivity to natural variations in questions across the tested model families. This supports concern about reliability, but cannot establish that no particular reliable application existed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "arxiv-org-html-2305-08377v3",
+   "source_snapshot_id": "af10264d27fa10a4ccc501a06cf6ed791419f27f6635a386735f2fc4d4972441",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.08377v3",
+   "locator": "Sections 5.2 and 5.4",
+   "receipt": {
+    "public_excerpt": "outperforms fine-tuned RoBBERTa",
+    "quote_hash": "b3a4afd147dfc255facc3d72ec53cd0e90539e032921679bf8dc290ace311323",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-09",
+   "available_at": "2023-10-09",
+   "retrieved_at": "2026-10-29T09:04:43Z",
+   "relation": "context",
+   "explanation": "CARP reports 97.39% accuracy on SST-2 and 98.78% on R8; its adaptation experiment retains 96.29% on SST-2 when demonstrations come from Yelp. These are material counterexamples to a weaker claim of no high-accuracy task performance, but do not fully establish operational robustness.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e8",
+   "role": "context",
+   "document_id": "arxiv-org-html-2405-10523v1",
+   "source_snapshot_id": "02c2b291e5dd58e976a177af3882ddaeba7b59dafb3ec076eef6e0700f488fe4",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2405.10523v1",
+   "locator": "Section VI-B; SMS results discussed in Section V-B",
+   "receipt": {
+    "public_excerpt": "more reliable.",
+    "quote_hash": "d7c9f2c4040b958c2804287bcfda079fd6a9a07b9f009e48db15e08fab48799d",
+    "verified": "exact"
+   },
+   "event_date": "2024-05-17",
+   "available_at": "2024-05-17",
+   "retrieved_at": "2026-10-29T09:04:40Z",
+   "relation": "context",
+   "explanation": "The study reports roughly 99% SMS-classification accuracy after fine-tuning and improved output consistency. This is a substantial candidate counterexample, but the retrieved evidence does not establish sustained reliability on representative deployment traffic and ordinary changes in that traffic.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7",
+  "e8"
+ ],
+ "unresolved_gaps": [
+  "The strong classification results do not fully establish robustness under representative operating variations.",
+  "The reliability study does not cover every possible narrow LLM application.",
+  "The source supplies no error tolerance or task-specific meaning of 'great reliability'; choosing a decisive numerical cutoff would determine the result."
+ ],
+ "packet_hash": "948c1044cb965c39bef77ec4c9434f51e3a87f58c8210f4ef332ac1300155b81"
+}

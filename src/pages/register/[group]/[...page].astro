@@ -1,0 +1,31 @@
+---
+// /register/<group> and /register/<group>/<n>: one group of claims for both
+// people, a page at a time. The home page links here rather than listing them.
+import Base from "../../../layouts/Base.astro";
+import Register from "../../../components/Register.astro";
+import { release } from "../../../lib/published.ts";
+import { SITE } from "../../../site.ts";
+import { GROUP_NOTE, GROUP_TITLE, listingsFor, type Listing } from "../../../lib/listing.ts";
+
+export function getStaticPaths() {
+  const r = release();
+  if (!r.manifest) return [];
+  return listingsFor(r.live, null)
+    .map((l) => ({ params: { group: l.group, page: l.page === 1 ? undefined : String(l.page) }, props: { listing: l } }));
+}
+const { listing } = Astro.props as { listing: Listing };
+const r = release();
+const title = `${GROUP_TITLE[listing.group]}${listing.pages > 1 ? `, page ${listing.page} of ${listing.pages}` : ""}`;
+---
+<Base title={title} description={GROUP_NOTE[listing.group]}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol><li><a href="/register/checked">All claims</a></li><li aria-current="page">{title}</li></ol>
+    </nav>
+    <header class="page-head">
+      <h1>{title}</h1>
+      <p class="lede">Claims by {SITE.subjects}, as of {r.manifest!.reference_date}.</p>
+    </header>
+    <Register listing={listing} subjects={r.subjects} />
+  </div>
+</Base>

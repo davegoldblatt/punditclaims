@@ -1,0 +1,87 @@
+{
+ "packet_id": "marcus-what-does-meta-ais-diplomacy-winning-d9349d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-meta-ais-diplomacy-winning-d9349d",
+  "version": 2,
+  "content_hash": "64daee5d722b7b95014195f52d999e9122878b53fbc46bcfd491b8a9c710efbd"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-meta-ais-diplomacy-winning-d9349d",
+  "version": 1,
+  "content_hash": "98132ea29f25f870148bdbbadd6f1954b3ea47ae24a1c6c1d8b0572d282a6989"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "github facebookresearch diplomacy cicero training README",
+   "Cicero retraining alternative map rules 125000 games",
+   "Cicero \"alternative\" \"retrain\"",
+   "Cicero \"rules\" \"transfer\" retraining",
+   "\"Cicero\" \"Diplomacy\" \"retraining\" \"rules\"",
+   "\"Cicero\" \"Diplomacy\" \"new maps\"",
+   "\"Cicero\" \"Diplomacy\" \"transfer learning\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.com/facebookresearch/diplomacy_cicero",
+    "used": false,
+    "why": "Read the current documentation, then used the original release revision to avoid attributing later changes to November 2022."
+   },
+   {
+    "url": "https://github.com/facebookresearch/diplomacy_cicero/commits/main/README.md",
+    "used": true,
+    "why": "Identifies the November 22, 2022 release revision."
+   },
+   {
+    "url": "https://github.com/facebookresearch/diplomacy_cicero/blob/3a3e81f/README.md",
+    "used": true,
+    "why": "Contemporaneous documentation describes training resources and the possibility of repeating reinforcement learning from existing checkpoints."
+   },
+   {
+    "url": "https://gwern.net/doc/reinforcement-learning/imperfect-information/diplomacy/2022-bakhtin.pdf",
+    "used": false,
+    "why": "Describes original training, but does not establish the minimum effort or data needed for changed-board adaptation."
+   },
+   {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/zfeh67/d_were_the_meta_ai_research_team_behind_cicero/",
+    "used": false,
+    "why": "A potentially relevant author discussion could not be read; read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T09:16:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "github-com-facebookresearch-diplomacy-cicero-blob-3a3e81f-readme-md",
+   "source_snapshot_id": "8021559e3843891c2244d455ec681717607c62a03c0f30a8207f1e8dfccb6a61",
+   "publisher": "Meta / facebookresearch",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/facebookresearch/diplomacy_cicero/blob/3a3e81f/README.md",
+   "locator": "Training models in RL; see also Supervised training of baseline models",
+   "receipt": {
+    "public_excerpt": "an appropriately configured Slurm cluster",
+    "quote_hash": "ed85cf3b953b0174ef06ce115dbc2e6c699b37c1ed420be8ab76d2f5ba798524",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-22",
+   "available_at": "2022-11-22",
+   "retrieved_at": "2026-10-29T09:12:21Z",
+   "relation": "context",
+   "explanation": "The release documents substantial computing requirements, but also says reinforcement learning can be repeated from existing checkpoints without new external game data. This qualifies a blanket claim about retraining, while leaving changed-board or changed-rule adaptation untested.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No located experiment measures human data and engineering requirements for adapting the released Cicero to representative changed boards or rules.",
+  "The documentation does not establish that a new corpus comparable to the original training corpus is necessary.",
+  "The speaker supplies no effort threshold or performance requirement for successful retraining."
+ ],
+ "packet_hash": "985d15510753367afeac5b59f14eb83b1bbe4a6bbb2c0c487228ed1db17c7120"
+}

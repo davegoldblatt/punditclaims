@@ -1,0 +1,144 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-05ddec-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-05ddec",
+  "version": 2,
+  "content_hash": "c66064e0f457427fad71d92c021edac733dc83c01bba36035a8a0d5ccad2be1a"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-05ddec",
+  "version": 1,
+  "content_hash": "d3f5933e8e0e8062afb7d960d5a12b1c5b516384554d288a62733f349a2a91e9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 system card overrefusals jailbreaks benign requests March 2023",
+   "GPT-4 XSTest exaggerated safety refusals 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "The launch disclosure establishes deployed safety interventions and acknowledges their limits."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.13860v2",
+    "used": true,
+    "why": "Primary study reports successful jailbreaks against GPT-4 and describes its evaluation methods."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.13860",
+    "used": true,
+    "why": "Verifies the publication history of the jailbreak study and the date of the cited revision."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2305.13860v1",
+    "used": true,
+    "why": "Confirms that the reported GPT-4 jailbreak result was already present in the May 2023 version."
+   },
+   {
+    "url": "https://arxiv.org/html/2308.01263v3",
+    "used": true,
+    "why": "Primary XSTest evaluation documents harmless-request refusals, collection dates and substantial successful refusal of unsafe requests."
+   },
+   {
+    "url": "https://arxiv.org/abs/2308.01263",
+    "used": true,
+    "why": "Verifies the cited version's availability date and acceptance at NAACL 2024."
+   },
+   {
+    "url": "https://aclanthology.org/2024.naacl-long.301.pdf",
+    "used": false,
+    "why": "The published paper was checked, but its interleaved PDF extraction was less suitable for exact quotations than the authors' HTML version."
+   },
+   {
+    "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
+    "used": false,
+    "why": "The overrefusal passage located concerns GPT-4-early. The independent evaluation provides clearer evidence about released GPT-4."
+   }
+  ],
+  "performed_at": "2026-10-29T19:18:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Risks & mitigations",
+   "receipt": {
+    "public_excerpt": "Overall, our model-level interventions increase the difficulty of eliciting bad behavior but doing so is still possible.",
+    "quote_hash": "e80f4edfd3b9adeacbd612dcc215f9cd3de2bec1aefe95487ada1642bbd66c5b",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "supports",
+   "explanation": "The launch disclosure describes GPT-4's safety training and interventions, establishing that safeguards were present. It also reports safety improvements, which limit any reading that the safeguards were wholly ineffective.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-13860v2",
+   "source_snapshot_id": "40d5c9171eb48b05dcdca1b64f968d1e6ece7fcf29a7751b918dc4d68baefac4",
+   "publisher": "arXiv; Yi Liu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.13860v2",
+   "locator": "Section IV-C, Model Versions; Table V",
+   "receipt": {
+    "public_excerpt": "Nevertheless, there is considerable room for improvement in defending against jailbreak attempts, as the average jailbreak success rate in GPT-4 remains high at 87.20%.",
+    "quote_hash": "8c9a842e5dd3685cd3636f7843e1ce8dc5cd4e6469ae4f9c1f0895d4ed52e97e",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2024-03-10",
+   "retrieved_at": "2026-10-29T19:11:43Z",
+   "relation": "supports",
+   "explanation": "The study documents successful adversarial prompts against GPT-4, supporting the jailbreak prediction; the same result appears in its May 2023 first version. Its selected prompts and policy categories do not measure ordinary-use risk, and the study also finds GPT-4 more resistant than GPT-3.5.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2308-01263v3",
+   "source_snapshot_id": "cac730aaaaf9f71df8ba723fe385cc0c197142506bb20122dc55a2ca9439c8a5",
+   "publisher": "Paul Röttger and colleagues; NAACL 2024, author version on arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2308.01263v3",
+   "locator": "Section 4.3, GPT-4 results; Appendix B gives response collection date",
+   "receipt": {
+    "public_excerpt": "The model falls somewhere between the Mistral models in terms of overall exaggerated safety, with 6.4% full refusal and 2% partial refusal.",
+    "quote_hash": "2147af6bf7c984b54e79a146789a27e5346ac35d20c3e446c19c581994ebc56c",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-18",
+   "available_at": "2024-04-01",
+   "retrieved_at": "2026-10-29T00:53:50Z",
+   "relation": "supports",
+   "explanation": "XSTest documents GPT-4 refusing some harmless requests, with full refusals concentrated in questions about fictional characters' private information. It also finds that GPT-4 answered most safe prompts and refused all but one of 200 unsafe prompts, limiting the severity implied by a broader reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These sources do not establish repeated oscillation between safety settings over time.",
+  "The selected evaluations do not establish how frequently ordinary users encounter either failure mode."
+ ],
+ "packet_hash": "053a5c915fcd6ac950a90b74da393f6f51afa71b4db8e9375ce6000313b34f19"
+}

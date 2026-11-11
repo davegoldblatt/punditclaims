@@ -1,0 +1,148 @@
+{
+ "assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9-a2",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9",
+  "version": 1,
+  "content_hash": "c468d00d2703a6284ac9df7e98e9e5ee0172f2026909cda1d32d4b609c33f21c"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9",
+  "version": 1,
+  "content_hash": "6f3f6f787630fe3cb9d2f2487b1354a4aa0e10d9d1ad83f9efb39f2509e93b22"
+ },
+ "packet_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9-p1",
+  "content_hash": "b5aec91799e9cabada33ed3def3e1116e71d11f94cf71570f3625714a237165a"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-07-13",
+  "precision": "day"
+ },
+ "public_rationale": "The claimed strengths and weaknesses hold in some tested settings: the 2018 SCAN study found that recurrent neural networks handled small training-test differences but failed systematic recombinations [e1]. The 2023 comparison found systematic but rigid symbolic models, supporting the rule-application part [e2]. However, that study also reported systematic generalization from a neural network trained through compositional meta-learning [e2]. A June 2, 2025 preprint challenged the breadth of that result, arguing that it depended on restricted task setups [e4]. The symbolic-learning claim is too broad: the 2022 ILP review describes symbolic methods learning concepts from few examples, sometimes requiring fewer examples than neural methods [e3].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The studies do not provide a common comparison across all neural and symbolic methods [e1–e3].",
+  "The reach of neural meta-learning beyond the tested settings remains disputed; the cited critique is a position-paper preprint [e2, e4].",
+  "The ILP review identifies limitations in handling uncertain or incorrect background knowledge [e3]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-0bc5d5-4x-review-anthropic-1",
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-0bc5d5-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Neural networks learn well but generalize poorly, while symbolic systems generalize well but learn poorly.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Neural networks are good at learning but weak at generalization; symbolic systems are good at generalization, but not at learning.",
+   "locator": "paragraph 29",
+   "url": "https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated",
+   "date": "2025-07-13",
+   "document_title": "How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI",
+   "observed_at": "2026-10-28T23:56:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Neural networks are good at learning",
+    "weak at generalization",
+    "symbolic systems are good at generalization",
+    "not at learning"
+   ],
+   "our_interpretation": [
+    "The surrounding examples make systematic and out-of-distribution generalization the relevant reading: applying learned components or explicit rules in unfamiliar combinations.",
+    "The statement describes broad strengths and weaknesses, not a claim that every neural network fails every generalization task or that symbolic learning is logically impossible.",
+    "Good at learning includes learning useful rules or representations from examples; it is not restricted to perceptual learning from raw data.",
+    "This is a general summary of established methods, not a periodically reported quantity. The target is the research record available through the post, with no stated historical start. Earlier established results are therefore relevant rather than reassigned to 2025."
+   ],
+   "support_condition": "Comparative research substantiates the proposed complementary strengths: effective neural learning with systematic generalization weaknesses, and reliable symbolic rule application with substantial learning limitations.",
+   "contradiction_condition": "Research demonstrates material neural systematic-generalization successes or effective symbolic learning that makes the broad division misleading. Isolated successes do not establish the reverse universal claim."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claimed strengths and weaknesses hold in some tested settings: the 2018 SCAN study found that recurrent neural networks handled small training-test differences but failed systematic recombinations [e1]. The 2023 comparison found systematic but rigid symbolic models, supporting the rule-application part [e2]. However, that study also reported systematic generalization from a neural network trained through compositional meta-learning [e2]. A June 2, 2025 preprint challenged the breadth of that result, arguing that it depended on restricted task setups [e4]. The symbolic-learning claim is too broad: the 2022 ILP review describes symbolic methods learning concepts from few examples, sometimes requiring fewer examples than neural methods [e3].",
+  "limitations": [
+   "The studies do not provide a common comparison across all neural and symbolic methods [e1–e3].",
+   "The reach of neural meta-learning beyond the tested settings remains disputed; the cited critique is a position-paper preprint [e2, e4].",
+   "The ILP review identifies limitations in handling uncertain or incorrect background knowledge [e3]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "RNNs fail spectacularly.",
+    "locator": "Abstract, sentence contrasting systematic generalization with small training-test differences",
+    "url": "https://arxiv.org/abs/1711.00350",
+    "publisher": "ICML; author manuscript on arXiv",
+    "event_date": "2018",
+    "available_at": "2018-06-06",
+    "explanation": "The experiments support the neural-generalization weakness in the contextual sense. They concern tested recurrent networks and task splits, not every neural architecture."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "advances the compositional skills",
+    "locator": "Abstract",
+    "url": "https://www.nature.com/articles/s41586-023-06668-3",
+    "publisher": "Nature",
+    "event_date": "2023",
+    "available_at": "2023-10-25",
+    "explanation": "The study reports systematic generalization from a standard neural architecture trained through meta-learning, including comparisons with symbolic models. It materially qualifies the broad neural-versus-symbolic division without proving unrestricted neural generalization."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "symbolic ILP",
+    "locator": "Section 8.1, discussion comparing neural program synthesis with inductive logic programming",
+    "url": "https://arxiv.org/html/2008.07912v5",
+    "publisher": "Journal of Artificial Intelligence Research; accepted manuscript on arXiv",
+    "event_date": "2022",
+    "available_at": "2022-03-22",
+    "explanation": "The review describes symbolic methods that learn efficiently from examples, directly qualifying the claim that symbolic systems are poor at learning. It also identifies substantial practical limitations, so it does not establish symbolic superiority across learning tasks."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "highlight limitations",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2506.01820v1",
+    "publisher": "arXiv",
+    "event_date": "2025-06-02",
+    "available_at": "2025-06-02",
+    "explanation": "This critique argues that neural meta-learning successes depend on restricted task setups. It supports caution about broad generalization claims and limits how far e2 can be treated as a rebuttal."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "4a0e2678e799320abfb5004e1068b05aa1ac0347dc0a88be084c8bb70b8d6eb3",
+ "supersedes_assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-1116e9-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:03:17Z"
+}

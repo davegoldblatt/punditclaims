@@ -1,0 +1,139 @@
+{
+ "assessment_id": "wyea-ai-is-really-weird-a020bc-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-a020bc",
+  "version": 2,
+  "content_hash": "e03a48359aed791ebec3501c37fece34c56bfcba49cb267848d731bc66166046"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-a020bc",
+  "version": 1,
+  "content_hash": "e7653fda3a06b52bf3afae685b8db915912823905f9f6ed74ec32f1ad6b36dad"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-is-really-weird-a020bc-p1",
+  "content_hash": "e24cbd787a1cfd029207ff433c7889511c0f0225550a1a916ff86303fd7879e3"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-02-05",
+  "end": "2026-03-31",
+  "precision": "day"
+ },
+ "public_rationale": "Independent tests support a substantial increase in output-token use: approximately twofold for the tested Opus configurations and threefold for Sonnet. That makes the proposed mechanism plausible. It does not establish that this mechanism principally caused OpenRouter's aggregate increase or that new adoption was unimportant. The required traffic decomposition is missing.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The supporting benchmark measures output tokens under selected reasoning settings.",
+  "The Sonnet result differs from a uniform near-doubling.",
+  "No platform-wide causal inference follows from aggregate token totals alone."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-is-really-weird-9427f8-4x-review-anthropic-1",
+  "wyea-ai-is-really-weird-9427f8-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-is-really-weird-a020bc",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "The sudden burst in token burn on OpenRouter suggests not that many new people connected to Anthropic's and others' models, but that the models themselves started burning nearly twice as many tokens to do the same tasks.",
+  "kind": "causal",
+  "conditions": [
+   "suggests"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The sudden burst in token burn across OpenRouter doesn’t suggest a bunch of people suddenly decided to connect to Anthropic and other services’ models, but that the model themselves had started to burn nearly twice the amount of tokens to do the same tasks.",
+   "locator": "paragraph 171",
+   "url": "https://www.wheresyoured.at/ai-is-really-weird",
+   "date": "2026-04-08",
+   "document_title": "AI Is Really Weird",
+   "observed_at": "2026-10-28T22:26:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "sudden burst in token burn across OpenRouter",
+    "doesn’t suggest a bunch of people suddenly decided to connect",
+    "nearly twice the amount of tokens",
+    "to do the same tasks"
+   ],
+   "our_interpretation": [
+    "Assess the February–March 2026 increase described in the surrounding launch chronology.",
+    "Read this as a comparative causal explanation: increased tokens per task, rather than increased adoption, principally explains the observed aggregate increase.",
+    "Compare Opus 4.6 with Opus 4.5 and Sonnet 4.6 with Sonnet 4.5 on matched tasks and representative settings.",
+    "Treat 'suggests' as a qualification of confidence, not a conditional antecedent.",
+    "Distinguish output tokens, input tokens, cached tokens, and aggregate routed tokens. A benchmark output-token ratio alone cannot explain total platform traffic."
+   ],
+   "support_condition": "Matched-task measurements show approximately doubled token use under relevant settings, and OpenRouter traffic decomposition shows that this change principally explains the increase rather than new users, more tasks, or a changed task mix.",
+   "contradiction_condition": "Representative matched-task measurements show no comparable increase, or OpenRouter cohort and request data establish adoption or workload growth as the principal cause."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Independent tests support a substantial increase in output-token use: approximately twofold for the tested Opus configurations and threefold for Sonnet. That makes the proposed mechanism plausible. It does not establish that this mechanism principally caused OpenRouter's aggregate increase or that new adoption was unimportant. The required traffic decomposition is missing.",
+  "limitations": [
+   "The supporting benchmark measures output tokens under selected reasoning settings.",
+   "The Sonnet result differs from a uniform near-doubling.",
+   "No platform-wide causal inference follows from aggregate token totals alone."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "~2x the number",
+    "locator": "Paragraph immediately before Intelligence vs Output Tokens",
+    "url": "https://artificialanalysis.ai/articles/opus-4-6-everything-you-need-to-know",
+    "publisher": "Artificial Analysis",
+    "event_date": "2026-02",
+    "available_at": "2026-02-06",
+    "explanation": "This supports approximately doubled output-token use on the benchmark suite for the tested Opus configurations. It does not measure total OpenRouter tokens or explain their increase."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "less token efficient",
+    "locator": "Key takeaways, paragraph reporting output-token totals",
+    "url": "https://artificialanalysis.ai/articles/sonnet-4-6-everything-you-need-to-know",
+    "publisher": "Artificial Analysis",
+    "event_date": "2026-02",
+    "available_at": "2026-02-18",
+    "explanation": "The accompanying results report 74 million output tokens for Sonnet 4.6 at maximum effort versus 25 million for Sonnet 4.5 reasoning, approximately threefold. This supports increased token use but qualifies a uniform near-doubling claim and does not establish the platform-wide cause."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "can add cost and latency",
+    "locator": "First impressions, paragraph on deeper reasoning and effort settings",
+    "url": "https://www.anthropic.com/news/claude-opus-4-6",
+    "publisher": "Anthropic",
+    "event_date": "2026-02-05",
+    "available_at": "2026-02-05",
+    "explanation": "Anthropic describes deeper reasoning and advises reducing effort when the model overthinks. This makes settings and task difficulty relevant to any per-task comparison; it does not quantify OpenRouter adoption."
+   }
+  ],
+  "what_would_resolve": "Dated OpenRouter user and request cohorts, task mix, and token categories, combined with representative matched-task comparisons of the 4.5 and 4.6 models.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "5e88fb22fdc3eaf3804362006393a378acb922fa835088a22007974a8a4e365f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:20:47Z"
+}

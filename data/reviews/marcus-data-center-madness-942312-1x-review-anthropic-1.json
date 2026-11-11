@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-data-center-madness-942312-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-data-center-madness-942312": "dbf76f3794ca574fd8973546567abeca36289dc67637bdead7ea4d4e28d2458a"
+ },
+ "started_at": "2026-11-09T19:50:22Z",
+ "completed_at": "2026-11-09T19:50:46Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post. He cites Berezin and Williams for the required-revenue figures, but this revenue-vs-capex summary is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps his 'tens of billions' baseline, his 'really optimistic' low-hundreds allowance, and his unqualified 'Capex in the trillions'. It is a present-tense observation of scale with no hedging."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading revenue as an annualized run rate and counting projected capex as the context allows are both ordinary readings. Counting low hundreds as within range is generous, since he called that figure optimistic. The capex test depends on whether $1T a year counts as 'in the trillions'. The contract rightly forbids picking a multiyear window."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Economist estimate, July 2026: roughly $150bn a year of AI revenue, inside the target period. This is within the low-hundreds range the contract allows. The same article cites other estimates of $170–220bn."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Exponential View's June 2026 run rate of $175bn predates the target period and excludes China and professional services. It corroborates the low-hundreds scale."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The capex projection Marcus referenced: about $1T of hyperscaler capex in 2027, assumed to continue. This is trillion-scale on a stated annual basis, which the contract allows as projected spending."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Goldman's $7.6T cumulative estimate for 2026–2031 uses a window Marcus did not supply. It corroborates multitrillion scale but cannot set the result on its own."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Revenue: contemporaneous estimates put annualized AI revenue at about $150–220bn, inside the range the contract allows. Capex: the referenced projection is about $1T a year from 2027, continuing, which is trillion-scale on an identifiable basis, and nothing shows it below trillion scale. Caveat: low hundreds is the mainstream estimate, not the 'really optimistic' case Marcus called it, so his 'tens of billions' baseline is understated. The contract permits that range, so the claim is supported.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-data-center-madness-942312"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14150,
+  "output_tokens": 2227,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

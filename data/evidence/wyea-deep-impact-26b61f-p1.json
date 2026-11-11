@@ -1,0 +1,160 @@
+{
+ "packet_id": "wyea-deep-impact-26b61f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-26b61f",
+  "version": 1,
+  "content_hash": "8d08316bba371b9c4495e7e97ee471269519abece960a6254c1915f4f9d23889"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-26b61f",
+  "version": 1,
+  "content_hash": "ab08f4df496e385e97fcddbccf8517ac471ee7c3fac79e3964ee5d93d4772aed"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.api.deepseek.com news 2025 R1 0.55 2.19",
+   "site.api.deepseek.com V3 December 2024 0.14 0.28",
+   "DeepSeek R1 January 2025 local 671B 1.5B MIT license",
+   "site:openai.com \"o1\" \"$15\" \"$60\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://deepseek.com/en/news/deepseek-r1/",
+    "used": true,
+    "why": "Original R1 announcement supplies licensing and API tariffs."
+   },
+   {
+    "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing/",
+    "used": true,
+    "why": "Publication-day capture establishes the relevant OpenAI tariffs."
+   },
+   {
+    "url": "https://unsloth.ai/blog/deepseekr1-dynamic",
+    "used": true,
+    "why": "First-hand January demonstration addresses deployment of compressed full R1."
+   },
+   {
+    "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/LICENSE-MODEL",
+    "used": true,
+    "why": "The actual V3 model license qualifies the blanket licensing description."
+   },
+   {
+    "url": "https://api-docs.deepseek.com/news/news250120",
+    "used": false,
+    "why": "The reader returned current API instructions rather than the historical announcement."
+   }
+  ],
+  "performed_at": "2026-10-29T20:09:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "deepseek-com-en-news-deepseek-r1",
+   "source_snapshot_id": "7d84598979a620f6fc83d1e97b67a6369af744c6f49e96e3feff5ff97d315912",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://deepseek.com/en/news/deepseek-r1",
+   "locator": "Opening announcement; API Access & Pricing",
+   "receipt": {
+    "public_excerpt": "MIT",
+    "quote_hash": "05872366da87e02d537b592b9ebf451e8c99b03460e945c5dc8b187dd9a0e2b9",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-20",
+   "available_at": "2025-01-20",
+   "retrieved_at": "2026-10-29T08:30:29Z",
+   "relation": "supports",
+   "explanation": "R1's code and weights carry the stated permissive license. The pricing section lists $0.55 per million uncached input tokens and $2.19 per million output tokens.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "web-archive-org-web-20250129060213-https-openai-com-api-pricing",
+   "source_snapshot_id": "e64c34b9036ae44073051a6cb460f3946408d45d521352a52ca98042949f4ba0",
+   "publisher": "OpenAI, preserved by the Internet Archive",
+   "source_type": "company_disclosure",
+   "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing",
+   "locator": "Pricing introduction; OpenAI o1 standard pricing rows",
+   "receipt": {
+    "public_excerpt": "use",
+    "quote_hash": "7a36db6b8be6b1b72af428852a6b2406ec0c5979829fd052e88dc0b11919d88f",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-29",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T19:53:12Z",
+   "relation": "supports",
+   "explanation": "The o1 rows list $15 per million uncached input tokens and $60 per million output tokens. Against e1, both ratios are about 27-fold, reasonably described as approximately thirtyfold for R1 API access.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: R1 uncached input $0.55 and output $2.19 per million tokens",
+     "e2: o1 uncached input $15 and output $60 per million tokens"
+    ],
+    "formula": "Input ratio = 15 / 0.55; output ratio = 60 / 2.19.",
+    "rounding": "27.27 and 27.40 respectively; both round to 30 at one significant figure."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "unsloth-ai-blog-deepseekr1-dynamic",
+   "source_snapshot_id": "173b9e2337167518a03df1e2b61ad424eae22d9d8d79a1716b5c793d6eade7ba",
+   "publisher": "Unsloth",
+   "source_type": "demonstration",
+   "url": "https://unsloth.ai/blog/deepseekr1-dynamic",
+   "locator": "Opening deployment discussion",
+   "receipt": {
+    "public_excerpt": "very slow.",
+    "quote_hash": "25c790acd51ea5d14a4eeede240f8ae817f75a9e1e9a6bf8d65d53caf801866e",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-27",
+   "available_at": "2025-01-27",
+   "retrieved_at": "2026-10-29T16:09:44Z",
+   "relation": "supports",
+   "explanation": "The developers describe compressing the full 671-billion-parameter R1 to 131GB and running it with limited RAM. This supports technical local feasibility, while explicitly qualifying speed and leaving broad benchmark parity unestablished.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "github-com-deepseek-ai-deepseek-v3-blob-main-license-model",
+   "source_snapshot_id": "2c922d9e77f33d0303c644aff6910aa939907bd5b9027bfa937a7fee1acd9bb7",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/LICENSE-MODEL",
+   "locator": "Section III, paragraph 5",
+   "receipt": {
+    "public_excerpt": "restricted uses.",
+    "quote_hash": "eca4406be2eb999f54f56b0fc717e7a6968d76471526e4006ec6e895f9f2fa9c",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-26",
+   "available_at": "2024-12-26",
+   "retrieved_at": "2026-10-29T19:50:32Z",
+   "relation": "context",
+   "explanation": "The original V3 release uses a model license with use restrictions. Its licensing cannot simply be equated with R1's MIT terms; this is background from before the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No matched inference-cost or computational-efficiency measurement establishes a general thirtyfold advantage.",
+  "The sentence supplies no model-wide price comparison or workload.",
+  "The local demonstration does not establish ordinary interactive speed or unchanged benchmark quality on modest hardware."
+ ],
+ "packet_hash": "705b86365860eb8b6ce48106f1e5f46cf3d5c7fa68067962e1236a0f90813207"
+}

@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-5f020c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-5f020c",
+  "version": 1,
+  "content_hash": "54422e6e313b4b9b046b29890df9513cad15083450017f3379d618de038236ee"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-5f020c",
+  "version": 1,
+  "content_hash": "4972968090efb30f96aaf001b6c0a1a6ca66147b32eefbebbb6a548071795ff0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"GPT4\" \"Wolfram\" \"syntactic\" \"Davis\"",
+   "Davis Aaronson \"Wolfram\" \"syntax errors\" 105",
+   "\"GPTPlugInTests\" \"reserved\"",
+   "read_page: ArbitraryOutput.pdf, find=reserved",
+   "read_page: ArbitraryOutput.pdf, find=Then the process",
+   "read_page: MotivatedOutput.pdf, find=protected"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+    "used": true,
+    "why": "Shows repeated protected-symbol errors and subsequent changes of variable names."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "used": true,
+    "why": "Documents another reserved-symbol error and seven unsuccessful calls attributed tentatively to name conflicts."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": false,
+    "why": "Reports broader interface failures without a syntax-specific frequency audit."
+   }
+  ],
+  "performed_at": "2026-10-29T06:54:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-motivatedoutput-pdf",
+   "source_snapshot_id": "aaa1b477e93b3b6af31409fed7e823222827e93bad33be830e34654e7afa9f68",
+   "publisher": "New York University; Scott Aaronson and Ernest Davis",
+   "source_type": "benchmark",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+   "locator": "Problem 11, pages 16–17, protected-symbol errors",
+   "receipt": {
+    "public_excerpt": "same mistake",
+    "quote_hash": "df41cfd6024b465a3e4130de639e8384b78f4c2f9c54536f2110008881bbe274",
+    "verified": "exact"
+   },
+   "event_date": "2023-08-02",
+   "available_at": "2023-08-15",
+   "retrieved_at": "2026-10-29T06:36:54Z",
+   "relation": "supports",
+   "explanation": "GPT-4 twice assigns to protected symbol E, receives explicit errors, and changes identifiers. This verifies recurrence within one problem, but the local corrections do not establish an unrecovered syntax failure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-arbitraryoutput-pdf",
+   "source_snapshot_id": "bfac9f70458ef442e565c9e75fda547932a9122de95d326d63603d2c77bc2b9a",
+   "publisher": "New York University; Ernest Davis and Scott Aaronson",
+   "source_type": "benchmark",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+   "locator": "Problem 26, page 31; reserved-symbol example also in problem 10",
+   "receipt": {
+    "public_excerpt": "bugs",
+    "quote_hash": "4a7047d4451d14daddc3c6140be61062a26b3f273945390e1585e7f05250b48b",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-12",
+   "available_at": "2024-09-17",
+   "retrieved_at": "2026-10-29T06:36:37Z",
+   "relation": "supports",
+   "explanation": "Problem 26 reports seven failed calls, apparently caused by variable-name conflicts, but omits the calls needed to confirm that diagnosis. Problem 10 separately documents replacing a reserved variable before encountering a different failure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No complete count of syntax-related failures across problems or calls.",
+  "The strongest unrecovered example has a tentative diagnosis and omitted calls.",
+  "Visible reserved-symbol errors sometimes receive local corrections."
+ ],
+ "packet_hash": "681a24791c907a1e24f5b73d1a9709cfd2d4ea8ed112d7676b6d33fb6e6c9c72"
+}

@@ -1,0 +1,153 @@
+{
+ "packet_id": "marcus-top-5-reasons-openai-is-probably-4050bb-p1",
+ "claim_revision_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-4050bb",
+  "version": 1,
+  "content_hash": "5fd64b428aaa5ef242d44e763fa1327ee5dfc61af0d36432be4482acba9ba39e"
+ },
+ "contract_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-4050bb",
+  "version": 1,
+  "content_hash": "f62619579d2e3798369e408a961c27e5466bbcf83d969288e27339ae47e83d62"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 large language models instruction following explicit constraints benchmark September Can large language models really follow instructions",
+   "IFEval 2023 GPT-4 model 0314 0613 instruction following results",
+   "\"2023\" \"instruction following\" \"September\" benchmark GPT-4",
+   "\"Can Large Language Models Really Follow Instructions\"",
+   "2023 \"instruction\" \"benchmark\" \"August\" \"constraints\" LLM",
+   "LLM instruction following benchmark 2023 July September counterintuitive instructions GPT4"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2311.07911v1",
+    "used": true,
+    "why": "Read with read_page. Supplies reproducible instruction-compliance results and explicitly dates PaLM 2 S testing to August 2023. Its November GPT-4 results are excluded from the outcome assessment."
+   },
+   {
+    "url": "https://arxiv.org/abs/2311.07911v1",
+    "used": true,
+    "why": "Read with read_page to verify the November 14, 2023 publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.09009v3",
+    "used": true,
+    "why": "Read with read_page. Evaluates March and June 2023 model versions and reports both instruction-following failures and successful instruction following."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.09009",
+    "used": true,
+    "why": "Read with read_page to verify that the cited revision, which adds instruction-following evaluations, appeared October 31, 2023."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.09150v1",
+    "used": true,
+    "why": "Read with read_page. CELLO provides contemporaneous context about model strengths, weaknesses and variation across complex instructions."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.09150v1",
+    "used": true,
+    "why": "Read with read_page to inspect CELLO's tables and distinguish partial-credit scores from complete instruction-compliance rates."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.09150",
+    "used": true,
+    "why": "Read with read_page to verify the September 17, 2023 first-version publication date."
+   },
+   {
+    "url": "https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2",
+    "used": false,
+    "why": "read_page returned HTTP 403. Used the accessible arXiv version instead."
+   },
+   {
+    "url": "https://aclanthology.org/2024.acl-long.257.pdf",
+    "used": false,
+    "why": "FollowBench appeared after the post. The search result did not establish testing within the target period, so it was not used."
+   }
+  ],
+  "performed_at": "2026-10-29T09:01:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2311-07911v1",
+   "source_snapshot_id": "860d21fb3f9454c4c6b5e2a5e52508e3b08fa723721f1dd127fee2d3a0de7e30",
+   "publisher": "arXiv; Jeffrey Zhou and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2311.07911v1",
+   "locator": "Table 3; section 3 dates PaLM 2 S testing to August 2023",
+   "receipt": {
+    "public_excerpt": "PaLM 2 S 43.07 55.76 46.95 59.11",
+    "quote_hash": "fe81eb3146c00c79c5d767d4be622b533ad5948ef31666030a78ab061163545b",
+    "verified": "exact"
+   },
+   "event_date": "2023-08",
+   "available_at": "2023-11-14",
+   "retrieved_at": "2026-10-29T08:57:06Z",
+   "relation": "supports",
+   "explanation": "PaLM 2 S satisfied every checked instruction on 43.07% of prompts under strict scoring and 46.95% under relaxed scoring; individual-instruction accuracy was 55.76% and 59.11%, respectively. These August results show frequent explicit-constraint failures, but this smaller model alone cannot establish performance across all leading LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2307-09009v3",
+   "source_snapshot_id": "656db1b0f4bbbe429f34a269b2d17043724fc4db9823a26ba026d8b18df6261d",
+   "publisher": "arXiv; Lingjiao Chen, Matei Zaharia and James Zou",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2307.09009v3",
+   "locator": "Section 4, instruction-following experiments and Figures 13–14",
+   "receipt": {
+    "public_excerpt": "Overall, we observe that GPT-4 followed less user instructions over time.",
+    "quote_hash": "bc04b3c3be6f3e164483176c08b71d1cdc7146b346411f0fcb8ec31a6ba78740",
+    "verified": "exact"
+   },
+   "event_date": "2023-06",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T08:57:07Z",
+   "relation": "supports",
+   "explanation": "The June GPT-4 version complied with only 0.5% of the study's answer-extraction requests, with capitalization errors accounting for failures despite otherwise correct bracket placement. However, the same study found good performance on three individual text-formatting instructions in both March and June, so the evidence establishes uneven reliability rather than general inability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2309-09150v1",
+   "source_snapshot_id": "02fe6c6662b529b6033e8fcfd6f4b85cee1b4a363cde1b664a24d9cb5777cc7d",
+   "publisher": "arXiv; Qianyu He and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.09150v1",
+   "locator": "Experiment, Fine-grained Evaluation; General Comparisons",
+   "receipt": {
+    "public_excerpt": "Different models also excel in specific tasks.",
+    "quote_hash": "4b343002b8e613598cd1b08aa31a7660252d4bc4f5b97f9aeb7041c8f621db41",
+    "verified": "exact"
+   },
+   "event_date": "2023-09",
+   "available_at": "2023-09-17",
+   "retrieved_at": "2026-10-29T08:56:27Z",
+   "relation": "context",
+   "explanation": "CELLO identifies task-specific strengths and a substantial advantage for GPT-4 and GPT-3.5 over smaller open models. This limits a sweeping interpretation of Marcus's statement; the benchmark uses Chinese complex instructions and partial-credit measures, not a representative everyday failure rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative distribution of employee-like instructions establishes a single overall compliance rate.",
+  "Marcus supplied neither a model list nor a numerical standard for acceptable performance.",
+  "The cited GPT-4 experiments concern March and June versions; they do not directly measure every model available on September 27."
+ ],
+ "packet_hash": "a46ed4782d12fae84335067956ce547aa33d64d6e8ca3867e95c246b2531ae1d"
+}

@@ -1,0 +1,158 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-3d067c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-3d067c",
+  "version": 1,
+  "content_hash": "07674378dee8af7a85d2da2285b18deb50eae82e0b9f2319855a9447b495b6ad"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-3d067c",
+  "version": 1,
+  "content_hash": "54e709f59c4dcc233d3f7731e2188b5dea875674c48c412e2ecee9ed577cf826"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2025 cash burn billion",
+   "Anthropic 2025 loss revenue full year results investors",
+   "Anthropic S-1 filing sec.gov 2025 net loss operating activities cash"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary source: Anthropic's S-1, filed with the SEC on 2026-10-26, with full-year 2025 results and cash flows."
+   },
+   {
+    "url": "https://thenextweb.com/news/anthropic-ipo-prospectus-42bn-loss-518bn-compute",
+    "used": true,
+    "why": "News summary of Reuters' report on the 2025 operating loss. Matches the S-1."
+   },
+   {
+    "url": "https://wolfstreet.com/2026/09/28/anthropic-lost-42-billion-on-4-6-billion-in-revenues-in-2025-leaked-ipo-prospectus/",
+    "used": false,
+    "why": "Secondary report on the same figures; the primary filing is better."
+   }
+  ],
+  "performed_at": "2026-10-29T12:49:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC (SEC Form S-1)",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, 'We have a history of net losses'",
+   "receipt": {
+    "public_excerpt": "including a net loss of $1.5 billion, $8.3 billion, and $42.0 billion for the years ended December 31, 2023, 2024, and 2025, respectively",
+    "quote_hash": "78068b1b14a907529adc5bc713b0b2cfbf8be4c2bb93f8d52983eadb2ea5f55a",
+    "verified": "normalized"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "supports",
+   "explanation": "Anthropic reports a 2025 net loss of $42.0 billion, so it was not profitable in 2025. Most of this was a non-cash fair-value charge, so this item shows unprofitability, not the cash burn.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC (SEC Form S-1)",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "MD&A, Cash Flows table and 'Operating Activities' paragraph",
+   "receipt": {
+    "public_excerpt": "Net cash used in operating activities for the year ended December 31, 2025 decreased by $3.1 billion compared to the year ended December 31, 2024.",
+    "quote_hash": "aa1e93b2a30a8c03895cb82e25aca4f0ab4c210cab89ab2bd4613702d3ef802e",
+    "verified": "normalized"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "supports",
+   "explanation": "In the cash-flow table just above this paragraph, 2025 operating activities used $2,637 million and investing used $3,077 million. That is about $5.7 billion of cash outflow before financing, which is billions of cash burn in 2025.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "net cash used in operating and investing activities",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Operating activities 2025: $(2,637) million",
+     "Investing activities 2025: $(3,077) million"
+    ],
+    "formula": "2,637 + 3,077 = 5,714 million USD net cash outflow before financing",
+    "rounding": "about $5.7 billion"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "thenextweb-com-news-anthropic-ipo-prospectus-42bn-loss-518bn-compute",
+   "source_snapshot_id": "b0dc4afdd2eb82b9557567f06133bf4bb148adfbf228c634216bd95a7cd9d457",
+   "publisher": "The Next Web (citing Reuters)",
+   "source_type": "news_report",
+   "url": "https://thenextweb.com/news/anthropic-ipo-prospectus-42bn-loss-518bn-compute",
+   "locator": "section 'Most of the loss was an accounting charge', paragraph 2",
+   "receipt": {
+    "public_excerpt": "The operating loss, which leaves that charge out, widened to $8.06bn from $2.98bn in 2024.",
+    "quote_hash": "1cc01ff79dc25344a37dfa32e2a2cc750f6c26cec8ac84a844e6dde29cea7a12",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-29",
+   "retrieved_at": "2026-10-29T12:45:18Z",
+   "relation": "supports",
+   "explanation": "Anthropic's 2025 operating loss was $8.06 billion, which matches the S-1 operating-loss line. This is billions lost from operations in 2025.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "operating loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The S-1 does not label any figure 'cash burn'. Burn is read here as operating plus investing cash outflow, or as operating loss. Both are in the billions."
+ ],
+ "packet_hash": "86864ca76dfb9a325b74d275e15ddd111e3757b384952a4e6fc4ec695120e727"
+}

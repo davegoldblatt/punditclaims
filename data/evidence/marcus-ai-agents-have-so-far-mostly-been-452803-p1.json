@@ -1,0 +1,115 @@
+{
+ "packet_id": "marcus-ai-agents-have-so-far-mostly-been-452803-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-452803",
+  "version": 1,
+  "content_hash": "84abf841264aca91fdca18eeb435f0ce7f1f76f416e9a6f34ab9809e3c9367ab"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-452803",
+  "version": 1,
+  "content_hash": "f7d5570730b7adba016f09c858a38914a17b1d810181ff177e09a175151b1b83"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Security Challenges in AI Agent Deployment large scale public competition Zou arXiv",
+   "Simon Willison prompt injection LLMs cannot distinguish instructions from data agents lethal trifecta"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2507.20526v1",
+    "used": true,
+    "why": "The large multi-team red-teaming study Marcus cites; primary source for attack success."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.20526v1",
+    "used": true,
+    "why": "Full text describing how successful attacks worked."
+   },
+   {
+    "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+    "used": true,
+    "why": "Widely cited expert explanation of why prompt injection works."
+   }
+  ],
+  "performed_at": "2026-10-29T01:08:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2507-20526v1",
+   "source_snapshot_id": "48a81a2ebafb670f7a974d0c402a76785afd24033e798e04017de916a79f0ea2",
+   "publisher": "arXiv (Zou et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2507.20526v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Participants submitted 1.8 million prompt-injection attacks, with over 60,000 successfully eliciting policy violations such as unauthorized data access, illicit financial actions, and regulatory noncompliance.",
+    "quote_hash": "7ff07b99f39d8121d911b8d5aad1ed68f1781a4a868f2be9f2fe2208c20b8bc4",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-28",
+   "available_at": "2025-07-28",
+   "retrieved_at": "2026-10-29T01:05:53Z",
+   "relation": "supports",
+   "explanation": "Over 60,000 successful attacks across 22 frontier agents, and nearly all agents broke policy within 10–100 queries. That is gross vulnerability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2507-20526v1",
+   "source_snapshot_id": "ea1a7c944ff6363a8bd9ac95150758c54f4faff71852c1e702efc86975379a2b",
+   "publisher": "arXiv (Zou et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2507.20526v1",
+   "locator": "section on attack strategies, Faux Reasoning (Attacker 2 in Figure 8)",
+   "receipt": {
+    "public_excerpt": "This attack involves injecting text that mimics the model’s internal reasoning, often using tags like \"<think>\" or similar structures.",
+    "quote_hash": "33b4c47b760c2744627699f00f91747847baceed000038272b699b70f99c5dbd",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-28",
+   "available_at": "2025-07-28",
+   "retrieved_at": "2026-10-29T01:06:28Z",
+   "relation": "supports",
+   "explanation": "Successful attacks work by imitating surface forms (fake system tags, fake reasoning) that fool agents about who is instructing them. This fits a shallow grasp of the request.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "simonwillison-net-2025-jun-16-the-lethal-trifecta",
+   "source_snapshot_id": "9ac93c52970babbc78bdba3e169b9c41758720fad7a2a2732ad50e3f80f66630",
+   "publisher": "Simon Willison's Weblog",
+   "source_type": "secondary_summary",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta",
+   "locator": "section The problem is that LLMs follow instructions in content",
+   "receipt": {
+    "public_excerpt": "LLMs are unable to reliably distinguish the importance of instructions based on where they came from.",
+    "quote_hash": "6fc8a6de4647b9482288e71fd81c8b54321a91a6ebedcd6e67d5d67143f684af",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-16",
+   "available_at": "2025-06-16",
+   "retrieved_at": "2026-10-29T01:06:10Z",
+   "relation": "supports",
+   "explanation": "A leading practitioner explains that agents are exploitable because they cannot tell the user's instructions from injected ones, which is a failure to understand what they are actually being asked.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No study tests 'superficial understanding' as a cause in those words; the causal link rests on how successful attacks work and on expert explanation.",
+  "I did not verify Marcus's 1.45% figure for the most secure system."
+ ],
+ "packet_hash": "427f3a7cf56c66650b486167abc37f713ed9295ce072bc2d41288e55bb0031da"
+}

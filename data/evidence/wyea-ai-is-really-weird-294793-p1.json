@@ -1,0 +1,103 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-294793-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-294793",
+  "version": 2,
+  "content_hash": "dd2bf79a43d99af64fabb5aa0285a499af4b8eacc1cefe94154e03598a7d89c8"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-294793",
+  "version": 1,
+  "content_hash": "b4ba09db94fbfd6a120d626a49bc50318970ca563b5266e619abba8979618d32"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 revenue 13 billion 8 billion costs 2026 Reuters",
+   "Anthropic 2025 revenue expenses 4.5 billion 2026 Reuters",
+   "Midjourney 2025 revenue profitable Reuters",
+   "Anthropic subsidy price increase demand 2025 customer growth cost revenue"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Read in full. Reports annual financial statements and provides a useful operating-expense comparison, but does not establish the claim's unspecified spending measure or causal necessity."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "Read financial tables and relevant passages. The filing distinguishes operating expenses, cash flows, and valuation charges; none can automatically be substituted for the claim's undefined spending measure."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-compute-spend-around-223950561.html/",
+    "used": false,
+    "why": "Read in full. Its spending description is insufficiently defined for calculating the claimed company-wide expense ratio."
+   },
+   {
+    "url": "https://www.theinformation.com/briefings/midjourney-revenue-now-significantly-200-million",
+    "used": false,
+    "why": "Potential counterexample, but read_page returned HTTP 403. Search text was not used as evidence."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-changes-pricing-bill-firms-based-ai-use-amid-compute-crunch?offer=ab-25",
+    "used": false,
+    "why": "Search lead about pricing changes. It did not provide a verified causal comparison establishing growth without subsidies."
+   }
+  ],
+  "performed_at": "2026-10-29T10:08:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Story text, financial-results paragraphs before 'Gotta spend money to make money'",
+   "receipt": {
+    "public_excerpt": "revenues are still dwarfed",
+    "quote_hash": "d23a7cb4eab4f5b358bc592de31bb236c6a346d31c1dbd6a69b8ac830e270990",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The article reports $13.07 billion of revenue and $20.92 billion of operating losses, implying approximately $2.60 in operating expenses per revenue dollar. This challenges the stated minimum under an operating-expense reading, but does not match an unspecified spending basis or establish subsidy dependence.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Operating expenses divided by realized revenue",
+    "currency": "USD",
+    "units": "USD of operating expenses per USD of revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "Reported 2025 revenue: USD 13.07 billion",
+     "Reported 2025 operating loss: USD 20.92 billion"
+    ],
+    "formula": "(13.07 + 20.92) / 13.07 = 2.6006",
+    "rounding": "Rounded to USD 2.60 of operating expenses per revenue dollar."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The intended company group and spending basis are unspecified.",
+  "No matched evidence establishes that subsidies were necessary for growth across the group.",
+  "The operating-expense comparison cannot settle a claim whose accounting basis is unknown."
+ ],
+ "packet_hash": "c6709c07449da42a34f2d8f2dce6e2233d86822d90e130724787b5fc5e2d24fc"
+}

@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6",
+  "version": 1,
+  "content_hash": "45bfc35778dd793a209458a2b90826350ab7e068815d49df1f63a76b499a3809"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-d4d2d6",
+  "version": 1,
+  "content_hash": "4ee1fba0e1b6584fa047d756eeacaa4def36f4a621aaf2ebb706ee9fc4b80576"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com April 2026 capacity demand reliability outages",
+   "site.status.claude.com \"March\" \"2026\" \"capacity\"",
+   "\"Anthropic and Amazon expand\" \"2026\"",
+   "Anthropic outages March April 2026 \"capacity\" Reuters",
+   "Anthropic \"outages\" \"demand\" \"March 2, 2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+    "used": true,
+    "why": "Primary disclosure explicitly connects infrastructure strain with reduced reliability and describes capacity expansion."
+   },
+   {
+    "url": "https://www.tomsguide.com/ai/claude-crashes-under-unprecedented-demand-service-restored-as-surge-shows-explosive-growth",
+    "used": true,
+    "why": "Reports an attributed company explanation of the March 2 outage; the original statement was not located separately."
+   },
+   {
+    "url": "https://status.claude.com/incidents/b9802k1zb5l2",
+    "used": true,
+    "why": "Primary postmortem documents another interruption and a distinct networking cause."
+   },
+   {
+    "url": "https://fortune.com/2026/04/24/anthropic-engineering-missteps-claude-code-performance-decline-user-backlash/",
+    "used": false,
+    "why": "Read successfully, but the earlier primary capacity disclosure and incident records provide more direct evidence for the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T16:37:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-news-anthropic-amazon-compute",
+   "source_snapshot_id": "260521d1b70d4642b9bd8afc0bc28bc4e459dad9da19dc35cbe78e267955f512",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+   "locator": "Infrastructure at scale and Meeting record demand sections",
+   "receipt": {
+    "public_excerpt": "Significant Trainium2 capacity",
+    "quote_hash": "26be092db8e71a5b5af8a58d1dfd1f4435e42606f03bdd14fe8d389d581986bb",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-20",
+   "available_at": "2026-04-20",
+   "retrieved_at": "2026-10-29T10:03:16Z",
+   "relation": "supports",
+   "explanation": "The announcement's Meeting record demand section explicitly attributes reliability and performance problems across consumer and Team plans to growth straining infrastructure, especially at peak hours. Its planned expansion addresses that capacity pressure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "tomsguide-com-ai-claude-crashes-under-unprecedented-demand-service-b7a5644f9255",
+   "source_snapshot_id": "e57f4051d442c5dcdf52822995596e545a2c10719c783dd93e80f0a08fc5ca46",
+   "publisher": "Tom's Guide",
+   "source_type": "news_report",
+   "url": "https://www.tomsguide.com/ai/claude-crashes-under-unprecedented-demand-service-restored-as-surge-shows-explosive-growth",
+   "locator": "What happened section",
+   "receipt": {
+    "public_excerpt": "“unprecedented demand”",
+    "quote_hash": "9c30422f9743d251e50aa2edcbb539a7b03e87485da71846454542edf5cd2455",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-02",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T16:17:19Z",
+   "relation": "supports",
+   "explanation": "Reports a specific outage attributed by Anthropic to exceptional demand. This is secondary reporting of the company's explanation, rather than a published technical postmortem.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "status-claude-com-incidents-b9802k1zb5l2",
+   "source_snapshot_id": "a66db3dcb841f41a8cee24e467f2ba37d1e1b3f309ef283ca68d32f5cf19f333",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://status.claude.com/incidents/b9802k1zb5l2",
+   "locator": "Postmortem posted March 27, 2026, 17:37 UTC",
+   "receipt": {
+    "public_excerpt": "networking performance degradation",
+    "quote_hash": "5978ad56bbbe2a3ce6b9a8bee66cf43f9abaf4857d9fe6c2ff3a47431096e9b0",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-27",
+   "available_at": "2026-03-27",
+   "retrieved_at": "2026-10-29T16:15:35Z",
+   "relation": "context",
+   "explanation": "Documents another interruption affecting multiple Claude services, establishing recurrence alongside the March 2 event. Its networking explanation limits any stronger claim that every outage resulted from insufficient compute.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The records do not quantify the proportion of downtime attributable to insufficient capacity."
+ ],
+ "packet_hash": "dee78c4393aba679f121813dbe9498c8b0bd0eacb26fdc94b7fb2fb02c3d1d55"
+}

@@ -1,0 +1,41 @@
+---
+// The disclosure that sits beside every assessment: which models drafted and
+// checked it, that agreement is a check and not proof, and the conflict of
+// interest. A claim about Anthropic or OpenAI gets a specific note as well.
+// A screened-out claim (policy .7) has no drafted text and no final-text
+// check: a model extracted it, both providers screened it, and code composed
+// the text from the two screens. The note says exactly that.
+import type { PublicAssessment, PublicClaim } from "../lib/manifest.ts";
+import { modelName, PROVIDER_NAME } from "../lib/view.ts";
+import type { Provider } from "../policy.ts";
+
+interface Props { claim: PublicClaim; a: PublicAssessment }
+const { claim: c, a } = Astro.props;
+// A model is named with its company the first time, by name alone after that.
+const named = new Set<string>();
+const who = (x: { provider: Provider; model: string }) => { const first = !named.has(x.model); named.add(x.model); return first ? `${modelName(x.model)} (${PROVIDER_NAME[x.provider]})` : modelName(x.model); };
+const [r1, r2] = a.reviewers;
+const ft = a.final_text;
+const screened = ft === null;
+const roles = screened
+  ? [{ role: "extracted it", ...a.drafter }, { role: "screened it", ...r1 }, { role: "screened it", ...r2 }]
+  : [{ role: "drafted it", ...a.drafter }, { role: "reviewed it", ...r1 }, { role: "reviewed it", ...r2 }, { role: "checked its final text", ...ft }];
+const joinAnd = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
+const specific = c.concerns_providers.map((p) => ({
+  company: PROVIDER_NAME[p],
+  work: [...new Set(roles.filter((r) => r.provider === p).map((r) => `${r.model} ${r.role}`))],
+}));
+---
+<aside class="ai-note" aria-label="How this was checked" data-pagefind-ignore>
+  {specific.map((s) => (
+    <p class="specific">{s.work.length
+      ? <>This claim is about {s.company}, which makes one of the AIs that checked it.</>
+      : <>This claim is about {s.company}. No {s.company} AI worked on it.</>}</p>
+  ))}
+  {screened ? (
+    <p>{who(a.drafter)} pulled this claim from the post and wrote our reading. {who(r1)} and {who(r2)} each looked at it separately and agreed that public evidence can’t settle it.</p>
+  ) : (
+    <p>{who(a.drafter)} wrote this up. {who(r1)} and {who(r2)} each reviewed it separately, and {who(ft!)} checked the final text. A fixed rule, not a person, decided whether to publish it.</p>
+  )}
+  <p>AIs can be wrong, even when they agree. <a href={screened ? "/method#screen" : "/method#review"}>How we check claims</a>.</p>
+</aside>

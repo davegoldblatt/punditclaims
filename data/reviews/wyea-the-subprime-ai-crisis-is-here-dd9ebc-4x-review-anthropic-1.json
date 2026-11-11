@@ -1,0 +1,209 @@
+{
+ "run_id": "wyea-the-subprime-ai-crisis-is-here-dd9ebc-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-subprime-ai-crisis-is-here-dd9ebc": "4ff64e7e522fbf02585bf59ca43d858cb0e6e8735dca25364810e411f84bf637",
+  "case:wyea-the-subprime-ai-crisis-is-here-dfb594": "634e9d9af1e41c0c1329ba4f0e9b69d39c3dce02cfd9b7e613d0999421752f54",
+  "case:wyea-the-subprime-ai-crisis-is-here-e0a3c0": "f8848762d9da63c159e9f9579f6ba6f715486a6c9e32c50dc5db5a0dd7a5bbe3",
+  "case:wyea-the-subprime-ai-crisis-is-here-e3678e": "d7b92026029e998f9fbd1fe167ecae0be7b9e8d9dda8f38810507bade5b45710"
+ },
+ "started_at": "2026-10-29T22:29:53Z",
+ "completed_at": "2026-10-29T22:30:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, presented as his own calculation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the funding figure, the 'at best' qualifier, the linear-growth assumption and his aside that uneven months are more likely. It is a retrospective estimate, so observation is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'revenue' as revenue actually earned, not ARR, fits his interpolation from run-rate milestones. Asking the evidence to back an upper bound follows from his 'at best'. The result is unresolved under any reasonable reading because there is no cumulative revenue data."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure of the $2.3B Series D in Nov 2025. It is one round, not the full funding ledger, and says nothing of cumulative earned revenue."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure of the $900M Series C in Jun 2025. It covers capital raised only; the ARR figure is annualized, not earned revenue."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Reported $2B annualized revenue as of Mar 2, 2026. That is a run rate, so it cannot establish cumulative earned revenue."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet confirms the Series C and Series D rounds ($3.2B together), but not the early rounds needed to reach $3.36B; one unused source suggests the rounded inputs differ. No cumulative earned-revenue figure or monthly revenue series is in the packet, only annualized milestones. Neither the revenue estimate nor the 'at best' upper bound can be checked.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-ai-crisis-is-here-dd9ebc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion, made while rebutting a counterargument in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "In context he is answering the idea that falling token prices mean services got cheaper to run. 'Falling prices do not mean serving cost fell' captures that without claiming serving costs never fall."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading, that the customer's price is distinct from the provider's serving expense and a price cut alone does not prove lower serving cost, is ordinary and fair. It is not stretched in either direction."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "NIST CAISI report (Sep 2025) defines inference serving cost separately from the per-token price users pay. This directly supports the distinction."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "MIT preprint (Nov 2025) attributes falling prices partly to economic forces as well as efficiency gains, so prices do not simply track serving cost. Its efficiency finding does not contradict the narrow claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent sources from the period treat token price and serving cost as separate quantities, and show that price declines reflect competitive and economic factors as well as technical efficiency. That meets the contract's support condition. The claim does not assert that serving costs never fall.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-ai-crisis-is-here-dfb594"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "'It only takes one' is firm, not hedged. The proposition keeps the trigger (one failed exit or firesale) and the dependence of valuations on perceived exit options. No deadline is stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'break the illusion' as broad loss of exit confidence and widespread markdowns is fair. Counting Firmus, an AI data-centre firm, as an 'AI startup' is the evaluator's choice and contestable, but the outcome is unresolved either way."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Firmus withdrew its IPO on Oct 9, 2026. This bears on whether the trigger occurred, not on the predicted broad effect."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Character.ai started a Chapter 11 sale process on Oct 12, 2026. The sale was not complete by the cutoff, and the item shows nothing about effects on other startups."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic filed an S-1 on Oct 26, 2026, which suggests exit plans continued. It does not measure startup valuations broadly and cannot refute an undated forecast."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "Possible triggers exist: Firmus withdrew its IPO and Character.ai entered a bankruptcy sale. But the packet has no evidence of broad AI startup markdowns or lost exit confidence caused by either event. The forecast has no deadline and the early-resolution rule is not met, so it stays open.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-ai-crisis-is-here-e0a3c0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The universal quantifier 'every' is kept. Context points to generative-AI startups that sell token-burning services at flat rates. The claim is firm, though 'economically broken' is loosely defined."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (a business model that cannot cover its ongoing costs from customer revenue) is ordinary. But who counts as an AI startup, and what counts as 'broken', decide whether an apparent exception such as Midjourney qualifies."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch AI estimate on OpenAI's GPT-5 economics. It covers one company and one model, so it cannot establish a claim about every AI startup."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary report (Mar 31, 2026) that Midjourney is profitable. That makes it an apparent exception, but there are no disclosed 2025 accounts and the profitability measure is not defined."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Proving the universal claim would need evidence across the whole startup population, and the packet has none. Refuting it would need one startup shown to be self-sustaining on a disclosed, comparable cost basis. Midjourney is a plausible candidate, but the only source is a secondary summary with an undefined measure, so the contract's contradiction condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-subprime-ai-crisis-is-here-e3678e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30848,
+  "output_tokens": 5274,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

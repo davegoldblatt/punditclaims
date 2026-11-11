@@ -1,0 +1,104 @@
+{
+ "packet_id": "wyea-ai-is-slowing-down-a1ab1b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-slowing-down-a1ab1b",
+  "version": 1,
+  "content_hash": "5bb37457785932b0593816f01b428165144026afbb06657231889479b3122d6b"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-slowing-down-a1ab1b",
+  "version": 1,
+  "content_hash": "76e154aa164d0d7226bcbe963ee6685ff07bb7cec6f0a18725a0b8e391d25349"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2026 2028 100 billion revenue compute commitments",
+   "site.sec.gov Anthropic 2026 S-1 commitments October",
+   "\"Anthropic\" \"2028\" \"100 billion\" commitments revenue June 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing describes reliance on both revenue and capital. The extracted liquidity discussion contains blank numerical fields and does not settle June 2028 affordability."
+   },
+   {
+    "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+    "used": true,
+    "why": "Primary announcement identifies external funding relevant to affordability, without treating investment proceeds as revenue."
+   }
+  ],
+  "performed_at": "2026-10-29T10:13:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, filed with the SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, page 138, funding of compute investments",
+   "receipt": {
+    "public_excerpt": "the capital that we raise",
+    "quote_hash": "eb3097ee453a10cde91fc4e7280698e5b9bbbc0e8d7d9b74664c70b0c692a33f",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-26",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "Anthropic describes financing as an additional source for meeting investment needs. This makes a revenue-only affordability calculation incomplete, but does not establish whether the claimed threshold is unnecessary in 2028.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-anthropic-amazon-compute",
+   "source_snapshot_id": "260521d1b70d4642b9bd8afc0bc28bc4e459dad9da19dc35cbe78e267955f512",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+   "locator": "Paragraph beginning 'Continued investment'",
+   "receipt": {
+    "public_excerpt": "Amazon is investing",
+    "quote_hash": "2b648c4062032beebeab0a5fb6969a9895e76bd5b9567c0e355ec7b0f4bfdf6d",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-20",
+   "available_at": "2026-04-20",
+   "retrieved_at": "2026-10-29T10:03:16Z",
+   "relation": "context",
+   "explanation": "The announcement identifies financing available or potentially available alongside revenue. The future investment ceiling is not cash already received, and neither figure is revenue.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Announced Amazon investment and potential additional investment",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-20",
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "Revenue and payment capacity for the June 2028 deadline are not yet observable.",
+  "No complete reconciliation establishes a necessary $100 billion revenue threshold after financing and payment timing.",
+  "The claim does not specify an accounting basis."
+ ],
+ "packet_hash": "84149b293253acf3ac79958568388789b12688da0e48101a053a7e5a389869f0"
+}

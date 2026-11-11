@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-b32438-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-b32438": "87c8e6dcca2a0c1e76e42eec03034644f8e1272fe38d04e941d4718c09c5a90d",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-bddd3d": "0f17827678574516e6050256ca811f5323617a36282783abbac444409a6b78de",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-dcbd3b": "f86986b5f11ad14fdcda4e6bbf9ce1c2b85b7a5b640bc224bf3fbcae09272d17",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-e81e95": "847124c27751d2c100e130ba9e45dda922963905a09f83d869a65d4f15b70cf9"
+ },
+ "started_at": "2026-10-29T21:42:39Z",
+ "completed_at": "2026-10-29T21:43:47Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack essay, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The sentence joins a historical observation with an unhedged 'will continue'. Treating it as a forecast scored on the forward part is accurate. No deadline or threshold was stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'changing the world' as substantial changes to work or daily life after publication is ordinary, and it does not require the changes to be beneficial. Requiring post-publication effects, not adoption alone, is fair. The no-deadline rule correctly prevents a contradiction from a mere lack of evidence."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "NBER usage study covering the period through July 2025. It measures usage, not causal effects, and its window ends at about the publication date. It shows adoption, not post-publication substantial change, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is an undated, firm forecast. The only evidence item shows ChatGPT usage up to July 2025 and does not isolate substantial changes caused by machine learning after publication. The early-resolution rule is not met, and nothing shows that continued effects are impossible. With no deadline and no qualifying evidence, the forecast stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-b32438"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own summary statement in his essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Accurately captures both parts: pure LLMs are unreliable at applying algorithms, and symbolic enhancement often improves results. The parenthetical about vindication is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Here's where we are' supports reading this as a statement about current capability, not an impossibility claim. The meanings given to 'reliably' and 'often' are ordinary, and the 2025 year-to-date window is reasonable. The result does depend on those readings."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Apple study from June 2025: models failed to execute an algorithm even when given it, and accuracy collapsed as complexity rose. This supports the first part, though the study's methods are disputed."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "ASyMOB, May 2025: enabling code execution raised scores by an average of 3.1%, more for some models such as GPT-4.1. Frontier models showed no gain, so the support for 'often' is modest."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "July 2025 replication: Hanoi failures persist at moderate complexity (about 8 disks), but River Crossing succeeds once unsolvable cases are removed. It weakens a blanket-failure reading while leaving reliability limits in place."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "June 2025 rebuttal: models can generate compact Hanoi programs, but this was preliminary and is generation, not unaided execution. It does not show reliable execution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Studies from the period show unaided reasoning models failing to execute algorithms reliably as complexity rises (e1, plus the Hanoi results in e3). Same-model comparisons show improvement on average when code execution is enabled (e2). The counterevidence (e3, e4) disputes the scale and causes of failure but does not show consistently reliable unaided execution. The tool benefit in e2 is small and absent for frontier models, which limits but does not defeat 'often'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-bddd3d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in the essay. The surrounding Karen Hao quotations are separate and are not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'finally', 'quietly' and 'without public acknowledgement'. The background allegation about personal disparagement is properly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading neurosymbolic to include code-interpreter use follows Marcus's own definition in the same essay. Reading the acknowledgement qualifier as 'not labeled neurosymbolic', with DeepMind as an exception, matches the text. The result depends on this contested classification."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's April 2025 o3 launch post, a company disclosure: models trained to use tools, including Python, inside their reasoning. It is framed as reinforcement learning and agentic tool use, not as neurosymbolic AI."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "xAI's July 2025 Grok 4 launch post, a company disclosure: native tool use, including a code interpreter, trained with reinforcement learning. It is not labeled neurosymbolic."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "DeepMind's AlphaGeometry2 paper, February 2025, openly calls its system neuro-symbolic. The essay itself treats DeepMind as an exception, so this limits a universal reading but does not contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's reading, which follows the speaker's own definition, both named 2025 frontier systems added trained, executed code-interpreter tool use to their reasoning. Their launch posts describe this as tool use and reinforcement learning, not neurosymbolic AI. DeepMind's open labeling is an exception the essay already acknowledges. The evidence is company disclosures, which are the right sources for how the developers described their systems. The result depends on counting tool use as neurosymbolic.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-dcbd3b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his list of lessons. The nearby Phil Libin quote is separate."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Close paraphrase. 'Fall apart as soon as' becomes 'inevitably fail'. The firm quantifier 'inevitably' and the condition about complex reasoning tasks are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Inevitably' is firm language, so reading it as unavoidable failure is the ordinary meaning. Treating multistep repository diagnosis and repair as complex reasoning is reasonable, though Marcus gave no threshold. A weaker 'often unreliable' reading would change the result, as the contract notes."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "SWE-smith paper, May 2025: an open agent resolves 40.2% of SWE-bench Verified repository issues, with reproducible released assets. This is substantial success on multistep repair tasks."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "METR, March 2025: success falls below 10% on tasks that take humans over about four hours, but is not zero. This supports a reliability concern rather than unavoidable failure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "Read plainly, 'inevitably fall apart' claims unavoidable failure on more complex reasoning tasks. Reproducible 2025 evaluations show code agents resolving a substantial share of real multistep repository issues (e1), and METR records some successes on long tasks (e2). That contradicts inevitability, even though e2 confirms reliability falls off steeply as tasks grow. The result depends on the firm reading of 'inevitably'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-e81e95"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 32544,
+  "output_tokens": 7244,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

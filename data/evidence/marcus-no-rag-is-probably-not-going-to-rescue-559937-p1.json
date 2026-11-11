@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-no-rag-is-probably-not-going-to-rescue-559937-p1",
+ "claim_revision_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-559937",
+  "version": 1,
+  "content_hash": "1d0d152423868cccc0c49f0a70508d9f91dfc92a11ea4e7c9a607acb6d665b43"
+ },
+ "contract_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-559937",
+  "version": 1,
+  "content_hash": "a7fdc38c9c2cbc938a3345b76c77a3c71eeb322f0663cf0ea2b08d0ff61c66ce"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "February 2025 chatbot hallucination benchmark SimpleQA factuality",
+   "site:arxiv.org February 2025 hallucinations Gemini Deepseek benchmark",
+   "\"hallucination-free\" \"2024\" RAG achieved",
+   "site:openai.com \"introducing deep research\" \"hallucinate\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-simpleqa/",
+    "used": true,
+    "why": "Primary factuality evaluation published within the forecast window."
+   },
+   {
+    "url": "https://openai.com/index/introducing-deep-research/",
+    "used": true,
+    "why": "February 2025 launch disclosure explicitly acknowledges continuing hallucinations in a browsing-enabled ChatGPT capability."
+   },
+   {
+    "url": "https://arxiv.org/html/2412.05223v1",
+    "used": true,
+    "why": "Examines a claimed hallucination-free approach and its actual experimental scope."
+   },
+   {
+    "url": "https://cdn.openai.com/API/docs/deep_research_blog.pdf",
+    "used": false,
+    "why": "read_page could not retrieve the oversized PDF; no quotation is taken from it."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.05223",
+    "used": false,
+    "why": "The unversioned page includes a March 2025 revision; the December 2024 version is used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T17:47:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-simpleqa",
+   "source_snapshot_id": "2f154715a4a9cad852b45faab5b445100aa3567cbd94650e1638236d6d183936",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-simpleqa",
+   "locator": "Opening discussion of factuality and SimpleQA",
+   "receipt": {
+    "public_excerpt": "false outputs",
+    "quote_hash": "106db25b310c9f737853149a74fe706759e0c130054ac927610a9fe32da33a24",
+    "verified": "exact"
+   },
+   "event_date": "2024-10",
+   "available_at": "2024-10-30",
+   "retrieved_at": "2026-10-29T02:31:24Z",
+   "relation": "supports",
+   "explanation": "The release documents continuing factual errors and evaluates several OpenAI models. Its tests exclude browsing, so they establish limitations of those model configurations rather than every retrieval-enabled chatbot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-deep-research",
+   "source_snapshot_id": "6f1d8dbe39d835f35c0d3139c9279b1f31393f37a31e7b4449cfbd6b4095de4e",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-deep-research",
+   "locator": "Limitations",
+   "receipt": {
+    "public_excerpt": "hallucinate facts",
+    "quote_hash": "b94e4809ee20ccec13f4feb86723f783e01f01cad609a5f401fe1d7274f7356c",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-02",
+   "available_at": "2025-02-02",
+   "retrieved_at": "2026-10-29T02:03:15Z",
+   "relation": "supports",
+   "explanation": "OpenAI's February launch disclosure acknowledges factual hallucinations even in its research capability that searches the web. The same paragraph reports improvement over existing ChatGPT models, which is compatible with continued failure to achieve perfection.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2412-05223v1",
+   "source_snapshot_id": "1a60fc603c1983d497f595b8b9a79f574f8acb0b45885a41940701668aa7d3e6",
+   "publisher": "Wood and Forbes, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.05223v1",
+   "locator": "Section 5, Limitations; section 4.3, Confidence Interval",
+   "receipt": {
+    "public_excerpt": "three passages.",
+    "quote_hash": "d1c0d998ef0750d4461ba3b92becf26175da3d11ee78e70d3c8a2d06e89dca69",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-06",
+   "retrieved_at": "2026-10-29T17:31:28Z",
+   "relation": "context",
+   "explanation": "The authors report eliminating hallucinations in their tested sample, providing material counterevidence. Their sample of 37 and restrictions to factual passages and small contexts do not establish a perfectly reliable general-purpose chatbot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No finite set of evaluations can establish the reliability of every chatbot or every possible query.",
+  "The selected outcome evidence is concentrated on OpenAI systems."
+ ],
+ "packet_hash": "0bc70eb40294775181950b3f9fd7b97529b31c406f09cc425e681196068f5f4b"
+}

@@ -1,0 +1,160 @@
+{
+ "packet_id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32",
+  "version": 1,
+  "content_hash": "3b4ffade005002f67da1801f6e807ab97745a0aea658cec966f6c3f41294e855"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32",
+  "version": 1,
+  "content_hash": "d8115027ec2e4f0b6091ae3d739fb383633628bec661aee4e524b6a9340124dc"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GSM Symbolic understanding limitations mathematical reasoning large language models arxiv",
+   "Reasoning or Reciting Exploring Capabilities Limitations Language Models Counterfactual Tasks training",
+   "site.arxiv.org \"The Importance of Being Statistically Earnest\"",
+   "LLM controlled training data memorization generalization reasoning Razeghi 2022 frequency numerical reasoning"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2410.05229v1",
+    "used": true,
+    "why": "Primary perturbation study documenting the behavior Marcus describes."
+   },
+   {
+    "url": "https://arxiv.org/html/2410.23123v2",
+    "used": true,
+    "why": "Controlled training on generated logical puzzles directly examines memorization alongside generalization."
+   },
+   {
+    "url": "https://arxiv.org/html/2407.14985v5",
+    "used": true,
+    "why": "Examines model behavior against a known pretraining corpus across different tasks."
+   },
+   {
+    "url": "https://arxiv.org/abs/2605.28700",
+    "used": true,
+    "why": "Later reanalysis, available before the evaluation date, challenges the statistical and mechanistic interpretation of GSM-Symbolic."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.02477v3",
+    "used": false,
+    "why": "Relevant counterfactual-task results, but the selected studies more directly examine known training data and controlled fine-tuning."
+   },
+   {
+    "url": "https://aclanthology.org/2022.findings-emnlp.59/",
+    "used": false,
+    "why": "Training-term frequency correlates with numerical accuracy, but correlation alone does not establish the broad causal explanation."
+   }
+  ],
+  "performed_at": "2026-10-29T17:52:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2410-05229v1",
+   "source_snapshot_id": "4c080a21ce242a7457f7f4982cfbc90f7a3e1baf6bf2825c2fc1ca8bc17cffac",
+   "publisher": "arXiv; Mirzadeh et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2410.05229v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "noticeable variance",
+    "quote_hash": "f3361013ea76f7a043bae564fb1c56039b0e947c384eeb3310a7933dee58cb21",
+    "verified": "exact"
+   },
+   "event_date": "2024-10",
+   "available_at": "2024-10-07",
+   "retrieved_at": "2026-10-29T02:05:40Z",
+   "relation": "supports",
+   "explanation": "The study reports sensitivity to numerical substitutions and irrelevant clauses, supporting the behavioral part of the claim. It presents replication of training reasoning as a hypothesis, rather than isolating that cause experimentally.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2410-23123v2",
+   "source_snapshot_id": "cac72a4dd98a15dbfdbf9979b62ba8fd928e6640f70e3cd6e6cfa47d41b856c1",
+   "publisher": "arXiv; Xie et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2410.23123v2",
+   "locator": "Section 6, Distinguish Memorization from Reasoning",
+   "receipt": {
+    "public_excerpt": "both memorization and reasoning",
+    "quote_hash": "dde11010c94b8d3d2edb1e493f7be276bac3c193541bf1f4515212f43e57772f",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-04",
+   "retrieved_at": "2026-10-29T17:48:29Z",
+   "relation": "contradicts",
+   "explanation": "Controlled fine-tuning produces both memorization-related fragility and better performance on unseen puzzles, including different difficulty levels. This challenges the reduction to regurgitation, without establishing a general explanation for all LLM failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2407-14985v5",
+   "source_snapshot_id": "e92d1e382dc82c21a6303c35a9a400f43a55d4bd0ca038dff7ec3330cb4ad7a7",
+   "publisher": "arXiv; Wang et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2407.14985v5",
+   "locator": "Section 1, Introduction",
+   "receipt": {
+    "public_excerpt": "MMLU shows weaker memorization",
+    "quote_hash": "abeb900859be2154e702c59a6973db66a9a6a3879133c70207ebc6e2dae26872",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-02",
+   "retrieved_at": "2026-10-29T17:48:30Z",
+   "relation": "contradicts",
+   "explanation": "Using Pythia models and their known Pile training corpus, the study finds that reliance on memorization varies by task and that generalization contributes to reasoning improvements. Its distributional measure challenges a uniform regurgitation account but does not identify every internal mechanism.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2605-28700",
+   "source_snapshot_id": "f9db0437c08e0e3e275c38b17a955f67cfe326fe74e222dcc6f20ca624dc7f8b",
+   "publisher": "arXiv; Długosz, Oliveira and Díaz-Rodríguez",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2605.28700",
+   "locator": "Abstract, version 3",
+   "receipt": {
+    "public_excerpt": "Controlling for this large-number effect",
+    "quote_hash": "01a2ba314ebe99a8f43dbfcaafc915684e2b90f50dd7f636cb8798ba0c296a0f",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-09-01",
+   "retrieved_at": "2026-10-29T07:17:18Z",
+   "relation": "context",
+   "explanation": "The reanalysis finds fewer statistically significant perturbation effects and identifies larger numerical values as a confound. This limits how strongly GSM-Symbolic can support the proposed cause; the later analysis is contextual evidence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The studies do not establish how much of LLMs' general unevenness is caused by near-reproduction of training examples.",
+  "Known-corpus and controlled fine-tuning results do not fully reveal the training mechanisms of proprietary frontier models such as o3.",
+  "The source provides no similarity measure or threshold that distinguishes minor adaptation from generalization."
+ ],
+ "packet_hash": "8bf6acb84239cf7247b7edc6b1cd02b91f57cb368fb9e25544cbf70f505f6ce6"
+}

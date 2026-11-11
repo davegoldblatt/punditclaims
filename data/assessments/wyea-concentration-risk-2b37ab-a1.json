@@ -1,0 +1,137 @@
+{
+ "assessment_id": "wyea-concentration-risk-2b37ab-a1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-2b37ab",
+  "version": 1,
+  "content_hash": "e6ff9c7207483e624142548fcf692b084b816a830cbf5a4b5842bb37f3f1b6f8"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-2b37ab",
+  "version": 1,
+  "content_hash": "ea1b787cc6132e6cde512879af46147368d60419bffbf6a58049d7b4659da39c"
+ },
+ "packet_ref": {
+  "id": "wyea-concentration-risk-2b37ab-p1",
+  "content_hash": "1c19f816bf1872ef0544d8c0899673a93ff2d1c9cfe54ac35721bae6d724bc06"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2026-06-30",
+  "precision": "day"
+ },
+ "public_rationale": "Reporting matches the 2025 revenue and total-cost amounts. It does not fully settle the expense classification. Rounded Q2 inputs imply about negative 183.6%, which is close to the claim but does not independently establish negative 183% at its stated precision. These are verification gaps, not sufficient grounds to call the claim false. The combined claim remains unresolved.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Public news reporting was used because matching primary financial statements were not located.",
+  "Support for one component does not establish the entire compound claim.",
+  "A small difference caused by rounded inputs is not treated as substantive contradiction."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-concentration-risk-2b37ab-4x-review-anthropic-1",
+  "wyea-concentration-risk-2b37ab-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-concentration-risk-2b37ab",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "OpenAI had $34B opex on $13.07B revenue in 2025, and its operating margin worsened to -183% in Q2 2026.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "OpenAI, in 2025, had $34 billion in operating expenses on $13.07 billion in revenue. In Q2 2026, its operating margin worsened to negative 183%.",
+   "locator": "paragraph 160",
+   "url": "https://www.wheresyoured.at/concentration-risk",
+   "date": "2026-09-08",
+   "document_title": "Concentration Risk",
+   "observed_at": "2026-10-28T22:24:29Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "OpenAI, in 2025",
+    "$34 billion in operating expenses",
+    "$13.07 billion in revenue",
+    "In Q2 2026",
+    "operating margin worsened to negative 183%"
+   ],
+   "our_interpretation": [
+    "The claim contains three financial observations: 2025 operating expenses, 2025 realized revenue and Q2 2026 operating margin.",
+    "The target-period envelope covers 2025 and Q2 2026; each component must be checked only against its own stated period.",
+    "Operating margin means operating income divided by realized revenue, not net income or cash burn.",
+    "'Worsened' can be tested against the preceding quarter and the stated 2025 baseline.",
+    "The figures are treated as press-reported estimates, without assuming GAAP or another unstated accounting standard.",
+    "'Operating expenses' may mean all operating costs, including cost of revenue, or the narrower expense category excluding it. I do not silently equate these.",
+    "Rounded financial inputs can substantiate an approximate margin but may not establish the exact stated whole-percentage figure."
+   ],
+   "support_condition": "Matching financial records establish the stated 2025 revenue and operating-expense figures and a Q2 2026 operating margin consistent with negative 183% at the reported precision, with deterioration on a consistent basis.",
+   "contradiction_condition": "Comparable records establish materially different annual figures or a Q2 margin inconsistent with the stated value and deterioration. A different expense classification or insufficient input precision alone is not a contradiction."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Reporting matches the 2025 revenue and total-cost amounts. It does not fully settle the expense classification. Rounded Q2 inputs imply about negative 183.6%, which is close to the claim but does not independently establish negative 183% at its stated precision. These are verification gaps, not sufficient grounds to call the claim false. The combined claim remains unresolved.",
+  "limitations": [
+   "Public news reporting was used because matching primary financial statements were not located.",
+   "Support for one component does not establish the entire compound claim.",
+   "A small difference caused by rounded inputs is not treated as substantive contradiction."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "OpenAI’s revenue came out to $13.07 billion",
+    "locator": "Paragraph beginning 'In 2025'",
+    "url": "https://fortune.com/2026/06/17/openai-balance-sheet-mysterious-business",
+    "publisher": "Fortune",
+    "event_date": "2025",
+    "available_at": "2026-06-17",
+    "explanation": "Matches revenue only."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "reached $34 billion",
+    "locator": "Section 'OpenAI's financials show growth and enormous losses side by side'",
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-1-trillion-ambition-could-020300510.html",
+    "publisher": "TheStreet, syndicated by Yahoo Finance",
+    "event_date": "2025",
+    "available_at": "2026-06-29",
+    "explanation": "This matches the amount but names total costs and expenses. That category needs reconciliation before it can settle the operating-expense component."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "$6.7 billion",
+    "locator": "Opening summary; quarter identified in Highlights",
+    "url": "https://nrb.bg/en/openai-losses-widen-despite-rising-sales",
+    "publisher": "NRB — News Republic Brigade",
+    "event_date": "2026-06",
+    "available_at": "2026-10-03",
+    "explanation": "The rounded inputs imply a margin near negative 183.6%. This secondary account does not independently verify the precise margin or settle the complete claim."
+   }
+  ],
+  "what_would_resolve": "Obtain independently verified financial statements or equivalent reporting that reconciles 2025 expense categories and supplies Q2 operating income, revenue and a comparable baseline at sufficient precision.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "33b4c7e658c0dfface5833c3fd21ea8ae3ead4f7d298bded06eb7dd2ff0eeccb",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:34:27Z"
+}

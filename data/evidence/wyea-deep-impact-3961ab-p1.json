@@ -1,0 +1,174 @@
+{
+ "packet_id": "wyea-deep-impact-3961ab-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-3961ab",
+  "version": 2,
+  "content_hash": "f2e31ef06040dd5bf1990cfc7e7719db933685874793ba6a1848f0885b39f125"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-3961ab",
+  "version": 1,
+  "content_hash": "4f96c485b9a254bfae8ef8114b8801868cb40af0498a4aeb7a7722560e5d7dd2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2024 revenue 2.7 billion 1 billion API 27 percent September 2024",
+   "OpenAI 2024 revenue \"2.7 billion\" \"billion\" API",
+   "OpenAI September 2024 \"27%\" revenue API",
+   "OpenAI 2024 \"5.5 billion\" \"annualized\" revenue",
+   "OpenAI 2024 \"2.7 billion\" \"API\" revenue September October"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://fortune.com/2024/09/28/openai-5-billion-loss-2024-revenue-forecasts-fundraising-chapgpt-fee-hikes/",
+    "used": true,
+    "why": "Readable reporting on the underlying 2024 annual-revenue projections."
+   },
+   {
+    "url": "https://www.tanayj.com/p/openai-and-anthropic-revenue-breakdown",
+    "used": true,
+    "why": "Contemporaneous analysis explicitly distinguishes projected annual revenue from a year-end annualized estimate."
+   },
+   {
+    "url": "https://www.cnbc.com/2025/06/09/openai-hits-10-billion-in-annualized-revenue-fueled-by-chatgpt-growth.html",
+    "used": true,
+    "why": "Later reporting supplies a different 2024 total ARR figure, but no matched historical component breakdown."
+   },
+   {
+    "url": "https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html",
+    "used": false,
+    "why": "The original financial-document report could not be read; read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-coo-says-chatgpt-passed-11-million-paying-subscribers",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T11:01:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "fortune-com-2024-09-28-openai-5-billion-loss-2024-revenue-forecasts-6c5a99b406b4",
+   "source_snapshot_id": "8933f446ac69c75c66d93a910cb77d74745ee4d313b9df683a72f0dd4be01815",
+   "publisher": "Fortune",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2024/09/28/openai-5-billion-loss-2024-revenue-forecasts-fundraising-chapgpt-fee-hikes",
+   "locator": "Second substantive paragraph",
+   "receipt": {
+    "public_excerpt": "According to documents seen by the New York Times, the company expects revenue of $3.7 billion in 2024.",
+    "quote_hash": "d31722613b9165afbb9c48ac426338ba1572a7f333888ceb205e8b20c9fbc799",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-28",
+   "retrieved_at": "2026-10-29T01:00:36Z",
+   "relation": "context",
+   "explanation": "The same paragraph assigns $2.7 billion to ChatGPT and $1 billion to other businesses. These are projections for annual revenue, so they explain the figures without verifying the claimed recurring-revenue snapshot.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected full-year revenue and business breakdown",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected other-business revenue: $1 billion",
+     "Projected total annual revenue: $3.7 billion"
+    ],
+    "formula": "1 / 3.7 × 100 = 27.027...%",
+    "rounding": "27% to the nearest whole percentage point; this calculation concerns projected annual revenue, not ARR."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "tanayj-com-openai-and-anthropic-revenue-breakdown",
+   "source_snapshot_id": "c4c8eda7b0db7906f16dd9aa52a4f40fdfa36a6d8b6a13029834d306b3983116",
+   "publisher": "Tanay Jaipuria",
+   "source_type": "secondary_summary",
+   "url": "https://www.tanayj.com/p/openai-and-anthropic-revenue-breakdown",
+   "locator": "OpenAI, Revenue paragraph",
+   "receipt": {
+    "public_excerpt": "Based on their projected total revenue of $3.7B for 2024, I estimate OpenAI ending 2024 at ~$5B-5.2B in annualized run rate revenue.",
+    "quote_hash": "71e8c766e78e2be852200070de1a322e960d60e040ed098ab2e35853defe1ea4",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-30",
+   "retrieved_at": "2026-10-29T10:54:31Z",
+   "relation": "context",
+   "explanation": "This contemporaneous analysis distinguishes annual revenue from annualized revenue. Its year-end number is an estimate rather than an observed outcome.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Forecast year-end total annualized revenue",
+    "currency": "USD",
+    "units": "billions of dollars per year",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-12-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "cnbc-com-2025-06-09-openai-hits-10-billion-in-annualized-revenue-fu-7932ac8e3cf3",
+   "source_snapshot_id": "fba3f4555a92bbf24ac906a041c76e777bfcf285cb638b7481170326f21c1dff",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2025/06/09/openai-hits-10-billion-in-annualized-revenue-fueled-by-chatgpt-growth.html",
+   "locator": "Paragraph following the revenue-inclusions explanation",
+   "receipt": {
+    "public_excerpt": "For all of last year, OpenAI had around $5.5 billion in ARR.",
+    "quote_hash": "6cf2cd11f1feb1c08cbef1f4f159474026ade8527909b7e397b25c653b510658",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-06-09",
+   "retrieved_at": "2026-10-29T10:54:59Z",
+   "relation": "context",
+   "explanation": "The reported total raises a material concern about treating $3.7 billion as the relevant ARR total. It does not provide a matching 2024 model-access and subscription breakdown, and its historical snapshot wording is imprecise.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Total annual recurring revenue",
+    "currency": "USD",
+    "units": "billions of dollars per year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No matched 2024 annualized breakdown establishes all three asserted figures.",
+  "The underlying numbers can be traced to annual-revenue projections, but that does not establish the explicitly claimed recurring-revenue measure.",
+  "Direct API revenue, partner licensing, and subscription categories are not consistently reconciled."
+ ],
+ "packet_hash": "b294903b6777b96be3f7ed32f0d7a06054660c3415f7d01d9c6e84c0e0046a3f"
+}

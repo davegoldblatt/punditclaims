@@ -1,0 +1,118 @@
+{
+ "packet_id": "wyea-never-forget-what-theyve-done-f3a9f7-p2",
+ "claim_revision_ref": {
+  "id": "wyea-never-forget-what-theyve-done-f3a9f7",
+  "version": 1,
+  "content_hash": "3b426a36ad7a9102988319f5ad4184b287b82290a296f89bc09eba03087265d9"
+ },
+ "contract_ref": {
+  "id": "wyea-never-forget-what-theyve-done-f3a9f7",
+  "version": 2,
+  "content_hash": "6ed92071ef90694ff9d127c139474a7faa6db651d96ab243ad307c49afe6172c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "tau-bench pass^k reliability agents consistency paper",
+   "METR measuring AI ability to complete long tasks 80% success time horizon",
+   "TheAgentCompany benchmark best agent completes 30% of tasks autonomously"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2406.12045",
+    "used": true,
+    "why": "tau-bench (ICLR 2025) measures agent consistency across repeated trials; directly tests his reliability and replicability criteria."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.14499v1",
+    "used": true,
+    "why": "METR's March 2025 paper reports both 50% and 80% success time horizons for frontier models; it shows the reliability gap and also the growth trend."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.14161",
+    "used": false,
+    "why": "TheAgentCompany reports about 30% of workplace tasks completed autonomously, but the readable abstract is the September 2025 version, after the target period. Not used as decisive."
+   }
+  ],
+  "performed_at": "2026-10-31T20:19:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2406-12045",
+   "source_snapshot_id": "5cadb367df6414f20979c0a564d39ece54ab9eb9f09162780bedb5682bdb43b2",
+   "publisher": "arXiv (Sierra / Princeton; published at ICLR 2025)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2406.12045",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "even state-of-the-art function calling agents (like gpt-4o) succeed on <50% of the tasks, and are quite inconsistent (pass^8 <25% in retail).",
+    "quote_hash": "cac5192a2c4c56728d5805227ab3ed07e6887fb0a3ca9f153eb41060c3aef68f",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2024-06-17",
+   "retrieved_at": "2026-10-31T20:11:52Z",
+   "relation": "supports",
+   "explanation": "Measures the consistency the speaker names. A frontier model succeeded on fewer than half of tasks, and on fewer than a quarter of retail tasks when it had to succeed in all 8 tries. That supports 'not consistent, reliable or replicable'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-14499v1",
+   "source_snapshot_id": "a06b9216ef240a1912ea7483ce353d5bd43ae9932ea093d9b4bafbf347775fb9",
+   "publisher": "METR (arXiv)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.14499v1",
+   "locator": "Section 4.2.1",
+   "receipt": {
+    "public_excerpt": "This gap suggests that even models that sometimes succeed on difficult and diverse tasks cannot reliably perform tasks of moderate length.",
+    "quote_hash": "0cee30c84c10f0e3b6ba44013373328db941aaac5b89ce47c11c4bc6963d5099",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-18",
+   "retrieved_at": "2026-10-29T01:04:11Z",
+   "relation": "supports",
+   "explanation": "An independent evaluator found that the best frontier model of early 2025 reached 80% reliability only on tasks of about 15 minutes. The authors conclude that models cannot reliably do moderate-length tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2503-14499v1",
+   "source_snapshot_id": "a06b9216ef240a1912ea7483ce353d5bd43ae9932ea093d9b4bafbf347775fb9",
+   "publisher": "METR (arXiv)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.14499v1",
+   "locator": "Section 1 (Introduction)",
+   "receipt": {
+    "public_excerpt": "the 50% time horizon has been growing exponentially from 2019–2025 on our tasks, with a doubling time of approximately seven months",
+    "quote_hash": "6400ef0b36c7e7892267119fa48d450ecc10f18cefc7754ca667c12903d853ac",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-18",
+   "retrieved_at": "2026-10-29T01:04:11Z",
+   "relation": "context",
+   "explanation": "Counterpoint: models did complete bounded software tasks without help, and the length they could handle was growing fast. Some would read this as early evidence that they could become autonomous. It does not show the consistency the speaker's definition requires.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "'No proof that they can be' is partly about future potential. Evidence by the post date can show only that dependable autonomy had not yet been shown.",
+  "The benchmarks cover software and customer-service style tasks, not every domain."
+ ],
+ "packet_hash": "549bb200dad4866af0573b3c48d4ed9ae0e5a5733c9bb72a6eccc296164992d3"
+}

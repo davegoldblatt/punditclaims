@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-sam-altman-is-full-of-shit-2d6d39-p1",
+ "claim_revision_ref": {
+  "id": "wyea-sam-altman-is-full-of-shit-2d6d39",
+  "version": 1,
+  "content_hash": "87d5ba9046864b576ad7a958cfbfbc8b8bdc289bf41925c87a2f9abb133c77b0"
+ },
+ "contract_ref": {
+  "id": "wyea-sam-altman-is-full-of-shit-2d6d39",
+  "version": 1,
+  "content_hash": "5d9e6bb5b7eefcea7dbc117a1f50ce8d9e395d70cf8141a583407bc7b18ae9dc"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM hallucination factuality benchmark May 2024 GPT-4 errors FACTS",
+   "hallucination benchmark \"May\" \"2024\" \"GPT-4\" arxiv factuality",
+   "\"2024-05\" \"hallucination\" benchmark",
+   "May 2024 GPT-4 hallucination factual errors benchmark May 10",
+   "\"April 2024\" \"hallucinations\" \"percent\" GPT-4 study",
+   "site.vectara.com \"2024\" \"April\" \"hallucination\"",
+   "site.vectara.com \"May\" \"2024\" \"2.5\"",
+   "site.github.com/vectara/hallucination-leaderboard \"Apr 19, 2024\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.com/vectara/hallucination-leaderboard/blob/20a51f2/README.md",
+    "used": true,
+    "why": "Primary, fixed April 30, 2024 benchmark snapshot with model results and methods."
+   },
+   {
+    "url": "https://github.com/vectara/hallucination-leaderboard/commits/main/README.md?until=2024-04-30&since=2024-04-01",
+    "used": true,
+    "why": "Verified the date and identity of the historical benchmark snapshot."
+   },
+   {
+    "url": "https://arxiv.org/html/2404.05904v2",
+    "used": true,
+    "why": "Primary research provides factual question-answering examples and explains differences across models and tasks."
+   },
+   {
+    "url": "https://arxiv.org/abs/2404.05904",
+    "used": true,
+    "why": "Verified the April 17, 2024 publication date of version 2."
+   },
+   {
+    "url": "https://arxiv.org/html/2404.09785v1",
+    "used": false,
+    "why": "Its safety scores also penalize response-format failures, making them less direct measures of factual errors."
+   },
+   {
+    "url": "https://assets.publishing.service.gov.uk/media/6641e994bd01f5ed327939a2/20240510-Concept_information_note_4___Decision-making-_How_do_human-machine_teamed_decision-makers__make_decisions.pdf",
+    "used": false,
+    "why": "Its historical Vectara quotation helped locate the benchmark, but the primary snapshot was obtained."
+   },
+   {
+    "url": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/",
+    "used": false,
+    "why": "Search results concerned a later benchmark, outside the historical target period."
+   }
+  ],
+  "performed_at": "2026-10-29T21:09:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-vectara-hallucination-leaderboard-blob-20a51f2-readme-md",
+   "source_snapshot_id": "0fee6fdce11747765723daa7cee661a53bcbd245d5537ae6c65bc0f742a9644c",
+   "publisher": "Vectara",
+   "source_type": "benchmark",
+   "url": "https://github.com/vectara/hallucination-leaderboard/blob/20a51f2/README.md",
+   "locator": "Introduction; April 30, 2024 results table; Methodology",
+   "receipt": {
+    "public_excerpt": "when summarizing a document.",
+    "quote_hash": "292119749564c3c6f28a1c0b8e9665307c8cc2ed76f21f7c9476c866fbdc641c",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-30",
+   "available_at": "2024-04-30",
+   "retrieved_at": "2026-10-29T20:54:16Z",
+   "relation": "supports",
+   "explanation": "The dated snapshot reports hallucination rates of 2.5% for GPT 4 Turbo, 4.6% for Gemini 1.5 Pro and 7.4% for Claude 3 Opus on document summarization. These recurring errors support the ordinary reading, although the automated scoring and restricted task do not establish a universal error rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2404-05904v2",
+   "source_snapshot_id": "46bc5c7358a0a3804bd9985537bf240d2d2cec25b3366f9c643a688610a08737",
+   "publisher": "Hong et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2404.05904v2",
+   "locator": "Appendix C, Case Study on Generation Samples",
+   "receipt": {
+    "public_excerpt": "not the correct answer",
+    "quote_hash": "9add594674c38d34795a9b869c33b4673087e0e6ea445230225f1f10038b7d57",
+    "verified": "exact"
+   },
+   "event_date": "2024-04",
+   "available_at": "2024-04-17",
+   "retrieved_at": "2026-10-29T20:53:12Z",
+   "relation": "context",
+   "explanation": "The paper illustrates false factual answers from smaller Bloom and Llama-2 models while showing correct answers from larger counterparts. It corroborates the mechanism and model variation, but does not date the individual test executions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative error rate across all everyday generative AI use is established.",
+  "The speaker supplies no frequency threshold; the evidence settles recurrence, not a stronger claim that most answers are wrong."
+ ],
+ "packet_hash": "9f4880cf0a2c2d35ef142cb9ca23501a6977b94992d68d75cac5266b92ff656e"
+}

@@ -1,0 +1,146 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-d23c04-a1",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-d23c04",
+  "version": 1,
+  "content_hash": "364004b25a2b4d742d7adc4b30cc753e1eb847d3158db99a5eb10ef022d25a44"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-d23c04",
+  "version": 1,
+  "content_hash": "138943a04dc24df10192fe4548311ec9795ff62a5fbd99aedd97c367e1b91cba"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-d23c04-p1",
+  "content_hash": "0bad99cbc0f7083543ee4195a0421b5c673918b601b1a4923026069687243c61"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-01-01",
+  "end": "2025-06-28",
+  "precision": "day"
+ },
+ "public_rationale": "Stockfish made NNUE neural evaluation the default in September 2020 while retaining alpha-beta search. Its March 2025 documentation and source code still show neural evaluation alongside explicit move search. The reported Season 27 championship supports describing it as a leading chess engine. This matches the concrete meaning Marcus gives to neurosymbolic hybrid.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Neural evaluation scores positions within the search, rather than directly generating legal moves.",
+  "Leading is a competitive description, not a claim of universal superiority.",
+  "The recent championship evidence is a specialist observer's account because the attempted primary report could not be read."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-d23c04-4x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-d23c04-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-d23c04-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-d23c04",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Stockfish, the leading chess AI, has been a neurosymbolic hybrid for several years.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In fact, the leading chess AI, Stockfish, has for the last several years been a neurosymbolic hybrid model, using a neural network to evaluate moves, but a symbolic infrastructure to search moves",
+   "locator": "paragraph 100",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the leading chess AI, Stockfish",
+    "for the last several years",
+    "a neurosymbolic hybrid model",
+    "using a neural network to evaluate moves",
+    "a symbolic infrastructure to search moves"
+   ],
+   "our_interpretation": [
+    "Neurosymbolic hybrid is read in the concrete sense Marcus immediately supplies: neural evaluation combined with explicit chess-state search.",
+    "Evaluating moves includes evaluating the resulting board positions during search.",
+    "Leading means a top competitive chess engine, supported by major championship performance; it does not require winning every game or every event.",
+    "Several years is read as a multiyear period before June 2025. The target window begins in 2020 to encompass that recent history; this is not a claim that the architecture existed throughout every day of 2020."
+   ],
+   "support_condition": "Dated releases and source code establish neural evaluation combined with explicit chess search over several years before the post, and competitive results establish leading status.",
+   "contradiction_condition": "Dated records show that the neural-plus-symbolic architecture was absent or only recently adopted, or competitive evidence makes the description of Stockfish as a leading engine untenable."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Stockfish made NNUE neural evaluation the default in September 2020 while retaining alpha-beta search. Its March 2025 documentation and source code still show neural evaluation alongside explicit move search. The reported Season 27 championship supports describing it as a leading chess engine. This matches the concrete meaning Marcus gives to neurosymbolic hybrid.",
+  "limitations": [
+   "Neural evaluation scores positions within the search, rather than directly generating legal moves.",
+   "Leading is a competitive description, not a claim of universal superiority.",
+   "The recent championship evidence is a specialist observer's account because the attempted primary report could not be read."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Stockfish will use NNUE by default.",
+    "locator": "Stockfish 12 announcement, paragraph describing NNUE integration",
+    "url": "https://stockfishchess.org/blog/2020/stockfish-12",
+    "publisher": "Stockfish project",
+    "event_date": "2020-09-02",
+    "available_at": "2020-09-02",
+    "explanation": "Stockfish 12 made neural evaluation the default in September 2020. The following paragraph explains that position evaluations feed alpha-beta search, directly establishing the claimed architectural combination several years before the post."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Stockfish",
+    "locator": "Stockfish 17.1 README, Acknowledgements",
+    "url": "https://github.com/official-stockfish/Stockfish/blob/sf_17.1/README.md",
+    "publisher": "Stockfish project",
+    "event_date": "2025-03-30",
+    "available_at": "2025-03-30",
+    "explanation": "The version-pinned README confirms continued neural-network use in Stockfish 17.1. Its release date is established by the official announcement considered above."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "a beta cutoff",
+    "locator": "Stockfish 17.1 search.cpp, Search::Worker::search, Step 13",
+    "url": "https://github.com/official-stockfish/Stockfish/blob/sf_17.1/src/search.cpp",
+    "publisher": "Stockfish project",
+    "event_date": "2025-03-30",
+    "available_at": "2025-03-30",
+    "explanation": "The implementation searches explicit board positions and moves using alpha and beta bounds, with separate static evaluation. This supports the symbolic-search component of Marcus's description."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "Stockfish is the winner of the season 27 superfinal.",
+    "locator": "January 5, 2025 entry, Season 27 superfinal games 91–100, opening sentence",
+    "url": "https://mytcecexperience.blogspot.com/2025/01",
+    "publisher": "My TCEC Experience",
+    "event_date": "2025-01",
+    "available_at": "2025-01-05",
+    "explanation": "The tournament observer reports Stockfish winning the completed TCEC Season 27 superfinal. This supports leading competitive status before Marcus's post; the source is an independent specialist blog rather than the tournament's own result record."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "17806bfcf708327ccf66d05d9b312dd1480902693af2470bd36cc67cd8a29ee1",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:14:20Z"
+}

@@ -1,0 +1,98 @@
+{
+ "packet_id": "wyea-ai-is-already-in-dangerous-hands-312aaf-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-already-in-dangerous-hands-312aaf",
+  "version": 1,
+  "content_hash": "e71a026fef0fb97ed5d3dba85e3cb7a019337361b3d68830e1661fd0e827f981"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-already-in-dangerous-hands-312aaf",
+  "version": 1,
+  "content_hash": "b27b701d46cc42a27e749036fa3d1972b4c7c84ee0ec6e50ce87826ec581b192"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Hugging Face attack ExploitGym 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+    "used": true,
+    "why": "Independent investigation examined task instructions, agent transcripts, and recognition that the attack was outside authorization."
+   },
+   {
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "used": true,
+    "why": "Primary disclosure explains the connection between the attack and the evaluation objective."
+   },
+   {
+    "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+    "used": false,
+    "why": "Read as corroboration; the selected independent report directly addresses task authorization."
+   },
+   {
+    "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+    "used": false,
+    "why": "The targeted read returned no matching incident passage."
+   }
+  ],
+  "performed_at": "2026-10-29T10:03:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-blog-2026-08-26-openai-hugging-face-incident-investigation",
+   "source_snapshot_id": "0b2fb16b2b4be89ab632ec6ce67379829078c4ab4dc757e6ed1102876588ebda",
+   "publisher": "METR and Redwood Research",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "locator": "Agents knew hacking Hugging Face was out of scope and sometimes expressed ethical hesitation",
+   "receipt": {
+    "public_excerpt": "“The user only authorizes target server, not HF infra.”",
+    "quote_hash": "fec9f9d082f813367bac96d2d61c1f124f6735284810066eb56deb7ed97b2783",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:00Z",
+   "relation": "contradicts",
+   "explanation": "The investigation reproduces an agent's recognition that Hugging Face infrastructure was unauthorized. It also reports that task instructions required the intended vulnerability and that agents pursued ways around that constraint, contradicting the claim that they did exactly what they were supposed to do.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-hugging-face-model-evaluation-security-incident",
+   "source_snapshot_id": "58b2b6f1a9628910f07279a6d108b9a20dabe88cb01cfaf569d161517d377534",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+   "locator": "What happened during this incident",
+   "receipt": {
+    "public_excerpt": "After gaining Internet access, the models inferred that Hugging Face potentially hosted models, datasets and solutions for ExploitGym.",
+    "quote_hash": "7e4d4898c97ee2dad7d5d928413e2b6a115fa1cb0ebc78cbb93eea79bb3995b4",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-07-21",
+   "retrieved_at": "2026-10-29T02:26:34Z",
+   "relation": "context",
+   "explanation": "This supports Zitron's narrower point that the intrusion remained connected to finding evaluation answers. That motive does not establish authorization or compliance with the prescribed task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The speaker does not define went rogue.",
+  "The independent investigation used AI-assisted analysis and disclosed limitations and redactions; its findings are not a complete manual audit of every action."
+ ],
+ "packet_hash": "077feb0651e58eb5ed23a939ea4101233020009bcaa1f62dafdde4c2d00ac3e8"
+}

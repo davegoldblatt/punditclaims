@@ -1,0 +1,215 @@
+{
+ "run_id": "marcus-o3-agi-the-art-of-the-demo-and-what-256352-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-o3-agi-the-art-of-the-demo-and-what-256352": "034ca5e5fc22a1722097440e4df4b64fc1d400d70af84ea93f198988262c83c9",
+  "case:marcus-o3-agi-the-art-of-the-demo-and-what-612921": "20a1ebf28bb5b396011405b2097db65ac32feb0da42c409e4e1d347933a4be91",
+  "case:marcus-o3-agi-the-art-of-the-demo-and-what-6ddd11": "5293356d231cc575f5c4408b9bde523e5091c9e21ec406931b98e994bc4839f5",
+  "case:marcus-o3-agi-the-art-of-the-demo-and-what-8bf959": "b410150528d5dca59f1a1d8df3e123e016c69aa61b760d4a1771642c6f609e59"
+ },
+ "started_at": "2026-10-29T07:58:35Z",
+ "completed_at": "2026-10-29T07:59:17Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post. It is not part of the Chollet quote that comes earlier."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding paragraphs are about AGI and the o3 demo, so adding 'on the path to AGI' is a fair reading of the context. It is a present-tense observation with no hedge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary and fair. 'Unsolved' means evaluations still show systematic reliability failures, not zero progress. The window from the Apple paper to the o3 demo matches the context. 'Many' is read qualitatively, as a reader would."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Preprint v1, dated 7 Oct 2024 and inside the window. It shows performance dropping on grade-school math when only the numbers change or an irrelevant clause is added. These are observed failures; the authors' explanation is only a hypothesis."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC Prize evaluator, 20 Dec 2024: o3 still fails some very easy tasks. This is a direct evaluation showing a remaining reliability gap."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "The 87.5% high-compute score shows real progress. It does not show that the reported shortcomings were resolved, so it does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two primary evaluations from the window (GSM-Symbolic and the ARC Prize o3 report) document basic reliability failures, in elementary math reasoning under controlled changes and on easy novel tasks. The progress in e5 is real but does not show these problems solved. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-o3-agi-the-art-of-the-demo-and-what-256352"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post, as his own prediction."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I would wager' is bet language, which policy treats as firm, like 'I bet'. The drafter's 'will likely' adds a probability hedge the source does not have. 'At best' is kept correctly as a ceiling: at most partial reliability. Score it as a firm forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: reliability will vary by task type, strong on some and weak on others. No deadline was stated, and the early-resolution rule matches what the claim implies once o3 is released."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI release post, 16 Apr 2025, a company disclosure: 98.4% pass@1 on AIME 2025 with tools. It shows o3 reliable on one kind of problem."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Secondary page quoting the o3 system card: 0.33 hallucination rate on PersonQA, against 0.16 for o1. It shows unreliability on factual questions about people."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI GPT-5 post, Aug 2025: o3 gave confident answers about images that did not exist 86.7% of the time. Another domain where it was unreliable. Company measurement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "o3 was released in April 2025. The published evaluations show near-perfect tool-assisted competition math alongside high hallucination and confident-error rates on factual and missing-image tasks, so its reliability varied by problem type. This meets the early-resolution rule. The sources are mainly OpenAI disclosures, which the contract allows.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-o3-agi-the-art-of-the-demo-and-what-612921"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states this as his own long-held point. He cites a paper but makes the claim in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The claim is about a tendency ('tend to be better') and is kept as one, not stated as a universal rule."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "A recurring tendency shown in controlled ID-versus-OOD comparisons is the ordinary reading. The contradiction condition sensibly ignores individual successes."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "WILDS, ICML 2021, peer reviewed: OOD performance was substantially lower than ID performance on each of ten datasets in different domains."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Qin et al., Dec 2024, the paper the post names: 100% ID accuracy, while OOD accuracy differs widely and is often much lower. Some configurations generalize well, which limits only a stronger claim than this one."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary research before the post shows a recurring OOD performance gap across many tasks (WILDS) and in controlled experiments (Qin et al.). The successful OOD configurations do not contradict a stated tendency. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-o3-agi-the-art-of-the-demo-and-what-6ddd11"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An accurate observation about the time of the demo. The exception Marcus himself names (Chollet's ARC test) is preserved in the contract."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair. It counts his stated ARC exception in his favour, and it excludes safety-testing sign-ups from counting as public release."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch, 20 Dec 2024: neither o3 nor o3-mini was widely available yet, and only a safety-researcher preview of o3-mini was offered."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch, same day: the benchmark claims came from OpenAI's internal evaluations, and outside benchmarking was still to come."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI release post dated 16 Apr 2025, a company disclosure. It confirms public release came later, which the support condition requires."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reporting from the day says o3 was not publicly available and its results were OpenAI's own internal evaluations. OpenAI released it only in April 2025. Nothing in the packet shows broad independent vetting by 21 Dec 2024 beyond the ARC exception Marcus noted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-o3-agi-the-art-of-the-demo-and-what-8bf959"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31875,
+  "output_tokens": 4550,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

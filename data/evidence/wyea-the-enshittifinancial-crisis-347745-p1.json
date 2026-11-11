@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-the-enshittifinancial-crisis-347745-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-347745",
+  "version": 1,
+  "content_hash": "5d4b1a611a1329d911fedbcab352bc1bec7109dfbd67fe3cdb9cac39cf936616"
+ },
+ "contract_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-347745",
+  "version": 1,
+  "content_hash": "d617e11b00d1c3a29abdcc5b5153238079e294f4af6ee4d2b05eff12cc108b1d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic December 2025 cash balance Broadcom 10 billion 11 billion order payment financing",
+   "site.anthropic.com \"2025\" \"13 billion\"",
+   "Anthropic S-1 October 2026 December 2025 cash 2025 balance sheet",
+   "site.sec.gov/Archives/edgar \"Anthropic\" \"2026\" \"S-1\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+    "used": true,
+    "why": "Primary confirmation of completed financing; context rather than a December cash balance."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary retrospective financial statements available before the freeze. The year-end balance is outside the claim's exact date."
+   },
+   {
+    "url": "https://tenq.co/report/ANT",
+    "used": false,
+    "why": "Read as a discovery source; replaced by the underlying filing."
+   },
+   {
+    "url": "https://apnews.com/article/80f77cfda96027779cccecf7741570f8",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T21:24:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "anthropic-com-news-anthropic-raises-series-f-at-usd183b-post-money-valuation",
+   "source_snapshot_id": "ed8460033f0a5f3b4bd080dbf701096008a34f68b71641bcb4d6cc493c6fe8a9",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+   "locator": "Opening announcement paragraph",
+   "receipt": {
+    "public_excerpt": "$13 billion",
+    "quote_hash": "1b542fcfa3663458b422b38de7f3fa3fa2b0b572ed7635ff8b9306c3ad09ad12",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-02",
+   "available_at": "2025-09-02",
+   "retrieved_at": "2026-10-29T03:06:30Z",
+   "relation": "context",
+   "explanation": "Completed financing weakens an argument based only on operating losses. It does not establish how much remained accessible on December 29.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Series F financing raised",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2025-09-02",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Note 3, Investments; consolidated balance sheets, page F-5",
+   "receipt": {
+    "public_excerpt": "short-term investments",
+    "quote_hash": "121b46572390bc8a99050a4a066a78cfb6bec931a7bceaa926a05b0c5f169005",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The audited year-end table reports $17.388 billion in cash and equivalents and $2.889 billion in short-term investments. These are substantial contrary indications, but the balance is two days later and does not reconcile publication-date obligations.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Cash, cash equivalents and short-term investments",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-12-31",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No reconciliation of unrestricted liquidity specifically on December 29, 2025.",
+  "No complete schedule of immediately unavoidable obligations or Broadcom payment terms.",
+  "The December 31 balance cannot be moved backward two days without evidence about intervening transactions."
+ ],
+ "packet_hash": "3e66ed17336a580af9ce6119f92ef0f07d59b794c0b3c6ef437550289841dc03"
+}

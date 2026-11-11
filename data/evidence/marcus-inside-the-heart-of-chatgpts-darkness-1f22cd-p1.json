@@ -1,0 +1,130 @@
+{
+ "packet_id": "marcus-inside-the-heart-of-chatgpts-darkness-1f22cd-p1",
+ "claim_revision_ref": {
+  "id": "marcus-inside-the-heart-of-chatgpts-darkness-1f22cd",
+  "version": 2,
+  "content_hash": "e5c7732a3898fe08c107806eaf8197e40110469553ae16e01fc04a89469bd1b2"
+ },
+ "contract_ref": {
+  "id": "marcus-inside-the-heart-of-chatgpts-darkness-1f22cd",
+  "version": 1,
+  "content_hash": "5985b4bbf98eb62e2d466ac7f2e30b5d35f69983c52ad0d4cd93bceb11d6b24e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ChatGPT RLHF training data not released February 2023 OpenAI",
+   "ChatGPT February 2023 RLHF dataset not publicly available training data",
+   "site.openai.com \"ChatGPT\" \"content filter\" \"2023\"",
+   "site.huggingface.co/blog \"ChatGPT\" \"data\" \"public\" \"RLHF\"",
+   "site.time.com/6247678/ \"January 18, 2023\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/",
+    "used": true,
+    "why": "Original investigation contains OpenAI confirmation of toxicity detection and training-data filtering."
+   },
+   {
+    "url": "https://openai.com/index/chatgpt/",
+    "used": true,
+    "why": "Primary launch documentation describes both the training method and a separate moderation mechanism."
+   },
+   {
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "used": true,
+    "why": "Original research establishes substantial public explanation of the underlying RLHF method, but concerns InstructGPT."
+   },
+   {
+    "url": "https://huggingface.co/blog/dialog-agents",
+    "used": false,
+    "why": "Read as a contemporaneous disclosure cross-check; it substitutes InstructGPT details for undocumented ChatGPT details and supplies no ChatGPT safeguard ablation."
+   },
+   {
+    "url": "https://www.cyberark.com/resources/threat-research-blog/chatting-our-way-into-creating-a-polymorphic-malware",
+    "used": false,
+    "why": "read_page returned unrelated current site material rather than the historical experiment."
+   }
+  ],
+  "performed_at": "2026-10-29T17:20:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e7",
+   "role": "evidence_of_outcome",
+   "document_id": "time-com-6247678-openai-chatgpt-kenya-workers",
+   "source_snapshot_id": "3f2b50f0704b36c7faa39a0e7fe738e0ae804e6b167d7a7a238127e4ab62195b",
+   "publisher": "TIME",
+   "source_type": "news_report",
+   "url": "https://time.com/6247678/openai-chatgpt-kenya-workers",
+   "locator": "Paragraph beginning 'In a statement, an OpenAI spokesperson confirmed'",
+   "receipt": {
+    "public_excerpt": "remove toxic data",
+    "quote_hash": "bba901f61bf2b0ca6fa18fff8ca44ac58e8e52f87a3b1afe72de009e5020231a",
+    "verified": "exact"
+   },
+   "event_date": "2023-01-18",
+   "available_at": "2023-01-18",
+   "retrieved_at": "2026-10-29T02:01:45Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI's confirmation describes a toxicity detector incorporated into ChatGPT and efforts to filter training material. These are protections beyond reinforcement learning; the report does not quantify their separate effects.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e8",
+   "role": "context",
+   "document_id": "openai-com-index-chatgpt",
+   "source_snapshot_id": "743b566fdd173180503f6a3b1fbdc638508c7b593090cef011f2ea8d8da84ce2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/chatgpt",
+   "locator": "Methods, second paragraph; separate moderation documented under Limitations",
+   "receipt": {
+    "public_excerpt": "Proximal Policy Optimization⁠",
+    "quote_hash": "80fabb0a60134d6a65b3e9baae01e1c89d58f489bb11f9c07e2c0c44eea8a2fd",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-30",
+   "available_at": "2022-11-30",
+   "retrieved_at": "2026-10-29T04:11:28Z",
+   "relation": "context",
+   "explanation": "OpenAI described the feedback-training pipeline and separately stated that its Moderation API warned or blocked unsafe content. The page establishes public method disclosure and corroborates additional safeguards, but is not a controlled efficacy comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e9",
+   "role": "context",
+   "document_id": "arxiv-org-html-2203-02155v1",
+   "source_snapshot_id": "acf509b6f0a50af240e00d3d1a92e7fa656bee807312df45692a68d280b39be9",
+   "publisher": "OpenAI researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.02155v1",
+   "locator": "Section 1, Introduction, paragraph introducing RLHF",
+   "receipt": {
+    "public_excerpt": "human preferences",
+    "quote_hash": "35dc77963067560fbd92f307fa1781b9c485276b2d54635448b7d78304eac591",
+    "verified": "exact"
+   },
+   "event_date": "2022-03-04",
+   "available_at": "2022-03-04",
+   "retrieved_at": "2026-10-29T04:12:12Z",
+   "relation": "context",
+   "explanation": "The paper explains the predecessor's demonstration, ranking, reward-model, and reinforcement-learning procedure. It counters a reading that the general method was secret, but cannot establish complete disclosure or causal effects for ChatGPT itself.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "No controlled early-ChatGPT ablation was found that measures each safeguard's independent effect.",
+  "The retrieved evidence does not establish complete disclosure of ChatGPT-specific implementation details."
+ ],
+ "packet_hash": "be5a560a36b617f7f0b8e3ebd3dd75ec2d2c548535bc4d1541f5567d6a574b86"
+}

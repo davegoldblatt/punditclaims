@@ -1,0 +1,133 @@
+{
+ "packet_id": "wyea-brokenomics-2c8942-p1",
+ "claim_revision_ref": {
+  "id": "wyea-brokenomics-2c8942",
+  "version": 1,
+  "content_hash": "83a6b65ff35389d81f44951337d5973fbacd0054e35ef7613303f53bf826b584"
+ },
+ "contract_ref": {
+  "id": "wyea-brokenomics-2c8942",
+  "version": 1,
+  "content_hash": "12f03718d1f0d47cf20885d580f1ff5645f4bf596293ae4830e897af939a8974"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic Q1 2026 revenue costs losses enterprise billing token pricing June",
+   "site.sec.gov Anthropic 2026 S-1 October 26 4731",
+   "OpenAI Q1 2026 revenue operating loss financial filing June 2026",
+   "OpenAI Q1 2026 revenue loss Reuters June",
+   "\"OpenAI\" \"burned\" \"$3.7 billion\" \"June 16\" Reuters"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://uk.finance.yahoo.com/news/openai-burned-3-7-billion-234306479.html/",
+    "used": true,
+    "why": "Readable Reuters report about Q1 cash burn, with an explicit verification caveat. Used only as context."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial filing available before the freeze. It distinguishes losses and operating results, but does not supply the missing definition of business-model viability."
+   },
+   {
+    "url": "https://www.marketscreener.com/news/openai-burned-3-7-billion-in-first-quarter-of-2026-the-information-reports-ce7f5cdcd888ff2d",
+    "used": false,
+    "why": "read_page returned HTTP 403; the Reuters report was read through Yahoo instead."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": false,
+    "why": "Describes 2025 rather than the selected quarter and substantially relies on documents publicized by the speaker."
+   },
+   {
+    "url": "https://apnews.com/article/3c2674f5cdf67ac6d88eedb207de117c",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T10:32:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "uk-finance-yahoo-com-news-openai-burned-3-7-billion-234306479-html",
+   "source_snapshot_id": "f1de240a81aecad3164ce24dddf04280cd74473c903e64739de697af20d8fe7d",
+   "publisher": "Reuters, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://uk.finance.yahoo.com/news/openai-burned-3-7-billion-234306479.html",
+   "locator": "Paragraph 2",
+   "receipt": {
+    "public_excerpt": "Reuters could not immediately",
+    "quote_hash": "becc5b7f3e4bb7edbde8799019bfe0998d63908dcac85b22e0537b483d4fb1b4",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T09:01:20Z",
+   "relation": "context",
+   "explanation": "Reuters relays The Information's report of $3.7 billion in Q1 cash burn and $5.7 billion in revenue, while expressly withholding verification. Cash burn is not an operating-loss measure or a direct test of sustainable unit economics.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Cash burn",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, filed with the SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; quarterly operating results on pages 158–160",
+   "receipt": {
+    "public_excerpt": "history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing documents net losses through the first half of 2026, while its quarterly discussion also reports a Q2 operating profit. These different measures and the later period cannot settle the claim about both companies' Q1 business models.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The claim does not specify an accounting basis, which prevents a supported or contradicted money assessment under the stated rules.",
+  "No comparable, verified Q1 breakdown of sustainable service costs and customer economics was established for both companies.",
+  "Current losses do not identify how much spending is necessary to serve existing customers versus investment in future capabilities.",
+  "Anthropic's later operating profit is material context but falls outside the target quarter."
+ ],
+ "packet_hash": "9bd0863f73ea39068d6993e15dc790e4f8f6f1f0dbe8510adbda76cfc265468d"
+}

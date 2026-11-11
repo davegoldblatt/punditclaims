@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-make-fun-of-them-140c13-p1",
+ "claim_revision_ref": {
+  "id": "wyea-make-fun-of-them-140c13",
+  "version": 1,
+  "content_hash": "7db0225c4b9968f9d00284028e4e5cf5adb5fe44db52d17d9f8ec67ab17e66a1"
+ },
+ "contract_ref": {
+  "id": "wyea-make-fun-of-them-140c13",
+  "version": 1,
+  "content_hash": "173f65d2a8aad4059ee0d7faab7e120d0b2d700a870f58e23a1823e34b273444"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"generative AI\" \"18.8 billion\" \"2025\" Information",
+   "\"The Information\" \"18.8 billion\" AI",
+   "\"generative AI\" \"Q1 2025\" \"funding\" \"18.8\"",
+   "\"generative AI\" \"revenue\" \"June\" \"2025\" \"billion\" industry total"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theinformation.com/newsletters/pro-weekly/pro-weekly-ai-venture-funding-extends-hot-streak",
+    "used": false,
+    "why": "read_page returned HTTP 403; the funding figures could not be verified from the article."
+   },
+   {
+    "url": "https://info-reader-production.herokuapp.com/newsletters/pro-weekly/pro-weekly-ai-venture-funding-extends-hot-streak",
+    "used": false,
+    "why": "Returned only a title, byline, and subscription prompt. No substantive evidence was available."
+   },
+   {
+    "url": "https://www.wheresyoured.at/make-fun-of-them",
+    "used": true,
+    "why": "Used only to document and recompute the argument's inputs, not as evidence of actual industry revenue or that the speaker was right."
+   }
+  ],
+  "performed_at": "2026-10-29T20:25:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "wyea-make-fun-of-them",
+   "source_snapshot_id": "32e1dd44aee44065123571177c979124161f278149651b24fc8999a262290350",
+   "publisher": "Where's Your Ed At — Ed Zitron",
+   "source_type": "secondary_summary",
+   "url": "https://www.wheresyoured.at/make-fun-of-them",
+   "locator": "Revenue subtotal immediately before the investment comparison",
+   "receipt": {
+    "public_excerpt": "Less than $39 billion",
+    "quote_hash": "1b88fbf9f873960eb174abb59ed2911960a9f6289267acecb9e94486892bcc8c",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-30",
+   "available_at": "2025-06-30",
+   "retrieved_at": "2026-10-28T22:29:42Z",
+   "relation": "context",
+   "explanation": "Recomputing the stated inputs gives $38.387 billion, above the $37.08 billion threshold. This exposes a problem in the argument but does not independently establish actual industry revenue.",
+   "metric_scope": {
+    "company": "Companies included in Zitron's tally",
+    "metric": "Arithmetic sum of stated revenue projections and annualized rates",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Initial stated subtotal: 32.3",
+     "Anthropic: 3",
+     "Scale: 0.870",
+     "Additional Anysphere amount: 0.300",
+     "Neo4j: 0.200",
+     "Midjourney: 0.200",
+     "Ironclad: 0.150",
+     "Glean: 0.103",
+     "Together AI, Moveworks, Abridge, Synthesia, WEKA, and Windsurf: 6 × 0.100",
+     "Runway: 0.084",
+     "ElevenLabs: 0.100",
+     "Cohere: 0.070",
+     "Jasper: 0.060",
+     "Harvey, Ada, and Photoroom: 3 × 0.050",
+     "Remainder: 0.200",
+     "Stated investment and capex denominator: 370.8"
+    ],
+    "formula": "32.3 + 3 + 0.870 + 0.300 + 0.200 + 0.200 + 0.150 + 0.103 + 6*0.100 + 0.084 + 0.100 + 0.070 + 0.060 + 3*0.050 + 0.200 = 38.387; 370.8/10 = 37.08; 38.387/370.8*100 = 10.3525%",
+    "rounding": "Subtotal retained to three decimal places in billions; ratio rounded to 10.35%. Inputs remain the speaker's unverified estimates."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The underlying funding database was not accessible through read_page.",
+  "No comparable independent industry revenue total was established.",
+  "The denominator combines fundraising with capex and does not establish necessary industry expenditure.",
+  "The internal arithmetic problem does not by itself prove the real-world revenue ratio."
+ ],
+ "packet_hash": "404720b06693e48afc03468b030b01dcf2ddbf60242280cb988413c170c75476"
+}

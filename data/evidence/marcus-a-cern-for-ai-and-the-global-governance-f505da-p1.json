@@ -1,0 +1,135 @@
+{
+ "packet_id": "marcus-a-cern-for-ai-and-the-global-governance-f505da-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-cern-for-ai-and-the-global-governance-f505da",
+  "version": 1,
+  "content_hash": "feb068bff686c4dcabba9503802fc01b25f75ed6ca0bef98644abd20d2b9e273"
+ },
+ "contract_ref": {
+  "id": "marcus-a-cern-for-ai-and-the-global-governance-f505da",
+  "version": 1,
+  "content_hash": "985612ded0ca4b9658899d5543a38e3ad7fb0c728cfa45462fe5eef053dc01a0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Jailbreaking Black Box Large Language Models twenty queries October 2023 PAIR",
+   "\"2023\" \"certified\" \"jailbreak\" defense",
+   "\"2023\" \"certified\" \"jailbreak\" defense SmoothLLM"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2310.08419v1",
+    "used": true,
+    "why": "Original PAIR paper; includes automation, running time, success rates, and less successful results."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.08419v1",
+    "used": true,
+    "why": "Read to verify the October 12 publication date and original model coverage."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.02705v1",
+    "used": true,
+    "why": "Material qualification: erase-and-check offered guarantees for bounded adversarial modifications before the post."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2310.03684v1",
+    "used": true,
+    "why": "Material qualification: SmoothLLM provided conditional attack-mitigation guarantees."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.03684v1",
+    "used": true,
+    "why": "Read to verify the October 5 publication date and distinguish mitigation from general immunity."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.08419",
+    "used": false,
+    "why": "Search returned a later revised abstract. The original October 2023 version was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T02:07:55Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2310-08419v1",
+   "source_snapshot_id": "4dd9d22aeabc3516473f5dbbeb657f156928715bd1e1ed62cab86180f2c42bcc",
+   "publisher": "arXiv; Patrick Chao and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2310.08419v1",
+   "locator": "Section 1; results in Table 1 and the discussion following Table 2",
+   "receipt": {
+    "public_excerpt": "fully automated process",
+    "quote_hash": "a1baaa61d0ccb62380d680a2a723a0b7a5b9820be1e5a04c50695eb27ffbff75",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-12",
+   "available_at": "2023-10-12",
+   "retrieved_at": "2026-10-29T02:02:40Z",
+   "relation": "supports",
+   "explanation": "The published demonstration reports roughly five-minute successful jailbreak generation and success rates of 60% for GPT-3.5, 62% for GPT-4, and 72% for PaLM-2. Success was substantially lower for Llama-2 and Claude, so the evidence establishes capability across multiple models rather than uniform vulnerability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2309-02705v1",
+   "source_snapshot_id": "f734c3e5c414e019dd9a0576db77c2458e6c53714c9116a13a016da3a58fd4ec",
+   "publisher": "arXiv; Aounon Kumar and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2309.02705v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "up to a certain size",
+    "quote_hash": "54022c7971b3095c2969a8a7f89921eafe7797268a02864763807b672db0424e",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-06",
+   "available_at": "2023-09-06",
+   "retrieved_at": "2026-10-29T02:02:48Z",
+   "relation": "context",
+   "explanation": "Erase-and-check is material counterevidence to a literal assertion that no guarantees of any kind existed. Its protection concerns bounded modifications and a safety filter, not immunity to arbitrary jailbreaks; it also predates the selected October window.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2310-03684v1",
+   "source_snapshot_id": "93aac05e1c1d9803f906f12131ba93268154becbf1bec84cf356eb44a4bd5816",
+   "publisher": "arXiv; Alexander Robey and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2310.03684v1",
+   "locator": "Section 4, following Definition 4.1",
+   "receipt": {
+    "public_excerpt": "k-unstable",
+    "quote_hash": "83aa8f39e0fc02a8ba84ff809a3a4b9c28d3d60ccc681096305e9902fcc450ac",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-05",
+   "available_at": "2023-10-05",
+   "retrieved_at": "2026-10-29T02:03:04Z",
+   "relation": "context",
+   "explanation": "SmoothLLM derives a high-probability defense guarantee under an assumption about how suffix attacks respond to character changes. This qualifies the sweeping wording, but does not establish general jailbreak immunity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No exhaustive proof excludes every possible general defense.",
+  "PAIR's experiment execution dates are not specified; the event date records publication of the demonstrated technique."
+ ],
+ "packet_hash": "3403a1b7599352b2d0155688b162248f4e6b81d2652f5d46083ef3a88eb73b08"
+}

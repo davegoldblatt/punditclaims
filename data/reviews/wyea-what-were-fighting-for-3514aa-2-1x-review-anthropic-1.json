@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-what-were-fighting-for-3514aa-2-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-what-were-fighting-for-3514aa-2": "5dfc02b63cca408e05bd19b2dd2590c11343547ae1481e1d519b3ce551c83097"
+ },
+ "started_at": "2026-11-10T02:08:35Z",
+ "completed_at": "2026-11-10T02:08:49Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post, endorsed and not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The sentence is a recommendation ('should add') to the press, but it states as fact that ChatGPT burns billions a year. Pulling out that embedded factual claim as an observation is faithful. The use-case and killer-app parts are left out, which is appropriate."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: ChatGPT stands for OpenAI's business, 'burns' means losing money after revenue, at least $2B, in calendar 2024, the latest completed year before the post. Reading 'burns' as net cash outflow could give a different answer (see e3), so the interpretation matters to the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "CNBC report from June 2025, available before the evaluation date, says OpenAI lost about $5B in 2024, the completed year. That is well above the $2B threshold. It is press reporting, not audited statements."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A September 2024 forecast of about a $5B loss for 2024. It is consistent with e1 but is a projection, not the completed-year result."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "First-half 2024 net cash burn of $340M. Different metric and period. It shows that cash burn and accounting loss differ, but it does not contradict the annual-loss reading."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the contract's fair plain reading, completed-year reporting (e1) puts OpenAI's 2024 loss at about $5B, which meets the $2B-a-year threshold. The forecast (e2) is consistent with that. The smaller first-half cash-burn figure (e3) measures something different and does not defeat the loss reading. The main limitation is that e1 is press reporting rather than financial statements.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-what-were-fighting-for-3514aa-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12354,
+  "output_tokens": 1461,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

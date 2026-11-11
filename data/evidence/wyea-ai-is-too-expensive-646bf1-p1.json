@@ -1,0 +1,160 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-646bf1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-646bf1",
+  "version": 1,
+  "content_hash": "cda4c3ca899ee333b1a28e8b9f18f616ddb49986bddb5039bc6f690aa252a95a"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-646bf1",
+  "version": 1,
+  "content_hash": "85b1d1e7a998e8ff90efee0c0a735a0bb215ed56fb668e433c4ff9a639034bd0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 net loss 60.35 billion financial statements June 2026",
+   "OpenAI 2025 net loss 38.5 billion Financial Times June 2026 Reuters",
+   "Anthropic \"2025\" \"net loss\" \"42\" October 2026 Reuters",
+   "Anthropic \"net loss\" \"$42 billion\" \"2025\" September 28 Reuters 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.ynetnews.com/business/article/bjsox0u9fl",
+    "used": true,
+    "why": "Readable Reuters-attributed reporting on Anthropic's prospectus."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Reports audited OpenAI financial statements and their independent review by the Financial Times."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary corroboration for Anthropic; GAAP figures are retained as context rather than silently replacing the contract's reported-estimate basis."
+   },
+   {
+    "url": "https://www.reuters.com/business/finance/anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs-2026-09-28/",
+    "used": false,
+    "why": "read_page returned HTTP 401; readable Reuters-attributed coverage was used."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/bankruptcy-law/openais-losses-soar-eightfold-after-costs-hit-34-billion-ft",
+    "used": false,
+    "why": "The returned text was visibly a subscription preview, so it was excluded."
+   }
+  ],
+  "performed_at": "2026-10-29T16:06:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "ynetnews-com-business-article-bjsox0u9fl",
+   "source_snapshot_id": "c070015008977cfc71aec82f1a40675f45e3053dab2fd66f628c3357d191a32a",
+   "publisher": "Ynetnews / Reuters",
+   "source_type": "news_report",
+   "url": "https://www.ynetnews.com/business/article/bjsox0u9fl",
+   "locator": "Financial results discussion, paragraph following the operating-loss figures",
+   "receipt": {
+    "public_excerpt": "$42 billion",
+    "quote_hash": "986438b6bf3001d80f3fceaa0e6d903e8ccb2dc6b06836e5626fe2198ce34321",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-29",
+   "retrieved_at": "2026-10-29T10:37:29Z",
+   "relation": "supports",
+   "explanation": "The article identifies nearly $42 billion in 2025 net losses and explains that roughly $34 billion reflected financing-related accounting charges. The result exceeds the threshold without equating the loss to cash expenditure.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section 'Gotta spend money to make money', first paragraph",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "supports",
+   "explanation": "The article reports nearly $39 billion in 2025 net losses from audited statements independently reviewed by the Financial Times. It distinguishes the headline loss from large nonrecurring accounting charges.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; consolidated financial results table",
+   "receipt": {
+    "public_excerpt": "net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing corroborates the reported loss, listing $41.965 billion for 2025. Its GAAP basis is identified separately from the press-estimate contract.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "7b15a69a30f8747de4a458732a31a1684923786205c8005a9df6f8c3774972ba"
+}

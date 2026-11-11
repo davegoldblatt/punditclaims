@@ -1,0 +1,120 @@
+{
+ "assessment_id": "marcus-how-not-to-test-gpt-3-96daed-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-96daed",
+  "version": 1,
+  "content_hash": "f9d82f3bd6c04aa55c17f08137c89cb6c63d9cf046aeac9fb6409e888690b95b"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-96daed",
+  "version": 1,
+  "content_hash": "962fb10bc36ab7dee86505a69f739d600189c30b43dedfa7bfd3b9b9b0ead042"
+ },
+ "packet_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-96daed-p1",
+  "content_hash": "a225c292b7b1a94effbfe579c9ce65a9ca619c3a5a830d98e35d278ffc79f69a"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "There is substantial circumstantial support: GPT-3 trained on Wikipedia with repeated sampling, and a preserved pretraining-era article describes the experiments. However, the records reviewed do not establish which relevant passages were retained and sampled. They make Marcus's inference plausible without settling the stronger 'almost certainly' claim.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "This is not a finding that the descriptions were absent.",
+  "The training paper concerns original GPT-3 and does not fully document every later system discussed in the post.",
+  "The historical page's availability date refers to the preserved Wikipedia revision, not the mirror's upload date."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-not-to-test-gpt-3-60f4e5-4x-review-anthropic-1",
+  "marcus-how-not-to-test-gpt-3-60f4e5-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-not-to-test-gpt-3-96daed",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT-3's training data almost certainly included repeated descriptions of the classic false-belief experiments.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In short, GPT-3 has almost certainly read about this experiment again and again and again.",
+   "locator": "paragraph 22",
+   "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+   "date": "2023-02-17",
+   "document_title": "How Not to Test GPT-3",
+   "observed_at": "2026-10-29T00:04:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "GPT-3",
+    "almost certainly read about this experiment",
+    "again and again and again"
+   ],
+   "our_interpretation": [
+    "'Read' means exposure during training to descriptions of the classic false-belief experiments discussed in the preceding paragraphs.",
+    "'Again and again' means repeated exposure, whether through multiple descriptions or repeated sampling. No exact count is supplied.",
+    "'Almost certainly' asserts very high likelihood, not documented certainty. Circumstantial corpus evidence is relevant, but web availability alone does not establish training inclusion.",
+    "The target is training completed before the post. Its starting date is unspecified."
+   ],
+   "support_condition": "Training documentation combined with dated corpus records establishes repeated exposure, or makes such exposure highly likely without relying only on the experiments' general popularity.",
+   "contradiction_condition": "A sufficiently complete corpus audit or documented exclusion process establishes that relevant descriptions were absent or that repeated exposure was unlikely."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "There is substantial circumstantial support: GPT-3 trained on Wikipedia with repeated sampling, and a preserved pretraining-era article describes the experiments. However, the records reviewed do not establish which relevant passages were retained and sampled. They make Marcus's inference plausible without settling the stronger 'almost certainly' claim.",
+  "limitations": [
+   "This is not a finding that the descriptions were absent.",
+   "The training paper concerns original GPT-3 and does not fully document every later system discussed in the post.",
+   "The historical page's availability date refers to the preserved Wikipedia revision, not the mirror's upload date."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "the final mixture of datasets",
+    "locator": "Section 2.2, Training Dataset; Table 2.2",
+    "url": "https://arxiv.org/pdf/2005.14165v4",
+    "publisher": "arXiv; Tom B. Brown and colleagues",
+    "event_date": "2020",
+    "available_at": "2020-07-22",
+    "explanation": "The surrounding section and table identify English Wikipedia as training data, with 3.4 epochs of sampling, alongside web and book corpora. This makes repeated exposure plausible but does not identify retained descriptions of these experiments."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Sally also has a marble",
+    "locator": "False-belief task section; revision date in page footer",
+    "url": "https://static.hlt.bme.hu/semantics/external/pages/t%C3%B6bbszerepl%C5%91s_tudatelm%C3%A9let/en.wikipedia.org/wiki/Theory_of_mind.html",
+    "publisher": "Wikipedia contributors; historical copy hosted by BME",
+    "event_date": "2019-01-28",
+    "available_at": "2019-01-28",
+    "explanation": "The preserved revision describes Sally–Anne and other false-belief tasks before GPT-3's training report. It is evidence of candidate training material, not proof that this passage survived preprocessing or was sampled."
+   }
+  ],
+  "what_would_resolve": "A corpus audit, retained-document records or a developer disclosure identifying repeated training exposure to descriptions of the classic false-belief experiments.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "d827ff566e57f9f12066d760b5dd69eb9535c36c71b3838f9573d5af2b873247",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:33:11Z"
+}

@@ -1,0 +1,107 @@
+{
+ "packet_id": "marcus-why-is-bing-so-reckless-763920-p1",
+ "claim_revision_ref": {
+  "id": "marcus-why-is-bing-so-reckless-763920",
+  "version": 1,
+  "content_hash": "b9981d1f6b18e271aef67e428fdf3271fb29f12a7c7e5184b04ad70f0448d48b"
+ },
+ "contract_ref": {
+  "id": "marcus-why-is-bing-so-reckless-763920",
+  "version": 1,
+  "content_hash": "6b2793ecfe2df3b1d2c1cac7525d7f65e071ac3d05720e9e039e4cde39a6683a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "reinforcement learning Breakout paddle moved pixels generalization Kansky schema networks 2017",
+   "reinforcement learning generalization small visual changes overfitting zero shot 2018 paper",
+   "\"reinforcement\" \"minor\" \"changes\" \"generalization\" arxiv 2017 2018"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://ar5iv.labs.arxiv.org/html/1706.04317",
+    "used": true,
+    "why": "Readable primary-paper rendering preserves the Breakout perturbations and findings without PDF column interleaving."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v70/kansky17a/kansky17a.pdf",
+    "used": false,
+    "why": "Read to check the experiment and results table; the HTML rendering is used for the exact quotation."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v70/kansky17a.html",
+    "used": false,
+    "why": "Read to confirm publication details and the algorithms compared."
+   },
+   {
+    "url": "https://bairblog.github.io/2019/03/18/rl-generalization/",
+    "used": true,
+    "why": "The researchers' own experimental report documents both generalization difficulties and cases where varied training improves robustness."
+   },
+   {
+    "url": "https://arxiv.org/abs/1810.12282",
+    "used": false,
+    "why": "Read to check the underlying generalization study and its publication history."
+   },
+   {
+    "url": "https://arxiv.org/abs/2102.05714",
+    "used": false,
+    "why": "Read as additional primary research on visual changes and improved transfer; the selected sources already establish the narrower claim."
+   }
+  ],
+  "performed_at": "2026-10-29T09:49:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "ar5iv-labs-arxiv-org-html-1706-04317",
+   "source_snapshot_id": "be4eeeebf2c5bea891756bb2a153e5f6e7966bd0e80ceeb62b1cee645092a200",
+   "publisher": "arXiv, rendered by ar5iv",
+   "source_type": "preprint",
+   "url": "https://ar5iv.labs.arxiv.org/html/1706.04317",
+   "locator": "Section 5.2, Zero-Shot Generalization, discussion of Table 1",
+   "receipt": {
+    "public_excerpt": "A3C has failed",
+    "quote_hash": "5e13754dde8536e0047dbd0c8aee57db66f5d4bce2ff31625dc2483644053465",
+    "verified": "exact"
+   },
+   "event_date": "2017",
+   "available_at": "2017-06-14",
+   "retrieved_at": "2026-10-29T09:41:56Z",
+   "relation": "supports",
+   "explanation": "The experiment includes shifting the Breakout paddle upward by a few pixels and reports poor transfer by A3C. It supports the general brittleness claim, although this specific comparison tests A3C rather than the DQN named in the surrounding post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "bairblog-github-io-2019-03-18-rl-generalization",
+   "source_snapshot_id": "2f3e8d75fcf240e94d0819c434be1a5981dd4307e2fada7ba52e1386861e3a8b",
+   "publisher": "Berkeley Artificial Intelligence Research",
+   "source_type": "independent_measurement",
+   "url": "https://bairblog.github.io/2019/03/18/rl-generalization",
+   "locator": "Results, paragraph discussing A2C and PPO interpolation",
+   "receipt": {
+    "public_excerpt": "similar environments.",
+    "quote_hash": "5559021f9f55d2601142fd5f7f2a12fad92432bd29c0bde9053bf3d475732559",
+    "verified": "exact"
+   },
+   "event_date": "2019",
+   "available_at": "2019-03-18",
+   "retrieved_at": "2026-10-29T09:40:25Z",
+   "relation": "context",
+   "explanation": "The authors report that training across varied environments can produce successful generalization. This limits any universal reading of brittleness without contradicting Marcus's narrower statement that failure may occur.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "8df9833c6b7e3c98515742d497232ac269bbdc8f879a9a65b9a4514c41fd3266"
+}

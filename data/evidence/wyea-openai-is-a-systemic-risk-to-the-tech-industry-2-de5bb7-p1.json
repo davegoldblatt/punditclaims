@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-de5bb7-p1",
+ "claim_revision_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-de5bb7",
+  "version": 2,
+  "content_hash": "91c5cff74de798aa501a2efa6fad0a349c04b952e320b173f17e818e2adc7606"
+ },
+ "contract_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-de5bb7",
+  "version": 1,
+  "content_hash": "dec67f5cdaa74b2996661cf9d8bda49c915eefb6b782e125fd086db0e8cd6667"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "CoreWeave first quarter 2025 results backlog $25.9 billion OpenAI",
+   "CoreWeave S-1 revenue backlog $15.1 billion December 31 2024 Microsoft 62% customer"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Reports-Strong-First-Quarter-2025-Results/default.aspx",
+    "used": true,
+    "why": "CoreWeave's Q1 2025 results: backlog composition and customer wins."
+   },
+   {
+    "url": "https://convergedigest.com/coreweave-files-for-ipo-explosive-growth-and-250k-gpus/?amp=1",
+    "used": true,
+    "why": "Summary of S-1 figures: end-2024 RPO and customer list."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000010/coreweave1q25earningspress.htm",
+    "used": false,
+    "why": "Could not be read (HTTP 403); the same release was read on CoreWeave's investor site."
+   }
+  ],
+  "performed_at": "2026-10-31T20:29:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "investors-coreweave-com-news-news-details-2025-coreweave-reports-st-de2ca1ae3bf8",
+   "source_snapshot_id": "d0e2783dc24b806ec8547787eb8938b20e4c9cb79e448e61741520037e39b47d",
+   "publisher": "CoreWeave",
+   "source_type": "company_disclosure",
+   "url": "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Reports-Strong-First-Quarter-2025-Results/default.aspx",
+   "locator": "section Additional First Quarter 2025 Financial Highlights",
+   "receipt": {
+    "public_excerpt": "Revenue backlog was $25.9 billion as of March 31, 2025. Revenue backlog includes RPO of $14.7 billion, plus",
+    "quote_hash": "f6156547b36618f5ce0523e2ba65dcbdc14a644f251b675ba9f5a8e62f33c59b",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-05-14",
+   "retrieved_at": "2026-10-29T12:02:52Z",
+   "relation": "supports",
+   "explanation": "The release says the OpenAI deal added $11.2B of backlog. Other contracts (RPO) were $14.7B, slightly below the $15.1B at end of 2024. So all of the Q1 2025 backlog growth came from OpenAI.",
+   "metric_scope": null,
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "RPO $15.1B at 2024-12-31 (S-1)",
+     "RPO $14.7B at 2025-03-31",
+     "OpenAI contract backlog $11.2B"
+    ],
+    "formula": "Non-OpenAI backlog change = 14.7 - 15.1; OpenAI share of total backlog = 11.2 / 25.9",
+    "rounding": "non-OpenAI change about -$0.4B; OpenAI share about 43%"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "investors-coreweave-com-news-news-details-2025-coreweave-reports-st-de2ca1ae3bf8",
+   "source_snapshot_id": "d0e2783dc24b806ec8547787eb8938b20e4c9cb79e448e61741520037e39b47d",
+   "publisher": "CoreWeave",
+   "source_type": "company_disclosure",
+   "url": "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Reports-Strong-First-Quarter-2025-Results/default.aspx",
+   "locator": "paragraph 2",
+   "receipt": {
+    "public_excerpt": "our major strategic deal with OpenAI as well as other customer wins, our acquisition of Weights & Biases",
+    "quote_hash": "e61b305c24c4321d80423e3567c5742ed9268b0d7dc48759e94b6bb1410555f8",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-05-14",
+   "retrieved_at": "2026-10-29T12:02:52Z",
+   "relation": "contradicts",
+   "explanation": "CoreWeave cited other customer wins in the quarter, including an IBM partnership listed in the same release, plus the Weights & Biases acquisition. And 57% of backlog was non-OpenAI contracts, mostly Microsoft. So 'entirely' overstates it.",
+   "metric_scope": null,
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "convergedigest-com-coreweave-files-for-ipo-explosive-growth-and-250k-gpus",
+   "source_snapshot_id": "dc6ed776562b3816f074c5947ef5a789bb6341d357489f769a24f02dc82974df",
+   "publisher": "Converge Digest",
+   "source_type": "secondary_summary",
+   "url": "https://convergedigest.com/coreweave-files-for-ipo-explosive-growth-and-250k-gpus?amp=1",
+   "locator": "section Microsoft and Major Customers, paragraph 1",
+   "receipt": {
+    "public_excerpt": "Other notable customers listed include Nvidia, Meta, IBM, Cohere, and Mistral",
+    "quote_hash": "7f0ad4428a9a92b9426e3be082abc3db4a1b15002f4bd5eb517d79775d0623f4",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2025-03-08",
+   "retrieved_at": "2026-10-31T20:22:21Z",
+   "relation": "context",
+   "explanation": "S-1 summary showing CoreWeave had a second large customer (15%) and others besides Microsoft and OpenAI. It covers 2024, before the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "How much of Microsoft's CoreWeave usage and backlog served OpenAI is not public.",
+  "The identity of the 15% second customer in 2024 is not disclosed."
+ ],
+ "packet_hash": "9ffe941f315fbcedd9f3af061dc99f215cb03b660f2e61dedfba63a9bc33ef4e"
+}

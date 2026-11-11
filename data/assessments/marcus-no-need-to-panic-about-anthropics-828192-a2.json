@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-no-need-to-panic-about-anthropics-828192-a2",
+ "claim_revision_ref": {
+  "id": "marcus-no-need-to-panic-about-anthropics-828192",
+  "version": 2,
+  "content_hash": "92e6a4c8788d8a65068208182e5fea5d28aa39f2029a499307d2f85744c00bf8"
+ },
+ "contract_ref": {
+  "id": "marcus-no-need-to-panic-about-anthropics-828192",
+  "version": 1,
+  "content_hash": "2c38c2450afbb9962a7e2be5c4df8e688b693bd874cfabbe58bffb643a9c6107"
+ },
+ "packet_ref": {
+  "id": "marcus-no-need-to-panic-about-anthropics-828192-p1",
+  "content_hash": "e18329f1dbe91b83337468df09ffb04745fec4808036ad2ea5a9812e19571cd1"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-06-04",
+  "end": "2026-06-04",
+  "precision": "day"
+ },
+ "public_rationale": "Anthropic's March 2026 report describes benefits from harness design in related coding work. [e3] Its April 8, 2026 report describes a model change that removed the need for context resets in one example. [e4] Neither report isolates the contributions of scaling, harnesses, symbolic tools, and inference budget to the coding gains discussed in the June 4 blog, so the causal attribution remains unresolved. [e3, e4]",
+ "evidence_ids": [
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "These reports concern related work rather than controlled comparisons of the June blog's coding gains. [e3, e4]",
+  "The harness comparison also changes runtime and cost. [e3]",
+  "The model-change example does not establish that scaling caused the improvement. [e4]",
+  "The reports do not establish that the relevant harness contributions qualify as neurosymbolic reasoning. [e3, e4]"
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-no-need-to-panic-about-anthropics-0827a4-3x-review-anthropic-1",
+  "marcus-no-need-to-panic-about-anthropics-0827a4-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-no-need-to-panic-about-anthropics-0827a4-3x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-no-need-to-panic-about-anthropics-828192",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The coding speed-up progress in Anthropic's blog is real, but it isn't a victory for pure scaling per se; it is a victory for harnesses and symbolic tools, which are neurosymbolic systems.",
+  "kind": "causal",
+  "conditions": [
+   "per se"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The progress is real, but this isn’t a victory for pure scaling per se, it’s victory for harnesses and symbolic tools, which are neurosymbolic systems.",
+   "locator": "paragraph 31",
+   "url": "https://garymarcus.substack.com/p/no-need-to-panic-about-anthropics",
+   "date": "2026-06-05",
+   "document_title": "No need to panic about Anthropic’s new blog, and some more good news",
+   "observed_at": "2026-10-28T22:29:40Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The progress is real",
+    "isn’t a victory for pure scaling per se",
+    "victory for harnesses and symbolic tools",
+    "which are neurosymbolic systems"
+   ],
+   "our_interpretation": [
+    "The claim concerns the causes of the coding gains discussed in the June 4 Anthropic blog.",
+    "The ordinary reading credits harnesses and symbolic tools with materially producing those gains and says scaling alone does not explain them.",
+    "Pure scaling means increasing model-training resources without adding the claimed harness or symbolic capabilities; the speaker does not distinguish pretraining, post-training, and inference scaling.",
+    "Calling an implementation neurosymbolic requires identifying a symbolic component. The presence of software around a model is not by itself a causal demonstration."
+   ],
+   "support_condition": "Comparisons on the reported tasks isolate material gains from harnesses and identifiable symbolic tools and show that scaling alone does not account for the reported improvement.",
+   "contradiction_condition": "Comparable experiments attribute the reported gains to scaling alone, with harnesses and symbolic tools held fixed or shown to contribute no material improvement."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Anthropic's March 2026 report describes benefits from harness design in related coding work. [e3] Its April 8, 2026 report describes a model change that removed the need for context resets in one example. [e4] Neither report isolates the contributions of scaling, harnesses, symbolic tools, and inference budget to the coding gains discussed in the June 4 blog, so the causal attribution remains unresolved. [e3, e4]",
+  "limitations": [
+   "These reports concern related work rather than controlled comparisons of the June blog's coding gains. [e3, e4]",
+   "The harness comparison also changes runtime and cost. [e3]",
+   "The model-change example does not establish that scaling caused the improvement. [e4]",
+   "The reports do not establish that the relevant harness contributions qualify as neurosymbolic reasoning. [e3, e4]"
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "harness design",
+    "locator": "Why naive implementations fall short; opening sentence",
+    "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+    "publisher": "Anthropic",
+    "event_date": "2026-03",
+    "available_at": "2026-03-24",
+    "explanation": "This supports the plausibility of a harness contribution in related coding work. It does not isolate the June blog's gains, and its full-harness comparison also changes runtime and cost."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "The resets had become dead weight.",
+    "locator": "Introduction; example comparing context resets for Sonnet 4.5 and Opus 4.5",
+    "url": "https://www.anthropic.com/engineering/managed-agents",
+    "publisher": "Anthropic",
+    "event_date": "2026-04",
+    "available_at": "2026-04-08",
+    "explanation": "Anthropic reports that a model change removed a behavior previously addressed by the harness. This cautions against assigning all progress to scaffolding, but does not show that scaling caused that model improvement."
+   }
+  ],
+  "what_would_resolve": "Controlled comparisons on the tasks behind the June blog's gains, separately varying model scale, harness design, and explicitly identified symbolic components while accounting for inference budget, training changes, and evaluation methods.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "8295e7d08532ad031855a9628b9562672919cae3cdbca645438086c80cdafb2a",
+ "supersedes_assessment_id": "marcus-no-need-to-panic-about-anthropics-828192-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:04:41Z"
+}

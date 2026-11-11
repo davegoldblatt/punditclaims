@@ -1,0 +1,103 @@
+{
+ "packet_id": "wyea-bubble-trouble-bac8b1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-bubble-trouble-bac8b1",
+  "version": 2,
+  "content_hash": "96f0e9d6f249b09ce5a07377a41e9f506c2fd578230bff5c396bbe51054dc10a"
+ },
+ "contract_ref": {
+  "id": "wyea-bubble-trouble-bac8b1",
+  "version": 1,
+  "content_hash": "cd6e524018234e81bb3b030743e3e26eb9a7ecb7d00621e53c753739cb4f096b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "hallucination reduction contrastive decoding DoLa no additional compute 2023",
+   "\"DoLa\" \"overhead\" 2023",
+   "\"hallucination\" \"inference\" \"ITI\" 2023 truthful",
+   "\"hallucinations\" \"without\" \"overhead\" \"2023\" LLM",
+   "\"Large Legal Fictions\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2306.03341v3",
+    "used": true,
+    "why": "Pre-post version describing truthfulness improvements and incorporation of the intervention into existing bias terms."
+   },
+   {
+    "url": "https://arxiv.org/abs/2306.03341v3",
+    "used": true,
+    "why": "Confirms the version date and reported experimental results."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.01301v1",
+    "used": true,
+    "why": "January 2024 primary study of hallucination risks in legal tasks."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.03883",
+    "used": false,
+    "why": "A decoding alternative alone would not establish unchanged computation; it was not used as a decisive counterexample."
+   }
+  ],
+  "performed_at": "2026-10-29T16:17:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2306-03341v3",
+   "source_snapshot_id": "ede3a71898b9d274d9273300d98ba4f399c9035b1d23a1ee9e206956da8501e6",
+   "publisher": "arXiv; Kenneth Li and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2306.03341v3",
+   "locator": "Computational efficiency paragraph immediately before Section 4",
+   "receipt": {
+    "public_excerpt": "offline editing",
+    "quote_hash": "4ae3b84d3ab0ccced8da2fa1dd809dec239937b904cb019c868653bfee9fa48a",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-21",
+   "available_at": "2023-07-21",
+   "retrieved_at": "2026-10-29T16:04:34Z",
+   "relation": "contradicts",
+   "explanation": "The paper reports improved Alpaca truthfulness on TruthfulQA through activation intervention and explains how to incorporate it into existing parameters. This counters the necessity of greater deployed processing capacity, although learning the intervention requires offline computation and the result is benchmark-specific.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2401-01301v1",
+   "source_snapshot_id": "0d21150c682897dce358710e06354eb9c61531975e20dec558da86626b5cdc79",
+   "publisher": "arXiv; Matthew Dahl and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2401.01301v1",
+   "locator": "Abstract, concluding findings",
+   "receipt": {
+    "public_excerpt": "unsupervised integration",
+    "quote_hash": "1200ea1f412c7af8e4893265108f491ace214f4451a81ae9aaf818517768a5c2",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-02",
+   "available_at": "2024-01-02",
+   "retrieved_at": "2026-10-29T06:36:41Z",
+   "relation": "supports",
+   "explanation": "The January version reports frequent hallucinations on verifiable legal questions, supporting a material risk in consequential business workflows. It supports the risk clause within legal tasks, not a measured count of affected businesses or the compute-depletion claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e6"
+ ],
+ "unresolved_gaps": [
+  "The intervention is not a controlled comparison of total lifetime computation, including its development.",
+  "The legal study does not quantify how many businesses experience harm.",
+  "No defined resource, measured depletion trend or causal estimate supports the destruction clause."
+ ],
+ "packet_hash": "895597c2230b469a07c30072b2d83c9cea92b43cb52f7dec7b403e2ec05641ab"
+}

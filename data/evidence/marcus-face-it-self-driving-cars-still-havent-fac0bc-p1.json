@@ -1,0 +1,110 @@
+{
+ "packet_id": "marcus-face-it-self-driving-cars-still-havent-fac0bc-p1",
+ "claim_revision_ref": {
+  "id": "marcus-face-it-self-driving-cars-still-havent-fac0bc",
+  "version": 1,
+  "content_hash": "6093425de852c0fb01e150d842064c864b385ae4b9bc88290c0d0ff529d96038"
+ },
+ "contract_ref": {
+  "id": "marcus-face-it-self-driving-cars-still-havent-fac0bc",
+  "version": 1,
+  "content_hash": "43274b87480027c98ee4f46b9adac8993e341e4e7890079c645fb23dfced1089"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Cruise wet concrete August 2023 company construction zone statement",
+   "site.waymo.com 2023 long tail rare events training",
+   "site.waymo.com/blog/2023 \"rare\"",
+   "site.waymo.com \"long tail\" \"2023\"",
+   "Waymo simulation city 2021 rare novel situations training data",
+   "Cruise wet concrete August 15 2023 Reuters",
+   "\"Cruise\" \"concrete\" \"August 16, 2023\" AP CNN"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theregister.com/software/2023/08/16/cruise-self-driving-taxi-gets-stuck-in-wet-cement/1442646",
+    "used": true,
+    "why": "Readable contemporary reporting establishes the concrete incident and recovery, but supplies no training audit."
+   },
+   {
+    "url": "https://waymo.com/blog/2021/07/simulation-city/",
+    "used": true,
+    "why": "Primary documentation explains scenario variation and simulation. It predates the target period and is context only."
+   },
+   {
+    "url": "https://www.sfgate.com/tech/article/cruise-stuck-wet-concrete-sf-18297946.php",
+    "used": false,
+    "why": "read_page returned a browser challenge rather than the article."
+   },
+   {
+    "url": "https://archive.legmt.gov/content/Committees/Interim/2023-2024/Transportation/Meetings/240508-May-08-2024/TIC_Public_Comment_240508.pdf",
+    "used": false,
+    "why": "The archived article could not be read because the file exceeded the tool's size limit."
+   },
+   {
+    "url": "https://www.teslarati.com/cruise-robotaxi-stuck-wet-concrete-san-francisco-photo/",
+    "used": false,
+    "why": "read_page did not return the sought company statement."
+   }
+  ],
+  "performed_at": "2026-10-29T05:38:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "theregister-com-software-2023-08-16-cruise-self-driving-taxi-gets-s-6396609fa594",
+   "source_snapshot_id": "af09b77e12f2b7389f1448d213c60f1f58dc371be05e29ffc6b8b4eb86463ad5",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/software/2023/08/16/cruise-self-driving-taxi-gets-stuck-in-wet-cement/1442646",
+   "locator": "Paragraph reporting recovery of the vehicle",
+   "receipt": {
+    "public_excerpt": "the vehicle was removed",
+    "quote_hash": "65b9cda59ccdca32dade2cbc7eb1f8c201901c08c8b1b4f0ef9ea987c47849f0",
+    "verified": "exact"
+   },
+   "event_date": "2023-08-15",
+   "available_at": "2023-08-16",
+   "retrieved_at": "2026-10-29T05:34:31Z",
+   "relation": "context",
+   "explanation": "The article documents a Cruise vehicle becoming stuck in wet concrete and its subsequent recovery. This is contemporary evidence of an unusual failure, but neither the report nor the company response establishes that the situation was absent from training.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "waymo-com-blog-2021-07-simulation-city",
+   "source_snapshot_id": "d16d28e3a970e0365e4dcb33a7e1e2b6a5e0803b85310d9c798e264b38e6492a",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo.com/blog/2021/07/simulation-city",
+   "locator": "Section Creating realistic simulation, paragraph about road-user behavior",
+   "receipt": {
+    "public_excerpt": "distribution of behaviors",
+    "quote_hash": "d66345b7c0cb00417c40856c8e95ad09fa62f9f93c49720f337a69e609bc0495",
+    "verified": "exact"
+   },
+   "event_date": "2021-07-06",
+   "available_at": "2021-07-06",
+   "retrieved_at": "2026-10-29T05:35:10Z",
+   "relation": "context",
+   "explanation": "Waymo describes generating rare scenarios and updating simulations with fleet experience, which makes Marcus's concern plausible. It also describes testing situations before encountering them on roads; this limits any inference that an unusual road event must be outside training, and the source falls outside the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved source discloses whether the concrete scenario was absent from the deployed Cruise system's training.",
+  "No matched record of training expansion and newly uncovered operational situations was found for the target week.",
+  "The evidence cannot establish the unlimited reading of always."
+ ],
+ "packet_hash": "b22d2ce91812832f0e3d531c63a361e7facbf5dfb75d5a8871d3fabe0f057f43"
+}

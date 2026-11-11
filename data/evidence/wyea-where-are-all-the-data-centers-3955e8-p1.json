@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-where-are-all-the-data-centers-3955e8-p1",
+ "claim_revision_ref": {
+  "id": "wyea-where-are-all-the-data-centers-3955e8",
+  "version": 1,
+  "content_hash": "253977332565307095508edc5a173e5f0aee541c9b84dd83a4b5652a27a46f1c"
+ },
+ "contract_ref": {
+  "id": "wyea-where-are-all-the-data-centers-3955e8",
+  "version": 1,
+  "content_hash": "022e2eedbbec91f09d3bb2d0048c163c7f324627445ca27504087e9a64cd2945"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Blackwell GPUs deployed million May 2026 in service warehouses",
+   "\"Blackwell\" \"in service\" \"million\" May 2026",
+   "Blackwell GPUs warehouse majority installed May 12 2026 million Zitron response",
+   "Epoch AI Blackwell chips sold deployed 2026 data center",
+   "Amazon GPUs sitting warehouse October 2026 Eugene Kim Business Insider"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://epoch.ai/data/ai-chip-sales",
+    "used": true,
+    "why": "The dataset explicitly distinguishes delivered chips from chips brought online. Its displayed update date precedes the evaluation freeze."
+   },
+   {
+    "url": "https://www.amcompute.com/blog/blackwell-gpu-market-size-and-fragmentation",
+    "used": true,
+    "why": "Material contrary estimate, but its deployment model concerns end-2025 and relies on assumed staging and installation behavior."
+   },
+   {
+    "url": "https://www.pcgamer.com/software/ai/youve-taken-us-free-cash-flow-negative-as-a-company-so-congratulations-amazon-has-plenty-of-nvidia-gpus-but-not-enough-energy-to-power-its-ai-boom/",
+    "used": false,
+    "why": "Read in full. Its hardware receipt and power-shortage reporting concerns August 2026 onward, not the May snapshot, and cannot establish a global majority."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/amazon-stockpiles-nvidia-ai-hardware-ahead-of-power-availability-business-insider-4960890",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://blogs.microsoft.com/blog/2026/03/16/microsoft-at-nvidia-gtc-new-solutions-for-microsoft-foundry-azure-ai-infrastructure-and-physical-ai/",
+    "used": false,
+    "why": "read_page failed, including on a retry. Search-preview deployment figures were not admitted as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T22:01:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "epoch-ai-data-ai-chip-sales",
+   "source_snapshot_id": "2bfa21c16789e93b81e92a2b99eafc921e8a8e689c964e7c6e5878a8524b6fdb",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/data/ai-chip-sales",
+   "locator": "FAQ: Do you track deployed, delivered, or just produced compute?",
+   "receipt": {
+    "public_excerpt": "delivered chips may take additional time",
+    "quote_hash": "7cc7ccb44a2a772dcde7fb0b4ea0b821d593d4dfff44f998b3776a5c6d596880",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-21",
+   "available_at": "2026-10-21",
+   "retrieved_at": "2026-10-29T21:55:20Z",
+   "relation": "context",
+   "explanation": "The dataset's methodology makes clear that chip deliveries do not measure operational installations. It supplies neither a May warehouse inventory nor the fraction of shipped Blackwell packages in storage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "amcompute-com-blog-blackwell-gpu-market-size-and-fragmentation",
+   "source_snapshot_id": "b7217c0e06ae8b5f6fd0f313cb52924d802a5d9e01891c1b1a205b261de4a1d5",
+   "publisher": "American Compute",
+   "source_type": "secondary_summary",
+   "url": "https://www.amcompute.com/blog/blackwell-gpu-market-size-and-fragmentation",
+   "locator": "Calculations, subsection 10 percent in staging",
+   "receipt": {
+    "public_excerpt": "deployed fully.",
+    "quote_hash": "9dcef7843389514735017532527dedc2728f03423ccd40d5e2daafef006bc524",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-04-20",
+   "retrieved_at": "2026-10-29T11:55:57Z",
+   "relation": "context",
+   "explanation": "The model estimates a roughly 10% staging share by assuming earlier shipment cohorts had deployed. This weighs against the warehouse-majority account, but it is not a verified May inventory and does not independently establish that assumption.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e6"
+ ],
+ "unresolved_gaps": [
+  "No reconciled global shipment and warehouse inventory for May 2026 was found.",
+  "The available contrary estimate assumes deployment of older shipments rather than documenting every installation.",
+  "Later reports of stored hardware do not establish the earlier share."
+ ],
+ "packet_hash": "cb9c902cbaf7140903883503d120037f57875c445abe78a78c5e2e022851a57d"
+}

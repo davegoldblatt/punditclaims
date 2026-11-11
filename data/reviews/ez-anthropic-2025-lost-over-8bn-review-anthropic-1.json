@@ -1,0 +1,62 @@
+{
+ "run_id": "ez-anthropic-2025-lost-over-8bn-review-anthropic-1",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "api",
+ "prompt_version": "review-3",
+ "prompt_hash": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc",
+ "rubric_version": "policy-2026-10-28.4",
+ "input_hashes": {
+  "claim": "08a10bb88eca243718261c7999f07d10209c047d0d34dcfd8548b91ff8a5f553",
+  "contract": "d78574dc5b6bb5c44986c9452456f6abff1b08ccfab6ef5ecf0f8e8096539a3a",
+  "packet": "20a6935847b0120fd19206ed622418802712ffd4b1d47ea9ab6327b8304f639f",
+  "prompt": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc"
+ },
+ "started_at": "2026-10-28T22:54:06Z",
+ "completed_at": "2026-10-28T22:54:25Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron's own sentence in his newsletter. He cites the figures to Reuters' S-1 report but states them in his own voice."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "observation",
+   "note": "Unqualified past-tense statement about calendar 2025. It drops the revenue figure ($4.6B), but the loss is the scored element. The context fixes the measure. He separately gives a $42B net loss and computes $12.65B of operating expenses against $4.6B of revenue, which implies an operating loss."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "'The measure Zitron meant' is fair, and his own context supplies it: opex of $12.65B minus revenue of $4.6B, i.e. the operating loss. The ambiguity flag's no-basis rule is not in policy 2026-10-28.4. Net loss would also exceed $8B, but he excluded it."
+  },
+  "evidence": [
+   {
+    "id": "s1-2025-operating-loss",
+    "fits": true,
+    "relation": "supports",
+    "note": "Audited S-1 statement of operations for FY2025, available 2026-10-26, before the evaluation date. It shows revenue of $4,585M, total opex of $12,645M, and an operating loss of $8,060M. This matches the measure the speaker's context implies and exceeds $8B. It is a company filing, but an audited SEC disclosure."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "historical_observation",
+  "horizon_state": "not_applicable",
+  "outcome": "supported",
+  "rationale": "Zitron's paragraph identifies 'lost' as revenue minus operating expenses ($12.65B opex vs $4.6B revenue), distinct from the $42B net loss he also cites. Anthropic's audited S-1 reports a 2025 operating loss of $8,060M on $4,585M revenue. That exceeds $8B, so the claim holds on the measure he used.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8615,
+  "output_tokens": 1681,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": "0.068080"
+}

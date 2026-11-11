@@ -1,0 +1,101 @@
+{
+ "run_id": "marcus-sora-cant-handle-the-truth-3cfd37-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sora-cant-handle-the-truth-3cfd37": "815a57b160b32bd6ec4b1b149a748e1b71cbb18a82b63873c7eb06859c460af1",
+  "case:marcus-sora-cant-handle-the-truth-e50cac": "305bf9c6b7a6ab53fbbbb8869bc7384c05ea214626bdc2afe2e1b702ffd3baa6"
+ },
+ "started_at": "2026-11-10T01:54:10Z",
+ "completed_at": "2026-11-10T01:54:26Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, stated as his conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Firm causal exclusion: compute shortfall did not cause the malformed chessboard, with the claim of immense compute given as the reason. Not hedged, and the normalisation matches the words."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Separating sharpness from structural sufficiency is a fair, ordinary reading of the causal claim. It requires controlled evidence before support or contradiction, which is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "DiT scaling paper (2023) on ImageNet FID. It concerns different models and metrics, and it neither tests Sora's compute nor the chessboard error."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The claim is a firm causal exclusion, but the packet has only architectural context. It has no disclosed Sora compute settings and no matched chessboard tests across compute budgets. The evidence neither confirms nor refutes that a compute shortfall caused the board error.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sora-cant-handle-the-truth-3cfd37"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "He credits Max Little and others but restates the observation in his own words, builds on it, and adds his own count of dramatic cuts. That makes it endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The firm observation is about the prevalence of smooth, slow shots among samples so far. The local-patches inference is correctly kept as only suggested and is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'vast majority' as a clearly overwhelming share, with a deduplicated, dated inventory, is fair and ordinary. A few fast examples are rightly not treated as contradiction."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's Sora launch page from 2024-02-15 is a company disclosure. It lists prompts but gives no motion classification or prevalence count, and a prompt does not show the generated motion."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no inventory of samples public by Feb 17, 2024, and no motion coding. The single gallery prompt cannot establish or refute that a vast majority were smoothly panned or slow-moving. The hedged architectural inference is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sora-cant-handle-the-truth-e50cac"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12208,
+  "output_tokens": 1617,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

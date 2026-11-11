@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-llms-coding-agents-security-nightmare-d37b11-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-d37b11",
+  "version": 1,
+  "content_hash": "50812f7b736e56b175c598b36b811d3f012b3896fbbfb3ab34eb5ed324482449"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-d37b11",
+  "version": 1,
+  "content_hash": "ab03f8e7c9d5a9d99dfa1028e6d0dcfada0decfb977a7b4255af143df7a9b4f9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 Cursor rules file backdoor prompt injection exploit July August",
+   "site.pillar.security/blog \"Rules File Backdoor\"",
+   "site.invariantlabs.ai \"GitHub\" \"May\" \"2025\" \"private\"",
+   "site.invariantlabs.ai \"GitHub MCP\" hijacked"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents",
+    "used": true,
+    "why": "Original demonstrations of hidden instructions in project rule files affecting generated code."
+   },
+   {
+    "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability",
+    "used": true,
+    "why": "Original repository-workflow demonstration using a public issue delivered through a trusted tool integration."
+   },
+   {
+    "url": "https://arxiv.org/abs/2509.22040",
+    "used": false,
+    "why": "The later evaluation was not needed to establish behavior in the selected pre-post observation period."
+   }
+  ],
+  "performed_at": "2026-10-29T17:40:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "pillar-security-blog-new-vulnerability-in-github-copilot-and-cursor-e3d9e94f5407",
+   "source_snapshot_id": "8d7c2bc74fa6abb147ece131ea7a0c6d8c04dd518f9e850fe05f7ebd9ac40890",
+   "publisher": "Pillar Security",
+   "source_type": "demonstration",
+   "url": "https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents",
+   "locator": "Real-World Demonstration: Compromising AI-Generated Code in Cursor — Step 3",
+   "receipt": {
+    "public_excerpt": "a malicious script",
+    "quote_hash": "dc5ee6354f8d68f4e4f63f8a0a72f804dcf389e35ca8d082cadceb0c9512a34c",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-26",
+   "available_at": "2025-03-18",
+   "retrieved_at": "2026-10-29T17:27:50Z",
+   "relation": "supports",
+   "explanation": "A poisoned rule file caused Cursor to add an attacker-selected script while responding to an ordinary HTML-generation request. February 26 is the documented initial disclosure date for the Cursor finding; the report also demonstrates the route in GitHub Copilot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "invariantlabs-ai-blog-mcp-github-vulnerability",
+   "source_snapshot_id": "8252312900f08b96d3c1ccc3215ed84714937fa7860dad4da0a4048e902d3420",
+   "publisher": "Invariant Labs",
+   "source_type": "demonstration",
+   "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability",
+   "locator": "Detecting Toxic Agent Flows",
+   "receipt": {
+    "public_excerpt": "does not require",
+    "quote_hash": "9045c401e9925e80a44b3f3ed243ba49fb6899473ba4c7ff93aafecf39953520",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-26",
+   "retrieved_at": "2026-10-29T17:29:17Z",
+   "relation": "supports",
+   "explanation": "In a repository-management demonstration, malicious public-issue content caused a Claude Desktop agent connected to GitHub to retrieve private information and publish it in a public pull request. The report notes default tool confirmations and recommends restricting repository access, so the result depends on permissions and approval choices.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These examples do not test every possible input channel or agent configuration.",
+  "The GitHub demonstration uses a general-purpose agent in a development workflow, not an IDE-only coding assistant.",
+  "The sources do not establish population-wide attack-success rates."
+ ],
+ "packet_hash": "f92afff0c75d8ef9880ba737f5c7b54841cda93556cac5e809f7ab87c5a0ac59"
+}

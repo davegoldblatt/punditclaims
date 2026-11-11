@@ -1,0 +1,89 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-b0ebef-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-b0ebef": "0480e5b7d06bc559db86d4ba2436b9f71c68c406c24ea608196fcb8746d8554c"
+ },
+ "started_at": "2026-10-29T21:45:20Z",
+ "completed_at": "2026-10-29T21:45:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. He is rebutting the 'write off any individual error' defense, not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Too broad and systematic for that' means too broad to dismiss as individual errors. The normalised wording keeps this, covering math, planning and chess. It is a firm judgement about past evidence, not hedged."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: failures recur across instances, models and controlled variations, not just isolated errors. Treating chess as anecdotal fits his own framing. Choosing 2024 through publication as the period is reasonable. The contract does not stretch the claim into 'models never reason'."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Apple GSM-Symbolic preprint, available Oct 7, 2024, within the target period. It reports drops from complexity and irrelevant clauses across many models. This is the controlled, repeated variation the contract asks for."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Kambhampati team preprint, Sept 2024. o1-preview falls from 97.8% to 23.63% on larger Blocksworld problems and degrades under obfuscation, a recurring planning weakness. The same paper also documents real gains and strong results on easier instances."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "GSM-Plus preprint, Feb 2024: 25 models and 10,552 variations, with recurring robustness failures under perturbations. It independently corroborates the math pattern within the period."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Small chess models fine-tuned for the task nearly always made legal moves. This qualifies the chess anecdotes but does not address the general-purpose LLMs Marcus discussed. The same paper says many pretrained models failed at the task."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2026 replication using new distractors finds the effect much smaller once ambiguous items are audited out. It is outside the target period and does not use Apple's original set. It raises an interpretive caveat but does not overturn the 2024 findings."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent 2024 studies of math (e2, e4) and planning (e3) document failures that recur across many models, instances, controlled perturbations and problem sizes. That is broader than isolated errors. The counterevidence qualifies but does not overturn this. e5 concerns specialized fine-tuned chess models. e6 is a later, different-data challenge to how the distractor results should be read. Under the fair plain reading, the observation holds for the period.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-b0ebef"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14784,
+  "output_tokens": 1537,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

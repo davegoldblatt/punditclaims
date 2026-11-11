@@ -1,0 +1,57 @@
+claim_id: wyea-dead-money-514ad4
+version: 1
+claim_revision_ref:
+  id: wyea-dead-money-514ad4
+  version: 1
+  content_hash: 709fb85bbef2c0ec92be5f1ca758c165b5cc04451196fe204d8a2fbc47bfd5b2
+assessment_axis: forecast_outcome
+explicit_source_elements:
+  - other AI-related debt stays flat on the year
+  - $739 billion
+  - in 2027
+  - growth matches hyperscaler debt issuance growth
+  - around 67.6%
+  - around $939 billion
+evaluator_interpretation:
+  - The surrounding discussion makes this annual debt issuance, not the outstanding debt stock.
+  - Treat the two totals as separate conditional scenarios, not as an unconditional range.
+  - "Other AI debt means issuance outside the five named hyperscalers: Meta, Alphabet, Amazon, Microsoft, and Oracle."
+  - Both scenarios also rely on the surrounding $419 billion hyperscaler issuance estimate.
+  - "The stated inputs do not exactly reproduce the upper total: 419 + (570 - 250) × 1.676 = 955.32, in billions. Preserve the published $939 billion target and flag the discrepancy rather than silently correcting it."
+support_condition: For each branch whose antecedent is documented, calendar-2027 gross issuance is approximately the stated branch total, using the same issuer and financing coverage as the 2026 baseline.
+contradiction_condition: A documented branch antecedent holds, but complete, comparable calendar-2027 issuance differs materially from that branch's stated total.
+measurement_requirements: Separate hyperscaler and other AI issuance for both years. Include the same debt instruments and SPVs throughout, avoid double counting securitized loans, and distinguish gross issuance from net borrowing and outstanding debt. Evaluate each condition separately.
+source_requirements: Completed-year issuance records or a transparent market dataset, with issuer filings and a documented classification of AI-related financing.
+metric_scope:
+  company: Meta, Alphabet, Amazon, Microsoft, Oracle, and other AI infrastructure borrowers
+  metric: Annual gross AI-related debt issuance
+  currency: USD
+  units: billions
+  accounting_basis: estimate
+  fiscal_or_calendar: calendar
+  period_start: 2027-01-01
+  period_end: 2027-12-31
+  stock_or_flow: flow
+  annualized_or_realized: realized
+  gross_or_net: gross
+original_horizon: in 2027
+horizon_interval:
+  start: 2026-09-29
+  end: 2027-12-31
+  precision: day
+target_period: null
+condition_status: unknown
+early_resolution_rule: Resolve a branch only when its annual growth condition is established and its annual issuance outcome is fixed. Forecasts, financing plans, or announced facilities do not establish completed-year issuance.
+interpretation_determines_result: false
+ambiguity_flags:
+  - The sentence says debt, while the surrounding analysis measures debt issuance.
+  - The coverage of other AI debt and SPVs is not fully defined.
+  - No tolerance is supplied for 'around'.
+  - The upper scenario does not exactly follow from the stated inputs.
+  - The $419 billion hyperscaler input is itself an estimate.
+retrospective_or_prospective: prospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T10:55:28Z
+frozen_at: 2026-10-29T10:55:28Z
+policy_version: 2026-10-28.7
+content_hash: 557e523a9958201474f3cd383d869d1cbbff591ae4555fb3d8c8601c89ee64bf

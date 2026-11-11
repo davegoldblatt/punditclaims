@@ -1,0 +1,135 @@
+{
+ "assessment_id": "marcus-large-language-models-like-chatgpt-49ee95-a2",
+ "claim_revision_ref": {
+  "id": "marcus-large-language-models-like-chatgpt-49ee95",
+  "version": 1,
+  "content_hash": "ec732fce498707b1ce71120dabb86727447ea48af1127da06c19229c1d725aea"
+ },
+ "contract_ref": {
+  "id": "marcus-large-language-models-like-chatgpt-49ee95",
+  "version": 2,
+  "content_hash": "2e491c62d96204aefb42efc672f9f5f154c79be64a75005cd2fe552a0ec078c5"
+ },
+ "packet_ref": {
+  "id": "marcus-large-language-models-like-chatgpt-49ee95-p2",
+  "content_hash": "873fbd2cf5e27e4d3b16002cc6623f45faaf3448ebcfa288d0dcfea5e460ac9c"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-01-09",
+  "precision": "day"
+ },
+ "public_rationale": "The claim concerns safeguards after a particular patch. The January news article repeats a December 4 bias example without establishing that it survived that patch. OpenAI's release notes document changed refusal behavior, and a later paper studies the December 15 version, but these records do not establish both claimed failures in the relevant patched state. They also do not refute Marcus. The evidence is insufficient for a supported, contradicted, or mixed finding.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "This is an evidence gap, not a finding that the safeguards worked.",
+  "The patch is not dated in the source, and model release dates cannot safely substitute for its deployment date.",
+  "The search did not establish a representative frequency of inappropriate refusals."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-large-language-models-like-chatgpt-49ee95-1x-review-anthropic-1",
+  "marcus-large-language-models-like-chatgpt-49ee95-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-large-language-models-like-chatgpt-49ee95-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-large-language-models-like-chatgpt-49ee95",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "ChatGPT's bias guardrails are imperfect, both too strict and too loose, and can be circumvented.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Still, the guardrails are imperfect, in some ways too strict and others too loose.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/large-language-models-like-chatgpt",
+   "date": "2023-01-09",
+   "document_title": "Large Language Models like ChatGPT say The Darnedest Things",
+   "observed_at": "2026-10-29T00:04:36Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The patch works to some extent",
+    "if you now run the prompt in figure 7",
+    "the guardrails are imperfect",
+    "in some ways too strict and others too loose",
+    "get around these “guardrails” by framing the requests in various indirect ways",
+    "the guardrails often lead to outputs that are absurdly over-cautious"
+   ],
+   "our_interpretation": [
+    "The claim concerns ChatGPT after the bias-related patch described in the preceding sentences, as experienced by the January 9, 2023 post. Launch-era failures alone cannot settle it.",
+    "The ordinary reading is that indirect requests could still elicit discriminatory responses, while safeguards also repeatedly obstructed harmless requests through inappropriate refusals or cautions.",
+    "The target period begins with the unspecified patch and ends on the post date. Its start is left null because the source supplies no patch date. Evidence must independently establish that it concerns the patched state.",
+    "No numerical failure rate is specified. Documented examples can establish bypasses; repeated examples or systematic testing are needed to substantiate the contextual description of over-caution as recurring."
+   ],
+   "support_condition": "Independent records of the relevant patched ChatGPT establish both successful indirect bypasses of bias safeguards and recurring inappropriate refusals or cautions on harmless requests before or at publication.",
+   "contradiction_condition": "Reliable testing of the relevant patched ChatGPT rebuts at least one component: the purported bypasses do not survive the patch, or the supposed over-cautious responses are justified or not a recurring behavior. Isolated successful safeguards do not contradict an assertion of imperfection."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claim concerns safeguards after a particular patch. The January news article repeats a December 4 bias example without establishing that it survived that patch. OpenAI's release notes document changed refusal behavior, and a later paper studies the December 15 version, but these records do not establish both claimed failures in the relevant patched state. They also do not refute Marcus. The evidence is insufficient for a supported, contradicted, or mixed finding.",
+  "limitations": [
+   "This is an evidence gap, not a finding that the safeguards worked.",
+   "The patch is not dated in the source, and model release dates cannot safely substitute for its deployment date.",
+   "The search did not establish a representative frequency of inappropriate refusals."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "General performance: Among other improvements, users will notice that ChatGPT is now less likely to refuse to answer questions.",
+    "locator": "Dec 15, 2022 — Performance updates to ChatGPT",
+    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "publisher": "OpenAI",
+    "event_date": "2022-12-15",
+    "available_at": "2022-12-15",
+    "explanation": "OpenAI documented a change in refusal behavior. A reduction in refusals neither establishes nor rules out inappropriate refusals after the particular bias patch Marcus describes."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "The user prompted the chatbot to produce python functions that were based on race and gender.",
+    "locator": "Concerns About Bias; paragraph introducing the embedded December 4, 2022 Piantadosi post",
+    "url": "https://indianexpress.com/article/technology/tech-news-technology/chatgpt-mistakes-satya-nadella-open-ai-8365732",
+    "publisher": "The Indian Express",
+    "event_date": "2022-12-04",
+    "available_at": "2023-01-10",
+    "explanation": "The underlying example is dated December 4, although the article appeared in January. Its timing relative to the patch is not established, so it cannot settle the post-patch claim. The availability date conservatively uses the displayed update date."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "In this paper, ChatGPT refers to the version released on Dec 15th.",
+    "locator": "Footnote 1 in the abstract",
+    "url": "https://arxiv.org/html/2301.12867v1",
+    "publisher": "arXiv; Terry Yue Zhuo and colleagues",
+    "event_date": "2022-12-15",
+    "available_at": "2023-01-30",
+    "explanation": "The study identifies a contemporary version and reports code-generation bias. The event date here identifies that version's release, not the experiments; the passage does not date the tests or connect the version to Marcus's specific patch."
+   }
+  ],
+  "what_would_resolve": "Dated independent transcripts or archived tests of ChatGPT after the identified bias patch and by January 9, 2023, showing indirect discriminatory outputs and repeated unjustified refusals on harmless prompts; or sufficiently broad testing that rebuts either component.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c15d6e8af14c29c050ae82cf0cd798d0dc03b64227f0bd49c3e1b9bc24e5a91d",
+ "supersedes_assessment_id": "marcus-large-language-models-like-chatgpt-49ee95-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T19:14:59Z"
+}

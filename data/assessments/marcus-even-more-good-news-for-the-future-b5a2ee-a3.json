@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-even-more-good-news-for-the-future-b5a2ee-a3",
+ "claim_revision_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-b5a2ee",
+  "version": 1,
+  "content_hash": "ff35ef1b8a71554fc01b4d1ce7ee8af5685d5ee5b4c4e50444a8b6e1f0ed6be1"
+ },
+ "contract_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-b5a2ee",
+  "version": 1,
+  "content_hash": "25fdc2e9f4c4ea310e49f0eeb78ae51ecedbb49ad2e6a5e0979f175eec4ad584"
+ },
+ "packet_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-b5a2ee-p1",
+  "content_hash": "ce247c019158a770d9713bc4bf4f5b91fecb8daff0b7c901a0d6f590cad2dcd9"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-02",
+  "end": "2026-02",
+  "precision": "month"
+ },
+ "public_rationale": "The results reported in February 2026 support failure on the larger unseen puzzle: neither tested VLA completed a four-block Hanoi game [e1]. They contradict “working fine” on smaller complete puzzles: on the three-block configuration included in training, completion rates were 34% for the end-to-end VLA and 0% for the planner-guided VLA [e2]. Their higher single-move success rates, 87.0% and 59.6%, measure individual manipulations rather than complete puzzle solutions [e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "These results do not establish performance beyond the two tested VLA configurations [e1, e2].",
+  "The task results do not establish that VLA and LLM failures share an underlying mechanism [e1, e2].",
+  "February 2026 is the study's reporting period; the evidence does not specify experiment dates."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-even-more-good-news-for-the-future-931695-4x-review-anthropic-1",
+  "marcus-even-more-good-news-for-the-future-931695-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-even-more-good-news-for-the-future-b5a2ee-1x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-even-more-good-news-for-the-future-b5a2ee",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "VLA models suffer the same generalization failures on Tower of Hanoi as LLMs, working on small instances but breaking down as size grows.",
+  "kind": "observation",
+  "conditions": [
+   "on Tower of Hanoi"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "First it (conceptually) replicates and extends the Apple reasoning paper, by showing that a newer variant on LLMs, called VLAs –Vision-Language-Action models, which are increasingly popular in robotics — also suffer from the same generalization problems on the Tower Hanoi, similarly working fine on small versions of the problem but breaking down as more rings get added.",
+   "locator": "paragraph 14",
+   "url": "https://garymarcus.substack.com/p/even-more-good-news-for-the-future",
+   "date": "2026-04-12",
+   "document_title": "Even more good news for the future of neurosymbolic AI",
+   "observed_at": "2026-10-28T22:30:25Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "conceptually replicates and extends",
+    "VLAs",
+    "same generalization problems",
+    "Tower Hanoi",
+    "working fine on small versions",
+    "breaking down as more rings get added"
+   ],
+   "our_interpretation": [
+    "This is a claim about the VLA configurations evaluated in the named Tufts study, not every VLA architecture.",
+    "Same problems means a similar size-related failure pattern, not proof of an identical underlying mechanism.",
+    "Working fine on small versions ordinarily means reasonably reliable completion of smaller full Hanoi tasks, rather than occasional success or isolated block moves.",
+    "The target is the February 2026 study reporting period identified in the post."
+   ],
+   "support_condition": "The study reports substantial success on smaller complete Hanoi tasks followed by failure on larger, unseen tasks.",
+   "contradiction_condition": "The larger tasks remain reliably solvable, or the models already fail frequently on the smaller complete tasks. The latter contradicts the working-fine component without disproving larger-task failure."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The results reported in February 2026 support failure on the larger unseen puzzle: neither tested VLA completed a four-block Hanoi game [e1]. They contradict “working fine” on smaller complete puzzles: on the three-block configuration included in training, completion rates were 34% for the end-to-end VLA and 0% for the planner-guided VLA [e2]. Their higher single-move success rates, 87.0% and 59.6%, measure individual manipulations rather than complete puzzle solutions [e2].",
+  "limitations": [
+   "These results do not establish performance beyond the two tested VLA configurations [e1, e2].",
+   "The task results do not establish that VLA and LLM failures share an underlying mechanism [e1, e2].",
+   "February 2026 is the study's reporting period; the evidence does not specify experiment dates."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Both VLAs failed",
+    "locator": "Section V-B3, 4-Block Towers of Hanoi",
+    "url": "https://arxiv.org/html/2602.19260v1",
+    "publisher": "Duggan and colleagues, Tufts University; ICRA 2026 accepted paper on arXiv",
+    "event_date": "2026-02",
+    "available_at": "2026-02-22",
+    "explanation": "Neither VLA configuration completed the unseen four-block task. The end-to-end model's success therefore fell from 34% on three blocks to zero on four, supporting the larger-task generalization failure."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "sub-task 9 of 14.",
+    "locator": "Section V-B2, 3-Block Towers of Hanoi",
+    "url": "https://arxiv.org/html/2602.19260v1",
+    "publisher": "Duggan and colleagues, Tufts University; ICRA 2026 accepted paper on arXiv",
+    "event_date": "2026-02",
+    "available_at": "2026-02-22",
+    "explanation": "On the smaller full puzzle, the planner-guided VLA completed no games and the end-to-end VLA completed only 34%. Those results do not show reasonably reliable small-puzzle performance, although individual-move success was substantially higher."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "cdfc2038868f708e353ec1ad2771afb6a500bfe6cb50450a90ed13868cc883f3",
+ "supersedes_assessment_id": "marcus-even-more-good-news-for-the-future-b5a2ee-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:31:13Z"
+}

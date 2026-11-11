@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-will-tesla-ever-solve-full-self-driving-127663-a2",
+ "claim_revision_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-127663",
+  "version": 1,
+  "content_hash": "d2de6bbd48835e0c539d6a94a37cb0a40f7c86c8473c696712270d33e9cf2789"
+ },
+ "contract_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-127663",
+  "version": 1,
+  "content_hash": "d880c6d1983368f8855f02260df9d08f9efaccdc646b5497b0f1cb2bdae7a64f"
+ },
+ "packet_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-127663-p1",
+  "content_hash": "992666c1c960d02d150a76da33762186508a8bf5618b6abfb043db6aa9ab07f8"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-06-01",
+  "end": "2022-06-15",
+  "precision": "day"
+ },
+ "public_rationale": "The March 15, 2022 CODA study found poor detection of unusual objects in the models tested [e7]. This supports difficulty with those examples, but does not establish that unseen outliers were the principal obstacle to full self-driving during June 1–15, 2022 [e7]. Waymo's May 18 account described rare encounters and training from fleet data, but did not establish which relevant situations were absent from training or how reliably humans handled them [e8]. The June 13 survey examined threats across driving-system components without establishing outliers' comparative importance [e9]. The evidence therefore leaves unresolved the claim that unfamiliar situations missing from training data were the core obstacle and were reliably manageable by humans [e7, e8, e9].",
+ "evidence_ids": [
+  "e7",
+  "e8",
+  "e9"
+ ],
+ "counterevidence_ids": [
+  "e8",
+  "e9"
+ ],
+ "limitations": [
+  "CODA evaluates object detectors, not representative complete driving systems; unusual examples are not necessarily unseen examples [e7].",
+  "Waymo's disclosure does not establish private training-data coverage or reliable handling of unfamiliar situations [e8].",
+  "The packet lacks representative comparisons of failure causes and matched human-versus-system performance for June 1–15, 2022 [e7, e8, e9]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-will-tesla-ever-solve-full-self-driving-127663-4x-review-anthropic-1",
+  "marcus-will-tesla-ever-solve-full-self-driving-127663-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-will-tesla-ever-solve-full-self-driving-127663-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-will-tesla-ever-solve-full-self-driving-127663",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The core obstacle to self-driving is outliers—unusual circumstances absent from databases that baffle current AI.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As I emphasized in a $100,000 bet that I recently offered Elon, the core issue is outliers, the endless list of unusual circumstances, like a person carrying stop sign, that aren’t in anybody’s database, obvious to humans, yet baffling to current AI.",
+   "locator": "paragraph 33",
+   "url": "https://garymarcus.substack.com/p/will-tesla-ever-solve-full-self-driving",
+   "date": "2022-06-15",
+   "document_title": "Will Tesla ever “Solve” Full Self Driving?",
+   "observed_at": "2026-10-29T00:05:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the core issue is outliers",
+    "the endless list of unusual circumstances",
+    "like a person carrying stop sign",
+    "aren’t in anybody’s database",
+    "obvious to humans, yet baffling to current AI"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that failure to generalize to unfamiliar situations was the principal technical obstacle to full self-driving.",
+    "The database language is read as a claim that relevant unusual situations remain absent from training examples, not that no database contains any unusual event.",
+    "The human comparison requires evidence that people can reliably handle the same situations.",
+    "The claim concerns technology around publication; use June 1–15, 2022. Earlier studies provide context for that causal assessment."
+   ],
+   "support_condition": "Representative failure analyses show unseen unusual situations are the principal barrier to full self-driving, with evidence of missing training coverage and better human handling.",
+   "contradiction_condition": "Representative analyses show robust handling of unfamiliar situations, or establish that other causes account for the principal remaining barrier."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The March 15, 2022 CODA study found poor detection of unusual objects in the models tested [e7]. This supports difficulty with those examples, but does not establish that unseen outliers were the principal obstacle to full self-driving during June 1–15, 2022 [e7]. Waymo's May 18 account described rare encounters and training from fleet data, but did not establish which relevant situations were absent from training or how reliably humans handled them [e8]. The June 13 survey examined threats across driving-system components without establishing outliers' comparative importance [e9]. The evidence therefore leaves unresolved the claim that unfamiliar situations missing from training data were the core obstacle and were reliably manageable by humans [e7, e8, e9].",
+  "limitations": [
+   "CODA evaluates object detectors, not representative complete driving systems; unusual examples are not necessarily unseen examples [e7].",
+   "Waymo's disclosure does not establish private training-data coverage or reliable handling of unfamiliar situations [e8].",
+   "The packet lacks representative comparisons of failure causes and matched human-versus-system performance for June 1–15, 2022 [e7, e8, e9]."
+  ],
+  "evidence": [
+   {
+    "id": "e7",
+    "relation": "context",
+    "excerpt": "significantly drops",
+    "locator": "Abstract, CODA benchmark results",
+    "url": "https://arxiv.org/abs/2203.07724v1",
+    "publisher": "Li et al., arXiv",
+    "event_date": "2022-03-15",
+    "available_at": "2022-03-15",
+    "explanation": "The experiment supports difficulty detecting unusual objects in the tested models. It predates the target window and neither tests complete commercial driving systems nor ranks outliers against other barriers."
+   },
+   {
+    "id": "e8",
+    "relation": "context",
+    "excerpt": "learn from each mile",
+    "locator": "Using Machine Learning to Build a Generalizable System",
+    "url": "https://waymo.com/blog/2022/05/howwevebuiltascalableautonomousdriver",
+    "publisher": "Waymo",
+    "event_date": "2022-05-18",
+    "available_at": "2022-05-18",
+    "explanation": "The disclosure describes training from fleet data and reports encounters with cyclists carrying stop signs, among other rare situations. This qualifies a literal absence-from-every-database reading, but does not demonstrate reliable handling of unseen situations."
+   },
+   {
+    "id": "e9",
+    "relation": "context",
+    "excerpt": "have made great achievements",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2206.05961v1",
+    "publisher": "Tang et al., arXiv",
+    "event_date": "2022-06-13",
+    "available_at": "2022-06-13",
+    "explanation": "The survey examines safety threats across sensing, perception, planning, control, and interactions between components. It supplies a broader account of technical challenges but does not quantify whether unseen outliers dominate them."
+   }
+  ],
+  "what_would_resolve": "Representative evaluations of June 1–15, 2022 systems comparing outlier-related failures with other barriers, documenting relevant training coverage, and measuring human performance on the same situations. These could establish the claimed causal primacy or show robust handling of unfamiliar situations or a different principal barrier.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e4f8b88204d1de23b1cd2aa47fe7837d51a3b327eca729bc55ed0f2b3b4d93bc",
+ "supersedes_assessment_id": "marcus-will-tesla-ever-solve-full-self-driving-127663-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T16:49:38Z"
+}

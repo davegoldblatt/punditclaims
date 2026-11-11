@@ -1,0 +1,155 @@
+{
+ "packet_id": "marcus-llms-coding-agents-security-nightmare-b75733-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-b75733",
+  "version": 2,
+  "content_hash": "a306d0b9365999a983f70db62435078063b9dbdb1917f9df14ccc6b2ccf80f6f"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-coding-agents-security-nightmare-b75733",
+  "version": 1,
+  "content_hash": "ece53add93a06ddb837a8746e9a2dae8dc9c0ef3452489e6d8c8e1190fbba698"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA Black Hat 2025 coding agents prompt injection Lynch Harang",
+   "2025 Cursor rules file backdoor prompt injection exploit July August",
+   "Tracebit Gemini CLI silently executing malicious code blog July 2025",
+   "\"CVE-2025-53773\" \"research\" \"Embrace\"",
+   "site.github.blog 2025 coding agent firewall security permissions May 19"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection/",
+    "used": true,
+    "why": "Original demonstration connecting workspace-write authority to changed approval settings and command execution; also records remediation."
+   },
+   {
+    "url": "https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack",
+    "used": true,
+    "why": "Original exploit report identifies default configuration, required approval, command execution, data theft, and effective protections elsewhere."
+   },
+   {
+    "url": "https://github.blog/changelog/2025-07-15-configure-internet-access-for-copilot-coding-agent/",
+    "used": true,
+    "why": "Dated vendor disclosure shows that a mainstream agent also shipped with meaningful default restrictions."
+   },
+   {
+    "url": "https://www.aim.security/post/when-public-prompts-turn-into-local-shells-rce-in-cursor-via-mcp-auto-start",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotation or outcome finding relies on it."
+   },
+   {
+    "url": "https://research.checkpoint.com/2025/cursor-vulnerability-mcpoison/",
+    "used": false,
+    "why": "read_page could not retrieve the page."
+   }
+  ],
+  "performed_at": "2026-10-29T17:40:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "embracethered-com-blog-posts-2025-github-copilot-remote-code-execut-b172c45327ed",
+   "source_snapshot_id": "ef5e8a27a05cd2f3855dafec6143513ad47780553fd82bcca0277dd07b59ca2b",
+   "publisher": "Embrace The Red — Johann Rehberger",
+   "source_type": "demonstration",
+   "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection",
+   "locator": "Exploit Chain Explained",
+   "receipt": {
+    "public_excerpt": "Remote Code Execution",
+    "quote_hash": "7ddff57ce5cc17d9cf3a38e4d40c5d819d79d816851c39386b845931eff4793e",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-29",
+   "available_at": "2025-08-12",
+   "retrieved_at": "2026-10-29T07:16:23Z",
+   "relation": "supports",
+   "explanation": "The researcher reported that Copilot could persistently edit workspace files without approval, then demonstrated injected instructions changing its approval configuration and executing commands. June 29 is the documented disclosure date by which the exploit existed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "tracebit-com-blog-code-exec-deception-gemini-ai-cli-hijack",
+   "source_snapshot_id": "c93882a8f47af7162ab2dd55499744161fd73501ed0dd2c5605f262e4c2c222b",
+   "publisher": "Tracebit",
+   "source_type": "demonstration",
+   "url": "https://tracebit.com/blog/code-exec-deception-gemini-ai-cli-hijack",
+   "locator": "Research — Setting the stage",
+   "receipt": {
+    "public_excerpt": "arbitrary code execution",
+    "quote_hash": "fafc668b931c79e183a8233ef4b8ff4e2804a70497a2c943463702301f0c1ea5",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-27",
+   "available_at": "2025-07-28",
+   "retrieved_at": "2026-10-29T17:27:50Z",
+   "relation": "supports",
+   "explanation": "The demonstrated Gemini CLI chain combined injected repository text, shell access, an approved innocuous command, and faulty command validation to exfiltrate environment variables in its default unsandboxed mode. The report also says this specific attack failed against tested alternatives and was fixed in Gemini CLI before the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "github-blog-changelog-2025-07-15-configure-internet-access-for-copi-c70c0e586fb1",
+   "source_snapshot_id": "8bea0e3622362435be3b9fc9387f3d24a4665d317b5e6a722e4e62ea1f00c988",
+   "publisher": "GitHub",
+   "source_type": "company_disclosure",
+   "url": "https://github.blog/changelog/2025-07-15-configure-internet-access-for-copilot-coding-agent",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "limited internet",
+    "quote_hash": "145b98c798ddddde104a2ca136e4675e8772b54479bc0662b8bd1da2096345c5",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-16",
+   "available_at": "2025-07-16",
+   "retrieved_at": "2026-10-29T17:28:19Z",
+   "relation": "context",
+   "explanation": "A mainstream cloud coding agent had default network restrictions, qualifying any suggestion that broad authority always means unrestricted access. This is a different configuration from the local VS Code exploit.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "embracethered-com-blog-posts-2025-github-copilot-remote-code-execut-b172c45327ed",
+   "source_snapshot_id": "ef5e8a27a05cd2f3855dafec6143513ad47780553fd82bcca0277dd07b59ca2b",
+   "publisher": "Embrace The Red — Johann Rehberger",
+   "source_type": "demonstration",
+   "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection",
+   "locator": "Responsible Disclosure",
+   "receipt": {
+    "public_excerpt": "now fixed",
+    "quote_hash": "e3a4486cc08305e3929ea2088a077f1623c8c69f560c7d9975547afe8ba9c3c3",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-12",
+   "available_at": "2025-08-12",
+   "retrieved_at": "2026-10-29T07:16:23Z",
+   "relation": "context",
+   "explanation": "The researcher reported remediation before Marcus's post. The exploit establishes the causal risk in that design, but cannot establish that patched installations retained this particular vulnerability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No representative survey establishes how often developers actually grant each permission.",
+  "These demonstrations do not measure compromise rates in real deployments."
+ ],
+ "packet_hash": "060ab51ccdbb183043b40a78e9047d3c5c62a206f63d9a036d88b6828828b475"
+}

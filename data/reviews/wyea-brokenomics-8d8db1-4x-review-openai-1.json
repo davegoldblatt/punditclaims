@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-brokenomics-8d8db1-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-brokenomics-8d8db1": "c5580411fed892dd3ce1fa2edd0f56392b9d6ec3d053485ecf631f55c9b0479c",
+  "case:wyea-brokenomics-97b75f": "8de6cdd7604ae9b1dc36af5ab4168303aa7949f94d694a207db0777b75f8f446",
+  "case:wyea-brokenomics-9c481e": "9118db40d5ec51b70abd7406d3e08ee918f0e8a46025cb9fd341bbde44c94c40",
+  "case:wyea-brokenomics-a3b852": "d57ba0a17eda4378ba29282970e12048a06cb02fda76c6a47f4479776b5c38c7"
+ },
+ "started_at": "2026-10-29T17:29:03Z",
+ "completed_at": "2026-10-29T17:30:11Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly asserts and endorses this causal explanation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful when scoped to the contemporaneous cuts under discussion; it asserts customer resistance and excludes efficiency as a cause."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Restricting the assessment to the June deliberations is ordinary and fair. Extending it to all subsequent price reductions would change the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Contemporaneous reporting identifies customer concerns and competition, but its tentative explanation does not establish both companies' motives or exclude efficiency."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A later company disclosure attributing July reductions to efficiency; it does not establish the causes of the June decisions."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A September company disclosure connecting serving efficiency and pricing. It is valid alternative-mechanism context, not evidence of June motives."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet establishes neither the asserted causal explanation nor its negation for the relevant June deliberations. Later efficiency explanations cannot resolve those earlier motives.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-8d8db1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron adopts the modeled conclusion as his own assertion while crediting its source."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the utilization threshold, margin bound, and explicit 75% modeling assumption."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Testing the cited model's arithmetic across its tiers fairly captures the statement without treating assumed costs as actual company financials."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The reproduced inputs yield margins of -25%, -25%, -150%, -118.75%, -118.75%, and -337.5%. Every tier satisfies the stated bound under the assumption."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "At 25% utilization, modeled serving cost is 6.25% of maximum API-equivalent usage. The highest resulting margin across the six tiers is -25%. This supports the conditional arithmetic, not actual provider profitability.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-97b75f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The statement is Zitron's own assessment following the quoted reporting."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "It preserves both assertions about the public evidence available at publication, rather than asserting that profitability or competition is impossible."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Credible financial evidence and meaningful production substitution are fair readings. The speaker supplies no accounting basis, sustainability duration, or scale threshold."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "DeepSeek discloses hypothetical billing and estimated compute costs, explicitly distinguishing these from actual revenue. Realized hosting profit is not established."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The company reports substantial production adoption, but supplies neither matched profitability accounts nor a demonstrated comparison with the named alternatives."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The study demonstrates competitive results for a specific feature against GPT-4, but the supplied abstract does not establish meaningful deployment volume or the full scale comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither realized profitable hosting nor competitive substitution at demonstrated scale is established by this packet. Conversely, its limited search cannot establish the universal absence of qualifying public evidence. Separate adoption and comparison records cannot supply the missing combined demonstration.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-9c481e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly endorses the warning about the contemplated cuts."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The firm consequence is conditional on the contemplated cuts occurring. No deadline is supplied."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Widespread failure or lasting loss of viability is a fair ordinary reading of deadly in this financial context. The industry boundary and connection to later cuts remain interpretive."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Establishes substantial later reductions by both companies, not fatal industry consequences. Their identity with the contemplated June cuts remains uncertain."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "Even accepting the later reductions as satisfying the broad antecedent, no decisive industry failure or completed durable adjustment is documented. The forecast has no deadline, and the early-resolution rule is unmet. Evidence of cuts alone cannot support the predicted consequence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-a3b852"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27710,
+  "output_tokens": 2026,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 334
+ },
+ "cost_usd": null
+}

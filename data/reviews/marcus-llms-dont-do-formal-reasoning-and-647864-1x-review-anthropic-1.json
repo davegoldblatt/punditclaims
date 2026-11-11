@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-647864-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-647864": "20c3ded77822aeeddacc946e6895e6a2f858d6e302e4fc9ad90382162849d98d"
+ },
+ "started_at": "2026-10-29T23:26:18Z",
+ "completed_at": "2026-10-29T23:26:30Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post. He cites Jia and Liang's study but makes the 'not new' claim himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to the statement and its context, which names the 2017 study. Calling the 2017 systems 'language model' is loose (they were reading-comprehension models), but the claim is about the same kind of flaw, not the same architecture."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (similar failures under answer-preserving distractors were documented in 2017) is fair and ordinary. It follows the source Marcus himself cited and does not demand identical architectures."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The original Jia–Liang paper, public July 2017. Adding AddSent distractors cut average F1 from 75.7% to 31.3%, and a human check confirmed people were not fooled, so the distractors kept the answer intact. Some other variants did not ensure this."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The 2017 Jia–Liang study shows reading-comprehension models failing badly when distracting sentences were added that did not change the correct answer (AddSent; checked with humans). That meets the support condition, so the claim that this flaw is 'not new' and was documented in 2017 holds. The AddAny variant did not guarantee answer preservation, but AddSent alone is enough.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-647864"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 7999,
+  "output_tokens": 1206,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

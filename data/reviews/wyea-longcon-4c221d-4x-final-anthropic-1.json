@@ -1,0 +1,75 @@
+{
+ "run_id": "wyea-longcon-4c221d-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:wyea-longcon-501d82": "8875ef437a4f8463550d30e774eeb5e70bf353dc605a902e48ef669ed7ebf437",
+  "payload:wyea-longcon-501d82": "77818b62aa38b249f1bc32c49061642d53ec4a4e5c38d95d9623bd15188c0be5",
+  "case:wyea-longcon-61855a": "bffcdeda4b74313fa07df20a4d6a2b96363c85f39206e6f682dd2cc138842ef4",
+  "payload:wyea-longcon-61855a": "20d9bcc38d0714e7d1f3b34fd52da42d95ed9f71133d46b86ad4a69e6af5f479",
+  "case:wyea-longcon-6acf31": "a0e854f0479f7df229fed80926374eebdea4da51d6e422771c392b0402468050",
+  "payload:wyea-longcon-6acf31": "35b3837a8e736a5274fe9f081afe4768cc3b2f2b28edaf52634cde0a40c45cb9"
+ },
+ "started_at": "2026-10-29T22:10:55Z",
+ "completed_at": "2026-10-29T22:11:43Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The reported financial-statement categories are not compute-only categories."
+    ],
+    "verdict": "fail",
+    "note": "Excerpt, proposition, conditions, outcome (unresolved) and the e1 citation all match. The rationale sentence about 'reported financial-statement categories' comes from the Ars Technica leaked-docs source, which the packet lists as read but not used. No cited evidence item supports it, so it states a fact the published evidence does not show. Either remove it or cite the source.",
+    "claim_id": "wyea-longcon-501d82"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. The proposition keeps the hypothetical framing and the speaker's wording. The 3.67% arithmetic matches e1's 11M numerator. The CFO's 75% figure (e2, 2024-10-28) supports the narrower claim that subscriptions dominated revenue at that time, and the text correctly says it gives no full-year 2024 mix. Unresolved matches the reviews. The e2 note on the 5–6% conversion figure is accurate.",
+    "claim_id": "wyea-longcon-61855a"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "The cost and speed concern has support."
+    ],
+    "verdict": "fail",
+    "note": "e1's 'expensive and slow' is lifted from a sentence that blames this on large pretrained models with broad world knowledge (vs the smaller o1-mini on the same reasoning pipeline). It does not blame reasoning. Labelling it 'supports' a reasoning cost/speed tradeoff, and the rationale's reliance on it, misreads the source. The e2 excerpt 'these reasoning-heavy tasks' is a fragment that drops the contradicting content. Outcome (mixed) and the e3 and e4 handling are fine.",
+    "claim_id": "wyea-longcon-6acf31"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29561,
+  "output_tokens": 5311,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2": "97b2b55d042b4b3ba7f29951a3b546e3dd09890a86263877fc65256fbd6e7a2e"
+ },
+ "started_at": "2026-10-31T19:14:54Z",
+ "completed_at": "2026-10-31T19:15:15Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. The nearby Litt reference is separate and not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normative 'should never trust' clause is correctly left out. The scored part is the descriptive claim that pure LLMs never really get basic linear functions, even under controlled, data-rich conditions. The qualifier is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as a capability assessment as of the post date, centred on reliable extrapolation in arithmetic, matches the passage's context. That reading is ordinary, not stretched. The result still turns on the unsupplied scope of 'pure LLMs' and on the lack of any reliability threshold."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Primary MathGLM report, dated before the post. Accuracy declines as digits increase. This supports only the narrow MathGLM case; the contract says MathGLM alone is insufficient for the categorical claim."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "June 2023 preprint. Small transformers trained on 5-digit addition extrapolate to 15 digits at about 98%, then collapse at 20 digits. These are task-specific models, not clearly LLMs, and the reliability is not sustained. Material, but not decisive."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "October 18, 2023 v1, the day before the post. Near-perfect accuracy up to 50 digits, but it relies on an extra attention-bias calibration and retraining step. Whether that counts as a pure LLM is ambiguous, so it cannot contradict the claim on its own."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e1 supports only the narrow MathGLM finding, which the contract deems insufficient for the categorical claim. The counterevidence either involves models of uncertain class with limited, unsustained extrapolation (e2) or relies on special attention calibration whose status as a pure LLM is ambiguous (e3). The packet establishes neither the support condition nor the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12436,
+  "output_tokens": 1857,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

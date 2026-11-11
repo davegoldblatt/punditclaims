@@ -1,0 +1,134 @@
+{
+ "assessment_id": "wyea-dead-money-57bc73-a2",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-57bc73",
+  "version": 1,
+  "content_hash": "00d238554b7c9397aec13013c5a2dfbddb2b69194f85d79e77e2713d24c4d905"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-57bc73",
+  "version": 2,
+  "content_hash": "0efb60152284dfa15495dda2d864393c3853a720015068b4444b14d0fce0522e"
+ },
+ "packet_ref": {
+  "id": "wyea-dead-money-57bc73-p2",
+  "content_hash": "c26a4f6fae20763d1b69be8c9962d37e470e5f10d6b81af35d9e8f19b56ad920"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-01-01",
+  "end": "2026-09-29",
+  "precision": "day"
+ },
+ "public_rationale": "The claim is that at least half of current NVIDIA and Broadcom AI chip sales are made years before the chips are used. Testing it needs sale dates matched to install dates for 2026 shipments, and no such data is public. There are signs both ways. Business Insider reports that Amazon takes NVIDIA racks before power is ready and stores them in warehouses. On the other side, CoreWeave said its install time fell from about three months to weeks by late 2025. The Morgan Stanley estimate he relies on says more than half of 2026-2028 GPU servers \"might\" lack power. That is a forecast, not a record of what happened. No source shows what share of all sales waits years, so the claim stays open.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Context evidence covers single buyers, not the whole market.",
+  "The Morgan Stanley note itself was not available to read."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "wyea-dead-money-419e3a-4x-review-anthropic-1",
+  "wyea-dead-money-419e3a-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-dead-money-419e3a-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-dead-money-57bc73",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "At least half of NVIDIA and Broadcom AI chip sales are made years before the chips are put to use.",
+  "kind": "observation",
+  "conditions": [
+   "includes Broadcom TPU sales"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In reality, at least half of all those chip sales — and I’d add in Broadcom’s TPU sales too (see my Hater’s guide for more) — are being made years before anything actually happens with the chips, making the trillion-plus dollars spent on capex so far seem somewhere between optimistic and utterly incoherent.",
+   "locator": "paragraph 11",
+   "url": "https://www.wheresyoured.at/dead-money",
+   "date": "2026-09-29",
+   "document_title": "Dead Money",
+   "observed_at": "2026-10-28T22:23:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "\"at least half of all those chip sales\"",
+    "\"I'd add in Broadcom's TPU sales too\"",
+    "\"are being made years before anything actually happens with the chips\"",
+    "present tense, following Morgan Stanley's estimate on GPU servers sold 2026-2028"
+   ],
+   "our_interpretation": [
+    "\"Those chip sales\" are read as current NVIDIA GPU sales plus Broadcom TPU sales being made now, in 2026. The present tense and the Morgan Stanley context point there.",
+    "\"Years before anything actually happens\" is read in his own words: a gap of more than a year between sale and the chips being installed and used. No extra threshold is added.",
+    "Target period: sales made in 2026 up to the post date. This is the latest period his present-tense words cover."
+   ],
+   "support_condition": "Credible deployment data showing that at least half (by value or volume) of NVIDIA and Broadcom AI chips sold in 2026 will not be installed and used until a year or more after sale.",
+   "contradiction_condition": "Credible deployment data showing that most NVIDIA and Broadcom AI chips sold in 2026 were installed and in use within about a year of sale."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claim is that at least half of current NVIDIA and Broadcom AI chip sales are made years before the chips are used. Testing it needs sale dates matched to install dates for 2026 shipments, and no such data is public. There are signs both ways. Business Insider reports that Amazon takes NVIDIA racks before power is ready and stores them in warehouses. On the other side, CoreWeave said its install time fell from about three months to weeks by late 2025. The Morgan Stanley estimate he relies on says more than half of 2026-2028 GPU servers \"might\" lack power. That is a forecast, not a record of what happened. No source shows what share of all sales waits years, so the claim stays open.",
+  "limitations": [
+   "Context evidence covers single buyers, not the whole market.",
+   "The Morgan Stanley note itself was not available to read."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Some AWS facilities reportedly had physical space for additional racks but lacked sufficient power infrastructure to activate them, leading Amazon to stage equipment in intermediary warehouses until sites were ready.",
+    "locator": "section 'Hardware First, Power Later', paragraph 3",
+    "url": "https://finance.yahoo.com/technology/ai/articles/amazon-warehousing-billions-nvidia-ai-142317720.html",
+    "publisher": "Yahoo Finance (citing Business Insider)",
+    "event_date": "2026-09",
+    "available_at": "2026-10-21",
+    "explanation": "Shows that some 2026 NVIDIA purchases at Amazon come before they can be powered. It gives no share of all sales and no length of delay."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "CoreWeave disclosed in May 2025 that its hardware goes through a “~3 month installation time” between delivery and monetization. By late 2025, this had decreased to “within weeks”.",
+    "locator": "Notes, footnote 3",
+    "url": "https://epoch.ai/gradient-updates/frontier-labs-dont-use-most-ai-compute",
+    "publisher": "Epoch AI",
+    "event_date": "2025-12",
+    "available_at": "2026-05-20",
+    "explanation": "For one major neocloud, the gap from delivery to use was weeks to months, not years. It is from 2025 and covers one buyer, so it does not settle 2026 sales overall."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Whether the warehoused hardware proves prescient or premature depends on how fast power infrastructure and construction can close the gap.",
+    "locator": "final paragraph",
+    "url": "https://finance.yahoo.com/technology/ai/articles/amazon-warehousing-billions-nvidia-ai-142317720.html",
+    "publisher": "Yahoo Finance (citing Business Insider)",
+    "event_date": "2026-10",
+    "available_at": "2026-10-21",
+    "explanation": "Shows that how long warehoused hardware will wait is still unknown, which is the gap that keeps this claim open."
+   }
+  ],
+  "what_would_resolve": "Disclosures from hyperscalers, neoclouds or NVIDIA/Broadcom on how much 2026 hardware was installed within a year of delivery, or an independent tracker of deployed vs. shipped AI chips through 2027.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "49f0ed46e3bf8d0bd698e663798a9d7478dedc417c1132933022ce71cfd935ca",
+ "supersedes_assessment_id": "wyea-dead-money-57bc73-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T20:02:34Z"
+}

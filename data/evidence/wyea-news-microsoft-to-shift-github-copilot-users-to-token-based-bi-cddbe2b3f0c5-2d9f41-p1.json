@@ -1,0 +1,118 @@
+{
+ "packet_id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-2d9f41-p1",
+ "claim_revision_ref": {
+  "id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-2d9f41",
+  "version": 1,
+  "content_hash": "fb4ffece416bbfb154e66d66242c4285e08c5fa19e8a24698bf1a33753e09222"
+ },
+ "contract_ref": {
+  "id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-2d9f41",
+  "version": 1,
+  "content_hash": "ebfbaf30a3517e8da7bf99e53f13e84c8277faccae0cdfd1842585c951978c50"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.github.com \"Opus 4.6\" \"3\" \"premium\" multiplier April 2026",
+   "site.github.blog \"Opus 4.6\" \"multiplier\" \"3\"",
+   "site.docs.github.com \"Claude Opus 4.6\" \"3\" \"Model multipliers\"",
+   "\"Opus 4.6\" \"3\" \"multiplier\" site:github.blog",
+   "\"Opus 4.6\" \"3\" site:docs.github.com/en/copilot/reference",
+   "site:docs.github.com \"Claude Opus 4.6\" \"Current multiplier\"",
+   "site:docs.github.com \"Model multipliers\" \"3\" \"27\"",
+   "GitHub Docs commit lookup: content/copilot/reference/ai-models/supported-models.md, until 2026-04-20T23:59:59Z",
+   "Read data/tables/copilot/model-multipliers.yml at commit 91ac21c37134bad6288e51eed9fa59e97075a9ba"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/",
+    "used": true,
+    "why": "Checks the promotional context; the decisive calculation uses both rates from one contemporaneous documentation snapshot."
+   },
+   {
+    "url": "https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/model-multipliers-for-annual-plans?ref=geeek.org",
+    "used": false,
+    "why": "Search results describe post-June legacy rates, which do not establish the April comparison."
+   },
+   {
+    "url": "https://github.com/miguelmodel/20260423-whats-new-github-copilot-feb-apr-2026/blob/main/research/2026-04-22-copilot-models-and-platform-feb-to-apr-2026.md",
+    "used": false,
+    "why": "A third-party compilation reproduces the rates, but GitHub's own historical data file is preferable."
+   },
+   {
+    "url": "https://api.github.com/repos/github/docs/commits?path=content/copilot/reference/ai-models/supported-models.md&until=2026-04-20T23:59:59Z&per_page=1",
+    "used": true,
+    "why": "Dates the immutable documentation snapshot to April 17, before the post."
+   },
+   {
+    "url": "https://raw.githubusercontent.com/github/docs/91ac21c37134bad6288e51eed9fa59e97075a9ba/data/tables/copilot/model-multipliers.yml",
+    "used": true,
+    "why": "GitHub's historical table data directly records 3 for standard Opus 4.6 and 7.5 for Opus 4.7."
+   },
+   {
+    "url": "https://github.com/github/docs/blob/91ac21c37134bad6288e51eed9fa59e97075a9ba/data/reusables/copilot/opus-47-promo-period.md",
+    "used": true,
+    "why": "The same snapshot identifies 7.5× as promotional through April 30."
+   }
+  ],
+  "performed_at": "2026-10-29T11:57:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-github-docs-91ac21c37134bad6288e51eed9fa5-88f57b9a2484",
+   "source_snapshot_id": "584f0dcc432a74340db69dc5535a827438197cb06590f0c1b4b274d3d119b5c1",
+   "publisher": "GitHub",
+   "source_type": "company_disclosure",
+   "url": "https://raw.githubusercontent.com/github/docs/91ac21c37134bad6288e51eed9fa59e97075a9ba/data/tables/copilot/model-multipliers.yml",
+   "locator": "File description and the Claude Opus 4.6 and Claude Opus 4.7 records; multiplier_paid fields",
+   "receipt": {
+    "public_excerpt": "model multipliers for paid and free plans.",
+    "quote_hash": "0e1e284140f90e15a3bbb3e6498c91a799f6c47a58760c3db30427a4a5fb5f1f",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-17",
+   "available_at": "2026-04-17",
+   "retrieved_at": "2026-10-29T11:52:22Z",
+   "relation": "contradicts",
+   "explanation": "The data file records paid-plan multipliers of 3 for standard Opus 4.6 and 7.5 for Opus 4.7. These confirm the baseline but yield a 150% increase, contradicting the claimed 250% increase.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Claude Opus 4.6 record: multiplier_paid = 3",
+     "Claude Opus 4.7 record: multiplier_paid = 7.5"
+    ],
+    "formula": "Percentage increase = ((7.5 − 3) / 3) × 100 = 150%; new rate as percentage of old rate = (7.5 / 3) × 100 = 250%.",
+    "rounding": "None; both results are exact."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "github-com-github-docs-blob-91ac21c37134bad6288e51eed9fa59e97075a9b-a8a91594f972",
+   "source_snapshot_id": "7511eee46526f92c48dfde42ea165f80dcfa1f72ae1c3b0304bc4217d7acff90",
+   "publisher": "GitHub",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/github/docs/blob/91ac21c37134bad6288e51eed9fa59e97075a9ba/data/reusables/copilot/opus-47-promo-period.md",
+   "locator": "Promotional-period notice, April 17 repository snapshot",
+   "receipt": {
+    "public_excerpt": "promotional multiplier of 7.5x",
+    "quote_hash": "93ce095c7d18332bcbfc556e0cec45e15099926ee17b039fdc8b23af0e071c65",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-17",
+   "available_at": "2026-04-17",
+   "retrieved_at": "2026-10-29T11:52:22Z",
+   "relation": "context",
+   "explanation": "This confirms that the 7.5 multiplier in the historical table is the April promotional rate specified in the claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "507ffc36784b0dbe9e5d3775fd38a87a7ba94c786dfd44ec8e167d4d7db6515d"
+}

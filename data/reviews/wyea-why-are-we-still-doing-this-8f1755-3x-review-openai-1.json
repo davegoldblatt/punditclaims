@@ -1,0 +1,136 @@
+{
+ "run_id": "wyea-why-are-we-still-doing-this-8f1755-3x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-why-are-we-still-doing-this-8f1755": "f646f6d59083e63e95526e3299a7dd84ffc2c47ed567b3c4c894a805d2b502fe",
+  "case:wyea-why-are-we-still-doing-this-9c8190": "1b5c2530088ca8353f524504897b6bdd33fd7b03a4d16987617c2d24a48061e0",
+  "case:wyea-why-are-we-still-doing-this-a82172": "3b3a40b13592fca0f995bff5419d67fd815dd4bbadc4283a8fce218467c0dd06"
+ },
+ "started_at": "2026-10-31T22:14:21Z",
+ "completed_at": "2026-10-31T22:14:58Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states this impression in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition preserves the hedged impression about profit from AI."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Scoring profitability would require an unspecified measure, company set and period. The contract fairly declines to supply them."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement expresses a hedged impression. Policy excludes it from scoring. The unspecified profit measure adds ambiguity, but the case is not broken.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-why-are-we-still-doing-this-8f1755"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The causal explanation is Zitron's own statement, distinct from the subsequent quotation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition preserves the hedge and the explanation involving inference and training costs. Context identifies Anthropic and OpenAI."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Declining to score the hedged conclusion is fair. Selecting total spending, unit costs or revenue share would introduce an unspecified measure."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The timely company disclosure reports unaudited quarterly figures. Compute spending rises while its revenue share falls. Neither establishes the hedged causal claim, and later quarters cannot establish the March observation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The central conclusion is explicitly hedged and therefore excluded from scoring. The filing supplies context, not proof of an inability to cut costs. An unspecified deadline alone would not make a firm forecast untestable.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-why-are-we-still-doing-this-9c8190"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron endorses this prediction about the effects of subscription price increases."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The price increase and stronger $80 prediction are preserved. The normalisation omits the explicit assumption that rate limits remain unchanged."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract restores the rate-limit assumption and reasonably tests consumer subscription collapse. At $80, collapse must reflect the stronger near-universal claim. No response test is reached without the qualifying increase."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The July summary reports unchanged prices and predates the cutoff. It concerns the antecedent, not the predicted consumer response, so it does not contradict the forecast."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The September price card reports unchanged consumer prices. It concerns the antecedent only and leaves October 1–28 unconfirmed. Later retrieval does not itself make the dated information inadmissible."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish a qualifying price increase with unchanged rate limits. Prices remained unchanged through September, and October is unconfirmed. The conditional forecast cannot be scored without its antecedent; unchanged prices are not a failed forecast.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-why-are-we-still-doing-this-a82172"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20822,
+  "output_tokens": 1531,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": 385
+ },
+ "cost_usd": null
+}

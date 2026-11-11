@@ -1,0 +1,113 @@
+{
+ "run_id": "wyea-godot-isnt-making-it-d2786c-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-godot-isnt-making-it-d2786c": "162d66acd748427d0396d8a76f6816757ffc6ec418f3dad4ec7c810cff6c21ef",
+  "case:wyea-godot-isnt-making-it-ef7b25": "f98b048c1abf007589248b476e61f48c5f4befd764dbc4f67e0047d1181a89b0"
+ },
+ "started_at": "2026-10-29T17:46:35Z",
+ "completed_at": "2026-10-29T17:47:17Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter essay, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "Unhedged 'isn't coming' about future revenue is a firm forecast. The normalisation as expected generative AI revenue fits the investment context. No deadline or threshold is stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (revenue at the scale that would justify the investment, not literally zero sales) is ordinary and fair. Requiring an industry-wide comparison against contemporaneous expectations is reasonable, but the speaker supplied no measure."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1, available 2026-10-26: about $16.3B realized revenue in H1 2026 against about $17.0B in operating expenses. Covers a single company and does not test industry-wide revenue against investment expectations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a firm forecast with no deadline. The packet has only one company's large realized revenue. That undercuts a literal reading, but it does not show whether industry revenue met the expectations behind the infrastructure investment, and nothing shows a definitive wind-down. Neither the support nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-godot-isnt-making-it-d2786c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Aren't going to get better' is unhedged. The Blackwell framing is kept. The earlier 'if we're truly at diminishing returns' sits in a separate paragraph; this sentence stands as a categorical forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (no material capability gain from Blackwell-era models) is ordinary. The narrower pre-training reading is flagged. The capability-benchmark test with a pre-post baseline is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft disclosure, available 2026-10-15: large GB200 (Blackwell) training run. Shows the hardware scenario happened. Its loss comparisons are against 2026 models, not a pre-post baseline."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "MAI-Thinking-1 report, 2026-06-02: base model trained on GB200, 84.2% on the GPQA Diamond science benchmark (same 198-question set). Company evaluation; different grading and output budget limit exact comparability."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI, 2024-09-12: pre-post GPQA Diamond baseline of 77.3% for the research o1 model and 73.3% for o1-preview."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "contradicted",
+    "rationale": "A dated Blackwell-trained Microsoft model reports 84.2% on GPQA Diamond. The best pre-post result was 77.3%. On the same benchmark subset, that is a material gain and meets the early-resolution rule. Caveats: the report is a company disclosure, grading and inference settings differ, and the gain is not isolated to pre-training. The contract admits these differences, so the categorical forecast is contradicted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-godot-isnt-making-it-ef7b25"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 36907,
+  "output_tokens": 4803,
+  "cached_input_tokens": 19587,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

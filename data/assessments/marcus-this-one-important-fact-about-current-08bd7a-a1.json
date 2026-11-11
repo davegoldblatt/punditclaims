@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-this-one-important-fact-about-current-08bd7a-a1",
+ "claim_revision_ref": {
+  "id": "marcus-this-one-important-fact-about-current-08bd7a",
+  "version": 1,
+  "content_hash": "f3f3d76a4a31696f8fa888595dcfb8d9394234455c1ae126d8f905359847f878"
+ },
+ "contract_ref": {
+  "id": "marcus-this-one-important-fact-about-current-08bd7a",
+  "version": 1,
+  "content_hash": "96cda7c2b86b78c2aa047240a87275a988b3bbbb8f046507685492bccf36bc4e"
+ },
+ "packet_ref": {
+  "id": "marcus-this-one-important-fact-about-current-08bd7a-p1",
+  "content_hash": "0eacda72bdaa2787d780d0d98b08aa7d434f97f1111ddbe3d25e7ab853cd114a"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Controlled studies support the narrower point that contemporary language models can fail badly outside their training distributions. Other pre-post work demonstrates substantial extrapolation with suitable representations and architectures. These findings do not settle the full claim: Marcus supplies no independent meaning of 'far enough', and the experiments do not establish inevitable failure across generative AI. Calling the whole statement supported would overextend the failure studies; calling it contradicted would overextend the successes.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The evidence is strongest for language models and synthetic reasoning tasks.",
+  "Distribution shift and increased task complexity are not identical.",
+  "The strong and weak readings of the sentence lead to different assessments."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-this-one-important-fact-about-current-0059de-4x-review-anthropic-1",
+  "marcus-this-one-important-fact-about-current-0059de-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-this-one-important-fact-about-current-08bd7a",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Generative AI handles outliers poorly and will fail on inputs far enough from its training examples.",
+  "kind": "causal",
+  "conditions": [
+   "inputs far enough from the space of trained examples"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "GenAI sucks at outliers. If things are far enough from the space of trained examples, the techniques of generative AI will fail.",
+   "locator": "paragraph 22",
+   "url": "https://garymarcus.substack.com/p/this-one-important-fact-about-current",
+   "date": "2024-08-01",
+   "document_title": "This one important fact about current AI explains almost everything",
+   "observed_at": "2026-10-28T23:59:30Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "GenAI sucks at outliers",
+    "If things are far enough from the space of trained examples",
+    "the techniques of generative AI will fail"
+   ],
+   "our_interpretation": [
+    "The post concerns generative-AI techniques available by August 1, 2024.",
+    "The ordinary empirical reading is that moving sufficiently beyond training distributions causes substantial failures of generalization.",
+    "An outlier must be identified independently of whether the model fails; otherwise the proposition becomes circular.",
+    "The first sentence asserts a broad weakness. The second makes a stronger claim about sufficiently distant inputs. Evidence of some failures can support the first without establishing the full second sentence.",
+    "This is a claim about a technical mechanism, not a forecast awaiting a future calendar event."
+   ],
+   "support_condition": "Controlled evaluations across representative contemporary generative-AI systems show substantial failure as inputs move beyond independently specified training distributions, with evidence that the distribution shift causes the degradation.",
+   "contradiction_condition": "Controlled evaluations show reliable generalization on inputs independently established as sufficiently distant under the same criterion, or show that the alleged degradation is explained by another factor rather than distribution shift."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Controlled studies support the narrower point that contemporary language models can fail badly outside their training distributions. Other pre-post work demonstrates substantial extrapolation with suitable representations and architectures. These findings do not settle the full claim: Marcus supplies no independent meaning of 'far enough', and the experiments do not establish inevitable failure across generative AI. Calling the whole statement supported would overextend the failure studies; calling it contradicted would overextend the successes.",
+  "limitations": [
+   "The evidence is strongest for language models and synthetic reasoning tasks.",
+   "Distribution shift and increased task complexity are not identical.",
+   "The strong and weak readings of the sentence lead to different assessments."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "the performance sharply declines",
+    "locator": "Section 3.1, discussion of Figures 4 and 5(a)",
+    "url": "https://arxiv.org/html/2305.18654v3",
+    "publisher": "arXiv",
+    "event_date": "2023",
+    "available_at": "2023-10-31",
+    "explanation": "Controlled task splits show sharp degradation outside the trained compositional region. This supports an important instance of the claimed weakness, but does not establish a universal limit across generative AI."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "robust across model sizes",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2309.12288",
+    "publisher": "arXiv",
+    "event_date": "2023",
+    "available_at": "2024-05-26",
+    "explanation": "The experiments identify a reproducible failure to reverse learned relations. They support limited generalization in the tested language models, but do not measure a general distance from training examples."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "length generalization",
+    "locator": "Section 1, final contribution statement",
+    "url": "https://arxiv.org/html/2405.17399v1",
+    "publisher": "arXiv",
+    "event_date": "2024-05-27",
+    "available_at": "2024-05-27",
+    "explanation": "Specially designed embeddings and architectures enable substantial extrapolation beyond trained sequence lengths. This limits any claim that novelty necessarily causes failure, but cannot directly refute an unspecified 'far enough' boundary."
+   }
+  ],
+  "what_would_resolve": "A specified model population, training-distance measure and failure threshold, followed by controlled tests covering both failures and successful extrapolation under those same definitions.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e3bba5c6a6c99d8e02f8ac5c711739626c015c955200502d5eed9fc9be16f248",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:01:30Z"
+}

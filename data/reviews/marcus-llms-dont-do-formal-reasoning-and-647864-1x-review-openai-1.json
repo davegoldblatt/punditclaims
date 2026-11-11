@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-647864-1x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-647864": "20c3ded77822aeeddacc946e6895e6a2f858d6e302e4fc9ad90382162849d98d"
+ },
+ "started_at": "2026-10-29T23:26:18Z",
+ "completed_at": "2026-10-29T23:26:34Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly asserts the historical comparison in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding text explicitly links the recurring distraction failure to Jia and Liang's 2017 study."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "A behavioral comparison with earlier reading-comprehension systems is an ordinary reading of the stated similarity; identical architectures or mechanisms are not implied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The 2017 study reports AddSent reducing average F1 from 75.7% to 31.3%, with answer preservation described in the packet. The caveat about unchecked contradictions concerns AddAny, a separate method."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The cited study documents substantial deterioration from distracting additions in 2017, supporting the historical behavioral comparison. It does not establish that the earlier systems and modern LLMs share an underlying reasoning mechanism, which this contract does not require.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-647864"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 13761,
+  "output_tokens": 411,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 88
+ },
+ "cost_usd": null
+}

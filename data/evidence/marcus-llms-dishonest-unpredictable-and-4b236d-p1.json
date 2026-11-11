@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-llms-dishonest-unpredictable-and-4b236d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-4b236d",
+  "version": 1,
+  "content_hash": "61bccd55d9d6f088753b4d38e6b3f539e03a6bde23fc3b4e4eb6f2d41511d785"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-4b236d",
+  "version": 1,
+  "content_hash": "9dbb3ec9f91375419df0dda0696bf24884b4a643b121a5c9f7df065d65f1badc"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com Claude 4 system card instruction following safety Claude 3.7 2025",
+   "site.anthropic.com constitutional classifiers 2025 86% 4.4%"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+    "used": true,
+    "why": "Contains directly comparable jailbreak results for Claude Sonnet 3.7, Sonnet 4 and Opus 4."
+   },
+   {
+    "url": "https://www.anthropic.com/research/constitutional-classifiers",
+    "used": true,
+    "why": "Documents a successful jailbreak against a guarded Claude system during the historical interval."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-4",
+    "used": false,
+    "why": "Read to verify the May 22 release date; the system card provides stronger evidence than promotional claims."
+   },
+   {
+    "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers?darkschemeovr=1",
+    "used": false,
+    "why": "Later improvements cannot establish whether improvement had occurred by June 22, 2025."
+   }
+  ],
+  "performed_at": "2026-10-29T17:32:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-constitutional-classifiers",
+   "source_snapshot_id": "4316eaa4c2b535f412e44e950ffc58bb9d9a8a8e11840415d2c60bcb45beb53d",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/constitutional-classifiers",
+   "locator": "13 February 2025 update, Key findings",
+   "receipt": {
+    "public_excerpt": "a universal jailbreak",
+    "quote_hash": "384577e8116fed8e000887dfd6e1efccb026c7210075e823e2881b671d10d3ed",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-13",
+   "retrieved_at": "2026-10-29T03:24:44Z",
+   "relation": "supports",
+   "explanation": "The public challenge found a strategy that bypassed the guarded system across its eight target questions. This supports the persistence of safety-instruction failures, but does not establish an absence of improvement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "www-cdn-anthropic-com-6be99a52cb68eb70eb9572b4cafad13df32ed995-pdf",
+   "source_snapshot_id": "5fffcfd56b1bb08c939a1d9d9b7b004cea9b17f8435c4fb280be38808e143b27",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
+   "locator": "Section 2.7, Table 2.7.A and following paragraph, pages 17–18",
+   "receipt": {
+    "public_excerpt": "improved jailbreak resistance",
+    "quote_hash": "daafe5b773ebb3c5703cbe699c6e9dfedf14faf73e19e07a5f774c663534daed",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-22",
+   "retrieved_at": "2026-10-29T17:26:28Z",
+   "relation": "contradicts",
+   "explanation": "On the same StrongREJECT evaluation, standard-mode best-attack success fell from 31.95% for Sonnet 3.7 to 6.71% for Sonnet 4 and 18.21% for Opus 4. Extended-thinking results also improved, while remaining above zero.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These behavioral evaluations do not settle whether Claude really understands instructions.",
+  "One comparable benchmark cannot establish improvement on every safety dimension or every possible attack."
+ ],
+ "packet_hash": "539a494e6005f185a108c9c19fd9ffc104f2173b0466712020349eb3f4fedf21"
+}

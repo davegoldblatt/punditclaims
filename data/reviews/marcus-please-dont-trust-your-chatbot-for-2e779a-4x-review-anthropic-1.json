@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-please-dont-trust-your-chatbot-for-2e779a": "8fad7b6a02e7f991433a5e42fbb837b1806da433ec70067c539dee3070e5b6d5",
+  "case:marcus-please-dont-trust-your-chatbot-for-352372": "098ef2a1764d325c37f153cb0a31996b1a1c1f12ff7543eb056d8ac7e60b7f44",
+  "case:marcus-please-dont-trust-your-chatbot-for-3db366": "f1450527c5c241254ecce64ef97c6649ec326af40eafaa9a5c2d05dfce53a1a5",
+  "case:marcus-please-dont-trust-your-chatbot-for-7ffa80": "ad9947c0d5c1521262e4094d0b35ebd580d3fc1c505f55f6ff4201fc2ba07da7"
+ },
+ "started_at": "2026-10-29T08:04:15Z",
+ "completed_at": "2026-10-29T08:05:09Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, written as his conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The core is kept: four converging studies, especially for amateurs. The proposition leaves out 'four journals' and 'a few months', but the contract restores both as explicit source elements, so the claim as scored matches his words."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'cannot be trusted' as not reliable enough for unsupervised medical decisions is ordinary and fair. Reading 'four journals' as four distinct journals is the plain reading. The January 1 start is generous and doesn't change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "BMJ Open, published April 14, 2026, inside the period. It found problematic answers across five chatbots."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "JAMA Network Open, April 2026. It concludes off-the-shelf LLMs are not yet safe to deploy. It used clinical vignettes, not lay users."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Nature Medicine, February 9, 2026. In a randomized trial, lay users helped by LLMs did no better than controls. This covers the lay-user part."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Nature Medicine, February 23, 2026: the same journal as e3. That makes three journals, not four. Its medical findings (emergency undertriage) still back the converging conclusion."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "October 2026 preprint, before the evaluation date. It shows measured triage errors depend on output format, but it tested API models, not ChatGPT Health, so it doesn't overturn the convergence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Four relevant papers did appear between February and April 2026, and all report material reliability problems, one of them with lay users. The medical convergence holds. But two of the four papers are in Nature Medicine, so there were three journals, not four. The contract says to score mixed when the convergence holds but a bibliographic part fails.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-2e779a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, written as his reading of the studies."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The revision keeps his concession, the lay-public scope and the 'can easily' wording. Even so, the 'because' mechanism and 'don't know how to conduct clinical interviews' are firm causal assertions, so the claim can be scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Asking evidence to separate missing information from other causes is a fair standard for a causal claim. It does not demand that models never ask useful questions, which matches his words."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Lay-user trial: models did better alone than with users, and 16 of 30 sampled chats began with incomplete information. Partial support only: it also found model errors after users added details, users not following correct suggestions, and some model questions."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AMIE, a specialised research system, gathered history about as well as primary care doctors in simulated consultations. This cuts against a universal inability, but it is a different system and setting from public chatbot use."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The lay-user study shows a gap between complete-case and interactive performance and frequent incomplete information. No evidence separates the effect of unasked questions from reasoning errors or users ignoring advice. The study also documents those other failures, and AMIE shows elicitation is possible for some systems. The packet does not settle the causal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-352372"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus reaffirms his own earlier characterisation in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'That's still true' brings in 'frequently wrong, never in doubt' and 'authoritative bullshit', applied to medicine. 'Shouldn't be trusted' is evaluative, but the testable core is recurring confident errors."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as recurring, confidently stated medical errors, not every answer being wrong, is the ordinary reading. 'Never in doubt' is fairly treated as rhetoric. The 2025-to-publication period suits the context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Five popular chatbots tested in February 2025: 49.6% of answers problematic, delivered with consistent confidence and almost no refusals. These were stress prompts, not typical conversations."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "ChatGPT Health tested in January 2026 undertriaged 51.6% of true emergencies, a consequential error. Accuracy was high on semi-urgent cases."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "21-model vignette study: strong final diagnosis, weak differential diagnosis. This qualifies a blanket reading of incompetence but does not negate the recurring errors."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent peer-reviewed evaluations within the period document recurring medical errors from commonly used chatbots. They were delivered confidently (BMJ Open) and included consequential triage failures in a 2026 consumer product. Strong performance on some tasks qualifies but does not refute 'frequently wrong'. The support condition is met under the contract's ordinary reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-3db366"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to the sentence. 'Entirely' is emphasis. 'Typical' means characteristic failure modes, not universal ones."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'typical' as recurring, characteristic failure modes across models, and 'problematic' as able to undermine medical decisions, is ordinary and fair to the wording."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "BMJ Open audit of five chatbots found all three failure types: fabricated citations, problematic answers and consistent confidence. Frequent disclaimers qualify any claim of universal certainty."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Separate 24-model preprint from May 2025, inside the period. Models were reluctant to express uncertainty when synthesising medical evidence. This backs overconfidence across many models from a different group, though model query dates are not established."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Multi-model evaluations within the period document hallucinated references, frequent problematic medical answers and overconfidence in medical tasks, from at least two research groups. Under the contract's ordinary reading of 'typical' these failure modes are recurring and characteristic. Disclaimers and stress-test design limit claims about prevalence but don't contradict the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-7ffa80"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 36132,
+  "output_tokens": 5812,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

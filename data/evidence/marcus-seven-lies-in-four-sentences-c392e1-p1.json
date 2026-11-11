@@ -1,0 +1,106 @@
+{
+ "packet_id": "marcus-seven-lies-in-four-sentences-c392e1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-c392e1",
+  "version": 1,
+  "content_hash": "d3e80b7729d195384764302cfea45e34563bedfef173a6d81bda653ba33734c3"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-c392e1",
+  "version": 1,
+  "content_hash": "3f631c4e2fc431045d8b5b48d9434855208553ee2d2d2a8d0e2a715dede6e816"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft Bing February 2023 grounding Prometheus search hallucinations",
+   "\"Chain-of-Verification Reduces Hallucination\" 2023",
+   "site.blog.google Bard September 19 2023 double-check responses evaluate"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v3",
+    "used": true,
+    "why": "Contemporaneous technical documentation establishes next-token pretraining and subsequent alignment."
+   },
+   {
+    "url": "https://blog.google/intl/en-in/google-bard-new-features-update-sept-2023/",
+    "used": true,
+    "why": "Documents a pre-post deployment feature that checks generated answers against web information. Relevant counterevidence to a blanket denial of verification."
+   },
+   {
+    "url": "https://blogs.bing.com/search-quality-insights/2023/2/Building-the-New-Bing/",
+    "used": false,
+    "why": "Documents search grounding, but retrieval alone does not establish reliable verification or identify the cause of the particular answer."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.11495v1",
+    "used": false,
+    "why": "Verification experiments are relevant, but they do not isolate the cause of the cited ChatGPT and Bing episodes or establish the asserted exclusive explanation."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2303.08774",
+    "used": false,
+    "why": "The unversioned URL returned a later revision; the March 2023 version was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T08:05:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2303-08774v3",
+   "source_snapshot_id": "a6871dddcc57ae497ffd9dde942d00a7c946f54908c7aa47bf483be609ed8f5f",
+   "publisher": "OpenAI; arXiv",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v3",
+   "locator": "Abstract, page 1",
+   "receipt": {
+    "public_excerpt": "predict the next token",
+    "quote_hash": "0f238fc90c42380326d20cc135e3ee83f628ae19bf0f0aa8ef48684a632107f7",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-27",
+   "retrieved_at": "2026-10-29T02:09:58Z",
+   "relation": "context",
+   "explanation": "This supports the factual premise behind the autocomplete analogy. The report also describes post-training alignment; the pretraining objective does not by itself establish an exclusive cause of hallucinations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "blog-google-intl-en-in-google-bard-new-features-update-sept-2023",
+   "source_snapshot_id": "424734f1985bf587826debbbd580101b0b284872ad7893ffb7af7c241ea7814b",
+   "publisher": "Google",
+   "source_type": "company_disclosure",
+   "url": "https://blog.google/intl/en-in/google-bard-new-features-update-sept-2023",
+   "locator": "Section Easily double-check responses and build on shared conversations",
+   "receipt": {
+    "public_excerpt": "double-check its answers.",
+    "quote_hash": "557ef420d75681cfc1f9b147081b846ae5f85b7a6a20c2add857f28c07f34d6c",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-19",
+   "available_at": "2023-09-19",
+   "retrieved_at": "2026-10-29T07:57:42Z",
+   "relation": "context",
+   "explanation": "Google describes checking generated responses against supporting or contradicting web information before Marcus's post. This challenges a blanket statement about deployed assistants lacking verification, but does not prove that a bare model independently checks reality or explain the cited Bing failure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No recovered controlled evidence attributes the cited episodes to the claimed exclusive mechanism.",
+  "The original prompts, system configuration, retrieved material, and full outputs are unavailable.",
+  "The distinction between a base model and a tool-equipped assistant materially affects the denial of factual comparison."
+ ],
+ "packet_hash": "4c800927fe6ade3e3504fa556166333113d5f41d3e2fc110edb466d0e6dde041"
+}

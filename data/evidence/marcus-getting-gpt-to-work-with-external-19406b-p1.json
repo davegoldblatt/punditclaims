@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-19406b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-19406b",
+  "version": 1,
+  "content_hash": "847a3450bcaf72c57b9ad0f555fa31b8d641fd9bf45fc34f4b5042337cfc4251"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-19406b",
+  "version": 1,
+  "content_hash": "a5a9bd258190e1a71f1f849ccdc54f6b130061993b5590890eb8830bc5c556d2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AgentBench evaluating LLMs agents 2023 long term reasoning decision making instruction following",
+   "ToolLLM 2023 tool use limitations reliable APIs ToolBench",
+   "ToolLLM arxiv 2307 16789",
+   "\"WebArena\" \"July\" \"2023\" 10.59 human"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2307.13854v1",
+    "used": true,
+    "why": "The original July version reports end-to-end failures on realistic web tasks. Later revised scores are not substituted."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.16789v1",
+    "used": true,
+    "why": "Primary tool-use research documents limitations, additional search machinery, and successful improvements."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.16789v1",
+    "used": true,
+    "why": "Confirms the original version was published July 31, 2023."
+   },
+   {
+    "url": "https://arxiv.org/abs/2308.03688v1",
+    "used": false,
+    "why": "Relevant agent benchmark, but WebArena and ToolLLM more directly cover task completion and additional tool-use engineering."
+   }
+  ],
+  "performed_at": "2026-10-29T06:42:15Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2307-13854v1",
+   "source_snapshot_id": "6bcb5fc15114cb730ee309ecd39794edf6fc76d46844b40b6d4882f2d49133fe",
+   "publisher": "arXiv; Shuyan Zhou and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2307.13854v1",
+   "locator": "Abstract, original July 2023 version",
+   "receipt": {
+    "public_excerpt": "10.59%",
+    "quote_hash": "ce38059176d2fbecf96c5f8585e5753ed990c973c0fd853b2c20a14e83a90ba3",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-25",
+   "retrieved_at": "2026-10-29T06:37:22Z",
+   "relation": "supports",
+   "explanation": "The July benchmark reports low completion rates for agents operating realistic websites with supporting tools, despite incorporating reasoning before acting. This supports the inference that connecting models to an actionable environment did not itself deliver dependable performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2307-16789v1",
+   "source_snapshot_id": "a58ec6d5fdd2c328822ca3b2b635923b7e7d9f278a700decfa8ec4d8b8a4c10a",
+   "publisher": "arXiv; Yujia Qin and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2307.16789v1",
+   "locator": "Abstract; Section 1 describes the search method and prior limitations",
+   "receipt": {
+    "public_excerpt": "significantly enhances",
+    "quote_hash": "13770bccfb05f380738dd3b7a8d1d828e37f683f2fdf2592ba5295d80dced021",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-31",
+   "retrieved_at": "2026-10-29T06:37:24Z",
+   "relation": "supports",
+   "explanation": "The researchers developed search over alternative action sequences, tool-specific training data, and API retrieval to improve complex tool use. Their successful results qualify pessimistic readings while documenting substantive engineering beyond a simple connection.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "Neither study measures engineering difficulty with a standardized effort or cost metric.",
+  "The evaluations do not cover every possible tool or application."
+ ],
+ "packet_hash": "0bd560cceadcbeb2c7e447b994f47a51deecefaa3599d1b6321d5f8bd5c28a03"
+}

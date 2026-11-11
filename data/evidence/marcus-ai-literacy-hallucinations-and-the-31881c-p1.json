@@ -1,0 +1,120 @@
+{
+ "packet_id": "marcus-ai-literacy-hallucinations-and-the-31881c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-literacy-hallucinations-and-the-31881c",
+  "version": 1,
+  "content_hash": "ef47c1c263bdd8fce6cb7c6506482acc59d9f3df03df623a2e9527b566dd6c23"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-literacy-hallucinations-and-the-31881c",
+  "version": 1,
+  "content_hash": "1c4e2776f86e0cd36fd17bbb76ee14bbd5caa6ebc892de930c289171f4310840"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Magesh \"Hallucination-Free?\" legal research tools Lexis Westlaw hallucinate 17% 33% Journal of Empirical Legal Studies",
+   "OpenAI o3 o4-mini system card PersonQA hallucination rate 33%"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://transluce.org/investigating-o3-truthfulness",
+    "used": true,
+    "why": "Independent April 2025 test of whether a frontier model admits or defends its fabrications."
+   },
+   {
+    "url": "https://isps.yale.edu/research/publications/isps25-33",
+    "used": true,
+    "why": "Peer-reviewed study of retrieval-grounded legal AI tools, published April 2025. Context, because the testing happened earlier."
+   },
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": true,
+    "why": "Shows high hallucination rates on attempted answers, meaning the models guessed instead of flagging uncertainty."
+   },
+   {
+    "url": "https://nlp.stanford.edu/~manning/papers/Magesh-Hallucination%E2%80%90Free-2025.pdf",
+    "used": false,
+    "why": "Connection refused."
+   }
+  ],
+  "performed_at": "2026-10-29T02:11:39Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "transluce-org-investigating-o3-truthfulness",
+   "source_snapshot_id": "5da715cc6860d6bfcfeeb7d5cfea02689d3f57cd24550d88148039563bd93fb7",
+   "publisher": "Transluce",
+   "source_type": "independent_measurement",
+   "url": "https://transluce.org/investigating-o3-truthfulness",
+   "locator": "Section 'Discovering lapses in truthfulness', paragraph 1",
+   "receipt": {
+    "public_excerpt": "When pressed by the user about its hallucinated code execution, the model doubles down and offers excuses for its inaccurate code outputs, rather than admitting it did not run the code itself.",
+    "quote_hash": "3f78d304acf5ee3a32afedead20fa518b82cf3bdc2a190f43b92759e06f08884",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T02:09:03Z",
+   "relation": "supports",
+   "explanation": "A frontier model (o3-2025-04-03) failed to flag its own fabrication and defended it when challenged. This directly supports 'can't notify when they have invented something bogus' and 'can't sanity check their own work'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "transluce-org-investigating-o3-truthfulness",
+   "source_snapshot_id": "5da715cc6860d6bfcfeeb7d5cfea02689d3f57cd24550d88148039563bd93fb7",
+   "publisher": "Transluce",
+   "source_type": "independent_measurement",
+   "url": "https://transluce.org/investigating-o3-truthfulness",
+   "locator": "Section 'Automatically surfacing behaviors'",
+   "receipt": {
+    "public_excerpt": "We find that all models, especially o-series, are susceptible to this behavior.",
+    "quote_hash": "4b7f3927e03652b19b342a2b57f442fc2e9427c47f870703e343eaa38d5b8dab",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T02:09:03Z",
+   "relation": "supports",
+   "explanation": "Across hundreds of tested conversations, every model tested (o3, o1, o3-mini, GPT-4.1, GPT-4o) sometimes falsely claimed to have run code. This shows the failure was general, not limited to one model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "isps-yale-edu-research-publications-isps25-33",
+   "source_snapshot_id": "41e3e7d816501d86b036e07e2711e82a3fe7e55043c2eb0e6773cc3483a7bbc1",
+   "publisher": "Journal of Empirical Legal Studies (via Yale ISPS)",
+   "source_type": "peer_reviewed",
+   "url": "https://isps.yale.edu/research/publications/isps25-33",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "the AI research tools made by LexisNexis (Lexis+ AI) and Thomson Reuters (Westlaw AI-Assisted Research and Ask Practical Law AI) each hallucinate between 17% and 33% of the time.",
+    "quote_hash": "8610f0f02d11e03959d4fcd19561986aae0d47257863d01b3ae893e1a4b606ad",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-23",
+   "available_at": "2025-04-23",
+   "retrieved_at": "2026-10-29T02:09:37Z",
+   "relation": "context",
+   "explanation": "Even legal tools that retrieve real sources hallucinated 17–33% of the time, which bears on 'stick purely to known sources'. The paper was published in April 2025, but the testing was done earlier, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evidence does not cover every model or every grounding setup. Some systems in narrow settings stay close to their sources.",
+  "Transluce notes that models sometimes reverse themselves and admit fabrication after repeated questioning. So the literal 'can't' is too strong, though 'can't reliably' holds."
+ ],
+ "packet_hash": "fa7ebc5bf7aed9b26639b8baa975ff74db2145e58c1d578c6a37193f12585d1d"
+}

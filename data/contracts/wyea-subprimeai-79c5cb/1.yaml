@@ -1,0 +1,41 @@
+claim_id: wyea-subprimeai-79c5cb
+version: 1
+claim_revision_ref:
+  id: wyea-subprimeai-79c5cb
+  version: 1
+  content_hash: 2fb73adf5b5714f6b99e45eb10a78bde157372f50baa32a77d6b2bf9c6d6db8c
+assessment_axis: causal_assessment
+explicit_source_elements:
+  - This is because
+  - a model that checks its work
+  - the work-checking part of the model
+  - still capable of hallucinations
+evaluator_interpretation:
+  - The preceding sentence supplies the comparison with GPT-4o. Assess whether errors in o1's checking process explain the asserted greater tendency to hallucinate.
+  - The relevant model is the September 2024 o1-preview release, not later o1 versions.
+  - Treat 'work-checking part' as the checking process described by the speaker; do not assume a separately deployed verifier without architecture evidence.
+  - Showing that reasoning can contain errors is weaker than establishing that those errors cause a comparative increase in final-answer hallucinations.
+support_condition: Architecture evidence identifies the relevant checking process, and controlled component experiments show that its hallucinations cause higher final-answer hallucination rates than GPT-4o on representative matched tasks.
+contradiction_condition: Architecture or controlled experiments rule out the proposed mechanism, or robust representative comparisons refute the asserted increase. A limited benchmark can challenge the comparison without settling the causal mechanism.
+measurement_requirements: Use matched prompts, a consistent hallucination definition, the September 2024 model checkpoints, and interventions or ablations isolating the checking process.
+source_requirements: Primary architecture documentation, comparative evaluations and controlled causal experiments. Anecdotes and reasoning summaries alone cannot identify the cause.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2024-09-12
+  end: 2024-09-16
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - Work-checking part could mean learned self-correction, a training-time reward model or a separate inference-time verifier.
+  - The surrounding comparison combines anecdotal reports with a general causal explanation.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T12:33:42Z
+frozen_at: 2026-10-29T12:33:42Z
+policy_version: 2026-10-28.7
+content_hash: b49578a39056bd531ddedea9eeb01d2f87ef2c3157151140f1a7037569ce1750

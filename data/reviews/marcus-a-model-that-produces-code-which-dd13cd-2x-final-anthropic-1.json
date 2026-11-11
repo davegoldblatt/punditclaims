@@ -1,0 +1,45 @@
+{
+ "run_id": "marcus-a-model-that-produces-code-which-dd13cd-2x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-a-model-that-produces-code-which-dd13cd": "c1cee2b3a71fd8036354b854c9d5cd76683b2b49903ff10ace34ff9d3ea5bd98",
+  "payload:marcus-a-model-that-produces-code-which-dd13cd": "768b6e2fe8dd0afe6fabf0845097a81d7a07948791e7ad802dd5e63d0dfd76ef"
+ },
+ "started_at": "2026-10-29T02:03:51Z",
+ "completed_at": "2026-10-29T02:04:04Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The benchmark uses tasks derived from known vulnerabilities, so its percentages must not be generalized to all generated code."
+    ],
+    "verdict": "fail",
+    "note": "The excerpt, proposition, axis, outcome and citations all match. The 84.4% and 7.8% figures are paired correctly to Cursor with Opus 4.6. However, the first limitation says the benchmark uses tasks derived from known vulnerabilities. No evidence item says this: e1 mentions only real-world open-source code and vulnerability classes. Minor issue: the rationale says '84.4% of tasks', while the source says 84.4% of generated code passed functional tests (functional correctness). Fix: remove or reword the first limitation and match the source wording.",
+    "claim_id": "marcus-a-model-that-produces-code-which-dd13cd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11532,
+  "output_tokens": 1416,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

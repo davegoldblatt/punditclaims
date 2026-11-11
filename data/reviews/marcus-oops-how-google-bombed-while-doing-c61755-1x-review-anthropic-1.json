@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-oops-how-google-bombed-while-doing-c61755-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-oops-how-google-bombed-while-doing-c61755": "5912097b932ab73150912763ba5f85fb4a0cf1902dc4c10c1bb5a145ccbd492e"
+ },
+ "started_at": "2026-10-29T21:48:01Z",
+ "completed_at": "2026-10-29T21:48:19Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this sentence in his own Substack post. It is his own claim, not a quotation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The wording is firm and unhedged ('has made'). It claims that scaling caused a gain in authority but no gain in truthfulness. The normalised version keeps both parts. Calling it causal is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair: the claim is limited to language models and judged by same-family size comparisons up to February 2023. The result depends on choices Marcus never made: which model families count, whether generated or multiple-choice answers count, and how to measure authority."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TruthfulQA (2021), a primary source dated before the post, found that the largest models were generally the least truthful when generating answers. This covers the GPT-3, GPT-Neo/J, GPT-2 and T5 families. It supports the 'not more truthful' part for these families only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "In the Gopher paper, published before the post, TruthfulQA multiple-choice accuracy rose with size within the Gopher family across several test setups. This is a comparable test showing truthfulness gains, though it measures picking answers, not writing them."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The 'not more truthful' part holds for the families tested in TruthfulQA (e1), where bigger models were less truthful in generated answers. Gopher's same-family multiple-choice results (e2) show truthfulness improving with size, so the general claim fails. The 'more authoritative-sounding' part was not measured in any evidence item and stays unsettled. The contract says that pattern counts as mixed.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-c61755"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 21746,
+  "output_tokens": 2013,
+  "cached_input_tokens": 13103,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

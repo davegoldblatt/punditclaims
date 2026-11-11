@@ -1,0 +1,94 @@
+{
+ "packet_id": "marcus-an-epidemic-of-weirdly-precise-ai-6dd8f9-p1",
+ "claim_revision_ref": {
+  "id": "marcus-an-epidemic-of-weirdly-precise-ai-6dd8f9",
+  "version": 2,
+  "content_hash": "6d2b33791c0e15f5ca3834b92e76a4b03eedbe2f53620cebbdcf84ac6d988abe"
+ },
+ "contract_ref": {
+  "id": "marcus-an-epidemic-of-weirdly-precise-ai-6dd8f9",
+  "version": 1,
+  "content_hash": "7c1bb4a3223a70eed0293f76b18232cca6f56b53b0a994abf3e7a91e925fe1c1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI o1 learning to reason with LLMs benchmarks GPT-4o"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "used": true,
+    "why": "OpenAI's primary o1 launch post with benchmark tables."
+   }
+  ],
+  "performed_at": "2026-10-29T02:18:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms",
+   "locator": "section Evals, paragraph 2",
+   "receipt": {
+    "public_excerpt": "GPT‑4o only solved on average 12% (1.8/15) of problems. o1 averaged 74% (11.1/15) with a single sample per problem",
+    "quote_hash": "bbdda569a6def8ea68f184033cdca356bf0e34ab94c5d5bcc4fe5cc4c04e72e9",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "supports",
+   "explanation": "On AIME, one of OpenAI's best showcases for o1, the gain is about sixfold (74% vs 12%), far below 100x.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "o1 AIME single-sample 74%",
+     "GPT-4o AIME 12%"
+    ],
+    "formula": "74 / 12",
+    "rounding": "about 6.2x"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms",
+   "locator": "Appendix A table",
+   "receipt": {
+    "public_excerpt": "GPQA Diamond cons@64 56.1 78.3 78.0",
+    "quote_hash": "f05295d3f1e9964c65112640e4c87cb574852e5c7e81b98ea6a8c0d437f4554b",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "supports",
+   "explanation": "On GPQA Diamond, GPT-4o scored 56.1 and o1 78.0, a gain of about 1.4x. Other rows (MMLU 88.0 vs 90.8, MATH 60.3 vs 94.8) also show modest gains.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "o1 GPQA Diamond 78.0",
+     "GPT-4o GPQA Diamond 56.1"
+    ],
+    "formula": "78.0 / 56.1",
+    "rounding": "about 1.4x"
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "OpenAI's tables use GPT-4o rather than the original GPT-4 as the baseline. Ratios against the original GPT-4 could be somewhat larger on some tasks, but nothing suggests they approach 100x."
+ ],
+ "packet_hash": "2e7650fbdc7dfb9c2675047399e19de6d16d3b7d8edd07262f3b065cfe37fee7"
+}

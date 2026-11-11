@@ -1,0 +1,128 @@
+{
+ "packet_id": "wyea-to-serve-altman-08355a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-to-serve-altman-08355a",
+  "version": 1,
+  "content_hash": "a135c69b6d271675872dae3c8f2b127b19e900a10319e99651c3ac4c1eda4d38"
+ },
+ "contract_ref": {
+  "id": "wyea-to-serve-altman-08355a",
+  "version": 1,
+  "content_hash": "ced3ef58a3771bec7e0af3a8b89ad0e9110765741acb02318550fcc8a1f0d275"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 training costs 2024 billions research development spending Reuters",
+   "Anthropic training spending 2025 2026 billion actual training costs",
+   "site.epoch.ai \"company-spending-breakdown\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://epoch.ai/data-insights/openai-compute-spend",
+    "used": true,
+    "why": "Separates training, research, and inference estimates and states their uncertainty."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+    "used": true,
+    "why": "Reports a post-publication competitor training estimate, while acknowledging its secondary sourcing."
+   },
+   {
+    "url": "https://ca.finance.yahoo.com/news/openais-first-half-revenue-rises-043012511.html",
+    "used": false,
+    "why": "Accessible Reuters report gives broader R&D expenditure, not transformer training expenditure."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": false,
+    "why": "R&D totals cannot be treated as training-only costs."
+   },
+   {
+    "url": "https://www.wheresyoured.at/to-serve-altman",
+    "used": true,
+    "why": "Used only to interpret the original financial basis and definition of training costs."
+   }
+  ],
+  "performed_at": "2026-10-29T13:38:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-openai-compute-spend",
+   "source_snapshot_id": "afbaa716f63cc0628fdefbb6d25984d1006201855bba0b9ab4845ba7e6d514a3",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/data-insights/openai-compute-spend",
+   "locator": "Opening paragraph; qualifications in Assumptions and limitations",
+   "receipt": {
+    "public_excerpt": "billions of dollars",
+    "quote_hash": "821dd0fc016eca07bbfb819d4bf2fd0ac1291269fadf2ed83b4334f68210db84",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-10-10",
+   "retrieved_at": "2026-10-29T05:19:33Z",
+   "relation": "context",
+   "explanation": "The analysis distinguishes estimated training and research compute from inference. Its annual figures include months before the post and projections for the final quarter, so they do not establish realized post-publication training spending.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "total cloud compute expenditure",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "e7049142024e1b70c90091e2ba7efa34de5bf983ae05d86fd435fa3b2c36ff1a",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+   "locator": "Data, second Anthropic bullet",
+   "receipt": {
+    "public_excerpt": "$4.1B",
+    "quote_hash": "3d029172d004301ded2059164de888eda57d196bf9abf243c366843ab98a2de9",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "context",
+   "explanation": "This supports the plausibility of continued multibillion-dollar competitor training expenditure. It relies on press reporting, does not cover OpenAI, and does not allocate spending by architecture.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "model training expenditure interpreted as R&D compute",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The reviewed records do not isolate realized OpenAI transformer-training expenditure after July 29, 2024.",
+  "The competitor estimate does not identify the model architectures receiving the expenditure.",
+  "The spending threshold's company and time aggregation remain unspecified."
+ ],
+ "packet_hash": "d1ca7e901369133be7ca958e068d1484b8591e8813350dbf824ce5233e9b392c"
+}

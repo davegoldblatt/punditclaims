@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-untitled-a86217-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-untitled-a86217": "08a9d057925a2e9c28d254411268fcea1933287380500e9c240ff4c452ccafe8",
+  "case:wyea-untitled-b8b9fc": "2bd79b09d72eee2a12c904b6a464103db8d9acc4d559d6f619deb2e43f01eac9",
+  "case:wyea-untitled-baa446": "b8bec7298090624d71c8c85d99e0e33d11740f8da9d6cec02031208a0a44e665",
+  "case:wyea-untitled-dc59a0": "edb4cb06d74248278d084057d1f93405374dea9f5bdd95564374573ab706fa94"
+ },
+ "started_at": "2026-10-29T23:34:09Z",
+ "completed_at": "2026-10-29T23:35:34Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron makes the financial prediction himself, drawing on reported deal terms."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The conclusion is firm despite uncertainty about its underlying premise. The normalization preserves the launch deadline."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Attributable revenue minus costs is an ordinary reading of losing money. The contract preserves the expressly named launch and does not equate absent Apple payments with losses."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple's disclosure establishes the September 16 launch, without establishing the deal's financial contribution."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Apple's disclosure places integration availability in December. This challenges the assumed timing but does not establish September revenue or preparation costs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "unresolved",
+    "rationale": "The deadline passed, but neither item establishes attributable revenue and costs at launch. Later integration availability alone cannot establish a nonnegative contribution because preparation costs remain unknown.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-a86217"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": false,
+     "endorsed": true,
+     "note": "The universal-loss assertion is Zitron's. The no-payment component is explicitly attributed to Gurman's reporting, so the combined claim is not wholly Zitron's own assertion."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the universal loss assertion but drops the explicit attribution of the payment information to Gurman."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading transactions as requests across paid and unpaid ChatGPT use is ordinary. Separating payment terms from query economics is appropriate, but subscription and overhead allocation remain unspecified."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Bloomberg's unnamed-source reporting supports only the no-payment component. It provides no transaction-level profitability evidence and is also the reporting Zitron attributes."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Reported deal terms support the payment component, which should retain its third-party attribution. They do not establish universal transaction losses. No comparable request-level revenue and cost records settle Zitron's own economic assertion.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-b8b9fc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron makes the loss assertions. The normalization correctly retains The Information as the source of the hedged revenue report."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The main assertion describes current profitability and includes a counterfactual. The attributed revenue possibility is not a separate firm forecast."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Restricting a June assertion of ongoing losses to January–March is an evaluator-imposed scope, not an ordinary equivalent. The unspecified hypothetical payment also prevents a determinate query-profitability test."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Corroborates annualized revenue context and reports annual cost estimates. Neither establishes realized first-quarter losses or universal query losses."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports projected full-year losses, not realized first-quarter results. CNBC confirms the forecast through a source but says it did not see the financial documents."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports usage-related expenses and possible subscription receipts. It provides neither query margins nor economics under a specified hypothetical Apple payment."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "The reassessment predates the cutoff but concerns unverified API gross margins. Those estimates cannot contradict ChatGPT query losses or company-wide net losses."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The combined claim cannot fairly receive a verdict under this contract: its exclusive first-quarter window is not supplied by the speaker, and the hypothetical payment lacks an amount or structure. The company-wide observation separately remains unresolved by the packet; annual forecasts and API estimates do not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-baa446"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron makes and endorses the conditional cost prediction."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The normalization preserves actual adoption by hundreds of millions and the firm cost consequence. The speculative subscription explanation is not an additional antecedent."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Actual integration users and substantial attributable serving expenditure are fair ordinary readings. The contract appropriately distinguishes gross costs from net losses."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports preference for the standalone app and financial disappointment, but supplies neither a qualifying integration-user count nor attributable compute and energy expenditure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was stated, the adoption antecedent remains unestablished, and the early-resolution rule is unmet. Reported disappointment cannot contradict a cost prediction conditional on hundreds of millions actually using the integration.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-dc59a0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28166,
+  "output_tokens": 2765,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 1034
+ },
+ "cost_usd": null
+}

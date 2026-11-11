@@ -1,0 +1,76 @@
+{
+ "packet_id": "marcus-why-do-large-language-models-hallucinate-65b7e1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-65b7e1",
+  "version": 1,
+  "content_hash": "bb923fa4bdc4fc30a44a1b0997592a1ece7fc53c1c6148af98a409cf5defe177"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-65b7e1",
+  "version": 1,
+  "content_hash": "c90ce522141fc970379fc48f21dadb277303bfd405e922d61becb5e97f3fefa5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Chain of Verification reduces hallucination language models 2023 verify factual claims",
+   "LLM fact checking revise retrieve RARR 2023 research",
+   "RARR Researching Revising What Language Models Say 2023 ACL",
+   "read_page: RARR, sections 3.2 and 5.3"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2210.08726v3",
+    "used": true,
+    "why": "Describes evidence comparison, conditional revision and evaluation of the implemented RARR system."
+   },
+   {
+    "url": "https://arxiv.org/abs/2210.08726",
+    "used": true,
+    "why": "Establishes that version 3 was publicly available on 2023-05-31."
+   },
+   {
+    "url": "https://aclanthology.org/2023.acl-long.910/",
+    "used": true,
+    "why": "Confirms the work's publication in the ACL 2023 proceedings."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.11495",
+    "used": false,
+    "why": "Chain-of-Verification is relevant, but its closed-book verification leaves more room for disagreement about external fact-checking than RARR."
+   }
+  ],
+  "performed_at": "2026-10-29T15:59:02Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2210-08726v3",
+   "source_snapshot_id": "2914295edf19dd955d77fc2c7c329158451fb8696e7987f529e9ece496423865",
+   "publisher": "Association for Computational Linguistics; author manuscript hosted by arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2210.08726v3",
+   "locator": "Section 5.3, Results; procedure in section 3.2",
+   "receipt": {
+    "public_excerpt": "RARR significantly improves attribution while preserving most of the original text.",
+    "quote_hash": "56c396bc6b7dd6031f500eb42dd299884bb288f3f5ad13285fdc7ceb7e7d77c4",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-05-31",
+   "retrieved_at": "2026-10-29T09:17:29Z",
+   "relation": "contradicts",
+   "explanation": "RARR uses PaLM to compare generated assertions with retrieved evidence and edits the passage when disagreement is detected. Its evaluated research-and-revision procedure is a counterexample to the categorical claim under the functional reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evidence does not settle whether LLMs share human cognitive mechanisms.",
+  "Evidence alignment does not guarantee truth when retrieved sources are unreliable."
+ ],
+ "packet_hash": "4fe053e776c5e013b209639c7d996a5333338a01c10a9afb320228c31fd2bd7d"
+}

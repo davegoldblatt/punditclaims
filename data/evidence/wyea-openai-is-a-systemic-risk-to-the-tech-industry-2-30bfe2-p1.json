@@ -1,0 +1,87 @@
+{
+ "packet_id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-30bfe2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-30bfe2",
+  "version": 1,
+  "content_hash": "e4b3ec3ac988c4ec2cfe6fb3386abe0e73dfd8c41194a3d77c83f69684fbebb8"
+ },
+ "contract_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-30bfe2",
+  "version": 1,
+  "content_hash": "5754b029eeabe72555759f5a762a0a171c6ded5ea53313b14886851cf04b318a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Gemini March 2025 weekly active users 35 million DeepSeek 97 million",
+   "site.justice.gov Google Gemini \"35 million\" March 2025",
+   "site.justice.gov \"Gemini\" \"350\" 2025",
+   "Gemini weekly active users March 2025 Google court 35 million 2025 primary exhibit",
+   "\"March 2025\" \"weekly active users\" \"Gemini\"",
+   "\"March 2025\" \"weekly active users\" \"DeepSeek\"",
+   "\"April 2025\" \"weekly active users\" \"Meta AI\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.gpb.org/news/2025/04/29/why-googles-search-engine-trial-about-ai",
+    "used": true,
+    "why": "Full NPR reporting carried by GPB describes Google’s March measurements presented in court."
+   },
+   {
+    "url": "https://openai.com/index/march-funding-updates/",
+    "used": false,
+    "why": "Read and confirmed the source of the stated 500-million base, but the contradiction uses Zitron’s own denominator."
+   },
+   {
+    "url": "https://law.justia.com/cases/federal/district-courts/district-of-columbia/dcdce/1%3A2020cv03010/223205/1436/",
+    "used": false,
+    "why": "Potential primary court record; read_page returned HTTP 403."
+   },
+   {
+    "url": "https://9to5google.com/2025/04/23/google-gemini-monthly-users-count-court-hearing/",
+    "used": false,
+    "why": "Search result corroborated the reporting but did not provide a direct weekly measurement or replace the underlying court exhibit."
+   }
+  ],
+  "performed_at": "2026-10-29T20:30:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "gpb-org-news-2025-04-29-why-googles-search-engine-trial-about-ai",
+   "source_snapshot_id": "60faa879a398abb7cc89b4a477b470ce87a1bc42effc263265284b2bfcfa2760",
+   "publisher": "NPR via Georgia Public Broadcasting",
+   "source_type": "news_report",
+   "url": "https://www.gpb.org/news/2025/04/29/why-googles-search-engine-trial-about-ai",
+   "locator": "Section Competing in a growing AI field, paragraph beginning They showed",
+   "receipt": {
+    "public_excerpt": "35 million active daily users",
+    "quote_hash": "0e87313f27ae7a5fe3ccbe8dbcba7fd15d0afaf02e4e71b67994ce32c1e82390",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-04-29",
+   "retrieved_at": "2026-10-29T20:24:36Z",
+   "relation": "contradicts",
+   "explanation": "The decisive quantity is a derived weekly-user lower bound: the same day’s active users must also be active in its containing week. The reported 35 million therefore exceeds the claimed 25-million ceiling without equating daily and weekly counts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Google’s reported March 2025 worldwide Gemini daily active users: 35 million.",
+     "Claim’s ChatGPT weekly-user base: 500 million.",
+     "Claim’s competitor ceiling: less than 5%."
+    ],
+    "formula": "For the same user population, WAU >= DAU. Thus Gemini WAU >= 35 million; 0.05 × 500 million = 25 million; 35/500 = 7%.",
+    "rounding": "No additional rounding; retain the reported rounded user counts."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The underlying Google court exhibit was not obtained in readable form.",
+  "No exact Gemini weekly-user total or fully harmonized cross-company audience methodology was established."
+ ],
+ "packet_hash": "ae8f02df207480ec0e91a7f8edec4002cdd0c8480443557099427fadfd06ac28"
+}

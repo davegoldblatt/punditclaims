@@ -1,0 +1,140 @@
+{
+ "assessment_id": "marcus-llms-dont-do-formal-reasoning-and-204262-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-204262",
+  "version": 1,
+  "content_hash": "c6a7313f4ea37d1bf1e99b018bfcea3726ff87b4af6f8e7a0e6ba6de4e7048ff"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-204262",
+  "version": 1,
+  "content_hash": "d717ee629cdd6e7b7040c0de298b739c212a5ac00c2b9ccc846b53465f3f63cf"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-204262-p1",
+  "content_hash": "d1a0e19650c27ee806da04d2fc78aea77c822220d0ddfea314e7bb0906e05eba"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2024-10-11",
+  "precision": "day"
+ },
+ "public_rationale": "Marcus said accuracy falling off on larger multiplication problems had been seen repeatedly, in both older and newer models. For older models, Dziri et al. (2023) found that GPT-3, ChatGPT and GPT-4 went from near-perfect to zero accuracy as problem size grew. ChatGPT and GPT-4 scored only 55% and 59% on 3x3-digit problems. For newer models, Yuntian Deng's September 2024 evaluation went up to 20x20 digits. It found GPT-4o struggles beyond 4x4 (under 30% accuracy, per TechCrunch), and o1 does well only up to about 9x9. That makes at least two separate evaluations across two model generations, all showing the same fall-off. The claim holds as stated.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The Deng results are a researcher's social-media post plus a news report, not a peer-reviewed paper.",
+  "Some models do better at larger sizes than others; the claim is about the trend, not about one threshold."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-anthropic-1",
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dont-do-formal-reasoning-and-204262",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Both older and newer LLMs have repeatedly been observed to get worse as multiplication problems get larger.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Fall off on increasingly large multiplication problems has repeatedly been observed, both in older models and newer models.",
+   "locator": "paragraph 13",
+   "url": "https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and",
+   "date": "2024-10-11",
+   "document_title": "LLMs don’t do formal reasoning - and that is a HUGE problem",
+   "observed_at": "2026-10-28T23:59:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Fall off on increasingly large multiplication problems",
+    "has repeatedly been observed",
+    "both in older models and newer models"
+   ],
+   "our_interpretation": [
+    "Read as: by October 2024, more than one published evaluation had shown LLM accuracy on multiplication dropping as the number of digits grows, in both older models (for example GPT-3, ChatGPT, GPT-4) and newer ones (for example GPT-4o, o1).",
+    "'Repeatedly' is read as at least two independent evaluations."
+   ],
+   "support_condition": "Two or more evaluations before the post show multiplication accuracy falling with operand size, covering both older and newer models.",
+   "contradiction_condition": "Evaluations before the post show no fall-off with size for the models tested, or such fall-off was seen only once or only in one generation of models."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Marcus said accuracy falling off on larger multiplication problems had been seen repeatedly, in both older and newer models. For older models, Dziri et al. (2023) found that GPT-3, ChatGPT and GPT-4 went from near-perfect to zero accuracy as problem size grew. ChatGPT and GPT-4 scored only 55% and 59% on 3x3-digit problems. For newer models, Yuntian Deng's September 2024 evaluation went up to 20x20 digits. It found GPT-4o struggles beyond 4x4 (under 30% accuracy, per TechCrunch), and o1 does well only up to about 9x9. That makes at least two separate evaluations across two model generations, all showing the same fall-off. The claim holds as stated.",
+  "limitations": [
+   "The Deng results are a researcher's social-media post plus a news report, not a peer-reviewed paper.",
+   "Some models do better at larger sizes than others; the claim is about the trend, not about one threshold."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "task performances deteriorate significantly from near perfection to zero with increasing complexity when measured by either problem size",
+    "locator": "Section 3.1, 'Limits of transformers in zero- and few-shot settings'",
+    "url": "https://arxiv.org/html/2305.18654v3",
+    "publisher": "arXiv (Dziri et al., NeurIPS 2023)",
+    "event_date": "2023-05-29",
+    "available_at": "2023-10-31",
+    "explanation": "For older models (GPT-3, ChatGPT, GPT-4), multi-digit multiplication accuracy falls from near perfect to zero as problem size grows."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Yet, off-the-shelf ChatGPT and GPT4 achieve only 55% and 59% accuracies on this task, respectively (§3).",
+    "locator": "Section 1 Introduction, paragraph 2",
+    "url": "https://arxiv.org/html/2305.18654v3",
+    "publisher": "arXiv (Dziri et al., NeurIPS 2023)",
+    "event_date": "2023-05-29",
+    "available_at": "2023-10-31",
+    "explanation": "Gives concrete numbers: even at 3x3 digits, ChatGPT and GPT-4 were well short of perfect."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "We tested it on up to 20x20 multiplication—o1 solves up to 9x9 multiplication with decent accuracy, while gpt-4o struggles beyond 4x4.",
+    "locator": "Post 1/4",
+    "url": "https://x.com/yuntiandeng/status/1836114401213989366",
+    "publisher": "Yuntian Deng (University of Waterloo) on X",
+    "event_date": "2024-09-17",
+    "available_at": "2024-09-17",
+    "explanation": "A separate 2024 evaluation of newer models (GPT-4o, o1) finds both hold up only to a certain size and then decline."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "“GPT-4o struggles with multi-digit multiplication, achieving less than 30% accuracy beyond four-digit by four-digit problems,” Deng told TechCrunch.",
+    "locator": "Paragraph beginning '“GPT-4o struggles'",
+    "url": "https://techcrunch.com/2024/10/02/why-is-chatgpt-so-bad-at-math",
+    "publisher": "TechCrunch",
+    "event_date": "2024-09",
+    "available_at": "2024-10-02",
+    "explanation": "Gives a numeric threshold for the newer GPT-4o: accuracy falls below 30% past 4x4 digits."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c2ac2331d64f90e7a420a23438a5ca2136e6dc21d016ec331f89ab5fbe01fe6f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:40:09Z"
+}

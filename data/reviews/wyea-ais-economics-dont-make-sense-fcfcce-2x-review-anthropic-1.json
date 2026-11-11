@@ -1,0 +1,107 @@
+{
+ "run_id": "wyea-ais-economics-dont-make-sense-fcfcce-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ais-economics-dont-make-sense-fcfcce": "271b02434579760141df2cd3bc956a5869167708d1d09234504c8e89a6d41d05",
+  "case:wyea-ais-economics-dont-make-sense-fe6a65": "08bbebdd38cf0a29baf2a277a6b40b0bb0174c8db39cd2d4bbafb2273e30d016"
+ },
+ "started_at": "2026-10-29T17:23:12Z",
+ "completed_at": "2026-10-29T17:23:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Verbatim. It is an unhedged present-tense observation about LLM behaviour."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The practical reading (you can't be sure what an LLM will do or whether it will be right in ordinary use) fits the surrounding text, which spells out exactly this. It is an ordinary reading, not stretched either way. The result does depend on not reading 'inherently' as 'no implementation can ever be deterministic'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Primary repeated-inference experiment, published Feb 2026, with evaluation ending Jan 2026. Fixed prompts still produced intermittent failures even at temperature 0. The study window partly predates the target period."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows token-level determinism can be engineered, which qualifies 'inherently' in a technical sense. It does not show predictable correctness or task success, so it does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the fair practical reading, e1 shows behaviour varying and failing intermittently despite fixed prompts and conservative decoding, which meets the support condition. e2 shows output can be made repeatable, but repeatable text does not mean predictable correctness, so it qualifies the claim rather than contradicting it. A strict 'unavoidable technical property' reading is weakened by e2, but the contract reasonably sets that reading aside.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ais-economics-dont-make-sense-fcfcce"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The drafter swaps the quote's 'underlying' for 'inherently'. The meanings are close, and the contract's criteria do not depend on that word. No quantifier or threshold was stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading, that current general-purpose LLMs keep a recurring tendency to produce false content, is ordinary and fair. It does not inflate the claim to 'every answer is unreliable'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own disclosure of 5 Mar 2026, inside the period. GPT-5.4 cut false claims and erroneous responses relative to GPT-5.2 but did not eliminate them; errors remain. Caveats: it is a company self-report, gives only relative rates, uses prompts selected from user-flagged errors, and covers a single vendor."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The support condition only asks for recurring factual errors in current LLMs. OpenAI's in-period disclosure on its 'most factual model yet' reports fewer errors, not zero, which meets that bar. Better hallucination rates do not show that models reliably avoid fabrication, so the contradiction condition is not met. The evidence is thin (one vendor's self-report with relative figures), but nothing in the packet points the other way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ais-economics-dont-make-sense-fe6a65"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14042,
+  "output_tokens": 2886,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

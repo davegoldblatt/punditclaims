@@ -1,0 +1,104 @@
+{
+ "packet_id": "marcus-top-5-reasons-openai-is-probably-6b9946-p1",
+ "claim_revision_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-6b9946",
+  "version": 1,
+  "content_hash": "597240965dadbac91696159dbd4dad0f7c29cfd5b4972a3b11991ecdfcb9d3ec"
+ },
+ "contract_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-6b9946",
+  "version": 1,
+  "content_hash": "68b42ea47a43240ec7395ca791f27324066c14f2d810a58b2d4f1a6fdb79f110"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 chess illegal moves September 2023 benchmark training data",
+   "GPT-4 training data chess rules not disclose 2023 report"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2308.15118",
+    "used": true,
+    "why": "Read in full to verify the study's identity and August 29, 2023 submission date."
+   },
+   {
+    "url": "https://arxiv.org/html/2308.15118v1",
+    "used": true,
+    "why": "Read relevant methods and results with read_page. Identifies the tested model, protocol, illegal-move failures, and prompting effects."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "Read the original technical report's scope section. It does not disclose the training corpus needed to verify the chess-rule assertion."
+   },
+   {
+    "url": "https://blog.mathieuacher.com/GPTsChessEloRatingLegalMoves/",
+    "used": false,
+    "why": "Read relevant passages. Reports substantially better results for an instruct model, but was published September 30 and contains later edits; the retrieved text does not securely date the relevant tests within the target period."
+   },
+   {
+    "url": "https://www.reddit.com/r/chess/comments/16q8a3b",
+    "used": false,
+    "why": "Search surfaced a September 23 report of strong instruct-model performance. read_page returned HTTP 403, so it cannot be cited or used to settle the claim."
+   }
+  ],
+  "performed_at": "2026-10-29T09:06:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2308-15118v1",
+   "source_snapshot_id": "2260a207525b518859da68bbf02cfba9305dfbb5864ec3115cac0fe81cd25e53",
+   "publisher": "arXiv; Mu-Tien Kuo, Chih-Chung Hsueh, and Richard Tzong-Han Tsai",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2308.15118v1",
+   "locator": "Section 2.3, Baseline Performance",
+   "receipt": {
+    "public_excerpt": "an illegal move",
+    "quote_hash": "877d24cd9dab0827b4c3dd863539d8f4e157226a42c538f3dbb89afcaae3e7ac",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-08-29",
+   "retrieved_at": "2026-10-29T03:40:45Z",
+   "relation": "supports",
+   "explanation": "The study tested gpt-3.5-turbo-0301 over 1,000 baseline games and found frequent illegal moves. It supports the rule-following component for that model and protocol, but cannot establish the contents of its training corpus or every GPT version's performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI, via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Section 2, Scope and Limitations of this Technical Report",
+   "receipt": {
+    "public_excerpt": "capabilities, limitations, and safety",
+    "quote_hash": "8896d7618a82e4773cc2bdf3d1d254c5c9482d66b6d3d8fa3e44620717bc6819",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "context",
+   "explanation": "The section describes broad training-data categories but expressly withholds further dataset-construction details. It supplies no confirmation that explicit chess rules appeared in training, leaving that component unverified rather than disproved.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No accessible primary record establishes explicit chess-rule inclusion in the relevant GPT training corpus.",
+  "The decisive chess study tests one GPT-3.5 chat snapshot, not all models available by September 27.",
+  "Potentially material reports of stronger instruct-model performance were found, but their underlying evidence could not be verified within the target period.",
+  "The study reports successful rule recitation and benefits from some prompting changes; neither establishes training-data provenance or universal rule-following failure."
+ ],
+ "packet_hash": "75c3a1257a3512c10439d54ed7fa156b25bbaecc2343cdcfe760d8fd1d6aed12"
+}

@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-dont-ride-this-bike-generative-ais-3f5639-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-dont-ride-this-bike-generative-ais-3f5639": "6dff0357849091cbab0183f5c31444daac360a2cc545d5db377db0d1b77ecf2c",
+  "case:marcus-dont-ride-this-bike-generative-ais-431d7d": "8d4b8164f3eb37dbdec927222b372593f1731abe116bf83373e39925d7b1e9b8",
+  "case:marcus-dont-ride-this-bike-generative-ais-5742c2": "bb2eeeb33bd5646bf359e8c135039c3156e1042fd5e1efd43408cafa5e962309",
+  "case:marcus-dont-ride-this-bike-generative-ais-7975a8": "1afeb5c81da240e2d302018a1dae2867961ef1e3151f9302f5d11b26c09093af"
+ },
+ "started_at": "2026-10-29T07:00:04Z",
+ "completed_at": "2026-10-29T07:00:36Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus co-wrote the post with Davis and published it under his own name on his Substack. It is endorsed authorial text."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The firm part, that current technology is quite poor at sanity checks, is an observation. The 'may be needed' clause is kept as a possibility, and the contract correctly does not score it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (detecting prompt and feedback violations in generated images, as of 2024) is fair and ordinary. No threshold is given for 'quite poor', but that does not decide the result here."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "FineMatch (April 2024) finds GPT-4V and Gemini weak at fine-grained image-text mismatch detection. This points toward the claim but is not a direct test of self-checking against prompts and feedback."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "ConceptMix (August 2024) finds GPT-4o grading agrees with humans about as well as humans agree with each other on decomposed concept questions. This cuts against 'quite poor', but it is not the full self-check and feedback task."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence points both ways and neither item measures the contract's task directly. FineMatch shows weak mismatch detection; ConceptMix shows close agreement with humans on decomposed checks. The packet does not establish either frequent failure or reliable detection of prompt and feedback violations in 2024.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-3f5639"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "This is the post's concluding sentence, written by the authors in their own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'current approaches' scope is preserved. 'Any one trial might be correct' describes variability, not a hedge on the claim itself."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract limits the claim to observed reliability on the compositional tasks the post discusses and treats 'superficial' as behavioural. That matches the context and is an ordinary reading. A broader reading covering all prompts could change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Conwell et al. (November 2024) used repeated, unselected DALL-E 3 generations with human judges. No relation, negation or number probe reliably passed 50% agreement."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "GenAI-Bench (June 2024): DALL-E 3 averaged 3.4 of 5 on advanced compositional prompts. Its 4.3 on basic prompts limits any reading of the claim as unrestricted."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's reading, two human-validated evaluations of 2024 systems show substantial, task-dependent failures on relational, numerical and negation constraints. That meets the support condition. Better results on basic prompts, and the lack of direct evidence about internal representations, limit only a broader reading than the contract adopts.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-431d7d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are the authors' own words in the co-authored post, interpreting their own experiment."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Firm observation about ChatGPT with DALL-E 3. The small-sample caveat is kept as a qualifier."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Scoring repeated label-to-part errors in November 2024, separately from spelling problems, is a fair and ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Public Citizen tested Bing's DALL-E 3 in March 2024 and found mislabelled mushroom diagrams. That is a different deployment and period, and the main problem it reports is nonsense lettering."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no independent, verifiable November 2024 evaluation of ChatGPT/DALL-E 3 label-to-part association. The only item covers an earlier Bing deployment, so it is context only, and the speaker's own experiment cannot prove the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-5742c2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are the authors' own words describing their earlier experiments."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A retrospective observation about DALL-E 2 as of October 2022. The scope (object-part specifications) is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'very poor' as frequent failure on object-part specifications is ordinary. With no threshold and no defined set of prompts, how the claim is read could matter."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Conwell and Ullman (July 2022) found DALL-E 2 matched only about 22% of relation prompts. That covers relations between objects, not object parts, and predates October 2022."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no independently scored October 2022 evaluation of DALL-E 2 on object-part specifications. The only item covers a related but different task in an earlier period, and the authors' own experiments cannot establish the outcome.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dont-ride-this-bike-generative-ais-7975a8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24932,
+  "output_tokens": 3743,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

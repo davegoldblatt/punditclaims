@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-the-haters-gui-6aba6c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-haters-gui-6aba6c",
+  "version": 2,
+  "content_hash": "d66f648780b54a287c35cdc708bf6c8eb586f6e8c315f08b422a6a61de577163"
+ },
+ "contract_ref": {
+  "id": "wyea-the-haters-gui-6aba6c",
+  "version": 1,
+  "content_hash": "0753533291ac628266be6d633188925d4ac65accf6534a40353708044db7dc85"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Amazon 2014 10k capital expenditures 4.9 billion AWS 2015 2014 2013",
+   "site.forbes.com/sites/chuckjones/2015 Amazon \"$4.9 billion\"",
+   "Amazon 2024 annual report 83,000 77,658 cash capital expenditures",
+   "site.aboutamazon.com \"2024\" \"77.7\" expenditures",
+   "site.bls.gov 2014 annual average CPI 236.736 2025 June 322.561",
+   "Amazon 2014 form 10-k filed January 30 2015 000101872415000006"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/a/NASDAQ_AMZN_2014.pdf",
+    "used": true,
+    "why": "Read successfully. Primary annual report identifies the historical figure as Amazon-wide cash capex, not AWS-only expenditure."
+   },
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_financials/2025/ar/Amazon-2024-Annual-Report.pdf",
+    "used": true,
+    "why": "Read successfully. Supplies the modern company-wide comparator and distinguishes it from AWS-specific spending."
+   },
+   {
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/a/NASDAQ_AMZN_2015.pdf",
+    "used": false,
+    "why": "Read successfully. Adds company-wide capex observations but does not establish the missing cumulative AWS allocation."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872416000172/amzn-20151231x10k.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the annual-report mirror was consulted instead."
+   },
+   {
+    "url": "https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_table.htm",
+    "used": false,
+    "why": "Located official inflation data, but did not calculate an AWS total because the underlying annual AWS expenditure series was missing."
+   }
+  ],
+  "performed_at": "2026-10-29T21:50:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "annualreports-com-hosteddata-annualreportarchive-a-nasdaq-amzn-2014-pdf",
+   "source_snapshot_id": "2709bf3fd12fbecfc58fbf1739094d0548eadc2cef420bdfbc86d450e829f002",
+   "publisher": "Amazon.com, annual report mirrored by AnnualReports",
+   "source_type": "filing",
+   "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/a/NASDAQ_AMZN_2014.pdf",
+   "locator": "Management's Discussion and Analysis; Liquidity and Capital Resources",
+   "receipt": {
+    "public_excerpt": "$4.9 billion",
+    "quote_hash": "fc44fc3c81fd629ee9104a12fc47b0027ae8fd10eaacced6d3e76f852b220b2b",
+    "verified": "exact"
+   },
+   "event_date": "2014",
+   "available_at": "2015-01-30",
+   "retrieved_at": "2026-10-29T21:34:02Z",
+   "relation": "context",
+   "explanation": "The historical $4.9 billion input is Amazon's company-wide cash capex, not a disclosed AWS total. It cannot establish cumulative AWS investment simply by repeating it for ten years.",
+   "metric_scope": {
+    "company": "Amazon.com",
+    "metric": "Company-wide cash capital expenditures",
+    "currency": "USD",
+    "units": "Billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2014-01-01",
+    "period_end": "2014-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s2-q4cdn-com-299287126-files-doc-financials-2025-ar-amazon-2024-ann-81a1675f18fd",
+   "source_snapshot_id": "82576c75d02295c6b944e2b3f7b3e773bb115364b83891e98db8dfa95264c497",
+   "publisher": "Amazon.com",
+   "source_type": "filing",
+   "url": "https://s2.q4cdn.com/299287126/files/doc_financials/2025/ar/Amazon-2024-Annual-Report.pdf",
+   "locator": "Form 10-K, page 23; Liquidity and Capital Resources",
+   "receipt": {
+    "public_excerpt": "cash capital expenditures",
+    "quote_hash": "9c86b2aa9609a562a0fde500abd6355c7257e55de7bf0401d592c5735dec07af",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-06",
+   "available_at": "2025-02-07",
+   "retrieved_at": "2026-10-29T12:04:58Z",
+   "relation": "context",
+   "explanation": "The surrounding disclosure reports $77.7 billion of 2024 cash capex and expects an increase in 2025. These are company-wide amounts covering technology infrastructure and fulfillment capacity; they do not supply the historical AWS numerator.",
+   "metric_scope": {
+    "company": "Amazon.com",
+    "metric": "Expected change in company-wide cash capital expenditures",
+    "currency": "USD",
+    "units": "Direction of annual spending change",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No cumulative AWS-specific capex series for the early buildout was established.",
+  "A consistent treatment of leased equipment and gross versus net cash spending is missing.",
+  "Without annual AWS expenditures, an inflation adjustment cannot establish the actual cost comparison.",
+  "The illustrative ten-year multiplication is neither an observed total nor a demonstrated upper bound."
+ ],
+ "packet_hash": "faa588e0237a94c2f5cb2758cf4b1ab055049a0f04946fe0a3aa2dd9dd832cb2"
+}

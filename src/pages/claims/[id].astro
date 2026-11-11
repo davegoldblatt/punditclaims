@@ -1,0 +1,98 @@
+---
+// /claims/<claim-id>: the permanent page for one claim. Every claim in the
+// release gets one, including a claim whose assessment was withdrawn (its
+// page becomes a tombstone that keeps the history readable). It is the only
+// file built per claim: the search index reads the post pages instead, and
+// the claim's JSON is one part of the claims export.
+import Base from "../../layouts/Base.astro";
+import Statement from "../../components/Statement.astro";
+import Criteria from "../../components/Criteria.astro";
+import Assessment from "../../components/Assessment.astro";
+import Notices from "../../components/Notices.astro";
+import Occurrences from "../../components/Occurrences.astro";
+import History from "../../components/History.astro";
+import RecordAside from "../../components/RecordAside.astro";
+import { release } from "../../lib/published.ts";
+import { HORIZON_LABEL, KIND_LABEL, OUTCOME_LABEL } from "../../policy.ts";
+import { assessmentLabel, isOpenHorizon, isScreenedOut, personPath, shownAssessment, standingOf } from "../../lib/view.ts";
+import { postOf } from "../../lib/listing.ts";
+import { PROBABLE_LABEL } from "../../lib/probable.ts";
+const COMPANY_AI: Record<string, string> = { anthropic: "Anthropic’s AI", openai: "OpenAI’s AI" };
+
+export function getStaticPaths() {
+  return release().claims.map((c) => ({ params: { id: c.claim_id } }));
+}
+const r = release();
+const m = r.manifest!;
+const c = r.claim(Astro.params.id!)!;
+const person = r.subject(c.subject_id)!;
+const a = shownAssessment(c);
+const standing = standingOf(c);
+const withdrawn = standing === "withdrawn";
+const p = a?.payload ?? null;
+const screened = isScreenedOut(a);
+const post = postOf(r.claims, r.held, c);
+const resolveShown = !withdrawn && p && (p.what_would_resolve || (isOpenHorizon(c.review.horizon_now) && p.outcome === "unresolved"));
+const description = `${person.name}, first said ${c.first_statement_date}: ${c.normalized_proposition} Assessment: ${assessmentLabel(c)}${p && !withdrawn ? (screened ? ", not checked against evidence" : `, evidence as of ${p.evaluation_as_of}`) : ""}.`;
+---
+<Base title={`${person.name}: ${c.normalized_proposition}`} description={description}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol><li><a href="/register/checked">All claims</a></li><li><a href={personPath(person.id)}>{person.name}</a></li><li aria-current="page">This claim</li></ol>
+    </nav>
+    <div class="claim">
+      <article class="claim-main" data-claim-page={c.claim_id}>
+        <p class="byline"><a href={personPath(person.id)}>{person.name}</a>{" "}<span>{KIND_LABEL[c.kind]}</span>{" "}<span>First said <time datetime={c.first_statement_date}>{c.first_statement_date}</time></span></p>
+        {p && !withdrawn ? (
+          <>
+            <figure class="quote quote-top">
+              <blockquote cite={p.statement.url}><p><span>“{p.statement.excerpt}”</span></p></blockquote>
+              <figcaption><a href={p.statement.url} rel="noopener">{p.statement.document_title}</a>, {p.statement.locator}.</figcaption>
+            </figure>
+            <p class="reading-label">Our reading:</p>
+            <h1 class:list={["prop", "prop-reading", { "prop-long": c.normalized_proposition.length > 140 }]}>{c.normalized_proposition}</h1>
+          </>
+        ) : (
+          <>
+            <h1 class:list={["prop", { "prop-long": c.normalized_proposition.length > 140 }]}>{c.normalized_proposition}</h1>
+            <p class="reading-note">Our reading of what {person.name} said.</p>
+          </>
+        )}
+        <p class="status">
+          {withdrawn
+            ? <span class="flag">Assessment withdrawn</span>
+            : <span class="label label-lg" data-o={p!.outcome}><span class="sr-only">Assessment: </span>{OUTCOME_LABEL[p!.outcome]}</span>}{" "}
+          {standing === "under_review" && <span class="flag">Under review</span>}{" "}
+          {c.review.review_due && <span class="flag">Review due</span>}{" "}
+          {(c.review.horizon_now === "not_due" || c.review.horizon_now === "elapsed") && <span class="horizon">{HORIZON_LABEL[c.review.horizon_now]}</span>}
+        </p>
+        <Notices claim={c} a={a} />
+        {a && <Assessment claim={c} a={a} m={m} heading={withdrawn ? "The withdrawn verdict" : "What happened"} withdrawn={withdrawn} />}
+        {c.probable && !withdrawn && (
+          <section class="section" aria-labelledby="probable-h">
+            <h2 id="probable-h">{PROBABLE_LABEL[c.probable.call]}?</h2>
+            <p class="small">{c.probable.level === "reasonable" ? "Both AIs" : "One AI"} {c.probable.level === "reasonable" ? "think" : "thinks"} this is {PROBABLE_LABEL[c.probable.call].toLowerCase()}{c.probable.level === "speculative" ? ", and the other says it’s too early to tell" : ""}. The evidence isn’t conclusive, so the verdict above stays {p ? OUTCOME_LABEL[p.outcome].toLowerCase() : "as it is"}. It counts only when you pick {c.probable.level === "reasonable" ? "Reasonable or Speculative" : "Speculative"} under “How sure?”.</p>
+            {(c.probable.reasons ?? []).length > 0 && <ul>{c.probable.reasons!.map((x) => <li><span class="k">{COMPANY_AI[x.provider] ?? x.provider}: </span>{x.reason}</li>)}</ul>}
+          </section>
+        )}
+        {a && <Criteria claim={c} a={a} m={m} />}
+        {resolveShown && (
+          <section class="section" aria-labelledby="resolve-h">
+            <h2 id="resolve-h">What would settle it</h2>
+            <p>{p!.what_would_resolve ?? "Nothing specific yet."}</p>
+          </section>
+        )}
+        {post && post.items.length > 1 && <p class="small">We found {post.items.length} claims in this post. <a href={post.path}>See them all</a>.</p>}
+        <details class="rcpt full-record">
+          <summary>Full record</summary>
+          <div class="rcpt-body">
+            {a && <Statement claim={c} a={a} personName={person.name} withdrawn={withdrawn} quoteShown={!withdrawn} />}
+            <Occurrences claim={c} />
+            <History claim={c} events={r.eventsOf(c.claim_id)} currentId={null} mainId={a?.assessment_id ?? null} />
+          </div>
+        </details>
+      </article>
+      <RecordAside claim={c} a={a} m={m} personName={person.name} />
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-annualized-enron-rate-db120f-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-annualized-enron-rate-db120f": "fb9b7abb1f1f365eb8027acae989ffa58aa9ee8ca4cf58367dc200f44b8dc275",
+  "case:wyea-annualized-enron-rate-e9c89c": "3fd7c68302c6667d08296e8111afa1edf9aa569abbbe9778cf01397d2c41eb02",
+  "case:wyea-annualized-enron-rate-f8012e": "c11c0fc65555a08f4b8c9908a27d2d445af2fd637426c24703f3958c4df3143b",
+  "case:wyea-annualized-enron-rate-faa536": "c350f6a424c09f6084b06b4c2a327166f43a1678f3c2f04abb0e4fba79f5966a"
+ },
+ "started_at": "2026-10-29T17:27:03Z",
+ "completed_at": "2026-10-29T17:27:44Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter, written as his summary of the argument."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'As a result' and 'necessitates' set out a chain of causes, and the universal 'every' is kept. The stated cause, small revenues against token burn, matches the paragraph before it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (net loss driven by token costs, which forces frequent large raises) is ordinary. Using Q3 2026 for an undated present-tense claim is reasonable. Letting one counterexample defeat 'every' is fair. The undefined loss basis and the line between necessary and discretionary raising leave room for interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "TechCrunch, Nov 2025: the founder says Gamma reached $100M ARR profitably and has raised cautiously. This is a company claim with no defined profit measure, and it predates the Q3 2026 target period, so it is only a possible counterexample."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no accounts from across the population for Q3 2026 and no financing records showing that raises were necessary. The one possible counterexample (Gamma) is an earlier, self-reported profit claim with no basis given, so it cannot defeat the universal claim for the target period. Neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-db120f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own calculation in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Correctly treated as an arithmetic claim about the contract: about $1.54/GPU-hour depreciation over six years and 'nearly half' of revenue lost. The six-year life against a five-year term is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Carrying forward his $540k per eight-GPU node figure is fair, since he uses it in the paragraph just before. Straight-line depreciation with zero residual is the ordinary reading of his illustration. Treating 'losing revenue' as depreciation's share of gross revenue is fair to him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Dated reporting gives the $4.30 and $3.50 rate schedule. With his own inputs, six-year depreciation is about $1.28/GPU-hour, roughly 32% of the blended $3.98. The $1.54 figure matches a five-year life, and even that is about 39%."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company release from Aug 2026 shows deployment was still planned. This supports treating the claim as an illustrative calculation, not realized results."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "Using the speaker's own $540k cost and six-year life, depreciation is about $1.28/GPU-hour, not $1.54, and about 32% of contract revenue, not 'nearly half'. $1.54 is the five-year figure, and even it gives about 39%. The claimed numbers do not follow from the stated assumptions.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-e9c89c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own statement in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The dependence claim is stated firmly. The hedge 'what appears to be' qualifies only how long it lasts and is kept. 'Every single month, without fail' is kept, though it reads as emphasis."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'growth' as revenue growth at each lab, set against aggregate startup token spending, is ordinary and fits the context. The measurement demands are strict but match a claim of necessity."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1 (Oct 26) says its customers range from startups to the largest enterprises. This hints at other growth sources but proves nothing about dependence."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure claims diversified revenue streams. It is a company statement with no matched spending and revenue series."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Ramp: per-employee spend in the top 1% of firms fell in August. This is a different metric and cohort, not aggregate startup spending or lab revenue."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "YipitData warns that its panel spending shares are not companywide revenue shares, which limits what the panel can show."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No matched monthly series of lab revenue against aggregate startup token spending is available, and there is no causal evidence for or against the claimed necessity. Customer diversity and per-employee spending panels do not settle the dependence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-f8012e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own statement in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Basically any' is kept as 'essentially all'. Dropping the causal 'as a result' (lack of disclosure) does not change what the claim commits him to."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'guesses' as estimates lacking verified empirical grounding, as opposed to merely uncertain ones, is a fair and ordinary reading. The result depends on where the line between an estimate and a guess falls, which the speaker did not define."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch methodology (Sep 2026) uses disclosed power capacity plus a cross-check model. This shows documented inputs for one estimator, but is not a representative set and does not independently verify the disclosures."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch, June 2026, before the target period: it uses satellite imagery, permits and disclosures, but notes only about 26% global coverage and sizable error bands."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows one rigorous estimator with documented inputs and cross-checks, which counts against pure guesswork. But it has no representative inventory of current estimates, so neither the claim that nearly all are guesses nor the contradiction condition (a substantial validated set) can be established.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-annualized-enron-rate-faa536"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33051,
+  "output_tokens": 4394,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-image-generation-still-crazy-after-d11e1d-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-image-generation-still-crazy-after-d11e1d": "518e821c0cb2142d4f1fc79c46e53a27268312b4a3fbef43a2e6a99486d6d120"
+ },
+ "started_at": "2026-10-29T17:12:04Z",
+ "completed_at": "2026-10-29T17:12:18Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own Substack post and endorses it. The quoted Google phrase is something he cites as the promise, not the claim itself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The claim is a firm present-tense observation that reliable, language-faithful image generation is still lacking. The hype phrase is rightly treated as background, and dating the promise to 2022 matches 'three years ago'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (dependable fidelity to the prompt without needing perfection) is an ordinary, fair reading given the post's examples. The window ending at the post date is reasonable. The result depends on how 'reliable' is read, and the contract acknowledges this."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Google's May 2022 Imagen abstract confirms the 'deep level of language understanding' wording, which substantiates what Marcus calls the promise. It is not evidence of 2025 performance."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 2025 GenEval scores for GPT-4o, the top model, were 0.75 on spatial position and 0.61 on attribute binding. Those are material, recurring failures on structured prompts, even though overall performance had improved a lot."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google's May 2025 Imagen 4 model card admits that counting, part reasoning, scale, composition, actions and spatial prompts remain hard for all models. It is a company disclosure, but it cuts against Google's own interest."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "The June 2025 OneIG-Bench paper calls Imagen 4 and GPT-4o strong at semantic alignment but notes continuing errors in assigning attributes and handling detail. That shows relative strength, not dependable correctness."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The support condition is met. Google's 2022 wording is verified (e1), and the leading 2025 systems still showed recurring, material semantic failures on benchmarks and in Google's own documentation (e2, e3). The counterevidence (e2's high overall score, e4) shows strong progress but does not show that failures had become rare. The contradiction condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-image-generation-still-crazy-after-d11e1d"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 13229,
+  "output_tokens": 1406,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

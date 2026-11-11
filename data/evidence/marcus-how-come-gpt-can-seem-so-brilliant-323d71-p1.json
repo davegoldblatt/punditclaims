@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-how-come-gpt-can-seem-so-brilliant-323d71-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-come-gpt-can-seem-so-brilliant-323d71",
+  "version": 2,
+  "content_hash": "111a33881398d804a7c90ae233bf1e8d22f0d9b4f53044355c6502c9c36ce305"
+ },
+ "contract_ref": {
+  "id": "marcus-how-come-gpt-can-seem-so-brilliant-323d71",
+  "version": 1,
+  "content_hash": "ba022d7c1aea2e4a7c3bce007a4459d2b89ddf8e7d9db937f96163dd64613647"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "TruthfulQA models imitate falsehoods learned from mimicking human text GPT-3 2021",
+   "InstructGPT 2022 outputs fluent human evaluation hallucination",
+   "GPT-3 language models few shot learners news articles no cherry picking human detection 52%"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2109.07958v2",
+    "used": true,
+    "why": "Primary research explicitly investigates imitation as a cause of false answers and discusses alternative explanations."
+   },
+   {
+    "url": "https://openai.com/index/instruction-following/",
+    "used": true,
+    "why": "Primary documentation establishes learning from demonstrations and feedback, without tracing the illustrated error."
+   },
+   {
+    "url": "https://arxiv.org/html/2005.14165v4",
+    "used": false,
+    "why": "The training and generation experiments establish relevant capabilities but do not identify the mechanism behind churro-surgery-style combinations."
+   },
+   {
+    "url": "https://openai.com/index/chatgpt/",
+    "used": false,
+    "why": "The disclosure describes training and plausible errors in the contemporary derivative, but does not establish this specific causal explanation."
+   }
+  ],
+  "performed_at": "2026-10-29T17:16:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2109-07958v2",
+   "source_snapshot_id": "0e47af329c0092b5d2e8f7c19643f41bbe7f6fab3d1fc2c750d2a74801a86829",
+   "publisher": "Lin, Hilton and Evans, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2109.07958v2",
+   "locator": "Abstract; causal qualifications in Section 4.3, Interpretation of results",
+   "receipt": {
+    "public_excerpt": "false answers that mimic popular misconceptions",
+    "quote_hash": "72445d64effaf7d3f1c1c4d02ffb98c8cc4c1b987d4709c0e1e0db4894f46b12",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T03:26:41Z",
+   "relation": "supports",
+   "explanation": "TruthfulQA supports learned imitation as a source of GPT-3 falsehoods, while its causal analysis also allows errors unrelated to imitation. Repeating human misconceptions does not establish the cause of novel combinations such as churros used in surgery.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-instruction-following",
+   "source_snapshot_id": "ee02ff2026adaad640f12043af1b3a04eb683b65d62f052cf4069466b7fee107",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/instruction-following",
+   "locator": "Opening explanation of human demonstrations and ranked model outputs",
+   "receipt": {
+    "public_excerpt": "use this data to fine-tune GPT‑3.",
+    "quote_hash": "d902d56b6b58e539776d5f1d06fc1bce0127c969b1e12b4ac0a6e51615843050",
+    "verified": "exact"
+   },
+   "event_date": "2022-01",
+   "available_at": "2022-01-27",
+   "retrieved_at": "2026-10-29T07:03:03Z",
+   "relation": "context",
+   "explanation": "The surrounding passage documents training on human demonstrations and rankings, alongside next-word pretraining. This makes learned imitation a plausible component of the explanation but does not isolate why the illustrated semantic mismatch occurred.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No controlled analysis of the churro-surgery response or a matched set of comparable combinations was located.",
+  "The retrieved imitation study concerns human misconceptions and explicitly leaves room for other causes of errors.",
+  "The model version and complete generation conditions for the example are not established."
+ ],
+ "packet_hash": "6ed87a89e290a7f25782de1aae23a80aaaa707e05ddf8fbce9fe5a1aa364e947"
+}

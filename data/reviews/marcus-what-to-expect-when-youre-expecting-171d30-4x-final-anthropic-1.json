@@ -1,0 +1,90 @@
+{
+ "run_id": "marcus-what-to-expect-when-youre-expecting-171d30-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-what-to-expect-when-youre-expecting-171d30": "712958d794d2d8ab0b540992f17b254844200b79b0f6a1f8da63200a50fd15c2",
+  "payload:marcus-what-to-expect-when-youre-expecting-171d30": "9f62cf5310bf06eea02da73c6f952dd16f18b2f2149440432dfb96a1016014f3",
+  "case:marcus-what-to-expect-when-youre-expecting-3868af": "8b91152ac2523100bb71e8ada6d961c23af27835f363ad2959096d0391512fa4",
+  "payload:marcus-what-to-expect-when-youre-expecting-3868af": "4c5190c9aa93f6acfe012349ee5fe078f7b8554704f20088040f3afa497d697c",
+  "case:marcus-what-to-expect-when-youre-expecting-79c713": "d368c669809a4c76076874d2e731a93ea6eb0432b8cb8bc399b3c044c403434a",
+  "payload:marcus-what-to-expect-when-youre-expecting-79c713": "ffb551337a5b6fd936bf63bcab4e9d5dcc13f96c47956d94dd84486244a5e705",
+  "case:marcus-what-to-expect-when-youre-expecting-ba0b73": "a13a14a819d54200eaa7e536b82af93ab49c07ef5d47445ec07bc304b72f9352",
+  "payload:marcus-what-to-expect-when-youre-expecting-ba0b73": "961c568804c3d358ac3cbf6611d829710e5312e3fb65ff557a7a912abf358a2d"
+ },
+ "started_at": "2026-10-29T12:57:40Z",
+ "completed_at": "2026-10-29T12:58:22Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "The October 2023 NEWTON study found uneven physical reasoning and scenario-specific inconsistency, alongside an 87.7% scenario-task average [e1].",
+     "The cited evaluations document GPT-4 reliability failures in all three named domains [e1, e2, e3]."
+    ],
+    "verdict": "fail",
+    "note": "The e1 source text never shows the 87.7% figure or a scenario where GPT-4 was inconsistent. Its 'non-uniform comprehension' finding is about models generally, and it says GPT-4 dominates overall and 'consistently performs well'. So the GPT-4 physical-domain failure, which the contract requires, is not supported by the quoted source. The public excerpts are cut down too far: e2's 'robust performance' drops 'don't exhibit' and reads as the opposite finding. e3's 'reasoning robustness' and e1's fragment also lose their meaning.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-171d30"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "NewsGuard used leading prompts and counted false claims even when accompanied by disclaimers."
+    ],
+    "verdict": "fail",
+    "note": "The rationale figures check out: 18% vs 55% fabricated citations (Sept 7, 2023), 80 vs 100 narratives from the same prompts in Jan/Mar 2023, and 'more detailed and convincing'. But one limitation says NewsGuard counted false claims even when they came with disclaimers. The quoted NewsGuard text does not say this. It only says GPT-4 outputs had fewer disclaimers, and the methodology section is not in the evidence. Remove that sentence or support it.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-3868af"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt and proposition are faithful, and the 'despite' qualifier is shown. The e1 figures match the abstract: 7 of 44 plans harmful, 9 without a satisfactory workup (35 of 44 satisfactory), and the 'hazardous without consultant input' conclusion. The e2 figures match: no majority-harmful question, 13 of 66 concordant, 35 with no majority, May 2023 version. The limitations correctly note that independent use is the contract's interpretation and that e1 covers one hospital. Outcome is supported/conclusive_event, matching the agreed reviews.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-79c713"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is exact, and 'prediction 7 of 7' is the right locator. The rationale matches the sources: the e1 controlled testbed (v2, June 2024), the e2 finding that the value of extra compute decays to zero with heavily repeated data (May 2023), and e3's v2 (June 2026), which includes post-training. The unresolved/open_horizon outcome matches the reviews, and what_would_resolve follows the contract. Minor: the public excerpts ('scaling laws', 'eventually decays to zero') are terse fragments but not misleading.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-ba0b73"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 39621,
+  "output_tokens": 5031,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

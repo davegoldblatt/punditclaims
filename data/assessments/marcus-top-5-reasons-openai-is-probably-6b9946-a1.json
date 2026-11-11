@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-top-5-reasons-openai-is-probably-6b9946-a1",
+ "claim_revision_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-6b9946",
+  "version": 1,
+  "content_hash": "597240965dadbac91696159dbd4dad0f7c29cfd5b4972a3b11991ecdfcb9d3ec"
+ },
+ "contract_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-6b9946",
+  "version": 1,
+  "content_hash": "68b42ea47a43240ec7395ca791f27324066c14f2d810a58b2d4f1a6fdb79f110"
+ },
+ "packet_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-6b9946-p1",
+  "content_hash": "75c3a1257a3512c10439d54ed7fa156b25bbaecc2343cdcfe760d8fd1d6aed12"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2023-09-27",
+  "precision": "day"
+ },
+ "public_rationale": "A contemporaneous study strongly supports unreliable chess legality for one GPT-3.5 chat model. The full claim also asserts direct exposure to chess rules during training, which the retrieved documentation does not establish. Model choice and prompting further limit generalisation. The compound claim therefore remains unresolved; the demonstrated legality failures are not in doubt for the tested setup.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Behavioural knowledge of rules is not proof of training-set membership.",
+  "A result for one chat snapshot cannot establish the performance of the entire GPT family.",
+  "No verified contradictory outcome item was obtained; missing support for a component is not evidence that it is false."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-top-5-reasons-openai-is-probably-4050bb-4x-review-anthropic-1",
+  "marcus-top-5-reasons-openai-is-probably-4050bb-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-top-5-reasons-openai-is-probably-4050bb-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-top-5-reasons-openai-is-probably-6b9946",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT cannot be trusted to follow the rules of chess despite those rules being in its training data.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Even now, GPT can’t be trusted to follow the rules of chess, for example, and those rules are stated directly (probably multiple times) in the training set.",
+   "locator": "paragraph 10",
+   "url": "https://garymarcus.substack.com/p/top-5-reasons-openai-is-probably",
+   "date": "2023-09-27",
+   "document_title": "Top 5 reasons OpenAI is probably not worth 90 billion dollars",
+   "observed_at": "2026-10-29T00:03:09Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Even now",
+    "GPT can’t be trusted to follow the rules of chess",
+    "those rules are stated directly",
+    "in the training set",
+    "probably multiple times"
+   ],
+   "our_interpretation": [
+    "The plain reading concerns contemporary general-purpose GPT models playing chess through text, without an external chess engine or legality filter.",
+    "Cannot be trusted means that ordinary play can produce illegal moves and needs checking. It does not mean that GPT cannot make legal moves or play competent games.",
+    "The assertion that rules were directly present in training data is retained as a separate factual component. The hedge concerns repetition, not clearly the underlying presence of the rules.",
+    "Reciting chess rules or receiving them in a prompt does not establish their presence in the original training corpus.",
+    "The target is the latest publicly testable 2023 GPT capability picture through the post date. No regular reporting period applies."
+   ],
+   "support_condition": "Reproducible tests show material illegal-move failures in relevant contemporary GPT models, and credible training documentation establishes that explicit chess rules were included in those models' training data.",
+   "contradiction_condition": "Representative testing establishes dependable unaided rule compliance for the relevant GPT models, or authoritative training records refute the asserted exposure to explicit chess rules. Evidence must identify which component it contradicts."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "A contemporaneous study strongly supports unreliable chess legality for one GPT-3.5 chat model. The full claim also asserts direct exposure to chess rules during training, which the retrieved documentation does not establish. Model choice and prompting further limit generalisation. The compound claim therefore remains unresolved; the demonstrated legality failures are not in doubt for the tested setup.",
+  "limitations": [
+   "Behavioural knowledge of rules is not proof of training-set membership.",
+   "A result for one chat snapshot cannot establish the performance of the entire GPT family.",
+   "No verified contradictory outcome item was obtained; missing support for a component is not evidence that it is false."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "an illegal move",
+    "locator": "Section 2.3, Baseline Performance",
+    "url": "https://arxiv.org/html/2308.15118v1",
+    "publisher": "arXiv; Mu-Tien Kuo, Chih-Chung Hsueh, and Richard Tzong-Han Tsai",
+    "event_date": "2023",
+    "available_at": "2023-08-29",
+    "explanation": "The study tested gpt-3.5-turbo-0301 over 1,000 baseline games and found frequent illegal moves. It supports the rule-following component for that model and protocol, but cannot establish the contents of its training corpus or every GPT version's performance."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "capabilities, limitations, and safety",
+    "locator": "Section 2, Scope and Limitations of this Technical Report",
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "publisher": "OpenAI, via arXiv",
+    "event_date": "2023-03",
+    "available_at": "2023-03-15",
+    "explanation": "The section describes broad training-data categories but expressly withholds further dataset-construction details. It supplies no confirmation that explicit chess rules appeared in training, leaving that component unverified rather than disproved."
+   }
+  ],
+  "what_would_resolve": "Training records confirming explicit chess-rule exposure for an identified contemporary model, together with reproducible legality tests covering that model and ordinary prompting. Alternatively, authoritative records refuting the training assertion would settle that component against the claim.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "824f0aaee6ccfeaf56600ffde5f92c56f86940db83791d036bf757a895690132",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:42:11Z"
+}

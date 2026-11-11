@@ -1,0 +1,38 @@
+claim_id: wyea-expectations-versus-reality-aabc01
+version: 1
+claim_revision_ref:
+  id: wyea-expectations-versus-reality-aabc01
+  version: 1
+  content_hash: a96ea4a3e86b0f323f4edc4d451d75c7195e02c2d9649a113134e502f6f5a497
+assessment_axis: forecast_outcome
+explicit_source_elements:
+  - If, say, Uber changes the layout of its website
+  - changes the flow of certain actions
+  - it would effectively break that entire part of the service
+evaluator_interpretation:
+  - This concerns the website-driven integrations described in the post, rather than every later version of Rabbit's software.
+  - A qualifying change affects a supported task's interface or sequence of steps. Breaking means that the affected integration can no longer complete that task.
+  - A failure must be linked to the interface change. An outage, authentication problem, or retired integration alone does not establish that link.
+support_condition: A documented supported-site interface change causes the corresponding R1 integration to stop completing the affected task, with recovery requiring changes to Rabbit's integration.
+contradiction_condition: A documented relevant interface change leaves the affected integration working without an integration-specific repair, contradicting the categorical prediction for that case.
+measurement_requirements: Dated interface changes, identification of the affected integration version, and comparable task results before and after the change. Repair records should distinguish interface adaptation from unrelated fixes.
+source_requirements: Prefer service release records, Rabbit incident reports, code changes, or reproducible independent tests. General explanations of script fragility are insufficient.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period: null
+condition_status: unknown
+early_resolution_rule: A dated interface-change event and paired integration results may settle the conditional prediction without waiting for a deadline, provided they establish whether the change caused failure.
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - No deadline.
+  - The size and type of qualifying interface change are unspecified.
+  - It is unclear whether the categorical wording covers every change or substantial changes to the affected workflow.
+  - Later replacement integrations may fall outside the architecture being discussed.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T11:21:55Z
+frozen_at: 2026-10-29T11:21:55Z
+policy_version: 2026-10-28.7
+content_hash: 83db17021025b08def5687a20fac88200c58ed6984627240303a6cdd1626c422

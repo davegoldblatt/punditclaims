@@ -1,0 +1,173 @@
+{
+ "run_id": "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-humans-versus-machines-the-hallucination-47c312": "06a6ef44782bd6a036b5c15b4e05e4f25c7242c96dd54b5fc185b43260984119",
+  "case:marcus-humans-versus-machines-the-hallucination-55d75c": "de720f95f247234bb64c11781f77352b2c6fd6a8dcdfb287dff4dacc0697e6cc",
+  "case:marcus-humans-versus-machines-the-hallucination-5d4b70": "2084ed98053dccbd56adb756a64eff497447bbd113fe3cab11eeba69461a5064"
+ },
+ "started_at": "2026-10-29T07:32:10Z",
+ "completed_at": "2026-10-29T07:34:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states this directly in his own explanation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithfully identifies statistical generalization as a cause of hallucinations, without requiring it to explain every hallucination."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading generalization as statistical learning and prediction is ordinary in this context. The criteria fairly test whether that process produces errors even without faulty training data."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Establishes a statistical hallucination mechanism with error-free data under calibration assumptions, specifically for arbitrary facts. It does not establish the same necessity for repeated or systematic facts."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's research explanation links next-word prediction to hallucinations on arbitrary, infrequent facts. This is a company research disclosure, not independent confirmation."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Abstention can prevent hallucinated answers. That limits claims of inevitability but does not negate the identified causal mechanism."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The research supports statistical prediction itself producing some hallucinations even with ideal data. Its restrictions to calibrated models and certain facts, and the possibility of abstention, do not contradict the claim that the generalization process also creates hallucinations.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-47c312"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Both assertions are Marcus's own endorsed statements."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Preserves the statistical-generation assertion and the categorical denial of fact-checking."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Counting prompted verification as checking is an ordinary reading of the categorical denial. Marcus supplies no unprompted-only restriction. Including tool-assisted products is more debatable, but the model-based verification evidence does not depend on that extension."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's technical report supports the next-token mechanism for GPT-4. It does not independently establish the mechanism for every LLM or support the denial of fact-checking."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Google disclosed a user-triggered feature checking Bard responses against web information within the target period. This counters the denial for LLM products, though it does not establish autonomous checking by a bare model."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The period-appropriate preprint reports models checking their drafts through independent verification questions and reducing hallucinations. Such checking need not be infallible to counter a categorical denial."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The packet supports statistical next-token generation for GPT-4, while documented verification methods contradict the assertion that LLMs never check their claims. Prompted checking still uses statistical generation; the two mechanisms are compatible. The packet does not establish the generation assertion for every possible LLM.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-55d75c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly endorses the causal explanation and associated assertions."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Preserves the stated causal dependence of lying on intentions, egos and financial interests, and keeps drug use and emotional states as separate assertions."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Marcus explicitly grounds his denial of lying in the absence of intentions. The contract substitutes functional deception while acknowledging that it cannot settle real intentions. That substitution can determine the verdict without testing his stated premise; functional emotion representations present the same problem."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Supports a statistical explanation of ordinary hallucinations. It does not establish the absence of intentions or emotions, or establish that all human and LLM error mechanisms differ."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports strategic concealment by GPT-4 in a simulated trading setting. It contradicts a functional denial of deception, but does not settle the intention-dependent distinction Marcus explicitly invokes."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic reports behaviorally effective emotion representations in a later model, while expressly withholding conclusions about subjective experience. This does not settle Marcus's mental-state assertion."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statistical explanation has support, and functional deception is documented. But scoring the entire proposition requires equating functional behavior with the intentions and emotional states Marcus denies. The packet cannot establish that equivalence, and the contract's substitution is not faithful to his explicit causal framing. This is a definitional scoring problem, not a broken case.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-5d4b70"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24964,
+  "output_tokens": 2745,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 1142
+ },
+ "cost_usd": null
+}

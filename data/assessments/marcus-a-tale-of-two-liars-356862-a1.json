@@ -1,0 +1,130 @@
+{
+ "assessment_id": "marcus-a-tale-of-two-liars-356862-a1",
+ "claim_revision_ref": {
+  "id": "marcus-a-tale-of-two-liars-356862",
+  "version": 1,
+  "content_hash": "9e047db5c886a3418ea56ede9c17a349ed446b3792ea35b84dcdcc437bdb796b"
+ },
+ "contract_ref": {
+  "id": "marcus-a-tale-of-two-liars-356862",
+  "version": 1,
+  "content_hash": "5e509e3cffb8668f0e33bda7bfccd960e9074a3661018fb9003550a4bbf84887"
+ },
+ "packet_ref": {
+  "id": "marcus-a-tale-of-two-liars-356862-p1",
+  "content_hash": "df7e416ca1ff67f592edf1349cf099dbbdd76c56293e5648be95ce411227ae90"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The autocomplete component is supported. Research also makes incomplete factual coverage a credible contributor to errors. However, the controlled coverage experiment examined another model, while the GPT-3 analysis used estimated training-data counts. Later theoretical work supplies context rather than a direct test of the relevant GPT systems. The complete causal claim therefore remains unresolved. Evidence of other error mechanisms would not, by itself, contradict his statement that coverage explains some outputs.",
+ "evidence_ids": [
+  "e3",
+  "e4",
+  "e5"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "This assessment does not interpret finite data as the sole asserted cause.",
+  "Training-data coverage, model scale, and total data volume are different variables.",
+  "Theoretical results and experiments on other models cannot fully establish the GPT-specific attribution."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-a-tale-of-two-liars-356862-3x-review-anthropic-1",
+  "marcus-a-tale-of-two-liars-356862-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-a-tale-of-two-liars-356862-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-a-tale-of-two-liars-356862",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT autocompletes sentences; some outputs are true because training data is vast and some are false because training data is not infinite.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "It autocompletes sentences, some of those completions are true given that the training data is so vast, and some aren’t, given that the training data aren’t infinite.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/a-tale-of-two-liars",
+   "date": "2023-11-22",
+   "document_title": "A Tale of Two Liars",
+   "observed_at": "2026-10-29T00:02:20Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "It autocompletes sentences",
+    "some of those completions are true",
+    "the training data is so vast",
+    "some aren’t",
+    "the training data aren’t infinite"
+   ],
+   "our_interpretation": [
+    "Autocompletes sentences means generating text by predicting successive tokens.",
+    "Vast but finite training data is read as broad but incomplete factual coverage.",
+    "The claim attributes some correct and incorrect outputs to that coverage. It does not expressly say that data coverage is the only cause or that infinite data would guarantee truth.",
+    "The relevant systems are GPT models available when the post appeared."
+   ],
+   "support_condition": "Model documentation confirms successive-token prediction, and evidence establishes that training-data coverage causally contributes to both correct answers and factual errors in the relevant GPT systems.",
+   "contradiction_condition": "Documentation refutes the generation mechanism, or controlled evidence refutes the proposed contribution of training-data coverage. Other causes of errors do not alone contradict this nonexclusive claim."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The autocomplete component is supported. Research also makes incomplete factual coverage a credible contributor to errors. However, the controlled coverage experiment examined another model, while the GPT-3 analysis used estimated training-data counts. Later theoretical work supplies context rather than a direct test of the relevant GPT systems. The complete causal claim therefore remains unresolved. Evidence of other error mechanisms would not, by itself, contradict his statement that coverage explains some outputs.",
+  "limitations": [
+   "This assessment does not interpret finite data as the sole asserted cause.",
+   "Training-data coverage, model scale, and total data volume are different variables.",
+   "Theoretical results and experiments on other models cannot fully establish the GPT-specific attribution."
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "predict the next token",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2303.08774v3",
+    "publisher": "OpenAI, arXiv",
+    "event_date": "2023-03",
+    "available_at": "2023-03-27",
+    "explanation": "This supports the next-token prediction component. It does not establish why particular completions are true or false."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "reduce the dependence",
+    "locator": "Abstract, final sentence; full paper Sections 3.1–3.2 and Appendix A",
+    "url": "https://proceedings.mlr.press/v202/kandpal23a.html",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2023",
+    "available_at": "2023-07-29",
+    "explanation": "The study supports a role for factual coverage, including a controlled removal experiment on a separate model. Its GPT-3 results use estimated training-data counts, so they do not directly isolate the claimed cause in GPT."
+   },
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "reward unwarranted guessing.",
+    "locator": "Abstract",
+    "url": "https://www.nature.com/articles/s41586-026-10549-w",
+    "publisher": "Nature",
+    "event_date": "2026-04-22",
+    "available_at": "2026-04-22",
+    "explanation": "The paper explains how sparse factual support can produce errors and how evaluation incentives can preserve guessing. This supports the plausibility of a coverage mechanism without directly establishing its contribution in the GPT systems discussed in 2023."
+   }
+  ],
+  "what_would_resolve": "GPT-specific controlled experiments that vary relevant factual coverage while holding model size, training objectives, prompting, and evaluation constant.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "70f2f68fdf0c1d65c23c72a8a1600be576fce244fb31f34ffca7026a8b38a247",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:19:21Z"
+}

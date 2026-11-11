@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-a-few-words-about-bullshit-2db47c-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-few-words-about-bullshit-2db47c": "59d3f6b053c78ffdea23f536905b2e5f156cea9b9484d75733369cfd13140e25"
+ },
+ "started_at": "2026-10-29T02:16:55Z",
+ "completed_at": "2026-10-29T02:17:09Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. The tweets he quotes (LeCun, Chapman) are not part of the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Reading 'prevaricates. A lot.' as 'frequently produces false or fabricated content' matches the context about confabulated math and science. The statement is unhedged, so it is a plain observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus gives no measure. The plain reading (a recurring, substantial problem at launch, with no deceptive intent required) is fair and ordinary. It neither asks for a majority-false rate nor counts a single error as enough."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Firsthand prompts and outputs dated Nov 15, 2022. Ordinary questions about the gravitational constant and Venus transits got many fabricated facts: wrong biographies, false mission history, gibberish transit dates. Errors recur across several ordinary prompts."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The developers report low absolute TruthfulQA accuracy. That is a benchmark result, not a fabrication rate in demo outputs, and the testing dates are unspecified."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The paper abstract reports benchmark successes. These show the model was not uniformly wrong, but they do not show that fabrication was rare in generated responses."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "NASA confirms the 2012 Venus transit, which shows that Galactica's '1882 last transit' output was false. This is background fact-checking, not an observation of Galactica."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Launch-day records (e1) show repeated, substantive fabrications across several ordinary scientific prompts, not one isolated failure, which meets the support condition under a fair plain reading. The benchmark successes (e3) do not show fabrication was rare. Prevalence across representative use is not established, but the claim does not require it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-few-words-about-bullshit-2db47c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12255,
+  "output_tokens": 1224,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

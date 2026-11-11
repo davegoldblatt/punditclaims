@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-sorry-genai-is-not-going-to-10x-computer-2b2972-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sorry-genai-is-not-going-to-10x-computer-2b2972": "421470dda646d190a7127a754be878c4527c39cdde4f3c1887f740db60cb1a37"
+ },
+ "started_at": "2026-11-10T01:54:31Z",
+ "completed_at": "2026-11-10T01:54:49Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post, summarising the studies he cites. Not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "This sentence summarises what the evidence then available showed, so 'observation' is the right kind. The headline's forward-looking 'is not going to' is separate. The security and tech-debt costs are kept as possible ('potential'), which matches the source."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'modest' against the tenfold comparison the speaker himself makes is an ordinary plain reading, not stretched. Leaving the hedged security caveat unscored is correct. Limiting the evidence to studies available by 2024-10-01 fits a retrospective summary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Working paper available 2024-09-05 that pooled field experiments with about 4,900 developers and found a 26% output gain, far short of tenfold. Marcus called the 26% a junior-developer figure, but it is the pooled estimate. The slip does not change his point."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Uplevel report, covered on 2024-09-17, so public before the post. It found no meaningful change in efficiency metrics across about 785 developers. Its bug-rate finding is not used to score the hedged caveat."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "2023 controlled experiment on a single task: developers finished 55.8% faster. That is the strongest positive result, and it limits how far 'modest' can be taken in ordinary usage. Still, it is a task-time measure and nowhere near tenfold, so under the contract's comparative reading it supports the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The studies available before 2024-10-01 show gains from none (Uplevel), to about 26% in output (Cui et al.), to 55.8% task speed in one narrow experiment. None comes close to tenfold. Under the contract's fair comparative reading, Marcus's summary of modest gains, not 10x, is accurate. The 55.8% result sits at the edge of 'modest' in everyday terms but does not meet the contradiction condition. The security and tech-debt caveat is hedged and was not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sorry-genai-is-not-going-to-10x-computer-2b2972"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12187,
+  "output_tokens": 1846,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

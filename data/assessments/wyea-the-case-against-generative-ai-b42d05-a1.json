@@ -1,0 +1,133 @@
+{
+ "assessment_id": "wyea-the-case-against-generative-ai-b42d05-a1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-b42d05",
+  "version": 1,
+  "content_hash": "41e75662989ae064f13d2e02f1102b11d99e01bf1909a39e79172cac6d7b407b"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-b42d05",
+  "version": 1,
+  "content_hash": "a58c411f640e420f22f4fd7ece2dce820a3697e78bf8b6fc5ba174f60dea5a12"
+ },
+ "packet_ref": {
+  "id": "wyea-the-case-against-generative-ai-b42d05-p1",
+  "content_hash": "16d61fdbfba603e20104ba4943caeba91eb1e8221679829add77751a7339b7c4"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Controlled research supports increased failures at higher complexity in some tasks. Follow-up experiments show that tools and test design materially affect those results. This supports the narrower concern about errors but does not settle the claimed fatal consequence for agents. Calling the whole claim supported would overstate the evidence; calling it contradicted would overlook the documented failures.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "Puzzle performance is not a direct measure of practical autonomous work.",
+  "The cited studies are preprints.",
+  "The speaker supplies no operational meaning for 'fatal'."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-case-against-generative-ai-a9057b-4x-review-anthropic-1",
+  "wyea-the-case-against-generative-ai-a9057b-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-the-case-against-generative-ai-a9057b-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-case-against-generative-ai-b42d05",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLM hallucinations multiply with task complexity and multi-step tasks, which is fatal to the idea of agents.",
+  "kind": "causal",
+  "conditions": [
+   "complex or multi-step tasks"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "You do not know what you’re going to get each time, and hallucinations multiply with the complexity of the thing you’re asking for, or whether a task contains multiple steps (which is a fatal blow to the idea of “agents.”",
+   "locator": "paragraph 97",
+   "url": "https://www.wheresyoured.at/the-case-against-generative-ai",
+   "date": "2025-09-29",
+   "document_title": "The Case Against Generative AI",
+   "observed_at": "2026-10-28T22:26:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "hallucinations multiply with the complexity",
+    "a task contains multiple steps",
+    "a fatal blow to the idea of “agents.”"
+   ],
+   "our_interpretation": [
+    "The surrounding text expressly includes reasoning, instruction-following and task-execution errors within 'hallucinations'.",
+    "'Multiply' means errors become more prevalent as complexity or step count increases; no numerical multiplier is specified.",
+    "The ordinary reading of 'fatal blow' is that error accumulation prevents agents from completing useful autonomous work reliably. Occasional failures alone do not establish this.",
+    "Assess the causal argument about systems available at publication, rather than an unstated prediction about all future systems."
+   ],
+   "support_condition": "Controlled comparisons show increasing complexity or step count causes more errors, and evidence establishes that these errors prevent reliable useful autonomous work despite available methods of checking and recovery.",
+   "contradiction_condition": "Controlled comparisons undermine the proposed relationship, or repeated evaluations demonstrate reliable useful autonomous work despite complexity and multiple steps, sufficient to refute the claimed fatal consequence."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Controlled research supports increased failures at higher complexity in some tasks. Follow-up experiments show that tools and test design materially affect those results. This supports the narrower concern about errors but does not settle the claimed fatal consequence for agents. Calling the whole claim supported would overstate the evidence; calling it contradicted would overlook the documented failures.",
+  "limitations": [
+   "Puzzle performance is not a direct measure of practical autonomous work.",
+   "The cited studies are preprints.",
+   "The speaker supplies no operational meaning for 'fatal'."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "complete accuracy collapse",
+    "locator": "Abstract, results of controlled puzzle experiments",
+    "url": "https://arxiv.org/abs/2506.06941v1",
+    "publisher": "Shojaee et al., arXiv",
+    "event_date": "2025-06",
+    "available_at": "2025-06-07",
+    "explanation": "Supports the complexity-related error claim in the tested puzzles. It does not establish that errors are fatal to practical agents."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "proper tool use",
+    "locator": "Abstract, results",
+    "url": "https://arxiv.org/abs/2507.17699",
+    "publisher": "Song, Yue and Zhang, arXiv",
+    "event_date": "2025-07",
+    "available_at": "2025-07-23",
+    "explanation": "Tool-assisted results caution against treating unassisted puzzle failures as an intrinsic limit on agents. Relative improvement does not itself establish reliable autonomous work."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "over 100 agent pairs",
+    "locator": "Abstract, River Crossing replication",
+    "url": "https://arxiv.org/abs/2507.01231",
+    "publisher": "Dellibarda Varela et al., arXiv",
+    "event_date": "2025-07",
+    "available_at": "2025-07-01",
+    "explanation": "Some apparent complexity failures depended on unsolvable test configurations. The agent pairs here are puzzle participants, not deployed AI agents."
+   }
+  ],
+  "what_would_resolve": "Repeated controlled evaluations of representative autonomous tasks, with explicit reliability requirements and error-recovery methods, showing whether increasing complexity prevents agents from meeting those requirements.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "fd5dc3360a6c4421f9d600c555fa4ecc580a6bb04cd9192a438c66a68a42ed72",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T18:13:55Z"
+}

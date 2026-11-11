@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-wheres-the-money-60d8a5-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-60d8a5",
+  "version": 2,
+  "content_hash": "ffd53d1d74670b5c54f0861f82a23fbb966b68fea9d5b84ec22459c9cd123855"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-60d8a5",
+  "version": 1,
+  "content_hash": "6b8e7108c0ab44d606b162ab0af2fbb1dd681988bd6f84f3048aaa08c04404aa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI January 2025 15.5 million paying subscribers ChatGPT Pro losing money Plus margins",
+   "\"ChatGPT\" \"339 million\" \"January\" Sensor Tower",
+   "\"ChatGPT\" \"15.5 million\" \"January 31\" subscribers",
+   "site.similarweb.com \"ChatGPT\" \"January 2025\" \"246\"",
+   "Sam Altman \"insane thing\" \"currently losing money\" January 2025 x.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://x.com/sama/status/1876104315296968813",
+    "used": true,
+    "why": "Read successfully. Primary statement about Pro-tier losses, with a narrower scope than the claim."
+   },
+   {
+    "url": "https://the-decoder.com/chatgpt-hits-nearly-4-billion-monthly-visitors-as-growth-slows-to-a-crawl/",
+    "used": true,
+    "why": "Read successfully. Secondary confirmation that the subscriber figure describes year-end 2024; used only as context."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/chatgpt-subscribers-nearly-tripled-to-15-5-million-in-2024",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search snippets were not used as evidence."
+   },
+   {
+    "url": "https://info-reader-production.herokuapp.com/articles/chatgpt-subscribers-nearly-tripled-to-15-5-million-in-2024",
+    "used": false,
+    "why": "The returned text contained only a title, byline, and subscription prompt."
+   },
+   {
+    "url": "https://techcrunch.com/2025/01/05/OpenAI-is-losing-money-on-its-pricey-chatgpt-pro-plan-ceo-sam-altman-says/",
+    "used": false,
+    "why": "Read successfully, but replaced by the directly readable statement from Altman."
+   }
+  ],
+  "performed_at": "2026-10-29T22:24:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "x-com-sama-status-1876104315296968813",
+   "source_snapshot_id": "46d9985a35aedcc19b23a679a622f0f1c6559da84081bf0b7db7a26beef91602",
+   "publisher": "Sam Altman",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/sama/status/1876104315296968813",
+   "locator": "Post text, first sentence",
+   "receipt": {
+    "public_excerpt": "we are currently losing money on openai pro subscriptions!",
+    "quote_hash": "c61f6834ac45818b15ecdeccacae3f9780e91998fffd361053f517488a3efddd",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-06",
+   "available_at": "2025-01-06",
+   "retrieved_at": "2026-10-29T10:54:39Z",
+   "relation": "context",
+   "explanation": "Altman reports losses on Pro subscriptions collectively. This does not establish losses on every Pro subscriber, other paying tiers, or every ChatGPT user.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Aggregate profit or loss on ChatGPT Pro subscriptions",
+    "currency": null,
+    "units": null,
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": "2025-01-06",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "the-decoder-com-chatgpt-hits-nearly-4-billion-monthly-visitors-as-g-8420c1202f4c",
+   "source_snapshot_id": "ffb28fd6e30cdad715343c8446d3ca4de475f979cbd111f42951912e4de32055",
+   "publisher": "The Decoder",
+   "source_type": "news_report",
+   "url": "https://the-decoder.com/chatgpt-hits-nearly-4-billion-monthly-visitors-as-growth-slows-to-a-crawl",
+   "locator": "Paragraph beginning ChatGPT reportedly ended 2024",
+   "receipt": {
+    "public_excerpt": "15.5 million paying subscribers",
+    "quote_hash": "d44a2b43efd75b73b728f1b3a9d6d1be3c98094a53c40601409d8e304ed3afee",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-03-09",
+   "retrieved_at": "2026-10-29T22:17:49Z",
+   "relation": "context",
+   "explanation": "This secondary report places the numerator at year-end 2024, outside the selected January period. The calculation below uses the speaker's denominator assumptions, not independently verified audience counts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "15.5 million paying subscribers",
+     "600 million monthly users: upper endpoint assumed in the supplied claim",
+     "500 million monthly users: lower endpoint assumed in the supplied claim"
+    ],
+    "formula": "100 × 15.5 / 600 = 2.583333...%; 100 × 15.5 / 500 = 3.1%",
+    "rounding": "The upper-denominator result rounds to 2.583% at three decimal places."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No verified, deduplicated January monthly-user denominator was obtained.",
+  "The reported subscriber numerator describes a different period.",
+  "No customer-level profitability distribution or cost-allocation basis was found.",
+  "The claim's accounting basis is unknown, preventing a supported or contradicted financial judgment."
+ ],
+ "packet_hash": "b13b2f1e3b885274bcb1a6a2a3a7822043c5a71e4ed20598f57073681e52d45d"
+}

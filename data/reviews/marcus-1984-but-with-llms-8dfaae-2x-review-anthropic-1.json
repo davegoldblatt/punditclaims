@@ -1,0 +1,125 @@
+{
+ "run_id": "marcus-1984-but-with-llms-8dfaae-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-1984-but-with-llms-8dfaae": "fd809b661b1e2bceff7156c4b83737977e023c40682dd3abb2c460d6d546329b",
+  "case:marcus-1984-but-with-llms-bbafdd": "e98e6465fc2822ce2f1779b163912aa5981477bcd53f72bfb73539f0e8a3da83"
+ },
+ "started_at": "2026-11-09T19:33:58Z",
+ "completed_at": "2026-11-09T19:34:25Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post. He shows Musk's plan, but the prediction is in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Is going to rewrite history' is firm language. In context it means Musk will rewrite Grok's training data to match his views. The antecedent (Musk's dissatisfaction with Grok) is kept as a qualifier. No deadline is given."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'rewrite history' as deliberately revising Grok's training material is a fair, ordinary reading of the passage. Requiring actual implementation, not just an announcement, and having no deadline both match the wording."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated June 18, 2025 report of Musk calling a Grok political answer a 'major fail'. It establishes the antecedent (dissatisfaction), not the predicted outcome."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Musk's June 21, 2025 post announcing a plan to rewrite the corpus and retrain. It shows intent, not implementation. This is the speaker's source material, so it cannot prove the forecast."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "xAI's August 2026 training disclosure for Grok 4.6 describes generated technical data and regenerated SFT trajectories. It shows no rewritten historical material and no abandonment."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "July 2026 audit finding that Grokipedia leans right compared with Wikipedia. It does not show that Grokipedia was used as rewritten Grok training data."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a firm, open-ended forecast. The antecedent is met. But no evidence by the cutoff documents Grok training data rewritten to match Musk's views, and no evidence shows the plan was explicitly abandoned. The Grokipedia audit and xAI's training disclosures are only context. With no deadline and neither resolution condition met, the outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-1984-but-with-llms-8dfaae"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'pretty hard', 'stands out from the pack', the same-data scope, and the fine-tuning exception. The accuracy clause is hedged ('likely'), and the proposition rightly keeps it hedged."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": false,
+     "note": "Reading 'stands out' as political differentiation is fair given the context. But both the support and contradiction conditions test the hedged 'likely reduce accuracy' clause, and under the policy that clause should not be scored. Only the core difficulty claim is scorable. The outcome is unresolved either way."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Feb 2025 study finding open-source LLMs similarly biased in a German setting. It does not show the models shared training data, and it does not measure how hard differentiation is."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2024 PoliTune paper on aligning LLMs to chosen ideologies with parameter-efficient fine-tuning. That falls inside the speaker's fine-tuning exception. The excerpt does not settle difficulty or accuracy cost."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The core claim is that, with shared data, politically differentiating an LLM is hard without fine-tuning. No evidence holds training data constant and measures that difficulty for models of June 2025. The clustering study and PoliTune are context only. The hedged accuracy clause is not scored. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-1984-but-with-llms-bbafdd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 18565,
+  "output_tokens": 2748,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

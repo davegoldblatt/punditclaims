@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-expectations-versus-reality-f2bbd3-p1",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-f2bbd3",
+  "version": 1,
+  "content_hash": "7d3a91d379492fc7f30ba3e41959661087e22b51c7f382865937dd71d228bb3f"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-f2bbd3",
+  "version": 1,
+  "content_hash": "8a4dc56db5faff5d7659a25cfbc7674610c25f841f57cd478bd6fd86a23ba7aa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "WebVoyager 2024 arxiv 59.1",
+   "2013 IBM Watson DeepQA question answering documents",
+   "site.aaai.org \"Building Watson\" DeepQA 2010",
+   "site.ibm.com Watson 2011 \"documents\" question answering"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2401.13919v1",
+    "used": true,
+    "why": "Original agent paper documents browser actions and end-to-end evaluation before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.13919v1",
+    "used": true,
+    "why": "Verifies the January 2024 release and its original reported success rate."
+   },
+   {
+    "url": "https://logicprogramming.org/2011/03/natural-language-processing-with-prolog-in-the-ibm-watson-system/",
+    "used": true,
+    "why": "Dated technical account by researchers, including an IBM Watson researcher, describing answers derived from textual evidence."
+   },
+   {
+    "url": "https://research.ibm.com/publications/building-watson-an-overview-of-the-deepqa-project",
+    "used": false,
+    "why": "read_page returned unrelated publication content."
+   }
+  ],
+  "performed_at": "2026-10-29T11:24:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2401-13919v1",
+   "source_snapshot_id": "16c8544204cdeef032b700b4731dc7d6d8fa116f84186169d455a30c82a1e23f",
+   "publisher": "Hongliang He and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2401.13919v1",
+   "locator": "Section 3, WebVoyager",
+   "receipt": {
+    "public_excerpt": "browser environment",
+    "quote_hash": "b0e55361199a57cb240ef1db26831c6ecdbce4826128445a870b2ab2a51610a1",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-25",
+   "available_at": "2024-01-25",
+   "retrieved_at": "2026-10-29T11:18:39Z",
+   "relation": "contradicts",
+   "explanation": "WebVoyager observes websites, chooses actions and executes them through a browser, with an evaluation reporting 55.7% task success in this original version. Those interactive capabilities exceed answering questions from a supplied document, even though reliability was incomplete.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "logicprogramming-org-2011-03-natural-language-processing-with-prolo-b393b739d7f2",
+   "source_snapshot_id": "24ae542de567366ac2da4ab25b35318a404937232c67f1ddbb76f67f37f5f23b",
+   "publisher": "Association for Logic Programming; Adam Lally and Paul Fodor",
+   "source_type": "company_disclosure",
+   "url": "https://logicprogramming.org/2011/03/natural-language-processing-with-prolog-in-the-ibm-watson-system",
+   "locator": "Opening explanation of question answering, following the abstract",
+   "receipt": {
+    "public_excerpt": "precise answer",
+    "quote_hash": "97094604d9f3778c2018a4b7ac8f00b014478d7d30c486513cde5c39ee472c9d",
+    "verified": "exact"
+   },
+   "event_date": "2011-02",
+   "available_at": "2011-03-31",
+   "retrieved_at": "2026-10-29T11:18:39Z",
+   "relation": "supports",
+   "explanation": "The authors describe Watson's February 2011 system deriving answers using unstructured text and matching evidence from passages. This establishes the document-question-answering capability more than a decade before the post, without establishing equivalence to modern agent architectures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The post does not specify which marketed products belong to the group it describes.",
+  "The historical evidence establishes the age of a capability, not identity between old and new implementations."
+ ],
+ "packet_hash": "435e8f413e2d2e2b6a7e1861f977e0e37a7109719bffb1080f751554ab1ff8ae"
+}

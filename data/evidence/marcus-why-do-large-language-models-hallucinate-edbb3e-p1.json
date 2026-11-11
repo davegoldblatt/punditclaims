@@ -1,0 +1,85 @@
+{
+ "packet_id": "marcus-why-do-large-language-models-hallucinate-edbb3e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-edbb3e",
+  "version": 1,
+  "content_hash": "b2daac3d862c6c375ed31e3747a01610f36f0e901a6287750fabaaac385afdc9"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-edbb3e",
+  "version": 1,
+  "content_hash": "63b89dc86bac04806ad3d174343354da7eb53649d883fd700fe7ca19ba055426"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM Wikipedia factual accuracy benchmark 2025 FACTSCORE",
+   "site.arxiv.org 2025 Wikipedia factuality benchmark hallucination May",
+   "\"Llama 3\" \"Wikipedia\" \"training\" paper",
+   "\"Qwen2.5\" \"Wikipedia\" \"training data\"",
+   "\"Gemma 2\" \"Wikipedia\" training data",
+   "\"GPT-4o\" \"Wikipedia\" \"memorization\" paper 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2504.17550v1",
+    "used": true,
+    "why": "HalluLens directly evaluates answers against Wikipedia and explicitly states its training-exposure assumption."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2504.17550",
+    "used": true,
+    "why": "Read to inspect the numerical results in Table 2."
+   },
+   {
+    "url": "https://arxiv.org/html/2407.21783v1",
+    "used": false,
+    "why": "The retrieved Wikipedia passage concerns a quality classifier, not confirmation that the evaluated Wikipedia articles were in model training."
+   },
+   {
+    "url": "https://arxiv.org/html/2412.15115v1",
+    "used": false,
+    "why": "The inspected Qwen2.5 report passages did not establish relevant Wikipedia exposure."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.19786v1",
+    "used": false,
+    "why": "Gemma 3 documentation does not establish training exposure for the Gemma 2 models evaluated in HalluLens."
+   }
+  ],
+  "performed_at": "2026-10-29T09:48:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2504-17550v1",
+   "source_snapshot_id": "7065b61bcedb995b69aeaff033620f68e424b0ea18b6d1fb3b0bbc7957746ba7",
+   "publisher": "Yejin Bang and colleagues / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2504.17550v1",
+   "locator": "Section 3.1.3, PreciseWikiQA results; Table 2 in PDF",
+   "receipt": {
+    "public_excerpt": "but often refuses.",
+    "quote_hash": "10893c8d8e07766b7748404a58a34354d62429f4e4205ede5b931dc754def0cb",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-04-24",
+   "retrieved_at": "2026-10-29T08:54:24Z",
+   "relation": "supports",
+   "explanation": "The reported evaluation strongly supports the factual-fidelity concern: even the lowest non-refusal error rate was 26.84%. However, the benchmark assumes Wikipedia training exposure rather than verifying it, leaving the full training-linked proposition unsettled.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "Relevant Wikipedia training exposure was assumed by the benchmark and was not independently verified for the evaluated models.",
+  "The evidence does not separately evaluate whether deviations were justified.",
+  "Exact experiment dates are not disclosed; the evidence item uses the report year.",
+  "The benchmark does not establish a population-wide rate for ordinary Wikipedia questions."
+ ],
+ "packet_hash": "3ea73495c92250cb3164955a8cc22f4f66dd0d4e5188f8f569c580675702a2de"
+}

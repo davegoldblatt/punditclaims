@@ -1,0 +1,106 @@
+{
+ "assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-ae5cd0-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-ae5cd0",
+  "version": 1,
+  "content_hash": "368b3e4301ff8424253cfa9be126fd989312d722c95dd4733f215a3a70b01331"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-ae5cd0",
+  "version": 1,
+  "content_hash": "0bc47f88139b02b02888cea04edcc0fcaefc14ee9d8ca320d7ceea6a1d0ff33c"
+ },
+ "packet_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-ae5cd0-p1",
+  "content_hash": "6a6f09c46e1c88a9f8deb4f50d620792d0fa6789384762bde28b26cd1d71fc17"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The PAL execution ablation demonstrates the modest claim Marcus makes. Performance fell substantially when the model had to simulate execution instead of using the Python runtime. That establishes a benefit from combining neural generation with symbolic execution on the tested tasks.",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The finding concerns specific benchmarks and models.",
+  "The classification as neurosymbolic uses the broad workflow meaning supplied by Marcus's example.",
+  "It does not establish general architectural superiority or historical influence."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-a564b3-4x-review-anthropic-1",
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-a564b3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-a564b3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-ae5cd0",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Importing neurosymbolic ideas, including symbolic algorithms in the workflow, has worked to some degree.",
+  "kind": "observation",
+  "conditions": [
+   "to some degree"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "What has worked—to some degree—is importing some of the ideas from neurosymbolic AI, including using purely symbolic algorithms as a direct part of the workflow.",
+   "locator": "paragraph 74",
+   "url": "https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated",
+   "date": "2025-07-13",
+   "document_title": "How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI",
+   "observed_at": "2026-10-28T23:56:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "What has worked—to some degree",
+    "importing some of the ideas from neurosymbolic AI",
+    "using purely symbolic algorithms as a direct part of the workflow"
+   ],
+   "our_interpretation": [
+    "'Worked to some degree' means demonstrated gains on at least some tasks when a language model uses an executable symbolic tool.",
+    "The context supplies Python execution as a concrete example. No general superiority across tasks or historical debt to particular researchers is required.",
+    "'To some degree' limits the strength of the claim; it is not a conditional antecedent.",
+    "Assess evidence of benefits already demonstrated by the post date."
+   ],
+   "support_condition": "A controlled comparison shows improved task performance when a language model's generated programs are executed by a symbolic runtime.",
+   "contradiction_condition": "Relevant controlled comparisons establish that the supposed benefit disappears when other changes are controlled, with no demonstrated benefit from symbolic execution."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The PAL execution ablation demonstrates the modest claim Marcus makes. Performance fell substantially when the model had to simulate execution instead of using the Python runtime. That establishes a benefit from combining neural generation with symbolic execution on the tested tasks.",
+  "limitations": [
+   "The finding concerns specific benchmarks and models.",
+   "The classification as neurosymbolic uses the broad workflow meaning supplied by Marcus's example.",
+   "It does not establish general architectural superiority or historical influence."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "solve rate drops",
+    "locator": "Appendix B, 'Generating the answer directly', and Table 6",
+    "url": "https://proceedings.mlr.press/v202/gao23f/gao23f.pdf",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2023",
+    "available_at": "2023-07-23",
+    "explanation": "Table 6 reports a 72.0 solve rate with PAL and 23.2 when the language model simulates the runtime; chain-of-thought scores 65.6. This ablation supports a causal benefit from executing the generated program in this setting."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "53815c613a7f554f6360465a54470d9d879e5fc4213b9d4dd99a028e7739f19c",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:34:32Z"
+}

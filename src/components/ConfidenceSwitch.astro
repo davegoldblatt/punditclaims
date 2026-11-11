@@ -1,0 +1,24 @@
+---
+// How sure the answers on this page are (docs/adr/0006). Three radio buttons,
+// strict first and checked. The stylesheet shows the matching level in every
+// answer on the page with :has(). Without :has() support the switch hides
+// itself and the page stays on strict, so the hero and Explore never disagree.
+---
+<fieldset class="conf">
+  <legend>How sure?</legend>
+  <div class="conf-options">
+    <input type="radio" name="conf" id="conf-strict" value="strict" checked /><label for="conf-strict">Strict</label>
+    <input type="radio" name="conf" id="conf-reasonable" value="reasonable" /><label for="conf-reasonable">Reasonable</label>
+    <input type="radio" name="conf" id="conf-speculative" value="speculative" /><label for="conf-speculative">Speculative</label>
+  </div>
+  <p class="conf-help lvl-strict">Strict: only claims where the evidence is clear. Two AIs from different companies must agree.</p>
+  <p class="conf-help lvl-reasonable">Reasonable: adds claims both AIs think are probably right or wrong, though the evidence isn’t conclusive.</p>
+  <p class="conf-help lvl-speculative">Speculative: also adds claims where only one AI makes a call. Treat these as guesses.</p>
+</fieldset>
+<script>
+  if (typeof CSS === "undefined" || !CSS.supports("selector(:has(*))")) {
+    for (const f of document.querySelectorAll<HTMLElement>("fieldset.conf")) f.hidden = true;
+    const strict = document.getElementById("conf-strict") as HTMLInputElement | null;
+    if (strict) strict.checked = true;
+  }
+</script>

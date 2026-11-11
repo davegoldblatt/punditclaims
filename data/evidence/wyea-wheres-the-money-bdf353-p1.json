@@ -1,0 +1,116 @@
+{
+ "packet_id": "wyea-wheres-the-money-bdf353-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-bdf353",
+  "version": 1,
+  "content_hash": "dd8af8b41e7dafe11f2a63814edfb926b17963e266ba5a1e052baa3b38d835f3"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-bdf353",
+  "version": 1,
+  "content_hash": "9146fdc659bb8de98635582380bc79da42d67b4ee85d9ea7138e250d70268ff5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2024 918 million 5.6 billion cash burn Information February 2025",
+   "\"Anthropic\" \"5.6 billion\" \"2025\" -site:reddit.com -site:wheresyoured.at",
+   "\"Anthropic\" \"cash burn\" \"February\" \"2025\" Reuters",
+   "Anthropic cash burn February 13 2025 Reuters The Information 2027",
+   "site.epoch.ai will we run out data 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available October 26, 2026. It contains historical consolidated accounts, which provide context but have a different scope and accounting basis."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/anthropic-sees-revenue-potentially-soaring-002016692.html",
+    "used": false,
+    "why": "Read Reuters' account of reported cash burn. Cash burn is not the model-profit metric, and the primary filing provides stronger financial context."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-projects-soaring-growth-to-34-5-billion-in-2027-revenue",
+    "used": false,
+    "why": "read_page returned HTTP 403; not used as evidence."
+   },
+   {
+    "url": "https://arxiv.org/abs/2211.04325",
+    "used": true,
+    "why": "Primary research identifies possible ways around public-text limits, but does not establish Anthropic's inventories."
+   }
+  ],
+  "performed_at": "2026-11-10T01:48:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk factors, page 64; historical amounts also appear in Summary Consolidated Financial and Other Data",
+   "receipt": {
+    "public_excerpt": "We have a history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing includes audited 2024 consolidated losses, supporting the background concern about company finances. Consolidated GAAP losses do not establish the claimed estimated profitability of its models or inevitable financial failure.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Consolidated net loss",
+    "currency": "USD",
+    "units": "millions of dollars",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2211-04325",
+   "source_snapshot_id": "b6ad0918a8361cc642f56185a660a8d9501157cd37f052d8f0610cf7748aadc8",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2211.04325",
+   "locator": "Abstract, final sentence",
+   "receipt": {
+    "public_excerpt": "synthetic data generation, transfer learning from data-rich domains, and data efficiency improvements might support further progress.",
+    "quote_hash": "15bc30ee10e0e5cbda91e23d5318615d2cc30c5b947a2071b0b23fd200593966",
+    "verified": "exact"
+   },
+   "event_date": "2024-06-04",
+   "available_at": "2024-06-04",
+   "retrieved_at": "2026-10-29T11:55:05Z",
+   "relation": "context",
+   "explanation": "The research identifies possible alternatives to expanding human-written text datasets. This limits conclusions about unavoidable dependence on exhausted inputs, without proving that Anthropic had solved its data constraints.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matching model-business profit calculation with allocated training and serving costs was established.",
+  "No dated inventory establishes Anthropic's remaining required training data at publication.",
+  "The OpenAI comparison is not established by the selected evidence.",
+  "The compound claim spans different metrics and periods."
+ ],
+ "packet_hash": "c7f37646a0166ceee4e83b37f83d7b6685b987995f79a187b59e5a0845b48c03"
+}

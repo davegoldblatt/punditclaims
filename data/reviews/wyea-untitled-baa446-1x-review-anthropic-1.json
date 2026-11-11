@@ -1,0 +1,83 @@
+{
+ "run_id": "wyea-untitled-baa446-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-untitled-baa446": "f9c067e065af46e9d7edb1da417fd0a48201537536e9eb66ad713f861af6f50e"
+ },
+ "started_at": "2026-10-31T21:44:20Z",
+ "completed_at": "2026-10-31T21:44:36Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own post. The revenue figure is attributed to The Information, but 'remains deeply unprofitable' and the per-search loss line are his own claims."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the cited report, the unprofitability claim and the Apple counterfactual. It is stated as a present-tense observation, which is right for 'remains deeply unprofitable'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'deeply unprofitable' as a multi-billion-dollar loss, or one that is large relative to revenue, is ordinary and fair. Using calendar 2024 fits his reference to that year. Leaving the 'every search' counterfactual unscored is reasonable because it names no payment and no per-query data exists."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "CNBC, Sept 2024, based on company documents seen by the NYT: OpenAI expected about a $5B loss on $3.7B revenue in 2024. This is a projection, but it is consistent with the claim."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ars Technica, June 2026, before the evaluation date. Audited 2024 net loss was just over $5B. The documents were obtained by Zitron, but the FT reviewed them too. These are financial statements, not his own assertions."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "2024 cost of revenue ($2.65B) was below revenue ($3.7B). This cuts against a literal reading of 'every search', but that clause is unscored and the Apple hypothetical can't be checked."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Confirms The Information reported $3.4B annualized revenue in June 2024, which matches his reference."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenAI's 2024 net loss was just over $5B on $3.7B revenue, according to audited figures reviewed by the FT and reported by Ars Technica, and in line with 2024 projections. That meets the plain-reading threshold for 'deeply unprofitable'. The 'lose money on every search' counterfactual is not scored. Gross margin being positive in 2024 is noted as context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-untitled-baa446"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 13148,
+  "output_tokens": 1527,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

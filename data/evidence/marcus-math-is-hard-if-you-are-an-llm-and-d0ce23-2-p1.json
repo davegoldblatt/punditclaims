@@ -1,0 +1,122 @@
+{
+ "packet_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 1,
+  "content_hash": "08b99c88390200b95937949c74eefbac026362aec7a27f93406ec756af285007"
+ },
+ "contract_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 1,
+  "content_hash": "351abb9c2902527657da24ca3e568a787206a885e9bf01e3a3c84ada6605f99d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 language models linear functions regression numerical in context learning LLaMA arithmetic Goat",
+   "transformers learn linear functions in context Garg 2022 multiplication length generalization 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.14201v1",
+    "used": true,
+    "why": "Contemporaneous experiments on an actual fine-tuned LLaMA model, including held-out arithmetic and extrapolation limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.14201",
+    "used": true,
+    "why": "Verified the May 2023 publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2208.01066v3",
+    "used": true,
+    "why": "Relevant direct linear-function experiments, retained as context because the model is a purpose-trained transformer rather than a demonstrated general-purpose LLM."
+   },
+   {
+    "url": "https://arxiv.org/abs/2208.01066",
+    "used": true,
+    "why": "Verified publication and revision dates."
+   }
+  ],
+  "performed_at": "2026-10-29T17:42:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-14201v1",
+   "source_snapshot_id": "508f3c777807a2d9a70805cb47ddb3996b01f8b38b75da9e960e6e5b4333c44d",
+   "publisher": "arXiv; Liu and Low",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.14201v1",
+   "locator": "Section 3.3, Addition and Subtraction; training details in Introduction and Appendix F",
+   "receipt": {
+    "public_excerpt": "The model successfully captures the underlying patterns of the arithmetic operations.",
+    "quote_hash": "8de9854174d6f809d792cbfbbb6d46695cefb8eb70b52446c3d3d5b990aa43f6",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-23",
+   "retrieved_at": "2026-10-29T07:44:34Z",
+   "relation": "contradicts",
+   "explanation": "Goat, a LLaMA model fine-tuned on approximately one million synthetic examples, produces direct addition and subtraction answers with near-perfect accuracy on unseen test data. These are basic linear operations performed without an external calculator.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2305-14201v1",
+   "source_snapshot_id": "508f3c777807a2d9a70805cb47ddb3996b01f8b38b75da9e960e6e5b4333c44d",
+   "publisher": "arXiv; Liu and Low",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.14201v1",
+   "locator": "Section 5.2, Extrapolation",
+   "receipt": {
+    "public_excerpt": "The results reveal that the model has limited extrapolation capabilities.",
+    "quote_hash": "f821c97b1866fabd573c55d001ec854e458095b30e38c577a016e99d6f38032a",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-23",
+   "retrieved_at": "2026-10-29T07:44:34Z",
+   "relation": "context",
+   "explanation": "Addition accuracy declines as test numbers move beyond the training distribution. This supports Marcus's concern about unrestricted reliability, but does not erase the demonstrated learning on unseen examples within the tested domain.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2208-01066v3",
+   "source_snapshot_id": "ae5a949e68c244c6fe329fd8cb66e84fa7b14b3f14c8b83a033ca94578eb92db",
+   "publisher": "arXiv; Garg et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2208.01066v3",
+   "locator": "Introduction, summary of findings; Sections 3.1 and 4",
+   "receipt": {
+    "public_excerpt": "Transformers can in-context learn linear functions.",
+    "quote_hash": "d637705dbf2177605ef50779d7b72f372443a78fa8c900490fd8f43cf3dd7f03",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2023-08-11",
+   "retrieved_at": "2026-10-29T17:27:44Z",
+   "relation": "context",
+   "explanation": "A purpose-trained transformer learns unseen linear functions with performance comparable to least squares and tolerates several distribution shifts. Its different model and training setup make it contextual rather than decisive evidence about pure LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These experiments do not establish perfect accuracy or unlimited extrapolation.",
+  "The phrase 'really get' does not specify whether Marcus requires an identifiable internal algorithm."
+ ],
+ "packet_hash": "2a010bb3caf69358e4dd0844de60b6b27b05c1df92b55345f1237724e69b1cd2"
+}

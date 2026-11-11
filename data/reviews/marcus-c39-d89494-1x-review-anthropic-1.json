@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-c39-d89494-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-c39-d89494": "318a390612b0da22f2752165eefc3483af4c8442b97ca4bf0c658fde4d5e0b47"
+ },
+ "started_at": "2026-10-29T02:38:08Z",
+ "completed_at": "2026-10-29T02:38:20Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, numbered point 2, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The hedged part about what listeners heard ('may have sounded') is rightly left out. The firm part, 'not actually what happened', is a historical observation about how o3 was tested."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'cold' as meaning no ARC-specific training beyond each task's demonstration pairs is a fair, ordinary reading, and it matches Marcus's point 3 about pretraining. Using the ARC Prize report as the required source is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ARC Prize testing report, dated 2024-12-20, before the evaluation date. It relays OpenAI's statement that the tested o3 was trained on 75% of the Public Training set. This is a disclosure from the testing party, which meets the source requirement."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The same report says the scored o3 system was trained on the ARC-AGI-1 Public Training set. That confirms the tested system had ARC-specific training."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The ARC Prize report, written by the organisation that ran the test and relaying OpenAI's own disclosure, says the tested o3 had been trained on ARC public training data. So it did not take the test cold with only a few sample items. The packet contains no counterevidence. How much of the score came from that training is unknown, but the claim does not depend on it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-c39-d89494"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9198,
+  "output_tokens": 979,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

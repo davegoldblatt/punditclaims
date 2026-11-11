@@ -1,0 +1,167 @@
+{
+ "run_id": "wyea-hyperscale-normalization-4919e0-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-hyperscale-normalization-4919e0": "b824d79e25bf384e265bcba45539abdbe71eec79b83a7b2a926ec00e2a4f0f2c",
+  "case:wyea-hyperscale-normalization-94a81f": "afb56eb2c2dfbe3e680815ffdaa3cd9c1cafabdf21e92a618583d89aac453761",
+  "case:wyea-hyperscale-normalization-c24ec4": "7f3dcfefe648e84c6171c5acda28d2d5a145ecc7fb6fe8e87a60ca5f71e676ac"
+ },
+ "started_at": "2026-10-31T20:14:33Z",
+ "completed_at": "2026-10-31T20:15:14Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post, which he endorses. The WSJ quote nearby is a separate passage and is not the basis of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The present-tense 'can't afford' for both companies is kept. The data-center forecast clause in the same sentence is left out, which is right because it is a separate claim. 'This compute' is widened to their contracted compute generally, which matches the surrounding text."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is that neither company can cover its commitments from its own revenue and cash without new financing. That is an ordinary reading of 'can't afford' and is not stretched either way. The stricter reading, that they will be unable to pay, is rightly set aside as a future question. The result depends on accepting this reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters relaying the FT, dated Sept 2026. OpenAI projects $278B of negative free cash flow and expects its raised cash to run out by 2028. So it depends on new financing to pay for compute."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's prospectus, reported Sept 2026: $518B of mostly non-cancellable commitments against about $20B of cash. The cash figure is from end-2025, but the gap is too large for that date difference to matter."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Same-day report saying Anthropic's revenue has not reached the scale its contracts assume. It also calls the arithmetic defensible. It frames the bet but does not measure affordability."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic reports a positive adjusted operating profit (unaudited, relayed). That does not show it can pay hundreds of billions in commitments from its own cash flow, so it does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's plain reading, both companies' commitments far exceed their revenue and cash, and both depend on new outside financing. OpenAI's projected burn and cash runway (e1) and Anthropic's $518B against about $20B of cash (e2) show this. Anthropic's adjusted operating profit (e4) does not show it could pay these commitments itself. The result rests on that reading of 'afford'.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-4919e0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence. The figures come from The Information, but he asserts the conclusion in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful, and 'a chance' is kept. The present-tense loss claim is an observation. 'Necessitates burning billions more' is forward-looking with no date, and the Duolingo comparison is hedged. Neither is scored, which is correct."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Only the firm present claim is scored: losses of hundreds of millions, measured as cash burn of at least about $200M in Q2 2026. That is the period and measure the speaker's own context uses, so the reading is fair and ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Secondary report relaying The Information, dated Aug 2026. It gives about $200M of burn in Q2 2026 and about $800M planned for the year. The note that the core business is near breakeven excluding training costs does not change the total burn."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Duolingo's Q2 2026 results. These bear only on the hedged comparison, which is not scored."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The scored part holds. Credible reporting puts Cognition's Q2 2026 burn at about $200M and its 2026 burn at about $800M, which fits 'loses hundreds of millions'. The 'billions more' and Duolingo parts are forward-looking or hedged and are not scored. The source is unaudited and secondary.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-94a81f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful paraphrase of a claim about the state of collective knowledge. It is phrased as an observation, but it has no testable standard."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly treats 'no real clear understanding' and 'any kind of AI service' as having no standard. The answer would turn on which profit measure counts, and the speaker named none. Treating the claim as not adjudicable is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "AP report: CoreWeave's GAAP net loss in Q2 2026. It shows profit depends on the measure used and cannot settle a claim about what is known."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's adjusted operating profit (unaudited, relayed). It cuts against the claim on one measure only. Context."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim is about whether there is a 'clear understanding' of profitability across an unbounded set of AI businesses, and no standard is given. The evidence shows GAAP losses and adjusted profits side by side, so the answer depends on the measure chosen. That cannot be checked, so the claim is not adjudicable.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-c24ec4"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24648,
+  "output_tokens": 4143,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

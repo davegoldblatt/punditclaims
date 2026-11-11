@@ -1,0 +1,104 @@
+{
+ "packet_id": "marcus-caricaturing-noam-chomsky-016ae2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-016ae2",
+  "version": 1,
+  "content_hash": "3c20d3934104dd51507a6395fb1592ec48af4818fdfdb2c50033c005b4c79235"
+ },
+ "contract_ref": {
+  "id": "marcus-caricaturing-noam-chomsky-016ae2",
+  "version": 1,
+  "content_hash": "e042015c120c469b623209df8f0118459af89cef316f256aaf7b06858b269685"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Minerva language model 4-digit multiplication accuracy",
+   "Minerva PaLM multiplication accuracy drops digits \"Minerva\" arithmetic figure multiplication",
+   "\"Minerva\" \"4-digit multiplication\" OR \"four-digit multiplication\" language model fails"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2206.14858",
+    "used": true,
+    "why": "Primary source. Appendix H and Figure 8 report Minerva's arithmetic accuracy by digits, but the figure's values cannot be read from the text."
+   },
+   {
+    "url": "https://arxiv.org/html/2206.14858v2",
+    "used": false,
+    "why": "The HTML version did not contain the multiplication figure text."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2305.17491",
+    "used": true,
+    "why": "FERMAT paper summarizing Minerva's digit study for multiplication. It is secondary and worded ambiguously."
+   },
+   {
+    "url": "https://www.lesswrong.com/posts/8Ggqf2t8WBtPw33K9/minerva",
+    "used": false,
+    "why": "A blog says Minerva struggles with multiplication. It is not a measurement and is weaker than the other sources."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2310.13016",
+    "used": false,
+    "why": "Reports GPT-4 multiplication results, not Minerva."
+   }
+  ],
+  "performed_at": "2026-10-29T03:05:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2206-14858",
+   "source_snapshot_id": "acd3dac95e6dc293751fc5ace637384a878e47338a7ea2523b74e1043c3e8d67",
+   "publisher": "arXiv (Lewkowycz et al., Google)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2206.14858",
+   "locator": "Appendix H, Arithmetic Results (with Figure 8)",
+   "receipt": {
+    "public_excerpt": "For each operation, and for each choice of number of digits, we sample 500 arithmetic questions at random.",
+    "quote_hash": "9e56d054351125e6439bb9bb62f6c5fe7ae0c59670c986a866df545ca71764c4",
+    "verified": "exact"
+   },
+   "event_date": "2022-06-29",
+   "available_at": "2022-06-29",
+   "retrieved_at": "2026-10-29T02:30:00Z",
+   "relation": "context",
+   "explanation": "Confirms Minerva's multiplication accuracy was measured by number of digits (Figure 8, x-axis 'Average number of digits in solution'). The plotted values are not in the text, so the 4-digit result cannot be quoted.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2305-17491",
+   "source_snapshot_id": "f5f459c44f73b34b8d5ba03cb90ff2472a59064cbe9fbff83811adf6d8a8a68b",
+   "publisher": "arXiv (FERMAT, Sivakumar & Moosavi)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2305.17491",
+   "locator": "Section 2, Related Work",
+   "receipt": {
+    "public_excerpt": "Lewkowycz et al. (2022) conducted a digit study and highlighted that Minerva is unable to per- form any multiplication of numbers with more than seven digits.",
+    "quote_hash": "903b66883b3943bd1934f60d18fdcf22fa9c6cd69db8fee983666896a3c494d9",
+    "verified": "normalized"
+   },
+   "event_date": "2022-06-29",
+   "available_at": "2023-05-27",
+   "retrieved_at": "2026-10-29T02:30:29Z",
+   "relation": "context",
+   "explanation": "A secondary summary of Minerva's Figure 8. It puts the failure point at 'more than seven digits', probably digits in the answer. A 4x4-digit product has 7 or 8 digits, so this is consistent with near-total failure on 4-digit multiplication, but it does not state it.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "Minerva's Figure 8 gives multiplication accuracy only as a plotted curve. No text states the accuracy for 4-digit multiplication.",
+  "The secondary summary's 'more than seven digits' is ambiguous between operand digits and solution digits, and does not cover 7-digit products.",
+  "I found no independent evaluation of Minerva on 4x4-digit multiplication. Minerva was never publicly released."
+ ],
+ "packet_hash": "ad6c48db5b0d252715e51c8eb2e3930c15cb71816f7b5479860195eb05e44195"
+}

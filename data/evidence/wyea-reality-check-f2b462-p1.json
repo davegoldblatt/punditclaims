@@ -1,0 +1,130 @@
+{
+ "packet_id": "wyea-reality-check-f2b462-p1",
+ "claim_revision_ref": {
+  "id": "wyea-reality-check-f2b462",
+  "version": 1,
+  "content_hash": "c602ad19c7da21163fca38e5dc93a9865b8ad768faae5c4ff00967ee9f999f8a"
+ },
+ "contract_ref": {
+  "id": "wyea-reality-check-f2b462",
+  "version": 1,
+  "content_hash": "4954ead41d7105293257af9ab75c7353f61b16059862b9c866ed71f7eb375020"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"OpenAI\" \"subscriptions\" \"8 billion\" \"April\" \"2025\"",
+   "\"OpenAI\" \"inference\" \"6 billion\" \"2025\" \"Information\"",
+   "OpenAI forecasts inference costs six billion 2025 April revenue 125 billion",
+   "\"Will OpenAI ever make real money?\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theinformation.com/articles/openai-forecasts-revenue-topping-125-billion-2029-agents-new-products-gain",
+    "used": false,
+    "why": "The original report could not be read: HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-charts-bold-path-125b-135158077.html",
+    "used": true,
+    "why": "Full text corroborates the projected subscription revenue and attributes the projections to The Information."
+   },
+   {
+    "url": "https://www.hindustantimes.com/business/will-openai-ever-make-real-money-101747355103918.html",
+    "used": true,
+    "why": "Full-text republication of The Economist corroborates the projected inference spending. It appeared after the post but before the evaluation date."
+   },
+   {
+    "url": "https://www.economist.com/business/2025/05/15/will-openai-ever-make-real-money",
+    "used": false,
+    "why": "Original page returned HTTP 403; the accessible licensed republication was used."
+   }
+  ],
+  "performed_at": "2026-10-29T20:51:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-charts-bold-path-125b-135158077-html",
+   "source_snapshot_id": "943542751bc70bfae0c8e5f79755caff15ab728679b7412917c3cef37131a4e4",
+   "publisher": "GuruFocus, republished by Yahoo Finance",
+   "source_type": "secondary_summary",
+   "url": "https://finance.yahoo.com/news/openai-charts-bold-path-125b-135158077.html",
+   "locator": "Paragraph discussing ChatGPT subscriptions",
+   "receipt": {
+    "public_excerpt": "That's up from $8 billion in projected revenue for 2025.",
+    "quote_hash": "02a294b71eecc96d6a18932ed74c017fd58a1fd33d1733ffa15fd6620cbce399",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-04-24",
+   "retrieved_at": "2026-10-29T12:12:44Z",
+   "relation": "context",
+   "explanation": "The preceding sentence identifies ChatGPT subscriptions as the revenue category. This supplies the denominator for the derived ratio in e2.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected ChatGPT subscription revenue",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "hindustantimes-com-business-will-openai-ever-make-real-money-101747-bca68ecebc30",
+   "source_snapshot_id": "708cbf6aa1bdfbd636d01c4ba3c3cc424285da6bc152bcbc6e48736e495fb3b5",
+   "publisher": "The Economist, republished by Hindustan Times",
+   "source_type": "news_report",
+   "url": "https://www.hindustantimes.com/business/will-openai-ever-make-real-money-101747355103918.html",
+   "locator": "Section Confounding variables",
+   "receipt": {
+    "public_excerpt": "inference costs to grow at the same rate, to $6bn.",
+    "quote_hash": "c244543d60f6af53965efcbf60c2aa20f16763f0e2ff4293d4309dd359ffb2e2",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-05-16",
+   "retrieved_at": "2026-10-29T20:38:20Z",
+   "relation": "supports",
+   "explanation": "The source supplies projected annual inference spending of $6 billion. Combining that numerator with the $8 billion subscription projection in e1 produces 75%; this is an evaluator calculation, not a reported subscription margin.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected total inference costs divided by projected ChatGPT subscription revenue",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected 2025 total inference costs: USD 6 billion, from this item's quoted Economist report.",
+     "Projected 2025 ChatGPT subscription revenue: USD 8 billion, from e1."
+    ],
+    "formula": "(6 billion USD / 8 billion USD) × 100 = 75%",
+    "rounding": "75% using the rounded reported inputs; the underlying ratio is approximate."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The Information's original article could not be verified directly with read_page.",
+  "No subscription-specific allocation of inference spending was established."
+ ],
+ "packet_hash": "dd033e6be93ad1bacbf61efbcc5c7448a5da709cde2f21dff93775398f3bf1ca"
+}

@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-openclaw-aka-moltbot-is-everywhere-1c0361-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-1c0361": "07d85bb4c298a210e1e89df5cd00cbe8c0b9e808d08dd8363677dc9fb327ca71",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-247be2": "7df3233e8b9c4dfffed89653b86044ec7a12bdb2a06398ac8c64f5c2163ae05d",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-5db4ae": "e7e79da9437e678a027e4671f03f0ef4ee72ff6ae1b54bf7266a0d2bd196236e",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-5f1672": "e018c33e093c1e3d4a324e4835120b254a983c07344e6bc0a7834525ed8dba29"
+ },
+ "started_at": "2026-10-29T21:49:43Z",
+ "completed_at": "2026-10-29T21:50:25Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus makes the claim himself and cites Riegler as his source. The assertion that Moltbook was attacked is his own, so it counts as endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'It' means Moltbook. The claim is a past-tense observation with no conditions, and the normalisation keeps it intact."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'attacked' as attempted adversarial manipulation, without requiring a successful compromise, is the ordinary reading in this prompt-injection context. The upper bound of Feb 1 is fair."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "The Riegler/Gautam observatory report, dated Jan 31 and covering Jan 28–31, counts 506 posts with embedded instructions aimed at agent readers. Examples include hidden API-action payloads. These are attack attempts before the post."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A contemporaneous independent report documents hundreds of prompt-injection attempts on Moltbook before Feb 1, 2026. That meets the support condition. The packet has no counterevidence, and success of the attacks is not required.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-1c0361"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The revised normalisation keeps 'sometimes' and drops the inferred conclusion. It is a general observation about LLM-based agents."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary: hallucinations occur and errors are not reliably detected or anticipated, without claiming every output fails. Using January 2026 as the window is a reasonable stand-in for the state of the field."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Versioned OpenClaw documentation shows the agent runs on configurable language models. It is a project disclosure, but it suffices to establish the architecture."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "AgentHallu (Jan 2026) documents hallucinations across 7 agent frameworks. The best model's step-localization accuracy is only 41.1%, which shows errors are hard to identify."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "HALT shows useful but imperfect hallucination detection and pre-generation risk prediction (AUROC about 75–94). This rules out 'wholly unpredictable', but that reading was never part of the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenClaw's documentation confirms an LLM foundation. January evaluations show agent hallucinations and that errors remain hard to localize and detect. HALT's partial success fits 'hard to predict' and 'sometimes hard to detect' and does not refute them.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-247be2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is Marcus's own. The Hamiel quotation that follows is not the claim being scored."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "In context, 'all these weaknesses' refers to the prompt-injection and trickability weaknesses just described. The normalisation names them correctly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract settles the ambiguous referent of 'all these weaknesses' by tying it to the immediate prompt-injection and tool-access context. That is a fair, ordinary reading, though it is the evaluator's choice rather than the speaker's."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Cisco ran a malicious skill against OpenClaw that used direct prompt injection to bypass safety guidelines and silently exfiltrate data. This is OpenClaw-specific evidence of the weakness. The Jan 28 date is the page's displayed date."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The v2026.1.30 README says tools run on the host with full access by default, which confirms the access through which injected instructions can act. Sandboxing is optional."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The project's own post describes security hardening and admits prompt injection is still unsolved. This qualifies a 'no protections' reading but does not disprove susceptibility."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent testing shows prompt-injected instructions redirecting OpenClaw into harmful actions, and the documentation confirms host-level default access. The project's hardening work and optional sandboxing do not show the weakness was prevented.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-5db4ae"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own words."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "rhetoric",
+     "note": "'An accident waiting to happen' is an idiom for a hazardous situation that is likely to cause harm. It characterises present risk; it does not commit to a definite outcome. The drafter's 'will' modality and removal of the inherent 'likely' overstate what Marcus committed to."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract turns a risk idiom into a definite open-ended forecast. It also adds its own severity threshold and excludes pre-post incidents, none of which the speaker supplied. The contract itself flags the present-tense warning reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Wiz documents a large data exposure discovered Jan 31 and fixed by Feb 1. It predates the post, so it bears on the risk, not on a later outcome."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Zenity observed live attack attempts in February. The authors say the impact was unverified."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Zenity's benign demonstration influenced over 1,000 agents without causing damage. It shows the risk but is not a harmful incident."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The idiom means a situation likely to produce an accident. That is a characterisation of risk with built-in likelihood, not a firm forecast, so policy does not score it. Even read as a forecast, it has no deadline and the packet holds no qualifying post-post incident, so it would stay unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-5f1672"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 32426,
+  "output_tokens": 4652,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

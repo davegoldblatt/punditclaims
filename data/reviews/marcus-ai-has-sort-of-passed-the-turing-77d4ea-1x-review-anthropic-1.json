@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-ai-has-sort-of-passed-the-turing-77d4ea-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ai-has-sort-of-passed-the-turing-77d4ea": "af89f01803acf8a03ff0b440b0feb6474792009a91581c1ef5585e9d6c9270b2"
+ },
+ "started_at": "2026-10-29T23:24:35Z",
+ "completed_at": "2026-10-29T23:24:50Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful past-tense observation about the paper's no-persona result. The proposition leaves 'ChatGPT' unversioned, which matches the source."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'ChatGPT straight from the box' as GPT-4.5. But the '4.5' mention in the passage refers to the persona-prompted system. An ordinary reading of out-of-the-box ChatGPT in early 2025 points just as well to GPT-4o, which the paper also tested without a persona. The model choice decides the result, and the contract picks a reading Marcus did not give."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "This is the original preprint, posted before the article. It reports GPT-4.5-NO-PERSONA at 36% against ELIZA's 23%, which contradicts the GPT-4.5 reading. It also reports GPT-4o-NO-PERSONA at 21%, below ELIZA, which fits the GPT-4o reading, though the gap is small."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The paper's numbers split by model. GPT-4.5 without a persona (36%) beat ELIZA (23%), so the claim fails under the contract's reading. GPT-4o without a persona, the more natural meaning of default ChatGPT, scored 21%, below ELIZA, so the claim holds numerically under that reading. Because the contract's model choice decides the result and is not fair to the speaker, the outcome is mixed: it holds for GPT-4o and fails for GPT-4.5.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-has-sort-of-passed-the-turing-77d4ea"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8499,
+  "output_tokens": 1515,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

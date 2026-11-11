@@ -1,0 +1,103 @@
+{
+ "packet_id": "marcus-rumors-of-agis-arrival-have-been-723913-p1",
+ "claim_revision_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-723913",
+  "version": 2,
+  "content_hash": "ca6dc0fee8c82f25644dd038571a66de63ac278508f66d4c633f49174ad9a1ec"
+ },
+ "contract_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-723913",
+  "version": 1,
+  "content_hash": "94903efec95f9bd0e98e37bef0a850fbcdc38c0210519f98fc9bf9928f9a45b4"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "benchmark contamination increasing over time synthetic training benchmarks prevalence 2025 study",
+   "benchmark overfitting synthetic data training generalization controlled study 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2310.17589",
+    "used": true,
+    "why": "Primary contamination study reporting a temporal increase; its full paper identifies the comparison as benchmark overlap with Common Crawl."
+   },
+   {
+    "url": "https://arxiv.org/html/2310.17589v3",
+    "used": true,
+    "why": "Read to establish what the longitudinal comparison actually measures."
+   },
+   {
+    "url": "https://arxiv.org/abs/2602.12413",
+    "used": true,
+    "why": "Primary study examining semantic duplicates in an actual modern training corpus."
+   },
+   {
+    "url": "https://arxiv.org/html/2602.12413v1",
+    "used": true,
+    "why": "Read the methods to distinguish corpus measurements from experimental synthetic contamination."
+   },
+   {
+    "url": "https://aclanthology.org/2025.emnlp-main.511.pdf",
+    "used": false,
+    "why": "Search result describes a survey of contamination research, rather than a comparable longitudinal measurement of training practices."
+   }
+  ],
+  "performed_at": "2026-10-29T18:18:10Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2310-17589",
+   "source_snapshot_id": "1fed78f622e826c075d63f7cdfc23586e91405b52c3677e0ae7e2b5d985b843c",
+   "publisher": "arXiv; Yucheng Li, Frank Guerin and Chenghua Lin",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2310.17589",
+   "locator": "Abstract; temporal comparison explained in section 5 and Figure 2 of the full paper",
+   "receipt": {
+    "public_excerpt": "increasing rapidly over time.",
+    "quote_hash": "d0e9cc81800803e641cf18753ad0d948fdc0a32b5dadc312dfb1fd2c1146bcdb",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2024-01-29",
+   "retrieved_at": "2026-10-29T18:04:30Z",
+   "relation": "context",
+   "explanation": "The paper compares benchmark overlap in Common Crawl from December 2020 through October 2023. This supports increasing contamination risk, but does not directly measure the proportion of successive model cohorts trained on those examples.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2602-12413",
+   "source_snapshot_id": "d79597cf2596e4246d7f5a0414dddf70ff48f5ee7dd82c794436ec923bd93951",
+   "publisher": "arXiv; Ari Spiesberger and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2602.12413",
+   "locator": "Abstract; sections 3 and 4 of the full paper",
+   "receipt": {
+    "public_excerpt": "semantic duplicates.",
+    "quote_hash": "1042477f0b13f2765385b641c10728ffaf81d38b6f4fec78f954888223712b97",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-12",
+   "retrieved_at": "2026-10-29T07:48:00Z",
+   "relation": "context",
+   "explanation": "The researchers find benchmark duplicates in Olmo3 training data and experimentally show that duplicate-based training can improve benchmark scores. A single model family and constructed training experiments do not establish an industry-wide increase over time.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No comparable longitudinal measurement of the prevalence of benchmark-focused training across model cohorts was established.",
+  "Increasing internet contamination is not itself proof of increasing inclusion after developers filter training data.",
+  "The searches did not establish a corresponding measure of increasing financial stakes tied specifically to benchmark performance."
+ ],
+ "packet_hash": "591c1e9bdab255339619aeadc0b91e0b7236536118c681f29bf952aeea73f2a1"
+}

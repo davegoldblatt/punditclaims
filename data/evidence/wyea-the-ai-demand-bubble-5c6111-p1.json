@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-the-ai-demand-bubble-5c6111-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-demand-bubble-5c6111",
+  "version": 1,
+  "content_hash": "fb2258390a9633f7bde512f2405bbcffbbe9a4756053d3901b49189a4b09df62"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-demand-bubble-5c6111",
+  "version": 1,
+  "content_hash": "0e7b921bb24fef804787d62594a2232ed8f509b7db3674fd1700ebccb68175ed"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Amazon Google Microsoft 2026 capex OpenAI Anthropic largest customers revenues August 2026",
+   "OpenAI Anthropic 2026 cash burn funding losses July 2026",
+   "\"OpenAI\" \"2026\" \"cash burn\" Reuters June July",
+   "\"Anthropic\" \"S-1\" \"2026\" site:sec.gov"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-spots-a-hidden-risk-in-big-techs-165-billion-ai-capex-race/articleshow/133230392.cms",
+    "used": true,
+    "why": "Readable reporting of Jefferies customer-concentration estimates. The underlying analyst report was not obtained, so this is secondary context."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available before the cutoff. Its half-year losses and cash flows inform the financing question but do not isolate the target quarter."
+   },
+   {
+    "url": "https://uk.finance.yahoo.com/news/openai-burned-3-7-billion-234306479.html/",
+    "used": false,
+    "why": "Read successfully, but it concerns Q1 rather than Q2. Reuters also says it could not independently verify the underlying report."
+   },
+   {
+    "url": "https://apnews.com/article/ca2f4c282bef3201a392e59e3df2300c",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T12:41:45Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "economictimes-indiatimes-com-markets-stocks-news-jefferies-chris-wo-2aa8780b60a2",
+   "source_snapshot_id": "f1142df3d8d2cd85c986499e66d3d6104e1a2545effed1b421921297b428e087",
+   "publisher": "The Economic Times",
+   "source_type": "news_report",
+   "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-spots-a-hidden-risk-in-big-techs-165-billion-ai-capex-race/articleshow/133230392.cms",
+   "locator": "Paragraph preceding the Q2 customer-revenue estimates",
+   "receipt": {
+    "public_excerpt": "The exposure is already material in current revenue.",
+    "quote_hash": "079f96ae03031319448508c4578dd4053215a60a4452886c451631301428be5f",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-08-14",
+   "retrieved_at": "2026-10-29T12:32:30Z",
+   "relation": "context",
+   "explanation": "The article reports Jefferies estimates of roughly 45% of Google Cloud Platform revenue, 25% of Azure revenue and 6% of AWS revenue from the labs in Q2. These estimates support material exposure, but GCP is not the entire Google Cloud segment and the article does not establish either lab's annual financing requirement.",
+   "metric_scope": {
+    "company": "Amazon AWS; Microsoft Azure; Google Cloud Platform",
+    "metric": "Estimated share of quarterly revenue attributable to OpenAI and Anthropic",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; MD&A, Cash Flows and Operating Activities",
+   "receipt": {
+    "public_excerpt": "We have a history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing reports a first-half net loss of $80.7 billion, including $72.4 billion of financing-instrument fair-value changes, alongside $3.929 billion of positive operating cash flow. This is material caution against treating losses as annual cash needs; the half-year period and accounting measures do not directly settle the target-quarter claim.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Net loss and net cash provided by operating activities",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No comparable customer-level recognized-revenue records were obtained for all three named cloud businesses.",
+  "No matched annual cash-needs analysis establishes the claimed necessary financing amount for both labs.",
+  "Anthropic's half-year cash flows do not isolate Q2, and comparable OpenAI Q2 financial statements were not obtained.",
+  "Continuing financing risk does not establish that the businesses cannot become self-financing."
+ ],
+ "packet_hash": "62af38d2121d29ec4baa036f78694459863066daae7d08782da7ad713bdff5ba"
+}

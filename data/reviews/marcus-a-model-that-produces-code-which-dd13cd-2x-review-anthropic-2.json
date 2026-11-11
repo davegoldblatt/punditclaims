@@ -1,0 +1,125 @@
+{
+ "run_id": "marcus-a-model-that-produces-code-which-dd13cd-2x-review-anthropic-2",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-a-model-that-produces-code-which-dd13cd": "ec0913ec675d94214ec56e4c3557738d717988d453e5d613a31521bfaebd9aff",
+  "case:marcus-a-model-that-produces-code-which-e36713": "91afab03d9afe4a24fca731478401cfe36d82729691e1fa025bd14bea89331bd"
+ },
+ "started_at": "2026-10-29T02:02:13Z",
+ "completed_at": "2026-10-29T02:02:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised text matches his words, including 'less far'. It is an unhedged observation about the current state of AI coding."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (substantial working code, weaker robustness assurance) is ordinary and fair. Using April 2026 as the snapshot is reasonable. The contract does not treat the claim as causal."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 15 vendor benchmark with paired results on the same tasks: 84.4% functional vs 7.8% security for the top functional agent. It is vendor research, and the packet notes the limitation as the contract requires."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "March preprint showing maintainability eroding on iterative tasks. It points the same way but falls before the April target period."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "March peer-reviewed study: models detect flaws poorly but fix them well when given feedback. Qualifies the claim but does not contradict it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The April snapshot shows a large gap between functional and security correctness on the same tasks and systems, which meets the support condition. The caveats: it is vendor research, security is only part of robustness, and e3 shows repair with feedback is possible. None of these meets the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-model-that-produces-code-which-dd13cd"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. The claim is about Brockman's remarks, but the subject is the one asserting it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 'sorta kinda' hedge. 'Rare note of realism' is correctly marked as evaluative. It is an observation about past remarks."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Whether 'the point' means the specific code-quality distinction or a broader point about uneven capability decides the result. The contract's reading allows indirect acknowledgment, which is fair, but the speaker did not supply that interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "TNW says Brockman acknowledges the gap, but that is the journalist's reading. The Brockman quote it gives does not mention code quality."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Third-party transcript of the April 1 interview. Brockman says AI is jagged and 'can just do' coding, and that it struggles with unspecified basic tasks. He does not concede the code-quality distinction."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Brockman's February post warns about functionally correct but poorly maintainable code. That is close to Marcus's point but falls outside the April target period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Within the period, the only support for an acknowledgment is TNW's interpretation. Brockman's April words, as transcribed by a third party, concede only general limits and say AI can 'just do' coding. Nothing shows misattribution or an explicit rejection, so the contradiction condition is not met. No authenticated transcript settles it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-a-model-that-produces-code-which-e36713"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 18193,
+  "output_tokens": 3089,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

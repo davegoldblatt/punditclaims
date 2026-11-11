@@ -1,0 +1,143 @@
+{
+ "run_id": "wyea-oai-business-a046f3-2-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-oai-business-a046f3-2": "f3caafed4972d5804e37cbae477cbf019455873dcde715e5d7084761f5c00a3a",
+  "case:wyea-oai-business-eaa9ba-2": "a320319806a80e69bd066c37dce8b337e276d5d8dd4b8d5d919dbd84842ed990"
+ },
+ "started_at": "2026-10-31T20:29:11Z",
+ "completed_at": "2026-10-31T20:29:40Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, presented as his own view."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The drafter dropped 'I hypothesize' and set the modality to 'will'. A hypothesis is a tentative conjecture, like 'I suspect', and the context says so too ('If my hypothesis... is true', 'If I'm right'). It is a hedged forecast."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract treats a hedged hypothesis as a firm expectation and scores it on a plain reading. Plain-reading scoring applies only to firm language. The contract also chose the growth measure itself (revenue and WAU)."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Run rate went from $5.5B (Dec 2024) to $10B (Jun 2025). That is no dramatic slowdown, but the claim is hedged and so not scored."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "500M weekly users by March 2025, against a 250M baseline. Growth continued."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Company baseline of 250M weekly users on the day of the post."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "CFO's full-year ARR figures. A company disclosure, and outside the early-2025 window."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "The round closed. That part was a concession and is not the tested claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "not_adjudicable",
+    "rationale": "The growth forecast is framed as 'I hypothesize'. That signals tentative confidence, like 'I suspect', and the policy does not score such claims. The evidence (run rate up about 82% in six months, weekly users doubled) would contradict a firm forecast, but this claim is hedged, so it is not adjudicable.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-a046f3-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The normalised proposition leaves out the firm timetable for conversion ('next six or so months'). The contract restores it as part (b), so the scoring covers the full statement."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Splitting the claim into three parts is fair, and so is the generous reading of six months as through mid-2025. Part (a) depends on which loss measure is used: $5.09B attributable counts as about $5B, while the pre-allocation figure is uncited."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Audited 2024 net loss attributable to OpenAI was $5.09B, which is about $5B, at the top of the range."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "In May 2025, seven months on, there was no conversion and the plan had been revised."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Recapitalization completed on 2025-10-28, about 13 months after the post. That is well past six or so months."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reported Q1 2026 operating loss of $9.3B, after conversion. OpenAI kept losing money."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "mixed",
+    "rationale": "Two parts hold: the 2024 loss of about $5B (audited $5.09B attributable) and continued losses after conversion (Q1 2026 operating loss of $9.3B). The conversion timetable fails: it was completed in October 2025, about 13 months later, not within six or so months.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-eaa9ba-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22890,
+  "output_tokens": 2965,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

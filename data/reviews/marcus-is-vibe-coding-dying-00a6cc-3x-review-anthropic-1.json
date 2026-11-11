@@ -1,0 +1,155 @@
+{
+ "run_id": "marcus-is-vibe-coding-dying-00a6cc-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-is-vibe-coding-dying-00a6cc": "d0d304e4d3df8cf9e1a34955ccabfad7c95a379715c26d5d3767c4167629986c",
+  "case:marcus-is-vibe-coding-dying-09de22": "a97f8f4260624dc60c582c2cd64774131fc5a2fb6ab81665cc66543322de9331",
+  "case:marcus-is-vibe-coding-dying-dec746": "300e7b71a53de75e3209d0157ba84d1771f0a2f06e9aa79d9f6c3b55e10d954b"
+ },
+ "started_at": "2026-11-09T20:22:35Z",
+ "completed_at": "2026-11-09T20:23:16Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post, written in his voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the sentence and keeps 'often'. Here 'often' states how frequent the pattern is; it is not a probability hedge, so the claim can be scored as an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is ordinary: 'often' means a common recurring pattern, and 'end badly' means serious failure or abandonment, not routine debugging. It is not stretched for or against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "One dated project (Lemkin/Replit) shows a strong start followed by serious failures. The database was then recovered and he kept using the tool. A single incident cannot show how often this happens."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A small corpus of session videos, by the authors' own account. It does not follow projects from their start to how they ended, so it cannot show the claimed pattern."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The contract needs project histories that link early success to later outcomes, with enough cases to show how common the pattern is. The packet has one anecdote, which partly ends in recovery, and one small video study with no outcome follow-up. Neither condition is met, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-vibe-coding-dying-00a6cc"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. 'That' refers to his earlier points about reliability, complex apps and maintainability."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Mostly faithful. It leaves out the 'hard to maintain' point from the antecedent and does not capture the change implied by 'finally', but it keeps the core idea of customers recognizing that the tools are unreliable and unfit for complex apps."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'figuring that out' as recognition rather than abandonment is ordinary. Requiring no majority and no measured rate of change fits the speaker's unquantified wording. The result depends on this reading of 'that' and 'finally'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Published 2025-09-30, before the post. It analyses 518 firsthand practitioner accounts and documents recurring awareness of flawed output, production-readiness problems and maintenance costs alongside continued use. The accounts are self-selected, and change over time is not measured."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's plain reading, a systematic study of firsthand accounts written before the post shows recurring recognition that vibe-coded output is flawed and needs substantial work before production. Continued use cannot contradict the claim under the contract. The evidence does not establish population share or a trend, which the contract does not require.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-vibe-coding-dying-09de22"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post. The Karpathy material that follows is a separate quotation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. 'Can be fine' is a modest possibility, but the comparative 'is less reliable for the unfamiliar' is stated firmly and can be scored as a general observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker's preceding sentence supplies the training-distribution meaning of familiarity. Requiring difficulty controls and caution about task-level benchmarks is reasonable. The result depends on accepting benchmark proxies for familiarity."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ObfusEval (2024): obfuscated real-project code lowers test-pass rates. The authors say they did not deliberately raise difficulty, but they concede obfuscation may change complexity."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "CTF-Code (May 2025): small requirement changes cut performance by more than 10% for many models. This measures sensitivity to detail rather than training exposure, so it is only indirect support."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "RealClassEval (published 2025-10-30): performance on seen and unseen real-world code is nearly identical, which cuts against the familiarity claim. The experiment date is not tied to the target period, and it is one setting only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Two studies support lower reliability on less familiar tasks, but neither fully separates familiarity from difficulty or sensitivity to detail. A real-world study finds nearly identical performance on seen and unseen code. The support condition requires consistently lower correctness, and that is not shown. No controlled contradiction across the claimed scope exists either, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-vibe-coding-dying-dec746"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20635,
+  "output_tokens": 4300,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

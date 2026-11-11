@@ -1,0 +1,215 @@
+{
+ "run_id": "marcus-noam-chomsky-and-gpt-3-2a95db-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-noam-chomsky-and-gpt-3-2a95db": "ce5170d39d63f3a9866d492ce645339af711d507927afcb79fe2f00764429279",
+  "case:marcus-noam-chomsky-and-gpt-3-9c77a9": "dc390c188f6412403e48fa1d6d30304a04ae5c0136f2e68a3c8b5115d8696408",
+  "case:marcus-noam-chomsky-and-gpt-3-9d2404": "7a2dd089168487d61192936332511eb99dbc7f5987c2823b7b993f4ce1101f28",
+  "case:marcus-noam-chomsky-and-gpt-3-c8b259": "4829ef2282fa52030e65d61ffc1bb305a39f577ccb73bb640a297cf270ad457f"
+ },
+ "started_at": "2026-10-29T21:47:04Z",
+ "completed_at": "2026-10-29T21:47:46Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. He summarises other studies but adopts their finding as his own claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'In many instances good' becomes 'often good', which is faithful. Both halves are kept. This is an unhedged present-tense observation about contemporary LLMs."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is ordinary: factual recall counts as memorising, event tracking means state updates, and 'systematically' means recurring failures. Scoping it to GPT-3-era models and 2021 to May 2022 is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Nye et al. (July 2021): GPT-3 alone answered 29% of bAbI questions about people, objects and locations correctly, and its stories repeatedly lost consistency. This is controlled evidence of state-tracking failure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Gopher paper (Dec 2021): large gains on general-knowledge subjects and 60% on MMLU. This supports the factual-knowledge half for a comparable model. MMLU does not isolate recall."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporary evaluations show useful factual knowledge in GPT-like models (e2) and repeated failures by unaided GPT-3 to track changing narrative states (e1). That matches the support condition. The packet has no matched same-model comparison, but the contract does not require one.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-noam-chomsky-and-gpt-3-2a95db"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus reports what recent studies found and endorses it in his own essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'some measures' qualifier and the 'helps in some respects' concession are both kept. This is a limited observation about scaling results."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair: scale brings gains on some tasks while substantial deficits remain on some reasoning and common-sense benchmarks. It does not require failure everywhere."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Gopher paper (Dec 2021): on Winogrande, HellaSwag and PIQA, all LMs trail human performance considerably, and the authors call reasoning limited. The same paper reports gains from scale elsewhere."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "DeepMind blog (Dec 2021) summarising the same study: scale helps in reading comprehension and fact-checking but not much in logical reasoning or common sense. It is a company disclosure and not independent of e1."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "PaLM blog (Apr 2022): beat the average human on a BIG-bench subset, with reasoning gains when scale is combined with chain-of-thought prompting. This qualifies the picture but does not remove deficits on some measures."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The Gopher study reports gains from scale on some tasks and persistent shortfalls on specific common-sense and reasoning benchmarks, which is the limited combination Marcus described. PaLM's gains came partly through prompting and do not erase the remaining deficits.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-noam-chomsky-and-gpt-3-9c77a9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to the three elements: scattershot comprehension, tied to training input, and lacking genuine abstraction."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus did not define 'genuine abstraction'. The behavioural transfer reading is reasonable, but the result depends on it, and on how far 'lacking' is read as a categorical absence."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Mishra et al. (Apr 2021): GPT-3's gains varied by task, but instructions also improved generalisation to new tasks. The signals are mixed, and the study does not test abstraction or training-data dependence directly."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Rytting and Wingate (Oct 2021): T5 fine-tuned on symbolic tasks generalised to new cases. Different model and training regime, so context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet itself says its evidence does not show missing abstraction or dependence on particular training examples. e1 shows uneven performance but also some generalisation. e2 concerns a different, fine-tuned model. The key study Marcus cited was not retrieved, so the evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-noam-chomsky-and-gpt-3-9d2404"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, stated as fact ('In point of fact, they can't')."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "All three elements are kept: unreliable truth discrimination, routine loss of coherence, and fabrication."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'fabricate endlessly' as recurring fabrication and 'routinely' as recurring failure is the ordinary, fair reading. Scoping it to GPT-3-era models, including InstructGPT, fits the text."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TruthfulQA (Sep 2021): the best model was truthful on 58% of questions against 94% for humans. This is an adversarial set, not an ordinary-use rate."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Nye et al. (Jul 2021): all 50 GPT-3 bAbI stories needed resampling, and 53% of sentences were rejected for inconsistency. This shows coherence failures in connected text."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "InstructGPT paper (Mar 2022): invented information in 21% of InstructGPT outputs versus 41% for GPT-3 on closed-domain tasks. Fabrication recurs, though InstructGPT improved."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Scarecrow (Jul 2021): scale reduced factual and incoherence errors, but GPT-3 text still had more errors than human text. This qualifies the claim but is consistent with it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporary evaluations show large truthfulness gaps (e1), recurring narrative inconsistency (e2) and frequent fabrication even after instruction tuning (e3). Improvements from scale and tuning (e3, e4) do not reach dependable truthfulness or sustained coherence, so the contradiction condition is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-noam-chomsky-and-gpt-3-c8b259"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33002,
+  "output_tokens": 4770,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

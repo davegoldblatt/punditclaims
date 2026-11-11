@@ -1,0 +1,107 @@
+{
+ "packet_id": "marcus-a-new-ai-scaling-law-shell-game-baa1e0-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-baa1e0",
+  "version": 1,
+  "content_hash": "a8c9ecc64be8ffa1601995d7493a472fc561f1c3b8e5a4a014369497192f10eb"
+ },
+ "contract_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-baa1e0",
+  "version": 1,
+  "content_hash": "b485520d54aedd47332c590fba9b83822048c9f44c46eaf34fdd35fe8af3e385"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "post training inference time scaling plateau reinforcement learning limitations 2025 2026 empirical",
+   "\"The Limits of Inference Scaling Through Resampling\" arxiv",
+   "\"test-time scaling\" \"2026\" \"plateau\" reasoning",
+   "\"post-training\" \"2026\" \"scaling\" \"saturation\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2411.17501v3",
+    "used": true,
+    "why": "Read with read_page. Establishes a limit for resampling with imperfect verifiers, a narrower result than the full forecast."
+   },
+   {
+    "url": "https://developer.nvidia.com/blog/breaking-through-rl-training-limits-with-scaling-rollouts-in-brorl/",
+    "used": true,
+    "why": "Read with read_page. Reports both a post-training plateau and renewed gains after changing rollout scaling."
+   },
+   {
+    "url": "https://arxiv.org/abs/2509.25300",
+    "used": false,
+    "why": "Read with read_page. Mathematical-reasoning experiments describe scaling and saturation trends, but do not settle eventual exhaustion of both approaches."
+   },
+   {
+    "url": "https://arxiv.org/abs/2602.18998",
+    "used": false,
+    "why": "Read with read_page. Reports limits in tested agent environments; does not establish exhaustion of post-training scaling."
+   },
+   {
+    "url": "https://arxiv.org/abs/2609.33155",
+    "used": false,
+    "why": "Read with read_page. Examines failures in individual stance prediction, a narrower task than the forecast's general scope."
+   }
+  ],
+  "performed_at": "2026-10-29T01:04:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2411-17501v3",
+   "source_snapshot_id": "74b1864996f8fd42769dd8bcbd9dec2c23131f50e351a2aba7d2ff6ca4579f20",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2411.17501v3",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Resampling cannot decrease this probability, so it imposes an upper bound to the accuracy of resampling-based inference scaling, regardless of compute budget.",
+    "quote_hash": "b0ff01a2f54de835bb1bd091d55858da7a372ac91dcf7d2ecf2b5a6b07332a05",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-26",
+   "available_at": "2026-03-26",
+   "retrieved_at": "2026-10-29T01:01:43Z",
+   "relation": "context",
+   "explanation": "This version reports a bound arising from imperfect verifiers. It is evidence of a specific inference-scaling limit, but does not establish limits for every inference method or for post-training.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "developer-nvidia-com-blog-breaking-through-rl-training-limits-with-0b50dd1448f7",
+   "source_snapshot_id": "a7fb13aeb8a8cca8eb2b8f62d68a98559bf9cb3ce89fda97aab020ed2c5e6569",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://developer.nvidia.com/blog/breaking-through-rl-training-limits-with-scaling-rollouts-in-brorl",
+   "locator": "Section 'BroRL comprehensive results'",
+   "receipt": {
+    "public_excerpt": "The divergence was clear: ProRL stagnated, while BroRL delivered steady, significant gains in less time.",
+    "quote_hash": "1f30e3d15a0007eff04dc5bb50bd01639a236cb8a949b3b3761f727c911fdf43",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-11-19",
+   "retrieved_at": "2026-10-29T01:00:46Z",
+   "relation": "context",
+   "explanation": "The experiment reports a post-training plateau that a different rollout allocation overcame. This cautions against treating an observed plateau as exhaustion of post-training scaling generally.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No located result decisively establishes exhaustion of both scaling approaches at the forecast's general scope.",
+  "The speaker did not specify how broad or persistent a plateau must be to count as running out.",
+  "Finite demonstrations of continued improvement cannot disprove an eventual limit."
+ ],
+ "packet_hash": "19c0d24d44ab9a94937256441b12d5d141b97b6ae00251ed572bc33cbfb0b22f"
+}

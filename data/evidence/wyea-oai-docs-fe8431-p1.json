@@ -1,0 +1,119 @@
+{
+ "packet_id": "wyea-oai-docs-fe8431-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-docs-fe8431",
+  "version": 2,
+  "content_hash": "5cb2e3b4d8bbbe7db9c5aa675f14fe8766601b11965ca56921ef1340f2f821a3"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-docs-fe8431",
+  "version": 1,
+  "content_hash": "9f8ba8cad607ebd1fa197bcbd0c0160349c363884514154a20a9e61a342b45c1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Azure inference 8.67 billion 2025 Zitron documents independent verification",
+   "Reuters September 2025 OpenAI 4.3 billion revenue 2.5 billion cash burn 9 billion",
+   "OpenAI inference 8.67 billion Financial Times November 2025 Zitron",
+   "OpenAI 2025 financial documents June 2026 cost revenue Microsoft 5.4 billion 2024 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://ca.finance.yahoo.com/news/openais-first-half-revenue-rises-043012511.html",
+    "used": true,
+    "why": "Readable Reuters reporting establishes an earlier annual cash-burn projection, but does not verify inference expenditure."
+   },
+   {
+    "url": "https://www.theregister.com/software/2025/11/12/openai-has-spent-12b-on-inference-with-microsoft-report/1901006",
+    "used": true,
+    "why": "Relays a contemporaneous concern about the documents' completeness. Its spending figure is attributed to Zitron."
+   },
+   {
+    "url": "https://techcrunch.com/2025/11/14/leaked-documents-shed-light-into-how-much-openai-pays-microsoft/",
+    "used": false,
+    "why": "Read, but does not independently authenticate the exact inference total or provide a complete cash-flow reconciliation."
+   },
+   {
+    "url": "https://www.ft.com/content/fce77ba4-6231-4920-9e99-693a6c38e7d5",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/openai-generates-43-billion-in-revenue-in-first-half-of-2025-the-information-reports-sept-29-4267702",
+    "used": false,
+    "why": "read_page returned HTTP 403; the Reuters report was instead read through Yahoo."
+   }
+  ],
+  "performed_at": "2026-10-29T12:09:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "ca-finance-yahoo-com-news-openais-first-half-revenue-rises-043012511-html",
+   "source_snapshot_id": "b53fdeb8f81b7da1b53615a13df3e3be8832a3c83ea9c9cd5d3c8c1b0776c96f",
+   "publisher": "Reuters, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://ca.finance.yahoo.com/news/openais-first-half-revenue-rises-043012511.html",
+   "locator": "Paragraph beginning 'OpenAI looks to meet'",
+   "receipt": {
+    "public_excerpt": "cash-burn target",
+    "quote_hash": "2480610268a8aff8215467c82019863aef956204c1863ce9215ead6657268f4a",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-29",
+   "available_at": "2025-09-29",
+   "retrieved_at": "2026-10-29T09:47:16Z",
+   "relation": "context",
+   "explanation": "This establishes an earlier annual projection, not realized inference spending. Reuters attributes it to The Information and says it could not immediately verify that report.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual net cash burn",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "theregister-com-software-2025-11-12-openai-has-spent-12b-on-inferen-a8d18d1ddffc",
+   "source_snapshot_id": "90a5bfdab922ccba777879d16d93b8f3711205c49b2165d80a1390381d189311",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/software/2025/11/12/openai-has-spent-12b-on-inference-with-microsoft-report/1901006",
+   "locator": "Paragraph beginning 'According to the Financial Times'",
+   "receipt": {
+    "public_excerpt": "incomplete accounting",
+    "quote_hash": "86b846c4156756f50234584e39cff3e9294a12a27e653b7e43c72c5934c5ebe4",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-12",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T11:54:09Z",
+   "relation": "context",
+   "explanation": "This is a contemporaneous objection to completeness, relayed through another publication. It supplies no corrected inference figure and cannot itself refute the claimed spending.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No independently verified January–September Azure inference total was obtained.",
+  "The alleged expenditure has not been reconciled to cash payments and credits.",
+  "No complete reconciliation establishes whether the inference figure and the annual net cash-burn projection are compatible."
+ ],
+ "packet_hash": "0d67f5db19a0028df6c1306226952579164e45b74936a224c0a22e4b304263d4"
+}

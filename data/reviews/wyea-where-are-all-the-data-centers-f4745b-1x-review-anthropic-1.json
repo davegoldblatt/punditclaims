@@ -1,0 +1,83 @@
+{
+ "run_id": "wyea-where-are-all-the-data-centers-f4745b-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-where-are-all-the-data-centers-f4745b": "7524fa45dedc03ba9f65a9d9457588bf2378230c43d71cfc36fa4368f458aa85"
+ },
+ "started_at": "2026-10-31T21:59:19Z",
+ "completed_at": "2026-10-31T21:59:39Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, written in the first person. He is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Refuse to believe that even half... installed' is a firm present-tense claim that fewer than half of about 3M are installed. It is not hedged with probability language. The normalised wording keeps the threshold and the reference set."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'installed' as physically racked is the plain, ordinary reading. Taking the claim as of the post date and setting the 1.5M threshold are both fair. The contract rightly treats analyst lag models as weak evidence that needs corroboration."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "A GPU-finance firm's model, published before the post, estimates about 2.88M of 3.2M packages deployed at end-2025. That points against the claim, but the figure rests on an assumed staging share, not an observed count."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows that e1's deployed figure assumes earlier cohorts 'deployed fully'. This weakens e1 as measured evidence."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Nadella, Nov 2025: some Microsoft chips sit uninstalled. This partly fits the thesis but gives no count and no Blackwell share."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA's own disclosure from May 2025, before the target period. 'Deploying' may mean deliveries. It is not an installed count."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only direct estimate (e1) puts installations well above 1.5M. But it is an analyst model that assumes deployment lags rather than measuring them, and the contract says such models need corroboration. Nothing in the packet corroborates it: e4 predates the period and is ambiguous, and e3 gives no count. No census or hyperscaler count settles whether 1.5M were installed by 2026-05-12.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-where-are-all-the-data-centers-f4745b"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15067,
+  "output_tokens": 1801,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

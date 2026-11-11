@@ -1,0 +1,89 @@
+{
+ "packet_id": "wyea-dont-look-up-843cef-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dont-look-up-843cef",
+  "version": 1,
+  "content_hash": "27e4bedcf1da13fae2bc3d58f5a1d3a2aab89771474a72108adf7b0c87350e1a"
+ },
+ "contract_ref": {
+  "id": "wyea-dont-look-up-843cef",
+  "version": 1,
+  "content_hash": "c9e62a2bc107d583f96b4192117c44b04951e5eb7666a4dac25f4493c8a83605"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "hyperscaler GPU spending cumulative AI revenue 2026 Wells Fargo 14.86 billion",
+   "hyperscalers cumulative GPU spending AI revenue tens billions 2026 Wells Fargo estimate",
+   "\"hyperscaler\" \"GPU\" \"cumulative\" \"revenue\" \"2026\" -site:reddit.com",
+   "\"NVIDIA Announces Financial Results for First Quarter Fiscal 2027\" \"May 20\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a0e17dc3d633295d45282e6/",
+    "used": true,
+    "why": "Primary supplier disclosure demonstrates that data-center sales include networking, which cannot be counted as GPU-only expenditure."
+   },
+   {
+    "url": "https://www.jpmorgan.com/insights/global-research/artificial-intelligence/ai-capex",
+    "used": false,
+    "why": "The text returned by read_page provides a full-year 2026 capital-spending projection, not realized GPU-only expenditure through publication."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+    "used": false,
+    "why": "The capital-spending discussion combines CPUs, GPUs, and long-lived assets; it does not supply the required cumulative GPU total."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast",
+    "used": false,
+    "why": "The AI revenue figure is an annualized run rate, not cumulative realized revenue."
+   }
+  ],
+  "performed_at": "2026-10-29T16:19:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-6a0e17dc3d633295d45282e6",
+   "source_snapshot_id": "2f6c6fb665a61fda0fa92e5c53f0ae0b7bb61d7f4223873fcf6ff25f39f2ec35",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a0e17dc3d633295d45282e6",
+   "locator": "Financial results discussion immediately before Q1 Fiscal 2027 Summary",
+   "receipt": {
+    "public_excerpt": "$14.8 billion",
+    "quote_hash": "274421ff6936e13e0dd5273364af52ed457348fedf002146a3ebe19c598e1886",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-26",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T03:05:19Z",
+   "relation": "context",
+   "explanation": "Supplier data-center revenue includes a substantial networking component. It therefore cannot be substituted for purchases of GPUs by the four named hyperscalers.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Data Center networking revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-04-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matched cumulative GPU-only spending total was obtained for the four companies.",
+  "No corresponding cumulative realized AI revenue total was obtained.",
+  "Available broader spending measures and annualized revenue figures cannot settle the stated comparison."
+ ],
+ "packet_hash": "b91bb2cba053a00a8c7a58bf32828c7b519786042dea5f00146ab838c80d5c9d"
+}

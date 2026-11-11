@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-hyperscale-normalization-33c6ff-p1",
+ "claim_revision_ref": {
+  "id": "wyea-hyperscale-normalization-33c6ff",
+  "version": 1,
+  "content_hash": "d6ddc7435c91dacf75c36b0ee69eed4a72ec019fed97a27d98d923014652897f"
+ },
+ "contract_ref": {
+  "id": "wyea-hyperscale-normalization-33c6ff",
+  "version": 1,
+  "content_hash": "d0afde747117044e2818f4a446885d25b1a713d6964350429a49c6d5b234d565"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA Q2 fiscal 2027 accounts receivable five customers 70%",
+   "site:nvidia.com Q1 2027 \"receivable\" \"customers\"",
+   "site:nvidia.com \"2027\" \"Q1\" \"64%\"",
+   "site:nvidia.com \"2026\" \"April 26\" \"10-Q\"",
+   "\"NVIDIA\" \"April 26, 2026\" \"Three direct customers\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "used": true,
+    "why": "Primary Q2 filing with direct-customer receivables shares."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/927dc2d6-a76c-4006-9f34-8769b2c665fb.pdf",
+    "used": true,
+    "why": "Primary Q1 filing supplies the preceding-quarter comparison."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the readable company-hosted filing instead."
+   }
+  ],
+  "performed_at": "2026-10-29T11:46:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "investor-nvidia-com-files-doc-financials-2027-nvda-2027-q2-10q-fina-b4ea8829627f",
+   "source_snapshot_id": "7fba94c628877867e1770c7f8d657ca15965536cb1bdac6b21fbe0dd5e0ae506",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+   "locator": "Note 7 — Supplemental Financial Statement Information",
+   "receipt": {
+    "public_excerpt": "Five direct customers",
+    "quote_hash": "85b978e3587e9f4d91a1920c1d3ede3241b2fc90395c30bd3ef7238fd33fdcc6",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T05:34:35Z",
+   "relation": "supports",
+   "explanation": "The disclosed shares sum to 70%, confirming that numerical subclaim. The largest three sum to 49%; the disclosure does not establish that NVIDIA's total customer count fell.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Share of reported accounts receivable attributable to largest direct customers",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-07-26",
+    "period_end": "2026-07-26",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Q2 shares: 22%, 14%, 13%, 11%, 10%"
+    ],
+    "formula": "Top five = 22 + 14 + 13 + 11 + 10 = 70%; top three = 22 + 14 + 13 = 49%.",
+    "rounding": "Sums of the whole-percentage shares reported in the filing; no additional rounding."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "d18rn0p25nwr6d-cloudfront-net-cik-0001045810-927dc2d6-a76c-4006-9f3-f487dc9908f3",
+   "source_snapshot_id": "56aeea6147f11160fd259818987da8e5191ac5b8470aef25e0c64c0575f89d5c",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/927dc2d6-a76c-4006-9f34-8769b2c665fb.pdf",
+   "locator": "Note 7 — Balance Sheet Components, page 13",
+   "receipt": {
+    "public_excerpt": "30%,\n18%, and 16%",
+    "quote_hash": "471d746c73884a872fdf19ab056cb8d509fefa601f337ad4dc5ce39c228bf9a8",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-26",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T11:26:42Z",
+   "relation": "context",
+   "explanation": "The preceding quarter's top-three share was 64%. Compared with Q2's 49%, like-for-like top-three concentration decreased; this baseline concerns an earlier period and does not measure customer counts.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Share of reported accounts receivable attributable to largest direct customers",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-04-26",
+    "period_end": "2026-04-26",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Q1 shares: 30%, 18%, 16%",
+     "e1 Q2 top-three share: 49%"
+    ],
+    "formula": "Q1 top three = 30 + 18 + 16 = 64%; Q2 change = 49 - 64 = -15 percentage points.",
+    "rounding": "Calculated from reported whole-percentage shares; no additional rounding."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No comparable total customer counts establishing contraction.",
+  "No matched count of ultimate customers behind direct purchasers.",
+  "The top-five versus top-three comparison cannot establish increasing concentration."
+ ],
+ "packet_hash": "d56191541d44c4d5b7b54f974ea8daf01035fb7ba5c4dd4961003d50cce0bd18"
+}

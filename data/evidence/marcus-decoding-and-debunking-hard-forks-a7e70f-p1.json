@@ -1,0 +1,110 @@
+{
+ "packet_id": "marcus-decoding-and-debunking-hard-forks-a7e70f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-decoding-and-debunking-hard-forks-a7e70f",
+  "version": 1,
+  "content_hash": "5520764b0ecff784dfacc23f4e3388aeb4c51add85f2800ec108af6affc147eb"
+ },
+ "contract_ref": {
+  "id": "marcus-decoding-and-debunking-hard-forks-a7e70f",
+  "version": 1,
+  "content_hash": "c8d79233dc37cf2fd6ac8b1d1dcf1bcded583fa5840d7409687d63faedfddff5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4.5 SimpleQA hallucination 37.1 February 2025",
+   "GPT 4.5 system card pdf 0.37 hallucination",
+   "\"GPT-4.5\" \"37.1%\" hallucination February 27 2025",
+   "\"GPT-4.5\" \"37.1%\" site:openai.com",
+   "\"GPT-4.5\" \"37.1%\" site:techcrunch.com",
+   "\"Do you trust AI? Here’s why half of users don’t\" June 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-gpt-4-5/",
+    "used": true,
+    "why": "Primary launch page identifies the SimpleQA hallucination evaluation and explains its scope. Its readable extraction omits numeric chart values."
+   },
+   {
+    "url": "https://www.computerworld.com/article/3999619/do-you-trust-ai-heres-why-half-of-users-dont.html",
+    "used": true,
+    "why": "Readable reputable reporting explicitly supplies GPT-4.5's 37.1% SimpleQA result."
+   },
+   {
+    "url": "https://openai.com/safety/evaluations-hub/",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://cdn.openai.com/gpt-4-5-system-card.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 404; search material also concerned a different hallucination benchmark."
+   },
+   {
+    "url": "https://www.forbes.com/sites/conormurray/2025/05/06/why-ai-hallucinations-are-worse-than-ever/",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://tollbit.forbes.com/sites/conormurray/2025/05/06/why-ai-hallucinations-are-worse-than-ever/",
+    "used": false,
+    "why": "read_page returned HTTP 402."
+   }
+  ],
+  "performed_at": "2026-10-29T04:06:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "computerworld-com-article-3999619-do-you-trust-ai-heres-why-half-of-46bdefe26369",
+   "source_snapshot_id": "49ff6abf104d5e617a04452d874fe3354499ed48113324e5576300c085bf051f",
+   "publisher": "Computerworld",
+   "source_type": "news_report",
+   "url": "https://www.computerworld.com/article/3999619/do-you-trust-ai-heres-why-half-of-users-dont.html",
+   "locator": "Section Hallucinations getting worse, paragraph comparing o4-mini and GPT-4.5",
+   "receipt": {
+    "public_excerpt": "37.1% hallucination rate on SimpleQA.",
+    "quote_hash": "d05f482b840a8af5c0fe37d4fa958760864617934ed7ad219cb9e308ff067584",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-06-03",
+   "retrieved_at": "2026-10-29T03:58:19Z",
+   "relation": "supports",
+   "explanation": "The report identifies a 37.1% hallucination rate for the February GPT-4.5 model on SimpleQA, exceeding one third. This is secondary reporting of OpenAI's result because the primary page's numeric chart values were absent from readable text.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-gpt-4-5",
+   "source_snapshot_id": "c69fa72f2c930ee685e73e1c65e9d59b65894b13edee4ea561a82ae7f60eb15f",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-4-5",
+   "locator": "Deeper world knowledge, caption beneath SimpleQA evaluation charts",
+   "receipt": {
+    "public_excerpt": "challenging knowledge questions.",
+    "quote_hash": "08d9d80cf728bc950282bf1fb099ab82fb711559a3b31b3643f9a4cc2c337134",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-27",
+   "available_at": "2025-02-27",
+   "retrieved_at": "2026-10-29T02:27:02Z",
+   "relation": "context",
+   "explanation": "The launch announcement confirms the relevant standardized evaluation and its factual-question scope. The extracted text does not expose the numeric bars, so this item supplies context rather than the threshold evidence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The primary launch chart's numeric values could not be recovered through read_page; the threshold evidence therefore relies on reputable secondary reporting."
+ ],
+ "packet_hash": "594fb2ed9e2f3d359bfe14d36c094f1ce54b106f292a72829444526152e9a19d"
+}

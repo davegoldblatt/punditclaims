@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-a-knockout-blow-for-llms-68a208-a1",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-68a208",
+  "version": 2,
+  "content_hash": "0b85bfb7ae61f3a6b9eff037a6ced6fbb85e9610f397ea1e390bb0cf43e06d3c"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-68a208",
+  "version": 1,
+  "content_hash": "85b9cd30b431e9442dab8b54ffe8ca3afb036791bb8d20f8d9b05a40c8c42e67"
+ },
+ "packet_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-68a208-p1",
+  "content_hash": "316b5d1a800b3b0d26fea2e1d937d3f2961fc84c7097bfe052a4a76df3593d65"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "1998-01-01",
+  "end": "2025-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "The ordinary reading is supported. WILDS finds substantial performance losses across ten distribution-shift datasets, and SCAN finds failures on systematic generalization despite success on easier held-out commands. These are direct experimental examples of the recurring pattern Marcus describes. Successful meta-learning results limit the conclusion: neural networks can generalize systematically under suitable training. They do not overturn a claim expressly qualified by 'tend to'.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "Support concerns a recurring empirical weakness, not an impossibility theorem or a measured failure rate for all neural networks.",
+  "The selected studies do not establish the behavior of every LLM or explain every reasoning failure.",
+  "Successful systematic generalization depends on the training procedure and the test being used."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-a-knockout-blow-for-llms-68a208-2x-review-anthropic-1",
+  "marcus-a-knockout-blow-for-llms-68a208-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-a-knockout-blow-for-llms-68a208-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-a-knockout-blow-for-llms-68a208",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Neural networks of various kinds can generalize within the training distribution of data they are exposed to, but their generalizations tend to break down outside that distribution.",
+  "kind": "observation",
+  "conditions": [
+   "neural networks of various kinds",
+   "tend to"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "neural networks of various kinds can generalize within a training distribution of data they are exposed to, but their generalizations tend to break down outside that distribution.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/a-knockout-blow-for-llms",
+   "date": "2025-06-07",
+   "document_title": "A knockout blow for LLMs?",
+   "observed_at": "2026-10-28T23:56:20Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "neural networks of various kinds",
+    "can generalize within a training distribution",
+    "generalizations tend to break down outside that distribution"
+   ],
+   "our_interpretation": [
+    "The plain reading is a recurring empirical weakness: networks that perform well on held-out examples resembling their training data often perform substantially worse after a distribution shift.",
+    "The words 'tend to' allow successful exceptions. 'Break down' means a substantial loss of successful generalization, without requiring accuracy to fall to zero.",
+    "The surrounding passage explicitly describes a longstanding pattern dating from 1998 through the post. I assess that historical research record through 2025-06-07. This scientific claim has no quarterly reporting cycle.",
+    "A new example from the same distribution is distinguished from a test that changes combinations, sequence lengths, domains, or other relevant data properties."
+   ],
+   "support_condition": "Controlled studies across several neural-network variants and tasks show successful within-distribution generalization alongside substantial performance losses under specified distribution shifts.",
+   "contradiction_condition": "Broad, controlled comparisons across varied neural networks and meaningful distribution shifts show that within-distribution performance generally carries over, making substantial breakdown an exceptional rather than recurring pattern."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The ordinary reading is supported. WILDS finds substantial performance losses across ten distribution-shift datasets, and SCAN finds failures on systematic generalization despite success on easier held-out commands. These are direct experimental examples of the recurring pattern Marcus describes. Successful meta-learning results limit the conclusion: neural networks can generalize systematically under suitable training. They do not overturn a claim expressly qualified by 'tend to'.",
+  "limitations": [
+   "Support concerns a recurring empirical weakness, not an impossibility theorem or a measured failure rate for all neural networks.",
+   "The selected studies do not establish the behavior of every LLM or explain every reasoning failure.",
+   "Successful systematic generalization depends on the training procedure and the test being used."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "On each dataset, we show that standard training yields substantially lower out-of-distribution than in-distribution performance.",
+    "locator": "Abstract, sentence 4",
+    "url": "https://proceedings.mlr.press/v139/koh21a.html",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2021",
+    "available_at": "2021-07-24",
+    "explanation": "WILDS compares within-distribution and shifted performance across ten datasets covering varied applications. The consistent substantial gaps support the claimed recurring weakness."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "However, when generalization requires systematic compositional skills (as in the \"dax\" example above), RNNs fail spectacularly.",
+    "locator": "Abstract, sentence 6",
+    "url": "https://proceedings.mlr.press/v80/lake18a.html",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2018",
+    "available_at": "2018-07-15",
+    "explanation": "The study tests several recurrent-network variants and reports successful generalization when training and test commands differ little, followed by failures on systematic compositional tests. It supports the distinction Marcus describes in a controlled setting."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Our results show how a standard neural network architecture, optimized for its compositional skills, can mimic human systematic generalization in a head-to-head comparison.",
+    "locator": "Abstract, final sentence",
+    "url": "https://www.nature.com/articles/s41586-023-06668-3",
+    "publisher": "Nature",
+    "event_date": "2023",
+    "available_at": "2023-10-25",
+    "explanation": "Meta-learning produces successful systematic generalization and improves performance on several compositional benchmarks. This limits any categorical reading of neural-network incapacity, but a successful exception does not refute the stated tendency."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3c52b1c81b10a5d025c6abb940e314290f57947fb39bded45ec3de442843dfeb",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:18:46Z"
+}

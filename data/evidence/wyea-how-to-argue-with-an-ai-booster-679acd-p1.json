@@ -1,0 +1,135 @@
+{
+ "packet_id": "wyea-how-to-argue-with-an-ai-booster-679acd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-679acd",
+  "version": 2,
+  "content_hash": "c91cafd46e82ec2b02b1fa31bcf3fd0aa98d459ac5515601511b1dd29ccf3a9a"
+ },
+ "contract_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-679acd",
+  "version": 1,
+  "content_hash": "d2229790ced4a2be809ba0ed68a8f3903f843ce1fe8789e270c44126b0c93891"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM continual learning deployment experience self updating weights reproducible 2025",
+   "LLM \"continual learning\" \"2026\" deployment weights self",
+   "LLM \"test-time training\" \"2025\" reinforcement learning experience",
+   "\"CASCADE\" \"2605.06702\" code",
+   "\"Learning from Trials and Errors: Reflective Test-Time Planning\" code",
+   "\"Self-Adapting Language Models\" SEAL code 2025 continual"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2607.22157v1",
+    "used": true,
+    "why": "Primary experiment measuring retained learning from post-episode feedback, with a no-memory comparison."
+   },
+   {
+    "url": "https://github.com/memcoai/spark-continual-learning-paper-data",
+    "used": false,
+    "why": "Inspected reproduction instructions. Live memory experiments require a server available on request; the current repository was not treated as a separately dated outcome."
+   },
+   {
+    "url": "https://arxiv.org/html/2602.21198v3",
+    "used": true,
+    "why": "Primary evidence of deployment-time model updates and behavioral correction."
+   },
+   {
+    "url": "https://github.com/Reflective-Test-Time-Planning/Reflective-Test-Time-Planning",
+    "used": false,
+    "why": "Inspected implementation availability. Only a sample household evaluation is released, and the cupboard experiment is incomplete."
+   },
+   {
+    "url": "https://arxiv.org/abs/2506.10943",
+    "used": true,
+    "why": "Primary evidence of persistent weight adaptation, with a narrower task scope than general continual learning."
+   },
+   {
+    "url": "https://arxiv.org/html/2605.06702v1",
+    "used": false,
+    "why": "Additional memory-based adaptation evidence; unnecessary for the proposed result."
+   }
+  ],
+  "performed_at": "2026-10-29T11:32:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2607-22157v1",
+   "source_snapshot_id": "e93d93701855fb5aa7d385b44f0788bdace794dadbf87d780905011c2d65a229",
+   "publisher": "arXiv; Valentin Tablan, Scott Taylor and Kristoffer Bernhem",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2607.22157v1",
+   "locator": "Sections 3.3.1, 4.1 and 5",
+   "receipt": {
+    "public_excerpt": "driven entirely by post-episode feedback.",
+    "quote_hash": "dd9dbf2e753c704fd601e92404c65ac6a339203b0262b1eef944eec7807be0de",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-24",
+   "available_at": "2026-07-24",
+   "retrieved_at": "2026-10-29T11:25:22Z",
+   "relation": "contradicts",
+   "explanation": "The dated public report describes a frozen-weight LLM agent retaining and applying lessons across episodes. Its outcome-only feedback condition improves single-trial success to 1.6 times the static-retrieval baseline without supplying corrected answers; methods, harness and data are reported released.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2602-21198v3",
+   "source_snapshot_id": "08eacde1d5accede8f0cce95c669f75ab75f92e2a18e4a649d0ce94ca9cecc2e",
+   "publisher": "arXiv; Yining Hong and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2602.21198v3",
+   "locator": "Section 2; Sections 3–4 and Appendix Q.3",
+   "receipt": {
+    "public_excerpt": "the agent’s own verbal assessments.",
+    "quote_hash": "6ad4ffa435577e58566b3e8c3ff8754296394a66dc10f0326c98266c73abea99",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-25",
+   "available_at": "2026-05-25",
+   "retrieved_at": "2026-10-29T11:27:02Z",
+   "relation": "context",
+   "explanation": "The report describes embodied language models revising actions and model parameters after execution feedback. This strengthens the case beyond external memory, but the experiment concerns specialized embodied systems and its public reproduction package is incomplete.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2506-10943",
+   "source_snapshot_id": "77ac9b5f3aaad546d41ca4b90c3fb1f695a2a684f5b5c15f4cc6de769050a1f0",
+   "publisher": "arXiv; Adam Zweiger and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2506.10943",
+   "locator": "Abstract, version 2",
+   "receipt": {
+    "public_excerpt": "persistent weight updates",
+    "quote_hash": "e6336ad7936063550d14f689480371f3bab8b2416c567abb46e5db069a98c8a1",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-18",
+   "available_at": "2025-09-18",
+   "retrieved_at": "2026-10-29T11:26:45Z",
+   "relation": "context",
+   "explanation": "SEAL provides another mechanism for lasting adaptation through model-generated training material. Knowledge incorporation and few-shot adaptation alone do not establish unrestricted learning from deployment experience.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independently completed replication was established.",
+  "The decisive experiment uses external memory and frozen model weights.",
+  "The decisive study covers one benchmark domain and one run per condition; live reproduction requires access to its memory service."
+ ],
+ "packet_hash": "a4f455b77a50a8bb1390f402f2a40e3f20c013b0c33f6c3311b012e045a635da"
+}

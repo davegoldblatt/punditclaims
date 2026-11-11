@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e19a2c": "91567c3a2458ea910ee962ab6a954e62c2f72b15999d0ee7c31b4f762ce3f029"
+ },
+ "started_at": "2026-10-29T22:01:52Z",
+ "completed_at": "2026-10-29T22:02:31Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. He agrees with SlateStarCodex here but states the point himself as true."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'It is true' and 'I do think' are firm, not graded confidence. The hedged InstructGPT part is correctly kept as uncertain and is not scored. The core is a retrospective claim that GPT-3 beats GPT-2 and that correct answers became more likely."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result turns on 'any given example'. Read literally (as worded), it is universal, and matched exceptions make it mixed. Read as a general tendency, it would be supported. The contract says this openly and credits the broad gains, so it is fair, but the reading is the evaluator's, not the speaker's."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed independent study (ICML 2021) before the post. Its GPT-3 175B 8-shot baselines (SST-2 95.6, LAMA 63.8) can be read in the excerpt and beat GPT-2 XL. The AGNews 79.1 figure is not visible in the excerpt. The 2.7B rows are GPT-3 sizes."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "GPT-2 XL baselines from the same study and methods. In zero-shot, GPT-2 beats GPT-3 175B on DBPedia (64.3 vs 22.0) and CB (44.6 vs 30.4). These are matched exceptions against a universal reading. Its 8-shot rows also show broad GPT-3 gains."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The broad claim holds: under matched few-shot conditions GPT-3 175B clearly beats GPT-2 XL on several tasks (e1 with e2). The literal claim that correctness rose on any given example fails in some matched zero-shot settings, where GPT-2 XL beats GPT-3 on DBPedia and CB. Per the contract, broad gains with such exceptions make the result mixed. The evidence measures greedy-decoding accuracy, not per-example sampling probability.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12309,
+  "output_tokens": 4109,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,155 @@
+{
+ "packet_id": "marcus-sora-cant-handle-the-truth-cfa367-p1",
+ "claim_revision_ref": {
+  "id": "marcus-sora-cant-handle-the-truth-cfa367",
+  "version": 1,
+  "content_hash": "31fe126188a1b65f9e0aeb4def777be071ca9d32e5a45cbc97b942fa0f46cfd8"
+ },
+ "contract_ref": {
+  "id": "marcus-sora-cant-handle-the-truth-cfa367",
+  "version": 1,
+  "content_hash": "ca6c1d240765c272dbe2e35270204b02f16038ab3d6a6100bb37d12eea12d54d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report hallucinations reasoning limitations 2023 training data",
+   "language models larger training data reasoning failures planning 2023 benchmark TruthfulQA",
+   "Llama 2 paper two trillion tokens truthfulness factuality reasoning limitations 2023",
+   "text to image physical commonsense benchmark 2023 VISOR spatial relations 40 percent",
+   "T2I CompBench 2023 complex compositional text to image generation failure attribute binding relationships"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2212.10015v3",
+    "used": true,
+    "why": "Primary evaluation of object and spatial consistency in image generation."
+   },
+   {
+    "url": "https://arxiv.org/html/2305.18654v3",
+    "used": true,
+    "why": "Primary experiments on multistep compositional reasoning."
+   },
+   {
+    "url": "https://arxiv.org/html/2307.09288v2",
+    "used": true,
+    "why": "Primary evidence of increased training data, refinement, and improved but imperfect performance."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Contemporary primary acknowledgement of factual and reasoning errors, together with improvements."
+   },
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": false,
+    "why": "Relevant historical evidence, but later model reports better address whether difficulties persisted."
+   }
+  ],
+  "performed_at": "2026-10-29T08:07:49Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2212-10015v3",
+   "source_snapshot_id": "58ed96a6a5bfbafc82d422c4a485eccef4b00dab6a83ef32c87b9edd0505fef5",
+   "publisher": "arXiv; Gokhale and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2212.10015v3",
+   "locator": "Introduction, summary of experimental findings",
+   "receipt": {
+    "public_excerpt": "poor spatial",
+    "quote_hash": "9455d084febf2263605fbc7bf9798eb6bf9e6e5c409ba25241852b3d439f614b",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-27",
+   "retrieved_at": "2026-10-29T08:00:24Z",
+   "relation": "supports",
+   "explanation": "The evaluation reports substantial failures to generate requested object relationships despite strong visual quality. This supports difficulties with spatial world consistency, without proving the absence of internal world models.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2305-18654",
+   "source_snapshot_id": "3d4af96bd4586271284ed7bb1d3f6e6372a504c1bf5365aab0e7be749bdd9076",
+   "publisher": "arXiv; Dziri and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2305.18654",
+   "locator": "Abstract; experimental details checked in sections 3.1 and B.1 of the full paper",
+   "receipt": {
+    "public_excerpt": "failures on surprisingly trivial problems",
+    "quote_hash": "3b961dcc2f2d9c079c082e22891501969e9dc364750ba93e4f913ad7e56650df",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T02:09:24Z",
+   "relation": "supports",
+   "explanation": "Experiments on multiplication, logic puzzles, and dynamic programming document sharply worsening performance with task complexity. These are repeatable multistep reasoning difficulties, rather than isolated anecdotes.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2307-09288v2",
+   "source_snapshot_id": "d551f5df79b58e6395bd147787a16e880005d40cb42a5840dcce9279db592396",
+   "publisher": "Meta; Touvron and colleagues, arXiv",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/html/2307.09288v2",
+   "locator": "Appendix A.4.8; training changes in sections 1–2; limitations in section 5.2",
+   "receipt": {
+    "public_excerpt": "with a larger size",
+    "quote_hash": "48e8c26dded3bbd14fb8366cbe9589f245da8052407a9c796c59a6a77375b384",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-19",
+   "retrieved_at": "2026-10-29T03:10:54Z",
+   "relation": "context",
+   "explanation": "The report documents 40% more pretraining tokens, revised data selection, and remaining hallucination risks. It also reports improvements, which limit any interpretation that greater scale or refinement brought no benefit.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Limitations",
+   "receipt": {
+    "public_excerpt": "makes reasoning errors",
+    "quote_hash": "4d64a687297ecb72a0ad1ae10cf17642ab6edae434cf2b1f255c96184ec61259",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "supports",
+   "explanation": "OpenAI acknowledges continuing factual and reasoning errors in GPT-4. The same section reports improved factuality relative to GPT-3.5, showing that persistent limitations coexisted with progress.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "The studies do not provide one representative failure rate covering all generative AI.",
+  "No controlled comparison isolates training-data growth across all three capability areas.",
+  "Spatial generation tests cover only part of what world modeling can mean."
+ ],
+ "packet_hash": "d30a457c7b10f6103bb4f17b888ff20414f4c8ae99a8eedd2c3d2d8d496401c2"
+}

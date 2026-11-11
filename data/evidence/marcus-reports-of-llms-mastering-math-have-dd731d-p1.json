@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-reports-of-llms-mastering-math-have-dd731d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-dd731d",
+  "version": 1,
+  "content_hash": "86b6d5af6b732043af26cf16c571734eca2018738da2753503febb44db99bbac"
+ },
+ "contract_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-dd731d",
+  "version": 1,
+  "content_hash": "ad7430a36c369d251c3b4c8afd466e262897794ec0d30e12401a2a1e26b94b91"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AlphaProof AlphaGeometry 2024 formal verified proof symbolic engine",
+   "AlphaGeometry symbolic engine incorrect proofs soundness numerical bugs",
+   "\"Gold-Medal-Level Olympiad Geometry\" \"AlphaGeometry\" fallacious",
+   "\"AlphaGeometry\" \"step 9\" \"2020\"",
+   "\"Olympiad-level formal mathematical reasoning\" arxiv AlphaProof",
+   "\"AlphaGeometry\" \"IMO-2020-P1\" \"wrong\" correction response"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nature.com/articles/s41586-025-09833-y_reference.pdf",
+    "used": true,
+    "why": "The AlphaProof methods paper explicitly describes final Lean kernel verification."
+   },
+   {
+    "url": "https://arxiv.org/html/2502.03544v1",
+    "used": true,
+    "why": "The AlphaGeometry 2 paper describes its symbolic engine and distinguishes it from the original system."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2512.00097v1",
+    "used": true,
+    "why": "A later primary research paper identifies a specific gap in an original AlphaGeometry proof published before Marcus's post."
+   },
+   {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-023-06747-5/MediaObjects/41586_2023_6747_MOESM1_ESM.pdf",
+    "used": true,
+    "why": "Checked section 2.28 against the critique. It contains the identified step, but concerns original AlphaGeometry rather than AlphaGeometry 2."
+   },
+   {
+    "url": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+    "used": false,
+    "why": "read_page returned unrelated navigation text rather than the announcement's substantive contents."
+   }
+  ],
+  "performed_at": "2026-10-29T18:04:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "nature-com-articles-s41586-025-09833-y-reference-pdf",
+   "source_snapshot_id": "c8c411b476852a67476f9bb436dbf2e2032cfedc0439e9801c617577dfa38191",
+   "publisher": "Nature; Google DeepMind authors",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-025-09833-y_reference.pdf",
+   "locator": "Methods, Tactic Validation and Execution",
+   "receipt": {
+    "public_excerpt": "Lean kernel",
+    "quote_hash": "6c39bd9dde077e245b2d24687f3f0bdcf830d0cf95ae3e10ec3081a60361ebec",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-11-12",
+   "retrieved_at": "2026-10-29T02:54:54Z",
+   "relation": "supports",
+   "explanation": "The paper describes the AlphaProof system used for the 2024 IMO and explicitly grounds final proof validity in Lean kernel checking. This supports the AlphaProof part of the claim, conditional on the formal statement and trusted verifier.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "arxiv-org-html-2502-03544v1",
+   "source_snapshot_id": "deb4fdf193769689f833c07d9a7fd10801b3a2a06e7ae9b7e1e7ea8dc5bdac63",
+   "publisher": "Chervonyi et al., Google DeepMind; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2502.03544v1",
+   "locator": "Section 4.2, Faster algorithm",
+   "receipt": {
+    "public_excerpt": "DDAR2",
+    "quote_hash": "139808edbca9824ed763c6249e39519b334edc95002a0308e4b26b7a4664d194",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-02-05",
+   "retrieved_at": "2026-10-29T01:09:39Z",
+   "relation": "context",
+   "explanation": "The paper documents AlphaGeometry 2's symbolic deduction engine and distinguishes it from its predecessor. The architecture supports stronger checking than unrestricted text generation, but this passage and the inspected methods do not establish an unconditional guarantee for every delivered proof.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2512-00097v1",
+   "source_snapshot_id": "b2d7e4af7151887616ea13b6eb663cb7585d66c4e33c49af70a07ae200246372",
+   "publisher": "Duan et al.; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2512.00097v1",
+   "locator": "Appendix A, Fallacious Proof in AlphaGeometry",
+   "receipt": {
+    "public_excerpt": "step 9",
+    "quote_hash": "d40fe218893464aecbeb454b97bb4454482e285a53c55e720962f641f5e8abb2",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-11-27",
+   "retrieved_at": "2026-10-29T18:01:13Z",
+   "relation": "context",
+   "explanation": "The authors identify an unproved collinearity assumption in a proof published with the original AlphaGeometry paper in 2024. This is material counterevidence to a broad claim of immunity for the whole system family, but it is not a demonstrated failure of AlphaGeometry 2.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "The inspected evidence does not establish the required final-proof guarantee for AlphaGeometry 2.",
+  "The documented problematic proof belongs to original AlphaGeometry; its applicability to the IMO 2024 version is unestablished.",
+  "The search did not locate a response resolving the reported original AlphaGeometry proof gap."
+ ],
+ "packet_hash": "a7bcf46761f3ee32cd4bae13494542cc8a5648c1f8c41f4949cb26f643657da4"
+}

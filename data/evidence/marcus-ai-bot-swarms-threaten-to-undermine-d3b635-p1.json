@@ -1,0 +1,128 @@
+{
+ "packet_id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635",
+  "version": 2,
+  "content_hash": "9b392c7f31eb2081da29446d6fbaf32a57010d9e23d3559d76abee53ea038b93"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635",
+  "version": 1,
+  "content_hash": "e659c3da06b7d0dc7a3f55c522d4da41a9ab55c3f39e7e652591e3ce3938ff7b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM grooming training data poisoning web 250 documents Anthropic 2025",
+   "\"LLM grooming\" \"little evidence\" Harvard 2025",
+   "\"LLM grooming\" training experiment web poisoning 2026",
+   "\"web\" \"pretraining\" \"poisoning\" \"misinformation\" 2025",
+   "\"duplicated\" \"poisoning\" \"LLM\" training",
+   "\"Pretraining Data Can Be Poisoned through Computational Propaganda\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2607.15267v1",
+    "used": true,
+    "why": "Read in full. Directly studies automated web-comment injection, survival through data preparation, and downstream training effects."
+   },
+   {
+    "url": "https://arxiv.org/abs/2607.15267",
+    "used": true,
+    "why": "Read to verify authorship and the July 16, 2026 publication date."
+   },
+   {
+    "url": "https://www.anthropic.com/research/small-samples-poison",
+    "used": true,
+    "why": "Primary controlled training experiment supports the poisoning mechanism, with a narrower attack than the claim."
+   },
+   {
+    "url": "https://misinforeview.hks.harvard.edu/article/llms-grooming-or-data-voids-llm-powered-chatbot-references-to-kremlin-disinformation-reflect-information-gaps-not-manipulation/",
+    "used": true,
+    "why": "Read in full. Material caution against interpreting chatbot references as proof of successful grooming."
+   },
+   {
+    "url": "https://arxiv.org/abs/2302.10149",
+    "used": false,
+    "why": "Readable primary research, but its domain and Wikipedia attacks are less directly matched than the later public-comment study."
+   }
+  ],
+  "performed_at": "2026-10-29T01:49:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2607-15267v1",
+   "source_snapshot_id": "42e6b633f0d98a45f2d86758e8bb9369bb543e2860be8c8a76fe4780b0ccdfb6",
+   "publisher": "arXiv; University of Washington and Allen Institute for Artificial Intelligence researchers",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2607.15267v1",
+   "locator": "Section 7; supporting experiments in Sections 4–5",
+   "receipt": {
+    "public_excerpt": "poison inclusion at practical scale.",
+    "quote_hash": "88a82c54a7d2a1a6c0c00ba3144093f72c36ddc36285d01d086ffc9e94c5813e",
+    "verified": "exact"
+   },
+   "event_date": "2026",
+   "available_at": "2026-07-16",
+   "retrieved_at": "2026-10-29T01:11:26Z",
+   "relation": "supports",
+   "explanation": "Sandboxed comment injection and crawl-data analysis establish a feasible path through extraction and filtering. Separate controlled training experiments find shifts toward attacker-preferred answers, including with less conspicuous repeated content.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-small-samples-poison",
+   "source_snapshot_id": "4e1fe2a79fe3b8b8d01d7fa920014f6185f2f361cef77b5b4e054082ef09bc0e",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/small-samples-poison",
+   "locator": "Results",
+   "receipt": {
+    "public_excerpt": "250 documents",
+    "quote_hash": "dc743d8ed2ebca9157a640885fb9b00e98dc28754fd1784dba183fc577c995f4",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-10-09",
+   "retrieved_at": "2026-10-29T01:07:06Z",
+   "relation": "context",
+   "explanation": "Supports susceptibility once malicious documents enter training. It tests a gibberish-producing backdoor and directly inserts documents, so it alone would not establish the claimed web-publication pathway.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "misinforeview-hks-harvard-edu-article-llms-grooming-or-data-voids-l-53eb398ff2e2",
+   "source_snapshot_id": "9cc22ba29146a0b63862302bf845ddcdce0127624bd49091d37c533f80429e7d",
+   "publisher": "Harvard Kennedy School Misinformation Review",
+   "source_type": "peer_reviewed",
+   "url": "https://misinforeview.hks.harvard.edu/article/llms-grooming-or-data-voids-llm-powered-chatbot-references-to-kremlin-disinformation-reflect-information-gaps-not-manipulation",
+   "locator": "Research note Summary",
+   "receipt": {
+    "public_excerpt": "little evidence to support the grooming theory.",
+    "quote_hash": "b2934e2ed536898c4253cba02f5ae303ebc1f300048b5b24e2fb2de14355f4b0",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-22",
+   "available_at": "2025-10-15",
+   "retrieved_at": "2026-10-29T00:46:40Z",
+   "relation": "context",
+   "explanation": "This audit found limited evidence for successful grooming in a specific Kremlin-disinformation case. It cautions against claiming documented real-world success, but does not disprove the experimental capability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "de92fed92d7b66f922fbacda8a7786281e5200ffd11c62bbf368865d7dcef619"
+}

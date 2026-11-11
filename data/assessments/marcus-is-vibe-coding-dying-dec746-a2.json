@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-is-vibe-coding-dying-dec746-a2",
+ "claim_revision_ref": {
+  "id": "marcus-is-vibe-coding-dying-dec746",
+  "version": 1,
+  "content_hash": "93e1a4ee338ea8ed358bd02e5fbf463adf2e54a5ae41590b5ef7d9111e9c0093"
+ },
+ "contract_ref": {
+  "id": "marcus-is-vibe-coding-dying-dec746",
+  "version": 2,
+  "content_hash": "4b925af8362b9b1a012a2a41306f8defbb0a3b08ab1d400d13a9b1487bdfda10"
+ },
+ "packet_ref": {
+  "id": "marcus-is-vibe-coding-dying-dec746-p2",
+  "content_hash": "a17d0f029e85003777ecf2fdf232dc53b532ae20b8ba8445e7979214bd7ad36f"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-10-22",
+  "precision": "day"
+ },
+ "public_rationale": "Two pre-post benchmarks support lower performance on altered coding tasks. Their results are relevant, but familiarity is not fully separated from difficulty or sensitivity to changed requirements. Another study available by the freeze finds nearly equal performance on familiar and novel real-world codebases. Its experiment date is uncertain, so it cannot supply a dated contradiction. The evidence supports a narrower benchmark tendency but does not settle the general claim about vibe coding applications.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "Task-level correctness is an imperfect measure of complete application reliability.",
+  "Training exposure is generally inferred rather than directly verified.",
+  "Results depend on how unfamiliarity is operationalized."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-is-vibe-coding-dying-00a6cc-3x-review-anthropic-1",
+  "marcus-is-vibe-coding-dying-00a6cc-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-is-vibe-coding-dying-00a6cc-3x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-is-vibe-coding-dying-dec746",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Vibe coding can work for very familiar projects but is less reliable for unfamiliar ones.",
+  "kind": "observation",
+  "conditions": [
+   "fine for very familiar builds"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Vibe coding can be fine if you are building something very familiar, but is less reliable for the unfamiliar.",
+   "locator": "paragraph 8",
+   "url": "https://garymarcus.substack.com/p/is-vibe-coding-dying",
+   "date": "2025-10-22",
+   "document_title": "Is vibe coding dying?",
+   "observed_at": "2026-10-28T23:55:17Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "can be fine",
+    "something very familiar",
+    "less reliable for the unfamiliar",
+    "generalizing outside the training distribution"
+   ],
+   "our_interpretation": [
+    "Familiarity refers to similarity to the model's training distribution, as indicated by the preceding sentence.",
+    "Reliability means producing code that correctly performs the requested task.",
+    "The claim describes a general tendency, not failure on every unfamiliar task.",
+    "Comparisons should account for task difficulty, supplied context and evaluation conditions.",
+    "This is a general capability observation through the post date. Earlier relevant evaluations remain eligible; no October-only window is imposed.",
+    "Code-generation benchmarks can inform the claim, but transferring their results to complete amateur-built applications requires caution."
+   ],
+   "support_condition": "Relevant comparisons show successful performance on familiar tasks and consistently lower correctness on unfamiliar tasks, with material differences in difficulty and evaluation conditions addressed.",
+   "contradiction_condition": "Relevant, adequately controlled comparisons show similar or better reliability on unfamiliar tasks across the claimed scope."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Two pre-post benchmarks support lower performance on altered coding tasks. Their results are relevant, but familiarity is not fully separated from difficulty or sensitivity to changed requirements. Another study available by the freeze finds nearly equal performance on familiar and novel real-world codebases. Its experiment date is uncertain, so it cannot supply a dated contradiction. The evidence supports a narrower benchmark tendency but does not settle the general claim about vibe coding applications.",
+  "limitations": [
+   "Task-level correctness is an imperfect measure of complete application reliability.",
+   "Training exposure is generally inferred rather than directly verified.",
+   "Results depend on how unfamiliarity is operationalized."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "reduced the TPR",
+    "locator": "Section IV-B2, RQ2; qualification in Section V, Threats to validity",
+    "url": "https://arxiv.org/html/2412.08109v1",
+    "publisher": "arXiv; Yuanliang Zhang and colleagues",
+    "event_date": "2024",
+    "available_at": "2024-12-11",
+    "explanation": "ObfusEval compares functionality-preserving alterations of code from real projects and finds lower test-pass rates. This supports a familiarity disadvantage, although the authors acknowledge that obfuscation can also change complexity."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "performance drop",
+    "locator": "Abstract; Section 3.2, Benchmark Construction",
+    "url": "https://arxiv.org/html/2505.14597v1",
+    "publisher": "arXiv; Xianzhen Luo and colleagues",
+    "event_date": "2025",
+    "available_at": "2025-05-20",
+    "explanation": "CTF-Code finds deterioration after small requirement changes to easy programming problems. This supports sensitivity to unfamiliar variants, but it does not directly establish training exposure or measure complete application development."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "nearly identical performance",
+    "locator": "Introduction, RQ1 summary; Section 4, RQ1 results",
+    "url": "https://arxiv.org/html/2510.26130v1",
+    "publisher": "arXiv; Musfiqur Rahman, SayedHassan Khatoonabadi and Emad Shihab",
+    "event_date": "2025",
+    "available_at": "2025-10-30",
+    "explanation": "RealClassEval reports little practical difference between codebases classified as seen and unseen, challenging a broad familiarity explanation. The exact experiment date is unavailable, so this is contextual counterevidence rather than a dated contradiction within the target period."
+   }
+  ],
+  "what_would_resolve": "A comparison using pre-post tools on familiar and unfamiliar application-building tasks, with comparable difficulty, documented training-related familiarity and consistent functional testing.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f1d1201ec670bc13ffdadf8a90968374ba98cc789a20810d52d81de2073929f7",
+ "supersedes_assessment_id": "marcus-is-vibe-coding-dying-dec746-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-09T20:24:07Z"
+}

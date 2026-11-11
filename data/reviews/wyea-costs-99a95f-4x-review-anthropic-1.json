@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-costs-99a95f-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-costs-99a95f": "4bd1fb1bb2bc42748bcef2b25d9d7bc861ed38908e06197181f13de076b6c94c",
+  "case:wyea-costs-b8368f": "8a3630095fbce65cf766f910693a14f463daa464d82fcd76fc8ba3bd86567610",
+  "case:wyea-costs-bccdf4": "34959388ff25a4ad294d9e072e56ee983dddc63b6d2d131b8e5c2e6bfb0da8b1",
+  "case:wyea-costs-d37b66": "2cb073d86406038b9cf21fedf53cb2c4b7cd0eef6622f0968ab08b2ce7237cc4"
+ },
+ "started_at": "2026-10-29T17:34:40Z",
+ "completed_at": "2026-10-29T17:35:30Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, giving his view on the cause of the increase."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps 'I think', the approximate $83M figure, the June-July period and 'big part'. 'I think' is a statement of his view, not a graded probability, so the causal claim stays reviewable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the figure as the monthly equivalent of the run rate matches the post's own calculation. 'Big part' read as substantial, not a majority, is fair. The result turns on missing evidence, not on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "FT via PYMNTS (Jul 29, 2025): ARR around $4B. Date and definition are unclear, there is no June baseline, and there is no Claude Code or pricing split. It hints the July level may be lower than the post assumes but does not settle it."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's own disclosure (Sep 2025): Claude Code run rate above $500M. This falls outside the June-July window and cannot show Claude Code's share of the monthly change."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no comparable June and July run-rate figures and nothing linking the change to Claude Code or to new rates. e1 hints at a lower July level but is imprecise. e2 covers a later period. The causal claim can't be settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-99a95f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own concluding argument in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "Keeps the firm 'must increase dramatically', the condition 'to ever become sustainable', the hedged 'seems unprofitable' and the tentative 100% figure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker never defined 'sustainable'. The contract's definition (self-funding without recurring outside financing) is a fair ordinary reading, and the contract correctly requires sustainability to be established before scoring."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's S-1, available before the cutoff: continuing net and operating losses, some positive operating cash flow, and an expectation that losses will continue. This does not show durable sustainability, so the condition is not met."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a conditional necessity claim with no deadline. The condition, Anthropic becoming sustainable, has not been shown to have happened: the S-1 reports ongoing losses and expects them to continue. With the condition unmet and no pricing history, the claim can't be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-b8368f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The firm part is that customer inference costs are clearly rising. The provider-cost part ('appears to be high') is hedged and stays unscored. The training/inference caveat is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Taking 2025 up to publication and comparing like-for-like effective charges, including subscription allowances, is a fair plain reading. Whether 'customers' means all customers or heavy users matters, and the contract flags this."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Sonnet 4.5 list price unchanged (Sep 2025). This weighs against an across-the-board list-price rise but says nothing about effective bills or allowances."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Haiku 4.5 list price of $1/$5 (Oct 2025). Different model, with no like-for-like comparison in the packet. The page snapshot shows later navigation links, but the dated content is relevant."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A user's Nov 2025 GitHub repost of a company reply saying the new usage limits started in late September. Tighter allowances may raise effective costs for some subscribers, but the effect is not measured."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "There is no representative like-for-like billing series. Unchanged Sonnet pricing cuts against a general rise. The new usage limits cut the other way for some subscribers, but their size is unknown. The evidence does not settle whether customer inference costs broadly rose, and the provider-cost part is hedged and not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-bccdf4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps 'I believe', his exact figures and the 'direct result' claim. 'I believe' states his view firmly; it is not a probability grade."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'costs' as AWS payments follows the post. Requiring a material, not sole, contribution from effective Anthropic charges, including caching and service tiers, is fair to the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Cursor's own pricing post says more tokens per request drove costs, an alternative explanation based on usage. It does not quantify AWS bills or rule out a price effect. The snapshot appears to have been edited after publication."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Claude 4 list prices unchanged (May 22, 2025). This weighs against a headline price rise but leaves open effective caching or service-tier charges to Cursor."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Nothing independent confirms the two monthly AWS totals, and nothing separates price effects from usage. Unchanged list prices and Cursor's usage explanation weaken the claim but do not rule out higher effective charges. The causal claim can't be settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-d37b66"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31576,
+  "output_tokens": 5470,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,59 @@
+{
+ "run_id": "marcus-llms-dishonest-unpredictable-and-46b840-2x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-llms-dishonest-unpredictable-and-46b840": "839d5de190f5f7acbaa4f86649376fc639683cb7be531aaba8b82d6d3217efc1",
+  "payload:marcus-llms-dishonest-unpredictable-and-46b840": "c1f87c03c78d70f2f1064d04d8cf05a1bc6269e5d7acfcef7cad2cb72ffc2c37",
+  "case:marcus-llms-dishonest-unpredictable-and-ff4c7a": "42c53519248bcc24c825c3e2a5a38dbec842fe1d04dd82dbdd43e3bad60a5e21",
+  "payload:marcus-llms-dishonest-unpredictable-and-ff4c7a": "021ef36fcf11e42481716369f5e964dc1dd92abd17fc12cc56a53dd7e56ad308"
+ },
+ "started_at": "2026-11-09T20:23:44Z",
+ "completed_at": "2026-11-09T20:24:09Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. 'Almost certainly not' keeps the probabilistic framing. The scope 'or at least some applications' is missing from the proposition but appears in the visible interpretation. Money and China are rightly shown as reasons, not conditions. The rationale and limitations stay within e3. The e3 excerpt is a shortened substring; the explanation names the US, so it is not misleading. Dates, publisher, relation and the not_applicable/not_adjudicable outcome all match.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-46b840"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": false,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "Unless safety practices radically improve, deploying LLMs as agents will lead to accidents."
+    ],
+    "verdict": "fail",
+    "note": "The proposition 'will lead to accidents' turns the idiom 'an accident waiting to happen' into a firm prediction. The payload's own interpretation says this adds commitments and that likelihood is unspecified. The rationale's 'improves substantially' softens 'radically'. The e2 excerpt 'had minimal real-world impact.' drops 'The cases we've identified to date in these categories', which limits its scope. The outcome matches the reviews.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-ff4c7a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15077,
+  "output_tokens": 2749,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

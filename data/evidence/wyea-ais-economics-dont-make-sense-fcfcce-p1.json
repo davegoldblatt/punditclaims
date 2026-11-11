@@ -1,0 +1,101 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-fcfcce-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-fcfcce",
+  "version": 1,
+  "content_hash": "938eb4bbfc94a1d3941908901a4b4d3be79627d0101bba07cfee573668832a06"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-fcfcce",
+  "version": 1,
+  "content_hash": "d3e558141df0d094e46e43c9325126bc60b41112fb27506ecf78cac78db8cf9b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2026 LLM unpredictability reproducibility identical prompts benchmark reliability",
+   "\"2026\" \"LLM\" \"deterministic\" \"March\" reproducibility",
+   "\"Same Prompt, Different Answer\" \"Rover\" 2026 researchsquare",
+   "\"Deterministic LLMs\" \"2026\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2602.11786v1",
+    "used": true,
+    "why": "Primary repeated-inference experiment with an explicitly stated evaluation period ending in January 2026."
+   },
+   {
+    "url": "https://arxiv.org/html/2601.17768v2",
+    "used": true,
+    "why": "Primary technical counterqualification demonstrates a method for enforcing deterministic inference."
+   },
+   {
+    "url": "https://www.researchsquare.com/article/rs-9096283/v1",
+    "used": false,
+    "why": "Relevant controlled output-variability study, but experiment dates were not established; semantic equivalence also complicates interpreting textual variation."
+   },
+   {
+    "url": "https://ieeexplore.ieee.org/abstract/document/11458980",
+    "used": false,
+    "why": "read_page returned site navigation without the study's substantive text."
+   }
+  ],
+  "performed_at": "2026-10-29T10:19:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2602-11786v1",
+   "source_snapshot_id": "d0f182748cb44fbeb32821dc54bc95b22af41d34be27601d108f9a084917097a",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2602.11786v1",
+   "locator": "Section 4.1, 'Prompt-level distribution of failures'; evaluation dates in Appendix A.2",
+   "receipt": {
+    "public_excerpt": "failures are distributed across multiple prompts",
+    "quote_hash": "c85746cbb06fc2605fc050b933a55a021e6d73d60dbf2854cc31afdd32ef518f",
+    "verified": "exact"
+   },
+   "event_date": "2026-01",
+   "available_at": "2026-02-12",
+   "retrieved_at": "2026-10-29T10:10:49Z",
+   "relation": "supports",
+   "explanation": "The evaluation ending in January 2026 repeatedly sampled fixed prompts and found intermittent safety failures even with conservative decoding. This supports practical behavioral uncertainty; it does not prove that nondeterminism is unavoidable in every implementation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2601-17768v2",
+   "source_snapshot_id": "93551c9fce5846073a78d070b28e575d1b9b13da8e56cd9bce775b9b6434ed2b",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2601.17768v2",
+   "locator": "Section 1, description of the decode–verify–rollback protocol",
+   "receipt": {
+    "public_excerpt": "Determinism is guaranteed",
+    "quote_hash": "141d9ba2c53e012004e850b783ed1d75c3ce529745ba35871b9af20c18a59670",
+    "verified": "exact"
+   },
+   "event_date": "2026-01",
+   "available_at": "2026-01-30",
+   "retrieved_at": "2026-10-29T10:11:45Z",
+   "relation": "context",
+   "explanation": "LLM-42 describes and evaluates controlled deterministic inference, materially qualifying the word 'inherently'. Enforcing repeated token sequences does not guarantee that those sequences are correct or accomplish the user's intended task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The repeated-inference study's evaluation spans December 2025–January 2026 and does not separately report January-only results.",
+  "The evidence does not establish an immutable property of every LLM or quantify ordinary task-cost unpredictability."
+ ],
+ "packet_hash": "62e9e57d148ce294bfe5404cb3312c84ad2fe61d31e556e8f02eeec80e6972e1"
+}

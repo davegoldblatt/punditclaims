@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-oai-business-d6f2e1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-business-d6f2e1",
+  "version": 1,
+  "content_hash": "b7d9c1e15e293d28e5ab17df830363f245948e47179044a6bbbaf873d16aca8f"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-business-d6f2e1",
+  "version": 1,
+  "content_hash": "2668aac0148b0c3afd346fea9558742a0879ed7860e1900c362e000be1af9206"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI September 2024 10 million subscribers 350 million June New York Times",
+   "OpenAI 10 million subscribers September 2024 New York Times revenue",
+   "site.theverge.com 2024 OpenAI 10 million subscribers price 44"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html",
+    "used": false,
+    "why": "Original reporting was inaccessible to read_page: HTTP 403."
+   },
+   {
+    "url": "https://archive.ph/y98pA",
+    "used": false,
+    "why": "The archived article could not be read: HTTP 429."
+   },
+   {
+    "url": "https://veritaglobal.net/vertex/document/2490507241001000000000004",
+    "used": false,
+    "why": "The newspaper reproduction could not be read because certificate verification failed."
+   },
+   {
+    "url": "https://www.business-standard.com/technology/tech-news/openai-projects-its-revenue-to-increase-to-11-6-billion-next-year-124092900747_1.html",
+    "used": false,
+    "why": "The syndicated report returned HTTP 403."
+   },
+   {
+    "url": "https://9to5mac.com/2024/09/28/chatgpt-price-double-openai-raise/",
+    "used": false,
+    "why": "read_page returned unrelated article text, so the search snippet was not usable evidence."
+   },
+   {
+    "url": "https://techcrunch.com/2024/09/27/openai-might-raise-the-price-of-chatgpt-to-22-by-2025-44-by-2029/",
+    "used": true,
+    "why": "Readable contemporaneous reporting supplies the consumer subscriber estimate."
+   },
+   {
+    "url": "https://www.engadget.com/ai/chatgpt-added-50-million-weekly-users-in-just-two-months-181012894.html",
+    "used": true,
+    "why": "Readable reporting supplies the June monthly-user estimate and attributes it to internal documents reviewed by the New York Times."
+   }
+  ],
+  "performed_at": "2026-10-29T20:22:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "techcrunch-com-2024-09-27-openai-might-raise-the-price-of-chatgpt-t-fd32cd0cb2b6",
+   "source_snapshot_id": "27458bdb145d853efc588f2ac75bb3e692fe3a07fe7b784b11cf369bf697c521",
+   "publisher": "TechCrunch",
+   "source_type": "news_report",
+   "url": "https://techcrunch.com/2024/09/27/openai-might-raise-the-price-of-chatgpt-to-22-by-2025-44-by-2029",
+   "locator": "Final article paragraph",
+   "receipt": {
+    "public_excerpt": "10 million paying users",
+    "quote_hash": "f85cd405df09e8af67578f528dae3f889215a6cd3734cab07f127d07c6247fa8",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-27",
+   "available_at": "2024-09-27",
+   "retrieved_at": "2026-10-29T20:17:54Z",
+   "relation": "supports",
+   "explanation": "Supplies the approximate consumer subscriber numerator. Together with e2, it reproduces the calculation in the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: approximately 10 million paying ChatGPT users",
+     "e2: approximately 350 million monthly users of OpenAI tools in June"
+    ],
+    "formula": "100 × 10,000,000 / 350,000,000 = 2.857142857%",
+    "rounding": "2.9% to one decimal place; 3% to the nearest whole percentage point."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "engadget-com-ai-chatgpt-added-50-million-weekly-users-in-just-two-m-f88c4f994428",
+   "source_snapshot_id": "7a69247d9706f1aa741287de4f0493df47b8287d8bf44bd91c24514aa365c57c",
+   "publisher": "Engadget",
+   "source_type": "news_report",
+   "url": "https://www.engadget.com/ai/chatgpt-added-50-million-weekly-users-in-just-two-months-181012894.html",
+   "locator": "First article paragraph",
+   "receipt": {
+    "public_excerpt": "350 million people",
+    "quote_hash": "a0c617cee2c04dd36a800b210a08e6907bb307beac5f20607708ea0527b12395",
+    "verified": "exact"
+   },
+   "event_date": "2024-06",
+   "available_at": "2024-10-02",
+   "retrieved_at": "2026-10-29T20:16:31Z",
+   "relation": "supports",
+   "explanation": "Supplies the denominator explicitly used in the post. Its scope is OpenAI tools, so the calculation should not be presented as a directly measured ChatGPT conversion rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No accessible primary record establishes synchronized subscriber and monthly-user counts.",
+  "The denominator's product coverage and overlap with the subscriber population remain unclear.",
+  "These reports do not measure transitions from free usage to paid subscriptions."
+ ],
+ "packet_hash": "68f68b2a415d2d69145041257ec4a4494d30baab1764c05911543c34687fbc02"
+}

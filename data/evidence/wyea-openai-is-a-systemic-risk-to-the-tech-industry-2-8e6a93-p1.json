@@ -1,0 +1,146 @@
+{
+ "packet_id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-8e6a93-p1",
+ "claim_revision_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-8e6a93",
+  "version": 2,
+  "content_hash": "cc3f93309bfac2860f596a9d2770e261a6f1c571cd77820e427c1243b2fd8129"
+ },
+ "contract_ref": {
+  "id": "wyea-openai-is-a-systemic-risk-to-the-tech-industry-2-8e6a93",
+  "version": 1,
+  "content_hash": "5120826f4d9b6f7777d9d57f3428a2967d584218010565abfc4fa89dcf09bd33"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2026 funding round closed 122 billion March 2026",
+   "site.group.softbank news 2026 OpenAI 30 billion second closing 10 billion July October",
+   "site.group.softbank/en/news/press/20261001 OpenAI",
+   "OpenAI funding 2026 122 billion received cash tranches Nvidia Amazon 15 billion",
+   "site.sec.gov Amazon 2026 \"OpenAI\" \"15.0 billion\"",
+   "\"Amazon\" \"2026\" \"10-Q\" \"June 30\" investor pdf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://group.softbank/en/news/press/20261001",
+    "used": true,
+    "why": "Full text read. Confirms completion of the separate 2026 investment."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001018724/575d79fb-3eda-4e99-9920-97324791ae65.html",
+    "used": true,
+    "why": "Filing passages read, including the unaudited status. Reports a completed investment transaction, distinct from carrying values."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. The filing was read through its CloudFront copy."
+   },
+   {
+    "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
+    "used": false,
+    "why": "Full text read, but the headline total measures committed capital. Completed payments provide the stronger test."
+   },
+   {
+    "url": "https://group.softbank/en/news/press/20251231",
+    "used": false,
+    "why": "Full text read. Concerns the original round, which is excluded from the subsequent-funding calculation."
+   },
+   {
+    "url": "https://openai.com/our-structure/",
+    "used": false,
+    "why": "Read to check the restructuring language. It does not establish the subsequent funding amount."
+   },
+   {
+    "url": "https://www.theinformation.com/briefings/exclusive-nvidia-softbank-make-final-20-billion-investment-openais-last-round/",
+    "used": false,
+    "why": "read_page returned HTTP 403. No quotation or investment amount was taken from its preview."
+   }
+  ],
+  "performed_at": "2026-10-29T20:42:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "group-softbank-en-news-press-20261001",
+   "source_snapshot_id": "9949a8259a9b665c22efe9addccb345ae82622f57fb0aa1d308dfa18ce48f93f",
+   "publisher": "SoftBank Group",
+   "source_type": "company_disclosure",
+   "url": "https://group.softbank/en/news/press/20261001",
+   "locator": "Opening paragraph, second sentence",
+   "receipt": {
+    "public_excerpt": "USD 30.0 billion",
+    "quote_hash": "32b532636a055ffa0730b757a00283470cbc224b82e4609cf2fd7bfe9cd508f5",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-01",
+   "available_at": "2026-10-01",
+   "retrieved_at": "2026-10-29T02:25:05Z",
+   "relation": "contradicts",
+   "explanation": "SoftBank completed USD 30 billion of fresh 2026 investments. Adding the separately documented Amazon payment in e2 establishes a conservative USD 43.7 billion received during 2026 by October 1.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "New primary investment funding received, excluding the March 2025 round",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-10-01",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "USD 30.0 billion: completed 2026 SoftBank investments disclosed in e1",
+     "USD 13.7 billion: completed Amazon Q2 2026 investment disclosed in e2"
+    ],
+    "formula": "30.0 + 13.7 = 43.7 billion USD of documented new funding within 2026 by October 1",
+    "rounding": "No additional rounding; retain the sources' one-decimal precision. This is a lower bound, not total fundraising."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "d18rn0p25nwr6d-cloudfront-net-cik-0001018724-575d79fb-3eda-4e99-992-ad538628dc12",
+   "source_snapshot_id": "0889ac7041756beee68096972b988f0d56d907483fc1a02d7a2f3b64d951a7a6",
+   "publisher": "Amazon",
+   "source_type": "filing",
+   "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001018724/575d79fb-3eda-4e99-9920-97324791ae65.html",
+   "locator": "Financial Instruments, OpenAI investment disclosure",
+   "receipt": {
+    "public_excerpt": "$13.7 billion",
+    "quote_hash": "ee1d2ec0003972c758917fce2a6c9adf1362da9709c3e0f0220365c03b5051b2",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-31",
+   "retrieved_at": "2026-10-29T20:32:17Z",
+   "relation": "context",
+   "explanation": "This completed primary investment supplies the second input to e1. Its individual quarterly period is narrower than the combined measurement window; the amount used is transaction funding, not a GAAP valuation gain.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "New primary investment funding received, excluding the March 2025 round",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The records do not establish that this fundraising pace can continue indefinitely."
+ ],
+ "packet_hash": "86644dac8bee89f15a82fc17ff1d615aad252275f144ac14501ebcea9164a6e8"
+}

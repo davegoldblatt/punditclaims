@@ -1,0 +1,119 @@
+{
+ "assessment_id": "marcus-noam-chomsky-and-gpt-3-f648bc-a1",
+ "claim_revision_ref": {
+  "id": "marcus-noam-chomsky-and-gpt-3-f648bc",
+  "version": 1,
+  "content_hash": "ee5e9456c1bae3baea7524b27fadd8094ae0eb790781414d8348c839ad8ed9a6"
+ },
+ "contract_ref": {
+  "id": "marcus-noam-chomsky-and-gpt-3-f648bc",
+  "version": 1,
+  "content_hash": "8e881be2216a6898518fcba9850d90c02cce79c24379bcfdfbe731f86f3732f5"
+ },
+ "packet_ref": {
+  "id": "marcus-noam-chomsky-and-gpt-3-f648bc-p1",
+  "content_hash": "b3898373fa2d15c4f04611daca7b2770b2e1f92d8bcd464b96d27c62f69574e0"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-05",
+  "end": "2022-05-21",
+  "precision": "day"
+ },
+ "public_rationale": "The claim has an empirical part and a causal part. The evidence fits the empirical part read fairly. GPT-3 and InstructGPT kept making up information, at 41% and 21% on closed-domain tasks (e2). But fine-tuning without any grounding in the world halved that rate, which shows some capacity to reduce misinformation. TruthfulQA's authors tie false answers to imitating training text (e1), which partly fits Marcus's story. No cited study isolates the cause he names, being a model of word relations rather than of the world, from other factors. The causal part therefore stays open on the available evidence.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence is about error rates, not about mechanism.",
+  "Settling this would need a controlled grounded-versus-ungrounded comparison, which no source here provides."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-noam-chomsky-and-gpt-3-61b596-4x-review-anthropic-1",
+  "marcus-noam-chomsky-and-gpt-3-61b596-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-noam-chomsky-and-gpt-3-61b596-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-noam-chomsky-and-gpt-3-f648bc",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT-3 cannot avoid producing misinformation because it models how words relate to each other, not how language relates to the world.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "There is no intention to create misinformation—but also no capacity to avoid it, because fundamentally, GPT-3 is a model of how words relate to one another, not a model of how language might relate to the perceived world.",
+   "locator": "paragraph 12",
+   "url": "https://garymarcus.substack.com/p/noam-chomsky-and-gpt-3",
+   "date": "2022-05-21",
+   "document_title": "Noam Chomsky and GPT-3",
+   "observed_at": "2026-10-29T00:05:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "no intention to create misinformation",
+    "but also no capacity to avoid it",
+    "because fundamentally, GPT-3 is a model of how words relate to one another",
+    "not a model of how language might relate to the perceived world"
+   ],
+   "our_interpretation": [
+    "Two parts. (a) GPT-3 had no reliable built-in way to avoid producing false content. (b) The cause is that it is trained only on relations among words, without grounding in the perceived world.",
+    "Read fairly, 'no capacity to avoid it' means it cannot reliably avoid misinformation, not that it never says anything true."
+   ],
+   "support_condition": "Controlled evidence that GPT-3-era models' misinformation stems from text-only training, and that grounding in the world is what would be needed to fix it.",
+   "contradiction_condition": "Evidence that GPT-3-era models without world grounding could reliably avoid misinformation, or that the errors had a different main cause."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claim has an empirical part and a causal part. The evidence fits the empirical part read fairly. GPT-3 and InstructGPT kept making up information, at 41% and 21% on closed-domain tasks (e2). But fine-tuning without any grounding in the world halved that rate, which shows some capacity to reduce misinformation. TruthfulQA's authors tie false answers to imitating training text (e1), which partly fits Marcus's story. No cited study isolates the cause he names, being a model of word relations rather than of the world, from other factors. The causal part therefore stays open on the available evidence.",
+  "limitations": [
+   "The evidence is about error rates, not about mechanism.",
+   "Settling this would need a controlled grounded-versus-ungrounded comparison, which no source here provides."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "However, this result is expected if false answers are learned from the training distribution.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2109.07958",
+    "publisher": "ACL 2022 (Lin, Hilton, Evans), via arXiv",
+    "event_date": "2021-09",
+    "available_at": "2021-09-08",
+    "explanation": "Links falsehoods to imitating training text, which partly fits Marcus's word-statistics story. It does not test whether grounding in the world is the missing factor."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "InstructGPT models make up information not present in the input about half as often as GPT-3 (a\n21% vs. 41% hallucination rate, respectively).",
+    "locator": "Section 1 Introduction, summary of findings",
+    "url": "https://arxiv.org/pdf/2203.02155",
+    "publisher": "arXiv (OpenAI authors)",
+    "event_date": "2022-03",
+    "available_at": "2022-03-04",
+    "explanation": "Human-feedback fine-tuning, with no grounding in the world, halved fabrication but left it at 21%. This fits 'cannot reliably avoid' and also shows some capacity to reduce errors, so the causal story stays unsettled."
+   }
+  ],
+  "what_would_resolve": "Controlled studies comparing text-only and world-grounded models of similar scale on misinformation rates, or mechanistic work showing why GPT-3-era models fabricate.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0806e439dcf4d61d7983acdaccc30f4b9a89a7470ec219625c4c92fd69166df7",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:01:38Z"
+}

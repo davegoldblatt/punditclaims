@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-hello-multimodal-hallucinations-1c3721-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-hello-multimodal-hallucinations-1c3721": "7ef70c815af3300acefc20086a5a83de0ed34b6cee8a1223fa62f052e1df7de9",
+  "case:marcus-hello-multimodal-hallucinations-5f7eea": "97f1db2a16995e1ea139ec18aec3ca3d2832d5aeabed881824f75750bd7f035c",
+  "case:marcus-hello-multimodal-hallucinations-773cbd": "7a4d73b2fc4cc5876284004636334add512412f91bfdc306288d83f902ea0916",
+  "case:marcus-hello-multimodal-hallucinations-c3ae37": "023656d3b9390fe9a58e378a760fe1ec8767f85a28bf9cb1da64a9b845fde45d"
+ },
+ "started_at": "2026-10-29T07:27:56Z",
+ "completed_at": "2026-10-29T07:28:37Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post, written in the authors' voice; endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 'to our knowledge' qualifier, 'yet' and 'reliably'. Reading SHRLDU as SHRDLU's blocks world is correct. The exact task is shown in an omitted image, but the surrounding text identifies it well enough."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Counting hybrids as 'LLM-based' is an ordinary reading, since the speaker excluded nothing. With no reliability threshold or task bundle stated, the result depends on interpretation, as the contract says."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "May 2023 study: autonomous LLM planning is weak (~12% for GPT-4), and assisted modes look more promising. Covers standalone planning only, not the full SHRDLU dialogue and state-tracking bundle or hybrids."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Sept 2023 LLM+P hybrid finds optimal plans for most benchmark problems. 'Majority' success on planning alone does not show reliable SHRDLU-style dialogue and state tracking, so it neither meets the contradiction condition nor supports the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Standalone LLMs did poorly at blocks-world planning, but hybrids such as LLM+P succeeded on most planning problems. Neither study tests the full SHRDLU bundle (language understanding, state tracking, manipulation across an exchange) for reliability. The support condition (broad evaluations including hybrids) and the contradiction condition (a documented reliable comparable system) are both unmet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-hello-multimodal-hallucinations-1c3721"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post; endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Hallmark' names a characteristic feature, not a cause, so observation is the right kind. The 'widely known' framing is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (hallucination as a recognized, recurring failure of text-prediction models, not universal) is ordinary and fair. Using 2023 up to publication as the window is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Sept 2023 independent survey calls hallucination a substantial challenge to LLM reliability and organizes a body of research on it. This shows the failure was broadly recognized and recurring."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's March 2023 GPT-4 report admits the model still hallucinates, like earlier GPT models. This is a company disclosure. The reported improvements qualify how severe the problem is, not whether it persists."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An independent survey from before the post and a developer's own technical report both treat hallucination as a persistent, widely recognized limitation of LLMs. That meets the support condition. Reported reductions in hallucination rates do not show that hallucination was exceptional.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-hello-multimodal-hallucinations-5f7eea"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post; endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "Firm 'will remain inevitable' with no deadline, so it is an unhedged forecast. Leaving out the rhetorical aside about investors and CEOs is fine. Scoping it to LLMs matches the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading it as 'useful general-purpose LLMs keep some risk of hallucination' is ordinary. Requiring a validated impossibility result for early support, or a substantiated guarantee for contradiction, is reasonable for an open-ended forecast."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI, Sept 2025 (company disclosure): GPT-5 hallucinates less, but it still happens. This shows persistence up to that date, not inevitability, so it is not a conclusive event."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Formal impossibility result in a computable-function setting (v2, Feb 2025). Its assumptions do not clearly cover systems that verify answers or abstain, so it does not meet the full-scope early-resolution rule."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Lower bound that holds only for calibrated models and arbitrary facts. The authors say other kinds of hallucination may be mitigable, so this is not an unconditional result."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was stated, and neither early-resolution trigger has occurred. The impossibility results rest on narrower assumptions than the forecast's scope, and the packet shows no general-purpose system with a hallucination guarantee. Hallucinations persisting so far is consistent with the forecast but cannot prove inevitability.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-hello-multimodal-hallucinations-773cbd"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own co-authored post; endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'Which means that' ties the lack of world models to poor planning and unreliable reasoning, so causal is the right kind. Leaving out 'profound step backwards' and 'hit or miss' as rhetoric is acceptable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Judging a causal claim requires evidence for the mechanism, not just behavioral failures. Using 2023 models up to the post date is a fair window."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-4 succeeds on about 34% of Blocksworld tasks, and the authors suggest pattern matching rather than an internal model. This supports the 'poor at planning' part but does not isolate the cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Othello-GPT shows an emergent board representation that plays a causal role in its moves. This cuts against a blanket 'no world model' claim, but it is a synthetic model, not a general LLM."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "RAP adds LLM-simulated world states plus search and improves planning. It is loosely consistent with the proposed mechanism, but because several changes are made at once, world-model stability is not isolated as the cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The behavioral part (2023 LLMs were poor at autonomous planning) is supported by e1. But no study in the packet isolates unstable or absent world models as the cause of the planning and reasoning failures. The Othello and RAP results are narrow or confounded. Neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-hello-multimodal-hallucinations-c3ae37"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31620,
+  "output_tokens": 4587,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

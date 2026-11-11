@@ -1,0 +1,42 @@
+claim_id: marcus-when-looked-at-carefully-openais-483f6c
+version: 1
+claim_revision_ref:
+  id: marcus-when-looked-at-carefully-openais-483f6c
+  version: 2
+  content_hash: 25fde81ff57960fa171bf288234b5eee80a798b82a27f308ac8630670c91a2a8
+assessment_axis: historical_observation
+explicit_source_elements:
+  - collapsed all the measurements of accuracy
+  - a simple t-test
+  - would ... be significant
+  - as Footnote C implies
+evaluator_interpretation:
+  - This is a testable statement about an existing dataset, not a conditional forecast.
+  - Collapse means sum the five accuracy scores within each participant, preserving participants as independent observations.
+  - The primary test combines both cohorts and compares the 50 LLM-assigned participants with the 50 internet-only participants.
+  - Use an unadjusted, two-sided Welch t-test with significance at p < 0.05; also check the expert-only interpretation suggested by the preceding discussion.
+  - This assesses the numerical significance claim, not whether this was the uniquely correct analysis.
+support_condition: A participant-level t-test of total accuracy produces p < 0.05 for the combined sample, with a positive LLM-group difference.
+contradiction_condition: The specified participant-level t-test produces p >= 0.05.
+measurement_requirements: Join scores and assignments by participant ID, verify five accuracy scores per participant, sum within participant, and compare independent groups without multiple-comparison adjustment.
+source_requirements: Original participant assignments and accuracy records, with the published statistical summary as a cross-check.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2024-01-31
+  end: 2024-02-04
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: false
+plain_reading: true
+ambiguity_flags:
+  - Marcus does not specify the aggregation unit, test sidedness, variance assumption, or whether cohorts are combined.
+  - Treating all repeated task scores as independent would be a different analysis.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: true
+written_at: 2026-10-29T09:37:29Z
+frozen_at: 2026-10-29T09:37:29Z
+policy_version: 2026-10-28.7
+content_hash: 6c227852ad88a019390303b3ca133130ffad2d0f2c027a3914af1c9b4f063e03

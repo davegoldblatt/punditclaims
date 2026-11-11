@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-lying-to-you-d670c8-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-d670c8",
+  "version": 1,
+  "content_hash": "77d39176f5f8ef3a4552476edb4d80e595d53988f7de670dff088985b5b6e7b1"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-d670c8",
+  "version": 1,
+  "content_hash": "5d1f43f94b36fadf30b31a75b48fe63c765adc2c354e80941d1b1d7203a57386"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2026 10-K United States 149.6 195.7 revenue installation",
+   "\"NVIDIA\" \"2026\" \"headquarters\" \"end\" revenue location",
+   "NVIDIA 2026 10k investor.nvidia.com \"215,938\"",
+   "\"data centers\" \"2025\" \"installed\" \"44 billion\" NVIDIA",
+   "site.nvidianews.nvidia.com \"2026\" \"Full-year revenue rose 68%\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. The issuer-hosted copy of the filing was read instead."
+   },
+   {
+    "url": "https://fintel.io/doc/sec-nvidia-corporation-1045810-10k-2026-february-25-20509-6086",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q4/10K-NVDA.pdf",
+    "used": true,
+    "why": "Readable issuer-hosted filing establishes the revenue geography definition and fiscal-year figures."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907/",
+    "used": true,
+    "why": "Readable company earnings-release PDF establishes actual full-year Data Center revenue."
+   },
+   {
+    "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+    "used": false,
+    "why": "Read, but aggregate market absorption cannot identify the installation status or purchase value of NVIDIA's FY2026 sales cohort."
+   }
+  ],
+  "performed_at": "2026-10-29T21:22:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s201-q4cdn-com-141608511-files-doc-financials-2026-q4-10k-nvda-pdf",
+   "source_snapshot_id": "8caaee3837655507765ce07c743e0a197f94a316dad85d77fe711525f1ca3a9c",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q4/10K-NVDA.pdf",
+   "locator": "Note 16, geographic revenue disclosure, printed page 78",
+   "receipt": {
+    "public_excerpt": "shipping location",
+    "quote_hash": "331d9e5e34caa20c72cbc55ea10159ee7636f7ddc6e54de00a3556de4a82dbbb",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T11:59:58Z",
+   "relation": "context",
+   "explanation": "The filing reports US geographic revenue by customer headquarters, not installation destination. Applying that geographic share to global Data Center revenue therefore does not establish purchases for US deployment or an uninstalled balance.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Revenue from customers headquartered in the United States, across all end markets",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-699f6ab43d6332ccaa689907",
+   "source_snapshot_id": "aa3a4b784cf45a02bbb6c7afb432ea1d842cd26c85a346c9af410dbf33a043aa",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907",
+   "locator": "Highlights, Data Center, first bullet",
+   "receipt": {
+    "public_excerpt": "$193.7\nbillion.",
+    "quote_hash": "9444ee5b11dae3fa67448057d08e23019aab02fca01ecb68b4884a23ada3428e",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T12:39:07Z",
+   "relation": "context",
+   "explanation": "NVIDIA reports $193.7 billion of global Data Center revenue, rather than the quoted $195.7 billion. This corrects an input but measures revenue, not uninstalled US hardware, so it cannot directly contradict the normalized proposition.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Global Data Center end-market revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched disclosure establishes the value of sold FY2026 hardware remaining uninstalled.",
+  "Customer-headquarters revenue does not establish deployment geography.",
+  "The calculation lacks a reconciliation between fiscal-year sales, calendar-year commissioning and equipment installed in existing facilities.",
+  "The hardware-cost assumption does not establish how much installed equipment value was NVIDIA revenue."
+ ],
+ "packet_hash": "a49d3a7b535684ae80988205fe53c818b741ab19e392849268788312dc2ec171"
+}

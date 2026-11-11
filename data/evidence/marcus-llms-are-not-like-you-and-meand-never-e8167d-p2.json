@@ -1,0 +1,177 @@
+{
+ "packet_id": "marcus-llms-are-not-like-you-and-meand-never-e8167d-p2",
+ "claim_revision_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-e8167d",
+  "version": 1,
+  "content_hash": "6b6d0cedc958aa8206ddef36542d7893118701fad12fc96e414d74c3248e8a52"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-e8167d",
+  "version": 2,
+  "content_hash": "55f6011d95bdf3f515320b89fde2a8bcfe3541e8402496264d610af743eb6d5c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Evaluating the World Model Implicit in a Generative Model\"",
+   "\"Emergent World Models\" \"Chess\" language",
+   "next token prediction world models reliable generalization Othello 2025",
+   "\"A Causal World Model Underlying Next Token Prediction in GPT\"",
+   "language models world model induction robust generalization 2025 benchmark August",
+   "\"language models\" \"world models\" \"2025\" \"generalization\" before:2025-08-13 after:2025-01-01",
+   "\"language models\" \"world model\" \"induction\" benchmark 2026 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2406.03689v3",
+    "used": true,
+    "why": "Read with read_page. Tests coherence and behavioral robustness, including an important successful synthetic-Othello result alongside failures."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.03689",
+    "used": true,
+    "why": "Read with read_page to verify version dates."
+   },
+   {
+    "url": "https://www.basis.ai/blog/autumn-platform-2025/",
+    "used": true,
+    "why": "Read with read_page. Primary benchmark report testing contemporary general-purpose models on learning and using unfamiliar environments."
+   },
+   {
+    "url": "https://arxiv.org/html/2403.15498v2",
+    "used": true,
+    "why": "Read with read_page. Provides chess behavior and representation evidence, with narrower coverage than the full claim."
+   },
+   {
+    "url": "https://arxiv.org/abs/2403.15498",
+    "used": true,
+    "why": "Read with read_page to verify publication history and conference acceptance."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.04421v1",
+    "used": true,
+    "why": "Read with read_page. Reports both learned Othello representations and difficulty generating consecutive legal moves."
+   },
+   {
+    "url": "https://arxiv.org/abs/2503.04421",
+    "used": true,
+    "why": "Read with read_page to verify the March 6, 2025 release."
+   },
+   {
+    "url": "https://arxiv.org/abs/2505.10819",
+    "used": false,
+    "why": "Read with read_page. The displayed version was revised after the post and describes a system combining program synthesis and model-based planning; it does not isolate the claimed capability of autocomplete."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v267/zhang25j.html",
+    "used": false,
+    "why": "Read with read_page. Its theoretical recovery result under architectural and task assumptions does not establish reliable world-model use by the contemporary LLMs at issue."
+   }
+  ],
+  "performed_at": "2026-10-30T00:16:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2406-03689v3",
+   "source_snapshot_id": "90cc6d3b97b865213146616bfbf9dbf8a7ca83abdf655c1a113948f583ce7075",
+   "publisher": "Vafa et al., NeurIPS 2024; arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2406.03689v3",
+   "locator": "Section 4, Othello; Appendix D discussion of Tables 3 and 4",
+   "receipt": {
+    "public_excerpt": "performs well on both metrics.",
+    "quote_hash": "9ecec59d99e5e89d0ad4704d16c37e5060e6ff7e28b1d46ec6edca3d9e52b22a",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-11-10",
+   "retrieved_at": "2026-10-29T06:21:17Z",
+   "relation": "contradicts",
+   "explanation": "The synthetic-Othello model passes tests of recognizing equivalent states and distinguishing different states, and maintains nearly error-free legal play under move substitutions. This is stronger counterevidence than a decodable representation, although the same study finds substantial failures in other models and domains.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "basis-ai-blog-autumn-platform-2025",
+   "source_snapshot_id": "ab20721c1e5a9a842d921a94e7cd5fb21b6f814512ed3fc00e2dcf8bf46b5cff",
+   "publisher": "Basis",
+   "source_type": "benchmark",
+   "url": "https://www.basis.ai/blog/autumn-platform-2025",
+   "locator": "AI Performance Results; Task-Specific AI Performance",
+   "receipt": {
+    "public_excerpt": "world model learning through exploration and experimentation.",
+    "quote_hash": "74291499445f5a4ac83ed0ab5fc7b0e4c39bbb9f88c184a55c6f4b8c2cd37b0e",
+    "verified": "exact"
+   },
+   "event_date": "2025-07",
+   "available_at": "2025-07-17",
+   "retrieved_at": "2026-10-29T23:55:03Z",
+   "relation": "supports",
+   "explanation": "The benchmark reports that Claude 4 Sonnet, Gemini 2.5 Pro, and o3 underperform humans on prediction, planning, and change detection after exploring unfamiliar environments. This supports a practical reliability limitation, but performance also depends on exploration and reasoning, so it does not isolate an inability to induce a world model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2403-15498v2",
+   "source_snapshot_id": "3c77e44dff7ca5a00a715151bbf6c56ed4a7306affa0c990b4d184d68c87f1e8",
+   "publisher": "Adam Karvonen, COLM 2024; arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2403.15498v2",
+   "locator": "Section 3, model training and chess performance",
+   "receipt": {
+    "public_excerpt": "99.8%",
+    "quote_hash": "24113c6701c87359990e1b6fb5775333c1095de8a00635eb397d5e8779dd3aa2",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-07-14",
+   "retrieved_at": "2026-10-29T06:21:01Z",
+   "relation": "context",
+   "explanation": "Models trained solely to predict chess notation show substantial legal-play competence, alongside board-state probes and interventions. This challenges a simple equation of next-token prediction with having no useful state model, but does not by itself establish the broader reliability required by the contract.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-04421v1",
+   "source_snapshot_id": "9e28467960b0e034f633a04629d57d0cc73f000ec20c3c4da10c46162db07559",
+   "publisher": "Yifei Yuan and Anders Søgaard, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.04421v1",
+   "locator": "Section 3.2, discussion of move-generation results",
+   "receipt": {
+    "public_excerpt": "predict two or more consecutive moves.",
+    "quote_hash": "edd6ffad3eeb53b086ec1d9953d3ac7218d947972f97355956e7d42d254b6be8",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-03-06",
+   "retrieved_at": "2026-10-29T06:21:37Z",
+   "relation": "supports",
+   "explanation": "The study counts illegal generated moves as errors and reports difficulty extending single-move success to consecutive moves. Its simultaneous evidence of learned board representations illustrates why representation recovery alone does not settle reliable functional use.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The studies do not establish a common reliability standard connecting successful specialized models to the broader everyday competence discussed in the post.",
+  "Failures in the tested systems do not establish that next-token prediction itself is insufficient; success in synthetic Othello does not establish broad everyday reliability.",
+  "The evidence does not provide a representative assessment of all relevant capabilities available immediately before the post."
+ ],
+ "packet_hash": "e2fbc5eb1a9e99a529955ebf1aad4b2fcaad6c518ca114625771d3c052c765b0"
+}

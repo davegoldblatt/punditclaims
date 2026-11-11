@@ -1,0 +1,98 @@
+{
+ "packet_id": "marcus-checking-the-math-behind-openai-and-ef1be9-p1",
+ "claim_revision_ref": {
+  "id": "marcus-checking-the-math-behind-openai-and-ef1be9",
+  "version": 1,
+  "content_hash": "15533d1765b3a3c47f2c90a96689ad497d0eb74d8d63a111eaff63196d9b227b"
+ },
+ "contract_ref": {
+  "id": "marcus-checking-the-math-behind-openai-and-ef1be9",
+  "version": 1,
+  "content_hash": "cd4721ed3df1c6ad325b899ebdccab146fdd9481cbbe7597f8380bb76d688100"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic Berber Jin May 21 2026 559 million first profitable quarter",
+   "site.wsj.com Berber Jin Anthropic first profit May 20 2026",
+   "\"Mind-Blowing Growth Is About\" wsj.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wsj.com/tech/ai/mind-blowing-growth-is-about-to-propel-anthropic-into-its-first-profitable-quarter-7edbf2f4",
+    "used": false,
+    "why": "Original report identified, but read_page returned HTTP 401."
+   },
+   {
+    "url": "https://archive.ph/BoY3H",
+    "used": false,
+    "why": "Archived report could not be read; HTTP 429."
+   },
+   {
+    "url": "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
+    "used": false,
+    "why": "Full text corroborates the WSJ attribution and first operating-profit projection, but the selected account supplies more financial detail."
+   },
+   {
+    "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-revenue-set-more-double-212649753.html",
+    "used": true,
+    "why": "Full-text Investing.com report explicitly attributes the projection to WSJ and identifies its amount, quarter, revenue denominator, and accounting exclusions."
+   },
+   {
+    "url": "https://ca.finance.yahoo.com/news/anthropic-pace-first-profitable-quarter-211224834.html",
+    "used": false,
+    "why": "read_page returned HTTP 404."
+   }
+  ],
+  "performed_at": "2026-10-29T03:11:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-markets-stocks-articles-anthropic-revenue-set-mor-0f0561ae80fb",
+   "source_snapshot_id": "92af824dd8c47d5087e5f5811fb5623db0ff4b36ad5d7fa4e11d630a33b12bab",
+   "publisher": "Investing.com, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-revenue-set-more-double-212649753.html",
+   "locator": "Article body, second paragraph",
+   "receipt": {
+    "public_excerpt": "The company expects to post its first operating profit of $559 million in the June quarter.",
+    "quote_hash": "044f72f0c954387eec27844e231843d7ce04649cc0043f7168c875f3fc36f951",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-20",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T03:04:35Z",
+   "relation": "supports",
+   "explanation": "The article attributes the projection to WSJ and reports $10.9 billion in quarterly revenue, with training costs included and stock-based compensation excluded from operating profit. The implied margin is about 5.1%, consistent with the ordinary reading of slightly profitable.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Projected quarterly operating profit excluding stock-based compensation",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected operating profit: USD 559 million.",
+     "Projected quarterly revenue: USD 10,900 million."
+    ],
+    "formula": "Projected operating margin = 559 / 10900 × 100.",
+    "rounding": "5.1284%, rounded to 5.1%."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The original WSJ text and underlying investor projections were not accessible for direct verification."
+ ],
+ "packet_hash": "d453dd951293fc57e9b2793514831b435fd9e2ad5154413c5d0cd52bd096dc02"
+}

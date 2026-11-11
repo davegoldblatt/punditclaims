@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-horse-rides-astronaut-f165b1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-horse-rides-astronaut-f165b1",
+  "version": 2,
+  "content_hash": "d6f4e432e46904bd160d632028428fd8b076dc63d3c6e48cafb1e3cb40022ce6"
+ },
+ "contract_ref": {
+  "id": "marcus-horse-rides-astronaut-f165b1",
+  "version": 1,
+  "content_hash": "fab5394e79270d18443ef63afdf467b838c4c8f1bee0f9b830c51ec80c898faf"
+ },
+ "packet_ref": {
+  "id": "marcus-horse-rides-astronaut-f165b1-p1",
+  "content_hash": "0817be9b3bf8ed8bc030ccea767fbad49b8aee83d0ea8985454cb383a120db22"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2022-05-28",
+  "precision": "day"
+ },
+ "public_rationale": "The architecture descriptions are consistent with the absence of an explicit syntactic parser. They do not establish that this absence causes the semantic failures. Research on implicit syntactic representations shows why that inference requires additional evidence, but it neither tests full reliability in Imagen and DALL-E 2 nor disproves the proposed cause. The causal claim therefore remains unsettled.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Architectural omissions and observed failures do not by themselves identify a cause.",
+  "The contextual counterevidence concerns other language models.",
+  "Reading 'derive' to include implicit structure changes the architectural premise."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-horse-rides-astronaut-2b3e87-4x-review-anthropic-1",
+  "marcus-horse-rides-astronaut-2b3e87-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-horse-rides-astronaut-2b3e87-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-horse-rides-astronaut-f165b1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because the systems under discussion (Imagen, DALL-E 2 and similar architectures) represent phrases as strings and have no step to derive hierarchical syntactic structures, it is just wishful thinking to expect them to be fully sensitive to semantics as it relates to syntactic structure.",
+  "kind": "causal",
+  "conditions": [
+   "Imagen, DALL-E 2 and similar architectures under discussion",
+   "phrases represented as strings, with no step to derive syntactic structures",
+   "fully sensitive"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Furthermore, there is no step in the process to try to derive such structures; so it is just wishful thinking to expect them to be fully sensitive to semantics as it relates to syntactic structure.",
+   "locator": "paragraph 100",
+   "url": "https://garymarcus.substack.com/p/horse-rides-astronaut",
+   "date": "2022-05-28",
+   "document_title": "Horse rides astronaut",
+   "observed_at": "2026-10-29T00:05:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "no step in the process to try to derive such structures",
+    "so",
+    "fully sensitive to semantics",
+    "as it relates to syntactic structure"
+   ],
+   "our_interpretation": [
+    "Read 'such structures' as explicit hierarchical syntactic representations, following the preceding reference to syntactic trees.",
+    "Assess the asserted causal connection between lacking an explicit structure-building step and lacking reliable syntax-dependent semantic behavior.",
+    "The named systems are the 2022 Imagen and DALL-E 2 architectures. Later or different models can inform the mechanism but cannot directly settle their performance.",
+    "'Fully sensitive' means systematic handling of meaning-changing syntactic distinctions, rather than occasional successful examples."
+   ],
+   "support_condition": "Controlled experiments or a sufficiently specific theoretical result establish that the missing structure-building step explains the relevant semantic failures in these systems.",
+   "contradiction_condition": "Matched evidence demonstrates systematic syntax-dependent semantic reliability without such a step, or otherwise rules out its absence as the asserted cause."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The architecture descriptions are consistent with the absence of an explicit syntactic parser. They do not establish that this absence causes the semantic failures. Research on implicit syntactic representations shows why that inference requires additional evidence, but it neither tests full reliability in Imagen and DALL-E 2 nor disproves the proposed cause. The causal claim therefore remains unsettled.",
+  "limitations": [
+   "Architectural omissions and observed failures do not by themselves identify a cause.",
+   "The contextual counterevidence concerns other language models.",
+   "Reading 'derive' to include implicit structure changes the architectural premise."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "Imagen explores pretrained text encoders:",
+    "locator": "Section 2.1; conditioning architecture in sections 2 and 2.5",
+    "url": "https://arxiv.org/html/2205.11487v1",
+    "publisher": "Google Research researchers via arXiv",
+    "event_date": "2022-05",
+    "available_at": "2022-05-23",
+    "explanation": "The documented pipeline uses text embeddings to condition diffusion models and specifies no explicit tree-building stage. That supports the architectural premise under the explicit-parser reading, but does not establish its claimed causal consequence."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "subjects and verbs close",
+    "locator": "A brief example on subject-verb number agreement",
+    "url": "https://www.cs.columbia.edu/~johnhew/structural-probe.html",
+    "publisher": "John Hewitt",
+    "event_date": "2019",
+    "available_at": "2019-04-04",
+    "explanation": "The author demonstrates recoverable syntactic relationships in learned BERT representations without an explicit parser in the underlying model. This cautions against inferring absence of syntactic information from architecture alone, but concerns a different system and does not prove full semantic reliability."
+   }
+  ],
+  "what_would_resolve": "Controlled comparisons on the named systems that add, remove, or disrupt syntactic information while holding other factors fixed, paired with systematic role-reversal and relation tests.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "2a265a80bb9df81de925fec6912e06c144f217d964ad438b08f0760e0c2ac12f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:43:28Z"
+}

@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-covert-racism-in-llms-ebba76-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-covert-racism-in-llms-ebba76": "b84fae58cd59cd61f19d5feeafc71e1e9c243013a9ac004817806a3880d2a8c1"
+ },
+ "started_at": "2026-10-29T06:51:29Z",
+ "completed_at": "2026-10-29T06:51:44Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, introducing a figure from the Hofmann et al. paper. It is his reading of the results, not a quotation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The causal content is captured correctly, and 'appear to' keeps the hedge. The drafter itself recorded the modality as 'likely'. 'It looks like' is tentative language about appearance, not a firm assertion."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": false,
+     "note": "The contract admits the wording is 'tentative' but scores it as a plain-reading causal claim anyway. Policy limits plain-reading scoring to firm language. Hedged or probabilistic wording is not scored, so the contract should not produce a verdict here."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Original 2024 preprint. It reports that higher AAE feature density in controlled text gives significantly stronger covert stereotypes, and the authors conclude a causal link. This is relevant evidence of the outcome, but it cannot be scored because the claim is hedged."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "Correctly attributed causal claim, but 'It looks like' is a hedge, and the drafter coded the modality as 'likely'. Under policy, hedged claims are not scored. e1 does support a causal role for dialect features, but that cannot turn a tentative statement into a scored one.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-covert-racism-in-llms-ebba76"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 7618,
+  "output_tokens": 1392,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

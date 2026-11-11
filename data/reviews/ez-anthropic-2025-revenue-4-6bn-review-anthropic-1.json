@@ -1,0 +1,62 @@
+{
+ "run_id": "ez-anthropic-2025-revenue-4-6bn-review-anthropic-1",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "api",
+ "prompt_version": "review-3",
+ "prompt_hash": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc",
+ "rubric_version": "policy-2026-10-28.4",
+ "input_hashes": {
+  "claim": "74922a3b2efa03022f6e5ada290d7fbdceefe7a6c1baff5d0aa51b5f99b8a44d",
+  "contract": "5db16a7148bc77a7b38c1d86abf08b4519a6ddb9a2a9f31d1138e35faa8db854",
+  "packet": "00257eac5d68b87addf028285692e360a7cfd34ba7593fbdbc1e2e4c5261dded",
+  "prompt": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc"
+ },
+ "started_at": "2026-10-28T22:54:31Z",
+ "completed_at": "2026-10-28T22:54:44Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron states the figure in his own voice as fact. He credits the Reuters report of the S-1 as his source, but he adopts the figure rather than merely quoting it."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "observation",
+   "note": "The normalised claim isolates the revenue figure for calendar 2025, which is faithful to the statement. The separate loss figure is not part of this claim. This is a plain past-tense observation with no conditions or hedging."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "The GAAP basis comes from the S-1, which the speaker names as his source. Reading '$4.6 billion' as rounded to one decimal place is natural. The reported figure fits any reasonable reading, so no interpretation decides the result."
+  },
+  "evidence": [
+   {
+    "id": "s1-2025-revenue",
+    "fits": true,
+    "relation": "supports",
+    "note": "Anthropic's filed S-1, available 2026-10-26, before the evaluation date. Its audited statement of operations shows 2025 revenue of $4,585M, which is $4.585B and rounds to $4.6B. The locator cites F-7, but the excerpt places the table on F-8; this is minor. It is a company filing, but it is audited and is the source the contract specifies."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "historical_observation",
+  "horizon_state": "not_applicable",
+  "outcome": "supported",
+  "rationale": "Anthropic's audited S-1 reports $4,585 million in revenue for the year ended December 31, 2025. That is $4.585 billion, which rounds to $4.6 billion, so the support condition is met. The packet contains no conflicting evidence.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8288,
+  "output_tokens": 1112,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": "0.055392"
+}

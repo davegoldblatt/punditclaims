@@ -1,0 +1,100 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-577dc0-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-577dc0": "38902f93a57b7fa19ff9e7d696cee8bd45e7f428ae791a6dabf4d1039efdcb03",
+  "case:marcus-llms-dont-do-formal-reasoning-and-80315f": "c5ebfb6b5c92a1b18be9771c2a16b8c3da9c0d14f8948b5cf8a2eef582c12f0c"
+ },
+ "started_at": "2026-10-29T07:38:06Z",
+ "completed_at": "2026-10-29T07:38:39Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, restating his 2001 view as still correct."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps his definition of symbol manipulation and 'part of the mix'. A technical-necessity claim fits causal. He names no goal or horizon, and the proposition adds none."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Fair to treat it as not adjudicable. The necessity claim has no stated goal, test or deadline, so any result would depend on a goal the speaker never named."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a theoretical claim that symbol manipulation is necessary in AI design. It names no goal, benchmark or deadline, so no dated evidence could confirm or refute it. The packet cites no outcome evidence, and the sources it considered could not settle a necessity claim either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-577dc0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post. It introduces an example he embeds and endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful: LLMs keep failing to follow chess rules. The 'formal reasoning' label is interpretive and is fairly left ungraded."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is fair and ordinary: leading LLMs before the post still made illegal moves at a non-trivial rate. A 2024 window ending on the post date is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Report dated June 2024 on a 1,000-puzzle benchmark from May 2024. The strongest model tested, GPT-4o, made illegal moves 12.7% of the time, and most other LLMs made more illegal moves than legal ones. This falls inside the target period."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The primary benchmark repository behind e1. It counts illegal moves as rule failures, but its table is dated April 2025, after the target period, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "e1 documents a 2024 evaluation from before the post: GPT-4o, the strongest model tested, made illegal moves at 12.7%, and most other leading LLMs did worse. That meets the support condition. No contrary evidence appears. One gap: o1 was not tested, but the plain reading covers leading models in general.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-80315f"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27485,
+  "output_tokens": 2654,
+  "cached_input_tokens": 15836,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

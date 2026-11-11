@@ -1,0 +1,122 @@
+{
+ "assessment_id": "marcus-a-knockout-blow-for-llms-e0245c-a3",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-e0245c",
+  "version": 1,
+  "content_hash": "fd1ffabc357c9df8972767152c87af68d2beb5ae20abc9faf2986b6ae80d3f7a"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-e0245c",
+  "version": 1,
+  "content_hash": "8c0fe4f3679a97e6e95030772829afbabc1ecd1e258ca2413e5c89fc39705636"
+ },
+ "packet_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-e0245c-p1",
+  "content_hash": "afde0a51edc82358e3fa21ffe1fbd92ea43d224fc7551ac7cb8475c40be08a25"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "The evaluation published May 16, 2025 found that executing generated Python substantially improved localization results but generally worsened tracking results, with significant errors from generated algorithms [e1]. For o3-mini, code assistance sometimes increased error by up to 354% [e1]. This supports the claim that generated Python did not by itself ensure dependable correctness across the tested tasks, despite substantial benefits on some tasks [e1].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The decisive evaluation covers spatiotemporal tasks; it does not establish unreliability in every Python application [e1].",
+  "The reported metrics measure numerical error, not a universal task-completion success rate; exact experiment dates are not supplied [e1].",
+  "Successful Hanoi demonstrations were preliminary, used Lua, and were reported June 16, 2025, after the January 1–June 7 observation window [e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-a-knockout-blow-for-llms-753c69-4x-review-anthropic-2",
+  "marcus-a-knockout-blow-for-llms-753c69-4x-review-openai-2"
+ ],
+ "final_text_run_id": "marcus-a-knockout-blow-for-llms-e0245c-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-a-knockout-blow-for-llms-e0245c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs writing Python code to supplement their weaknesses is not reliable.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In the best case (not always reached) they can write python code, supplementing their own weaknesses with outside symbolic code, but even this is not reliable.",
+   "locator": "paragraph 34",
+   "url": "https://garymarcus.substack.com/p/a-knockout-blow-for-llms",
+   "date": "2025-06-07",
+   "document_title": "A knockout blow for LLMs?",
+   "observed_at": "2026-10-28T23:56:20Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "write python code",
+    "supplementing their own weaknesses with outside symbolic code",
+    "even this is not reliable"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that generating and executing Python does not by itself make LLM solutions dependably correct across tasks.",
+    "Reliable does not mean mathematically perfect. Material, recurring errors matter; isolated failures would be insufficient.",
+    "Useful code generation and substantial performance improvements are compatible with this claim.",
+    "Use calendar 2025 through June 7 for contemporary capability reports because the statement gives no period and this field has no standard reporting interval."
+   ],
+   "support_condition": "Execution-based evaluations show material errors or unstable task performance when contemporary LLMs use generated Python to solve verifiable problems.",
+   "contradiction_condition": "Broad, representative execution-based evaluations show dependably correct task completion using generated Python, without material correction or task-specific intervention."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evaluation published May 16, 2025 found that executing generated Python substantially improved localization results but generally worsened tracking results, with significant errors from generated algorithms [e1]. For o3-mini, code assistance sometimes increased error by up to 354% [e1]. This supports the claim that generated Python did not by itself ensure dependable correctness across the tested tasks, despite substantial benefits on some tasks [e1].",
+  "limitations": [
+   "The decisive evaluation covers spatiotemporal tasks; it does not establish unreliability in every Python application [e1].",
+   "The reported metrics measure numerical error, not a universal task-completion success rate; exact experiment dates are not supplied [e1].",
+   "Successful Hanoi demonstrations were preliminary, used Lua, and were reported June 16, 2025, after the January 1–June 7 observation window [e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Conversely, for tracking tasks, CI generally degrades performance.",
+    "locator": "Section 4.4, Result of using a code interpreter",
+    "url": "https://arxiv.org/html/2505.11618v1",
+    "publisher": "Quan et al., arXiv",
+    "event_date": "2025-05",
+    "available_at": "2025-05-16",
+    "explanation": "Executed Python improved localization substantially but worsened tracking; the study attributes significant errors to generated algorithms and optimization inaccuracies. This supports the limited claim that adding Python does not assure dependable solutions."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "correctly implement the recursive algorithm",
+    "locator": "Section 5, Alternative Representations Restore Performance",
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "publisher": "A. Lawsen, arXiv",
+    "event_date": "2025-06",
+    "available_at": "2025-06-16",
+    "explanation": "Preliminary demonstrations found successful Hanoi solutions when models generated Lua functions. This cautions against treating puzzle-output failures as proof that code generation cannot help, but it concerns another language and later tests."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c10f9609eee58b9559c5144e3051040064d66e6fe738979dbd17eb12a8cc9edf",
+ "supersedes_assessment_id": "marcus-a-knockout-blow-for-llms-e0245c-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:18:08Z"
+}

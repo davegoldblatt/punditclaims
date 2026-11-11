@@ -1,0 +1,143 @@
+{
+ "run_id": "wyea-ai-doesnt-have-roi-bd1ab7-2x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ai-doesnt-have-roi-bd1ab7": "ebf08380c6ffaab996a8af395e4faea346e7b12c4ee4ff645b7e8212e9e3a53b",
+  "case:wyea-ai-doesnt-have-roi-ca4bb0": "153bf31505db453a5b45d08a45fa0fc7d6e0f68579a88d788e1a16f2cb5e96f2"
+ },
+ "started_at": "2026-10-31T19:29:23Z",
+ "completed_at": "2026-10-31T19:30:49Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states this in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the observation and its hedge. That hedge prevents scoring under the policy."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract turns a hedged observation into a scored test. The plain-reading allowance applies only to firm language. The accounting basis, company boundaries, and reporting window also come from the evaluator."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports company financial results for the relevant year, but appeared after the statement. It does not establish what the public record showed on June 2."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports company losses for a relevant quarter, but publication followed the statement. It cannot establish the public record available when Zitron wrote."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports company operating profit for a quarter ending after the statement. This later result does not contradict the historical observation."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A contemporaneous report of company projections. Expected profit is not a realized financial result."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement expressly hedges its conclusion with 'appears'. Policy excludes hedged claims from scoring, and a plain-reading contract cannot override that exclusion. The later profit report concerns a quarter ending after the statement.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-doesnt-have-roi-bd1ab7"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly endorses the claim and its contract-role exception."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization faithfully extracts the present-tense capability and replacement claims, including the exception."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Documented employee replacement is a fair test. Treating employment declines associated with AI exposure as sufficient contradiction does not establish replacement caused by AI. The contract also introduces a softer aggregate claim that Zitron did not make."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Salesforce's company account directly challenges the claim by describing reduced support headcount, substantial AI workload, and comparable satisfaction. However, employee versus contractor status is unresolved, and this is not an independent finding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The study measures employment declines associated with AI exposure. It does not establish that AI performed the lost jobs or caused the decline. Its comparison also begins before the contract's window."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "No major aggregate disruption is compatible with individual jobs being replaced. This does not establish the categorical claim."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Offers reasons to question some AI layoff explanations. It does not establish the cause of Salesforce's reductions or rule out actual replacement."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports actual employee cuts and management's AI explanation, alongside overhiring. It does not identify work AI took over from those employees."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Salesforce supplies meaningful counterevidence, but the packet leaves the employee-versus-contractor distinction unresolved. The employment study establishes association, and Block's explanation has multiple causes. Aggregate stability cannot prove that no jobs were replaced. The evidence does not settle the claim with its exception preserved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-doesnt-have-roi-ca4bb0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25497,
+  "output_tokens": 2325,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": 1137
+ },
+ "cost_usd": null
+}

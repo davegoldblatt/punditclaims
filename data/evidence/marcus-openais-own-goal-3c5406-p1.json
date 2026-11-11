@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-openais-own-goal-3c5406-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-own-goal-3c5406",
+  "version": 2,
+  "content_hash": "e995f1cde9d0249ccde7aed780ef77fa23ecdfcd99e75ae5a3a217498a4ef9d1"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-own-goal-3c5406",
+  "version": 1,
+  "content_hash": "6b83ff4dea592c0f47cd6d7202387e4bdde4cdd7ea71ffdc82161aba0ce79c01"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com GPT-4 technical report architecture model size hardware training compute",
+   "site.openai.com \"GPT-4\" \"no further details\"",
+   "GPT-4 architecture July 2023 SemiAnalysis leaked details verified"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2303.08774v6",
+    "used": true,
+    "why": "Versioned primary technical report public immediately before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.08774",
+    "used": true,
+    "why": "Read to verify the March 4, 2024 revision date."
+   },
+   {
+    "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+    "used": false,
+    "why": "Read, but the versioned arXiv text gives a clearer historical snapshot."
+   },
+   {
+    "url": "https://semianalysis.com/2023/07/10/gpt-4-architecture-infrastructure/",
+    "used": false,
+    "why": "read_page marked this PARTIAL; it cannot be cited."
+   },
+   {
+    "url": "https://www.semafor.com/article/07/28/2023/its-not-magic-revealing-the-mysteries-of-chatgpt",
+    "used": true,
+    "why": "Accessible interview with the analyst supplies material counterevidence about reported architecture details."
+   }
+  ],
+  "performed_at": "2026-10-29T07:46:20Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2303-08774v6",
+   "source_snapshot_id": "c8d941aee28cfa795e2066177589c37437a4e9891b6f451975e7b8de7319d47d",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/html/2303.08774v6",
+   "locator": "Section 2, Scope and Limitations of this Technical Report",
+   "receipt": {
+    "public_excerpt": "capabilities, limitations, and safety properties",
+    "quote_hash": "8896d7618a82e4773cc2bdf3d1d254c5c9482d66b6d3d8fa3e44620717bc6819",
+    "verified": "exact"
+   },
+   "event_date": "2024-03-04",
+   "available_at": "2024-03-04",
+   "retrieved_at": "2026-10-29T01:10:00Z",
+   "relation": "supports",
+   "explanation": "The same paragraph expressly withholds detailed architecture, size, hardware, compute, dataset construction, and training methods. It nevertheless identifies a Transformer-style model, next-token pretraining, public and licensed data, and reinforcement learning from human feedback.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "semafor-com-article-07-28-2023-its-not-magic-revealing-the-mysteries-of-chatgpt",
+   "source_snapshot_id": "2b70c1aa535c10781e289b1355f3589170cdab48315e40c11cdaa53487af28d6",
+   "publisher": "Semafor",
+   "source_type": "news_report",
+   "url": "https://www.semafor.com/article/07/28/2023/its-not-magic-revealing-the-mysteries-of-chatgpt",
+   "locator": "Interview with Dylan Patel, discussion of mixture-of-experts architecture",
+   "receipt": {
+    "public_excerpt": "GPT-4 has 16 experts.",
+    "quote_hash": "fbff22971957e32c517bc80039f1917b9bf40f2708ed2188bacb23c1fcad1533",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-28",
+   "available_at": "2023-07-28",
+   "retrieved_at": "2026-10-29T07:38:59Z",
+   "relation": "context",
+   "explanation": "Patel publicly reported a specific architecture and discussed its operation. This qualifies the claim about public knowledge, but the interview does not expose evidence independently establishing the specification; it also predates the target snapshot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The accessible independent reporting does not establish how its specific architecture claims were verified.",
+  "The paywalled SemiAnalysis investigation could not be examined in full."
+ ],
+ "packet_hash": "bf7580072820905c7cb48281a86c3be5cccd8584648719d17372df4bda185936"
+}

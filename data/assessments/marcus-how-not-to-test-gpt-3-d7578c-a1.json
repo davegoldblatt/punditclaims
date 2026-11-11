@@ -1,0 +1,146 @@
+{
+ "assessment_id": "marcus-how-not-to-test-gpt-3-d7578c-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-d7578c",
+  "version": 1,
+  "content_hash": "1d1c41b02adb0d0902a4a65215bcea7564db824810ad359485b0138562048f0a"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-d7578c",
+  "version": 1,
+  "content_hash": "9bb4452fe7a86ac5611f76e56e5d6c969d18affb8404e6b7a037231a5d1626be"
+ },
+ "packet_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-d7578c-p1",
+  "content_hash": "9175400228eedbe71922c9c33fa5afba25096c6b1185bc0d6b3adfd55c67c01c"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-01-01",
+  "end": "2023-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "Primary documentation shows a conspicuous English imbalance on both sides of the claim. InstructGPT's instruction data was overwhelmingly English, BIG-G's training mixture contained little non-English text, and HELM's initial core evaluations covered only English. BIG-bench also acknowledged limited lower-resource coverage. BLOOM and xP3 are important multilingual exceptions, so the supported reading is broad predominance rather than a universal English-only rule.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "The assessment concerns language systems in the post's context, not all AI applications.",
+  "Instruction tuning, pretraining, and evaluation coverage measure different aspects of the imbalance.",
+  "No exact industry-wide English share or universal performance gap is established."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-not-to-test-gpt-3-995428-4x-review-anthropic-1",
+  "marcus-how-not-to-test-gpt-3-995428-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-not-to-test-gpt-3-995428-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-not-to-test-gpt-3-d7578c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "AI systems and AI test sets have a huge English-language bias.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "AI and AI test sets have a huge English-language bias.",
+   "locator": "paragraph 52",
+   "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+   "date": "2023-02-17",
+   "document_title": "How Not to Test GPT-3",
+   "observed_at": "2026-10-29T00:04:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "AI and AI test sets",
+    "a huge English-language bias",
+    "DO run tests in other languages"
+   ],
+   "our_interpretation": [
+    "In context, AI refers to GPT-like language systems and their language and reasoning evaluations, not every kind of artificial intelligence.",
+    "The plain reading is substantial English predominance in model development and evaluation coverage, with weaker representation of other languages. It does not assert that every model or benchmark is English-only.",
+    "Huge describes a conspicuous imbalance; no numerical cutoff or population-weighting formula is supplied.",
+    "For this ongoing research-state observation, use the latest completed research year and the elapsed publication year: 2022 through 17 February 2023. This observation window is evaluator-selected."
+   ],
+   "support_condition": "Primary documentation shows substantial English predominance in the training or tuning of prominent contemporary language models and in major general-purpose evaluation suites.",
+   "contradiction_condition": "Representative documentation shows broadly balanced language coverage in both contemporary language-model development and major evaluation suites, without substantial English predominance."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Primary documentation shows a conspicuous English imbalance on both sides of the claim. InstructGPT's instruction data was overwhelmingly English, BIG-G's training mixture contained little non-English text, and HELM's initial core evaluations covered only English. BIG-bench also acknowledged limited lower-resource coverage. BLOOM and xP3 are important multilingual exceptions, so the supported reading is broad predominance rather than a universal English-only rule.",
+  "limitations": [
+   "The assessment concerns language systems in the post's context, not all AI applications.",
+   "Instruction tuning, pretraining, and evaluation coverage measure different aspects of the imbalance.",
+   "No exact industry-wide English share or universal performance gap is established."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "almost entirely of English instructions",
+    "locator": "Section 5, limitations of data collection; Appendix A.4",
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "publisher": "Ouyang et al., OpenAI, arXiv",
+    "event_date": "2022",
+    "available_at": "2022-03-04",
+    "explanation": "The developer reports that roughly 96% of its instruction dataset was classified as English, possibly more because of classifier errors. This directly supports English predominance in instruction tuning, without treating that percentage as the pretraining distribution."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "English varieties and dialects",
+    "locator": "Section 3.1, Languages; introduction's description of the 16 core scenarios",
+    "url": "https://arxiv.org/html/2211.09110v1",
+    "publisher": "Liang et al., Stanford CRFM, arXiv",
+    "event_date": "2022",
+    "available_at": "2022-11-16",
+    "explanation": "HELM's initial core scenarios covered only English, including different English varieties. The authors explicitly say that even multilingual BLOOM was evaluated only for English."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "a handful also target lower-resource languages",
+    "locator": "Section 3.7; model description for BIG-G",
+    "url": "https://arxiv.org/html/2206.04615v1",
+    "publisher": "Srivastava et al., BIG-bench collaboration, arXiv",
+    "event_date": "2022",
+    "available_at": "2022-06-09",
+    "explanation": "BIG-bench documents limited lower-resource-language coverage and reports that its BIG-G training mixture contained about 6% non-English text. Its multilingual tasks also show that English predominance coexisted with deliberate efforts to test other languages."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "covering 46 languages",
+    "locator": "Section 3.1, Multitask Prompted Finetuning; abstract",
+    "url": "https://arxiv.org/html/2211.05100v1",
+    "publisher": "BigScience collaboration, arXiv",
+    "event_date": "2022",
+    "available_at": "2022-11-09",
+    "explanation": "BLOOM was trained on 46 natural languages, and the project developed a multilingual prompted dataset collection. These are substantial exceptions to an English-only description, but do not negate predominance in other prominent systems and evaluations."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "2d01624655c504568c759b67aae61701b5099f93e81d275ab52f08e63c8c6b52",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:32:34Z"
+}

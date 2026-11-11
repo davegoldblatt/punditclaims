@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-please-dont-trust-your-chatbot-for-2e779a-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-please-dont-trust-your-chatbot-for-2e779a": "8fad7b6a02e7f991433a5e42fbb837b1806da433ec70067c539dee3070e5b6d5",
+  "case:marcus-please-dont-trust-your-chatbot-for-352372": "098ef2a1764d325c37f153cb0a31996b1a1c1f12ff7543eb056d8ac7e60b7f44",
+  "case:marcus-please-dont-trust-your-chatbot-for-3db366": "f1450527c5c241254ecce64ef97c6649ec326af40eafaa9a5c2d05dfce53a1a5",
+  "case:marcus-please-dont-trust-your-chatbot-for-7ffa80": "ad9947c0d5c1521262e4094d0b35ebd580d3fc1c505f55f6ff4201fc2ba07da7"
+ },
+ "started_at": "2026-10-29T08:04:15Z",
+ "completed_at": "2026-10-29T08:06:04Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus presents this conclusion as his own assessment."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The medical conclusion is preserved, but the normalization omits the distinct-journal count and recent-publication window. Those omissions matter to the result; the contract retains them."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Insufficient reliability for unsupervised medical decisions is an ordinary reading. Checking four distinct journals follows the explicit wording. The selected starting date does not affect the bibliographic finding."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The April publication documents medical misinformation and confident errors across five chatbots. Adversarial prompts and older systems limit generalization."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The April study identifies substantial clinical reasoning failures despite stronger final-diagnosis performance. Prepared vignettes do not establish lay-user error rates."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The February randomized study directly supports concerns about lay-user interactions. Strong model-only condition identification qualifies the conclusion."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "This paper and e3 appeared in Nature Medicine, leaving three distinct journals. Its triage findings nevertheless support the medical reliability concern."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Available before the cutoff, this preprint shows measurement sensitivity in different API systems. It does not directly overturn the ChatGPT Health findings."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Four papers published within the stated period converge on material medical reliability problems, including problems involving lay users. They appeared in three distinct journals, contradicting the four-journal component. Stronger performance on some tasks and the methodological reanalysis limit generalization without establishing reliable unsupervised use.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-2e779a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The causal explanation is Marcus's own interpretation of the studies."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalization preserves the information-quality concession, lay-user scope, causal explanation and possibility qualifier."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The proposed mechanism is a reasonable research question, but the contract turns a qualified possibility of bad advice into a scored causal generalization across models. The plain-reading exception does not authorize scoring possibility language."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Transcript analysis supports incomplete information as a plausible contributor. It does not isolate its causal effect; additional information sometimes introduced errors, and the interactions occurred in 2024."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AMIE demonstrates effective information gathering in simulated consultations, qualifying universal incapacity. A specialized research system with patient-actors does not directly resolve ordinary lay-user chatbot behavior."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The causal passage qualifies the adverse outcome as something that can easily happen. Under the policy excluding possibility claims from scoring, this formulation is not adjudicable. Independently, the packet does not isolate missing questions as the cause of the observed performance gap. The case is intact, so abstention is unwarranted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-352372"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus explicitly reaffirms his earlier characterization and applies it to medicine."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization captures the empirical assertion of recurring confident errors. The accompanying warning against reliance is not independently scored as a recommendation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Recurring materially incorrect medical answers presented confidently is a fair ordinary reading. The explicit reference to older testing supports the contextual period, without establishing behavior in every current model."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The multi-chatbot audit documents recurring problematic answers, fabricated references and confident presentation. Its stress prompts do not estimate everyday error prevalence."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2026 testing documents consequential emergency undertriage. Strong performance on intermediate and textbook cases qualifies the scope without eliminating the observed failures."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Strong final-diagnosis performance limits a blanket incompetence reading. This evaluation does not directly measure confidence accompanying errors."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The audit establishes recurring medical errors with confident presentation across multiple chatbots, and the consumer-health evaluation establishes consequential triage failures. Strong performance on other tasks does not contradict this bounded reading. The packet does not establish ordinary-use error prevalence or identical behavior in every publication-day model.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-3db366"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus directly endorses the characterization in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the asserted failure types, general scope and medical relevance."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading typical as characteristic recurring failures, and problematic as undermining medical reliability, is ordinary and fair. Neither wording requires most answers to be false or documented patient injury."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The five-chatbot audit documents fabricated references, answer errors and confident presentation. Stress prompts, sensitive scoring and consultation disclaimers limit broader prevalence or universal-certainty conclusions."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The 24-model preprint corroborates difficulty expressing medical uncertainty. Unestablished query dates prevent treating it as decisive outcome evidence for the specified testing period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The primary multi-model audit documents all three asserted failure types in medically relevant tasks. This supports their characterization as recurring medical reliability problems. Disclaimers and stronger performance in some categories qualify the finding; ordinary-use prevalence and actual patient injuries remain unestablished and are not required by the fair contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-7ffa80"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30980,
+  "output_tokens": 2569,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 516
+ },
+ "cost_usd": null
+}

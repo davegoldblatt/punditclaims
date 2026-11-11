@@ -1,0 +1,191 @@
+{
+ "run_id": "wyea-dead-money-514ad4-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-dead-money-514ad4": "855b0accdba1d7df900cc9b7caed84721ad5c6c89039fc4b952b7be4a24abfca",
+  "case:wyea-dead-money-55a225": "b888db523895f47422e7af0ac7e8c1bd7377984e19306765954f469947a34060",
+  "case:wyea-dead-money-57bc73": "928810c376e8d0a61378e99471e52ea9620edd7b52db6b0c42a4fa68bc8e73ec",
+  "case:wyea-dead-money-6054f8": "bfd874bff7d77211e522b67363f41530f312ffd308fb83ae2cd03330ef5f485b"
+ },
+ "started_at": "2026-10-29T17:36:59Z",
+ "completed_at": "2026-10-29T17:37:54Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own arithmetic in his post. The hyperscaler input ($419B) is credited to Jeff Pu/Goldman, but he does the totals himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "This is scenario arithmetic ('if we assume'). Both branch antecedents are kept. Both totals also depend on the $419B hyperscaler estimate, which the contract makes explicit. The 67.6% branch does not reproduce exactly from the stated inputs."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract treats the branches separately and uses gross annual issuance for calendar 2027. It flags the arithmetic gap and the unclear SPV coverage. That is a fair reading of the scenario framing."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Goldman projects about $420B of hyperscaler issuance in 2027. That is a forecast, published before the cutoff, matching the input. It shows neither realized 2027 issuance nor either antecedent."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "The forecast concerns calendar 2027, after the 2026-10-28 evaluation date. Neither branch antecedent (other AI debt flat, or growth of 67.6%) can be known yet, and the packet has no realized issuance data. The only evidence is an analyst forecast, which is context. This cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-514ad4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence, stated in his own voice in the post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "A firm causal claim ('exists because') about the source of NVIDIA's backlog. The normalisation matches the wording."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "On the plain reading, 'much' means a substantial share, not necessarily a majority, and stockpiling means buying well ahead of deployment. That is an ordinary reading, and it does not stretch the claim for or against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA's 10-Q risk language on demand uncertainty and customers' infrastructure limits. It does not attribute any of the backlog to stockpiling."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Management (a company disclosure) says compute is 'fully utilized' in clouds it serves. Deployed capacity can coexist with stockpiled orders, so this does not refute the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No order-level or independent data links NVIDIA's customer backlog to buying ahead of deployment. Both items are NVIDIA's own disclosures, and neither measures the share of the backlog driven by stockpiling. The evidence does not settle the claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-55a225"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion ('In reality, at least half...'). He builds on Morgan Stanley's estimate but states it as his own claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Firm language with a stated threshold ('at least half') and Broadcom TPUs included. The evaluative tail about capex being 'incoherent' is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": false,
+     "note": "'Are being made' and the Morgan Stanley context (servers sold 2026–2028) point to current sales. Fixing the cohort as 2022 to June 2026 is not the ordinary reading, and it pulls in early sales that were deployed quickly, which works against the speaker. The two-year minimum is also the evaluator's addition."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A Google company disclosure that one customer runs Ironwood TPUs. It gives no sale dates and no market-wide share."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No dataset matches sale dates to first use for NVIDIA or Broadcom chips. The single item is an anecdote about TPUs in use and cannot test a 50% threshold. The packet cannot settle the claim under any choice of cohort.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-57bc73"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own summary line in the 'Let's review' list."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm, unqualified claim about cost. The normalisation is verbatim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker gave no measure. On the plain reading, 'extremely expensive' means multimillion-dollar cost per MW and billions for a large facility. That is the ordinary reading in context and is fair, although the result does depend on it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Cushman & Wakefield's Sept 2026 cost guide: $17.6M per MW for modern greenfield facilities, excluding GPUs. That is roughly $1.76B at 100 MW."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "JLL, January 2026: shell construction about $11.3M per MW, with AI fit-out costing up to $25M per MW on top."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A news report confirming the guide's Sept 3 release date and that its figure excludes chips."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent 2026 benchmarks show construction alone at $11–18M per MW, before AI hardware fit-out of up to $25M per MW. A large facility therefore needs billions of dollars, which meets the plain-reading test. The packet contains no contrary evidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-6054f8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28514,
+  "output_tokens": 5608,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

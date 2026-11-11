@@ -1,0 +1,107 @@
+{
+ "run_id": "marcus-decoding-and-debunking-hard-forks-d3b5d0-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-decoding-and-debunking-hard-forks-d3b5d0": "4321a7c43aa741e601a492890ba8805e3683485fcee659a5c68b339c8dd84a12",
+  "case:marcus-decoding-and-debunking-hard-forks-e70745": "d366e5094f575cc4f86bcca2801eb578d18fe7217a8d7de827202ab8fb6b15b2"
+ },
+ "started_at": "2026-10-29T06:55:24Z",
+ "completed_at": "2026-10-29T06:55:58Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, stated in his voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A present-state observation: the US lead is shrinking, as DeepSeek shows. The previous sentence speaks of a lead 'in coding', so the domain is ambiguous. The drafter's 'US lead' with target 'US AI lead' is a fair rendering."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'lead' as frontier AI model capability is the ordinary reading, given that DeepSeek is a model. The human-coding-capacity reading is flagged and cannot be settled by benchmarks. Requiring the gap to narrow, not just DeepSeek being capable, is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Stanford AI Index 2025, available April 2025, before the evaluation date. It reports the US-China model gap closing on several benchmarks from end-2023 to end-2024, and per its explanation also on Arena ratings by Feb 2025. The DeepSeek-specific figures appear only in the explanation, not the excerpt."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent AI Index data shows the US-China frontier-model gap narrowed sharply into early 2025, with Chinese models, DeepSeek among them, nearly matching US leaders. On the contract's plain reading of 'lead' as AI model capability, the observation holds. The packet has no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-decoding-and-debunking-hard-forks-d3b5d0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Can', backed by 'history has told us over and over', is a factual claim that this pattern has occurred, not a probability hedge. The proposition rightly leaves out the separate accusation against Roose. Narrowing the claim to code matches the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating 'can' as an existence claim and 'enormous challenges' as substantial failures on unfamiliar or perturbed tasks is an ordinary, fair reading. Both the lack of a numeric threshold and the excluded Roose accusation are flagged."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "March 2024 preprint: StarCoderBase scores 72% on the MBPP problems most similar to its training data versus 22% on the least similar, and the authors test whether difficulty explains the gap. Strong familiarity-versus-generalization evidence from before the post."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed ReCode (ACL 2023) shows code models failing after meaning-preserving prompt changes. This supports substantial generalization limits, though it does not by itself pin the cause on memorization."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Before March 2025, published evaluations showed code models doing much better on training-similar problems than on unfamiliar ones (72% vs 22%) and failing under meaning-preserving perturbations. Strong performance on familiar code alongside large generalization failures is documented, so the existence claim holds. The claim about Roose himself is not assessed.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-decoding-and-debunking-hard-forks-e70745"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31720,
+  "output_tokens": 3795,
+  "cached_input_tokens": 17601,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

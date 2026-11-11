@@ -1,0 +1,119 @@
+{
+ "run_id": "marcus-the-hottest-new-programming-language-8231fa-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-hottest-new-programming-language-8231fa": "6c880a949852298b93256ac8f5c98469344fe68371e31bcca75c2aa72bc4dc63",
+  "case:marcus-the-hottest-new-programming-language-a7b060": "d9478d556802a80ca4c5973f39eac7aa1501a715cefe9975052149c658f71d44"
+ },
+ "started_at": "2026-10-29T21:57:15Z",
+ "completed_at": "2026-10-29T21:57:40Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post. He introduces it after BioBootloader's point, but then states it in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to his words, including 'apparently'. But 'apparently' marks the claim as uncertain, and 'new era' and 'frightening' are characterisation, not a firm checkable fact."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract scores a plain reading even though the language is hedged ('apparently'), which policy does not allow. It also reduces 'new and frightening era' to 'LLMs can produce buggy code', a reading the speaker did not supply."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A dated Jan 2024 preprint showing GPT-4-generated code with bugs that needed debugging. It bears on the narrowed core only, and the claim is not scored."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2011 study of compilers producing wrong code from valid input. It qualifies the novelty framing but is not about LLMs."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement is hedged with 'apparently' and framed as a subjective 'frightening new era'. Under policy, hedged or uncertain language is not scored, and plain-reading scoring applies only to firm language. The evidence suggests LLM code needs debugging, and older compilers also produced wrong code. Neither can score a hedged characterisation.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-hottest-new-programming-language-8231fa"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. The Libin quote that follows is separate and is not used."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The comparison with English prompting comes from context, but 'But' directly contrasts this with programming in English, so the comparison is a fair reading. The claim is firm and has no hedge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "An ordinary plain reading: formal languages define behaviour precisely, while English prompts do not guarantee an implementation. It does not require full determinism, which is fair because the speaker's point is precision."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The Java SE 21 spec (2023) defines exact integer-division behaviour. It is a primary specification of the language's semantics."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The 2021 Codex paper: models solved only some problems from natural-language docstrings, so prompts do not guarantee correct code."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The Wasm 1.0 spec allows one non-deterministic instruction but states its permitted outcomes precisely. This qualifies 'deterministic' without undermining precision."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Formal language specs available before the post define operations precisely (Java division). Code generated from natural-language prompts was only partly correct (Codex). Wasm's permitted non-determinism is itself precisely specified, so it does not contradict the precision claim. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-hottest-new-programming-language-a7b060"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17824,
+  "output_tokens": 2617,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

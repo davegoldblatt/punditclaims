@@ -1,0 +1,119 @@
+{
+ "assessment_id": "marcus-alphaproof-alphageometry-chatgpt-1141c0-a1",
+ "claim_revision_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-1141c0",
+  "version": 1,
+  "content_hash": "b54747770dfe8e2a123adf424c5fac5c2f8481f6c1283056d8f8dc3283c9d08c"
+ },
+ "contract_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-1141c0",
+  "version": 1,
+  "content_hash": "ffc32ebd86c196b6361296aa09259a7bc216d88851fbf438e1b31977b03189b8"
+ },
+ "packet_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-1141c0-p1",
+  "content_hash": "bfb04a5a9e2fbff221144dbcdf83dd55a9b56e66baeaf4fc054bb815b44a0caa"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2019-02",
+  "end": "2024-07-28",
+  "precision": "day"
+ },
+ "public_rationale": "Part holds: an ICLR 2024 paper by Google DeepMind authors found that, without external feedback, LLMs struggle to self-correct their reasoning and sometimes make it worse. That supports the core of the claim, that LLMs cannot dependably check their own work. Part does not hold: a 2022 Anthropic study found large LLMs can estimate whether their own answers are correct, with 'encouraging performance, calibration, and scaling', and do better when they look at several of their own samples. So the absolute wording 'literally can't' overstates the evidence. The ability existed but was weak, especially for reasoning.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Only two key studies were cited. Other work in the period (for example on self-refinement) was not reviewed.",
+  "The result depends on reading 'literally can't' strictly versus as 'can't reliably'."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-alphaproof-alphageometry-chatgpt-0bf994-4x-review-anthropic-1",
+  "marcus-alphaproof-alphageometry-chatgpt-0bf994-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-alphaproof-alphageometry-chatgpt-1141c0",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs cannot sanity-check their own work.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Perhaps the deepest problem is that LLMs literally can’t sanity-check their own work.",
+   "locator": "paragraph 36",
+   "url": "https://garymarcus.substack.com/p/alphaproof-alphageometry-chatgpt",
+   "date": "2024-07-28",
+   "document_title": "AlphaProof, AlphaGeometry, ChatGPT, and why the future of AI is neurosymbolic",
+   "observed_at": "2026-10-28T23:15:36Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs literally can't sanity-check their own work",
+    "with no inherent way of verifying whether their predictions are correct",
+    "in literally every transformer released, from GPT-2 to ... SearchGPT"
+   ],
+   "our_interpretation": [
+    "Plain reading: LLMs of that era, unaided by external tools or feedback, cannot check their own outputs for errors in a useful way.",
+    "'Literally can't' is absolute. Evidence of meaningful self-evaluation ability counts against it. Evidence of failed self-correction counts for it.",
+    "Target period: GPT-2 (2019) to the post date (2024-07-28), following the post's own list of models."
+   ],
+   "support_condition": "Controlled studies from the period show that unaided LLMs fail to detect or correct their own errors.",
+   "contradiction_condition": "Controlled studies from the period show that unaided LLMs can meaningfully evaluate whether their own outputs are correct."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Part holds: an ICLR 2024 paper by Google DeepMind authors found that, without external feedback, LLMs struggle to self-correct their reasoning and sometimes make it worse. That supports the core of the claim, that LLMs cannot dependably check their own work. Part does not hold: a 2022 Anthropic study found large LLMs can estimate whether their own answers are correct, with 'encouraging performance, calibration, and scaling', and do better when they look at several of their own samples. So the absolute wording 'literally can't' overstates the evidence. The ability existed but was weak, especially for reasoning.",
+  "limitations": [
+   "Only two key studies were cited. Other work in the period (for example on self-refinement) was not reviewed.",
+   "The result depends on reading 'literally can't' strictly versus as 'can't reliably'."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2310.01798",
+    "publisher": "arXiv / ICLR 2024 (Huang et al., Google DeepMind)",
+    "event_date": "2023-10-03",
+    "available_at": "2023-10-03",
+    "explanation": "Supports the substance of the claim for reasoning: without external feedback, LLMs largely fail to check and fix their own reasoning, and sometimes make it worse."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "We find encouraging performance, calibration, and scaling for P(True) on a diverse array of tasks.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2207.05221v1",
+    "publisher": "arXiv (Kadavath et al., Anthropic)",
+    "event_date": "2022-07-11",
+    "available_at": "2022-07-11",
+    "explanation": "Large LLMs could estimate, with useful calibration, whether their own proposed answers were correct. That is a form of self-checking, which cuts against the absolute 'literally can't'."
+   }
+  ],
+  "what_would_resolve": "A broad, controlled review of unaided self-evaluation and self-correction across LLMs of 2019-2024, with an agreed threshold for 'sanity-checking'.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "68f2acb0d5035a885f5d7a8d2ff51c9f87e309afda44a0d2da691236827911d8",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T03:13:09Z"
+}

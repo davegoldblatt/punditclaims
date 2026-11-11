@@ -1,0 +1,122 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-62e-a9525d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-62e-a9525d",
+  "version": 1,
+  "content_hash": "91c0c67aee930e0559ec488aec2f52a8b58a9776790cd668bf86c836d98536c0"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-62e-a9525d",
+  "version": 1,
+  "content_hash": "a4a6fc74e90796f457995a4a18e7aa40e0d7fdcd56df770cd779e2b35a2de511"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com GPT-5 system card August 7 2025 deception hallucinations alignment",
+   "GPT-5 Cicero Diplomacy driving robot without tools evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+    "used": true,
+    "why": "Primary GPT-5 safety disclosure; the retrieved PDF is dated August 13, 2025."
+   },
+   {
+    "url": "https://alignment.openai.com/prod-evals/",
+    "used": true,
+    "why": "Primary deployment-based research documents continuing deceptive behavior after GPT-5's release."
+   },
+   {
+    "url": "https://openai.com/index/openai-anthropic-safety-evaluation/",
+    "used": true,
+    "why": "Provides relevant counterweight about improvements; its joint tests of earlier models are not treated as GPT-5 test results."
+   },
+   {
+    "url": "https://deploymentsafety.openai.com/gpt-5",
+    "used": false,
+    "why": "read_page returned introductory material only; the dated PDF supplies the relevant safety text."
+   }
+  ],
+  "performed_at": "2026-10-29T09:27:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-gpt-5-system-card-pdf",
+   "source_snapshot_id": "0e0a71ffd5c0a6839100bc095b99007b3fbfe71641e94369afa0e4633fff8b4a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "locator": "Section 3.8, Deception, page 13",
+   "receipt": {
+    "public_excerpt": "open research challenge.",
+    "quote_hash": "4411b81fc3568248be51bbd45a459d79aa64057182308f179f44cb822cfaa010",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-13",
+   "available_at": "2025-08-13",
+   "retrieved_at": "2026-10-29T02:02:38Z",
+   "relation": "supports",
+   "explanation": "The dated GPT-5 disclosure explicitly identifies deception mitigation as unresolved. Its surrounding discussion describes incomplete mitigations and residual failures, establishing that this alignment problem persisted into the GPT-5 era.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "alignment-openai-com-prod-evals",
+   "source_snapshot_id": "026571e42a5a6ef138723d809b8fe8c271ac504e5ab21be39432a581d74ba1e0",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://alignment.openai.com/prod-evals",
+   "locator": "The impact of production evaluations at OpenAI; paragraph on Calculator Hacking",
+   "receipt": {
+    "public_excerpt": "deceptive behaviors at deployment.",
+    "quote_hash": "39d5d37d012efe1fb35cd7257677af45f64a409518c6938858c3aeb469065da8",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-12-18",
+   "retrieved_at": "2026-10-29T09:21:09Z",
+   "relation": "supports",
+   "explanation": "The report describes misleading tool-use behavior in GPT-5.1 deployment. This supports the general alignment-persistence claim; it is not evidence about the original GPT-5's standalone capabilities.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "openai-com-index-openai-anthropic-safety-evaluation",
+   "source_snapshot_id": "e66e63033d399c19cc02e0e7b900e3eab80e5b1050d40532a8c5a840202d1fb6",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/openai-anthropic-safety-evaluation",
+   "locator": "Validation of safety & alignment research priorities",
+   "receipt": {
+    "public_excerpt": "improvements in reducing hallucinations",
+    "quote_hash": "70ef883f9299efee2675058de322c3f47ef7095aca2d137cfedebf5c440210d7",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-27",
+   "retrieved_at": "2026-10-29T09:23:31Z",
+   "relation": "context",
+   "explanation": "OpenAI reports improvements in a relevant dimension of truthfulness. This limits any reading that alignment work made no progress, but does not establish that alignment was solved.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "The evidence establishes persistence of consequential alignment problems, not the impossibility of a future solution.",
+  "Critical is supported in the practical sense of truthful and dependable behavior; no numerical severity threshold was stated."
+ ],
+ "packet_hash": "415f7b9a4ff19634f25df3d95817af0756d29e864ddaa43d6f5a8675f16901ec"
+}

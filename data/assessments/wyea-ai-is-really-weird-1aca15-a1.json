@@ -1,0 +1,120 @@
+{
+ "assessment_id": "wyea-ai-is-really-weird-1aca15-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-1aca15",
+  "version": 1,
+  "content_hash": "55fb36f870e06507811ebbc0b467bfac9b16fa0de87821a4562197fcb0e98cfe"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-1aca15",
+  "version": 1,
+  "content_hash": "416903e9bb9656059342ffe37b3c2045c84063a8a86ac74c864181d3b21be1a2"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-is-really-weird-1aca15-p1",
+  "content_hash": "ba14a686987d370fb6fc9881c6f1ab80b5f656279a17ce23950b66c7318a3496"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "There is experimental evidence that an AI assistant can worsen security. There is also controlled evidence finding no detectable downstream maintenance penalty. Neither establishes the full claim that broader use generally forces more review labor or more vulnerabilities. The findings concern different tasks and outcomes, so combining them into a decisive verdict would overstate what they show.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Security tasks and maintenance tasks measure different aspects of quality.",
+  "A failure to detect a difference does not prove equal quality.",
+  "The cited experiments do not represent every model or development setting."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-is-really-weird-165165-4x-review-anthropic-1",
+  "wyea-ai-is-really-weird-165165-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ai-is-really-weird-165165-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-is-really-weird-1aca15",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLMs write a lot of code, not good code; broader use means more review time or more vulnerabilities.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As I wrote a few weeks ago, LLMs are good at writing a lot of code, not good code, and the more people you allow to use them, the more code you’re going to generate, which means the more time you’re either going to need to review that code, or the more vulnerabilities you’re going to create as a result.",
+   "locator": "paragraph 90",
+   "url": "https://www.wheresyoured.at/ai-is-really-weird",
+   "date": "2026-04-08",
+   "document_title": "AI Is Really Weird",
+   "observed_at": "2026-10-28T22:26:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "good at writing a lot of code, not good code",
+    "the more people you allow to use them",
+    "the more code you’re going to generate",
+    "more time you’re either going to need to review that code",
+    "more vulnerabilities"
+   ],
+   "our_interpretation": [
+    "The plain reading is a general causal claim about expanding LLM-assisted development: output increases, while maintaining quality requires more total review effort or accepting more vulnerabilities.",
+    "Good code means code that is correct, maintainable and secure in ordinary development work.",
+    "Review time means total review labor, not merely elapsed time per change. Vulnerabilities means actual security weaknesses, not all warnings from a code analyzer.",
+    "The claim describes a general mechanism, not a forecast with a deadline. Historical experiments can test parts of that mechanism, but older tools cannot establish its prevalence in April 2026."
+   ],
+   "support_condition": "Credible comparisons show that broader LLM adoption increases code output and causes additional review labor or security vulnerabilities, with evidence that the generated code generally has quality shortcomings.",
+   "contradiction_condition": "Credible comparisons across relevant development settings show increased output without additional total review labor or vulnerabilities, and maintained or improved code quality."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "There is experimental evidence that an AI assistant can worsen security. There is also controlled evidence finding no detectable downstream maintenance penalty. Neither establishes the full claim that broader use generally forces more review labor or more vulnerabilities. The findings concern different tasks and outcomes, so combining them into a decisive verdict would overstate what they show.",
+  "limitations": [
+   "Security tasks and maintenance tasks measure different aspects of quality.",
+   "A failure to detect a difference does not prove equal quality.",
+   "The cited experiments do not represent every model or development setting."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "less secure solutions",
+    "locator": "Section 4.4, SQL task",
+    "url": "https://arxiv.org/html/2211.03622v3",
+    "publisher": "Perry et al.; ACM CCS, author manuscript on arXiv",
+    "event_date": "2022",
+    "available_at": "2023-12-18",
+    "explanation": "This experiment supports the possibility that AI assistance worsens security. It tested an older assistant on bounded tasks and did not measure the effect of broader adoption on total code output and review labor."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "no significant differences",
+    "locator": "Abstract, Results; Section 3.3.1 gives the data-collection closing date",
+    "url": "https://arxiv.org/html/2507.00788v3",
+    "publisher": "Borg et al.; arXiv",
+    "event_date": "2025-01-18",
+    "available_at": "2026-02-26",
+    "explanation": "The maintenance experiment found no detectable disadvantage when developers subsequently modified AI-assisted code. This weighs against a blanket quality judgment, but neither proves equivalence nor measures security and total review labor."
+   }
+  ],
+  "what_would_resolve": "A controlled adoption study measuring code output, total review hours and independently verified vulnerabilities together across representative teams and tasks.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3304643390f80605566079ba37612dc74b6324a7ca56fda57ba348c280817ce2",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:20:08Z"
+}

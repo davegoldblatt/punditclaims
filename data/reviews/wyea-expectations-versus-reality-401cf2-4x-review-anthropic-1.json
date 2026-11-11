@@ -1,0 +1,191 @@
+{
+ "run_id": "wyea-expectations-versus-reality-401cf2-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-expectations-versus-reality-401cf2": "522cd87e2e60cdb0ccf7221142a8704676dbc426eaaa4dbb54fab809a0234af8",
+  "case:wyea-expectations-versus-reality-474ae0": "5c554bdaf2ac889f226f9ba38a7206abcc71a649712ff20be0841bff705c250f",
+  "case:wyea-expectations-versus-reality-4c2cab": "47b435a2cfff0448e286265c3cd7828a8368392878d590d160fe56ac056b8e5a",
+  "case:wyea-expectations-versus-reality-5ab339": "9f6a03e9c768b251fd1942fcf87eccb469888db64fbb84971ffad50bf59d9077"
+ },
+ "started_at": "2026-10-29T17:44:16Z",
+ "completed_at": "2026-10-29T17:44:53Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post, giving his own view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'It' refers back to Playwright and its scripted browser actions. The normalised wording keeps that narrow scope and does not stretch it to Rabbit's whole backend."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Zitron gave no definition of AI. The plain reading, that the automation framework itself is not an AI model, is the ordinary one and is fair. The contract also separates the framework from any code or model that calls it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Versioned Playwright README (v1.44.0, May 6, 2024), published before the post. It describes Playwright as a framework for web testing and automation driven through one API. It is the project describing its own tool, but it is the right source for what the framework does."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The contemporaneous official documentation describes Playwright as programmed browser automation driven by explicit API calls. Nothing in the packet shows the framework doing AI inference itself. On the fair plain reading, the claim holds for the launch period.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-expectations-versus-reality-401cf2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence, stated as his view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalised wording keeps the cause (complex computation on $10,000 GPUs), the scope ('even simple prompts') and GPT-4."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Treating $10,000 as an approximate price per GPU and asking for evidence tied to how GPT-4 was served is a fair reading. 'Extremely expensive' has no threshold, which the contract flags."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CNBC, February 2023: the A100 market price was about $10,000. This is a different period and not OpenAI's purchase price or GPT-4's serving setup, so it is background only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft, March 2023: general description of GPU inference infrastructure. It gives no GPT-4 cost per prompt and no GPU price."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both items are background only. Neither shows which GPUs actually served GPT-4 in May 2024, what they cost, or that simple prompts cause high serving costs. The packet lists these gaps itself, so the causal claim cannot be settled either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-expectations-versus-reality-474ae0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own reasoning, introduced as his concerns, separate from Thacker's points."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording drops the stated premise (no OAuth or SAML), but the core technical claim, that original credentials are kept, is preserved. 'Insanely dangerous' is an evaluation and is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The hashing context makes clear that 'credentials' means recoverable passwords. Telling password storage apart from session tokens is a fair test of the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Obscurity Labs pentest, testing April 29–May 10, 2024 (published July 30). It found session cookies were collected and vaulted, not entered passwords. Caveat: the test was commissioned by Rabbit, so it is not fully independent, but it is a third-party inspection of the code."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "A source-code and infrastructure inspection during the launch period found that Rabbit stored service-issued session tokens, not original usernames and passwords. That meets the contract's contradiction condition. The test was commissioned by Rabbit, but it is the only implementation evidence in the packet and directly answers the question.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-expectations-versus-reality-4c2cab"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording keeps all five features and leaves out the rhetorical aside about the developers."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'photos' as ordinary photo-taking is fair, because Zitron separately acknowledges the camera's visual-analysis feature. The launch-to-post window is a reasonable inference."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Tom's Guide launch review (with a May 1 update): no email, photos, reminders or timers."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Engadget, April 25, 2024: calendar support missing."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechRadar, May 6, 2024: confirms email is missing. Images saved from Vision lookups are analysis output, not ordinary photography, so they do not contradict the photos point under the contract."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporaneous hands-on reviews together show that all five named features were missing from the launch-period R1: timers, reminders, calendar, photo-taking and email. The saved Vision images are not ordinary photography. Remaining gap: no full feature inventory for the exact May 13 software build was found.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-expectations-versus-reality-5ab339"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26253,
+  "output_tokens": 4007,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,191 @@
+{
+ "run_id": "wyea-ai-is-really-weird-165165-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ai-is-really-weird-165165": "018311bc338a930a8d57c617290216fda3e951c9bf9b1d50a97ad6af52eec380",
+  "case:wyea-ai-is-really-weird-1aca15": "9121a162b51af07a326b31b1fce056c1f5c2b52f6aa977379b4f4970aff13b9f",
+  "case:wyea-ai-is-really-weird-1f5c23": "3123e16dc4983c881940d5c56ea242b70ef4874c8879cde8b459b73f94610938",
+  "case:wyea-ai-is-really-weird-294793": "4a4b2810cafb2389391275d1f6cf34af3ae23e0afd131fffebe9fc4e41c04ed6"
+ },
+ "started_at": "2026-10-29T17:18:19Z",
+ "completed_at": "2026-10-29T17:19:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter. The Newcomer/Coatue quote in the passage is quoted material. The claim rests on his own conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the hedge on margins ('probably') and the firm loss assertion. Under policy, the hedged margin part is not scored. Only 'loses billions a year, just like OpenAI' is a firm observation that can be scored."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The support condition requires proof of weak GAAP gross margins. That turns the hedged 'probably suck' into a scored element, and plain-reading scoring applies only to firm language. The loss reading (net loss of at least $2B in calendar 2025) is fair and ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Audited S-1 filed 2026-10-26, before the cutoff. It reports Anthropic net losses of $8.3B (2024) and $42.0B (2025). Even without the $34.3B fair-value charge, the 2025 loss is in the billions. The 39.5% GAAP gross margin has no reconciliation and no threshold, so it does not settle the margin part."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ars, June 2026, reports leaked audited statements that FT also reviewed. OpenAI's 2025 net loss was nearly $39B, or about $8B excluding a one-off charge. Either way it is billions, which matches the 'just like OpenAI' comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The firm part holds: audited filings and reporting show Anthropic and OpenAI each lost billions in 2025, even after removing valuation charges. The hedged part ('real margins probably suck') is probabilistic and has no threshold, so it is not scored. No GAAP vs non-GAAP reconciliation for the same period is in the packet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-really-weird-165165"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion, restating his earlier writing. The NYT/StackHawk passages nearby are quoted material and are not his claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition captures a general causal mechanism: wider LLM use means more code, which means more review labor or more vulnerabilities, along with a quality judgment. The kind and scope are preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (more output, more total review labor or vulnerabilities, generally weaker quality) is ordinary and fair. Defining good code as correct, maintainable and secure is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Perry et al. found less secure SQL solutions with an older assistant on bounded tasks. That is consistent with the vulnerability concern, but the study did not measure adoption-driven output or total review labor, and it does not reflect 2026 tools."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Borg et al. RCT found no significant maintainability difference for AI-assisted code. This weighs against a blanket quality judgment, but it did not measure security, total review labor or adoption-scale effects."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has one older experiment pointing to security harm and one RCT finding no maintainability penalty. Neither study tests output growth, total review labor and vulnerabilities together under broader adoption in 2026 workflows. The evidence does not settle the causal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-really-weird-1aca15"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words. The NYT and CNBC passages nearby are quoted material."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'as sold' and 'for the most part'. Leaves out the architectural description and the causal aside about unheard achievements. That is acceptable as long as the claim is scored only on the prevalence of failure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as 'most marketed agents materially fail their advertised functions' is a fair, ordinary reading of rhetorical language. Choosing Q1 2026 as the period and defining the product population are evaluator decisions that shape the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A Feb 2026 preprint finds persistent reliability limits across model configurations. It tests models, not commercial products against their marketing claims, so it cannot show what share of marketed agents fail. I treat it as context, not support."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A vendor-hosted customer testimonial from Feb 2026. It is a company disclosure, not an independent test, and cannot establish a market-wide success or failure rate."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no representative comparison of marketed agent products against their Q1 2026 promises. A model-level reliability study and one vendor testimonial point in opposite directions, and neither measures what share of products are broken. The claim stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-really-weird-1f5c23"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps 'only possible because', 'all of the companies in question' and the $3–$15 per dollar range. The scope revision to companies boosters cite matches the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly separates the spending ratio from subsidy necessity and flags that the spending basis is unspecified. The result depends on which spending measure is chosen: operating expenses, cash burn, compute commitments or net loss."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Reported 2025 figures put OpenAI's operating expenses at about $2.60 per revenue dollar, below $3 if opex is the measure. The speaker named no basis, and other measures could differ. The figures come from documents the speaker obtained, but FT reviewed them independently. Nothing here shows subsidy dependence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Under an operating-expense reading, OpenAI's 2025 ratio (about 2.6) falls below the stated range. The speaker did not specify the spending basis, so this does not clearly contradict him. No evidence covers the other companies or shows that growth depended on subsidies. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-really-weird-294793"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 65959,
+  "output_tokens": 9043,
+  "cached_input_tokens": 32618,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,221 @@
+{
+ "run_id": "wyea-subprimeai-ac3799-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-subprimeai-ac3799": "10cd617c6a6c35ce026b687668190859157ef2723c7737c2644273c3efdc05a4",
+  "case:wyea-subprimeai-d90f9f": "a2d44cb677383ad34dbc5a0d5c5914653ad3f4a63bb272be7fd2292c25e4dd8e",
+  "case:wyea-subprimeai-eef25b": "c8652413a453401e8ec0316e503f291fffb778e3049c42472bff102ea3478738",
+  "case:wyea-subprimeai-f58f39": "9039e4036c7b974d8d2382f461e92f76f07ee0b34dc5b4cb0c7c49d54fbfc766"
+ },
+ "started_at": "2026-10-29T22:17:18Z",
+ "completed_at": "2026-10-29T22:18:13Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his newsletter. He draws on reporting from The Information, but the inference and the forecast are his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Almost certainly increase' is high confidence, so the training part is a scorable forecast with no deadline. The $6bn server figure is a hedged counterfactual ('would likely') and is not scorable. The proposition keeps the hedge, but it bundles both parts together."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The support and contradiction conditions both turn on the $6bn counterfactual, which the speaker hedged with 'likely'. Under policy, hedged language is not scored, so the compound conditions go beyond his commitment. Only the training-increase forecast should be scored."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Sets the 2024 baseline: a projected $3bn for training and data. Says nothing about spending in later years."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Warns that the 2024 compute figures partly relied on projections. No later realized training spend."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Gives $6.7bn of H1 2025 R&D, unverified by Reuters. R&D is broader than training plus data, so this cannot show the threshold was crossed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The training forecast has no deadline, and the packet has no realized post-2024 training-and-data spend reconciled to the $3bn baseline. The only later figure is broader, unverified R&D. The server-cost part is hedged and not scorable. Unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-subprimeai-ac3799"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own unhedged assertion in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A present-tense categorical observation with three parts. 'Dud' is an evaluative judgment with no criterion. The price and usefulness parts are factual claims."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'the prices' as published generative-AI model prices, including OpenAI's API prices, is the ordinary reading in a passage about OpenAI. Using a window from Nov 2023 to the post date is reasonable for 'are not decreasing'. Leaving 'dud' unscored is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's dated Jan 2024 notice cutting GPT-3.5 Turbo input prices 50% and output prices 25%. A provider's price notice is the primary record of the price itself."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Price cuts announced 6 Nov 2023 for GPT-4 Turbo versus GPT-4, and for GPT-3.5 Turbo. Within the window."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Calls o1 'uniquely pricey', which supports the narrower point that the new model costs more. It does not show prices in general stopped falling."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "Dated price notices show repeated cuts to comparable OpenAI model prices within the window, which refutes the categorical claim that prices were not decreasing. The usefulness part is not settled by the packet, and 'dud' cannot be scored. The contract's contradiction condition is met by the price cuts.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-subprimeai-d90f9f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron restates his own earlier analysis and endorses it. The estimates come from press reporting, but the claim is his. The Amodei prediction is a quote and is not scored."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'On course to lose $5 billion in 2024' is a firm trajectory forecast. The funding-need part is an analytic claim of necessity with no survival period. The hedged 'likely to increase' clause is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reasonable: it treats $5bn as approximate, keeps the funding-necessity part separate from the amounts actually raised, and requires the loss measure to be reconciled. The result depends on which loss measure counts: net loss or operating loss."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Audited 2024 net loss just over $5bn, but operating loss was $8.78bn. The original estimate's basis is not reconciled to either, and nothing here shows the minimum funding need."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure of $6.6bn raised. The amount raised does not show the amount that was needed to survive."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A $4bn credit line, undrawn at closing. This is available liquidity, not cash raised or required."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "unresolved",
+    "rationale": "The 2024 headline net loss (just over $5bn) matches numerically, but operating loss was $8.78bn, and the packet does not reconcile the original estimate's basis to either. Nothing establishes the minimum funding needed to survive. The contract requires both parts, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-subprimeai-eef25b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron lists 'going to get better' as one of the lies generative AI is sold on, which endorses its denial. The surrounding text says LLMs have plateaued."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unhedged denial of future improvement with no deadline, backed by firm context ('plateaued', 'not going to'). Treating it as a firm negative forecast is fair."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading of 'better' as completing more demanding useful tasks or gaining practical functionality is ordinary. Excluding isolated benchmark, accuracy or speed gains respects his context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Independent METR measurement: the length of software tasks models can complete grew through early 2025. Models released after the post (o1, Claude 3.7 Sonnet) sit above trend, with better tool use and error recovery."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Dated Oct 2024 launch of computer use, which is new practical functionality. Company disclosure, described as error-prone, so it only corroborates e1."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "RCT found early-2025 AI tools slowed experienced developers. It compares AI help with none, not successive models, so it does not test improvement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "contradicted",
+    "rationale": "Independent comparative evaluation (e1) shows that models released after Sept 2024 complete substantially longer, more demanding tasks than earlier models. e2 corroborates this with new functionality. That meets the early-resolution rule and contradicts the unrestricted denial. The productivity RCT limits claims of practical benefit but does not show capability stopped improving.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-subprimeai-f58f39"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34826,
+  "output_tokens": 5945,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

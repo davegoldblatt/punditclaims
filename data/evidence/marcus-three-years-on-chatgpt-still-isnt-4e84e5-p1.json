@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-three-years-on-chatgpt-still-isnt-4e84e5-p1",
+ "claim_revision_ref": {
+  "id": "marcus-three-years-on-chatgpt-still-isnt-4e84e5",
+  "version": 1,
+  "content_hash": "336bef347e1f3f4ef6ea4dbd9f5024a268e13826b98e361c9f040e028b1dfa74"
+ },
+ "contract_ref": {
+  "id": "marcus-three-years-on-chatgpt-still-isnt-4e84e5",
+  "version": 1,
+  "content_hash": "f3ce331a168ed65babe831120486986065d009b1195d7744cb5dd6c838cfa53f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM human ratings plausibility factual accuracy same answers study 2025 hallucinations",
+   "\"LLM\" \"plausibility\" \"factual\" \"November\" \"2025\" human study",
+   "\"LLMs\" \"plausibility\" \"factual accuracy\" human judgments study 2025",
+   "\"GPT-5\" \"SimpleQA\" November 2025 accuracy",
+   "\"c30qeMg8dv\" hallucinations perceived accuracy title"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2510.08091v1",
+    "used": true,
+    "why": "Primary human plausibility experiment. Relevant context, but it tests prompted arguments about answer choices rather than the claimed general gap in ordinary factual answers."
+   },
+   {
+    "url": "https://openai.com/index/introducing-gpt-5/",
+    "used": true,
+    "why": "Primary disclosure of factuality improvements, providing a counterweight to generalizations from earlier models. It does not measure human plausibility judgments."
+   },
+   {
+    "url": "https://aclanthology.org/2025.acl-long.1587/",
+    "used": false,
+    "why": "Read successfully. FactBench evaluates factuality, but does not supply the paired human credibility comparison required here."
+   },
+   {
+    "url": "https://openreview.net/pdf?id=c30qeMg8dv",
+    "used": false,
+    "why": "read_page returned a browser-verification page rather than the paper."
+   },
+   {
+    "url": "https://deploymentsafety.openai.com/gpt-5",
+    "used": false,
+    "why": "The targeted read returned no SimpleQA passage suitable for citation."
+   }
+  ],
+  "performed_at": "2026-10-29T09:02:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2510-08091v1",
+   "source_snapshot_id": "71159565df1d22d1f0a9ca2e98fd295ee39fd614d6d87a58e7263d5902e9b1d6",
+   "publisher": "arXiv; Shramay Palta and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2510.08091v1",
+   "locator": "Section 3, discussion of Table 3",
+   "receipt": {
+    "public_excerpt": "PRO rationales appear sufficiently persuasive",
+    "quote_hash": "1299a6083a26c69c992d099304236293f8a65ee8715c854727f6296e36daf747",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-10-09",
+   "retrieved_at": "2026-10-29T08:56:21Z",
+   "relation": "context",
+   "explanation": "Human readers found arguments for incorrect answer choices persuasive in this experiment. Its deliberately generated rationales and two commonsense datasets do not establish a general plausibility-versus-factuality gap for November's LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-gpt-5",
+   "source_snapshot_id": "3ac0f5f38e569efd0cd40cae4bb36d3dc6ceb49de3a3dfbf7bafe3d1f7233d87",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-5",
+   "locator": "Section 'More accurate answers to real-world queries'",
+   "receipt": {
+    "public_excerpt": "less likely to hallucinate",
+    "quote_hash": "e41656d85a2f49c6c66ef973b1dce4738d66537a3c7d47f4f7d18b1fca3752b8",
+    "verified": "exact"
+   },
+   "event_date": "2025-08",
+   "available_at": "2025-08-07",
+   "retrieved_at": "2026-10-28T22:31:06Z",
+   "relation": "context",
+   "explanation": "OpenAI reports improved factual reliability at GPT-5's release. This limits extrapolation from older models, but improvement alone neither establishes nor disproves Marcus's comparison with perceived plausibility.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No located evaluation measures the claimed broad gap using human credibility ratings and factual verification of the same ordinary answers from models in the target period.",
+  "The plausibility study predates the target period and does not establish when its experimental observations were collected.",
+  "The source supplies no numerical threshold for 'much less good'."
+ ],
+ "packet_hash": "011d3d0c96962363d6d4adbdc1007dd9197b2a2f61802829b3387e373d54842c"
+}

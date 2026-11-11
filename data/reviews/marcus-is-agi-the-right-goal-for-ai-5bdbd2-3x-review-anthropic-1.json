@@ -1,0 +1,155 @@
+{
+ "run_id": "marcus-is-agi-the-right-goal-for-ai-5bdbd2-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-is-agi-the-right-goal-for-ai-5bdbd2": "a422cad4d39cd64034dda41e46fc6a0ea59b08d2ba43fd3609516b060b140b97",
+  "case:marcus-is-agi-the-right-goal-for-ai-aaad0e": "4b24317c7f6c09449fcedf48443a1edc47b186cfee9ba4b2d684fbedcd530459",
+  "case:marcus-is-agi-the-right-goal-for-ai-b23dd5": "cab9a7307b992bcf2c8524c861d0fbaa3135fa8834cc1e54cad1e3e041736ad8"
+ },
+ "started_at": "2026-10-29T21:43:38Z",
+ "completed_at": "2026-10-29T21:44:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus says it in his own voice and attributes it to a paper he coauthored. He endorses the point rather than just reporting it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition follows his wording closely and keeps the 'as the paper notes' attribution. It is a present-tense observation with no hedge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary: substantial incompleteness across the paper's framework, with 'fraction' not tied to a number. The result depends on that reading and on which framework is used, and Marcus defined neither."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "This is the coauthored paper, which reports 58% for GPT-5. Because Marcus is a coauthor, it cannot independently confirm his claim. It only shows the framework's scope."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "An independent but narrow visual benchmark from September 2025, before the target month. One narrow task cannot show how much of the whole framework is covered."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The support condition needs an independent assessment of October 2025 systems across the framework's domains, and the packet has none. e1 is coauthored by Marcus, and e2 covers one narrow visual skill. The paper's own 58% score is not independent evidence either way. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-agi-the-right-goal-for-ai-5bdbd2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post, written as his criticism of the paper."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition captures his factual premise that benchmarks can be gamed, plus his judgment that this weakens the definition. The judgment itself is evaluative and is not scored. The contract tests only the factual premise."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'gamed' as benchmark scores inflated without matching general capability, including through contamination or overfitting, is a fair, ordinary reading. 'Can' is treated correctly as a claim about vulnerability, not an accusation against this paper."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A primary 2024 study defines contamination as inflated performance that does not generalize. It tests deliberately contaminated models and finds inflated scores in popular public models, which meets the measurement requirement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "ConStat, published before the post, shows benchmark gains that fail to carry over to rephrased or comparable tasks, including in widely used models. That establishes his factual premise that benchmarks can be gamed. Nothing in the packet contradicts it. The claim does not say this paper's scores were manipulated.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-agi-the-right-goal-for-ai-aaad0e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence comes from Marcus's own NYT op-ed. He quotes it in his post as the core of his essay, so it is his claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful wording. It is an unhedged historical observation about LLMs up to the date of publication."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'always prone' as a persistent weakness across model generations, rather than errors in every answer or an error rate that never improved, is the ordinary and fair reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TruthfulQA (2021) found many false answers from GPT-2, GPT-3, GPT-Neo/J and T5 models, against far higher human accuracy. This is independent evidence covering early models."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own March 2023 disclosure says GPT-4 still hallucinates and makes reasoning errors. It also reports improvement, which does not count against a claim of persistent weakness."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's own September 2025 disclosure says GPT-5 still hallucinates, though less often. It shows the problem persisted shortly before the post."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Evidence from 2021 to 2025 records hallucinations and errors in each generation, from GPT-2 and GPT-3 through GPT-4 to GPT-5. The reported improvements do not show the problem was eliminated, so the contradiction condition is not met. Persistent susceptibility up to 2025-10-16 is established.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-is-agi-the-right-goal-for-ai-b23dd5"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20645,
+  "output_tokens": 3181,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

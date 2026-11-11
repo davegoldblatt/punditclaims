@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-the-sparks-of-agi-or-the-end-of-science-868b0c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-sparks-of-agi-or-the-end-of-science-868b0c",
+  "version": 2,
+  "content_hash": "be9cd0c6516c94368ab7439f3bde10f97e4c1d4c5a3318871ffb67f0b8942a82"
+ },
+ "contract_ref": {
+  "id": "marcus-the-sparks-of-agi-or-the-end-of-science-868b0c",
+  "version": 1,
+  "content_hash": "a18edfba782d841455a6a2ec3ffeba953baea4ae87ae27dd1c0cded8b593e9da"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com GPT-4 March 14 2023 safety 82% 50 experts system card",
+   "site.bing.com March 2023 new Bing safety five turns 50 chat",
+   "site.newsguardtech.com \"March\" \"2023\" \"GPT-4\" 100",
+   "\"NewsGuard\" \"March 21, 2023\" GPT-4 100"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.newsguardtech.com/misinformation-monitor/march-2023/",
+    "used": true,
+    "why": "Primary account of an outside organization's tests of the deployed GPT-4 chatbot."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "Original report contains capabilities, risk disclosures, safety metrics and mitigation methods."
+   },
+   {
+    "url": "https://blogs.bing.com/search/2023/3/Bing-Preview-Release-Notes-%C2%A0Increasing-Chat-Turns/",
+    "used": true,
+    "why": "Contemporaneous documentation of deployed conversation limits."
+   },
+   {
+    "url": "https://www.axios.com/2023/03/21/gpt4-misinformation-newsguard-study",
+    "used": false,
+    "why": "Search located contemporaneous coverage, but read_page returned HTTP 403. It is not cited as outcome evidence."
+   },
+   {
+    "url": "https://blogs.bing.com/search/2023/2/The-new-Bing-Edge-Updates-to-Chat/",
+    "used": false,
+    "why": "The February announcement falls outside the chosen observation window; March release notes provide contemporaneous evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T08:49:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "newsguardtech-com-misinformation-monitor-march-2023",
+   "source_snapshot_id": "2f2c62219c75fb185a90fa5e9ed5ce17c496f0a510187d236384d3893b48a408",
+   "publisher": "NewsGuard",
+   "source_type": "independent_measurement",
+   "url": "https://www.newsguardtech.com/misinformation-monitor/march-2023",
+   "locator": "Opening discussion, paragraph beginning 'In January 2023'",
+   "receipt": {
+    "public_excerpt": "false and misleading claims",
+    "quote_hash": "e0e6449d2e7715ad10b647cd1a778bd8ee6333d415df949a74353997e65b684c",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-21",
+   "retrieved_at": "2026-10-29T07:05:45Z",
+   "relation": "supports",
+   "explanation": "The researchers tested the deployed ChatGPT Plus system with leading prompts and documented misinformation generation. This supports unreliability and misuse concerns, although it does not measure the error rate in ordinary conversations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Section 6, Improvements on Safety Metrics; Figure 9",
+   "receipt": {
+    "public_excerpt": "safety",
+    "quote_hash": "437c390f9b25c890d7cafaf7a21f94cb330244c21acde5e0938b8f4d28dfa066",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "contradicts",
+   "explanation": "The report describes safety training and quantifies disallowed-content responses, sensitive-request behavior and toxic generations. These are concrete measures, although the report also discloses substantial capabilities, multiple risks and remaining failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "blogs-bing-com-search-2023-3-bing-preview-release-notes-c2-a0increa-daa427ed83a7",
+   "source_snapshot_id": "0f36df53d8a997eb9b436be7703134ae7c42d2e92e461f93a9c69722921a7c69",
+   "publisher": "Microsoft Bing",
+   "source_type": "company_disclosure",
+   "url": "https://blogs.bing.com/search/2023/3/Bing-Preview-Release-Notes-%C2%A0Increasing-Chat-Turns",
+   "locator": "Increasing Chat Turns bullet",
+   "receipt": {
+    "public_excerpt": "120",
+    "quote_hash": "36b60087d642ffdec8d4f19effc585f7cbc05125559d110d5950c5eb2a900931",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-09",
+   "available_at": "2023-03-09",
+   "retrieved_at": "2026-10-29T08:37:14Z",
+   "relation": "contradicts",
+   "explanation": "The release notes document ten turns per conversation and 120 per day in the live preview. These are identifiable constraints, though their existence alone does not prove adequate safety.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5",
+  "e6"
+ ],
+ "unresolved_gaps": [
+  "The cited measurements do not establish a comprehensive level of safety across deployment contexts."
+ ],
+ "packet_hash": "ee010d8a0d089f4c9ded477e1507dd64488e6705937f598f416edacf5a920d92"
+}

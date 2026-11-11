@@ -1,0 +1,103 @@
+{
+ "packet_id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-0a1d51-p1",
+ "claim_revision_ref": {
+  "id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-0a1d51",
+  "version": 1,
+  "content_hash": "099e6b7c178591e22cfa1070e68c0fd53d131b10dab4e307b705ed8525731e46"
+ },
+ "contract_ref": {
+  "id": "wyea-news-microsoft-to-shift-github-copilot-users-to-token-based-bi-cddbe2b3f0c5-0a1d51",
+  "version": 1,
+  "content_hash": "0255ca3b1f64e18343973bc61c9ff1b709e14d1b4bb86c24ce0ec219eee3d07c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.github.blog/changelog \"Opus 4.7\" \"7.5\"",
+   "site.docs.github.com premium requests model multiplier each prompt",
+   "GitHub Docs commit lookup: content/copilot/reference/ai-models/supported-models.md, until 2026-04-20T23:59:59Z",
+   "Read historical content/copilot/concepts/billing/copilot-requests.md at commit 91ac21c37134bad6288e51eed9fa59e97075a9ba"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/",
+    "used": true,
+    "why": "GitHub's dated announcement states the promotional multiplier and its advertised end date."
+   },
+   {
+    "url": "https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests",
+    "used": false,
+    "why": "The current page describes later legacy billing. A contemporaneous repository version provides stronger evidence for April."
+   },
+   {
+    "url": "https://api.github.com/repos/github/docs/commits?path=content/copilot/reference/ai-models/supported-models.md&until=2026-04-20T23:59:59Z&per_page=1",
+    "used": true,
+    "why": "Identifies and dates the April 17 documentation snapshot."
+   },
+   {
+    "url": "https://raw.githubusercontent.com/github/docs/91ac21c37134bad6288e51eed9fa59e97075a9ba/content/copilot/concepts/billing/copilot-requests.md",
+    "used": true,
+    "why": "Preserves the contemporaneous rule converting user prompts into premium-request consumption."
+   }
+  ],
+  "performed_at": "2026-10-29T11:57:06Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "github-blog-changelog-2026-04-16-claude-opus-4-7-is-generally-available",
+   "source_snapshot_id": "adc02e5fccebc9994e0e63d16b288b5732853c2ec0d14d2ca542cffa5754bcae",
+   "publisher": "GitHub",
+   "source_type": "company_disclosure",
+   "url": "https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available",
+   "locator": "Promotional-pricing paragraph immediately before Availability in GitHub Copilot",
+   "receipt": {
+    "public_excerpt": "7.5× premium request multiplier",
+    "quote_hash": "969c6bfa44a66fe1497a5720b4deb6af8128ddca763febb6d80ceac050bf8358",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-16",
+   "available_at": "2026-04-16",
+   "retrieved_at": "2026-10-29T11:51:21Z",
+   "relation": "supports",
+   "explanation": "GitHub explicitly announced the 7.5× promotional rate. This establishes the multiplier described in the claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-github-docs-91ac21c37134bad6288e51eed9fa5-63235274541d",
+   "source_snapshot_id": "78ed842063352a09c56bb5c16b20553e9d6bb08f06e4df0969adc37db060eee5",
+   "publisher": "GitHub",
+   "source_type": "company_disclosure",
+   "url": "https://raw.githubusercontent.com/github/docs/91ac21c37134bad6288e51eed9fa59e97075a9ba/content/copilot/concepts/billing/copilot-requests.md",
+   "locator": "Premium features table, Copilot Chat row, April 17 repository snapshot",
+   "receipt": {
+    "public_excerpt": "multiplied by the model's rate.",
+    "quote_hash": "fe251e454c9faf685fa5f2c4b7c6943bae28d54f1f4d9a313df4db6f1225dbe5",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-17",
+   "available_at": "2026-04-17",
+   "retrieved_at": "2026-10-29T11:52:04Z",
+   "relation": "supports",
+   "explanation": "The contemporaneous accounting rule applies the model multiplier to one premium request per user prompt. Combined with e1, that yields 7.5 premium-request units per Opus 4.7 prompt.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: Opus 4.7 promotional multiplier = 7.5",
+     "e2: base consumption = 1 premium request per user prompt"
+    ],
+    "formula": "1 × 7.5 = 7.5 premium-request units per user prompt",
+    "rounding": "None."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "946e7158316a6732081646fca5a706be67152ac716972c84436b4b346a86692c"
+}

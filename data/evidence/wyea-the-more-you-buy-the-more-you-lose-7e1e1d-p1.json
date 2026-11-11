@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-the-more-you-buy-the-more-you-lose-7e1e1d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-more-you-buy-the-more-you-lose-7e1e1d",
+  "version": 2,
+  "content_hash": "2d0a4c40ac30f16d46e5f689882a2c42451b26fc023eca65a841e66252080698"
+ },
+ "contract_ref": {
+  "id": "wyea-the-more-you-buy-the-more-you-lose-7e1e1d",
+  "version": 1,
+  "content_hash": "bed2af7f3b7bf7d87d2677fe4b068506d611c3c7cfa005e8484035bfbb899f60"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "generative AI practical deployment clinical documentation randomized trial 2026 2025",
+   "\"A Pragmatic Randomized Controlled Trial\" \"Ambient\" NEJM 2025",
+   "\"Generative AI\" \"clinical\" \"documentation\" randomized trial 2025 2026 reduces time",
+   "\"NCT06517082\" \"2025\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41625485/",
+    "used": true,
+    "why": "Readable abstract of the original randomized clinical implementation study, with publication date and practical outcomes."
+   },
+   {
+    "url": "https://clinicaltrials.gov/api/v2/studies/NCT06517082",
+    "used": true,
+    "why": "Official study record verifies the LLM intervention and the actual completion date."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41591-026-04503-6",
+    "used": true,
+    "why": "A separate clinical trial supplies relevant caution: another LLM application did not improve its primary clinical outcome."
+   },
+   {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12858090/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the original abstract was available through PubMed."
+   },
+   {
+    "url": "https://ai.nejm.org/doi/full/10.1056/AIoa2500945",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://clinicaltrials.ucsd.edu/trial/NCT07866001",
+    "used": false,
+    "why": "The search result described a trial starting after the post; it cannot establish the claimed historical state."
+   }
+  ],
+  "performed_at": "2026-10-29T13:17:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "pubmed-ncbi-nlm-nih-gov-41625485",
+   "source_snapshot_id": "3306e05c11996da996ed4edd17e4151991fc2aef14b523fab18fe2a467595710",
+   "publisher": "NEJM AI; abstract hosted by the National Library of Medicine",
+   "source_type": "peer_reviewed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41625485",
+   "locator": "Abstract, Conclusions",
+   "receipt": {
+    "public_excerpt": "Documentation time decreased",
+    "quote_hash": "f6588e79566d3a531b7ae70bb64563bb0cdf4f74c79daf19ecc3276e98721ffa",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-27",
+   "available_at": "2025-11-26",
+   "retrieved_at": "2026-10-29T13:07:15Z",
+   "relation": "contradicts",
+   "explanation": "The randomized implementation study involved 66 practitioners and found reduced documentation time when ambient AI drafted visit notes. The study completion date is verified by e2; generating clinical records from conversations is a practical application outside the listed exceptions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "clinicaltrials-gov-api-v2-studies-nct06517082",
+   "source_snapshot_id": "8b29470369a85930c609db1d8db12bde49d734c0ae52d6464989f9fd0ed8aa50",
+   "publisher": "University of Wisconsin, Madison, study record on ClinicalTrials.gov",
+   "source_type": "company_disclosure",
+   "url": "https://clinicaltrials.gov/api/v2/studies/NCT06517082",
+   "locator": "protocolSection.armsInterventionsModule.interventions; completion date in statusModule",
+   "receipt": {
+    "public_excerpt": "generate clinical documentation in real-time.",
+    "quote_hash": "c92da9d068fdd1b22a8225ec086ca6f6b6d2b6000f89550082831ff1211ae9b6",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-27",
+   "available_at": "2025-05-30",
+   "retrieved_at": "2026-10-29T13:10:02Z",
+   "relation": "context",
+   "explanation": "The sponsor's official registry record confirms that the intervention used LLMs to generate clinical documentation and records actual completion on March 27, 2025. This supports the technology classification and timing of e1.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "nature-com-articles-s41591-026-04503-6",
+   "source_snapshot_id": "34b78c965f19dc354b5e7f36e790c3db97e3a8532e52204aedb0962c0d9e7026",
+   "publisher": "Nature Medicine",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41591-026-04503-6",
+   "locator": "Abstract, primary outcome result",
+   "receipt": {
+    "public_excerpt": "did not differ significantly",
+    "quote_hash": "8a8e464ab734a660d3c17ea749c30251baa97d1ce0f11272280941c9c27e63ac",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-16",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T06:54:14Z",
+   "relation": "context",
+   "explanation": "A separate Kenyan trial of LLM-assisted clinical decision support did not significantly reduce treatment failure. This limits any general claim of clinical effectiveness, but does not negate the demonstrated documentation application.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The speaker does not define 'fundamental'.",
+  "The cited documentation benefit does not establish industry-wide profitability or improved patient outcomes."
+ ],
+ "packet_hash": "8dae9b3c058621e322a9c06e9f8056427e8a12486d30d33822c6ab551caff118"
+}

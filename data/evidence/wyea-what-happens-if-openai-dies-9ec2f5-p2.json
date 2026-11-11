@@ -1,0 +1,195 @@
+{
+ "packet_id": "wyea-what-happens-if-openai-dies-9ec2f5-p2",
+ "claim_revision_ref": {
+  "id": "wyea-what-happens-if-openai-dies-9ec2f5",
+  "version": 1,
+  "content_hash": "eb9afa700bcb4b5eaf0164b802717656b6894c5d49b7c3f120aaf4e49c867163"
+ },
+ "contract_ref": {
+  "id": "wyea-what-happens-if-openai-dies-9ec2f5",
+  "version": 2,
+  "content_hash": "11a4770bfd787c20b72b0ef2faaca4e198661f880c4ef63875828f53dac19e72"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft commercial remaining performance obligation OpenAI percent 2026",
+   "OpenAI share of hyperscaler backlog RPO Microsoft Oracle Amazon Google combined percent 2026",
+   "Microsoft FY26 Q2 earnings call transcript Amy Hood \"45%\" OpenAI commercial RPO"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://siliconlien.com/research/compute-demand-2026q2/",
+    "used": true,
+    "why": "Gives each seller's backlog as of mid-2026, drawn from their filings, and Microsoft's disclosed 45% OpenAI share."
+   },
+   {
+    "url": "https://technosight.substack.com/p/hyperscalers-two-customer-problem",
+    "used": true,
+    "why": "Totals OpenAI's commitments to Microsoft, Amazon, and Oracle, and notes OpenAI's current share of Microsoft revenue."
+   },
+   {
+    "url": "https://www.webull.com/news/15317720163771392",
+    "used": true,
+    "why": "Benzinga's derivation of OpenAI's share of Microsoft's June 2026 backlog."
+   },
+   {
+    "url": "https://www.fierce-network.com/cloud/microsoft-livin-ai-prayer",
+    "used": false,
+    "why": "Returned HTTP 403."
+   },
+   {
+    "url": "https://fortune.com/2026/01/28/microsoft-stock-drops-azure-growth-slows-capex-spending-q2/",
+    "used": false,
+    "why": "Did not contain the 45% passage."
+   }
+  ],
+  "performed_at": "2026-10-31T21:48:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "siliconlien-com-research-compute-demand-2026q2",
+   "source_snapshot_id": "91de960f327952b0eef9e1d6dcfc1d5f16e54b25c73d9cb4244ce15f730641a0",
+   "publisher": "Silicon Lien",
+   "source_type": "secondary_summary",
+   "url": "https://siliconlien.com/research/compute-demand-2026q2",
+   "locator": "section 'What four large US sellers disclose'",
+   "receipt": {
+    "public_excerpt": "Latest reported backlogs: Microsoft $678B commercial RPO (Jun), Oracle $638B (May), Alphabet $519.5B (Jun), and Amazon $496B (Jun, primarily AWS).",
+    "quote_hash": "70db1c9149b38786b9b6665e977b7b1314cb59a281153deca6a4869d7ed431c9",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-03",
+   "retrieved_at": "2026-10-31T21:41:33Z",
+   "relation": "supports",
+   "explanation": "Gives the denominator: combined backlog of about $2.33T for the four sellers as of mid-2026.",
+   "metric_scope": {
+    "company": "Microsoft, Oracle, Alphabet, Amazon",
+    "metric": "remaining performance obligations (backlog)",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "technosight-substack-com-hyperscalers-two-customer-problem",
+   "source_snapshot_id": "a645130bfef75f4bc2b705e2e831730a6f865387142c078c76c11ab6c6a016c8",
+   "publisher": "Technosight (Substack)",
+   "source_type": "secondary_summary",
+   "url": "https://technosight.substack.com/p/hyperscalers-two-customer-problem",
+   "locator": "section 'The money loop'",
+   "receipt": {
+    "public_excerpt": "$688B from OpenAI (Microsoft $250B, Amazon $138B, Oracle about $300B), over different horizons.",
+    "quote_hash": "6506ea307726b3aea6a75c9beb9388f64446d2f2c0cf863f2186c435e11e7387",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-10-10",
+   "retrieved_at": "2026-10-31T21:41:35Z",
+   "relation": "supports",
+   "explanation": "OpenAI's commitments to three sellers total about $688B, excluding its undisclosed Google contract. Against the roughly $2.33T combined backlog in e1, that is about 29.5%, above the 20% floor.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "cloud compute commitments to Microsoft, Amazon, Oracle",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": "2026-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "OpenAI commitments $688B (Microsoft $250B, Amazon $138B, Oracle ~$300B)",
+     "Backlogs: Microsoft $678B, Oracle $638B, Alphabet $519.5B, Amazon $496B (e1)"
+    ],
+    "formula": "688 / (678 + 638 + 519.5 + 496) = 688 / 2331.5",
+    "rounding": "≈29.5%, rounded to one decimal"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "webull-com-news-15317720163771392",
+   "source_snapshot_id": "08dc1cef0d271d3378706b8adb7d52328fa5e84f8531c2c4bfb455d5368c722f",
+   "publisher": "Benzinga (via Webull)",
+   "source_type": "news_report",
+   "url": "https://www.webull.com/news/15317720163771392",
+   "locator": "section 'The Math Behind Microsoft’s OpenAI Exposure', paragraph 2",
+   "receipt": {
+    "public_excerpt": "OpenAI-related commitments could represent about 32% of Microsoft’s commercial backlog.",
+    "quote_hash": "a9f6acc65ceb49e412df524b862da5e10df4260a0d8e58f0a6eb27ce4e6cef9f",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-30",
+   "retrieved_at": "2026-10-29T12:33:24Z",
+   "relation": "supports",
+   "explanation": "At the largest hyperscaler, OpenAI was at least about 32% of contracted future revenue in June 2026, derived from Microsoft's own disclosure. Silicon Lien's estimate is about 41.5%.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "OpenAI share of commercial remaining performance obligation",
+    "currency": "USD",
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "technosight-substack-com-hyperscalers-two-customer-problem",
+   "source_snapshot_id": "a645130bfef75f4bc2b705e2e831730a6f865387142c078c76c11ab6c6a016c8",
+   "publisher": "Technosight (Substack)",
+   "source_type": "secondary_summary",
+   "url": "https://technosight.substack.com/p/hyperscalers-two-customer-problem",
+   "locator": "section 'The four ecosystems', Microsoft paragraph",
+   "receipt": {
+    "public_excerpt": "$24.1B of revenue from OpenAI arrangements, 7% of the company’s total",
+    "quote_hash": "188422d671c19335a9febf2322c24c9d363e644359ac63b275657642930614c7",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-10",
+   "retrieved_at": "2026-10-31T21:41:35Z",
+   "relation": "context",
+   "explanation": "OpenAI's realized revenue share at Microsoft today is about 7% of total revenue. Shares of revenue actually recognized are well below backlog shares, and future revenue will include sales not yet booked.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "No primary filing was read directly; seller backlogs and OpenAI contract values come from secondary analyses, and the Oracle and Amazon OpenAI figures are partly press-reported.",
+  "Backlog is not the same as all future cloud revenue. Revenue not yet contracted would lower OpenAI's share, and the size of that effect is unknown.",
+  "OpenAI's Google Cloud commitment is undisclosed, so the numerator is understated."
+ ],
+ "packet_hash": "624f2815b3915b0d1f1b211b6a8e9e15ca5c75a392b77d7d06377fa6d134b08b"
+}

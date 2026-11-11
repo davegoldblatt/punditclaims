@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-why-are-we-still-doing-this-d4635f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d4635f",
+  "version": 2,
+  "content_hash": "d4d8d6414f11a2184c1d2d965ea686c9a15fbea2b55bd507318ba1d0366fae11"
+ },
+ "contract_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d4635f",
+  "version": 1,
+  "content_hash": "f2a8d01fae22c80bae1f3fb39b8286efedb1bdb143f5664503ecc5908f10e519"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "TARP total disbursements 443.5 billion Treasury PPP 800 billion SBA",
+   "2026 AI spending 700 billion capex 2025 400 billion Reuters February",
+   "site.cbo.gov \"Final Report\" \"Troubled Asset\" \"2024\"",
+   "site.sba.gov PPP \"800 billion\" \"2024\"",
+   "site.reuters.com February 2026 big tech 650 billion spending",
+   "site.home.treasury.gov TARP \"443.5\" \"2024\"",
+   "site.aboutamazon.com 2025 financial results 2026 200 billion capital expenditures",
+   "Amazon.com Announces Fourth Quarter Results 2026 February 5 2025 128.3"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2025/q4/earnings-result/AMZN-Q4-2025-Earnings-Release.pdf",
+    "used": true,
+    "why": "Read relevant passages. Distinguishes a realized increase in capital purchases from a forward-looking 2026 spending plan."
+   },
+   {
+    "url": "https://files.gao.gov/reports/GAO-26-108820/index.html",
+    "used": true,
+    "why": "Read in full. Provides official PPP authorization and lending context."
+   },
+   {
+    "url": "https://home.treasury.gov/system/files/256/GAO-Audit-TARP-Costs.pdf",
+    "used": false,
+    "why": "Read relevant passages, but extracted columns were interleaved. It also cannot supply the missing comparable AI expenditure total."
+   },
+   {
+    "url": "https://www.cbo.gov/system/files/2024-04/59919-TARP.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/big-tech-to-invest-about-650-billion-in-ai-in-2026-4519448",
+    "used": false,
+    "why": "read_page returned HTTP 403; search snippets were not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T22:27:42Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s2-q4cdn-com-299287126-files-doc-earnings-2025-q4-earnings-result-a-8dc1a87a38f2",
+   "source_snapshot_id": "2aa165ce0dc51d8f9175ab6fef4a3a881fda8bccc2a42ef15d1d6b5db218e4a4",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2025/q4/earnings-result/AMZN-Q4-2025-Earnings-Release.pdf",
+   "locator": "Full Year 2025, free cash flow bullet",
+   "receipt": {
+    "public_excerpt": "primarily reflects investments in artificial intelligence.",
+    "quote_hash": "09bd54f4b67884be4a60ec8d75307fd6691eb6e32f05e4c0d67b3f777ec80a56",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-02-05",
+   "retrieved_at": "2026-10-29T12:24:53Z",
+   "relation": "context",
+   "explanation": "The referenced increase is $50.7 billion in annual purchases of property and equipment, net of sales and incentives. This is one company's change in spending, not cumulative industry expenditure; the release separately describes approximately $200 billion of 2026 capex as expected spending.",
+   "metric_scope": {
+    "company": "Amazon",
+    "metric": "Year-over-year increase in purchases of property and equipment, net of proceeds from sales and incentives",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "files-gao-gov-reports-gao-26-108820-index-html",
+   "source_snapshot_id": "3623fcd219ef2176beacb794cc079b907ebd430e6d51f4c3db4e74566c88d606",
+   "publisher": "U.S. Government Accountability Office",
+   "source_type": "official_statistics",
+   "url": "https://files.gao.gov/reports/GAO-26-108820/index.html",
+   "locator": "Background, SBA’s Pandemic Relief Programs, Paycheck Protection Program",
+   "receipt": {
+    "public_excerpt": "Congress provided approximately $814 billion in commitment authority.",
+    "quote_hash": "2d6cc245489ef1b4c8530c3397ec5271157ac420afe1656a4fd03292dc363247",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2025-12-10",
+   "retrieved_at": "2026-10-29T22:16:28Z",
+   "relation": "context",
+   "explanation": "GAO places PPP commitment authority at approximately $814 billion and reports about $800 billion in loans by May 31, 2021. These provide program-scale context, but neither authorization nor lending is automatically comparable to industry losses or AI-specific expenditure.",
+   "metric_scope": {
+    "company": "U.S. Small Business Administration Paycheck Protection Program",
+    "metric": "Congressional commitment authority",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": "2020",
+    "period_end": "2021",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No reconciled total of actual cumulative LLM expenditure was established.",
+  "The proportion of general infrastructure spending attributable to LLMs is unresolved.",
+  "Funding and expenditure may overlap, and planned 2026 expenditure had not all occurred by the post.",
+  "No consistent comparison supporting or refuting the unrestricted historical superlative was established."
+ ],
+ "packet_hash": "72bc9c70da314caec4f27bace87d7f2ac3f004e55e554d6e9b80a27b09e7f41b"
+}

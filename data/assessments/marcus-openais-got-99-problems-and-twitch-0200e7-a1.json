@@ -1,0 +1,150 @@
+{
+ "assessment_id": "marcus-openais-got-99-problems-and-twitch-0200e7-a1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-got-99-problems-and-twitch-0200e7",
+  "version": 1,
+  "content_hash": "80b62f4c9921d5023d22c1452f6f37ae6d98b89ba0ebabae646e0e79590b4dac"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-got-99-problems-and-twitch-0200e7",
+  "version": 1,
+  "content_hash": "95cc9e323c9f01f663ae5b1949a69a036b6e7d4b3b4c4663eebb0097b7119925"
+ },
+ "packet_ref": {
+  "id": "marcus-openais-got-99-problems-and-twitch-0200e7-p1",
+  "content_hash": "d08009d832b5ea55817f36bb2a219d3c52ed1ee95dde2a6a1231b3e128d862b8"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-10-01",
+  "end": "2024-01-27",
+  "precision": "day"
+ },
+ "public_rationale": "The research supports the ordinary, class-level reading: LLMs had disclosed verified personal information, researchers identified continuing underlying vulnerabilities, and the January legal evaluation found serious hallucination problems. A reported patch to the particular word-repetition attack limits the finding but does not establish a general solution. Support depends on reading private data to include personal information recovered from training data, rather than exclusively confidential conversations.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "The extraction experiments preceded the target period; the contemporaneous outcome evidence concerns the continuing vulnerability assessment.",
+  "Personal information recovered from public-source training material is not necessarily secret information.",
+  "Legal benchmark error rates cannot be generalized to every LLM task.",
+  "The patch report is secondary reporting."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-openais-got-99-problems-and-twitch-0200e7-4x-review-anthropic-1",
+  "marcus-openais-got-99-problems-and-twitch-0200e7-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-openais-got-99-problems-and-twitch-0200e7-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-openais-got-99-problems-and-twitch-0200e7",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs sometimes leak private data, an unresolved problem, and hallucinations remain problematic.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "It has become apparent that large language models, OpenAI’s core technology, sometimes leak private data, and that this problem has not been resolved; hallucinations too remain problematic.",
+   "locator": "paragraph 20",
+   "url": "https://garymarcus.substack.com/p/openais-got-99-problems-and-twitch",
+   "date": "2024-01-27",
+   "document_title": "OpenAI’s Got 9.9 Problems, and Twitch Ain’t One",
+   "observed_at": "2026-10-29T00:01:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "large language models",
+    "sometimes leak private data",
+    "this problem has not been resolved",
+    "hallucinations too remain problematic"
+   ],
+   "our_interpretation": [
+    "The claim concerns persistent classes of LLM failure, not every model or every interaction.",
+    "Private data is read as personal or sensitive information disclosed through model output, including memorized personal information originally collected from public sources. Confidential user conversations are a narrower category.",
+    "Unresolved means the underlying disclosure risk remained, even if a particular extraction technique was blocked.",
+    "Problematic hallucinations means material factual errors in consequential uses, without imposing a universal error-rate threshold.",
+    "For the ongoing observation, use the latest completed quarter and the elapsed publication quarter: October 2023 through January 27, 2024."
+   ],
+   "support_condition": "Contemporaneous research establishes continuing personal-data disclosure vulnerabilities and material hallucination problems, while distinguishing individual mitigations from a general solution.",
+   "contradiction_condition": "Reliable evidence establishes that either asserted ongoing problem had been comprehensively resolved for the relevant LLM class during the target period."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The research supports the ordinary, class-level reading: LLMs had disclosed verified personal information, researchers identified continuing underlying vulnerabilities, and the January legal evaluation found serious hallucination problems. A reported patch to the particular word-repetition attack limits the finding but does not establish a general solution. Support depends on reading private data to include personal information recovered from training data, rather than exclusively confidential conversations.",
+  "limitations": [
+   "The extraction experiments preceded the target period; the contemporaneous outcome evidence concerns the continuing vulnerability assessment.",
+   "Personal information recovered from public-source training material is not necessarily secret information.",
+   "Legal benchmark error rates cannot be generalized to every LLM task.",
+   "The patch report is secondary reporting."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "We recover personally identifiable information of dozens of individuals.",
+    "locator": "Section 5, Qualitative analysis, PII; Ethics & Responsible Disclosure",
+    "url": "https://arxiv.org/html/2311.17035v1",
+    "publisher": "Nasr and coauthors, arXiv",
+    "event_date": "2023",
+    "available_at": "2023-11-28",
+    "explanation": "The researchers verified extracted personal information against their comparison dataset. The attack was discovered and disclosed before the target period, so this is background evidence rather than a newly dated extraction outcome."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "language models are subject to divergence",
+    "locator": "Patching an exploit != Fixing the underlying vulnerability",
+    "url": "https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html",
+    "publisher": "Authors of Scalable Extraction of Training Data from (Production) Language Models",
+    "event_date": "2023-11-28",
+    "available_at": "2023-11-28",
+    "explanation": "This is the researchers’ dated assessment of the continuing vulnerability, not a claim that their experiments occurred on publication day. They explain why a word-repetition filter would address one exploit without eliminating memorization and divergence."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "unsupervised integration of popular LLMs",
+    "locator": "Abstract, version 1 submitted January 2, 2024",
+    "url": "https://arxiv.org/abs/2401.01301v1",
+    "publisher": "Dahl, Magesh, Suzgun and Ho, arXiv",
+    "event_date": "2024-01-02",
+    "available_at": "2024-01-02",
+    "explanation": "The January assessment reports legal hallucinations ranging from 69% for ChatGPT 3.5 to 88% for Llama 2 on the specified questions. The date identifies the published assessment of the problem; the abstract does not specify individual test dates."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "OpenAI has been notified and the attack no longer works.",
+    "locator": "Paragraph discussing OpenAI notification and the patch",
+    "url": "https://www.securityweek.com/simple-attack-allowed-extraction-of-chatgpt-training-data",
+    "publisher": "SecurityWeek",
+    "event_date": "2023-12-01",
+    "available_at": "2023-12-01",
+    "explanation": "This materially limits any assertion that the original ChatGPT exploit remained usable. The same report distinguishes that mitigation from resolving the underlying vulnerabilities."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "4c4abfa7d4dbd21be7f4b388b7a89dd294ae68091899017be15fe30470d72e54",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:50:22Z"
+}

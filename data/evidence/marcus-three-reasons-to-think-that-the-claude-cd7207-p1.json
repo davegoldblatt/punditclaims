@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-three-reasons-to-think-that-the-claude-cd7207-p1",
+ "claim_revision_ref": {
+  "id": "marcus-three-reasons-to-think-that-the-claude-cd7207",
+  "version": 1,
+  "content_hash": "a37c7b29d6ae5c2a5dd2b038d8596ae3f0100d3dd5831639350874d359b26a1f"
+ },
+ "contract_ref": {
+  "id": "marcus-three-reasons-to-think-that-the-claude-cd7207",
+  "version": 1,
+  "content_hash": "6d863fb9461fcd5aeba4c1a05dc70cf53dc6dd2ddd9e035f8f3c66f422bce978"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Mythos open weights eight out of eight isolated code April 2026",
+   "\"Mythos\" \"Eight out of eight\"",
+   "\"Mythos\" \"open\" \"AISLE\"",
+   "AISLE Mythos Stanislav Fort small models mythos blog",
+   "site.aisle.com/blog \"jagged\" \"Mythos\" \"April 8\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+    "used": true,
+    "why": "Read in full with read_page. This is the original experiment, including model-level results, caveats, and an April 9 false-positive update."
+   },
+   {
+    "url": "https://github.com/stanislavfort/mythos-jagged-frontier",
+    "used": false,
+    "why": "Read with read_page. The repository describes the prompts and transcript files, but its summary is not independent corroboration of AISLE's report."
+   },
+   {
+    "url": "https://aisle.com/blog/system-over-model-zero-day-discovery-at-the-jagged-frontier",
+    "used": false,
+    "why": "Search identified later whole-codebase experiments. They concern a different setup and are unnecessary to assess the explicitly simplified launch-period claim."
+   }
+  ],
+  "performed_at": "2026-10-29T08:56:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "aisle-com-blog-ai-cybersecurity-after-mythos-the-jagged-frontier",
+   "source_snapshot_id": "d4e8484d949321d4c7f9d4f5ea96af1019de82829b22473f9f7116d2b4afc355",
+   "publisher": "AISLE",
+   "source_type": "independent_measurement",
+   "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+   "locator": "The announcement; detailed results in Tests 2 and 3",
+   "receipt": {
+    "public_excerpt": "Those models recovered much of the same analysis.",
+    "quote_hash": "edcab85b7f475a041492561321f6eb0fe79c8d473531c1d544ef4b2186ee1787",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-07",
+   "available_at": "2026-04-07",
+   "retrieved_at": "2026-10-29T08:51:49Z",
+   "relation": "supports",
+   "explanation": "AISLE reports successful FreeBSD vulnerability detection by all eight tested models, including several open-weight models; the eight were not all open-weight. GPT-OSS-120b also recovered the core OpenBSD chain, supporting substantial analysis in the expressly simplified setting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "aisle-com-blog-ai-cybersecurity-after-mythos-the-jagged-frontier",
+   "source_snapshot_id": "d4e8484d949321d4c7f9d4f5ea96af1019de82829b22473f9f7116d2b4afc355",
+   "publisher": "AISLE",
+   "source_type": "independent_measurement",
+   "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+   "locator": "Test 2, The payload-size constraint, and how models solved it differently",
+   "receipt": {
+    "public_excerpt": "None of the models arrived at the specific multi-round RPC approach.",
+    "quote_hash": "aa4ee8e0c85fec6ad024fee7cce10683f53aba201723aa506e842943e1eebe8e",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-07",
+   "available_at": "2026-04-07",
+   "retrieved_at": "2026-10-29T08:51:49Z",
+   "relation": "context",
+   "explanation": "The models did not reproduce Mythos's particular exploit-delivery solution, and proposed alternatives were not executed. The April 9 update also found frequent false positives on patched code, limiting broader claims of practical equivalence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No independent rerun of AISLE's results was verified.",
+  "The tests do not measure autonomous discovery or successful end-to-end exploitation."
+ ],
+ "packet_hash": "e1e9934767046680ebbd2b99758e6256c0a686aa05cadf45de4acdf01fe80e7d"
+}

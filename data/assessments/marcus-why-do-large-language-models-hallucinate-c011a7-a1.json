@@ -1,0 +1,128 @@
+{
+ "assessment_id": "marcus-why-do-large-language-models-hallucinate-c011a7-a1",
+ "claim_revision_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-c011a7",
+  "version": 2,
+  "content_hash": "67527c3fdbafd280c3551d10b10c3e737e3803954e5210302d86fce77e52c1dc"
+ },
+ "contract_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-c011a7",
+  "version": 1,
+  "content_hash": "c4d029ab49d401d226aaf843bbde8d074454cdfc33d4cc1907223be37195a3e7"
+ },
+ "packet_ref": {
+  "id": "marcus-why-do-large-language-models-hallucinate-c011a7-p1",
+  "content_hash": "8f5be008b38873f73d7ebfb696e325a44fd16c9244754560b66818ca08b20c49"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-05-05",
+  "precision": "day"
+ },
+ "public_rationale": "The contemporary puzzle benchmark confirms illegal moves in several models, with large differences between them. It does not establish full-game reliability or why errors occur. Earlier controlled work found high move legality and manipulable board representations in chess-trained language models. That qualifies Marcus’s proposed explanation, but does not directly settle it for contemporary general-purpose LLMs. The combined behavioral and causal claim remains unresolved.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "Puzzle results, full-game results, and playing strength are not interchangeable.",
+  "Specialized chess models cannot automatically represent general-purpose chat models.",
+  "The presence of a board representation does not prove complete mastery of every chess rule."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-why-do-large-language-models-hallucinate-c011a7-4x-review-anthropic-1",
+  "marcus-why-do-large-language-models-hallucinate-c011a7-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-why-do-large-language-models-hallucinate-c011a7-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-why-do-large-language-models-hallucinate-c011a7",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs can't reliably stick to the rules of chess despite having the rules and millions of games in their data, and this is a manifestation of the related problem of extracting statistical tendencies without ever fully deriving and grasping the correct abstractions.",
+  "kind": "causal",
+  "conditions": [
+   "reliably"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "(Those systems also can’t reliably stick to the rules of chess despite having them – and millions of games – in their database, a manifestation of the related problem of extracting statistical tendencies without every fully deriving and apprehending the correct abstractions).",
+   "locator": "paragraph 25",
+   "url": "https://garymarcus.substack.com/p/why-do-large-language-models-hallucinate",
+   "date": "2025-05-05",
+   "document_title": "Why DO large language models hallucinate?",
+   "observed_at": "2026-10-28T23:56:42Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "can’t reliably stick to the rules of chess",
+    "despite having them – and millions of games – in their database",
+    "a manifestation of the related problem",
+    "extracting statistical tendencies",
+    "without every fully deriving and apprehending the correct abstractions"
+   ],
+   "our_interpretation": [
+    "Read database here as training data, given the surrounding discussion, rather than an explicit inference-time record store.",
+    "The behavioral claim concerns unaided language models repeatedly violating chess rules during play. Puzzle accuracy and playing strength are different measurements.",
+    "The causal claim attributes these violations to failure to acquire usable rule abstractions; errors alone cannot establish that explanation.",
+    "Reliable does not mean perfect. Complete-game legality and unfiltered move attempts are the relevant ordinary measures.",
+    "Use the current year's pre-publication reporting window, 2025-01-01 through 2025-05-05; older controlled experiments provide context."
+   ],
+   "support_condition": "Representative full-game evaluations show recurring illegal moves, training records establish extensive chess exposure, and controlled interventions connect those failures to missing rule abstractions.",
+   "contradiction_condition": "Representative unaided models consistently complete legal games, or controlled tests demonstrate usable rule abstractions and show that another mechanism explains the alleged failures."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The contemporary puzzle benchmark confirms illegal moves in several models, with large differences between them. It does not establish full-game reliability or why errors occur. Earlier controlled work found high move legality and manipulable board representations in chess-trained language models. That qualifies Marcus’s proposed explanation, but does not directly settle it for contemporary general-purpose LLMs. The combined behavioral and causal claim remains unresolved.",
+  "limitations": [
+   "Puzzle results, full-game results, and playing strength are not interchangeable.",
+   "Specialized chess models cannot automatically represent general-purpose chat models.",
+   "The presence of a board representation does not prove complete mastery of every chess rule."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "1000 chess puzzles",
+    "locator": "Results, updated April 26, 2025; Methodology",
+    "url": "https://github.com/kagisearch/llm-chess-puzzles",
+    "publisher": "Kagi",
+    "event_date": "2025-04-26",
+    "available_at": "2025-04-26",
+    "explanation": "The table reports illegal-move rates of 8.9% for GPT-4o, 7.6% for GPT-4.1, and 0.9% for GPT-4.5-preview. These results show errors and substantial model differences, but puzzle responses cannot establish full-game reliability or the asserted cause."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "legal move rate of 99.8%",
+    "locator": "Section 2, model training and performance; sections 3–4",
+    "url": "https://arxiv.org/html/2403.15498v1",
+    "publisher": "Adam Karvonen / arXiv",
+    "event_date": "2024",
+    "available_at": "2024-03-21",
+    "explanation": "Specialized next-character models trained on chess games achieved high move legality and learned board representations that researchers could manipulate. This challenges the general inference from statistical training to absent abstractions, but predates the target window and does not test the contemporary general-purpose models."
+   }
+  ],
+  "what_would_resolve": "Dated full-game evaluations of unaided contemporary models, verified chess-training exposure, and interventions distinguishing missing rule abstractions from state-tracking and prompting failures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "716d699a5a98db3c02d7660c02f5cdaa0c670a349adefc6fcd83b55193f11dc2",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:54:59Z"
+}

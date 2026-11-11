@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-where-are-all-the-data-centers-0ae21e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-where-are-all-the-data-centers-0ae21e",
+  "version": 1,
+  "content_hash": "3f6a5f9c8baa5a0228314ffb8b2838f8c6f40d4a5d1555aaecdc6f5ca1cba823"
+ },
+ "contract_ref": {
+  "id": "wyea-where-are-all-the-data-centers-0ae21e",
+  "version": 1,
+  "content_hash": "f6c6d4ef55d039624d7d872686ac4cf8c5f45e74997b7d5168afda7759a42cc3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic SpaceX Colossus May 2026 gross margins 2026 negative compute",
+   "Anthropic 2026 gross margin negative 2026 estimate The Information 2026",
+   "Anthropic \"2026\" \"negative\" \"gross margins\" May"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/higher-limits-spacex",
+    "used": true,
+    "why": "Primary confirmation of the agreement; it does not disclose its margin effect."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial statements available before the freeze provide material counterevidence, but cover six months and do not isolate the agreement."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotation or financial finding from this filing is used."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets?offer=ab-25%5C",
+    "used": false,
+    "why": "Search results concerned a different year's margin forecast. They were not used as evidence of the claimed 2026 effect."
+   }
+  ],
+  "performed_at": "2026-10-29T22:14:15Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "anthropic-com-news-higher-limits-spacex",
+   "source_snapshot_id": "86bbee34c0be4966cba308a44a19b3df36cb9b380ddb813fc411e80f890b7047",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/higher-limits-spacex",
+   "locator": "New compute partnership with SpaceX, first paragraph",
+   "receipt": {
+    "public_excerpt": "We’ve signed an agreement with SpaceX to use all of the compute capacity at their Colossus 1 data center.",
+    "quote_hash": "d51757b3dbc27410c0aba7e661c8b911dde35f41b16e6fd6da66dd93e2c51351",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-06",
+   "available_at": "2026-05-06",
+   "retrieved_at": "2026-10-29T02:53:43Z",
+   "relation": "context",
+   "explanation": "Confirms the purchase decision underlying the claim. It supplies no pricing, gross-margin calculation, or evidence that management knowingly accepted worse margins.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Note 8, Supplemental Operating Expense Information, footnote 1; Consolidated Statements of Operations, six months ended June 30, 2026",
+   "receipt": {
+    "public_excerpt": "Substantially all of cost of revenue consists of compute and infrastructure costs associated with customer-serving workloads.",
+    "quote_hash": "a096884b6aecdf700cf484006e2bd8cddb0e23d7832c5cd810165482f226d2f7",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "Revenue of $16,286 million and functional cost of revenue of $2,380 million imply a positive 85.4% first-half gross margin. This challenges a broad negative-margin characterization, but differs from a full-year projection on an unspecified basis and does not identify the deal's causal effect.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Gross margin derived from revenue and functional cost of revenue",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "First-half 2026 revenue: USD 16,286 million, Consolidated Statements of Operations.",
+     "First-half 2026 cost of revenue: USD 2,380 million, Note 8 functional expense table."
+    ],
+    "formula": "(16286 - 2380) / 16286 * 100",
+    "rounding": "85.3862%, rounded to 85.4%."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No identified accounting basis for the claimed negative margin.",
+  "No comparable pre-agreement and post-agreement full-year margin projections.",
+  "No decomposition of incremental costs, associated revenue, and other changes.",
+  "No evidence establishing knowing acceptance of a margin reduction."
+ ],
+ "packet_hash": "b63cea3277da8ef4e96f93752711c171e36d95344e1b7a57d23732f01af2130d"
+}

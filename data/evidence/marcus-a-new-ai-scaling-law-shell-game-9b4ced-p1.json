@@ -1,0 +1,71 @@
+{
+ "packet_id": "marcus-a-new-ai-scaling-law-shell-game-9b4ced-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-9b4ced",
+  "version": 1,
+  "content_hash": "c0f78d7dc2780000f1461149584eaafebdfed3bffa20ee4217990cf10db844c7"
+ },
+ "contract_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-9b4ced",
+  "version": 1,
+  "content_hash": "269e113fef092fe6362e4c7d0182a43873a695f7b7806430d844f7b718ca84f8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com \"Learning to reason with LLMs\" \"personal writing\"",
+   "\"Learning to reason with LLMs\" \"personal writing\" OpenAI September 12 2024",
+   "site.openai.com/index/learning-to-reason-with-llms \"not better\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "used": false,
+    "why": "The initial read_page request returned HTTP 403; the same page was successfully read using a query-suffixed URL."
+   },
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/?",
+    "used": true,
+    "why": "Read in full with read_page. The report describes scaling gains and uneven model comparisons, but does not supply a clear negative task-level compute sweep."
+   },
+   {
+    "url": "https://forum.openai.com/public/videos/learning-to-reason-with-llms-2024-10-04",
+    "used": false,
+    "why": "Read with read_page. Its discussion of weaker abstract-task performance concerns model comparisons, not controlled changes in inference compute."
+   }
+  ],
+  "performed_at": "2026-10-29T01:04:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms?",
+   "locator": "Section 'Evals', opening paragraph",
+   "receipt": {
+    "public_excerpt": "Unless otherwise specified, we evaluated o1 on the maximal test-time compute setting.",
+    "quote_hash": "c3a1371b00e019f0b930c4ed1d8494149f757da022325d65c2987628b2982ded",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "context",
+   "explanation": "The cross-model benchmark comparisons generally use one o1 compute setting. They cannot alone show whether increasing o1's inference budget helps or fails on a particular task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No clear within-model comparison was located in the cited disclosure showing a task that fails to improve as inference compute increases.",
+  "The report's uneven model comparisons do not identify the separate effect of test-time compute.",
+  "The plain-text rendering does not expose every plotted value."
+ ],
+ "packet_hash": "7976b09739a2149b2176b547228ac75c5ca8ec703ac005001bee75fd09ea78cc"
+}

@@ -1,0 +1,93 @@
+{
+ "packet_id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b",
+  "version": 1,
+  "content_hash": "b9dfdced78e090cdd40a5e8e7de0ef73a053f60e58e3ef6dee26ad333124f65c"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b",
+  "version": 1,
+  "content_hash": "8a68b545dadb8b75050fccc05ac4e9b2866060ceee40d5a0fe352250073faac1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "PaLM 2022 paper limitations reasoning social physical commonsense",
+   "\"TruthfulQA\" \"58%\" \"94%\"",
+   "\"InstructGPT\" \"still\" \"mistakes\" 2022 limitations"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Primary benchmark report documenting factual failures across several language models."
+   },
+   {
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "used": true,
+    "why": "Contemporaneous primary report addressing InstructGPT, including simple failures and improvements."
+   },
+   {
+    "url": "https://arxiv.org/html/2204.02311v3",
+    "used": false,
+    "why": "Documents reasoning improvements, but neither establishes an independent comprehension measure nor identifies the cause of failures."
+   }
+  ],
+  "performed_at": "2026-10-29T09:18:24Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2109-07958",
+   "source_snapshot_id": "223855e8ead0b33318f2f1cb1369b15a3b6f01b4293f03c0706241535264358a",
+   "publisher": "Stephanie Lin, Jacob Hilton and Owain Evans / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2109.07958",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "truthful on 58% of questions",
+    "quote_hash": "04aa65d7ed88edfc09a5550344094e910a1f628d603dff2d03a8ef81d3d31c5c",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T02:20:23Z",
+   "relation": "supports",
+   "explanation": "The benchmark documents substantial factual fallibility in the tested GPT-3-era models. It supports the behavioral component, but measures neither users' effort to discover failures nor their proposed cognitive cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2203-02155v1",
+   "source_snapshot_id": "acf509b6f0a50af240e00d3d1a92e7fa656bee807312df45692a68d280b39be9",
+   "publisher": "OpenAI researchers / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.02155v1",
+   "locator": "Section 4.3, Qualitative results",
+   "receipt": {
+    "public_excerpt": "InstructGPT still makes simple mistakes.",
+    "quote_hash": "4f8d7870dc3c69132026e5f405ecc3b0bd15dd45f5e51d76ef98c295b271df57",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-03-04",
+   "retrieved_at": "2026-10-29T04:12:12Z",
+   "relation": "supports",
+   "explanation": "The report describes false-premise acceptance and failures under multiple constraints, extending the behavioral evidence to InstructGPT. It also reports improved instruction following and generalization, without establishing whether comprehension is absent.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The sources do not independently measure genuine comprehension or establish its absence as the cause of failures.",
+  "They do not measure how readily ordinary users could discover failures across all the contemporary models named in the post."
+ ],
+ "packet_hash": "6ab944ead0acf15879e7d24d7f2296e8893eb2905e2c454a1bbf6609b5932b48"
+}

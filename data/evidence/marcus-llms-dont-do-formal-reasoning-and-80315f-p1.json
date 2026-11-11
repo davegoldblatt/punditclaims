@@ -1,0 +1,96 @@
+{
+ "packet_id": "marcus-llms-dont-do-formal-reasoning-and-80315f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-80315f",
+  "version": 1,
+  "content_hash": "280593b0346d63fd0ebc694f55d365bc6efac6bb4e01b35437ad045e1d64b19e"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-80315f",
+  "version": 1,
+  "content_hash": "bbe8a968b0149b2f61566cf44f9fa024f7be480c6f15c412ef71927a69881151"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM chess illegal moves study 2024 GPT-4o"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theregister.com/2024/06/04/chess_puzzle_benchmark_llm",
+    "used": true,
+    "why": "Reputable news report on a 2024 benchmark that gives illegal-move rates for GPT-4o and other LLMs."
+   },
+   {
+    "url": "https://github.com/kagisearch/llm-chess-puzzles",
+    "used": true,
+    "why": "Primary benchmark repository. Its current table is dated April 2025, so it is used as context only."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2503.12349",
+    "used": false,
+    "why": "2025 paper, outside the target period; not read."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2509.24239",
+    "used": false,
+    "why": "2025 paper on newer models, outside the target period; not read."
+   }
+  ],
+  "performed_at": "2026-10-29T07:19:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "theregister-com-2024-06-04-chess-puzzle-benchmark-llm",
+   "source_snapshot_id": "9306ad13b3b71d1398426c0de3959cee13a1efaa65ac532b1192554d68e80357",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/2024/06/04/chess_puzzle_benchmark_llm",
+   "locator": "paragraph beginning 'Calculating Elo wasn't exactly straightforward'",
+   "receipt": {
+    "public_excerpt": "Even GPT-4o made an illegal move 12.7 percent of the time, and most of the other LLMs made more illegal moves than legal ones.",
+    "quote_hash": "778036b260b10530a863911a4e1135bc9c6cba09220f1f002dc24e5cf54d6348",
+    "verified": "exact"
+   },
+   "event_date": "2024-05",
+   "available_at": "2024-06-04",
+   "retrieved_at": "2026-10-29T03:08:26Z",
+   "relation": "supports",
+   "explanation": "On a 1,000-puzzle benchmark in mid-2024, the strongest model tested (GPT-4o) made illegal moves 12.7% of the time, and most other LLMs made more illegal moves than legal ones. That matches a continuing failure to follow chess rules before the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "github-com-kagisearch-llm-chess-puzzles",
+   "source_snapshot_id": "80021af6bec2f3c2aa2e073ec05fe86d58ebbf218f3eacc0d923dbf530c1fc92",
+   "publisher": "Kagi (kagisearch, GitHub)",
+   "source_type": "benchmark",
+   "url": "https://github.com/kagisearch/llm-chess-puzzles",
+   "locator": "Results section, sentence after the results table",
+   "receipt": {
+    "public_excerpt": "The count of illegal moves made is included, as it represents a complete failure of the model to internalize the board state and rules of the game.",
+    "quote_hash": "5c84eea6e9946438346c6f78f068bdde6ba0c48461d0baf33a10b1a7aafe2b43",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-26",
+   "available_at": "2025-04-26",
+   "retrieved_at": "2026-10-29T06:21:01Z",
+   "relation": "context",
+   "explanation": "This is the primary benchmark behind e1. It confirms that illegal moves are counted as rule-following failures. Its current table dates from April 2025, after the target period, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The main evidence is one puzzle benchmark, reported through a news article. It is not a full-game study or a peer-reviewed paper.",
+  "No 2024 source was read that tests the newest model at the post date (o1) for illegal chess moves."
+ ],
+ "packet_hash": "c7578473a785ab16c8593e971c0c690649d1eb48e6f898508c6eca21773d18fd"
+}

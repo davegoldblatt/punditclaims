@@ -1,0 +1,147 @@
+{
+ "packet_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2-p2",
+ "claim_revision_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 1,
+  "content_hash": "08b99c88390200b95937949c74eefbac026362aec7a27f93406ec756af285007"
+ },
+ "contract_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2",
+  "version": 2,
+  "content_hash": "56bfe1dd3b4f340d93a6ee497b839363d4cfb8edaa8d7c3825b96d45c0ae1a4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "MathGLM 2023 table 7 multiplication 85.16 length generalization",
+   "transformer arithmetic length generalization 2023 multiplication train digits extrapolation",
+   "2023 transformer in context learning linear functions out of distribution Garg",
+   "MathGLM 85.16 table 7 2023 arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2309.03241v2",
+    "used": true,
+    "why": "Primary MathGLM report underlying the post. Read its generalization and scaling analyses."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.03241",
+    "used": true,
+    "why": "Read to verify the September 2023 version dates."
+   },
+   {
+    "url": "https://arxiv.org/html/2306.15400v1",
+    "used": true,
+    "why": "Primary controlled experiments documenting both length extrapolation and its limits."
+   },
+   {
+    "url": "https://arxiv.org/abs/2306.15400",
+    "used": true,
+    "why": "Read to verify publication timing and the distinction between ordinary training and long-example priming."
+   },
+   {
+    "url": "https://arxiv.org/html/2310.11984v1",
+    "used": true,
+    "why": "Contemporaneous counterevidence on arithmetic extrapolation, with an additional attention-calibration procedure."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.11984",
+    "used": true,
+    "why": "Read to establish that the original version was submitted on 2023-10-18 and distinguish it from subsequent revisions."
+   },
+   {
+    "url": "https://arxiv.org/html/2310.11984v3",
+    "used": false,
+    "why": "Inspected the later revision, but did not substitute its experimental claims for the version available when Marcus wrote."
+   },
+   {
+    "url": "https://arxiv.org/abs/2208.01066",
+    "used": false,
+    "why": "Read the primary abstract. Its linear-function regression results do not directly establish exact arithmetic extrapolation under the context-sensitive criteria."
+   }
+  ],
+  "performed_at": "2026-10-30T00:14:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2309-03241v2",
+   "source_snapshot_id": "3b8df65b5bf8beb8fb64b0f682cf46a5d0fd58ee533eb7ca3f87bc59ca1dca88",
+   "publisher": "Zhen Yang and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.03241v2",
+   "locator": "Section 4.1.4, Generalization Analysis",
+   "receipt": {
+    "public_excerpt": "decline in accuracy",
+    "quote_hash": "a39c195db725b737637f2f6d6ccf4fbdb8630978841e31abd481bbed9deee6b9",
+    "verified": "exact"
+   },
+   "event_date": "2023-09",
+   "available_at": "2023-09-12",
+   "retrieved_at": "2026-10-29T07:18:58Z",
+   "relation": "supports",
+   "explanation": "Supports the narrower observation that MathGLM remained unreliable as arithmetic inputs grew. The experiment added 50,000 training records within the 12-digit range, so its declining performance does not itself establish a universal inability to extrapolate beyond training lengths.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2306-15400v1",
+   "source_snapshot_id": "25a1d56f999fbc3424ace2613959afbbead38e21152c64abc447a460a37b23c8",
+   "publisher": "Samy Jelassi and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2306.15400v1",
+   "locator": "Section 3, addition experiments and discussion of Table 1",
+   "receipt": {
+    "public_excerpt": "generalize to longer sequences",
+    "quote_hash": "5b2ea5bf72babe930ad837ab7ee3f6affffb7b0ac4a97798eda7cd1e347b5e27",
+    "verified": "exact"
+   },
+   "event_date": "2023-06",
+   "available_at": "2023-06-27",
+   "retrieved_at": "2026-10-29T07:18:50Z",
+   "relation": "context",
+   "explanation": "Material counterevidence to an absolute absence of extrapolation: models trained on five-digit addition reached 99.9% accuracy at ten digits and 98.3% at fifteen. Accuracy fell to 21.3% at twenty digits, so this does not establish the sustained reliability emphasized by Marcus.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2310-11984v1",
+   "source_snapshot_id": "02b6d468e07893c7fa9a7baedbdc32ed7861e98cee86807421cc985fd13a9381",
+   "publisher": "Shaoxiong Duan and Yining Shi, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2310.11984v1",
+   "locator": "Section 6, Main Results; methods in Section 5 and training-length comparison in Figure 1",
+   "receipt": {
+    "public_excerpt": "up to 50 digits",
+    "quote_hash": "c53c06854b908e45bfb63cf62f2dfdab9fce4b876019809d43cfa9162352a524",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2023-10-18",
+   "retrieved_at": "2026-10-29T23:53:29Z",
+   "relation": "context",
+   "explanation": "The original report describes substantial extrapolation, including addition trained through six digits, using attention patterns extracted, extended, and incorporated into retraining. This challenges the broader claim about transformer learning, but whether these specialized calibrated models qualify as pure LLMs is unresolved.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "MathGLM's measured failures do not establish the categorical claim across pure LLMs.",
+  "The strongest contemporaneous extrapolation result uses specialized attention calibration; the source claim does not settle whether that falls inside its model scope.",
+  "The records examined do not establish a qualifying pure LLM with sustained exact arithmetic extrapolation under the full contextual reading.",
+  "Finite benchmark success or failure alone does not establish whether a complete arithmetic algorithm was learned."
+ ],
+ "packet_hash": "9ccf1d179f9b73f1c869e18d1586badd6ede46a9aa78babccfd1d4e100a2ebd4"
+}

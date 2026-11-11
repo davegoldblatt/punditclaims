@@ -1,0 +1,140 @@
+{
+ "packet_id": "wyea-brokenomics-5d7c12-p2",
+ "claim_revision_ref": {
+  "id": "wyea-brokenomics-5d7c12",
+  "version": 1,
+  "content_hash": "780caf94ef4a8f73ee7fb4cd3829a4dacdc7036d654030f82f7b20cf36ddb675"
+ },
+ "contract_ref": {
+  "id": "wyea-brokenomics-5d7c12",
+  "version": 2,
+  "content_hash": "0693fc9ae549106ba9916067f7c87bbc704f276b0dee4c918fccffa335b754d3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-5 system card percentage of responses with at least one major factual error production traffic",
+   "EBU BBC News Integrity in AI Assistants study 45% significant issue 81% some form of issue",
+   "BBC mediacentre \"News Integrity in AI Assistants\" report accuracy issues percentage responses no issues"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.research-live.com/article/news/bbc-research-finds-significant-issues-over-accuracy-of-ai-responses-to-news-questions/id/5135763",
+    "used": true,
+    "why": "Reports the BBC study's answer-level issue rates, judged by journalists."
+   },
+   {
+    "url": "https://communication.vrt.be/largest-study-of-its-kind-shows-ai-assistants-misrepresent-news-content-45-of-the-time-regardless-of-language-or-territory",
+    "used": true,
+    "why": "Press release from a participant in the EBU/BBC 22-broadcaster study, giving answer-level rates."
+   },
+   {
+    "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+    "used": false,
+    "why": "OpenAI's own figures for the share of responses with major errors. The PDF text breaks lines mid-sentence, it is the vendor's own measurement, and it counts only major errors."
+   },
+   {
+    "url": "https://www.ebu.ch/news/2025/10/ai-s-systemic-distortion-of-news-is-consistent-across-languages-and-territories-international-study-by-public-service-broadcaste",
+    "used": false,
+    "why": "Could not be read (HTTP 403)."
+   },
+   {
+    "url": "https://www.mediapost.com/publications/article/410114/ai-assistants-provide-answers-full-of-errors-stud.html",
+    "used": false,
+    "why": "Duplicates the VRT figures."
+   }
+  ],
+  "performed_at": "2026-10-31T19:35:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "research-live-com-article-news-bbc-research-finds-significant-issue-eefab49130d9",
+   "source_snapshot_id": "80143fc87d2c6b51f837ee630a4d8e7512b131912cbd3eebf313676d59e8de53",
+   "publisher": "Research Live (Market Research Society)",
+   "source_type": "news_report",
+   "url": "https://www.research-live.com/article/news/bbc-research-finds-significant-issues-over-accuracy-of-ai-responses-to-news-questions/id/5135763",
+   "locator": "paragraph 4",
+   "receipt": {
+    "public_excerpt": "while 91% of responses contained at least ‘some issues’.",
+    "quote_hash": "5b2b4d2e65a077236a4e0b3c4314117a5f258bace7c1906a36e5618f22c10a3f",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-11",
+   "retrieved_at": "2026-10-31T19:30:37Z",
+   "relation": "contradicts",
+   "explanation": "BBC journalists found that 9% of AI assistant answers had no issues of any kind, so those answers contained no hallucinations. The high issue rate supports the speaker's caution, but not his claim that every answer is affected.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "91% of responses contained at least some issues"
+    ],
+    "formula": "100% - 91% = share of responses with no issues",
+    "rounding": "9%, whole percent"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "research-live-com-article-news-bbc-research-finds-significant-issue-eefab49130d9",
+   "source_snapshot_id": "80143fc87d2c6b51f837ee630a4d8e7512b131912cbd3eebf313676d59e8de53",
+   "publisher": "Research Live (Market Research Society)",
+   "source_type": "news_report",
+   "url": "https://www.research-live.com/article/news/bbc-research-finds-significant-issues-over-accuracy-of-ai-responses-to-news-questions/id/5135763",
+   "locator": "paragraph 7",
+   "receipt": {
+    "public_excerpt": "19% of AI responses which cited BBC content introduced factual errors, for example, incorrect factual statements, numbers and dates.",
+    "quote_hash": "2093b36e01ec9eea14877413d38a6cfc18e8e334d96dac4bfae55a7a6005560c",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-11",
+   "retrieved_at": "2026-10-31T19:30:37Z",
+   "relation": "contradicts",
+   "explanation": "About 81% of AI answers citing BBC content were not found to introduce factual errors. Most answers were not judged to contain fabricated facts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "19% of AI responses citing BBC content introduced factual errors"
+    ],
+    "formula": "100% - 19%",
+    "rounding": "81%, whole percent"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "communication-vrt-be-largest-study-of-its-kind-shows-ai-assistants-ab77e3cbfa91",
+   "source_snapshot_id": "92a8f13d114c74d0bae18b445a33aaea89ee961645090ee6130ae4ef38438f6e",
+   "publisher": "VRT (participant in EBU/BBC study)",
+   "source_type": "company_disclosure",
+   "url": "https://communication.vrt.be/largest-study-of-its-kind-shows-ai-assistants-misrepresent-news-content-45-of-the-time-regardless-of-language-or-territory",
+   "locator": "paragraph 3",
+   "receipt": {
+    "public_excerpt": "45% of all AI answers had at least one significant issue, ranging from incorrect source attribution to factual inaccuracies. Source referencing was especially problematic: in 31% of cases, references were missing or misleading, and 20% of responses contained major accuracy issues such as fabricated or outdated information.",
+    "quote_hash": "f83cdb78e93d36c0a5f43deb429648d19a5c5382bd322e064430f49febcff61c",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-22",
+   "available_at": "2025-10-22",
+   "retrieved_at": "2026-10-31T19:30:22Z",
+   "relation": "context",
+   "explanation": "In a 22-broadcaster study, 20% of answers had major accuracy issues, so most did not. It counts only major issues, so minor errors in the other answers are not ruled out. It also shows high error rates overall.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The evaluations covered news questions given to general assistants, not specialised 'deep research' reports. Long research reports may have higher odds of containing at least one error.",
+  "No source gives a minor-error-inclusive, hallucination-specific answer-level rate for 2026 models."
+ ],
+ "packet_hash": "773a7cff5fb15ac560206121a3d51670eac5dbb6358c9fb71fb8c689f8a746d6"
+}

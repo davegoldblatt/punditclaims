@@ -1,0 +1,95 @@
+{
+ "packet_id": "marcus-there-must-be-some-misunderstanding-8ebd86-p1",
+ "claim_revision_ref": {
+  "id": "marcus-there-must-be-some-misunderstanding-8ebd86",
+  "version": 1,
+  "content_hash": "20d18764aab1f019ba19ff1256530be40ccfda8c72bf840b8c85c75010840dd0"
+ },
+ "contract_ref": {
+  "id": "marcus-there-must-be-some-misunderstanding-8ebd86",
+  "version": 1,
+  "content_hash": "d095b870430a6edd60420e0563e7e85f84792ff24a9d91dd618de4abea7383dd"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM negation compositionality GPT-4 January 2024 benchmark negated instructions",
+   "large language models compositional reasoning January 2024 GPT-4 failures benchmark",
+   "site.arxiv.org \"Faith and Fate\" compositionality"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://allenai.org/blog/faith-and-fate-limits-of-transformers-on-compositionality-d90726d635ef",
+    "used": true,
+    "why": "The researchers explain their controlled compositional-task experiments, including GPT-4 results."
+   },
+   {
+    "url": "https://alexbleakley.com/blog/saying-what-not-to-do",
+    "used": true,
+    "why": "Original paired positive and negative instruction tests provide both failures and material qualifications."
+   },
+   {
+    "url": "https://aclanthology.org/2023.emnlp-main.531/",
+    "used": false,
+    "why": "Relevant corroboration, but its open-model classification tasks are less directly matched to the claim's instruction-following context."
+   }
+  ],
+  "performed_at": "2026-10-29T08:54:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "allenai-org-blog-faith-and-fate-limits-of-transformers-on-compositi-a4eacfcecf26",
+   "source_snapshot_id": "4e5c9de93a3c21f2350e27da7061c5f1976d6ab9cac1850e718386206687072d",
+   "publisher": "Allen Institute for Artificial Intelligence",
+   "source_type": "independent_measurement",
+   "url": "https://allenai.org/blog/faith-and-fate-limits-of-transformers-on-compositionality-d90726d635ef",
+   "locator": "Section 1, Model Performance Decreases as Graph Complexity Increases",
+   "receipt": {
+    "public_excerpt": "a significant decline in performance from nearly perfect to zero",
+    "quote_hash": "091f01ded081f54f3ec0f8abbe3de777401694b9690e0957936628b9f9c2e7e1",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-11-17",
+   "retrieved_at": "2026-10-29T08:44:06Z",
+   "relation": "supports",
+   "explanation": "The researchers tested multiplication, logic puzzles and dynamic programming. GPT-4's multiplication accuracy declined sharply with problem complexity; step-by-step prompting improved simpler cases without eliminating the harder failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "alexbleakley-com-blog-saying-what-not-to-do",
+   "source_snapshot_id": "58b62b4b70fbd498e9c8448bef22c232d3798ab581605d7334cf2a34c1e43962",
+   "publisher": "Alex Bleakley",
+   "source_type": "independent_measurement",
+   "url": "https://alexbleakley.com/blog/saying-what-not-to-do",
+   "locator": "Results and conclusions, paragraph introducing Table 4",
+   "receipt": {
+    "public_excerpt": "GPT-4 scores 37% with positive phrasing, but 0% with the negative instruction",
+    "quote_hash": "a7e7cdfbbdda8aa41ec066b048217d151898dfd54d98bba24415219244760515",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-09-26",
+   "retrieved_at": "2026-10-29T08:44:06Z",
+   "relation": "supports",
+   "explanation": "Paired tests document a repeatable negative-instruction failure in GPT-4. However, other tasks succeeded, and GPT-3.5 and Claude 2.0 performed similarly on positive and negative instructions overall; this limits any blanket claim of inability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These evaluations do not directly retest the deployed services on February 8, 2024.",
+  "They do not independently reproduce the post's image-generation examples."
+ ],
+ "packet_hash": "20522626651754b1cb357b682c52c4a6192e4aec15c32afdb899e8f136f39585"
+}

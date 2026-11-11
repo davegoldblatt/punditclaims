@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-generative-ais-crippling-and-widespread-4b8e3a-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-generative-ais-crippling-and-widespread-4b8e3a": "812b60b0e8ff59a15a200a91817187a8f33d4165a239f13caf6204ff36fcfc3f"
+ },
+ "started_at": "2026-11-10T01:50:13Z",
+ "completed_at": "2026-11-10T01:50:28Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post. It is not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalised wording matches the source word for word and keeps the scope 'LLMs that lack explicit models'. It is unhedged ('is literally'), so it is scorable as a causal risk claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading treats the sentence as a practical safety warning: delegating life-critical decisions to these chatbots exposes people to life-threatening errors. That is an ordinary reading. It does not require deaths or proof of the mechanism, and treating 'lack explicit models' as scope rather than a proven cause is fair. Whether the claim is supported depends on this reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A peer-reviewed study from 2024, before the post. Emergency physicians found dangerous content in 5–35% of answers from four consumer chatbots, including incomplete or wrong advice on when to seek urgent care. This is independent evidence of life-relevant risk from relying on them."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2025 vignette study in which GPT-4 helped physicians make better chest-pain decisions. This was assisted use, not delegation. It does not show that leaving decisions to LLMs is safe, so it does not contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The plain reading is that leaving life-critical decisions to these chatbots exposes people to danger. e1, independent and peer-reviewed, found dangerous advice and omissions about life-threatening conditions across the major chatbots, which meets the support condition. e2 shows benefit only when physicians use the model as an aid, which the contract excludes as a contradiction. The packet does not test whether the lack of explicit world models causes the failures, and the contract does not require that.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-generative-ais-crippling-and-widespread-4b8e3a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10263,
+  "output_tokens": 1554,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

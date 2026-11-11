@@ -1,0 +1,117 @@
+{
+ "packet_id": "wyea-sam-altman-fried-32b943-p1",
+ "claim_revision_ref": {
+  "id": "wyea-sam-altman-fried-32b943",
+  "version": 1,
+  "content_hash": "f644a0f22e74898d1ce746acc345a14a0fbdb0818ded38fd69af9c02befdada7"
+ },
+ "contract_ref": {
+  "id": "wyea-sam-altman-fried-32b943",
+  "version": 1,
+  "content_hash": "d9c9f27ddcc6555810ac1143206abd6487a6c0435e4d93db16ba9fea34663360"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Sora February 2024 \"The current model has weaknesses\"",
+   "Pika 1.0 review limitations video generator December 2023 inconsistent"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/sora/",
+    "used": true,
+    "why": "OpenAI's own Sora launch page lists the model's limits, including prompt-following failures, and also claims prompt adherence."
+   },
+   {
+    "url": "https://inverse.com/tech/pika-ai-text-to-video-generator-review-poor-creations",
+    "used": true,
+    "why": "A dated December 2023 hands-on review of Pika 1.0."
+   },
+   {
+    "url": "https://www.tomsguide.com/features/i-got-access-to-pika-labs-new-ai-video-tool-and-couldnt-believe-the-quality-of-the-videos-it-produced",
+    "used": false,
+    "why": "Not read. Search summary shows a more positive hands-on review that still said motion needed work."
+   }
+  ],
+  "performed_at": "2026-10-31T20:50:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-sora",
+   "source_snapshot_id": "fa086305cd84c9e3bcd903638f262e10de5af24e0d654559f0a8ed44843c57c6",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/sora",
+   "locator": "paragraph after demo videos, before weakness examples",
+   "receipt": {
+    "public_excerpt": "It may struggle to simulate the physics of a complex scene, and may not comprehend specific instances of cause and effect (for example: a cookie might not show a mark after a character bites it). The model may also confuse spatial details included in a prompt, such as discerning left from right, or struggle with precise descriptions of events that unfold over time",
+    "quote_hash": "d2b1316f9dcf1d56c2032f6215e534b6c3790d1f0ab080cc7f19bc909086da5f",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-15",
+   "available_at": "2024-02-15",
+   "retrieved_at": "2026-10-29T07:58:45Z",
+   "relation": "supports",
+   "explanation": "The developer admits Sora may confuse spatial details in a prompt and struggle with precise events and camera paths. In other words, it may fail at a specific requested task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "inverse-com-tech-pika-ai-text-to-video-generator-review-poor-creations",
+   "source_snapshot_id": "ab9636e4fc3b924b2b10cb845888ef83ff3974ed28cabc1b4bb0bb15532b5518",
+   "publisher": "Inverse",
+   "source_type": "news_report",
+   "url": "https://inverse.com/tech/pika-ai-text-to-video-generator-review-poor-creations",
+   "locator": "section 'A Lot More Work To Do', paragraph 3",
+   "receipt": {
+    "public_excerpt": "This is an issue with all current generative AI video tools, but if you want continuity between clips on Pika, you’re out of luck.",
+    "quote_hash": "e295073ca6f2074de9059d4943efefe089046d86cdb5395a35ad1ce9fe63ebf3",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-22",
+   "available_at": "2023-12-22",
+   "retrieved_at": "2026-10-31T20:44:41Z",
+   "relation": "supports",
+   "explanation": "A hands-on reviewer found Pika 1.0 could not keep continuity between clips or follow style requests reliably. This supports the claim for Pika.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-sora",
+   "source_snapshot_id": "fa086305cd84c9e3bcd903638f262e10de5af24e0d654559f0a8ed44843c57c6",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/sora",
+   "locator": "introduction, paragraph 1",
+   "receipt": {
+    "public_excerpt": "Sora can generate videos up to a minute long while maintaining visual quality and adherence to the user’s prompt.",
+    "quote_hash": "d2cbd7eb6518f49871f0b7c911e10bcffe5db65d376e6435786239f1877f114f",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-15",
+   "available_at": "2024-02-15",
+   "retrieved_at": "2026-10-29T07:58:45Z",
+   "relation": "context",
+   "explanation": "OpenAI's marketing claim of prompt adherence cuts the other way. It is a self-description, not an evaluation, and the same page lists prompt-following failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No independent, task-based benchmark of Sora existed in the period because the model was not public.",
+  "Only one dated hands-on review of Pika 1.0 was read. A more positive Tom's Guide review was not read."
+ ],
+ "packet_hash": "8673221d11aa123856f384f98ba4a30e02ef3947bb1e6b41f2fe27bbfb9e20ee"
+}

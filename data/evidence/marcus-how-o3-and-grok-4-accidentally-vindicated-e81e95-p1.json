@@ -1,0 +1,98 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-e81e95-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-e81e95",
+  "version": 1,
+  "content_hash": "c256963fdcb1386bbb9c5a2bd52c9670da50140556d1befc63115b2397abd244"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-e81e95",
+  "version": 1,
+  "content_hash": "dc3419ab55246171e9ade605dcf01e77b1be381419f42014c7870f9452abf1c2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 SWE agent complex software tasks benchmark SWE-smith",
+   "METR March 2025 measuring AI ability complete long tasks 50 percent"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2504.21798",
+    "used": true,
+    "why": "Reports reproducible code-agent successes on real repository issues."
+   },
+   {
+    "url": "https://arxiv.org/html/2504.21798v2",
+    "used": true,
+    "why": "Read to check the agent configuration, evaluation definition, multistep behavior, and difficulty analysis."
+   },
+   {
+    "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+    "used": true,
+    "why": "Independent evaluation documents both successes on extended tasks and sharply declining reliability as tasks lengthen."
+   },
+   {
+    "url": "https://www.swebench.com/",
+    "used": false,
+    "why": "The live leaderboard includes later systems; the dated paper provides a safer historical record."
+   }
+  ],
+  "performed_at": "2026-10-29T17:23:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2504-21798",
+   "source_snapshot_id": "f600c7aa6d8fcdc65be7e88107f1754067801ccc24c6513586be6c49e4f71fae",
+   "publisher": "Yang et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2504.21798",
+   "locator": "Abstract; methods and task analysis in the May 21, 2025 version",
+   "receipt": {
+    "public_excerpt": "40.2% Pass@1 resolve rate",
+    "quote_hash": "ed101a065da8b9485422aa08346816e214e63facbe2f2c4694a0a85f01955163",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-21",
+   "available_at": "2025-05-21",
+   "retrieved_at": "2026-10-29T17:06:10Z",
+   "relation": "contradicts",
+   "explanation": "The documented agent edits files and executes commands to resolve real repository issues, with released methods and assets. The accompanying analysis reports multistep successful trajectories and nonzero success even on tasks rated hard, contradicting unavoidable failure under the stated reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "metr-org-blog-2025-03-19-measuring-ai-ability-to-complete-long-tasks",
+   "source_snapshot_id": "0ae4b9627fc865ad39d3993b61bdd1ed9a7823fe3cf19949e596c62fea8c616c",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks",
+   "locator": "Original article, discussion of current capabilities before the task-length analysis",
+   "receipt": {
+    "public_excerpt": "unable to reliably handle",
+    "quote_hash": "23349e2437e8b879e951fe4099d40c143a1315834f5706168f69da6fd242ef5c",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-19",
+   "available_at": "2025-03-19",
+   "retrieved_at": "2026-10-29T07:41:54Z",
+   "relation": "context",
+   "explanation": "METR reports severe reliability limits, including success below 10% on tasks taking humans more than about four hours, while also reporting some successes on tasks taking experts hours. This supports Marcus's broader concern about reliability, but not inevitable failure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "Marcus does not identify a task class or complexity threshold that would distinguish his claim from ordinary unreliability."
+ ],
+ "packet_hash": "215b641ab49ca4cef5254983a4e8d67cea85cf4d12afb276102100889cedeed8"
+}

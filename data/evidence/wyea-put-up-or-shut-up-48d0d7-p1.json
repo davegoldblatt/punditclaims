@@ -1,0 +1,193 @@
+{
+ "packet_id": "wyea-put-up-or-shut-up-48d0d7-p1",
+ "claim_revision_ref": {
+  "id": "wyea-put-up-or-shut-up-48d0d7",
+  "version": 1,
+  "content_hash": "8f8d54d2f1c89b677b69c2be98ccea5ee3d1ed05b9cc354f462393f26174be9a"
+ },
+ "contract_ref": {
+  "id": "wyea-put-up-or-shut-up-48d0d7",
+  "version": 1,
+  "content_hash": "48d22ccce0c910c807d8d44c705d3d6ed2860e1118391c5202ef9a6c4b6f26c2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ChatGPT election misinformation Democracy Reporting International 2024 report",
+   "ChatGPT bomb instructions 2023 2024 study jailbreak",
+   "ChatGPT dangerous medical advice medication 2023 study",
+   "ChatGPT generated code security vulnerabilities study 2023 2024",
+   "site.ashp.org ChatGPT 2023 inaccurate drug questions",
+   "ChatGPT bomb instructions \"2023\" \"researchers\"",
+   "ChatGPT \"medical\" \"dangerous\" \"2023\" site.liu.edu",
+   "\"A vignette-based evaluation\" \"PMC\"",
+   "\"chatbot-audit\" \"03.04.2024\"",
+   "\"Chatbots\" \"Democracy Reporting\" \"April 11\" 2024",
+   "\"AI Writes, We Analyze\" arxiv",
+   "\"AI Writes, We Analyze\" \"vulnerabilities\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://democracyreporting.s3.eu-central-1.amazonaws.com/pdf/6617ed0e24bf5.pdf",
+    "used": true,
+    "why": "Original audit identifies erroneous ChatGPT election answers and reports stronger performance on many other questions."
+   },
+   {
+    "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chatbots-misinform-citizens-about-european-parliament-elections",
+    "used": true,
+    "why": "Read to corroborate that the election testing occurred in March 2024."
+   },
+   {
+    "url": "https://www.cert.europa.eu/publications/threat-intelligence/cb24-05/",
+    "used": true,
+    "why": "Read to corroborate public availability of the election audit on April 11, 2024."
+   },
+   {
+    "url": "https://www.inverse.com/tech/chatgpt-jailbreakers-reddit-open-ai-chatbot",
+    "used": true,
+    "why": "Firsthand reporter demonstration of ChatGPT producing explosives instructions after a jailbreak."
+   },
+   {
+    "url": "https://llm-attacks.org/",
+    "used": false,
+    "why": "Original research concerns API-based attacks; the firsthand consumer-product demonstration is more directly matched to the bomb-instructions claim."
+   },
+   {
+    "url": "https://news.ashp.org/News/ashp-news/2023/12/05/study-finds-chatgpt-provides-inaccurate-responses-to-drug-questions",
+    "used": false,
+    "why": "read_page returned HTTP 403. Replaced with an accessible original medical study."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41598-023-45223-y.pdf",
+    "used": true,
+    "why": "Original medical evaluation describes unsafe care-setting advice and gives the February 2023 collection dates."
+   },
+   {
+    "url": "https://arxiv.org/abs/2403.15600",
+    "used": true,
+    "why": "Original study reports security defects in code produced by the ChatGPT model."
+   },
+   {
+    "url": "https://arxiv.org/html/2403.15600v1",
+    "used": true,
+    "why": "Read the methods to verify the model identifier and API access."
+   },
+   {
+    "url": "https://www2.cose.isu.edu/~minhazzibran/resources/MyPapers/ChatGPT-Python_MSR24_Published.pdf",
+    "used": false,
+    "why": "read_page returned the author's homepage rather than the requested paper."
+   },
+   {
+    "url": "https://techcrunch.com/2024/09/12/hacker-tricks-chatgpt-into-giving-out-detailed-instructions-for-making-homemade-bombs/",
+    "used": false,
+    "why": "The reported demonstration postdates the observation period."
+   }
+  ],
+  "performed_at": "2026-10-29T12:21:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "democracyreporting-s3-eu-central-1-amazonaws-com-pdf-6617ed0e24bf5-pdf",
+   "source_snapshot_id": "beed17f558e6f24d2ece677bd67915b705003dce44c66cd068e7840e3ae5ff7a",
+   "publisher": "Democracy Reporting International",
+   "source_type": "independent_measurement",
+   "url": "https://democracyreporting.s3.eu-central-1.amazonaws.com/pdf/6617ed0e24bf5.pdf",
+   "locator": "Comparison of Chatbots, ChatGPT 3.5 bullet",
+   "receipt": {
+    "public_excerpt": "That said, it sometimes provided detailed responses including\nmade-up information.",
+    "quote_hash": "cd53fd1129f4b3e97b4e1512fc00cc7dccb5abd04c4334e62b5e561db5ccce1e",
+    "verified": "exact"
+   },
+   "event_date": "2024-03",
+   "available_at": "2024-04-11",
+   "retrieved_at": "2026-10-29T09:33:23Z",
+   "relation": "supports",
+   "explanation": "The audit documents ChatGPT 3.5 falsely describing postal voting in France and an Irish voting-age cutoff. It also reports that most answers were acceptable and that ChatGPT 4 performed best among the tested systems.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "inverse-com-tech-chatgpt-jailbreakers-reddit-open-ai-chatbot",
+   "source_snapshot_id": "b1cde62af46e8defb6e229e557aa8e0360f73dbd9c85e710f28ee56069bf099a",
+   "publisher": "Inverse",
+   "source_type": "news_report",
+   "url": "https://www.inverse.com/tech/chatgpt-jailbreakers-reddit-open-ai-chatbot",
+   "locator": "Opening section, paragraph immediately before the demonstration video",
+   "receipt": {
+    "public_excerpt": "Yet, with a few choice words, carefully couched concepts, and a well-crafted prompt, that’s exactly what I watched the chatbot do for me.",
+    "quote_hash": "62b1986a2f6be271114f3b41f69e700caf9c06e6eec35539e4a946586226e017",
+    "verified": "exact"
+   },
+   "event_date": "2023-04",
+   "available_at": "2024-02-20",
+   "retrieved_at": "2026-10-29T12:13:00Z",
+   "relation": "supports",
+   "explanation": "The reporter describes personally inducing ChatGPT to provide explosives instructions using a jailbreak. This is firsthand reporting, not an independently validated test of whether the instructions would produce a working device; the page identifies original publication in April 2023 and an update in February 2024.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "nature-com-articles-s41598-023-45223-y-pdf",
+   "source_snapshot_id": "f623d3a60465429870a49e1165a84b3a7b75f20c6bae71f09c415541db892fe0",
+   "publisher": "Scientific Reports",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41598-023-45223-y.pdf",
+   "locator": "Results, opening paragraph",
+   "receipt": {
+    "public_excerpt": "Three (3%) responses contained clinically inappropriate advice that was clearly inconsistent with established\ncare guidelines.",
+    "quote_hash": "fc33208196f0d62b4c0d2fc03779debb4ff40aa41c07e91eda6aabeeb97fe0ca",
+    "verified": "exact"
+   },
+   "event_date": "2023-02",
+   "available_at": "2023-10-19",
+   "retrieved_at": "2026-10-29T12:14:18Z",
+   "relation": "supports",
+   "explanation": "One response directed an uninsured patient with high-risk chest pain to either a community clinic or an emergency department, although the authors judged the emergency department safer. The study also found that 97% of responses did not explicitly violate clinical guidelines, so it supports occurrence rather than pervasive unsafe advice.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2403-15600",
+   "source_snapshot_id": "794ae423fd03c0fc0a5d55de9cded16a79bea9748f135e8d26b491f2a6b2bc18",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2403.15600",
+   "locator": "Abstract, results",
+   "receipt": {
+    "public_excerpt": "Additionally, ChatGPT generated 19 types of CWE, fewer than the 22 found in SO.",
+    "quote_hash": "18967097b5593af432033e4a5f3dd9e8f3dd128cb9f635516fad5fd3d7210280",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-03-22",
+   "retrieved_at": "2026-10-29T12:12:21Z",
+   "relation": "supports",
+   "explanation": "The study reports 248 security weaknesses in 108 generated Java snippets, including defects such as null-pointer dereference. Its methods specify gpt-3.5-turbo-0613 accessed through the API; the tested outputs predate the March publication, but their exact collection dates are not supplied.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e4",
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "The cited bomb demonstration does not establish the practical effectiveness of the instructions.",
+  "The code study directly establishes behavior of the named ChatGPT model through its API, not the identical consumer-interface configuration.",
+  "These studies do not estimate the frequency of all four output categories in ordinary ChatGPT use."
+ ],
+ "packet_hash": "de370d85b827670de8fd48b9e7f8763a9405c8a76b121651ad164103f1b857e2"
+}

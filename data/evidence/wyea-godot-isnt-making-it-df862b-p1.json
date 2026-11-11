@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-godot-isnt-making-it-df862b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-godot-isnt-making-it-df862b",
+  "version": 2,
+  "content_hash": "f220fcaedd0bfe5d310d9b29e3ca83c79bd4ad000a3e9b5eea6eb228ec35dd6c"
+ },
+ "contract_ref": {
+  "id": "wyea-godot-isnt-making-it-df862b",
+  "version": 1,
+  "content_hash": "970e000b29cd5454894f7a646d65169a267e85c9eeb29d025ce22a2820528d6c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2024 hallucinations GPT-4 GPT-3.5 factuality 40% GPT-4 technical report",
+   "2024 Stanford legal AI hallucinate 17 33 percent study",
+   "site.anthropic.com \"March 4, 2024\" \"accuracy\" \"twofold\"",
+   "site.openai.com \"o1\" \"hallucinations\" \"2024\" September",
+   "\"o1-preview\" \"hallucinations\" \"SimpleQA\" \"September\" system card pdf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/o1-preview-system-card-20240917.pdf",
+    "used": true,
+    "why": "Read the September system card. It directly compares hallucination rates and also reports contrary anecdotal feedback."
+   },
+   {
+    "url": "https://arxiv.org/html/2405.20362v1",
+    "used": true,
+    "why": "Read the preregistered legal-product evaluation, including results and testing dates."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-3-family",
+    "used": false,
+    "why": "Read the March announcement. It corroborates measured progress, but another vendor evaluation supplies a clearer numerical hallucination comparison."
+   },
+   {
+    "url": "https://openai.com/index/openai-o1-system-card/",
+    "used": false,
+    "why": "Read to locate the original September card. The December revision includes models and evaluations outside the observation period."
+   },
+   {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363351/",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T20:06:49Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-o1-preview-system-card-20240917-pdf",
+   "source_snapshot_id": "bfa67b4aa94fa08bfd4da0417815a402ec285eb088e8d0d0088086adb8a04cb2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/o1-preview-system-card-20240917.pdf",
+   "locator": "Section 3.1.4, paragraph following Table 2",
+   "receipt": {
+    "public_excerpt": "o1-preview hallucinates less frequently than GPT-4o",
+    "quote_hash": "37eaa254573ef6c0ea359df5946ec4857c0a227800ff91be19ab6b72ddbc4770",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-17",
+   "retrieved_at": "2026-10-29T06:06:27Z",
+   "relation": "contradicts",
+   "explanation": "Table 2 reports SimpleQA hallucination rates of 0.61 for GPT-4o and 0.44 for o1-preview, with improvements on the other listed tests. The same paragraph reports contrary anecdotal feedback and cautions against generalizing beyond these evaluations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2405-20362v1",
+   "source_snapshot_id": "144cbb08c16d5362a0df14aa548e490a799a3ddd42c807bf03d18cb7bdc36fde",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2405.20362v1",
+   "locator": "Section 6.1, first paragraph",
+   "receipt": {
+    "public_excerpt": "one-third of its responses contained a hallucination.",
+    "quote_hash": "dfe4ebb85de5cdcf6b2481acfb73c9540d3764db75b4570750df9b067cb26f9e",
+    "verified": "exact"
+   },
+   "event_date": "2024-05",
+   "available_at": "2024-05-30",
+   "retrieved_at": "2026-10-29T02:09:27Z",
+   "relation": "supports",
+   "explanation": "Testing on May 23–27 found frequent hallucinations in a specialized legal research product. This supports the barrier to unverified, high-reliability legal work under the stated interpretation, but does not establish the number of business tasks excluded.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not quantify a great many business tasks.",
+  "Neither study establishes whether hallucinations can eventually be eliminated.",
+  "Benchmark improvements do not establish dependable performance in every business setting."
+ ],
+ "packet_hash": "c78b180a3bbc5aaef13c06849d7bbb9574f05a5c566329325e4f59cc3903c7a2"
+}

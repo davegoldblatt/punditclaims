@@ -1,0 +1,117 @@
+{
+ "assessment_id": "marcus-llms-dont-do-formal-reasoning-and-4a617e-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-4a617e",
+  "version": 1,
+  "content_hash": "3879f420cdf4d839d26f483883002a7bdbfae0eec187886eb6f443bc422751d8"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-4a617e",
+  "version": 1,
+  "content_hash": "d55bc441049c405e17b33ca76f00d694c3563d6c74d192f54bf48db9ed4cc9b6"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-4a617e-p1",
+  "content_hash": "1dcd301328a8f4af585aaae515b04f618419a651a2613e29a333dba0fc94118f"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-09-12",
+  "end": "2024-10-11",
+  "precision": "day"
+ },
+ "public_rationale": "Marcus summarized the Kambhampati team's o1 analysis as 'ok on small problems, but quickly tails off.' The paper reports that o1-preview scored 97.8% on 3-5 block Blocksworld problems. On 110 larger problems with 6 to 20 blocks, it scored only 23.63%, and most of those correct answers were the shorter plans. The authors themselves write that performance 'quickly degrade[s]'. This matches his description. The paper also calls o1 a 'quantum improvement' over earlier models, which Marcus does not mention, but that does not conflict with his statement.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The model tested was o1-preview.",
+  "This is one benchmark domain (Blocksworld)."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-anthropic-1",
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dont-do-formal-reasoning-and-4a617e",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "o1 does acceptably on small planning problems, but its performance drops quickly as problems get larger.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Performance is ok on small problems, but quickly tails off.",
+   "locator": "paragraph 11",
+   "url": "https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and",
+   "date": "2024-10-11",
+   "document_title": "LLMs don’t do formal reasoning - and that is a HUGE problem",
+   "observed_at": "2026-10-28T23:59:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "recent analysis of GPT o1 by Subbarao Kambhapati's team",
+    "Performance is ok on small problems",
+    "but quickly tails off",
+    "as problems are made bigger"
+   ],
+   "our_interpretation": [
+    "Read as: in the Valmeekam, Stechly and Kambhampati PlanBench evaluation of o1 (Sept 2024), o1 scores well on small Blocksworld problems but much lower on larger ones.",
+    "'GPT o1' is read as the o1-preview model that the paper tested."
+   ],
+   "support_condition": "The paper reports high o1 accuracy on small planning problems and a steep drop on larger problems.",
+   "contradiction_condition": "The paper reports that o1 accuracy holds up on larger problems, or is poor even on small ones."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Marcus summarized the Kambhampati team's o1 analysis as 'ok on small problems, but quickly tails off.' The paper reports that o1-preview scored 97.8% on 3-5 block Blocksworld problems. On 110 larger problems with 6 to 20 blocks, it scored only 23.63%, and most of those correct answers were the shorter plans. The authors themselves write that performance 'quickly degrade[s]'. This matches his description. The paper also calls o1 a 'quantum improvement' over earlier models, which Marcus does not mention, but that does not conflict with his statement.",
+  "limitations": [
+   "The model tested was o1-preview.",
+   "This is one benchmark domain (Blocksworld)."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Without any obfuscation, we see performance quickly degrade from the 97.8% reported earlier. In fact, over these 110 instances, o1-preview only manages 23.63%, and most of this accuracy comes from correctly solving problems which require fewer than 28 steps.",
+    "locator": "Section 'Accuracy with Increased Problem Size'",
+    "url": "https://arxiv.org/html/2409.13373v1",
+    "publisher": "arXiv (Valmeekam, Stechly, Kambhampati)",
+    "event_date": "2024-09-20",
+    "available_at": "2024-09-20",
+    "explanation": "o1-preview scored 97.8% on small problems but 23.63% on 6-20 block problems, and its correct answers on the larger set were mostly the shorter plans. That is good performance on small problems with a quick fall-off."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "while o1's performance is a quantum improvement on the benchmark, outpacing the competition, it is still far from saturating it.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2409.13373",
+    "publisher": "arXiv (Valmeekam, Stechly, Kambhampati)",
+    "event_date": "2024-09-20",
+    "available_at": "2024-09-20",
+    "explanation": "The authors also call o1 a large improvement over earlier models. This is fair context: 'ok on small problems' if anything undersells the 97.8%."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "2b69fb76289a262b0921907ac89ebbd15d8c1036bf83a39cc208b7a72403f49e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:40:09Z"
+}

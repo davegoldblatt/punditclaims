@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-1728f6-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-1728f6",
+  "version": 1,
+  "content_hash": "bf7cb61bf517eebd49b42f5f93b9d0364e695920fa0e2f49fd604ad7feb35efd"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-1728f6",
+  "version": 1,
+  "content_hash": "ecbc7485f9061cb477a1f1f9e98b26ae5e441b34d1c76d846572efa2b54e9a56"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 midyear global private equity dry powder June 2025 Bain",
+   "\"global\" \"dry powder\" \"June 30\" \"2025\" \"2.515\"",
+   "\"global private capital\" \"dry powder\" \"2025\" \"June\"",
+   "PitchBook global private market funds dry powder dashboard Q2 2025 4.63 trillion",
+   "site.pitchbook.com/news/articles \"Global Private Market Funds\" \"Dry Powder Dashboard\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/news/global-private-market-funds-dry-174735581.html",
+    "used": true,
+    "why": "Read in full. Syndicates PitchBook's own report and gives worldwide private-capital dry powder for Q2 2025."
+   },
+   {
+    "url": "https://pitchbook.com/news/articles/global-private-market-funds-dry-powder-dashboard-2026",
+    "used": false,
+    "why": "read_page returned HTTP 403. The full syndicated PitchBook article was readable on Yahoo Finance."
+   },
+   {
+    "url": "https://www.linkedin.com/pulse/private-equity-deal-value-rises-h125-dry-nhpje",
+    "used": true,
+    "why": "Read in full. S&P Global's own publication supplies a contemporaneous estimate for the narrower private-equity subset."
+   },
+   {
+    "url": "https://www.spglobal.com/market-intelligence/en/news-insights/articles/2025/7/global-private-equity-dry-powder-continues-fall-from-2023-peak-91374487",
+    "used": false,
+    "why": "read_page returned HTTP 403. Used the publisher's readable LinkedIn publication for context."
+   }
+  ],
+  "performed_at": "2026-10-29T12:57:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e6",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-news-global-private-market-funds-dry-174735581-html",
+   "source_snapshot_id": "31fedc3d75167669fba88a1b721be899ce1c73f483bf137a9c9581c20b5eb50a",
+   "publisher": "PitchBook News, syndicated by Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/news/global-private-market-funds-dry-174735581.html",
+   "locator": "Body paragraph 4; the global amount and Q2 reference date are in paragraph 2",
+   "receipt": {
+    "public_excerpt": "private market dry powder",
+    "quote_hash": "1dae353446f2728e17dc827de47822ef3010fdcdf8bc4ca7c9d767b59646ee05",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-30",
+   "available_at": "2026-01-16",
+   "retrieved_at": "2026-10-29T12:50:43Z",
+   "relation": "contradicts",
+   "explanation": "The full article reports $4.63 trillion of worldwide closed-end private-capital dry powder at the end of Q2 2025, exceeding $325 billion. The quoted sentence describes the composition of that stock; it does not establish that these funds could all invest in OpenAI.",
+   "metric_scope": {
+    "company": "Global private-capital funds",
+    "metric": "Available private capital measured as dry powder",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-06-30",
+    "period_end": "2025-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "PitchBook reported USD 4.63 trillion at the end of Q2 2025.",
+     "The claim's comparison threshold is USD 325 billion."
+    ],
+    "formula": "4.63 × 1000 = 4630 billion; 4630 > 325",
+    "rounding": "Unit conversion only; retain the source's reported precision."
+   }
+  },
+  {
+   "id": "e7",
+   "role": "context",
+   "document_id": "linkedin-com-pulse-private-equity-deal-value-rises-h125-dry-nhpje",
+   "source_snapshot_id": "1e1f7d540241da16f77665db7563f8676c9018bc5292d78854a9813a59fdfa31",
+   "publisher": "S&P Global Market Intelligence",
+   "source_type": "independent_measurement",
+   "url": "https://www.linkedin.com/pulse/private-equity-deal-value-rises-h125-dry-nhpje",
+   "locator": "Second substantive paragraph",
+   "receipt": {
+    "public_excerpt": "substantial available capital",
+    "quote_hash": "443048cb683aa24118e9d8be928c53cb1d276ef44954d7730f34168d43d4d58c",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-30",
+   "available_at": "2025-07-15",
+   "retrieved_at": "2026-10-29T12:49:08Z",
+   "relation": "context",
+   "explanation": "This contemporaneous publication reports $2.515 trillion of global private-equity dry powder. Its narrower population provides corroborating context but is not substituted for the worldwide private-capital measure.",
+   "metric_scope": {
+    "company": "Global private-equity funds",
+    "metric": "Private-equity dry powder",
+    "currency": "USD",
+    "units": "trillions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-06-30",
+    "period_end": "2025-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e6",
+  "e7"
+ ],
+ "unresolved_gaps": [
+  "The records do not establish how much global capital could or would be allocated specifically to OpenAI.",
+  "The separate $325 billion NVIDIA-related expenditure estimate is not verified by this comparison."
+ ],
+ "packet_hash": "149804a37755114d508bc6ca83674c67414098b6449fa198785fde35be6e6896"
+}

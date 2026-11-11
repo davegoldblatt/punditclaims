@@ -1,0 +1,83 @@
+{
+ "run_id": "wyea-sam-altman-fried-dda545-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-sam-altman-fried-dda545": "9575c7c1f40827f390dd6c5b1932d5028352576d8af484e729d43e3205e51f40"
+ },
+ "started_at": "2026-10-29T18:03:27Z",
+ "completed_at": "2026-10-29T18:03:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post. The OpenAI and Anthropic figures nearby are cited reporting, but the unprofitability claim is his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Likely' hedges his guess about why the press skips the profit question. The claim that generative AI is deeply unprofitable is stated as fact, and the wider passage firmly says it burns more money than it makes. The drafter rightly dropped the causal link."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as generally substantial net losses, with computing a major cost, is an ordinary plain reading. Calendar 2023 matches the revenue year in the passage. 'Deeply' and 'massive' have no thresholds, and the result depends on sector-wide representativeness."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1, available 2026-10-26, before the cutoff. It reports a 2023 net loss of $1.5B, about $1.0B of it from fair-value changes. Only one company, on a GAAP basis, so not sector-wide."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's own disclosure that training needs extensive compute. It gives no cloud cost figures and says nothing about profitability."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's reported $540M loss is for 2022, outside the 2023 target period."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Midjourney was reported profitable in 2023, with heavy compute spending. This is an exception to a blanket reading, but it does not show the sector was generally profitable."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Anthropic lost money in 2023 and Midjourney was reportedly profitable. The packet has no representative, comparable 2023 figures across generative AI providers (OpenAI's 2023 result is missing), so neither the support nor the contradiction condition is met. Computing needs are documented but not measured. Single companies count only as context under the contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-sam-altman-fried-dda545"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12463,
+  "output_tokens": 1629,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

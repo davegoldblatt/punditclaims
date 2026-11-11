@@ -1,0 +1,214 @@
+{
+ "run_id": "wyea-wheres-the-money-595b3e-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-wheres-the-money-595b3e": "a70b6d2599a7b9f71d5ab3acc7d601a8bb377c57dbe5d45992100c1090098473",
+  "case:wyea-wheres-the-money-60d8a5": "a16eba56c78e75e31d5c741e44c5c6e42b0fe6738bc4d10ad31a46401e1e6cdb",
+  "case:wyea-wheres-the-money-63d53c": "326206f7a4969d3e43c7206c99136885b85f754e7b4d252b65a27ba1a7788a8b",
+  "case:wyea-wheres-the-money-a58412": "641eb92e23760f92450f8192a51c9ba2e756ef839460758ed01bada64deb52f0"
+ },
+ "started_at": "2026-10-31T21:59:20Z",
+ "completed_at": "2026-10-31T22:00:37Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, explicitly marked 'in my opinion'."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "normative",
+     "note": "Proposition keeps 'in my opinion' and the no-definition premise. But it is a judgment about what may reasonably be assumed, not a checkable observation; kind 'observation' overstates testability."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Contract correctly treats the sentence as opinion about permissible inference, not a factual charge of manipulation. The only factual element (OpenAI's reply) is a private exchange only he reported."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "An opinion about what can be assumed absent a metric definition has no true/false outcome. No evidence items exist, and none could settle it: even an audit showing honest counts would not falsify the opinion. The refusal claim rests only on his own account.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-595b3e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'would suggest', his own MAU estimate as input, the 2.583% figure, and credits 'astonishingly bad' to him. The per-user loss claim is a firm factual assertion."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading of 'loses the company money' per user as cost-to-serve exceeding revenue is the ordinary reading of a per-user claim; a fully loaded reading is flagged. Grading arithmetic rather than his MAU estimate is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Confirms 15.5M paid subscribers at end-2024; 15.5/600 = 2.583%, so the conditional arithmetic is correct."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Altman said OpenAI was losing money on Pro subscriptions (Jan 2025). Supports the loss claim only for the $200 Pro tier, not all paying users."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Reported 52% compute margin on paying users at end-2024: paying users as a group brought in more than model-running costs. Unnamed source, unconfirmed by OpenAI; covers corporate plus consumer paid users."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Arithmetic part holds: 15.5M/600M = 2.583%. The claim that every user, paid or not, loses money is contradicted on the contract's cost-to-serve reading: a positive 52% compute margin on paying users means at least many paying users cost less than they pay. Pro-tier losses are a partial exception only. 'Astonishingly bad' is not graded.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-60d8a5"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'without ChatGPT', 'it appears' and the 147M peak. 'It appears' reports what his data showed, and he backs it firmly ('not a chance in hell' missed apps cover the shortfall), so it is scored as an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Scope includes embedded assistants because he himself names Rufus as part of the market; that rests on his words. Result turns on that scope and on accepting company-defined MAU versus Sensor Tower counts, which is flagged."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Meta disclosed 700M+ Meta AI monthly actives on 2025-01-29, about ten times the ~74M threshold on his own embedded-assistant scope. Company self-report with its own definition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The 147M figure is a SuperData count for May 2018, later hidden from the report; the figure existed but its dating is two years after launch."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "May 2018 described as highest since the 2016 launch, implying the launch period was higher, so '147M at its peak' is doubtful."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Gemini 350M MAU in March 2025, outside the January 2025 window; suggests non-ChatGPT use far above his estimate but cannot be scored."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "On his own scope, which includes built-in assistants like Rufus, Meta AI alone reported 700M+ monthly actives in January 2025, far above a little more than half of 147M. That meets the contradiction condition, despite definitional differences. The Pokémon Go peak figure is also doubtful: 147M was May 2018, not the launch peak.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-63d53c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'does not appear to be able to', and the market part is credited as his opinion ('nor do I think'). The reliability statements are firm observations about the launch product."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading (often failed, inconsistent, not reliable unsupervised) is an ordinary reading of hyperbolic 'barely works' and 'not ready for prime time'. Period limited to launch through post date. Market opinion is not graded."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's launch post: released as a research preview, not expected to perform reliably in all scenarios. A company admission of inconsistency."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OSWorld computer-control success 38.1% vs 72.4% human, on OpenAI's own page; supports 'not consistently'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent roundup of early tests (Feb 2025): too many mistakes to rely on without constant supervision."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "87% on simpler WebVoyager tasks and some 10/10 trials cut against the strongest wording 'barely works', but do not show reliable general-use performance."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Launch-period evidence shows inconsistent task success: 38.1% on OSWorld, task results varying from 3/10 to 10/10, OpenAI's own research-preview caveat, and testers needing constant supervision. That meets the support condition. Strong results on simple web tasks temper 'barely works' but fall short of the contradiction condition. The market opinion is not graded.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-a58412"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 32551,
+  "output_tokens": 7971,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

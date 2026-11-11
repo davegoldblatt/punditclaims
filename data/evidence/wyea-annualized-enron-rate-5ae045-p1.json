@@ -1,0 +1,177 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-5ae045-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-5ae045",
+  "version": 1,
+  "content_hash": "ece4c999e8caee56ceb887b2acf3d2905c141b851ef7067d68c0916894388c42"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-5ae045",
+  "version": 1,
+  "content_hash": "e4e1d4df58e2f9d5e7681a439b66002a766a2b9b64fc59296ca8e40374233c07"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2026 \"15.5 billion\" revenue",
+   "Anthropic \"May 28\" \"48 billion\"",
+   "OpenAI \"6.7 billion\" \"2026\" revenue",
+   "site.anthropic.com \"May 28, 2026\" revenue",
+   "\"OpenAI\" \"first half\" \"12.4 billion\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wheresyoured.at/annualized-enron-rate",
+    "used": true,
+    "why": "Used only to document the arithmetic implied by the supplied inputs, not to establish those inputs as true."
+   },
+   {
+    "url": "https://www.anthropic.com/news/series-h",
+    "used": true,
+    "why": "Primary May announcement. It reports crossing $47 billion, rather than an exact $48 billion observation."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available by the freeze, reporting H1 revenue and identifying interim statements as unaudited."
+   },
+   {
+    "url": "https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998",
+    "used": false,
+    "why": "Original reporting could not be read; read_page returned HTTP 401."
+   },
+   {
+    "url": "https://siliconangle.com/2026/08/18/openai-falls-further-behind-anthropic-with-disappointing-revenue-growth-and-mounting-losses/",
+    "used": false,
+    "why": "Readable secondary reporting of OpenAI's quarterly figures, but it does not resolve the exact May run rate or reconcile all component reporting bases."
+   }
+  ],
+  "performed_at": "2026-10-29T10:28:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "wyea-annualized-enron-rate",
+   "source_snapshot_id": "8c066a0cd6d55de100a1da2ef1f11f9402adb05f096978946727c5f60d03b33f",
+   "publisher": "Where's Your Ed At / Ed Zitron",
+   "source_type": "secondary_summary",
+   "url": "https://www.wheresyoured.at/annualized-enron-rate",
+   "locator": "Paragraph immediately after ‘I’ll give you an example.’",
+   "receipt": {
+    "public_excerpt": "OpenAI made $12.4 billion",
+    "quote_hash": "5ea621d9b680a88309c4f09ffdc12427b87745bc463109d32c018f8babd6a2fd",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-13",
+   "retrieved_at": "2026-10-28T22:23:53Z",
+   "relation": "context",
+   "explanation": "The post's own inputs imply a $20.1 billion gap when subtracted from its stated $48 billion run rate. This establishes an internal arithmetic inconsistency, not the independently verified real-world difference.",
+   "metric_scope": {
+    "company": "Anthropic and OpenAI",
+    "metric": "Anthropic May annualized revenue run rate minus combined H1 realized revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Post's stated Anthropic May run rate: $48 billion",
+     "Post's stated OpenAI H1 revenue: $12.4 billion",
+     "Post's stated Anthropic H1 revenue: $15.5 billion"
+    ],
+    "formula": "48 - (12.4 + 15.5) = 20.1",
+    "rounding": "Exact arithmetic on the supplied one-decimal figures, in USD billions."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-series-h",
+   "source_snapshot_id": "c1dc7377bfb4e8c7018dd9622ca23e7a253dae1b98dbac46d0685825f3caa6da",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/series-h",
+   "locator": "Second substantive paragraph",
+   "receipt": {
+    "public_excerpt": "crossed $47 billion",
+    "quote_hash": "c90ff005fd41e5d87ea1c2a1d020966d5d4b8a879595af83c721517b4dd699a5",
+    "verified": "exact"
+   },
+   "event_date": "2026-05",
+   "available_at": "2026-05-28",
+   "retrieved_at": "2026-10-29T00:47:07Z",
+   "relation": "context",
+   "explanation": "The announcement supplies a threshold crossed earlier in May. It does not establish an exact May 28 run rate, so it cannot alone settle the subtraction.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annualized revenue run rate",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2026-05",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, subsection beginning ‘We are at an early stage of our revenue growth’",
+   "receipt": {
+    "public_excerpt": "our revenue was $16.3 billion",
+    "quote_hash": "4dca04f82e893db785a9143eec75001406c79ddd0e457fa63227a5243d934867",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing reports a different Anthropic H1 figure from the post. It measures one company's realized revenue, not the composite difference, and is not silently substituted for the post's press-estimate basis.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Recognized revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No exact May run-rate observation was established.",
+  "The post's Anthropic revenue estimate was not reconciled with the later filing.",
+  "No independently verified, consistently scoped calculation established the exact composite difference."
+ ],
+ "packet_hash": "429ce3ec5f06e578ae7807a97ac19fa4064fda77fe0123e9f14ba2c88171e258"
+}

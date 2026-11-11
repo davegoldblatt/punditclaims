@@ -1,0 +1,109 @@
+{
+ "packet_id": "marcus-ais-jurassic-park-moment-acb031-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ais-jurassic-park-moment-acb031",
+  "version": 2,
+  "content_hash": "860ea6c22f60b2655bc6fa644d31bdd25cf943804141b5eddbd438bf9c10a7dd"
+ },
+ "contract_ref": {
+  "id": "marcus-ais-jurassic-park-moment-acb031",
+  "version": 1,
+  "content_hash": "66d2448cf39e7a1303751f2b5dd65e0eac9be2fb6d23ee4b518ab9cbefe57397"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com November 30 2022 ChatGPT limitations incorrect nonsensical answers",
+   "Galactica 2022 paper reasoning mathematics limitations hallucination 65.8",
+   "site.openai.com/index/chatgpt/ \"November 30, 2022\"",
+   "site.meta.stackoverflow.com \"Temporary policy\" \"ChatGPT\" \"2022\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/blog/chatgpt",
+    "used": true,
+    "why": "Readable primary announcement describing the original ChatGPT's limitations."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.09085v1",
+    "used": true,
+    "why": "Original Galactica evaluation, including quantitative reasoning results."
+   },
+   {
+    "url": "https://arxiv.org/abs/2211.09085",
+    "used": true,
+    "why": "Confirms the paper's November 16, 2022 submission date."
+   },
+   {
+    "url": "https://openai.com/index/chatgpt/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the readable original blog URL was used."
+   },
+   {
+    "url": "https://meta.stackoverflow.com/questions/421831/temporary-policy-chatgpt-is-banned",
+    "used": false,
+    "why": "read_page returned HTTP 403, so the moderators' statement was not cited."
+   },
+   {
+    "url": "https://huggingface.co/facebook/galactica-1.3b/blob/241c2933133be42da3bfbf11388af23a629f7b7c/README.md",
+    "used": false,
+    "why": "Contains relevant warnings, but the dated original paper supplies a cleaner historical record."
+   }
+  ],
+  "performed_at": "2026-10-29T03:01:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-blog-chatgpt",
+   "source_snapshot_id": "743b566fdd173180503f6a3b1fbdc638508c7b593090cef011f2ea8d8da84ce2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/blog/chatgpt",
+   "locator": "Limitations, first paragraph",
+   "receipt": {
+    "public_excerpt": "ChatGPT sometimes writes plausible-sounding but incorrect or nonsensical answers.",
+    "quote_hash": "8b82d797b9c75663e8a617fdc5e5c12adcd1603eb166d213d199790a894477d0",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-30",
+   "available_at": "2022-11-30",
+   "retrieved_at": "2026-10-29T02:02:16Z",
+   "relation": "supports",
+   "explanation": "The launch disclosure acknowledges plausible false answers and explains why correcting them is difficult. It establishes a recurring factual-reliability problem, although it supplies no numerical error rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-09085v1",
+   "source_snapshot_id": "83f6fd9b5f18d635fb0e8b27d3a9290e96ca2c9157491c1c393171938f02706d",
+   "publisher": "Meta AI researchers / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.09085v1",
+   "locator": "Section 1.1, Our Contribution, reasoning-results paragraph",
+   "receipt": {
+    "public_excerpt": "Our 120B model achieves a score of 20.4% versus PaLM 540B’s 8.8% on MATH",
+    "quote_hash": "4adb919385c93189eb24a397e7c9b4e5881e1b52e046af066494e23f8c6e82f9",
+    "verified": "exact"
+   },
+   "event_date": "2022-11",
+   "available_at": "2022-11-16",
+   "retrieved_at": "2026-10-29T02:02:15Z",
+   "relation": "supports",
+   "explanation": "The release evaluation documents substantial remaining failures on a mathematical reasoning benchmark. Its improvement over another model is relevant qualification: these systems had useful capabilities despite their errors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "These sources do not establish a representative everyday-use error rate.",
+  "They do not separately evaluate Dall-E 2 or Lensa, or prove permanent unreliability of future architectures."
+ ],
+ "packet_hash": "f1f509502027ba33585bf94037c8c410f5bf907aa81ffdb08ea076899be398c2"
+}

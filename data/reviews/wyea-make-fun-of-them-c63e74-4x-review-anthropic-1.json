@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-make-fun-of-them-c63e74-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-make-fun-of-them-c63e74": "14f460b6bf4034f01f20a1738122f761a363408f54a07ed2d4d9bd86c76ce3a1",
+  "case:wyea-make-fun-of-them-ca5a7c": "73f9d06b85be0f95c19beb9b6a03295684dc0d9484a91ceb8a4b2ba5fdc899a8",
+  "case:wyea-make-fun-of-them-deb642": "c30905dfcde0782a249ac5fac8d49b72f45ef1fea566dba29316db3ddb872671",
+  "case:wyea-make-fun-of-them-e326e2": "259a4164dcb68032a9c7a0bf170d9e345150aff49d73a3d2e85f209603e0eaa3"
+ },
+ "started_at": "2026-10-29T22:10:01Z",
+ "completed_at": "2026-10-29T22:10:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post. The surrounding paragraph shows that the 'most prominent company' is OpenAI."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'can only make' and 'revenue, not profit'. 'Unstable monolith' and 'vague product' are evaluative and cannot be tested. The financial part is an observation of OpenAI's revenue scale at that time."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The post itself frames the $10B as annualized revenue, so reading it as OpenAI's June 2025 run rate is ordinary and fair. Treating 'can only make' as a statement about current scale, not a permanent ceiling, is fair to him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "CNBC, June 9, 2025: an OpenAI spokesperson put annual recurring revenue at $10B on the scope the contract specifies. This is a company disclosure reported by the press, which is what the contract requires."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters, June 9, 2025: OpenAI's annualized run rate reached $10B as of June, excluding Microsoft licensing and one-time deals. Matches the metric scope."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two contemporaneous reports of OpenAI's own disclosure put its June 2025 annualized revenue at $10B, which matches his figure. The packet has no counterevidence. Only the financial part is scored; the evaluative labels are outside the test.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-make-fun-of-them-c63e74"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own summary sentence in his post. The figures behind it come from his calculation of others' projections."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Matches the sentence: about $500B of capex plus VC funding has produced an industry with revenue about the size of the smartwatch industry. 'Nearly' and the comparison are approximate."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading this as a 2025 comparison of spending and revenue follows his own calculation. The contract correctly flags that he mixes projections with completed spending, and that the industry boundaries and tolerances are unspecified."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "One quarter of Microsoft spending. It cannot establish the combined total or isolate AI spending."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Menlo's estimate of 2025 enterprise AI spending. That is a different metric from worldwide generative-AI revenue, and there is no smartwatch comparator."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no complete spending total, no consistent generative-AI revenue estimate and no smartwatch revenue figure. The items are partial and use different metrics, so neither side of the comparison can be checked.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-make-fun-of-them-ca5a7c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps his chain of reasons. 'May' applies to humans making mistakes, so it does not hedge the claim. His 'know' is about knowing in a real sense ('doesn't know what anything is... at all')."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract recasts 'doesn't know' as a categorical practical inability to diagnose and fix bugs. That reading is the drafter's, not his; the drafter's own revision called his wording weaker. His claim is about understanding, which behavioural benchmarks cannot test, and the packet admits it cannot isolate the probabilistic cause."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "DebugBench: GPT-4 repaired 75% of bugs, below human level. This shows practical repair ability but does not address whether the model knows what a mistake is."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "ReaLMistake: LLM error detection is weak and unreliable, across general tasks rather than code. Useful context about reliability, but it does not settle the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim is that AI does not know, in an understanding sense, because it is a probabilistic model. Debugging benchmarks measure behaviour, not knowledge, and the packet concedes the cause cannot be isolated. Scoring it as a categorical practical inability stretches his words, so the claim cannot be scored as stated.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-make-fun-of-them-deb642"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "His sentence. The capex figures are company guidance and media projections that he adds up; the revenue total is his own rough tally."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The proposition keeps the 'projected' framing and his rough, rhetorical 'what, $18 billion?'. The revenue figure is a hedged guess, and the capex total sums others' guidance rather than committing to an outcome."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract scores a sum of relayed projections and a rhetorical approximation as his firm forecast of actual 2025 results. Approximate language like this is not scored under the policy, and the contract's own ambiguity flags note the forecast reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's $13B figure is an annualized run rate from late 2024, not realized 2025 AI revenue."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Alphabet's 2025 capex of $91.4B is above the $75B component. It is one component only."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Meta's 2025 capex of $72.22B, including finance-lease payments, is close to the $72B component. It is one component only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "not_adjudicable",
+    "rationale": "The revenue figure is a hedged, rhetorical approximation, and the $327B is a sum of others' projections, not his own firm forecast, so the policy does not score it. Even scored, the packet has no realized four-company AI revenue total and only partial capex figures.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-make-fun-of-them-e326e2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33547,
+  "output_tokens": 6173,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

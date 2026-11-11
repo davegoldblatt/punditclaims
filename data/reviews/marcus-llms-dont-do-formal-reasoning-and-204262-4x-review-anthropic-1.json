@@ -1,0 +1,221 @@
+{
+ "run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dont-do-formal-reasoning-and-204262": "4fb90e80b0564e5db913bf9f4c779a433c2479c468940ec18af10e49f3c67096",
+  "case:marcus-llms-dont-do-formal-reasoning-and-269833": "89fd785b16b79cf614c9b447e83ff2322a13b8ffb890fc71a688412650fbd9e3",
+  "case:marcus-llms-dont-do-formal-reasoning-and-27cfda": "b62dee4c31ceb2b8982f315a4f6018a7ade254364005b14dfd6927f7e02351f7",
+  "case:marcus-llms-dont-do-formal-reasoning-and-4a617e": "dd614ce2def18e967939e9e5e0ab5a1345a22b5ea60f1645d48d9f28153168e3"
+ },
+ "started_at": "2026-10-29T07:38:05Z",
+ "completed_at": "2026-10-29T07:38:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post, stated as fact."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful restatement of a retrospective observation about older and newer models."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading is fair: at least two pre-post evaluations showing accuracy falling with size, covering older and newer models. Naming GPT-3/ChatGPT/GPT-4 vs GPT-4o/o1 is an ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dziri et al. (2023): GPT-3, ChatGPT and GPT-4 accuracy drops from near perfect to zero as problem size grows. Covers the older models."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Same paper: ChatGPT and GPT-4 reach only about 55-59% at 3x3. Adds weight but is not a separate evaluation."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Deng (Sept 2024), an independent evaluation: GPT-4o struggles past 4x4 and o1 holds up only to about 9x9. Covers the newer models."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch (Oct 2, 2024) is a secondary report of Deng's results: GPT-4o is under 30% past 4x4."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Before the post, two independent evaluations showed multiplication accuracy falling with operand size: Dziri et al. for GPT-3, ChatGPT and GPT-4, and Deng for GPT-4o and o1. That covers both older and newer models, and the packet contains no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-204262"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own first-person statement."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Strongly believe' signals high confidence, not a hedge, so the robustness claim is gradable. 'Current results' covers all the work he cites, not only the Apple study."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'robust' as 'holds up under independent replication' is an ordinary reading. The result still depends on the drafter's choice to focus on GSM-Symbolic/NoOp and on the post-2024 window; the planning, multiplication and chess results were not checked."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GSM-DC (2025), an independent controlled benchmark, finds LLMs significantly sensitive to irrelevant context, reproducing the NoOp-style effect."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "2026 statistical re-analysis (accepted at EMNLP): the GSM-Symbolic drop is significant for only 8 of 20 models, and about half of those are explained by a shift toward larger numbers. This weakens the headline result."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Non-peer-reviewed replication (2026): the NoOp drop reappears on unaudited data but is much smaller once ambiguous distractors are removed, including for GPT-4o. Weaker source."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Sensitivity to irrelevant context was reproduced independently (e1). But the GSM-Symbolic headline drop largely fails proper statistics (e2), and the NoOp effect shrinks sharply on cleaned data (e3). Some core effects hold and others do not; the other results he cites were never checked.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-269833"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence, applying his multiplication fall-off point to o1."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'This' correctly resolves to fall-off on larger multiplication problems."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading is fair: any clear decline in o1's accuracy as operand size grows counts."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Deng (Sept 17, 2024), testing up to 20x20: o1 had decent accuracy only up to about 9x9, implying a decline beyond that."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch (Oct 2024) reports Deng's results: o1 is right about half the time at 9x9. Secondary source."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Feb 2025 post, outside the target period: o3-mini does better than o1. Context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An independent evaluation published before the post shows o1's multiplication accuracy holding up only to about 9x9 and falling at larger sizes. That meets the support condition, and the packet has no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-27cfda"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own summary of the Kambhampati team's o1 results, which he endorses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "In context, 'problems' means the planning problems in the cited o1 analysis; the normalisation says this correctly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Fair: the contract scores against the paper he cites, comparing small and larger Blocksworld problems for o1-preview."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "PlanBench o1 paper (Sept 2024): o1-preview scores 97.8% on 3-5 block problems but only 23.63% on 6-20 block problems."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The abstract calls o1 a large improvement on the benchmark that still falls well short of saturating it. Context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The cited paper reports high o1-preview accuracy on small Blocksworld problems (97.8%) and a steep drop on larger ones (23.63%). That matches 'ok on small problems, but quickly tails off.'",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dont-do-formal-reasoning-and-4a617e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33041,
+  "output_tokens": 4185,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,93 @@
+{
+ "packet_id": "marcus-muddles-about-models-566f8e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-muddles-about-models-566f8e",
+  "version": 2,
+  "content_hash": "eeb1b546e394514ed5c81732265985134ed1a47813993b32f714f1e544664075"
+ },
+ "contract_ref": {
+  "id": "marcus-muddles-about-models-566f8e",
+  "version": 1,
+  "content_hash": "18806dcaea2a1c737226acb6324117a3d63e25de539071529fdee97f4dd6df8c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT chess illegal moves 2023 board state tracking evaluation paper"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2308.15118v1",
+    "used": true,
+    "why": "Contemporary primary evaluation of GPT-3.5 chess behavior; read_page returned full text."
+   },
+   {
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/21390",
+    "used": false,
+    "why": "Relevant research on state tracking, but its specially trained models do not directly establish the cause of contemporary ChatGPT failures."
+   },
+   {
+    "url": "https://adamkarvonen.github.io/machine_learning/2024/03/20/chess-gpt-interventions.html",
+    "used": true,
+    "why": "Primary intervention experiments challenge the general inference that next-token prediction cannot learn board representations. Different models and a later period make this context."
+   }
+  ],
+  "performed_at": "2026-10-29T07:28:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2308-15118v1",
+   "source_snapshot_id": "2260a207525b518859da68bbf02cfba9305dfbb5864ec3115cac0fe81cd25e53",
+   "publisher": "arXiv; Mu-Tien Kuo, Chih-Chung Hsueh, and Richard Tzong-Han Tsai",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2308.15118v1",
+   "locator": "Section 5.1, ChatGPT’s Performance Overview",
+   "receipt": {
+    "public_excerpt": "only 1.59% of games concluded naturally",
+    "quote_hash": "a7c26e372b95c1e0a36db3d24f66a1d76e9ebe1ed3cca41fa62bfb9617e9a97a",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-08-29",
+   "retrieved_at": "2026-10-29T03:40:45Z",
+   "relation": "context",
+   "explanation": "The experiments document substantial problems following chess rules in GPT-3.5-turbo-0301. They support the behavioral premise, but do not isolate reliance on correlations as its cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "adamkarvonen-github-io-machine-learning-2024-03-20-chess-gpt-interventions-html",
+   "source_snapshot_id": "a37a912430fc459fd60b7438ce48ebf952c858106e2cc40ae3be44cb0c1403ce",
+   "publisher": "Adam Karvonen",
+   "source_type": "independent_measurement",
+   "url": "https://adamkarvonen.github.io/machine_learning/2024/03/20/chess-gpt-interventions.html",
+   "locator": "Section Implications",
+   "receipt": {
+    "public_excerpt": "world model",
+    "quote_hash": "925f77a84198402ee282f780e873866d0bf46715123c47619d754d489509bf8e",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-03-20",
+   "retrieved_at": "2026-10-29T07:22:39Z",
+   "relation": "context",
+   "explanation": "The author reports interventions in chess-model activations that change moves in line with altered board states. This challenges a blanket opposition between statistical training and internal models, but does not settle the cause of failures in the GPT systems Marcus discussed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved controlled study establishes the claimed causal chain in the relevant contemporary GPT systems.",
+  "The claim provides no test separating fragile correlations from an imperfect learned representation."
+ ],
+ "packet_hash": "843c875dffd4bda1f6b803a26f82aef1b41fff68c016c61b3fd8840c24ef5a7f"
+}

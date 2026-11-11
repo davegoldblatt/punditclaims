@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-reports-of-the-birth-of-agi-are-greatly-965273-p1",
+ "claim_revision_ref": {
+  "id": "marcus-reports-of-the-birth-of-agi-are-greatly-965273",
+  "version": 1,
+  "content_hash": "3069479b560f4e0e49b013f5c08f22b40dd1960c02af956c41dedaa555195d0c"
+ },
+ "contract_ref": {
+  "id": "marcus-reports-of-the-birth-of-agi-are-greatly-965273",
+  "version": 1,
+  "content_hash": "7dc015bfd56c7142fd9a78b74bbacc7ea133d504234611f934c91dbc3d9fe0fa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 FActScore ChatGPT atomic facts biographies 58%",
+   "2023 \"summarization\" \"human\" \"GPT-4\" evaluators Goyal",
+   "site.arxiv.org 2023 \"Lost in the Middle\"",
+   "\"Summarization is (Almost) Dead\" arxiv 2023",
+   "site.arxiv.org 2023 \"fact-checking\" \"ChatGPT\" performance"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.14251v2",
+    "used": true,
+    "why": "Primary factual-writing evaluation; this version was available before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.09558v1",
+    "used": true,
+    "why": "Primary human evaluation directly challenges the summarization example."
+   },
+   {
+    "url": "https://arxiv.org/abs/2307.03172v1",
+    "used": true,
+    "why": "Documents long-context weaknesses, but does not directly test full-book comprehension."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.13091",
+    "used": false,
+    "why": "Evaluates models as judges of summaries, which is different from generating competent summaries."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.16810",
+    "used": false,
+    "why": "Published after the post, with the timing of the underlying evaluation not established."
+   }
+  ],
+  "performed_at": "2026-10-29T07:55:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-14251v2",
+   "source_snapshot_id": "6f80c8126e36315bca32264092a49223766f525f697563d57c4e7b96ee056c61",
+   "publisher": "arXiv; Min and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.14251v2",
+   "locator": "Section 3.4, Results",
+   "receipt": {
+    "public_excerpt": "InstructGPT and ChatGPT achieve FActScores of 42.5% and 58.3%, respectively.",
+    "quote_hash": "d39bea8caf6e26dc8401133ed0f563b4032b7fa910f5f19e179a0238a948a6b5",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-10-11",
+   "retrieved_at": "2026-10-29T03:56:54Z",
+   "relation": "supports",
+   "explanation": "Human checking found substantial unsupported factual content in generated biographies. This supports the factual-prose limitation for the tested systems and task, without establishing that all factual writing was beyond their competence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2309-09558v1",
+   "source_snapshot_id": "e69d0992c2fbf47bd932870ea833c44f1d629a48a0e43c64438d43f1c288560c",
+   "publisher": "arXiv; Pu, Gao and Wan",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2309.09558v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "better factual consistency and fewer instances of extrinsic hallucinations",
+    "quote_hash": "59d274c7609311b0532215ad37823a5e36294a4062a3280326761c894cdd60cd",
+    "verified": "exact"
+   },
+   "event_date": "2023-09",
+   "available_at": "2023-09-18",
+   "retrieved_at": "2026-10-29T07:45:15Z",
+   "relation": "contradicts",
+   "explanation": "Across five summarization tasks, human evaluators preferred model summaries to the human references; the factuality comparison also favored GPT-4. This contradicts treating summarization generally as an activity contemporary systems could not perform competently.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2307-03172v1",
+   "source_snapshot_id": "a6cf29b20311a8b5433bf4a33d92fdbea056de4f6860cf22c80c847122915c21",
+   "publisher": "arXiv; Liu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2307.03172v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "performance substantially decreases",
+    "quote_hash": "a2934ed35c7b1553339a25b79a67a3bb3e63f29bdb7ae652ec9a80dc81488e95",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-07-06",
+   "retrieved_at": "2026-10-29T07:45:15Z",
+   "relation": "context",
+   "explanation": "The study documents weaknesses in multi-document question answering and retrieval from long inputs. It supplies relevant context but neither tests full-book comprehension nor establishes a human competence threshold.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No directly comparable evaluation of hostile-witness cross-examination was established.",
+  "The cited long-context experiment does not settle full-book comprehension.",
+  "The factual-writing study lacks a matched human-writing baseline.",
+  "The evidence does not establish how many task categories meet a common competence threshold."
+ ],
+ "packet_hash": "9d32adc501d9ef0cb772958fe1b7f342e3ad1f79f85c0be53e75ae6f7a68575a"
+}

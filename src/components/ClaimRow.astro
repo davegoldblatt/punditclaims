@@ -1,0 +1,45 @@
+---
+// One register row, kept to what a reader scans: their words (linking to the
+// claim page, where our reading, the criteria, the evidence, and the source
+// are), the grade and the date said, and what settled it (Dave 2026-10-29:
+// "we are just displaying the quote and our grade"). Flags show only when
+// set. The data attributes drive the client filters. On a post
+// page a row also quotes the words from that post, carries an anchor that the
+// search index uses to find the claim, and may be a withdrawn claim.
+import type { PublicClaim } from "../lib/manifest.ts";
+import { OUTCOME_LABEL } from "../policy.ts";
+import { assessmentLabel, claimPath, personPath, saidKey, shownAssessment, standingOf, whatHappened } from "../lib/view.ts";
+
+interface Props { claim: PublicClaim; personName: string; showPerson?: boolean; quote?: string | null; anchor?: boolean; showSource?: boolean }
+const { claim: c, personName, showPerson = true, quote = null, anchor = false } = Astro.props;
+const a = shownAssessment(c)!; // registers list live claims; a post page may also list a withdrawn one
+const p = a.payload;
+const standing = standingOf(c);
+const withdrawn = standing === "withdrawn";
+// Their words lead; a withdrawn claim's excerpt is not presented as a verified quotation.
+const excerpt = withdrawn ? null : (quote ?? p.statement.excerpt);
+// What settled it, from the evidence the reviewers accepted.
+const settlers = withdrawn ? [] : whatHappened(c);
+---
+<li class="row" data-item data-id={c.claim_id} data-person={c.subject_id} data-kind={c.kind} data-outcome={p.outcome}
+    data-horizon={c.review.horizon_now} data-topic={c.topic_tags.join(" ")} data-said={saidKey(c)} data-changed={c.last_substantive_change_at}>
+  <p class="row-margin" data-pagefind-ignore={anchor ? "" : undefined}>
+    {withdrawn
+      ? <span class="flag"><span class="sr-only">Assessment: </span>{assessmentLabel(c)}</span>
+      : <span class="label" data-o={p.outcome}><span class="sr-only">Assessment: </span>{OUTCOME_LABEL[p.outcome]}</span>}
+    <span class="row-date"><span class="k">Said </span><time datetime={c.first_statement_date}>{c.first_statement_date}</time></span>
+  </p>
+  <div class="row-body">
+    {showPerson && <p class="row-by" data-pagefind-ignore={anchor ? "" : undefined}><a href={personPath(c.subject_id)}>{personName}</a></p>}
+    <h3 class="row-q" id={anchor ? `c-${c.claim_id}` : undefined}><a href={claimPath(c.claim_id)}>{excerpt ? <span>“{excerpt}”</span> : c.normalized_proposition}</a></h3>
+    {anchor && excerpt && <p class="sr-only">What we tested: {c.normalized_proposition}</p>}
+    {(standing === "under_review" || c.review.review_due || a.notice?.kind === "operational_stale") && (
+      <p class="status">
+        {standing === "under_review" && <span class="flag">Under review</span>}{" "}
+        {c.review.review_due && <span class="flag">Review due</span>}{" "}
+        {a.notice?.kind === "operational_stale" && <span class="flag">Review overdue</span>}
+      </p>
+    )}
+    {settlers.map((w) => <p class="row-line row-why"><span class="k">{w.label}: </span>{w.text} <span class="row-why-src">(<a href={w.url} rel="noopener">{w.publisher}</a>, <time datetime={w.date}>{w.date}</time>)</span></p>)}
+  </div>
+</li>

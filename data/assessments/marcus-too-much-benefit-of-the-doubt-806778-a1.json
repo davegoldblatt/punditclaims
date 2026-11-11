@@ -1,0 +1,150 @@
+{
+ "assessment_id": "marcus-too-much-benefit-of-the-doubt-806778-a1",
+ "claim_revision_ref": {
+  "id": "marcus-too-much-benefit-of-the-doubt-806778",
+  "version": 2,
+  "content_hash": "3e9023a3bb3281fa9d80e75b01624a389f7bde0ed0037b64562f25d6b0e10357"
+ },
+ "contract_ref": {
+  "id": "marcus-too-much-benefit-of-the-doubt-806778",
+  "version": 1,
+  "content_hash": "1c772a33b04fa3003307d1222f00efd26e7dcdaf53a839340b8794b637db8e54"
+ },
+ "packet_ref": {
+  "id": "marcus-too-much-benefit-of-the-doubt-806778-p1",
+  "content_hash": "801c430848812a5469c00fed3beb97d0aea1f9fc20e417cc7938ef89f4d403f7"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-01-01",
+  "end": "2022-10-16",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence substantiates important parts of the description: radiology uses textual clinical information, and processing it presents documented difficulties. The [2022 report-structuring study](https://arxiv.org/html/2209.12177v1) does not establish the full comparison with image interpretation or patient-history reasoning. Earlier successful CNN text classification also cautions against treating text as categorically unsuitable. The comparative component remains unsettled.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "Supporting evidence for individual components does not settle the compound claim.",
+  "Text classification, report structuring and clinical reasoning are different tasks.",
+  "Different benchmark scores cannot establish relative suitability without accounting for task difficulty and practical requirements."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-too-much-benefit-of-the-doubt-723cae-4x-review-anthropic-1",
+  "marcus-too-much-benefit-of-the-doubt-723cae-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-too-much-benefit-of-the-doubt-723cae-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-too-much-benefit-of-the-doubt-806778",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "A radiologist's job includes not just reading images, which convnets are suited to, but also, in some cases, reasoning about a patient's history and reading unstructured text, two problems for which convnets are less suited.",
+  "kind": "observation",
+  "conditions": [
+   "in some cases"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "the job of a radiologist includes not just reading images (which convnets are suited to but (in some cases) reasoning about a patient’s history and reading unstructured text, two problems for which convnets are less suited.",
+   "locator": "paragraph 26",
+   "url": "https://garymarcus.substack.com/p/too-much-benefit-of-the-doubt",
+   "date": "2022-10-16",
+   "document_title": "Three baffling claims about AI and machine learning in four days, statistical errors in top journals, and claims from Yann LeCun that you should not believe.",
+   "observed_at": "2026-10-29T00:04:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the job of a radiologist includes not just reading images",
+    "in some cases",
+    "reasoning about a patient’s history",
+    "reading unstructured text",
+    "convnets are less suited"
+   ],
+   "our_interpretation": [
+    "The claim has two components: radiologists sometimes integrate clinical histories and free text, and conventional convolutional networks are relatively less suited to those functions than to image interpretation.",
+    "Less suited means a practical disadvantage for the specified work; it does not mean incapable of every text-processing task.",
+    "In some cases limits the asserted professional duties. It is not a conditional forecast.",
+    "I use the current-year reporting window through the post date for the ongoing professional and technical state."
+   ],
+   "support_condition": "Professional evidence establishes the stated duties, and contemporary technical evidence establishes the relative suitability of convolutional networks for image interpretation versus clinical-history reasoning and free-text understanding.",
+   "contradiction_condition": "Professional evidence rules out the stated duties, or relevant comparative technical evidence shows convolutional networks equally or better suited to the history and text functions under comparable practical requirements."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence substantiates important parts of the description: radiology uses textual clinical information, and processing it presents documented difficulties. The [2022 report-structuring study](https://arxiv.org/html/2209.12177v1) does not establish the full comparison with image interpretation or patient-history reasoning. Earlier successful CNN text classification also cautions against treating text as categorically unsuitable. The comparative component remains unsettled.",
+  "limitations": [
+   "Supporting evidence for individual components does not settle the compound claim.",
+   "Text classification, report structuring and clinical reasoning are different tasks.",
+   "Different benchmark scores cannot establish relative suitability without accounting for task difficulty and practical requirements."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "guide clinical care",
+    "locator": "Abstract, first sentence",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36029890",
+    "publisher": "Journal of the American College of Radiology; abstract hosted by PubMed",
+    "event_date": "2022-08-25",
+    "available_at": "2022-08-25",
+    "explanation": "The review describes radiological reports as commonly unstructured and their manual review as costly. It supports the textual-information component of radiology work, but does not establish the architectural comparison."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "hard for computers",
+    "locator": "Introduction, second sentence",
+    "url": "https://arxiv.org/html/2209.12177v1",
+    "publisher": "arXiv",
+    "event_date": "2022",
+    "available_at": "2022-09-25",
+    "explanation": "The paper documents difficulties with clinical free text and evaluates a transformer approach. Its task is report structuring; it does not directly compare convolutional image interpretation with reasoning over patient histories."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "patients’ history",
+    "locator": "Section Information technology support and shortcomings",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9537212/fullTextXML",
+    "publisher": "Pediatric Radiology; full text hosted by Europe PMC",
+    "event_date": "2021-10-19",
+    "available_at": "2021-10-19",
+    "explanation": "The professional discussion describes histories, previous examinations and reports as parts of radiological workflow, and explains their diagnostic relevance. It predates the selected target period."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "worse than CNN",
+    "locator": "Results, Results of the clinical text classification paradigm",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6322223/fullTextXML",
+    "publisher": "BMC Medical Informatics and Decision Making; full text hosted by Europe PMC",
+    "event_date": "2019",
+    "available_at": "2019-01-07",
+    "explanation": "This earlier report shows convolutional networks successfully classifying clinical text, including smoking status and fractures. It qualifies a blanket claim of text unsuitability, but does not demonstrate broad clinical-history reasoning or compare text with image tasks."
+   }
+  ],
+  "what_would_resolve": "Contemporary architectural analysis or controlled evaluations showing how conventional convolutional networks perform on the specified clinical reasoning and text duties relative to their image tasks, together with dated professional workflow evidence.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "4fa4040d766d45f70b2379120841373909c905d0dd46fec14649e17e963e06c7",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:02:09Z"
+}

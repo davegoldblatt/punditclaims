@@ -1,0 +1,88 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-30df4a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-30df4a",
+  "version": 1,
+  "content_hash": "eb2945fe2fa99b1b38aa92219e276000484d82bd9d615b83c18f169806d050d9"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-30df4a",
+  "version": 1,
+  "content_hash": "b64146aaceed6f3bb4cb62a30c18bcca86d3db4dd99cadb477d7057807eac9c4"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Meta 2024 results capital expenditures 2023 28.10 39.23",
+   "Meta 2023 capital expenditures 28.10 billion 2024 results",
+   "Meta 2023 \"Capital expenditures\" \"28.10\" results February 1"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/m/NASDAQ_META_2023.pdf",
+    "used": true,
+    "why": "Readable primary annual report provides a decisive counterexample within the expressly named companies and years."
+   },
+   {
+    "url": "https://investor.atmeta.com/files/doc_financials/2024/q4/Meta-12-31-2024-Exhibit-99-1-FINAL.pdf",
+    "used": false,
+    "why": "Read as an additional check; a second company-year is unnecessary to disprove the universal comparison."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000012/meta-20231231.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the annual-report mirror was readable."
+   }
+  ],
+  "performed_at": "2026-10-29T10:16:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "annualreports-com-hosteddata-annualreportarchive-m-nasdaq-meta-2023-pdf",
+   "source_snapshot_id": "906c9976e2385d16733fa2443355ed2ed28c9e80657fceb7d7345ad905747362",
+   "publisher": "Meta Platforms, Inc., mirrored by AnnualReports",
+   "source_type": "filing",
+   "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/m/NASDAQ_META_2023.pdf",
+   "locator": "Management discussion, executive overview, capital expenditures bullet",
+   "receipt": {
+    "public_excerpt": "$28.10 billion",
+    "quote_hash": "b8d77008a4f3e057c4e8c14da73407ed4c603f94e68e2e6b836fe64a414308a3",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2024-02-01",
+   "retrieved_at": "2026-10-29T10:09:45Z",
+   "relation": "contradicts",
+   "explanation": "Meta is one of the companies explicitly named. Its 2023 annual capex was below the stipulated $45 billion, disproving the assertion that this amount would not cover any named company-year.",
+   "metric_scope": {
+    "company": "Meta",
+    "metric": "Annual capital expenditures, including principal payments on finance leases",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-01-01",
+    "period_end": "2023-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Stipulated annual amount: USD 45 billion",
+     "Meta 2023 reported capex: USD 28.10 billion"
+    ],
+    "formula": "45.00 - 28.10 = 16.90 billion dollars above Meta's annual capex",
+    "rounding": "Two decimal places, matching the reported capex precision."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "e9f9c5d22af0dc638238d52917a48e0b439753a4f165d371c1e8b146999672af"
+}

@@ -1,0 +1,63 @@
+{
+ "run_id": "gm-no-hallucination-free-chatbots-by-2025-review-anthropic-4",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-4",
+ "prompt_hash": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+ "rubric_version": "policy-2026-10-28.5",
+ "input_hashes": {
+  "claim": "9528b354b564da41db196f56804c04e7174f5ab3653e1e0b89f6771e677b5504",
+  "contract": "a603e860ec6e37e3a046388d194a750860999ae8559d22f8af755d67cab7e069",
+  "packet": "d87897e4b8e3fa951b10a06254f9607dad040bff8d62228cb7212b8211502e5b",
+  "prompt": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+  "case": "f012ee542a5ede7b670932f142da9023ed0d20a0c9f797da983e94de97da625a"
+ },
+ "started_at": "2026-10-28T23:55:13Z",
+ "completed_at": "2026-10-28T23:55:28Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Marcus's own words in his own Substack post. He is not quoting anyone else."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "forecast",
+   "note": "The sentence itself has no hedge. Calling the idea 'bonkers' is a firm dismissal, so it counts as a forecast that no such chatbots will exist by about February 2025. The hedges elsewhere in the post ('probably' in the title) apply to RAG, not to this sentence. The threshold 'perfectly reliable, hallucination-free' is kept."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "Taking 'perfectly' and 'hallucination-free' literally follows the speaker's own words. Reading 'this time next year' as about 23 Feb 2025 is reasonable, and a few days either way would not change the result. Using the best-scoring models on an independent test is a fair way to check a universal negative."
+  },
+  "evidence": [
+   {
+    "id": "vectara-leaderboard-2025-02",
+    "fits": true,
+    "relation": "supports",
+    "note": "Vectara's leaderboard, updated 28 Feb 2025, five days after the deadline. It scores other companies' models with Vectara's own evaluator, HHEM-2.1. The best model, Gemini-2.0-Flash, hallucinated in 0.7% of summaries, and every listed model scored above zero. It only covers document summarization, but even under that narrow test no model was hallucination-free."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "forecast_outcome",
+  "horizon_state": "elapsed",
+  "outcome": "supported",
+  "rationale": "The deadline (about 23 Feb 2025) has passed. An independent leaderboard from 28 Feb 2025 shows every leading model still hallucinating, the best at 0.7%. The packet contains no counterevidence of a chatbot measured at zero. This meets the contract's support condition. The test covers summarization only, which limits its scope but cannot point to a hallucination-free chatbot.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8173,
+  "output_tokens": 1508,
+  "cached_input_tokens": 2607,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

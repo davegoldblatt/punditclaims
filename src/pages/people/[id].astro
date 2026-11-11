@@ -1,0 +1,82 @@
+---
+// /people/<subject-id>: exactly the two subjects in the release, never an
+// auto-generated profile. The person's answer as one picture, then the
+// Explore tool locked to them (Dave 2026-10-30), then the sources covered
+// and recent changes. The static register of their claims is under
+// /people/<subject-id>/<group>. The page opens with the person's
+// answer as one picture, the same one the home page shows.
+import Base from "../../layouts/Base.astro";
+import ExploreTool from "../../components/ExploreTool.astro";
+import WhatHappened from "../../components/WhatHappened.astro";
+import ConfidenceSwitch from "../../components/ConfidenceSwitch.astro";
+import OutcomeChips from "../../components/OutcomeChips.astro";
+import KindSwitch from "../../components/KindSwitch.astro";
+import { release } from "../../lib/published.ts";
+import { PHOTOS } from "../../site.ts";
+import { EVENT_LABEL } from "../../policy.ts";
+import { byNewest, claimPath, day } from "../../lib/view.ts";
+
+export function getStaticPaths() {
+  return release().subjects.map((s) => ({ params: { id: s.id } }));
+}
+const r = release();
+const m = r.manifest!;
+const s = r.subject(Astro.params.id!)!;
+const photo = PHOTOS[s.id];
+const live = r.live.filter((c) => c.subject_id === s.id);
+const held = r.held.filter((h) => h.subject_id === s.id);
+const claimOf = (id: string | null) => (id ? r.claim(id) : null);
+// Recent changes to this person's published claims. Held records have no page, so they are left out here.
+const recent = r.events.filter((e) => e.subject_id === s.id && e.substantive && claimOf(e.claim_id)).sort(byNewest).slice(0, 5);
+// One line per publication, from its earliest window start to its latest end.
+const pubs = [...new Set(s.windows.map((w) => w.publication))].map((p) => { const ws = s.windows.filter((w) => w.publication === p); return { publication: p, origin: ws[0].origin, from: ws.map((w) => w.from).sort()[0], to: ws.map((w) => w.to).sort().at(-1)! }; });
+---
+<Base title={s.name} description={`AI claims by ${s.name} in the Pundit Claims register: the exact words, the dated evidence, and the assessment of each.`}>
+  <div class="wrap person">
+    <header class="page-head p-head">
+      <div class="p-name">{photo && <img class="p-photo" src={photo.file} width="112" height="112" alt={`${s.name}`} />}<h1>{s.name}</h1></div>
+    </header>
+
+    <section class="p-hero" aria-label={`Was ${s.name} right?`}>
+      <div class="p-hero-main">
+      <ConfidenceSwitch />
+      <KindSwitch />
+      <OutcomeChips />
+      <WhatHappened subjectId={s.id} name={s.name} live={live} heldRecords={held} link={false} heading={`So, was ${s.name} right?`} />
+      </div>
+      <div class="p-about">
+        <p class="lede">{s.identification} <span class="small">Source: <a href={s.identification_source.url} rel="noopener">{s.identification_source.title}</a>.</span></p>
+        {s.profile_links.length > 0 && <p class="small">{s.profile_links.map((l, i) => <>{i > 0 && ", "}<a href={l.url} rel="noopener">{l.label}</a></>)}</p>}
+        <p class="small">This covers claims from {pubs.map((p) => p.publication).join(" and ")}, not everything {s.name} has written.</p>
+        {photo && <p class="small soft">Photo: <a href={photo.source_url} rel="noopener">{photo.credit}</a>, <a href={photo.license_url} rel="noopener">{photo.license}</a>{photo.note ? `, ${photo.note}` : ""}.</p>}
+        <p class="small soft">As of {m.reference_date}. Each square is one claim: hover to read it, click to see what happened. <a href="/method#answer">How we work out the answer</a>.</p>
+      </div>
+    </section>
+
+    <section class="p-explore" aria-labelledby="explore-h">
+      <h2 id="explore-h">Explore {s.name}’s claims</h2>
+      <ExploreTool person={s.id} />
+    </section>
+
+    <div class="p-det">
+      <section class="section" aria-labelledby="cov-h">
+        <h2 id="cov-h">Sources</h2>
+        <ul class="small">
+          {pubs.map((w) => <li><a href={w.origin} rel="noopener">{w.publication}</a>, <time datetime={w.from}>{w.from}</time> to <time datetime={w.to}>{w.to}</time>.</li>)}
+        </ul>
+        <p class="small"><a href="/coverage">What we read</a></p>
+      </section>
+      <section class="section" aria-labelledby="recent-h">
+        <h2 id="recent-h">Recent changes</h2>
+        {recent.length ? (
+          <ul class="small">
+            {recent.map((e) => { const c = claimOf(e.claim_id); return (
+              <li><time datetime={e.recorded_at}>{day(e.recorded_at)}</time>: {EVENT_LABEL[e.type]}{c && <>, <a href={claimPath(c.claim_id)}>{c.normalized_proposition}</a></>}</li>
+            ); })}
+          </ul>
+        ) : <p class="small soft">No changes recorded.</p>}
+        <p class="small"><a href={`/changes?person=${s.id}`}>All changes for {s.name}</a></p>
+      </section>
+    </div>
+  </div>
+</Base>

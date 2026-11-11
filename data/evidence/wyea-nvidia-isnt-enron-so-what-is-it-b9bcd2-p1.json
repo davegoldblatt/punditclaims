@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-b9bcd2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-b9bcd2",
+  "version": 1,
+  "content_hash": "d393ae51cba3631ccca89448a6de49132849138c96cd07b8b996c5b0cba82f34"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-b9bcd2",
+  "version": 1,
+  "content_hash": "7e0a00acc73ff5ccff421593b06b93fd9189ae305063ad80863a39f1718c486e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Amazon third quarter 2025 results AWS operating income cash flow",
+   "NVIDIA third quarter fiscal 2026 results net income October 26 2025",
+   "site.oracle.com \"2026\" \"First Quarter\" \"GAAP net income\"",
+   "\"Oracle\" \"GAAP net income was $2.9 billion\" \"2025\"",
+   "site.microsoft.com investor earnings FY-2026-Q1 \"Net income\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s23.q4cdn.com/440135859/files/doc_financials/2026/q1/1q26-pressrelease-September-final_.pdf",
+    "used": true,
+    "why": "Primary disclosure of positive net income at a hyperscaler expressly discussed in the context."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/691e34d93d633290a88deeef/",
+    "used": true,
+    "why": "Primary disclosure confirms NVIDIA's positive earnings in its latest reported quarter."
+   },
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_financials/2025/q3/AMZN-Q3-2025-Earnings-Release.pdf",
+    "used": false,
+    "why": "Read the release. AWS operating income does not establish GPU-specific net profit; Oracle supplies the simpler company-level counterexample."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q1/press-release-webcast",
+    "used": false,
+    "why": "Read the release. Its consolidated earnings do not resolve the narrower AI-activity interpretation and are unnecessary alongside Oracle."
+   }
+  ],
+  "performed_at": "2026-10-29T20:24:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s23-q4cdn-com-440135859-files-doc-financials-2026-q1-1q26-pressrele-117617ddf4d8",
+   "source_snapshot_id": "e9992c97ffe0ead6fe522810fbdf1c3f644b27787005a109123e545461398d09",
+   "publisher": "Oracle",
+   "source_type": "company_disclosure",
+   "url": "https://s23.q4cdn.com/440135859/files/doc_financials/2026/q1/1q26-pressrelease-September-final_.pdf",
+   "locator": "Opening financial-results discussion, fiscal 2026 first quarter",
+   "receipt": {
+    "public_excerpt": "GAAP net income was $2.9 billion.",
+    "quote_hash": "a71a5f6455af477891c1c89faae9b7ab663ccb2affbf8139ea7e25a573e9750b",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-31",
+   "available_at": "2025-09-09",
+   "retrieved_at": "2026-10-29T16:42:27Z",
+   "relation": "context",
+   "explanation": "Oracle's positive company-level net income is strong counterevidence to the ordinary reading. It does not isolate GPU-service earnings, and its stated GAAP basis cannot silently replace the claim's unspecified basis.",
+   "metric_scope": {
+    "company": "Oracle",
+    "metric": "Consolidated net income",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-06-01",
+    "period_end": "2025-08-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-691e34d93d633290a88deeef",
+   "source_snapshot_id": "b1351e8e3ad1bc9622d029cba7451b4ddff34a32fb1b0e201c3d681bc0537f2d",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/691e34d93d633290a88deeef",
+   "locator": "Opening financial-results discussion",
+   "receipt": {
+    "public_excerpt": "For the quarter, GAAP and non-GAAP earnings per diluted share were both $1.30.",
+    "quote_hash": "ce3804ce87c61d4d5c7008c8bc70a8204cd86c88f5f8bf7c3e60356c13a48ef3",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-26",
+   "available_at": "2025-11-19",
+   "retrieved_at": "2026-10-29T02:54:42Z",
+   "relation": "context",
+   "explanation": "Positive reported earnings are consistent with the NVIDIA portion. They do not establish that NVIDIA was the only profitable participant.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "GAAP diluted earnings per share",
+    "currency": "USD",
+    "units": "dollars per diluted share",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-28",
+    "period_end": "2025-10-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The claim's accounting basis is unknown; the specified rules prohibit a supported or contradicted money-claim outcome on that basis.",
+  "Public company earnings do not isolate profits attributable to GPU-based AI activities."
+ ],
+ "packet_hash": "90ce91c8b3cbff8c3adc64eac3d6a43a2f5c7773ad5a1c73eb7d39b81c9b238f"
+}

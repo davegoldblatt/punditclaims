@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-llms-dishonest-unpredictable-and-9dec2f-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-9dec2f",
+  "version": 1,
+  "content_hash": "caa44067080d412c1c1e357587126d10d7abf107f0b292bb11845cabe576ffb1"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-9dec2f",
+  "version": 1,
+  "content_hash": "5cc5d6915b5128bebb382a8dac18b4971dcd5d917c4939864f8906fd9fc6cc9e"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-9dec2f-p1",
+  "content_hash": "a05b897855f0f6502b567f8e7fab928745068a15758b0582164e46f394f72e30"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-04-01",
+  "end": "2025-06-22",
+  "precision": "day"
+ },
+ "public_rationale": "Supported on the ordinary reading that LLMs cannot reliably recognize their knowledge limits. AbstentionBench documents broad failures on questions that should trigger uncertainty or abstention. However, calibration research demonstrates useful uncertainty signals and successful self-evaluation in some settings. The evidence therefore does not support the stronger reading that LLMs never recognize what they do not know. This distinction makes the interpretation material to the result.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "Benchmark results do not establish failure on every model or task.",
+  "Abstention depends partly on prompting and response policy; it does not directly reveal internal knowledge.",
+  "The decisive study was a preprint and used automated judging with imperfect agreement against human labels."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dishonest-unpredictable-and-9dec2f-4x-review-anthropic-1",
+  "marcus-llms-dishonest-unpredictable-and-9dec2f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dishonest-unpredictable-and-9dec2f-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dishonest-unpredictable-and-9dec2f",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs do not know the limits of their own knowledge.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "One of the vexing things about LLMs is that they don’t know what they don’t know.",
+   "locator": "paragraph 39",
+   "url": "https://garymarcus.substack.com/p/llms-dishonest-unpredictable-and",
+   "date": "2025-06-22",
+   "document_title": "LLMs: Dishonest, unpredictable and potentially dangerous.",
+   "observed_at": "2026-10-28T23:56:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs",
+    "they don’t know what they don’t know"
+   ],
+   "our_interpretation": [
+    "The ordinary behavioral reading is that LLMs do not reliably recognize when they lack the knowledge needed to answer accurately. This does not require that they have no useful uncertainty signals whatsoever.",
+    "Recognition is assessed through confidence calibration and appropriate abstention, without making claims about subjective awareness.",
+    "For this ongoing observation, use the current calendar quarter through publication, April 1–June 22, 2025, as the latest reporting window for contemporary model evaluations. Marcus supplied no reporting period."
+   ],
+   "support_condition": "Contemporary evaluations across multiple LLMs demonstrate substantial failures to recognize uncertainty or withhold answers when necessary information is unavailable.",
+   "contradiction_condition": "Representative contemporary evaluations show that LLMs reliably distinguish answerable from unanswerable questions and communicate uncertainty or abstain appropriately across varied tasks."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Supported on the ordinary reading that LLMs cannot reliably recognize their knowledge limits. AbstentionBench documents broad failures on questions that should trigger uncertainty or abstention. However, calibration research demonstrates useful uncertainty signals and successful self-evaluation in some settings. The evidence therefore does not support the stronger reading that LLMs never recognize what they do not know. This distinction makes the interpretation material to the result.",
+  "limitations": [
+   "Benchmark results do not establish failure on every model or task.",
+   "Abstention depends partly on prompting and response policy; it does not directly reveal internal knowledge.",
+   "The decisive study was a preprint and used automated judging with imperfect agreement against human labels."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "abstention is an unsolved problem",
+    "locator": "Abstract; methods and results in sections 3–4 of version 1",
+    "url": "https://arxiv.org/abs/2506.09038",
+    "publisher": "Kirichenko et al., arXiv",
+    "event_date": "2025-06",
+    "available_at": "2025-06-10",
+    "explanation": "The June evaluation covers 20 models and 20 datasets involving missing information, false premises, and other reasons to abstain. Its widespread failures support unreliable recognition of limits, while improvements from prompting show that the failure is not absolute."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "reduces overconfidence problem in high-confidence predictions.",
+    "locator": "Section 1, findings paragraph; section 3.5 and Appendix E",
+    "url": "https://arxiv.org/html/2505.23854v1",
+    "publisher": "Tao et al., arXiv",
+    "event_date": "2025-05",
+    "available_at": "2025-05-29",
+    "explanation": "Across 80 models on MMLU-Pro, the study finds meaningful uncertainty signals and particularly strong uncertainty estimation from Qwen3-235B-A22B. This materially qualifies the absolute wording, but bounded calibration success does not establish reliable recognition across tasks."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "encouraging performance, calibration, and scaling",
+    "locator": "Research summary, discussion of answer self-evaluation",
+    "url": "https://www.anthropic.com/research/language-models-mostly-know-what-they-know",
+    "publisher": "Anthropic",
+    "event_date": "2022-07",
+    "available_at": "2022-07-11",
+    "explanation": "Earlier experiments found that models could estimate whether answers were correct, while knowledge-confidence calibration transferred imperfectly to new tasks. This is counterevidence to zero self-knowledge, but concerns an earlier model generation outside the target period."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "d90a6a1817a65afa37fbda99b3de0c406f367d7798c538f3f8ea0c12ca3defae",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:46:42Z"
+}

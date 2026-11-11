@@ -1,0 +1,73 @@
+{
+ "run_id": "wyea-dead-money-ec2ec3-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:wyea-dead-money-f32ea5": "92016bb55dd917eaf5db0ca5b8cdf04aa9bbb5f2daed88b4785a44cd3f6e0613",
+  "payload:wyea-dead-money-f32ea5": "650ecba7a8902c82679d782f6208115cce9b0725434bb0f7c574e9b90320f65c",
+  "case:wyea-dead-money-f8f550": "c7e04b898371925ba6cbe6c944b1fb60c0fa3343969af41a866a0b7728c85192",
+  "payload:wyea-dead-money-f8f550": "a59f03e64b3e14ce48b6b4dde07ff721d88651cdf49106f882b736e4b300943a",
+  "case:wyea-dead-money-fd5ee0": "551f70c504b8857084c6cc7ff9a2ae81355b56dfa7ab9f2d366c9615c3e8d5f2",
+  "payload:wyea-dead-money-fd5ee0": "44d5048a0a4dc0c98ce0ed8717c2b987614b1d5a4540aeb9a4c75ee51ff6096a"
+ },
+ "started_at": "2026-10-29T17:40:47Z",
+ "completed_at": "2026-10-29T17:41:24Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. Proposition and the 'author's estimate' qualifier match the statement. The quarter and annualization are labelled as evaluator choices. Rationale fits e1: IDC covers infrastructure in Q1 2026, an earlier quarter. Axis, horizon and outcome match the reviews. Minor point: the '$67.9 billion' excerpt is IDC's US-only figure, but no part of the payload says it is US-only. It is accurate but could be clearer.",
+    "claim_id": "wyea-dead-money-f32ea5"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The unknown accounting basis also prevents a definitive money-claim score."
+    ],
+    "verdict": "fail",
+    "note": "Excerpt, proposition, citations, and the forecast_outcome/open_horizon/unresolved result are fine. The rationale correctly treats e1 (bond yields) and e2 (conversion terms) as context only. The third limitation is unsupported. This is a default forecast, not a money claim. The contract sets interpretation_determines_result to false. The outcome is unresolved because no qualifying default or discharge has happened, not because the accounting basis is unknown. Remove that sentence.",
+    "claim_id": "wyea-dead-money-f8f550"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt is verbatim. The proposition leaves out 'lifetime', but the payload shows it in the speaker criteria and in the interpretation as lifetime interest. Rationale is consistent with e1 (2025 principal amounts) and e2 (April 2026 notes at 9.750%, due 2031). It correctly says the September 29 replacement yields are missing. Citations' dates and relations match the frozen items. The unresolved outcome matches the reviews.",
+    "claim_id": "wyea-dead-money-fd5ee0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25454,
+  "output_tokens": 4081,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

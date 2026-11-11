@@ -1,0 +1,53 @@
+claim_id: wyea-dead-money-b10e40
+version: 2
+claim_revision_ref:
+  id: wyea-dead-money-b10e40
+  version: 1
+  content_hash: 49c2e36cf5ddde02e9d511c6198ff0bf0cf6309bf02007df5e846d811a72ce81
+assessment_axis: historical_observation
+explicit_source_elements:
+  - '"In both of these cases": the Sharon AI/ESDS contract (8,208 B300s at $3.30 an hour for five years, about $1.264 billion) and the Catalyst Compute/Canopy Wave contract (256 B300s, about $44.6 million)'
+  - '"capital expenditures are barely paid off in five years"'
+  - "\"only if you don't include a single dollar of operating expenses or associated debt\""
+  - "his capex inputs: about $550,000 per 8-GPU B300 pod, with 'the capex' for the facility 'a comparable amount', giving about $1.1 billion and about $35 million"
+evaluator_interpretation:
+  - This is an appraisal of the two contracts as signed and disclosed before the post. The test compares each contract's full five-year value, assuming full payment, with the project's actual or company-disclosed capital cost. Disclosures from the contract signings onward count, including any mid-2026 project budget.
+  - "'Barely paid off' is read as five-year contract revenue only modestly above capex: roughly up to a third more, as with his own figures of $1.264 billion vs $1.1 billion and $44.6 million vs $35 million. Revenue far above capex (for example, 1.5 times or more) would contradict it."
+  - The second part ('only if you don't include ... opex or debt') is read as saying that once operating costs and financing costs are added, five-year receipts would not cover total cost. It is tested only if capex, opex, and debt cost data are available.
+  - Capex counts only what the contract holder actually spends. If a provider rents space in an existing data center, facility costs are operating expenses, not capex.
+support_condition: "Disclosed capital cost for each project sits close to its five-year contract value: the contract exceeds capex only modestly, and adding reasonable opex and financing costs would leave no surplus."
+contradiction_condition: Disclosed capital cost for either or both projects sits well below the five-year contract value (for example, contract value 1.5 times capex or more), so capex is clearly more than 'barely' recovered before opex and debt.
+measurement_requirements: Each project's five-year contract value and its disclosed or documented capital cost (GPU servers, networking, any owned facility build), plus where possible opex and debt cost.
+source_requirements: SharonAI and KIDZ AI SEC filings and press releases; contract documents; credible reporting on project budgets.
+metric_scope:
+  company: SharonAI Holdings; KIDZ AI (Catalyst Compute LLC)
+  metric: five-year contract value vs project capital expenditure
+  currency: USD
+  units: millions
+  accounting_basis: estimate
+  fiscal_or_calendar: unknown
+  period_start: 2026-04-01
+  period_end: 2031-09-30
+  stock_or_flow: flow
+  annualized_or_realized: not_applicable
+  gross_or_net: gross
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2026-04-01
+  end: 2026-09-29
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - "'Barely paid off' has no stated margin."
+  - The capex is his own estimate (pod price, and an equal amount again for the facility). The real project capex may differ, especially if the GPUs sit in leased data center space.
+  - The target period runs from the first contract signing (2026-04-01) to the post date. This is my choice so that disclosures about the contracts, including mid-2026 project budgets, count.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-31T19:44:47Z
+frozen_at: 2026-10-31T19:44:47Z
+policy_version: 2026-10-28.7
+content_hash: 1af2a3a4aeb24eb172302bd757fa3d4b32afd6c60a15e1ffa074f585e165ce39

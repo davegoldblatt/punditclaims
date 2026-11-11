@@ -1,0 +1,137 @@
+{
+ "packet_id": "wyea-wheres-the-money-1efc99-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-1efc99",
+  "version": 1,
+  "content_hash": "a7d604107f2ce5fac1291bc282ee33c646ef024de63fc6513fc71b4ba076d944"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-1efc99",
+  "version": 1,
+  "content_hash": "92053c64efa1fb7107010fc54486f2f53817e75d96e5b1138f14c8c90f848ed2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2024 actual revenue 3.7 billion 5 billion loss 2025 expenses training inference costs",
+   "OpenAI 2024 loss 5 billion excluding stock compensation Reuters September 2024",
+   "OpenAI 2024 5 billion loss 3.7 revenue CNBC September 27 2024",
+   "\"OpenAI\" \"2024\" \"stock\" \"12.48\"",
+   "\"OpenAI spending hit $34bn\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+    "used": true,
+    "why": "Read in full. Independently confirms the contemporary revenue and loss forecasts, but not completed-year expenses."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+    "used": true,
+    "why": "Read in full. Fortune's report specifies the exclusion of equity compensation from the forecast loss."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-projections-imply-losses-tripling-to-14-billion-in-2026",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search text was not used as citable evidence."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-spending-hit-34bn-last-032859173.html",
+    "used": false,
+    "why": "Read in full. The Financial Times independently confirmed financial figures, but this article does not provide a reconciled 2024 expense total excluding stock compensation."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": false,
+    "why": "Read in full. Its operating-expense and loss figures are not reconciled to the claimed exclusion; much of the reporting also traces back to Zitron."
+   }
+  ],
+  "performed_at": "2026-10-29T22:25:44Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cnbc-com-2024-09-27-openai-sees-5-billion-loss-this-year-on-3point7-9437e7cf32e6",
+   "source_snapshot_id": "5dcdb740be1dafcb832346f53fc5568d66e42583be24be25dd264b625eb5a6ba",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+   "locator": "First paragraph of article body",
+   "receipt": {
+    "public_excerpt": "$5 billion in losses",
+    "quote_hash": "8df5b2fd936ead1e27b965c519b87880eeb5628f8e83cef4706b8033347f3343",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-27",
+   "retrieved_at": "2026-10-29T02:03:27Z",
+   "relation": "context",
+   "explanation": "These forecasts explain the approximate $9 billion arithmetic. They do not establish expenses actually incurred over the completed year.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual revenue and loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected revenue: $3.7 billion",
+     "Projected loss: approximately $5 billion",
+     "Equity-compensation exclusion described in e2"
+    ],
+    "formula": "3.7 + 5.0 = 8.7 billion, conditional on a compatible revenue-to-loss reconciliation",
+    "rounding": "$8.7 billion rounds to $9 billion to the nearest billion."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-sees-5-billion-loss-170306927-html",
+   "source_snapshot_id": "a6b55647389acc1c597b73b58fad8f63aae5fa820be691e9569ce71349ac3b65",
+   "publisher": "Fortune, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+   "locator": "Third paragraph of article body",
+   "receipt": {
+    "public_excerpt": "doesn't include equity-based compensation",
+    "quote_hash": "873fd1387f36ac9de9727944e090f9c1f78d74636a7a7ba8ad72941a15bcc58f",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-30",
+   "retrieved_at": "2026-10-29T11:19:24Z",
+   "relation": "context",
+   "explanation": "This identifies an important exclusion in the projected loss. It remains a forecast rather than a reconciled completed-year expense figure.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual loss excluding equity-based compensation",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No cited completed-year expense figure reconciles the stock-compensation exclusion and other adjustments.",
+  "The available forecasts establish the arithmetic's origin, not its realization."
+ ],
+ "packet_hash": "d95759369ac83f9c46e5b14f4921879ecd61f7cda503692ba8cd1da2b04e02d3"
+}

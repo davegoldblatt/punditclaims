@@ -1,0 +1,138 @@
+{
+ "assessment_id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3",
+  "version": 2,
+  "content_hash": "c1d7207fa01255935fbb75e2b59330eaa187e5041b61372e97977c5fb5f69621"
+ },
+ "contract_ref": {
+  "id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3",
+  "version": 1,
+  "content_hash": "b35bba4d913c944859d04bdfac697ea73d498432069810021c20f0ceacff7619"
+ },
+ "packet_ref": {
+  "id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-p1",
+  "content_hash": "121a6095ae04f1e6b9ffa585f3451433af1332c2b87cd46f63d7ce45c7dcde84"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2022-12-01",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence supports related observations, but does not settle the stated training explanation. GPT-3 struggled with entity tracking in a controlled evaluation (e1). Separate experiments found factual forgetting during OLMo training (e3). Neither traces GPT-3's binding errors to its training. Mechanistic evidence also shows that other language models can represent bindings (e2), which does not contradict Marcus's limited word 'sometimes.' Treating any incorrect association as sufficient would drop the claim's explicit training clause.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The result depends on retaining the training-specific meaning rather than treating the sentence as shorthand for incorrect answers.",
+  "Failure to locate decisive evidence does not establish that Marcus's explanation is false.",
+  "Study event dates are recorded at year precision because exact experimental dates were not established."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-1x-review-anthropic-1",
+  "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-come-gpt-can-seem-so-brilliant-8671b3",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Over the course of training, GPT sometimes loses track of the precise relations ('bindings') between entities and their properties.",
+  "kind": "observation",
+  "conditions": [
+   "over the course of training",
+   "sometimes"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Over the course of training, GPT sometimes loses track of the precise relations (“bindings”, to use a technical term) between those entities and their properties.",
+   "locator": "paragraph 37",
+   "url": "https://garymarcus.substack.com/p/how-come-gpt-can-seem-so-brilliant",
+   "date": "2022-12-01",
+   "document_title": "How come GPT can seem so brilliant one minute and so breathtakingly dumb the next?",
+   "observed_at": "2026-10-29T00:04:44Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Over the course of training",
+    "GPT sometimes loses track",
+    "the precise relations",
+    "between those entities and their properties"
+   ],
+   "our_interpretation": [
+    "The surrounding discussion identifies GPT-3 as the relevant model.",
+    "The ordinary reading is that training sometimes fails to preserve correct entity-property associations. This need not mean that an association was first perfectly learned and then forgotten.",
+    "The training clause makes this an explanation of how errors arise, although the supplied classification calls it an observation. Incorrect answers alone do not establish that explanation.",
+    "The relevant training occurred before the December 1, 2022 post; its starting date is unspecified."
+   ],
+   "support_condition": "Experiments on the relevant GPT models trace incorrect entity-property associations to loss or confusion of those associations during training, using known training examples, checkpoints, or other direct causal evidence.",
+   "contradiction_condition": "Direct evidence establishes that the relevant training preserves these associations and rules out training-induced loss or confusion as the proposed explanation. Successful binding examples alone cannot refute 'sometimes.'"
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports related observations, but does not settle the stated training explanation. GPT-3 struggled with entity tracking in a controlled evaluation (e1). Separate experiments found factual forgetting during OLMo training (e3). Neither traces GPT-3's binding errors to its training. Mechanistic evidence also shows that other language models can represent bindings (e2), which does not contradict Marcus's limited word 'sometimes.' Treating any incorrect association as sufficient would drop the claim's explicit training clause.",
+  "limitations": [
+   "The result depends on retaining the training-specific meaning rather than treating the sentence as shorthand for incorrect answers.",
+   "Failure to locate decisive evidence does not establish that Marcus's explanation is false.",
+   "Study event dates are recorded at year precision because exact experimental dates were not established."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "only GPT-3.5 text-davinci-003 consistently outperformed the (strong) random baseline.",
+    "locator": "Section 4.4, Results, discussion of Figure 2",
+    "url": "https://arxiv.org/html/2305.02363v2",
+    "publisher": "Kim and Schuster, ACL 2023; arXiv",
+    "event_date": "2023",
+    "available_at": "2023-09-08",
+    "explanation": "The study includes GPT-3 davinci and documents difficulty tracking changing box contents. It tests inference after training, so it does not show that training lost associations from training examples."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "represent binding information",
+    "locator": "Abstract, sentence beginning 'Using causal interventions'",
+    "url": "https://arxiv.org/abs/2310.17191",
+    "publisher": "Feng and Steinhardt; arXiv",
+    "event_date": "2024",
+    "available_at": "2024-05-06",
+    "explanation": "Experiments identify a binding mechanism in Pythia and LLaMA models. This limits any inference that language models cannot represent bindings, but different models and successful cases do not refute occasional training failures in GPT-3."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "the log probability decreases again",
+    "locator": "Section 4.1, discussion of Figure 2",
+    "url": "https://arxiv.org/html/2406.11813v3",
+    "publisher": "Chang and colleagues, NeurIPS 2024; arXiv",
+    "event_date": "2024",
+    "available_at": "2024-11-12",
+    "explanation": "Controlled OLMo pretraining experiments show that gains from injected factual knowledge subsequently diminish. This makes training-related forgetting plausible, but does not establish entity-property binding loss in the GPT-3 training discussed by Marcus."
+   }
+  ],
+  "what_would_resolve": "A controlled study of the relevant GPT model linking known entity-property training examples to later confusion or loss across training, with tests separating stored associations from retrieval errors.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ba2971433791848f053ad023f5aee471adc274e826dddadc9151f7918cc06776",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:26:26Z"
+}

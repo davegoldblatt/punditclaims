@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-deep-impact-491ea1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-491ea1",
+  "version": 1,
+  "content_hash": "896655de167b45dc71cb3fbddc90b701e56f3319e24e3e321d90f84b3d204ddb"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-491ea1",
+  "version": 1,
+  "content_hash": "68825126263cc1da3f49c78d3892ed930d4371ff3d9492c5fcec04c1d78cb304"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com GPT-4o May 2024 twice as fast half price efficiency",
+   "site.anthropic.com \"2024\" \"efficiency\" \"Sonnet\"",
+   "site.anthropic.com/news \"prompt caching\" \"latency\" 2024",
+   "site.aws.amazon.com/blogs \"2024\" \"prompt caching\" \"Claude\"",
+   "OpenAI Anthropic 2024 efficiency resource allocation funding pressure incentives prompt caching"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/api-prompt-caching/",
+    "used": true,
+    "why": "Dated primary record of an implemented method that reuses processed inputs."
+   },
+   {
+    "url": "https://platform.claude.com/docs/en/release-notes/overview",
+    "used": true,
+    "why": "Anthropic's dated release history records prompt caching in August 2024."
+   },
+   {
+    "url": "https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-bedrock-preview-prompt-caching/",
+    "used": true,
+    "why": "Primary deployment announcement explicitly connects caching with lower computing requirements."
+   },
+   {
+    "url": "https://openai.com/index/hello-gpt-4o/",
+    "used": false,
+    "why": "Corroborative speed and efficiency claims, but caching provides a more concrete technical counterexample."
+   },
+   {
+    "url": "https://www.anthropic.com/news/prompt-caching",
+    "used": false,
+    "why": "The readable page has a 2025 date alongside a 2024 update. The dated release history is clearer."
+   },
+   {
+    "url": "https://darioamodei.com/on-deepseek-and-export-controls",
+    "used": false,
+    "why": "An interested executive's explanation of incentives does not independently establish the causal effect of financing."
+   }
+  ],
+  "performed_at": "2026-10-29T19:59:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-api-prompt-caching",
+   "source_snapshot_id": "366f1c2f14b29c73f9b493d3fa1de943384ca17319542b673fc34646f6d8b629",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/api-prompt-caching",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "By reusing recently seen input tokens, developers can get a 50% discount and faster prompt processing times.",
+    "quote_hash": "fb3e194764c5ef8dbe8307c5ff94a1b9cee4d6b3429dce55f19fd9a983d3c8a4",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-01",
+   "available_at": "2024-10-01",
+   "retrieved_at": "2026-10-29T19:50:31Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI delivered reuse of previously processed inputs before the post. This is an implemented inference improvement, not merely a plan or an unexplained price reduction.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "platform-claude-com-docs-en-release-notes-overview",
+   "source_snapshot_id": "3796bba13f7a5156dd9925bd8d5ae3215c3f5d42e51f1f777871d0474631f19f",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview",
+   "locator": "August 14th, 2024 release entry",
+   "receipt": {
+    "public_excerpt": "Cache and re-use prompts to reduce latency by up to 80% and costs by up to 90%.",
+    "quote_hash": "b296dd226a4bee37e8f3522a7f7b6dcb3774ed8fb34df0e1c74a3e8dbf91475c",
+    "verified": "exact"
+   },
+   "event_date": "2024-08-14",
+   "available_at": "2024-08-14",
+   "retrieved_at": "2026-10-29T10:30:53Z",
+   "relation": "contradicts",
+   "explanation": "Anthropic's release history records a delivered prompt-reuse feature and substantial potential latency reductions. It contradicts the claimed absence of achieved inference improvements.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "aws-amazon-com-about-aws-whats-new-2024-12-amazon-bedrock-preview-prompt-caching",
+   "source_snapshot_id": "3442230275762fbc5377896811d3fd5ba4459a2340fef8a77f83cacdbb53da43",
+   "publisher": "Amazon Web Services",
+   "source_type": "company_disclosure",
+   "url": "https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-bedrock-preview-prompt-caching",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "When cache is used, fewer computing resources are needed to generate output.",
+    "quote_hash": "0d5aeae78e71d8d545b19ab720a5a076498262b943290600e4d269ae8054eb8f",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-04",
+   "available_at": "2024-12-04",
+   "retrieved_at": "2026-10-29T19:52:28Z",
+   "relation": "context",
+   "explanation": "AWS explains the computational saving from caching and announces its availability for Claude models. This corroborates the technical mechanism; it does not establish either company's financing incentives.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The records do not establish how abundant financing affected the amount or priority of efficiency work.",
+  "They do not show whether either company had matched DeepSeek's particular training methods or efficiency gains."
+ ],
+ "packet_hash": "83fb92f7179749df6934768caf4643eeca38fa6472f0df6159ae63cde7fd55ab"
+}

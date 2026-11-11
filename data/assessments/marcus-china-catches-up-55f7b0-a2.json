@@ -1,0 +1,148 @@
+{
+ "assessment_id": "marcus-china-catches-up-55f7b0-a2",
+ "claim_revision_ref": {
+  "id": "marcus-china-catches-up-55f7b0",
+  "version": 1,
+  "content_hash": "00819cb7fa80bb4f3de2a439a83d080858285a6d6a82e8a3e5aff38a9c2a32bb"
+ },
+ "contract_ref": {
+  "id": "marcus-china-catches-up-55f7b0",
+  "version": 2,
+  "content_hash": "332d0a48c026dcf8077dd0f820e4301423a430ceb4f9835a22be1707be49d5d3"
+ },
+ "packet_ref": {
+  "id": "marcus-china-catches-up-55f7b0-p2",
+  "content_hash": "7cc3aeaa63c206f50398fffa48dc098a4839e7240cbdbe50f199a58f752df643"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The training-to-cost mechanism has support: training computation depends on data quantity and model size, and a disclosed training run used millions of accelerator-hours. But this does not establish the full claim. The inference explanation remains unproven: Chinchilla illustrates that more training data can accompany lower inference computation and better performance, although its remaining resource requirements may still be substantial. Classification experiments also show inefficient uses of LLMs, but cannot establish inefficiency across their general-purpose capabilities. The evidence supports parts of Marcus's concern without settling both asserted necessities or the paradigm-wide judgment.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The assessment tests the causal explanations rather than treating high expenditure alone as proof of inefficiency.",
+  "Older model measurements are contextual and are not substituted for June 2026 industry measurements.",
+  "No numerical meaning for 'wildly' or 'vast' has been invented.",
+  "The evidence does not justify treating efficiency improvements as a decisive contradiction."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-china-catches-up-55f7b0-1x-review-anthropic-1",
+  "marcus-china-catches-up-55f7b0-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-china-catches-up-55f7b0-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-china-catches-up-55f7b0",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The current LLM paradigm is a wildly inefficient brute-force approach that is expensive to develop and requires vast resources to run.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "First, it is wildly inefficient, a brute force paradigm that requires a model to train on the entire internet in order to approximate intelligence — hence expensive to develop; it is also difficult to operate, because the approximation, being derivative of the entire internet, requires vast resources in order to run.",
+   "locator": "paragraph 4",
+   "url": "https://garymarcus.substack.com/p/china-catches-up",
+   "date": "2026-06-28",
+   "document_title": "China catches up",
+   "observed_at": "2026-10-28T22:29:10Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "wildly inefficient",
+    "a brute force paradigm",
+    "requires a model to train on the entire internet in order to approximate intelligence",
+    "hence expensive to develop",
+    "because the approximation, being derivative of the entire internet, requires vast resources in order to run"
+   ],
+   "our_interpretation": [
+    "Read 'entire internet' as web-scale training, not literally every internet page.",
+    "Read the target as general-purpose LLMs discussed in the post, rather than requiring every small specialist model to have frontier-model costs.",
+    "Assess both asserted mechanisms: learning from web-scale data causes high development costs; the resulting internet-derived approximation makes substantial operating resources necessary.",
+    "Read 'wildly inefficient' as using excessive resources relative to useful performance. High absolute expenditure alone does not establish inefficiency.",
+    "Treat 'brute force' as a characterization of reliance on large-scale training, not a claim that developers use no sophisticated algorithms.",
+    "The primary assessment concerns causal mechanisms asserted as of 2026-06-28. It does not concern a particular accounting or reporting period, so target_period is null. Earlier model measurements are contextual examples, not measurements of June 2026 industry costs."
+   ],
+   "support_condition": "Evidence must establish that useful general-purpose performance depends on web-scale learning and that this learning substantially drives development costs. It must also connect the resulting internet-derived representation to necessarily substantial inference resources. Comparisons of resources and useful performance must substantiate the claimed inefficiency.",
+   "contradiction_condition": "Comparable-performance experiments must show that the asserted dependence on web-scale training or necessarily substantial inference resources does not hold, or that resource use is not excessive against a relevant alternative. Lower costs that remain substantial, or efficient performance on a narrow task, do not alone contradict the whole claim."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The training-to-cost mechanism has support: training computation depends on data quantity and model size, and a disclosed training run used millions of accelerator-hours. But this does not establish the full claim. The inference explanation remains unproven: Chinchilla illustrates that more training data can accompany lower inference computation and better performance, although its remaining resource requirements may still be substantial. Classification experiments also show inefficient uses of LLMs, but cannot establish inefficiency across their general-purpose capabilities. The evidence supports parts of Marcus's concern without settling both asserted necessities or the paradigm-wide judgment.",
+  "limitations": [
+   "The assessment tests the causal explanations rather than treating high expenditure alone as proof of inefficiency.",
+   "Older model measurements are contextual and are not substituted for June 2026 industry measurements.",
+   "No numerical meaning for 'wildly' or 'vast' has been invented.",
+   "The evidence does not justify treating efficiency improvements as a decisive contradiction."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "inference compute and energy costs",
+    "locator": "Section 1, Introduction, opening paragraph",
+    "url": "https://arxiv.org/html/2401.00448v3",
+    "publisher": "Sardana et al.; ICML/PMLR, revised author version on arXiv",
+    "event_date": "2025-04-14",
+    "available_at": "2025-04-14",
+    "explanation": "The revised analysis identifies training-data quantity and model size as determinants of training computation, supporting the training-to-cost mechanism. It separately identifies model size and demand as inference-cost determinants; it does not establish that internet derivation makes vast operating resources unavoidable."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "2.788M H800 GPU hours for its full training.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2412.19437",
+    "publisher": "DeepSeek-AI",
+    "event_date": "2024",
+    "available_at": "2025-02-18",
+    "explanation": "The report describes pretraining on 14.8 trillion tokens and substantial accelerator use, illustrating the training burden. This historical, self-reported example neither measures June 2026 development costs nor demonstrates that such resource use was inefficient or necessary."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "substantially less compute for fine-tuning and inference",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2203.15556",
+    "publisher": "Hoffmann et al., DeepMind; arXiv",
+    "event_date": "2022",
+    "available_at": "2022-03-29",
+    "explanation": "Chinchilla used more training data and fewer parameters than Gopher, improved measured performance and reduced inference computation. This challenges a simple inference from training-data scale to operating cost, but does not show that the remaining resources were small or refute Marcus's broader necessity claim."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "variability in inference energy consumption",
+    "locator": "Abstract",
+    "url": "https://www.nature.com/articles/s41598-026-45023-0",
+    "publisher": "Scientific Reports",
+    "event_date": "2026",
+    "available_at": "2026-04-17",
+    "explanation": "The study reports cases where LLMs consume more energy without better classification accuracy, supporting concern about inefficiency on those tasks. Its narrow task comparison does not establish inefficiency across general-purpose capabilities or isolate internet-derived learning as the cause."
+   }
+  ],
+  "what_would_resolve": "Comparable-capability experiments that vary training-data scale and model design, measure development and inference resources separately, and test whether internet-derived learning makes substantial operating costs unavoidable. Representative measurements and a defensible performance comparator would also be needed to settle the broad inefficiency claim.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "fc77b1f5e1f7c3815ebce214161d37a9acfe46e31dadb64d1f856f71eb16bd77",
+ "supersedes_assessment_id": "marcus-china-catches-up-55f7b0-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-09T19:50:53Z"
+}

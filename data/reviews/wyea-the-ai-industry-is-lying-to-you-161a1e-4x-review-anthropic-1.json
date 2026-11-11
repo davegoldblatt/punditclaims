@@ -1,0 +1,179 @@
+{
+ "run_id": "wyea-the-ai-industry-is-lying-to-you-161a1e-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-ai-industry-is-lying-to-you-161a1e": "ed2f99ed96e9879f3dab17c794619ae7df71f29e38cd0edebc8cc9b018429237",
+  "case:wyea-the-ai-industry-is-lying-to-you-2524e1": "eb59848d5bb6e216f2df539e3157d2f39dd81121305fd40a2aa2883479cadf0e",
+  "case:wyea-the-ai-industry-is-lying-to-you-2a7027": "00878f27b036628794b2f102ddcd707d3e03e0401a0954cdff1c3b77a51abfa4",
+  "case:wyea-the-ai-industry-is-lying-to-you-3ee241": "0c05fd354e0a0c9599b2eab6d4aa3987c41e6beef3a4f74ac9e833357c524d77"
+ },
+ "started_at": "2026-10-29T18:09:02Z",
+ "completed_at": "2026-10-29T18:09:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post. They are not quoted from anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The arrival part is firm ('absolutely'). The knowledge part is introduced by 'I also think' and is a graded judgment ('really tough'). The normalised text drops that hedge and presents both parts as equally firm. Only the arrival part can be scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly treats the knowledge part as the speaker's judgment and says it will assess the two parts separately. But its support condition still asks for evidence of knowledge, which should not be scored given the hedge. Scored on arrival only."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "DOJ account of a guilty plea: NVIDIA H100/H200 GPUs were shipped to the PRC between Oct 2024 and May 2025. This counts as an admitted completed shipment. It is a government source, not a company disclosure as labelled, and it says nothing on what NVIDIA knew."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Indictment allegations of diversion to China and of concealment from the manufacturer, including dummy servers. These are allegations only. They weaken an inference of knowledge from scale but settle nothing."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The firm claim that NVIDIA GPUs were reaching China is supported by the guilty plea, which describes completed shipments to the PRC. The claim that NVIDIA or Huang must have known is a hedged 'I think' judgment, so under policy it is not scored. The alleged concealment in e2 is context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-ai-industry-is-lying-to-you-161a1e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will have to decline' is a firm forecast, and 'at some point' sets no deadline. The normalisation keeps both."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The reading is fair: a fall in money spent, not just slower growth. The contract rightly says continued growth cannot contradict a forecast with no deadline."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA 10-Q for Q2 FY2027: revenue and Data Center revenue grew both year on year and quarter on quarter. This is a broader metric than GPU spending, and growth within a finite window cannot disprove an eventual decline."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The forecast has no deadline. No decline in aggregate GPU spending after publication is documented. The NVIDIA filing shows continued growth, which cannot contradict an open-ended forecast, and the early-resolution rule has not been met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-ai-industry-is-lying-to-you-2524e1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm compound observation: about $5B of revenue over four years, against at least $25B of salaries and compute. The four years are not named."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Taking 2022–2025 as the four years is a reasonable but assumed reading. The accounting basis and what counts as compute and salaries were not supplied by the speaker, and the result depends on them."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Audited S-1 figures for 2023–2025: about $5.01B revenue and about $12.7B in compute/infrastructure plus personnel costs. Revenue is consistent with the claim, but costs fall far short of $25B. The filing covers three years, not four, and GAAP categories that are not reconciled to the claim's terms, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Revenue matches roughly $5B. The cost total in the filing (about $12.7B over 2023–2025) is well below $25B, but there are no 2022 figures and the GAAP categories are not reconciled to 'salaries and compute'. The packet therefore does not establish a matched four-year comparison, and the outcome stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-ai-industry-is-lying-to-you-2a7027"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An aside saying the 'supposedly-planned' extension never really existed and was never going to happen. The second half is a counterfactual about inevitability."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "By calling it 'supposedly-planned', the speaker accepts that it was announced. His claim is that it was never a real plan. Treating a 'potential' expansion announcement as a contradiction stretches the reading against him. And 'never going to happen' cannot be tested."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Oracle fact sheet (Sep 2025) announcing a 'potential' 600MW expansion near Abilene. It is the companies' own disclosure about themselves. It shows the announcement the speaker acknowledged, but not that a real, committed plan existed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence is the announcement of a 'potential' expansion, and the speaker's 'supposedly-planned' already concedes it. Read fairly, he claims there was never a real plan, and nothing in the packet settles that either way. 'Was never going to happen' is a counterfactual that cancellation alone cannot prove.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-ai-industry-is-lying-to-you-3ee241"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26248,
+  "output_tokens": 5775,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

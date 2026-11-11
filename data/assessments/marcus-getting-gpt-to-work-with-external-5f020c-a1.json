@@ -1,0 +1,126 @@
+{
+ "assessment_id": "marcus-getting-gpt-to-work-with-external-5f020c-a1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-5f020c",
+  "version": 1,
+  "content_hash": "54422e6e313b4b9b046b29890df9513cad15083450017f3379d618de038236ee"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-5f020c",
+  "version": 1,
+  "content_hash": "4972968090efb30f96aaf001b6c0a1a6ca66147b32eefbebbb6a548071795ff0"
+ },
+ "packet_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-5f020c-p1",
+  "content_hash": "681a24791c907a1e24f5b73d1a9709cfd2d4ea8ed112d7676b6d33fb6e6c9c72"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-06",
+  "end": "2023-08",
+  "precision": "month"
+ },
+ "public_rationale": "The records confirm the reserved-symbol example and repeated mistakes. They also describe an apparently unrecovered name-conflict episode. However, the available edited records do not securely establish how often syntax failures occurred or whether the unrecovered episode was actually caused by syntax. This supports parts of the claim without settling its full frequency-and-recovery assertion.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "The arbitrary-problem document is a 2024 revision describing the 2023 tests.",
+  "General interface failures cannot all be counted as syntax failures.",
+  "A locally corrected error can coexist with an incorrect final answer."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-getting-gpt-to-work-with-external-0a2884-4x-review-anthropic-1",
+  "marcus-getting-gpt-to-work-with-external-0a2884-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-getting-gpt-to-work-with-external-5f020c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "In the tests, GPT-4 often made syntax errors calling Wolfram Alpha and sometimes could not correct them.",
+  "kind": "observation",
+  "conditions": [
+   "in the tests"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "GPT-4 often made syntactic mistakes in calling Wolfram Alpha (e.g. it tried to use a reserved word as a variable) and was sometimes unable to correct itself and find a correct formulation.",
+   "locator": "paragraph 15",
+   "url": "https://garymarcus.substack.com/p/getting-gpt-to-work-with-external",
+   "date": "2023-10-23",
+   "document_title": "Getting GPT to work with external tools is harder than you think",
+   "observed_at": "2026-10-29T00:02:53Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "often made syntactic mistakes",
+    "calling Wolfram Alpha",
+    "a reserved word as a variable",
+    "sometimes unable to correct itself",
+    "find a correct formulation"
+   ],
+   "our_interpretation": [
+    "Syntactic mistakes includes invalid symbol use, as Marcus's own example specifies; it is not restricted to parser errors.",
+    "Often means a recurring feature of the experiment, not merely several retries within one exceptional problem.",
+    "Failure to recover must concern the tool-call formulation, rather than an independently incorrect mathematical model.",
+    "The claim concerns the June–August 2023 experiment."
+   ],
+   "support_condition": "The records establish recurring invalid Wolfram formulations across problems and cases where subsequent attempts never produced a valid formulation.",
+   "contradiction_condition": "A sufficiently complete review establishes that such errors were isolated rather than recurring, or that all were successfully corrected."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The records confirm the reserved-symbol example and repeated mistakes. They also describe an apparently unrecovered name-conflict episode. However, the available edited records do not securely establish how often syntax failures occurred or whether the unrecovered episode was actually caused by syntax. This supports parts of the claim without settling its full frequency-and-recovery assertion.",
+  "limitations": [
+   "The arbitrary-problem document is a 2024 revision describing the 2023 tests.",
+   "General interface failures cannot all be counted as syntax failures.",
+   "A locally corrected error can coexist with an incorrect final answer."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "same mistake",
+    "locator": "Problem 11, pages 16–17, protected-symbol errors",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+    "publisher": "New York University; Scott Aaronson and Ernest Davis",
+    "event_date": "2023-08-02",
+    "available_at": "2023-08-15",
+    "explanation": "GPT-4 twice assigns to protected symbol E, receives explicit errors, and changes identifiers. This verifies recurrence within one problem, but the local corrections do not establish an unrecovered syntax failure."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "bugs",
+    "locator": "Problem 26, page 31; reserved-symbol example also in problem 10",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "publisher": "New York University; Ernest Davis and Scott Aaronson",
+    "event_date": "2023-07-12",
+    "available_at": "2024-09-17",
+    "explanation": "Problem 26 reports seven failed calls, apparently caused by variable-name conflicts, but omits the calls needed to confirm that diagnosis. Problem 10 separately documents replacing a reserved variable before encountering a different failure."
+   }
+  ],
+  "what_would_resolve": "Complete original call logs, classified by error type and recovery outcome, would establish whether invalid formulations recurred across the tests and sometimes remained uncorrected.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "145b7148c13a311e2438ba4a9c91837648f8723b62b8220c08d527f54bf8cf97",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:23:59Z"
+}

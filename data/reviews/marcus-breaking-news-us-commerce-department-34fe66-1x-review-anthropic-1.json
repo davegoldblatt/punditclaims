@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-breaking-news-us-commerce-department-34fe66-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-news-us-commerce-department-34fe66": "d23577b80de175b1d71c248819cbdf77a4b4e103ee296bb43f714351cd17cc9e"
+ },
+ "started_at": "2026-10-29T01:03:50Z",
+ "completed_at": "2026-10-29T01:04:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states the directive's existence in his own words. He quotes Anthropic only for the scope language, and he adopts it as fact."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised proposition matches the statement: Commerce issued an export control directive suspending access to both models by foreign nationals, including Anthropic's own employees. The headline's 'effectively shuts down' is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract tracks the statement's elements directly. The ambiguity flag about who issued the directive is settled by Fortune naming Commerce."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic, as recipient, disclosed on Jun 12 an export control directive to suspend access to both models by foreign nationals, including its staff. It names only 'the US government'. This is a company disclosure, not an independent finding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Fortune, Jun 13, independently reports that the US Commerce Department used export controls to bar distributing the models to any foreign national."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Fortune reports that the directive covered foreign nationals in the US, including Anthropic's non-citizen employees."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Anthropic's Jun 12 statement and Fortune's Jun 13 report both describe an export control directive suspending all access to Fable 5 and Mythos 5 by foreign nationals, including Anthropic employees. Fortune names Commerce as the issuer. The packet has no counterevidence. The directive itself isn't public, but the contract accepts Anthropic's statement or reputable reporting.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-us-commerce-department-34fe66"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9149,
+  "output_tokens": 1095,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

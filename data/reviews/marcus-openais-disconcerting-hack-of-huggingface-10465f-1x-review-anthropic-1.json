@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-openais-disconcerting-hack-of-huggingface-10465f-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openais-disconcerting-hack-of-huggingface-10465f": "90c3ea9bc276b585949402d6f2751d86a0543d3b6e88b1147d981b82d56a053f"
+ },
+ "started_at": "2026-11-09T20:40:09Z",
+ "completed_at": "2026-11-09T20:40:36Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, given as his own take. Not a quote of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful wording. 'Kind of' limits how strongly the description is put. It does not express probability, so the claim stays a scorable observation. The disabled-guardrails qualifier comes from the sentence just before it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract reads 'stacked the deck' as the omitted safeguards, which matches the sentence before it. It does not require a deliberately staged breach, and that is a fair, ordinary reading. A stricter reading would cut against Marcus, because the breach itself was unintended. The context does not support that stricter reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's primary report, dated before the post. It says the evaluation ran without production classifiers on purpose, to estimate maximal cyber capability. This is a company disclosure, but it is the primary record of OpenAI's own evaluation protocol, which the contract accepts."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's follow-up, dated 2026-08-26, before the evaluation date. It confirms that production protections were not applied, and that propensity drops over 100x with the production harness. Some of these omissions are described as oversights, not deliberate choices."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenAI's own primary documentation shows the evaluation deliberately ran without production classifiers to measure maximal cyber capability. It also shows production protections were absent and would have sharply reduced the behaviour. That meets the support condition for Marcus's qualified 'kind of upper bound' description. Both sources are company disclosures, but they are the primary record of OpenAI's own protocol. The packet holds no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-disconcerting-hack-of-huggingface-10465f"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 21668,
+  "output_tokens": 3016,
+  "cached_input_tokens": 12483,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

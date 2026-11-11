@@ -1,0 +1,148 @@
+{
+ "packet_id": "wyea-ai-doesnt-have-roi-93d7c4-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-doesnt-have-roi-93d7c4",
+  "version": 1,
+  "content_hash": "2cf744a6a85df46e293792b7e42923201640cdbce7e128a2391bcc1ac374b20b"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-doesnt-have-roi-93d7c4",
+  "version": 1,
+  "content_hash": "6c5e87a81d46b0b0087716a045df2ab575f03332c797253c5187528e4ff62f68"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Trainium TPU inference cost reduction deployment 2026 DeepSeek",
+   "Trainium inference customer reduced costs June July August September 2026",
+   "TPU inference customer cost reduction July 2026 September",
+   "site.aws.amazon.com/blogs \"Inferentia\" \"2026\" \"reduced\" costs",
+   "site.aws.amazon.com/blogs/machine-learning/ \"2026\" \"Trainium\" \"cost reduction\"",
+   "DeepSeek V4.1 Flash inference costs benchmark September 2026 independent",
+   "OpenAI Broadcom chip deployment inference cost October 2026",
+   "NVIDIA Vera CPU actual cost per task production benchmark September 2026",
+   "AWS Trainium production inference savings customer September 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://aws.amazon.com/blogs/machine-learning/cost-effective-deployment-of-vision-language-models-for-pet-behavior-detection-on-aws-inferentia2/",
+    "used": true,
+    "why": "Customer-coauthored production example with a stated baseline and cost reduction, but published before the forecast."
+   },
+   {
+    "url": "https://arxiv.org/html/2609.19969v1",
+    "used": true,
+    "why": "Primary technical report describing DeepSeek deployment efficiencies after publication."
+   },
+   {
+    "url": "https://arxiv.org/abs/2610.34422",
+    "used": true,
+    "why": "Reports workload-specific TPU savings and migration problems; training evidence rather than the requested deployed inference comparison."
+   },
+   {
+    "url": "https://arxiv.org/abs/2610.23047",
+    "used": false,
+    "why": "The accessible abstract reports Trainium software speedups, not a comparable production-cost result."
+   },
+   {
+    "url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+    "used": false,
+    "why": "Read successfully, but the technical report provides more detail. The announcement's price and efficiency claims do not supply a controlled production-cost comparison."
+   },
+   {
+    "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence/",
+    "used": false,
+    "why": "read_page returned HTTP 403; not used as evidence."
+   },
+   {
+    "url": "https://signal65.com/research/ai/validating-nvidia-vera-on-agentic-cpu-workloads/",
+    "used": false,
+    "why": "read_page returned unrelated text rather than the research described in search results; excluded."
+   }
+  ],
+  "performed_at": "2026-10-29T16:01:43Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "aws-amazon-com-blogs-machine-learning-cost-effective-deployment-of-5aadcb000d99",
+   "source_snapshot_id": "13cb20b0be9ce67192c6b2232d79caa7f7a137531429e5b7bcfcff71c1339516",
+   "publisher": "Amazon Web Services and Tomofun",
+   "source_type": "company_disclosure",
+   "url": "https://aws.amazon.com/blogs/machine-learning/cost-effective-deployment-of-vision-language-models-for-pet-behavior-detection-on-aws-inferentia2",
+   "locator": "Conclusion, first sentence",
+   "receipt": {
+    "public_excerpt": "By migrating BLIP inference on AWS Inferentia-based EC2 Inf2 instances, Tomofun reduced their Furbo application deployment costs by 83%.",
+    "quote_hash": "01362a27111772edda4c21947aac8409aa447a9a4dccdd018a4fb076179b35ca",
+    "verified": "exact"
+   },
+   "event_date": "2026-05",
+   "available_at": "2026-05-06",
+   "retrieved_at": "2026-10-29T15:51:16Z",
+   "relation": "context",
+   "explanation": "The customer-coauthored account describes comparable BLIP service after migration from GPU instances and reports maintained performance. It is strong contrary background, but the savings were already reported before Zitron's forecast; the migration date is not specified.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2609-19969v1",
+   "source_snapshot_id": "2e50e6da30b2822bf73eebb915c68e6c4affe3798136db27ea31513feae0d2a7",
+   "publisher": "DeepSeek-AI via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2609.19969v1",
+   "locator": "Section 1, Introduction, concluding paragraph",
+   "receipt": {
+    "public_excerpt": "In summary, DeepSeek-V4.1-Flash simultaneously improves model intelligence and inference efficiency while reducing deployment costs.",
+    "quote_hash": "ca8730db97ea4dd826f3861ad0768c0fe0a7b34f46d34e66fc4d24d7bacd4722",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-09-17",
+   "retrieved_at": "2026-10-29T15:54:00Z",
+   "relation": "context",
+   "explanation": "The report describes reduced cache storage and other deployment optimizations, providing a concrete technical challenge to the forecast. It does not supply the matched realized task-cost comparison required by this contract.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2610-34422",
+   "source_snapshot_id": "9b1b996bd8cd7062f108fd58220c32b55d0dcb286122f5f8f957eb51624cf836",
+   "publisher": "Hui Sun, Anderson Uchôa, and Wesley K. G. Assunção via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2610.34422",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "We also examine failures, human effort, and costs.",
+    "quote_hash": "e27a2b3cd427378d95d8e69c4abfa6e457f0c60a5df4b7d130ae47a3e6a9d7fc",
+    "verified": "exact"
+   },
+   "event_date": "2026-10",
+   "available_at": "2026-10-25",
+   "retrieved_at": "2026-10-29T15:51:17Z",
+   "relation": "context",
+   "explanation": "The study reports one TPU training workload costing 25% less per run, alongside substantial migration failures and correctness risks. This is relevant to broader AI costs but does not establish comparable deployed generative-AI inference savings.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The clearest documented inference deployment savings found were reported before publication.",
+  "Post-publication DeepSeek evidence does not disclose a matched realized task-cost comparison.",
+  "The TPU study measures training runs rather than deployed inference.",
+  "No sufficiently documented post-publication inference-cost comparison was obtained for Trainium, Vera CPUs, or OpenAI's chips."
+ ],
+ "packet_hash": "e04acecc0112cf988a7dff15adc0c451cd1f3097ca83e23a12c175d700886fd7"
+}

@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-the-misguided-backlash-against-californias-c3bf59-a1",
+ "claim_revision_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "version": 2,
+  "content_hash": "3e82039848d5125661a4e0dd022f676c07e6da0d07219bb34c988babf8828d16"
+ },
+ "contract_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "version": 1,
+  "content_hash": "0dfedfd16b6bf7e243b908d4495583bf75154781b5225ebb3648280324799338"
+ },
+ "packet_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59-p1",
+  "content_hash": "d84c5cbf481b241c9e078b641e9466f69f90bf7ad079f806dd934094ac1c5299"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-05-24",
+  "end": "2024-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "The original TotalRecall documentation demonstrates that the early implementation stored searchable screenshot-derived text in an unencrypted SQLite database. Contemporary independent testing corroborated access to raw Recall data. The system-encryption exception needs care: whole-disk encryption could protect files at rest and could be enabled through ordinary setup, while the database remained readable in the logged-in environment. That qualification does not overturn the central observation about the early database.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "This finding applies to the early preview implementation, not later Recall releases.",
+  "Explicitly set is imprecise because disk encryption could be enabled by default during setup.",
+  "The evidence does not establish Marcus's subjective security labels as independently measurable facts.",
+  "The original tool documentation is preserved in a repository folder moved after its initial publication."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-the-misguided-backlash-against-californias-c3bf59-2x-review-anthropic-1",
+  "marcus-the-misguided-backlash-against-californias-c3bf59-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-the-misguided-backlash-against-californias-c3bf59-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "It has come out that the database indexing Microsoft Recall's screenshots is stored in plain text, except on systems explicitly set to encrypt everything, which Marcus calls bananas and Keystone Kops level security.",
+  "kind": "observation",
+  "conditions": [
+   "except on systems that are explicitly set to encrypt everything"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Two weeks later, it has already come out that the database that indexes the whole thing is in plain text (except on systems that are explicitly set to encrypt everything). That’s bananas. Keystone Kops level security.",
+   "locator": "paragraph 37",
+   "url": "https://garymarcus.substack.com/p/the-misguided-backlash-against-californias",
+   "date": "2024-06-07",
+   "document_title": "The misguided backlash against California’s SB-1047",
+   "observed_at": "2026-10-28T23:59:47Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Two weeks later, it has already come out",
+    "the database that indexes the whole thing is in plain text",
+    "except on systems that are explicitly set to encrypt everything"
+   ],
+   "our_interpretation": [
+    "Assess the early Recall implementation examined around the post date, not later redesigned releases.",
+    "Plain text means readable, unencrypted database contents, not that the SQLite file is literally a plain-text document.",
+    "Read the exception as referring to whole-disk encryption, which is distinct from encryption applied to the database itself.",
+    "Use May 24 through June 7, 2024, reflecting the post's recent two-week context. Its reference to March 24 conflicts with that context.",
+    "The descriptions bananas and Keystone Kops level security are opinions; the assessable proposition is the database's storage protection."
+   ],
+   "support_condition": "Direct technical examination of the relevant early Recall implementation establishes that its screenshot-derived text index was readable in an SQLite database without separate database encryption, while system-level disk encryption could protect the stored files.",
+   "contradiction_condition": "Direct examination establishes that the relevant early implementation independently encrypted its index database, or that the plaintext reports concerned a different product or materially different implementation."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The original TotalRecall documentation demonstrates that the early implementation stored searchable screenshot-derived text in an unencrypted SQLite database. Contemporary independent testing corroborated access to raw Recall data. The system-encryption exception needs care: whole-disk encryption could protect files at rest and could be enabled through ordinary setup, while the database remained readable in the logged-in environment. That qualification does not overturn the central observation about the early database.",
+  "limitations": [
+   "This finding applies to the early preview implementation, not later Recall releases.",
+   "Explicitly set is imprecise because disk encryption could be enabled by default during setup.",
+   "The evidence does not establish Marcus's subjective security labels as independently measurable facts.",
+   "The original tool documentation is preserved in a repository folder moved after its initial publication."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "unencrypted SQLite database",
+    "locator": "Technical Details; see also the June 6 extraction example and changelog",
+    "url": "https://github.com/xaitax/TotalRecall/tree/main/totalrecall_original_2024",
+    "publisher": "Alexander Hagenah",
+    "event_date": "2024-06-06",
+    "available_at": "2024-06-08",
+    "explanation": "The preserved June documentation describes the unencrypted database and demonstrates extracting and searching its screenshot-derived text. Its June 6 example falls within the target period; June 8 is the documentation's stated FAQ update date."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Other Windows 11 24H2 versions",
+    "locator": "Section “Fundamentally breaks the promise of security in Windows,” testing instructions and subsequent encryption discussion",
+    "url": "https://arstechnica.com/ai/2024/06/windows-recall-demands-an-extraordinary-level-of-trust-that-microsoft-hasnt-earned",
+    "publisher": "Ars Technica",
+    "event_date": "2024-06-04",
+    "available_at": "2024-06-04",
+    "explanation": "The author tested build 26100.712 and independently verified access to raw Recall data. The article also explains that whole-disk encryption generally applied when signed into a Microsoft account or using BitLocker, qualifying any suggestion that it always required a separate manual choice."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c5e85f520f5f15d92cb9f40027717369d83b79a2f85428f8b2eb48e618e040f8",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:32:30Z"
+}

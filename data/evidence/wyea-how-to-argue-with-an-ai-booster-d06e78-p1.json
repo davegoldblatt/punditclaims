@@ -1,0 +1,100 @@
+{
+ "packet_id": "wyea-how-to-argue-with-an-ai-booster-d06e78-p1",
+ "claim_revision_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-d06e78",
+  "version": 1,
+  "content_hash": "5741f2b70e89540d5f6b126edd7d80ca31f27bc8df42e4b89b5a75055d8b868b"
+ },
+ "contract_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-d06e78",
+  "version": 1,
+  "content_hash": "0ee9160828457d797cc048e9b5423acde7d6b960ae5cbd4ba70d4e315f2c89c1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Qwen3 non thinking mode Qwen2.5 performance parameters April 2025",
+   "site.openai.com \"GPT-4.1\" \"training\" \"2025\"",
+   "site.arxiv.org/html/2505.09388v1 \"MMLU-Pro\" \"log\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2505.09388v1",
+    "used": true,
+    "why": "Primary technical report compares pretrained base models under a common evaluation pipeline, before reasoning post-training."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": true,
+    "why": "The original DeepSeek-R1 report provides primary context supporting the narrower benefit of inference-time reasoning."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-1/",
+    "used": false,
+    "why": "Read the announcement, but selected the more directly relevant base-model technical comparison."
+   },
+   {
+    "url": "https://arxiv.org/abs/2501.12948",
+    "used": false,
+    "why": "The unversioned abstract currently reflects a January 2026 revision; the January 2025 version was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T11:32:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2505-09388v1",
+   "source_snapshot_id": "52ba681ef476ed04f3b97e307d24cec0d51228e4bb708e0a1d45f2c598ad033d",
+   "publisher": "Qwen Team / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2505.09388v1",
+   "locator": "Section 3, Qwen3-32B-Base evaluation, point 1",
+   "receipt": {
+    "public_excerpt": "Qwen3-32B-Base achieves 65.54 on MMLU-Pro and 39.78 on SuperGPQA, significantly outperforming its predecessor Qwen2.5-32B-Base.",
+    "quote_hash": "19a31c0c71593fde265080cffff19356aa8db324340c0bdd7b7bc73f6ddeff1e",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-14",
+   "available_at": "2025-05-14",
+   "retrieved_at": "2026-10-29T07:02:55Z",
+   "relation": "contradicts",
+   "explanation": "The report documents gains in the pretrained base model under a common evaluation pipeline, separately from its later reasoning post-training. Its architecture, data, and training improvements supply another route to capability gains, contradicting the claim of exclusivity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2501-12948v1",
+   "source_snapshot_id": "ca43eab91020a36e390e35d28edaedf2a6ac6bb407983bbcf88c3987c61e34c3",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.12948v1",
+   "locator": "Section 1, paragraph discussing OpenAI o1 and inference-time scaling",
+   "receipt": {
+    "public_excerpt": "This approach has achieved significant improvements in various reasoning tasks, such as mathematics, coding, and scientific reasoning.",
+    "quote_hash": "73d82aab5712007eab0af259310603652a035b2dc3dd465621f782373b5a404c",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-22",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:10Z",
+   "relation": "context",
+   "explanation": "The preceding sentence identifies the approach as increasing chain-of-thought length. This supports the narrower contention that additional inference reasoning can improve performance, but not that it was the only available route.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The sources do not quantify how much of any industry-wide inference-cost increase came from longer reasoning.",
+  "They do not establish a quantitative threshold at which pretraining returns became a wall."
+ ],
+ "packet_hash": "eed1756dd70e82fc909293e2189f773f90458d18743eeb34f9286488d196874e"
+}

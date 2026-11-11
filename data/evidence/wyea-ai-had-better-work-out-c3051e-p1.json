@@ -1,0 +1,135 @@
+{
+ "packet_id": "wyea-ai-had-better-work-out-c3051e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-had-better-work-out-c3051e",
+  "version": 1,
+  "content_hash": "d3f7283bdf40c9e5bfc02cc0bd7f14c9c0086a48dd42733946c165ddfa36c30c"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-had-better-work-out-c3051e",
+  "version": 1,
+  "content_hash": "0e891582d5c6d6e0e354cbe2e0efb082e809bda8352b5f887ad3777103d30b55"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA second quarter fiscal 2027 44% three customers 70% accounts receivable 16%",
+   "Nvidia \"first half\" \"2027\" \"three\" \"44\"",
+   "\"NVIDIA\" \"2027\" \"16%\" \"one customer\" revenue concentration"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "used": true,
+    "why": "Readable primary filing establishes the revenue shares and the different receivables customer count. Its financial statements are labeled unaudited."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; NVIDIA's hosted copy of the filing was readable."
+   },
+   {
+    "url": "https://mbiz.heraldcorp.com/article/10872762",
+    "used": true,
+    "why": "Provides a concise corroborating statement of the 44% revenue total, checked against the primary filing. Its separate wording about receivables is confused and is not relied upon."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "used": false,
+    "why": "read_page returned an unrelated conference-call announcement rather than the financial results."
+   }
+  ],
+  "performed_at": "2026-10-29T09:59:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "mbiz-heraldcorp-com-article-10872762",
+   "source_snapshot_id": "c80747a6a81c62b1dfca0f2bb6fa22b7e29f3a5bceaab8f9521cb2a136556a5b",
+   "publisher": "The Herald Business",
+   "source_type": "news_report",
+   "url": "https://mbiz.heraldcorp.com/article/10872762",
+   "locator": "First article paragraph; reporting period specified in the following paragraph",
+   "receipt": {
+    "public_excerpt": "Nvidia generates 44% of its sales from just three customers",
+    "quote_hash": "f004a88267435d8520091ad770f5cd46564aa24fc2d0b4158a3d91eb587d7037",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-09-14",
+   "retrieved_at": "2026-10-29T09:51:04Z",
+   "relation": "supports",
+   "explanation": "The article identifies first-half FY2027 shares of 16%, 15%, and 13%. Those shares match the primary filing's revenue disclosure and support the 44% component.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Three direct customers' combined share of first-half FY2027 revenue",
+    "currency": null,
+    "units": "percent of total revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-01-26",
+    "period_end": "2026-07-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "First customer's disclosed revenue share: 16%",
+     "Second customer's disclosed revenue share: 15%",
+     "Third customer's disclosed revenue share: 13%"
+    ],
+    "formula": "16% + 15% + 13% = 44%",
+    "rounding": "Sum of the reported whole-percent shares; no additional rounding."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "investor-nvidia-com-files-doc-financials-2027-nvda-2027-q2-10q-fina-b4ea8829627f",
+   "source_snapshot_id": "7fba94c628877867e1770c7f8d657ca15965536cb1bdac6b21fbe0dd5e0ae506",
+   "publisher": "NVIDIA",
+   "source_type": "filing",
+   "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+   "locator": "Note 7 — Supplemental Financial Statement Information, customer-concentration paragraph",
+   "receipt": {
+    "public_excerpt": "Five direct customers accounted for\n22%, 14%, 13%, 11%, and 10% of our accounts receivable balance as of July 26, 2026.",
+    "quote_hash": "85b978e3587e9f4d91a1920c1d3ede3241b2fc90395c30bd3ef7238fd33fdcc6",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-27",
+   "retrieved_at": "2026-10-29T05:34:35Z",
+   "relation": "contradicts",
+   "explanation": "The five disclosed receivables shares total 70%; the largest three total 49%. The filing's separate revenue disclosure also confirms the 16% Q2 customer share and the 16%, 15%, and 13% first-half shares, so the error concerns receivables rather than those revenue figures.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Direct-customer concentration in accounts receivable at Q2 FY2027 end",
+    "currency": null,
+    "units": "percent of total accounts receivable; customer count",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-07-26",
+    "period_end": "2026-07-26",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Customer receivable shares: 22%, 14%, 13%, 11%, 10%"
+    ],
+    "formula": "Five customers: 22 + 14 + 13 + 11 + 10 = 70%; largest three: 22 + 14 + 13 = 49%.",
+    "rounding": "Sum of the reported whole-percent shares; no additional rounding."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "6b079458d455a8a4d0a3b03db3238b8a977b82966425996c06146d6f161729e5"
+}

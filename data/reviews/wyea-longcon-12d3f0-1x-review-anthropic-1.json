@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-longcon-12d3f0-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-longcon-12d3f0": "8e841ad999ed01257c337c9ce3044510997a5186365cc6216944dfe2299e06f5"
+ },
+ "started_at": "2026-11-10T02:02:36Z",
+ "completed_at": "2026-11-10T02:02:54Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post, stated in his own voice and not quoted from anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the statement and keeps the 'do not appear' qualifier. Saying they are burning billions is a firm present-tense observation. The second clause is about how things appeared, not a probabilistic forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading burn as annual losses of at least $2B for each company in calendar 2024 is a fair, ordinary reading. Zitron himself argues that burn should include noncash costs. The result depends on that loss measure, and on keeping losses separate from cash burn, which the speaker did not define."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A September 2024 report of OpenAI's expected loss of about $5B for 2024. It is a projection that excludes some expenses, not a realized full-year result, so it cannot settle the contract. Its metric_scope label of 'realized' is inaccurate."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's first-half 2024 cash burn of $340M. It covers half a year on a cash basis, not full-year losses, so it does not decide the outcome. It does show how far cash burn and accounting losses differ."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's audited S-1, available before the evaluation date, shows $5.69B of operating cash used in 2024. That figure was driven largely by prepaid hosting, a working-capital item. It measures cash flow, not net loss, and the contract keeps those separate. It says nothing about OpenAI."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The contract needs comparable realized 2024 losses of at least $2B for each company. For OpenAI, the packet has only a projected loss (e1) and half-year cash burn (e2). For Anthropic, it has GAAP operating cash flow (e3), not net loss. No evidence in the packet tests the second clause. The packet strongly suggests large burn at both companies, but on the contract's own measure it does not settle the outcome.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-longcon-12d3f0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12992,
+  "output_tokens": 1714,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

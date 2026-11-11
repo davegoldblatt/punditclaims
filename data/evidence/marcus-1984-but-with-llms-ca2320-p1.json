@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-1984-but-with-llms-ca2320-p1",
+ "claim_revision_ref": {
+  "id": "marcus-1984-but-with-llms-ca2320",
+  "version": 1,
+  "content_hash": "cf1af36f87d989aa0f656f761d3a0c65334c578e262b89ad1da581ff9e4acf23"
+ },
+ "contract_ref": {
+  "id": "marcus-1984-but-with-llms-ca2320",
+  "version": 1,
+  "content_hash": "27616efc2b76ccf462438de025f4e02a1877c4d6d71b2eddbf871b8133706fd0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Mozilla Common Crawl report training data LLMs 64% \"price of a sandwich\"",
+   "Rozado political preferences of LLMs PLOS ONE 2024 left-of-center"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.mozillafoundation.org/en/blog/Mozilla-Report-How-Common-Crawl-Data-Infrastructure-Shaped-the-Battle-Royale-over-Generative-AI/",
+    "used": true,
+    "why": "Mozilla's summary of its review of 47 LLMs' training data."
+   },
+   {
+    "url": "https://www.mozillafoundation.org/en/research/library/generative-ai-training-data/",
+    "used": false,
+    "why": "The report landing page. It is useful background but does not give the 64% figure in the text that could be read."
+   },
+   {
+    "url": "https://arxiv.org/abs/2402.01789v1",
+    "used": true,
+    "why": "Bears on whether expressed political views come from pretraining or post-training."
+   },
+   {
+    "url": "https://www.eurekalert.org/news-releases/1052424",
+    "used": false,
+    "why": "Says the same as the arXiv abstract on this point."
+   }
+  ],
+  "performed_at": "2026-10-29T01:03:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "mozillafoundation-org-en-blog-mozilla-report-how-common-crawl-data-580f018c249e",
+   "source_snapshot_id": "cc173c3487d60102bc453d2c8b30e05a0235848b22c23dde6175df456ce8c12a",
+   "publisher": "Mozilla Foundation",
+   "source_type": "independent_measurement",
+   "url": "https://www.mozillafoundation.org/en/blog/Mozilla-Report-How-Common-Crawl-Data-Infrastructure-Shaped-the-Battle-Royale-over-Generative-AI",
+   "locator": "paragraph 3",
+   "receipt": {
+    "public_excerpt": "the study analyzed 47 LLMs published between 2019 and October 2023 that power text generators and found at least 64% of them were trained on Common Crawl.",
+    "quote_hash": "189911ab164973419e0b71548dd960a9d34bb5ead603b173e556078109e2aa6c",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2024-02-06",
+   "retrieved_at": "2026-10-29T01:00:57Z",
+   "relation": "context",
+   "explanation": "Shows that many LLMs share a major data source, which partly supports the overlap claim. But 64% is short of 'pretty much every', the review stops at 2023, and it does not test any effect on views.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2402-01789v1",
+   "source_snapshot_id": "79c095499ad66d12e2b4fcf08d832d3986981e5045d8b0dd820194ab731d919c",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2402.01789v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "our results provide preliminary evidence for the intriguing hypothesis that the embedding of political preferences into LLMs might be happening mostly post-pretraining.",
+    "quote_hash": "c2512ea366321be390ca2d020d3a994026b59a758bb89fa6c34a76006eb1919b",
+    "verified": "exact"
+   },
+   "event_date": "2024-02",
+   "available_at": "2024-02-02",
+   "retrieved_at": "2026-10-29T01:01:09Z",
+   "relation": "context",
+   "explanation": "Preliminary evidence that the shared political lean comes mainly from fine-tuning, not shared pretraining data. This cuts against Marcus's explanation, but the author says it is not conclusive.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The training data of major 2024–2025 models (GPT-4o, Claude 3.x, Gemini 2.x, Grok 3) is largely undisclosed, so the overlap cannot be measured.",
+  "No controlled study isolates shared pretraining data as the cause of models' views clustering."
+ ],
+ "packet_hash": "66f41f3f30e0f34eca27cc0c22f0f0a19ba4b4c0f6521871f038bb2f67dcbcec"
+}

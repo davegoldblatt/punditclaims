@@ -1,0 +1,105 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795",
+  "version": 2,
+  "content_hash": "f67c2966f56c665e64d787ca2e5d3ee7fd41a423b7251e6f2487c89f3edd1212"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795",
+  "version": 1,
+  "content_hash": "d486488741ddecf679b39dadbad3a26552d6e2f48dd394b94091bf78e49028dc"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic AWS spending 2.66 billion September 2025 revenue 2.55 billion",
+   "Anthropic 2025 September revenue AWS spending Reuters October 2025 2.66",
+   "Anthropic 2025 September AWS spending 2.66 -site:wheresyoured.at -site:reddit.com",
+   "site.anthropic.com/news \"183 billion\" \"2025\"",
+   "Anthropic S-1 October 26 2026 September 2025 revenue Amazon expenses",
+   "site.sec.gov/Archives/edgar/data/ \"Anthropic\" \"2026\" \"S-1\"",
+   "site.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm \"Amazon\" \"expenses\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing available before the freeze contains quarterly historical revenue. It does not independently verify the claimed nine-month AWS and Google spending totals in the passages located."
+   },
+   {
+    "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+    "used": false,
+    "why": "Read in full. Its revenue figures are annualized run rates, not cumulative nine-month revenue."
+   },
+   {
+    "url": "https://www.wheresyoured.at/costs/",
+    "used": false,
+    "why": "The speaker's own underlying report cannot independently establish that his figures are correct."
+   },
+   {
+    "url": "https://www.calcalistech.com/ctechnews/article/7jdx324ra",
+    "used": false,
+    "why": "Read in full, then superseded by the primary filing. Full-year and half-year figures do not settle the claimed nine-month cloud spending."
+   },
+   {
+    "url": "https://www.stocktitan.net/sec-filings/ANT/s-1-anthropic-pbc-files-s-1-registration-statement-a0477b41760e.html",
+    "used": false,
+    "why": "read_page returned HTTP 403; the SEC version was readable."
+   }
+  ],
+  "performed_at": "2026-10-29T20:27:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Page 158, Quarterly Results of Operations, introductory paragraph and Revenue row",
+   "receipt": {
+    "public_excerpt": "unaudited",
+    "quote_hash": "b741555f1879a1360a6d2326c5393a728e6fa1506a9d8781f1ec07b04007c228",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The first three quarterly revenue entries total $2.545 billion, approximately the stated $2.55 billion. This is a GAAP revenue cross-check, not verification of the estimated AWS spending or its accounting treatment.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Revenue",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "March 2025 quarter revenue: USD 376 million, page 158 Revenue row",
+     "June 2025 quarter revenue: USD 787 million, page 158 Revenue row",
+     "September 2025 quarter revenue: USD 1,382 million, page 158 Revenue row"
+    ],
+    "formula": "(376 + 787 + 1382) / 1000 = 2.545 billion USD",
+    "rounding": "Inputs are reported to the nearest million. The sum rounds half-up to approximately USD 2.55 billion."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independent confirmation of the $2.66 billion nine-month AWS spending total was located.",
+  "No comparable nine-month Google Cloud spending figure was located.",
+  "The spending estimate's treatment of cash timing, accruals, credits and prepayments remains unspecified."
+ ],
+ "packet_hash": "ea703be819d154b6a51e5697f9801df159d44a647c32db0b1506de77a0fb3cc3"
+}

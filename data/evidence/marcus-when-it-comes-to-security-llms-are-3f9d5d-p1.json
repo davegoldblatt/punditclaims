@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-3f9d5d",
+  "version": 1,
+  "content_hash": "ebdad5a92e382c542703c6059661187ca9510f266290b0b9f5b61e6e15c2b4b3"
+ },
+ "contract_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-3f9d5d",
+  "version": 1,
+  "content_hash": "de64da1810b2be7b0bcf1519b22b8081f14f96d3f826578c8fb47f03977ce059"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Imprompter obfuscated adversarial prompts October 2024 UCSD Nanyang",
+   "\"Imprompter\" arxiv",
+   "\"Imprompter\" site:wired.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2410.14923v1",
+    "used": true,
+    "why": "Read the original paper, including affiliations, personal-information experiments, transfer to real products, and limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2410.14923v1",
+    "used": true,
+    "why": "Read to verify the archived version's submission date."
+   },
+   {
+    "url": "https://www.wired.com/story/ai-imprompter-malware-llm/",
+    "used": true,
+    "why": "read_page returned full text. Establishes October 17 disclosure and reports the company's remediation."
+   },
+   {
+    "url": "https://imprompter.ai/",
+    "used": false,
+    "why": "read_page returned an expired-domain page, not the research."
+   }
+  ],
+  "performed_at": "2026-10-29T19:32:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2410-14923v1",
+   "source_snapshot_id": "3a8e5d73506540acd25b3b759075dbfa5d59995014c3e22f00e3d7df33b1cf91",
+   "publisher": "arXiv; UC San Diego and Nanyang Technological University researchers",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2410.14923v1",
+   "locator": "Section 5.2, Results on the Real Product",
+   "receipt": {
+    "public_excerpt": "the PII Exfiltration task.",
+    "quote_hash": "e255d3447bcf353296fca3bc315af54ba5e5c50342dfac04e304edc2a95de215",
+    "verified": "exact"
+   },
+   "event_date": "2024-10",
+   "available_at": "2024-10-19",
+   "retrieved_at": "2026-10-29T19:23:11Z",
+   "relation": "supports",
+   "explanation": "The paper demonstrates extraction of personal information and transmission through Markdown image requests in tested agents. Its archived version appeared October 19; contemporaneous reporting in e2 establishes that this research had already been disclosed on October 17.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "wired-com-story-ai-imprompter-malware-llm",
+   "source_snapshot_id": "46c14fb1e7404c249e116457df27897989908284c7e9373a3206be07d49677d0",
+   "publisher": "WIRED",
+   "source_type": "news_report",
+   "url": "https://www.wired.com/story/ai-imprompter-malware-llm",
+   "locator": "Hidden Meanings, Mistral response",
+   "receipt": {
+    "public_excerpt": "implemented the proper remediation",
+    "quote_hash": "01ab78689215156c7a9b2faae5dae4a49dc68a377f781f30a474b45cf8027c52",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-17",
+   "available_at": "2024-10-17",
+   "retrieved_at": "2026-10-29T19:24:03Z",
+   "relation": "context",
+   "explanation": "The article documents the research's public disclosure and reports that Mistral blocked external image loading, with researcher confirmation. This limits any implication of continuing vulnerability in that product; a separately accessible primary remediation notice was not found.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "474a4bc25c2b5320dca41f153a7d1ac7379d0217f96d72d1824eb719ffb2c22e"
+}

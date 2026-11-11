@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-exclusive-openai-financials-cc8ff1-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-exclusive-openai-financials-cc8ff1": "dbedeee0d86451b7070e5bccc73ae93002ff853026a2dc76bbfe8ee5f0225540"
+ },
+ "started_at": "2026-10-31T19:59:18Z",
+ "completed_at": "2026-10-31T19:59:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, in his own closing analysis on his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A retrospective observation about reported annual losses. 'Appear to be' describes what the figures he just reported show. It is not a probability or confidence hedge about a future outcome, so the claim is scoreable. The sustainability clause is opinion and is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The speaker supplied the measure himself: the headline net loss attributable, $38.53B. Comparing 2024 with 2025 on that basis, and reading 'dramatic' as a rise of several times, is an ordinary reading. The adjusted-basis caveat is correctly flagged but does not apply, because no adjusted 2024 figure exists."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "FT-verified audited figures, relayed in a dated news report: net loss went from about $5B in 2024 to about $39B in 2025, roughly 7.8 times. Same company, metric and calendar basis."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Most of the increase was a one-time non-cash restructuring charge, and the adjusted 2025 loss was about $8B. This is a different basis from the contract's metric, so it limits the operational reading but does not contradict the claim."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A second outlet confirms the FT's adjusted loss of about $8B and repeats the headline figures. The adjusted figure is on a different basis; the parts relaying Zitron's own figures are not independent."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent FT-verified audited figures show OpenAI's net loss rose about 7.8 times, from about $5B in 2024 to about $39B in 2025. That meets the contract's test of a rise of several times. Most of the rise was a one-time non-cash charge (the adjusted 2025 loss was about $8B), but that is a different basis from the headline net loss the speaker cited, and no adjusted 2024 figure exists to compare against.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-exclusive-openai-financials-cc8ff1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12271,
+  "output_tokens": 1719,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,140 @@
+{
+ "packet_id": "marcus-no-rag-is-probably-not-going-to-rescue-c82ea4-p1",
+ "claim_revision_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-c82ea4",
+  "version": 1,
+  "content_hash": "c03626a91c7eaacd7508bf10bf6f7fe777a1eff716cfcdb0d917430f7b2f4358"
+ },
+ "contract_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-c82ea4",
+  "version": 1,
+  "content_hash": "33ae666a7b5178aeaee81921840e02ecfd6a95e405b0ed3cb006e3d90640f688"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "BBC February 2025 AI assistants news answers 51% significant issues research report",
+   "2024 SimpleQA benchmark language models factuality hallucinations October 30",
+   "site.gov.uk \"International AI Safety Report 2025\" \"reliability\"",
+   "AI hallucination free RAG 2024 2025 Vectara 0 percent benchmark",
+   "AI hallucination solved February 2025 reliable chatbots breakthrough before:2025-02-24 after:2024-02-23"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.bbc.co.uk/aboutthebbc/documents/bbc-research-into-ai-assistants.pdf",
+    "used": true,
+    "why": "Primary evaluation of four deployed assistants with internet access, conducted in December 2024 and published before the deadline."
+   },
+   {
+    "url": "https://www.bbc.co.uk/mediacentre/2025/articles/how-distortion-is-affecting-ai-assistants/",
+    "used": true,
+    "why": "Read to verify the BBC research publication date of 2025-02-11."
+   },
+   {
+    "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2025",
+    "used": true,
+    "why": "Contemporary scientific assessment of reliability and the limits of mitigation."
+   },
+   {
+    "url": "https://arxiv.org/html/2405.20362v1",
+    "used": true,
+    "why": "Primary evaluation documenting both benefits and remaining failures of legal RAG systems."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.20362",
+    "used": true,
+    "why": "Read to verify the paper's publication date and version."
+   },
+   {
+    "url": "https://openai.com/index/introducing-simpleqa/",
+    "used": false,
+    "why": "Read, but its short-answer factuality setting is narrower than deployed retrieval-enabled assistants; the selected evidence is more directly relevant."
+   },
+   {
+    "url": "https://deepmind.google/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/",
+    "used": false,
+    "why": "read_page returned only a later benchmark-suite heading, not the historical findings."
+   }
+  ],
+  "performed_at": "2026-10-29T17:35:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "bbc-co-uk-aboutthebbc-documents-bbc-research-into-ai-assistants-pdf",
+   "source_snapshot_id": "34754c83605a45449901cbfc327bab4fef56c3aab1a98f37d0e4b9ae22ab75c7",
+   "publisher": "BBC",
+   "source_type": "independent_measurement",
+   "url": "https://www.bbc.co.uk/aboutthebbc/documents/bbc-research-into-ai-assistants.pdf",
+   "locator": "Page 4, High level findings",
+   "receipt": {
+    "public_excerpt": "‘significant issues’ of some form",
+    "quote_hash": "b7f7843a6c248f6433eba59c90b46ac105e6bd4e280e57eb0fbd1904d0c408c4",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2025-02-11",
+   "retrieved_at": "2026-10-29T06:48:10Z",
+   "relation": "supports",
+   "explanation": "The BBC tested ChatGPT, Copilot, Gemini and Perplexity with access to BBC sources. Beyond the broader issue measure quoted here, it reported factual errors in 19% of answers citing BBC content, supporting continued factual unreliability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "internationalaisafetyreport-org-publication-international-ai-safety-report-2025",
+   "source_snapshot_id": "0f255b618dfad0358c69a6a46228b8765f1a4c73a0e24b6f3966cfb0845882a7",
+   "publisher": "International AI Safety Report",
+   "source_type": "secondary_summary",
+   "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2025",
+   "locator": "Section 2.2.1, Reliability issues, Key Information",
+   "receipt": {
+    "public_excerpt": "Existing guardrails to contain and mitigate reliability issues are not fail-proof.",
+    "quote_hash": "c0ebb57d9d6ef400f056b3d2f5349fe6778b90b26fd76574517df21b0742e091",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-05",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T05:18:53Z",
+   "relation": "supports",
+   "explanation": "The scientific review reports continuing reliability problems and limitations in methods for mitigating hallucinations. The event date uses its stated writing cutoff rather than treating January publication as a new experiment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2405-20362v1",
+   "source_snapshot_id": "144cbb08c16d5362a0df14aa548e490a799a3ddd42c807bf03d18cb7bdc36fde",
+   "publisher": "arXiv; Varun Magesh and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2405.20362v1",
+   "locator": "Section 1, Introduction, outline of Section 6",
+   "receipt": {
+    "public_excerpt": "reduce hallucinations",
+    "quote_hash": "010d40a18ce695ebdbb8f2205862bbede5bf88c5f7387bb4dbd3e7f0c92948c7",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-05-30",
+   "retrieved_at": "2026-10-29T02:09:27Z",
+   "relation": "context",
+   "explanation": "The study found that legal RAG tools reduced hallucinations relative to GPT-4, while still producing substantial errors. This qualifies any suggestion that RAG offered no benefit, but does not demonstrate a general solution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No evaluation exhaustively covers every system available on the exact deadline.",
+  "The source does not independently define the duration of near at hand or a numerical success threshold."
+ ],
+ "packet_hash": "3e8e38b70d7758ef81926a199016edb4e355859b30622417ea927a14b7924970"
+}

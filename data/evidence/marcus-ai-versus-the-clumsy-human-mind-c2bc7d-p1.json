@@ -1,0 +1,120 @@
+{
+ "packet_id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d",
+  "version": 1,
+  "content_hash": "324b3214d8f8b5e8c2c2e78c04fa51330a89e1184912bc1cfcf6eb2e3d7e42cf"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-versus-the-clumsy-human-mind-c2bc7d",
+  "version": 1,
+  "content_hash": "bf5df32786c4a319bd6f7a739c8987dd7e35e90ff5cf2a54819ab71ac9e1a631"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Faith and Fate: Limits of Transformers on Compositionality GPT-4 multiplication accuracy arxiv",
+   "GPT-4 technical report human-level performance benchmarks"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.18654",
+    "used": true,
+    "why": "A 2023 study measuring GPT-4 and ChatGPT accuracy on multi-digit multiplication."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.18654",
+    "used": true,
+    "why": "Its abstract describes LLMs as strong on many tasks but reliant on subgraph matching (pattern matching)."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.08774v4",
+    "used": true,
+    "why": "The GPT-4 technical report gives human-level exam performance, evidence of strong learned pattern use."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v3",
+    "used": false,
+    "why": "Its table shows GSM-8K at 92% with chain of thought, relevant context on word-problem maths. It has no clean quotable sentence, so it is noted in the gaps."
+   }
+  ],
+  "performed_at": "2026-10-29T02:13:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-18654",
+   "source_snapshot_id": "dc714f3ef6a738049641ba9be67beda224ec71bcd86cabac19d6a1343c500471",
+   "publisher": "arXiv / NeurIPS 2023 (Dziri et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2305.18654",
+   "locator": "Section 1 (Introduction), paragraph 1",
+   "receipt": {
+    "public_excerpt": "Yet, off-the-shelf ChatGPT and GPT4 achieve only 55% and 59% accuracies on this task, respectively (§3).",
+    "quote_hash": "a8794b1695a11b4c985e4f4c929fb553b1dc08abf91ea46745efc5cf05453eab",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T02:09:30Z",
+   "relation": "supports",
+   "explanation": "GPT-4, tested from January to May 2023, got 3-digit by 3-digit multiplication wrong about 41% of the time, a task a calculator never misses. This supports 'lousy' at arithmetic.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2305-18654",
+   "source_snapshot_id": "3d4af96bd4586271284ed7bb1d3f6e6372a504c1bf5365aab0e7be749bdd9076",
+   "publisher": "arXiv / NeurIPS 2023 (Dziri et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2305.18654",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "transformer LLMs solve compositional tasks by reducing multi-step compositional reasoning into linearized subgraph matching, without necessarily developing systematic problem-solving skills.",
+    "quote_hash": "f86590de865b2d51d860ba00158c14bbabd4f9c05551adb50264e80b89945006",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T02:09:24Z",
+   "relation": "supports",
+   "explanation": "The authors find LLMs succeed by matching learned sub-patterns rather than by running systematic procedures. That matches the claim's contrast between pattern matching and arithmetic.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2303-08774v4",
+   "source_snapshot_id": "cf642bd6fdd32d9b48c15b75f34586fb0d8440d38df0c51f4d875140cf185f06",
+   "publisher": "OpenAI (arXiv)",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/abs/2303.08774v4",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers.",
+    "quote_hash": "50986f20964bd79eeb7022946118aaa9b4234d3e9a998480a4e7e70546dc44ac",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:09:33Z",
+   "relation": "supports",
+   "explanation": "Human-level scores on many text benchmarks show that LLMs were strong at some pattern-based tasks in 2023. This supports the 'great at some kinds of pattern matching' half.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The arithmetic tests cited use integer multiplication, not floating point numbers specifically.",
+  "With chain-of-thought prompting, GPT-4 scored highly on grade-school word problems (GSM-8K 92% in its technical report), and LLMs paired with code tools could compute exactly. Both soften 'lousy' for tool-assisted or simple-number use."
+ ],
+ "packet_hash": "dcda6e86baccd6d1160e14eb49b491c812217669e0ca9159c297727ffda9b4e3"
+}

@@ -1,0 +1,93 @@
+{
+ "packet_id": "marcus-the-last-two-weeks-at-openai-59b61b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-last-two-weeks-at-openai-59b61b",
+  "version": 2,
+  "content_hash": "b45b86cf48295e51f4540fe805d0e56e25c22f0113bcdf302cb747ffe4cfada2"
+ },
+ "contract_ref": {
+  "id": "marcus-the-last-two-weeks-at-openai-59b61b",
+  "version": 1,
+  "content_hash": "33e3ffd98ee1aecd50cde77bb23400d6e0980c3afe303b0af16add8ef4e1184d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.status.openai.com February 20 2024 unexpected responses ChatGPT postmortem"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://status.openai.com/incidents/ssg8fh7sfyz3",
+    "used": true,
+    "why": "Primary incident record includes a dated explanation published before Marcus's post."
+   },
+   {
+    "url": "https://www.itpro.com/technology/artificial-intelligence/chatgpt-has-gone-haywire-and-nobody-knows-why",
+    "used": true,
+    "why": "Contemporary reporting documents substantial abnormal responses and initial uncertainty."
+   },
+   {
+    "url": "https://gizmodo.com/chatgpt-gone-berserk-giving-nonsensical-responses-1851273889",
+    "used": false,
+    "why": "Search result was redundant; the primary incident record and a fully read contemporary report were sufficient."
+   }
+  ],
+  "performed_at": "2026-10-29T08:29:39Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "itpro-com-technology-artificial-intelligence-chatgpt-has-gone-haywi-8c31d98b5200",
+   "source_snapshot_id": "7a502747f15f9d158492d46bdcf40ddefb9b4d55d8f7613b63bb458eb11226c3",
+   "publisher": "ITPro",
+   "source_type": "news_report",
+   "url": "https://www.itpro.com/technology/artificial-intelligence/chatgpt-has-gone-haywire-and-nobody-knows-why",
+   "locator": "Opening body paragraph",
+   "receipt": {
+    "public_excerpt": "provide nonsensical answers",
+    "quote_hash": "bf0eae8d6a707201ed9efea8575168baa13f93d07176df23ca4f72b0977e16b9",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-21",
+   "available_at": "2024-02-21",
+   "retrieved_at": "2026-10-29T02:59:29Z",
+   "relation": "supports",
+   "explanation": "The report documents the substantial malfunction and describes uncertainty about its cause at that stage. It does not establish that the uncertainty persisted until February 29.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "status-openai-com-incidents-ssg8fh7sfyz3",
+   "source_snapshot_id": "228c7f787a0aea4f5164fd5693dbaed1150a001039b4060ce19172f09aeaad1e",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://status.openai.com/incidents/ssg8fh7sfyz3",
+   "locator": "Incident explanation, update dated February 21, 2024",
+   "receipt": {
+    "public_excerpt": "inference kernels",
+    "quote_hash": "8765fe1989e65a7bad2543c15e262d53f9162050e00a86000354fc55b257c5cf",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-21",
+   "available_at": "2024-02-21",
+   "retrieved_at": "2026-10-29T02:32:25Z",
+   "relation": "contradicts",
+   "explanation": "Before Marcus published, OpenAI identified a concrete cause: incorrect inference-kernel results under particular GPU configurations. Its explanation connects this bug to incorrect token selection and nonsensical output.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The records do not establish a clean six-hour user-impact interval. The current status page's summary timestamps and displayed update timestamps are inconsistent.",
+  "The public explanation does not disclose every internal implementation detail."
+ ],
+ "packet_hash": "5c94c36b661616adcb004140440d9054a76170b98a3a5d4d0c8d03dcba234704"
+}

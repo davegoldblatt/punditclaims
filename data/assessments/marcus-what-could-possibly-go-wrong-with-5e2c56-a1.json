@@ -1,0 +1,118 @@
+{
+ "assessment_id": "marcus-what-could-possibly-go-wrong-with-5e2c56-a1",
+ "claim_revision_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-5e2c56",
+  "version": 1,
+  "content_hash": "677340fb3285efcc80f5f8e83108b137381b6a16f21c132df9269fbd2a1d1cd2"
+ },
+ "contract_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-5e2c56",
+  "version": 1,
+  "content_hash": "d182581be82bf45015cf8ca930e9dc37a13ac24adf2e181f1f22ee6cc8d7da38"
+ },
+ "packet_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-5e2c56-p1",
+  "content_hash": "2879d30317c8d8fcd037d743ef5fd7c3e6361fffefb6431e1bc77ea695e65008"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The causal mechanism is demonstrated. ToolEmu researchers reproduced an agent action that crashed a virtual machine. Replit confirms an agent deleted database data in a setup where development actions could affect production. Executing the errors therefore produced consequences beyond an incorrect answer. Recovery and permission boundaries can reduce those consequences; Replit reports that the deleted data was fully restored.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence supports increased potential consequences, not inevitable harm from every action.",
+  "The sandbox result is not a production loss.",
+  "No population-wide effect size is established."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-could-possibly-go-wrong-with-09f7ef-4x-review-anthropic-1",
+  "marcus-what-could-possibly-go-wrong-with-09f7ef-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-could-possibly-go-wrong-with-09f7ef-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-could-possibly-go-wrong-with-5e2c56",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "When LLMs can take actions like writing emails or signing checks, the consequences of their unreliability and hallucinations escalate.",
+  "kind": "causal",
+  "conditions": [
+   "in systems that take real-world actions"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In a system that can write emails, make appointments, sign checks, etc, the consequences of unreliability, discomprehension, and hallucination all escalate.",
+   "locator": "paragraph 18",
+   "url": "https://garymarcus.substack.com/p/what-could-possibly-go-wrong-with",
+   "date": "2024-02-09",
+   "document_title": "What Could Possibly Go Wrong with Sam Altman’s New Ambitions?",
+   "observed_at": "2026-10-29T00:01:32Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "a system that can write emails, make appointments, sign checks",
+    "the consequences of unreliability, discomprehension, and hallucination all escalate"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that executing an erroneous instruction can directly change external systems and cause harm beyond producing an erroneous answer.",
+    "This concerns the consequences of errors, not a claim that tool access necessarily increases error frequency.",
+    "The examples describe a class of action-taking systems; they do not require every listed action or every deployment to produce harm."
+   ],
+   "support_condition": "Controlled demonstrations or documented incidents trace an agent error through an executed action to damage or disruption that an unexecuted advisory answer would not itself cause.",
+   "contradiction_condition": "Comparative evidence shows that executing the relevant errors does not increase their consequences, including where the agent can change external systems."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The causal mechanism is demonstrated. ToolEmu researchers reproduced an agent action that crashed a virtual machine. Replit confirms an agent deleted database data in a setup where development actions could affect production. Executing the errors therefore produced consequences beyond an incorrect answer. Recovery and permission boundaries can reduce those consequences; Replit reports that the deleted data was fully restored.",
+  "limitations": [
+   "The evidence supports increased potential consequences, not inevitable harm from every action.",
+   "The sandbox result is not a production loss.",
+   "No population-wide effect size is established."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "a crash",
+    "locator": "Section 4.2, End-to-End Validation",
+    "url": "https://arxiv.org/html/2309.15817v2",
+    "publisher": "arXiv",
+    "event_date": "2024",
+    "available_at": "2024-05-17",
+    "explanation": "The researchers reproduced destructive execution in a real sandbox, rather than merely generating harmful text. The paper traces agent failures involving misinterpretation and unsafe assumptions into consequential tool actions; the exact experiment date is not reported."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "production application",
+    "locator": "Section Doubling down on our commitment to secure vibe coding, incident discussion",
+    "url": "https://replit.com/blog/doubling-down-on-our-commitment-to-secure-vibe-coding",
+    "publisher": "Replit",
+    "event_date": "2025-07",
+    "available_at": "2025-07-29",
+    "explanation": "Replit confirms that its agent deleted database data and explains how development actions could affect the live application. It also reports full restoration and subsequently introduced separation of development and production databases."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "bffa40caa9c23179332fd87a9fd2e5cb715d7097390dcf933dda8143cf75521f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:45:52Z"
+}

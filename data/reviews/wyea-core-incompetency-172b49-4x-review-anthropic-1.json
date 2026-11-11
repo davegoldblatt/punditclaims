@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-core-incompetency-172b49-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-core-incompetency-172b49": "e154fb2e0684a08d9567dc0142d94a662d0f9b78b26a91a6ac53d77aea309dde",
+  "case:wyea-core-incompetency-220a23": "e1856f46d943e3ab105368fa94961e987d300a957d4c891052bd0d65d4620607",
+  "case:wyea-core-incompetency-290d66": "31d1e9b3869b226e1f7d97f026526fa6cc5b5b1135ac4ecfa6a6deef055ab237",
+  "case:wyea-core-incompetency-2a1a36": "c5d2c6104d836a7b8c5a0fbafec43ad024ef31ed0daa367467787f3f2bde42a4"
+ },
+ "started_at": "2026-10-29T17:34:08Z",
+ "completed_at": "2026-10-29T17:34:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter, stated as his calculation."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A plain historical statement about 2024. The 'in effect' wording and the preceding sentence tie it to revenue plus net loss, and the proposition keeps that."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'spends' as revenue plus net loss follows the speaker's own preceding sentence, so it is an ordinary, fair reading. Allowing for his rounded ~$2B revenue figure is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "supports",
+      "note": "S-1/A financial statements: 2024 revenue $1,915M, net loss $863M. That gives about $1.45 per dollar, close to the claimed $1.43, which reflects his rounded revenue figure. This is a company filing."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reported 2024 revenue and net loss give about $1.45 of loss-inclusive charges per revenue dollar. The claimed $1.43 is what his stated rounded revenue produces, and the gap is small. On the contract's fair reading the claim holds.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-172b49"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion, given as his view of CoreWeave's risks."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation keeps the claim of commoditisation and the three named differentiators."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'commoditized' as broadly substitutable services, with secondary differences allowed, is ordinary and fair. Requiring evidence on customer choices is demanding but appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "AWS's own announcement of an H200 instance. It shows hardware and availability as selling points but not how much they matter relative to other factors."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "CoreWeave's own blog on its managed Kubernetes and storage software. Having software does not show that software drives customer choice."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has only two provider marketing disclosures. There is no controlled comparison and no evidence of what customers actually bought, and the packet itself lists these gaps. The evidence cannot show whether price, availability and hardware dominate provider choice.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-220a23"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own summary bullet in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It covers both the 'starting from scratch' facility claim and the claim about repurposing the miner itself."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Splitting the ASIC hardware from the facility is a fair way to handle the ambiguity in 'bitcoin miner'. Reading 'from scratch' as little practical advantage from existing infrastructure is ordinary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "June 2024 Core Scientific engineering talk: conversion adds generators, chillers, UPS, batteries and GPUs, and the ASICs are replaced. But it describes substation, fiber and MV distribution as kept, with the new spending described as incremental."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "FY2024 10-K says the HPC deals use existing infrastructure, describing work as refurbishing or converting facilities. This is company self-description, not an independent finding."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "2026 management account: much capacity was built from the ground up for liquid cooling, but the first site was converted in 45 days. This is later testimony, so context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The narrow point holds: the mining ASICs cannot be repurposed and are replaced by GPU systems, and conversion needs major new mechanical and electrical plant. The broader 'effectively starting from scratch' claim is contradicted in the period: power, substation, fiber and buildings were kept and reused (e1, e2). Later testimony cuts both ways.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-290d66"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own estimate in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The proposition keeps the hedge 'not unreasonable to expect' and the drafter rates it 'likely'. That is possibility or plausibility language, not an unqualified expectation, so under policy it is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract scores the claim as a firm numerical forecast. The speaker only said the figure was a plausible expectation, so scoring it treats a hedge as a commitment."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "S-1/A baseline: through end-2024, $288M principal and $255M interest paid on DDTL 1.0."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Proxy: through end-2025, cumulative $748M principal and $523M interest. That means about $728M paid in 2025, below $1B and below the 20% band. This is a company filing."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "not_adjudicable",
+    "rationale": "'Not unreasonable to expect' is hedged, plausibility language, and policy says such claims are not scored. For the record, the filings imply about $728M of DDTL 1.0 payments in 2025, short of the ~$1B figure. But the hedge rules out a verdict.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-2a1a36"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30532,
+  "output_tokens": 4826,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

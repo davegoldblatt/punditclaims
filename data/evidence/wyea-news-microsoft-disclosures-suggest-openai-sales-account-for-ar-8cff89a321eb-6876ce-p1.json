@@ -1,0 +1,128 @@
+{
+ "packet_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6876ce-p1",
+ "claim_revision_ref": {
+  "id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6876ce",
+  "version": 1,
+  "content_hash": "f794af4221438b984a35f48aa0ba20f044ebd076717f9dbfbc11fc4d081e3f41"
+ },
+ "contract_ref": {
+  "id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6876ce",
+  "version": 1,
+  "content_hash": "fc812345d2357f7ac73aa2f667e570c4aae56469b9e8a84d8bc45a9cc31daaf5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.microsoft.com investor FY 2026 revenue \"24.1\" OpenAI",
+   "Microsoft 2026 \"24.1\" \"revenue\" \"331.8\"",
+   "site.microsoft.com/investor/reports/ar26 \"ASC 850\"",
+   "\"Microsoft\" \"2026\" \"24.1 billion\" \"revenue-sharing\"",
+   "Microsoft 2026 annual report pdf annualreports"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://microsoft.gcs-web.com/node/35106/html",
+    "used": true,
+    "why": "Readable company-hosted copy of the filed FY26 10-K. Contains both revenue inputs and the auditor's report."
+   },
+   {
+    "url": "https://microsoft.gcs-web.com/sec-filings/sec-filing/10-k/0001193125-26-323660",
+    "used": true,
+    "why": "Confirms the filing date of July 29, 2026 and reporting date of June 30, 2026."
+   },
+   {
+    "url": "https://microsoft.gcs-web.com/static-files/8a9beeed-0e9e-48e6-b4fb-593d558e2693",
+    "used": false,
+    "why": "Readable PDF duplicate; the HTML filing provides cleaner text."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar26/index.html",
+    "used": false,
+    "why": "read_page extracted the shareholder letter but did not expose the relevant financial note."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+    "used": false,
+    "why": "Confirms total revenue, but the filed statements supply both inputs together."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/artificial-intelligence/microsofts-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "The returned text ends at a subscription prompt. The primary filing makes reliance on this preview unnecessary."
+   },
+   {
+    "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+    "used": false,
+    "why": "Readable secondary confirmation of the FY26 numerator; primary evidence was obtained."
+   },
+   {
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/MSFT_FY26Q4_10K.docx",
+    "used": false,
+    "why": "read_page did not extract the relevant figure."
+   },
+   {
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/2026_AnnualReport.docx",
+    "used": false,
+    "why": "read_page did not extract the relevant figure."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427876/d62902dars.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T11:57:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "microsoft-gcs-web-com-node-35106-html",
+   "source_snapshot_id": "b4b9aa959feb06f0155ba09e8c5df6d80f6ad922009d82c5f5153d95e0b70019",
+   "publisher": "Microsoft",
+   "source_type": "filing",
+   "url": "https://microsoft.gcs-web.com/node/35106/html",
+   "locator": "Part II, Item 8, accounting policies: OpenAI related-party paragraph; Income Statements, FY2026 total revenue; independent auditor's report",
+   "receipt": {
+    "public_excerpt": "transactions with OpenAI.",
+    "quote_hash": "2415c46808c479a433097d99651d02da58d88ee97c748c5cdae54a9b164f1394",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-29",
+   "retrieved_at": "2026-10-29T11:52:20Z",
+   "relation": "supports",
+   "explanation": "The surrounding note reports $24.1 billion of FY26 commercial revenue from OpenAI, including revenue sharing; the income statement reports $331.839 billion of total revenue. Their ratio is 7.262558%, which rounds to 7.26%, while total revenue rounds to $331.8 billion.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "OpenAI commercial revenue, including revenue-sharing payments, as a percentage of consolidated revenue",
+    "currency": "USD",
+    "units": "percent; underlying amounts in billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "FY26 revenue from commercial arrangements with OpenAI, including revenue-sharing payments: USD 24.1 billion.",
+     "FY26 consolidated revenue: USD 331,839 million, equivalent to USD 331.839 billion."
+    ],
+    "formula": "(24.1 / 331.839) * 100 = 7.262558047727966%",
+    "rounding": "7.26% to two decimal places; USD 331.839 billion rounds to USD 331.8 billion."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "f9079a3b620c326e86448007f270ee2d7e1facb796468db83d7ddf787c46beb4"
+}

@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2",
+  "version": 2,
+  "content_hash": "916022cee6cc1efa93562b7a82a5418d31c2908ba761a4d53310588b0d8e542e"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2",
+  "version": 1,
+  "content_hash": "2a12dbdbdee34ea8614dd66853007a7d8ff61ea1a8bd9bbaa7ecde5a91798b40"
+ },
+ "packet_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-p1",
+  "content_hash": "3326f2ff7b35997ba79ea0544aaa525309386c0496ce9e1288627490cfca0e25"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-07-13",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence supports the narrower statement that challenging problems can produce flawed code. It does not settle the stronger assertion that contemporary code generation was highly dependent on similarity to training examples. Errors alone cannot distinguish unfamiliarity from difficulty or other reasoning limits. The later controlled study finds both memorization-related failures and meaningful generalization, so it does not justify a blanket verdict.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The cited competitive-programming study evaluates generation without external tools, rather than every code-agent configuration.",
+  "Training exposure is generally unknown for the frontier systems implicated by the context.",
+  "The later study is contextual evidence only."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-4x-review-anthropic-1",
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The code is still produced by a system highly dependent on similarity to training examples. In easy, familiar cases the results can be astonishing, but in problems that diverge from such cases the code can be buggy or altogether flawed.",
+  "kind": "observation",
+  "conditions": [
+   "in problems that diverge from easy and familiar cases"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The code construction itself is still produced by a system that is highly dependent on similarity to training examples. In easy, familiar cases, the results can be astonishing. In problems that diverge from easy and familiar cases, the constructed code can be buggy, or altogether flawed.",
+   "locator": "paragraph 118",
+   "url": "https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated",
+   "date": "2025-07-13",
+   "document_title": "How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI",
+   "observed_at": "2026-10-28T23:56:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "highly dependent on similarity to training examples",
+    "In easy, familiar cases",
+    "problems that diverge from easy and familiar cases",
+    "the constructed code can be buggy, or altogether flawed"
+   ],
+   "our_interpretation": [
+    "The plain reading combines a substantial dependence on training-example similarity with the weaker claim that unfamiliar problems can produce incorrect code.",
+    "High dependence requires evidence connecting familiarity to correctness, beyond merely finding bugs on difficult tasks.",
+    "I assess contemporary code-generation systems during 2025 through the post date, using the current year-to-date benchmark reporting window.",
+    "Controlled novelty tests should distinguish training familiarity from problem difficulty and should cover systems reasonably representative of the claim's scope."
+   ],
+   "support_condition": "Controlled comparisons show substantial loss of correctness as tasks depart from training-like examples, together with incorrect generated programs on those unfamiliar tasks.",
+   "contradiction_condition": "Representative controlled comparisons show robust performance under substantial novelty and no substantial dependence on training-example similarity."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports the narrower statement that challenging problems can produce flawed code. It does not settle the stronger assertion that contemporary code generation was highly dependent on similarity to training examples. Errors alone cannot distinguish unfamiliarity from difficulty or other reasoning limits. The later controlled study finds both memorization-related failures and meaningful generalization, so it does not justify a blanket verdict.",
+  "limitations": [
+   "The cited competitive-programming study evaluates generation without external tools, rather than every code-agent configuration.",
+   "Training exposure is generally unknown for the frontier systems implicated by the context.",
+   "The later study is contextual evidence only."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "implementation precision and tool augmentation, not superior reasoning.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2506.11928v1",
+    "publisher": "Zheng et al., arXiv",
+    "event_date": "2025-06-13",
+    "available_at": "2025-06-13",
+    "explanation": "The study reports incorrect algorithmic reasoning and substantial failures on challenging programming problems, supporting the error component. It does not directly measure similarity to the models' actual training examples, so it cannot establish the full dependence claim."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "persists on more difficult ones.",
+    "locator": "Section 5.1.1, Additional Findings",
+    "url": "https://arxiv.org/html/2503.02296v2",
+    "publisher": "Zhang et al., arXiv",
+    "event_date": "2025-09",
+    "available_at": "2025-09-30",
+    "explanation": "Controlled code rewriting finds task-dependent failures, but also substantially lower measured memorization for larger models on simpler tasks. This later evaluation qualifies a blanket dependence claim; it is context because the new experiments were reported after the target period."
+   }
+  ],
+  "what_would_resolve": "Controlled evaluations of the July 2025 model versions using documented training exposure and matched familiar versus materially novel tasks, with executable correctness checks and separate difficulty controls.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "357c10d77405f3ccc31b5c96dc4cd5858cfb0a20b53c6a3807ae3096db8b2f8b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:43:38Z"
+}

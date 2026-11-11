@@ -1,0 +1,102 @@
+{
+ "packet_id": "marcus-three-ideas-from-linguistics-that-8c1485-p1",
+ "claim_revision_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-8c1485",
+  "version": 1,
+  "content_hash": "6c2728ab62c0ef1f54e9c81cab6e3d7a9d191d6d7d4121d5e273614ff9420e90"
+ },
+ "contract_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-8c1485",
+  "version": 1,
+  "content_hash": "2af7755a5c781d45dfe8bf0554630492718b17182981e7f75f8884175701528d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "TruthfulQA 2021 falsehoods truth language models",
+   "LaMDA groundedness safety ablation 2022 language models",
+   "language models reference cognitive models compositionality causal ablation truthfulness 2022 2025",
+   "\"language models\" \"truth\" \"reference\" controlled grounding 2024 2025 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Primary evidence of contemporary models producing false answers; does not establish the proposed cause."
+   },
+   {
+    "url": "https://aclanthology.org/2022.acl-long.229/",
+    "used": false,
+    "why": "Read to verify the published TruthfulQA record; the arXiv version provides an exact version date for the evidence item."
+   },
+   {
+    "url": "https://arxiv.org/html/2203.11147v1",
+    "used": true,
+    "why": "Primary intervention study distinguishes evidence-supported answers from truthfulness and reports a relevant negative result."
+   },
+   {
+    "url": "https://arxiv.org/html/2201.08239v3",
+    "used": false,
+    "why": "LaMDA groundedness measures source attribution, which does not directly settle true-versus-false discrimination."
+   }
+  ],
+  "performed_at": "2026-10-29T08:56:24Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e8",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2109-07958",
+   "source_snapshot_id": "223855e8ead0b33318f2f1cb1369b15a3b6f01b4293f03c0706241535264358a",
+   "publisher": "arXiv; Stephanie Lin, Jacob Hilton and Owain Evans",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2109.07958",
+   "locator": "Abstract, benchmark results",
+   "receipt": {
+    "public_excerpt": "truthful on 58% of questions",
+    "quote_hash": "04aa65d7ed88edfc09a5550344094e910a1f628d603dff2d03a8ef81d3d31c5c",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T02:20:23Z",
+   "relation": "context",
+   "explanation": "TruthfulQA documents false-answer generation in GPT-family and other models on questions designed to elicit misconceptions. It does not manipulate reference, cognitive models or compositionality, so the reported failures do not establish the causal claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e9",
+   "role": "context",
+   "document_id": "arxiv-org-html-2203-11147v1",
+   "source_snapshot_id": "e7180365df34bd8ef4b006b75aa652697ec66cb8bb7ab68bbf453eec951cb673",
+   "publisher": "DeepMind; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.11147v1",
+   "locator": "Section 3.1; explanation in section 3.7",
+   "receipt": {
+    "public_excerpt": "no improvements in truthfulness",
+    "quote_hash": "b20de73544f0207f475a586d1c1a1a84963b4d65e71edbf37bff5fdba9df3a1e",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-03-21",
+   "retrieved_at": "2026-10-29T08:47:03Z",
+   "relation": "context",
+   "explanation": "GopherCite adds retrieved supporting evidence and preference-based training, yet does not improve this truthfulness measure. This cautions against equating source grounding with truth, but does not refute the broader claim involving all three linguistic factors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e9"
+ ],
+ "unresolved_gaps": [
+  "The benchmark failures do not identify the cause of poor truth discrimination.",
+  "The grounding intervention is not a controlled manipulation of all three proposed capabilities.",
+  "The cited generation results do not directly measure every model’s ability to classify supplied statements as true or false."
+ ],
+ "packet_hash": "bae0f7ba7446be4a1a29e26da9eaf101a0d0d4a790a2acce7c1fd34b04076067"
+}

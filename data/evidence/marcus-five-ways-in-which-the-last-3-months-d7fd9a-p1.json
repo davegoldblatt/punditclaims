@@ -1,0 +1,98 @@
+{
+ "packet_id": "marcus-five-ways-in-which-the-last-3-months-d7fd9a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-five-ways-in-which-the-last-3-months-d7fd9a",
+  "version": 2,
+  "content_hash": "6d579dfe4f2d8bbe9d7fb49849cd38bd768aada1ee728a4d1b3999c77467c655"
+ },
+ "contract_ref": {
+  "id": "marcus-five-ways-in-which-the-last-3-months-d7fd9a",
+  "version": 1,
+  "content_hash": "f34e4272ba41f759b604c8fad0a3dc8538e71f7e853d3dd6684ccd7e1c5ff267"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "test time compute scaling necessary pretraining scaling 2024 2025 s1",
+   "2024 Llama 3 405B pretraining scaling performance 15 trillion tokens paper"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2501.19393v1",
+    "used": true,
+    "why": "The original pre-post version reports an experiment varying test-time computation."
+   },
+   {
+    "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+    "used": true,
+    "why": "Independent benchmark testing supports gains, while the accompanying analysis acknowledges uncertainty about the system's mechanism."
+   },
+   {
+    "url": "https://arxiv.org/abs/2408.03314v1",
+    "used": false,
+    "why": "Read as background. Its experiments precede the contextual three-month period and establish conditional efficiency benefits rather than general necessity."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.15115v1",
+    "used": false,
+    "why": "Read the report. Its combination of pretraining and post-training changes does not isolate the necessary source of gains."
+   }
+  ],
+  "performed_at": "2026-10-29T05:39:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2501-19393v1",
+   "source_snapshot_id": "e46e65311239103a076b32b96d67aa9e26fc4a699af07b6d7407525b3259d896",
+   "publisher": "Muennighoff et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2501.19393v1",
+   "locator": "Abstract, penultimate sentence",
+   "receipt": {
+    "public_excerpt": "from 50% to 57%",
+    "quote_hash": "b2c8706a2b591abc262f0801228a2b345a0f019b8736d7ae7ce640f444baff49",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-31",
+   "retrieved_at": "2026-10-29T05:34:28Z",
+   "relation": "supports",
+   "explanation": "The experiment supports the limited assertion that additional inference computation was working on some tasks. It does not show that a differently scaled pretrained model could not attain the same performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arcprize-org-blog-oai-o3-pub-breakthrough",
+   "source_snapshot_id": "eb3c789e8bd202680f43628bc816534067e127e5f29f1fa976c461179d8082fd",
+   "publisher": "ARC Prize, François Chollet",
+   "source_type": "independent_measurement",
+   "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+   "locator": "Section: What's different about o3 compared to older models?",
+   "receipt": {
+    "public_excerpt": "speculate",
+    "quote_hash": "539e7ba3d018a11dfd7791dd946bac74a2725fc0c8fde725b6ef8930d27dd470",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-20",
+   "available_at": "2024-12-20",
+   "retrieved_at": "2026-10-29T01:02:26Z",
+   "relation": "context",
+   "explanation": "ARC Prize reported substantial gains and better scores with greater inference computation, and argued that new methods mattered. Its explicit uncertainty about the mechanism limits using this analysis as proof that pure scaling could not achieve those gains.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evidence establishes benefits but does not isolate general necessity.",
+  "No specified capability target or compute constraint makes the necessity comparison determinate.",
+  "No controlled comparison found rules out achieving the relevant gains through additional pretraining scale."
+ ],
+ "packet_hash": "6543eb0e09c4d6ad2872f917b5ce85c53f27b4cd400af93369cb96c62ef4e344"
+}

@@ -1,0 +1,137 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-030294-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-030294",
+  "version": 2,
+  "content_hash": "8865a1ced7241248b33f79ee0392a3b9b6f15aa94310aaef8484ba9453e3f4c2"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-030294",
+  "version": 1,
+  "content_hash": "7d37b3ea67de72beb97f0ba389f6afba6b64f32414f8b9eec3d4b21f805ded7b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenClaw March 2026 requirements Mac mini VPS cost benchmark reliability",
+   "site.openclaw.ai March 2026 Mac mini requirements",
+   "OpenClaw benchmark March 2026 hallucination tasks evaluation cost",
+   "\"PinchBench\" site:blog.kilo.ai/p/ before:2026-04-01",
+   "site:blog.kilo.ai \"M2.7 scores 86.2%\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://raw.githubusercontent.com/openclaw/openclaw/v2026.3.31/docs/help/faq.md",
+    "used": true,
+    "why": "Versioned primary documentation describes supported hosts and distinguishes requirements from recommendations."
+   },
+   {
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.31",
+    "used": true,
+    "why": "Read to verify the March 31 release date of the documentation snapshot."
+   },
+   {
+    "url": "https://blog.kilo.ai/p/minimax-m27",
+    "used": true,
+    "why": "Contemporaneous results from the benchmark operator provide counterevidence to uniformly poor performance."
+   },
+   {
+    "url": "https://blog.kilo.ai/p/pinchbench-20-is-here",
+    "used": true,
+    "why": "Later methodological disclosure limits confidence in the earlier benchmark results; used only as context."
+   },
+   {
+    "url": "https://pinchbench.com/about",
+    "used": false,
+    "why": "read_page returned no article text."
+   },
+   {
+    "url": "https://arthursoares.github.io/openclaw-llm-bench/",
+    "used": false,
+    "why": "The search result dates the benchmark run to April 10, outside the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T10:07:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "raw-githubusercontent-com-openclaw-openclaw-v2026-3-31-docs-help-faq-md",
+   "source_snapshot_id": "99f8e9b1ba8a4cc8ca6c57d8e6250205dae9d347eefaebadd831a771e1ed489d",
+   "publisher": "OpenClaw",
+   "source_type": "company_disclosure",
+   "url": "https://raw.githubusercontent.com/openclaw/openclaw/v2026.3.31/docs/help/faq.md",
+   "locator": "FAQ passage discussing whether a Mac mini is needed",
+   "receipt": {
+    "public_excerpt": "macOS or Linux",
+    "quote_hash": "5cc00dd80b247a25aaad4b378e64cac8fbda2eb16df884e0ed5c22fedd3955fe",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-03-31",
+   "retrieved_at": "2026-10-29T09:59:13Z",
+   "relation": "context",
+   "explanation": "The documentation permits ordinary Linux hosts and describes a dedicated host as recommended rather than mandatory. This weakens a special-hardware reading, but a secured Linux host could satisfy Zitron's private-space alternative.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "blog-kilo-ai-minimax-m27",
+   "source_snapshot_id": "cd9f4ac59bb480d35911508e7dbd1ecfd4f397c0aad6b54586356fbac82b21ab",
+   "publisher": "Kilo",
+   "source_type": "benchmark",
+   "url": "https://blog.kilo.ai/p/minimax-m27",
+   "locator": "PinchBench: #5 Out of 50 Models",
+   "receipt": {
+    "public_excerpt": "M2.7 scored 86.2%",
+    "quote_hash": "b3caa93bb47b4b9382a4ab0d51b872f777218025ee038d3a68e521ae936d7020",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-03-18",
+   "retrieved_at": "2026-10-29T10:01:38Z",
+   "relation": "contradicts",
+   "explanation": "Strong scores on OpenClaw tasks challenge the broad poor-performance characterization. They are aggregate benchmark scores, not verified success rates for every task in Zitron's list or a matched comparison with ordinary chatbots.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "blog-kilo-ai-pinchbench-20-is-here",
+   "source_snapshot_id": "2dd02d98a2c74705a1140c20b8cffbbee265e166d959898470174202f6cf4ecf",
+   "publisher": "Kilo",
+   "source_type": "company_disclosure",
+   "url": "https://blog.kilo.ai/p/pinchbench-20-is-here",
+   "locator": "The problems with v1",
+   "receipt": {
+    "public_excerpt": "silently wrong scores",
+    "quote_hash": "608fff715cc00f8c71d5fcbfe6fe926245ee955854e330aaca948dd723d96749",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-11",
+   "available_at": "2026-05-11",
+   "retrieved_at": "2026-10-29T10:01:07Z",
+   "relation": "context",
+   "explanation": "The benchmark operator subsequently disclosed grading and scoring defects in version 1. This limits the weight of e2; it does not establish that the particular reported score was wrong.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative comparison establishes total cost and complexity for equivalent completed tasks.",
+  "No sufficiently reliable target-period evaluation settles performance across the tasks named in context.",
+  "The benchmark article's publication metadata says March 18, 2026, but one leaderboard caption says March 18, 2025."
+ ],
+ "packet_hash": "f3f7cb8b1de17458c64a3632130a72834296da0ff1b8b3ea89f138e819176312"
+}

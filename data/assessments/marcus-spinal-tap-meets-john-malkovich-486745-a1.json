@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-spinal-tap-meets-john-malkovich-486745-a1",
+ "claim_revision_ref": {
+  "id": "marcus-spinal-tap-meets-john-malkovich-486745",
+  "version": 2,
+  "content_hash": "104092bd7f07ab1bb8363732721d0889b7fb64dac917b48c4e68458ceeaa9c31"
+ },
+ "contract_ref": {
+  "id": "marcus-spinal-tap-meets-john-malkovich-486745",
+  "version": 1,
+  "content_hash": "be0124a1b5127a836717e9d8d28d84c85d6052856f697b7c648c0b16a4870488"
+ },
+ "packet_ref": {
+  "id": "marcus-spinal-tap-meets-john-malkovich-486745-p1",
+  "content_hash": "b79f02d8e9826e7593a82c4c4564451e20493161fdbe06c7be14a7acad0a0799"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-08-31",
+  "precision": "day"
+ },
+ "public_rationale": "The claim is that current image generators, run many times on the same request, are sometimes right and sometimes wrong, and you cannot know in advance which you will get. A January 2025 study improves image models by trying many random starting points and keeping the better ones, which only works because quality varies from run to run. A 2025 evaluation of ChatGPT's GPT-4o image generator found it strong overall but still prone to errors in object-human interactions, the kind of scene in the post. A CVPR 2024 paper says plainly that not all random starts give images faithful to the prompt. Together these support the claim. One caveat: automated checkers can screen for better outputs, but a single run's result is still not known in advance.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The evidence is about the class of systems, not repeated runs of the exact prompt in ChatGPT-5 or Grok.",
+  "Automated checkers can partly filter outputs after generation, which softens 'you never know' for engineered pipelines."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-spinal-tap-meets-john-malkovich-0500bc-4x-review-anthropic-1",
+  "marcus-spinal-tap-meets-john-malkovich-0500bc-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-spinal-tap-meets-john-malkovich-486745",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "When the image-generating AI systems under discussion are run many times, they are sometimes right and sometimes wrong, and you never know which result you will get.",
+  "kind": "observation",
+  "conditions": [
+   "these systems",
+   "if run many times"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Of course you if run these systems many times, sometimes they will be right, sometimes they will be wrong — and you never know what you are going to get.",
+   "locator": "paragraph 24",
+   "url": "https://garymarcus.substack.com/p/spinal-tap-meets-john-malkovich",
+   "date": "2025-08-31",
+   "document_title": "Spinal Tap meets John Malkovich",
+   "observed_at": "2026-10-28T23:55:39Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "these systems",
+    "if run many times",
+    "sometimes they will be right, sometimes they will be wrong",
+    "you never know what you are going to get"
+   ],
+   "our_interpretation": [
+    "'These systems' means the current generative image and video models discussed in the post, such as ChatGPT image generation and Grok.",
+    "Plain reading: the same request, run repeatedly, gives outputs that vary in correctness. Some are faithful and some are flawed, and a user cannot tell in advance which a given run will give.",
+    "The claim describes an ongoing state with no named period. I use 2025 up to the post date as the latest period public evidence could cover."
+   ],
+   "support_condition": "Research from the period showing that a single prompt gives better or worse samples depending on random noise, or that leading 2025 systems are often but not always correct.",
+   "contradiction_condition": "Evidence that current systems give consistently correct (or consistently wrong) outputs for the same prompt, or that users can reliably predict the result of a run."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claim is that current image generators, run many times on the same request, are sometimes right and sometimes wrong, and you cannot know in advance which you will get. A January 2025 study improves image models by trying many random starting points and keeping the better ones, which only works because quality varies from run to run. A 2025 evaluation of ChatGPT's GPT-4o image generator found it strong overall but still prone to errors in object-human interactions, the kind of scene in the post. A CVPR 2024 paper says plainly that not all random starts give images faithful to the prompt. Together these support the claim. One caveat: automated checkers can screen for better outputs, but a single run's result is still not known in advance.",
+  "limitations": [
+   "The evidence is about the class of systems, not repeated runs of the exact prompt in ChatGPT-5 or Grok.",
+   "Automated checkers can partly filter outputs after generation, which softens 'you never know' for engineered pipelines."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Specifically, we consider a search problem aimed at identifying better noises for the diffusion sampling process.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2501.09732",
+    "publisher": "arXiv (Ma et al., Google / NYU / MIT)",
+    "event_date": "2025-01-16",
+    "available_at": "2025-01-16",
+    "explanation": "The authors improve image models by trying many random noise starts and keeping the best ones. This shows the same prompt gives better or worse results depending on the run."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Although GPT-4o demonstrates remarkable capabilities in generating complex scenes, it still faces significant challenges in producing coherent multi-person scenarios and object-human interactions.",
+    "locator": "Section 4 Weakness Analysis, 'Failures in Complicated Scenes Generation'",
+    "url": "https://arxiv.org/html/2504.02782v3",
+    "publisher": "arXiv (Yan et al., GPT-ImgEval)",
+    "event_date": "2025-04",
+    "available_at": "2025-05-02",
+    "explanation": "ChatGPT's 2025 image generator is often good, but it still fails on object-human interactions, the kind of scene in the post. Its outputs are therefore sometimes right and sometimes wrong."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "Considering text prompts, not all random noises are effective in synthesizing semantically-faithful images.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2404.04650v1",
+    "publisher": "CVPR 2024 (Guo et al.)",
+    "event_date": "2024-04",
+    "available_at": "2024-04-06",
+    "explanation": "Says directly that, for a given prompt, some random starting points give faithful images and others do not. It predates the target period, so it is context only."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "873c59e08d75e46b999bb0ef970c306675a32f2c9592bbdd7aaf9b9ef0dc01c2",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:28:31Z"
+}

@@ -1,0 +1,120 @@
+{
+ "assessment_id": "wyea-tss-169467-a1",
+ "claim_revision_ref": {
+  "id": "wyea-tss-169467",
+  "version": 1,
+  "content_hash": "64e1d29f6fc13150e7490dcb0e697d51c60ef4d2e2fc0da3f2d3a0e9b2281a73"
+ },
+ "contract_ref": {
+  "id": "wyea-tss-169467",
+  "version": 1,
+  "content_hash": "a87040a08391e67cdef53c01ffd4595cb62eb4496e3c0173e308a207e533e678"
+ },
+ "packet_ref": {
+  "id": "wyea-tss-169467-p1",
+  "content_hash": "6c275afca16f0121f2bdfb9b719817bd9f819d5b6764d5b9d8f8c200eb9b0682"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The security concern has evidence behind it: an academic audit found recurring weaknesses, and Snyk demonstrated replication of an SQL-injection pattern. But the complete claim includes a cause. Snyk’s intervention identifies surrounding code as an influence; it does not establish that the tool outputs insecure code because it knows nothing. Supporting the observed problem is insufficient to support that explanation.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "Snyk sells security tools and presents a demonstration, not a representative prevalence study.",
+  "The academic sample is limited to identifiable Copilot-generated snippets in public projects.",
+  "The functional reading of knowledge is an evaluator interpretation."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-tss-0086a5-4x-review-anthropic-1",
+  "wyea-tss-0086a5-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-tss-0086a5-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-tss-169467",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "GitHub Copilot routinely outputs insecure code because it does not know anything.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As pointed out by cybersecurity firm Snyk, Microsoft’s Github Copilot tool routinely — and unquestioningly — outputs insecure code, because (as I’ve said ad nauseum in other newsletters) it doesn’t know anything.",
+   "locator": "paragraph 109",
+   "url": "https://www.wheresyoured.at/tss",
+   "date": "2024-07-01",
+   "document_title": "The Shareholder Supremacy",
+   "observed_at": "2026-10-28T22:31:27Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Microsoft’s Github Copilot tool",
+    "routinely — and unquestioningly — outputs insecure code",
+    "because",
+    "it doesn’t know anything",
+    "As pointed out by cybersecurity firm Snyk"
+   ],
+   "our_interpretation": [
+    "Routinely means a recurring, material problem, not necessarily a majority of suggestions.",
+    "I interpret the causal language functionally: inadequate security understanding causes insecure suggestions.",
+    "A literal claim about possessing no knowledge has no agreed measurement. The functional interpretation is necessary to test the causal proposition.",
+    "The assessment concerns the system described before publication; older code samples provide background rather than a precise current failure rate."
+   ],
+   "support_condition": "Security evaluations establish recurring insecure suggestions, and controlled evidence identifies deficient security understanding as their cause.",
+   "contradiction_condition": "Representative evaluations undermine the alleged recurring problem, or causal evidence shows that the proposed mechanism does not explain the failures."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The security concern has evidence behind it: an academic audit found recurring weaknesses, and Snyk demonstrated replication of an SQL-injection pattern. But the complete claim includes a cause. Snyk’s intervention identifies surrounding code as an influence; it does not establish that the tool outputs insecure code because it knows nothing. Supporting the observed problem is insufficient to support that explanation.",
+  "limitations": [
+   "Snyk sells security tools and presents a demonstration, not a representative prevalence study.",
+   "The academic sample is limited to identifiable Copilot-generated snippets in public projects.",
+   "The functional reading of knowledge is an evaluator interpretation."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Copilot has used our vulnerable code as context",
+    "locator": "Section Understanding the problem, after the second SQL example",
+    "url": "https://labs.snyk.io/resources/copilot-amplifies-insecure-codebases-by-replicating-vulnerabilities",
+    "publisher": "Snyk",
+    "event_date": "2024-02-22",
+    "available_at": "2025-05-27",
+    "explanation": "The demonstration supports a narrower mechanism: vulnerable neighboring code changed a secure suggestion into an insecure one. It does not measure general frequency or establish that Copilot possesses no knowledge."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "29.6% of these code snippets contain security weaknesses.",
+    "locator": "Section 5.1, RQ1: How secure is the code generated by Copilot?",
+    "url": "https://arxiv.org/html/2310.02059v2",
+    "publisher": "arXiv; Yujia Fu and coauthors",
+    "event_date": "2024",
+    "available_at": "2024-04-04",
+    "explanation": "The audit supports concern about recurring security weaknesses in the collected code. Its selected historical snippets do not provide a representative July 2024 suggestion rate or identify the claimed cognitive cause."
+   }
+  ],
+  "what_would_resolve": "Controlled evaluations connecting measurable security understanding to vulnerability generation while separating effects of training data, prompts, surrounding code, and safeguards.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f3e468dab9eb847578e5795c9e2ad7f62489e6bbb089999907665f9babe57a8d",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:34:51Z"
+}

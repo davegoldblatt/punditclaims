@@ -1,0 +1,140 @@
+{
+ "assessment_id": "marcus-what-to-expect-when-youre-expecting-05ddec-a2",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-05ddec",
+  "version": 2,
+  "content_hash": "c66064e0f457427fad71d92c021edac733dc83c01bba36035a8a0d5ccad2be1a"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-05ddec",
+  "version": 1,
+  "content_hash": "d3f5933e8e0e8062afb7d960d5a12b1c5b516384554d288a62733f349a2a91e9"
+ },
+ "packet_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-05ddec-p1",
+  "content_hash": "053a5c915fcd6ac950a90b74da393f6f51afa71b4db8e9375ce6000313b34f19"
+ },
+ "axis": "forecast_outcome",
+ "outcome": "supported",
+ "horizon_state": "conclusive_event",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "OpenAI's March 14, 2023 launch disclosure establishes that GPT-4 had safeguards [e1]. Successful GPT-4 jailbreaks were documented in a study whose May 2023 version already contained the findings [e2]. XSTest responses collected on September 18, 2023 show refusals of harmless requests, concentrated in questions about fictional characters' private information [e3]. These findings establish both predicted failure modes [e1, e2, e3]. Their existence is compatible with the safety benefits reported in the same evidence: greater jailbreak resistance than GPT-3.5 and appropriate responses to most XSTest prompts [e2, e3].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The evidence establishes both failure modes, not repeated oscillation between safety settings over time [e1, e2, e3].",
+  "The selected evaluations do not establish how frequently ordinary users encounter either failure mode [e2, e3].",
+  "XSTest found localized harmless-request refusals, not refusal of most harmless requests [e3]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-to-expect-when-youre-expecting-05ddec-2x-review-anthropic-1",
+  "marcus-what-to-expect-when-youre-expecting-05ddec-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-to-expect-when-youre-expecting-05ddec-2x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-to-expect-when-youre-expecting-05ddec",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Guardrails like ChatGPT's may be in place for GPT-4, but they will teeter between being too weak (beaten by jailbreaks) and too strong (rejecting some perfectly reasonable requests).",
+  "kind": "forecast",
+  "conditions": [
+   "guardrails (a la ChatGPT) may be in place"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Guardrails (a la ChatGPT) may be in place, but the guardrails will teeter between being too weak (beaten by “jailbreaks”) and too strong (rejecting some perfectly reasonable requests).",
+   "locator": "prediction 3 of 7",
+   "url": "https://garymarcus.substack.com/p/what-to-expect-when-youre-expecting",
+   "date": "2022-12-25",
+   "document_title": "What to Expect When You’re Expecting … GPT-4",
+   "observed_at": "2026-10-29T00:04:41Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Guardrails (a la ChatGPT) may be in place",
+    "the guardrails will teeter",
+    "too weak (beaten by “jailbreaks”)",
+    "too strong (rejecting some perfectly reasonable requests)"
+   ],
+   "our_interpretation": [
+    "The plain reading predicts both successful jailbreaks and refusals of some harmless requests in released GPT-4.",
+    "Teeter describes the coexistence of these opposing failure modes; it does not specify a measured cycle of changes over time.",
+    "Perfectly reasonable requests are harmless requests that a helpful assistant can appropriately answer, assessed from their actual content.",
+    "The claim supplies no minimum failure rate and does not say guardrails will provide no benefit.",
+    "The assessment concerns GPT-4 itself, not later models such as GPT-4o or GPT-4.1."
+   ],
+   "support_condition": "After GPT-4 is released with safeguards, documented testing establishes both successful circumvention of its restrictions and refusals of clearly harmless requests.",
+   "contradiction_condition": "Adequate testing of released GPT-4 establishes that the alleged failures are misidentified or that one of the two predicted failure modes is absent. A lower failure rate or improvement over earlier models is insufficient by itself."
+  },
+  "axis": "forecast_outcome",
+  "outcome": "supported",
+  "horizon_state": "conclusive_event",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "OpenAI's March 14, 2023 launch disclosure establishes that GPT-4 had safeguards [e1]. Successful GPT-4 jailbreaks were documented in a study whose May 2023 version already contained the findings [e2]. XSTest responses collected on September 18, 2023 show refusals of harmless requests, concentrated in questions about fictional characters' private information [e3]. These findings establish both predicted failure modes [e1, e2, e3]. Their existence is compatible with the safety benefits reported in the same evidence: greater jailbreak resistance than GPT-3.5 and appropriate responses to most XSTest prompts [e2, e3].",
+  "limitations": [
+   "The evidence establishes both failure modes, not repeated oscillation between safety settings over time [e1, e2, e3].",
+   "The selected evaluations do not establish how frequently ordinary users encounter either failure mode [e2, e3].",
+   "XSTest found localized harmless-request refusals, not refusal of most harmless requests [e3]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Overall, our model-level interventions increase the difficulty of eliciting bad behavior but doing so is still possible.",
+    "locator": "Risks & mitigations",
+    "url": "https://openai.com/index/gpt-4-research",
+    "publisher": "OpenAI",
+    "event_date": "2023-03-14",
+    "available_at": "2023-03-14",
+    "explanation": "The launch disclosure describes GPT-4's safety training and interventions, establishing that safeguards were present. It also reports safety improvements, which limit any reading that the safeguards were wholly ineffective."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Nevertheless, there is considerable room for improvement in defending against jailbreak attempts, as the average jailbreak success rate in GPT-4 remains high at 87.20%.",
+    "locator": "Section IV-C, Model Versions; Table V",
+    "url": "https://arxiv.org/html/2305.13860v2",
+    "publisher": "arXiv; Yi Liu and colleagues",
+    "event_date": "2023",
+    "available_at": "2024-03-10",
+    "explanation": "The study documents successful adversarial prompts against GPT-4, supporting the jailbreak prediction; the same result appears in its May 2023 first version. Its selected prompts and policy categories do not measure ordinary-use risk, and the study also finds GPT-4 more resistant than GPT-3.5."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "The model falls somewhere between the Mistral models in terms of overall exaggerated safety, with 6.4% full refusal and 2% partial refusal.",
+    "locator": "Section 4.3, GPT-4 results; Appendix B gives response collection date",
+    "url": "https://arxiv.org/html/2308.01263v3",
+    "publisher": "Paul Röttger and colleagues; NAACL 2024, author version on arXiv",
+    "event_date": "2023-09-18",
+    "available_at": "2024-04-01",
+    "explanation": "XSTest documents GPT-4 refusing some harmless requests, with full refusals concentrated in questions about fictional characters' private information. It also finds that GPT-4 answered most safe prompts and refused all but one of 200 unsafe prompts, limiting the severity implied by a broader reading."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "7c30743901f4bf7af9b8f9afa218ec5d55219da5c748b10b4c5241a33a8a8b2d",
+ "supersedes_assessment_id": "marcus-what-to-expect-when-youre-expecting-05ddec-a1",
+ "next_review_due_at": null,
+ "conclusive_event": {
+  "evidence_id": "e3",
+  "event_date": "2023-09-18",
+  "meets_rule": "The dated XSTest responses establish harmless-request refusals. Together with the earlier successful jailbreak findings in e2 and the safeguards documented in e1, this completes the conjunction required by the contract's early-resolution rule."
+ },
+ "recorded_at": "2026-10-29T22:19:07Z"
+}

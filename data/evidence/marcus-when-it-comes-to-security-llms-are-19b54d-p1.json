@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-when-it-comes-to-security-llms-are-19b54d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-19b54d",
+  "version": 1,
+  "content_hash": "43fdc527675395347427360109604673cea8cc5c317b866997065ebb0d735d2d"
+ },
+ "contract_ref": {
+  "id": "marcus-when-it-comes-to-security-llms-are-19b54d",
+  "version": 1,
+  "content_hash": "30a7a5c3fc34b06ea4c2835a97fae547f498d8560a8b175e2a0d2f2bd37d114e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2024 jailbreak defenses robustness many shot Anthropic October",
+   "LLM Defenses Are Not Robust to Multi-Turn Human Jailbreaks Yet",
+   "\"Jailbreaking LLM-Controlled Robots\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2408.15221v2",
+    "used": true,
+    "why": "Read the primary evaluation, introduction, conclusion, and limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2408.15221",
+    "used": true,
+    "why": "Read to verify August submission and September revision dates."
+   },
+   {
+    "url": "https://www.anthropic.com/research/many-shot-jailbreaking",
+    "used": true,
+    "why": "Read in full. Supplies primary evidence of both vulnerabilities and effective attack-specific mitigation."
+   },
+   {
+    "url": "https://arxiv.org/html/2410.13691v1",
+    "used": false,
+    "why": "Read, but its October robot-specific results are outside the selected quarter and do not independently establish industry-wide defense performance."
+   }
+  ],
+  "performed_at": "2026-10-29T19:32:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2408-15221v2",
+   "source_snapshot_id": "4516bc841eed6e9fe6ef18979acd6db7603d414ebb10e5761ec7019896e61c60",
+   "publisher": "arXiv; Scale AI and UC Berkeley researchers",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2408.15221v2",
+   "locator": "Section 1, Introduction; experimental results and Section 6",
+   "receipt": {
+    "public_excerpt": "fail to generalize",
+    "quote_hash": "72852e33a2e45ff94b024c4f1207d778af86520baaac7ed0ef1341507098d00b",
+    "verified": "exact"
+   },
+   "event_date": "2024-08",
+   "available_at": "2024-09-04",
+   "retrieved_at": "2026-10-29T19:23:51Z",
+   "relation": "supports",
+   "explanation": "The study evaluates four defenses and reports substantial vulnerability to human multi-turn attacks despite strong results against automated single-turn attacks. This supports the ordinary reading that established defenses lacked broad robustness.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-many-shot-jailbreaking",
+   "source_snapshot_id": "4bc1bdd80ca9da5627c40ac0d630d32dff58bb15d5766ee71472fa64e634425d",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/many-shot-jailbreaking",
+   "locator": "Opening paragraph; Mitigating many-shot jailbreaking",
+   "receipt": {
+    "public_excerpt": "implemented mitigations",
+    "quote_hash": "ba501106b19ffb1214057709c82c1747410589fafefa5889823613db94f3f20a",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-02",
+   "available_at": "2024-04-02",
+   "retrieved_at": "2026-10-29T02:16:15Z",
+   "relation": "context",
+   "explanation": "Anthropic reports a mitigation reducing one attack's success from 61% to 2%, while also describing weaknesses and possible evasions. This is material evidence against reading Marcus as saying no effective response existed at all; it predates the target quarter and does not establish broad robustness.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The available evaluations do not exhaust every proprietary defense.",
+  "Marcus did not specify an acceptable failure rate or attack budget."
+ ],
+ "packet_hash": "b6797716b991afb05ff98efbc162adee918f75378e836af2fc7b7aed083e1aee"
+}

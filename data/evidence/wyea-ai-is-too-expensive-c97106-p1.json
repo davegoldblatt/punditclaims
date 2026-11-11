@@ -1,0 +1,168 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-c97106-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-c97106",
+  "version": 1,
+  "content_hash": "ff9f0de5fdc02358e7de26086d46cf8dd5e4aeb6c22887baffe41e83993ae6f8"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-c97106",
+  "version": 1,
+  "content_hash": "ffa9cc3b0835acc47a9b34c15af3d875f5473bab8f1a18113cd38aef19632b1a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.microsoft.com investor FY 2026 Q3 earnings RPO excluding OpenAI 627",
+   "site.microsoft.com FY 2026 Q2 RPO excluding OpenAI 45% 625",
+   "site.microsoft.com \"FY 2026\" \"392\" \"RPO\"",
+   "Microsoft FY 2026 Q2 \"Anthropic\" \"RPO\" excluding",
+   "site.microsoft.com \"2025\" \"Anthropic\" \"30 billion\" \"Azure\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1",
+    "used": true,
+    "why": "Read successfully. Establishes the initial reported RPO balance."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+    "used": true,
+    "why": "Read successfully. Gives the total balance, OpenAI share, and growth outside OpenAI, but not a sequential reconciliation excluding both companies."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+    "used": true,
+    "why": "Read successfully. Gives the subsequent balance and growth excluding OpenAI, without separately excluding Anthropic."
+   },
+   {
+    "url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
+    "used": false,
+    "why": "Read successfully. The announced purchase commitment is not a reconciliation of its contribution to Microsoft RPO."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T10:18:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q1",
+   "source_snapshot_id": "eb142c9aa3bdfa5b432328bfaf72ffc962906db55788b2917560ba4277e3a5a4",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1",
+   "locator": "Amy Hood, commercial results",
+   "receipt": {
+    "public_excerpt": "increased to $392 billion",
+    "quote_hash": "da957907e71893d3251a8fd25d1e8c4ed42944ca878d5dc402cba93ddac3d926",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2025-10-29",
+   "retrieved_at": "2026-10-29T02:54:35Z",
+   "relation": "context",
+   "explanation": "Establishes the starting aggregate balance. It does not disclose the residual balance required by the claim.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Total commercial remaining performance obligations",
+    "currency": "USD",
+    "units": "Billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-09-30",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q2",
+   "source_snapshot_id": "bbe4a93afea170ce5e09c86b5f65a8b65a70d3ac00f3cc7f8d77382a5ffaeb3f",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+   "locator": "Amy Hood, commercial results, paragraph discussing OpenAI's share of RPO",
+   "receipt": {
+    "public_excerpt": "grew 28%",
+    "quote_hash": "2eff02099c3c1da5bd46391ae102c60531741f91d2182d537b963abba7aa042b",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-01-28",
+   "retrieved_at": "2026-10-29T10:00:03Z",
+   "relation": "context",
+   "explanation": "The paragraph reports $625 billion total RPO, approximately 45% from OpenAI, and 28% growth in the remainder. That growth comparison still includes Anthropic and does not establish the claimed sequential residual.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Year-over-year growth in commercial RPO excluding OpenAI but including Anthropic",
+    "currency": "USD",
+    "units": "Percent year-over-year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-12-31",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q3",
+   "source_snapshot_id": "465c63e33d1a7815269f2a998162f799fc7d90151965fa606bd3c24f4a4e81a9",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+   "locator": "Amy Hood, commercial results",
+   "receipt": {
+    "public_excerpt": "grew 26%",
+    "quote_hash": "4fe1fd5295ac9d55c77ed9e08d7b6688e3344219f5d9647174c52b17bb24d476",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T09:55:20Z",
+   "relation": "context",
+   "explanation": "Microsoft reports $627 billion total RPO in the same paragraph. Its growth disclosure excludes only OpenAI and does not provide the sequential change after removing both companies' additions.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Year-over-year growth in commercial RPO excluding OpenAI but including Anthropic",
+    "currency": "USD",
+    "units": "Percent year-over-year",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-03-31",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No matching quarter-by-quarter reconciliation excluding both companies' identified additions was found.",
+  "The searched disclosures do not establish how announced contract amounts map to net changes in RPO.",
+  "The published growth rates excluding OpenAI use a different comparison and still include Anthropic."
+ ],
+ "packet_hash": "2fb797857d25169ce65f797880c8db9bc285f5b5beb6cc3d9ebffef4975d90e8"
+}

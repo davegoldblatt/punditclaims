@@ -1,0 +1,135 @@
+{
+ "packet_id": "wyea-what-happens-if-openai-dies-8e9fba-p1",
+ "claim_revision_ref": {
+  "id": "wyea-what-happens-if-openai-dies-8e9fba",
+  "version": 2,
+  "content_hash": "f996bd960754e4d534dd20fda29845c59546a5d7b85902b5711086697706c8f9"
+ },
+ "contract_ref": {
+  "id": "wyea-what-happens-if-openai-dies-8e9fba",
+  "version": 1,
+  "content_hash": "633c79e754334ebec6119ca24e34dc6c085c48158aa3c1cf46633f2c6ccd81ad"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 300 billion commitments three years 2026 losses",
+   "Anthropic \"$300 billion\" commitments August 2026",
+   "Anthropic \"300 billion\" \"2029\"",
+   "Anthropic \"commitments\" \"August 18\" 2026",
+   "Anthropic August 2026 \"commitments\" \"three\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing read using commitment, lease, loss, and quarterly-result passages. The extracted aggregate payment schedule contains blank amounts and does not establish the exact publication-date three-year total."
+   },
+   {
+    "url": "https://www.geekwire.com/2026/whos-getting-anthropics-compute-spending-ipo-filing-shows-where-the-tech-giants-really-stand/",
+    "used": true,
+    "why": "Readable reporting of quarterly net losses and operating profit, useful for distinguishing profitability measures."
+   },
+   {
+    "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+    "used": false,
+    "why": "Read successfully, but the announcement covers a ten-year agreement without the required three-year payment schedule."
+   },
+   {
+    "url": "https://www.fidelity.com/news/article/company-news/202609290607RTRSNEWSCOMBINED_KBN3VF0YX-OUSBS_1",
+    "used": false,
+    "why": "read_page returned the site shell without the Reuters article."
+   },
+   {
+    "url": "https://www.midgardfinance.com/research/anthropic/",
+    "used": false,
+    "why": "Read relevant passages, but this secondary compilation adds no verified publication-date payment schedule."
+   }
+  ],
+  "performed_at": "2026-10-29T13:45:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Financial-statement notes, Leases Not Yet Commenced",
+   "receipt": {
+    "public_excerpt": "lease terms",
+    "quote_hash": "3f46937678440a353ccb67c2aca2b472430ab67edb5906c13da787bda2e87686",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The lease disclosures cover obligations extending well beyond three years. Their total cannot be treated as entirely payable by August 2029.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Terms of uncommenced compute and infrastructure leases",
+    "currency": "USD",
+    "units": "years",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-06-30",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "geekwire-com-2026-whos-getting-anthropics-compute-spending-ipo-fili-23542635ab5e",
+   "source_snapshot_id": "7ec743d5da177fac6775059adb1bc62e783319b086704a0c022297c701c34235",
+   "publisher": "GeekWire",
+   "source_type": "news_report",
+   "url": "https://www.geekwire.com/2026/whos-getting-anthropics-compute-spending-ipo-filing-shows-where-the-tech-giants-really-stand",
+   "locator": "Paragraph immediately following the Q2 revenue and first operating-profit discussion",
+   "receipt": {
+    "public_excerpt": "net loss",
+    "quote_hash": "cbd73febcf01255eb00788d17b0aa24d0821a12d6bd0f84612c6cc363b5801e3",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T11:29:01Z",
+   "relation": "context",
+   "explanation": "The report is consistent with Anthropic being net-loss-making in Q2, while the surrounding paragraph reports operating profitability. Neither result settles the commitment total or provides the matched OpenAI comparison.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Quarterly net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No complete payment schedule establishes commitments outstanding on August 18, 2026 and due by August 18, 2029.",
+  "The extracted filing leaves key aggregate payment-schedule amounts blank.",
+  "The commitment claim's accounting basis is unknown, precluding a supported or contradicted money score.",
+  "No matched OpenAI profitability evidence for Q2 2026 was established.",
+  "Net-loss evidence cannot resolve an operating-profit or cash-burn interpretation."
+ ],
+ "packet_hash": "6ff003d680b20a413f5657320e1f2e21afc195934dd3236ed3d3db79cddd45ad"
+}

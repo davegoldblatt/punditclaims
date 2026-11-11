@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-let-ai-burn-f45d5c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-let-ai-burn-f45d5c",
+  "version": 1,
+  "content_hash": "730b4b096fccd6f62c947eaad9f11ade597077e8047f68ebb2423ca7a8780d1d"
+ },
+ "contract_ref": {
+  "id": "wyea-let-ai-burn-f45d5c",
+  "version": 1,
+  "content_hash": "621c7cce97e1768312ff0f8d9346beb2eafcf1b0928c365333c0fc4614845067"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.nersc.gov \"2026\" \"simulation\" \"GPU\"",
+   "site.olcf.ornl.gov \"2026\" \"June\" simulation",
+   "2026 April \"H100\" molecular dynamics simulation",
+   "GPU H100 simulation \"June 2026\" molecular",
+   "\"H100\" \"simulation\" \"Jun\" \"2026\" site.arxiv.org/abs -generative -language -video -agent -world -LLM",
+   "\"GPU\" \"2026\" \"May\" \"molecular dynamics\" -dcsai"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.exxactcorp.com/blog/molecular-dynamics/amber-molecular-dynamics-nvidia-gpu-benchmarks",
+    "used": true,
+    "why": "Primary molecular dynamics benchmarks include B200, GH200, and H100 hardware and explicitly discuss cost limitations."
+   },
+   {
+    "url": "https://arxiv.org/html/2606.01852v1",
+    "used": true,
+    "why": "Primary experiments on H100 nodes cover quantum circuit simulation and many-body dynamics."
+   },
+   {
+    "url": "https://arxiv.org/html/2606.17390v1",
+    "used": true,
+    "why": "The version available before the post documents A100 and H100 execution of non-generative material mechanics simulations."
+   },
+   {
+    "url": "https://www.ornl.gov/news/tag-teaming-turbulence-frontier-trains-ai-model-cosmic-storms",
+    "used": false,
+    "why": "The described method includes generative diffusion, making it unsuitable as a clean non-generative counterexample."
+   },
+   {
+    "url": "https://pubs.rsc.org/en/content/articlehtml/2026/dd/d5dd00423c",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T11:48:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "exxactcorp-com-blog-molecular-dynamics-amber-molecular-dynamics-nvi-e6d6e54901b8",
+   "source_snapshot_id": "f97db16d06abb2aacaae0722d1e734535c0f1c5aaeec129a6dad20744650c674",
+   "publisher": "Exxact",
+   "source_type": "benchmark",
+   "url": "https://www.exxactcorp.com/blog/molecular-dynamics/amber-molecular-dynamics-nvidia-gpu-benchmarks",
+   "locator": "Quick AMBER GPU Benchmark Takeaways",
+   "receipt": {
+    "public_excerpt": "but it is expensive for molecular dynamics.",
+    "quote_hash": "3228765778399aac212a027356dc72ba684d6499b16f1bc3c850818a51c35b0a",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-10",
+   "available_at": "2026-06-10",
+   "retrieved_at": "2026-10-29T11:32:40Z",
+   "relation": "contradicts",
+   "explanation": "The published benchmark documents molecular dynamics workloads on B200, GH200, and H100 GPUs, including a million-atom system. Its purchase-cost caveat is material: demonstrated usefulness does not establish that these are the cheapest GPUs for that work.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2606-01852v1",
+   "source_snapshot_id": "e73937ed94aa4c538944204c797157e0940367bd97c43864d62be4259466c372",
+   "publisher": "arXiv; Feng Pan and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2606.01852v1",
+   "locator": "Section V, Experiments",
+   "receipt": {
+    "public_excerpt": "All experiments use DGX H100 nodes (Section II-D).",
+    "quote_hash": "95b65027befb74fe1af802c7df391403e2e56cd8c3ef25a6491354c239b4f326",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-06-01",
+   "retrieved_at": "2026-10-29T11:32:53Z",
+   "relation": "contradicts",
+   "explanation": "The experiments demonstrate quantum circuit simulation and three many-body dynamics workloads on H100 systems, with scaling across multiple nodes. These are numerical scientific computations rather than generative AI applications.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2606-17390v1",
+   "source_snapshot_id": "26ddabf7872350d56d16b399ecf62d597f92cbc6f0200380169c28a3f07e1917",
+   "publisher": "arXiv; Deepak Sharma and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2606.17390v1",
+   "locator": "Section 3.1, forward simulation benchmark discussion adjacent to Table 4",
+   "receipt": {
+    "public_excerpt": "The H100 and A100 GPU executions",
+    "quote_hash": "c40ade75167a17768961f76e7ea4bf723530700f276049850fa1a0ee14fe05d8",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T11:33:07Z",
+   "relation": "contradicts",
+   "explanation": "The paper demonstrates finite-element material mechanics computations on A100 and H100 GPUs and compares execution with CPU-based software. This establishes another substantial non-generative application.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "These records do not measure the proportion of commercial GPU demand attributable to non-generative workloads.",
+  "The papers do not separately date each experimental run; the event month records when the demonstrated capability was publicly documented."
+ ],
+ "packet_hash": "ce1a8f4245bc7d39b8ad892811ebc2605a4a8f2ef44dd634c7fb8547deda8e68"
+}

@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-the-beginning-of-history-c90ddd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-beginning-of-history-c90ddd",
+  "version": 1,
+  "content_hash": "34e282cb027ee5a218f3634da69f426d220612d7aa3fadaf3b94738a48c26328"
+ },
+ "contract_ref": {
+  "id": "wyea-the-beginning-of-history-c90ddd",
+  "version": 1,
+  "content_hash": "d28783f6ee9af1d40992980ba51a59d0d015f073e6c1b369bd0138f26d1aa247"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Anthropic\" \"2025\" \"4.5 billion\" revenue 2026 Reuters",
+   "\"Anthropic\" \"2025\" \"4.5 billion\" revenue 2026 Financial Times",
+   "\"Anthropic\" \"2025\" \"revenue\" \"4.5\" Reuters December 2025",
+   "\"Anthropic\" \"2025\" \"4.5 billion\" revenue Reuters 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary audited 2025 financial results; important counterevidence, retained as context because the disputed estimate’s accounting basis is unreconciled."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+    "used": true,
+    "why": "Identifies the earlier $4.5 billion number as a projection and explicitly notes uncertainty about its accounting."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-hikes-2026-revenue-forecast-20-delays-will-go-cash-flow-positive",
+    "used": false,
+    "why": "read_page returned HTTP 403; search-preview text was not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T12:55:15Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Page 151, Comparison of the Years Ended December 31, 2024 and 2025; revenue table immediately above the quoted sentence",
+   "receipt": {
+    "public_excerpt": "increased by $4.2 billion, or 1,088%",
+    "quote_hash": "7e0ae56ce03acc4f6ac9f7ddc344de10331092f20395c94e76309a85d37cd150",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The accompanying table reports $4,585 million of 2025 revenue, weighing strongly against an allegation that $4.5 billion overstated annual sales. These are audited GAAP results; the earlier estimate’s accounting conventions were not established, so the item is context under the required basis-matching rule.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-company-spending-breakdown",
+   "source_snapshot_id": "e7049142024e1b70c90091e2ba7efa34de5bf983ae05d86fd435fa3b2c36ff1a",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/company-spending-breakdown",
+   "locator": "Data and Assumptions sections",
+   "receipt": {
+    "public_excerpt": "our estimates for Anthropic are somewhat speculative.",
+    "quote_hash": "39f87c4738701840a97c0ff4896a11b741940daed8877babfbb5c9e64d32f31f",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-04",
+   "retrieved_at": "2026-10-29T10:00:44Z",
+   "relation": "context",
+   "explanation": "The article traces the $4.5 billion figure to a near-year-end projection reported by The Information and warns that the accounting is uncertain. It establishes the nature of the disputed estimate, not independent verification of its accuracy.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The original press estimate’s accounting conventions were not independently established.",
+  "No reconciliation explicitly connects that estimate to the audited GAAP revenue line.",
+  "No independent evidence establishes intentional deception by the unnamed sources."
+ ],
+ "packet_hash": "199a761b9809c9a083dd6918a1689cf6b5a0d2ae7ab0e257df6d87dbacd95ecb"
+}

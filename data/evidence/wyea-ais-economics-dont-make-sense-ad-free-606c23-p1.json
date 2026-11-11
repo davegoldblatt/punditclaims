@@ -1,0 +1,150 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-ad-free-606c23-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-606c23",
+  "version": 1,
+  "content_hash": "df5fb7e52b1b21a48c5908c1e7693ab589e9af2ec4f692d55aa077c94aca6c92"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-606c23",
+  "version": 1,
+  "content_hash": "af2782b5250f9ef0612cf1cd361d47db6861099a9008ae8678db37924310eeed"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "gross profit loan principal repayments depreciation gross margin definition",
+   "site.support.microsoft.com \"PMT function\"",
+   "loan payment formula monthly principal annuity site.math.libretexts.org",
+   "gross profit principal loan payments depreciation expenses site.openstax.org",
+   "OpenStax Contemporary Mathematics publication date March 2023",
+   "OpenStax Principles Finance publication date 2022 March 24"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense-ad-free",
+    "used": false,
+    "why": "Read to establish the model's premises. Not used as independent evidence that its conclusions are correct."
+   },
+   {
+    "url": "https://openstax.org/books/contemporary-mathematics/pages/6-8-the-basics-of-loans",
+    "used": true,
+    "why": "Supplies the amortization method used in the independent recalculation."
+   },
+   {
+    "url": "https://openstax.org/books/principles-finance/pages/5-1-the-income-statement",
+    "used": true,
+    "why": "Explains gross profit and separates financing costs from it."
+   },
+   {
+    "url": "https://support.microsoft.com/en-us/excel/functions/pmt-function",
+    "used": false,
+    "why": "Read as a cross-check of the loan-payment method; redundant with the textbook."
+   },
+   {
+    "url": "https://www.business.qld.gov.au/running-business/finance/essentials/break-even-profit",
+    "used": false,
+    "why": "Read as an accounting cross-check; redundant with the textbook."
+   }
+  ],
+  "performed_at": "2026-10-29T10:22:34Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openstax-org-books-contemporary-mathematics-pages-6-8-the-basics-of-loans",
+   "source_snapshot_id": "9a01d7bdd674fdab2eac063e2fe704e2921e512626edeb291d1ddc514103c35d",
+   "publisher": "OpenStax",
+   "source_type": "secondary_summary",
+   "url": "https://openstax.org/books/contemporary-mathematics/pages/6-8-the-basics-of-loans",
+   "locator": "Section 6.8, Calculating Loan Payments and subsequent payment formula",
+   "receipt": {
+    "public_excerpt": "Loan payments are made up of two components.",
+    "quote_hash": "c123d8dbb73d142fc7962cf436417a6cab9af0f4126a69e54244f03a3565ca5d",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-28",
+   "available_at": "2023-03-22",
+   "retrieved_at": "2026-10-29T10:15:43Z",
+   "relation": "supports",
+   "explanation": "Applying the textbook's amortization method to the supplied premises reproduces the debt payments and approximately reproduces both percentages under Zitron's formula. This is an evaluator calculation, not a textbook finding about data centers.",
+   "metric_scope": {
+    "company": "Hypothetical 100MW AI data-center operator",
+    "metric": "Estimated annual gross margin and associated debt-service calculation",
+    "currency": "USD",
+    "units": "percent; USD millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Supplied model: principal P = USD 2,800 million",
+     "Supplied model: annual interest rate = 0.06",
+     "Supplied model: 12 interest-only months followed by 60 monthly amortizing payments",
+     "Supplied model: annual revenue R = USD 1,060 million",
+     "Supplied model: annual costs including depreciation, before financing C = USD 837.4 million"
+    ],
+    "formula": "Monthly payment M = 2800*(0.06/12)/(1-(1+0.06/12)^(-60)) = 54.131844 million. Annual debt service = 12*M = 649.582131 million. First-year interest = 2800*0.06 = 168 million. First-year modeled percentage = (1060-837.4-168)/1060*100 = 5.150943%. Later modeled percentage = (1060-837.4-649.582131)/1060*100 = -40.281333%.",
+    "rounding": "Calculate without intermediate rounding; report payments to two decimal places in USD millions and percentages to two decimal places."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openstax-org-books-principles-finance-pages-5-1-the-income-statement",
+   "source_snapshot_id": "5e6dec121bc56d528a7e013cedb1ba35a5ca207c9625e5db498804f1a9ce8d1b",
+   "publisher": "OpenStax",
+   "source_type": "secondary_summary",
+   "url": "https://openstax.org/books/principles-finance/pages/5-1-the-income-statement",
+   "locator": "Section 5.1, Sales and Gross Profit",
+   "receipt": {
+    "public_excerpt": "Next, the cost of goods sold (COGS) is deducted from net sales in order to arrive at gross profit.",
+    "quote_hash": "016dcaa1d7e07dc202129d7fe94a69fe284e68ea7421ccc4274ced9fcd3cb64e",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-28",
+   "available_at": "2022-03-24",
+   "retrieved_at": "2026-10-29T10:15:43Z",
+   "relation": "contradicts",
+   "explanation": "Applying the ordinary gross-profit definition to the same hypothetical inputs excludes loan payments. Even treating all $837.4 million of pre-financing costs as direct costs gives 21%, so financing does not turn this model's gross margin into approximately -40%.",
+   "metric_scope": {
+    "company": "Hypothetical 100MW AI data-center operator",
+    "metric": "Estimated annual gross margin and associated debt-service calculation",
+    "currency": "USD",
+    "units": "percent; USD millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Supplied model: annual revenue = USD 1,060 million",
+     "Supplied model: annual costs before financing, including depreciation = USD 837.4 million",
+     "Conservative classification for this check: all supplied pre-financing costs count as direct costs"
+    ],
+    "formula": "Gross-margin check = (1060-837.4)/1060*100 = 21%. Loan interest and principal payments are excluded from this calculation.",
+    "rounding": "21.00%; the exact classification of overhead could change the conventional gross margin, but cannot justify deducting loan principal."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The commercial realism of the assumed revenue, utilization, costs, and financing terms has not been independently established.",
+  "The model does not separate all direct costs from overhead, preventing a precise conventional gross-margin calculation beyond the stated conservative check."
+ ],
+ "packet_hash": "80c1c25268501bfeac4841913b77822383c2acd26ea5c640b0ccdb0dead26634"
+}

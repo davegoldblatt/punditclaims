@@ -1,0 +1,120 @@
+{
+ "assessment_id": "wyea-optimistic-cowardice-249326-a1",
+ "claim_revision_ref": {
+  "id": "wyea-optimistic-cowardice-249326",
+  "version": 2,
+  "content_hash": "a980aa829dcaf37b2322fa19d75e3912efd6ac89419a8083d45bf8b7d5dd9611"
+ },
+ "contract_ref": {
+  "id": "wyea-optimistic-cowardice-249326",
+  "version": 1,
+  "content_hash": "b4d49cbbb65ea5771f5521acf541a8134faceb3e3a95e4c7d6546be25d97c574"
+ },
+ "packet_ref": {
+  "id": "wyea-optimistic-cowardice-249326-p1",
+  "content_hash": "01dffce925f7bc4557d380bd001879aa1d0095f62f26c8d891006111641f62b6"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "SimpleQA has fixed reference answers, and experiments show that training on known benchmark material can sharply raise scores on that benchmark. This supports the narrow possibility Zitron asserts. The qualification is that a scorer's access to reference answers does not require the model or its training team to have seen them, and none of this establishes vendor misconduct.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The causal experiment is on another fixed-answer language-model benchmark.",
+  "The support applies to optimization being possible, not inevitable.",
+  "The phrase 'absolutely have to' is supported only as a statement about access needed for reference-based scoring."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-optimistic-cowardice-0243d9-4x-review-anthropic-1",
+  "wyea-optimistic-cowardice-0243d9-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-optimistic-cowardice-249326",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Because benchmarks like SimpleQA score answers against pre-written correct answers that must be known ahead of time, a model can be optimized to answer those questions correctly.",
+  "kind": "observation",
+  "conditions": [
+   "no accusation that any vendor has actually done this"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "If you know the answers ahead of time — and, given that you’re testing how close an answer resembles a pre-written “correct” answer, you absolutely have to — you can optimize the model to answer these questions correctly.",
+   "locator": "paragraph 19",
+   "url": "https://www.wheresyoured.at/optimistic-cowardice",
+   "date": "2025-03-24",
+   "document_title": "The Phony Comforts of AI Optimism",
+   "observed_at": "2026-10-28T22:30:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "If you know the answers ahead of time",
+    "a pre-written “correct” answer",
+    "you absolutely have to",
+    "you can optimize the model to answer these questions correctly",
+    "There’s no accusation that OpenAI — or any other vendor — has done this"
+   ],
+   "our_interpretation": [
+    "Although supplied as an observation, the sentence asserts a causal possibility: access to fixed test answers enables optimization that improves performance on those questions.",
+    "The plain reading is about answer-key-aware evaluation and development, not a claim that every model trainer must receive the key before training.",
+    "The evaluator needs reference answers for this scoring procedure; the evaluated model need not have seen them.",
+    "This is a methodological claim already applicable when posted, not a conditional forecast or an allegation of vendor misconduct."
+   ],
+   "support_condition": "Benchmark documentation establishes fixed reference answers, and a controlled experiment or transparent construction shows that training on known test questions and answers can raise correctness on those tests.",
+   "contradiction_condition": "The relevant scoring procedure does not use fixed reference answers, or evidence establishes that the proposed access and optimization cannot improve correctness on the fixed questions."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "SimpleQA has fixed reference answers, and experiments show that training on known benchmark material can sharply raise scores on that benchmark. This supports the narrow possibility Zitron asserts. The qualification is that a scorer's access to reference answers does not require the model or its training team to have seen them, and none of this establishes vendor misconduct.",
+  "limitations": [
+   "The causal experiment is on another fixed-answer language-model benchmark.",
+   "The support applies to optimization being possible, not inevitable.",
+   "The phrase 'absolutely have to' is supported only as a statement about access needed for reference-based scoring."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Second, responses are easy to grade, because questions are created such that there exists only a single, indisputable answer.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2411.04368",
+    "publisher": "arXiv; OpenAI researchers",
+    "event_date": "2024-11",
+    "available_at": "2024-11-07",
+    "explanation": "Establishes SimpleQA's fixed-answer design. The paper's grading procedure compares model responses with reference answers, supporting the scoring premise without implying that the model was trained on those answers."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Llama-2 7B and 13B trained on rephrased samples can achieve dramatically high scores on MMLU, from 45.3 to 88.5.",
+    "locator": "Section 5.1.1, Benchmark results",
+    "url": "https://arxiv.org/html/2311.04850v2",
+    "publisher": "arXiv; Shuo Yang and colleagues",
+    "event_date": "2023-11",
+    "available_at": "2023-11-11",
+    "explanation": "Training on rephrased benchmark test material substantially raises performance on that benchmark. This directly supports the claimed optimization mechanism; it is evidence about possibility, not evidence that OpenAI contaminated SimpleQA."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "067eaa9b611ced3283751034965edd86e8719da924ac432d260801fcb8d5dda2",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:59:37Z"
+}

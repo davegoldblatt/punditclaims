@@ -1,0 +1,197 @@
+{
+ "run_id": "marcus-getting-gpt-to-work-with-external-19406b-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-getting-gpt-to-work-with-external-19406b": "4387967438159f8d0d6d780dfc2a764108ae7c3215a02165b54dfa80740e0e60",
+  "case:marcus-getting-gpt-to-work-with-external-44d1f1": "a6ef530810788339b4a045a330fe77ae666347278cd2634f6671e38bf838b0cb",
+  "case:marcus-getting-gpt-to-work-with-external-53ff44": "c0137818c56d2ced04a50dc1ad0d4804158eb7a42f053b034dfa281da9ba67bf",
+  "case:marcus-getting-gpt-to-work-with-external-8575ae": "858475819a536c5307ddbe77cb29b945e96606c624b692d888ca113569feddbe"
+ },
+ "started_at": "2026-10-29T07:11:23Z",
+ "completed_at": "2026-10-29T07:12:04Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is in a post Marcus co-wrote with Davis and published under his byline. It is the authors' own conclusion, not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised proposition matches the source almost word for word. It describes current difficulty and is not a forecast; the post itself says the problem is not unsolvable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Far from trivial' has no threshold. The plain reading, that dependable tool use needed substantial work beyond simply connecting a model to tools, is ordinary and fair. Requiring end-to-end task success rather than just valid tool calls is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "WebArena v1 (July 2023, before the post): the best GPT-4 agent completed only 10.59% of realistic tool-enabled web tasks end to end. Taken alone, that is direct evidence that a plain integration was not dependable."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "ToolLLM (July 2023) needed search over action sequences, tool-specific training data and an API retriever to get strong tool use. It praises ChatGPT's tool use, which qualifies the picture, but the extra engineering fits 'far from trivial'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two independent studies from before the post show low end-to-end success on varied tool-enabled tasks (e4) and substantial methods built to make tool use work (e5). This meets the support condition. Nothing shows a simple integration achieving dependable completion across tasks. ToolLLM's praise of ChatGPT is a qualification, not a contradiction.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-19406b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is in a post Marcus co-wrote and published, and it reports the authors' own observations."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the 'we have seen' scope and 'thus far'. Framing it as tool-assisted use matches the surrounding text on tool integration."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'consistently unreliable' as recurring errors, not universal failure, is fair given that the post admits mixed results. Requiring independent examination of the authors' own observations is appropriate, but no such record exists in the packet."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Search-engine audit from February–March 2023. It finds imperfect citation support, including for Bing. It measures citations, not truth, leaves out Bard, and does not examine the authors' tests."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Independent 13-problem study. Individual Code Interpreter attempts sometimes failed, but consensus answers were all correct. It used different problems from the authors' and cannot confirm or refute their observations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The claim is about what the authors themselves observed. The contract requires independent examination or replication of those observations, and the packet says none was found. e2 and e3 test other questions and systems, so they can only corroborate or qualify the general pattern. The speaker's own account cannot prove itself.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-44d1f1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is in a post Marcus co-wrote and published, and it is the authors' own assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "In context, the claim is that the CI and WA plug-ins improve GPT-4 on math, especially straightforward calculation. The normalised causal proposition captures this without overstating it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Higher accuracy with each plug-in than unaided GPT-4 on the same tasks is a fair, ordinary test. No minimum effect size is imposed, which suits 'does improve things'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "AutoGen paper (October 3, before the post), on the same 120 MATH problems: ChatGPT+CI and ChatGPT+WA beat vanilla GPT-4 (about 48% and 45% versus 30%, per Figure 4a). The comparison is product versus API, a minor confound."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "SciBench: a custom Wolfram Language prompting setup hurt performance and Python helped. It did not test the commercial Wolfram Alpha plug-in, so it qualifies the general point without contradicting this claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An independent comparison from before the post shows both named commercial plug-ins beating vanilla GPT-4 on a shared set of math problems, which meets the support condition. The only contrary result (e2) comes from a custom Wolfram Language setup, not the plug-in. Differences between the product and API setups do not reverse the direction of the result.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-53ff44"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is in a post Marcus co-wrote and published, and it is the authors' own assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Context ties the claim to GPT-4 with CI or WA. The proposition keeps both domains: simple math, and simple science combined with math."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading, that users cannot depend on consistently correct answers, is fair. But 'reliably' has no error threshold, and whether roughly 7% failures on grade-school problems counts as unreliable decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Code Interpreter scored a reported 92.9% on GSM8K (August 2023). That is strong, but about 7% still failed. With no reliability threshold it neither clearly supports nor contradicts the claim, and it does not cover science problems or WA."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "College engineering problems: individual Code Interpreter attempts were stochastic and consensus answers succeeded. The problems go beyond 'simple' and Wolfram Alpha was not tested, so it is not decisive."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The independent evidence covers only Code Interpreter, mainly on math benchmarks, and the packet admits it lacks representative simple science-and-math tests with both plug-ins. The GSM8K results (92.9% without extra methods, higher with verification) fit either side depending on an unstated reliability threshold. Neither the support nor the contradiction condition is clearly met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-8575ae"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28190,
+  "output_tokens": 4447,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

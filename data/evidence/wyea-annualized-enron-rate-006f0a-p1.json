@@ -1,0 +1,120 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-006f0a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-006f0a",
+  "version": 1,
+  "content_hash": "7c950e592ffdfcf5a1837c49defeeeaf6f44828b93b84d97cb903ef1f4ada324"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-006f0a",
+  "version": 1,
+  "content_hash": "4fd8cdf290e6bff6a5121de295cf951ae9f2f33d8dd5bc46094d3567b0c7cb47"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SpaceX Cursor acquisition 2026 revenue costs",
+   "SpaceX Cursor acquisition completed June 2026 actual revenue financial statements",
+   "\"spcx-20260930\" \"Cursor\" \"net\"",
+   "\"Cursor\" \"$608 million\" \"net loss\"",
+   "\"Cursor\" \"2026\" \"costs\" \"October 22\" SpaceX"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://prod.cursor.com/blog/joining-spacex",
+    "used": true,
+    "why": "Dated company confirmation that the acquisition completed."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm",
+    "used": false,
+    "why": "Located the relevant filing, but read_page returned HTTP 403. A fully readable filing mirror was used."
+   },
+   {
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001181412/c01951ce-0302-4129-a8f1-db6f485d2857.html",
+    "used": true,
+    "why": "Full filing text reports Cursor-specific realized revenue and explains the integration limitation on separate net income."
+   },
+   {
+    "url": "https://www.publicnow.com/view/F5E703DCA574F158778510A765AD57A70803AD66",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://kresmion.com/learn/how-spacex-makes-money",
+    "used": false,
+    "why": "Readable secondary discussion, superseded by the filing mirror."
+   }
+  ],
+  "performed_at": "2026-10-29T10:28:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "prod-cursor-com-blog-joining-spacex",
+   "source_snapshot_id": "df6a7c4e2b56d66e10ea4d684cd7b82c34b3ebc06dcda021bbe44cbfc629ea7f",
+   "publisher": "Cursor",
+   "source_type": "company_disclosure",
+   "url": "https://prod.cursor.com/blog/joining-spacex",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "Cursor has officially been acquired by SpaceX.",
+    "quote_hash": "a0db775b4a48fecd3c94cad108b0baff65cbcd638bc41b741b15dba7e4c89f58",
+    "verified": "exact"
+   },
+   "event_date": "2026-08-14",
+   "available_at": "2026-08-14",
+   "retrieved_at": "2026-10-29T09:52:28Z",
+   "relation": "supports",
+   "explanation": "Establishes that the acquisition antecedent happened.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "d18rn0p25nwr6d-cloudfront-net-cik-0001181412-c01951ce-0302-4129-a8f-c8ff92a12f20",
+   "source_snapshot_id": "6ba23523201fbf67ccdb0c2b461410737388e7fea2e71393b5be8a35201d85dd",
+   "publisher": "Space Exploration Technologies Corp.",
+   "source_type": "filing",
+   "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001181412/c01951ce-0302-4129-a8f1-db6f485d2857.html",
+   "locator": "Note 20 — Acquisitions, Cursor Merger, Results of Operations",
+   "receipt": {
+    "public_excerpt": "The Company’s results of operations included $608 million of revenue attributable to Cursor from the Closing Date through September 30, 2026.",
+    "quote_hash": "f2682b1b2354923c54485a91c072e372b23c86f82a8cfd1c4b1443d996a6c0a4",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-22",
+   "retrieved_at": "2026-10-29T09:53:31Z",
+   "relation": "context",
+   "explanation": "Actual Cursor revenue became public after the post, directly challenging the ordinary nondisclosure prediction. It remains context for the formal monetary verdict because the claim supplies no accounting basis to match against the filing's GAAP basis.",
+   "metric_scope": {
+    "company": "Cursor",
+    "metric": "Revenue attributable to Cursor included in consolidated results",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-08-14",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The claim's accounting basis is unspecified; the supplied money rules prohibit a supported or contradicted verdict with that basis unknown.",
+  "The filing does not provide a complete separate Cursor cost statement. It says integration makes Cursor's separate net-income effect impracticable to determine.",
+  "No finite nondisclosure interval can prove the unlimited prediction."
+ ],
+ "packet_hash": "caeb9af84f0dcd291392439096fb011bff374b757aa6c912be9b3355581a3971"
+}

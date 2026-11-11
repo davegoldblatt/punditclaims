@@ -1,0 +1,102 @@
+{
+ "packet_id": "marcus-dont-ride-this-bike-generative-ais-3f5639-p1",
+ "claim_revision_ref": {
+  "id": "marcus-dont-ride-this-bike-generative-ais-3f5639",
+  "version": 1,
+  "content_hash": "2ec5f1670ea4876ca3b0f58f9bf3ec1c581c66778bd1ade359e2d79c3c2b90e0"
+ },
+ "contract_ref": {
+  "id": "marcus-dont-ride-this-bike-generative-ais-3f5639",
+  "version": 1,
+  "content_hash": "e9d1c99984ccdb4cc0f66618d1011ad017ee9e870b0f51b10a696de1b1e6a3aa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2024 vision language models evaluating text to image alignment self correction GPT-4V benchmark failures",
+   "FineMatch aspect based fine grained image text mismatch detection correction 2024 arxiv",
+   "2024 text image self verification feedback GPT-4o image generation evaluation self correction",
+   "ConceptMix 2024 flux DALL-E 3 7 concepts 22 percent"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2404.14715v1",
+    "used": true,
+    "why": "Primary mismatch-detection evaluation; relevant but not a direct test of the complete self-checking and corrective-feedback task."
+   },
+   {
+    "url": "https://arxiv.org/html/2408.14339v1",
+    "used": true,
+    "why": "Primary human validation of automated checks on generated images; material evidence of useful checking ability."
+   },
+   {
+    "url": "https://arxiv.org/html/2406.13743v1",
+    "used": false,
+    "why": "Automated ranking is relevant background, but does not directly establish accurate detection of prompt and feedback violations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2504.02782",
+    "used": false,
+    "why": "Evaluates a later image-generation system outside the historical scope."
+   }
+  ],
+  "performed_at": "2026-10-29T04:51:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2404-14715v1",
+   "source_snapshot_id": "05c271e9f54d6da513f0ab7b528a9831f689cb8111fcfea960bef909a60a3c2b",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2404.14715v1",
+   "locator": "Section 1; related experimental findings in sections 4.2 and 5",
+   "receipt": {
+    "public_excerpt": "fine-grained compositional information",
+    "quote_hash": "5c552277d0cfbb219fa8fdeb23e36f2656d4f5f8f514a94a450bd7e7439f688f",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-04-23",
+   "retrieved_at": "2026-10-29T04:48:00Z",
+   "relation": "context",
+   "explanation": "FineMatch finds weaknesses in compositional mismatch analysis by GPT-4V and Gemini Pro Vision, while reporting improvements from task-specific training. Its benchmark does not directly measure a generator checking its own outputs against successive user corrections.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2408-14339v1",
+   "source_snapshot_id": "af4264e502e3fb14841c49892bd44b433b3e030903de00717fc288b4c12074cf",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2408.14339v1",
+   "locator": "Introduction, contribution 2; section 3 and appendix A.3",
+   "receipt": {
+    "public_excerpt": "high consistency",
+    "quote_hash": "b7bfbdc7e8bf11be3e589da3d017d0dcf39090ada2e4960a548f56989575cb56",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-08-26",
+   "retrieved_at": "2026-10-29T04:48:19Z",
+   "relation": "context",
+   "explanation": "ConceptMix reports 0.81 consistency between GPT-4o and human-majority judgments, compared with 0.85 among human evaluators. This challenges a blanket characterization of checking as poor, but uses decomposed concept questions rather than the full self-checking and feedback task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No located evaluation directly covers both checking a system's own generated images and checking compliance with corrective feedback.",
+  "The available studies use different tasks and measures, so they do not establish a common failure rate for the claimed capability.",
+  "The evidence does not establish whether substantially new technology was necessary."
+ ],
+ "packet_hash": "d30a0986913809f6944bb88cba44b618a6ffe59041f920947c3a49ab113aef56"
+}

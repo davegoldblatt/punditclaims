@@ -1,0 +1,118 @@
+{
+ "packet_id": "marcus-c39-66ca37-p1",
+ "claim_revision_ref": {
+  "id": "marcus-c39-66ca37",
+  "version": 1,
+  "content_hash": "c398681339d97473ca084198862c25f03ddabb7349f1dd3c08ca37fb69630019"
+ },
+ "contract_ref": {
+  "id": "marcus-c39-66ca37",
+  "version": 1,
+  "content_hash": "0326de44a2cdb12ffa1eb599dc8359968ecc155ab7f1fd49cb5ae7f9f0b58f4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ARC-AGI-2 paper compositional reasoning ARC-AGI-1 limitations",
+   "Chollet On the Measure of Intelligence core knowledge priors objectness"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arcprize.org/arc-agi",
+    "used": true,
+    "why": "Official description of ARC's design. It excludes acquired knowledge."
+   },
+   {
+    "url": "https://arxiv.org/pdf/1911.01547",
+    "used": true,
+    "why": "Original ARC paper. It lists the core knowledge priors, including elementary physics."
+   },
+   {
+    "url": "https://arxiv.org/html/2505.11831",
+    "used": true,
+    "why": "ARC-AGI-2 paper by the ARC authors. It describes how much ARC-AGI-1 tested combining rules."
+   }
+  ],
+  "performed_at": "2026-10-29T02:31:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arcprize-org-arc-agi",
+   "source_snapshot_id": "9d00a01c52a659a1627485df16420d71f3ba83d20f23db411e537a708625a135",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "company_disclosure",
+   "url": "https://arcprize.org/arc-agi",
+   "locator": "section Core Knowledge Priors, paragraph 2",
+   "receipt": {
+    "public_excerpt": "ARC-AGI avoids this by restricting itself to core knowledge priors,\nthose cognitive building blocks that are either present at birth or\nacquired very early in human development with minimal explicit\ninstruction",
+    "quote_hash": "1741edc0a2e7bf7b6cd607af8450bc65677e1db158b361bb16cf84e50c6c452a",
+    "verified": "exact"
+   },
+   "event_date": "2019-11",
+   "available_at": "2026-10-28",
+   "retrieved_at": "2026-10-29T02:29:22Z",
+   "relation": "supports",
+   "explanation": "ARC deliberately avoids acquired and cultural knowledge, so factual knowledge is not tested. This supports the factuality part.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-1911-01547",
+   "source_snapshot_id": "3c10934bd0e58a665c456115391792470cc1919bdde54dd0492ac318237674ef",
+   "publisher": "arXiv (François Chollet)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/1911.01547",
+   "locator": "Section II.3.1, Core Knowledge list, first bullet (p. 47)",
+   "receipt": {
+    "public_excerpt": "Objectness and elementary physics: humans assume that their environment should\nbe parsed into “objects” characterized by principles of cohesion",
+    "quote_hash": "f788d5bb4a87ceeba662f256ee2896f7473a965f0976b06067be940f44f2b7d4",
+    "verified": "exact"
+   },
+   "event_date": "2019-11",
+   "available_at": "2019-11-05",
+   "retrieved_at": "2026-10-29T02:29:30Z",
+   "relation": "contradicts",
+   "explanation": "ARC is built on core-knowledge priors such as objectness and elementary physics, which are basic commonsense intuitions. That cuts against 'common sense aren't even addressed', though only the most basic layer is covered.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2505-11831",
+   "source_snapshot_id": "1f56bf97b72b036369294046e56162d5265709ed80017bfb4f5d3e21fa02429b",
+   "publisher": "arXiv (Chollet, Knoop, Kamradt, Landers, Pinkard)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2505.11831",
+   "locator": "Section 7.1, final paragraph",
+   "receipt": {
+    "public_excerpt": "Lastly, a major focus with ARC-AGI-2 is to investigate deeper levels of compositional generalization — the ability to combine known rules or concepts in novel ways.",
+    "quote_hash": "2b27f2895b4bcadc2ea382c1bc9861adbdc83653864ad908aa367e1d624531ca",
+    "verified": "exact"
+   },
+   "event_date": "2019-11",
+   "available_at": "2025-05-17",
+   "retrieved_at": "2026-10-29T02:29:25Z",
+   "relation": "contradicts",
+   "explanation": "The ARC authors describe ARC-AGI-2 as probing 'deeper levels' of compositional generalization than the 2019 ARC-AGI-1 design. That implies ARC-AGI-1 covered shallower levels, not none. The same section says most ARC-AGI-1 tasks needed only one high-level transformation, so coverage was weak.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No source measures how much of ARC-AGI-1 requires combining rules.",
+  "Whether core-knowledge priors count as 'common sense' in Marcus's sense is a matter of definition."
+ ],
+ "packet_hash": "73c74e59ffdca8496747325ab55e2f2ecbca4762a70aa7e0948279f2602dfc44"
+}

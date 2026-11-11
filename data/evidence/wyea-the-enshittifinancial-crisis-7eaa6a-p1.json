@@ -1,0 +1,129 @@
+{
+ "packet_id": "wyea-the-enshittifinancial-crisis-7eaa6a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-7eaa6a",
+  "version": 1,
+  "content_hash": "1729f6bf25c929d972cac267b06b1816c2c5d7a071fc5fba84e0b1605a29fccb"
+ },
+ "contract_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-7eaa6a",
+  "version": 1,
+  "content_hash": "1df6ebc0e13a3486c65f24036fda3a8c200575a0d551962deb7109f3b9e533cd"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 CoreWeave revenue Microsoft OpenAI customers 2026 full year",
+   "2025 AI cloud revenue Lambda Together Nebius excluding Microsoft revenue",
+   "Lambda 2025 full year revenue 2026 500 million",
+   "2025 AI compute revenue excluding hyperscalers OpenAI billion",
+   "Nebius 2025 revenue \"480.3\" annual 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "used": true,
+    "why": "Annual filing supplies realized revenue and customer concentration, but does not identify every excluded customer's revenue."
+   },
+   {
+    "url": "https://sacra.com/research/no-side-quests-for-lambda/",
+    "used": true,
+    "why": "Readable private-company estimate illustrates the annualized-versus-realized distinction and does not provide the required customer exclusions."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926052948/nbis-20251231x20f.htm",
+    "used": false,
+    "why": "Search surfaced relevant segment figures, but read_page returned HTTP 403. Search snippets were not used as evidence."
+   },
+   {
+    "url": "https://assets.nebius.com/assets/e59fb92e-9027-473a-8cac-04f9d2e9ea9a/Shareholder%20Letter%20Q4%202025.pdf",
+    "used": false,
+    "why": "Read, but customer capacity announcements and annualized figures did not establish an eligible full-year revenue subtotal."
+   }
+  ],
+  "performed_at": "2026-10-29T21:32:19Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q4-coreweave-inc-096f28cdd102",
+   "source_snapshot_id": "0f75b4e603c8f8d12b89623bdef8865f4f4c6d0ac2301f9eb0465aa000f9c270",
+   "publisher": "CoreWeave, Inc.",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+   "locator": "Customer-concentration risk discussion; Results of Operations; Note 2, Customer Concentration",
+   "receipt": {
+    "public_excerpt": "a limited number of customers.",
+    "quote_hash": "6d8e76aec60777de04b215c9788e5cbf490e82447550f521426c497811c632a3",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-03-02",
+   "retrieved_at": "2026-10-29T10:13:39Z",
+   "relation": "context",
+   "explanation": "The filing reports $5.131 billion of total 2025 revenue and approximately 67% from Microsoft. Those figures do not isolate eligible AI-compute revenue after removing OpenAI, other hyperscalers and any nonqualifying services.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Total consolidated revenue and customer concentration",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sacra-com-research-no-side-quests-for-lambda",
+   "source_snapshot_id": "71629e1e5d5a6b11708fa88f9ee24688f63395fe48b84bbdac8e35fc5b7fbcc9",
+   "publisher": "Sacra",
+   "source_type": "secondary_summary",
+   "url": "https://sacra.com/research/no-side-quests-for-lambda",
+   "locator": "Opening summary",
+   "receipt": {
+    "public_excerpt": "annualized revenue",
+    "quote_hash": "a07e8e39d17ddd44e0ffaac0cab1cd6c2fa15e03bf523dbd21ca5902eb31d082",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-04-20",
+   "retrieved_at": "2026-10-29T19:46:10Z",
+   "relation": "context",
+   "explanation": "This is an annualized year-end estimate, not realized calendar-year rental revenue. It also does not remove hyperscaler and OpenAI purchases, so it cannot be added to a qualifying market total.",
+   "metric_scope": {
+    "company": "Lambda",
+    "metric": "Annualized revenue",
+    "currency": "USD",
+    "units": "millions per year",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-12-31",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No complete same-scope market estimate was found.",
+  "Customer disclosures do not permit all excluded purchases to be removed.",
+  "Private-company figures found include annualized rates rather than realized calendar-year revenue.",
+  "No defensible eligible lower bound reaching USD 1 billion was established.",
+  "The denominator and scope of the accompanying 0.5831% calculation remain unspecified."
+ ],
+ "packet_hash": "6a22de95de734326dd6f94c329a2e369c1b2b3ee9a40ecb5d6132470d6242e9f"
+}

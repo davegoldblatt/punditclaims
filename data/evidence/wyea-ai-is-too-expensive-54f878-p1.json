@@ -1,0 +1,111 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-54f878-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-54f878",
+  "version": 1,
+  "content_hash": "3362cd5787413ab5bb34d46a1a7d9ee00f6dc85d91b92cb3dcf2970d7a9cdda6"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-54f878",
+  "version": 1,
+  "content_hash": "9ec3eec16f7296e7fce70a76f69b40356b867f5d65cf16182969b545c888159e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM nondeterminism identical prompts repeated runs 2026 temperature zero study",
+   "site.thinkingmachines.ai \"Defeating Nondeterminism\" \"September 10\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2502.20747",
+    "used": true,
+    "why": "Primary repeated-run study covering code-review assessments, including a Claude model, with fixed prompts and temperature zero."
+   },
+   {
+    "url": "https://arxiv.org/html/2502.20747v1",
+    "used": true,
+    "why": "Read the methods and discussion to check that the experiment repeated identical tasks and measured variation in assessments."
+   },
+   {
+    "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+    "used": true,
+    "why": "Primary experiment showing that deterministic serving configurations can eliminate variation. This limits a stronger interpretation of the claim."
+   },
+   {
+    "url": "https://arxiv.org/abs/2601.19934",
+    "used": false,
+    "why": "Read alongside the full paper. Additional repeated-run evidence was unnecessary for the narrow possibility claim."
+   },
+   {
+    "url": "https://arxiv.org/html/2601.19934v1",
+    "used": false,
+    "why": "Read the methods and results. The reported measurements chiefly concern lexical differences; the selected code-review study more directly addresses task assessments."
+   },
+   {
+    "url": "https://arxiv.org/abs/2604.22411",
+    "used": false,
+    "why": "The abstract page and full-text page presented inconsistent dates, so this source was not used decisively."
+   },
+   {
+    "url": "https://arxiv.org/html/2604.22411v1",
+    "used": false,
+    "why": "The full text displayed August 24, 2026, while the abstract metadata listed an April submission. Its timing relative to the post was not sufficiently clear."
+   }
+  ],
+  "performed_at": "2026-10-29T19:34:41Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2502-20747",
+   "source_snapshot_id": "c4b225ec3a6cfe997ed2c1adc88610e13d9c6fd734972dc49e673a11094a28b5",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2502.20747",
+   "locator": "Abstract, results sentence",
+   "receipt": {
+    "public_excerpt": "LLM responses varied to different degrees.",
+    "quote_hash": "cb8db61a35de0c388cacec451f9adc364f8b58805eac206232f50efada936aee",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-02-28",
+   "retrieved_at": "2026-10-29T19:26:51Z",
+   "relation": "supports",
+   "explanation": "The authors tested four models, including Claude 3.5 Sonnet, on 70 Java commits, clearing context and repeating identical prompts five times at temperature zero. The reported variation in code-review assessments supports the possibility asserted; the precise experiment dates are not supplied.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "thinkingmachines-ai-blog-defeating-nondeterminism-in-llm-inference",
+   "source_snapshot_id": "870fb46c59d08d8e239a1030dec30043e8c6bf8563d5931b9e00e95bb4e641ca",
+   "publisher": "Thinking Machines Lab",
+   "source_type": "demonstration",
+   "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference",
+   "locator": "Experiments: How nondeterministic are completions?",
+   "receipt": {
+    "public_excerpt": "completions are identical.",
+    "quote_hash": "7ac801983ad2c347591741c8cfed4c64c85fb993325f75e8f136ddee6426f1ea",
+    "verified": "exact"
+   },
+   "event_date": "2025-09",
+   "available_at": "2025-09-10",
+   "retrieved_at": "2026-10-29T11:27:19Z",
+   "relation": "context",
+   "explanation": "This experiment shows that changes to the serving implementation can make repeated completions identical. It counters an interpretation that variation is unavoidable, but does not contradict Zitron's narrower statement that variation can occur.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "15e0c47af32e62e34e1128ff0aba49fb59e97e384a153d4f0d22e7b4a2ec4b65"
+}

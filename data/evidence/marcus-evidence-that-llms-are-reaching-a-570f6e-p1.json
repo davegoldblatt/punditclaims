@@ -1,0 +1,110 @@
+{
+ "packet_id": "marcus-evidence-that-llms-are-reaching-a-570f6e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-570f6e",
+  "version": 1,
+  "content_hash": "febf5b2483564f974bee87e0167307b25cb748527487483a273bbf0a2020b65e"
+ },
+ "contract_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-570f6e",
+  "version": 1,
+  "content_hash": "3dcf0443f5d4e06b62219cdd6f3eadf71f9961e86c1c7e1ba6def8ee35be6eaa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI April 9 2024 GPT-4 Turbo benchmark graph MMLU GPQA MATH HumanEval",
+   "\"GPT-4 Turbo\" \"01/25/2024\" \"04/09/2024\"",
+   "\"OpenAI\" \"new GPT-4 Turbo\" \"April\" \"2024\" benchmarks chart",
+   "GitHub openai/simple-evals commit history through 2024-04-13"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://x.com/OpenAI/status/1778574613813006610",
+    "used": true,
+    "why": "Original announcement identifies improved capabilities and links the evaluation repository."
+   },
+   {
+    "url": "https://x.com/OpenAI/status/1778602770784002136",
+    "used": false,
+    "why": "Read to verify that the graph was updated for MMLU clarity; no numerical chart data appeared in the readable output."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals/tree/267835b30446d8f68a77cff13bc8a8256ce41829",
+    "used": true,
+    "why": "Dated April 13 repository revision preserves both model versions, both prompting configurations, and six benchmark scores."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals",
+    "used": false,
+    "why": "Superseded by the historical revision to avoid later changes."
+   },
+   {
+    "url": "https://viral-chart.com/data/a9afe7ace998/",
+    "used": false,
+    "why": "Approximate image-derived values without adequate publication provenance; unnecessary once primary tabular data was recovered."
+   }
+  ],
+  "performed_at": "2026-10-29T05:24:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "x-com-openai-status-1778574613813006610",
+   "source_snapshot_id": "8130f3b39280c53cab2cfd85e65fcbb6c48675dea66bc7ad121b3b26fbe4ecf9",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/OpenAI/status/1778574613813006610",
+   "locator": "Announcement text",
+   "receipt": {
+    "public_excerpt": "We’ve improved capabilities in writing, math, logical reasoning, and coding.",
+    "quote_hash": "9516a8a6fc955812ebf611b9760e150e04f2b1be017ac620df6a546d823ae459",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-12",
+   "available_at": "2024-04-12",
+   "retrieved_at": "2026-10-29T05:19:46Z",
+   "relation": "context",
+   "explanation": "Identifies the release and improvements being discussed. The announcement links OpenAI's simple-evals repository, which supplies the numerical comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-openai-simple-evals-tree-267835b30446d8f68a77cff13bc8a8256ce41829",
+   "source_snapshot_id": "a7540a3ffaf75e519673716980c3fa74d328bc6cf5b57c10574c3042c3b94688",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/openai/simple-evals/tree/267835b30446d8f68a77cff13bc8a8256ce41829",
+   "locator": "Overview methodological qualification; Benchmark Results, January and April GPT4s rows",
+   "receipt": {
+    "public_excerpt": "Evals are sensitive to prompting, and there's significant variation in the formulations used in recent publications and libraries.",
+    "quote_hash": "d2589ae4a5a0facb92253645ed834fd533ce21ec7a07e6a6b3b5dcae9a55f6c0",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-13",
+   "available_at": "2024-04-13",
+   "retrieved_at": "2026-10-29T05:20:07Z",
+   "relation": "supports",
+   "explanation": "In the assistant configuration, April-minus-January changes are 4.5 DROP F1 points and 7.9, 8.9, 4.5, 1.3, and 1.6 percentage points on GPQA, MATH, MGSM, MMLU, and HumanEval. The ChatGPT configuration likewise has small changes on most measures, with larger GPQA and MATH gains and a slight HumanEval decline.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Assistant January, ordered DROP/GPQA/MATH/MGSM/MMLU/HumanEval: 81.5, 41.4, 64.5, 85.1, 85.4, 86.6.",
+     "Assistant April, same order: 86.0, 49.3, 73.4, 89.6, 86.7, 88.2.",
+     "ChatGPT January, same order: 83.4, 39.7, 64.2, 83.7, 84.8, 88.2.",
+     "ChatGPT April, same order: 85.4, 49.1, 72.2, 88.6, 86.5, 87.6."
+    ],
+    "formula": "Subtract each January score from its April counterpart within the same prompting configuration. Assistant differences: 4.5, 7.9, 8.9, 4.5, 1.3, 1.6. ChatGPT differences: 2.0, 9.4, 8.0, 4.9, 1.7, -0.6.",
+    "rounding": "One decimal place, matching the published scores."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "d61cccb79c018900523e22527a073431875a9a8a367f0d61c8e35baa43b2cdd7"
+}

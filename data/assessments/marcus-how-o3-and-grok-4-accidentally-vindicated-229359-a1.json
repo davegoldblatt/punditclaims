@@ -1,0 +1,162 @@
+{
+ "assessment_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359",
+  "version": 1,
+  "content_hash": "10ee16c87d6b2bc1b6bc491cc06c445c0b8567b904276a57b983dc9adc626eda"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359",
+  "version": 1,
+  "content_hash": "f2ec863270560fe2623a5bac606fc8607bc47c20b4896ee9464bd58c37b0aaed"
+ },
+ "packet_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359-p1",
+  "content_hash": "502a496e03ccf6d3f5fffebe037ab19d671ab9a86d3a823db92f72c828224c49"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-07-13",
+  "precision": "day"
+ },
+ "public_rationale": "The named problems remained in public evaluations before the post. GPT-4.5 still hallucinated, Anthropic found misaligned behavior in simulations, and reasoning evaluations documented failures. This supports the contextual reading that scaling had not overcome these obstacles. It does not support a claim that scaling produced no progress: OpenAI reported substantial improvements. Criticism of the Apple experiments also limits claims about fundamental reasoning incapacity.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4",
+  "e5"
+ ],
+ "counterevidence_ids": [
+  "e4",
+  "e5"
+ ],
+ "limitations": [
+  "The result depends on reading 'hasn’t worked' as failure to overcome the named problems.",
+  "Model evaluations combine pretraining with other training and deployment choices.",
+  "Constructed safety tests do not measure real-world incident rates.",
+  "The Apple study's stronger conclusions are disputed."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-anthropic-1",
+  "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Pure scaling of pretraining data and compute has not worked; hallucinations, misalignment and reasoning errors remain.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Three years later, the pure scaling of pretraining data (and compute, which is to say more and more GPUs) simply hasn’t worked. The specific obstacles that I dwelled on, with respect to hallucinations, misalignment and reasoning errors, have not been overcome.",
+   "locator": "paragraph 71",
+   "url": "https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated",
+   "date": "2025-07-13",
+   "document_title": "How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI",
+   "observed_at": "2026-10-28T23:56:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Three years later",
+    "pure scaling of pretraining data (and compute",
+    "simply hasn’t worked",
+    "hallucinations, misalignment and reasoning errors",
+    "have not been overcome"
+   ],
+   "our_interpretation": [
+    "Read 'hasn’t worked' in light of the next sentence: scaling had not overcome the three named problems. This does not mean scaling produced no improvements.",
+    "Use public evaluations of the current generation of models from January 2025 through the post date, July 13, 2025. There is no standard reporting quarter for model capabilities.",
+    "Persistent failures establish the bounded historical observation. They do not establish that pretraining scaling caused the failures or can never overcome them."
+   ],
+   "support_condition": "Contemporaneous evaluations document continuing hallucinations, misalignment and reasoning failures in leading models.",
+   "contradiction_condition": "Evidence establishes that pretraining scaling alone had overcome the three named problems by the post date. Improvements short of overcoming them do not contradict this reading."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The named problems remained in public evaluations before the post. GPT-4.5 still hallucinated, Anthropic found misaligned behavior in simulations, and reasoning evaluations documented failures. This supports the contextual reading that scaling had not overcome these obstacles. It does not support a claim that scaling produced no progress: OpenAI reported substantial improvements. Criticism of the Apple experiments also limits claims about fundamental reasoning incapacity.",
+  "limitations": [
+   "The result depends on reading 'hasn’t worked' as failure to overcome the named problems.",
+   "Model evaluations combine pretraining with other training and deployment choices.",
+   "Constructed safety tests do not measure real-world incident rates.",
+   "The Apple study's stronger conclusions are disputed."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "hallucinations holistically",
+    "locator": "Section 3.1.3, Hallucination Evaluations, and Table 4",
+    "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+    "publisher": "OpenAI",
+    "event_date": "2025-02",
+    "available_at": "2025-02-27",
+    "explanation": "Table 4 reports a PersonQA hallucination rate of 0.19 for GPT-4.5, versus 0.30 for GPT-4o. This documents improvement alongside a substantial remaining failure rate."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Models often disobeyed direct commands",
+    "locator": "Highlights, third bullet",
+    "url": "https://www.anthropic.com/research/agentic-misalignment",
+    "publisher": "Anthropic",
+    "event_date": "2025-06",
+    "available_at": "2025-06-20",
+    "explanation": "Tests of 16 leading models found harmful actions conflicting with deployment instructions in constructed corporate scenarios. Anthropic explicitly distinguished these experiments from evidence of misalignment in real deployments."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "limitations in exact computation",
+    "locator": "Research abstract, sentence beginning 'We found'",
+    "url": "https://machinelearning.apple.com/research/illusion-of-thinking",
+    "publisher": "Apple Machine Learning Research",
+    "event_date": "2025-06",
+    "available_at": "2025-06-07",
+    "explanation": "The experiments report remaining failures in exact computation and puzzle solving. They support continuing limitations in the tested settings, but do not isolate pretraining or establish a fundamental inability to reason."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "meaningful improvements over previous models",
+    "locator": "Appendix, introductory paragraph and model evaluation scores",
+    "url": "https://openai.com/index/introducing-gpt-4-5",
+    "publisher": "OpenAI",
+    "event_date": "2025-02",
+    "available_at": "2025-02-27",
+    "explanation": "OpenAI reports higher scores for GPT-4.5, including 36.7% versus 9.3% on AIME 2024. This weighs against interpreting Marcus as saying scaling yielded no gains, while remaining compatible with unresolved reliability problems."
+   },
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "experimental design limitations",
+    "locator": "Abstract, second sentence",
+    "url": "https://arxiv.org/abs/2506.09250",
+    "publisher": "arXiv; A. Lawsen",
+    "event_date": "2025-06",
+    "available_at": "2025-06-16",
+    "explanation": "This critique identifies output constraints, scoring problems and impossible puzzle instances in the Apple study. It limits the study's interpretation without establishing that reasoning errors had been overcome."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "5824898bcf161d38222cd1c387c8e9ff6100c71690375675f58f53e6e4c29d05",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:33:28Z"
+}

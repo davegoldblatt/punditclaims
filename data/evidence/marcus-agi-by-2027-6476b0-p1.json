@@ -1,0 +1,128 @@
+{
+ "packet_id": "marcus-agi-by-2027-6476b0-p1",
+ "claim_revision_ref": {
+  "id": "marcus-agi-by-2027-6476b0",
+  "version": 1,
+  "content_hash": "4108de433a8a94f682aca226984f7af93e51e500a85326384b2bf0aa9e2f3a8b"
+ },
+ "contract_ref": {
+  "id": "marcus-agi-by-2027-6476b0",
+  "version": 1,
+  "content_hash": "9aef139e2457385ba6bc6053959ca6014b14c5f6f64362069325586c4ff0eeec"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SWE-bench GPT-4 resolve rate 2023",
+   "Coscientist GPT-4 autonomous chemical research Nature 2023",
+   "GPT-4 system card ARC autonomous replication evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2310.06770",
+    "used": true,
+    "why": "SWE-bench paper. Frontier models, GPT-4 included, solved only the simplest real software issues."
+   },
+   {
+    "url": "https://situational-awareness.ai/from-gpt-4-to-agi/",
+    "used": true,
+    "why": "Gives GPT-4's roughly 2% SWE-bench score without scaffolding."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41586-023-06792-0",
+    "used": true,
+    "why": "Coscientist: GPT-4 inside a tool-equipped system doing semi-autonomous experiments. Context and possible counterevidence."
+   },
+   {
+    "url": "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
+    "used": false,
+    "why": "Its ARC finding that GPT-4 was ineffective at autonomous tasks is relevant, but the passage spans line breaks, so it was not quoted."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.15793",
+    "used": false,
+    "why": "SWE-agent's 12.5% uses scaffolding. The SWE-bench sources are more direct."
+   }
+  ],
+  "performed_at": "2026-10-29T02:07:18Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2310-06770",
+   "source_snapshot_id": "45658130f85e66b76fcadb678dbccd6661439d8b66170d9cadc41a1d14a13e5b",
+   "publisher": "arXiv / ICLR 2024 (Jimenez et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2310.06770",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues.",
+    "quote_hash": "4a997ff76eead71e3938d2b1bc9df3f156655eee1a319c0f7e82a0fab4797a27",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-10",
+   "available_at": "2023-10-10",
+   "retrieved_at": "2026-10-29T02:05:13Z",
+   "relation": "supports",
+   "explanation": "On real GitHub issues, frontier models including GPT-4 solved under 2%. That is far from singlehandedly designing and building original systems.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "situational-awareness-ai-from-gpt-4-to-agi",
+   "source_snapshot_id": "6b2bd90a59fda3e7bc3a9d9f416c92337360965171e0d1bbc6b1a2266c952799",
+   "publisher": "Leopold Aschenbrenner, Situational Awareness",
+   "source_type": "secondary_summary",
+   "url": "https://situational-awareness.ai/from-gpt-4-to-agi",
+   "locator": "Section 'Unhobbling', Scaffolding paragraph",
+   "receipt": {
+    "public_excerpt": "GPT-4 can only solve ~2% correctly, while with Devin’s agent scaffolding it jumps to 14-23%.",
+    "quote_hash": "681688058959d0c18112189a3985de4f3acc96047191fe41a61133d2ced08d53",
+    "verified": "exact"
+   },
+   "event_date": "2024-06-04",
+   "available_at": "2024-06-04",
+   "retrieved_at": "2026-10-29T02:04:49Z",
+   "relation": "supports",
+   "explanation": "As of the post date, even the optimistic author put GPT-4 on its own at about 2% on real software tasks. Only external scaffolding raised this.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "nature-com-articles-s41586-023-06792-0",
+   "source_snapshot_id": "0298aeba1b3bf92160605aadc683f22863931e8b12d9308e50b6cb26bb5e2541",
+   "publisher": "Nature (Boiko et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-023-06792-0",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Coscientist, an artificial intelligence system driven by GPT-4 that autonomously designs, plans and performs complex experiments by incorporating large language models empowered by tools",
+    "quote_hash": "b8427df77c45d5a0c45ba48c559a53eefdbb7f99b43117b44038148a3ed65a35",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-20",
+   "available_at": "2023-12-20",
+   "retrieved_at": "2026-10-29T02:05:38Z",
+   "relation": "context",
+   "explanation": "A human-built system driven by GPT-4 designed and ran experiments with tools and lab automation. This is not GPT-4 'on its own', and the tasks optimised known reactions, but a looser reading could count it against Marcus.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "Absence of a documented case cannot be proven exhaustively.",
+  "No benchmark directly measures 'science-fair-level original ideas'."
+ ],
+ "packet_hash": "e674a2a5106488dcba6514b04986b37c8d93f1670ba63cfa26fb5811ce8ff637"
+}

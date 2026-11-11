@@ -1,0 +1,75 @@
+{
+ "run_id": "marcus-1984-but-with-llms-183cfc-3x-final-openai-24",
+ "kind": "batch_final_text",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-1984-but-with-llms-183cfc": "e94ef97ff217ada509d106e66584658bf89eee7d6d2fb60f12a1646cc9ca1496",
+  "payload:marcus-1984-but-with-llms-183cfc": "8149a12ba9af36bee8ceeb18c7269171f71741e8851dd9f8bc34d847e81eb1f4",
+  "case:marcus-1984-but-with-llms-3c3539": "5b63f378bfb62fb925b3beee2a38aa92669e06c359729c112014cbb94f1dc1cd",
+  "payload:marcus-1984-but-with-llms-3c3539": "57f6a62684b8d2765324868a6c9187fc8567dd0d74f4e44e2279cd3abba7fc23",
+  "case:marcus-1984-but-with-llms-ca2320": "6221998f2342ec15ee02860535befb120c6e9c4b5e3ad77fefbfb22e6b045a7a",
+  "payload:marcus-1984-but-with-llms-ca2320": "671a715759886bfd2587319de2aff8d773811970caf3ff4040f03fa62265840a"
+ },
+ "started_at": "2026-11-01T01:29:56Z",
+ "completed_at": "2026-11-01T01:30:26Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The payload preserves the statement's meaning, explains the missing test and deadline, and accurately limits what the Meta evidence establishes.",
+    "claim_id": "marcus-1984-but-with-llms-183cfc"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "But every company ranged from neutral to left, with none clearly right."
+    ],
+    "verdict": "fail",
+    "note": "The e3 explanation asserts results for every company. The supplied excerpts give company-level results for only four of eight companies, as the payload itself acknowledges. Absence of reported right-leaning results does not establish that none occurred.",
+    "claim_id": "marcus-1984-but-with-llms-3c3539"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "But 64% is short of 'pretty much every', the review stops at 2023, and it does not test any effect on views."
+    ],
+    "verdict": "fail",
+    "note": "The e1 explanation treats a lower bound as an exact share. 'At least 64%' does not establish that the actual share falls short of 'pretty much every'. Say the reported lower bound does not establish near-universal use. The limitation correctly identifies this distinction, but does not repair the explanation.",
+    "claim_id": "marcus-1984-but-with-llms-ca2320"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26366,
+  "output_tokens": 1076,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": 671
+ },
+ "cost_usd": null
+}

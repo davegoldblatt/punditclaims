@@ -1,0 +1,109 @@
+{
+ "packet_id": "marcus-even-more-good-news-for-the-future-e79af0-p1",
+ "claim_revision_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-e79af0",
+  "version": 2,
+  "content_hash": "ad980a99864c6f61444790f599c80b7436ced93425ace97cb315ac509b70a11b"
+ },
+ "contract_ref": {
+  "id": "marcus-even-more-good-news-for-the-future-e79af0",
+  "version": 1,
+  "content_hash": "c9432461d5c5dd420d09ef74d7c8315a32ea31cb9af5c5c7ea05f67da095a5ac"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com Claude Opus 4.6 system card February 2026 limitations coding",
+   "Claude Code Opus 4.6 evaluation errors April 2026 AGI",
+   "\"SWE-AGI\" \"4.6\" \"2026\"",
+   "\"Claude Code\" \"stellaraccident\" \"2026\" \"degradation\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2602.09447",
+    "used": true,
+    "why": "Read to verify the paper's submission history."
+   },
+   {
+    "url": "https://arxiv.org/html/2602.09447v1",
+    "used": true,
+    "why": "Primary evaluation explicitly identifies Claude Code as the agent used with Opus 4.6 and reports final task outcomes."
+   },
+   {
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "used": true,
+    "why": "First-party retrospective documents failures during the target period. Changes introduced after April 12 are excluded."
+   },
+   {
+    "url": "https://github.com/anthropics/claude-code/issues/42796",
+    "used": false,
+    "why": "Read the original user report, but preferred controlled evaluation and the vendor's subsequent investigation over an uncontrolled complaint."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-6",
+    "used": true,
+    "why": "Read for model identification and release context; its favorable capability claims do not establish unattended reliability."
+   },
+   {
+    "url": "https://www-cdn.anthropic.com/6a5fa276ac68b9aeb0c8b6af5fa36326e0e166dd.pdf",
+    "used": false,
+    "why": "read_page rejected the document because it exceeded the retrieval size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T05:22:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2602-09447v1",
+   "source_snapshot_id": "88cfb3e5685685161dee7571287d6e4d102cddcb124a243fef08875157f936cb",
+   "publisher": "Zhang et al. / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2602.09447v1",
+   "locator": "Section 5, Conclusion; agent configuration in Section 3.1",
+   "receipt": {
+    "public_excerpt": "claude-opus-4.6 solves 15/22 (68.2%)",
+    "quote_hash": "4bc98bc907b24a63b11a971abbcf7d31b726bc74dc4fb1ae03f5def1e92cb39a",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-10",
+   "retrieved_at": "2026-10-29T05:18:55Z",
+   "relation": "supports",
+   "explanation": "The study uses Claude Code with Opus 4.6 and finds multiple final submissions that fail its correctness tests. It also reports strong performance on easy tasks and notes that many failures are near-complete solutions, limiting how broadly the failure rate can be generalized.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-april-23-postmortem",
+   "source_snapshot_id": "456a5d397166e0eca950889ae682c805ea24fd066ed5c1380b66ce93bc938dd6",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/april-23-postmortem",
+   "locator": "Section A caching optimization that dropped prior reasoning",
+   "receipt": {
+    "public_excerpt": "forgetfulness, repetition, and odd tool choices",
+    "quote_hash": "cbf758f289450e47f18b2b1636917d153f47cb21901554f5a71002a235b99222",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-26",
+   "available_at": "2026-04-23",
+   "retrieved_at": "2026-10-29T03:11:44Z",
+   "relation": "supports",
+   "explanation": "Anthropic traces these behaviors to a Claude Code bug introduced March 26 that repeatedly discarded reasoning history and affected both Sonnet 4.6 and Opus 4.6. The company says it fixed this specific bug April 10, so it corroborates failures during the period rather than a continuing defect on the post date.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The benchmark does not estimate the error rate across ordinary Claude Code usage.",
+  "No numerical threshold defines plenty or the acceptable risk for a particular user."
+ ],
+ "packet_hash": "31c02e6b28442c1a2509ea8ebe331cffed9fdc912eda8306245d397dee63238b"
+}

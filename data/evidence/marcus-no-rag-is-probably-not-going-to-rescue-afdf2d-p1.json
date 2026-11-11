@@ -1,0 +1,136 @@
+{
+ "packet_id": "marcus-no-rag-is-probably-not-going-to-rescue-afdf2d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-afdf2d",
+  "version": 1,
+  "content_hash": "23dcb6509108bebaa9cf39b67bb92923dfc99a0fbd5818d5245ca6aa96bba243"
+ },
+ "contract_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-afdf2d",
+  "version": 1,
+  "content_hash": "0ff4553d1c3ff47829fedff9cca1b6502574b945f3a3b9258be9b1825d6c887f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "RAG hallucination near zero benchmark 2025 2026 factuality abstention",
+   "RAG zero hallucination 2025 2026 benchmark Vectara leaderboard",
+   "site.arxiv.org RAG hallucination 2025 2026 \"zero\"",
+   "site.vectara.com \"2025\" \"0.7\" hallucination",
+   "site.arxiv.org CRAG comprehensive RAG benchmark 2024 hallucination 28%"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2406.04744v1",
+    "used": true,
+    "why": "A broad factual-answering benchmark reports substantial remaining hallucinations in evaluated RAG systems."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.04744v1",
+    "used": true,
+    "why": "Confirms the June 7, 2024 release date."
+   },
+   {
+    "url": "https://github.com/vectara/hallucination-leaderboard",
+    "used": true,
+    "why": "The retrieved February 2025 table provides material evidence of low error rates, but measures document summarization."
+   },
+   {
+    "url": "https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard",
+    "used": true,
+    "why": "The benchmark operator reports a harder evaluation and explains the narrower scope of its measurement."
+   },
+   {
+    "url": "https://arxiv.org/abs/2610.35056",
+    "used": false,
+    "why": "Read a study released October 26, 2026. Its improvements on three smaller backbones do not establish broadly near-zero hallucination or settle the unlimited forecast."
+   },
+   {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12749912/",
+    "used": false,
+    "why": "A potentially relevant radiology study could not be read because access returned HTTP 403. Its search snippet was not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T07:36:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2406-04744v1",
+   "source_snapshot_id": "044383b20caea817e3a4d94fdc6ff895dd4576b8fc41a2d0328d24199864467f",
+   "publisher": "arXiv; Yang and colleagues, Meta and HKUST",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2406.04744v1",
+   "locator": "Section 5, discussion of Table 6 and state-of-the-art systems",
+   "receipt": {
+    "public_excerpt": "17% to 25%",
+    "quote_hash": "0c7eca4f11e16dc68a30e98f627020c987d24a1eabf90949013fb443e881f83c",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-06-07",
+   "retrieved_at": "2026-10-29T07:27:45Z",
+   "relation": "context",
+   "explanation": "CRAG found substantial hallucinations across its tested industry systems. This documents failures at that time, but cannot establish that future RAG systems will never approach elimination.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "github-com-vectara-hallucination-leaderboard",
+   "source_snapshot_id": "8f44b6f7c783387094ec9b230eb6c2d70bb8c751d44c2274a70bc377b8806e6d",
+   "publisher": "Vectara",
+   "source_type": "benchmark",
+   "url": "https://github.com/vectara/hallucination-leaderboard",
+   "locator": "Introduction and leaderboard dated February 28, 2025; Gemini-2.0-Flash-001 row",
+   "receipt": {
+    "public_excerpt": "summarizing a document.",
+    "quote_hash": "292119749564c3c6f28a1c0b8e9665307c8cc2ed76f21f7c9476c866fbdc641c",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-28",
+   "available_at": "2025-02-28",
+   "retrieved_at": "2026-10-28T23:17:00Z",
+   "relation": "context",
+   "explanation": "The table reports a 0.7% hallucination rate with 100% answer rate for Gemini-2.0-Flash-001. This materially challenges a blanket dismissal of low error rates, but the test measures judged summary faithfulness, not broad retrieval-based factual answering or retrieval's causal contribution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "vectara-com-blog-introducing-the-next-generation-of-vectaras-halluc-26387b1ce300",
+   "source_snapshot_id": "7d845222f85cd3d5043a21eaf387d120df9c779096f3f09fa9fdd0fc06afbf66",
+   "publisher": "Vectara",
+   "source_type": "benchmark",
+   "url": "https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard",
+   "locator": "Leaderboard Results",
+   "receipt": {
+    "public_excerpt": "3.3% hallucination rate",
+    "quote_hash": "11bc35fbb5ef0ec8b97ab9939adc03ede4e64517d1b7bf9051a854e2abd59008",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-19",
+   "retrieved_at": "2026-10-29T06:47:28Z",
+   "relation": "context",
+   "explanation": "The revised summarization benchmark uses longer, harder, more varied documents and reports higher rates. It shows why low scores on the earlier dataset cannot establish general elimination.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No retrieved evaluation meets the stated rule for a decisive broad demonstration.",
+  "The speaker supplies neither a deadline nor a numerical near-zero threshold.",
+  "Low summarization error rates do not isolate the effect of retrieval or establish factual accuracy across representative queries."
+ ],
+ "packet_hash": "67ba7bccab0082e28d563e4434a4f96a6fb5e8a886b6d651a89e3cf59781207d"
+}

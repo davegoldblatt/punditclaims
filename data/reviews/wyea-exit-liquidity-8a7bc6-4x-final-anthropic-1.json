@@ -1,0 +1,75 @@
+{
+ "run_id": "wyea-exit-liquidity-8a7bc6-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:wyea-exit-liquidity-8a7bc6": "b82eb18a8f56549b9b93c97ffaedd2ace3c57a8953a001704952328f60ad38c0",
+  "payload:wyea-exit-liquidity-8a7bc6": "1f680b4d32d9b9a72314505a8fb2f4e757761d2ecf9ae6d749507e6e6d141a46",
+  "case:wyea-exit-liquidity-8d89d4": "75cd76f24a1fe4efe11a883df963f67c1a3b6b59886bdd9cd292cbd018db61c1",
+  "payload:wyea-exit-liquidity-8d89d4": "d1dd889b2047a955cc7b9d374c2f96306eb0bd76ace0433893d20070af73368f",
+  "case:wyea-exit-liquidity-929935": "d476fda4d0adc54d73ee33c49eb792d12717009951bf3605b186ccf8c2c0c9f6",
+  "payload:wyea-exit-liquidity-929935": "f6b2d925547b4bf2fd1b2eb6523f630aaee84f1d75cbdb5ed06c5cc856a03bcb"
+ },
+ "started_at": "2026-10-29T17:44:54Z",
+ "completed_at": "2026-10-29T17:45:36Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "Excerpt matches the statement exactly. The interpretation shows that $269.4B is the Google/Amazon/Microsoft subtotal. The cited amounts (44.9+114.5+110.0) add up to it, and the excerpts, publishers, dates and relations are correct. The rationale correctly treats the 'majority unrealized' part as unsettled because no reconciliation of recognized amounts exists. Outcome unresolved, axis historical_observation and horizon not_applicable match the reviews.",
+    "claim_id": "wyea-exit-liquidity-8a7bc6"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The retrieved records describe proposed or newly priced offerings, not final returns."
+    ],
+    "verdict": "fail",
+    "note": "Excerpt, proposition, axis, open horizon and unresolved outcome are all fine. The only cited item is Anthropic's S-1 announcement. 'Newly priced offerings' relies on Meta's pricing announcement, which was marked used:false and is not an evidence item. The claim covers both Anthropic and Meta, yet the payload cites no evidence about Meta's offering. Either add the Meta pricing record as an evidence item or remove the reference.",
+    "claim_id": "wyea-exit-liquidity-8d89d4"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "The records establish financing activity and describe substantial commitments, but they do not settle this combined assertion."
+    ],
+    "verdict": "fail",
+    "note": "Outcome unresolved, axis historical_observation and horizon not_applicable match the reviews. The citation excerpts are cut to meaningless fragments: e1 'Approximately $' and e2 'last week'. Neither conveys what is being cited (a blank commitment field; OpenAI fundraising meetings). The cited S-1 text leaves every amount blank, so it does not support 'describe substantial commitments'. Restore the full exact-words excerpts and soften that sentence.",
+    "claim_id": "wyea-exit-liquidity-929935"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28257,
+  "output_tokens": 4763,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

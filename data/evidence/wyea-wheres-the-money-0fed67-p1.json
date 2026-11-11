@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-wheres-the-money-0fed67-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-0fed67",
+  "version": 1,
+  "content_hash": "601a0cc949f30b114165864b4091fe4bbbf9e007157b194b2e928ecce84fe3ce"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-0fed67",
+  "version": 1,
+  "content_hash": "eacd7285931654f5a55b818dabf1e099dc1492242cef8a69976ab2405868cb9a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2024 gross margin inference costs 2 billion training 3 billion 2025 Information",
+   "OpenAI 2024 actual revenue 3.7 billion 5 billion loss 2025 expenses training inference costs",
+   "OpenAI 2024 2025 total salary spending cash payroll actual financial statements"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://epoch.ai/data-insights/openai-compute-spend",
+    "used": true,
+    "why": "Read in full. Explains the estimates, their research-compute treatment, and their reliance on fourth-quarter projections."
+   },
+   {
+    "url": "https://www.deeplearning.ai/the-batch/openai-faces-financial-growing-pains-spending-double-its-revenue",
+    "used": false,
+    "why": "Read in full. Describes an earlier forecast with a different inference-cost estimate; it is not a completed-year measurement."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-projections-imply-losses-tripling-to-14-billion-in-2026",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": false,
+    "why": "Read in full. Research-and-development expense and cost of revenue are broader accounting categories than the specified compute costs."
+   }
+  ],
+  "performed_at": "2026-10-29T22:25:44Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-openai-compute-spend",
+   "source_snapshot_id": "afbaa716f63cc0628fdefbb6d25984d1006201855bba0b9ab4845ba7e6d514a3",
+   "publisher": "Epoch AI — Josh You",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/openai-compute-spend",
+   "locator": "Analysis — OpenAI’s overall compute expenses",
+   "receipt": {
+    "public_excerpt": "$3 billion on training compute, $1.8 billion on inference compute",
+    "quote_hash": "b6030e242f734fb62cccf81696737f235ca1298566d71422e893090db56cf478",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-10-10",
+   "retrieved_at": "2026-10-29T05:19:33Z",
+   "relation": "context",
+   "explanation": "The training and inference components total $4.8 billion. The separate research category makes the definition of total compute spending material, and e2 explains why these figures are not completed-year confirmation.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Estimated training, inference, and amortized research compute expenses",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Training compute: $3 billion",
+     "Inference compute: $1.8 billion"
+    ],
+    "formula": "3.0 + 1.8 = 4.8 billion",
+    "rounding": "No additional rounding."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-openai-compute-spend",
+   "source_snapshot_id": "afbaa716f63cc0628fdefbb6d25984d1006201855bba0b9ab4845ba7e6d514a3",
+   "publisher": "Epoch AI — Josh You",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/openai-compute-spend",
+   "locator": "Assumptions and limitations, first paragraph",
+   "receipt": {
+    "public_excerpt": "They should not be considered completely reliable; for one, they rely on projections for the final quarter of 2024.",
+    "quote_hash": "717768b7c385ad3044dccb8ea8f050bbf4fba5f141341b31fcc0b2598f0766bb",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-10-10",
+   "retrieved_at": "2026-10-29T05:19:33Z",
+   "relation": "context",
+   "explanation": "The reported revenue produces a $1.1 billion gap when compared with e1's training and inference estimates. Epoch explicitly warns that the spending figures include projections, so that calculation does not establish the realized gap.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Reported annual revenue compared with partly projected compute expenses",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Training and inference estimate from e1: $4.8 billion",
+     "Reported 2024 revenue: approximately $3.7 billion"
+    ],
+    "formula": "4.8 - 3.7 = 1.1 billion",
+    "rounding": "$1.1 billion rounds to $1 billion to the nearest billion."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No comparable completed-year training and inference expense breakdown was established.",
+  "The distinction between training and separately amortized research compute remains unreconciled."
+ ],
+ "packet_hash": "b938adf87a2dd3ac68c8e9d829fe7e1bddffdf14a70b67a430518a9a77cee0c6"
+}

@@ -1,0 +1,22 @@
+---
+// Numbered links between the pages of a long list: previous, the first and
+// last page, the pages near this one, next. Plain links, so every page of
+// every list is reachable without JavaScript.
+interface Props { page: number; pages: number; href: (n: number) => string; label: string }
+const { page, pages, href, label } = Astro.props;
+const near = new Set([1, pages, page - 2, page - 1, page, page + 1, page + 2].filter((n) => n >= 1 && n <= pages));
+const nums = [...near].sort((a, b) => a - b);
+const items: (number | null)[] = [];
+for (const n of nums) { if (items.length && n - (items.at(-1) as number) > 1) items.push(null); items.push(n); }
+---
+{pages > 1 && (
+  <nav class="pager" aria-label={label}>
+    <ul>
+      {page > 1 && <li><a href={href(page - 1)} rel="prev">Previous page</a></li>}
+      {items.map((n) => n === null
+        ? <li class="gap" aria-hidden="true">…</li>
+        : <li><a href={href(n)} aria-current={n === page ? "page" : undefined}><span class="sr-only">Page </span>{n}</a></li>)}
+      {page < pages && <li><a href={href(page + 1)} rel="next">Next page</a></li>}
+    </ul>
+  </nav>
+)}

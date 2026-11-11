@@ -1,0 +1,138 @@
+{
+ "packet_id": "marcus-breaking-news-and-how-the-end-might-469c5d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-469c5d",
+  "version": 2,
+  "content_hash": "745c13282f315f01dc90ad53594b424a4b046d376ed664cc96dd685b4b2cbfc8"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-469c5d",
+  "version": 1,
+  "content_hash": "c2997e90b4e32544ad9bc236040d184f5a5d97c9a9660f22be6abad862f6ce7b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic multi-agent research system tokens than chat",
+   "GitHub Copilot usage-based billing agents cost more than subscription 2026 Microsoft token pricing"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "used": true,
+    "why": "Primary provider data on agent and multi-agent token use and architecture."
+   },
+   {
+    "url": "https://itdaily.com/news/cloud/github-copilot-to-bill-based-on-token-consumption-starting-in-june/",
+    "used": true,
+    "why": "Reports GitHub's explanation that agent sessions cost far more to serve than chat queries."
+   },
+   {
+    "url": "https://github.blog/changelog/2026/04/27/github-copilot-is-moving-to-usage-based-billing/",
+    "used": false,
+    "why": "Page returned only author bio text."
+   }
+  ],
+  "performed_at": "2026-10-29T02:24:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-engineering-multi-agent-research-system",
+   "source_snapshot_id": "2034fe89dbc021348ae56bfb0c3a973b9e6225b38fa9b10fb47837ed5f107f04",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+   "locator": "section on token usage, paragraph beginning 'There is a downside'",
+   "receipt": {
+    "public_excerpt": "In our data, agents typically use about 4× more tokens than chat interactions, and multi-agent systems use about 15× more tokens than chats.",
+    "quote_hash": "652d5dfd7a238e672831b1522aa68fbe6580213b70dcbb6c62d4bd2f621dc325",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-13",
+   "available_at": "2025-06-13",
+   "retrieved_at": "2026-10-29T00:48:02Z",
+   "relation": "supports",
+   "explanation": "Provider data shows agents, and especially multi-agent systems, use several times more tokens than chat, which drives cost.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-engineering-multi-agent-research-system",
+   "source_snapshot_id": "2034fe89dbc021348ae56bfb0c3a973b9e6225b38fa9b10fb47837ed5f107f04",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+   "locator": "section Architecture overview for Research, paragraph 2",
+   "receipt": {
+    "public_excerpt": "the lead agent analyzes it, develops a strategy, and spawns subagents to explore different aspects simultaneously. As shown in the diagram above, the subagents act as intelligent filters by iteratively using search tools",
+    "quote_hash": "66ab250e327ca2bd208555878c1ce5b7af5ce2aa5f2e4a4800a52230e46137e4",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-13",
+   "available_at": "2025-06-13",
+   "retrieved_at": "2026-10-29T00:48:02Z",
+   "relation": "supports",
+   "explanation": "Describes the mechanism Marcus named: several model instances run in the background, repeatedly, in a coordinated loop.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-engineering-multi-agent-research-system",
+   "source_snapshot_id": "2034fe89dbc021348ae56bfb0c3a973b9e6225b38fa9b10fb47837ed5f107f04",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+   "locator": "section Guide the thinking process",
+   "receipt": {
+    "public_excerpt": "Subagents also plan, then use interleaved thinking after tool results to evaluate quality, identify gaps, and refine their next query.",
+    "quote_hash": "fd37903dc97bae3ae61af5c33334d11ee6992ebe4d725ab047fb416657d0574d",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-13",
+   "available_at": "2025-06-13",
+   "retrieved_at": "2026-10-29T00:48:02Z",
+   "relation": "supports",
+   "explanation": "Shows agents repeatedly check and refine their outputs, matching 'until they get the answers that by some criteria seem correct'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "itdaily-com-news-cloud-github-copilot-to-bill-based-on-token-consum-2c2bdee25e7c",
+   "source_snapshot_id": "b8f4de396a63061253189db7a2338253093012981fce61c6be760f1c4767a83f",
+   "publisher": "ITdaily",
+   "source_type": "news_report",
+   "url": "https://itdaily.com/news/cloud/github-copilot-to-bill-based-on-token-consumption-starting-in-june",
+   "locator": "paragraph 3",
+   "receipt": {
+    "public_excerpt": "a short chat query and an autonomous coding session of several hours cost the end user the same, while the actual cost differs significantly.",
+    "quote_hash": "1fd79f52cd00a04c707964089dbec17e6cd1d764390cbe9710ece8b7629d869d",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-27",
+   "available_at": "2026-06-02",
+   "retrieved_at": "2026-10-29T02:21:58Z",
+   "relation": "supports",
+   "explanation": "Reports GitHub's reasoning that long agent sessions cost far more to serve than chat queries.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The main data come from one provider's research agent. Other agent designs may differ.",
+  "No source isolates the role of 'good old fashioned AI' tooling in cost."
+ ],
+ "packet_hash": "641601d6382c57a4e4d90facda2bf7971b33b17fe1b994f21e8669d6835106c3"
+}

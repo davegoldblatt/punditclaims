@@ -1,0 +1,108 @@
+{
+ "packet_id": "wyea-the-subprime-data-center-crisis-fba537-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-subprime-data-center-crisis-fba537",
+  "version": 2,
+  "content_hash": "54ca64a1228d0992a3ee3f17ab9a827b9a2ae9d24b4c313564ca07a6c4ba2497"
+ },
+ "contract_ref": {
+  "id": "wyea-the-subprime-data-center-crisis-fba537",
+  "version": 1,
+  "content_hash": "d1d2aa7b120559ceedc9d7e0dc85e185ea2c84c8c2f90dc7208f0a6eaa25fce4"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI data center 2026 unleased capacity IBM CoreWeave long term contract",
+   "site.coreweave.com \"Jane Street\" \"2026\" agreement",
+   "site.iren.com \"Q3 FY26\" \"contracted\"",
+   "\"AI\" \"uncontracted\" \"June\" \"2026\" data center",
+   "\"AI\" \"unleased\" \"May\" \"2026\" data center"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://iren.gcs-web.com/static-files/60dded6a-e6fc-47ee-a4ec-86f68512701e",
+    "used": true,
+    "why": "Primary interim update explicitly distinguishes fully contracted operational capacity from a deployment target that is not fully contracted."
+   },
+   {
+    "url": "https://www.coreweave.com/news/jane-street-signs-6-billion-ai-cloud-agreement-with-coreweave",
+    "used": true,
+    "why": "Primary announcement identifies a compute commitment from a trading firm outside the named customer group."
+   },
+   {
+    "url": "https://www.cbre.com/press-releases/north-american-data-center-demand-continues-to-outpace-supply-despite-record-construction-activity",
+    "used": false,
+    "why": "Read successfully. Reports unleased capacity but does not isolate AI facilities."
+   },
+   {
+    "url": "https://investor.galaxy.com/static-files/f325cc7a-50b8-48a8-b669-9a53584badca",
+    "used": false,
+    "why": "Read successfully. Its ongoing leasing discussion includes post-quarter updates, so it was not assigned a target-quarter event date."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/jane-street-signs-6-billion-ai-cloud-deal-with-coreweave-boosts-stake-4615477",
+    "used": false,
+    "why": "read_page returned HTTP 403. The accessible company announcement provides primary evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T13:36:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e7",
+   "role": "evidence_of_outcome",
+   "document_id": "iren-gcs-web-com-static-files-60dded6a-e6fc-47ee-a4ec-86f68512701e",
+   "source_snapshot_id": "9d4b68f75c7962216ff05ce744fe91095bff016f8ab2668d208ee33501ee8f07",
+   "publisher": "IREN",
+   "source_type": "company_disclosure",
+   "url": "https://iren.gcs-web.com/static-files/60dded6a-e6fc-47ee-a4ec-86f68512701e",
+   "locator": "Page 4, Assumptions and Notes, note 1",
+   "receipt": {
+    "public_excerpt": "not fully\ncontracted",
+    "quote_hash": "81b9653adc3a03807a47f060dfa70d8f651f069eb09406c8ea0a8f34c763b603",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-07",
+   "available_at": "2026-05-07",
+   "retrieved_at": "2026-10-29T13:27:09Z",
+   "relation": "supports",
+   "explanation": "The note concerns planned GPU deployments underlying IREN's annual revenue target. It supports the narrow proposition that planned AI deployments were not universally backed by full customer commitments; the release separately says operational capacity was fully contracted.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e8",
+   "role": "evidence_of_outcome",
+   "document_id": "coreweave-com-news-jane-street-signs-6-billion-ai-cloud-agreement-with-coreweave",
+   "source_snapshot_id": "d416a5b689328e414dec856fba088db24e100139b4dd352aeb68929745001b6f",
+   "publisher": "CoreWeave and Jane Street",
+   "source_type": "company_disclosure",
+   "url": "https://www.coreweave.com/news/jane-street-signs-6-billion-ai-cloud-agreement-with-coreweave",
+   "locator": "Announcement summary immediately below the title",
+   "receipt": {
+    "public_excerpt": "Jane Street",
+    "quote_hash": "d675f5163b561c4c84da789f713e92d1ae5b85738b67e3520c63452e2f1c6ed5",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-15",
+   "available_at": "2026-04-15",
+   "retrieved_at": "2026-10-29T10:03:15Z",
+   "relation": "contradicts",
+   "explanation": "The announcement describes a compute commitment from Jane Street, an established trading firm outside Zitron's list, and distinguishes it from a separate equity investment. It contradicts the customer restriction under the contractual-commitment reading, without establishing an unconditional payment guarantee.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e8"
+ ],
+ "unresolved_gaps": [
+  "The public Jane Street announcement does not disclose every termination provision or credit protection.",
+  "The evidence does not establish what Zitron personally found.",
+  "IREN's disclosure concerns planned deployment coverage; it does not show that its operational capacity lacked contracts."
+ ],
+ "packet_hash": "7242d5546522e9dce4441712376ac866c8fcfa3b9d10bc20a561cdb7a02cf421"
+}

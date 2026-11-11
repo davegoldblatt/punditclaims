@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-humans-versus-machines-the-hallucination-55d75c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-55d75c",
+  "version": 1,
+  "content_hash": "12877b6a2c15be0e9914c2d22478134a52bba3bfb4d53f22cffb3ff42fcdbb9c"
+ },
+ "contract_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-55d75c",
+  "version": 1,
+  "content_hash": "db677ab5066a43b8bb28dfaeb0a6d21f2072853abe5c65f12fcfa71866dd8289"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report next token",
+   "Bard double-check responses Google It button September 2023 blog",
+   "Chain-of-Verification Reduces Hallucination in Large Language Models"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2303.08774",
+    "used": true,
+    "why": "Primary description of how GPT-4 was trained."
+   },
+   {
+    "url": "https://blog.google/products/gemini/google-bard-new-features-update-sept-2023/",
+    "used": true,
+    "why": "Google's announcement of Bard checking its own answers."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.11495",
+    "used": true,
+    "why": "Research method in which the LLM fact-checks its own draft."
+   },
+   {
+    "url": "https://www.seroundtable.com/google-search-check-google-bard-36060.html",
+    "used": false,
+    "why": "Secondary coverage; the primary Google post was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T07:05:15Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2303-08774",
+   "source_snapshot_id": "65d8e43979e942b49f25bb7b546fc1200555641dfbe7a32c23c932e2a865fe57",
+   "publisher": "OpenAI (arXiv)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2303.08774",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "GPT-4 is a Transformer-based model pre-trained to predict the next token in a document.",
+    "quote_hash": "4e8853c99c7f437c5878a918cbdf086cdf6b96e9025b331d1c291032faa94e80",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-15",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:02:52Z",
+   "relation": "supports",
+   "explanation": "This supports the first part. The leading LLM generates text by predicting likely next tokens. The report also notes post-training, which shapes but does not replace that process.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "blog-google-products-gemini-google-bard-new-features-update-sept-2023",
+   "source_snapshot_id": "fbc68f84f4e92e4eca10c516ff36954d289b9281f083879db22a2da059a9d2f1",
+   "publisher": "Google",
+   "source_type": "company_disclosure",
+   "url": "https://blog.google/products/gemini/google-bard-new-features-update-sept-2023",
+   "locator": "Section 'Easily double-check responses and build on shared conversations'",
+   "receipt": {
+    "public_excerpt": "When you click on the “G” icon, Bard will read the response and evaluate whether there is content across the web to substantiate it.",
+    "quote_hash": "c7112ddcac269e709e6ace9e286a0d8f0b4312a3aca2074eb998b0554d3af31c",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-19",
+   "available_at": "2023-09-19",
+   "retrieved_at": "2026-10-29T07:03:16Z",
+   "relation": "contradicts",
+   "explanation": "From September 2023, Google's deployed LLM product, at the user's request, checked its own answers against web content. This contradicts 'NEVER fact-check' as applied to LLM products.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2309-11495",
+   "source_snapshot_id": "a99202e3de42dcb24b19a93cdc8a5b4f4ec3a2e931a54915cf4c3d583d5663bc",
+   "publisher": "arXiv (Dhuliawala et al., Meta AI)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2309.11495",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "the model first (i) drafts an initial response; then (ii) plans verification questions to fact-check its draft;",
+    "quote_hash": "6a8cc2739018f733ac193ed64acdb8dc72b9744349b506a5536c5ffafe038b9c",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-20",
+   "available_at": "2023-09-20",
+   "retrieved_at": "2026-10-29T02:55:47Z",
+   "relation": "contradicts",
+   "explanation": "Before the post, LLMs were shown fact-checking their own drafts when prompted. This contradicts the universal 'NEVER'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "By default, a bare LLM does not fact-check unless prompted or given tools. The 'never' part turns on whether prompted or tool-assisted checking counts."
+ ],
+ "packet_hash": "f33cbfd6d0932436db92d49b196abefd150c5dad4956e0a9a4c8c90e199432b4"
+}

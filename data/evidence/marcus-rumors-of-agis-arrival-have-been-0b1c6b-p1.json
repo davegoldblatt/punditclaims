@@ -1,0 +1,115 @@
+{
+ "packet_id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b-p1",
+ "claim_revision_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b",
+  "version": 1,
+  "content_hash": "7059c8c15fdef20cd9d3af24fc5b9a32240628ac9afcaa9bdc618b6dc2dd8cd2"
+ },
+ "contract_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b",
+  "version": 1,
+  "content_hash": "16421339c552759fff3c069969b4e58d621d6235f07de1f710ea649c4f2f1a0f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"The Leaderboard Illusion\" Chatbot Arena arXiv",
+   "Establishing Best Practices for Building Rigorous Agentic Benchmarks arXiv overestimate",
+   "Berkeley researchers broke AI agent benchmarks exploit near-perfect scores without solving tasks"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2507.02825",
+    "used": true,
+    "why": "Audit by Stanford, Berkeley, UK AISI and other researchers finding many agentic benchmarks flawed. Example: TAU-bench counts empty responses as successful."
+   },
+   {
+    "url": "https://arxiv.org/abs/2504.20879",
+    "used": true,
+    "why": "Documents private-variant testing and selective disclosure distorting Chatbot Arena."
+   },
+   {
+    "url": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/",
+    "used": true,
+    "why": "April 2026 audit exploiting eight agent benchmarks to near-perfect scores. It postdates the post, so it is context only."
+   }
+  ],
+  "performed_at": "2026-10-29T07:47:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2507-02825",
+   "source_snapshot_id": "bb5fa090679820e85278e0f1ab9f9e4fd220965c49ab9e9a6f0ebf314836a804",
+   "publisher": "arXiv (Zhu et al., incl. Stanford, Berkeley, UK AISI researchers)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2507.02825",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "many agentic benchmarks have issues in task setup or reward design. For example, SWE-bench Verified uses insufficient test cases, while TAU-bench counts empty responses as successful.",
+    "quote_hash": "8f777a911c5c6116302e57083846034d06631368744e833790d0216d5f9904cf",
+    "verified": "exact"
+   },
+   "event_date": "2025-07",
+   "available_at": "2025-07-03",
+   "retrieved_at": "2026-10-29T07:45:17Z",
+   "relation": "supports",
+   "explanation": "Many prominent benchmarks had flaws that allow inflated scores. One even credits empty responses, which shows gaming can be easy.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2504-20879",
+   "source_snapshot_id": "24af9829b88cd2105156b4ebfa08037b1c413bc1e885dd68d5469314da5c8428",
+   "publisher": "arXiv (Singh et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2504.20879",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "the ability of these providers to choose the best score leads to biased Arena scores due to selective disclosure of performance results. At an extreme, we identify 27 private LLM variants tested by Meta in the lead-up to the Llama-4 release.",
+    "quote_hash": "458c6217ecd31c2da0098dc599460665686889cb73f40f1578ecd4aa35e83aaa",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-29",
+   "retrieved_at": "2026-10-29T06:47:58Z",
+   "relation": "supports",
+   "explanation": "The leading public leaderboard was distorted by best-of-many private testing, a simple way to game rankings.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "rdi-berkeley-edu-blog-trustworthy-benchmarks-cont",
+   "source_snapshot_id": "48dc705191ee96bfe7ece0079a34ed122a25eb26699f58ed2c8e015c9b7de852",
+   "publisher": "UC Berkeley RDI",
+   "source_type": "independent_measurement",
+   "url": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont",
+   "locator": "Section 'The Benchmark Illusion'",
+   "receipt": {
+    "public_excerpt": "discovered that every single one can be exploited to achieve near-perfect scores without solving a single task. No reasoning. No capability. Just exploitation of how the score is computed.",
+    "quote_hash": "eb84c47f781932b113165a374ebd60bca84cb48502df5ba84516354a4ad5acb9",
+    "verified": "exact"
+   },
+   "event_date": "2026-04",
+   "available_at": "2026-04-11",
+   "retrieved_at": "2026-10-29T07:45:40Z",
+   "relation": "supports",
+   "explanation": "Later confirmation that major benchmarks in use before the post were easy to exploit. It is dated after the post, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No census exists of how many benchmarks are gameable, so 'often' rests on audits of prominent benchmarks rather than a full count."
+ ],
+ "packet_hash": "97d60d4834427f477324f281d11dd4e95e40796351a61aed5716dc6b9dc3a537"
+}

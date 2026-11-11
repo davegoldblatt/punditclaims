@@ -1,0 +1,111 @@
+{
+ "packet_id": "marcus-the-hottest-new-programming-language-8231fa-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-hottest-new-programming-language-8231fa",
+  "version": 2,
+  "content_hash": "81cee2590d5c926c973942a052cefff6360cea4bd0c0af4cb0205721eb7f4d74"
+ },
+ "contract_ref": {
+  "id": "marcus-the-hottest-new-programming-language-8231fa",
+  "version": 1,
+  "content_hash": "8438ea0f247274c4a3e18f4b1cf33d459f42b9de699e184d762f7ee8505e9df8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org Evaluating Large Language Models Trained on Code 2021 incorrect code docstrings",
+   "site.arxiv.org 2024 January code generation large language models fail specifications debugging",
+   "site.cs.utah.edu \"compiler bugs\" \"2011\" Csmith",
+   "\"Finding and Understanding Bugs in C Compilers\" \"June\" \"2011\" \"4\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2401.05319v1",
+    "used": true,
+    "why": "Read in full and with targeted passages. Contains programming requirements, test-based evaluation, and a case study repairing model-generated code."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.05319v1",
+    "used": true,
+    "why": "Read to verify the version and its 2024-01-10 publication date."
+   },
+   {
+    "url": "https://www.flux.utah.edu/paper/yang-pldi11",
+    "used": true,
+    "why": "Read the authors' institutional publication record and abstract. Supplies material historical context about compiler failures on valid input."
+   },
+   {
+    "url": "https://arxiv.org/abs/2107.03374v1",
+    "used": false,
+    "why": "Read, but the January 2024 debugging study provides a more recent and direct example."
+   },
+   {
+    "url": "https://dl.acm.org/doi/10.1145/1993498.1993532",
+    "used": false,
+    "why": "Reading returned HTTP 403; the accessible institutional abstract was used instead."
+   },
+   {
+    "url": "https://users.cs.utah.edu/~regehr/papers/pldi11-preprint.pdf",
+    "used": false,
+    "why": "Reading timed out; no quotation was taken from this PDF."
+   }
+  ],
+  "performed_at": "2026-10-29T18:44:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2401-05319v1",
+   "source_snapshot_id": "c671275406dbbbd53497de65a7ac8dc66cdc3439679ab771000590410a4fe19b",
+   "publisher": "arXiv; Xueyu Hu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2401.05319v1",
+   "locator": "Section 4.5, Case study",
+   "receipt": {
+    "public_excerpt": "fixes the bugs",
+    "quote_hash": "5e85ce36b3c7138462fa7a23d53b65123bb92873ab1afa210e289135ba88badd",
+    "verified": "exact"
+   },
+   "event_date": "2024-01",
+   "available_at": "2024-01-10",
+   "retrieved_at": "2026-10-29T18:38:12Z",
+   "relation": "supports",
+   "explanation": "The study reports a GPT-4 implementation of a specified array problem that required debugging against test results. This supports the existence of model-generated implementation errors requiring repair; the reporting month is used because individual experiment dates are not supplied.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "flux-utah-edu-paper-yang-pldi11",
+   "source_snapshot_id": "d7c3fddb12d7a90b714f72f836141f163f4bf2ab89ad4856fc6acaefd4297872",
+   "publisher": "ACM PLDI 2011; University of Utah Flux Research Group",
+   "source_type": "peer_reviewed",
+   "url": "https://www.flux.utah.edu/paper/yang-pldi11",
+   "locator": "Abstract, fourth sentence",
+   "receipt": {
+    "public_excerpt": "when presented with valid input.",
+    "quote_hash": "29c112a1514ba1554497e9b9326a2ec98c985af17f05e8a54e72f93267d28e43",
+    "verified": "exact"
+   },
+   "event_date": "2011",
+   "available_at": "2011-06-04",
+   "retrieved_at": "2026-10-29T18:39:52Z",
+   "relation": "context",
+   "explanation": "This earlier research documents computing infrastructure mishandling valid programs. It materially qualifies a literal historical reading of 'new era', while measuring compiler behavior rather than LLM programming.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not establish an exact beginning for the claimed era or quantify how much debugging work LLMs add.",
+  "The January 2024 study does not separately date each experiment."
+ ],
+ "packet_hash": "68206b11cc76711e3a50030285636c387c2034b061b9d9f724cbdb3cd6c88067"
+}

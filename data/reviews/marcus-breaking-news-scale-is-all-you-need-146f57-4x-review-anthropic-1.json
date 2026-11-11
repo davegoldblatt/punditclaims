@@ -1,0 +1,227 @@
+{
+ "run_id": "marcus-breaking-news-scale-is-all-you-need-146f57-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-news-scale-is-all-you-need-146f57": "07e944df51e3230bfa059fb8a9f03a4f3b79f9af51c0b272c7a24fed7af7341b",
+  "case:marcus-breaking-news-scale-is-all-you-need-2cf2ef": "0fc3d78b2d616b943a56d9f5761c89c1ff5fcb4b9785fe22ccbbc5f3f3bc8a20",
+  "case:marcus-breaking-news-scale-is-all-you-need-2dc671": "de7562d9c13277d20b3f431315910a4e6c198394a8aedd9593cb45047eb42e85",
+  "case:marcus-breaking-news-scale-is-all-you-need-458c0d": "6b528eb63545023dcc7580a01284bad2af3156ba517f5c2179c6af253b6ebb72"
+ },
+ "started_at": "2026-10-29T02:35:37Z",
+ "completed_at": "2026-10-29T02:36:25Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. The Sutton and Choi material is quoted context, not the claim itself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Jig is up' paraphrased as 'pure scaling has failed' is acceptable. The contract narrows it further to 'scaling is hitting limits'. The NeurIPS 2025 scope is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading: prominent figures said at NeurIPS that scaling has limits. That is an ordinary reading of the colourful phrase. Allowing for dissent follows Marcus's own 'not everyone realizes it'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Official NeurIPS preview of Sutton's 3 Dec keynote, published 20 Nov: says AI 'lost its way'. It doubts the current approach, but not scaling specifically."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Official preview of Choi's Posner Lecture: says current scaling approaches may have limits. This is a prominent speaker raising doubts at NeurIPS 2025."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechRadar report on the conference week says researchers agreed plain scaling no longer gives meaningful returns. It is a journalist's summary, not a count."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Vinyals's dissent is dated 20 Nov, before the period. Marcus already allows that not everyone agrees, and Vinyals himself calls 'scaling is over' a popular belief. It does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The support condition is met: the NeurIPS 2025 keynote and Posner Lecture raised limits of the current approach, and press coverage reported broad agreement that scaling no longer pays off. One prominent figure disagreed, which Marcus concedes. The growth implied by 'more and more' is not measured, but it fits the reported mood.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-146f57"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion about Altman. The Altman quote is missing from the excerpt, but the claim rests on Marcus's words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'The scaling notion he promoted' fairly renders 'this notion' given the missing quote. 'Entire company' is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Tying 'this notion' to the Three Observations post fits 'a blog earlier this year'. Reading 'wrong' as scaling failing to give predictable gains is an ordinary reading, though Marcus gave no test."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Altman's February 2025 statement of the scaling view. It confirms what Marcus is responding to, not whether the view was wrong."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "About $1.4T in compute commitments against about $20B revenue shows a very large bet on compute. This loosely supports 'bet the company' but says nothing on 'wrong'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Sutskever doubts that 100x scale would transform AI. That is expert opinion, not a measurement showing the scaling relationship broke down."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Google DeepMind's Gemini co-lead reports large pre-training gains in Gemini 3. This is a company statement about its own model, but it cuts against 'wrong'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The size of OpenAI's compute commitments loosely supports the 'bet' part. The core assertion, that the scaling view was wrong by December 2025, rests on conflicting expert opinion: Sutskever against Google DeepMind. No independent measurement shows the scaling relationship breaking down. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-2cf2ef"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will someday want to write' is an unhedged forecast with no deadline. The 'possibly' hedge on the economy part is kept. The sentence is heavily rhetorical."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating published historical accounts as the observable test is reasonable. The early-resolution rule needs work that documents the whole account, and the contract rightly says that non-publication cannot count as failure. The 'retrospective' label is odd but does not change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Executive Order 14365 (Dec 2025) seeks a framework that forbids conflicting state AI laws. It bears on the state-autonomy element only and is not historical writing."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Publisher listing of Lepore's September 2026 book on AI and the state. The description does not set out the scaling, Trump and state-autonomy account."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a forecast with no deadline ('someday'). The early-resolution rule is not met: no inspected historical work documents the specified account. Without a deadline, the lack of such work cannot count as failure. Unresolved as of the cutoff.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-2dc671"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'The technology' is read as generative AI, which matches the context (MIT GenAI ROI study). 'Starting to' is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading: in 2025, business users reported weak value or disappointment. That is an ordinary reading, and it does not require customers to abandon the technology."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "BCG's September 2025 survey: 60% of companies get hardly any material value despite heavy investment. It covers AI broadly rather than only generative AI."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechRepublic's April 2025 report says Gartner placed generative AI entering the Trough of Disillusionment. This is secondhand reporting and partly hedged, but it matches 'starting to realize'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Wharton survey: three in four leaders report positive ROI. It tempers the claim but does not show 'no growing disappointment'. It is labelled peer_reviewed but is a university article about a survey report."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The support condition is met: BCG finds most firms getting little material value, and Gartner placed generative AI in the Trough of Disillusionment in 2025. The Wharton survey shows many firms reporting positive returns, but that does not meet the contradiction condition. Recognising limits is compatible with some positive ROI.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-scale-is-all-you-need-458c0d"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 35700,
+  "output_tokens": 5195,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

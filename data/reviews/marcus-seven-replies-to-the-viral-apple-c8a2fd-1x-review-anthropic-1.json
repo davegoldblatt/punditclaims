@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-seven-replies-to-the-viral-apple-c8a2fd-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-seven-replies-to-the-viral-apple-c8a2fd": "38248635670f091ed984061370fcf8777ceb8240a52c087882e246f853dde0b2"
+ },
+ "started_at": "2026-10-29T21:52:38Z",
+ "completed_at": "2026-10-29T21:53:01Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, given as his reading of the Apple paper's real takeaway."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to the source. Both qualifiers (complexity and distance from the training distribution) are kept. The wording is firm, not hedged. 'Can't be trusted' has a slight normative tone, but it reads as a claim about reliability, so observation is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading it as a warning about dependable unaided execution, not universal failure, is fair and ordinary. Requiring evidence on both complexity and distribution shift follows the speaker's words. The June 2025 period is inferred but reasonable. No reliability threshold is stated, so interpretation matters."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The Apple study (June 2025) shows contemporary models collapsing as complexity rises, even when given the algorithm. That backs the complexity part. It does not measure distance from the training distribution, and its coverage is narrow, so it falls short of the support condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2022 study of earlier models: they fail to generalize to longer problems, but scratchpad prompting helps a lot. Different generation and period, so context only."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Theory paper showing length generalization is possible for some problem families. It weighs against a universal reading but does not show frontier models executing reliably, so it does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows complexity-related execution failures in June 2025 models (e1). It does not measure distance from the training distribution, and it does not fully check output budgets, both of which the support condition requires. Nothing in the packet shows dependable execution either. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-seven-replies-to-the-viral-apple-c8a2fd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24424,
+  "output_tokens": 2353,
+  "cached_input_tokens": 14206,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

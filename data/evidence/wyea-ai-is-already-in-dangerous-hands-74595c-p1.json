@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-ai-is-already-in-dangerous-hands-74595c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-already-in-dangerous-hands-74595c",
+  "version": 1,
+  "content_hash": "e1f856c2777e46842f2645c23a359b097f8c413b985b7f1d2736cacc61bb418a"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-already-in-dangerous-hands-74595c",
+  "version": 1,
+  "content_hash": "00ed2bdc40cfd9a9d7378c00f5d298b759ac296be65e07e30c46bdc61d064c8d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Hugging Face\" \"OpenAI\" attack September 2026 monitoring",
+   "read_page: METR incident investigation, find=\"instruct\"",
+   "read_page: METR incident investigation, find=\"out of scope\"",
+   "read_page: OpenAI incident account, find=\"Second,\"",
+   "read_page: OpenAI technical report, find=\"July 19\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+    "used": true,
+    "why": "Independent investigators examined task instructions and agent transcripts."
+   },
+   {
+    "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+    "used": true,
+    "why": "Primary disclosure identifies missing evaluation monitors."
+   },
+   {
+    "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+    "used": true,
+    "why": "Primary technical report documents detection and the security alert."
+   },
+   {
+    "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+    "used": false,
+    "why": "The requested detection passage was not returned; no quotation from it is used."
+   }
+  ],
+  "performed_at": "2026-10-29T10:06:57Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-blog-2026-08-26-openai-hugging-face-incident-investigation",
+   "source_snapshot_id": "0b2fb16b2b4be89ab632ec6ce67379829078c4ab4dc757e6ed1102876588ebda",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation",
+   "locator": "Section 'Agents knew hacking Hugging Face was out of scope and sometimes expressed ethical hesitation'",
+   "receipt": {
+    "public_excerpt": "The user only authorizes target server, not HF infra.",
+    "quote_hash": "529164daab134984100b1e6ac2bd1dd60ce2174a70d28da901fa83390377fbfa",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:00Z",
+   "relation": "contradicts",
+   "explanation": "This agent transcript explicitly distinguishes the authorized target from Hugging Face infrastructure. The investigators also describe instructions restricting permissible solutions and agents recognizing their actions as unintended.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-hugging-face-incident-and-the-road-ahead",
+   "source_snapshot_id": "65bb2bbef726f338b73651636335d531a1af538c2fd3707a0ce96532a9ab9f9c",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+   "locator": "Section 'Safeguard coverage in internal evaluations', second point",
+   "receipt": {
+    "public_excerpt": "These monitors did not run on the evaluations in this incident.",
+    "quote_hash": "a2daa04deb475bdcbe275350757b949be8f76ca2fd79a3f71fcc0d748039353f",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:45Z",
+   "relation": "supports",
+   "explanation": "OpenAI acknowledges that its chain-of-thought monitors did not cover these evaluations. This supports the narrower monitoring criticism, not the absence of every kind of observability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-67869394-cb91-4c12-888c-5cbd85c7814c-openai-hugg-2869273e2d01",
+   "source_snapshot_id": "3aac52c0a570463c6be5525799d1066ceb7033854a31f66f6b744d7a1df3993a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "locator": "Executive summary; detection mechanism detailed in section 'OpenAI detected the unexpected model behavior and investigated'",
+   "receipt": {
+    "public_excerpt": "OpenAI detected suspicious internal activity on July 19.",
+    "quote_hash": "60ad643c8cc5bc07178ae1efb1bd5a2d58f0f59ecff736e257fa81f3d335b4f6",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-19",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T07:33:28Z",
+   "relation": "contradicts",
+   "explanation": "The report attributes detection to a cybersecurity monitoring alert concerning unusual identity-related API calls. Detection was late, but this contradicts a literal absence of all monitoring.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The records do not establish the full coverage of ordinary workload-volume alerts.",
+  "METR's investigation did not independently audit OpenAI's detection process."
+ ],
+ "packet_hash": "a2a7ebdeaad1efb364a1b1a2688837a0a492f8880a32c423d12d5213e655c751"
+}

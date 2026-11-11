@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-llms-are-not-like-you-and-meand-never-db6a26-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-db6a26",
+  "version": 1,
+  "content_hash": "badee472ba979a506002ac99386594c1eb9d11bcb5cc85e1c05de84598c29faa"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-db6a26",
+  "version": 1,
+  "content_hash": "fb3bf39bc4b092382691f595c4087c342452225f3fc1386ce2e7df1e05c2d991"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-are-not-like-you-and-meand-never-db6a26-p1",
+  "content_hash": "96936a1bbc1572e32639d7ee6c678eece7db53826341198dccab4d89b6ed7579"
+ },
+ "axis": "historical_observation",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-08-12",
+  "precision": "day"
+ },
+ "public_rationale": "Before the post, primary studies documented models revisiting and correcting their own reasoning without external error feedback during inference. That contradicts the categorical statement that LLMs do not sanity check their work. Evidence that checking often fails supports a narrower warning about reliability.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The positive studies do not show that every model checks every answer.",
+  "Specialized training contributes to the demonstrated behavior.",
+  "The DeepSeek evidence is developer-reported."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-are-not-like-you-and-meand-never-cee75f-4x-review-anthropic-1",
+  "marcus-llms-are-not-like-you-and-meand-never-cee75f-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-are-not-like-you-and-meand-never-cee75f-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-are-not-like-you-and-meand-never-db6a26",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs do not sanity check their own work.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "They do not sanity check their own work.",
+   "locator": "paragraph 7",
+   "url": "https://garymarcus.substack.com/p/llms-are-not-like-you-and-meand-never",
+   "date": "2025-08-12",
+   "document_title": "LLMs are not like you and me—and never will be.",
+   "observed_at": "2026-10-28T23:55:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "They do not sanity check",
+    "their own work"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is a categorical denial that LLMs examine their own reasoning or responses for mistakes.",
+    "A counterexample must show actual checking or correction, rather than merely a claim by the model that it checked.",
+    "Checking need not be infallible. An external verifier supplying the correction does not qualify by itself.",
+    "Assess capabilities demonstrated by 2025-08-12. Earlier demonstrations remain relevant to this categorical capability claim; no lower time bound is asserted."
+   ],
+   "support_condition": "Representative evaluations of contemporary LLMs, including reasoning models, show no genuine inspection or correction of their own work without externally supplied error judgments.",
+   "contradiction_condition": "A documented pre-post LLM examines and corrects its own reasoning or response without an external error judgment at inference time."
+  },
+  "axis": "historical_observation",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Before the post, primary studies documented models revisiting and correcting their own reasoning without external error feedback during inference. That contradicts the categorical statement that LLMs do not sanity check their work. Evidence that checking often fails supports a narrower warning about reliability.",
+  "limitations": [
+   "The positive studies do not show that every model checks every answer.",
+   "Specialized training contributes to the demonstrated behavior.",
+   "The DeepSeek evidence is developer-reported."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "self-correct within a turn",
+    "locator": "Section 6, qualitative analysis immediately before Section 7",
+    "url": "https://arxiv.org/html/2409.12917v1",
+    "publisher": "arXiv; Aviral Kumar and colleagues",
+    "event_date": "2024-09-19",
+    "available_at": "2024-09-19",
+    "explanation": "SCoRe evaluates correction without external feedback at inference time and documents revision of the model's own mistakes. It supplies a behavioral counterexample, although the models received specialized training; the event date denotes the capability documented by publication."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "self-verification, reflection,",
+    "locator": "Section 1.1, Contributions; elaborated in Section 2.2.4",
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "publisher": "arXiv; DeepSeek-AI",
+    "event_date": "2025-01-22",
+    "available_at": "2025-01-22",
+    "explanation": "The report describes the model spontaneously revisiting earlier reasoning during generation. This supports the existence of self-checking, although the developer's report does not establish its general reliability; the date is when this capability was publicly documented in the cited version."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "not yet capable of self-correcting their reasoning.",
+    "locator": "Section 6, Conclusion",
+    "url": "https://arxiv.org/html/2310.01798v1",
+    "publisher": "arXiv; Jie Huang and colleagues",
+    "event_date": "2023-10-03",
+    "available_at": "2023-10-03",
+    "explanation": "The earlier experiments found that intrinsic revision could fail or reduce accuracy. This supports caution about dependable self-correction, but does not negate later demonstrations or prove that models never check their work."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "bb00032e5dd5d343101555d47470cbb09a06e65a85d9f837de99dfd472e1820b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:55:09Z"
+}

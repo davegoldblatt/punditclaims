@@ -1,0 +1,122 @@
+{
+ "packet_id": "wyea-oai-docs-cb309c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-docs-cb309c",
+  "version": 1,
+  "content_hash": "d498961f2af4934d2c772dede62cbd85068cb102f737dd584281210bc970b3af"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-docs-cb309c",
+  "version": 1,
+  "content_hash": "23e26dfb0acc840cff85c54a1f317a480ce7f0ab7c049cb9a429bdd09bcf2ae2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Microsoft revenue share 493.8 454.7 865.9 2025",
+   "OpenAI 2024 revenue 3.7 billion 2025 first half 4.3 billion Reuters",
+   "OpenAI revenue 2024 3.7 billion Reuters March 26 2025",
+   "site:cnbc.com/2024/09/27/openai \"3.7\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+    "used": true,
+    "why": "Read in full. Establishes the earlier $3.7 billion forecast, not final revenue or Microsoft's receipts."
+   },
+   {
+    "url": "https://techcrunch.com/2025/11/14/leaked-documents-shed-light-into-how-much-openai-pays-microsoft/",
+    "used": true,
+    "why": "Read in full. Payment figures are attributed to Zitron, but separate source reporting addresses net versus gross treatment."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/artificial-intelligence/openai-expects-revenue-will-triple-to-12-7-billion-this-year",
+    "used": false,
+    "why": "Returned text ends at a subscription prompt. Excluded as an incomplete preview."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotation or finding relies on it."
+   }
+  ],
+  "performed_at": "2026-10-29T12:06:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cnbc-com-2024-09-27-openai-sees-5-billion-loss-this-year-on-3point7-9437e7cf32e6",
+   "source_snapshot_id": "5dcdb740be1dafcb832346f53fc5568d66e42583be24be25dd264b625eb5a6ba",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+   "locator": "First article-body paragraph",
+   "receipt": {
+    "public_excerpt": "OpenAI, the creator of ChatGPT, expects about $5 billion in losses on $3.7 billion in revenue this year, CNBC has confirmed.",
+    "quote_hash": "8df5b2fd936ead1e27b965c519b87880eeb5628f8e83cef4706b8033347f3343",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-27",
+   "available_at": "2024-09-27",
+   "retrieved_at": "2026-10-29T02:03:27Z",
+   "relation": "context",
+   "explanation": "Establishes the earlier calendar-2024 revenue forecast. It does not verify the payment figure or final realized revenue; the calculation below uses unverified claim inputs.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Forecast annual revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Claim-stated payment: $493.8 million, independently unverified.",
+     "Claim-context revenue-share rate: 20%, agreement not obtained.",
+     "CNBC's reported 2024 revenue forecast: $3.7 billion."
+    ],
+    "formula": "493.8 / 0.20 = 2469 million; 3.7 - 2.469 = 1.231 billion.",
+    "rounding": "The difference rounds to $1.23 billion. This verifies only conditional arithmetic."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "techcrunch-com-2025-11-14-leaked-documents-shed-light-into-how-much-a1a66777bf03",
+   "source_snapshot_id": "bfedb329720841f1a429560ab1ab3fdf6d0962b17536a67a2d6eb98766185222",
+   "publisher": "TechCrunch",
+   "source_type": "news_report",
+   "url": "https://techcrunch.com/2025/11/14/leaked-documents-shed-light-into-how-much-openai-pays-microsoft",
+   "locator": "Paragraph 5",
+   "receipt": {
+    "public_excerpt": "The source also told TechCrunch that the leaked payments refer to Microsoft’s net revenue share, not the gross revenue share.",
+    "quote_hash": "e0131b97ba9b5da7c34c0febad3d37b92ea008d8dee90a0b5189741a11ddc55c",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-14",
+   "available_at": "2025-11-14",
+   "retrieved_at": "2026-10-29T09:46:03Z",
+   "relation": "context",
+   "explanation": "Separate reporting raises a material accounting qualification. Netting could explain a floor below total revenue, but does not itself disprove the floor or independently authenticate the payment total.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No independently authenticated calendar-2024 revenue-share ledger was obtained.",
+  "The applicable agreement, revenue base, reciprocal offsets, and period reconciliation remain unavailable.",
+  "The earlier $3.7 billion report establishes a forecast, not the claimed payment or its relationship to final revenue."
+ ],
+ "packet_hash": "a283052cabbd66d6cfb5512f5a8b00ab214eeee9d44ee056777cc1881f514a3a"
+}

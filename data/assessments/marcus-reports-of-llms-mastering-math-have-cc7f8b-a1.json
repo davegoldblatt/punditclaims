@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-reports-of-llms-mastering-math-have-cc7f8b-a1",
+ "claim_revision_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-cc7f8b",
+  "version": 2,
+  "content_hash": "e3dc3c42697466f7012c4e49d3744ba5ac802a59e607f12ef7983f3dbec594aa"
+ },
+ "contract_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-cc7f8b",
+  "version": 1,
+  "content_hash": "d23a481e669ff1d6a85715b4db0bdbdaa77876ab57cdab2006b78f24abf0053c"
+ },
+ "packet_ref": {
+  "id": "marcus-reports-of-llms-mastering-math-have-cc7f8b-p1",
+  "content_hash": "e08f1ce32706f2a035dfaf14e41b5edcb7a82fc8cfb9e9bc3f3f8f395dfa748b"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-01-01",
+  "end": "2025-04-05",
+  "precision": "day"
+ },
+ "public_rationale": "The technical descriptions support the causal distinction: AlphaProof checks proof terms with Lean, and AlphaGeometry derives conclusions through programmed symbolic rules. Unchecked LLM proofs lack this protection. This supports the ordinary technical reading about accepted proofs. The literal claim that the systems cannot generate any incorrect candidate, or cannot fail under any circumstances, goes beyond the evidence.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The result depends on distinguishing accepted proofs from generated candidates.",
+  "Formal correctness depends on the trusted machinery and the statement supplied to it.",
+  "The AlphaProof paper was published after the post but before the evaluation date and describes the 2024 system."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-reports-of-llms-mastering-math-have-552698-4x-review-anthropic-1",
+  "marcus-reports-of-llms-mastering-math-have-552698-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-reports-of-llms-mastering-math-have-552698-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-reports-of-llms-mastering-math-have-cc7f8b",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "AlphaProof and AlphaGeometry cannot generate incorrect proofs because they rely in part on powerful, completely hand-written symbolic reasoning systems, and LLMs are not similarly immune.",
+  "kind": "causal",
+  "conditions": [
+   "rely in part on hand-written symbolic reasoning systems"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But that is because they rely in part on powerful, completely hand-written, symbolic reasoning systems. LLMs are not similarly immune.",
+   "locator": "paragraph 5",
+   "url": "https://garymarcus.substack.com/p/reports-of-llms-mastering-math-have",
+   "date": "2025-04-05",
+   "document_title": "Reports of LLMs mastering math have been greatly exaggerated",
+   "observed_at": "2026-10-28T23:57:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "rely in part",
+    "completely hand-written, symbolic reasoning systems",
+    "LLMs are not similarly immune",
+    "they cannot generate an incorrect proof"
+   ],
+   "our_interpretation": [
+    "The comparison concerns the systems discussed in connection with the 2024 IMO and ordinary LLM proof generation as understood by the post date.",
+    "I read the correctness claim as applying to completed proofs accepted by the symbolic machinery, assuming its implementation and mathematical premises are sound. It does not apply to every candidate generated during search.",
+    "Hand-written means programmed checking and deduction rules, rather than learned proof-search behavior.",
+    "LLMs means models producing unchecked proofs, not every possible system combining an LLM with a verifier."
+   ],
+   "support_condition": "Technical descriptions establish that symbolic verification or rule-based deduction controls accepted proofs in both systems, while unchecked language-model output lacks that guarantee.",
+   "contradiction_condition": "Technical descriptions show that accepted proofs bypass those checks, or that the claimed correctness protection comes from learned generation alone. A documented invalid accepted proof would challenge the guarantee."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The technical descriptions support the causal distinction: AlphaProof checks proof terms with Lean, and AlphaGeometry derives conclusions through programmed symbolic rules. Unchecked LLM proofs lack this protection. This supports the ordinary technical reading about accepted proofs. The literal claim that the systems cannot generate any incorrect candidate, or cannot fail under any circumstances, goes beyond the evidence.",
+  "limitations": [
+   "The result depends on distinguishing accepted proofs from generated candidates.",
+   "Formal correctness depends on the trusted machinery and the statement supplied to it.",
+   "The AlphaProof paper was published after the post but before the evaluation date and describes the 2024 system."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Lean’s kernel",
+    "locator": "Introduction, page 1; further detail in section 5.1, Lean Environment",
+    "url": "https://www.nature.com/articles/s41586-025-09833-y_reference.pdf",
+    "publisher": "Nature",
+    "event_date": "2024",
+    "available_at": "2025-11-12",
+    "explanation": "The paper describes AlphaProof's use of Lean and attributes proof correctness to kernel verification. It also explains that informal LLM reasoning lacks guaranteed correctness; this supports the mechanism behind Marcus's comparison."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Deductive Database Arithmetic Reasoning.",
+    "locator": "Section 4, Stronger and faster symbolic engine; sections 4.2–4.3 and Appendix E",
+    "url": "https://arxiv.org/html/2502.03544v1",
+    "publisher": "arXiv",
+    "event_date": "2025-02",
+    "available_at": "2025-02-05",
+    "explanation": "The authors describe fixed deduction rules and a programmed implementation, rather than trusting language-model assertions. Appendix E separately evaluates model-generated proof steps and documents checks for invalid steps, supporting the distinction between learned proposals and symbolic validation."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f569515d24f80335e52706fcdc372728845f06c2d962c8d7bb889670d650a700",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:52:28Z"
+}

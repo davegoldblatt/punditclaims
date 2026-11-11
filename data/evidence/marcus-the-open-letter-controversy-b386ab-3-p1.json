@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-the-open-letter-controversy-b386ab-3-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-open-letter-controversy-b386ab-3",
+  "version": 1,
+  "content_hash": "e1ed46336f311a24d9ffd08d10762fe5e435d61d3a78237a3ee4966e544911ef"
+ },
+ "contract_ref": {
+  "id": "marcus-the-open-letter-controversy-b386ab-3",
+  "version": 1,
+  "content_hash": "7668abdd3a5933c9feff837b2ca4b4ce6a028ac504495ebc0d8425fdd2b0dfea"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 March 14 2023 safety safeguards 82% disallowed content technical report",
+   "site.blog.google March 2023 Bard safeguards number exchanges",
+   "site.blogs.bing.com February March 2023 \"five\" \"turns\"",
+   "site.blogs.bing.com \"chat\" \"February 17 2023\"",
+   "site.newsguardtech.com \"March 21, 2023\" \"GPT\"",
+   "\"NewsGuard\" \"March 21, 2023\" \"misinformation\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Read the launch documentation describing implemented mitigations, reported improvements, and continuing failures."
+   },
+   {
+    "url": "https://blogs.bing.com/search/february-2023/The-new-Bing-Edge-Updates-to-Chat",
+    "used": true,
+    "why": "Read the dated announcement of an implemented conversation restriction."
+   },
+   {
+    "url": "https://www.newsguardtech.com/misinformation-monitor/march-2023/",
+    "used": true,
+    "why": "Read the independent testing report and methodology as material evidence of remaining failures."
+   },
+   {
+    "url": "https://blog.google/innovation-and-ai/products/try-bard/",
+    "used": false,
+    "why": "Read its description of dialogue limits and human evaluation. Omitted as additional developer evidence duplicating the controls documented in the selected items."
+   },
+   {
+    "url": "https://www.axios.com/2023/03/21/gpt4-misinformation-newsguard-study",
+    "used": false,
+    "why": "Search located contemporary coverage, but read_page returned HTTP 403. The outcome evidence comes from NewsGuard's own report."
+   }
+  ],
+  "performed_at": "2026-10-29T08:36:10Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Risks & mitigations",
+   "receipt": {
+    "public_excerpt": "model-level interventions",
+    "quote_hash": "e80f4edfd3b9adeacbd612dcc215f9cd3de2bec1aefe95487ada1642bbd66c5b",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "contradicts",
+   "explanation": "The launch documentation describes refusal training, expert adversarial testing feeding into mitigations, and monitoring and enforcement for the deployed model. It also explicitly acknowledges bypasses, so it establishes implemented safeguards without establishing comprehensive protection.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "blogs-bing-com-search-february-2023-the-new-bing-edge-updates-to-chat",
+   "source_snapshot_id": "da620a953df330bd782bc53e05cd5d66555067717fa5ad79e6ae4c57ea98d2a6",
+   "publisher": "Microsoft Bing",
+   "source_type": "company_disclosure",
+   "url": "https://blogs.bing.com/search/february-2023/The-new-Bing-Edge-Updates-to-Chat",
+   "locator": "Paragraph explaining the conversation limit",
+   "receipt": {
+    "public_excerpt": "start a new topic",
+    "quote_hash": "e0ab1068563b58bb10efebc3ab26f7a0a4ec2d863e4d45753318bd0a5aed0548",
+    "verified": "exact"
+   },
+   "event_date": "2023-02-17",
+   "available_at": "2023-02-17",
+   "retrieved_at": "2026-10-29T07:09:13Z",
+   "relation": "contradicts",
+   "explanation": "Microsoft announced an implemented conversation restriction intended to address problems arising in long chats. This is a concrete deployment safeguard during the observation window; it does not establish that the numerical limit remained unchanged on March 30.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "newsguardtech-com-misinformation-monitor-march-2023",
+   "source_snapshot_id": "2f2c62219c75fb185a90fa5e9ed5ce17c496f0a510187d236384d3893b48a408",
+   "publisher": "NewsGuard",
+   "source_type": "independent_measurement",
+   "url": "https://www.newsguardtech.com/misinformation-monitor/march-2023",
+   "locator": "Opening results discussion; Methodology",
+   "receipt": {
+    "public_excerpt": "false and misleading claims",
+    "quote_hash": "e0e6449d2e7715ad10b647cd1a778bd8ee6333d415df949a74353997e65b684c",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-21",
+   "retrieved_at": "2026-10-29T07:05:45Z",
+   "relation": "context",
+   "explanation": "NewsGuard's adversarial misinformation exercise found substantial failures in the deployed system. This limits claims about safeguard effectiveness, but failures on this test do not establish that implemented safeguards were absent.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "Developer documentation does not independently establish effectiveness across all risks.",
+  "No comprehensive measurement establishes whether contemporary safeguards adequately protected society.",
+  "NewsGuard's page labels publication by month; March 21 availability is corroborated by contemporary search-indexed coverage."
+ ],
+ "packet_hash": "022d486f57fb5678a9d31115df2e7a4a18405cf5e43f9799b57d0467639d702e"
+}

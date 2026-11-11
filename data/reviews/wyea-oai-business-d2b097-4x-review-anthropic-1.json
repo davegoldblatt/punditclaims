@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-oai-business-d2b097-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-oai-business-d2b097": "6714110ce958ec2c2a7fb4b9b01e2839f35c60a289f2e3d141a58dc976751b54",
+  "case:wyea-oai-business-d6f2e1": "f698e7fea05e1105669b3378c429624a9812edbc0fed7809c7119a94a151f7d5",
+  "case:wyea-oai-business-fbd930": "fba17884004e858e855abdb018cb2d4989c636db181326cd6d650282f12e6783",
+  "case:wyea-oai-business-fc5341": "6c5ba21541fb937af6312a49ca116cbd4d5ac8347cb886b4f03b4561ea45101a"
+ },
+ "started_at": "2026-10-29T22:11:43Z",
+ "completed_at": "2026-10-29T22:12:53Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post, framed as his updated hypothesis."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The antecedent and horizon are preserved. 'I believe ... will have to' is a firm expectation, like 'I expect'. The drafter's 'likely' modality overstates the hedge, but the claim is still a scorable conditional forecast."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'will have to' as a forecast of another primary round is fair and ordinary. Using July 31 as the deadline and counting only completed investment are reasonable. Financial necessity itself cannot be observed, which the contract acknowledges."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure confirms the antecedent: the $6.6B round completed on Oct 2, 2024, which sets the threshold. It is evidence of the condition, not of the outcome."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "SoftBank's FY2025 filing (an investor filing, available July 2025) dates completion of a $10.0B investment in OpenAI Global to April 15, 2025. That is above $6.6B and before the deadline."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "supported",
+    "rationale": "The antecedent was met: OpenAI completed a $6.6B round. An investor filing shows a $10B primary investment completed April 15, 2025, as the first closing of the next round. That exceeds the threshold before July 31, 2025, so the forecast of another round of at least the same size came true. Whether OpenAI truly had no alternative cannot be tested.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-d2b097"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own calculation and conclusion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm observation about the share of users who pay, at about 3%. The target says ChatGPT, but the denominator in the post is users of all OpenAI services. This is a minor scope point."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract tests the speaker's own stock ratio (subscribers divided by monthly users) rather than a conversion probability. That is the ordinary reading in context. Rounding to a whole percentage fits 'about 3%'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch, Sep 27, 2024, citing NYT internal documents: roughly 10M paying ChatGPT users."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Engadget, Oct 2, 2024, citing NYT internal documents: 350M monthly users of OpenAI tools as of June. Combined with e1, the share is about 2.9%, which rounds to 3%."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Contemporaneous reporting of NYT-reviewed internal figures gives about 10M paying users against 350M monthly users, or about 2.9%. That rounds to 3%. Nothing in the packet refutes these inputs. The caveats are that the two snapshots are not exactly the same date and that this is a stock ratio rather than measured conversion.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-d6f2e1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own inference in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'These annualized figures' follows the roughly $1B each for OpenAI and Microsoft, so the model-access scope can be defended. However, his explanation then uses total OpenAI revenue ($3.4B to $3.6B), so the scope is ambiguous."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Treating 'slowed growth' as a lower growth rate after June is the ordinary reading. The scope ambiguity (model-access versus total revenue) is flagged. It does not change the result here because the packet lacks the series under either reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Gives total OpenAI annualized revenue of $3.4B in June and API revenue of $1B as of March. There is no comparable later series for either company and no Microsoft figure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Testing the claim needs comparable model-access revenue observations from before and after June 2024 for both OpenAI and Microsoft. The packet has only a June total-revenue figure and a March API figure. The evidence cannot establish whether growth slowed.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-fbd930"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own inference from reported figures in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps 'highly suggests'. That is an evidential, probabilistic hedge on an inferred past state, not a firm assertion."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract applies a plain reading and scores the underlying trend even though the speaker's language is hedged. Policy limits plain-reading scoring to firm language. 'Plateaued' and 'about as much' also lack any stated tolerance."
+    },
+    "evidence": [
+     {
+      "id": "e11",
+      "fits": true,
+      "relation": "context",
+      "note": "A June secondary summary of The Information: OpenAI's API revenue led Microsoft's resale business, and both were around $1B. There is no matched series through October."
+     },
+     {
+      "id": "e12",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI called the June financial estimates inaccurate but gave no corrected figures."
+     },
+     {
+      "id": "e13",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own statement that API usage doubled after GPT-4o mini. Usage is not revenue."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The speaker says the figure 'highly suggests' a plateau and rough parity. That is hedged inferential language, which this policy does not score. Even setting the hedge aside, the packet has no matched revenue series for direct API sales or Azure OpenAI, so it could not settle either part.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-fc5341"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 59264,
+  "output_tokens": 7900,
+  "cached_input_tokens": 30518,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

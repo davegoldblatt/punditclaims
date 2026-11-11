@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-why-do-large-language-models-hallucinate-fc26ca-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-why-do-large-language-models-hallucinate-fc26ca": "186b2cfd0d72406faf90fc23b87f6aed048edde334a50f67c178c5f85a5854bc"
+ },
+ "started_at": "2026-10-29T12:52:50Z",
+ "completed_at": "2026-10-29T12:53:15Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post, in his own voice. It is not quoted from anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The 'such... that they can't' structure blames the inability to fact-check on superficial understanding, so causal is the right kind. 'Begin to' is kept and nothing is hedged. The proposition matches the sentence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "An informed reader would take 'can't begin to' as no meaningful ability, not just unreliability, so the reading is fair and ordinary. The definition of self-checking, the limits on outside help and the 2025 window were all chosen by the evaluator, so interpretation decides the result. The causal mechanism has no measure the speaker supplied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Preprint from 2025-03-24, inside the window. It is a controlled self-evaluation without retrieval. GPT-4o and GLM-4 correctly assessed about 38–43% of the false claims they had generated themselves. That is meaningful error identification, despite many abstentions and more wrong assessments on their own output."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Preprint from 2025-03-05, inside the window. The method adds trained internal-state probes, which is an extra component, so it does not show unaided self-checking. Context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The contract's contradiction condition is met. In e1 the models, with no retrieval, correctly flagged a substantial share of their own false claims, which goes against 'can't begin to.' The same study shows weaknesses: many abstentions and more wrong assessments on their own output. These limits do not restore a total inability. No study in the packet tests the superficial-understanding mechanism. But the claimed effect is contradicted, so the causal claim fails under the contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-do-large-language-models-hallucinate-fc26ca"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9625,
+  "output_tokens": 2223,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

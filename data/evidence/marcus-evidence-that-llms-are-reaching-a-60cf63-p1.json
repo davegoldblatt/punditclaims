@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-evidence-that-llms-are-reaching-a-60cf63-p1",
+ "claim_revision_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-60cf63",
+  "version": 1,
+  "content_hash": "c8bd238680234101802a625af8d0290c76a82dbed23a8347ae5fe28299c3b471"
+ },
+ "contract_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-60cf63",
+  "version": 1,
+  "content_hash": "672a9067d7d1a8832dcf9aa0a66bf72fe2ae65df91268ae58b56b354aea6b63f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Lech Mazur Connections benchmark April 2024 GPT-4 Turbo",
+   "OpenAI April 9 2024 GPT-4 Turbo benchmark graph MMLU GPQA MATH HumanEval",
+   "Read Aider January GPT-4 Turbo benchmark report",
+   "Read Anthropic Introducing the next generation of Claude; find accuracy",
+   "GitHub nyt-connections commit history before 2024-04-13"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://aider.chat/2024/01/25/benchmarks-0125.html",
+    "used": true,
+    "why": "Dated independent evidence of uneven progress between successive Turbo versions."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-3-family",
+    "used": true,
+    "why": "Material qualification: a contemporaneous developer reported a substantial improvement on another capability measure."
+   },
+   {
+    "url": "https://x.com/lechmazur/status/1776357798260920753",
+    "used": false,
+    "why": "The readable post identifies leading models but does not expose the historical score series."
+   },
+   {
+    "url": "https://github.com/lechmazur/nyt-connections",
+    "used": false,
+    "why": "The current leaderboard has changed tasks and coverage; the requested pre-post commit lookup returned no records."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals/tree/267835b30446d8f68a77cff13bc8a8256ce41829",
+    "used": false,
+    "why": "Useful recent comparisons, but insufficient matched earlier history to establish a general change in the rate of progress."
+   }
+  ],
+  "performed_at": "2026-10-29T05:24:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "aider-chat-2024-01-25-benchmarks-0125-html",
+   "source_snapshot_id": "10ec7d729fab337cbc40359c4d744ead9b4b3a48b9c071e214cb08d8c021ef4f",
+   "publisher": "Aider",
+   "source_type": "independent_measurement",
+   "url": "https://aider.chat/2024/01/25/benchmarks-0125.html",
+   "locator": "Benchmark results",
+   "receipt": {
+    "public_excerpt": "It gets worse benchmark scores when using the unified diffs code editing format.",
+    "quote_hash": "a50d411ddfe35d5ebad740e8e5e0c03f9846603f416cb086fcaf60a0e0a1179e",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-25",
+   "available_at": "2024-01-25",
+   "retrieved_at": "2026-10-29T05:19:48Z",
+   "relation": "supports",
+   "explanation": "The January Turbo version regressed against November on this coding setup, providing one sign of uneven progress. The same report says January improved with a different editing format, limiting the inference.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-claude-3-family",
+   "source_snapshot_id": "efc3dfe7b6264cda614d15b1df8cf9ea901934094749826d4136ec959e56db30",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-3-family",
+   "locator": "Improved accuracy",
+   "receipt": {
+    "public_excerpt": "To assess this, we use a large set of complex, factual questions that target known weaknesses in current models.",
+    "quote_hash": "c4d8553b5e98728ec8d8a2b7c58c54666292db740176bf1261fc6aedb781ea79",
+    "verified": "exact"
+   },
+   "event_date": "2024-03-04",
+   "available_at": "2024-03-04",
+   "retrieved_at": "2026-10-29T02:08:52Z",
+   "relation": "context",
+   "explanation": "Anthropic reports that Opus doubled correct-answer accuracy versus Claude 2.1 on these questions. This qualifies any broad slowdown inference, but its different baseline and selected evaluation do not refute the existence of diminishing gains elsewhere.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The retrieved evidence does not establish multiple matched historical series showing shrinking gains.",
+  "The contemporaneous Connections score history was not recovered in readable, dated form.",
+  "No specified aggregation or resource denominator distinguishes a general slowdown from uneven progress on selected tasks."
+ ],
+ "packet_hash": "60dd8b92ae34736c9dc6d3732640c658242f2e997dab5e45f970f4e94b61aaa4"
+}

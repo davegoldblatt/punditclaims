@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-will-tesla-ever-solve-full-self-driving-127663-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-will-tesla-ever-solve-full-self-driving-127663": "683e5e8c1bb13817ebb110e44a8e2608a6f08fec948aa03653567b7cf19b7bc9",
+  "case:marcus-will-tesla-ever-solve-full-self-driving-1d2f2b": "90421b3651062b9dae724132a9f8db6176e566fb0b8636d02402c4f905e40281",
+  "case:marcus-will-tesla-ever-solve-full-self-driving-4475d0": "0980b9e29b09473b4b8c1448ef5480c6c7beb62675b185a160f224f482973ed2",
+  "case:marcus-will-tesla-ever-solve-full-self-driving-5fcaec": "0acbda483198a5cd660ecb39aba80af71271f1d856eaf7480fb2487b1b2b1952"
+ },
+ "started_at": "2026-10-29T12:54:17Z",
+ "completed_at": "2026-10-29T12:55:06Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post; the bet reference is his own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Captures the core-issue causal claim. It drops 'obvious to humans' and 'endless list', but the contract restores both. Causal is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'core issue' as the principal obstacle is the ordinary reading of firm language. Treating the database phrase as a claim about missing training coverage is fair. The June 2022 window is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "A perception benchmark showing detectors struggle with corner cases. It does not test complete driving systems or rank causes."
+     },
+     {
+      "id": "e8",
+      "fits": true,
+      "relation": "context",
+      "note": "Waymo disclosure that it encountered rare cases such as cyclists with stop signs and trains on fleet data. This qualifies the literal database wording but proves neither primacy nor robust handling."
+     },
+     {
+      "id": "e9",
+      "fits": true,
+      "relation": "context",
+      "note": "A survey of safety threats across many ADS modules. It gives a broader picture of challenges but does not quantify how much outliers matter."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows corner cases are hard for perception models (e7) and that developers meet rare events (e8). Nothing in the packet compares outlier failures with other causes to show they were the principal barrier in June 2022. Nothing matches human and system performance, and nothing shows what private training data covers. Under the contract the causal primacy claim stays unsettled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-will-tesla-ever-solve-full-self-driving-127663"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, describing the NHTSA ADS graph."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Tying the claim to the NHTSA ADS data matches the context. The 'Level 5' label is the speaker's own conflation, and the contract flags it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'problems' as repeated reported crash involvement fits the graph the speaker cites and his incident-a-week remark. The reporting window is correct."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The TRB record reproduces NHTSA's summary: 130 ADS crash reports as of May 15, 2022. The reporting threshold does not imply ADS fault."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporary AP reporting: Waymo 62, Transdev 34, Cruise 23 crashes. Most were rear-end impacts with no injuries, which limits any inference about fault but still shows repeated involvement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "NHTSA's initial ADS release, via the TRB summary and AP reporting, shows 130 crashes across 25 entities in the reporting window. Several developers had repeated involvement: Waymo 62, Transdev 34, Cruise 23. That meets the contract's support condition. Most crashes were minor rear-end impacts, so this shows repeated incidents, not ADS fault.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-will-tesla-ever-solve-full-self-driving-1d2f2b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The revised proposition keeps his hedges: 'informal read' and 'lacking a tremendous amount of information'. Those are explicit low-confidence markers."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract applies a plain reading and scoring conditions to a self-described informal read made with admittedly incomplete information. Plain reading applies only to firm language. 'Anywhere close' also has no measure."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "NHTSA filing says Tesla's systems are Level 2 and depend on driver supervision. That bears on Tesla only and does not measure remaining distance."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "Waymo disclosure of geofenced driverless service and staged expansion. It does not measure how close Waymo was to unrestricted operation."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The speaker frames this as an informal read made while lacking much information, which is graded low confidence, and 'anywhere close' has no measure. Even setting the hedge aside, the packet only settles the Tesla half: e5 shows supervised Level 2. Nothing measures Waymo's distance to unrestricted capability. The claim is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-will-tesla-ever-solve-full-self-driving-4475d0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unqualified 'will' forecast, keeping 'in the long run'. The normative 'should not give up' part is rightly left out. The named groups were examples of 'many people'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Treating the forecast as open-ended with no deadline is fair. Requiring both the fatality and independence parts matches the conjunction he wrote. The early-resolution rule is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "IIHS independent study: Waymo's police-reportable crash rate is lower than human drivers'. It does not measure fatalities or mobility gains."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Waymo-authored study of reduced injury crashes. It is a company disclosure and does not establish reduced deaths or independence gains."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "AFB survey records accessibility and affordability barriers for disabled riders. It does not contradict an undated long-run forecast."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The forecast has no deadline. The early-resolution rule needs both an established fatality benefit and sustained independence gains at scale in the named groups. The packet shows lower crash and injury rates but no fatality reduction, and the AFB survey shows barriers rather than established gains. Neither condition is met, so the forecast stays open.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-will-tesla-ever-solve-full-self-driving-5fcaec"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 32111,
+  "output_tokens": 5326,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

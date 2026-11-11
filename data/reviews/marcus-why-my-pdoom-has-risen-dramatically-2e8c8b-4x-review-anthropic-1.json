@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-why-my-pdoom-has-risen-dramatically-2e8c8b-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-why-my-pdoom-has-risen-dramatically-2e8c8b": "c54adc838ded1ad9078c45e75d664de44467790df4ca9cb6cd593128802abc0b",
+  "case:marcus-why-my-pdoom-has-risen-dramatically-345f9c": "eef9f27fbb477ad58dd448df412edd805a01e10a5f0524a80a12fae511940f81",
+  "case:marcus-why-my-pdoom-has-risen-dramatically-881381": "b3c594e83c1586de50c8fefcf5d1724fdd206f34cf4ef9f0b70df852f873c17c",
+  "case:marcus-why-my-pdoom-has-risen-dramatically-961123": "0b35ab96a23f523f4520aaa41d2aed2ad419d1b24ba57fb5b461074172b82e90"
+ },
+ "started_at": "2026-10-29T12:53:37Z",
+ "completed_at": "2026-10-29T12:54:32Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post. The 'sometimes searches' context comes from the sentence just before it, which he also wrote."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'sometimes' and treats pizza as a single example. Adding the general search behaviour from the previous sentence is fair, since Marcus states it himself as background to this sentence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'asked his opinion' as searching for Musk's stated views fits the context. Requiring the pizza example to be verified is fair, because it is the specific thing the sentence asserts."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A firsthand trace from 11 July 2025 shows Grok 4 searching for Musk's views on an Israel–Palestine prompt. This supports the general behaviour only. It does not show the pizza interaction."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The general claim that Grok sometimes looked up Musk's views before answering is supported by a firsthand trace in the July window. The sentence's specific claim, the pizza example, has no readable record or reliable account in the packet. Nothing contradicts it, but nothing verifies it either, so the claim as a whole is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-my-pdoom-has-risen-dramatically-2e8c8b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, building on a thread by Samuel Marks. The either/or statement about preflight checks is his own claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "In the source, 'apparently' attaches to 'didn't [know]'. The either/or sentence about checks is stated firmly. The drafter moves 'apparently' onto that sentence, but the commitment is essentially the same. Scoping it to the Grok 4 release follows the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Splitting the claim into missing documentation and missing or poor internal testing is fair. Marcus names both red-teaming and model cards. The contract does not let documentation alone settle the broader claim. That choice decides the result, but it is a reasonable reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A dated monitor entry says Grok 4 launched without a safety report. This supports the model-card part. It also notes that xAI claimed internal evaluations, so it does not show testing was absent."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "xAI's own model card, published 20 Aug 2025, after launch. It describes the testing and safeguards in place then and cannot show what was done before release."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The documentation part holds: Grok 4 launched without a model card or safety report. The broader claim, that internal preflight testing was skipped or done poorly, is not settled. There is no independent record of the testing before launch, and the later model card is xAI's own disclosure about a later state. Under the contract, missing documentation alone does not meet the support condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-my-pdoom-has-risen-dramatically-345f9c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own inference, stated in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'I infer' is restored. It marks a stated conclusion, not a probability. The claim is a broad description of xAI's main alignment practice, drawn from a single incident."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading trial-and-error as relying mainly on iterative fixes after observed failures matches the context. Requiring evidence of how important that is relative to other methods is demanding, but it follows from the word 'main'. 'Main' itself has no measure, so the reading drives the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "xAI's own model card from August 2025. It describes several evaluation and safeguard methods but does not rank them or show what was practised in July. It cannot support or contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No record in the packet shows how much weight xAI gave each alignment method in July 2025. The later model card is xAI's own disclosure and describes several methods without ranking them. The incident response alone cannot show a company-wide main method. The evidence settles neither support nor contradiction.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-my-pdoom-has-risen-dramatically-881381"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own comparison of his p(doom), in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The comparison is stated firmly. Only his own figure is hedged ('maybe 3%'). The proposition matches the sentence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Industry people' has no defined population. Reading it as more than half of AI industry workers is reasonable, though Marcus may have meant prominent industry figures. Neither reading is settled by the packet, so the reading does not change the outcome here."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2023 survey of AI authors gives a median of 5% for extremely bad outcomes. That is consistent with the claim, but it is a different population and an older period."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2024 Pew survey of experts. It is not representative, and no comparable doom probabilities appear in the excerpt."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No representative July 2025 distribution of AI industry people's doom estimates is in the packet. The 2023 researcher survey's 5% median makes the comparison plausible, but its population, dates and question wording differ, so it is context only. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-why-my-pdoom-has-risen-dramatically-961123"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25388,
+  "output_tokens": 5945,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

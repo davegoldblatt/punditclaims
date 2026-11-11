@@ -1,0 +1,121 @@
+{
+ "packet_id": "marcus-o3-agi-the-art-of-the-demo-and-what-612921-p1",
+ "claim_revision_ref": {
+  "id": "marcus-o3-agi-the-art-of-the-demo-and-what-612921",
+  "version": 1,
+  "content_hash": "615a697eb82f49de953e358f73e64fd16b126a3b8fc4a1173db74ef39158c4b1"
+ },
+ "contract_ref": {
+  "id": "marcus-o3-agi-the-art-of-the-demo-and-what-612921",
+  "version": 1,
+  "content_hash": "d1f75a21727c63e21ea3794616582d0e6d8c4521c72e10b5370afa19b549deea"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI o3 system card PersonQA hallucination rate 33%",
+   "Introducing OpenAI o3 and o4-mini AIME 2025",
+   "Introducing GPT-5 o3 hallucination comparison"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": false,
+    "why": "The primary system card, but line breaks in the PDF text make exact quotation unreliable. Its content is quoted on Simon Willison's page."
+   },
+   {
+    "url": "https://simonwillison.net/2025/Apr/21/openai-o3-and-o4-mini-system-card/",
+    "used": true,
+    "why": "Quotes the system card's hallucination section word for word."
+   },
+   {
+    "url": "https://openai.com/index/introducing-o3-and-o4-mini/",
+    "used": true,
+    "why": "OpenAI's release post, with o3's math results."
+   },
+   {
+    "url": "https://openai.com/index/introducing-gpt-5/",
+    "used": true,
+    "why": "OpenAI's own measurement of o3 giving confident answers about images that did not exist."
+   }
+  ],
+  "performed_at": "2026-10-29T07:30:47Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-o3-and-o4-mini",
+   "source_snapshot_id": "d1b7388d2041dc5ab79a241ac7d97c3ce5b5353765a2e7ef60304cec26f0b2eb",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-o3-and-o4-mini",
+   "locator": "section What's changed, paragraph 3",
+   "receipt": {
+    "public_excerpt": "o3 shows similar improvements on AIME 2025 from tool use (98.4% pass@1, 100% consensus@8).",
+    "quote_hash": "bc6f97895d71af992619c0ced835472b6f7f885a6db4c5204bba66a52031b575",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T07:02:17Z",
+   "relation": "supports",
+   "explanation": "Shows o3 performing almost perfectly on one kind of problem: competition math with tools.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "simonwillison-net-2025-apr-21-openai-o3-and-o4-mini-system-card",
+   "source_snapshot_id": "3c65c07b0b869425729cf01717db92cd2695181ae4e4d5e874b209ae2f4f6ece",
+   "publisher": "Simon Willison's Weblog (quoting OpenAI system card)",
+   "source_type": "secondary_summary",
+   "url": "https://simonwillison.net/2025/Apr/21/openai-o3-and-o4-mini-system-card",
+   "locator": "quoted system card section 3.3 Hallucinations",
+   "receipt": {
+    "public_excerpt": "o3 tends to make more claims overall, leading to more accurate claims as well as more inaccurate/hallucinated claims.",
+    "quote_hash": "c9f92c7eeac719f97a27170376fc3c31efb56dcaf0a9b83db67e866e13c977ee",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-21",
+   "retrieved_at": "2026-10-29T02:15:10Z",
+   "relation": "supports",
+   "explanation": "OpenAI's system card reports that o3 hallucinated more than o1 on factual questions about people. The same page shows a 0.33 hallucination rate on PersonQA.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-gpt-5",
+   "source_snapshot_id": "3ac0f5f38e569efd0cd40cae4bb36d3dc6ceb49de3a3dfbf7bafe3d1f7233d87",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-5",
+   "locator": "section More honest responses",
+   "receipt": {
+    "public_excerpt": "we removed all the images from the prompts of the multimodal benchmark CharXiv, and found that OpenAI o3 still gave confident answers about non-existent images 86.7% of the time",
+    "quote_hash": "c0383d308fd80237c50542279229eefb0a9055bc2189d74ae39f1391d7fc8d90",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-07",
+   "available_at": "2025-08-07",
+   "retrieved_at": "2026-10-28T22:31:06Z",
+   "relation": "supports",
+   "explanation": "OpenAI's own test found o3 unreliable on another kind of task: it gave confident answers about images that were not there.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "'Reliable' has no stated threshold, so whether the math results count as 'reliable' is a judgment.",
+  "Most of the evidence comes from OpenAI's own evaluations, not independent ones."
+ ],
+ "packet_hash": "25f9d55b1bf58a64e6ebc5cecb05ef7d209b6d24e9fc564b3936ffde578371ef"
+}

@@ -1,0 +1,141 @@
+{
+ "assessment_id": "marcus-top-5-reasons-openai-is-probably-4050bb-a1",
+ "claim_revision_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-4050bb",
+  "version": 1,
+  "content_hash": "5fd64b428aaa5ef242d44e763fa1327ee5dfc61af0d36432be4482acba9ba39e"
+ },
+ "contract_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-4050bb",
+  "version": 1,
+  "content_hash": "f62619579d2e3798369e408a961c27e5466bbcf83d969288e27339ae47e83d62"
+ },
+ "packet_ref": {
+  "id": "marcus-top-5-reasons-openai-is-probably-4050bb-p1",
+  "content_hash": "a46ed4782d12fae84335067956ce547aa33d64d6e8ca3867e95c246b2531ae1d"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-01-01",
+  "end": "2023-09-27",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence supports the ordinary reliability reading. August PaLM 2 S results show frequent failures on explicit, automatically checkable constraints. Tests of June GPT-4 also found severe failures on particular instruction types. These were systematic tests, not isolated anecdotes. The qualification matters: GPT-4 followed some simple instructions well, and CELLO found substantial differences between models and tasks. The evidence supports unreliable compliance in 2023, not an inability to follow instructions generally. Calling that 'not very good' remains an interpretive judgment.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The conclusion depends on reading the claim as a reliability criticism.",
+  "PaLM 2 S is a smaller model and cannot represent all frontier systems.",
+  "Some GPT-4 failures were capitalization errors; their practical importance depends on the application.",
+  "IFEval's November GPT-4 results are outside the target period and were not used.",
+  "These studies do not establish a human-employee comparison or assess spoken-instruction comprehension."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-top-5-reasons-openai-is-probably-4050bb-4x-review-anthropic-1",
+  "marcus-top-5-reasons-openai-is-probably-4050bb-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-top-5-reasons-openai-is-probably-4050bb-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-top-5-reasons-openai-is-probably-4050bb",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs are not very good at following explicit verbal instructions.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Explicit verbal instruction is key in training human employees, and LLMs aren’t very good at following those instructions.",
+   "locator": "paragraph 10",
+   "url": "https://garymarcus.substack.com/p/top-5-reasons-openai-is-probably",
+   "date": "2023-09-27",
+   "document_title": "Top 5 reasons OpenAI is probably not worth 90 billion dollars",
+   "observed_at": "2026-10-29T00:03:09Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs",
+    "aren’t very good at following those instructions",
+    "Explicit verbal instruction",
+    "Even now"
+   ],
+   "our_interpretation": [
+    "This concerns the instruction-following reliability of LLMs available when the post appeared, not later models.",
+    "Use 2023-01-01 through 2023-09-27 as the observation window for the current generation discussed. Model capability has no standard reporting period; this window is an evaluator choice.",
+    "Verbal instruction means natural-language directions, including written prompts.",
+    "The plain reading is that contemporary leading models frequently missed clear instructions, limiting dependable use. It does not require failure on most simple requests.",
+    "The employee-training comparison supplies context; it is not separately assessed."
+   ],
+   "support_condition": "Reproducible evaluations of contemporary leading LLMs show frequent, material failures to follow clear natural-language directions across multiple tasks.",
+   "contradiction_condition": "Broad evaluations show consistently reliable compliance with clear natural-language directions across representative tasks, with failures uncommon."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports the ordinary reliability reading. August PaLM 2 S results show frequent failures on explicit, automatically checkable constraints. Tests of June GPT-4 also found severe failures on particular instruction types. These were systematic tests, not isolated anecdotes. The qualification matters: GPT-4 followed some simple instructions well, and CELLO found substantial differences between models and tasks. The evidence supports unreliable compliance in 2023, not an inability to follow instructions generally. Calling that 'not very good' remains an interpretive judgment.",
+  "limitations": [
+   "The conclusion depends on reading the claim as a reliability criticism.",
+   "PaLM 2 S is a smaller model and cannot represent all frontier systems.",
+   "Some GPT-4 failures were capitalization errors; their practical importance depends on the application.",
+   "IFEval's November GPT-4 results are outside the target period and were not used.",
+   "These studies do not establish a human-employee comparison or assess spoken-instruction comprehension."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "PaLM 2 S 43.07 55.76 46.95 59.11",
+    "locator": "Table 3; section 3 dates PaLM 2 S testing to August 2023",
+    "url": "https://arxiv.org/pdf/2311.07911v1",
+    "publisher": "arXiv; Jeffrey Zhou and colleagues",
+    "event_date": "2023-08",
+    "available_at": "2023-11-14",
+    "explanation": "PaLM 2 S satisfied every checked instruction on 43.07% of prompts under strict scoring and 46.95% under relaxed scoring; individual-instruction accuracy was 55.76% and 59.11%, respectively. These August results show frequent explicit-constraint failures, but this smaller model alone cannot establish performance across all leading LLMs."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "Overall, we observe that GPT-4 followed less user instructions over time.",
+    "locator": "Section 4, instruction-following experiments and Figures 13–14",
+    "url": "https://arxiv.org/html/2307.09009v3",
+    "publisher": "arXiv; Lingjiao Chen, Matei Zaharia and James Zou",
+    "event_date": "2023-06",
+    "available_at": "2023-10-31",
+    "explanation": "The June GPT-4 version complied with only 0.5% of the study's answer-extraction requests, with capitalization errors accounting for failures despite otherwise correct bracket placement. However, the same study found good performance on three individual text-formatting instructions in both March and June, so the evidence establishes uneven reliability rather than general inability."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Different models also excel in specific tasks.",
+    "locator": "Experiment, Fine-grained Evaluation; General Comparisons",
+    "url": "https://arxiv.org/html/2309.09150v1",
+    "publisher": "arXiv; Qianyu He and colleagues",
+    "event_date": "2023-09",
+    "available_at": "2023-09-17",
+    "explanation": "CELLO identifies task-specific strengths and a substantial advantage for GPT-4 and GPT-3.5 over smaller open models. This limits a sweeping interpretation of Marcus's statement; the benchmark uses Chinese complex instructions and partial-credit measures, not a representative everyday failure rate."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "7296bc2f37bee682cbdc935750ccbd8353fc7a64124cf52ff8de2d543536af89",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:42:11Z"
+}

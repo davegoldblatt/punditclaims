@@ -1,0 +1,55 @@
+---
+// A claim's history: every assessment version with its standing and public
+// dates, then every recorded event. Speaker events and site events carry
+// different labels and never share a word such as "updated". A version that
+// this page does not show in full carries its permanent anchor here, so a
+// citation of it still lands on its entry after it is replaced.
+import type { PublicClaim, PublicEvent } from "../lib/manifest.ts";
+import { EVENT_LABEL, OUTCOME_LABEL } from "../policy.ts";
+import { assessmentAnchor, assessmentPath, byNewest, day, EVENT_GROUP_LABEL, eventGroup, isScreenedOut, plainEventReason, VERSION_STATUS_TEXT, versionsOf } from "../lib/view.ts";
+
+// events: the claim's own events (any others are ignored). mainId: the
+// assessment this page shows in full, which carries its own anchor.
+interface Props { claim: PublicClaim; events: PublicEvent[]; currentId?: string | null; mainId?: string | null }
+const { claim: c, events, currentId = null, mainId = null } = Astro.props;
+const versions = [...versionsOf(c)].reverse();
+const mine = events.filter((e) => c.event_ids.includes(e.event_id)).sort(byNewest);
+const substantive = mine.filter((e) => e.substantive);
+const edits = mine.filter((e) => !e.substantive);
+---
+<section class="section" aria-labelledby="history-h">
+  <h2 id="history-h">History</h2>
+  <h3 class="h3">Versions</h3>
+  <ul class="versions">
+    {versions.map((v) => (
+      <li aria-current={v.assessment_id === currentId ? "page" : undefined} id={v.assessment_id === mainId ? undefined : assessmentAnchor(v.assessment_id)}>
+        <a href={assessmentPath(c, v.assessment_id)}>{VERSION_STATUS_TEXT[v.status]}</a>{v.status === "withdrawn" ? "." : `: ${OUTCOME_LABEL[v.payload.outcome]}.`} {isScreenedOut(v) ? "" : `Evidence up to ${v.payload.evaluation_as_of}.`}
+        {v.public_from && <span class="soft small">{" "}Shown from {day(v.public_from)}{v.public_until ? ` until ${day(v.public_until)}` : ""}.</span>}
+      </li>
+    ))}
+  </ul>
+  <h3 class="h3">What happened to this record</h3>
+  {substantive.length ? (
+    <ol class="timeline">
+      {substantive.map((e) => {
+        const g = eventGroup(e.type);
+        return (
+          <li id={`event-${e.event_id}`}>
+            <time datetime={e.recorded_at}>{day(e.recorded_at)}</time>
+            <div>
+              <p class="ev-type"><strong>{EVENT_LABEL[e.type]}</strong><span class:list={["group", `group-${g}`]}>{EVENT_GROUP_LABEL[g]}</span></p>
+              <p>{plainEventReason(e, "It didn’t pass every check")}</p>
+              {e.effective_at && <p class="small soft">Effective {day(e.effective_at)}.</p>}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  ) : <p class="soft">No events recorded.</p>}
+  {edits.length > 0 && (
+    <details class="rcpt">
+      <summary>Wording fixes ({edits.length}). These never change a verdict.</summary>
+      <ul>{edits.map((e) => <li><time datetime={e.recorded_at}>{day(e.recorded_at)}</time>: {e.reason}</li>)}</ul>
+    </details>
+  )}
+</section>

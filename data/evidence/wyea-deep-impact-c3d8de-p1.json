@@ -1,0 +1,135 @@
+{
+ "packet_id": "wyea-deep-impact-c3d8de-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-c3d8de",
+  "version": 2,
+  "content_hash": "78cc8308004d665457f19ac3649c11d74d8618cecbcbe5a3fc37ec028a657fb1"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-c3d8de",
+  "version": 1,
+  "content_hash": "0b68b4429ea7da8b2e4c94c13319d87defc6704961fcf132886d02459655c471"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.github.com deepseek-ai DeepSeek-R1 January 2025 MIT license",
+   "site.together.ai January 2025 DeepSeek R1 available open source",
+   "site.github.com huggingface blog open-r1.md datasets",
+   "\"DeepSeek-R1\" \"training code\" \"not\" \"January 28\" open source"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1/tree/23807ce",
+    "used": true,
+    "why": "Version-specific release record containing licensing and local deployment instructions."
+   },
+   {
+    "url": "https://arxiv.org/abs/2501.12948v1",
+    "used": true,
+    "why": "The January technical report documents the method and the developer's performance claim."
+   },
+   {
+    "url": "https://github.com/huggingface/blog/blob/main/open-r1.md",
+    "used": true,
+    "why": "The replication team's contemporary assessment identifies missing training information."
+   },
+   {
+    "url": "https://huggingface.co/blog/open-r1",
+    "used": false,
+    "why": "read_page returned only a model-card fragment; the publisher's GitHub copy was readable."
+   },
+   {
+    "url": "https://api-docs.deepseek.com/news/news250120",
+    "used": false,
+    "why": "read_page returned current API instructions instead of the historical announcement."
+   },
+   {
+    "url": "https://www.boozallen.com/content/dam/home/docs/ai/a-technical-primer-on-deepseek.pdf",
+    "used": false,
+    "why": "The extraction interleaves columns and does not establish a precise publication date; unnecessary given the primary release and replication records."
+   }
+  ],
+  "performed_at": "2026-10-29T11:01:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-deepseek-ai-deepseek-r1-tree-23807ce",
+   "source_snapshot_id": "3745637db8e9d362cbdbab980cb2d32837b38b7744f2ecb7783cb9a46daae2d1",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/deepseek-ai/DeepSeek-R1/tree/23807ce",
+   "locator": "Section 7, License",
+   "receipt": {
+    "public_excerpt": "licensed under the MIT License.",
+    "quote_hash": "2cad86f188d5a48f02337cef2920acb8929eb43bbd3a0fe0ef6a22d811180ecc",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-20",
+   "available_at": "2025-01-20",
+   "retrieved_at": "2026-10-29T10:56:40Z",
+   "relation": "supports",
+   "explanation": "The release supports permissive reuse of R1's repository and weights. Its local-running instructions support deployment, but the license does not establish that the complete training implementation was published or that the whole LLM market became a commodity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2501-12948v1",
+   "source_snapshot_id": "4331a8599deb09e40fb348b17d8378128ecc0e9016e577a49f82d2ebe817eacc",
+   "publisher": "DeepSeek-AI via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2501.12948v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "comparable to OpenAI-o1-1217 on reasoning tasks.",
+    "quote_hash": "efda4613724d6933e3d21d1a7399b3dd2da843cfbc538681f754aa4b0120b0fc",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-22",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:05Z",
+   "relation": "supports",
+   "explanation": "The dated report establishes publication of technical guidance and a competitive-performance claim. These are developer-reported reasoning results, not independent proof of broad substitutability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "github-com-huggingface-blog-blob-main-open-r1-md",
+   "source_snapshot_id": "111ad167ede13645091141dde1a7aea19a72391b4b5f6a6779b0abd552abbd7d",
+   "publisher": "Hugging Face",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/huggingface/blog/blob/main/open-r1.md",
+   "locator": "'What is DeepSeek-R1?', Data collection question and adjacent Model training discussion",
+   "receipt": {
+    "public_excerpt": "How were the reasoning-specific datasets curated?",
+    "quote_hash": "5159d6a44dacedf091e31c0dfa0aa84c56d7812f850343069582248d945ef0ba",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-28",
+   "available_at": "2025-01-28",
+   "retrieved_at": "2026-10-29T10:54:36Z",
+   "relation": "context",
+   "explanation": "The replication team identifies undisclosed dataset construction and states in the adjacent discussion that DeepSeek had not released training code. This limits a complete-reproduction reading, while leaving deployment and adaptation of released weights possible.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The cited release records do not establish market-wide commoditization by January 29.",
+  "The performance evidence retained here is developer-reported.",
+  "The distinction between deploying released weights and reproducing model training materially changes the assessment."
+ ],
+ "packet_hash": "87a955312f01e9f0e39ff7abc11304e6bd2e2d6783f982b0b8c248ee5c22e4f2"
+}

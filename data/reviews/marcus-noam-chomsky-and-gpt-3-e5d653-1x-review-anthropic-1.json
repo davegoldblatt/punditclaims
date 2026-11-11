@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-noam-chomsky-and-gpt-3-e5d653-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-noam-chomsky-and-gpt-3-e5d653": "bbb98c6c5bc625c930b20a1b40f81f8b21bd7c3ff945e3b8b95db4c902e23247"
+ },
+ "started_at": "2026-10-29T21:47:14Z",
+ "completed_at": "2026-10-29T21:47:29Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own characterization in his own voice. He draws on the Razeghi and Singh work but asserts the conclusion himself, so it counts as his claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalized claim matches the statement: LLMs learn addition piecemeal rather than abstractly, and do markedly better on seen examples than unseen ones. It is a present-tense observation with no hedging."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'specific examples they have seen' as whole examples seen in pretraining is an ordinary reading, so the contract is fair. However, the speaker grounded the claim in term-frequency research, so whether operand frequency counts largely determines the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The study the post cites (Feb 2022). It shows accuracy tracks how often numbers and number pairs appear in training data. It does not compare matched seen and unseen whole equations, and it declines a causal reading. That is consistent with the claim but does not meet the support condition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The 2020 GPT-3 report found about 80% accuracy on 3-digit addition, with few test problems found in training data, which cuts against exact memorization. It predates the target period and its training-data search was limited, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The contract needs matched tests separating whole-example exposure from operand frequency. The cited 2022 study shows only correlations with operand frequency. The contrary GPT-3 contamination check is from 2020, outside the target period. The evidence in the packet establishes neither the support nor the contradiction condition, so the outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-noam-chomsky-and-gpt-3-e5d653"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9594,
+  "output_tokens": 1480,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

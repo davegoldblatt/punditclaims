@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6",
+  "version": 1,
+  "content_hash": "5393ba6412a821c24f2a7039459c2b512a985734853f97666b1f6e430668f690"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6",
+  "version": 1,
+  "content_hash": "18bc0f70559f92fbc9dbee853314b79dcdd120e65ea5a255dc0b8e8bd182d82d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Claude Opus 4.7 April 2026 benchmarks tokens tokenizer",
+   "site.artificialanalysis.ai \"Opus 4.7\" \"4.6\" April 16",
+   "site.artificialanalysis.ai/articles \"opus-4-7\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-7",
+    "used": true,
+    "why": "Primary launch disclosure explains the tokenizer change and its effect on identical inputs."
+   },
+   {
+    "url": "https://artificialanalysis.ai/articles/opus-4-7-everything-you-need-to-know",
+    "used": true,
+    "why": "Dated independent evaluation compares both models at maximum effort and reports quality and output-token usage."
+   },
+   {
+    "url": "https://www.stet.sh/blog/opus-4-7-zod",
+    "used": true,
+    "why": "Independent same-task coding comparison supplies a narrower check on the general performance claim."
+   },
+   {
+    "url": "https://www.anthropic.com/research/april-23-postmortem",
+    "used": false,
+    "why": "The identified prompt regression affected both Opus 4.6 and 4.7, so it does not isolate a predecessor-to-successor regression."
+   }
+  ],
+  "performed_at": "2026-10-29T20:00:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-news-claude-opus-4-7",
+   "source_snapshot_id": "7540573ecbeb9b72ba335fe46de19a8455bac5b7b754e3265387b072b698b4dd",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-opus-4-7",
+   "locator": "Migrating from Opus 4.6 to Opus 4.7",
+   "receipt": {
+    "public_excerpt": "1.0–1.35×",
+    "quote_hash": "b39882aa27e77e74db544de8f8f62cb52fd5a69c26c3275ea6a01fcec76f1aa2",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-16",
+   "available_at": "2026-04-16",
+   "retrieved_at": "2026-10-29T03:12:51Z",
+   "relation": "supports",
+   "explanation": "This supports increased input-token counts for some identical text. It does not establish greater total consumption per completed task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "artificialanalysis-ai-articles-opus-4-7-everything-you-need-to-know",
+   "source_snapshot_id": "2ef1dd8dfa2c9b631af3523a8c11c2f22d6b14cb8480654cb9e4d73edf788580",
+   "publisher": "Artificial Analysis",
+   "source_type": "independent_measurement",
+   "url": "https://artificialanalysis.ai/articles/opus-4-7-everything-you-need-to-know",
+   "locator": "Key takeaways; output-token comparison",
+   "receipt": {
+    "public_excerpt": "fewer output tokens",
+    "quote_hash": "def5fcf2d4bc55680d8dc25be773d73a783b4ca93bf8077b6bd93fbdbc4e98a2",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-17",
+   "available_at": "2026-04-17",
+   "retrieved_at": "2026-10-29T19:54:03Z",
+   "relation": "contradicts",
+   "explanation": "At maximum effort, this independent comparison found higher aggregate performance and lower output-token consumption. It contradicts a general regression and shows why input-token inflation cannot establish higher output usage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "stet-sh-blog-opus-4-7-zod",
+   "source_snapshot_id": "5e7ab34e069e818184965d6a886e4078539998b1884a6e8e99f9810516221c69",
+   "publisher": "Stet",
+   "source_type": "independent_measurement",
+   "url": "https://www.stet.sh/blog/opus-4-7-zod",
+   "locator": "Headline; paragraph following the comparison table",
+   "receipt": {
+    "public_excerpt": "identical tests",
+    "quote_hash": "a1962b4e2b9fa8d4ac0e4ad1d427198c5fbe1efa7029acbcd6c880c82d29ea07",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-16",
+   "available_at": "2026-05-01",
+   "retrieved_at": "2026-10-29T19:53:50Z",
+   "relation": "contradicts",
+   "explanation": "The 28-task coding comparison found the same test pass rate for Opus 4.7 and two Opus 4.6 runs. Other patch-quality measures varied, so this is a limited counterexample rather than proof of superiority on every workflow.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative measurement covers every workflow or default setting implied by the wording.",
+  "The statement does not specify which category of tokens it means."
+ ],
+ "packet_hash": "f088ef4ddc1922a55126b23a9aeb5100a73514f4ddf5b7f908c4e4de9d30f70d"
+}

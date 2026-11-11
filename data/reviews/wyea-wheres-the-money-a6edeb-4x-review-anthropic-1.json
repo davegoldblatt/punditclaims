@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-wheres-the-money-a6edeb-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-wheres-the-money-a6edeb": "3545ef81a03a295123fe0dce7a4039bff4844367bc3507e14686a818e926fdbb",
+  "case:wyea-wheres-the-money-a86f32": "d9338de282cd89efb464fa7a63b2b3d4b22ffa1d3747ac04cdfa28e0d935a797",
+  "case:wyea-wheres-the-money-abfd5b": "f008b5fab5b46d161cb6b1b03210fa8d8df313dd4f92247e5a8fb334fd81c307",
+  "case:wyea-wheres-the-money-adebd3": "7c09976f5337e65b3b3f311be7e893cb28022401b71953ef5156d97b2914ee1f"
+ },
+ "started_at": "2026-10-29T23:44:30Z",
+ "completed_at": "2026-10-29T23:45:14Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post. The KPMG and PwC examples nearby are his framing, not quotes of others' claims."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps the demand context, the 'little evidence' wording and the 'I'd argue' explanation. 'I'd argue' presents an argued explanation, not a graded probability, so the claim is scoreable. It mixes a descriptive part with a causal part."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (purchasing outruns real use, mainly because returns are inadequate) is an ordinary reading. It turns a claim about missing evidence into a claim about an actual gap, but that is a fair reading. There are no thresholds, and the 2024 window is inferred."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Representative US survey: 28.1% use at work, 10.6% daily. It does not separate enterprise-bought products or measure returns. It cuts against a reading of no use at all, but it is not matched procurement data."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Self-reported executive gains in a survey commissioned by the vendor (Google Cloud). It is a company disclosure, not net returns, and it does not explain employee adoption."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Deloitte survey: limited scaling and trouble measuring value, but data, risk and governance barriers are also named. It does not single out inadequate returns as the cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No item links enterprise purchases to sustained use and net returns for the same firms, and none isolates inadequate returns as the cause. The usage survey and the vendor ROI claims cut against the claim somewhat, and the Deloitte barriers offer other explanations. Neither the descriptive part nor the causal part is settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-a6edeb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The sentence is Zitron's own. The TechCrunch quote that follows backs it up but is not the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm present-tense claim that scaling data and training is giving diminishing returns. The normalisation is faithful."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (smaller marginal gains from more pretraining, not a halt) is ordinary and fair. The window Q4 2024 to the post date is inferred from context. Requiring controlled measurements is strict but suits the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A 2024 preprint finds scaling is predictable at small scale, before the target period. Predictable power laws are compatible with diminishing gains. It does not address the frontier."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A reproduction of a Reuters report: Sutskever says pretraining gains have plateaued, and labs report disappointing runs. This is testimony, not measured resource-versus-performance data."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no frontier-scale series that isolates pretraining resources and the marginal performance they bought in late 2024 to early 2025. The insider testimony agrees with the claim but does not meet the contract's measurement requirement. The small-scale preprint is from earlier and does not settle the question.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-a86f32"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, introduced with 'Let's be frank'."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "The firm 'will require' sets out a necessity condition for solving hallucinations, with no deadline. Leaving out the consumer-benefit clause is acceptable because it is a separate assertion."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the claim as 'dependable general use needs genuinely new mathematical fields' is fair. The support and contradiction conditions both require a validated general solution, which matches the claim's structure. 'New branch' has no clear boundary."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Nature 2026: hallucination persists; it proposes fixing evaluation incentives using existing learning theory. This is not a validated general solution and does not show new mathematics is needed."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "2026 preprint: conformal guarantees, tested on two benchmarks only. Narrow and not independently validated, so it does not meet the early-resolution rule."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was stated, and no independently validated general solution has appeared, so the early-resolution rule is not met. Ongoing hallucination does not show that new mathematics is required, and partial fixes using existing mathematics do not refute the claim. It cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-abfd5b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The target is Pichai's, as quoted by Zitron. The judgment that it is unrealistic is Zitron's own."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'So unrealistic' (strong enough that someone should be fired) is firm disbelief, not a graded probability. It works as 'won't reach 500M by end-2025'. The threshold and horizon are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Counting monthly active users of the consumer Gemini service is an ordinary measure of 'used by 500 million people'. Treating 'unrealistic' as a prediction of a miss is a fair reading of firm language."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Google's dated Q3 2025 disclosure (2025-10-29): Gemini app had over 650M monthly users, before the deadline. It is a company disclosure, but the contract accepts that as a source."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "contradicted",
+    "rationale": "The deadline (2025-12-31) has passed. Google disclosed over 650M monthly users of the Gemini app on 2025-10-29, well above the 500M target that Zitron called unrealistic. The packet has no counterevidence. The figure is a company disclosure, but it meets the contract's source requirement.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-wheres-the-money-adebd3"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27523,
+  "output_tokens": 4862,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

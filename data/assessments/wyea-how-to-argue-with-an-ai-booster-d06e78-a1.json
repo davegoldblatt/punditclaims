@@ -1,0 +1,123 @@
+{
+ "assessment_id": "wyea-how-to-argue-with-an-ai-booster-d06e78-a1",
+ "claim_revision_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-d06e78",
+  "version": 1,
+  "content_hash": "5741f2b70e89540d5f6b126edd7d80ca31f27bc8df42e4b89b5a75055d8b868b"
+ },
+ "contract_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-d06e78",
+  "version": 1,
+  "content_hash": "0ee9160828457d797cc048e9b5423acde7d6b960ae5cbd4ba70d4e315f2c89c1"
+ },
+ "packet_ref": {
+  "id": "wyea-how-to-argue-with-an-ai-booster-d06e78-p1",
+  "content_hash": "eed1756dd70e82fc909293e2189f773f90458d18743eeb34f9286488d196874e"
+ },
+ "axis": "causal_assessment",
+ "outcome": "contradicted",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-09-01",
+  "end": "2025-08-25",
+  "precision": "day"
+ },
+ "public_rationale": "The exclusive explanation is contradicted. Qwen's pre-publication report documents gains in pretrained base models through improvements made before reasoning post-training. Longer inference reasoning therefore was not the only route to better performance. DeepSeek's report supports the narrower point that longer reasoning can improve results. The evidence does not settle how much reasoning contributed to industry costs or how sharply training returns diminished.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The decisive evaluation is developer-reported.",
+  "It does not independently isolate the contribution of each training change or provide a complete workload-cost breakdown.",
+  "The verdict addresses the explicit claim of exclusivity, not a claim that reasoning is unimportant."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-how-to-argue-with-an-ai-booster-a265e4-4x-review-anthropic-1",
+  "wyea-how-to-argue-with-an-ai-booster-a265e4-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-how-to-argue-with-an-ai-booster-a265e4-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-how-to-argue-with-an-ai-booster-d06e78",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Inference costs rose because model developers hit diminishing returns and could only improve models by having them burn more tokens through reasoning.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Because model developers hit a wall of diminishing returns, and the only way to make their models do more was to make them burn more tokens to generate a more accurate response (this is a very simple way of describing reasoning, a thing that OpenAI launched in September 2024 and others followed).",
+   "locator": "paragraph 245",
+   "url": "https://www.wheresyoured.at/how-to-argue-with-an-ai-booster",
+   "date": "2025-08-25",
+   "document_title": "How To Argue With An AI Booster",
+   "observed_at": "2026-10-28T22:27:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "hit a wall of diminishing returns",
+    "the only way",
+    "burn more tokens",
+    "generate a more accurate response",
+    "OpenAI launched in September 2024"
+   ],
+   "our_interpretation": [
+    "The surrounding passage asserts that rising inference costs resulted from developers having no remaining route to better models except longer reasoning outputs.",
+    "Burn more tokens refers to tokens generated during inference, not tokens consumed during training.",
+    "The exclusivity is explicit: a demonstrated improvement from another route is sufficient to contradict the full explanation, even if longer reasoning also improves some results."
+   ],
+   "support_condition": "Controlled scaling studies show diminishing training returns left no effective alternative improvement route, and comparable workload measurements show longer reasoning caused the asserted cost increase.",
+   "contradiction_condition": "A credible pre-publication model comparison demonstrates capability improvements through another route, or controlled cost evidence refutes the asserted causal chain."
+  },
+  "axis": "causal_assessment",
+  "outcome": "contradicted",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The exclusive explanation is contradicted. Qwen's pre-publication report documents gains in pretrained base models through improvements made before reasoning post-training. Longer inference reasoning therefore was not the only route to better performance. DeepSeek's report supports the narrower point that longer reasoning can improve results. The evidence does not settle how much reasoning contributed to industry costs or how sharply training returns diminished.",
+  "limitations": [
+   "The decisive evaluation is developer-reported.",
+   "It does not independently isolate the contribution of each training change or provide a complete workload-cost breakdown.",
+   "The verdict addresses the explicit claim of exclusivity, not a claim that reasoning is unimportant."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "Qwen3-32B-Base achieves 65.54 on MMLU-Pro and 39.78 on SuperGPQA, significantly outperforming its predecessor Qwen2.5-32B-Base.",
+    "locator": "Section 3, Qwen3-32B-Base evaluation, point 1",
+    "url": "https://arxiv.org/html/2505.09388v1",
+    "publisher": "Qwen Team / arXiv",
+    "event_date": "2025-05-14",
+    "available_at": "2025-05-14",
+    "explanation": "The report documents gains in the pretrained base model under a common evaluation pipeline, separately from its later reasoning post-training. Its architecture, data, and training improvements supply another route to capability gains, contradicting the claim of exclusivity."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "This approach has achieved significant improvements in various reasoning tasks, such as mathematics, coding, and scientific reasoning.",
+    "locator": "Section 1, paragraph discussing OpenAI o1 and inference-time scaling",
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "publisher": "DeepSeek-AI / arXiv",
+    "event_date": "2025-01-22",
+    "available_at": "2025-01-22",
+    "explanation": "The preceding sentence identifies the approach as increasing chain-of-thought length. This supports the narrower contention that additional inference reasoning can improve performance, but not that it was the only available route."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9b511835624990d6fff577935fddc6ac0a79dd4f1871a5446cf560c8a4e87f00",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:49:40Z"
+}

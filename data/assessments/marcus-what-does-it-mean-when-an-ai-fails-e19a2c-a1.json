@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-a1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 1,
+  "content_hash": "94f7790f0104c55472835dd562302c93f6e5492cceb260188a96bf918eb665c2"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "version": 1,
+  "content_hash": "1af58dc5f16139e656edde0a14b4ce87c6d6c62f2d541d5facf6e02ee02ded5c"
+ },
+ "packet_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-p1",
+  "content_hash": "eb55d8bd12f3224b3f67a9682c7c0560c105637df0b018449b0b0afe9c9c317a"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-01-01",
+  "end": "2022-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "Independent comparisons support the broad claim that GPT-3 improved on GPT-2: under matched eight-shot testing, accuracy rose on classification and factual retrieval tasks. However, the same study reports substantial reversals in some zero-shot settings. Thus broad improvement holds, while unrestricted improvement on any example does not hold under the benchmark-accuracy interpretation. This distinction matters: if Marcus meant only that answers generally became more likely to be correct, the evidence supports that reading. His explicitly uncertain statement about InstructGPT is not scored as a firm claim.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The mixed result depends on taking 'any given example' literally; a general-improvement reading would be supported.",
+  "Dataset accuracy cannot establish the change in sampling probability for every individual answer.",
+  "The comparison concerns tested model sizes and prompting settings, not every version or possible use of either model."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-anthropic-1",
+  "marcus-what-does-it-mean-when-an-ai-fails-e19a2c-1x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e19a2c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "GPT-3 is genuinely better than GPT-2 and the probability of a correct answer per example has risen; whether InstructGPT is better than GPT-3 is uncertain.",
+  "kind": "observation",
+  "conditions": [
+   "InstructGPT improvement over GPT-3 uncertain"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Now it is true that GPT-3 is genuinely better than GPT-2, and maybe (but maybe not, see footnote 1) true that InstructGPT is genuinely better than GPT-3. I do think that for any given example, the probability of a correct answer has gone up.",
+   "locator": "paragraph 37",
+   "url": "https://garymarcus.substack.com/p/what-does-it-mean-when-an-ai-fails",
+   "date": "2022-06-07",
+   "document_title": "What does it mean when an AI fails? A Reply to SlateStarCodex’s riff on Gary Marcus",
+   "observed_at": "2026-10-29T00:05:19Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "GPT-3 is genuinely better than GPT-2",
+    "for any given example, the probability of a correct answer has gone up",
+    "maybe (but maybe not, see footnote 1)"
+   ],
+   "our_interpretation": [
+    "Read 'genuinely better' as a broad improvement in measured task accuracy, without implying that the underlying reasoning problems were solved.",
+    "Assess 'any given example' separately: read literally, it extends the improvement to every example. If it instead means a general tendency, the overall assessment would be supported rather than mixed.",
+    "Use correct-answer rates under comparable testing conditions as the observable measure. These rates do not directly measure the probability assigned to each individual answer.",
+    "The context compares the models retrospectively across 2020 and the period leading up to the June 2022 post. Use January 1, 2020 through the post date as the reporting window; the year-start boundary is a convention, not a claimed event date.",
+    "The InstructGPT qualification expresses uncertainty. It is neither a firm superiority claim nor a condition that must occur before assessing GPT-3 versus GPT-2."
+   ],
+   "support_condition": "Comparable evaluations show substantial accuracy gains for GPT-3 across multiple tasks. Supporting the stronger per-example wording additionally requires evidence that improvement extends to individual examples under specified prompting and decoding conditions.",
+   "contradiction_condition": "Comparable evaluations show no broad improvement, or show lower correct-answer rates in particular matched settings, contradicting the unrestricted reading of improvement on any example. Broad gains alongside such exceptions warrant a mixed assessment."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Independent comparisons support the broad claim that GPT-3 improved on GPT-2: under matched eight-shot testing, accuracy rose on classification and factual retrieval tasks. However, the same study reports substantial reversals in some zero-shot settings. Thus broad improvement holds, while unrestricted improvement on any example does not hold under the benchmark-accuracy interpretation. This distinction matters: if Marcus meant only that answers generally became more likely to be correct, the evidence supports that reading. His explicitly uncertain statement about InstructGPT is not scored as a firm claim.",
+  "limitations": [
+   "The mixed result depends on taking 'any given example' literally; a general-improvement reading would be supported.",
+   "Dataset accuracy cannot establish the change in sampling probability for every individual answer.",
+   "The comparison concerns tested model sizes and prompting settings, not every version or possible use of either model."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Contextual calibration improves accuracy across a range of tasks.",
+    "locator": "Table 1, baseline columns; compare supplementary Table 4 in e2",
+    "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c.pdf",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2021",
+    "available_at": "2021-07-24",
+    "explanation": "Using the uncalibrated eight-shot baseline columns, GPT-3 175B scores 79.1% on AGNews, 95.6% on SST-2, and 63.8% on LAMA; the corresponding GPT-2 results in e2 are 57.1%, 54.5%, and 42.5%. These matched comparisons support broad gains across classification and factual retrieval; the quoted caption describes the study's main intervention, but this comparison uses its baseline results."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "This table is analogous to Table 1 but shows results for GPT-2 XL.",
+    "locator": "Appendix A, Table 4, zero-shot baseline columns; compare Table 1 in e1",
+    "url": "https://proceedings.mlr.press/v139/zhao21c/zhao21c-supp.pdf",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2021",
+    "available_at": "2021-07-24",
+    "explanation": "The uncalibrated zero-shot baseline scores GPT-2 at 64.3% on DBPedia and 44.6% on CB, versus GPT-3 175B at 22.0% and 30.4% in e1. These exceptions contradict an unrestricted claim of higher observed correctness in every setting, while the same table supplies the GPT-2 baselines supporting broad gains."
+   }
+  ],
+  "what_would_resolve": "Clarifying the intended scope of 'any given example' would determine whether the exceptions affect the claim. A strict sampling-probability interpretation would require repeated matched-prompt testing with fixed decoding settings.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "05529b5da31a6ae1ff9750396cb1b4a16c66e085f9af38f83d9230244e2eefbe",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:02:36Z"
+}

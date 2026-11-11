@@ -1,0 +1,144 @@
+{
+ "packet_id": "wyea-anthropics-profitability-swindle-a42d63-p1",
+ "claim_revision_ref": {
+  "id": "wyea-anthropics-profitability-swindle-a42d63",
+  "version": 2,
+  "content_hash": "accfff584f45d3b16675da7bf657823e363fd2e719c10a10adc10a69d39f13ef"
+ },
+ "contract_ref": {
+  "id": "wyea-anthropics-profitability-swindle-a42d63",
+  "version": 1,
+  "content_hash": "f53a558abeb378b22767da56a41bd3a7c8a14003c9da308e430b30890f2f687c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic SpaceX July 2026 \"$1.25 billion\" compute AWS Google costs",
+   "site:sec.gov SpaceX S-1 May 2026 Anthropic \"July\" \"1.25\"",
+   "Anthropic July 2026 AWS Google monthly compute spending costs 3.75 billion",
+   "site:sec.gov/Archives/edgar/ SpaceX \"Anthropic\" \"1.25\" \"2026\"",
+   "site:anthropic.com \"SpaceX\" \"May 6, 2026\"",
+   "Anthropic SpaceX \"$1.25 billion\" May 20 2026 Reuters",
+   "Anthropic third quarter October 2026 \"11%\" \"computing\" CNBC"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/higher-limits-spacex",
+    "used": true,
+    "why": "Primary confirmation of the compute agreement, but it does not disclose matching provider charges."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "Read the quarterly financial table and infrastructure arrangements. Neither supplies the required provider-by-provider July charges; multiyear commitments cannot substitute for monthly spending."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search snippets were not admitted as evidence."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026039276/spaceexplorationtechnologi.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000000000026005505/filename1.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.axios.com/2026/05/20/anthropic-spacex-compute",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.fidelity.com/news/article/default/202605202002RTRSNEWSCOMBINED_L6N41X1FW_1",
+    "used": false,
+    "why": "read_page returned the site template without the Reuters article."
+   },
+   {
+    "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html",
+    "used": true,
+    "why": "Readable reporting supplies a third-quarter revenue and compute ratio. It is relevant countercontext, but differs in period, provider scope and measurement."
+   }
+  ],
+  "performed_at": "2026-10-29T10:29:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "anthropic-com-news-higher-limits-spacex",
+   "source_snapshot_id": "86bbee34c0be4966cba308a44a19b3df36cb9b380ddb813fc411e80f890b7047",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/higher-limits-spacex",
+   "locator": "Section New compute partnership with SpaceX, first paragraph",
+   "receipt": {
+    "public_excerpt": "Colossus 1 data center.",
+    "quote_hash": "d51757b3dbc27410c0aba7e661c8b911dde35f41b16e6fd6da66dd93e2c51351",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-06",
+   "available_at": "2026-05-06",
+   "retrieved_at": "2026-10-29T02:53:43Z",
+   "relation": "context",
+   "explanation": "Confirms the SpaceX capacity agreement. It establishes neither its July charges nor comparable AWS and Google charges.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cnbc-com-2026-10-15-anthropics-third-quarter-revenue-hits-16point8-35c422e411c0",
+   "source_snapshot_id": "0882424e4904866eb8d63618220f9ec76b1460f1312c85f96c687de885afc958",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html",
+   "locator": "Key Points; article paragraph reporting $1.70 revenue per dollar of computing",
+   "receipt": {
+    "public_excerpt": "revenue jumped to $16.8 billion",
+    "quote_hash": "33c0b50d8a21d739ab54c8b560efb19e701dea55e99d9564168de3eeecfaee53",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-14",
+   "retrieved_at": "2026-10-29T02:21:02Z",
+   "relation": "context",
+   "explanation": "The article also reports $1.70 of revenue per dollar spent on computing, implying approximately $9.88 billion of third-quarter compute spending. That challenges the extrapolated quarterly amount, but a quarterly aggregate with unspecified provider coverage cannot establish July charges; no matching primary disclosure was located.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Implied aggregate third-quarter computing expenditure",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Reported third-quarter revenue: USD 16.8 billion",
+     "Reported revenue per dollar spent on computing: USD 1.70"
+    ],
+    "formula": "16.8 / 1.70 = 9.882352941 billion dollars",
+    "rounding": "Approximately USD 9.88 billion; underlying reported inputs are rounded."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matching July charges for AWS and Google Cloud were located.",
+  "The comparability assumption and the assertion that spending is greater remain unverified.",
+  "The later quarterly report cannot isolate July or establish consistent treatment of compute spending."
+ ],
+ "packet_hash": "b8fa18b0d859c629ec897f22eb2d04423c8749fe7cea507c23f57447aa323f0d"
+}

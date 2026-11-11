@@ -1,0 +1,203 @@
+{
+ "run_id": "marcus-when-looked-at-carefully-openais-02bc2d-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-when-looked-at-carefully-openais-02bc2d": "f51b920e50b1cd9469daabbe57c6b652d83bb4c8136f8bce5d4d94efa0ede62c",
+  "case:marcus-when-looked-at-carefully-openais-04e71c": "0f86c70936093cfaac684e9f647a675572800c84dc40d1295f06188fcbedc8d6",
+  "case:marcus-when-looked-at-carefully-openais-115f1a": "1575683be48c4fcfd97268f2f5340eae5e4fd8f718d4f1e7abd70a27e42572f6",
+  "case:marcus-when-looked-at-carefully-openais-483f6c": "a7e9d6c47887e906ba052af516df84f9cfdf24728eb4ef46c2e851d6a375f554"
+ },
+ "started_at": "2026-10-29T12:50:23Z",
+ "completed_at": "2026-10-29T12:50:59Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, stating his own view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It disputes that the study shows only slight risk and asserts reason for concern. The second part is partly evaluative."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as 'the study does not establish a slight-risk upper bound' is fair and ordinary. Reading 'concern' as justified uncertainty, not proof of danger, is a reasonable plain reading of an evaluative phrase."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The study's own limitations section says it could detect only very large effects. So a non-significant result cannot bound the risk as slight. This is the target study itself, dated 2024-01-31."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The study admits low statistical power (only very large effects detectable), plus other design limits. So it does not establish that GPT-4 poses at most a slight risk. That meets the support condition. The 'reason to be concerned' part is evaluative and is graded only under the contract's uncertainty reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-looked-at-carefully-openais-02bc2d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own parenthetical argument in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful, and it keeps his 'crude measure' qualifier. This is a claim about statistical inference on existing results."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on whether 'crude measure' means illustrative arithmetic or a valid sign test. The contract takes the plain reading that he asserts real significance, which is reasonable. Requiring the independence assumption follows from that reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A methods reference. It confirms the arithmetic: one-sided 1/32 is below 0.05 if signs are independent and fair. It does not test whether the assumption holds here."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "States that the sign test assumes independent observations. That assumption is not shown for task-level signs from the same participants."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "The published data confirm all five expert threshold differences are positive. Because the same participants appear in every task, independence is in question, but this does not prove the probability wrong."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The premise that all five go the same way, and the 1/32 one-sided arithmetic, both check out. But support requires a justified independent-trials null, and the same participants appear across tasks. The packet has no joint null-distribution analysis either establishing or refuting significance, so the evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-looked-at-carefully-openais-04e71c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own description of the study's results."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The threshold-analysis scope is correctly taken from the preceding paragraph, and the expert scope is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'predicted direction' as a higher share of experts reaching accuracy of 8 or more with model access is the ordinary reading in this context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The participant file gives cohort and assignment: 25 experts per arm. Needed for the join."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Derived counts show model access beats internet-only on all five tasks (18/16, 7/4, 3/0, 4/1, 5/1). None are tied or reversed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Joining OpenAI's released participant and response data shows the expert model-access group had more threshold successes on every one of the five tasks. That meets the support condition. Direction alone says nothing about significance, as the contract notes.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-looked-at-carefully-openais-115f1a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own reanalysis claim in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Treating this as a testable claim about existing data is correct, not a forecast, and the collapse/t-test qualifiers are kept. The 'as Footnote C implies' part is not separately verified in the packet."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Marcus did not specify the aggregation, sidedness or cohort. The contract's choice of a participant-level two-sided Welch test on the combined sample is conservative and ordinary. The expert-only test is also significant, so the result does not hinge on the choice."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Derived participant-level Welch test, combined cohorts: positive difference, p≈0.019. The group means match the published summary."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Supplies the assignment labels used for the join."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Published expert total p=0.0027 (one-sided), and student total p=0.24. This is a cross-check showing expert-only significance too."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Summing accuracy within each participant and running the contract's unadjusted two-sided Welch t-test gives p≈0.019 with a positive LLM difference. That meets the support condition. The expert-only reading is also significant. The student cohort alone is not, but Marcus said 'all the measurements', which points to the combined test.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-looked-at-carefully-openais-483f6c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30972,
+  "output_tokens": 3940,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

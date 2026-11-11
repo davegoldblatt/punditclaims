@@ -1,0 +1,177 @@
+{
+ "run_id": "marcus-three-ideas-from-linguistics-that-0eeecb-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-three-ideas-from-linguistics-that-0eeecb": "adca3b888d9c4e42416cb3a6daedafe2cca432362e18d29d3da66ad654ddb076",
+  "case:marcus-three-ideas-from-linguistics-that-179852": "99a8a6fbfdc9f536a024182da20836b2a98c437818d24a98d8964e201c98c7ff",
+  "case:marcus-three-ideas-from-linguistics-that-20ca0c": "148d70981fde229fbf95a25ca604945e4cc2a2aa8a1f764861268e6efd1d9dec",
+  "case:marcus-three-ideas-from-linguistics-that-30f93e": "16ebbeaa33e4be34d6baf9ff1d4248c0db4a0cde1b053bd48d5ea7d8eda40dd0"
+ },
+ "started_at": "2026-10-29T12:37:18Z",
+ "completed_at": "2026-10-29T12:37:45Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Co-authored post (Marcus and Murphy) on Marcus's Substack, written in the authors' own voice ('In our view'). Not a quotation of others."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Causal claim that inadequate attention to reference, cognitive models and compositionality contributes to serious LLM problems. 'In our view' marks opinion, not a probability hedge. The proposition leaves out the three listed consequences, but the contract restores them."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (a substantial contribution, not the sole cause, applied to models of the time) is ordinary and fair. Requiring controlled causal evidence and separating retrieval and training changes from the linguistic mechanisms suits a causal claim."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "LaMDA paper (Feb 2022). External retrieval improves groundedness and safety fine-tuning improves safety, but it does not isolate the three linguistic factors or test all three consequences."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Li et al. 2021 find implicit, error-prone state representations in BART and T5. This complicates an absence-based account but does not test whether such deficits cause the listed problems."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No study in the packet isolates reference, cognitive-model or compositionality deficits and measures their causal effect on coherence, truthfulness and harmful speech. The LaMDA intervention results and Li et al.'s probing work are relevant but leave the attribution unsettled either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-0eeecb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The authors report their own DALL-E Mini experiments in the co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Narrowed to the specific prompt and the authors' experiments. The frequency words 'not reliably', 'often' and 'in most cases' are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Scoring the three components separately and reading 'most cases' as more than half is a fair, ordinary reading. Requiring independent access to the original records is appropriate for a self-reported experiment."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. No independent record of the authors' trials and no replication of the exact prompt were found. The speaker's own report cannot confirm itself, so the observation is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-179852"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Footnote in the co-authored post, stated in the authors' own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "A comparative causal claim: GPT-3's good predictions owe more to corpus size than to a genuine mapping onto reference and cognitive models. The proposition keeps the comparison."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The comparative causal reading is ordinary and fair. The required controlled comparison is demanding, but it matches what the claim asserts. The contract also notes that corpus size may itself produce the representations."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Kaplan et al. 2020 show loss scales with dataset size in smaller models. Corpus size matters, but the paper makes no comparison with referential representations in GPT-3."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The GPT-3 paper shows gains with model size, which is a different variable from corpus size. It does not separate statistical learning from reference or state representations."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Li et al. 2021 interventions show state representations affect generation in BART and T5. These are different models, and the paper gives no relative ranking for GPT-3."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No evidence in the packet compares the effect of corpus size with the effect of referential or world-state representations on GPT-3's prediction quality. The scaling and probing studies each address one factor, or use other models, so the comparative claim is not settled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-20ca0c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Stated in the authors' own voice in the co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "An observation that DALL-E (in context, likely DALL-E Mini) performs poorly on reflexive sentences like the quoted prompt. The proposition keeps the source's 'DALL-E' wording."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'does not do well' as recurring errors, not total inability, is fair. Treating Mini as the provisional model is reasonable from context. The model ambiguity is flagged, but it does not decide the result given the empty packet."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. No independent, representative evaluation of the June 2022 model on the reflexive prompt was found, and the model identity is ambiguous. The claim cannot be confirmed or refuted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-three-ideas-from-linguistics-that-30f93e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24353,
+  "output_tokens": 3113,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

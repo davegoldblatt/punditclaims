@@ -1,0 +1,182 @@
+{
+ "packet_id": "marcus-evidence-that-llms-are-reaching-a-f2cb8e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-f2cb8e",
+  "version": 1,
+  "content_hash": "4318c855ae430ebb769686bae42292deabceb85c3b122c19f4f555ea6b3970e9"
+ },
+ "contract_ref": {
+  "id": "marcus-evidence-that-llms-are-reaching-a-f2cb8e",
+  "version": 1,
+  "content_hash": "417169f555c88f53c72cbad447613e7929cbb28e059ea3f90f77f21b96bacf7e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Turbo April 2024 MMLU 86.5 86.4 benchmark",
+   "Measuring Massive Multitask Language Understanding GPT-2 25.9 GPT-3 43.9",
+   "OpenAI April 9 2024 GPT-4 Turbo MMLU 86.7 benchmark",
+   "GPT-4 Turbo April 2024 MMLU OpenAI 86.7 85.4",
+   "site.openai.com \"April 9\" \"MMLU\"",
+   "site.github.com/openai/simple-evals \"gpt-4-0314\"",
+   "\"simple-evals\" \"April 10, 2024\"",
+   "\"gpt-4-turbo-2024-04-09\" \"86.7\" \"April\"",
+   "\"GPT-4\" \"86.4%\" \"MMLU\" site:openai.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2009.03300v3",
+    "used": true,
+    "why": "Original MMLU research reports GPT-2 and GPT-3 results and explains their different evaluation methods."
+   },
+   {
+    "url": "https://arxiv.org/abs/2009.03300",
+    "used": true,
+    "why": "Confirms the paper's version dates."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "Original GPT-4 report supplies the 86.4% five-shot MMLU result."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.08774",
+    "used": true,
+    "why": "Confirms publication of the original report on March 15, 2023."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals/blob/fea8034/README.md",
+    "used": true,
+    "why": "Historical company record reports both April 2024 Turbo scores and describes the prompting method."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals/commits/main/README.md",
+    "used": true,
+    "why": "Dates the initial evaluation release to April 11, 2024."
+   },
+   {
+    "url": "https://github.com/openai/simple-evals",
+    "used": false,
+    "why": "Read, but replaced by the historical commit to avoid relying on a changing table."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": false,
+    "why": "The extracted page omitted the numerical benchmark chart; the original technical report provides the result."
+   },
+   {
+    "url": "https://openreview.net/pdf?id=d7KBjmI3GmQ",
+    "used": false,
+    "why": "The requested score was not located in the extracted text; the arXiv version was readable."
+   },
+   {
+    "url": "https://garymarcus.substack.com/p/evidence-that-llms-are-reaching-a",
+    "used": false,
+    "why": "Read to confirm the claim's scope, but not used as evidence of its truth."
+   }
+  ],
+  "performed_at": "2026-10-29T06:40:18Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2009-03300v3",
+   "source_snapshot_id": "4898f70dbbf264c0fe165fa75f3ce38c144e46e0eb28717e463080a384e5364b",
+   "publisher": "Dan Hendrycks and coauthors, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2009.03300v3",
+   "locator": "Section 4.1 and Table 1; Appendix A.1",
+   "receipt": {
+    "public_excerpt": "GPT-2 on UnifiedQA training data and our dev+val set.",
+    "quote_hash": "6d5d3b423a44977c76e74c24f89a195b51e93ff31a48dacef876c9e16187b4ed",
+    "verified": "exact"
+   },
+   "event_date": "2021-01",
+   "available_at": "2021-01-12",
+   "retrieved_at": "2026-10-29T06:22:26Z",
+   "relation": "supports",
+   "explanation": "Table 1 reports 32.4% for fine-tuned GPT-2 and 43.9% for GPT-3 X-Large evaluated few-shot, a reported increase of 11.5 percentage points. The different evaluation methods prevent treating this as a controlled comparison of unchanged model preparation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Table 1: GPT-2 overall accuracy = 32.4%",
+     "Table 1: GPT-3 X-Large few-shot overall accuracy = 43.9%"
+    ],
+    "formula": "43.9 - 32.4 = 11.5 percentage points",
+    "rounding": "One decimal place, matching the published scores."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Table 2, MMLU row and caption",
+   "receipt": {
+    "public_excerpt": "GPT-4’s performance along with the few-shot method\nused to evaluate.",
+    "quote_hash": "fcb70533b97436154619fb89fdbd9d39d93ac5cd8cd39019fb7fc222afcbf90e",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "supports",
+   "explanation": "Table 2 reports GPT-4 MMLU accuracy of 86.4% with five-shot evaluation. Compared with the GPT-3 result in e1, the published increase is 42.5 percentage points.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: GPT-3 X-Large MMLU accuracy = 43.9%",
+     "Table 2: GPT-4 five-shot MMLU accuracy = 86.4%"
+    ],
+    "formula": "86.4 - 43.9 = 42.5 percentage points",
+    "rounding": "One decimal place, matching the published scores."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-openai-simple-evals-blob-fea8034-readme-md",
+   "source_snapshot_id": "07e48f0525cef500843d4aaac3d7b2f35a7d3318d76603094bb8e722e220ce22",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/openai/simple-evals/blob/fea8034/README.md",
+   "locator": "Overview; Benchmark Results, gpt-4-turbo-2024-04-09 rows",
+   "receipt": {
+    "public_excerpt": "Evals are sensitive to prompting",
+    "quote_hash": "d2589ae4a5a0facb92253645ed834fd533ce21ec7a07e6a6b3b5dcae9a55f6c0",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-11",
+   "available_at": "2024-04-11",
+   "retrieved_at": "2026-10-29T06:37:04Z",
+   "relation": "supports",
+   "explanation": "The initial release reports April Turbo MMLU scores of 86.5% with the chatgpt prompt and 86.7% with the assistant prompt, only 0.1–0.3 points above e2. It describes zero-shot chain-of-thought evaluation and warns about prompting sensitivity, limiting comparison with GPT-4's five-shot result.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e2: original GPT-4 MMLU accuracy = 86.4%",
+     "April Turbo, chatgpt prompt: MMLU = 86.5%",
+     "April Turbo, assistant prompt: MMLU = 86.7%"
+    ],
+    "formula": "86.5 - 86.4 = 0.1; 86.7 - 86.4 = 0.3 percentage points",
+    "rounding": "One decimal place, matching the published scores."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The retrieved records do not evaluate all four models under one identical protocol.",
+  "These scores alone cannot establish diminishing returns to training resources or a general slowdown across capabilities."
+ ],
+ "packet_hash": "fdf65d94f1e7ed3237355a92d05bc19b8b55db42efed55ef3a6088ea75492cf5"
+}

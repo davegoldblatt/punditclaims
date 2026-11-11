@@ -1,0 +1,131 @@
+{
+ "packet_id": "marcus-reports-of-the-birth-of-agi-are-greatly-0d5048-p1",
+ "claim_revision_ref": {
+  "id": "marcus-reports-of-the-birth-of-agi-are-greatly-0d5048",
+  "version": 1,
+  "content_hash": "138de2baf3007a0cbf2bc642848473d1a57bfdd01383968b77b04808bad46507"
+ },
+ "contract_ref": {
+  "id": "marcus-reports-of-the-birth-of-agi-are-greatly-0d5048",
+  "version": 1,
+  "content_hash": "0c36dfd3aec1765fc1b1a5ec6866b4977049daba0fc0b482a88959ff90fccb87"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 LLM planning Kambhampati GPT-4 12% plans",
+   "2023 \"world models\" \"Othello\" language model emergent",
+   "2023 language models state tracking world models benchmark GPT4 hallucination",
+   "\"Can You Follow Me?\" \"ChatGPT\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.15771v1",
+    "used": true,
+    "why": "Direct contemporary planning evaluation by Kambhampati and colleagues."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.13534v1",
+    "used": true,
+    "why": "Tests hallucination and recognition of errors; helps distinguish observed errors from absent knowledge."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.07582",
+    "used": true,
+    "why": "Pre-post evidence of a learned world representation in a narrow transformer model."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.02363",
+    "used": false,
+    "why": "Relevant entity-tracking results, but the selected Othello study already supplies a narrow counterexample to treating world representations as entirely uninvented."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.16135",
+    "used": false,
+    "why": "Relevant state-tracking research published after the post; the underlying test dates were not established."
+   }
+  ],
+  "performed_at": "2026-10-29T07:55:21Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-15771v1",
+   "source_snapshot_id": "d1372b73eef3e971e1154de066cae5d426e8c61840513e10f7ba04c9c4f283a1",
+   "publisher": "arXiv; Valmeekam and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.15771v1",
+   "locator": "Section 4, Evaluating Planning Capabilities of LLMs in Autonomous Mode",
+   "receipt": {
+    "public_excerpt": "approximately 34%",
+    "quote_hash": "5ecfd926b2c1ab0c0935b13bd9a33e01e36bd252fc8043f9c07f0c1adc4bed20",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-25",
+   "retrieved_at": "2026-10-29T06:37:04Z",
+   "relation": "supports",
+   "explanation": "GPT-4's poor executable-plan performance supports the planning premise. The paper also reports stronger human performance and benefits from external planners or verification, so its results do not establish that a new invention was necessary.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2305-13534v1",
+   "source_snapshot_id": "4c29e0f06933cc1323f6d639102be00acc9a33118f4977201cd227122a0f0d4f",
+   "publisher": "arXiv; Zhang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2305.13534v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "identify 67% and 87%",
+    "quote_hash": "8400c336aef645a09b84499d9171a34eb14e327ab003e8850e7e1bd65d93a9e9",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-22",
+   "retrieved_at": "2026-10-29T07:46:32Z",
+   "relation": "context",
+   "explanation": "The study documents erroneous answers followed by further false explanations, but also substantial ability to recognize those mistakes separately. Hallucination therefore does not by itself identify what underlying capability or invention is absent.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2310-07582",
+   "source_snapshot_id": "c8acf646b6177af77ebcadb435b2fc2205be2959f0e51ee642e36dee92a5266f",
+   "publisher": "arXiv; Hazineh, Zhang and Chiu",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2310.07582",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "linear representation",
+    "quote_hash": "9a4830583096a448c7ed62c6c2b5e1a3ba62d6662fe5ade352839c4d8ab93877",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2023-10-12",
+   "retrieved_at": "2026-10-29T07:44:34Z",
+   "relation": "context",
+   "explanation": "A transformer trained on a restricted game learned a causally relevant representation of its world. This qualifies a broad missing-world-model inference, but is not evidence that general-purpose LLMs maintained detailed real-world models reliably.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The record does not establish which capabilities are necessary and sufficient for AGI.",
+  "No cited experiment distinguishes a missing invention from deficient training, scale, integration or inference procedures.",
+  "The world-model evidence concerns limited tasks, not reliable maintenance of a detailed general world model."
+ ],
+ "packet_hash": "c8461c3d4a9cdb48a11e887ece37b1a22661d01a7d26e234a0a751c0b901af30"
+}

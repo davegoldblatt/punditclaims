@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-breaking-trump-asks-the-impossible-aa96a1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-trump-asks-the-impossible-aa96a1",
+  "version": 1,
+  "content_hash": "d9b984845fc7ce3a2965dbfe46c1eff2ce5b5de861aebac5b54be10179ae878e"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-trump-asks-the-impossible-aa96a1",
+  "version": 1,
+  "content_hash": "9cf0eb953f2ffb9c19cd5447c2a468b0ca61e71c43760b0344a42bd3be2f59f7"
+ },
+ "packet_ref": {
+  "id": "marcus-breaking-trump-asks-the-impossible-aa96a1-p1",
+  "content_hash": "64112c15a4c08434219eb1079e309e1c64b52045da88cc4cc7cc4c8beb55cb0c"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-06-01",
+  "end": "2026-06-17",
+  "precision": "day"
+ },
+ "public_rationale": "NIST reports a result supporting the narrower claim that fixed guardrails cannot provide universal robustness. The underlying paper supplies a formal policy-checking framework. That is substantial support, but extending it to every possible useful LLM guardrail requires assumptions absent from Marcus's statement. Neither observed jailbreaks nor the absence of a verified counterexample closes that gap.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "A narrower reading restricted to fixed conventional guardrails would receive stronger support.",
+  "The NIST summary was updated after the post, though before the evaluation cutoff.",
+  "No independent formal verification of the paper was performed."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-breaking-trump-asks-the-impossible-3e154e-4x-review-anthropic-1",
+  "marcus-breaking-trump-asks-the-impossible-3e154e-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-breaking-trump-asks-the-impossible-aa96a1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "For LLMs, it is not possible to guarantee that guardrails cannot be circumvented by jailbreaks.",
+  "kind": "observation",
+  "conditions": [
+   "with respect to LLMs"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "At least with respect to LLMs, the security experts are right.",
+   "locator": "paragraph 14",
+   "url": "https://garymarcus.substack.com/p/breaking-trump-asks-the-impossible",
+   "date": "2026-06-17",
+   "document_title": "Breaking: Trump asks the impossible of Anthropic",
+   "observed_at": "2026-10-28T22:29:16Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "with respect to LLMs",
+    "the security experts are right",
+    "guardrails can't be circumvented",
+    "that can't be done"
+   ],
+   "our_interpretation": [
+    "The contextual claim concerns a guarantee against every jailbreak for a useful general-purpose LLM.",
+    "Passing a finite test does not establish such a guarantee. Finding failures in existing systems does not by itself establish impossibility.",
+    "I assess the technical position during June 1–17, 2026. This is a present technical assertion, not a forecast.",
+    "The qualification about LLMs defines the scope; it is not a conditional forecast."
+   ],
+   "support_condition": "A technical impossibility result establishes that useful general-purpose LLM guardrails cannot provide the claimed guarantee, with assumptions matching the claimed scope.",
+   "contradiction_condition": "A useful general-purpose LLM system has a verified guarantee against all jailbreaks under the same scope and threat model."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "NIST reports a result supporting the narrower claim that fixed guardrails cannot provide universal robustness. The underlying paper supplies a formal policy-checking framework. That is substantial support, but extending it to every possible useful LLM guardrail requires assumptions absent from Marcus's statement. Neither observed jailbreaks nor the absence of a verified counterexample closes that gap.",
+  "limitations": [
+   "A narrower reading restricted to fixed conventional guardrails would receive stronger support.",
+   "The NIST summary was updated after the post, though before the evaluation cutoff.",
+   "No independent formal verification of the paper was performed."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "not universally robust",
+    "locator": "First summary point below the publication date",
+    "url": "https://www.nist.gov/news-events/news/2026/06/nist-mathematical-proof-supports-transition-continuous-monitor-and-update",
+    "publisher": "National Institute of Standards and Technology",
+    "event_date": "2026-06-09",
+    "available_at": "2026-06-22",
+    "explanation": "NIST's June assessment directly supports a limitation on fixed guardrails. It does not independently establish impossibility for every architecture covered by Marcus's unqualified wording."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "main prompt interface",
+    "locator": "Section 2.1, On adversarial robustness of AI Systems",
+    "url": "https://arxiv.org/html/2512.10100v2",
+    "publisher": "arXiv",
+    "event_date": "2026-04-07",
+    "available_at": "2026-04-07",
+    "explanation": "The manuscript formalizes policy checking for prompt-based attacks and separately treats unlimited and finite context windows. Applying that formalization to every possible useful guardrail requires a scope assumption Marcus did not state; this version also predates the target period."
+   }
+  ],
+  "what_would_resolve": "A validated impossibility result covering the stated class of useful LLM systems, or a verified jailbreak-proof counterexample under a clearly matched threat model.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "dad2cdef91f6b3d02431829bdb80a42f5f93dc233b971590eafa16d8166df6ea",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:48:01Z"
+}

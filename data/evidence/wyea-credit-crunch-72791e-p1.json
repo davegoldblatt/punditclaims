@@ -1,0 +1,160 @@
+{
+ "packet_id": "wyea-credit-crunch-72791e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-credit-crunch-72791e",
+  "version": 1,
+  "content_hash": "e9ec5e0a2d56f2889026e23cdd808447ca7ceb6ecd770bdf4427a6d3069d9b1d"
+ },
+ "contract_ref": {
+  "id": "wyea-credit-crunch-72791e",
+  "version": 1,
+  "content_hash": "634b325132578b509a15f6c056c04e95dbf9d4ceef48cf63971b922d35dba698"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA Q2 fiscal 2027 hyperscalers 50% 60% revenue",
+   "NVIDIA second quarter fiscal 2027 \"Hyperscale revenue\" \"49\"",
+   "site.sec.gov nvidia 20260726 \"96,221\" \"49\"",
+   "\"NVIDIA\" \"August 26, 2026\" \"96.2\" -site:reddit.com -site:sec.gov",
+   "Nvidia October 2026 hyperscaler spending debt collapse chip demand"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+    "used": true,
+    "why": "Readable company-hosted earnings transcript supplies the rounded Hyperscale revenue figure."
+   },
+   {
+    "url": "https://www.globenewswire.com/news-release/2026/08/26/3351702/0/en/nvidia-announces-financial-results-for-second-quarter-fiscal-2027.html",
+    "used": true,
+    "why": "Readable NVIDIA release supplies total quarterly revenue and management's description of the buildout."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; search-result figures were not cited."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/",
+    "used": false,
+    "why": "read_page returned only the page title and navigation."
+   },
+   {
+    "url": "https://www.tomshardware.com/tech-industry/data-centers/spacex-closes-usd40-billion-debt-financing-for-gpus-expected-in-the-first-half-of-2027-musk-says-company-faces-up-to-usd40-billion-in-additional-fourth-quarter-capital-spending-as-ai-infrastructure-costs-soar",
+    "used": true,
+    "why": "Readable dated reporting addresses financing stress and continued proposed GPU financing, without establishing the forecast's broad trigger."
+   }
+  ],
+  "performed_at": "2026-10-29T16:17:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "investor-nvidia-com-files-content-files-transcript-nvidia-corp-nvda-db40ed12fe8b",
+   "source_snapshot_id": "5174794585ec23e993d9ec96d6d41afdc164da62619b55e19589752bf0c61ed7",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+   "locator": "CFO Colette Kress prepared remarks, Q2 Data Center discussion",
+   "receipt": {
+    "public_excerpt": "Hyperscale revenue of $49 billion",
+    "quote_hash": "da5625884a810b6c1c17a55dcab986f91af669c5f3a20fa1faad70e77995040e",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T03:05:23Z",
+   "relation": "context",
+   "explanation": "Together with total revenue in e2, the rounded company figure implies approximately 50.9%, consistent with the numerical premise. It measures the company's Hyperscale classification and does not test demand after the conditional event.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Hyperscale revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-07-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: rounded Hyperscale revenue of USD 49 billion",
+     "e2: total revenue of USD 96.221 billion in the Q2 Fiscal 2027 Summary table"
+    ],
+    "formula": "49 / 96.221 * 100",
+    "rounding": "Approximately 50.9%; numerator is rounded by the company."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "globenewswire-com-news-release-2026-08-26-3351702-0-en-nvidia-annou-d78fa41bdd12",
+   "source_snapshot_id": "20866811d632cc825bdde93f4a15e5abbd8802b9d331e151ea6f9fd557c8b6cb",
+   "publisher": "NVIDIA via GlobeNewswire",
+   "source_type": "company_disclosure",
+   "url": "https://www.globenewswire.com/news-release/2026/08/26/3351702/0/en/nvidia-announces-financial-results-for-second-quarter-fiscal-2027.html",
+   "locator": "Jensen Huang quotation; revenue denominator appears in the Q2 Fiscal 2027 Summary table",
+   "receipt": {
+    "public_excerpt": "at full steam",
+    "quote_hash": "8b26446aca114fa81d8073f1bf2ce1b564ebee4dbbeb03c84501d7280cf0e540",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-26",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T16:09:51Z",
+   "relation": "context",
+   "explanation": "The release reports total quarterly revenue of USD 96,221 million. Its revenue table supplies the denominator for e1; the accompanying management statement describes an ongoing buildout rather than a post-boom outcome.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Total revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-07-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_condition",
+   "document_id": "tomshardware-com-tech-industry-data-centers-spacex-closes-usd40-bil-70311e861737",
+   "source_snapshot_id": "94af8336b32579ce4714c8e891a6d2a1ba47bf5eb8dc53eabf944b6e18719b03",
+   "publisher": "Tom's Hardware",
+   "source_type": "news_report",
+   "url": "https://www.tomshardware.com/tech-industry/data-centers/spacex-closes-usd40-billion-debt-financing-for-gpus-expected-in-the-first-half-of-2027-musk-says-company-faces-up-to-usd40-billion-in-additional-fourth-quarter-capital-spending-as-ai-infrastructure-costs-soar",
+   "locator": "Paragraph following the embedded financing discussion",
+   "receipt": {
+    "public_excerpt": "unclear",
+    "quote_hash": "a9d12918019e53902b0b35065f7302bd99e613c32bd40538a22beeac92bc856b",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-25",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T09:49:06Z",
+   "relation": "context",
+   "explanation": "The report describes financing stress alongside Musk's claim of continued GPU financing. It does not establish that the broad debt-supported purchasing boom had ended, and explicitly qualifies the reported financing status.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No verified occurrence of the complete conditional trigger was established.",
+  "No post-trigger replacement-demand period exists in the evidence examined.",
+  "The claimed accounting basis and the meaning of 'anything close' remain unspecified."
+ ],
+ "packet_hash": "d9c375429f99ad316f31e96bf33aecccf677146112b0bb7dc739c2d0aa591048"
+}

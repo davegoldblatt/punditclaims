@@ -1,0 +1,185 @@
+{
+ "run_id": "wyea-dont-look-up-4bf44f-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-dont-look-up-4bf44f": "cb5aed1441775716c8ba68f0e243fe799c81604c3bc374bb9ed3e38e24552300",
+  "case:wyea-dont-look-up-4ec1fb": "954c158f7a65b9390935f7aae68c88af7123a51c8a0f25d2b240c7d6593136df",
+  "case:wyea-dont-look-up-56e7ca": "4ec51f87fe10b473518445976646b960b34c1c9baaa9413f74b0bf04c19d1005",
+  "case:wyea-dont-look-up-5912d1": "fee6b37b102df1cc770f504b8e1ae632ef8c90d64e1e6763c66108f39393f0ea"
+ },
+ "started_at": "2026-10-29T17:41:08Z",
+ "completed_at": "2026-10-29T17:42:48Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly asserts both companies' losses."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition preserves the separate claims of unprofitability and annual losses for each company."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Net loss and the latest completed annual period are reasonable plain readings. The accounting interpretation matters, but unspecified accounting terminology does not itself prevent scoring under this policy."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's audited company filing reports approximately $42 billion in 2025 net losses. Lower operating losses and substantial valuation charges do not negate the net-loss figure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The report describes independently reviewed accounts showing nearly $39 billion in OpenAI's 2025 net losses. The restructuring charge limits inferences about recurring losses, but remains part of net loss."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the contract's reasonable plain reading of realized 2025 net losses, both companies were unprofitable and each exceeded $20 billion. Operating losses, adjusted losses and cash burn are different measures; their lower values do not contradict this reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dont-look-up-4bf44f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron makes and endorses the financing-dependence assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition preserves the firm majority claim and approximate wagered range. The 'likely' metadata understates the commitment: wagering is not automatically a probabilistic hedge under this policy."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "AI compute rental revenue is a reasonable contextual denominator. Requiring evidence of financing dependence, beyond customer concentration, fairly tests the asserted causal relationship."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic discloses a financing round. This establishes funding received by one lab, not the worldwide revenue denominator or spending that depends on additional equity."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The firm financing-dependence claim is assessable, but the packet supplies neither comparable global revenue shares nor a counterfactual accounting for receipts, liquidity, alternative financing and replacement demand. A funding announcement cannot settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dont-look-up-4ec1fb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron directly asserts the performance comparison and its explanation for reluctance to discuss revenue."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalization preserves both the comparison with Microsoft and the claimed causal explanation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The surrounding discussion reasonably supplies revenue outside the labs relative to investment. Reading the alleged silence as reluctance to provide meaningful detail is fair, although the comparison remains qualitative."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Amazon's disclosure reports broader AWS results and an AI run rate. Neither supplies comparable realized AI revenue excluding both labs or establishes motives for disclosure decisions."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Alphabet's disclosure reports aggregate performance and AI-related growth. It does not isolate the required customer-excluded revenue or explain disclosure choices."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish comparable AI revenue relative to investment across the three companies or link weak results to disclosure reluctance. Strong aggregate results and public AI commentary do not resolve that narrower comparison and causal explanation.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dont-look-up-56e7ca"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states and endorses the necessary conditions for full use of the discussed capacity."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The normalization correctly preserves incomplete use rather than total non-use, along with both exceptions. No utilization deadline is stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reasonably limits the claim to the discussed buildout and requires actual use and verified customer conditions. Its terminal-event requirement prevents temporary vacancies from settling an undated forecast."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch's methodology explicitly excludes actual utilization. Allocated or operationally available compute cannot establish full use, permanent non-use or the customer-spending conditions."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "There is no stated deadline, verified antecedent or qualifying conclusive event. The packet does not identify matched utilization and customer-spending records for the capacity cohort, so the conditional forecast cannot yet be scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dont-look-up-5912d1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25996,
+  "output_tokens": 2682,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 1034
+ },
+ "cost_usd": null
+}

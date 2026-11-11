@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-openclaw-aka-moltbot-is-everywhere-5f1672-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-5f1672": "14a693fc8bfa5e97f2c927890c640af2653121cfba5989cb95beaa4b532402c6"
+ },
+ "started_at": "2026-11-10T01:51:06Z",
+ "completed_at": "2026-11-10T01:51:26Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post, not a quotation of Riegler or Hamiel."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "observation",
+     "note": "The wording is close to verbatim. The drafter labelled it a forecast with 'will', but the present-tense idiom describes a hazardous current state. It does not commit to an accident by any date. The contract treats it as an observation, which better fits the words."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the idiom as a warning that existing weaknesses make harm foreseeable is the ordinary reading, not stretched either way. The target period of Jan 31 to Feb 1 is inferred from the post's mention of attacks 'yesterday'. Scoring it as a forecast would leave it unresolved, so the interpretation decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Wiz's firsthand investigation found a misconfigured Moltbook database with full read and write access, exposing tokens, emails and private messages, on Jan 31, inside the target period. It was fixed before the post, but the contract only requires a weakness during the period."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Riegler and Gautam's report, dated Jan 31, documents 506 prompt-injection posts and API command injections aimed at agents. It shows attack mechanisms existed, not that agents obeyed them, which the contract's support condition allows."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the contract's fair plain reading, the warning needed a concrete security basis during Jan 31 to Feb 1. Wiz found an exploitable database exposure on Jan 31, and the observatory report documents prompt-injection attempts in the same window. The packet flags as counterevidence that the database was fixed by Feb 1 01:00 UTC. That fix does not show the attack mechanisms were contained, and the injection vectors remained. Evidence of successful harm to agents is not required.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-5f1672"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9657,
+  "output_tokens": 1979,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,161 @@
+{
+ "packet_id": "wyea-the-revenge-of-the-business-idiot-2ed7ec-p2",
+ "claim_revision_ref": {
+  "id": "wyea-the-revenge-of-the-business-idiot-2ed7ec",
+  "version": 1,
+  "content_hash": "9fceef9ae16d43014d8c9be36a76a295f8114a87fc6639158f7d8a7549ca4071"
+ },
+ "contract_ref": {
+  "id": "wyea-the-revenge-of-the-business-idiot-2ed7ec",
+  "version": 2,
+  "content_hash": "8d25bc70c026e1a17b26bbeb239b508c82a8399d398b338e2dd551b3f69cbefb"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "hyperscaler capex 2026 funded by operating cash flow versus debt share",
+   "Alphabet first quarter 2026 results Google Cloud operating income",
+   "Meta first quarter 2026 results net cash provided by operating activities capital expenditures",
+   "investor.atmeta.com Meta Reports First Quarter 2026 Results"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://app.edgar.tools/filing/1652044/0001652044-26-000043/googexhibit991q12026.htm",
+    "used": true,
+    "why": "Alphabet Q1 2026 earnings release (8-K exhibit). Gives operating cash flow, capex and debt issued."
+   },
+   {
+    "url": "https://app.edgar.tools/filing/1326801/0001628280-26-028364/meta-03312026xexhibit991.htm",
+    "used": true,
+    "why": "Meta Q1 2026 earnings release (8-K exhibit). Gives operating cash flow, capex and free cash flow."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000043/googexhibit991q12026.htm",
+    "used": false,
+    "why": "Returned HTTP 403. The same exhibit was read through a mirror."
+   },
+   {
+    "url": "https://www.im.natixis.com/en-us/insights/macro-investing-insights/chart-of-the-week-archives/how-resilient-is-the-ai-trade",
+    "used": false,
+    "why": "Page returned 404. Also dated November 2025, before the target period."
+   },
+   {
+    "url": "https://fourweekmba.com/ai-meta-free-cash-flow-fell-from-12-4b-to-minus-2-1b/",
+    "used": false,
+    "why": "Secondary source. It covers Meta's Q3 2026, when capex exceeded operating cash flow, which is outside the target period. Noted as a gap."
+   }
+  ],
+  "performed_at": "2026-10-31T21:28:39Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "app-edgar-tools-filing-1652044-0001652044-26-000043-googexhibit991q12026-htm",
+   "source_snapshot_id": "abb38f37b8d1cefc63723e855178a4a70f07982f2ecb17bd83e85b5222894e6e",
+   "publisher": "Alphabet Inc. (SEC Form 8-K Exhibit 99.1)",
+   "source_type": "filing",
+   "url": "https://app.edgar.tools/filing/1652044/0001652044-26-000043/googexhibit991q12026.htm",
+   "locator": "Reconciliation from GAAP Net Cash Provided by Operating Activities to Non-GAAP Free Cash Flow table",
+   "receipt": {
+    "public_excerpt": "Net cash provided by operating activities $ 27,747 $ 48,414 $ 52,402 $ 45,790 $ 174,353",
+    "quote_hash": "09015d06a745c3cb80b0ba4d4dd42dcd17f66bb78ed237d94a5b0bdf5d07a45a",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-31T21:23:41Z",
+   "relation": "contradicts",
+   "explanation": "In Q1 2026 Alphabet's operating cash flow ($45.8B) more than covered its capex ($35.7B), leaving $10.1B of free cash flow. One of the largest AI compute buyers paid for its buildout out of operating cash, not mostly with debt.",
+   "metric_scope": {
+    "company": "Alphabet Inc.",
+    "metric": "Operating cash flow vs. purchases of property and equipment (capex)",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Q1 2026 net cash from operating activities $45,790M",
+     "Q1 2026 purchases of property and equipment $35,674M"
+    ],
+    "formula": "45,790 / 35,674 = operating cash flow covers about 128% of capex",
+    "rounding": "nearest percent"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "app-edgar-tools-filing-1326801-0001628280-26-028364-meta-03312026xexhibit991-htm",
+   "source_snapshot_id": "bb69ee1d915f4bb78b0bf974948abbb50025acff13f5c9d7153818961311f4df",
+   "publisher": "Meta Platforms, Inc. (SEC Form 8-K Exhibit 99.1)",
+   "source_type": "filing",
+   "url": "https://app.edgar.tools/filing/1326801/0001628280-26-028364/meta-03312026xexhibit991.htm",
+   "locator": "First Quarter 2026 Financial Highlights, Cash flow bullet",
+   "receipt": {
+    "public_excerpt": "Cash flow from operating activities was $32.23 billion, and free cash flow was $12.39 billion.",
+    "quote_hash": "67f5a0042b484f40b0d646c4c7e1b4242533d757f638291eb0c995eb9975c533",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-31T21:24:08Z",
+   "relation": "contradicts",
+   "explanation": "Meta defines free cash flow as operating cash flow minus capex and finance-lease principal. Positive free cash flow of $12.39B on $19.84B of capex means Meta's Q1 2026 AI buildout was paid from operating cash.",
+   "metric_scope": {
+    "company": "Meta Platforms, Inc.",
+    "metric": "Operating cash flow and free cash flow (after capex)",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "app-edgar-tools-filing-1652044-0001652044-26-000043-googexhibit991q12026-htm",
+   "source_snapshot_id": "abb38f37b8d1cefc63723e855178a4a70f07982f2ecb17bd83e85b5222894e6e",
+   "publisher": "Alphabet Inc. (SEC Form 8-K Exhibit 99.1)",
+   "source_type": "filing",
+   "url": "https://app.edgar.tools/filing/1652044/0001652044-26-000043/googexhibit991q12026.htm",
+   "locator": "Additional Information Relating to the Quarter, Issuance of Senior Unsecured Notes",
+   "receipt": {
+    "public_excerpt": "In the first quarter of 2026, we issued senior unsecured notes for net proceeds of $31.1 billion, to be used for general corporate purposes.",
+    "quote_hash": "dd9e11b15c2dd14b86e0fb6eb82e99a6fc37b249038d6f2e45e7e63135c47f4a",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-31T21:23:41Z",
+   "relation": "context",
+   "explanation": "Hyperscalers did borrow heavily in early 2026, which partly fits the speaker's emphasis on debt. But Alphabet's operating cash flow alone exceeded its capex in the quarter.",
+   "metric_scope": null,
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "I found no primary aggregate breakdown of debt versus cash versus equity funding for all AI compute spending in early 2026.",
+  "Neoclouds, Oracle and third-party data center developers rely more on debt. I did not quantify their share of total demand.",
+  "Secondary reporting says Meta's capex exceeded operating cash flow in Q3 2026. That is after the target period."
+ ],
+ "packet_hash": "286d36f67f95ec7c5ff80aafe720349cb3ea1bd0da1003dc51cfcb7567171b73"
+}

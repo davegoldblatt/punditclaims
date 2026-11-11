@@ -1,0 +1,136 @@
+{
+ "assessment_id": "marcus-five-things-most-people-dont-seem-507f10-a1",
+ "claim_revision_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-507f10",
+  "version": 1,
+  "content_hash": "00b251e05972fa47089d522e44dface3851e984117a4bb6786ff73c3d3c90d5b"
+ },
+ "contract_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-507f10",
+  "version": 1,
+  "content_hash": "491863383d87dec1d8348672d2bce1908625ecff999ff52b4dcbec64d0a95f75"
+ },
+ "packet_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-507f10-p1",
+  "content_hash": "61def0c8cccec364941c3dcb768dbcbe7f62670d505ec0df84b3163f9374a9f3"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-20",
+  "end": "2025-01-28",
+  "precision": "day"
+ },
+ "public_rationale": "The engineering evidence supports the mechanism that longer reasoning consumes more resources. It does not settle whether January R1 operation was expensive under a specified workload. The direct cost disclosure concerns February and combines V3 with R1; lower API prices measure a different quantity. An unknown accounting basis also prevents a supported or contradicted money assessment.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The claim has a meaningful ordinary reading, but its cost level remains unmeasured.",
+  "A large deployment's daily expense alone does not establish high cost per useful answer.",
+  "Later serving optimizations cannot automatically be attributed to the January release period."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-five-things-most-people-dont-seem-103fa6-4x-review-anthropic-1",
+  "marcus-five-things-most-people-dont-seem-103fa6-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-five-things-most-people-dont-seem-103fa6-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-five-things-most-people-dont-seem-507f10",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "DeepSeek r1 is still expensive to run at inference, especially when made to reason longer like o3.",
+  "kind": "observation",
+  "conditions": [
+   "especially when made to think longer like o3"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "It is still expensive to operate (\"inference\"), especially if you want to make it \"think\" longer like o3.",
+   "locator": "paragraph 3",
+   "url": "https://garymarcus.substack.com/p/five-things-most-people-dont-seem",
+   "date": "2025-01-28",
+   "document_title": "Five things most people don't seem to understand about DeepSeek",
+   "observed_at": "2026-10-28T23:58:03Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "still expensive to operate",
+    "inference",
+    "especially if you want to make it \"think\" longer like o3"
+   ],
+   "our_interpretation": [
+    "The ordinary reading concerns the material computing expense of serving the full original R1 model, especially per completed answer when reasoning is extended.",
+    "The reference to o3 illustrates extended reasoning; it does not assert that R1 costs more than o3.",
+    "Longer thinking is an emphasized operating scenario, not a conditional forecast.",
+    "Use the release-to-post period for this ongoing observation. No workload, cost threshold or accounting basis is supplied."
+   ],
+   "support_condition": "Matched measurements establish substantial operating expense for ordinary R1 workloads and greater expense per completed answer when reasoning is extended.",
+   "contradiction_condition": "Matched measurements establish low operating expense under an appropriate ordinary workload and refute the claimed cost increase from extended reasoning."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The engineering evidence supports the mechanism that longer reasoning consumes more resources. It does not settle whether January R1 operation was expensive under a specified workload. The direct cost disclosure concerns February and combines V3 with R1; lower API prices measure a different quantity. An unknown accounting basis also prevents a supported or contradicted money assessment.",
+  "limitations": [
+   "The claim has a meaningful ordinary reading, but its cost level remains unmeasured.",
+   "A large deployment's daily expense alone does not establish high cost per useful answer.",
+   "Later serving optimizations cannot automatically be attributed to the January release period."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "The DeepSeek-R1 NIM microservice can deliver up to 3,872 tokens per second on a single NVIDIA HGX H200 system.",
+    "locator": "Introduction; DeepSeek-R1 — a Perfect Example of Test-Time Scaling",
+    "url": "https://blogs.nvidia.com/blog/deepseek-r1-nim-microservice",
+    "publisher": "NVIDIA",
+    "event_date": "2025-01-30",
+    "available_at": "2025-01-30",
+    "explanation": "NVIDIA describes an eight-H200 deployment and explains that extended reasoning generates more tokens and longer generation cycles. This supports the resource mechanism, but neither measures monetary expense nor falls inside the target period."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Assuming the leasing cost of one H800 GPU is $2 per hour, the total daily cost amounts to $87,072.",
+    "locator": "Inference-service statistics for the 24 hours ending February 28, 2025",
+    "url": "https://github.com/deepseek-ai/open-infra-index/blob/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_inference_system_overview.md",
+    "publisher": "DeepSeek-AI",
+    "event_date": "2025-02-28",
+    "available_at": "2025-03-01",
+    "explanation": "This is a rental-equivalent daily compute estimate for V3 and R1 together. It cannot establish January R1-only operating expense or the incremental cost of longer reasoning."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "However, while the performance difference between the two models is small, the pricing difference is definitely not.",
+    "locator": "Performance and pricing",
+    "url": "https://epoch.ai/gradient-updates/what-went-into-training-deepseek-r1",
+    "publisher": "Epoch AI",
+    "event_date": "2025-01-31",
+    "available_at": "2025-01-31",
+    "explanation": "The analysis reports much lower customer output-token pricing for R1 than o1. This cautions against interpreting expensive as a relative API-price claim, but retail prices do not disclose provider costs."
+   }
+  ],
+  "what_would_resolve": "January R1-only serving-cost measurements for defined workloads, including matched short- and long-reasoning runs, together with a specified cost basis and comparison for expensive.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e91b38d8f3a567304394dd886160e5de7082b4581b1a48c7769936262fedffce",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:08:56Z"
+}

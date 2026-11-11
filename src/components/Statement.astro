@@ -1,0 +1,59 @@
+---
+// The speaker's words as observed, with the four dates that must never be
+// confused: when it was said, when this site observed the source version,
+// the evidence cutoff, and when the assessment was recorded. When the
+// assessment was withdrawn, the excerpt sits behind a disclosure under the
+// notice instead of being presented as a verified quotation. A screened-out
+// claim was not checked against evidence, so it shows no evidence cutoff.
+import type { PublicAssessment, PublicClaim } from "../lib/manifest.ts";
+import { ACCESS_TEXT, day, isScreenedOut, statementOccurrence } from "../lib/view.ts";
+
+// quoteShown: the claim page already leads with the words, so this section keeps only the source and the dates.
+interface Props { claim: PublicClaim; a: PublicAssessment; personName: string; withdrawn?: boolean; post?: { path: string; count: number } | null; quoteShown?: boolean }
+const { claim: c, a, personName, withdrawn = false, post = null, quoteShown = false } = Astro.props;
+const p = a.payload;
+const s = p.statement;
+const occ = statementOccurrence(c, p);
+const observed = day(s.observed_at);
+const screened = isScreenedOut(a);
+---
+<section class="section" aria-labelledby="said-h">
+  <h2 id="said-h">{quoteShown ? "Source and dates" : `What ${personName} wrote`}</h2>
+  {withdrawn ? (
+    <details class="rcpt">
+      <summary>Show the excerpt that was withdrawn</summary>
+      <div class="rcpt-body">
+        <p class="small">This excerpt belongs to the withdrawn assessment. It is kept for the record and is not presented as a verified quotation.</p>
+        <blockquote cite={s.url}><p><span>“{s.excerpt}”</span></p></blockquote>
+      </div>
+    </details>
+  ) : quoteShown ? (
+    <p class="small">{occ ? `${occ.document.publisher}, ` : ""}<a href={s.url} rel="noopener">{s.document_title}</a>, {s.locator}.</p>
+  ) : (
+    <figure class="quote">
+      <blockquote cite={s.url}><p><span>“{s.excerpt}”</span></p></blockquote>
+      <figcaption>
+        {occ ? `${occ.document.publisher}, ` : ""}<a href={s.url} rel="noopener">{s.document_title}</a>, {s.locator}.
+      </figcaption>
+    </figure>
+  )}
+  {withdrawn && <p class="small">Source: <a href={s.url} rel="noopener">{s.document_title}</a>, {s.locator}.</p>}
+  <dl class="dates">
+    <div><dt>Said</dt><dd><time datetime={s.date}>{s.date}</time>{occ?.document.date_uncertain && <small>date uncertain: {occ.document.date_provenance}</small>}</dd></div>
+    <div>
+      <dt>We read the source</dt>
+      <dd><time datetime={s.observed_at}>{observed}</time>
+        {occ && <small>{occ.observed_via === "archive" ? "from an archived copy" : "live page"}, {ACCESS_TEXT[occ.access_state]}</small>}
+      </dd>
+    </div>
+    {screened
+      ? <div><dt>Evidence</dt><dd>Not checked</dd></div>
+      : <div><dt>Evidence up to</dt><dd><time datetime={p.evaluation_as_of}>{p.evaluation_as_of}</time></dd></div>}
+    <div><dt>Checked</dt><dd><time datetime={a.recorded_at}>{day(a.recorded_at)}</time></dd></div>
+  </dl>
+  {occ?.archive_url && <p class="small">Archived copy: <a href={occ.archive_url} rel="noopener">{occ.archive_url}</a></p>}
+  {post && post.count > 1 && <p class="small">We found {post.count} claims in this post. <a href={post.path}>See them all</a>.</p>}
+  {!withdrawn && observed > s.date && (
+    <p class="small soft">We read this wording on {observed}. The post may have been edited after {s.date}.</p>
+  )}
+</section>

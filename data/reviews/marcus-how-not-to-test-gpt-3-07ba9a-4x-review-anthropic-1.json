@@ -1,0 +1,184 @@
+{
+ "run_id": "marcus-how-not-to-test-gpt-3-07ba9a-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-not-to-test-gpt-3-07ba9a": "b112f5088cf54e773874786b917cff38e8b7e6308f795aa18bfbd77e03aaecff",
+  "case:marcus-how-not-to-test-gpt-3-1a2e80": "5c03c6c890d4144bccce3b63cce93cfa9d73e044600bdeb8664a5b1ae2b3b44f",
+  "case:marcus-how-not-to-test-gpt-3-419899": "100281ea82efbc0630007cd82b1b71cfb3982fcd93b1e1bf27617c6bcb2b5ecb",
+  "case:marcus-how-not-to-test-gpt-3-4a0eb5": "abd46ca567196b5f1c1d1b8953fe17d41f988e3e1b6f063a05b35eb7be37ceb8"
+ },
+ "started_at": "2026-10-29T07:30:28Z",
+ "completed_at": "2026-10-29T07:31:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus co-wrote and published the post in his own voice. The sentence is the authors' own generalisation, not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "In context, 'will reemerge' describes a recurring pattern the authors observed, not a dated forecast. 'Often' is a frequency word, not a hedge on probability. The normalised wording keeps 'often' and the slight-variation condition."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (failures recur on modest variants, but not universally) is ordinary and fair. The early-2023 window is the evaluator's choice but reasonable. The vague 'often' and 'slight' leave room for interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ullman's independent preprint (Feb 16, 2023, inside the window) reports repeated failures when classic theory-of-mind tasks the model had passed were modestly altered, e.g. 'in' changed to 'on' or a transparent container."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An independent paired evaluation from the target period shows apparently solved reasoning tasks failing repeatedly under modest variations. That meets the support condition. The packet contains no counterevidence showing that successes reliably survive variants. The main limit is scope: one study covering one domain, with no frequency estimate. The plain reading does not require a census, though.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-not-to-test-gpt-3-07ba9a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The parenthetical 'They can't, reliably' is the co-authors' own assertion in a post Marcus published."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'These AIs' refers to GPT and similar systems at the time of writing, and the normalised proposition keeps the qualifier 'reliably'. The separate claim about the history of testing is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (frequent counting errors, not total incapacity) is fair. Treating program execution separately from direct answers is reasonable. 'Reliably' has no threshold, so interpretation matters."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "On BBH object counting, direct answers scored 44–51%. Chain-of-thought (CoT) answers scored 77–93%, so errors remain with reasonable prompting. Caveat: Codex with CoT beat the average human rater."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Codex scored 37.6% with direct answers and 73% with CoT on object counting. The 96.7% score depended on running a Python interpreter, which the contract treats separately."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "An informal January 2023 demonstration of ChatGPT miscounting characters. Supplementary only and selected, not representative."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary evaluations from the window show direct counting accuracy around 40–50% across three models. Even with step-by-step prompting, error rates of roughly 7–23% remain, which counts as appreciable error. The strongest counterpoint is Codex with CoT at 93%, above the average human, but that is one model. The contradiction condition (dependable counting across models) is not met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-not-to-test-gpt-3-1a2e80"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The co-authors assert this in their own voice in a post Marcus published."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding text is about GPT-3, so naming GPT-3 and setting the claim as of February 2023 is faithful. Both the physical and psychological domains are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as persistence of the 2020 failure types and close variants, not every exact example, is fair. Requiring both domains matches the speaker's words. Which failures count depends on the reading, because the sentence does not list them."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows GPT-3 proposing a physically unsound solution, but the work predates the window (Dec 2022) and the task does not map to the 2020 failures."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Kosinski (Feb 2023) reports high success on classic false-belief tasks. These are not the authors' 2020 failure types, so the result neither settles nor refutes persistence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No independent test from the target period maps either domain to the 2020 failure types. The physical-reasoning evidence predates the window and uses a different task. The psychological-reasoning evidence covers different, well-known tasks. Neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-not-to-test-gpt-3-419899"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The experiment was Eisenberg's, but Marcus asserts its conclusion in his own voice ('as is evident'). That makes the conclusion his endorsed claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "This reports a specific past failure on the bookmark variant, and the normalised proposition matches it. Note that the post moves between GPT-3 and ChatGPT."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Limiting the claim to Eisenberg's particular variant and separating belief-tracking from where to resume reading is fair. The unknown model version and date leave room for interpretation."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. No independent Eisenberg transcript or documented replication was found. Possible reports of success could not be read, so they were rightly not used. The case is not broken, because the evidence simply does not settle the outcome.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-not-to-test-gpt-3-4a0eb5"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26413,
+  "output_tokens": 4353,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,57 @@
+---
+// /coverage: the declared source windows and, for each, what happened to
+// the posts in it. Counts come from the release's coverage projection.
+import Base from "../layouts/Base.astro";
+import { release } from "../lib/published.ts";
+
+
+const r = release();
+const m = r.manifest;
+const FIELDS = [
+  ["discovered", "Posts found"],
+  ["read_in_full", "Read in full"],
+  ["paywalled", "Paywalled, not read"],
+  ["failed", "Couldn’t load"],
+  // Releases before 2026-11-09 left candidates at 0; those show published + held.
+  ["candidates", "Claims found"],
+  ["published", "Published"],
+  ["held", "Held back"],
+] as const;
+const fmt = (n: number) => n.toLocaleString("en-US");
+---
+<Base title="Coverage" description="Which newsletters Pundit Claims read, for which dates, and what it found.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Coverage</h1>
+      <p class="lede">Which newsletters we read, for which dates, and what we found. We pick out claims, so this isn’t everything they wrote.</p>
+    </header>
+    {m ? (
+      <div class="prose">
+        <p>We read posts up to <strong>{m.source_cutoff}</strong> and gathered evidence up to <strong>{m.evaluation_cutoff}</strong>.</p>
+        {r.subjects.map((s) => {
+          const wins = r.coverage.filter((w) => w.subject_id === s.id);
+          return (
+            <section class="section" aria-labelledby={`cov-${s.id}`}>
+              <h2 id={`cov-${s.id}`}>{s.name}</h2>
+              {wins.length === 0 && <p class="soft">Nothing read for {s.name} yet.</p>}
+              {wins.map((w) => {
+                const decl = s.windows.find((x) => x.id === w.window_id);
+                return (
+                  <div class="window" id={`window-${w.window_id}`}>
+                    <h3>{w.publication}, <time datetime={w.from}>{w.from}</time> to <time datetime={w.to}>{w.to}</time></h3>
+                    {decl && <p class="small"><a href={decl.origin} rel="noopener">{decl.origin.replace(/^https:\/\//, "")}</a></p>}
+                    <dl class="counts">
+                      {FIELDS.map(([f0, label]) => { const f = f0 === "candidates" && !w.candidates ? "selected" : f0; return <div><dt>{label}</dt><dd class="num" data-count={`coverage.${w.window_id}.${f}`} data-n={w[f]}>{fmt(w[f])}</dd></div>; })}
+                    </dl>
+                  </div>
+                );
+              })}
+            </section>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="notice" role="note"><p>Nothing is published yet.</p></div>
+    )}
+  </div>
+</Base>

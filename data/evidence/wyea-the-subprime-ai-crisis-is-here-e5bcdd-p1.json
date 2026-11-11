@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-the-subprime-ai-crisis-is-here-e5bcdd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-subprime-ai-crisis-is-here-e5bcdd",
+  "version": 2,
+  "content_hash": "32e8bc0264ffc165798360e3668b36340116314eb09deaf23290c37b6a601d57"
+ },
+ "contract_ref": {
+  "id": "wyea-the-subprime-ai-crisis-is-here-e5bcdd",
+  "version": 1,
+  "content_hash": "5a1200ca782d7f3dda55de805632f2a08d68473342cb049fe9fb6026c304c58d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "reasoning models coding token usage inference cost efficiency DeepSeek V3 R1 serving costs paper",
+   "site.anthropic.com \"inference costs\" \"2025\"",
+   "site.anthropic.com \"Opus 4.5\" \"pricing\"",
+   "site.cursor.com/blog composer 2 March 2026 cost tokens training"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cursor.com/blog/composer-1-5",
+    "used": true,
+    "why": "Primary disclosure directly addresses the importance of thinking tokens to a coding model."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-5",
+    "used": true,
+    "why": "Provides a coding-benchmark comparison with lower token consumption."
+   },
+   {
+    "url": "https://arxiv.org/abs/2511.13223",
+    "used": true,
+    "why": "Explains the resource burden of long reasoning traces, but its reported compression result concerns mathematics rather than coding."
+   },
+   {
+    "url": "https://cursor.com/blog/composer-2",
+    "used": false,
+    "why": "Lists prices and coding performance, but does not establish matched serving costs or the motive for price reductions."
+   }
+  ],
+  "performed_at": "2026-10-29T13:27:22Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cursor-com-blog-composer-1-5",
+   "source_snapshot_id": "a1e2da122e3c6ea281e25d31f9c95b2869dc443d0ab7d4d4259fb66390edad31",
+   "publisher": "Cursor",
+   "source_type": "company_disclosure",
+   "url": "https://cursor.com/blog/composer-1-5",
+   "locator": "Introducing Composer 1.5, paragraph describing thinking tokens",
+   "receipt": {
+    "public_excerpt": "critical to the model’s intelligence.",
+    "quote_hash": "56485e9463d88e924e891eb4c8bd1736241963fc1379a5f3bf2b66cdfda28043",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-09",
+   "available_at": "2026-02-09",
+   "retrieved_at": "2026-10-29T13:19:39Z",
+   "relation": "supports",
+   "explanation": "Cursor identifies reasoning stages as important to its coding model. This supports the reliance-on-reasoning component, without establishing industry-wide token growth or costs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-news-claude-opus-4-5",
+   "source_snapshot_id": "903a44766cb359392ef9320f2bc5029f7ace3f6162cd21935c58f5edac839607",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "locator": "New on the Claude Developer Platform, SWE-bench Verified comparison",
+   "receipt": {
+    "public_excerpt": "using 48% fewer tokens.",
+    "quote_hash": "454f82c714d5b4dd9ef30f43f5c3a1db5ad1e3dc725df4e87f293df446ceafff",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-24",
+   "available_at": "2025-11-24",
+   "retrieved_at": "2026-10-29T08:55:27Z",
+   "relation": "contradicts",
+   "explanation": "This coding comparison reports better performance with fewer tokens. It contradicts an across-the-board increase in token requirements, although it does not measure aggregate provider spending.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2511-13223",
+   "source_snapshot_id": "0a6c269fc77934e4a950aa5add6025f73f3be71d0c620b7582598aabe675e78b",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2511.13223",
+   "locator": "Abstract, second sentence",
+   "receipt": {
+    "public_excerpt": "higher inference latency and memory consumption.",
+    "quote_hash": "f79b5be94e39f7839be15d87239b408bb868c5cfde56a7e9876e847bd1a371e9",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-17",
+   "available_at": "2025-11-17",
+   "retrieved_at": "2026-10-29T13:18:21Z",
+   "relation": "context",
+   "explanation": "The paper describes the resource burden of long reasoning traces. Its mathematics results and resource measures do not establish coding-service bills or providers’ financial costs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative matched coding-workload series establishes the claimed industry-wide increase in total costs.",
+  "No cited evidence establishes that token-price reductions were merely marketing decisions rather than reflecting serving efficiencies."
+ ],
+ "packet_hash": "0ffaca10fa028d4202529ca0cdbaac35cb2d5d9286a495bce4f2af64b5f456ff"
+}

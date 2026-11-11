@@ -1,0 +1,87 @@
+{
+ "run_id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec-4x-final-anthropic-2",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-05ddec": "9aa6405b960b903f490d22ba7badfa46a31679866197714e336e618b469dc04d",
+  "payload:marcus-what-to-expect-when-youre-expecting-62e-05ddec": "b6eca3d2be27169db9ae5b7e91769fbcee7cde75824fe2fd2a4ef8c990fc0d36",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-1335b1": "c40ea92742a17e1ed4f27ae208c6591cedb72d1f2abfc34f2c974cc30cd0ee7a",
+  "payload:marcus-what-to-expect-when-youre-expecting-62e-1335b1": "2750bed35021aa8ca7ca405ded2bae9197fd700fed11462aabe21255750bd127",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-172c71": "4ab81c30566a29a8cbcd4142d14d205777ac681d8534719db17b7d5af4021647",
+  "payload:marcus-what-to-expect-when-youre-expecting-62e-172c71": "9bad5adf0db8415cfa3f530a5b828e1426ffb57f10f885b0c28f24dadabdeb9c",
+  "case:marcus-what-to-expect-when-youre-expecting-62e-2b6f70": "b2a1fdad40f0116051920e8b46cf398389544c79de2436fd046828f820141d70",
+  "payload:marcus-what-to-expect-when-youre-expecting-62e-2b6f70": "302e09206afed58514f8cd8d37d656e6f4fa94934d9b936abf4e3e1e2e45f096"
+ },
+ "started_at": "2026-10-29T12:57:39Z",
+ "completed_at": "2026-10-29T12:58:17Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is verbatim and keeps the 'may be in place' concession. The rationale's dates match e1–e4: system card Aug 13, 2025; safe-completions paper Aug 12, 2025; study Jan 25, 2026. The jailbreak bypassing all layers and the benign-prompt refusals are both supported. e4 is framed correctly as context and not as a refutation. The limitations reflect the gaps in the evidence and the privileged red-team access. The trimmed e3 excerpt keeps its meaning. Outcome supported/conclusive_event matches the agreed assessment.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-05ddec"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "METR's July 2025 evaluation, published August 7, found more bugs and fewer completed features on a small set of naturally specified product tasks; it did not separate misunderstood intent from execution failures [e2]."
+    ],
+    "verdict": "fail",
+    "note": "The rationale says METR found 'more bugs and fewer completed features' but does not say compared with what. The source compares GPT-5 with human contractors given 10–20 hours. The e2 excerpt also cuts the clause 'Compared to human contractors given 10-20 hours', so the comparison has nothing to refer to. Readers could take it to mean worse than other models. Restore the comparison in both places. Everything else checks out, including the ~97% τ2-bench figure, the dates and unresolved/open_horizon.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-1335b1"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The source supports 18 reward-hack rescores, about 2% of HCAST/RE-Bench runs. The e1 excerpt shows 15/49 and its explanation accounts for the gap. The instruction-hierarchy regressions in gpt-5-main and SecureBio's 'refused every prompt' finding are quoted accurately. The limitations are supported, including the monitor doing worse on GPT-5 reasoning traces. The rationale gives a balanced reading of strengths and failures. Unresolved/open_horizon matches.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-172c71"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [],
+    "verdict": "fail",
+    "note": "The e2 excerpt is cut down to the single word 'human-level'. That drops the source's qualifier 'In some cases, GPT-5 even reaches human-level performance', and on its own the word could be read as broad human-level ability. Use the full sentence. The e1 excerpt also drops its subject 'GPT-5 has'; this is minor. The rationale and limitations otherwise match the spatial study (Aug 18, 2025). Unresolved/open_horizon matches.",
+    "claim_id": "marcus-what-to-expect-when-youre-expecting-62e-2b6f70"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 42344,
+  "output_tokens": 4376,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

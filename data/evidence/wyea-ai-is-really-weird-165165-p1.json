@@ -1,0 +1,134 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-165165-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-165165",
+  "version": 1,
+  "content_hash": "7e68359f26a58de7b2640a3d7c8454b78eae7ab0d56154da8fc36d0ffc360cf5"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-165165",
+  "version": 1,
+  "content_hash": "646512bfbbc2dd9e5aed4942b6f3e61e40461ef0847b71a1feb098d7f9d58327"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2025 net loss gross margin 2026 38% 45% Coatue Newcomer",
+   "site.sec.gov/Archives/edgar/data Anthropic 2026 S-1 gross profit 2025",
+   "Anthropic S-1 October 26 2026 2025 net loss gross margin",
+   "OpenAI 2025 net loss 2026 13 billion 20 billion",
+   "OpenAI losses 2025 38.53 billion Quartz June 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Read the filing, financial tables, functional expense note, and audit opinion. It supplies historical 2025 figures before the evaluation cutoff."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Full text reports OpenAI financial statements and identifies separate Financial Times review. Used as secondary evidence because an accessible public OpenAI filing was not located."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.midgardfinance.com/research/anthropic/",
+    "used": false,
+    "why": "The page was updated October 29, after the evaluation cutoff. The underlying filing was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T10:11:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; consolidated statements of operations; Note 8, Supplemental Operating Expense Information",
+   "receipt": {
+    "public_excerpt": "history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing documents a 2025 net loss of $41.965 billion, including $34.308 billion of financing-instrument fair-value changes. Separately, its revenue and functional cost-of-revenue figures imply a 39.5% gross margin; neither the net loss nor that margin establishes what the speaker meant by poor or supplies the requested non-GAAP reconciliation.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Gross margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "2025 revenue: USD 4,585 million, consolidated statements of operations.",
+     "2025 cost of revenue: USD 2,773 million, Note 8 functional expense table."
+    ],
+    "formula": "(4585 - 2773) / 4585 * 100",
+    "rounding": "39.520174482006546%, rounded to 39.5%."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section: Gotta spend money to make money",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "This corroborates the OpenAI annual-loss comparison, while identifying a substantial accounting charge. It measures another company's net loss and cannot establish Anthropic's gross margin.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Reported annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No specified threshold makes the gross-margin description objectively true or false.",
+  "No matched-period reconciliation between the cited management gross margins and GAAP gross margin was located.",
+  "Annual net losses establish the loss component but do not establish poor gross margins."
+ ],
+ "packet_hash": "8cb5a1f98021f9d7651fde6c1d93bc1faeb3b98f9b5660b33a1fb753ca29d914"
+}

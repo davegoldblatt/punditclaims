@@ -1,0 +1,124 @@
+{
+ "packet_id": "marcus-misplaced-panic-over-ai-progress-5125cd-p1",
+ "claim_revision_ref": {
+  "id": "marcus-misplaced-panic-over-ai-progress-5125cd",
+  "version": 2,
+  "content_hash": "60ff6ecceeed280a0a0484823fa4b856ad4d758f64aa5bffdd92a578c9d8da34"
+ },
+ "contract_ref": {
+  "id": "marcus-misplaced-panic-over-ai-progress-5125cd",
+  "version": 1,
+  "content_hash": "641f4f93b20d293fa5e09da38aa36461ae4de11050824d7a6d2d538ed9c07983"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.metr.org Mythos 80% 95% May 2026 time horizon",
+   "site.metr.org \"Mythos\" \"March\"",
+   "\"Mythos\" \"95%-time\"",
+   "\"Mythos\" \"95% success\"",
+   "\"Mythos\" \"99% success\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://metr.org/time-horizons/",
+    "used": true,
+    "why": "Primary results page, methodology and dated record of the May 8 Mythos addition."
+   },
+   {
+    "url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+    "used": true,
+    "why": "Read directly to obtain the numerical inputs underlying the graph and the calculation in e1."
+   },
+   {
+    "url": "https://github.com/METR/eval-analysis-public",
+    "used": true,
+    "why": "Read to verify that the fitted success curve uses logarithmic human task duration."
+   },
+   {
+    "url": "https://x.com/METR_Evals/status/2052896621760004602",
+    "used": true,
+    "why": "Primary dated announcement identifies the early checkpoint and March evaluation."
+   },
+   {
+    "url": "https://metr.org/blog/2026-01-29-time-horizon-1-1/",
+    "used": false,
+    "why": "Describes suite construction before the target evaluation; not evidence of Mythos performance."
+   },
+   {
+    "url": "https://leap.forecastingresearch.org/forecasts/80-8-hour-task-horizon-1",
+    "used": false,
+    "why": "Retrospective corroboration of the 80% result; primary numerical data were accessible."
+   },
+   {
+    "url": "https://www.synopticonresearch.com/articles/mythos-metr-prediction/",
+    "used": false,
+    "why": "Its May 12 update corroborates the reported horizons, but primary evidence was preferred."
+   }
+  ],
+  "performed_at": "2026-10-29T22:45:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-time-horizons",
+   "source_snapshot_id": "8a28caaedb844344af9d76e10509bc6dc701537c80e6e52dde3eb0508ec8f79d",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/time-horizons",
+   "locator": "Methodological Details; linked raw data, claude_mythos_preview_early_inspect",
+   "receipt": {
+    "public_excerpt": "logistic curve",
+    "quote_hash": "5f7f04538d18bcc5c4a7d2e62fb1e6514526fb6459f1a3af591a8149a76c29ff",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-09-08",
+   "retrieved_at": "2026-10-29T00:43:33Z",
+   "relation": "supports",
+   "explanation": "The linked official data give an 80% horizon of about 3.10 hours, well below the page's 16-hour upper reliable measurement range. Applying the documented fitted curve implies a still shorter 95% horizon; that implication is an evaluator calculation, not a published validated 95% measurement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Official linked data: https://metr.org/assets/benchmark_results_1_1.yaml",
+     "claude_mythos_preview_early_inspect p50_horizon_length estimate: 1044.780145 minutes",
+     "claude_mythos_preview_early_inspect p80_horizon_length estimate: 185.911829 minutes",
+     "METR's analysis repository specifies logistic success probability against log2(human_minutes)."
+    ],
+    "formula": "H80_hours = 185.911829 / 60 = 3.09853048. For the fitted logistic curve, H95_minutes = H50 * (H80/H50)^(ln(19)/ln(4)) = 26.70861024.",
+    "rounding": "80% horizon rounded to 3.10 hours; illustrative fitted 95% horizon rounded to 26.7 minutes."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "x-com-metr-evals-status-2052896621760004602",
+   "source_snapshot_id": "53a20815fd0a9fc03c28e0fe3f836b8964238d1a7afc07887b25079a0174e4e2",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://x.com/METR_Evals/status/2052896621760004602",
+   "locator": "Opening sentence of May 8 announcement",
+   "receipt": {
+    "public_excerpt": "March 2026.",
+    "quote_hash": "60f956873c5f27dfc9328afeb3c8d2753f7153efd7fd24eeac5cc6b6cf040df0",
+    "verified": "exact"
+   },
+   "event_date": "2026-03",
+   "available_at": "2026-05-08",
+   "retrieved_at": "2026-10-29T07:20:49Z",
+   "relation": "context",
+   "explanation": "Identifies the checkpoint and testing period. The announcement reports a 50% horizon of at least 16 hours and warns that this approaches the suite's measurement limit.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No separately validated 95% horizon or sufficiently precise task-by-task reliability analysis was located.",
+  "The live primary results page was updated after the post; its update history identifies the historical Mythos addition."
+ ],
+ "packet_hash": "43be2f4f661bc6fc3f1a3efa1bfa75beb46062f58bd0f7529f2808a6a9be34d7"
+}

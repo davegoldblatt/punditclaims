@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-core-incompetency-2a1a36-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-2a1a36",
+  "version": 2,
+  "content_hash": "048f576c34e9e7d0d085328e20e5eef14fd9b43597b3fe8f57577708fd28d137"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-2a1a36",
+  "version": 1,
+  "content_hash": "97c9809e7319b7ddb867eee8d45bef88d9c5e3165e24f2326d8545aa18964725"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.sec.gov CoreWeave 2025 10-k \"DDTL 1.0\" \"2025\"",
+   "CoreWeave \"DDTL 1.0\" \"2025\" \"paid\" \"interest\"",
+   "CoreWeave \"2024\" \"$288 million\" \"$255 million\" -site:reddit.com",
+   "CoreWeave \"2025\" \"$748 million\" \"$523 million\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001769628/000119312525052207/d899798ds1a.htm",
+    "used": true,
+    "why": "Readable mirror of the March 2025 S-1 amendment; establishes cumulative payments through 2024."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/ar/Proxy-Statement.pdf",
+    "used": true,
+    "why": "Company-hosted proxy establishes cumulative payments through 2025."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525052207/d899798ds1a.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the readable filing mirror."
+   },
+   {
+    "url": "https://www.stifel.com/prospectusfiles/PD_7101.pdf",
+    "used": false,
+    "why": "read_page rejected the document because it exceeded its size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T10:49:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001769628-000119312525052207-12c679181765",
+   "source_snapshot_id": "454b8c70d832b14efccf7266216c5977539cd1e7acbd8c87002e4da6da92f8ba",
+   "publisher": "CoreWeave, filing mirrored by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001769628/000119312525052207/d899798ds1a.htm",
+   "locator": "Page 192, Delayed Draw Term Loan 1.0 Facility; cumulative payments as of December 31, 2024",
+   "receipt": {
+    "public_excerpt": "we have paid $288 million and\n$255 million in principal and in interest on outstanding amounts under our DDTL 1.0 Facility, respectively.",
+    "quote_hash": "fcb47299c68e6e9da045934550927025afc8fa88b8f714704e83338d0b290205",
+    "verified": "exact"
+   },
+   "event_date": "2024-12-31",
+   "available_at": "2025-03-12",
+   "retrieved_at": "2026-10-29T10:41:53Z",
+   "relation": "context",
+   "explanation": "The pre-2025 cumulative baseline is $288 million of principal and $255 million of interest. These amounts must be removed from the subsequent lifetime totals.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "DDTL 1.0 cumulative cash principal and interest payments",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2023-07-30",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-ar-proxy-statement-pdf",
+   "source_snapshot_id": "e9901997b2839209eb189deab637f03475f70cd53844fb5e8545cdf09a4f2e5e",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/ar/Proxy-Statement.pdf",
+   "locator": "Page 59, Delayed Draw Term Loan 1.0 Facility; cumulative payments as of December 31, 2025",
+   "receipt": {
+    "public_excerpt": "we have paid $748 million in principal and $523 million in interest on outstanding amounts under our DDTL\n1.0 Facility.",
+    "quote_hash": "a21682ad6a3d12a7138f21ac7a24fc90e6a5fd22306abe03df070d78e1d62a69",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-04-22",
+   "retrieved_at": "2026-10-29T10:41:05Z",
+   "relation": "contradicts",
+   "explanation": "Subtracting e3 gives $460 million in principal and $268 million in interest paid during 2025, totaling $728 million. That is 27.2% below $1 billion.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "DDTL 1.0 cash principal and interest payments",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "End-2025 cumulative principal paid: $748 million, e4.",
+     "End-2024 cumulative principal paid: $288 million, e3.",
+     "End-2025 cumulative interest paid: $523 million, e4.",
+     "End-2024 cumulative interest paid: $255 million, e3."
+    ],
+    "formula": "(748 - 288) + (523 - 255) = 728; 728 / 4 = 182; (1000 - 728) / 1000 = 27.2%.",
+    "rounding": "Inputs are reported to the nearest million; the derived annual total is approximately $728 million and the quarterly average is $182 million."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The cited cumulative disclosures do not establish each individual quarter's payments."
+ ],
+ "packet_hash": "27c8076f9b6953c76a7f054e1d12966774738a6e8f93ce2118204c989b4669f9"
+}

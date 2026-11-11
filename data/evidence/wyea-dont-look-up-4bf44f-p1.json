@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-dont-look-up-4bf44f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dont-look-up-4bf44f",
+  "version": 1,
+  "content_hash": "a24f33acf7d0ec7b033a15d2dabb3e512873d2fa35eaaf814f37bf99458ca2c2"
+ },
+ "contract_ref": {
+  "id": "wyea-dont-look-up-4bf44f",
+  "version": 1,
+  "content_hash": "2f70eccf3f8233901122528ca0c48d432c27124df770967f44e7eea8ec0a0d0a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic 2025 annual net loss 2026 losses financial reporting",
+   "OpenAI 2025 38.53 billion net loss June 2026 Financial Times audited",
+   "site.ft.com \"OpenAI\" \"2025\" \"38.5\" \"June\"",
+   "site.sec.gov/Archives/edgar/data/2130357 \"Our net loss\" \"2025\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Full-text passages provide audited 2025 accounts, accounting policies and the distinction between operating and net losses."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Full text reports the accounts and identifies independent Financial Times review. Used as secondary context, not the speaker's own evidence."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/openai-spending-hit-34-billion-last-year-ahead-of-planned-ipo-ft-reports-4743789",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://apnews.com/article/ca2f4c282bef3201a392e59e3df2300c",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T11:04:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; 2025 financial statements and accounting policies",
+   "receipt": {
+    "public_excerpt": "history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-31",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing reports a 2025 GAAP net loss of $41.965 billion, including $34.308 billion in financing-instrument valuation changes, versus an operating loss of $8.060 billion. The numerical threshold is met for net loss, but not operating loss; the claim does not specify its basis.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "consolidated annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Gotta spend money to make money section, first paragraph",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The report places OpenAI's 2025 headline net loss above the threshold and identifies independent review of the accounts. It also describes a large restructuring-related accounting charge, so the figure cannot be treated as recurring cash burn.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "reported annual headline net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The claim's accounting basis is unknown, which prevents a supported or contradicted score under the money-claim rules.",
+  "The intended annual period could instead be a 2026 current rate.",
+  "OpenAI's underlying audited accounts were not obtained directly."
+ ],
+ "packet_hash": "d88b7614e7213525722779a8d59fb63112806d7e50a2d760e65c842cc06a7fe1"
+}

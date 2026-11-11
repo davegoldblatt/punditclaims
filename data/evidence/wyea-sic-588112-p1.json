@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-sic-588112-p1",
+ "claim_revision_ref": {
+  "id": "wyea-sic-588112",
+  "version": 1,
+  "content_hash": "a6f1441e9851ec0f273da956812b5ec70fc19d6724d53e6431a5c654f879b4e7"
+ },
+ "contract_ref": {
+  "id": "wyea-sic-588112",
+  "version": 1,
+  "content_hash": "355a8d6c4fee3194deeb061d7da35daa94f79a4d02f2f481de0b69a1571b7e72"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org \"The Impact of AI on Developer Productivity\" \"55.8\"",
+   "site.survey.stackoverflow.co/2024 \"trust\" \"AI\"",
+   "site.cloudsmith.com 2025 \"review\" \"AI\" survey May June",
+   "site.cursor.com/blog \"2025\" \"production\" \"May\"",
+   "site.github.blog \"2024\" \"production\" \"Copilot\" Duolingo"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2302.06590",
+    "used": true,
+    "why": "Read the original productivity experiment's abstract and publication history."
+   },
+   {
+    "url": "https://arxiv.org/html/2302.06590v1",
+    "used": true,
+    "why": "Read the study-design passage to establish the experiment's actual dates."
+   },
+   {
+    "url": "https://abnormal.ai/blog/how-abnormal-uses-ai-in-the-ml-lifecycle",
+    "used": true,
+    "why": "Read a company's concrete workflow combining faster development, AI-generated code, and human review."
+   },
+   {
+    "url": "https://stackoverflow.blog/2024/07/24/developers-want-more-more-more-the-2024-results-from-stack-overflow-s-annual-developer-survey/",
+    "used": true,
+    "why": "Read the republished 2024 survey summary. It discusses trust but does not identify the speaker's cohort or measure refusal to ship reviewed code."
+   },
+   {
+    "url": "https://survey.stackoverflow.co/2024/ai/",
+    "used": false,
+    "why": "The reader returned only the adoption section; the publisher's survey summary supplied more relevant text."
+   },
+   {
+    "url": "https://cloudsmith.com/blog/ai-is-now-writing-code-at-scale-but-whos-checking-it",
+    "used": false,
+    "why": "The reader returned only an introductory fragment. The alternate Ghost page was unavailable, so search-result quotations were not used."
+   }
+  ],
+  "performed_at": "2026-10-29T12:37:29Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2302-06590",
+   "source_snapshot_id": "d4a8f3be03500a6a4860a8953084c37b7e24cda24fdf3b8868c71e147cc245e9",
+   "publisher": "arXiv; Peng and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2302.06590",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "55.8% faster",
+    "quote_hash": "6d3d39b4df78633d1dae8e52f93dbe41ee38af0789629c4215ae8ef0966c49a8",
+    "verified": "exact"
+   },
+   "event_date": "2022-06-20",
+   "available_at": "2023-02-13",
+   "retrieved_at": "2026-10-29T02:56:22Z",
+   "relation": "context",
+   "explanation": "This controlled programming experiment documents substantial historical speed benefits. It predates the target period and does not measure participants' production-trust policies.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "abnormal-ai-blog-how-abnormal-uses-ai-in-the-ml-lifecycle",
+   "source_snapshot_id": "354296a9b8f73c6925f849bcbf92eb273f17a0bdc2a9015163e65d67bba17823",
+   "publisher": "Abnormal AI",
+   "source_type": "company_disclosure",
+   "url": "https://abnormal.ai/blog/how-abnormal-uses-ai-in-the-ml-lifecycle",
+   "locator": "Key Insights, fifth statement",
+   "receipt": {
+    "public_excerpt": "thorough review",
+    "quote_hash": "53732ed40eb5801fd0f7e0bfe895fc62caca70b1a7d931ee73a4b63d4461f8d4",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-27",
+   "retrieved_at": "2026-10-29T12:30:03Z",
+   "relation": "context",
+   "explanation": "Abnormal describes accelerated feature development within a deployment workflow that retains engineering review. This challenges a blanket exclusion of AI-assisted code from production, but does not establish unchecked trust or identify Zitron's engineers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "stackoverflow-blog-2024-07-24-developers-want-more-more-more-the-20-467c0957088f",
+   "source_snapshot_id": "14b36027f79d3d35a10cf1df1d0ada09619a77c5a37a0013683fac647cc03f01",
+   "publisher": "Stack Overflow",
+   "source_type": "independent_measurement",
+   "url": "https://stackoverflow.blog/2024/07/24/developers-want-more-more-more-the-2024-results-from-stack-overflow-s-annual-developer-survey",
+   "locator": "Challenges, frustrations, and what gets you through",
+   "receipt": {
+    "public_excerpt": "human in the loop",
+    "quote_hash": "f8ce3c59d7314853c34704dd1d9de019872e0dd5a3e19767d09212c677e5afac",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-01-01",
+   "retrieved_at": "2026-10-29T12:26:14Z",
+   "relation": "context",
+   "explanation": "The survey summary reports both distrust and trust in AI accuracy, alongside continued human oversight. General accuracy attitudes do not establish a categorical production restriction for engineers reporting large speed gains.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No identified cohort connects the claimed speed benefits to the claimed production-trust restriction.",
+  "The source does not specify whether reviewed production use counts as trusting the output.",
+  "The retrieved studies do not directly measure both parts during the target period."
+ ],
+ "packet_hash": "e5c8e8f7c83913bf48afefe92d00d2c7d176f6e964bc0ac846bd4bef0ea67afe"
+}

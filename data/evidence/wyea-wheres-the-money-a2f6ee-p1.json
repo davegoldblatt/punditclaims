@@ -1,0 +1,149 @@
+{
+ "packet_id": "wyea-wheres-the-money-a2f6ee-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-a2f6ee",
+  "version": 2,
+  "content_hash": "f5752b7e12e2d9bf22bbfa8d9895d69dbd344be4b8e2767cb6a33e2e6b5eeb90"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-a2f6ee",
+  "version": 1,
+  "content_hash": "8fdf52723f82d820e6ff42734d332a399c31157da9205aca81d7e87a6151515b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 net loss first half 13.5 billion Reuters Microsoft",
+   "\"OpenAI\" \"2025\" \"loss\" \"Reuters\" \"2026\" net",
+   "OpenAI 13.5 billion net loss first half 2025 Information September 2025",
+   "OpenAI 2025 net loss 39 billion Financial Times June 2026",
+   "site.microsoft.com January 21 2025 OpenAI partnership IP revenue sharing 2030",
+   "\"OpenAI\" \"2025\" \"GPT-5\" \"August 7\" site:openai.com/index/introducing-gpt-5/"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-gpt-5-for-developers/",
+    "used": true,
+    "why": "Primary evidence that OpenAI continued releasing language models commercially."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Readable reporting on annual financial statements, including a report of Financial Times verification. Used as financial context, not as proof of the entire bundle."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+    "used": true,
+    "why": "Primary contemporary evidence of a commercial partnership relevant to the moat question."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openais-first-half-results-4-3-billion-sales-2-5-billion-cash-burn/",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.ft.com/content/e15b0d7e-ff6b-4f16-ba7a-4068feddb828",
+    "used": false,
+    "why": "read_page returned HTTP 403; the reported independent verification could not be examined directly."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. Microsoft's investment losses also must not be substituted directly for OpenAI's net losses."
+   }
+  ],
+  "performed_at": "2026-10-29T22:25:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "openai-com-index-introducing-gpt-5-for-developers",
+   "source_snapshot_id": "f42dfb927c4e0254f0a4d4d0c97d9fdb2ac02a100f90ff5b932bea47292f7a73",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-5-for-developers",
+   "locator": "Introduction, opening sentence",
+   "receipt": {
+    "public_excerpt": "Today, we’re releasing GPT‑5",
+    "quote_hash": "a6f6162f114e65647deb2341bab5c98b841f36aa7dd5a132f74d57abaef68780",
+    "verified": "exact"
+   },
+   "event_date": "2025-08-07",
+   "available_at": "2025-08-07",
+   "retrieved_at": "2026-10-29T08:13:43Z",
+   "relation": "supports",
+   "explanation": "The commercial model release establishes continued operation of the language-model business after publication.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section Gotta spend money to make money, opening sentence",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "This strongly supports the direction of the loss forecast. The annual period includes time before the post, and the report describes substantial restructuring-related accounting effects; it does not isolate the specified subsequent window or prove the proposed cause.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2025-earnings-fy-2025-q2",
+   "source_snapshot_id": "2244e1ed7564476daa6c4ecb3147f376269d37ebbda331a07f4dfba702927a39",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q2",
+   "locator": "Satya Nadella's prepared remarks, AI platforms and tools",
+   "receipt": {
+    "public_excerpt": "benefit mutually",
+    "quote_hash": "e3b9986d6af1b8ec95a317768ef66ba38d6d0f820ce777f02950bf516eee985a",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-29",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T05:19:46Z",
+   "relation": "context",
+   "explanation": "The partnership merits examination as a possible commercial advantage beyond training capacity. Microsoft's statement does not itself establish that this advantage was durable or independently protected from competition.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The retrieved financial record does not isolate net losses after publication on a basis matched to the contract.",
+  "No decisive evidence establishes or excludes durable advantages beyond the two exceptions.",
+  "Losses do not by themselves establish the proposed causal explanation."
+ ],
+ "packet_hash": "0f91d503c5b92ff48be885b0a1b2a8fc3230fe86d7447fd9247abbedb2283c9d"
+}

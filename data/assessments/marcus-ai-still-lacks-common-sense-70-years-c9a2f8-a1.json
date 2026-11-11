@@ -1,0 +1,144 @@
+{
+ "assessment_id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8-a1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8",
+  "version": 1,
+  "content_hash": "be815734cbac82fbf685c291612f100d929a6c07ffb0e923522d281fb9d8e319"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8",
+  "version": 1,
+  "content_hash": "90be06fd3b9baf4597a5b556b9ffe3f01c4c45cd700559e9b25c250d5ce1b56f"
+ },
+ "packet_ref": {
+  "id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8-p1",
+  "content_hash": "2a5b5b7284e53dcc1a3e6b13fa94e87f9cd2c93391872d3a433c7ec50aae4021"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-02-15",
+  "end": "2025-01-05",
+  "precision": "day"
+ },
+ "public_rationale": "OpenAI's technical report says Sora generates video in a compressed latent space and decodes it back to pixels. It also says Sora's abilities arise with no explicit biases for 3D or objects. So the output is a stream of images, not a scene split into objects with properties, as a game engine has. OpenAI's own December 2024 launch post says the public version often generates unrealistic physics, which backs 'unreliable'. OpenAI does claim Sora often keeps objects consistent, but only implicitly and not always. That does not contradict the claim.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e4"
+ ],
+ "limitations": [
+  "Whether internal latents encode objects implicitly is a research question. The claim is read as being about explicit outputs.",
+  "The evidence for unreliability comes from OpenAI's own statements, not an independent benchmark."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-ai-still-lacks-common-sense-70-years-b0c0ed-4x-review-anthropic-1",
+  "marcus-ai-still-lacks-common-sense-70-years-b0c0ed-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-ai-still-lacks-common-sense-70-years-b0c0ed-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-ai-still-lacks-common-sense-70-years-c9a2f8",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Sora's outputs are unreliable pure image streams, not segmentations of the world into objects with properties.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Moreover, they are pure image streams, not segmentations of the world into objects with specific properties (as one would find in a game engine), and unreliable at that.",
+   "locator": "paragraph 25",
+   "url": "https://garymarcus.substack.com/p/ai-still-lacks-common-sense-70-years",
+   "date": "2025-01-05",
+   "document_title": "AI still lacks “common” sense, 70 years later",
+   "observed_at": "2026-10-28T23:58:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Sora's videos",
+    "pure image streams",
+    "not segmentations of the world into objects with specific properties",
+    "as one would find in a game engine",
+    "unreliable at that"
+   ],
+   "our_interpretation": [
+    "Plain reading: Sora outputs only pixel video. It does not output an explicit scene of separate objects with properties, the way a game engine does. And its videos often fail at physical consistency.",
+    "The period is Sora as OpenAI described it, from its unveiling (2024-02-15) through the post (2025-01-05). The post discusses Sora from its debut to its public release in December 2024."
+   ],
+   "support_condition": "OpenAI's own documents show that Sora makes video by generating latents that are decoded to pixels, with no explicit object or scene representation, and admit frequent physical errors.",
+   "contradiction_condition": "OpenAI documents show that Sora outputs or exposes explicit object-level scene representations, or that its physical consistency was reliable."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "OpenAI's technical report says Sora generates video in a compressed latent space and decodes it back to pixels. It also says Sora's abilities arise with no explicit biases for 3D or objects. So the output is a stream of images, not a scene split into objects with properties, as a game engine has. OpenAI's own December 2024 launch post says the public version often generates unrealistic physics, which backs 'unreliable'. OpenAI does claim Sora often keeps objects consistent, but only implicitly and not always. That does not contradict the claim.",
+  "limitations": [
+   "Whether internal latents encode objects implicitly is a research question. The claim is read as being about explicit outputs.",
+   "The evidence for unreliability comes from OpenAI's own statements, not an independent benchmark."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Sora is trained on and subsequently generates videos within this compressed latent space. We also train a corresponding decoder model that maps generated latents back to pixel space.",
+    "locator": "section Video compression network",
+    "url": "https://openai.com/research/video-generation-models-as-world-simulators",
+    "publisher": "OpenAI",
+    "event_date": "2024-02-15",
+    "available_at": "2024-02-15",
+    "explanation": "Sora's output is latent video decoded to pixels. Nothing in it is an explicit object or scene representation."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "These properties emerge without any explicit inductive biases for 3D, objects, etc.—they are purely phenomena of scale.",
+    "locator": "section Emerging simulation capabilities",
+    "url": "https://openai.com/research/video-generation-models-as-world-simulators",
+    "publisher": "OpenAI",
+    "event_date": "2024-02-15",
+    "available_at": "2024-02-15",
+    "explanation": "OpenAI says Sora has no explicit object or 3D structure. This matches 'not segmentations of the world into objects'."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "The version of Sora we are deploying has many limitations. It often generates unrealistic physics and struggles with complex actions over long durations.",
+    "locator": "section Our approach to deployment",
+    "url": "https://openai.com/index/sora-is-here",
+    "publisher": "OpenAI",
+    "event_date": "2024-12-09",
+    "available_at": "2024-12-09",
+    "explanation": "OpenAI itself admits the public version often produces unrealistic physics. This supports 'unreliable at that'."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "We find that Sora is often, though not always, able to effectively model both short- and long-range dependencies. For example, our model can persist people, animals and objects even when they are occluded or leave the frame.",
+    "locator": "section Emerging simulation capabilities, Long-range coherence and object permanence",
+    "url": "https://openai.com/research/video-generation-models-as-world-simulators",
+    "publisher": "OpenAI",
+    "event_date": "2024-02-15",
+    "available_at": "2024-02-15",
+    "explanation": "OpenAI claims some implicit object persistence. This is partial, and it is not an explicit object segmentation, so it does not undercut the claim."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "67a46cc0ba25856b77ad9a83ff11b829cf01c2eeba93da0187b59eefa483a9aa",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:09:38Z"
+}

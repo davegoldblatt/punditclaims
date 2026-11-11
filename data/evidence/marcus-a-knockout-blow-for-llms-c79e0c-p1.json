@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-a-knockout-blow-for-llms-c79e0c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-c79e0c",
+  "version": 1,
+  "content_hash": "41009988f26b9ed13e462a8bf4bfc27f7d394f3dbf8b5af565b07b3f270b95f9"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-c79e0c",
+  "version": 1,
+  "content_hash": "72d332158e831c4382ba421fbb36b89774b6739874e20cdfce0e37f937c8097a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Apple Illusion of Thinking paper Claude 7 8 Hanoi accuracy 2025",
+   "\"illusion-of-thinking\" github data accuracy",
+   "\"Claude\" \"Hanoi\" \"seven\" \"eight\" accuracy Apple"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2506.06941v1",
+    "used": true,
+    "why": "Original primary evaluation, including Hanoi solution validation and complexity-dependent failures."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "used": true,
+    "why": "A corrected follow-up provides material context about success with generated programs and the limits of broad interpretations."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v1",
+    "used": false,
+    "why": "Superseded by the corrected second version; its original token-limit calculation should not be relied upon."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.01231v1",
+    "used": false,
+    "why": "Read as a follow-up lead, but it tests a different model and prompting arrangements after the target snapshot."
+   }
+  ],
+  "performed_at": "2026-10-29T01:06:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2506-06941v1",
+   "source_snapshot_id": "b51f3c18783389c9073131f9e2939d113c3ffa0d3a536ca7a3f19a3ebe61fe5d",
+   "publisher": "Apple researchers, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.06941v1",
+   "locator": "Section 4.3, discussion of Figure 7(b); final-answer results and validation described in Sections 4.1–4.2 and Appendix A.2",
+   "receipt": {
+    "public_excerpt": "accuracy is zero.",
+    "quote_hash": "ae9fd049fdf3b1e4d06048acffc5fa9a3cb17935df1cae7e7072849ef66105f0",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-07",
+   "retrieved_at": "2026-10-29T01:00:54Z",
+   "relation": "supports",
+   "explanation": "The study reports repeated failures in complete solutions and intermediate attempts as complexity increases. This supports unreliable direct Hanoi execution in the evaluated setting, while successful easier cases limit the scope.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2506-09250v2",
+   "source_snapshot_id": "bb12d07c62a73d23ad0dce718206b5a0ce388c2db14fcae65e48b39bee4e6305",
+   "publisher": "A. Lawsen, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.09250v2",
+   "locator": "Section 5, Alternative Representations Restore Performance",
+   "receipt": {
+    "public_excerpt": "The generated solutions correctly implement the recursive algorithm",
+    "quote_hash": "feec8014efb703cb8d14ce9e8d50fc9f3334266c257ad66c243ba1b2e2cd3a7c",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-16",
+   "retrieved_at": "2026-10-29T01:02:32Z",
+   "relation": "context",
+   "explanation": "The follow-up reports successful program generation for larger Hanoi instances. It changes the required output and follows the post, so it limits an unrestricted inability claim without contradicting the original direct-generation result.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not establish failure for every contemporary LLM or every prompting and tool configuration."
+ ],
+ "packet_hash": "5ba1f208b58e667cac4cbbb6651455d654e8c1c840256d0786babc399927fb87"
+}

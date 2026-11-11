@@ -1,0 +1,107 @@
+{
+ "assessment_id": "marcus-how-not-to-test-gpt-3-c48e17-a2",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-c48e17",
+  "version": 1,
+  "content_hash": "8b4f41663c73c7b360660c44fd7cd1485d3c9f44685ce28d10e1d17277eae106"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-c48e17",
+  "version": 1,
+  "content_hash": "d25412e3a5c1f4f45d6f770be66d97c686164fb65c2ebc36f3757f1a71758aca"
+ },
+ "packet_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-c48e17-p1",
+  "content_hash": "cddebeea2c281fd64128e3909b9da0dea13771de70507623f198d2d1cd589cce"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020",
+  "end": "2022-06",
+  "precision": "month"
+ },
+ "public_rationale": "The 45% and 50% figures come from an informal experiment by Marcus and Davis. The only evidence item (e1) is their own NYU report from June 2022. Under the contract, the authors' own report counts only as context and cannot confirm their tallies. Its table lists 71 of 157 tests (45%) as successes in 2020 and 40 of 80 tests (50%) in 2022. Because the test counts differ, it is unclear whether the two percentages cover the same examples. However, e1 does not show how the example sets or the scoring differed. The packet's search found no independent rerun or audit. On this evidence, the claim can be neither confirmed nor refuted.",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "No independent rerun or audit of the authors' example set was found. That does not prove none exists.",
+  "e1 notes that the system is not deterministic, so a rerun could give different results.",
+  "The packet notes that the 2020 model versions are no longer available, which limits replication."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-not-to-test-gpt-3-995428-4x-review-anthropic-1",
+  "marcus-how-not-to-test-gpt-3-995428-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-not-to-test-gpt-3-995428-2x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-not-to-test-gpt-3-c48e17",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "From 2020 to June 2022, GPT-3 improved only slightly on the authors' commonsense examples, going from 45% to 50% right.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "However, just in terms of percentage right vs. wrong, the improvement was slight; It now got 50% right, 40% wrong, and 10% borderline (marginally better than the 45% right before).",
+   "locator": "paragraph 37",
+   "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+   "date": "2023-02-17",
+   "document_title": "How Not to Test GPT-3",
+   "observed_at": "2026-10-29T00:04:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "in June 2022 we reran all the examples that we had run before",
+    "50% right, 40% wrong, and 10% borderline",
+    "marginally better than the 45% right before",
+    "the improvement was slight"
+   ],
+   "our_interpretation": [
+    "The claim reports the authors' own informal experiment: GPT-3 (2020 version) at 45% right, and text-davinci-002 in June 2022 at 50% right / 40% wrong / 10% borderline, on their commonsense examples.",
+    "Verification needs an independent record of the prompts, outputs and scoring. The authors' own report cannot serve as evidence that they were right."
+   ],
+   "support_condition": "An independent rerun or audit of the authors' example set confirming roughly 45% right in 2020 and 50% right in June 2022.",
+   "contradiction_condition": "An independent audit of the same examples and outputs showing materially different success rates, or showing that the two runs did not cover the same examples."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The 45% and 50% figures come from an informal experiment by Marcus and Davis. The only evidence item (e1) is their own NYU report from June 2022. Under the contract, the authors' own report counts only as context and cannot confirm their tallies. Its table lists 71 of 157 tests (45%) as successes in 2020 and 40 of 80 tests (50%) in 2022. Because the test counts differ, it is unclear whether the two percentages cover the same examples. However, e1 does not show how the example sets or the scoring differed. The packet's search found no independent rerun or audit. On this evidence, the claim can be neither confirmed nor refuted.",
+  "limitations": [
+   "No independent rerun or audit of the authors' example set was found. That does not prove none exists.",
+   "e1 notes that the system is not deterministic, so a rerun could give different results.",
+   "The packet notes that the 2020 model versions are no longer available, which limits replication."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "There\nare some examples that GPT-3 got wrong in 2020 and got right in 2022,\nbut there are also examples of the reverse.",
+    "locator": "Paragraph after the tally table",
+    "url": "https://cs.nyu.edu/~davise/papers/GPT-3-6-22.html",
+    "publisher": "Ernest Davis, NYU (co-author of the post)",
+    "event_date": "2022-06",
+    "available_at": "2022-06-30",
+    "explanation": "The underlying report is by the post's own authors. Its table lists 157 tests at 45% in 2020 and 80 tests at 50% in 2022, so the sets differ in size. It cannot be used as independent confirmation."
+   }
+  ],
+  "what_would_resolve": "Someone other than the authors would need to rescore the full 2020 and 2022 example sets and outputs, or replicate the tests on the same examples, and confirm or reject roughly 45% right in 2020 and 50% right in June 2022.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ec3c3e5ef5f60ebcd8131ce3ce1e6e4abb358ac3731c86cccda960f9a6f610d6",
+ "supersedes_assessment_id": "marcus-how-not-to-test-gpt-3-c48e17-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:42:36Z"
+}

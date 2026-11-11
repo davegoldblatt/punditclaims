@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-eric-schmidts-risky-bet-on-ai-and-ae0621-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-eric-schmidts-risky-bet-on-ai-and-ae0621": "dd9ab4ae7e147a9da7825bfe73cd640f3c156076eaef8b6f331e0b6031a54163"
+ },
+ "started_at": "2026-10-29T23:53:04Z",
+ "completed_at": "2026-10-29T23:53:23Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, written in his own voice. He is not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The 'seems' hedge on the 'only potent trick' part is kept and left out of scoring. The firm part is a directional causal link: more scaling means more power use. The context 'if we continue on the current path' fits that reading."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is a directional rise in total electricity as AI computation grows, with no size or deadline. That is an ordinary and fair reading. Weighing efficiency gains and judging totals rather than per-query energy is reasonable to both sides."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google's 2026 report (available June 2026, before the evaluation date) describes a surge in electricity demand alongside a fast AI buildout and new AI demand. It is a company disclosure and does not quantify AI's share. The 37% figure is in the drafter's note but not in the quoted excerpt."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Berkeley Lab independently finds US data-center power demand more than doubled from 2017 to 2023, largely due to AI servers. It backs the mechanism but covers the whole sector, not big tech alone."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Google researchers report large per-prompt efficiency gains. That limits any fixed workload-to-energy ratio, but it does not show total consumption flat or falling."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The scored claim is that more scaling means more power use. Google says its electricity demand surged alongside its accelerating AI buildout. Berkeley Lab independently ties the doubling of US data-center demand to AI servers. The per-prompt efficiency gains (e3) do not show total use falling, and nothing in the packet meets the contradiction condition. The causal evidence is limited because Google does not say how much of its increase came from AI.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-eric-schmidts-risky-bet-on-ai-and-ae0621"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12177,
+  "output_tokens": 1619,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-bubble-trouble-3b68e1-p1",
+ "claim_revision_ref": {
+  "id": "wyea-bubble-trouble-3b68e1",
+  "version": 1,
+  "content_hash": "9e4f0e916d8226625f315f310a03d96138f6bf77383c215cae5986b01933236c"
+ },
+ "contract_ref": {
+  "id": "wyea-bubble-trouble-3b68e1",
+  "version": 1,
+  "content_hash": "9f6aa28e4469f06e2d8b45f25737b8c21f3a6334283538bae7c91c517ea60800"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org Scaling of Search and Learning roadmap reproduce o1 2024 fixed data inference compute",
+   "site.arxiv.org \"Scaling LLM Test-Time Compute\" \"PaLM\" 2024",
+   "Self Correction via Reinforcement Learning SCoRe September 2024 Gemini 1.0 Pro MATH training data",
+   "2024 self improvement GPT-4 factual accuracy without additional training data reliability study"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2409.12917v1",
+    "used": true,
+    "why": "Controlled self-correction experiments disclose existing benchmark inputs and self-generated training traces."
+   },
+   {
+    "url": "https://arxiv.org/html/2408.03314v1",
+    "used": true,
+    "why": "Experiments test improvements through inference computation and allocation."
+   },
+   {
+    "url": "https://arxiv.org/abs/2308.02312",
+    "used": true,
+    "why": "Documents substantial errors in earlier ChatGPT outputs, supporting the reliability concern without establishing the proposed data requirement."
+   },
+   {
+    "url": "https://arxiv.org/html/2306.11644v2",
+    "used": false,
+    "why": "Useful for the separate synthetic-data claim, but predates the April 2024 capability baseline."
+   }
+  ],
+  "performed_at": "2026-10-29T16:13:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2409-12917v1",
+   "source_snapshot_id": "de5190616717456fffdf0bb374ec742fb31dc5800bab448032b4557e692f174b",
+   "publisher": "Google DeepMind researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2409.12917v1",
+   "locator": "Introduction; methods and results in sections 6 and 6.1",
+   "receipt": {
+    "public_excerpt": "training on self-generated data",
+    "quote_hash": "372de6be98b948fc72a1c8be8d72f3d762c284765e783ebf222e6e3ef4b39e55",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-19",
+   "retrieved_at": "2026-10-29T07:15:58Z",
+   "relation": "contradicts",
+   "explanation": "SCoRe uses existing MATH and MBPP problems, generated correction traces, and correctness rewards. Its Gemini 1.0 Pro coding experiments improve self-correction on held-out HumanEval, demonstrating further error-correction progress without requiring an expanded stock of human-written material.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2408-03314v1",
+   "source_snapshot_id": "f303aad7eac1975154b2202f4b79babf8d9cc390249a9260173ed72f6d31fdef",
+   "publisher": "UC Berkeley and Google DeepMind researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2408.03314v1",
+   "locator": "Section 6, results on revision strategies",
+   "receipt": {
+    "public_excerpt": "substantially improve test-time compute scaling",
+    "quote_hash": "2414d09036aabac5633348a86cfe81ddebb3a2615c7443792e3eb53d9ee6a2bb",
+    "verified": "exact"
+   },
+   "event_date": "2024-08",
+   "available_at": "2024-08-06",
+   "retrieved_at": "2026-10-29T02:02:37Z",
+   "relation": "contradicts",
+   "explanation": "Experiments on an existing MATH split show that inference strategies improve checked answer performance. The methods include specialized training, but do not require collecting a human-text stock beyond what existed in April 2024.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2308-02312",
+   "source_snapshot_id": "7a0bcb24a92d296282e44bf2b5a80cc4427c89f728423470ff6a91a21a78f79e",
+   "publisher": "Samia Kabir and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2308.02312",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "52% of ChatGPT answers contain incorrect information",
+    "quote_hash": "9b405aa95437f96ef64466659496256f055c6679c6b254ddb4d1627e3fc5d77f",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2024-02-07",
+   "retrieved_at": "2026-10-29T06:47:50Z",
+   "relation": "context",
+   "explanation": "The study supports concern about unreliable programming answers before the post. It does not test whether improving them requires more human data than exists.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The cited experiments do not establish universally reliable performance across open-ended tasks.",
+  "The claim provides no threshold for progressing beyond a deeply unreliable state."
+ ],
+ "packet_hash": "fe55c71f02b98b95002e3b52692b8537037d0bd366a2a32e76270444b316a5d8"
+}

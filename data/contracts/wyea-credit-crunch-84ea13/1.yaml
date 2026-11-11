@@ -1,0 +1,55 @@
+claim_id: wyea-credit-crunch-84ea13
+version: 1
+claim_revision_ref:
+  id: wyea-credit-crunch-84ea13
+  version: 1
+  content_hash: 9a0e6f83954ec6a4f2bbb486281bc60be816770ed6d1c6891bce015b589a0dcf
+assessment_axis: historical_observation
+explicit_source_elements:
+  - OpenAI’s audited 2025 financials
+  - $34 billion of expenses
+  - $13.07 billion in losses
+  - EBITDA of $20.92 billion
+  - EBITDA margin of negative 160%
+evaluator_interpretation:
+  - Assess the 2025 annual results, not annualized revenue or a later forecast.
+  - The negative margin and surrounding discussion imply negative EBITDA, despite the missing minus sign before $20.92 billion.
+  - Preserve the explicit reference to $13.07 billion in losses as a possible labeling error; do not silently change it to revenue.
+  - An audited financial statement does not necessarily report EBITDA. A reconciliation is needed before treating operating loss as EBITDA.
+support_condition: The annual statements establish approximately $34 billion in expenses, and a valid EBITDA reconciliation establishes approximately negative $20.92 billion and a margin rounding to negative 160%. The stated loss figure must also be reconciled.
+contradiction_condition: Comparable annual statements and an EBITDA reconciliation establish materially different expenses or an EBITDA margin that does not round to negative 160%. A mislabeled input alone does not establish that the margin is false.
+measurement_requirements: Annual revenue, total expenses, operating and net losses, depreciation, amortization, interest, taxes and any EBITDA adjustments. Preserve the distinction between operating margin and EBITDA margin.
+source_requirements: Prefer the audited statements and notes. Independent reporting on reviewed or verified statements may corroborate individual figures but cannot supply a missing EBITDA bridge.
+metric_scope:
+  company: OpenAI
+  metric: 2025 EBITDA margin, with total expenses and losses as stated inputs
+  currency: USD
+  units: percent; billions of USD for monetary inputs
+  accounting_basis: company_reported
+  fiscal_or_calendar: calendar
+  period_start: 2025-01-01
+  period_end: 2025-12-31
+  stock_or_flow: flow
+  annualized_or_realized: realized
+  gross_or_net: not_applicable
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2025-01-01
+  end: 2025-12-31
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - The EBITDA amount lacks a minus sign despite the negative margin.
+  - The $13.07 billion figure is described as losses rather than revenue.
+  - The sentence may equate operating loss with EBITDA.
+  - The accounting standards and EBITDA adjustments are not specified.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T10:54:48Z
+frozen_at: 2026-10-29T10:54:48Z
+policy_version: 2026-10-28.7
+content_hash: b79f852f31c0e82a008b5f43432671bc66267f30bb1d3a4d63132cc3f3805826

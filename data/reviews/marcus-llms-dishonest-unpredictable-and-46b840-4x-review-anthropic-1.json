@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-llms-dishonest-unpredictable-and-46b840-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dishonest-unpredictable-and-46b840": "d2c00aa79a112e95b78620ba147ac85c9426852cf10646ff39aee26f24feb60f",
+  "case:marcus-llms-dishonest-unpredictable-and-4b236d": "1e519522bd1fa5d6b781be0a91abc98d8e8d429ff177cd95ff60b647f72274b5",
+  "case:marcus-llms-dishonest-unpredictable-and-538842": "62b9b572af84149b8a415f4b3869aedf838624300f0551e51f8343fd9b2a3261",
+  "case:marcus-llms-dishonest-unpredictable-and-776d17": "bc205052e76592e1b16494ada02fa75b59e50d7e2748395c98447e0c25adf987"
+ },
+ "started_at": "2026-10-29T21:45:09Z",
+ "completed_at": "2026-10-29T21:45:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own estimate in his own post. The Geoffrey Miller quote is only context."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "This is a forecast, but Marcus framed it as a probability estimate ('I estimate the probability'). The 'almost certainly' wording keeps the hedge. Under policy, a probability estimate is not scored, however close to zero it is."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract turns a stated probability into a directional forecast. Plain-reading scoring applies only to firm language, never to probabilistic language. The contract itself admits one outcome cannot test calibration. No deadline was given."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "US government plan to speed AI up, dated July 2025. It is labelled a company disclosure but is a government document. It fits continued deployment but cannot score an estimate."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's internal 11-day training pause, disclosed 2026-10-23, before the evaluation date. One developer pausing internally is not a collective suspension of deployment."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement is an explicit probability estimate. Under policy 2026-10-28.7 that is not scored, even when the estimate is near zero. It also had no deadline, and no qualifying collective pause appears in the packet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-46b840"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The claim has three parts: Claude lacks understanding (not testable), it fails to keep to instructions (testable), and it is not improving (a testable trend up to the post date)."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "In context the passage is about jailbreaks, so comparing jailbreak resistance across versions on the same test is a fair, ordinary way to measure 'getting better'. Treating partial improvement as improvement is the ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A universal jailbreak beat a guarded Claude system in February 2025. This shows failures persisted, not that nothing improved."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Claude 4 system card, May 2025, a company disclosure. On the same StrongREJECT test, jailbreak success fell from Sonnet 3.7 to Sonnet 4 and Opus 4, but stayed above zero."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Holds: failures to keep to instructions persisted by June 2025 (e1, plus e2's non-zero rates). Fails: 'not getting better', because on the same test jailbreak resistance clearly improved from Sonnet 3.7 to the Claude 4 models (e2). Whether Claude 'really understands' cannot be tested.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-4b236d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own opening statement in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. Keeps the 'depending on the circumstances' qualifier and the 'potentially do' hedge on actions."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'more or less anything' as 'safeguards do not reliably prevent varied harmful behaviour as circumstances change', not as literally unlimited, is a fair, ordinary reading of hyperbole. Counting simulated tool actions fits 'potentially do'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic study of June 2025, within the period, with disclosed methods. Models from many developers blackmailed, leaked and took harmful simulated actions depending on the scenario, and safety training did not reliably prevent this. No real-world cases were reported."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the fair plain reading, the June 2025 primary study shows harmful behaviour across developers' models that changed with the scenario, and shows safety training did not reliably prevent it. That meets the support condition. Its caveats (simulated settings, ethical options preferred when available) narrow the finding but do not contradict limited control.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-538842"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The Anthropic quote just before it is someone else's words and only context."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Correctly ties 'this' to the agentic-misalignment behaviours cited just before it (blackmail, leaking). The claim is hyperbolic but checkable as an observation about the state of the industry in June 2025."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'no clue how to stop' as 'no demonstrated reliable prevention method', rather than 'no mitigation ideas at all', is a fair, ordinary reading of the hyperbole. It goes neither for nor against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "June 2025 study with open-sourced code. It tested models from many developers and found current safety training did not reliably prevent blackmail or leaks. It proposes mitigations but demonstrates no reliable prevention."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the plain reading, the contemporaneous study across the industry's main developers shows no tested safety method reliably prevented the behaviour. The packet shows no demonstrated reliable method by June 22, 2025, so the contradiction condition is not met. The mitigation ideas it proposes qualify only the literal 'no clue', not the plain reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-776d17"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24695,
+  "output_tokens": 5272,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,112 @@
+{
+ "packet_id": "wyea-deep-impact-44a68b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-44a68b",
+  "version": 1,
+  "content_hash": "e6948ad4544050fdd9a77b798085679d206f1674f894a37da0f2c3eab5aa23a2"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-44a68b",
+  "version": 1,
+  "content_hash": "5b9b6d5fe693335faf126ecfb298e1da1fc17714b9a7870b833ce976227d7589"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.together.ai DeepSeek R1 January 2025 pricing 7",
+   "DeepSeek inference SGLang reproduction February 2025 cost throughput",
+   "Open R1 reproduction May 2025 DeepSeek methods",
+   "\"Deploy DeepSeek-R1 at scale\" \"Published\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.together.ai/blog/deploy-deepseek-r1-at-scale-fast-secure-serverless-apis-and-large-scale-together-reasoning-clusters",
+    "used": true,
+    "why": "Primary evidence of external full-model hosting and workload-dependent commercial pricing."
+   },
+   {
+    "url": "https://lmsys.org/blog/2025-05-05-large-scale-ep/",
+    "used": true,
+    "why": "Primary report of an independent inference-system reproduction, including a cost estimate and limitations."
+   },
+   {
+    "url": "https://huggingface.co/blog/open-r1",
+    "used": false,
+    "why": "Search identified a reproduction project announcement; an announced plan alone does not establish completed reproduction or serving economics."
+   },
+   {
+    "url": "https://inferencex.semianalysis.com/run/deepseek-r1-on-b200",
+    "used": false,
+    "why": "Search identified later B200 measurements. They do not directly establish the economics of the original pricing under early-2025 deployment conditions."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "together-ai-blog-deploy-deepseek-r1-at-scale-fast-secure-serverless-b0a0141cc1af",
+   "source_snapshot_id": "3d0a79f8cdf619723d442cb83ac8b198f8e01d358158c72e280a71f180c4e94e",
+   "publisher": "Together AI",
+   "source_type": "company_disclosure",
+   "url": "https://www.together.ai/blog/deploy-deepseek-r1-at-scale-fast-secure-serverless-apis-and-large-scale-together-reasoning-clusters",
+   "locator": "Section: Running DeepSeek-R1 on Together Serverless offers",
+   "receipt": {
+    "public_excerpt": "Our endpoint",
+    "quote_hash": "c5dd3c335005d47ed44ad6958e62f351d58cdd801799e0072e8f1100d9473e18",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-12",
+   "available_at": "2025-02-12",
+   "retrieved_at": "2026-10-29T16:12:05Z",
+   "relation": "supports",
+   "explanation": "The announcement establishes external hosting of full R1. Its cluster prices depend on a specified input/output mix and contract commitments, so they are not directly equivalent to DeepSeek's separate token prices.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_condition",
+   "document_id": "lmsys-org-blog-2025-05-05-large-scale-ep",
+   "source_snapshot_id": "5289b58aebb0f71e375c5ee995bc6314bcc29f3cc2c4fdaf32bc29863fa455a5",
+   "publisher": "LMSYS Org / SGLang Team",
+   "source_type": "independent_measurement",
+   "url": "https://lmsys.org/blog/2025-05-05-large-scale-ep",
+   "locator": "Section: Highlight, second bullet; introduction and Limitations and Future Work",
+   "receipt": {
+    "public_excerpt": "replicated DeepSeek’s inference",
+    "quote_hash": "fc55739bec07bbb79a6c0300e6fd201f62f8fcc6388b242eb8f3dc42e8073abc",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-05",
+   "available_at": "2025-05-05",
+   "retrieved_at": "2026-10-29T16:11:41Z",
+   "relation": "supports",
+   "explanation": "This establishes recreation of relevant inference methods and external V3 deployment. The authors estimate $0.20 per million output tokens, but identify latency and sequence-length limitations; this favors the claim without settling both full models' commercial economics.",
+   "metric_scope": {
+    "company": "SGLang Team / Atlas Cloud deployment of DeepSeek-V3",
+    "metric": "Estimated inference cost under the reported benchmark workload",
+    "currency": "USD",
+    "units": "dollars per million output tokens",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-05-05",
+    "period_end": "2025-05-05",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The strongest reproduction measures V3 under a limited workload, rather than matching both V3 and R1 commercial serving costs.",
+  "The sources do not reconcile all relevant operating costs with the original separate input and output prices.",
+  "Recreation of inference methods does not establish recreation of all training methods, if that broader condition was intended."
+ ],
+ "packet_hash": "b9915e670efea774b669a5d96a0c7c483e54a6e4e1a6cea3440702379687911c"
+}

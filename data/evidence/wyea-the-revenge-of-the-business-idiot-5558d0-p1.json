@@ -1,0 +1,99 @@
+{
+ "packet_id": "wyea-the-revenge-of-the-business-idiot-5558d0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-revenge-of-the-business-idiot-5558d0",
+  "version": 1,
+  "content_hash": "3a4cbbd04f6c9db62009ab28decff4ddad92bb95f08f5f0db862265628bf2992"
+ },
+ "contract_ref": {
+  "id": "wyea-the-revenge-of-the-business-idiot-5558d0",
+  "version": 1,
+  "content_hash": "97d724ca190822003c8359facb9425ec8a8f760bfab3f0c2e3d3b271132b082a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic May 2026 subscribers 8 13.50 revenue inference gross margin",
+   "Anthropic S-1 October 2026 filing sec 2025 inference gross margin",
+   "site.semianalysis.com 2026 \"Anthropic\" \"70%\"",
+   "\"Anthropic\" \"May\" \"2026\" \"inference\" \"SemiAnalysis\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Readable primary filing available before the evaluation cutoff. It provides Q1 results and explains functional cost classifications."
+   },
+   {
+    "url": "https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model",
+    "used": false,
+    "why": "A directly relevant analyst article, but read_page marked it PARTIAL, so its margin estimates are not cited."
+   },
+   {
+    "url": "https://www.nasdaq.com/docs/ndx-research-why-tech-outperforms-may-2026",
+    "used": false,
+    "why": "Potential secondary discussion of inference estimates; read_page timed out."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets?offer=ab-25%5C",
+    "used": false,
+    "why": "Search results described a projection for 2025, not a realized Q1 2026 inference margin."
+   }
+  ],
+  "performed_at": "2026-10-29T13:19:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Note 8, Supplemental Operating Expense Information, footnote 1; Quarterly Consolidated Statements of Operations",
+   "receipt": {
+    "public_excerpt": "customer-serving workloads.",
+    "quote_hash": "a096884b6aecdf700cf484006e2bd8cddb0e23d7832c5cd810165482f226d2f7",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The Q1 table reports $4,731 million of revenue and $3,387 million of total compute and infrastructure expense, which weighs against equating all compute spending with inference losses. However, other expense categories and the functional classification prevent treating that difference as a directly disclosed inference margin.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Company revenue less total compute and infrastructure expense",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Q1 2026 company revenue: USD 4,731 million",
+     "Q1 2026 total compute and infrastructure expense: USD 3,387 million"
+    ],
+    "formula": "4,731 - 3,387 = USD 1,344 million",
+    "rounding": "Exact subtraction of figures reported in millions; this is not an inference-profit calculation."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No cited item supplies a directly comparable Q1 inference margin with all attributable costs identified.",
+  "The claim’s accounting basis is unspecified.",
+  "The functional cost table reports annual and half-year periods rather than a standalone Q1 inference result.",
+  "The relevant analyst article could not be cited because read_page marked it PARTIAL."
+ ],
+ "packet_hash": "529b2211012912472eccfaa613c88060b467bb547d132b0146acc8a492231d02"
+}

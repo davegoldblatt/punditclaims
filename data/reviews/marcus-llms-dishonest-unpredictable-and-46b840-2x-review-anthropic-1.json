@@ -1,0 +1,107 @@
+{
+ "run_id": "marcus-llms-dishonest-unpredictable-and-46b840-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dishonest-unpredictable-and-46b840": "a51df44c8b91440659156bb3313c2d2d0cf0c4166bec36363ae5185d35f59265",
+  "case:marcus-llms-dishonest-unpredictable-and-ff4c7a": "1843161d441fa3de278f5b637777f811832ec80010a7638ef9119e0b1180b129"
+ },
+ "started_at": "2026-11-09T20:23:00Z",
+ "completed_at": "2026-11-09T20:23:28Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, stated in the first person as his estimate."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Almost certainly not' is a fair paraphrase of a near-zero probability. But the source is an explicit probability estimate, and the 'will_not' modality overstates it as a categorical forecast. Under the policy, probability language is not scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract correctly treats this as a probability estimate with no defined event, scope or deadline. It also correctly treats the money and China references as reasons, not conditions."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "A genuine, correctly dated White House release on accelerating AI. Its source type is mislabelled as official statistics; it is a policy announcement. It is consistent with Marcus's reasoning but cannot score a probability estimate."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "Marcus gave an explicit probability estimate ('I estimate the probability... barely indistinguishable from zero'), not a categorical prediction. Under the policy, probability language is not scored. The claim also has no deadline or defined pause event. The White House plan is context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-46b840"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post. Bengio and Anthropic are quoted separately and are not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The antecedent is preserved. But 'an accident waiting to happen' is an idiom of serious risk, and 'will lead to accidents' turns it into a firm, undated forecast. It also leaves the accident type and severity undefined."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract fairly declines to add an accident definition, a threshold for 'radical' improvement, or a deadline. Any score would depend on standards the speaker did not supply."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's own disclosure, dated 2025-06-20, says it had seen no agentic misalignment in real deployments. It is a company disclosure and does not test an undated risk warning."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's own disclosure, dated 2026-10-09 (before the evaluation date), reports unintended actions with minimal impact, plus remediation. It cannot settle whether safety improved 'radically' or whether a qualifying accident occurred."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a conditional warning stated as an idiom. Its antecedent ('radically up our game') has no measurable threshold, and its status is unknown. The claim also names no accident type, severity or deadline. Incidents and incident-free periods are context only, so the claim cannot be scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-ff4c7a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 13541,
+  "output_tokens": 3005,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

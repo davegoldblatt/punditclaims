@@ -1,0 +1,58 @@
+claim_id: wyea-annualized-enron-rate-e9c89c
+version: 1
+claim_revision_ref:
+  id: wyea-annualized-enron-rate-e9c89c
+  version: 2
+  content_hash: 2b48975fbbe2d05291181a62fe81d31a1e772d6a61917f83b2cf58bf98041c91
+assessment_axis: historical_observation
+explicit_source_elements:
+  - depreciation costs here
+  - about $1.54-per-GPU-per-hour
+  - losing nearly half of your revenue
+  - the first six years
+  - a five year long contract
+evaluator_interpretation:
+  - Assess the calculation attached to the existing contract, not a forecast that six years of business results have already occurred.
+  - Carry forward the immediately preceding assumption of $540,000 per eight-GPU B300 node.
+  - Use straight-line depreciation over six years, zero residual value and 8,760 hours per year. These are an interpretation of the illustrative calculation, not verified company accounting policies.
+  - Read losing revenue as depreciation expense relative to gross contractual revenue, not as a claim of net loss.
+  - The target covers the contract terms discussed retrospectively by the post; its service commencement date is unspecified.
+support_condition: The stated cost and six-year assumptions yield approximately $1.54 per GPU-hour, and the contract rates make that expense approximately half of revenue.
+contradiction_condition: The stated assumptions produce a materially different hourly depreciation charge or revenue share. An error in the numerical calculation can settle this without knowing the provider's actual acquisition cost.
+measurement_requirements: Keep the six-year depreciation life separate from the five-year revenue commitment. Calculate the time-weighted contractual rate and the corresponding depreciation share.
+source_requirements: Contract terms or reliable reporting of them, combined with an explicitly labeled calculation using the speaker's cost assumption.
+metric_scope:
+  company: Catalyst Compute LLC / KIDZ AI, Canopy Wave contract
+  metric: Illustrative B300 depreciation per GPU-hour and share of gross contractual revenue
+  currency: USD
+  units: USD per GPU-hour; percent of revenue
+  accounting_basis: estimate
+  fiscal_or_calendar: unknown
+  period_start: null
+  period_end: null
+  stock_or_flow: flow
+  annualized_or_realized: not_applicable
+  gross_or_net: gross
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: null
+  end: 2026-10-13
+  precision: day
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - The $540,000 cost assumption is carried forward from the preceding example.
+  - Straight-line depreciation, zero residual value and continuous hourly allocation are implicit.
+  - Nearly half has no numerical tolerance.
+  - Losing revenue could be confused with net loss.
+  - The contract has five committed years, whereas the assumed asset life is six years.
+  - No service commencement date or realized accounting period is supplied.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: true
+written_at: 2026-10-29T10:34:16Z
+frozen_at: 2026-10-29T10:34:16Z
+policy_version: 2026-10-28.7
+content_hash: e39c92d22f193bd572067e4d0a15548eb781a91004d7fafcac49ef9e7a442028

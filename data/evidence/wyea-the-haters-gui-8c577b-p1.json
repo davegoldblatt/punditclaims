@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-the-haters-gui-8c577b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-haters-gui-8c577b",
+  "version": 1,
+  "content_hash": "0baf21667ea53b6df81c4abbaa5702911c4e8d2acdff4a2ea4585a1f4eeb9028"
+ },
+ "contract_ref": {
+  "id": "wyea-the-haters-gui-8c577b",
+  "version": 1,
+  "content_hash": "8e7606e3b30de2aeaa39d4a97c4da6bed398b1a952b034d1527e9a0ca680ff4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "AI agents independent real world deployment reliable tasks 2026 evaluation",
+   "site.arxiv.org \"Measuring Agents in Production\"",
+   "site.mozilla.org 2026 Claude agent vulnerabilities Firefox 22",
+   "site.security.googleblog.com 2025 \"Big Sleep\" \"20\"",
+   "site.anthropic.com Firefox vulnerabilities agent 2026 22"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+    "used": true,
+    "why": "Read full-text passages documenting tool-based iterative vulnerability discovery. Developer evidence is corroborated by Mozilla."
+   },
+   {
+    "url": "https://blog.mozilla.org/en/firefox/ai-security-zero-day-vulnerabilities/",
+    "used": true,
+    "why": "Read in full. The software maintainer confirms repeated discoveries and fixes shipped in Firefox."
+   },
+   {
+    "url": "https://arxiv.org/html/2512.04123v4",
+    "used": true,
+    "why": "Read full-text passages. Provides material limitations concerning reliability and human oversight in production agents."
+   },
+   {
+    "url": "https://hal.cs.princeton.edu/reliability/",
+    "used": false,
+    "why": "Read in full, but the changing dashboard did not provide a sufficiently clear publication date for its current results."
+   },
+   {
+    "url": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+    "used": false,
+    "why": "Search and browser access found detailed workflow documentation, but read_page failed. It is not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T13:05:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-news-mozilla-firefox-security",
+   "source_snapshot_id": "b6ede16eab94683f3799eb13d2e3aef40e1b2c9c7b2b4354a14f7e272d742a29",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+   "locator": "Section What's next for AI-enabled cybersecurity",
+   "receipt": {
+    "public_excerpt": "real-time feedback",
+    "quote_hash": "5fb4cbe40a4c26d26b650dec78a49782c8dbbf765d8d2890f0c05f5d3b619129",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-03-06",
+   "retrieved_at": "2026-10-29T12:57:55Z",
+   "relation": "contradicts",
+   "explanation": "Anthropic describes iterative tool use in discovering Firefox vulnerabilities, with human validation and Mozilla's involvement. This establishes an agent workflow rather than a one-response chatbot demonstration, although it is developer-reported evidence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "blog-mozilla-org-en-firefox-ai-security-zero-day-vulnerabilities",
+   "source_snapshot_id": "b75adf9f03205f4b7d1abb51625a6a0dc072d3a642ca2259150df188e05eab5a",
+   "publisher": "Mozilla",
+   "source_type": "company_disclosure",
+   "url": "https://blog.mozilla.org/en/firefox/ai-security-zero-day-vulnerabilities",
+   "locator": "Opening discussion, second paragraph",
+   "receipt": {
+    "public_excerpt": "fixes for 271 vulnerabilities",
+    "quote_hash": "b42e7ef58fcdaaa0113815994b119509cae9daeb2ed9caf7d0717d8bdb79562f",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-21",
+   "available_at": "2026-04-21",
+   "retrieved_at": "2026-10-29T10:25:49Z",
+   "relation": "contradicts",
+   "explanation": "Mozilla confirms that its evaluation of Claude Mythos Preview produced many findings that were verified and fixed in a released browser. Together with the documented discovery workflow, this establishes repeated practical usefulness in a bounded task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2512-04123v4",
+   "source_snapshot_id": "d000ce7d5b21469d67791e1e24aaf9d6c5b0f524171c60c9f1da6ade08cf1fb8",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2512.04123v4",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "the top development challenge",
+    "quote_hash": "89169facd244703feaa289c86849c3657a8aebce8997af94f3f1d166bfae8247",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2026-06-04",
+   "retrieved_at": "2026-10-29T12:56:40Z",
+   "relation": "context",
+   "explanation": "This study of production deployments identifies reliability and substantial human involvement as continuing constraints. It limits any broader conclusion about autonomous agents, but does not negate the verified security use case or establish permanent impossibility.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The security disclosures do not provide a complete per-attempt success rate or establish reliability across unrelated tasks.",
+  "Mozilla was a collaboration partner, although it independently maintained the affected software and verified the practical results.",
+  "These later outcomes do not settle the present-tense assertion about agents on July 21, 2025."
+ ],
+ "packet_hash": "86d4365bff8b0ff7877b24b721bc4f7949718e3acba8546e5028c88cbdd7f984"
+}

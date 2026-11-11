@@ -1,0 +1,123 @@
+{
+ "assessment_id": "wyea-dead-money-fd5ee0-a1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-fd5ee0",
+  "version": 1,
+  "content_hash": "69b5f7b59f5bb8b869113c1009205c8d2f117249cfab72ba1208a87dd4e1af4f"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-fd5ee0",
+  "version": 1,
+  "content_hash": "ff92f97da439cec12a9c30cc62c83cbdd2b25ca0be7f6bc57569bf77f9a1b036"
+ },
+ "packet_ref": {
+  "id": "wyea-dead-money-fd5ee0-p1",
+  "content_hash": "334ac8b0a6e7638845721f2974c0d4d4fcc40ced0b58546f7226dd229a01ce40"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-09-29",
+  "end": "2026-09-29",
+  "precision": "day"
+ },
+ "public_rationale": "Issuer records establish original bond terms and show why the distinction between 2025 and 2026 issuance matters. They do not establish the September 29 replacement yields needed to verify either 35.8% or $1.2 billion. Company-wide quarterly interest expense cannot fill that gap.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "No independent repricing total was computed from incomplete inputs.",
+  "The two thresholds must be tested on the same basket and interest-cost definition."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-dead-money-ec2ec3-4x-review-anthropic-1",
+  "wyea-dead-money-ec2ec3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-dead-money-ec2ec3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-dead-money-fd5ee0",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Repricing CoreWeave's bonds at today's rates would raise their cost 35.8%, adding $1.2 billion.",
+  "kind": "observation",
+  "conditions": [
+   "if repriced at today's rates"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As you can see, repricing CoreWeave at today’s rates would increase its costs by 35.8%, adding $1.2 billion to the lifetime cost of the bonds for a company that already pays $640 million a quarter in interest.",
+   "locator": "paragraph 96",
+   "url": "https://www.wheresyoured.at/dead-money",
+   "date": "2026-09-29",
+   "document_title": "Dead Money",
+   "observed_at": "2026-10-28T22:23:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "repricing CoreWeave at today’s rates",
+    "increase its costs by 35.8%",
+    "adding $1.2 billion",
+    "lifetime cost of the bonds"
+   ],
+   "our_interpretation": [
+    "Today means September 29, 2026.",
+    "Costs means undiscounted lifetime cash interest, with the percentage increase measured against original lifetime interest.",
+    "Hold principal and original tenor constant when comparing hypothetical replacement bonds with their original terms.",
+    "Assess the bond basket discussed in context; resolve the heading's 2025 scope against the body's reference to 2025 and 2026.",
+    "The $640 million quarterly-interest aside is outside the screened normalized proposition and cannot establish the repricing result.",
+    "The metric dates identify the repricing date, not the full interest-payment period."
+   ],
+   "support_condition": "For one consistently identified bond basket, the additional lifetime interest rounds to $1.2 billion and the increase over original lifetime interest rounds to 35.8%.",
+   "contradiction_condition": "A reproducible calculation using matching principal amounts, original terms and September 29, 2026 replacement yields places either result outside its stated rounding interval."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Issuer records establish original bond terms and show why the distinction between 2025 and 2026 issuance matters. They do not establish the September 29 replacement yields needed to verify either 35.8% or $1.2 billion. Company-wide quarterly interest expense cannot fill that gap.",
+  "limitations": [
+   "No independent repricing total was computed from incomplete inputs.",
+   "The two thresholds must be tested on the same basket and interest-cost definition."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "$2.0 billion",
+    "locator": "Risk Factors, discussion of outstanding indebtedness",
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "publisher": "CoreWeave",
+    "event_date": "2025-05",
+    "available_at": "2026-03-02",
+    "explanation": "The filing identifies original 2025 debt, including this issue and the July 2031 notes. It is useful for reconstructing principal amounts but cannot determine the claimed publication-date interest increase."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "October 1, 2031.",
+    "locator": "April 9, 2026 announcement, opening paragraph",
+    "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Upsize-and-Pricing-of-1750-Million-of-Senior-Notes/default.aspx",
+    "publisher": "CoreWeave",
+    "event_date": "2026-04-09",
+    "available_at": "2026-04-09",
+    "explanation": "The announcement describes $1.75 billion of 9.750% notes priced in 2026. Their existence makes the heading-versus-body scope difference relevant, but the announcement does not identify the author's complete basket or its September replacement yields."
+   }
+  ],
+  "what_would_resolve": "A complete tranche schedule, independently dated September 29 yields, and a calculation showing original lifetime interest, incremental interest and the percentage denominator.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "44d5048a0a4dc0c98ce0ed8717c2b987614b1d5a4540aeb9a4c75ee51ff6096a",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:41:24Z"
+}

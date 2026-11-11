@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-alphaproof-alphageometry-chatgpt-3b7617-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-alphaproof-alphageometry-chatgpt-3b7617": "639048eb842f6c9540ee829564973f0a78563863f364da9aff643d7071b9a890"
+ },
+ "started_at": "2026-11-09T19:33:58Z",
+ "completed_at": "2026-11-09T19:34:22Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. The riddle example comes from Fraser, but the explanation and the claim that LLMs don't reason are Marcus's."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The wording is faithful. It keeps the general denial of reasoning and limits the retrieval point to this riddle. But the sentence mainly explains why ChatGPT failed, so it is a causal claim, as the contract's axis says. Calling it an observation fits only the parenthetical."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus did not define reasoning. The plain reading, deriving a conclusion from the problem's facts and relationships without needing reliability, is an ordinary reading of 'reasoning through the problem'. It is not stretched against him. The contract rightly keeps the general denial separate from the riddle explanation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Mechanistic preprint posted before the post. In Llama-2 7B on fictional ontologies, interventions trace attention heads carrying in-context relationships through to the answer. That meets the contract's test against the general denial. It says nothing about the ChatGPT riddle response."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed counterfactual study, available before the post. It shows large drops in performance on altered tasks, which fits Marcus's fragility concern, but also above-chance results. It establishes neither the riddle mechanism nor an absence of reasoning."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The claim that LLMs literally don't reason meets the contract's test for contradiction. e1 gives controlled, internally analysed evidence that an LLM existing in 2024 derived answers from new, supplied relationships, not a memorised answer. The riddle explanation cannot be checked: there is no original interaction record and no causal trace. Since the support condition needs both parts, the categorical denial is decisive. e2 is context only.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-3b7617"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11004,
+  "output_tokens": 2402,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

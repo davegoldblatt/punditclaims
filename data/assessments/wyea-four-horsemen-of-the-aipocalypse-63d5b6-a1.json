@@ -1,0 +1,139 @@
+{
+ "assessment_id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6-a1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6",
+  "version": 1,
+  "content_hash": "5393ba6412a821c24f2a7039459c2b512a985734853f97666b1f6e430668f690"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6",
+  "version": 1,
+  "content_hash": "18bc0f70559f92fbc9dbee853314b79dcdd120e65ea5a255dc0b8e8bd182d82d"
+ },
+ "packet_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6-p1",
+  "content_hash": "f088ef4ddc1922a55126b23a9aeb5100a73514f4ddf5b7f908c4e4de9d30f70d"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-04-13",
+  "end": "2026-04-21",
+  "precision": "day"
+ },
+ "public_rationale": "The token concern holds for input encoding: the same text can require more tokens. The broader comparison does not hold consistently. Artificial Analysis measured higher aggregate performance with about 35% fewer output tokens, while a smaller coding evaluation found equal test pass rates. Higher input-token counts therefore support one part, but do not show generally worse performance or greater total token consumption.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "Benchmark results do not rule out regressions in particular user workflows.",
+  "The independent aggregate comparison used maximum effort.",
+  "Stet tested one repository with 28 tasks; its page was updated May 1, while the reported runs occurred April 16.",
+  "The outcome depends on distinguishing input-token inflation from complete-task consumption."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-four-horsemen-of-the-aipocalypse-36a305-4x-review-anthropic-1",
+  "wyea-four-horsemen-of-the-aipocalypse-36a305-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-four-horsemen-of-the-aipocalypse-63d5b6",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Opus 4.7 appears to perform worse than its predecessor and to consume more tokens.",
+  "kind": "observation",
+  "conditions": [
+   "appears"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Things only got worse with last week’s launch of Opus 4.7, which appears to have worse performance and burn more tokens.",
+   "locator": "paragraph 26",
+   "url": "https://www.wheresyoured.at/four-horsemen-of-the-aipocalypse",
+   "date": "2026-04-21",
+   "document_title": "Four Horsemen of the AIpocalypse",
+   "observed_at": "2026-10-28T22:25:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "last week’s launch of Opus 4.7",
+    "appears to have worse performance",
+    "burn more tokens"
+   ],
+   "our_interpretation": [
+    "Compare Opus 4.7 with Opus 4.6, its predecessor in the surrounding discussion.",
+    "Read the claim as a tentative empirical comparison of task quality and token consumption, not a claim that every task becomes worse.",
+    "Use comparable tasks and disclosed reasoning settings. Keep input tokens for identical text separate from output tokens and total tokens used to complete tasks.",
+    "The target covers the previous calendar week and the observation through April 21. No benchmark or fixed token budget was named."
+   ],
+   "support_condition": "Comparable evaluations show poorer task performance and greater token consumption. Evidence limited to one task class or token category supports only that part.",
+   "contradiction_condition": "Comparable evaluations show equal or better task performance or lower token consumption. Opposing results across the two parts or across token categories warrant a mixed assessment."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The token concern holds for input encoding: the same text can require more tokens. The broader comparison does not hold consistently. Artificial Analysis measured higher aggregate performance with about 35% fewer output tokens, while a smaller coding evaluation found equal test pass rates. Higher input-token counts therefore support one part, but do not show generally worse performance or greater total token consumption.",
+  "limitations": [
+   "Benchmark results do not rule out regressions in particular user workflows.",
+   "The independent aggregate comparison used maximum effort.",
+   "Stet tested one repository with 28 tasks; its page was updated May 1, while the reported runs occurred April 16.",
+   "The outcome depends on distinguishing input-token inflation from complete-task consumption."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "1.0–1.35×",
+    "locator": "Migrating from Opus 4.6 to Opus 4.7",
+    "url": "https://www.anthropic.com/news/claude-opus-4-7",
+    "publisher": "Anthropic",
+    "event_date": "2026-04-16",
+    "available_at": "2026-04-16",
+    "explanation": "This supports increased input-token counts for some identical text. It does not establish greater total consumption per completed task."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "fewer output tokens",
+    "locator": "Key takeaways; output-token comparison",
+    "url": "https://artificialanalysis.ai/articles/opus-4-7-everything-you-need-to-know",
+    "publisher": "Artificial Analysis",
+    "event_date": "2026-04-17",
+    "available_at": "2026-04-17",
+    "explanation": "At maximum effort, this independent comparison found higher aggregate performance and lower output-token consumption. It contradicts a general regression and shows why input-token inflation cannot establish higher output usage."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "identical tests",
+    "locator": "Headline; paragraph following the comparison table",
+    "url": "https://www.stet.sh/blog/opus-4-7-zod",
+    "publisher": "Stet",
+    "event_date": "2026-04-16",
+    "available_at": "2026-05-01",
+    "explanation": "The 28-task coding comparison found the same test pass rate for Opus 4.7 and two Opus 4.6 runs. Other patch-quality measures varied, so this is a limited counterexample rather than proof of superiority on every workflow."
+   }
+  ],
+  "what_would_resolve": "A specified workload and matched product settings, with paired measurements of quality, input tokens, output tokens, and total consumption per successful task.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "b8578d31919367d4203b14a3f7c6da558dba14112571c97b48ec005c60236cc4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:08:35Z"
+}

@@ -1,0 +1,118 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-c02a12-a1",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-c02a12",
+  "version": 1,
+  "content_hash": "9e273223bc37a5b44234544b014a5eb8b69e838e21cc7df0adce32718e578f04"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-c02a12",
+  "version": 1,
+  "content_hash": "9abd20a479a210bfaa7ad9846a0ce6f5a705063c46ec5b2fb7d999a2668a5c33"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-c02a12-p1",
+  "content_hash": "f169797d758ecd04555740dfbfb4cbaf4046225030225d6f5ca29d2bd741a0da"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Retrieval experiments support the narrower proposition that access to relevant records can reduce hallucinations. Knowledge-graph studies also find errors when necessary facts are available. Neither result establishes the full explanation that frequent hallucinations arise because models reconstruct facts stochastically instead of using databases. Treating every residual error as a refutation would overstate what Marcus committed to.",
+ "evidence_ids": [
+  "e5",
+  "e6"
+ ],
+ "counterevidence_ids": [
+  "e6"
+ ],
+ "limitations": [
+  "The supporting experiment concerns structured workflow generation.",
+  "Retrieval, training, reasoning, and answer generation are not fully separated in these studies.",
+  "Having relevant records available does not ensure that the model uses them correctly."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-c02a12-4x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-c02a12-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-c02a12-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-c02a12",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs hallucinate often because they rebuild facts stochastically from fragments of text instead of using structured databases.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "And that is why they hallucinate, frequently. They wouldn’t need to do so if they actually had reliable access to relevant databases.",
+   "locator": "paragraph 27",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "that is why they hallucinate, frequently",
+    "They wouldn’t need to do so",
+    "reliable access to relevant databases"
+   ],
+   "our_interpretation": [
+    "The claim attributes frequent factual hallucinations to reconstructive generation without dependable access to factual records.",
+    "Reliable access means that correct, relevant records actually reach the answering system, not merely that a database or search tool exists.",
+    "Wouldn't need to is not automatically a guarantee of zero errors: the surrounding text explicitly calls external retrieval a partial workaround.",
+    "Evidence that retrieval helps supports a causal contribution, but does not alone establish the proposed general mechanism."
+   ],
+   "support_condition": "Controlled comparisons show that dependable access to relevant structured facts substantially reduces factual hallucinations, while isolating missing access or reconstructive generation as the causal factor.",
+   "contradiction_condition": "Controlled tests directly undermine the proposed mechanism, or show that supplying verified relevant records does not remove the information deficit invoked by the explanation. Residual errors alone do not refute a weaker contribution claim."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Retrieval experiments support the narrower proposition that access to relevant records can reduce hallucinations. Knowledge-graph studies also find errors when necessary facts are available. Neither result establishes the full explanation that frequent hallucinations arise because models reconstruct facts stochastically instead of using databases. Treating every residual error as a refutation would overstate what Marcus committed to.",
+  "limitations": [
+   "The supporting experiment concerns structured workflow generation.",
+   "Retrieval, training, reasoning, and answer generation are not fully separated in these studies.",
+   "Having relevant records available does not ensure that the model uses them correctly."
+  ],
+  "evidence": [
+   {
+    "id": "e5",
+    "relation": "supports",
+    "excerpt": "reduces hallucination",
+    "locator": "Section 1, contributions; methods and results in Sections 3 and 5.2",
+    "url": "https://arxiv.org/html/2404.08189v1",
+    "publisher": "Patrice Béchard and Orlando Marquez Ayala; arXiv",
+    "event_date": "2024",
+    "available_at": "2024-04-12",
+    "explanation": "Retrieving valid workflow elements reduces invented steps and tables. This supports a contribution from external factual access, but the task and training changes do not isolate the general explanation about stochastic reconstruction."
+   },
+   {
+    "id": "e6",
+    "relation": "context",
+    "excerpt": "containing necessary facts",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2407.12216",
+    "publisher": "Garima Agrawal et al.; arXiv",
+    "event_date": "2024",
+    "available_at": "2024-10-06",
+    "explanation": "Relevant structured information can be available while answering still fails. This limits a sufficiency reading, but does not refute Marcus's weaker claim that missing factual access contributes to hallucinations."
+   }
+  ],
+  "what_would_resolve": "Matched interventions that supply verified relevant database records, separately vary generation and reasoning, and measure the resulting factual errors across representative tasks.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "0b4f0a56940f2b3899aefd1d9d043ebf24b172031480977560ebdc25af2f90d9",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:13:20Z"
+}

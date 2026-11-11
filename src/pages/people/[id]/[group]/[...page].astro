@@ -1,0 +1,33 @@
+---
+// /people/<subject-id>/<group> and /people/<subject-id>/<group>/<n>: one
+// group of one person's claims, a page at a time. The person's own page
+// holds the Explore tool instead.
+import Base from "../../../../layouts/Base.astro";
+import Register from "../../../../components/Register.astro";
+import { release } from "../../../../lib/published.ts";
+import { personPath } from "../../../../lib/view.ts";
+import { GROUP_NOTE, GROUP_TITLE, listingsFor, type Listing } from "../../../../lib/listing.ts";
+
+export function getStaticPaths() {
+  const r = release();
+  if (!r.manifest) return [];
+  return r.subjects.flatMap((s) => listingsFor(r.live, s.id)
+    .map((l) => ({ params: { id: s.id, group: l.group, page: l.page === 1 ? undefined : String(l.page) }, props: { listing: l } })));
+}
+const { listing } = Astro.props as { listing: Listing };
+const r = release();
+const s = r.subject(listing.scope!)!;
+const title = `${GROUP_TITLE[listing.group]} by ${s.name}${listing.pages > 1 ? `, page ${listing.page} of ${listing.pages}` : ""}`;
+---
+<Base title={title} description={GROUP_NOTE[listing.group]}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol><li><a href="/register/checked">All claims</a></li><li><a href={personPath(s.id)}>{s.name}</a></li><li aria-current="page">{title}</li></ol>
+    </nav>
+    <header class="page-head">
+      <h1>{title}</h1>
+      <p class="lede">Deadlines are judged as of {r.manifest!.reference_date}. <a href={personPath(s.id)}>About {s.name} and the sources covered</a>.</p>
+    </header>
+    <Register listing={listing} subjects={r.subjects} heading={`${GROUP_TITLE[listing.group]} by ${s.name}`} />
+  </div>
+</Base>

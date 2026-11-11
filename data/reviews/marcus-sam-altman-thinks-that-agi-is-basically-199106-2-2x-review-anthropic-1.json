@@ -1,0 +1,100 @@
+{
+ "run_id": "marcus-sam-altman-thinks-that-agi-is-basically-199106-2-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-199106-2": "1e1a8446fe05175068bf2a90a3853c62366b9c481f2aa1732a0f47c5d63a300e",
+  "case:marcus-sam-altman-thinks-that-agi-is-basically-784185": "8a66ad4aeaf7eaa9eaca7c25f046c225230458d5f1d6cee12c5e8399847d7005"
+ },
+ "started_at": "2026-10-29T08:05:50Z",
+ "completed_at": "2026-10-29T08:06:16Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post, in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "Marcus's 'in which case' makes this a conditional, and the antecedent is kept. He also hedged the antecedent itself ('will likely'). So as a whole the statement is partly probabilistic, and the firm part depends on a condition."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract correctly scores this only if the antecedent is established. 'Unreliable', 'adequate augmentation' and 'comparatively little' have no agreed tests. It flags these points and gives no deadline."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a conditional forecast. Its antecedent (out-of-domain unreliability of test-time scaling) is unknown: the packet says 2025 studies point both ways, and it contains no evidence items. Under policy a conditional with an unknown antecedent is not scored. The hedged 'will likely' on the antecedent also weighs against scoring. No deadline was given.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-199106-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own unhedged statement in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Even o1 is losing money' is a present-tense, unhedged observation. The normalised proposition matches it. The 'perhaps' clause about o3 is correctly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (o1 as a product across channels unprofitable around Dec 2024–Jan 2025) is an ordinary reading of the words. Whether Marcus meant only the Pro tier changes the result, and the contract flags this."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Altman's 5 Jan 2025 post says OpenAI is losing money on Pro subscriptions. This is a company disclosure about one tier only. It is not o1's product-level P&L across Plus, Pro and API."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows the Pro tier includes o1 pro, which links the remark to o1. It does not cover o1 sold through Plus or the API, so it is partial context."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence is Altman's disclosure that the $200 Pro tier, built around o1 pro, was losing money. That fits the claim's direction but covers a different, narrower metric than o1's overall profit or loss. Nothing in the packet gives o1's results across all channels for the period, and nothing contradicts the claim. The evidence does not settle the claim as read under the contract.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sam-altman-thinks-that-agi-is-basically-784185"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26069,
+  "output_tokens": 3214,
+  "cached_input_tokens": 14866,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

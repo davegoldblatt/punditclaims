@@ -1,0 +1,126 @@
+{
+ "packet_id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f",
+  "version": 2,
+  "content_hash": "7790982245bf1d6e94b257e4f79fd67a996fdc84d25a5cd4ccc0d519cc063251"
+ },
+ "contract_ref": {
+  "id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f",
+  "version": 1,
+  "content_hash": "eea3e52820968a45e8aae9cf10ec3e2283aca7a712936424b1849acd9aded8d0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Training compute optimal large language models 2022 data parameters equally scaling",
+   "site.arxiv.org \"Scaling Laws for Neural Language Models\" 2020",
+   "Training language models to follow instructions human feedback 2022 still make mistakes hallucinate",
+   "site.openai.com \"Aligning language models to follow instructions\" \"make up\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2203.15556v1",
+    "used": true,
+    "why": "Controlled scaling experiments identify the joint importance of training tokens and parameter count."
+   },
+   {
+    "url": "https://arxiv.org/html/2001.08361v1",
+    "used": true,
+    "why": "Earlier scaling study separately examines model size, dataset size and compute."
+   },
+   {
+    "url": "https://openai.com/index/instruction-following/",
+    "used": true,
+    "why": "Documents improvements from a different training method applied to GPT-3."
+   },
+   {
+    "url": "https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback",
+    "used": false,
+    "why": "Relevant corroboration for training-method effects, but the directly relevant InstructGPT disclosure was preferred."
+   }
+  ],
+  "performed_at": "2026-10-29T09:22:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e9",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2203-15556v1",
+   "source_snapshot_id": "624d67e5b67942f3160cb0b53e8decea8528da52e59ac804d9091378cd6a514a",
+   "publisher": "DeepMind researchers / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.15556v1",
+   "locator": "Section 1, Introduction; sections 3 and 4",
+   "receipt": {
+    "public_excerpt": "equal proportions.",
+    "quote_hash": "8530d72688f437e33de46797a7461fb7585df61db1d1e837c0a4db6ff742b677",
+    "verified": "exact"
+   },
+   "event_date": "2022-03-29",
+   "available_at": "2022-03-29",
+   "retrieved_at": "2026-10-29T02:14:52Z",
+   "relation": "supports",
+   "explanation": "The experiments support a substantial role for more training data, including a smaller model trained on more tokens outperforming larger predecessors. They do not establish that data quantity predominantly caused the entire set of gains Marcus discusses; the paper also reports changes in the final model's training setup.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e10",
+   "role": "context",
+   "document_id": "arxiv-org-html-2001-08361v1",
+   "source_snapshot_id": "930b045b0cc350fe8328df568f2f389ae61dcfddf03a23edf12d49ea1a1c13df",
+   "publisher": "OpenAI researchers / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2001.08361v1",
+   "locator": "Section 4.1; section 1.1 summary of scaling results",
+   "receipt": {
+    "public_excerpt": "capacity-limited.",
+    "quote_hash": "239376e7ae9f37fe859ad2b69a33af6e040a6ae01a893880aa01f8f6727988fa",
+    "verified": "exact"
+   },
+   "event_date": "2020-01-23",
+   "available_at": "2020-01-23",
+   "retrieved_at": "2026-10-29T02:14:23Z",
+   "relation": "context",
+   "explanation": "The study identifies model size, dataset size and compute as distinct contributors to language-model loss. It cautions against a data-only explanation, but does not apportion the downstream gains of the full model sequence in Marcus's claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e11",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-instruction-following",
+   "source_snapshot_id": "ee02ff2026adaad640f12043af1b3a04eb683b65d62f052cf4069466b7fee107",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/instruction-following",
+   "locator": "Opening explanation of reinforcement learning from human feedback; Methods",
+   "receipt": {
+    "public_excerpt": "better at following instructions",
+    "quote_hash": "ce79bd80db68097da4602abdf00b56890b498c0aa5b82099664f7cbb56a64394",
+    "verified": "exact"
+   },
+   "event_date": "2022-01-27",
+   "available_at": "2022-01-27",
+   "retrieved_at": "2026-10-29T07:03:03Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI attributes these gains to supervised demonstrations and preference-based reinforcement learning applied to GPT-3, using little additional data relative to pretraining. This challenges the proposed explanation for this particular successor, but cannot determine the primary cause of all the improvements under discussion.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e10",
+  "e11"
+ ],
+ "unresolved_gaps": [
+  "No retrieved study apportions the relevant cross-generation gains among data quantity, parameter count, compute and training methods.",
+  "The studies measure different outcomes: pretraining loss, downstream benchmark performance and instruction-following preferences.",
+  "The word primarily cannot be settled merely by showing that more data helps or that an alternative method also helps."
+ ],
+ "packet_hash": "1956d718211398f75526061e4d6626837614b09267c5a3bf018377b427bbbe0a"
+}

@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-longcon-61855a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-longcon-61855a",
+  "version": 2,
+  "content_hash": "cf532cfb202698bb62c732d2f746360fb9e093db50514fce14f63abd38eab338"
+ },
+ "contract_ref": {
+  "id": "wyea-longcon-61855a",
+  "version": 1,
+  "content_hash": "b6ddf7e2026afc62a81ae1980ef1b894b4144debdbf4e8b88083db3d6df7bc0a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2024 revenue 2.7 billion subscriptions 1 billion API 11 million September 2024",
+   "OpenAI 2024 revenue subscriptions 73% 2024 actual",
+   "\"OpenAI\" \"75\" \"Friar\" \"October 28, 2024\"",
+   "\"ChatGPT\" \"11 million paying subscribers\" -site:theinformation.com -site:reddit.com -site:wheresyoured.at -site:techmeme.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.livemint.com/companies/start-ups/openai-nearly-doubles-valuation-to-157-billion-in-funding-round-11727949127921.html",
+    "used": true,
+    "why": "Read_page returned full text of syndicated Wall Street Journal reporting containing the rounded subscriber figure."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-cfo-says-75-revenue-163713534.html",
+    "used": true,
+    "why": "Full Bloomberg report of a CFO interview. Strong evidence for the contemporary revenue mix, but it does not specify a completed accounting period."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-coo-says-chatgpt-passed-11-million-paying-subscribers",
+    "used": false,
+    "why": "Read_page returned HTTP 403; not cited."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/chatgpt-subscribers-nearly-tripled-to-15-5-million-in-2024",
+    "used": false,
+    "why": "Potentially relevant later subscriber reporting, but read_page returned HTTP 403; not cited."
+   },
+   {
+    "url": "https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html",
+    "used": false,
+    "why": "Read_page returned HTTP 403. Search results described projections, which would not establish realized full-year revenue."
+   }
+  ],
+  "performed_at": "2026-10-29T20:23:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "livemint-com-companies-start-ups-openai-nearly-doubles-valuation-to-64ddb6b7b751",
+   "source_snapshot_id": "137664d923f11045300e7c221c7ff96e49eacb3dcb84c02ebe4b2becde9b91c7",
+   "publisher": "The Wall Street Journal, syndicated by Mint",
+   "source_type": "news_report",
+   "url": "https://www.livemint.com/companies/start-ups/openai-nearly-doubles-valuation-to-157-billion-in-funding-round-11727949127921.html",
+   "locator": "Paragraph beginning 'OpenAI is currently the best known company'",
+   "receipt": {
+    "public_excerpt": "11 million paying subscribers",
+    "quote_hash": "c48a0ceb04d5193f2f89e1a966c5da3874c39096f03f3cc4b4b48a139e0751f8",
+    "verified": "exact"
+   },
+   "event_date": "2024-10",
+   "available_at": "2024-10-03",
+   "retrieved_at": "2026-10-29T20:17:23Z",
+   "relation": "supports",
+   "explanation": "This corroborates the rounded numerator used in the hypothetical calculation. The calculation supports the numerical component only; the reported weekly denominator is not used.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "11,000,000 paying subscribers: rounded figure reported in this article and stipulated in the claim's context",
+     "300,000,000 monthly active users: hypothetical denominator supplied by the claim"
+    ],
+    "formula": "11,000,000 / 300,000,000 * 100 = 3.666666...%",
+    "rounding": "3.67%, rounded to two decimal places"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-cfo-says-75-revenue-163713534-html",
+   "source_snapshot_id": "2701446d45b8b0e893c271da52fac789b9451409d4d090ed46dd377bf6bd7d78",
+   "publisher": "Bloomberg, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-cfo-says-75-revenue-163713534.html",
+   "locator": "Paragraph reporting Sarah Friar's Money20/20 interview",
+   "receipt": {
+    "public_excerpt": "roughly 75%",
+    "quote_hash": "5fe4198fe259938af11572930224098296dbbabb4462b227edb1162e9308e269",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-28",
+   "available_at": "2024-10-28",
+   "retrieved_at": "2026-10-29T20:16:26Z",
+   "relation": "context",
+   "explanation": "The CFO's statement supports subscription dominance at that time, but supplies no completed accounting period. The same report gives a 5–6% conversion figure alongside weekly usage, so it cannot establish an actual monthly conversion rate below 4%.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Consumer subscription revenue as a share of total revenue",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No accessible source established the subscription share of realized revenue for the full 2024 accounting period on the specified basis.",
+  "The CFO's contemporary revenue-share statement does not identify its measurement period."
+ ],
+ "packet_hash": "e0d85ba4a46f30bee8bd2982bc8aa2e21c32691447ee9a4abfb237e4be52e19b"
+}

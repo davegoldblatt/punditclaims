@@ -1,0 +1,120 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-lying-to-you-ea6b1b-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-ea6b1b",
+  "version": 2,
+  "content_hash": "c1a60e4cfe6a710854473647fe087936299d386b141cddbf4c1dec766f198861"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-ea6b1b",
+  "version": 1,
+  "content_hash": "090f673003a0e6c0f66b8e8e68479e4915de7fc39335f5f51b1cb6892ed5d8a1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.nvidianews.nvidia.com 2026 fiscal 2026 results",
+   "site.investor.nvidia.com \"Fiscal 2026\" \"215.9\" February 25",
+   "site.oracle.com 2025 Abilene GB200 workloads September 2025",
+   "site.crusoe.ai Abilene 2025 live Nvidia Blackwell"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2605.24461v1",
+    "used": true,
+    "why": "Primary technical report measuring an operating GB200 cluster; fixes the text to the May 2026 version."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907/",
+    "used": true,
+    "why": "Readable primary financial release establishes the scope of NVIDIA's fiscal-year revenue figure."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026/",
+    "used": false,
+    "why": "read_page returned a different announcement, so its search-result text was not used as evidence."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+    "used": false,
+    "why": "read_page did not return the requested revenue passage; used the readable PDF instead."
+   },
+   {
+    "url": "https://www.oracle.com/data-centers/abilene/",
+    "used": false,
+    "why": "Read successfully, but the page did not provide a sufficiently precise publication date for an evidence item."
+   }
+  ],
+  "performed_at": "2026-10-29T12:51:54Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "arxiv-org-abs-2605-24461v1",
+   "source_snapshot_id": "836720b2b5e8c2ccc0da5981bcfb4a5bfc235609b38297b88ff72bdf0942daf2",
+   "publisher": "Ardestani and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2605.24461v1",
+   "locator": "Abstract, version 1",
+   "receipt": {
+    "public_excerpt": "a cluster of 83K GB200 GPUs",
+    "quote_hash": "97d1c492aeda569a73065fc2a8d78e63743af3a0ba09797e500c113503c40c6b",
+    "verified": "exact"
+   },
+   "event_date": "2026",
+   "available_at": "2026-05-23",
+   "retrieved_at": "2026-10-29T12:44:30Z",
+   "relation": "supports",
+   "explanation": "Operational measurements establish that relevant GPU-equipped infrastructure existed by publication, satisfying the limited construction antecedent. The paper does not identify what share of NVIDIA's 2025–2026 recognized sales this cluster represents.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-699f6ab43d6332ccaa689907",
+   "source_snapshot_id": "aa3a4b784cf45a02bbb6c7afb432ea1d842cd26c85a346c9af410dbf33a043aa",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907",
+   "locator": "Opening financial-results paragraph",
+   "receipt": {
+    "public_excerpt": "revenue was $215.9 billion",
+    "quote_hash": "ff37c7e5fe1547aabad9fd53d38b8a60b3fa3da29115d8b2576e32dd75b50b63",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T12:39:07Z",
+   "relation": "context",
+   "explanation": "This is realized company-wide fiscal-year revenue. It is not calendar-year GPU spending, an installation count or evidence of when customers put the purchased equipment into operation.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Total consolidated revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": null,
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No representative dataset links the relevant sales cohort to commissioning dates.",
+  "The evidence does not quantify GPUs purchased years before use.",
+  "The claimed accounting basis, sales-year convention and aggregate deployment threshold are unspecified.",
+  "The 2028–2029 horizon has not elapsed."
+ ],
+ "packet_hash": "7545307d786f88c618b22ebd3353a131d28708faab566a8a837fb311b6891157"
+}

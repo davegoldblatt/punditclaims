@@ -1,0 +1,92 @@
+{
+ "packet_id": "wyea-core-incompetency-dfcb20-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-dfcb20",
+  "version": 2,
+  "content_hash": "9ce096f8458a34c4dcd1a34e54fe5fb10d082ebf02a8d4958c0029c433fe093b"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-dfcb20",
+  "version": 1,
+  "content_hash": "16faffa565db286478128c4ec21f62897eabe2047f51d7e7801395e7b4012c02"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "CoreWeave 2025 \"DDTL 2.0\" \"drawn\" \"remaining\"",
+   "CoreWeave \"DDTL 2.0\" \"5.0 billion\" \"drawn\"",
+   "CoreWeave \"DDTL 1.0\" \"2025\" \"principal\" \"interest\" \"459\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q3/CoreWeave-Inc-10-Q-Q3-2025-8.pdf",
+    "used": true,
+    "why": "Reports the original facility's balance, exhausted borrowing availability, absence of principal repayments and the separate new tranche."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q4/CoreWeave-Inc-FY25-10-K-7.pdf",
+    "used": false,
+    "why": "Corroborates separate balances for DDTL 2.0 and 2.1, but the September filing already establishes the relevant draw-window outcome."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000041/crwv-20250630.htm",
+    "used": false,
+    "why": "The search result describes the extension to September; the later company-hosted filing supplies the completed-period evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T10:49:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "evidence_of_condition",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q3-coreweave-inc-54545741c3d2",
+   "source_snapshot_id": "7a33c41b0be74f6877903e70cdc8e74f473e6de99ba13c4ee8956effa7d33020",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q3/CoreWeave-Inc-10-Q-Q3-2025-8.pdf",
+   "locator": "Note 14, Delayed Draw Term Loan Facilities; also MD&A, Delayed Draw Term Loan Facility 2.0",
+   "receipt": {
+    "public_excerpt": "The Company has not made\nprincipal payments on the DDTL 2.0 Facility as of September 30, 2025.",
+    "quote_hash": "d72550596e0b3a39e433da992098284343be032247c59a0f8b44ff0b7c1f26c0",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2025-11-13",
+   "retrieved_at": "2026-10-29T10:41:05Z",
+   "relation": "contradicts",
+   "explanation": "The same filing reports approximately $5.0 billion outstanding under original DDTL 2.0 and no remaining borrowing capacity, while identifying DDTL 2.1 as a separate new tranche. With no principal repayments, the original facility had not been fully drawn to $7.6 billion.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "Gross cumulative drawings under original DDTL 2.0",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-05-16",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Original DDTL 2.0 outstanding borrowings at September 30, 2025: approximately $5.0 billion.",
+     "Principal repayments through September 30, 2025: zero.",
+     "Remaining original-facility borrowing capacity at September 30, 2025: zero."
+    ],
+    "formula": "Cumulative original-facility drawings = outstanding principal + principal repaid = approximately 5.0 + 0 = $5.0 billion, below $7.6 billion.",
+    "rounding": "Uses the filing's rounded billion-dollar balances; the shortfall is approximately $2.6 billion."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "The stated interest scenario was not triggered, so actual lower borrowing cannot test its counterfactual annual cost.",
+  "The claim's distinction between interest and principal amortization remains ambiguous."
+ ],
+ "packet_hash": "83ac93615109acb4e1c942597126e1f857ce47d3681bde04f225456e30dad709"
+}

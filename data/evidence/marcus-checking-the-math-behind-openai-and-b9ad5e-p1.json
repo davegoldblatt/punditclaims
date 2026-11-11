@@ -1,0 +1,149 @@
+{
+ "packet_id": "marcus-checking-the-math-behind-openai-and-b9ad5e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-checking-the-math-behind-openai-and-b9ad5e",
+  "version": 2,
+  "content_hash": "d34d57151d88e6608cd5dfd48c78a74122cfd65e9fd72a342dbffb44a9dcaa02"
+ },
+ "contract_ref": {
+  "id": "marcus-checking-the-math-behind-openai-and-b9ad5e",
+  "version": 1,
+  "content_hash": "577f42be3ce42a4a1a8ce31ce6ba03d7454b600de63d50d21af484e4a1c2f1f1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia May 2026 operating cash flow 95% circular financing 600 million",
+   "site.investor.nvidia.com 2027 first quarter April 26 2026 cash flows",
+   "Nvidia May 2026 \"cash\" \"600\" \"investments\"",
+   "Nvidia May 2026 \"95%\" cash flow",
+   "Nvidia 2027 Q1 CFO commentary 50.3 cash investing 2026",
+   "\"NVIDIA\" \"Q1FY27\" \"CFO\" commentary",
+   "\"NVIDIA\" \"2027\" \"10-Q\" \"April 26\" investor.nvidia.com/files"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+    "used": false,
+    "why": "Quarterly filing identified, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx",
+    "used": false,
+    "why": "read_page exposed only the title and navigation, not the financial statements."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a0e17dc3d633295d45282e6/",
+    "used": true,
+    "why": "Readable company earnings PDF contains the relevant balance sheets and quarterly cash-flow statements."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q127/Q1FY27-CFO-Commentary.pdf",
+    "used": true,
+    "why": "Readable CFO commentary explicitly distinguishes strategic investments from stock repurchases when explaining cash changes."
+   },
+   {
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "used": false,
+    "why": "Later-quarter records are outside the historical target period."
+   }
+  ],
+  "performed_at": "2026-10-29T03:11:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "s201-q4cdn-com-141608511-files-doc-financials-2027-q127-q1fy27-cfo-d21cf38d4bc8",
+   "source_snapshot_id": "5b381859f494db10b6e297d3c788a98057f69421f070e5877739e688d724af3e",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q127/Q1FY27-CFO-Commentary.pdf",
+   "locator": "Balance Sheet and Cash Flow",
+   "receipt": {
+    "public_excerpt": "These changes primarily reflect higher revenue,\noffset by outlays for stock repurchases and strategic investments.",
+    "quote_hash": "0d3600b0636bb917cd80dcf531cc5a3e13f80f62f2804e04bff6a46c76e205b0",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-26",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T02:33:52Z",
+   "relation": "contradicts",
+   "explanation": "The CFO identifies both repurchases and strategic investments as offsets to cash growth. Reconciliation using e2 reproduces approximately 95% only by combining investing and financing outflows, including substantial payments to Nvidia shareholders.",
+   "metric_scope": {
+    "company": "Nvidia",
+    "metric": "Estimated net cash generation after investment and financing outflows and its attribution to circular financing",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-01-26",
+    "period_end": "2026-04-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "e2: Operating cash inflow USD 50,344 million.",
+     "e2: Net investing outflow USD 26,429 million.",
+     "e2: Net financing outflow USD 21,283 million.",
+     "e2: Share repurchase payments USD 19,312 million; dividends USD 243 million."
+    ],
+    "formula": "Combined outflow absorption = (26429 + 21283) / 50344 × 100 = 94.772%. Investing outflow alone = 26429 / 50344 × 100 = 52.497%. Cash remaining after investing = 50344 − 26429 = 23915 million. Cash remaining after both categories = 50344 − 26429 − 21283 = 2632 million.",
+    "rounding": "Ratios rounded to 94.8% and 52.5%; dollar calculations retain reported millions."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "nvidianews-nvidia-com-gallery-download-pdf-6a0e17dc3d633295d45282e6",
+   "source_snapshot_id": "2f6c6fb665a61fda0fa92e5c53f0ae0b7bb61d7f4223873fcf6ff25f39f2ec35",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/6a0e17dc3d633295d45282e6",
+   "locator": "Shareholder-return paragraph; Condensed Consolidated Statements of Cash Flows and Balance Sheets",
+   "receipt": {
+    "public_excerpt": "As of the end of the first quarter, the company had $38.5 billion remaining\nunder its share repurchase authorization.",
+    "quote_hash": "ec04efe64fac1b02e5ae6092c35dcb2405db689a3568705725fd6e914a08a265",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-26",
+   "available_at": "2026-05-20",
+   "retrieved_at": "2026-10-29T03:05:19Z",
+   "relation": "context",
+   "explanation": "The statements supply the cash-flow inputs used in e1 and show cash and equivalents increasing by $2,632 million. Cash, equivalents, and marketable debt securities together increased by only $665 million, which supports the small-liquidity-increase premise but does not establish its circular-financing explanation.",
+   "metric_scope": {
+    "company": "Nvidia",
+    "metric": "Change in cash and cash equivalents",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-01-26",
+    "period_end": "2026-04-26",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "Ending cash and equivalents: USD 13,237 million; opening: USD 10,605 million.",
+     "Ending marketable debt securities: USD 37,098 million; opening: USD 39,065 million."
+    ],
+    "formula": "Cash increase = 13237 − 10605 = 2632 million. Increase including marketable debt securities = (13237 + 37098) − (10605 + 39065) = 665 million.",
+    "rounding": "No additional rounding."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The quoted analyst's exact classification and calculation were not independently recovered.",
+  "The statements do not separately identify every investment dollar that ultimately financed purchases of Nvidia products."
+ ],
+ "packet_hash": "3f87c31d3f422dee0f633a015c8726c103514236cb60202cd6d25f52b5b5fc2f"
+}

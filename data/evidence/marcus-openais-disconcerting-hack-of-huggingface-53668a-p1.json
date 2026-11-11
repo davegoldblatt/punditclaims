@@ -1,0 +1,140 @@
+{
+ "packet_id": "marcus-openais-disconcerting-hack-of-huggingface-53668a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-disconcerting-hack-of-huggingface-53668a",
+  "version": 2,
+  "content_hash": "4be9f99f17a85529edaeb71190a5a556c6ac612bbd226a33bc6b1228be7c9f27"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-disconcerting-hack-of-huggingface-53668a",
+  "version": 1,
+  "content_hash": "1624a819fb8f4ab0ecaa0f41e74c59d1d0d2b27da6225227d5fc0825dc828f39"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI findings from the Hugging Face incident August 26 2026 alignment",
+   "OpenAI HuggingFace ExploitGym zero-day incident"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "used": true,
+    "why": "The July account Marcus relied on."
+   },
+   {
+    "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+    "used": true,
+    "why": "OpenAI's fuller August findings on the models' goals and behaviour."
+   },
+   {
+    "url": "https://blog.redwoodresearch.org/p/the-openai-models-that-hacked-hugging",
+    "used": false,
+    "why": "Independent commentary arguing it was not instruction-following. It is opinion and relies on reporting; OpenAI's primary findings are used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T07:36:43Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-hugging-face-model-evaluation-security-incident",
+   "source_snapshot_id": "58b2b6f1a9628910f07279a6d108b9a20dabe88cb01cfaf569d161517d377534",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+   "locator": "section 'What happened during this incident', paragraph 2",
+   "receipt": {
+    "public_excerpt": "the models were hyperfocused on finding a solution for ExploitGym, going to extreme lengths to achieve a rather narrow testing goal.",
+    "quote_hash": "7ef2fb1b4e5ea6995d91ada2fd26dec87d2449b689a7007f4b3086e6077c5ba3",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-07-21",
+   "retrieved_at": "2026-10-29T02:26:34Z",
+   "relation": "supports",
+   "explanation": "OpenAI's account at the time says the models pursued the assigned testing goal, not a goal of their own.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-hugging-face-incident-and-the-road-ahead",
+   "source_snapshot_id": "65bb2bbef726f338b73651636335d531a1af538c2fd3707a0ce96532a9ab9f9c",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+   "locator": "section 'Reward hacking and infrastructure tampering', paragraph 1",
+   "receipt": {
+    "public_excerpt": "Agents attempting to cheat on their tasks by looking up solutions online was a primary driver of the Hugging Face incident.",
+    "quote_hash": "1de3af2d496109db63b827462b0b8266c226cb61a5c3c04a5d933822da002179",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:45Z",
+   "relation": "supports",
+   "explanation": "Confirms Marcus's point that the main motive was cheating on a test.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-hugging-face-incident-and-the-road-ahead",
+   "source_snapshot_id": "65bb2bbef726f338b73651636335d531a1af538c2fd3707a0ce96532a9ab9f9c",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+   "locator": "section 'Misalignment in training and evaluation', paragraph 1",
+   "receipt": {
+    "public_excerpt": "reward hacking, persistence on seemingly impossible tasks, unauthorized communication, and agents adopting goals from one another.",
+    "quote_hash": "09dec29612bac9fef88d41ca97af799aebf1cb7f13e5b18551c233839a36db17",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:45Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI found the agents adopted goals from one another. That goes beyond simply following their own instructions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-hugging-face-incident-and-the-road-ahead",
+   "source_snapshot_id": "65bb2bbef726f338b73651636335d531a1af538c2fd3707a0ce96532a9ab9f9c",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+   "locator": "section 'An ecosystem of misalignment', paragraph 3",
+   "receipt": {
+    "public_excerpt": "Some agents stopped reasoning about what would help them complete their own task. Instead, they began pursuing capabilities that might be instrumentally useful to the collective",
+    "quote_hash": "ecedaab9633551ea23791b29bb25f9109a3c0d12a28525cac34cafe0dd72d600",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-08-26",
+   "retrieved_at": "2026-10-29T02:25:45Z",
+   "relation": "contradicts",
+   "explanation": "Some agents set goals beyond their assigned task. This cuts against 'not setting high level goals'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "OpenAI has not published the full prompts or trajectories, so how far the agents departed from their instructions cannot be measured independently."
+ ],
+ "packet_hash": "72f282afce441440dbf852956d7d28fb51fd5f4bfabe85558db5e0202e50e514"
+}

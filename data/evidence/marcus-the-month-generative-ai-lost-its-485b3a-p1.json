@@ -1,0 +1,179 @@
+{
+ "packet_id": "marcus-the-month-generative-ai-lost-its-485b3a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-month-generative-ai-lost-its-485b3a",
+  "version": 2,
+  "content_hash": "fcb97d7c44457fcac95ada3f2bb67a9dd26ae5c3ebbecfc5624c63802158c382"
+ },
+ "contract_ref": {
+  "id": "marcus-the-month-generative-ai-lost-its-485b3a",
+  "version": 1,
+  "content_hash": "b1e36e2fc9b4af326edcab6e14f9371f31165eadf6784942b28d729ffed9fe4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "SpaceX June 26 2026 bonds selloff 11.74%",
+   "\"SpaceX\" \"June 26, 2026\" \"bonds\" losses",
+   "\"June 26, 2026\" \"11.74\" SpaceX",
+   "SpaceX historical stock June 26 2026 June 18 2026 11.74",
+   "\"SpaceX\" \"June 26, 2026\" \"AI\" shares bonds"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/quote/SPCX/history/?period1=1781740800&period2=1782518400",
+    "used": true,
+    "why": "Readable daily price table covers the necessary baseline and observation dates."
+   },
+   {
+    "url": "https://finance.yahoo.com/video/spacex-bonds-305m-haircut-secondary-210051955.html",
+    "used": true,
+    "why": "Readable dated summary confirms that newly issued bonds were trading below their issue prices."
+   },
+   {
+    "url": "https://businesspostcorner.com/spacex-bonds-sell-off-days-after-ai-and-rocket-groups-25bn-debt-deal/",
+    "used": true,
+    "why": "Readable reproduction of Financial Times reporting supplies bond-market comparisons and AI investment framing. Its hosting provenance limits its weight."
+   },
+   {
+    "url": "https://www.bloomberg.com/news/articles/2026-06-26/bond-traders-stunned-as-losses-on-spacex-s-new-debt-keep-growing",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://archive.vn/2026.08.13-093141/https%3A/www.bloomberg.com/news/articles/2026-06-26/bond-traders-stunned-as-losses-on-spacex-s-new-debt-keep-growing",
+    "used": false,
+    "why": "read_page returned HTTP 429."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/business-and-practice/spacex-declines-for-a-third-day-after-announcing-bond-sale-1",
+    "used": false,
+    "why": "The returned text stops at a subscription prompt; excluded as an incomplete preview."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/spcx/history/",
+    "used": false,
+    "why": "The readable table did not reach June. A pagination parameter returned the same recent rows."
+   }
+  ],
+  "performed_at": "2026-10-29T08:34:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-spcx-history",
+   "source_snapshot_id": "7f7c29705ee8e64a927848e236ea95bde12b44de0822fcb08deb353b604c2a50",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/SPCX/history?period1=1781740800&period2=1782518400",
+   "locator": "Historical Data, Close column; June 18, June 25 and June 26 rows",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:25:36Z",
+   "relation": "contradicts",
+   "explanation": "The table gives a weekly closing-price decline of 17.17%, rather than 11.74%. Even the June 26 session high was 14.38% below the preceding week's final listed close, so the discrepancy survives ordinary intraday timing within that session.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "June 18 close: USD 185.00",
+     "June 26 close: USD 153.23",
+     "June 26 high: USD 158.40"
+    ],
+    "formula": "Weekly close return = 100 × (153.23 / 185.00 − 1); return at session high = 100 × (158.40 / 185.00 − 1).",
+    "rounding": "Two decimal places: −17.17% and −14.38%."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-spcx-history",
+   "source_snapshot_id": "7f7c29705ee8e64a927848e236ea95bde12b44de0822fcb08deb353b604c2a50",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/SPCX/history?period1=1781740800&period2=1782518400",
+   "locator": "Historical Data, June 25 and June 26 rows, Close column",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:25:36Z",
+   "relation": "supports",
+   "explanation": "The daily closing-price gain was 0.15%, consistent with up slightly. This verifies the daily description at the close, not Marcus's unidentified snapshot time.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "June 25 close: USD 153.00",
+     "June 26 close: USD 153.23"
+    ],
+    "formula": "100 × (153.23 / 153.00 − 1)",
+    "rounding": "Two decimal places: +0.15%."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-video-spacex-bonds-305m-haircut-secondary-210051955-html",
+   "source_snapshot_id": "5a5a1cb1d3f85ae93c0a0830b5cab77b146e15958d3f83ba90b8d0674f09bfe9",
+   "publisher": "Blockspace, via Yahoo Finance",
+   "source_type": "secondary_summary",
+   "url": "https://finance.yahoo.com/video/spacex-bonds-305m-haircut-secondary-210051955.html",
+   "locator": "Video description",
+   "receipt": {
+    "public_excerpt": "Some of SpaceX's $25 billion bonds are already underwater",
+    "quote_hash": "e3910ec259f5c7e17746a04643c1daf4e954e368ec14726c47e29b5da05b490c",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:24:36Z",
+   "relation": "supports",
+   "explanation": "This dated summary supports weakening secondary-market bond performance. It does not independently verify the precise aggregate paper-loss estimate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "businesspostcorner-com-spacex-bonds-sell-off-days-after-ai-and-rock-98635d4be6bb",
+   "source_snapshot_id": "597c4735e6dbb4338e17f11ecc3d7cfd65b1870d732689041de940ecad00cdf0",
+   "publisher": "BusinessPostCorner, reproducing Financial Times reporting",
+   "source_type": "news_report",
+   "url": "https://businesspostcorner.com/spacex-bonds-sell-off-days-after-ai-and-rocket-groups-25bn-debt-deal",
+   "locator": "Third article paragraph",
+   "receipt": {
+    "public_excerpt": "among the worst performers",
+    "quote_hash": "9299896eaaeca72cc11d828ed9224a9c19a519fdfd492e18a716dab1ae6c3ea7",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:24:37Z",
+   "relation": "supports",
+   "explanation": "The article reports falling bond prices and widening spreads. Its discussion of a valuation resting on projected AI revenue also corroborates the AI investment framing, though it does not measure how rapidly that framing increased.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "Marcus's exact price snapshot and weekly chart convention are unknown.",
+  "The increase in AI-focused promotion was not quantified.",
+  "Direct bond transaction records were not obtained."
+ ],
+ "packet_hash": "5b9b8a9a956b1022088ac51593d8f94f71933c2d44b945fec34e3262d6311514"
+}

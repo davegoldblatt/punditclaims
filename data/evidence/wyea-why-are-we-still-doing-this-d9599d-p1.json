@@ -1,0 +1,140 @@
+{
+ "packet_id": "wyea-why-are-we-still-doing-this-d9599d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d9599d",
+  "version": 2,
+  "content_hash": "045479a9cb54f3203dc93a4f56304467c40906d1638bcdd34decfe895992866b"
+ },
+ "contract_ref": {
+  "id": "wyea-why-are-we-still-doing-this-d9599d",
+  "version": 1,
+  "content_hash": "34c391f392a2544dd639a6f3364c2c1c55975efd54e2d7fa3a4b94634f44202e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com token counting API budget max tokens November 2024",
+   "site.anthropic.com \"budget\" \"Claude 3.7\"",
+   "site.anthropic.com \"workspaces\" \"2024\" \"limits\"",
+   "LLM agents budget cost constraint completed tasks 2025 BudgetMLAgent",
+   "\"BAMAS\" \"budget\" \"arxiv\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://claude.com/resources/articles/workspaces",
+    "used": true,
+    "why": "Dated primary announcement documents monthly API spending controls before the post."
+   },
+   {
+    "url": "https://www.anthropic.com/research/visible-extended-thinking",
+    "used": true,
+    "why": "Dated primary documentation establishes a controllable thinking budget before the post."
+   },
+   {
+    "url": "https://arxiv.org/html/2511.21572v1",
+    "used": true,
+    "why": "Primary research describes advance token-cost estimates, tests useful task performance, and reports budget-overrun frequencies."
+   },
+   {
+    "url": "https://arxiv.org/abs/2511.21572",
+    "used": true,
+    "why": "Read to verify the paper's November 26, 2025 submission date and version."
+   },
+   {
+    "url": "https://platform.claude.com/docs/en/build-with-claude/token-counting",
+    "used": false,
+    "why": "The live documentation includes later models and does not date the retrieved wording. It also counts inputs rather than predicting total task consumption."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+    "used": false,
+    "why": "Read successfully; the research article supplies the same relevant thinking-budget capability with a concise quotation."
+   },
+   {
+    "url": "https://chenzhenpeng18.github.io/papers/AAAI2026.pdf",
+    "used": false,
+    "why": "Read successfully, but the versioned arXiv HTML has cleaner text and an independently checked submission date."
+   }
+  ],
+  "performed_at": "2026-10-29T22:26:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "claude-com-resources-articles-workspaces",
+   "source_snapshot_id": "b92c0c32d2e69ba2190d78331b6832220443f0e9f51eec5cf1ca7d45b155cafc",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://claude.com/resources/articles/workspaces",
+   "locator": "Managing multiple deployments; first capability",
+   "receipt": {
+    "public_excerpt": "Implement monthly spend limits",
+    "quote_hash": "80dbe518f31b43d3d838aa6d1b9510a6bf031e69b7875f300b3088bbff440a51",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-10",
+   "available_at": "2024-09-10",
+   "retrieved_at": "2026-10-29T21:12:44Z",
+   "relation": "contradicts",
+   "explanation": "Anthropic documented a way to constrain monthly API expenditure before the post. This contradicts the claim that every form of budgeting is unavailable, but does not guarantee that a task finishes before its budget is exhausted.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-visible-extended-thinking",
+   "source_snapshot_id": "81277e73d8a942c1bcddf6ff391f2ca065e9402cabaa9db685a4481666f08495",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/visible-extended-thinking",
+   "locator": "Introduction, following the description of extended thinking mode",
+   "receipt": {
+    "public_excerpt": "“thinking budget”",
+    "quote_hash": "bf779f432c1ce5812219f587f0003101b390b0a486f44f14b0617fcbd1eabda7",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-24",
+   "available_at": "2025-02-24",
+   "retrieved_at": "2026-10-29T22:15:43Z",
+   "relation": "contradicts",
+   "explanation": "A pre-post model exposed a developer-controlled reasoning budget. This provides control over one source of variable consumption, rather than exact prediction of an entire multi-call task.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2511-21572v1",
+   "source_snapshot_id": "8e71a89da7ccbe6b6247367f81e3a214c248ccedae370428753c21ef25fd3dad",
+   "publisher": "arXiv; Liming Yang and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2511.21572v1",
+   "locator": "RQ1; Budget adherence of BAMAS, discussion of Table 3",
+   "receipt": {
+    "public_excerpt": "BAMAS incurs no OOB tasks.",
+    "quote_hash": "13e7de2b7577845abfc04cbc96d2410d2be1480051fbf3cd13ec3c281e256f1d",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-26",
+   "retrieved_at": "2026-10-29T22:16:51Z",
+   "relation": "contradicts",
+   "explanation": "The study uses advance token-cost estimates and reports useful task performance with no budget overruns on this dataset. It also reports overruns on MBPP and MATH, supporting the narrower concern about uncertainty while contradicting the impossibility of practical budgeting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These sources do not establish exact advance token prediction for arbitrary prompts.",
+  "The benchmark results do not establish reliable fixed-price completion for unrestricted consumer coding projects."
+ ],
+ "packet_hash": "aa51761d18b1a459bc11d82b4b50613d5500d68ac780c9805ed2280eca9c0ddd"
+}

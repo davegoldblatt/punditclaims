@@ -1,0 +1,137 @@
+{
+ "assessment_id": "marcus-how-not-to-test-gpt-3-1a2e80-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-1a2e80",
+  "version": 1,
+  "content_hash": "a32978a0262fa5383d107b21d628c24de76fbd258d526f839c02dcf584fd80f5"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-1a2e80",
+  "version": 1,
+  "content_hash": "2f12b85c7e9a4b3d775d5777088ff3ed248108435be2c4db35252c71a2fd1a80"
+ },
+ "packet_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-1a2e80-p1",
+  "content_hash": "018eb7ba6d36472f9b65c54f77d85ef8c7d0cecd7a5f956befdedc8e24f92bcf"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2022-01-01",
+  "end": "2023-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "Contemporary evaluations document frequent direct counting errors across several models. Reasonable prompting improved performance substantially, but errors remained. The qualification “reliably” matters: Codex reached 93.2% on one counting evaluation, and program execution raised another result to 96.7%. The evidence supports unreliable direct counting, not an inability to count or to build a useful counting system.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "Reliability has no speaker-specified threshold; a human-comparative interpretation would give more weight to Codex's strong result.",
+  "Accuracy depends strongly on prompts and task construction.",
+  "The research papers do not specify exact experiment dates; their results are dated at year precision.",
+  "The chronology of the first counting tests is not adjudicated."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-not-to-test-gpt-3-07ba9a-4x-review-anthropic-1",
+  "marcus-how-not-to-test-gpt-3-07ba9a-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-not-to-test-gpt-3-07ba9a-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-not-to-test-gpt-3-1a2e80",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs cannot count reliably.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "People had been testing these Ais abilities at simple arithmetic for years before it occurred to anyone to check whether they can count. (They can’t, reliably).",
+   "locator": "paragraph 49",
+   "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+   "date": "2023-02-17",
+   "document_title": "How Not to Test GPT-3",
+   "observed_at": "2026-10-29T00:04:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "GPT and similar AI systems",
+    "whether they can count",
+    "They can’t, reliably"
+   ],
+   "our_interpretation": [
+    "Assess the counting assertion identified by the screens, separately from the historical assertion about when researchers first tested counting.",
+    "The plain reading is that contemporary GPT-like models frequently make mistakes when directly counting items or characters. It does not mean they never produce correct counts.",
+    "Include ordinary and step-by-step prompting. Treat execution of externally generated programs separately from the model answering directly.",
+    "For this ongoing research-state observation, use the latest completed research year and the elapsed publication year: 2022 through 17 February 2023. This observation window is evaluator-selected."
+   ],
+   "support_condition": "Repeated evaluations show appreciable counting errors across contemporary GPT-like models or ordinary counting tasks, including errors that remain with reasonable prompting.",
+   "contradiction_condition": "Representative evaluations show consistently dependable direct counting across varied ordinary tasks and contemporary models, with reported failures confined to unusual or misleading prompts."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Contemporary evaluations document frequent direct counting errors across several models. Reasonable prompting improved performance substantially, but errors remained. The qualification “reliably” matters: Codex reached 93.2% on one counting evaluation, and program execution raised another result to 96.7%. The evidence supports unreliable direct counting, not an inability to count or to build a useful counting system.",
+  "limitations": [
+   "Reliability has no speaker-specified threshold; a human-comparative interpretation would give more weight to Codex's strong result.",
+   "Accuracy depends strongly on prompts and task construction.",
+   "The research papers do not specify exact experiment dates; their results are dated at year precision.",
+   "The chronology of the first counting tests is not adjudicated."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Few-shot prompting performance",
+    "locator": "Table 3, Object Counting row and caption",
+    "url": "https://arxiv.org/pdf/2210.09261v1",
+    "publisher": "Suzgun et al., arXiv",
+    "event_date": "2022",
+    "available_at": "2022-10-17",
+    "explanation": "Object-counting accuracy was 44.0%, 45.2%, and 51.2% with answer-only prompts for InstructGPT, Codex, and PaLM; step-by-step prompts raised these to 77.2%, 93.2%, and 83.2%. The Codex result exceeded the average human-rater score of 86.1%, materially limiting any claim of general counting incapacity."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "reaching 96.7%",
+    "locator": "Section 4, Algorithmic Tasks; Table 3",
+    "url": "https://arxiv.org/html/2211.10435v1",
+    "publisher": "Gao et al., arXiv",
+    "event_date": "2022",
+    "available_at": "2022-11-18",
+    "explanation": "The study's Codex baseline scored 37.6% with direct answers and 73.0% with step-by-step answers. The 96.7% result used generated programs and a Python interpreter, showing an effective workaround while leaving direct counting errors substantial."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "unable to count",
+    "locator": "Main post, paragraph beginning “In my tests so far” and following transcript",
+    "url": "https://www.lesswrong.com/posts/AcDsTqA2vbbzmteuE/can-chatgpt-count",
+    "publisher": "p.b., LessWrong",
+    "event_date": "2023-01-07",
+    "available_at": "2023-01-07",
+    "explanation": "The main post records several incorrect character counts, alongside a correct zero count. It corroborates failures in the contemporary chat interface but is an informal, selected demonstration rather than a representative accuracy estimate."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "05eeb02d2e324f2ce260cb9ce8d670d8ebd53d6f45643b62a0396ed780167a2e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:33:07Z"
+}

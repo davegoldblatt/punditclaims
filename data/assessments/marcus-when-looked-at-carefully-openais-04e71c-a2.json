@@ -1,0 +1,133 @@
+{
+ "assessment_id": "marcus-when-looked-at-carefully-openais-04e71c-a2",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-04e71c",
+  "version": 1,
+  "content_hash": "73c99af4715e6269be9c35cafd3983545dda7e8f31148bdfb8f5963f38bc0bb2"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-04e71c",
+  "version": 1,
+  "content_hash": "fe6b76178db490a7dc8e1c0b58a44f1b9ceb4ab01fc496a02d7e0f7a0cea0c65"
+ },
+ "packet_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-04e71c-p1",
+  "content_hash": "7d28e270902db5cc95dfb8e0dc289d00ecf8fcb044556db112174ed1f8b22a6a"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-01-31",
+  "end": "2024-02-04",
+  "precision": "day"
+ },
+ "public_rationale": "In OpenAI's data released January 31, 2024, all five expert comparisons at an accuracy threshold of at least 8 favor model access [e3]. For five independent fair signs, the probability of all five taking a specified direction is 1/32, or 0.03125, below 0.05 in a one-sided test [e1][e2]. The study reuses participants across tasks, and the supplied evidence does not establish that its five comparison signs meet that model's assumptions [e2][e3]. The directional premise and conditional arithmetic hold, but they do not settle the claimed study-level probability or significance [e1][e2][e3].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Shared participants do not by themselves prove that the claimed probability is false [e3].",
+  "The packet provides no validated joint null distribution accounting for dependence and possible ties."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-when-looked-at-carefully-openais-02bc2d-4x-review-anthropic-1",
+  "marcus-when-looked-at-carefully-openais-02bc2d-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-when-looked-at-carefully-openais-04e71c-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-when-looked-at-carefully-openais-04e71c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Because all five expert tasks fell in the same direction, which has a 1-in-32 chance, the result is significant even by that crude measure.",
+  "kind": "observation",
+  "conditions": [
+   "crude coin-flip style measure"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "(If you flipped 5 coins, you have only a 1 in 32 chance of all tails, and that’s how it came out. Even by that crude measure, the result is significant.)",
+   "locator": "paragraph 23",
+   "url": "https://garymarcus.substack.com/p/when-looked-at-carefully-openais",
+   "date": "2024-02-04",
+   "document_title": "Diving deep into OpenAI’s new study on LLM’s and bioweapons",
+   "observed_at": "2026-10-29T00:01:39Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "5 coins",
+    "1 in 32 chance of all tails",
+    "that's how it came out",
+    "Even by that crude measure, the result is significant"
+   ],
+   "our_interpretation": [
+    "Assess both the arithmetic and its application to the five expert threshold comparisons.",
+    "Read the predicted direction as one-sided and significant as below the conventional 0.05 threshold.",
+    "The plain reading asserts statistical evidence about the study, rather than merely a hypothetical calculation for independent coins.",
+    "The study-result period is its January 31, 2024 release through the post date; statistical references provide methodological context."
+   ],
+   "support_condition": "All five comparisons favor model access, and a justified null model makes their signs independent with probability one-half each, yielding a valid one-sided probability of 1/32.",
+   "contradiction_condition": "The directional premise is false, or an appropriate null-distribution analysis establishes that the claimed probability or significance conclusion is invalid."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "In OpenAI's data released January 31, 2024, all five expert comparisons at an accuracy threshold of at least 8 favor model access [e3]. For five independent fair signs, the probability of all five taking a specified direction is 1/32, or 0.03125, below 0.05 in a one-sided test [e1][e2]. The study reuses participants across tasks, and the supplied evidence does not establish that its five comparison signs meet that model's assumptions [e2][e3]. The directional premise and conditional arithmetic hold, but they do not settle the claimed study-level probability or significance [e1][e2][e3].",
+  "limitations": [
+   "Shared participants do not by themselves prove that the claimed probability is false [e3].",
+   "The packet provides no validated joint null distribution accounting for dependence and possible ties."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "the one sided and two sided tests.",
+    "locator": "Note following the examples; see also Description",
+    "url": "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/signtest.htm",
+    "publisher": "National Institute of Standards and Technology",
+    "event_date": "2023-12-11",
+    "available_at": "2023-12-11",
+    "explanation": "NIST describes sign testing through a binomial distribution with probability one-half and distinguishes test direction. Under independent fair signs, Marcus's one-sided arithmetic is correct."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "the observations are independent",
+    "locator": "Sign-test example, second step: checking assumptions",
+    "url": "https://www-users.york.ac.uk/~mb55/yh_stats/sigtst.htm",
+    "publisher": "University of York, Martin Bland",
+    "event_date": "2020-07-13",
+    "available_at": "2020-07-13",
+    "explanation": "This identifies the assumption needed to turn the coin analogy into a significance test. Five positive differences alone do not establish that assumption."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "0,ideation,7,2,1,6,0,23,2075",
+    "locator": "Header and first two records; complete file repeats participant identifiers across five tasks",
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "publisher": "OpenAI",
+    "event_date": "2024-01-31",
+    "available_at": "2024-01-31",
+    "explanation": "The published data support the directional premise, but reuse participants across tasks. That makes independence a substantive question; repeated participants alone do not prove the numerical probability false."
+   }
+  ],
+  "what_would_resolve": "A reproducible joint null-distribution analysis that accounts for shared participants, task dependence and possible ties would establish whether the five positive comparisons warrant the claimed 1/32 probability and one-sided significance below 0.05.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9e0893393d10cf9d6843ab45020ca5beeef516f54513ace8de90a1127b70b5e5",
+ "supersedes_assessment_id": "marcus-when-looked-at-carefully-openais-04e71c-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T16:47:38Z"
+}

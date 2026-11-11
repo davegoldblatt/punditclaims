@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-24-seriously-embarrassing-hours-for-b4c4f1-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-24-seriously-embarrassing-hours-for-b4c4f1": "767c3e80771bc2f023664d356f3f304559e24021e59aaff020c209b3a0995382"
+ },
+ "started_at": "2026-10-29T17:10:35Z",
+ "completed_at": "2026-10-29T17:10:53Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own prose in his Substack post. He cites TIME's reporting, but the sentence is his own claim, and he endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the sentence: a large model alongside a massive amount of human labor for filtering harmful content. It is a present-tense factual description, so it is an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading treats 'massive' as sustained, large-volume labeling for harmful-content safeguards, not constant human review of each response. That is an ordinary, fair reading given the context about Kenyan labelers. The result depends on that reading of 'massive', which has no threshold."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TIME investigation, published the same day as the post. It reports about three dozen workers in three teams, each labeling 150–250 passages per shift, on sexual abuse, hate speech and violence under contracts with Sama, an outsourcing firm. Per the item, OpenAI confirmed this work fed ChatGPT's toxicity detector. This is substantial, organized harmful-content labeling."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own launch page (a company disclosure). It shows human trainers writing conversations and ranking responses (RLHF), which confirms human labor in development. But the excerpt mostly concerns general quality and gives no scale, so on its own it doesn't establish the harmful-content part."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "TIME's same-day reporting shows organized, sustained, large-volume human labeling of harmful text that contributed to ChatGPT's safeguards. OpenAI's own launch page corroborates extensive human trainer work in development. Under the contract's fair plain reading, this meets the support condition. Nothing in the packet shows the work was negligible or unconnected to ChatGPT.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-24-seriously-embarrassing-hours-for-b4c4f1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9874,
+  "output_tokens": 1727,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

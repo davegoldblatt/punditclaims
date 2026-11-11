@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-horse-rides-astronaut-af6c21-p1",
+ "claim_revision_ref": {
+  "id": "marcus-horse-rides-astronaut-af6c21",
+  "version": 2,
+  "content_hash": "e2baa3eb0a81fa09a30bfe8b945f2b7792dbb78c2783c006d070e311ed35957a"
+ },
+ "contract_ref": {
+  "id": "marcus-horse-rides-astronaut-af6c21",
+  "version": 1,
+  "content_hash": "7545ef356ea3bc312f483a510f0673b2a7b1709f669a960d3e68ad09fda688d2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Imagen photorealistic text image diffusion models deep language understanding compositionality limitations 2022",
+   "Hierarchical Text Conditional Image Generation CLIP Latents 2022 limitations binding attributes relations",
+   "\"Imagen\" \"T5-XXL\" \"CLIP\" \"Figure 6\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2204.06125v1",
+    "used": true,
+    "why": "The original DALL-E 2 paper directly documents attribute-binding failures."
+   },
+   {
+    "url": "https://imagen.research.google/",
+    "used": true,
+    "why": "The original project description explains relevant design differences and comparative evaluation results."
+   },
+   {
+    "url": "https://arxiv.org/html/2205.11487v1",
+    "used": true,
+    "why": "The May 2022 paper corroborates the project description, including T5-versus-CLIP comparisons on compositional prompts."
+   },
+   {
+    "url": "https://papers.nips.cc/paper_files/paper/2022/file/ec795aeadae0b7d230fa35cbaf04c041-Paper-Conference.pdf",
+    "used": false,
+    "why": "The later conference version confirms the comparison, but the original paper and project page suffice."
+   }
+  ],
+  "performed_at": "2026-10-29T17:13:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2204-06125v1",
+   "source_snapshot_id": "251288779692bb5ebe93ffe74079ae3771599c303d51721b30c168b48fdb6ccd",
+   "publisher": "OpenAI researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2204.06125v1",
+   "locator": "Section 7, Limitations and Risks; Figure 14",
+   "receipt": {
+    "public_excerpt": "worse at binding attributes to objects",
+    "quote_hash": "2b980c6699c3298e7275fc5916f2a444d545e0b3aed0d2b1de18203ce0fd866d",
+    "verified": "exact"
+   },
+   "event_date": "2022-04",
+   "available_at": "2022-04-13",
+   "retrieved_at": "2026-10-29T06:55:22Z",
+   "relation": "supports",
+   "explanation": "The DALL-E 2 paper documents difficulty assigning the correct colors to stacked cubes. This supports the component asserting that DALL-E 2 had already exhibited similar problems.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "imagen-research-google-root",
+   "source_snapshot_id": "e819dc6952ea309fe1fa4fa294a9dd88b3781657c6aee2c74931f6138abb4da0",
+   "publisher": "Google Research, Brain Team",
+   "source_type": "company_disclosure",
+   "url": "https://imagen.research.google/",
+   "locator": "DrawBench section; Related Work explains architectural differences",
+   "receipt": {
+    "public_excerpt": "Human raters strongly prefer Imagen over other methods",
+    "quote_hash": "66e089a708c8f0fa3c9ac92aff5508fc00a5a30a3db492313702d4185bbbf040",
+    "verified": "exact"
+   },
+   "event_date": "2022-05",
+   "available_at": "2022-05-23",
+   "retrieved_at": "2026-10-29T04:11:53Z",
+   "relation": "contradicts",
+   "explanation": "The project describes Imagen's larger pretrained language encoder and omission of DALL-E 2's latent prior, alongside better DrawBench alignment. Together with the original paper's encoder comparison, this provides a principled reason to expect relevant performance differences, although it does not establish a complete solution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "Neither the speaker nor these evaluations defines how large a difference must be to count as profound.",
+  "Preference comparisons do not establish complete reliability on role reversal or block stacking."
+ ],
+ "packet_hash": "fd61113c9797d3f9aca719b450f673bde8a2db7fe1b23b9016e4b6235640e6c7"
+}

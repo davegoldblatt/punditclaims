@@ -1,0 +1,170 @@
+{
+ "packet_id": "wyea-ai-is-slowing-down-e06ef5-p2",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-slowing-down-e06ef5",
+  "version": 1,
+  "content_hash": "77ae7d0858915ac1e9d3a311a449d63fdc1f61d315b56fd823785b68aa59f637"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-slowing-down-e06ef5",
+  "version": 2,
+  "content_hash": "e8affbab88b076317663bdded9d19ae1b97a65b2ad2dfd41ec88ec33b8f3129e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI o3 price drop 80%",
+   "ARC Prize ARC-AGI-2 results cost per task 2026",
+   "Anthropic S-1 filing net loss revenue first half 2026"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://simonwillison.net/2025/Jun/10/o3-price-drop/",
+    "used": true,
+    "why": "Contemporaneous record of OpenAI's 80% price cut on o3, the same model, with before and after prices."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-5",
+    "used": true,
+    "why": "Anthropic's own announcement of $5/$25 pricing for Opus 4.5, down from the earlier Opus price of $15/$75."
+   },
+   {
+    "url": "https://arxiv.org/abs/2603.13372",
+    "used": true,
+    "why": "Reports a 390x fall in measured per-task cost on ARC-AGI within one year."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+    "used": true,
+    "why": "Shows Anthropic's total compute cost rising. Context for the total-spending reading."
+   },
+   {
+    "url": "https://venturebeat.com/ai/openai-announces-80-price-drop-for-o3-its-most-powerful-reasoning-model",
+    "used": false,
+    "why": "Same fact as the Simon Willison post; not needed."
+   }
+  ],
+  "performed_at": "2026-10-31T19:23:03Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "simonwillison-net-2025-jun-10-o3-price-drop",
+   "source_snapshot_id": "d7ff5a0d318ebf6277a84f1eb613fe6a50064af1d7679dc1a8ae92e44a1be8e6",
+   "publisher": "Simon Willison's Weblog",
+   "source_type": "secondary_summary",
+   "url": "https://simonwillison.net/2025/Jun/10/o3-price-drop",
+   "locator": "Paragraph 1",
+   "receipt": {
+    "public_excerpt": "OpenAI just dropped the price of their o3 model by 80% - from $10/million input tokens and $40/million output tokens to just $2/million and $8/million for the very same model.",
+    "quote_hash": "f12d4a22baac99ca0690818e1ee322c3c7de3bcffd6403a9462a55f298a3dde6",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-10",
+   "available_at": "2025-06-10",
+   "retrieved_at": "2026-10-29T06:48:06Z",
+   "relation": "contradicts",
+   "explanation": "Customers' price for the very same model fell 80%. That directly contradicts 'costs have only ever increased' for customers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-news-claude-opus-4-5",
+   "source_snapshot_id": "903a44766cb359392ef9320f2bc5029f7ace3f6162cd21935c58f5edac839607",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "locator": "Paragraph 4",
+   "receipt": {
+    "public_excerpt": "Pricing is now $5/$25 per million tokens—making Opus-level capabilities accessible to even more users, teams, and enterprises.",
+    "quote_hash": "0fe23c04b9679b1069f1ad0600082e910eae1f38cd430c876c076465f37407b9",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-24",
+   "retrieved_at": "2026-10-29T08:55:27Z",
+   "relation": "contradicts",
+   "explanation": "Anthropic cut its Opus-tier API price to $5/$25 per million tokens, from the $15/$75 for Opus 4 recorded in e1's source. The price of top-tier Claude use fell by two-thirds.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Opus 4 price $15 input / $75 output per million tokens (simonwillison.net, 2025-06-10)",
+     "Opus 4.5 price $5 input / $25 output per million tokens (anthropic.com)"
+    ],
+    "formula": "(15-5)/15 = 0.667; (75-25)/75 = 0.667",
+    "rounding": "rounded to nearest percent: 67% reduction"
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2603-13372",
+   "source_snapshot_id": "b37559db79e662e788678d3d979115d2ebd0b43156fd4a12fd1857cb097278ea",
+   "publisher": "arXiv (Vahdati et al.)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2603.13372",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Cost fell 390x in one year (o3's $4,500/task to GPT-5.2's $12/task), although this largely reflects reduced test-time parallelism.",
+    "quote_hash": "13709b4e25af21af1a7dde1717ee1e9abbe777728de6ce04881e7de16a7941c4",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-03-09",
+   "retrieved_at": "2026-10-31T19:18:05Z",
+   "relation": "contradicts",
+   "explanation": "Measured per-task cost on a benchmark fell sharply within a year. The authors note that the fall partly reflects less parallel compute.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "finance-yahoo-com-technology-live-anthropic-ipo-live-updates-fronti-2e5602dc7b26",
+   "source_snapshot_id": "c0f8d3cd94e3cc4f71c0c1d7890051ac2c757f650125e1ccac592c2785114400",
+   "publisher": "Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+   "locator": "Live update, Oct 26, 2026, 3:53 PM UTC entry",
+   "receipt": {
+    "public_excerpt": "The cost of the computing power that runs its Claude models rose far less, to $5.6 billion from $3.4 billion.",
+    "quote_hash": "1cdc13668f9e63d77646788b6003090dc01809039ef39ac048ce699e116168d4",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-29T00:50:38Z",
+   "relation": "context",
+   "explanation": "A provider's total compute cost rose from Q1 to Q2 2026. That fits the total-spending reading of his claim, though it does not show that unit costs rose.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "compute cost (cost of computing power for Claude models)",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "Provider unit inference costs (cost per token served) are not directly disclosed in the sources read.",
+  "Total customer spending may have risen as reasoning models use more tokens. That alternative reading is not settled here."
+ ],
+ "packet_hash": "b7e2b96a48d8ceaa39495d155162337906b716c129665e47fdddd275270952ef"
+}

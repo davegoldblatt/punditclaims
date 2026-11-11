@@ -1,0 +1,117 @@
+{
+ "packet_id": "wyea-costs-9f9b2a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-costs-9f9b2a",
+  "version": 2,
+  "content_hash": "a57ce69340efc49fe721580e63e0c093e70c9e2010f182557bb5f0fca7d52093"
+ },
+ "contract_ref": {
+  "id": "wyea-costs-9f9b2a",
+  "version": 1,
+  "content_hash": "fcefc4d0b5b10c72abceb575bfed4374617fe80cf80ea99bed9a863a8036ab73"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic monthly AWS spending January 2024 September 2025 costs decline",
+   "Anthropic monthly AWS costs 2024 \"November\" \"146.5\"",
+   "Anthropic \"cost-cutting\" 2025 AWS Zitron",
+   "Anthropic \"monthly\" \"burn\" \"decreased\" \"2025\"",
+   "Anthropic AWS spend \"April\" \"221.6\" -site:wheresyoured.at"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wheresyoured.at/costs",
+    "used": true,
+    "why": "Used only to identify the dataset and material internal counterevidence, not to establish that the speaker was right."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial context showing that hosting prepayments affect cash flows. Its annual figures do not establish the claimed monthly pattern."
+   }
+  ],
+  "performed_at": "2026-10-29T20:03:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, Cash Flows, Operating Activities; discussion of 2024",
+   "receipt": {
+    "public_excerpt": "prepaid hosting",
+    "quote_hash": "a28fe8120f9f47547f96353e7bbd491ac8ffddc968bb3b2574c4a11839e796ff",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing attributes the annual increase in operating cash use principally to hosting prepayments. This illustrates why a cloud spending series cannot automatically establish monthly net cash burn or changes in operating efficiency.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual net cash used in operating activities",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "wyea-costs",
+   "source_snapshot_id": "8ac371135902caf982f08d2c50f51723c1a320997238188111b5052c81613952",
+   "publisher": "Where's Your Ed At",
+   "source_type": "news_report",
+   "url": "https://www.wheresyoured.at/costs",
+   "locator": "Anthropic’s Amazon Web Services Spend In 2024, introductory sentence and following monthly list",
+   "receipt": {
+    "public_excerpt": "Here’s its monthly AWS spend.",
+    "quote_hash": "4a04481fc61b2cb853844bef124e662048510ffa59c209ca1c8fb37493315b58",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-10-20",
+   "retrieved_at": "2026-10-28T22:29:09Z",
+   "relation": "context",
+   "explanation": "The following list reports declines from April to May, August to September, and October to November 2024. These are internal counterevidence to a strict claim that AWS spending only increased, but the underlying invoices are not supplied and AWS payments are not total cash burn.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Monthly AWS payments after discounts and credits",
+    "currency": "USD",
+    "units": "millions per month",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No authenticated monthly net cash-burn series was established for the target period.",
+  "The reported AWS series is not independently authenticated and omits other cash receipts and payments.",
+  "The evidence does not establish whether billing fluctuations reflect deliberate cost reductions, payment timing, or changing workloads."
+ ],
+ "packet_hash": "bc55e2eec412a4f5cb065b4ba7e17eb6a549d8448e263feb11d1b764a4347787"
+}

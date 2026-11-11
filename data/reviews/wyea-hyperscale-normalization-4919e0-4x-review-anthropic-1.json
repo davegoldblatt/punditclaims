@@ -1,0 +1,215 @@
+{
+ "run_id": "wyea-hyperscale-normalization-4919e0-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-hyperscale-normalization-4919e0": "f0a637f6292619e6679925cc7d29540361ccf831e710bf70a999d13cfd088375",
+  "case:wyea-hyperscale-normalization-4919e0-2": "e057def6a59126bbf443bc87b1775513988e2e2642c3c4a6c01d7b8ef97694ca",
+  "case:wyea-hyperscale-normalization-7a6a66": "d20ecd875120701e8972adb6596711a209c0c12c2e4ffd901558e0b25dac8ff9",
+  "case:wyea-hyperscale-normalization-8aa6ee": "899bd9e0de76b1be1f3f8b0af28a5e2781ecfe9efe22da964348a830caf6dc76"
+ },
+ "started_at": "2026-10-29T17:48:10Z",
+ "completed_at": "2026-10-29T17:49:14Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post. The nearby WSJ quote is separate and is not the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "This is a firm present-tense claim that neither firm can afford the compute. The normalised wording slightly widens 'this compute' to all contracted compute, but that is acceptable given the surrounding argument. The data-center timing forecast is handled as a separate claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'afford' as being able to pay when due from cash, committed financing and cash flow is an ordinary reading. Using Q2 2026 is the evaluator's choice. The speaker concedes both firms are solvent today, so his point is partly about the future. The contract records the accounting basis as unknown."
+    },
+    "evidence": [
+     {
+      "id": "e9",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's June 30, 2026 working capital of about $131B, from its S-1. This counts against an immediate shortfall, but it is not matched against the compute payment schedule. Company-reported."
+     },
+     {
+      "id": "e10",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's $122B committed round, closed before the target quarter. Committed capital is not drawable cash and is not matched to its payments."
+     },
+     {
+      "id": "e11",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's Series H includes previously committed money, so it is not all new funding. Company disclosure."
+     },
+     {
+      "id": "e12",
+      "fits": true,
+      "relation": "context",
+      "note": "The S-1 risk factors describe large fixed compute obligations, but the amounts are blank and the commitments date from September 2026 onward. This cannot establish a June shortfall."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither condition is met. The packet has no matched schedule of resources against compute payments for either company, and no record of nonpayment. Anthropic's large working capital and OpenAI's committed round argue against an immediate shortfall, but they are not reconciled against payment obligations, so they cannot contradict the claim. The accounting basis is also unknown, which blocks a monetary verdict.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-4919e0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Won't actually exist for years' is a firm forecast. 'If it ever does' adds doubt about whether it is ever built, and the normalised wording keeps that. Linking it to the Anthropic–Lambda facility fits the context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating 'for years' as at least two years is a fair, ordinary minimum. Reading 'exist' as delivering compute, rather than having a building, is a reasonable reading of an operating data center. These choices set the deadline and what counts as success."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary report of the WSJ story that ties the deal to Hut 8's Beacon Point campus. It identifies the facility but says nothing about delivery."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Hut 8 targets Phase 1 data-hall delivery in Q3 2027, before the 2028 boundary. That is a planned schedule, not verified compute delivery. Company disclosure."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "October 2026 local report: construction under way and Phase 1 possibly running by end of 2027. This is prospective only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "The two-year boundary (2028-09-01) is after the evaluation date. The only early-resolution route is verified compute delivery, and no such event appears in the packet. Hut 8's 2027 targets could contradict the forecast if met, but planned schedules do not count, so the forecast cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-4919e0-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own closing line in the post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The wording is faithful and keeps 'does not appear', 'any' and 'national scale'. But the claim is about whether AI caused a productivity payoff, so it is causal; the contract's axis treats it that way too. 'Does not appear' claims that no payoff is visible, not a firm zero effect."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The US scope and the Q2 2026 window are the evaluator's choices, not the speaker's. The support condition demands a precise, informative zero, which is more than 'does not appear' commits him to. A fair plain reading would ask whether credible sources show any visible aggregate payoff."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Fed note (July 2026) notes that no large aggregate signal had appeared as of 2026 and stresses measurement problems. This leans toward the speaker but gives no Q2 estimate."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "St. Louis Fed: industries using more AI had faster productivity growth through 2025, but the authors say this is not causal. The period also differs from the target."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "ECB worker survey on time saved in Europe. The authors note that time saved is not realized output. Different region and measure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet does not settle the claim on either the contract's terms or a fairer plain reading. The Fed note's remark that no large aggregate signal had appeared leans toward the speaker. The St. Louis Fed's non-causal industry associations and the ECB's European time savings lean against 'any payoff', but neither identifies a realized national contribution in Q2 2026. No source gives a precise estimate either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-7a6a66"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence. The figures may come from analyst estimates, but he asserts them himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "This is a compound claim: current capex (an observation), its main purpose (causal), and future revenue and share figures (forecast). Classing it as a forecast fits its core. 'For the most part' and the Google Cloud 2027 share are preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the window as Sept 2026 to Sept 2029, counting realized revenue, and treating the 70% share in aggregate are reasonable choices. But whether the share is aggregate or per supplier, what counts as AI revenue, and how close counts as 'around' $440B would decide the result. So interpretation does matter, contrary to the contract's own flag."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic's April 2026 Google/Broadcom compute announcement. It gives no realized supplier revenue or customer shares. Company disclosure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "Neither the three-year window (to 2029-09-01) nor calendar 2027 has passed. The packet has no completed-period accounts and no event that settles any part early, so the forecast cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-hyperscale-normalization-8aa6ee"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34675,
+  "output_tokens": 6895,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,134 @@
+{
+ "assessment_id": "wyea-longcon-aa8385-a1",
+ "claim_revision_ref": {
+  "id": "wyea-longcon-aa8385",
+  "version": 1,
+  "content_hash": "270ee5a44c0deb878d26d3a072faf1fff607e72236659b6fc1a8516871feb6ce"
+ },
+ "contract_ref": {
+  "id": "wyea-longcon-aa8385",
+  "version": 1,
+  "content_hash": "860da46fb13b0b253bb50a3fbfa3799311ebc5611dc6c1a33cd6109a357b1f6a"
+ },
+ "packet_ref": {
+  "id": "wyea-longcon-aa8385-p1",
+  "content_hash": "096675c8f82b78ad6a56cf0e27e48161d3a32f16823813208f1a7d4b33bd0a62"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-02-02",
+  "end": "2025-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence makes higher costs plausible: OpenAI and an independent analysis describe substantial compute requirements. But it does not establish a comparable monetary cost per request in the target period. The o3 benchmark figure concerns a different workload, and Zitron explicitly distinguishes it from Deep Research prompts.",
+ "evidence_ids": [
+  "e7",
+  "e8",
+  "e9"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "This is an evidentiary gap, not evidence that the relative-cost claim is false.",
+  "Later API prices and newer product versions cannot settle the launch-period comparison."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-longcon-9d1c36-4x-review-anthropic-1",
+  "wyea-longcon-9d1c36-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-longcon-9d1c36-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-longcon-aa8385",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Deep Research queries cost significantly more than regular ChatGPT queries.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Deep Research uses OpenAI's o3 model which can cost as much as $1,000 a query, and while I imagine these prompts aren't that expensive, they are still significantly more so than a regular query from ChatGPT.",
+   "locator": "paragraph 76",
+   "url": "https://www.wheresyoured.at/longcon",
+   "date": "2025-02-17",
+   "document_title": "The Generative AI Con",
+   "observed_at": "2026-10-28T22:29:30Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Deep Research uses OpenAI's o3 model",
+    "can cost as much as $1,000 a query",
+    "I imagine these prompts aren't that expensive",
+    "significantly more so than a regular query from ChatGPT"
+   ],
+   "our_interpretation": [
+    "The proposition being graded is the relative cost of serving Deep Research and ordinary ChatGPT queries.",
+    "The plain reading is OpenAI's inference expense per completed user request, rather than the subscription price paid by a user.",
+    "The $1,000 reference concerns an o3 configuration; Zitron expressly does not assign that cost to Deep Research requests.",
+    "The cited press estimate makes estimate the implied basis, not audited company accounting.",
+    "Ordinary ChatGPT means routine non-Deep-Research text use. GPT-4o is a reasonable contemporaneous reference, but the speaker names no model.",
+    "For this ongoing launch-era statement, the target period is February 2–17, 2025, the product's available operating period before the post.",
+    "'Significantly' means materially higher, without imposing an invented numerical multiplier."
+   ],
+   "support_condition": "Comparable launch-period measurements or well-grounded estimates show materially greater inference expense per representative Deep Research request than per routine ChatGPT request.",
+   "contradiction_condition": "Comparable launch-period evidence shows no material increase, or lower expense, for representative Deep Research requests."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence makes higher costs plausible: OpenAI and an independent analysis describe substantial compute requirements. But it does not establish a comparable monetary cost per request in the target period. The o3 benchmark figure concerns a different workload, and Zitron explicitly distinguishes it from Deep Research prompts.",
+  "limitations": [
+   "This is an evidentiary gap, not evidence that the relative-cost claim is false.",
+   "Later API prices and newer product versions cannot settle the launch-period comparison."
+  ],
+  "evidence": [
+   {
+    "id": "e7",
+    "relation": "context",
+    "excerpt": "Deep research in ChatGPT is currently very compute intensive.",
+    "locator": "Section 'Access', first sentence of original launch text",
+    "url": "https://openai.com/index/introducing-deep-research",
+    "publisher": "OpenAI",
+    "event_date": "2025-02-02",
+    "available_at": "2025-02-02",
+    "explanation": "The disclosure is consistent with higher serving costs, but does not quantify expense or compare representative requests."
+   },
+   {
+    "id": "e8",
+    "relation": "context",
+    "excerpt": "More transparency from OpenAI and other major AI companies would help produce a better estimate.",
+    "locator": "Section 'Discussion', paragraph on transparency",
+    "url": "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
+    "publisher": "Epoch AI",
+    "event_date": "2025-02-07",
+    "available_at": "2025-02-07",
+    "explanation": "The analysis describes Deep Research as more compute intensive than simple ChatGPT use, while emphasizing uncertainty. It estimates resources rather than a matched dollar cost for both products."
+   },
+   {
+    "id": "e9",
+    "relation": "context",
+    "excerpt": "We've documented both the total costs and the cost per task as an initial proxy for efficiency.",
+    "locator": "Section 'OpenAI o3 ARC-AGI Results', paragraph following the results table and tuning note",
+    "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+    "publisher": "ARC Prize",
+    "event_date": "2024-12-20",
+    "available_at": "2024-12-20",
+    "explanation": "These are benchmark cost proxies for o3 configurations, not Deep Research serving costs. The page also labels subsequent pricing revisions, so its current table cannot be treated as an unchanged December cost disclosure."
+   }
+  ],
+  "what_would_resolve": "Comparable February 2025 serving-cost measurements or transparent estimates for representative Deep Research and routine ChatGPT requests, with workload and cost assumptions stated.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f37e66b38dea387f1dcad8caf50454999a77258e235b3141ca7ed73f231826da",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:11:10Z"
+}

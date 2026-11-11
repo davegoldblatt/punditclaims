@@ -1,0 +1,131 @@
+{
+ "packet_id": "marcus-why-chatgpt-cant-be-trusted-with-d36a06-p2",
+ "claim_revision_ref": {
+  "id": "marcus-why-chatgpt-cant-be-trusted-with-d36a06",
+  "version": 1,
+  "content_hash": "53830e45cc76dd33aa9b6490fe605b17ebb8b30e86433c980b9d8f9efde6c526"
+ },
+ "contract_ref": {
+  "id": "marcus-why-chatgpt-cant-be-trusted-with-d36a06",
+  "version": 2,
+  "content_hash": "dd7eb70ea83df1f6681995cb449d11da7c2194fc487562a3d7c83173f7b8b057"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com GPT-5 system card hallucinations post training human feedback August 2025",
+   "site.anthropic.com Claude Sonnet 4.5 system card human feedback reward hacking September 2025",
+   "site.openai.com sycophancy GPT-4o April 2025 feedback training update what happened",
+   "site.arxiv.org Emergent World Representations Exploring a Sequence Model Trained on a Synthetic Task Othello 2210.13382",
+   "site.arxiv.org DeepSeek R1 Zero reinforcement learning reasoning 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/expanding-on-sycophancy/",
+    "used": true,
+    "why": "Explains corrective post-training and how combined changes produced an unexpected failure."
+   },
+   {
+    "url": "https://openai.com/index/sycophancy-in-gpt-4o/",
+    "used": true,
+    "why": "Documents a concrete reliability failure and subsequent corrective work."
+   },
+   {
+    "url": "https://arxiv.org/html/2210.13382v5",
+    "used": true,
+    "why": "Controlled research provides relevant counterevidence about representations learned through sequence prediction, with substantial limits on generalization."
+   },
+   {
+    "url": "https://openai.com/index/gpt-5-system-card/",
+    "used": false,
+    "why": "Describes a combined system, but does not isolate the origin of its capabilities."
+   },
+   {
+    "url": "https://arxiv.org/abs/2503.20783",
+    "used": false,
+    "why": "Reports reasoning behavior in base models, but the abstract alone does not establish the robust real-world capability distinction required by this contract."
+   }
+  ],
+  "performed_at": "2026-11-10T00:59:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-expanding-on-sycophancy",
+   "source_snapshot_id": "4a190f776d8d7d41446bfba28762708e3edf412b4c978bdea4b25c41e7291d13",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/expanding-on-sycophancy",
+   "locator": "Section 'How we update models in ChatGPT'",
+   "receipt": {
+    "public_excerpt": "shapes the behavior",
+    "quote_hash": "a9edb36a1a009b13d4e35a098c37252b8eda48daee9f169eb9123bc3efcd3eb8",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-02",
+   "available_at": "2025-05-02",
+   "retrieved_at": "2026-10-29T11:52:02Z",
+   "relation": "context",
+   "explanation": "OpenAI describes post-training that changes model behavior, including human and model-generated examples. This fits the inclusive reading of additional engineering but does not establish that all practical capabilities originate there.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-sycophancy-in-gpt-4o",
+   "source_snapshot_id": "9acf2584c416c4fd4694245294cbf5ecbdbe4f3ed6de605d1a344e56bed7f1f7",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/sycophancy-in-gpt-4o",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "overly flattering or agreeable",
+    "quote_hash": "f6fbdb1099a0de05e62ab1937129a072ee1df1f2770fb8aa0a6c92e9f246389c",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-29",
+   "retrieved_at": "2026-10-29T02:30:32Z",
+   "relation": "context",
+   "explanation": "This is a documented instance of a behavioral update producing an unwanted result. It supports concern about the reliability of interventions, but concerns an earlier deployment and cannot establish the entire observation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2210-13382v5",
+   "source_snapshot_id": "f0fb38b5b8349df60c3c41ac2e0a24efc365798455f9b52c3b5026bb1f94e7d3",
+   "publisher": "Li and colleagues; ICLR 2023, revised manuscript on arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/html/2210.13382v5",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "used to control the output of the network.",
+    "quote_hash": "299c0912d4450e02ca85753a3d8e5722ba8f63acd833bee679904703a444410a",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2024-06-26",
+   "retrieved_at": "2026-10-29T06:48:00Z",
+   "relation": "context",
+   "explanation": "The Othello experiments found an internal board representation learned through sequence prediction, which cautions against treating initial training as mere surface correlation. A synthetic board game does not establish reliable real-world updating in deployed assistants.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The sources do not provide a representative comparison separating initial training, corrective training, and external components for systems at publication.",
+  "Examples of unreliable interventions do not establish that every practical capability depends on them.",
+  "The evidence does not resolve the speaker's unspecified boundary between word correlation and additional capabilities."
+ ],
+ "packet_hash": "ea2a19da9aedf340e2e26eab2eff7e7a18f89dea284712cc81457c4a2a01e85f"
+}

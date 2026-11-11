@@ -1,0 +1,121 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-losing-1aee0a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-losing-1aee0a",
+  "version": 2,
+  "content_hash": "f5c0009a7b0bef86ef2dc5d1a51b91aaff8165151935328df04d68c091b9cb5a"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-losing-1aee0a",
+  "version": 1,
+  "content_hash": "29669100330365ea49f790a93bdb05060e43512467619c8f620345c60d3c015a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "H100 B200 B300 AWS Azure Google cloud customers 2026 revenue Anthropic OpenAI",
+   "OpenAI Anthropic 20% cloud revenue 2026 Google Amazon Microsoft spending",
+   "site.aws.amazon.com \"H100\" \"2026\" \"customers\" \"January\"",
+   "site.cloud.google.com/blog \"H100\" \"2026\" \"March\"",
+   "site.ir.aboutamazon.com \"2026\" \"first quarter\" \"37.6\"",
+   "site.abc.xyz \"2026\" \"Cloud revenues\" \"20.0\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q1-2026-report",
+    "used": true,
+    "why": "Read primary quarterly results; supplies an AWS denominator but not the two labs' matched spending."
+   },
+   {
+    "url": "https://cloud.google.com/blog/products/data-analytics/new-dataflow-features-to-enable-streaming-and-ml-workloads/",
+    "used": true,
+    "why": "Read primary documentation of H100 availability and other GPU customers; insufficient to identify their GPU-specific revenue."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; search snippets were not used as evidence."
+   },
+   {
+    "url": "https://www.datacenterdynamics.com/en/news/anthropic-cloud-spend-expected-to-reach-80bn-through-2029/",
+    "used": false,
+    "why": "read_page returned unrelated supplement text, not the spending report."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+    "used": false,
+    "why": "Read, but total AI run rate and broad cloud revenue do not supply matched customer-level GPU revenue shares."
+   }
+  ],
+  "performed_at": "2026-10-29T12:44:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "aboutamazon-com-news-company-news-amazon-earnings-q1-2026-report",
+   "source_snapshot_id": "b3658c8d985ebe53cedebbecc27eee3bbbc1467c0137852ab38654eb8e05f0ce",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q1-2026-report",
+   "locator": "Opening quarterly financial results, AWS segment sales",
+   "receipt": {
+    "public_excerpt": "AWS segment sales increased 28% year-over-year to $37.6 billion.",
+    "quote_hash": "9358dc1508ddae68d08f71e5f2d5d66d59089b60d532cc39e6d85f6a1614a33e",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T10:05:50Z",
+   "relation": "context",
+   "explanation": "This supplies quarterly AWS sales, but no matching Anthropic and OpenAI spending numerator. It cannot establish their percentage of AWS revenue.",
+   "metric_scope": {
+    "company": "Amazon/AWS",
+    "metric": "AWS segment sales",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cloud-google-com-blog-products-data-analytics-new-dataflow-features-52234fa7bfec",
+   "source_snapshot_id": "04626bcab6fdb7d032c678c5e1e7d9574e51ece7c7fb483cbae22dac1d31db8f",
+   "publisher": "Google Cloud",
+   "source_type": "company_disclosure",
+   "url": "https://cloud.google.com/blog/products/data-analytics/new-dataflow-features-to-enable-streaming-and-ml-workloads",
+   "locator": "More choice: Performance-optimized hardware, New GPUs paragraph",
+   "receipt": {
+    "public_excerpt": "AI inference workloads.",
+    "quote_hash": "2abb5943938738f06050844fa906fb48ee33f02e30aa59bfe3a4b633251b3bc0",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-27",
+   "available_at": "2026-01-27",
+   "retrieved_at": "2026-10-29T12:37:56Z",
+   "relation": "context",
+   "explanation": "The surrounding paragraph announces H100 support and names Flashpoint and Spotify as Dataflow GPU users. It weighs against the broad exclusivity assertion, but does not identify those customers' GPU models or recognized payments.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched quarterly compute-spending numerator for both labs at each provider.",
+  "No complete reconciliation of cloud-revenue reporting scopes.",
+  "No verified third-party revenue tied to the specified GPU models and target quarter."
+ ],
+ "packet_hash": "b4fba552550e3e85ec3427011b7e2ba9d091d919a445bf7d71ba795ec7d4ec17"
+}

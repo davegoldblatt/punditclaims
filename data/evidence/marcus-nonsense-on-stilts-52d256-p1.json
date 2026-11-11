@@ -1,0 +1,93 @@
+{
+ "packet_id": "marcus-nonsense-on-stilts-52d256-p1",
+ "claim_revision_ref": {
+  "id": "marcus-nonsense-on-stilts-52d256",
+  "version": 1,
+  "content_hash": "db38f4a89e562f399d9a189834fb8ac83c55522c7a6e65ccb2eadc39c360f792"
+ },
+ "contract_ref": {
+  "id": "marcus-nonsense-on-stilts-52d256",
+  "version": 1,
+  "content_hash": "9b00bd735774bad88a36efd310b2ba3e544163d8408feec6d0e54cfe3d2cdaeb"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LaMDA 2022 paper external information retrieval toolset grounding"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2201.08239v3",
+    "used": true,
+    "why": "Full paper read successfully. It describes external tools, grounding training, and inference."
+   },
+   {
+    "url": "https://arxiv.org/abs/2201.08239",
+    "used": true,
+    "why": "Read successfully to verify the paper's submission and revision dates."
+   },
+   {
+    "url": "https://research.google/blog/lamda-towards-safe-grounded-and-high-quality-dialog-models-for-everything/",
+    "used": true,
+    "why": "Contemporaneous developer explanation of next-token pretraining and subsequent fine-tuning."
+   }
+  ],
+  "performed_at": "2026-10-29T17:50:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2201-08239v3",
+   "source_snapshot_id": "d9f8abbe934cbe26ac49a4e1d0ebe2fc41d78b71ffab71c018c2d1b0616543ad",
+   "publisher": "Google Research authors / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2201.08239v3",
+   "locator": "Groundedness discussion, immediately before 'The toolset (TS)'",
+   "receipt": {
+    "public_excerpt": "external knowledge resources and tools.",
+    "quote_hash": "ec4d4ba62df53aefba9c9b246fea01e1fd17df574b7c430f77186a1a08ea0f37",
+    "verified": "exact"
+   },
+   "event_date": "2022-01",
+   "available_at": "2022-02-10",
+   "retrieved_at": "2026-10-29T07:25:11Z",
+   "relation": "contradicts",
+   "explanation": "The paper describes retrieval, calculator and translation tools, and training that routes queries to those tools during inference. This directly contradicts the assertion that LaMDA does not even attempt external grounding.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "research-google-blog-lamda-towards-safe-grounded-and-high-quality-d-fce0bae6bb4d",
+   "source_snapshot_id": "f71d6c932246c3b269eecb844d93caf8e3449343e60b5ab46fbb81f02b41eea0",
+   "publisher": "Google Research",
+   "source_type": "company_disclosure",
+   "url": "https://research.google/blog/lamda-towards-safe-grounded-and-high-quality-dialog-models-for-everything",
+   "locator": "Section 'LaMDA Pre-Training', opening sentence",
+   "receipt": {
+    "public_excerpt": "pre-training and fine-tuning.",
+    "quote_hash": "01bf485bb9e56354caf313b6f77e9b673b806966b07abb93c5130800a9c904c2",
+    "verified": "exact"
+   },
+   "event_date": "2022-01-21",
+   "available_at": "2022-01-21",
+   "retrieved_at": "2026-10-29T08:46:01Z",
+   "relation": "context",
+   "explanation": "The surrounding sections confirm next-token pretraining, but also describe safety classification, response ranking and external factual grounding. Marcus's description captures the generative training objective without capturing the complete system.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "These records do not establish philosophical understanding or sentience.",
+  "They do not identify which grounding features were enabled in every private LaMDA conversation."
+ ],
+ "packet_hash": "2c8012b6046b7cfd1852c33b81271d765848d2c226435748fcb2501a38e34a7e"
+}

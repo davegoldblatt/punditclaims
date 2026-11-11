@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809-a2",
+ "claim_revision_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809",
+  "version": 1,
+  "content_hash": "f5915c659349e2cd0306161fedca5fc9d80b9cc5da00d31d6a7487085fbe879a"
+ },
+ "contract_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809",
+  "version": 1,
+  "content_hash": "a418a419b2cac67e418674a59ba6c76cd12d328b25cfc593927a6a3b8cfbfb0b"
+ },
+ "packet_ref": {
+  "id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809-p1",
+  "content_hash": "82a2fba2d00161ce50234f576573d306352b028c3dccae35bb0dc13fab044f44"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2024-02-23",
+  "precision": "day"
+ },
+ "public_rationale": "The January 11, 2024 engineering report documents RAG failures, including failure to extract the correct answer when it was present in the supplied context [e1]. The December 18, 2023 survey reports improved answer accuracy and reduced hallucination, particularly on knowledge-intensive tasks [e2]. Together, these sources support the February 23, 2024 observation that RAG offered useful improvements while retaining unresolved reliability problems; they do not demonstrate comprehensive correction or guaranteed correctness [e1, e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence does not give 'infancy' an objective maturity threshold or show that every RAG application was immature.",
+  "The selected engineering cases do not measure RAG's average benefit or establish equal error rates with and without retrieval.",
+  "The packet does not prove the absence of every possible correctness guarantee or establish permanent limits."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-no-rag-is-probably-not-going-to-rescue-b72e11-3x-review-anthropic-1",
+  "marcus-no-rag-is-probably-not-going-to-rescue-b72e11-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-no-rag-is-probably-not-going-to-rescue-afdf2d-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "RAG is immature, not guaranteed correct, and there is no evidence it is a cure-all for LLM problems.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Reality is that RAG is still in its infancy, a work in progress much as LLMs themselves are, an no more guaranteed to be correct. Like LLMs, RAG can appear spectacular at times, but there is no evidence that it is a cure-all.",
+   "locator": "paragraph 23",
+   "url": "https://garymarcus.substack.com/p/no-rag-is-probably-not-going-to-rescue",
+   "date": "2024-02-23",
+   "document_title": "No, RAG is probably not going to rescue the current situation",
+   "observed_at": "2026-10-28T23:17:00Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "RAG is still in its infancy",
+    "a work in progress",
+    "no more guaranteed to be correct",
+    "can appear spectacular at times",
+    "no evidence that it is a cure-all"
+   ],
+   "our_interpretation": [
+    "The plain reading is that RAG remained an actively developing engineering approach with unresolved reliability problems, despite demonstrated benefits.",
+    "'No more guaranteed' concerns the absence of guaranteed correctness, not equal error rates between RAG and systems without retrieval.",
+    "'Cure-all' means comprehensive, reliable correction of LLM problems, rather than improvement on selected tasks.",
+    "The claim concerns the state of accumulated evidence through February 23, 2024, including the contemporary reviews cited in its context; it does not predict permanent impossibility.",
+    "'In its infancy' is treated as qualitative language about unresolved production challenges, not a literal claim about the technique's age."
+   ],
+   "support_condition": "Contemporary primary evaluations document material failures despite retrieval, and the research record shows unresolved reliability work alongside useful capabilities without demonstrating comprehensive correction.",
+   "contradiction_condition": "Evidence available by the post demonstrates general, reliable correction of the relevant LLM problems through RAG, with a valid correctness guarantee or comprehensive validation that addresses the documented failure modes."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The January 11, 2024 engineering report documents RAG failures, including failure to extract the correct answer when it was present in the supplied context [e1]. The December 18, 2023 survey reports improved answer accuracy and reduced hallucination, particularly on knowledge-intensive tasks [e2]. Together, these sources support the February 23, 2024 observation that RAG offered useful improvements while retaining unresolved reliability problems; they do not demonstrate comprehensive correction or guaranteed correctness [e1, e2].",
+  "limitations": [
+   "The evidence does not give 'infancy' an objective maturity threshold or show that every RAG application was immature.",
+   "The selected engineering cases do not measure RAG's average benefit or establish equal error rates with and without retrieval.",
+   "The packet does not prove the absence of every possible correctness guarantee or establish permanent limits."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "correct answer.",
+    "locator": "Section 5, failure point FP4, 'Not Extracted'",
+    "url": "https://arxiv.org/html/2401.05856v1",
+    "publisher": "Barnett and colleagues, Deakin University; arXiv",
+    "event_date": "2024-01",
+    "available_at": "2024-01-11",
+    "explanation": "Three engineering case studies identify unresolved retrieval and generation failures, including failure despite the answer being supplied in context. The January report documents the then-existing reliability limitations; individual test days are not specified."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "reduce model hallucination",
+    "locator": "Abstract, third sentence",
+    "url": "https://arxiv.org/abs/2312.10997v1",
+    "publisher": "Gao and colleagues; arXiv",
+    "event_date": "2023-12-18",
+    "available_at": "2023-12-18",
+    "explanation": "The contemporary survey credits RAG with meaningful benefits. This limits any interpretation of 'infancy' as uselessness, while remaining consistent with Marcus's acknowledgment of strong results on some tasks."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "d3493d42ed489a47729e7c4f497ba8ac85afb9a4a9d0f6a9b3e8b59b4bfb349e",
+ "supersedes_assessment_id": "marcus-no-rag-is-probably-not-going-to-rescue-ee4809-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:11:50Z"
+}

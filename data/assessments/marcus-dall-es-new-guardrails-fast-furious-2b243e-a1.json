@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-dall-es-new-guardrails-fast-furious-2b243e-a1",
+ "claim_revision_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-2b243e",
+  "version": 1,
+  "content_hash": "5abfb031286c1386c07f628cd447f0a5586857ea9f2dd4c5eb30b3d4483ffead"
+ },
+ "contract_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-2b243e",
+  "version": 1,
+  "content_hash": "4a45b284420c207ba00ba9409befb511da8f8bff0f252af0f56e5ee65f0f9f3c"
+ },
+ "packet_ref": {
+  "id": "marcus-dall-es-new-guardrails-fast-furious-2b243e-p1",
+  "content_hash": "5c4f9bb3b85346a1f0e29558c2a0c024e388daea999949c2f4fd05dd4b26b1ff"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2024-01-10",
+  "precision": "day"
+ },
+ "public_rationale": "Pre-post research documents substantial guardrail failures, but it does not establish that none worked effectively. XSTest found GPT-4 performed well on both safe and unsafe prompts, and SmoothLLM demonstrated useful defenses with retained task performance. These are material counterexamples to an unqualified dismissal, but their test coverage does not establish broad jailbreak resistance with low over-refusal. Calling the claim supported or contradicted would require imposing an effectiveness threshold Marcus did not supply.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The cited evaluations cover selected models, prompts, and attacks.",
+  "Useful task performance is not interchangeable with low over-refusal.",
+  "Later research or updated model behavior cannot establish the state of guardrails at the post date."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-dall-es-new-guardrails-fast-furious-059e57-4x-review-anthropic-1",
+  "marcus-dall-es-new-guardrails-fast-furious-059e57-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-dall-es-new-guardrails-fast-furious-059e57-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-dall-es-new-guardrails-fast-furious-2b243e",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "No AI guardrail so far has effectively balanced being neither too restrictive nor too permissive.",
+  "kind": "observation",
+  "conditions": [
+   "thus far"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Fundamentally, virtually any guardrail has to thread a needle between the Scylla of being too restrictive and Charybdis of being too permissive. None thus far have done this effectively.",
+   "locator": "paragraph 7",
+   "url": "https://garymarcus.substack.com/p/dall-es-new-guardrails-fast-furious",
+   "date": "2024-01-10",
+   "document_title": "DALL-E’s New Guardrails: Fast, Furious, and Far from Airtight",
+   "observed_at": "2026-10-29T00:01:51Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "virtually any guardrail",
+    "too restrictive",
+    "too permissive",
+    "None thus far have done this effectively"
+   ],
+   "our_interpretation": [
+    "Assess guardrails available through January 10, 2024, especially safeguards for general-purpose language models discussed in the surrounding passage.",
+    "Thus far is cumulative; no starting date is supplied, so the observation period has an open start.",
+    "The ordinary reading of effective is a practically useful balance: reliably permit benign requests while resisting harmful requests, including adversarial attempts.",
+    "Effective does not mean flawless. An isolated jailbreak or mistaken refusal is insufficient by itself to establish ineffectiveness.",
+    "The universal claim requires broader evidence than selected demonstrations of failure."
+   ],
+   "support_condition": "Representative evaluations of the relevant guardrails show that none achieved a practically useful balance of benign-request acceptance and resistance to harmful requests.",
+   "contradiction_condition": "At least one guardrail available by the post demonstrates that practical balance in sufficiently broad evaluations of both benign requests and adversarial harmful requests."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Pre-post research documents substantial guardrail failures, but it does not establish that none worked effectively. XSTest found GPT-4 performed well on both safe and unsafe prompts, and SmoothLLM demonstrated useful defenses with retained task performance. These are material counterexamples to an unqualified dismissal, but their test coverage does not establish broad jailbreak resistance with low over-refusal. Calling the claim supported or contradicted would require imposing an effectiveness threshold Marcus did not supply.",
+  "limitations": [
+   "The cited evaluations cover selected models, prompts, and attacks.",
+   "Useful task performance is not interchangeable with low over-refusal.",
+   "Later research or updated model behavior cannot establish the state of guardrails at the post date."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "objectionable behaviors",
+    "locator": "Abstract, first paragraph",
+    "url": "https://arxiv.org/abs/2307.15043v1",
+    "publisher": "Andy Zou and colleagues, arXiv",
+    "event_date": "2023-07",
+    "available_at": "2023-07-27",
+    "explanation": "The study demonstrates real failures of safeguards in multiple models. It does not measure benign-request refusals or establish that every guardrail lacked a practical balance."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "perform well",
+    "locator": "Section 4.5, Automated Model Evaluation",
+    "url": "https://arxiv.org/html/2308.01263v2",
+    "publisher": "Paul Röttger and colleagues, arXiv",
+    "event_date": "2023-10",
+    "available_at": "2023-10-17",
+    "explanation": "XSTest found GPT-4 fully refused 6.4% and partially refused 2% of safe prompts, while refusing all but one of 200 unsafe prompts. This challenges a sweeping failure claim, but the unsafe contrasts were not a comprehensive adversarial safety evaluation."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "high levels of nominal performance",
+    "locator": "Section 1, Contributions, Non-conservatism",
+    "url": "https://arxiv.org/html/2310.03684v3",
+    "publisher": "Alexander Robey and colleagues, arXiv",
+    "event_date": "2023-11",
+    "available_at": "2023-11-29",
+    "explanation": "The paper reports substantial defense against GCG attacks while retaining useful performance. Its PAIR test still had an attack success rate around 50%, and general question-answering performance is not a direct measure of inappropriate refusal."
+   }
+  ],
+  "what_would_resolve": "A justified practical effectiveness standard and sufficiently broad, reproducible evaluations of both benign-request acceptance and adversarial safety for guardrails available by January 10, 2024.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "580fde13124cd77121be87a5889e86a1465fa545b8911b2ee5d05a8296518cd5",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T06:54:54Z"
+}

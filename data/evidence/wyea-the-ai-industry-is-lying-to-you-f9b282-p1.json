@@ -1,0 +1,115 @@
+{
+ "packet_id": "wyea-the-ai-industry-is-lying-to-you-f9b282-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-f9b282",
+  "version": 1,
+  "content_hash": "eca09f8e075e5edfc7f28eee57df0f0afccabfb5ef587922e2c7aa559fbe997a"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-f9b282",
+  "version": 1,
+  "content_hash": "7d3eb56d8cc905dd10fc3f716d28ae9ddd9d20d614e28abfe15d97c3a21fb98d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "NVIDIA fiscal 2026 fourth quarter results data center revenue 62.3 billion January 25 2026",
+   "2025 North America data center capacity supply absorption 2025 CBRE 2026 3 GW",
+   "NVIDIA Blackwell GPU installation deployment six months sales data centers 2026",
+   "NVIDIA Blackwell purchased GPUs deployed installation rate gigawatts 2025 2026 six months"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001045810/000104581026000021/nvda-20260125.htm",
+    "used": true,
+    "why": "Readable copy of NVIDIA's filing explains the geographic revenue measure."
+   },
+   {
+    "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+    "used": true,
+    "why": "Primary market research identifies absorption as leasing and occupancy activity."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the readable filing mirror was used."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/_gallery/download_pdf/699f6ab43d6332ccaa689907/",
+    "used": false,
+    "why": "Financial results do not provide matched installation throughput or GPU shipment quantities."
+   }
+  ],
+  "performed_at": "2026-10-29T21:21:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cdn-yahoofinance-com-prod-sec-filings-0001045810-000104581026000021-38685b8500b5",
+   "source_snapshot_id": "77893304347366143928758535575106c9eb158c40b4b0f3c05d3a67e48205af",
+   "publisher": "NVIDIA, filing mirrored by Yahoo Finance",
+   "source_type": "filing",
+   "url": "https://cdn.yahoofinance.com/prod/sec-filings/0001045810/000104581026000021/nvda-20260125.htm",
+   "locator": "Notes to consolidated financial statements, geographic revenue discussion",
+   "receipt": {
+    "public_excerpt": "shipping location may be different",
+    "quote_hash": "4e1beabeb0724f2769b7bab87012a2cfbd996ddeefa353223bc5bbadadae626a",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T21:12:06Z",
+   "relation": "context",
+   "explanation": "The US revenue allocation cannot directly establish where GPUs were installed. This limits the geographic conversion underlying the estimate without disproving six months.",
+   "metric_scope": {
+    "company": "NVIDIA",
+    "metric": "Total revenue classified by direct-customer headquarters",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-27",
+    "period_end": "2026-01-25",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cbre-com-insights-books-north-america-data-center-trends-h2-2025",
+   "source_snapshot_id": "1ce89172c5ba640bb109b6c569b580912622a6b5fae7404d84f1b5a6bd8607a4",
+   "publisher": "CBRE",
+   "source_type": "independent_measurement",
+   "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+   "locator": "State of the Market, paragraph following primary-market net absorption",
+   "receipt": {
+    "public_excerpt": "leasing activity and occupancy of new supply.",
+    "quote_hash": "023f3e7709930d2e082920327c5b5c45d03a3eba4d2727317a70d4f042eb6023",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T13:14:01Z",
+   "relation": "context",
+   "explanation": "CBRE describes a property-market measure, not a count of operational NVIDIA GPUs. Its annual period also differs from the latest-quarter observation being assessed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched public series of relevant quarterly GPU shipments and operational installation throughput was located.",
+  "The supplied revenue allocation does not identify installation geography.",
+  "The conversion from leased or occupied capacity to operating NVIDIA equipment remains unverified."
+ ],
+ "packet_hash": "707823a0b22a9375cfd1ffbae5dea8240501f8972445217e9d13190f4db9f986"
+}

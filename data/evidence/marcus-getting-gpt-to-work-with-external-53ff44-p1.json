@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-53ff44-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-53ff44",
+  "version": 1,
+  "content_hash": "2287209a875aee4214d5751b52366fdae1b8c8b4d7ccc4fcc2f3c4e5ffcc0bfb"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-53ff44",
+  "version": 1,
+  "content_hash": "4ba20365dbfa16d94b0bd6027cf8ad01536277b2116ef947c5dee50f19d831f6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Code Interpreter Wolfram Alpha Davis Aaronson 2023 word problems evaluation",
+   "GPT-4 code interpreter math benchmark 2023 with without Wolfram plugin",
+   "GPT-4 Wolfram plugin evaluation comparison without plugin mathematics 2023 study",
+   "\"GPT-4\" \"commonsense\" \"plugins\" evaluation 2023 -site:garymarcus.substack.com -site:cs.nyu.edu"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2308.08155v2",
+    "used": true,
+    "why": "Direct comparison of vanilla GPT-4 and both commercial plug-ins on common MATH problems."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2307.10635v1",
+    "used": true,
+    "why": "Material qualification: custom Wolfram Language integration performed worse, but it is not the named commercial plug-in."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.08881",
+    "used": false,
+    "why": "Independent evidence for Code Interpreter, but it does not evaluate Wolfram Alpha and is unnecessary for the two-plug-in comparison."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": false,
+    "why": "Davis is also a coauthor of the post. Excluded as evidence that the speakers were right; the report also acknowledges sparse unaided-GPT-4 comparisons."
+   },
+   {
+    "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1386075/full",
+    "used": false,
+    "why": "The reader returned only publication metadata, insufficient to verify the study's results and testing period."
+   }
+  ],
+  "performed_at": "2026-10-29T06:29:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2308-08155v2",
+   "source_snapshot_id": "5c87eb770b5fe523286a41e0b7550c0aef94b1cdd46689b0eb7579302fa0f68f",
+   "publisher": "arXiv; Qingyun Wu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2308.08155v2",
+   "locator": "Section 3, application A1; Figure 4a and footnote 5",
+   "receipt": {
+    "public_excerpt": "We perform evaluations over 120 randomly selected level-5 problems and\non the entire5 test dataset from MATH.",
+    "quote_hash": "3763dcc0d99f4fe5deb67b4432e84bf1294081ad4d8300edee51ad94ea2079a2",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-03",
+   "retrieved_at": "2026-10-29T06:23:05Z",
+   "relation": "supports",
+   "explanation": "On the common 120-problem subset, Figure 4a reports 48.33% success for ChatGPT with Code Interpreter, 45.0% with Wolfram Alpha, and 30.0% for vanilla GPT-4. The commercial products were not evaluated on the entire MATH test set.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2307-10635v1",
+   "source_snapshot_id": "62fa113ad755e927ddd0f871488591a6c5d4bf04cbd58aae83c5ed28cb38ef87",
+   "publisher": "arXiv; Xiaoxuan Wang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2307.10635v1",
+   "locator": "Section 3.2, Results and Analysis",
+   "receipt": {
+    "public_excerpt": "Prompts that utilize Python yield impressive improvements while those using Wolfram\ndiminish performance.",
+    "quote_hash": "f06825cf21949241979ab4370e07edf39784136de475891b281eb036ac8ab9b6",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-07-20",
+   "retrieved_at": "2026-10-29T06:21:51Z",
+   "relation": "context",
+   "explanation": "SciBench found that its own Wolfram Language prompting configuration reduced performance. Because it used custom code generation through the API, this qualifies general claims about tools but does not directly contradict the claim about the commercial Wolfram Alpha plug-in.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The comparison does not fully separate tool access from differences between API and ChatGPT product configurations."
+ ],
+ "packet_hash": "e45a87c01dff18a2c0291dc3d36587b10e7e62294a55f15873cb3b6116a69a45"
+}

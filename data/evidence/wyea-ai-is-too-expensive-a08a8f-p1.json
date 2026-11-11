@@ -1,0 +1,147 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-a08a8f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-a08a8f",
+  "version": 1,
+  "content_hash": "895ae8495a01b9ff5e9f34fd9d26804f56a7e5544e47026a2c7f2ee6259595c6"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-a08a8f",
+  "version": 1,
+  "content_hash": "3ec5f467e508f4bd231c99e15a7ef2397f8f41bee3e17b5f3aac0672b47dcb6e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft FY 2026 Q3 earnings 20 million Copilot 37 billion AI revenue April 2026",
+   "site.microsoft.com Microsoft 365 Copilot monthly billing 31.50 April 2025 30 discount December 2025 18",
+   "Microsoft 365 Copilot $31.50 monthly 2026 pricing",
+   "Microsoft Copilot discount revenue 20 million paid seats May 2026",
+   "\"SREVM88490\" \"March\"",
+   "\"AI Business Solutions\" \"Partner Community Call\" \"March\" \"2026\" Microsoft"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+    "used": true,
+    "why": "Primary disclosure of more than 20 million paid seats."
+   },
+   {
+    "url": "https://learn.microsoft.com/partner-center/announcements/2025-november",
+    "used": true,
+    "why": "Dated primary announcement identifies the $30 existing offering, lower-priced Copilot Business, and promotions active during the target quarter."
+   },
+   {
+    "url": "https://info.microsoft.com/rs/157-GQE-382/images/EN-WBNR-SlideDeck-SREVM88490-pdf.pdf?version=0",
+    "used": false,
+    "why": "Read the March 2026 partner deck, which contains billing and promotional prices. Its exact publication day could not be established for the required available_at field."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/copilot/solutions/enterprise",
+    "used": false,
+    "why": "The live pricing page was readable, but its historical version and publication date were not established."
+   },
+   {
+    "url": "https://techcommunity.microsoft.com/blog/microsoft_365blog/flexible-billing-for-microsoft-365-copilot-pricing-updates-for-annual-subscripti/4288536",
+    "used": false,
+    "why": "read_page returned only the title."
+   },
+   {
+    "url": "https://rcpmag.com/articles/2024/11/12/microsoft-monthly-billing.aspx/",
+    "used": false,
+    "why": "read_page returned only the title."
+   }
+  ],
+  "performed_at": "2026-10-29T10:18:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e11",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q3",
+   "source_snapshot_id": "465c63e33d1a7815269f2a998162f799fc7d90151965fa606bd3c24f4a4e81a9",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q3",
+   "locator": "Satya Nadella prepared remarks, Microsoft 365 Copilot",
+   "receipt": {
+    "public_excerpt": "over 20 million",
+    "quote_hash": "183c01a03f59719354a9e54d04bfe4d81ad97c01bf3ce3032357007aae41c63d",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T09:55:20Z",
+   "relation": "context",
+   "explanation": "The disclosure supports the approximate scale but states a lower bound, not an exact count or maximum. Multiplying a fixed hypothetical 20 million seats by the stated price gives $7.2 billion; it does not establish actual annualized revenue.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Microsoft 365 Copilot paid seats",
+    "currency": null,
+    "units": "seats",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2026-03-31",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "20,000,000 seats, the claim's fixed hypothetical count; the source actually reports more than this",
+     "USD 30 per seat per month, the claim's assumption and the existing Copilot SKU price described in e12's source",
+     "12 months"
+    ],
+    "formula": "20,000,000 × 30 × 12 = USD 7,200,000,000 per year",
+    "rounding": "Exactly USD 7.2 billion under the stated assumptions; no estimate of actual revenue."
+   }
+  },
+  {
+   "id": "e12",
+   "role": "context",
+   "document_id": "learn-microsoft-com-partner-center-announcements-2025-november",
+   "source_snapshot_id": "ed6e69af2811f8d55486b78d5dc449ba6ec738bedd89b4492d0e19e5dea3c52e",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://learn.microsoft.com/partner-center/announcements/2025-november",
+   "locator": "November 18 announcement, New promotions for Copilot Business",
+   "receipt": {
+    "public_excerpt": "Promotions run",
+    "quote_hash": "bf5e716b7697efb6de74fa45cf464e65c3a7b753d14b60f9ce6aa8bc02f9f7e7",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2025-11-18",
+   "retrieved_at": "2026-10-29T10:06:33Z",
+   "relation": "context",
+   "explanation": "The announcement identifies an existing $30 SKU, a $21 Copilot Business offering, and a 15% standalone promotion active in the target quarter. It establishes lower-priced offers, but not uptake, realized average pricing, or aggregate Copilot revenue.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Microsoft 365 Copilot and Copilot Business published subscription prices and promotional discounts",
+    "currency": "USD",
+    "units": "dollars per seat per month and percent discounts",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-12-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e11"
+ ],
+ "unresolved_gaps": [
+  "The exact paid seat count is not disclosed in the cited update.",
+  "No effective average subscription price or discount uptake was established.",
+  "No matching realized or annualized Microsoft 365 Copilot revenue total was obtained.",
+  "The evidence confirms promotions but does not establish the claimed multi-year history of discounts."
+ ],
+ "packet_hash": "c4a5cc8fdce8bbb764700e8b3fb86ab2143ed20b9f60126fbe980a4f8c0bf597"
+}

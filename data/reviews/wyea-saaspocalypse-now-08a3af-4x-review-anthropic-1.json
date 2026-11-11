@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-saaspocalypse-now-08a3af-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-saaspocalypse-now-08a3af": "79ce8fe27606a413d72f46cf3a36cf8687b1ca067d2201dfe32950ad698b82ac",
+  "case:wyea-saaspocalypse-now-093359": "2dae61a93159da8d7ddebf6514594fa38d91df20b5765bb02e43589eefa88c3b",
+  "case:wyea-saaspocalypse-now-32057f": "16933580261e0ff82e34a2868a6ace10554ff8882785f07b9d187cad08172811",
+  "case:wyea-saaspocalypse-now-416612": "d1c13ddb7002e8e5cc1592104ee49952649bcf5d46de7d17b2a783500b579b85"
+ },
+ "started_at": "2026-10-29T18:01:57Z",
+ "completed_at": "2026-10-29T18:02:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post, stated in his voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the price-doubling premise, the 'most' scope and the 'hard to imagine' inference. 'Hard to imagine ... aren't' is near-certain inference, not a graded hedge. It is a present-tense claim about costs."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'most' as a majority and 'double' as roughly twice the price is ordinary. Requiring separate cost evidence is fair because the claim is about maintenance cost. The missing denominator is flagged. The result turns on missing evidence, not on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Zoom's Q2 FY25 filing links higher hosting costs and a lower margin partly to AI use. That is one company, company-wide, and mixed with data-centre upgrades. It does not isolate feature costs or cover a majority."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Zoom includes AI Companion at no extra cost. That is one exception to the price-doubling premise, not a representative comparison."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Slack's $10 per user per month AI add-on is one paid add-on example. It gives no majority comparison and no cost evidence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither the majority price-doubling premise nor feature-level maintenance-cost pressure is established. The packet has three single-company items pointing different ways: one AI cost note, one free inclusion and one paid add-on. No representative provider comparison or matched cost disclosure exists, so the evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-saaspocalypse-now-08a3af"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The proposition repeats his words. It attributes hallucinations to the nature of the model rather than to defects, which is a causal claim. That fits the contract's causal_assessment axis better than 'observation'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'feature, not bug' as a structural tendency arising from normal learning and generation is the ordinary meaning of the idiom. The contract rightly excludes impossibility of mitigation and the separate 'no closer to solving' claim. Reading 'transformer model' broadly as the LLM system is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Kalai and Vempala (STOC 2024, March 2024) show calibrated LMs should hallucinate even under ideal data. This is a structural cause, not a defect, and it predates the post."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Xu et al. v1 (January 2024) argue formally that LLMs cannot eliminate hallucination because of learning-theory limits, without any implementation bug. It predates the post."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the fair structural-tendency reading, two technical analyses public before the post show that hallucination arises from normal predictive learning and generation, not from implementation defects. They are not transformer-specific and do not show mitigation is impossible, but the claim as read does not require either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-saaspocalypse-now-093359"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures the checkable core: the agents are automations, not intelligent decision-makers, and they require customer programming. The rhetorical 'lifeforms' framing is reasonably dropped."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Counting no-code and natural-language configuration as programming is a fair plain reading. Separating mandatory setup from optional customization, and checking runtime decisions, follows from 'require' and 'just automations'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "ServiceNow's own announcement describes custom skills as an option, with first agents due later. It shows neither mandatory programming nor observed runtime behaviour."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Atlassian's May 2024 announcement predates the target period. It mentions planned prebuilt agents and optional no-code creation, and does not settle whether programming was required."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both items are vendor announcements describing optional customization and future agents. Nothing in the packet shows mandatory customer programming, or verified dynamic step selection at runtime, for September 2024 products. The evidence does not settle the claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-saaspocalypse-now-32057f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps his universal 'every company promising' scope and the 'trying to rebrand' framing. The colourful guardrail examples are fairly reduced to 'guardrails'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as about what the offerings do, not executives' motives, is fair. 'Every' is his own word, so one verified counterexample defeating it is fair. Requiring demonstrated behaviour, not promises, is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Workday's own September 2024 announcement describes recruiting tasks beyond chat. These are mostly future capabilities and are not demonstrated, so it is not a verified counterexample."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Atlassian's May 2024 developer roadmap describes write actions and event triggers. It predates the period and is design intent, with no verified deployment."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No complete inventory supports the universal claim. The possible counterexamples are vendor descriptions of planned or mixed features, without a verified demonstration in the period, so they do not meet the contract's one-verified-counterexample test. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-saaspocalypse-now-416612"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31774,
+  "output_tokens": 4840,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

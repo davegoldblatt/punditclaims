@@ -1,0 +1,105 @@
+{
+ "assessment_id": "marcus-llms-dont-do-formal-reasoning-and-647864-a3",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-647864",
+  "version": 1,
+  "content_hash": "56086994b367dcb36eb30de1a2979eb0012f0608a3cdf6d2d9324ed8dadc3a15"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-647864",
+  "version": 1,
+  "content_hash": "5cfe6a1dbe87ab9d6f472eb2146f750c2c94d6f22b359bcb236c2be5bc2d75b6"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-647864-p1",
+  "content_hash": "85e583093df6191560f6a3109ec29ae6aa8e7400ef6545abf9dc5d48cab91770"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2017",
+  "end": "2017",
+  "precision": "year"
+ },
+ "public_rationale": "Jia and Liang’s 2017 study used AddSent to add distracting sentences designed to preserve the correct answer [e1]. Average F1 fell from 75.7% to 31.3% across four tested reading-comprehension models [e1]. These results support the historical claim that comparable failures under distracting text were documented in 2017 [e1].",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The study measured reading comprehension in 2017 systems. It does not establish a shared failure mechanism with modern LLMs or an inability to perform formal reasoning.",
+  "The answer-preservation method applies to AddSent. The separate AddAny method did not guarantee that additions preserved the correct answer."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dont-do-formal-reasoning-and-647864-1x-review-anthropic-1",
+  "marcus-llms-dont-do-formal-reasoning-and-647864-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dont-do-formal-reasoning-and-647864-1x-final-anthropic-3",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dont-do-formal-reasoning-and-647864",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The failure of language model reasoning when distracting material is present is a long-known flaw, documented as early as 2017.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "This kind of flaw, in which reasoning fails in light of distracting material, is not new.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and",
+   "date": "2024-10-11",
+   "document_title": "LLMs don’t do formal reasoning - and that is a HUGE problem",
+   "observed_at": "2026-10-28T23:59:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "reasoning fails in light of distracting material",
+    "is not new",
+    "a similar study, with similar results, back in 2017"
+   ],
+   "our_interpretation": [
+    "The plain reading is that comparable failures under distracting text had already been documented in language-understanding systems in 2017.",
+    "Comparable means that adding distracting text reduced correct answers without changing the answer the original passage supported. It does not require identical architectures, tasks, or underlying mechanisms.",
+    "The target period is 2017 because the surrounding text explicitly identifies that year's Jia–Liang study."
+   ],
+   "support_condition": "The 2017 Jia–Liang study reports that adding distracting sentences that preserve the correct answer substantially worsened reading-comprehension model performance.",
+   "contradiction_condition": "The cited study found no such deterioration, or its reported failures depended on changing the correct answer rather than adding distracting material."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Jia and Liang’s 2017 study used AddSent to add distracting sentences designed to preserve the correct answer [e1]. Average F1 fell from 75.7% to 31.3% across four tested reading-comprehension models [e1]. These results support the historical claim that comparable failures under distracting text were documented in 2017 [e1].",
+  "limitations": [
+   "The study measured reading comprehension in 2017 systems. It does not establish a shared failure mechanism with modern LLMs or an inability to perform formal reasoning.",
+   "The answer-preservation method applies to AddSent. The separate AddAny method did not guarantee that additions preserved the correct answer."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "accuracy drop under every form of adversarial evaluation.",
+    "locator": "Section 4.2, Main Experiments; methods in Introduction and Section 3",
+    "url": "https://arxiv.org/html/1707.07328v1",
+    "publisher": "arXiv",
+    "event_date": "2017",
+    "available_at": "2017-07-23",
+    "explanation": "The authors constructed distracting sentences to preserve the correct answer and reported that AddSent reduced average F1 from 75.7% to 31.3% across four tested systems. This directly documents the comparable failure Marcus identifies in 2017."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "32a1a504485dbf945617538bb135fad28b8faef95da77766895cea08a6720f4b",
+ "supersedes_assessment_id": "marcus-llms-dont-do-formal-reasoning-and-647864-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-31T20:02:09Z"
+}

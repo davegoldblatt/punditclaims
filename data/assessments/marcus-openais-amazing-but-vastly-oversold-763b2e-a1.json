@@ -1,0 +1,147 @@
+{
+ "assessment_id": "marcus-openais-amazing-but-vastly-oversold-763b2e-a1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-amazing-but-vastly-oversold-763b2e",
+  "version": 1,
+  "content_hash": "c426355d3b02c82a2bdaa5c0a3dca9ed211693a18a88f8cbf96b334b8fcf52a7"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-amazing-but-vastly-oversold-763b2e",
+  "version": 1,
+  "content_hash": "72869167579814d146634a1aba0838ed46887daaf2818af4f27e0922e19df3a0"
+ },
+ "packet_ref": {
+  "id": "marcus-openais-amazing-but-vastly-oversold-763b2e-p1",
+  "content_hash": "27a0199c82635db7c61391181c8ab0bd269256d50a0d2ef09b91f0437ea7d81d"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The studies support the ordinary, limited reading. Verified synthetic examples can be generated at scale, and controlled training comparisons show benefits in mathematics and coding. Reliable automatic feedback does not extend equally to open-ended tasks. This does not establish that all synthetic answers are correct, that generation is free, or that other domains cannot improve through different methods.",
+ "evidence_ids": [
+  "e2",
+  "e3",
+  "e4",
+  "e5"
+ ],
+ "counterevidence_ids": [
+  "e5"
+ ],
+ "limitations": [
+  "The result depends on reading correctness relative to formal specifications.",
+  "Cheap is interpreted as automated production with reduced annotation requirements; no monetary threshold was supplied or established.",
+  "The evidence establishes a contributing mechanism, not a complete explanation of frontier-model performance.",
+  "Several decisive studies are preprints."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-openais-amazing-but-vastly-oversold-558b8d-4x-review-anthropic-1",
+  "marcus-openais-amazing-but-vastly-oversold-558b8d-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-openais-amazing-but-vastly-oversold-558b8d-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-openais-amazing-but-vastly-oversold-763b2e",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Models shine at math and coding because those domains allow verification and cheap correct synthetic data, which is not true of domains in general.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Math lends itself to two things: verification (using symbolic tools), and massive amounts of cheaply produced synthetic data where you can guarantee that the answers are correct. The same applies to coding — but it is not true in general.",
+   "locator": "paragraph 45",
+   "url": "https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold",
+   "date": "2026-08-02",
+   "document_title": "OpenAI’s amazing — but vastly oversold — new model Astra",
+   "observed_at": "2026-10-28T22:28:54Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "verification (using symbolic tools)",
+    "massive amounts of cheaply produced synthetic data",
+    "guarantee that the answers are correct",
+    "The same applies to coding",
+    "not true in general"
+   ],
+   "our_interpretation": [
+    "The surrounding passage attributes part of mathematical and coding progress to these properties; it does not identify them as the only causes.",
+    "The plain reading concerns formalizable tasks within math and coding, not every mathematical question or arbitrary software requirement.",
+    "Correctness guarantees apply to the formal statement or specification being checked.",
+    "Cheap production means scalable automated generation and checking without human annotation of every example, not zero computing cost.",
+    "Not true in general means that this guarantee is unavailable across open-ended tasks generally, not that all other domains lack useful feedback."
+   ],
+   "support_condition": "Training studies show that automated generation and verification can supply large datasets and materially improve mathematical and coding performance, while reliable automatic correctness checks have documented limits outside suitable formal tasks.",
+   "contradiction_condition": "Controlled studies undermine the claimed contribution in both domains, or comparable guaranteed automatic verification is shown to apply generally to open-ended tasks."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The studies support the ordinary, limited reading. Verified synthetic examples can be generated at scale, and controlled training comparisons show benefits in mathematics and coding. Reliable automatic feedback does not extend equally to open-ended tasks. This does not establish that all synthetic answers are correct, that generation is free, or that other domains cannot improve through different methods.",
+  "limitations": [
+   "The result depends on reading correctness relative to formal specifications.",
+   "Cheap is interpreted as automated production with reduced annotation requirements; no monetary threshold was supplied or established.",
+   "The evidence establishes a contributing mechanism, not a complete explanation of frontier-model performance.",
+   "Several decisive studies are preprints."
+  ],
+  "evidence": [
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "significantly outperform",
+    "locator": "Section 4.3.1, The Effectiveness of Large-scale Autoformalization",
+    "url": "https://arxiv.org/html/2405.14333v1",
+    "publisher": "Xin et al., arXiv",
+    "event_date": "2024-05",
+    "available_at": "2024-05-23",
+    "explanation": "The study constructs eight million synthetic proof examples and reports an ablation favoring the generated dataset. This supports the contribution of scalable, formally checked data, with guarantees limited to the formalized statements."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "SEQ supervision",
+    "locator": "Section 5.4.1, Value of SEQ Supervision",
+    "url": "https://arxiv.org/html/2604.17010v2",
+    "publisher": "Miceli Barone and Poon, arXiv",
+    "event_date": "2026-05",
+    "available_at": "2026-05-03",
+    "explanation": "The authors generate validated Haskell programs and compare training with and without formal-equivalence supervision. The controlled comparisons support a contribution from verified synthetic examples, while other reported tasks show limited transfer."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "a reliable reward model",
+    "locator": "Discussion of future directions, immediately before Section 7",
+    "url": "https://arxiv.org/html/2501.12948v2",
+    "publisher": "DeepSeek-AI et al., arXiv",
+    "event_date": "2026-01",
+    "available_at": "2026-01-04",
+    "explanation": "The research distinguishes tasks with dependable verifiers from tasks where feedback remains difficult. This supports a limitation on general applicability, rather than an absolute prohibition on progress elsewhere."
+   },
+   {
+    "id": "e5",
+    "relation": "context",
+    "excerpt": "general reasoning benchmarks",
+    "locator": "Section 5, Conclusions",
+    "url": "https://arxiv.org/html/2505.21493v1",
+    "publisher": "Zhou et al., arXiv",
+    "event_date": "2025-05",
+    "available_at": "2025-05-27",
+    "explanation": "This method improves general reasoning without explicit answer verification. It limits any stronger interpretation that progress requires formal verifiers, but does not establish guaranteed correctness across open-ended tasks."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "732bcfbebc2659a6335c5ff6e255980b0fee563a8fe6a8b4ecb710b6d8b2df51",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:03:18Z"
+}

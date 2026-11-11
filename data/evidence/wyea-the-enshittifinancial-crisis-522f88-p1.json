@@ -1,0 +1,87 @@
+{
+ "packet_id": "wyea-the-enshittifinancial-crisis-522f88-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-522f88",
+  "version": 1,
+  "content_hash": "788b24f1b1c05b34385bfc6d734f529231b0ed77a30d9f17e2fdecfef551b97f"
+ },
+ "contract_ref": {
+  "id": "wyea-the-enshittifinancial-crisis-522f88",
+  "version": 1,
+  "content_hash": "dbe63606ec6f3549accfd233e053949d5ad61423e71267f36bdeae3fc972be9e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2025 actual revenue 4.5 billion 2026 cash burn 2025 2.8 billion",
+   "Anthropic 2025 cash burn 5.2 billion January 2026 Information",
+   "site.sec.gov/Archives/edgar/data/ Anthropic 2026 s-1 4585 2637",
+   "Anthropic 2025 \"cash burn\" \"2.8\" 2026",
+   "Anthropic \"2025\" \"cash burn\" \"2.7\"",
+   "Anthropic \"2025\" \"burned\" \"2026\" billion cash"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Read cash-flow tables, operating-activity explanations, capital expenditures, and the audit opinion. These establish GAAP cash flows but do not reconcile the earlier estimate."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search results describe an EBITDA projection, which also cannot substitute for realized cash burn."
+   },
+   {
+    "url": "https://www.reddit.com/r/singularity/comments/1qke0zj/anthropic_underestimated_cash_burn_52b_on_a_9b/",
+    "used": false,
+    "why": "Search result labels $5.2 billion as cash burn without establishing comparability. It is not a reliable substitute for the underlying financial reporting."
+   }
+  ],
+  "performed_at": "2026-10-29T21:25:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, filed with the SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, Cash Flows, Operating Activities; consolidated cash-flow statement F-12",
+   "receipt": {
+    "public_excerpt": "Net cash used in operating activities for the year ended December 31, 2025 decreased by $3.1 billion compared\n\nto the year ended December 31, 2024.",
+    "quote_hash": "aa1e93b2a30a8c03895cb82e25aca4f0ab4c210cab89ab2bd4613702d3ef802e",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing reports $2.637 billion of 2025 operating cash outflow and separately reports $131 million of property and equipment purchases. These figures weigh against a large ordinary cash-burn excess, but the GAAP operating-cash-flow measure is not the unreconciled estimate specified in the claim.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Net cash used in operating activities",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No reconciliation connects the $2.8 billion estimate to the filing's cash-flow measures.",
+  "No readable, comparable report of realized 2025 cash burn on the original estimate's basis was established."
+ ],
+ "packet_hash": "a6665f6c85aecabda59e8fa6f29b29c5804841e2c7179c032ec7df4eaf1b45d4"
+}

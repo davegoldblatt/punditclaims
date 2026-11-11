@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-exclusive-openai-financials-cc8ff1-1x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-exclusive-openai-financials-cc8ff1": "dbedeee0d86451b7070e5bccc73ae93002ff853026a2dc76bbfe8ee5f0225540"
+ },
+ "started_at": "2026-10-31T19:59:18Z",
+ "completed_at": "2026-10-31T19:59:50Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron wrote and endorsed the statement."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition preserves the retrospective comparison and the hedge 'appear to be'. It appropriately excludes uncertainty about future profitability."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The net-loss measure and two-year comparison fit the context. However, treating the hedge as a scoreable claim about reported figures bypasses the policy exclusion for hedged language. The plain-reading rule applies only to firm claims."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reports FT verification of audited figures showing net losses rising from about $5 billion to $39 billion. Supports the underlying annual comparison, but cannot remove the speaker's hedge."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Explains that non-cash charges drove most of the increase. The adjusted loss uses a different accounting basis and does not contradict the headline net-loss comparison."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Relays the FT's adjusted 2025 loss. Without a comparable adjusted 2024 figure, it cannot establish underlying annual growth or contradict the specified net-loss comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The evidence supports a large increase in reported annual net losses, with substantial non-cash charges. However, the speaker hedged the observation with 'appear to be'. Under the supplied policy, that language is not scored, and the contract cannot use its plain-reading provision to override the hedge.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-exclusive-openai-financials-cc8ff1"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17549,
+  "output_tokens": 719,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 279
+ },
+ "cost_usd": null
+}

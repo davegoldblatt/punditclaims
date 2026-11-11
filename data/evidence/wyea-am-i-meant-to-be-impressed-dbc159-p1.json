@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-am-i-meant-to-be-impressed-dbc159-p1",
+ "claim_revision_ref": {
+  "id": "wyea-am-i-meant-to-be-impressed-dbc159",
+  "version": 1,
+  "content_hash": "fee68e9c069a466982202ac6a8e568f7c81d20de166ab837e7e7a104c912fa1a"
+ },
+ "contract_ref": {
+  "id": "wyea-am-i-meant-to-be-impressed-dbc159",
+  "version": 1,
+  "content_hash": "de5325d937ba0328715301989e5bc5fc20237daebe486d2960491e0099350b6a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic Broadcom 21 billion 42 billion 2026 Google TPUs buy CNBC April",
+   "site.sec.gov Broadcom April 6 2026 Anthropic 3.5",
+   "Broadcom Anthropic \"lease\" \"April\" \"2026\" Google purchase",
+   "\"Anthropic\" \"rent them back\" Google TPUs",
+   "\"Anthropic\" \"TPUs\" \"own data centers\" \"2026\" Broadcom"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing published before the cutoff identifies Broadcom equipment leases and dates the relevant agreement to March 2026."
+   },
+   {
+    "url": "https://ppc.land/anthropic-ipo-exhibits-show-9-interest-on-broadcoms-42bn-chip-notes/",
+    "used": true,
+    "why": "Readable reporting describes the executed March 31 agreement's supplier, lessor and lessee. Used alongside the primary filing because read_page could not retrieve the exhibit itself."
+   },
+   {
+    "url": "https://www.googlecloudpresscorner.com/2026-04-06-Anthropic-Expands-Use-of-Google-Cloud-and-TPUs",
+    "used": true,
+    "why": "Contemporaneous primary announcement distinguishes Google Cloud services from TPU access supplied through Broadcom."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/exhibit1011-sx1.htm",
+    "used": false,
+    "why": "The exhibit was located, but read_page returned HTTP 403. No quotation from it is used."
+   },
+   {
+    "url": "https://www.cnbc.com/2026/04/06/broadcom-agrees-to-expanded-chip-deals-with-google-anthropic.html",
+    "used": false,
+    "why": "Readable contemporaneous reporting describes compute access and analyst revenue estimates, but does not establish the claimed purchase-and-rent-back sequence."
+   },
+   {
+    "url": "https://www.googlecloudpresscorner.com/2025-10-23-Anthropic-to-Expand-Use-of-Google-Cloud-TPUs-and-Services",
+    "used": false,
+    "why": "Describes access to TPU capacity and cloud services, without establishing ownership or a second rental payment for purchased equipment."
+   }
+  ],
+  "performed_at": "2026-10-29T10:29:57Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "MD&A, Contractual Obligations, Infrastructure Equipment Leases; also Risk Factors page 58 and exhibit list entry 10.11",
+   "receipt": {
+    "public_excerpt": "These Lease Arrangements are accounted for as finance leases.",
+    "quote_hash": "6a1013a6ddca5399ea0533c9022aa272029381ed87b04176de730124654ed036",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "contradicts",
+   "explanation": "The surrounding disclosure identifies Broadcom as the equipment-lease counterparty and deployment in dedicated facilities operated on Anthropic's behalf. The filing dates the relevant agreement to March 31, establishing that the different rental structure preceded the post.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "ppc-land-anthropic-ipo-exhibits-show-9-interest-on-broadcoms-42bn-chip-notes",
+   "source_snapshot_id": "8372fdcab84ae2f8fc37bd731a41b495f9efe81f7e614e2d167ef459a02c5b59",
+   "publisher": "PPC Land",
+   "source_type": "news_report",
+   "url": "https://ppc.land/anthropic-ipo-exhibits-show-9-interest-on-broadcoms-42bn-chip-notes",
+   "locator": "The TPU8i lease: Google sells, Broadcom owns, Anthropic rents",
+   "receipt": {
+    "public_excerpt": "Broadcom is the lessor.",
+    "quote_hash": "3f0ea3f9f79d90c11edaef9b71030e2afbea72426a851466fd1e2f9813b6e36f",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-29T10:22:08Z",
+   "relation": "contradicts",
+   "explanation": "The report describes Google selling equipment to Broadcom, which leases it to Anthropic's subsidiary under the March 31 agreement. This directly conflicts with Anthropic buying the same equipment from Google and then renting it from Google.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "googlecloudpresscorner-com-2026-04-06-anthropic-expands-use-of-goog-f401441c8ca5",
+   "source_snapshot_id": "cd279abe60e06f5df74a1adf10ec59bc67b7ace8330ebc29aeb4f86c336eb640",
+   "publisher": "Google Cloud",
+   "source_type": "company_disclosure",
+   "url": "https://www.googlecloudpresscorner.com/2026-04-06-Anthropic-Expands-Use-of-Google-Cloud-and-TPUs",
+   "locator": "Second body paragraph",
+   "receipt": {
+    "public_excerpt": "TPUs supplied through Broadcom.",
+    "quote_hash": "53b945895f76b03095576964625c8a7f66c08eb87dcd27490253d76742b13285",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-06",
+   "available_at": "2026-04-06",
+   "retrieved_at": "2026-10-29T10:20:19Z",
+   "relation": "context",
+   "explanation": "The contemporaneous announcement describes two delivery channels. It does not say Anthropic purchases equipment from Google and subsequently pays Google to rent the same equipment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "read_page could not retrieve the executed lease exhibit, so its detailed purchase chain is supported by reporting alongside the readable primary filing.",
+  "Some contract terms are redacted."
+ ],
+ "packet_hash": "a2149df61966e811a4088bb731c2939e39d8e9b41be0fc303a1ea788bc4b2dc6"
+}

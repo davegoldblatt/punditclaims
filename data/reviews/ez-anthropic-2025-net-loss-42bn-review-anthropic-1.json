@@ -1,0 +1,62 @@
+{
+ "run_id": "ez-anthropic-2025-net-loss-42bn-review-anthropic-1",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "api",
+ "prompt_version": "review-3",
+ "prompt_hash": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc",
+ "rubric_version": "policy-2026-10-28.4",
+ "input_hashes": {
+  "claim": "723ea3ff1e707f6f2a4ee20cacb32aa4d1e93ecad5722d4786237255bc078e2d",
+  "contract": "f69d30776e3a8d78eec044ce2f526d3b1e80ce0c305de579df8b9a19e889f809",
+  "packet": "e69c69da72fe3abcb859a15cdcca6dd326e10aceadfb24e625430a07565dcd8b",
+  "prompt": "c0065d2075c3ee125e3386380d48935ed99d93174eb0b0e1cf0a9da718f93cbc"
+ },
+ "started_at": "2026-10-28T22:54:06Z",
+ "completed_at": "2026-10-28T22:54:20Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron wrote the sentence in his own newsletter and asserts the figure as fact. He sources it to Reuters' report on the S-1 leak, but adopts it as his own claim rather than merely quoting."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "observation",
+   "note": "The proposition captures the dated factual claim: a 2025 net loss of $42 billion. 'Technically' does not hedge the figure. The 'stock-related, not cash' gloss is a separate characterisation and is excluded from scoring."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "GAAP is the basis of the source he names (the S-1), and rounding to the nearest billion matches his own precision. Excluding the 'stock-related' description is fair. No reasonable alternative reading changes the result."
+  },
+  "evidence": [
+   {
+    "id": "s1-2025-net-loss",
+    "fits": true,
+    "relation": "supports",
+    "note": "Audited S-1 statement of operations, available 2026-10-26, before the evaluation date. It shows a 2025 net loss of $(41,965)M, or $41.965B, which rounds to $42B. The page locator looks off by one: the table appears on F-8, not F-7. This is immaterial. The source is a filed audited statement, not a self-promotional disclosure."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "historical_observation",
+  "horizon_state": "not_applicable",
+  "outcome": "supported",
+  "rationale": "Anthropic's filed S-1 reports an audited GAAP net loss of $41,965 million for the year ended 2025-12-31. That is 41.965 billion, which rounds to $42 billion, meeting the support condition. The packet lists no contrary evidence. The characterisation of the loss as stock-related is not assessed.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9490,
+  "output_tokens": 1108,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": "0.060120"
+}

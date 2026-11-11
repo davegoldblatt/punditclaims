@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-the-cnet-fake-news-fiasco-autopilot-5528cc-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-cnet-fake-news-fiasco-autopilot-5528cc": "7af722520c9d542256f1c6a11f720c6f900c505608da46e50aa3713c20f15cb8"
+ },
+ "started_at": "2026-11-10T01:55:22Z",
+ "completed_at": "2026-11-10T01:55:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He is giving his own explanation of the CNET episode, not quoting someone else."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": false,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The claim is causal, but the normalised version states it as a firm cause. That drops the 'probably' in the sentence just before and the 'might' in the counterfactual, which together frame the explanation as Marcus's likely account."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract treats this as a hedged explanation and does not score it. That is fair, because the hedge ('probably') comes from Marcus himself, not from the evaluator. It also rightly notes that proof of the errors alone would not prove why editors trusted the drafts."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CNET's own disclosure, dated 2023-01-25. It confirms that published AI-assisted stories had factual errors and that editors edited the drafts. It says nothing about whether fluent prose led editors to trust them."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "Marcus presents his causal story as probable ('probably took a quick look', 'might not have trusted'). Under the policy, a hedged claim is not scored. Separately, e1 confirms the errors were published but gives no evidence about the editors' reasoning, so the evidence could not settle the mechanism anyway.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-cnet-fake-news-fiasco-autopilot-5528cc"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8018,
+  "output_tokens": 1219,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

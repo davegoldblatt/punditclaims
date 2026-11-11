@@ -1,0 +1,121 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-238701-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-238701",
+  "version": 2,
+  "content_hash": "6bb6a8e3dc15d488b1b3bba66d7000d8893ad422689b616d26460fa411ea8b4b"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-238701",
+  "version": 1,
+  "content_hash": "be3d6828706566bb59725cd35ac40a018807f02c5c67a542b77117ca5ef78034"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 function calling June 2023 untrusted data proof of concept exploit",
+   "site.openai.com \"Introducing Structured Outputs\" \"gpt-4-0613\"",
+   "\"GPT-4\" \"direct\" \"database\" reliability benchmark BIRD 2023",
+   "site.bird-bench.github.io GPT-4 54.89 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/function-calling-and-other-api-updates/",
+    "used": true,
+    "why": "Dated primary documentation of GPT-4 function calling and downstream integration capabilities."
+   },
+   {
+    "url": "https://openai.com/index/introducing-structured-outputs-in-the-api/",
+    "used": true,
+    "why": "Reports a GPT-4 schema-following evaluation, later constrained-output support, and remaining semantic limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.03111",
+    "used": false,
+    "why": "The retrieved abstract reports ChatGPT results rather than the GPT-4 figure found in search results. Those figures were not substituted for one another."
+   }
+  ],
+  "performed_at": "2026-10-29T15:53:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-structured-outputs-in-the-api",
+   "source_snapshot_id": "916def24474fc29903a5c2dd4fd5e1361ad18bdc90959246d7b67d7ab7803015",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-structured-outputs-in-the-api",
+   "locator": "Opening discussion of complex JSON schema-following evaluations",
+   "receipt": {
+    "public_excerpt": "gpt-4-0613 scores less than 40%.",
+    "quote_hash": "c0e4f97b5ea87432fd2731e2e8622eed318ba6071d7420e1c5788ccbbb5861a6",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-08-06",
+   "retrieved_at": "2026-10-29T02:03:13Z",
+   "relation": "context",
+   "explanation": "This is evidence of substantial difficulty following complex output schemas. It measures schema compliance rather than correct execution of ordinary database or assistant requests, so it does not by itself settle the forecast.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-function-calling-and-other-api-updates",
+   "source_snapshot_id": "ed1dbd570f258339db9a39afa965bb41fcbbe71f9e1d1eabeafe840a9b05bf75",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/function-calling-and-other-api-updates",
+   "locator": "Section Function calling",
+   "receipt": {
+    "public_excerpt": "more reliably get structured data",
+    "quote_hash": "4812aa1cf8726bcccd3f7ec5c7d33a694ceb957387142a2eca25b22210b8a085",
+    "verified": "exact"
+   },
+   "event_date": "2023-06-13",
+   "available_at": "2023-06-13",
+   "retrieved_at": "2026-10-29T09:17:16Z",
+   "relation": "context",
+   "explanation": "GPT-4-0613 introduced structured arguments for external functions, including database and assistant examples. This challenges a broad claim that integration is impossible, but supplies no measured operational reliability and uses a structured interface.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-structured-outputs-in-the-api",
+   "source_snapshot_id": "916def24474fc29903a5c2dd4fd5e1361ad18bdc90959246d7b67d7ab7803015",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-structured-outputs-in-the-api",
+   "locator": "Section Limitations and restrictions",
+   "receipt": {
+    "public_excerpt": "model mistakes",
+    "quote_hash": "268f6d8cd58e6bca6e6bb2ebaa028a18a50c79a1add73786c3ce228d477c7cf3",
+    "verified": "exact"
+   },
+   "event_date": "2024-08-06",
+   "available_at": "2024-08-06",
+   "retrieved_at": "2026-10-29T02:03:13Z",
+   "relation": "context",
+   "explanation": "The release extends constrained function outputs to GPT-4-0613 and later tool-supporting models, while warning that values can still be wrong. It establishes progress in formatting without establishing dependable semantic behavior.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No cited evaluation measures end-to-end reliability under an agreed reading of simply and directly.",
+  "The claim supplies no practical error threshold.",
+  "Structured interfaces and unrestricted natural-language output are not interchangeable."
+ ],
+ "packet_hash": "02dcb832f955f7ed948b027981ea406a890b7ff2c2cdb2a17ddd62a263538815"
+}

@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-has-google-gone-too-woke-why-even-7cf71d-p1",
+ "claim_revision_ref": {
+  "id": "marcus-has-google-gone-too-woke-why-even-7cf71d",
+  "version": 1,
+  "content_hash": "64f5dcd49ff07fba0d3ee803fcbf442d313d0d950756b28a79b4d7386f6a793c"
+ },
+ "contract_ref": {
+  "id": "marcus-has-google-gone-too-woke-why-even-7cf71d",
+  "version": 1,
+  "content_hash": "ba609996587df7e6eacba61f93395e498abafb55e3f7ff5c34598c730a747398"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.blog.google Gemini image generation got it wrong February 2024 tuning",
+   "site:blog.google \"Gemini image generation got it wrong\"",
+   "\"text-to-image\" \"historical\" \"bias\" \"training data\" ablation",
+   "image generation temporal reasoning training data bias controlled experiment 2024 historical accuracy"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-image-generation-issue/",
+    "used": true,
+    "why": "Google's retrospective technical explanation identifies tuning problems, but does not isolate Marcus's two proposed causes."
+   },
+   {
+    "url": "https://link.springer.com/article/10.1007/s43681-024-00531-5",
+    "used": true,
+    "why": "Primary research demonstrates interventions on demographic bias, but does not jointly test historical accuracy and contextual reasoning in the February deployments."
+   },
+   {
+    "url": "https://www.wired.com/story/google-gemini-woke-ai-image-generation/",
+    "used": false,
+    "why": "Its causal discussion includes expert interpretation and repeats Marcus's argument. It is not an independent controlled test of that argument."
+   }
+  ],
+  "performed_at": "2026-10-29T06:58:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "blog-google-products-and-platforms-products-gemini-gemini-image-generation-issue",
+   "source_snapshot_id": "7ed13a057ddd6b4b8c1d41931b11e5281884779c392ed74a027719fc090ed08d",
+   "publisher": "Google",
+   "source_type": "company_disclosure",
+   "url": "https://blog.google/products-and-platforms/products/gemini/gemini-image-generation-issue",
+   "locator": "What happened, paragraph beginning 'So what went wrong?'",
+   "receipt": {
+    "public_excerpt": "failed",
+    "quote_hash": "ef723372ca15293f75d161f8dfd3167d57ba53e3e361302961aeaaa8152209ee",
+    "verified": "exact"
+   },
+   "event_date": "2024-02",
+   "available_at": "2024-02-23",
+   "retrieved_at": "2026-10-29T06:21:13Z",
+   "relation": "context",
+   "explanation": "Google attributes the problem to diversity tuning and excessive caution. This supplies a concrete alternative mechanism but does not establish whether data composition or reasoning limitations also contributed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "link-springer-com-article-10-1007-s43681-024-00531-5",
+   "source_snapshot_id": "caccd843bac883f661a3116a2c1caa02eedd7c1082b58bc6d54667cc423fe0bb",
+   "publisher": "AI and Ethics, Springer Nature",
+   "source_type": "peer_reviewed",
+   "url": "https://link.springer.com/article/10.1007/s43681-024-00531-5",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "reinforce such biases.",
+    "quote_hash": "2f4289878529eca2f6ab985108e95cbaa1c8067b401e616816c60a0932626fd5",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-08-01",
+   "retrieved_at": "2026-10-29T06:53:47Z",
+   "relation": "context",
+   "explanation": "The research reports biased outputs and changes to demographic proportions through deployment-time instructions without retraining. It does not establish both proposed causes for the systems and failures Marcus described.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No located study independently varies historical data composition and temporal or contextual reasoning for the relevant deployments.",
+  "The available evidence does not distinguish deficient underlying capability from behavior imposed by tuning."
+ ],
+ "packet_hash": "7c0862a7b9d427c52bbc5de7c8726d33e295064b3f4a4ef09e9759a87e525063"
+}

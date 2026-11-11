@@ -1,0 +1,151 @@
+{
+ "packet_id": "marcus-oops-how-google-bombed-while-doing-6726ff-p1",
+ "claim_revision_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-6726ff",
+  "version": 1,
+  "content_hash": "b093c8cb3ca221b2ba481d0faef5af5175eb2ae5b95af76b5992b1ad057b770b"
+ },
+ "contract_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-6726ff",
+  "version": 1,
+  "content_hash": "006184850522e892334c3ae0f1f5b6a0583e115c30b6c62ad6c1743f83610e9c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Hallucination is Inevitable: An Innate Limitation of Large Language Models arxiv",
+   "OpenAI \"Why language models hallucinate\" paper",
+   "language model hallucination lossy compression of training data factual knowledge paper arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2401.11817",
+    "used": true,
+    "why": "A formal argument that LLMs cannot avoid hallucinating in some cases."
+   },
+   {
+    "url": "https://arxiv.org/abs/2602.00906",
+    "used": true,
+    "why": "An ICML 2026 paper that links hallucination directly to lossy compression under limited capacity."
+   },
+   {
+    "url": "https://arxiv.org/abs/2604.03557",
+    "used": true,
+    "why": "A study tracing reasoning hallucinations to a 'path compression' mechanism during training."
+   },
+   {
+    "url": "https://openai.com/index/why-language-models-hallucinate/",
+    "used": true,
+    "why": "Developer research on where hallucinations come from. It supports the persistence and pretraining origin, but says hallucination is not inevitable because models can abstain."
+   },
+   {
+    "url": "https://arxiv.org/html/2509.11208v1",
+    "used": false,
+    "why": "A related compression-failure framing. It was not read in full, so it is not needed."
+   }
+  ],
+  "performed_at": "2026-10-29T07:33:20Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2602-00906",
+   "source_snapshot_id": "54f2271a933763a8f65f72bc65eb1fe458eec6bf8020b66caa2c741acc0f751f",
+   "publisher": "arXiv (ICML 2026), Guo and Li",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2602.00906",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "We validate this theory empirically on both synthetic and real-world data, showing that hallucinations persist as a natural consequence of lossy compression.",
+    "quote_hash": "931827d899f42e3e2263034d4ba9aada2e96af2ffd06c5364df77f0412cd2b83",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-31",
+   "available_at": "2026-05-29",
+   "retrieved_at": "2026-10-29T07:30:38Z",
+   "relation": "supports",
+   "explanation": "This paper ties hallucination directly to lossy compression of facts under limited capacity. That is close to Marcus's stated mechanism.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2401-11817",
+   "source_snapshot_id": "f544bc747df9951904fcc6d2c86dcb1efcfa0e7375cbab01e09e08f4514dbf1d",
+   "publisher": "arXiv, Xu, Jain and Kankanhalli (National University of Singapore)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2401.11817",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "In this paper, we formalize the problem and show that it is impossible to eliminate hallucination in LLMs.",
+    "quote_hash": "ee1e16896aa2b6536968a942acbb8ad179de144c527835b51c6b234389f541ce",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-22",
+   "available_at": "2025-02-13",
+   "retrieved_at": "2026-10-29T03:05:02Z",
+   "relation": "supports",
+   "explanation": "This paper supports the 'in their blood' part: under its formal definition, hallucination cannot be fully eliminated in LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2604-03557",
+   "source_snapshot_id": "e478d995c9c2904119ffbee25add71a2db74d60e063f540a350353e08098ba50",
+   "publisher": "arXiv, Dai et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2604.03557",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "We show that reasoning hallucinations arise from two fundamental mechanisms",
+    "quote_hash": "5a4e6828c97e855418832612b687da7a5545ca49e31557b51f47fa0bc816f539",
+    "verified": "exact"
+   },
+   "event_date": "2026-04-04",
+   "available_at": "2026-04-04",
+   "retrieved_at": "2026-10-29T07:30:38Z",
+   "relation": "supports",
+   "explanation": "In controlled experiments, part of reasoning hallucination comes from learned relations collapsing during training. This fits 'losing track of factual relations'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-why-language-models-hallucinate",
+   "source_snapshot_id": "48118ca0a0d79905589e23fb4621861fc915523872085cf50febffb86d5f68c0",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/why-language-models-hallucinate",
+   "locator": "section Conclusions",
+   "receipt": {
+    "public_excerpt": "Finding: They are not, because language models can abstain when uncertain.",
+    "quote_hash": "8cdb9511fb4afd3d7c8bf356f0e8d4168e767a65c26834bf3c1041f715f5c86c",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-05",
+   "available_at": "2025-09-05",
+   "retrieved_at": "2026-10-29T02:27:00Z",
+   "relation": "contradicts",
+   "explanation": "OpenAI pushes back on the strongest reading: models can avoid hallucinating by abstaining. Elsewhere on the same page it says hallucinations 'remain a fundamental challenge for all large language models' and come from pretraining on arbitrary facts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e4"
+ ],
+ "unresolved_gaps": [
+  "Most of the compression results are theoretical or come from synthetic or controlled settings, not from frontier chatbots.",
+  "Researchers also point to other causes, such as evaluation incentives that reward guessing. How much of the problem compression explains is not settled."
+ ],
+ "packet_hash": "733de6524aaa0d2bb5cf7bdf531805fd238d39e798a744c3753711c570731e49"
+}

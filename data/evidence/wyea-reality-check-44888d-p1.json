@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-reality-check-44888d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-reality-check-44888d",
+  "version": 1,
+  "content_hash": "4a7e6d5c554315e0d94b36fab9b5181bcca12bd880ac2f49b1bb1290a4aab029"
+ },
+ "contract_ref": {
+  "id": "wyea-reality-check-44888d",
+  "version": 1,
+  "content_hash": "7f1abdf46c83ee05ea3cb41f4a0ec72c93c410dcd4715832de581b5e22b059e9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ARC Prize 2025 results verified Gemini 3 Deep Think 87.5",
+   "site.arcprize.org \"March\" \"2025\" \"4%\"",
+   "site.arcprize.org/blog \"ARC-AGI-2\" \"o3\" \"2025\"",
+   "site.metr.org \"2026\" \"time horizon\" \"April\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025",
+    "used": true,
+    "why": "Read with read_page. Establishes the benchmark and the pre-post capability baseline."
+   },
+   {
+    "url": "https://arcprize.org/blog/analyzing-o3-with-arc-agi",
+    "used": true,
+    "why": "Read with read_page. Supplies an April 22 evaluation and explains why incomplete high-reasoning runs cannot be treated as reliable scores."
+   },
+   {
+    "url": "https://arcprize.org/blog/arc-prize-2025-results-analysis",
+    "used": true,
+    "why": "Read with read_page. Independent verification of later results, with explicit discussion of specialization and possible benchmark-domain overfitting."
+   },
+   {
+    "url": "https://metr.org/time-horizons/",
+    "used": false,
+    "why": "Read with read_page. The retrieved text explained methodology and limitations but did not expose the numerical chart needed for an additional matched comparison."
+   },
+   {
+    "url": "https://arcprize.org/results",
+    "used": false,
+    "why": "A changing leaderboard was less suitable than dated evaluation reports for establishing the baseline and resolution event."
+   }
+  ],
+  "performed_at": "2026-10-29T12:22:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arcprize-org-blog-announcing-arc-agi-2-and-arc-prize-2025",
+   "source_snapshot_id": "5d4e719a7f02fb5e00429f7a362fe8341e4cecb3b3ac9b818f7305abb6c6cb4d",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025",
+   "locator": "Announcements",
+   "receipt": {
+    "public_excerpt": "single-digit percentage scores",
+    "quote_hash": "0314fbe3b1ee8bc180642aa3fa7cb466d884aad4b8d9ec7f2a20b4020b7fdfcf",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-24",
+   "available_at": "2025-03-24",
+   "retrieved_at": "2026-10-29T07:34:30Z",
+   "relation": "context",
+   "explanation": "The benchmark developer documents low initial performance on novel abstract-reasoning tasks. This establishes a pre-publication baseline, not a later outcome.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arcprize-org-blog-analyzing-o3-with-arc-agi",
+   "source_snapshot_id": "b4df2d783f61f6523b916a64a3a316d3faae87b024dd3b4b0e906f53e5df9e69",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/analyzing-o3-with-arc-agi",
+   "locator": "Our testing shows, o3 low and medium results",
+   "receipt": {
+    "public_excerpt": "3%",
+    "quote_hash": "f3d30a8b2b5ce4bff8dae60a982de0a585b82b42d8a23dd7d215b60c91b2189d",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-22",
+   "available_at": "2025-04-22",
+   "retrieved_at": "2026-10-29T02:29:50Z",
+   "relation": "context",
+   "explanation": "Immediately before the post, the evaluator reported low and medium o3 results below 3%; it identified o3-medium as its strongest tested publicly available model. High-reasoning runs lacked sufficient coverage and were excluded from reliable scoring.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arcprize-org-blog-arc-prize-2025-results-analysis",
+   "source_snapshot_id": "b319dd3d49507a5144fdfb8fcba4042cc89dee6b540e154c4e8ba7db713aeb1c",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/arc-prize-2025-results-analysis",
+   "locator": "Industry Progress",
+   "receipt": {
+    "public_excerpt": "54%",
+    "quote_hash": "6b69f2d96f28250e404c9b179c03aa503a89974fa477274c6ee1b0610e32e65a",
+    "verified": "exact"
+   },
+   "event_date": "2025-12-05",
+   "available_at": "2025-12-05",
+   "retrieved_at": "2026-10-28T22:44:31Z",
+   "relation": "contradicts",
+   "explanation": "The independently verified result demonstrates a large increase in successful abstract-reasoning task completion over the April baseline. The report also cautions that refinement harnesses are domain-specific and that benchmark-domain training may contribute to performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "These results do not quantify gains across every practical use of generative AI.",
+  "The share of the improvement attributable to model changes, scaffolding, additional compute and benchmark-domain exposure is not isolated."
+ ],
+ "packet_hash": "705457f96d5667971c09aa426830d5cc87cf2339ca62d17e294d1246e2cfabb7"
+}

@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-on-nvidia-and-analyslop-93eb01-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-on-nvidia-and-analyslop-93eb01": "836d4b1773f83b760965195b023842935d44ff71a976f712dc880842b6cff463",
+  "case:wyea-on-nvidia-and-analyslop-f746c2": "208a13bf575cc343f3f01aafee5e912749a362b681d57f6a90ba22b8d43e19fa"
+ },
+ "started_at": "2026-10-29T17:56:23Z",
+ "completed_at": "2026-10-29T17:56:42Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his post, stating the figure as fact."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Numerical concentration claim kept with figures. 'Peculiar and worrying' is a value judgment and is correctly kept separate from the factual test."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'customers' as direct customers is the ordinary reading. It matches the 10-K disclosure and his own guess that the two are ODMs. The rounding allowance is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "FY2026 10-K: direct customers at 22% and 14% of revenue, 36% combined. Applied to $215.938B, that is about $77.7B. Available before the evaluation date."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "CFO commentary confirms FY2026 revenue of $215,938M, the denominator. It does not give customer shares."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "NVIDIA's FY2026 10-K reports two direct customers at 22% and 14% of total revenue, which is 36%. Revenue was $215.938B, so the two account for about $77.7B. Every numeric element of the statement matches. The value judgment is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-on-nvidia-and-analyslop-93eb01"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states in his own words what the METR study found and uses it in his argument. The claim tested is that his account of the study is accurate."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'per METR study' qualifier is kept, along with both figures and the 2025 date. The claim is about what the study reported, not a general law."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'engineers' as the study's participants and '24% faster' as their expected speedup is ordinary and fair. METR's own 24% figure is the expected speedup. The 20% believed afterwards does not change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "METR's July 2025 study: tasks took 19% longer with AI tools, and developers expected a 24% speedup."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "METR's caveat that the sample does not represent most software work. This bears on scope only, not on whether the claim is accurate."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "METR's Feb 2026 update repeats the 19% figure and says current speedup is likely higher. This does not change what the 2025 study found."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "METR's 2025 study reports a 19% slowdown with AI tools and a 24% expected speedup, as Zitron said. The only nuance is that 24% was what developers expected beforehand, while afterwards they believed AI had sped them up by 20%. That is within a fair reading. The 2026 update is context and does not change the 2025 result.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-on-nvidia-and-analyslop-f746c2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17829,
+  "output_tokens": 1961,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

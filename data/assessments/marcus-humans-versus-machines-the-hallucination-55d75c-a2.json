@@ -1,0 +1,138 @@
+{
+ "assessment_id": "marcus-humans-versus-machines-the-hallucination-55d75c-a2",
+ "claim_revision_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-55d75c",
+  "version": 1,
+  "content_hash": "12877b6a2c15be0e9914c2d22478134a52bba3bfb4d53f22cffb3ff42fcdbb9c"
+ },
+ "contract_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-55d75c",
+  "version": 1,
+  "content_hash": "db677ab5066a43b8bb28dfaeb0a6d21f2072853abe5c65f12fcfa71866dd8289"
+ },
+ "packet_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-55d75c-p1",
+  "content_hash": "f33cbfd6d0932436db92d49b196abefd150c5dad4956e0a9a4c8c90e199432b4"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-03-01",
+  "end": "2024-04-21",
+  "precision": "day"
+ },
+ "public_rationale": "The first part holds for GPT-4. Its technical report, published 15 March 2023, says it is a Transformer-based model pre-trained to predict the next token in a document, with post-training that improves factuality (e1). The 'NEVER fact-check' part does not hold under the contract's universal reading. On 19 September 2023, Google said Bard's 'Google it' button would read Bard's own response and check whether web content supports it (e2). On 20 September 2023, Meta researchers described Chain-of-Verification, in which the model plans verification questions to fact-check its own draft and then revises it (e3). Both dates fall within the target period, before the post on 21 April 2024. This result depends on counting prompted or tool-assisted checking as an LLM fact-checking what it says.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The packet documents next-token generation only for GPT-4 and does not cover every LLM in use during the period.",
+  "Bard's check relies on Google Search, a tool outside the model. Under a reading limited to the bare model, it may not count.",
+  "Chain-of-Verification needs a specific prompting method. The packet does not show it as default behavior in any deployed product.",
+  "Prompted self-checking is itself produced by statistical generation, so the evidence does not contradict the first part of the claim.",
+  "The packet does not show how often these checking features were used or how accurate they were."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-anthropic-1",
+  "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-humans-versus-machines-the-hallucination-55d75c-1x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-humans-versus-machines-the-hallucination-55d75c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "All LLM output, true or false, comes from the same statistical word-reconstruction process, and LLMs never fact-check what they say.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Instead, everything that LLMs say -- true or false -- comes from the same process of statistically reconstructing what words are likely in some context. They NEVER fact-check what they say.",
+   "locator": "paragraph 10",
+   "url": "https://garymarcus.substack.com/p/humans-versus-machines-the-hallucination",
+   "date": "2024-04-21",
+   "document_title": "Humans versus Machines: The Hallucination Edition",
+   "observed_at": "2026-10-29T00:00:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "everything that LLMs say -- true or false",
+    "comes from the same process of statistically reconstructing what words are likely in some context",
+    "They NEVER fact-check what they say"
+   ],
+   "our_interpretation": [
+    "Plain reading: LLM outputs are produced by next-token prediction, and LLMs never check their claims.",
+    "He names no period. The claim describes the state of LLMs when the post appeared. The target period runs from GPT-4's release (March 2023) to the post date (2024-04-21).",
+    "'NEVER' is a universal claim. One documented case of an LLM, or an LLM product, checking its own claims counts against it."
+   ],
+   "support_condition": "Documentation shows LLMs generate text by next-token prediction and no LLM checked its own claims during the period.",
+   "contradiction_condition": "A documented LLM method or deployed LLM feature from the period checks the model's own claims."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The first part holds for GPT-4. Its technical report, published 15 March 2023, says it is a Transformer-based model pre-trained to predict the next token in a document, with post-training that improves factuality (e1). The 'NEVER fact-check' part does not hold under the contract's universal reading. On 19 September 2023, Google said Bard's 'Google it' button would read Bard's own response and check whether web content supports it (e2). On 20 September 2023, Meta researchers described Chain-of-Verification, in which the model plans verification questions to fact-check its own draft and then revises it (e3). Both dates fall within the target period, before the post on 21 April 2024. This result depends on counting prompted or tool-assisted checking as an LLM fact-checking what it says.",
+  "limitations": [
+   "The packet documents next-token generation only for GPT-4 and does not cover every LLM in use during the period.",
+   "Bard's check relies on Google Search, a tool outside the model. Under a reading limited to the bare model, it may not count.",
+   "Chain-of-Verification needs a specific prompting method. The packet does not show it as default behavior in any deployed product.",
+   "Prompted self-checking is itself produced by statistical generation, so the evidence does not contradict the first part of the claim.",
+   "The packet does not show how often these checking features were used or how accurate they were."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "GPT-4 is a Transformer-based model pre-trained to predict the next token in a document.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2303.08774",
+    "publisher": "OpenAI (arXiv)",
+    "event_date": "2023-03-15",
+    "available_at": "2023-03-15",
+    "explanation": "This supports the first part. The leading LLM generates text by predicting likely next tokens. The report also notes post-training, which shapes but does not replace that process."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "When you click on the “G” icon, Bard will read the response and evaluate whether there is content across the web to substantiate it.",
+    "locator": "Section 'Easily double-check responses and build on shared conversations'",
+    "url": "https://blog.google/products/gemini/google-bard-new-features-update-sept-2023",
+    "publisher": "Google",
+    "event_date": "2023-09-19",
+    "available_at": "2023-09-19",
+    "explanation": "From September 2023, Google's deployed LLM product, at the user's request, checked its own answers against web content. This contradicts 'NEVER fact-check' as applied to LLM products."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "the model first (i) drafts an initial response; then (ii) plans verification questions to fact-check its draft;",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2309.11495",
+    "publisher": "arXiv (Dhuliawala et al., Meta AI)",
+    "event_date": "2023-09-20",
+    "available_at": "2023-09-20",
+    "explanation": "Before the post, LLMs were shown fact-checking their own drafts when prompted. This contradicts the universal 'NEVER'."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "5f3b35c642b60423ba8a824fc2acfec1241aface4da5ba1829b43687b4f4e7c7",
+ "supersedes_assessment_id": "marcus-humans-versus-machines-the-hallucination-55d75c-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:42:52Z"
+}

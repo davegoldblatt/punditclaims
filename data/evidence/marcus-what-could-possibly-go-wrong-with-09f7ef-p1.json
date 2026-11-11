@@ -1,0 +1,136 @@
+{
+ "packet_id": "marcus-what-could-possibly-go-wrong-with-09f7ef-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-09f7ef",
+  "version": 1,
+  "content_hash": "83988b703107879678f6d96f1ae242c04cd18a864edfd39b634cc954073996bd"
+ },
+ "contract_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-with-09f7ef",
+  "version": 1,
+  "content_hash": "c3510abae914252b9c292b7dbfeca8e4536aa6ab7e06a2f0f011ce97d9cefaf0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com Atlas prompt injection browser security 2025",
+   "site.openai.com introducing chatgpt atlas October 21 2025 agent mode computer",
+   "\"cross-origin data theft\" \"Atlas\" 2026 paper",
+   "site.openai.com \"April 16, 2025\" \"Codex CLI\"",
+   "site.arxiv.org \"Agentic Browsers and the Same-Origin Policy\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-o3-and-o4-mini/",
+    "used": true,
+    "why": "Dated primary announcement establishes a local OpenAI agent."
+   },
+   {
+    "url": "https://homes.cs.washington.edu/~franzi/pdf/roesner_kohlbrenner_2026_agentic_sop.pdf",
+    "used": true,
+    "why": "Primary experimental evidence of an additional data-theft path in Atlas."
+   },
+   {
+    "url": "https://agent-security.cs.washington.edu/agentic_browsers_sop.html",
+    "used": true,
+    "why": "Authors' accompanying page establishes experimental timing and limitations."
+   },
+   {
+    "url": "https://openai.com/index/introducing-chatgpt-atlas/",
+    "used": true,
+    "why": "Documents bounded access, safeguards, and residual risks."
+   },
+   {
+    "url": "https://openai.com/index/hardening-atlas-against-prompt-injection/",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   },
+   {
+    "url": "https://help.openai.com/en/articles/12591856-chatgpt-atlas-release-notes",
+    "used": false,
+    "why": "read_page returned HTTP 403; not cited."
+   }
+  ],
+  "performed_at": "2026-10-29T09:17:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "openai-com-index-introducing-o3-and-o4-mini",
+   "source_snapshot_id": "d1b7388d2041dc5ab79a241ac7d97c3ce5b5353765a2e7ef60304cec26f0b2eb",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-o3-and-o4-mini",
+   "locator": "Section Codex CLI: frontier reasoning in the terminal",
+   "receipt": {
+    "public_excerpt": "Codex CLI",
+    "quote_hash": "885773f6cef211260e96c471600afc5e27046160390b86698553bf09b0e55b25",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T07:02:17Z",
+   "relation": "supports",
+   "explanation": "The announcement describes an agent operating directly on the user's computer with access to local code. This establishes device access, without implying unrestricted access.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "homes-cs-washington-edu-franzi-pdf-roesner-kohlbrenner-2026-agentic-sop-pdf",
+   "source_snapshot_id": "917825929a7e907fc61f0de5f890583fdbed222ab34f01d1b33fb282af78f5fd",
+   "publisher": "University of Washington",
+   "source_type": "independent_measurement",
+   "url": "https://homes.cs.washington.edu/~franzi/pdf/roesner_kohlbrenner_2026_agentic_sop.pdf",
+   "locator": "Section 5, Sample Attack #1: Cross-Origin Data Theft",
+   "receipt": {
+    "public_excerpt": "ChatGPT Atlas in Agent Mode",
+    "quote_hash": "6a8d2d9062d0a2bebced2b818985b7eb1443e53edf8c722696523c7362223918",
+    "verified": "exact"
+   },
+   "event_date": "2026",
+   "available_at": "2026-04-15",
+   "retrieved_at": "2026-10-29T09:11:57Z",
+   "relation": "context",
+   "explanation": "Researchers demonstrated agent-assisted theft across website boundaries in controlled experiments conducted in January and February 2026. This supports the proposed mechanism, but does not establish the overall change in OpenAI's compromise risk.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-chatgpt-atlas",
+   "source_snapshot_id": "45af11a6b5b559df0b17d2413896733d8d1e3cccbea145e4579a6382246d59d3",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-chatgpt-atlas",
+   "locator": "Section Get work done for you, safety discussion",
+   "receipt": {
+    "public_excerpt": "still carry risk",
+    "quote_hash": "aa08ad8d7f5112db95b28d3446046f66e4a981f397cd7a3b885a2b74f749b30f",
+    "verified": "exact"
+   },
+   "event_date": "2025-10-21",
+   "available_at": "2025-10-21",
+   "retrieved_at": "2026-10-29T09:10:06Z",
+   "relation": "context",
+   "explanation": "OpenAI acknowledges data theft and unintended-action risks. The same discussion specifies restrictions on filesystem and other-app access, plus monitoring and logged-out operation, limiting the inference of unrestricted attacker access.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No retrieved evaluation settles both predicted increases against a comparable deployment without device access.",
+  "The evidence does not establish increased compromise risk for OpenAI's central infrastructure.",
+  "Demonstrated data theft does not establish the full range of harms listed in the post."
+ ],
+ "packet_hash": "53ff249738b850cc91a323ab885293ab869e643fb2041c65d6b1da7b858f0ba7"
+}

@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-3d27a5-a4",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-3d27a5",
+  "version": 1,
+  "content_hash": "b1f66d631a0a2bf6d4c198b7b3118f2a2b3dfd7712a17d7ccc942e528a8953ee"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-3d27a5",
+  "version": 2,
+  "content_hash": "fdc1bdd497441b78b19fdb407b6be26e829b7fe52aa05b86bc85b9c42c58ad48"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-3d27a5-p2",
+  "content_hash": "e25314a451e408595f53992276289a385aa1e0b593cc60439b39e7f480b899e6"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-06-28",
+  "precision": "day"
+ },
+ "public_rationale": "A 2024 study found learned board representations in a specialized chess language model, with interventions supporting their causal use in move generation [e1]. May 2025 tests found recurring illegal moves in o3 and o4-mini games; two flagged cases were instead notation ambiguities [e2]. These behavioral tests do not establish whether the models lack internal board representations or how much chess training they received [e2]. The specialized-model study does not establish complete tracking of relevant game history or uniform robustness, leaving the stronger claim unresolved [e1].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "The specialized-model results do not establish complete history tracking or reliable performance across all unfamiliar positions [e1].",
+  "The general-purpose-model tests measure behavior, not internal representations or chess-training exposure [e2].",
+  "The evidence does not resolve whether the specialized model meets the claim's intended model scope and completeness standard."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-3d27a5-4x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-3d27a5-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-3d27a5-3x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-3d27a5",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Despite massive training data, LLMs fail to induce proper, reliable world models of chess.",
+  "kind": "observation",
+  "conditions": [
+   "despite massive data"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Chess is a perfect example how, despite massive data, LLMs fail to induce proper, reliable world models.",
+   "locator": "paragraph 33",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "despite massive data",
+    "LLMs fail to induce proper, reliable world models",
+    "machine-internal representation of the current board state",
+    "updated after every move",
+    "track the history of board positions"
+   ],
+   "our_interpretation": [
+    "The plain reading concerns a learned, coherent representation of chess state that updates during play and reliably informs legal actions.",
+    "The surrounding definition includes relevant game history, not merely piece locations. It does not require perfect play or zero errors.",
+    "Behavioral illegality bears on reliability but does not by itself prove the absence of an internal representation.",
+    "Earlier chess studies remain relevant to what had been induced by publication. Specialized chess language models are considered explicitly rather than automatically included as decisive or excluded.",
+    "Despite massive data is an asserted circumstance, not a conditional forecast; actual chess-training exposure must be checked where possible."
+   ],
+   "support_condition": "Representation and behavioral studies of extensively trained, relevant LLMs show systematic failure to maintain and use coherent chess state across moves and varied positions.",
+   "contradiction_condition": "An in-scope language model trained without an engineered chess-state mechanism develops a reliably used, dynamically updated representation covering the relevant chess state."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "A 2024 study found learned board representations in a specialized chess language model, with interventions supporting their causal use in move generation [e1]. May 2025 tests found recurring illegal moves in o3 and o4-mini games; two flagged cases were instead notation ambiguities [e2]. These behavioral tests do not establish whether the models lack internal board representations or how much chess training they received [e2]. The specialized-model study does not establish complete tracking of relevant game history or uniform robustness, leaving the stronger claim unresolved [e1].",
+  "limitations": [
+   "The specialized-model results do not establish complete history tracking or reliable performance across all unfamiliar positions [e1].",
+   "The general-purpose-model tests measure behavior, not internal representations or chess-training exposure [e2].",
+   "The evidence does not resolve whether the specialized model meets the claim's intended model scope and completeness standard."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "board states",
+    "locator": "Section 4.2; Sections 2.1–3.1",
+    "url": "https://arxiv.org/html/2403.15498v2",
+    "publisher": "Adam Karvonen, COLM 2024 / arXiv",
+    "event_date": "2024",
+    "available_at": "2024-07-14",
+    "explanation": "Training used 16 million games; the larger model generated 99.8% legal moves, and probes recovered piece occupancy with 99.6% accuracy. Interventions support causal use, but these measurements do not independently establish complete history tracking or uniform robustness."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "illegal moves",
+    "locator": "Illegal moves; Longest game and (false) illegal move?",
+    "url": "https://blog.mathieuacher.com/GPTReasoningO3O4miniAndChess-copy",
+    "publisher": "Mathieu Acher",
+    "event_date": "2025-05",
+    "available_at": "2025-05-25",
+    "explanation": "The evaluation classified 61 of 67 o3/o4-mini games as containing illegal moves, with two cases subsequently identified as notation ambiguity. This supports behavioral unreliability, but does not measure internal representations or verify chess-training volume."
+   }
+  ],
+  "what_would_resolve": "Clarify whether specialized chess language models are in scope. For models existing by June 28, 2025, obtain documented training exposure and reproducible tests of dynamic board and history tracking, causal use, and legal play across varied and unfamiliar positions.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c50308a41744bd0344923e3258bd74e0f06904ed3c35e60a5a1a52c1afd144ec",
+ "supersedes_assessment_id": "marcus-generative-ais-crippling-and-widespread-3d27a5-a3",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-09T20:40:47Z"
+}

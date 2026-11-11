@@ -1,0 +1,134 @@
+{
+ "assessment_id": "marcus-this-one-important-fact-about-current-7cfe28-a1",
+ "claim_revision_ref": {
+  "id": "marcus-this-one-important-fact-about-current-7cfe28",
+  "version": 1,
+  "content_hash": "de161158da7e82e87e66c60a24064ae27705c709ec2fb4fc7bc5b4718a95a940"
+ },
+ "contract_ref": {
+  "id": "marcus-this-one-important-fact-about-current-7cfe28",
+  "version": 1,
+  "content_hash": "db000df5f0ab63682d2c09fb6ae2f06e9c4b9cf34c377118dc4dee515b31492e"
+ },
+ "packet_ref": {
+  "id": "marcus-this-one-important-fact-about-current-7cfe28-p1",
+  "content_hash": "14204b9edf685d47f4b2df747c018c2a135fd225607d4f290c7c3526daaadf7d"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Frequent multiplication errors are documented. Controlled fine-tuning also shows poor performance outside the training distribution, which supports Marcus's explanation in a narrower setting. But the evidence does not establish that large products are training outliers for representative LLMs or that this materially explains their errors generally. Sparse training examples can enable generalization, and answer-prefix changes affect performance. These findings qualify the explanation without disproving it.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The strongest training-coverage experiments concern particular models and training procedures.",
+  "The 2024 digit-prediction study uses Monte Carlo dropout and a limited set of model families.",
+  "Evidence supporting the observed failures does not by itself settle their cause."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-this-one-important-fact-about-current-7cfe28-2x-review-anthropic-1",
+  "marcus-this-one-important-fact-about-current-7cfe28-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-this-one-important-fact-about-current-7cfe28-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-this-one-important-fact-about-current-7cfe28",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs often get large multiplication problems wrong because those problems are effectively outliers relative to their training data.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "LLMs often stumble on large multiplication problems because such problems are effectively outliers relative to a training set that can’t sample them all; the symbolic algorithms in calculators are suitably abstract, and never falter.",
+   "locator": "paragraph 32",
+   "url": "https://garymarcus.substack.com/p/this-one-important-fact-about-current",
+   "date": "2024-08-01",
+   "document_title": "This one important fact about current AI explains almost everything",
+   "observed_at": "2026-10-28T23:59:30Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "LLMs often stumble",
+    "large multiplication problems",
+    "because such problems are effectively outliers",
+    "relative to a training set that can’t sample them all"
+   ],
+   "our_interpretation": [
+    "The plain reading is that multiplication problems poorly represented in training materially contribute to frequent errors by the LLMs available when the post appeared.",
+    "Large multiplication means multiplication of multi-digit integers. Marcus supplies no minimum digit count or numerical error threshold.",
+    "Assess unaided model calculations. Calculator or code execution would test a different mechanism.",
+    "A previously unseen problem is not necessarily outside the training distribution. Establishing the proposed cause requires more than showing errors on unfamiliar operand pairs.",
+    "The claim need not identify the only cause of errors. The calculator comparison is background to the supplied normalized proposition, not a separate claim being graded.",
+    "The scope is models available by 2024-08-01. This is a causal assessment, so no reporting-period target is imposed."
+   ],
+   "support_condition": "Experiments show frequent multi-digit multiplication errors and establish that inadequate coverage of the relevant problem distribution materially causes those errors, through controlled changes in training coverage or comparable causal evidence.",
+   "contradiction_condition": "Representative controlled experiments show that the proposed training-distribution mismatch does not materially explain the errors, or that relevant LLMs reliably solve large multiplication problems across the supposedly problematic distributions."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Frequent multiplication errors are documented. Controlled fine-tuning also shows poor performance outside the training distribution, which supports Marcus's explanation in a narrower setting. But the evidence does not establish that large products are training outliers for representative LLMs or that this materially explains their errors generally. Sparse training examples can enable generalization, and answer-prefix changes affect performance. These findings qualify the explanation without disproving it.",
+  "limitations": [
+   "The strongest training-coverage experiments concern particular models and training procedures.",
+   "The 2024 digit-prediction study uses Monte Carlo dropout and a limited set of model families.",
+   "Evidence supporting the observed failures does not by itself settle their cause."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "the performance sharply declines",
+    "locator": "Section 3, fine-tuning with question-answer pairs; Figures 3 and 5a",
+    "url": "https://arxiv.org/pdf/2305.18654v3",
+    "publisher": "arXiv; Dziri et al.",
+    "event_date": "2023-05",
+    "available_at": "2023-10-31",
+    "explanation": "GPT-3 fine-tuning experiments found strong performance within the training splits and poor generalization beyond them; multiplication was one of the tested tasks. This supports the proposed mechanism in a specific setting, but does not establish the pretraining coverage or causes of errors across contemporary LLMs."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "enables length generalization",
+    "locator": "Section 1, Contributions",
+    "url": "https://arxiv.org/html/2306.15400v1",
+    "publisher": "arXiv; Jelassi et al.",
+    "event_date": "2023",
+    "available_at": "2023-06-27",
+    "explanation": "Adding a small number of long examples enabled specialized transformers to generalize from shorter multiplication training to much longer operands. This supports the relevance of training coverage while showing that exhaustive sampling is unnecessary; it limits an interpretation that unsampled products inevitably cause failure."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "20% of samples",
+    "locator": "Figure 2 caption; Sections 2.1–2.3",
+    "url": "https://arxiv.org/html/2406.02356v1",
+    "publisher": "arXiv; Gambardella et al.",
+    "event_date": "2024",
+    "available_at": "2024-06-04",
+    "explanation": "The caption documents frequent last-digit errors by Llama 2 models on a multiplication example; duplicated digits reflect the page's mathematical rendering. The wider experiments find improved predictions when correct preceding digits are supplied, supporting the error observation while leaving training-outlier causation unestablished."
+   }
+  ],
+  "what_would_resolve": "Controlled studies of representative models available at the post date, with documented multiplication coverage, showing whether changing that coverage materially changes errors while holding complexity, representation, and generation procedure comparable.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "316a30227bfedee091ddf3c84a76f9c963e4503be21dcbf5dc3ddaf0be419af4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:38:01Z"
+}

@@ -1,0 +1,110 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-58c63d-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-58c63d",
+  "version": 1,
+  "content_hash": "a42b57d1244ce436653d7cbc8751557a5868b9344e3726baed699e032cbaa7e1"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-58c63d",
+  "version": 1,
+  "content_hash": "7ddec1c85c3df28a49da0bd009a5de388e8b21856734d03cc830f6b081e4aed3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "CoreWeave 2025 10-Q useful lives six years historical data GPUs depreciation",
+   "site.sec.gov CoreWeave 2025 September 30 \"useful\" \"six\"",
+   "site.microsoft.com investor 2025 annual report \"useful lives\" \"six\"",
+   "Nvidia GPU depreciation CoreWeave H100 95% November 2025 CNBC",
+   "CoreWeave \"2025\" \"10-Q\" \"cloudfront.net\" \"September\"",
+   "Microsoft September 30 2025 10-Q useful life depreciation estimates"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q3/CoreWeave-Inc-10-Q-Q3-2025-8.pdf",
+    "used": true,
+    "why": "Readable company-hosted filing for the target quarter. It describes estimates, historical experience and GPU useful-life risks."
+   },
+   {
+    "url": "https://www.cnbc.com/2025/11/14/ai-gpu-depreciation-coreweave-nvidia-michael-burry.html",
+    "used": true,
+    "why": "Full text reports management's observations about older GPUs. Used as later context because the observation falls outside the target quarter."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000062/crwv-20250930.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; the company-hosted filing was used instead."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+    "used": false,
+    "why": "Search located relevant accounting language, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar25/",
+    "used": false,
+    "why": "read_page did not retrieve the relevant passage; the annual period also precedes the target quarter."
+   }
+  ],
+  "performed_at": "2026-10-29T20:27:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q3-coreweave-inc-54545741c3d2",
+   "source_snapshot_id": "7a33c41b0be74f6877903e70cdc8e74f473e6de99ba13c4ee8956effa7d33020",
+   "publisher": "CoreWeave",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q3/CoreWeave-Inc-10-Q-Q3-2025-8.pdf",
+   "locator": "Note 1, Use of Estimates; related GPU useful-life discussion on page 69",
+   "receipt": {
+    "public_excerpt": "historical experience and assumptions",
+    "quote_hash": "806e7aad0390e49f85426b724a5d7623e4a4b09c3107d75ed3b27580d866d666",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2025-11-13",
+   "retrieved_at": "2026-10-29T10:41:05Z",
+   "relation": "supports",
+   "explanation": "The note includes useful lives among significant estimates, and the risk discussion expressly covers GPU useful-life uncertainty. This supports dependence on assumptions while also acknowledging an empirical basis.",
+   "metric_scope": null,
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cnbc-com-2025-11-14-ai-gpu-depreciation-coreweave-nvidia-michael-burry-html",
+   "source_snapshot_id": "8a18de520e01306a9ed0f95da489139d05efbc74c22353cb54c114f4f478ce05",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2025/11/14/ai-gpu-depreciation-coreweave-nvidia-michael-burry.html",
+   "locator": "Paragraph discussing CoreWeave's A100 utilization",
+   "receipt": {
+    "public_excerpt": "all fully booked.",
+    "quote_hash": "3d51ce7c54543d3cc0ba1c78e8fa2ba9cf4e0cba832c908be381d1afc1fb6193",
+    "verified": "exact"
+   },
+   "event_date": "2025-11",
+   "available_at": "2025-11-14",
+   "retrieved_at": "2026-10-29T20:16:19Z",
+   "relation": "context",
+   "explanation": "This reported management observation provides counterweight to a reading that no empirical support exists. It neither independently verifies utilization nor establishes a complete useful life, and it is outside the target quarter.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative fleet-level validation of complete physical and economic GPU lifespans was located.",
+  "The records do not establish whether the empirical support for the schedules was adequate.",
+  "The outcome changes between the narrow accounting-estimate reading and the stronger suggestion of inadequately supported schedules."
+ ],
+ "packet_hash": "6b09eb5817a0f475daec107e8dd01109c9a00f7ae3b9d78bcce52b15d90b6701"
+}

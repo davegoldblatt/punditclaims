@@ -1,0 +1,128 @@
+{
+ "packet_id": "wyea-godot-isnt-making-it-ef7b25-p1",
+ "claim_revision_ref": {
+  "id": "wyea-godot-isnt-making-it-ef7b25",
+  "version": 1,
+  "content_hash": "5e613b71cc1bedff8a11e364b0f47b6f053ff9aa8067b0d236ad3097b9cbbfd8"
+ },
+ "contract_ref": {
+  "id": "wyea-godot-isnt-making-it-ef7b25",
+  "version": 1,
+  "content_hash": "ce92ee5941b3640df28131822dcb00eb3f5664fa3c1165f2eff597e672ad5a23"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Blackwell trained model 2026 benchmarks Microsoft Google",
+   "site.microsoft.com Blackwell MAI-1-preview trained 2025",
+   "site.microsoft.ai \"MAI-Thinking-1\" \"GB200\"",
+   "\"MAI-Thinking-1\" technical report microsoft pdf",
+   "site.artificialanalysis.ai \"MAI-Thinking-1\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://microsoft.ai/pdf/mai-thinking-1.pdf",
+    "used": true,
+    "why": "Primary report identifies Blackwell training and reports GPQA Diamond scores and evaluation settings."
+   },
+   {
+    "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+    "used": true,
+    "why": "Dated corroboration of operational Blackwell training at Microsoft."
+   },
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "used": true,
+    "why": "Primary pre-post benchmark baseline."
+   },
+   {
+    "url": "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/",
+    "used": true,
+    "why": "Establishes the June 2, 2026 announcement and accompanying technical-report release."
+   },
+   {
+    "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+    "used": false,
+    "why": "The technical report provides more precise methods and results."
+   }
+  ],
+  "performed_at": "2026-10-29T11:27:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "microsoft-ai-news-frontier-pre-training-at-microsoft-ai",
+   "source_snapshot_id": "f2c880e67d41c0ec12d23551d7f3ab7da7cbbfdc0393841705c70aaea21bf8d2",
+   "publisher": "Microsoft AI",
+   "source_type": "company_disclosure",
+   "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai",
+   "locator": "How MAI-Base-2 Compares",
+   "receipt": {
+    "public_excerpt": "16k GB200 GPUs",
+    "quote_hash": "dde5985fe845327a38482981eca9a1270aaeaecf043b79b9a9a281fc30e0b317",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-10-15",
+   "retrieved_at": "2026-10-29T11:05:34Z",
+   "relation": "supports",
+   "explanation": "Microsoft documents actual large-scale Blackwell training, establishing that the hardware scenario occurred. The MAI-Thinking-1 report also identifies earlier training on an Azure GB200 cluster.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "microsoft-ai-pdf-mai-thinking-1-pdf",
+   "source_snapshot_id": "af893a904a4829bc89cf851ba49d6243d5728f2cce48ff1b2ce3748cae10bf6e",
+   "publisher": "Microsoft AI",
+   "source_type": "company_disclosure",
+   "url": "https://microsoft.ai/pdf/mai-thinking-1.pdf",
+   "locator": "Section 2 Pre-training; Table 11; Appendix H.2 Science and Table 17",
+   "receipt": {
+    "public_excerpt": "averaged over 16 rollouts.",
+    "quote_hash": "53436878e8b3b6d51338cafe7b4416b981629b3b4acfd4e4a4a289f5a0a7b44e",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-02",
+   "available_at": "2026-06-02",
+   "retrieved_at": "2026-10-29T11:19:59Z",
+   "relation": "contradicts",
+   "explanation": "The report identifies MAI-Thinking-1's base-model training on 8K GB200 GPUs and reports 84.2% GPQA Diamond pass@1, exceeding the pre-post results in e3. It uses the same 198-question Diamond subset; its large output budget and grading procedure limit exact comparability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms",
+   "locator": "Evals and Appendix A, GPQA Diamond rows",
+   "receipt": {
+    "public_excerpt": "o1 improved over the state-of-the-art.",
+    "quote_hash": "c26d079f7d8c0d80bb17f63b6e5aeabcd9fb99001cd45106802f624f7b818d2e",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-12",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "context",
+   "explanation": "Appendix A reports GPQA Diamond pass@1 of 50.6% for GPT-4o, 73.3% for o1-preview, and 77.3% for the research o1 model. These establish a pre-post baseline, including the stronger research model rather than only the released preview.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No independent replication of the particular cross-generation GPQA comparison was located.",
+  "The comparison does not isolate gains from pre-training, post-training, hardware, or additional inference computation."
+ ],
+ "packet_hash": "39b0f8e2965d68b3b970cfb09558f468c60bf5db414efc07e6ab82979483e19f"
+}

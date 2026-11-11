@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-an-unending-array-of-jailbreaking-052f07-p1",
+ "claim_revision_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 1,
+  "content_hash": "00b0a1270d2307fe048987872dccf38d9f8d07ea0634b231d1ec4bb5669c4f75"
+ },
+ "contract_ref": {
+  "id": "marcus-an-unending-array-of-jailbreaking-052f07",
+  "version": 1,
+  "content_hash": "8e29168270bfaf62817096542f5571c2b15ca7d3251f171da3b03a4a74823ff0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM provable security guarantees prompt injection noninterference formal verification",
+   "certified robustness LLM jailbreak erase and check 2023 2024",
+   "\"LLM\" \"noninterference\" \"guarantees\"",
+   "\"Provable\" \"LLMs\" \"Kumar\" \"2023\"",
+   "\"Design patterns for securing LLM agents\" provable",
+   "\"certified\" \"LLM\" \"impossible\" understanding guarantees"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2309.02705v3",
+    "used": true,
+    "why": "Read the certificate, proof, and explanation of probabilistic filters. This version was public before the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.02705v3",
+    "used": true,
+    "why": "Verified the version's publication date and the stated attack scope."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.08837v1",
+    "used": true,
+    "why": "Provides material qualifications about heuristic defenses and the distinction between model security and system protections."
+   },
+   {
+    "url": "https://arxiv.org/html/2602.20064v2",
+    "used": false,
+    "why": "Additional formal guarantees were considered, but the earlier certificate supplies the counterexample. The later work has distinct modeling and deployment limitations."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.18813v2",
+    "used": false,
+    "why": "CaMeL provides relevant architectural protections, but its separate assumptions and limitations are more useful when assessing the broader trustworthiness forecast."
+   }
+  ],
+  "performed_at": "2026-10-29T03:01:02Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2309-02705v3",
+   "source_snapshot_id": "52a854fd3f7daa56c15881c843e95d9dc0deacf4f1fcde0ed5aa83bacf208b4d",
+   "publisher": "arXiv; Aounon Kumar and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.02705v3",
+   "locator": "Appendix 0.A, answer to 'Does the safety filter need to be deterministic?'; Theorem 4.1 and Appendix 0.G",
+   "receipt": {
+    "public_excerpt": "Our safety certificates",
+    "quote_hash": "8e035c878d9b758ca2c3592f89ea34ef952ca57245b839952c243ac2718811e4",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-12",
+   "available_at": "2024-02-12",
+   "retrieved_at": "2026-10-29T02:58:19Z",
+   "relation": "contradicts",
+   "explanation": "Erase-and-check certifies detection against bounded adversarial modifications, with performance bounded by the filter's detection of the original harmful prompts. The proof uses enumeration and filter behavior, without a complete mechanistic account of Llama 2; this is a counterexample under the stated reading of guarantees around LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2506-08837v1",
+   "source_snapshot_id": "25a7ea64007211560508390a189a39d34758c25ac8bc11049aecaa540c44b46b",
+   "publisher": "arXiv; Luca Beurer-Kellner and coauthors",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.08837v1",
+   "locator": "Section 2, Existing Defenses, LLM-level defenses",
+   "receipt": {
+    "public_excerpt": "they do not provide guarantees.",
+    "quote_hash": "77b43eeaf31e97ef262da817e4f320911ae7f2d8e1be7885497fc61fd846eb01",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-10",
+   "available_at": "2025-06-10",
+   "retrieved_at": "2026-10-29T02:57:14Z",
+   "relation": "context",
+   "explanation": "The authors distinguish heuristic model defenses from constrained system designs and caution against assuming reliable guarantees for general-purpose agents. This supports Marcus's practical concern but does not establish the categorical impossibility of scoped guarantees.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "Marcus did not specify whether strong guarantees must cover unrestricted model behavior or may protect defined properties of a constrained system.",
+  "The certificate does not establish universal jailbreak resistance, complete output safety, or overall trustworthiness."
+ ],
+ "packet_hash": "e078e50d74ad240364b80ff9b6976aea3004cbeef5c8fcdfd15035440cce7d0f"
+}

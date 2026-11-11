@@ -1,0 +1,58 @@
+---
+// /watchlist: predictions the evidence has not settled whose window, as the
+// speaker wrote it, is still open. A window passing prompts a fresh look; it
+// never decides the outcome. Three groups, so vague windows never read as
+// deadlines: windows that name a year or a span we can count from the post
+// date; conditional predictions, which wait on a condition first; and
+// open-ended windows ("soon", "for years", "at least a decade").
+import Base from "../layouts/Base.astro";
+import WatchItem from "../components/WatchItem.astro";
+import { release } from "../lib/published.ts";
+import type { PublicClaim } from "../lib/manifest.ts";
+
+const r = release();
+const m = r.manifest;
+const name = (id: string) => r.subject(id)?.name ?? id;
+const OPEN_ENDED = /\b(soon|few years|for years|few quarters|at least|eventually|someday|sooner or later)\b/i;
+const open = r.live.filter((c) => (c.kind === "forecast" || c.kind === "conditional_forecast") && c.current!.payload.outcome === "unresolved" && c.review.horizon_now === "not_due")
+  .sort((a, b) => a.first_statement_date.localeCompare(b.first_statement_date) || a.claim_id.localeCompare(b.claim_id));
+const window = (c: PublicClaim) => (c.original_horizon_text ?? "").replace(/\s*\([^)]*\)\s*$/, "");
+const conditional = open.filter((c) => c.kind === "conditional_forecast");
+const openEnded = open.filter((c) => c.kind === "forecast" && (!c.original_horizon_text || OPEN_ENDED.test(c.original_horizon_text)));
+const dated = open.filter((c) => c.kind === "forecast" && c.original_horizon_text && !OPEN_ENDED.test(c.original_horizon_text));
+// Dated windows grouped by the first year the window names; a span such as
+// "in the next three years" is counted from the post date on the record page.
+const yearOf = (c: PublicClaim) => window(c).match(/\b(20\d\d)\b/)?.[1] ?? null;
+const byYear = new Map<string, PublicClaim[]>();
+for (const c of dated) { const k = yearOf(c) ?? "span"; byYear.set(k, [...(byYear.get(k) ?? []), c]); }
+const years = [...byYear.keys()].filter((k) => k !== "span").sort();
+const groups: [string, PublicClaim[]][] = [...years.map((y) => [`Due in ${y}`, byYear.get(y)!] as [string, PublicClaim[]]), ...(byYear.has("span") ? [["Due a set time after the post", byYear.get("span")!] as [string, PublicClaim[]]] : [])];
+---
+<Base title="Open predictions" description="Predictions the evidence has not settled whose window is still open, with what would settle each one.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Open predictions</h1>
+      <p class="lede">{open.length} predictions by {r.subjects.map((s) => s.name).join(" and ")} whose deadline hasn’t passed yet, as of {m?.reference_date}. We check each one again when its deadline passes.</p>
+    </header>
+    {groups.map(([title, list]) => (
+      <section class="section" aria-label={title}>
+        <h2>{title} <span class="count">({list.length})</span></h2>
+        <ol class="watch">{list.map((c) => <WatchItem c={c} name={name(c.subject_id)} />)}</ol>
+      </section>
+    ))}
+    {conditional.length > 0 && (
+      <section class="section" aria-label="Only if something else happens first">
+        <h2>Only if something else happens first <span class="count">({conditional.length})</span></h2>
+        <p class="small soft">Each of these comes due only if its condition happens first.</p>
+        <ol class="watch">{conditional.map((c) => <WatchItem c={c} name={name(c.subject_id)} />)}</ol>
+      </section>
+    )}
+    {openEnded.length > 0 && (
+      <section class="section" aria-label="No end date">
+        <h2>No end date <span class="count">({openEnded.length})</span></h2>
+        <p class="small soft">These say things like “soon” or “for years”, so there is no date to check them on.</p>
+        <ol class="watch">{openEnded.map((c) => <WatchItem c={c} name={name(c.subject_id)} />)}</ol>
+      </section>
+    )}
+  </div>
+</Base>

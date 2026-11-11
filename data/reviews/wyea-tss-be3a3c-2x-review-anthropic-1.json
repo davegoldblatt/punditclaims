@@ -1,0 +1,113 @@
+{
+ "run_id": "wyea-tss-be3a3c-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-tss-be3a3c": "64f2b057f4c54e8f37c4def46a5c69ccdd72185afa31fdc8ee45b5f6b30cd013",
+  "case:wyea-tss-bf5563": "0d69e05660600a7cdd2b5ff163c07e12e1e19d4cf2df2a89f9ae18bf7305e8f5"
+ },
+ "started_at": "2026-10-29T23:33:49Z",
+ "completed_at": "2026-10-29T23:34:47Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Correctly isolates the generative AI economics clause from the Nadella and layoffs assertions. It is a present-tense characterization, so treating it as an observation is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (revenues fail to cover full costs, so the business relies on subsidy) is ordinary and fair. The Q1 2024 period and the undefined provider population are inferred by the drafter, so interpretation shapes the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Real Microsoft FY24 Q3 segment disclosure for the right period. The segment mixes generative AI with other businesses, so it shows neither profit nor loss for generative AI alone."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Press report of OpenAI's projected full-year 2024 loss for one provider. It is an estimate for a different period and does not cover realized Q1 2024 results, so it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no separate profit-and-loss figures for generative AI in Q1 2024. Microsoft's segment income mixes in other businesses, and the OpenAI figure is a full-year projection for one company. Neither meets the measurement requirements, so the evidence does not settle the claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-tss-be3a3c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "rhetoric",
+     "note": "The wording is faithful. But 'merely guesses what code looks right' is an evaluative characterization of how generative models produce code (no understanding). It is not a checkable claim about product feature lists."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract reads the line as saying no coding assistant bundles any analysis or verification feature. That is stretched against the speaker: the context is about the generator not knowing anything, contrasted with human review. A bundled scanner does not test that point."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed paper describing next-token prediction as the training objective. It fits the mechanism the speaker describes but cannot settle whether that amounts to 'merely guessing'."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated AWS company disclosure that Amazon Q includes vulnerability scanning. On a fair reading this is a separate bundled feature, not evidence about how the generator produces code. It is also unverified marketing by the company itself."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "Read fairly, the sentence is a rhetorical characterization: AI code generation is plausibility-guessing without understanding. That is not testable against the packet. The contract's product-feature reading is unfair to the speaker, so e2 cannot fairly contradict him, and e1 only describes the training objective.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-tss-bf5563"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16089,
+  "output_tokens": 2941,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,137 @@
+{
+ "packet_id": "marcus-two-models-of-ai-oversight-and-how-c80a72-p1",
+ "claim_revision_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-c80a72",
+  "version": 2,
+  "content_hash": "caf6b58019e4be753a697ccc86d31765152e29a8b2913b0e450aed8411f81316"
+ },
+ "contract_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-c80a72",
+  "version": 1,
+  "content_hash": "4c8ecf07e730504919beb1056eff4c3d4b3b3c9c8f250214580b03db0a5229e3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com ChatGPT plugins red team impersonate phishing March 23 2023",
+   "ChatGPT plugins phishing credentials May 2023 prompt injection Embrace the Red",
+   "site.embracethered.com 2023 ChatGPT plugin email stolen May",
+   "\"site:embracethered.com/blog/posts/2023/\" \"plugin\" \"May\"",
+   "ChatGPT plugins May June 2023 impersonation phishing credentials security safeguards"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/chatgpt-plugins/",
+    "used": true,
+    "why": "Primary launch documentation describes capabilities, red-team findings, and safeguards."
+   },
+   {
+    "url": "https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./",
+    "used": true,
+    "why": "Original security demonstration, including its prerequisites and reported mitigation."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.10254v1",
+    "used": true,
+    "why": "Primary security research supplies context on account impersonation and phishing; its broader study period prevents treating it as decisive June 8 evidence."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.10254v1",
+    "used": true,
+    "why": "Verified the September 19, 2023 publication date of the research version."
+   },
+   {
+    "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/14-Iqbal-Applying-a-Systematic-Evaluation-to-OpenAIs-ChatGPT-Plugins.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403; the authors' arXiv version was read instead."
+   },
+   {
+    "url": "https://salt.security/press-releases/salt-security-uncovers-security-flaws-within-chatgpt-extensions-that-allowed-access-to-third-party-websites-and-sensitive-data---issues-have-been-remediated",
+    "used": false,
+    "why": "Search results described later disclosures without sufficiently precise pre-post event dates."
+   }
+  ],
+  "performed_at": "2026-10-29T09:15:19Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-chatgpt-plugins",
+   "source_snapshot_id": "05e2d427b4c2337a2449fd3723b1799b067464acfc385da1af535384c027c8fa",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/chatgpt-plugins",
+   "locator": "Code interpreter description",
+   "receipt": {
+    "public_excerpt": "We support uploading files to the current conversation workspace and downloading the results of your work.",
+    "quote_hash": "0e80bea04fa207243d0be032932d7d867e7a44498ee455bebbdcd16beaf9ad2b",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-23",
+   "available_at": "2023-03-23",
+   "retrieved_at": "2026-10-29T02:09:18Z",
+   "relation": "supports",
+   "explanation": "The launch documentation establishes browsing and file-processing capabilities and reports fraudulent-email and prompt-injection findings without safeguards. It also describes sandboxing, network controls, and a GET-only browser, which limit the claim's scope.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "embracethered-com-blog-posts-2023-chatgpt-cross-plugin-request-forg-d719c1eef07f",
+   "source_snapshot_id": "73e297fb86020ce838e3cf70ab064be8739a4675abf8e94d2f9bc7a32e58c495",
+   "publisher": "Johann Rehberger, Embrace The Red",
+   "source_type": "demonstration",
+   "url": "https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection.",
+   "locator": "Proof of Concept Exploit",
+   "receipt": {
+    "public_excerpt": "ChatGPT follows instructions and retrieves the user’s email, summarizes and URL encodes it.",
+    "quote_hash": "6221644c981e5c93e8242127b57b1d0b0a98abf013090d969aa900cd136d8c16",
+    "verified": "exact"
+   },
+   "event_date": "2023-05-19",
+   "available_at": "2023-05-28",
+   "retrieved_at": "2026-10-29T09:06:47Z",
+   "relation": "supports",
+   "explanation": "The demonstration used webpage instructions to misuse a connected user's authority and extract private email; the page links its May 19 public demonstration. It also reports that Zapier added authenticated confirmation, so the exploit is not evidence that this exact path remained open on June 8.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2309-10254v1",
+   "source_snapshot_id": "a8f8b1a649a59a2514c9dd473693ea21f18b7132527c8f61b576ab1d124a9dba",
+   "publisher": "Umar Iqbal, Tadayoshi Kohno, and Franziska Roesner; arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.10254v1",
+   "locator": "Section IV-B, Hijack user account",
+   "receipt": {
+    "public_excerpt": "Hijacking an account can result in multiple harms to the user, including stealing of private data and impersonation of the user.",
+    "quote_hash": "820d7cbba5a70e93364b8101d9215db27e1e1baf471975b5aee1d8e31548fc55",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-19",
+   "available_at": "2023-09-19",
+   "retrieved_at": "2026-10-29T02:03:41Z",
+   "relation": "context",
+   "explanation": "The researchers explain phishing and misuse of delegated authorization as plugin attack mechanisms. Their analysis spans June 6 through July 31, so this general discussion is context rather than proof of a specific pre-June 8 phishing incident.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No cited record establishes a successful credential-phishing incident through released plugins before June 8.",
+  "The demonstrated Zapier attack was reported mitigated; its continued availability on the posting day is not established.",
+  "The evidence does not support unrestricted filesystem or network access by every plugin."
+ ],
+ "packet_hash": "5ec97ff71fb9f1f2eefbf167b5d21e10f9e380be5baf1efcfe216c22d3b4eae2"
+}

@@ -1,0 +1,139 @@
+{
+ "assessment_id": "marcus-what-exactly-are-the-economics-of-62834f-a1",
+ "claim_revision_ref": {
+  "id": "marcus-what-exactly-are-the-economics-of-62834f",
+  "version": 1,
+  "content_hash": "cf617999583e3c2b7743d095c796030eb93742876b4b8254af6ccf6c2be42211"
+ },
+ "contract_ref": {
+  "id": "marcus-what-exactly-are-the-economics-of-62834f",
+  "version": 1,
+  "content_hash": "9c6ccd607a663d0394df9955d6a61dfc25cc4acd248d5ac9e8fcaad98ccf85aa"
+ },
+ "packet_ref": {
+  "id": "marcus-what-exactly-are-the-economics-of-62834f-p1",
+  "content_hash": "98f5f965927245f2ae5c33c2326064365a6546886c08ab25a1c678540c886b9d"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-08-14",
+  "precision": "day"
+ },
+ "public_rationale": "The evidence supports the contextual reading: contemporary language models had substantial behavioral weaknesses that complicated reliable integration. Controlled experiments found sensitivity to supplied context, while code and LangChain tests linked formatting behavior directly to execution and parsing failures. This establishes a concrete engineering obstacle. The qualification matters: some failures were repairable, some newer-model results improved, and version pinning reduced update disruption. The evidence supports difficulty, not impossibility, universal deterioration, or unavoidable drift in every fixed model.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "limitations": [
+  "The judgment depends on reading the broad wording through its language-model context.",
+  "Deeply unstable is qualitative; the sources do not supply a common threshold for that description.",
+  "The cited experiments were preprints at the time and covered selected tasks rather than representative production deployments.",
+  "Engineering burden is inferred from demonstrated failures and mitigations, not measured through a controlled study of development costs."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-what-exactly-are-the-economics-of-62834f-1x-review-anthropic-1",
+  "marcus-what-exactly-are-the-economics-of-62834f-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-what-exactly-are-the-economics-of-62834f-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-what-exactly-are-the-economics-of-62834f",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Foundation models are deeply unstable, which makes them difficult to engineer into reliable products.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The underlying technology—often referred to as Foundation Models, because systems are fine-tuned on top of large pretrained (foundation) model—is deeply unstable and thus difficult to engineer into reliable products.",
+   "locator": "paragraph 24",
+   "url": "https://garymarcus.substack.com/p/what-exactly-are-the-economics-of",
+   "date": "2023-08-14",
+   "document_title": "What exactly are the economics of AI?",
+   "observed_at": "2026-10-29T00:03:32Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Foundation Models",
+    "deeply unstable",
+    "thus difficult to engineer into reliable products",
+    "answers can even change from one month to the next"
+   ],
+   "our_interpretation": [
+    "The surrounding discussion concerns large language models. I assess foundation models used for language applications, rather than every kind of foundation model.",
+    "The plain reading is that substantial errors, sensitivity to inputs, and changes between model versions create material obstacles to reliable product engineering. It does not require every answer to vary or reliable products to be impossible.",
+    "The claim describes the technology available when the post appeared on 2023-08-14. No measurement window or reporting cycle is specified; the target period therefore has no invented starting date.",
+    "Engineering difficulty means demonstrated integration failures or a need for additional validation, output handling, monitoring, or version management."
+   ],
+   "support_condition": "Contemporaneous controlled evaluations demonstrate consequential instability across inputs or model versions, and documented integration experiments connect that behavior to failures or additional reliability engineering.",
+   "contradiction_condition": "Representative contemporaneous evaluations and integration evidence show reliably stable behavior across relevant inputs and versions, or show that the alleged instability does not materially impede reliable product engineering."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The evidence supports the contextual reading: contemporary language models had substantial behavioral weaknesses that complicated reliable integration. Controlled experiments found sensitivity to supplied context, while code and LangChain tests linked formatting behavior directly to execution and parsing failures. This establishes a concrete engineering obstacle. The qualification matters: some failures were repairable, some newer-model results improved, and version pinning reduced update disruption. The evidence supports difficulty, not impossibility, universal deterioration, or unavoidable drift in every fixed model.",
+  "limitations": [
+   "The judgment depends on reading the broad wording through its language-model context.",
+   "Deeply unstable is qualitative; the sources do not supply a common threshold for that description.",
+   "The cited experiments were preprints at the time and covered selected tasks rather than representative production deployments.",
+   "Engineering burden is inferred from demonstrated failures and mitigations, not measured through a controlled study of development costs."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "manually debugging such issues",
+    "locator": "Section 3.6, LangChain HotpotQA Agent: Poor Prompt Stability; accompanying code-generation results in section 3.5",
+    "url": "https://arxiv.org/html/2307.09009v2",
+    "publisher": "arXiv; Lingjiao Chen, Matei Zaharia, and James Zou",
+    "event_date": "2023-06",
+    "available_at": "2023-08-01",
+    "explanation": "Comparisons of March and June model versions document formatting failures that prevented code execution and caused a LangChain parser to fail, directly connecting model behavior to integration difficulty. The results also limit the claim: GPT-4's agent performance improved, and removing non-code wrappers increased its code-test success from 52% to 70%, so behavioral change did not imply declining underlying capability."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "performance substantially decreases",
+    "locator": "Abstract; experimental methods and results in sections 3–5",
+    "url": "https://arxiv.org/html/2307.03172v1",
+    "publisher": "arXiv; Nelson F. Liu and colleagues",
+    "event_date": "2023",
+    "available_at": "2023-07-06",
+    "explanation": "Controlled changes to document order and context length impaired question answering across several model families, supporting consequential input sensitivity in a setup resembling retrieval-based products. Mitigations were task-dependent: placing the query before and after the data fixed the tested synthetic retrieval task but made little difference to the question-answering pattern."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Each individually pinned model",
+    "locator": "July 20, 2023 update, paragraph discussing evaluation metrics and model pinning",
+    "url": "https://openai.com/index/function-calling-and-other-api-updates",
+    "publisher": "OpenAI",
+    "event_date": "2023-07-20",
+    "available_at": "2023-07-20",
+    "explanation": "Version pinning was an available mitigation, so changes between releases do not establish unavoidable month-to-month drift within a fixed version. The same disclosure acknowledged application disruption from model changes; its stability statement concerns provider updates, not guaranteed correctness on every input."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3e7e08fc87e672ef7d16dae1b0193344ddeee20c88d2e3356fc001da83706dcb",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:02:26Z"
+}

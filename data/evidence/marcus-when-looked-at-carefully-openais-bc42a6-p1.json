@@ -1,0 +1,113 @@
+{
+ "packet_id": "marcus-when-looked-at-carefully-openais-bc42a6-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-bc42a6",
+  "version": 1,
+  "content_hash": "a74d9f95f1411fc4c1f0356f02a81b12e05e669ad508528d3518997ba1a1bafe"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-bc42a6",
+  "version": 1,
+  "content_hash": "36dba9067abb39862cc92eaadb61ad847b81f75a3a308e18d1d154fa2450823a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com building early warning system LLM aided biological threat creation January 2024",
+   "OpenAI biological threat creation 2024 expert formulation 4 1 p value Welch test",
+   "\"OpenAI\" \"formulation\" \"16%\" \"4%\"",
+   "\"OpenAI\" \"formulation\" \"4 of 25\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/research/building-an-early-warning-system-for-llm-aided-biological-threat-creation",
+    "used": true,
+    "why": "Read the complete study to establish the threshold, experimental scope and links to the data."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+    "used": true,
+    "why": "Primary participant assignments establish the expert denominators."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "used": true,
+    "why": "Primary scores permit an independent reconstruction of the threshold counts."
+   },
+   {
+    "url": "https://www.nationalacademies.org/cdn/materials/9fba0921-297f-4446-96ec-75757b3bf540",
+    "used": false,
+    "why": "The reader rejected this copy because its file size exceeded the limit."
+   }
+  ],
+  "performed_at": "2026-10-29T09:42:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-ffa4b5bf338f",
+   "source_snapshot_id": "88ae786663ed69ce7c4b423d6c5f27d2ba8a265bf18d16bc8423f04f485882ba",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+   "locator": "CSV header and first two records; denominator calculation uses all records",
+   "receipt": {
+    "public_excerpt": "0,expert,llm_internet,Used a few times\n1,expert,internet_only,Use at least once every few weeks",
+    "quote_hash": "92f8ddb2ae4d9798aefa0e8f69ae54017fa39754dcf1706819cadaf5a5416127",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:28Z",
+   "relation": "supports",
+   "explanation": "Counting all expert records gives 25 participants in each assignment. The quotation preserves CSV records because this source contains no prose sentences.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "All records in participants.csv",
+     "cohort = expert",
+     "assignment = llm_internet or internet_only"
+    ],
+    "formula": "COUNT(expert AND llm_internet) = 25; COUNT(expert AND internet_only) = 25.",
+    "rounding": "Exact integer counts."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-6f5ca4856018",
+   "source_snapshot_id": "73215b822d45956b98b3cb752f8bc1002b27fa7816e4b53b25a94089811eb734",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+   "locator": "Formulation records; participant 22 is one qualifying example",
+   "receipt": {
+    "public_excerpt": "22,formulation,8,2,2,7,27,80,6804",
+    "quote_hash": "b393d675ed4a659044cfccdcef0db4b7c4b697196223aa31d9e83901ef2f8b36",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:29Z",
+   "relation": "supports",
+   "explanation": "Joining all formulation records to e1 identifies four qualifying LLM-assisted experts and one qualifying control expert. This reproduces the claimed sample ratio.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "responses.csv joined to participants.csv by id",
+     "LLM-assisted experts with formulation accuracy >= 8: IDs 22, 73, 86 and 94",
+     "Internet-only expert with formulation accuracy >= 8: ID 64",
+     "25 experts per assignment, established in e1"
+    ],
+    "formula": "LLM rate = 4/25 = 16%; control rate = 1/25 = 4%; observed risk ratio = (4/25)/(1/25) = 4.",
+    "rounding": "Exact percentages and ratio; no rounding."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "3883f73c90605d3a2ff4b1684d6f87227f7c4f2e37f4097f692ae636e0613894"
+}

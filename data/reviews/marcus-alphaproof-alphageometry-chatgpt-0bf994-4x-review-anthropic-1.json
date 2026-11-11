@@ -1,0 +1,227 @@
+{
+ "run_id": "marcus-alphaproof-alphageometry-chatgpt-0bf994-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-alphaproof-alphageometry-chatgpt-0bf994": "75824bc6cca96735967a041ea11cf5ec82440d417e52b5e6e7727bcf1089a638",
+  "case:marcus-alphaproof-alphageometry-chatgpt-1141c0": "c361c676eee869808f80554bbaf0a0847c0f8c88f546dd9a759a5b685cd875c0",
+  "case:marcus-alphaproof-alphageometry-chatgpt-19c5a2": "6c20ee4fd49c446a302c4a60126b067d5891c6cbb43ea7a4385abe86d7aa7b4c",
+  "case:marcus-alphaproof-alphageometry-chatgpt-313fcd": "6073fb22c3d7eb8f281eb7ed3d31f5a4e5bbf4b09358fc55b326f425b5d3ffe3"
+ },
+ "started_at": "2026-10-29T03:10:14Z",
+ "completed_at": "2026-10-29T03:11:06Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, stated as his view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Reading 'a bit part' as a typo for 'big part' is reasonable. The proposition drops 'after the initial hype', but the contract keeps it. The causal kind fits: unreliability is offered as a major cause of lost confidence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair and ordinary. Using surveys of large-company leaders as a proxy for the Fortune 500 is reasonable, given he named no source. The result depends on how much weight goes to two vendor-type sources that point in opposite directions."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Lucidworks survey, Apr–May 2024: firms more cautious than in 2023 and accuracy worries up fivefold. The sample is firms with 100+ staff, not the Fortune 500, and cost (up 14x) and ROI are also named as causes."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Same survey: the share planning to raise spending fell from 93% to 63%. This shows cooling, though most firms still planned to raise spending."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "a16z, Mar 2024: Fortune 500 and top enterprise leaders were nearly tripling genAI budgets and moving to production. This cuts against a loss of confidence. The source is an investor with an interest in the outcome."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Hallucination was a leading enterprise concern that limited external deployments even as budgets grew. This is consistent with reliability worries but not with lost confidence."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's claim of 92% Fortune 500 usage, dated after the post and outside the target period. It is a company disclosure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Both contract conditions are partly met. Holds: a broad 2024 survey shows enterprise cooling, with accuracy worries rising sharply among the named reasons. Contradicted: the only evidence specific to the Fortune 500 (a16z, early 2024) shows budgets nearly tripling and workloads moving into production. Reliability was a real concern, but cost and ROI were cited at least as strongly, so 'big part' is only partly borne out.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-0bf994"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Perhaps the deepest problem' hedges only how important the problem is, not whether it exists. 'Literally can't' is a firm, absolute claim about ability, and the proposition keeps it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Taking 'literally can't' as absolute follows his own wording. Splitting self-evaluation from self-correction is the deciding interpretive choice, and the contract counts evidence on both."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Huang et al. (ICLR 2024): without external feedback, LLMs struggle to self-correct their reasoning and sometimes get worse. This shows they struggle, not that they cannot."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Kadavath et al. (2022): larger models judge with useful calibration whether their own answers are true. That is meaningful unaided self-evaluation, which meets the contract's contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The self-correction part holds: controlled work shows unaided LLMs largely fail to fix their own reasoning errors. The absolute claim that they literally cannot sanity-check is contradicted: Anthropic's study found useful, calibrated self-evaluation of their own answers. The packet meets both the support and the contradiction conditions.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-1141c0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own description in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The revised proposition keeps his 'viable if close enough' and 'highly vulnerable if not'. It drops the 'Consequently' link to sanity-checking, which is acceptable for this observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Limiting the period to GPT-4-era models up to the post date, and reading 'highly vulnerable' as substantial drops rather than total failure, is an ordinary and fair reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Wu et al. (NAACL 2024): on counterfactual variants across 11 tasks, performance degrades substantially and consistently but stays nontrivial. This fits 'hit or miss'."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "McCoy et al. (2023): GPT-4's accuracy tracks how familiar the task and output are (cipher accuracy 51% vs 13%). Output probability is a reasonable proxy for closeness to training data."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two controlled studies of models from the period show large, consistent accuracy drops on unfamiliar or low-probability task variants, with performance still nontrivial. This matches the support condition. No evidence in the packet shows equal performance on novel variants.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-19c5a2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps the causal link, the list of failures, 'occasionally', and the 'literally every transformer' scope."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'every transformer' as the GPT line he names is lenient but tied to his own examples. Counting verification-reduces-errors studies as support for a contributing cause is a fair reading of 'leads them to'. Arithmetic errors and defamation are not evidenced one by one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's GPT-4 report says GPT-4, like earlier GPT models, hallucinates and makes reasoning errors. It is a company disclosure, but an admission of the model's own limits."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "SearchGPT's launch demo, July 2024, gave wrong festival dates: a fabricated fact from the latest system he named."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Chain-of-Verification (2023): adding explicit self-verification steps reduces hallucination. This is consistent with missing verification being a contributing cause."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI researchers' 2025 paper proposes training incentives as a cause. It is post-period, and the claim does not require a sole cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The evidence shows fabrications and reasoning errors persisting from earlier GPT models through GPT-4 and SearchGPT. A controlled study shows that adding verification reduces hallucination, which supports lack of checking as a contributing cause under the contract. The only alternative-cause evidence is post-period context. The specific arithmetic and defamation items are not separately shown.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-alphaproof-alphageometry-chatgpt-313fcd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 38223,
+  "output_tokens": 5805,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

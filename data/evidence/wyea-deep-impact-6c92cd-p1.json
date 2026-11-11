@@ -1,0 +1,157 @@
+{
+ "packet_id": "wyea-deep-impact-6c92cd-p1",
+ "claim_revision_ref": {
+  "id": "wyea-deep-impact-6c92cd",
+  "version": 1,
+  "content_hash": "7a3cf56a836215731511d4794ce02f8c7b6351fc269e6ad07c17add48a21870c"
+ },
+ "contract_ref": {
+  "id": "wyea-deep-impact-6c92cd",
+  "version": 1,
+  "content_hash": "d70234b4e0ea16956add5f0bb50fb16ab369cab2731643a18ba29298a016d4a4"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek R1 January 2025 local 671B 1.5B MIT license",
+   "site.api.deepseek.com news 2025 R1 0.55 2.19",
+   "site:openai.com \"o1\" \"$15\" \"$60\"",
+   "\"January 2025\" \"o1\" \"$15\" \"$60\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": true,
+    "why": "Versioned original report records the relevant benchmark comparison."
+   },
+   {
+    "url": "https://deepseek.com/en/news/deepseek-r1/",
+    "used": true,
+    "why": "Original R1 announcement provides its launch tariffs."
+   },
+   {
+    "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing/",
+    "used": true,
+    "why": "Dated capture establishes o1 prices at publication."
+   },
+   {
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+    "used": true,
+    "why": "Official documentation distinguishes full R1 deployment from distilled-model deployment."
+   },
+   {
+    "url": "https://developers.openai.com/api/docs/models/o1",
+    "used": false,
+    "why": "The historical archive is preferable to the mutable current model page."
+   }
+  ],
+  "performed_at": "2026-10-29T20:09:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2501-12948v1",
+   "source_snapshot_id": "ca43eab91020a36e390e35d28edaedf2a6ac6bb407983bbcf88c3987c61e34c3",
+   "publisher": "DeepSeek-AI via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.12948v1",
+   "locator": "Abstract; sections 1.2 and 3.1",
+   "receipt": {
+    "public_excerpt": "comparable",
+    "quote_hash": "efda4613724d6933e3d21d1a7399b3dd2da843cfbc538681f754aa4b0120b0fc",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:10Z",
+   "relation": "supports",
+   "explanation": "The original report places R1 close to o1 across mathematics, coding and knowledge tests. It also reports weaknesses, including lower factual-question performance, so the evidence supports competitiveness rather than universal equivalence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "deepseek-com-en-news-deepseek-r1",
+   "source_snapshot_id": "7d84598979a620f6fc83d1e97b67a6369af744c6f49e96e3feff5ff97d315912",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://deepseek.com/en/news/deepseek-r1",
+   "locator": "Launch announcement; API Access & Pricing",
+   "receipt": {
+    "public_excerpt": "API",
+    "quote_hash": "d2eac6096aa1d5add93803192476996de88594cdcaa780f92c465e79be732e60",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-20",
+   "available_at": "2025-01-20",
+   "retrieved_at": "2026-10-29T08:30:29Z",
+   "relation": "supports",
+   "explanation": "The pricing section lists R1 at $0.55 per million uncached input tokens and $2.19 per million output tokens. These are the customer prices used in the comparison with e3.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "web-archive-org-web-20250129060213-https-openai-com-api-pricing",
+   "source_snapshot_id": "e64c34b9036ae44073051a6cb460f3946408d45d521352a52ca98042949f4ba0",
+   "publisher": "OpenAI, preserved by the Internet Archive",
+   "source_type": "company_disclosure",
+   "url": "https://web.archive.org/web/20250129060213/https://openai.com/api/pricing",
+   "locator": "Pricing introduction; OpenAI o1 standard pricing rows and output-token footnote",
+   "receipt": {
+    "public_excerpt": "use",
+    "quote_hash": "7a36db6b8be6b1b72af428852a6b2406ec0c5979829fd052e88dc0b11919d88f",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-29",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T19:53:12Z",
+   "relation": "supports",
+   "explanation": "OpenAI lists o1 at $15 per million uncached input tokens and $60 per million output tokens, including internal reasoning tokens. Against e2, R1's corresponding rates are about 96.3% lower.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e2: R1 uncached input $0.55 and output $2.19 per million tokens",
+     "e3: o1 uncached input $15 and output $60 per million tokens"
+    ],
+    "formula": "Input saving = 100 × (1 − 0.55 / 15); output saving = 100 × (1 − 2.19 / 60).",
+    "rounding": "96.33% for input and 96.35% for output; approximately 96%."
+   }
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-deepseek-ai-deepseek-r1",
+   "source_snapshot_id": "6101aef6b3d72df8440a40d1d28689c47054a56eb58c4c2bfc04a862e59675f9",
+   "publisher": "DeepSeek",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+   "locator": "Section 6, How to Run Locally — DeepSeek-R1 Models",
+   "receipt": {
+    "public_excerpt": "locally.",
+    "quote_hash": "05acd8a2b6bad7490253ec0e9ef69ac947e93e60eb6d8478ef819940679d9136",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-20",
+   "available_at": "2025-01-20",
+   "retrieved_at": "2026-10-29T08:34:31Z",
+   "relation": "supports",
+   "explanation": "The official release provides a local deployment route for full R1 and separately documents the smaller distilled models. This establishes self-hostability, without establishing the nearby MacBook anecdote.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The evidence does not measure providers' actual inference costs or equal-cost completion of identical tasks.",
+  "The particular model and configuration used in the MacBook anecdote remain unidentified."
+ ],
+ "packet_hash": "c28fb5da42e9cf2391346584197fc21ced0096ade0f122631566b1a16049f085"
+}

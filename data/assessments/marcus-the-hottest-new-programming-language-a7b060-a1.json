@@ -1,0 +1,135 @@
+{
+ "assessment_id": "marcus-the-hottest-new-programming-language-a7b060-a1",
+ "claim_revision_ref": {
+  "id": "marcus-the-hottest-new-programming-language-a7b060",
+  "version": 1,
+  "content_hash": "f456a2cc304b560f3af2fdf77be759c97e9685494c358f9ebf7e0e8be5bc44ff"
+ },
+ "contract_ref": {
+  "id": "marcus-the-hottest-new-programming-language-a7b060",
+  "version": 1,
+  "content_hash": "3b4074fddd86b79fe44b287a3c371b9dbd472a3626dfb77fbfed001c0880d8f9"
+ },
+ "packet_ref": {
+  "id": "marcus-the-hottest-new-programming-language-a7b060-p1",
+  "content_hash": "91accad0047235c36a2e8e412703b7d60247c67c4bdceffb3321b55b0c8c67be"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2024-02-15",
+  "precision": "day"
+ },
+ "public_rationale": "The ordinary capability claim is supported. Java's specification gives exact rules for operations such as integer division. The code-generation study shows that a task description supplied to an LLM did not guarantee a functionally correct implementation. The distinction is between defined execution rules and model interpretation, not between universally flawless programs and universally ambiguous English. Explicitly permitted nondeterminism in WebAssembly limits a broader reading without defeating Marcus's stated claim that formal languages allow precision.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "Precise semantics do not guarantee that a programmer has specified the intended task.",
+  "Formal languages can explicitly permit nondeterminism.",
+  "The cited LLM results concern particular historical models and tasks, not every possible prompting system.",
+  "The evidence does not establish that English cannot express a precise requirement."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-the-hottest-new-programming-language-8231fa-2x-review-anthropic-1",
+  "marcus-the-hottest-new-programming-language-8231fa-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-the-hottest-new-programming-language-8231fa-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-the-hottest-new-programming-language-a7b060",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Formal deterministic programming languages offer a precision of specification that English prompting to LLMs lacks.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "But classical, formal, deterministic programming languages exist for a reason. They allow programs to specify with precision what they want.",
+   "locator": "paragraph 23",
+   "url": "https://garymarcus.substack.com/p/the-hottest-new-programming-language",
+   "date": "2024-02-15",
+   "document_title": "The hottest new programming language is English! Or maybe not.",
+   "observed_at": "2026-10-29T00:01:25Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "classical, formal, deterministic programming languages",
+    "allow programs to specify with precision what they want"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that formal programming languages can give operations defined execution rules, whereas an English instruction to an LLM does not itself guarantee the corresponding implementation.",
+    "The comparison with English prompting comes from the surrounding discussion. The quoted words alone assert a capability of formal languages.",
+    "Precision concerns specified behavior, not whether a program correctly expresses its author's intentions. It does not require every operation in every language to be deterministic.",
+    "The observation concerns specifications and demonstrated prompting behavior publicly available by 2024-02-15. These are non-periodic technical properties; the target ends at the post date and leaves the unspecified beginning open."
+   ],
+   "support_condition": "Published language specifications define concrete operations and permitted results precisely, while documented LLM programming experiments show that natural-language task descriptions do not guarantee a correct implementation.",
+   "contradiction_condition": "The relevant formal languages cannot specify concrete operations precisely, or ordinary English prompting provides equivalent guaranteed execution semantics in the systems being compared."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The ordinary capability claim is supported. Java's specification gives exact rules for operations such as integer division. The code-generation study shows that a task description supplied to an LLM did not guarantee a functionally correct implementation. The distinction is between defined execution rules and model interpretation, not between universally flawless programs and universally ambiguous English. Explicitly permitted nondeterminism in WebAssembly limits a broader reading without defeating Marcus's stated claim that formal languages allow precision.",
+  "limitations": [
+   "Precise semantics do not guarantee that a programmer has specified the intended task.",
+   "Formal languages can explicitly permit nondeterminism.",
+   "The cited LLM results concern particular historical models and tasks, not every possible prompting system.",
+   "The evidence does not establish that English cannot express a precise requirement."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Integer division rounds toward 0.",
+    "locator": "Section 15.17.2, Division Operator /",
+    "url": "https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html",
+    "publisher": "Oracle",
+    "event_date": "2023-08-23",
+    "available_at": "2023-08-23",
+    "explanation": "Java specifies a concrete arithmetic result rather than leaving rounding to an interpreter's guess about intent. The same chapter specifies evaluation order and exceptional cases, supporting the claimed capacity for precise behavior."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "repeated sampling",
+    "locator": "Abstract, sentence beginning 'Furthermore'",
+    "url": "https://arxiv.org/abs/2107.03374v1",
+    "publisher": "arXiv; Mark Chen and colleagues",
+    "event_date": "2021-07",
+    "available_at": "2021-07-07",
+    "explanation": "The study evaluates programs generated from task descriptions for functional correctness and reports incomplete success, improved by multiple samples. This supports the contextual distinction between a prompt and guaranteed execution semantics; the reporting month is used because experiment dates are not separately given."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "The memory.grow instruction is non-deterministic.",
+    "locator": "Section 4.4.4, memory.grow instruction note",
+    "url": "https://www.w3.org/TR/2019/REC-wasm-core-1-20191205",
+    "publisher": "World Wide Web Consortium",
+    "event_date": "2019-12-05",
+    "available_at": "2019-12-05",
+    "explanation": "This official specification explicitly permits a nondeterministic operation and describes its allowed outcomes. It qualifies any blanket claim that formal languages make every program deterministic, while remaining consistent with precise specification of permitted behavior."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "dcd9c116e2aa4116db02a7c9a12fcfd7c25a7b1244f51edba27df4f2fd29f08f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:58:05Z"
+}

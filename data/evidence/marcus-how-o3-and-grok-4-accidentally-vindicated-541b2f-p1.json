@@ -1,0 +1,128 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f",
+  "version": 1,
+  "content_hash": "0fd63d4f8335e451b1ea18a79b7a37270dbcc1cef49cfdfef0d327d08b91a413"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f",
+  "version": 1,
+  "content_hash": "1bfd4de22c183dcc2095a4ed23305537c8dc8ddf9ecc2437ee36cbad7c818c92"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com introducing o3 o4 mini tools without tools AIME 2025",
+   "site.x.ai news grok 4 tools 25.4 38.6 July 2025",
+   "2025 tool use without tools benchmark same model Python AIME \"improves\"",
+   "\"START: Self-taught Reasoner with Tools\" arxiv",
+   "\"ToRL\" \"without\" \"tools\" 2025 arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2503.23383v1",
+    "used": true,
+    "why": "Reports comparisons against reinforcement learning without tools using the same base-model family."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.04625v1",
+    "used": true,
+    "why": "Reports improvements from prompting an existing reasoning model to invoke Python, as well as subsequent tool-focused training."
+   },
+   {
+    "url": "https://x.ai/news/grok-4",
+    "used": true,
+    "why": "Confirms that a model explicitly implicated by the post was trained to use tools."
+   },
+   {
+    "url": "https://openai.com/index/introducing-o3-and-o4-mini/?Page=blog",
+    "used": false,
+    "why": "Read successfully and reports Python-assisted AIME results, but the research papers provide clearer baseline comparisons in readable text."
+   },
+   {
+    "url": "https://arxiv.org/abs/2503.23383",
+    "used": true,
+    "why": "Verified the submission date of the cited ToRL version."
+   }
+  ],
+  "performed_at": "2026-10-29T07:09:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-23383v1",
+   "source_snapshot_id": "7a2375564f4b5710231004cf877087e87e07dbd7af57b47a141f3145d89769ca",
+   "publisher": "Xuefeng Li, Haoyang Zou, and Pengfei Liu / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.23383v1",
+   "locator": "Section 3.2, Main Results; Figures 1 and 4",
+   "receipt": {
+    "public_excerpt": "ToRL consistently outperforms baseline models across all tested benchmarks.",
+    "quote_hash": "b47bad1705cd9aaf9dbc528634471c5c6fd101de86a083ff930eaf1b7a676241",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-30",
+   "retrieved_at": "2026-10-29T07:04:08Z",
+   "relation": "supports",
+   "explanation": "The study compares tool-integrated reinforcement learning with a baseline without tools using Qwen2.5-Math base models. It reports 43.3% AIME24 accuracy for ToRL-7B and an advantage over the tool-free baseline, supporting gains from the combined approach on mathematical tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2503-04625v1",
+   "source_snapshot_id": "492582871aed3e035ce5cce58fa60d3083a212e32ef031fcc93f0c1620928a20",
+   "publisher": "Chengpeng Li and colleagues / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.04625v1",
+   "locator": "Section 4.5, analysis of Hint-infer; Table 6",
+   "receipt": {
+    "public_excerpt": "improvements across all benchmarks.",
+    "quote_hash": "ba9d571c1b1d8de4e62e9053a68a5fceae5a84e502450a859b88520efef7ad36",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-06",
+   "retrieved_at": "2026-10-29T07:04:08Z",
+   "relation": "supports",
+   "explanation": "The authors activate Python tool use in the existing QwQ model through inference-time hints and report gains across their tested benchmarks. This preserves the model weights, although prompting and inference effort also change.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "x-ai-news-grok-4",
+   "source_snapshot_id": "2561b753b391d854226db11f58edbe5f3aa12b1cf3925bc123dc42e1d339a9a8",
+   "publisher": "xAI",
+   "source_type": "company_disclosure",
+   "url": "https://x.ai/news/grok-4",
+   "locator": "Native Tool Use section, first sentence",
+   "receipt": {
+    "public_excerpt": "Grok 4 was trained with reinforcement learning to use tools.",
+    "quote_hash": "f9a35f7aeb8b3baa91111c320957ea0959a3130d391bb5d6957a1f1734dfe1b4",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-09",
+   "available_at": "2025-07-09",
+   "retrieved_at": "2026-10-29T06:08:24Z",
+   "relation": "context",
+   "explanation": "The announcement confirms contemporary pursuit of tool-using models and identifies code interpretation and web browsing. This passage establishes implementation, not a controlled performance advantage.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "These comparisons do not establish superiority across all tasks or a universal advantage at equal total compute.",
+  "They do not settle which technical definition of neurosymbolic AI the field should adopt."
+ ],
+ "packet_hash": "7d3671546ff7151537760222e1088ad64478c8d01ebf66dc6fbfc379e41b913c"
+}

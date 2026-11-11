@@ -1,0 +1,103 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-0ab0f2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0ab0f2",
+  "version": 2,
+  "content_hash": "99bde451cf48a64fc6269d9803fb1287b3e9a56f8564c9e633f7391a24d6cfe4"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0ab0f2",
+  "version": 1,
+  "content_hash": "8b329d8b14b583ccf80304454dcb5b2761894ff3a1c0418abbd59af396a34cae"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Davis Aaronson GPT-4 Wolfram Alpha Code Interpreter 105 problems 2023 tests",
+   "GPT-4 Code Interpreter Wolfram Alpha comparison without plugins math benchmark 2023",
+   "AutoGen enabling next gen LLM applications Wolfram Alpha plugin 2023 GPT-4 math"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://garymarcus.substack.com/p/getting-gpt-to-work-with-external",
+    "used": false,
+    "why": "Read to establish context; excluded as evidence of its own correctness."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": true,
+    "why": "Primary report describing dated tests and specific tool-use failures."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "used": true,
+    "why": "Published test outputs and annotations document a specific misuse of Code Interpreter."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2308.08155v1",
+    "used": false,
+    "why": "Independent examples corroborate Wolfram output-selection and query failures, but the selected evidence already documents both named plug-ins with clearer testing dates."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.08881v1",
+    "used": false,
+    "why": "Useful evidence of capabilities and remaining failures, but the stated model-version date does not establish an exact testing date within the selected observation period."
+   }
+  ],
+  "performed_at": "2026-10-29T16:54:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-gpttestsummary-pdf",
+   "source_snapshot_id": "319b837ca0413f563bec9c41df3b4802972c5edb64e4a62a24b3ec11ea4f7e88",
+   "publisher": "Ernest Davis and Scott Aaronson, hosted by New York University",
+   "source_type": "preprint",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+   "locator": "Section 1; detailed examples in section 7; experiment dates in table 2",
+   "receipt": {
+    "public_excerpt": "GPT-4 also sometimes creates quite\nuseless calls to the plug-ins.",
+    "quote_hash": "0656469b42d82bd302f42f75fd2191c8d46f5798b6b3668f81bef6663070dd31",
+    "verified": "exact"
+   },
+   "event_date": "2023-08-02",
+   "available_at": "2023-08-14",
+   "retrieved_at": "2026-10-29T06:20:34Z",
+   "relation": "supports",
+   "explanation": "By completion of testing, the report documented repeated unsuccessful Wolfram queries, failure to request a usable numerical representation, and Code Interpreter bypasses that produced calculation errors. These distinguish tool-use failures from merely misunderstanding a science problem.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-arbitraryoutput-pdf",
+   "source_snapshot_id": "bfac9f70458ef442e565c9e75fda547932a9122de95d326d63603d2c77bc2b9a",
+   "publisher": "Ernest Davis and Scott Aaronson, hosted by New York University",
+   "source_type": "independent_measurement",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+   "locator": "Problem 21, GPT4+CI answer and comment; testing dates in introduction",
+   "receipt": {
+    "public_excerpt": "It claimed that the relative error is 0.",
+    "quote_hash": "304fccae29cb7f7f1e492115087b0f6ef90259e643ed7dc947dc6c41b9197ec3",
+    "verified": "exact"
+   },
+   "event_date": "2023-07",
+   "available_at": "2023-08-10",
+   "retrieved_at": "2026-10-29T06:36:37Z",
+   "relation": "supports",
+   "explanation": "The recorded answer used Monte Carlo sampling for an extremely small nonzero probability, returned zero, and claimed zero relative error. This illustrates inappropriate computational-method selection and interpretation of the result, rather than a malfunction of Python.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The selected problems and edited traces do not establish a representative tool-misuse rate.",
+  "These records establish behavior, not an internal cognitive state."
+ ],
+ "packet_hash": "5ea97cbef792dfcf8aeb0a7c146d551ea41828c29e70d900adbc169b557a6877"
+}

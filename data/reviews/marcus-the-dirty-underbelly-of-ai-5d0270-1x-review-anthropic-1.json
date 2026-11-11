@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-the-dirty-underbelly-of-ai-5d0270-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-dirty-underbelly-of-ai-5d0270": "ac5432bcbe8601179b1d032faaefeacff2fe5f4111651fcc48ed5b01855171b0"
+ },
+ "started_at": "2026-10-29T21:56:32Z",
+ "completed_at": "2026-10-29T21:56:48Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack post, said in his own voice, not quoted from anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Are going to' is firm and unhedged, so this is a scored forecast. 'Like it or not' is kept as a qualifier. No horizon was given, and the normalised claim adds none."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is that major developers train on nonpublic user data by default, without asking for opt-in. That is an ordinary reading of 'like it or not'. The contract does not require that explicit objections be ignored, which would stretch the words against the speaker. Narrowing 'private data' to chat content is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google disclosure dated 2026-10-26, before the cutoff. Reviewers assess users' chats and Google uses their suggestions to improve its models, which counts as model improvement from nonpublic data. On its own it does not show the default; e2 covers that."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed policy study (2025). Its Table 1 records Google, and five of six developers, training on chat input by default. This is independent corroboration of default participation, although the study reviews policies rather than training datasets."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Google blog post, 2025-08-13. Users get an opt-out and Temporary Chats. This limits any reading that everyone's data must be used, but under the contract it does not disprove default use. It also confirms that a sample of uploads is used while the setting is on."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "e1 and e2 are dated records from after publication. Together they show a major developer (Google) using nonpublic chat data to improve or train models under a default-participation policy. That meets the contract's early-resolution rule. The opt-outs in e3 narrow how broad the claim is but cannot contradict it. Nothing shows ignored objections, but the plain reading does not require that.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-dirty-underbelly-of-ai-5d0270"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11728,
+  "output_tokens": 1403,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

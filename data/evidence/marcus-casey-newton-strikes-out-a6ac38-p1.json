@@ -1,0 +1,131 @@
+{
+ "packet_id": "marcus-casey-newton-strikes-out-a6ac38-p1",
+ "claim_revision_ref": {
+  "id": "marcus-casey-newton-strikes-out-a6ac38",
+  "version": 2,
+  "content_hash": "6c7fddfca0de0b0b71a9f3f27ff68f17ed85c8fe3a6c248023b7ccab637ad787"
+ },
+ "contract_ref": {
+  "id": "marcus-casey-newton-strikes-out-a6ac38",
+  "version": 1,
+  "content_hash": "b8acb40cabab4351422a1f4ea184787d8658b85b0fa2ba2e1e9135df112cad4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Llama 3 herd models 2024 scaling laws predicted performance 405B",
+   "2024 scaling laws predictable diminishing returns paper November",
+   "Reuters November 11 2024 \"OpenAI and rivals seek\"",
+   "\"OpenAI and rivals seek new path\" -site:reddit.com -site:investing.com -site:streetinsider.com -site:reuters.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2001.08361",
+    "used": true,
+    "why": "Primary definition of the metric and empirical relationships called scaling laws."
+   },
+   {
+    "url": "https://arxiv.org/html/2407.21783v1",
+    "used": true,
+    "why": "Primary evidence of successful scaling predictions earlier in 2024; retained as context because it precedes the target period."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-rivals-seek-path-smarter-100616130.html",
+    "used": true,
+    "why": "Complete Reuters report documents concerns but provides no quantitative predicted-versus-observed training results."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.10938",
+    "used": false,
+    "why": "Read the observational scaling study. Its earlier results and different prediction method do not directly settle a late-2024 breakdown of frontier pretraining predictions."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/openai-and-rivals-seek-new-path-to-smarter-ai-as-current-methods-hit-limitations-3713748",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the readable Reuters republication instead."
+   }
+  ],
+  "performed_at": "2026-10-29T03:09:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2001-08361",
+   "source_snapshot_id": "155b693dfe4d0a51e36576ab989a4e83fbea4cb3eec60e2dee5b6a732243db00",
+   "publisher": "Kaplan et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2001.08361",
+   "locator": "Abstract, first sentence",
+   "receipt": {
+    "public_excerpt": "cross-entropy loss.",
+    "quote_hash": "e8cc62f2318fd3f506c2ba03c98c3609f3f32ed582c2028c58d3f71f32d80dce",
+    "verified": "exact"
+   },
+   "event_date": "2020-01",
+   "available_at": "2020-01-23",
+   "retrieved_at": "2026-10-29T01:01:04Z",
+   "relation": "context",
+   "explanation": "The original study models loss through power-law relationships with resources. Consequently, a claim about disappointing benchmark gains is not automatically a test of those relationships.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2407-21783v1",
+   "source_snapshot_id": "93deb5364e331acbf2d6fabb49705c5da389cd85201c59d22fc167562e49cdc6",
+   "publisher": "Meta Llama team, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2407.21783v1",
+   "locator": "Introduction, Scale bullet; see also section 3.2.1 and Figure 4",
+   "receipt": {
+    "public_excerpt": "outperforms smaller models",
+    "quote_hash": "9d76be33883251fc6d8cb6126517f46330f674d8a56021c3196fd10257449579",
+    "verified": "exact"
+   },
+   "event_date": "2024-07",
+   "available_at": "2024-07-31",
+   "retrieved_at": "2026-10-29T02:36:49Z",
+   "relation": "context",
+   "explanation": "The paper also reports an accurate two-stage ARC Challenge prediction across four orders of magnitude. This weighs against treating diminishing returns as proof of failed prediction, but the experiment predates the claimed recent breakdown.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-rivals-seek-path-smarter-100616130-html",
+   "source_snapshot_id": "e9faf84c36c7deddab3a6d7dea660d684849bb50664d8bca3598691771587d2d",
+   "publisher": "Reuters, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-rivals-seek-path-smarter-100616130.html",
+   "locator": "Paragraph immediately before the discussion of Ilya Sutskever",
+   "receipt": {
+    "public_excerpt": "limitations",
+    "quote_hash": "d4d66b5070f571cb5af266eccf48652155be9a1ee0ffdff4c715e60e36da86b5",
+    "verified": "exact"
+   },
+   "event_date": "2024-11",
+   "available_at": "2024-11-14",
+   "retrieved_at": "2026-10-29T02:33:30Z",
+   "relation": "context",
+   "explanation": "Reuters reports plateau concerns, disappointing training outcomes, and exploration of inference-time methods. It does not disclose the forecasts, measured losses, or errors needed to establish that scaling relationships stopped predicting results.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No matched predictions and observed frontier training results were found for the target period.",
+  "The speaker does not identify which scaling relationship allegedly failed.",
+  "Earlier successful predictions do not establish whether a later frontier regime changed."
+ ],
+ "packet_hash": "c7721d5db5d976b2e3a63e6128b2ea01530df69d28338e7bb6a69be150d1a1db"
+}

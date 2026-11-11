@@ -1,0 +1,112 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-deeb9e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-deeb9e",
+  "version": 1,
+  "content_hash": "28db1789b2f4d25cc8df1c20b53e79b41c02430164f9d35dfd65228d957e45af"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-deeb9e",
+  "version": 1,
+  "content_hash": "605171702d0a26275298c58d9017ea18d26d93978b40afa8a3f1abfa2b60edac"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia GPUs warehoused years inventory data center capacity 2026",
+   "site.nvidia.com fiscal 2026 fourth quarter results inventory January 25 2026",
+   "Nvidia GPU warehouse inventory January February March April 2026 delayed installation",
+   "\"Nvidia\" \"warehoused\" before:2026-04-22 after:2025-10-01 -site:wheresyoured.at -site:reddit.com",
+   "\"Nvidia\" \"warehouses\" \"2026\" \"Business Insider\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/Q426/Q4FY26-CFO-Commentary.pdf",
+    "used": true,
+    "why": "Readable primary disclosure about inventory and capacity secured ahead of demand. It does not identify sold GPUs stored pending customer facilities."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/ar/2026-annual-report-web-Hyperlinks.pdf",
+    "used": false,
+    "why": "read_page rejected the document because it exceeded its size limit."
+   },
+   {
+    "url": "https://www.stocktitan.net/sec-filings/NVDA/10-k-nvidia-corp-files-annual-report-7170d93a8070.html",
+    "used": false,
+    "why": "The attempted filing mirror also returned HTTP 403."
+   },
+   {
+    "url": "https://www.businessinsider.com/amazon-220-billion-ai-bet-data-centers-spending-challenges-2026-10",
+    "used": false,
+    "why": "read_page returned an unrelated headline rather than the reported article."
+   },
+   {
+    "url": "https://www.techradar.com/computing/gpu/is-the-gpu-stock-crisis-down-to-real-shortages-or-has-the-market-been-manipulated-gamers-wont-like-the-theory-floated-by-one-analyst",
+    "used": true,
+    "why": "Used only for its summary of Business Insider's later reporting. Its discussion of Zitron's interpretation is excluded, and the later events are context only."
+   }
+  ],
+  "performed_at": "2026-10-29T11:25:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "s201-q4cdn-com-141608511-files-doc-financials-2026-q426-q4fy26-cfo-040230d43bdc",
+   "source_snapshot_id": "c98c2ca7f186a78cc1aaa0e5cce6a78719fcca530c4809571682696e46e85f3d",
+   "publisher": "NVIDIA",
+   "source_type": "company_disclosure",
+   "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2026/Q426/Q4FY26-CFO-Commentary.pdf",
+   "locator": "Balance Sheet and Cash Flow section, inventory paragraph",
+   "receipt": {
+    "public_excerpt": "inventory and capacity",
+    "quote_hash": "7b780b781ce8014af30b8ab34291c321d03910d20f16b1d133e82f72736507e2",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T11:17:16Z",
+   "relation": "context",
+   "explanation": "NVIDIA acknowledges securing inventory and production capacity ahead of demand. This does not establish the quantity of already-sold GPUs in warehouses or their customers' installation constraints.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "techradar-com-computing-gpu-is-the-gpu-stock-crisis-down-to-real-sh-c93385c8970d",
+   "source_snapshot_id": "e1bf2d8daaf50a03fdc08bf91490ad9c1287f1b863f251ea178867a87937bb03",
+   "publisher": "TechRadar",
+   "source_type": "secondary_summary",
+   "url": "https://www.techradar.com/computing/gpu/is-the-gpu-stock-crisis-down-to-real-shortages-or-has-the-market-been-manipulated-gamers-wont-like-the-theory-floated-by-one-analyst",
+   "locator": "Paragraph beginning “Business Insider informs us”",
+   "receipt": {
+    "public_excerpt": "more Nvidia GPUs",
+    "quote_hash": "d5c313f57d36635be34510fe776e0aa6d7356b4543731c31321819f4456190aa",
+    "verified": "exact"
+   },
+   "event_date": "2026-10",
+   "available_at": "2026-10-23",
+   "retrieved_at": "2026-10-29T09:52:45Z",
+   "relation": "context",
+   "explanation": "The article summarizes later reporting about AWS purchasing and storing hardware ahead of available power. It concerns a later period and one customer, and does not establish years of warehoused supply during the target quarter.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No comprehensive record links GPU sales and shipments to warehouse holdings and installation dates.",
+  "NVIDIA's inventory disclosure does not measure sold inventory held by customers or manufacturers.",
+  "No defensible years-of-supply baseline is specified or established.",
+  "Later AWS reporting cannot establish the claimed earlier industry-wide scale."
+ ],
+ "packet_hash": "2c5bbda16d8d369c9c96c71e63f3958cc36e127aadc8f4a059dc92b661849c04"
+}

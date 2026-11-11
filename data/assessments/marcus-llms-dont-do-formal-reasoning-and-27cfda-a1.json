@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-llms-dont-do-formal-reasoning-and-27cfda-a1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-27cfda",
+  "version": 1,
+  "content_hash": "0fb7a03c1c2c8eb5ee8d42864582f4baf84d52b8515ddc679e1d1a2de38d9ba3"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-27cfda",
+  "version": 1,
+  "content_hash": "e63bbb2df5db0ccbbd9d4b5731ddbe379328094bc47dbb6d03523e032f85db68"
+ },
+ "packet_ref": {
+  "id": "marcus-llms-dont-do-formal-reasoning-and-27cfda-p1",
+  "content_hash": "5954d4507e0a3974222631b25c6a114f6835417c731c11f5d2eab7d045521e7b"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-09-12",
+  "end": "2024-10-11",
+  "precision": "day"
+ },
+ "public_rationale": "Marcus said even o1 shows accuracy falling off as multiplication problems get bigger. In September 2024, Yuntian Deng tested o1 on problems up to 20x20 digits. He reported that o1 'solves up to 9x9 multiplication with decent accuracy.' That implies its accuracy drops beyond that size. TechCrunch reported Deng's finding that o1 got 9x9 problems right only about half the time. Both sources also say o1 did much better than GPT-4o, which fits 'even o1': o1 improved but still showed the same fall-off. A 2025 study found o1 got every 5x5 problem right, which is consistent with a decline that starts only at larger sizes.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The evidence comes from a researcher's post and a news report, not a peer-reviewed paper.",
+  "The model tested in Sept 2024 was o1-preview or o1-mini, not the later full o1."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-anthropic-1",
+  "marcus-llms-dont-do-formal-reasoning-and-204262-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-llms-dont-do-formal-reasoning-and-204262-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-llms-dont-do-formal-reasoning-and-27cfda",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "o1's accuracy also drops as multiplication problems get larger.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Even o1 suffers from this:",
+   "locator": "paragraph 14",
+   "url": "https://garymarcus.substack.com/p/llms-dont-do-formal-reasoning-and",
+   "date": "2024-10-11",
+   "document_title": "LLMs don’t do formal reasoning - and that is a HUGE problem",
+   "observed_at": "2026-10-28T23:59:05Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Even o1 suffers from this",
+    "this = fall off on increasingly large multiplication problems"
+   ],
+   "our_interpretation": [
+    "Read as: at the time of the post, evaluations of OpenAI's o1 (the o1-preview/o1-mini models available in Sept-Oct 2024) showed its multiplication accuracy dropping as operands got longer.",
+    "No threshold is given; any clear decline from high accuracy on small problems to low accuracy on larger ones counts."
+   ],
+   "support_condition": "An evaluation of o1 by operand size shows accuracy falling as the number of digits rises.",
+   "contradiction_condition": "An evaluation shows o1 keeping high accuracy across all operand sizes tested (for example up to 20x20)."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Marcus said even o1 shows accuracy falling off as multiplication problems get bigger. In September 2024, Yuntian Deng tested o1 on problems up to 20x20 digits. He reported that o1 'solves up to 9x9 multiplication with decent accuracy.' That implies its accuracy drops beyond that size. TechCrunch reported Deng's finding that o1 got 9x9 problems right only about half the time. Both sources also say o1 did much better than GPT-4o, which fits 'even o1': o1 improved but still showed the same fall-off. A 2025 study found o1 got every 5x5 problem right, which is consistent with a decline that starts only at larger sizes.",
+  "limitations": [
+   "The evidence comes from a researcher's post and a news report, not a peer-reviewed paper.",
+   "The model tested in Sept 2024 was o1-preview or o1-mini, not the later full o1."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "We tested it on up to 20x20 multiplication—o1 solves up to 9x9 multiplication with decent accuracy",
+    "locator": "Post 1/4",
+    "url": "https://x.com/yuntiandeng/status/1836114401213989366",
+    "publisher": "Yuntian Deng (University of Waterloo) on X",
+    "event_date": "2024-09-17",
+    "available_at": "2024-09-17",
+    "explanation": "On a test running up to 20x20 digits, o1 had decent accuracy only up to 9x9. So accuracy fell off on larger problems."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "performed much better than GPT-4o, getting up to nine-digit by nine-digit multiplication problems right about half the time.",
+    "locator": "Paragraph beginning 'Deng is hopeful'",
+    "url": "https://techcrunch.com/2024/10/02/why-is-chatgpt-so-bad-at-math",
+    "publisher": "TechCrunch",
+    "event_date": "2024-09",
+    "available_at": "2024-10-02",
+    "explanation": "At about 9x9 digits, o1 was right only about half the time, well short of a calculator's 100%."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "It does much better than o1 but still struggles past 13×13.",
+    "locator": "Post text",
+    "url": "https://x.com/yuntiandeng/status/1889704768135905332",
+    "publisher": "Yuntian Deng (University of Waterloo) on X",
+    "event_date": "2025-02",
+    "available_at": "2025-02-12",
+    "explanation": "Using the same setup later, the researcher again notes o1 doing worse than o3-mini at larger sizes. This is outside the target period, so it is context only."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "d829c6447848fdbd5bbd57d6434a20f558a5460ab728cddd1f500bcfb10d73ce",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:40:09Z"
+}

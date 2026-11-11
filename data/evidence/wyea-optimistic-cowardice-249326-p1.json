@@ -1,0 +1,98 @@
+{
+ "packet_id": "wyea-optimistic-cowardice-249326-p1",
+ "claim_revision_ref": {
+  "id": "wyea-optimistic-cowardice-249326",
+  "version": 2,
+  "content_hash": "a980aa829dcaf37b2322fa19d75e3912efd6ac89419a8083d45bf8b7d5dd9611"
+ },
+ "contract_ref": {
+  "id": "wyea-optimistic-cowardice-249326",
+  "version": 1,
+  "content_hash": "b4d49cbbb65ea5771f5521acf541a8134faceb3e3a95e4c7d6546be25d97c574"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "benchmark contamination training test answers generalization overfitting 2024 paper",
+   "site.aclanthology.org benchmark contamination rephrased samples 2024 2023 Yang Chiang",
+   "site.arxiv.org \"SimpleQA\" \"Measuring short-form factuality\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2411.04368",
+    "used": true,
+    "why": "Primary SimpleQA paper establishes the fixed-answer design."
+   },
+   {
+    "url": "https://arxiv.org/html/2411.04368v1",
+    "used": false,
+    "why": "Read section 2.4 to verify reference-answer grading; the abstract record is cited without duplicating the paper."
+   },
+   {
+    "url": "https://arxiv.org/html/2311.04850v2",
+    "used": true,
+    "why": "Primary experiment directly demonstrates higher benchmark scores after training on rephrased test material."
+   },
+   {
+    "url": "https://www.abc.net.au/news/science/2025-03-20/openai-generative-ai-hallucinations-chatbot-gpt45-test/105041122",
+    "used": false,
+    "why": "Read for context, but primary experimental evidence is available."
+   }
+  ],
+  "performed_at": "2026-10-29T12:15:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2411-04368",
+   "source_snapshot_id": "702500a4d6fac9564cfe53b1b54a9f87531488292430809db1e53e390fd78306",
+   "publisher": "arXiv; OpenAI researchers",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2411.04368",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Second, responses are easy to grade, because questions are created such that there exists only a single, indisputable answer.",
+    "quote_hash": "8b1bc42f6b8f0dab0377f41f5c63a3dca122aef96c1173a4d4c71da666ce4a5d",
+    "verified": "exact"
+   },
+   "event_date": "2024-11",
+   "available_at": "2024-11-07",
+   "retrieved_at": "2026-10-29T01:00:55Z",
+   "relation": "supports",
+   "explanation": "Establishes SimpleQA's fixed-answer design. The paper's grading procedure compares model responses with reference answers, supporting the scoring premise without implying that the model was trained on those answers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2311-04850v2",
+   "source_snapshot_id": "9bffbf07029c7511638f7a1c994e96c4e03abaa310018f52585e4507e339aa2e",
+   "publisher": "arXiv; Shuo Yang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2311.04850v2",
+   "locator": "Section 5.1.1, Benchmark results",
+   "receipt": {
+    "public_excerpt": "Llama-2 7B and 13B trained on rephrased samples can achieve dramatically high scores on MMLU, from 45.3 to 88.5.",
+    "quote_hash": "b33c938296e3e8641e5311aba87a598158721ef3a8968e5ade067fc6beddbf46",
+    "verified": "exact"
+   },
+   "event_date": "2023-11",
+   "available_at": "2023-11-11",
+   "retrieved_at": "2026-10-29T12:04:33Z",
+   "relation": "supports",
+   "explanation": "Training on rephrased benchmark test material substantially raises performance on that benchmark. This directly supports the claimed optimization mechanism; it is evidence about possibility, not evidence that OpenAI contaminated SimpleQA.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The experimental example uses MMLU rather than SimpleQA; no SimpleQA-specific effect size is established.",
+  "The records do not show that any vendor actually trained on SimpleQA's answer key, which the claim expressly does not allege."
+ ],
+ "packet_hash": "01dffce925f7bc4557d380bd001879aa1d0095f62f26c8d891006111641f62b6"
+}

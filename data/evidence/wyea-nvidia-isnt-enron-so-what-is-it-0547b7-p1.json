@@ -1,0 +1,102 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-0547b7-p1",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-0547b7",
+  "version": 1,
+  "content_hash": "54fbaa6bd676fe29c17204a9fc070abb3d663d1a143eca2b959bb460f84fbb73"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-0547b7",
+  "version": 1,
+  "content_hash": "b5954d42b50813547a4eb77da27c03d22322b77db5f92a25941bfbda5bfdd9fb"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "H100 rental price index 2026 October average $1",
+   "site.silicondata.com blog H100 2026 rental \"$\"",
+   "H100 rental prices 2026 Silicon Data January 2026 blog"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.silicondata.com/products/silicon-index/h100",
+    "used": true,
+    "why": "Read successfully. Its dated index header and table provide an observation on the evaluation date."
+   },
+   {
+    "url": "https://www.silicondata.com/blog/h100-price-spike",
+    "used": true,
+    "why": "Read successfully. The index producer documents a price increase after the post."
+   },
+   {
+    "url": "https://gpurentalprices.com/gpu-price-index/2026-10",
+    "used": false,
+    "why": "The retrieved monthly aggregate includes October 29, after the evaluation cutoff."
+   },
+   {
+    "url": "https://www.silicondata.com/blog/h100-rental-price-over-time",
+    "used": false,
+    "why": "Historical context was considered, but the dated index observations are more directly relevant."
+   }
+  ],
+  "performed_at": "2026-10-29T12:02:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "silicondata-com-products-silicon-index-h100",
+   "source_snapshot_id": "36056d5313f0a36ea893cd07b690a51b4002626e7b171fea776e8a32dc4b3319",
+   "publisher": "Silicon Data",
+   "source_type": "independent_measurement",
+   "url": "https://www.silicondata.com/products/silicon-index/h100",
+   "locator": "Dated H100 index header; corroborated by the October 28 daily table row",
+   "receipt": {
+    "public_excerpt": "2.90",
+    "quote_hash": "e502a8ed95e5ebd880c275d20b5dbfea8abb67219d40f0c893e9d811388a5647",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-28",
+   "available_at": "2026-10-28",
+   "retrieved_at": "2026-10-29T10:50:03Z",
+   "relation": "context",
+   "explanation": "The dated neo-cloud index reads $2.90 per GPU-hour, above the comparison level. That does not establish or disprove an eventual decline to approximately $1.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "silicondata-com-blog-h100-price-spike",
+   "source_snapshot_id": "7e91e9477f49034b38d650a8571981f45b0b9333c0cc974290d917590752695d",
+   "publisher": "Silicon Data",
+   "source_type": "independent_measurement",
+   "url": "https://www.silicondata.com/blog/h100-price-spike",
+   "locator": "Opening paragraph; dates specified in The Timeline",
+   "receipt": {
+    "public_excerpt": "Hourly rates climbed from $2.00 to $2.20",
+    "quote_hash": "b65c8e116a3417309e26ca04518ca4401dd53d4ad6057d28f5a6dc0b92e41162",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-06",
+   "available_at": "2026-01-09",
+   "retrieved_at": "2026-10-29T11:54:56Z",
+   "relation": "context",
+   "explanation": "The index producer reports an increase from December 9, 2025 to January 6, 2026. This cautions against assuming a continuous decline, but does not settle the undated prediction.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative approximately $1 H100 market outcome was established.",
+  "The speaker supplied neither a deadline nor a precise definition of low rental prices.",
+  "The live index page contains a different, undated FAQ price; the dated header and table agree and were used instead."
+ ],
+ "packet_hash": "ae0626297bfc3be1334f43ebea87a4c24b3a76a2f4100c4d843107d15e5664bc"
+}

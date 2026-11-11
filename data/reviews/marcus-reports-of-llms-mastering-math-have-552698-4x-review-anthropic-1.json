@@ -1,0 +1,197 @@
+{
+ "run_id": "marcus-reports-of-llms-mastering-math-have-552698-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-reports-of-llms-mastering-math-have-552698": "b2ce1f8ed4a449c29e0b8a6584ab5eb081445aa4a7838cb73dea59f3ef676bd3",
+  "case:marcus-reports-of-llms-mastering-math-have-cc7f8b": "6b681d5a911fe3eb76b99d9b4a9ccb857443bddaff8a95281c8a3599e6877bce",
+  "case:marcus-reports-of-llms-mastering-math-have-dd731d": "67e95da7431bfef409e45a796962afc1438f3f8a69aa89ffa5f6552a89d88e39",
+  "case:marcus-reports-of-llms-mastering-math-have-e59e20": "3728ff2df8ad285d2bcafac2714daf3aafc45001fa1806833a41c1789595e4d4"
+ },
+ "started_at": "2026-10-29T21:50:22Z",
+ "completed_at": "2026-10-29T21:51:13Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own co-signed post (with Ernest Davis), summarising the report's results in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the cohort, the USAMO 2025 setting, the expert grading and the 5% overall threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'overall' as aggregate points over the maximum is the ordinary reading and matches the report's Total column. Limiting the claim to the six named models in the original evaluation is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The original v1 report (27 Mar 2025), Table 1: the highest average total is 2.0 of 42 points, about 4.8%. All six models are under 5%."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The original evaluation reports average totals of 0.9 to 2.0 out of 42 for the six named models. The best is about 4.76%, so no model scored above 5% overall. Small rounding in the displayed rows (Claude's per-problem scores) does not move any total above 5%. The packet contains no counterevidence for this cohort.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-reports-of-llms-mastering-math-have-552698"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own explanatory sentences in his co-signed post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps his causal explanation (correctness comes from reliance on hand-written symbolic systems) for the two named systems, plus the contrast with LLMs."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Limiting the claim to accepted proofs, assuming a sound implementation, is a fair contextual reading of 'cannot generate an incorrect proof'. Still, the result depends on that reading and on treating DDAR rule deduction as the guarantee for AlphaGeometry."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Nature paper (available Nov 2025, before the evaluation date) on the 2024 AlphaProof: soundness is guaranteed by Lean kernel verification, a programmed checker."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "AlphaGeometry 2 paper (Feb 2025): a symbolic engine, DDAR, builds deductions from a fixed set of rules. This supports rule-based control of the proof steps."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary technical descriptions show programmed symbolic machinery behind accepted proofs: the Lean kernel for AlphaProof and fixed-rule DDAR deduction for AlphaGeometry 2. That is the mechanism Marcus credits, and plain LLM output has no such check. The packet holds no documented invalid accepted proof. The stated gaps concern implementation soundness, which the contract assumes.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-reports-of-llms-mastering-math-have-cc7f8b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "This is Marcus's own assertion in his co-signed post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'This problem' means confidently presenting incorrect proofs, so the proposition captures it. It leaves out the IMO 2024 identification of the systems, which the contract restores."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus picks out the systems by their 2024 IMO result, so including AlphaGeometry 2 is a fair reading. The result turns on matching counterexamples to that version rather than to the original AlphaGeometry."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "AlphaProof's final proofs are verified by the Lean kernel. This supports the AlphaProof part under formal assumptions."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "Describes the AlphaGeometry 2 DDAR2 engine but does not establish a final-proof validity guarantee."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "Documents a wrong step in an original AlphaGeometry proof. Per the contract's version matching, this is not a demonstrated AlphaGeometry 2 failure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The AlphaProof part holds: final proofs are kernel-verified. For AlphaGeometry 2, the packet neither establishes the required guarantee on final proofs nor shows a failure. The flawed proof in e7 belongs to the original AlphaGeometry, which the contract treats as a different version. The support condition needs both systems, so the overall claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-reports-of-llms-mastering-math-have-dd731d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "This is Marcus's own statement in his co-signed post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The expectation among naive users appears only in a relative clause, but the contract scores it explicitly. The non-specialist qualifier is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading ('reliable' meaning dependable without expert correction) and the evaluator-chosen Q1 2025 window are ordinary and fair. With no threshold or population given, the result depends on how those terms are read."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Tow Center, Feb 2025: over 60% of article-identification queries answered wrongly. This covers one narrow task, not ordinary questions, and does not measure user expectations."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "YouGov, Mar 2025: trust in AI accuracy is split, 48% vs 42%. The survey does not identify prompting expertise or test expectations of particular answers."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet shows high error rates on one specific task and divided public trust. It has no matched evidence on answer reliability across ordinary questions, and no evidence on the expectations of non-specialist users. Neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-reports-of-llms-mastering-math-have-e59e20"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29567,
+  "output_tokens": 5646,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,103 @@
+{
+ "packet_id": "marcus-august-5-2024-a-big-day-in-tech-bc88ee-p1",
+ "claim_revision_ref": {
+  "id": "marcus-august-5-2024-a-big-day-in-tech-bc88ee",
+  "version": 1,
+  "content_hash": "0bbc9072d72dc184a8b825da18804441b41993e17f177704b6b14b2706b7c440"
+ },
+ "contract_ref": {
+  "id": "marcus-august-5-2024-a-big-day-in-tech-bc88ee",
+  "version": 1,
+  "content_hash": "16805d741cc7347eeb37843f67a017eccc9cf2829d758b577050f7f3d645c361"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia August 5 2024 fell 6.36% month 20%",
+   "Nvidia August 5 2024 \"20%\" \"month\"",
+   "Nvidia July 5 2024 closing 125.83",
+   "August 5 2024 Nvidia \"20.2\"",
+   "August 5 2024 Nvidia \"6.4%\" stock month",
+   "site.investor.nvidia.com historical stock lookup July 5 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://investor.nvidia.com/stock-info/historical-price-lookup/default.aspx",
+    "used": false,
+    "why": "The company page returned no historical prices in read_page."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/NVDA/history/?period1=1720137600&period2=1722902400",
+    "used": true,
+    "why": "The full historical table supplies all three comparable closing prices."
+   },
+   {
+    "url": "https://stockinvest.us/stock-news/volatile-ride-for-nvidia-stock-price-on-monday-moving-between-9069-and-10340-2024-08-05",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://financecharts.com/stocks/NVDA/summary/price",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/nvidia-stock-tumbles-tech-slump-103209778.html",
+    "used": false,
+    "why": "The report describes early trading, not the closing-price comparisons specified in the contract."
+   },
+   {
+    "url": "https://www.statmuse.com/money/ask/nvda-stock-price-july-5-2024",
+    "used": false,
+    "why": "Its displayed price matches Yahoo's dividend-adjusted column. The explicitly labeled Yahoo Close series is clearer for this assessment."
+   },
+   {
+    "url": "https://www.statmuse.com/money/ask/nvda-stock-price-august-2-2024",
+    "used": false,
+    "why": "Not needed after obtaining the complete, explicitly labeled Yahoo table."
+   },
+   {
+    "url": "https://www.statmuse.com/money/ask/nvda-stock-price-august-5-2024",
+    "used": false,
+    "why": "Not needed after obtaining the complete, explicitly labeled Yahoo table."
+   }
+  ],
+  "performed_at": "2026-10-29T03:02:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-nvda-history",
+   "source_snapshot_id": "105871216d39f35c08584a98c845d3b994bf951c5be58a883fb131748ac29164",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/NVDA/history?period1=1720137600&period2=1722902400",
+   "locator": "Historical Data table, Close column; July 5, August 2 and August 5, 2024 rows",
+   "receipt": {
+    "public_excerpt": "Aug 5, 2024 92.06 103.41 90.69 100.45 100.17 552,842,400",
+    "quote_hash": "79b16b2917090deec2f902846afce202f95afe3637402a3febb0b9ead000847b",
+    "verified": "exact"
+   },
+   "event_date": "2024-08-05",
+   "available_at": "2024-08-05",
+   "retrieved_at": "2026-10-29T02:57:27Z",
+   "relation": "supports",
+   "explanation": "The table's Close column gives $125.83 on July 5, $107.27 on August 2 and $100.45 on August 5. These produce declines of 20.17% over the month and 6.36% for the day; the separate Adj Close column is not used.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "July 5, 2024 Close: USD 125.83",
+     "August 2, 2024 Close: USD 107.27",
+     "August 5, 2024 Close: USD 100.45"
+    ],
+    "formula": "Daily return = 100 × (100.45 / 107.27 − 1) = −6.3577887573%; monthly return = 100 × (100.45 / 125.83 − 1) = −20.1700707304%.",
+    "rounding": "Two decimal places for reporting the calculations; nearest whole percentage point for comparison with the claim."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "6e4a40d245f772499c1e43020fb1c578a5de7cc996822d603606890d3944c932"
+}

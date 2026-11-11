@@ -1,0 +1,137 @@
+{
+ "run_id": "wyea-dead-money-36854f-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-dead-money-36854f": "95c9755b7fba473c0ea999c7dcf27c1ff1f402546ded57aa73ce87c676b86574",
+  "case:wyea-dead-money-a60375": "107567323600b27155016d5acf49364869ac9021f875bd3423695fda8080f4cb"
+ },
+ "started_at": "2026-10-31T19:45:03Z",
+ "completed_at": "2026-10-31T19:45:33Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter. He is not quoting anyone else here."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps both stated reasons, the $190-200B figure (for Anthropic only) and the two-year window. 'Cannot afford to slow down' is a judgment resting on factual premises, so treating it as an observation is acceptable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Testing only the stated factual premises, not the judgment, is a fair and ordinary reading. Reading 'two years' as calendar 2028 matches the reports. OpenAI's compute obligations are a required element, but the packet has no evidence on them."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "A secondary summary of the Reuters exclusive, dated before the post. The IPO valuation rests on a $190-200B revenue forecast for 2028."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "A second summary, dated before the post. It confirms the $190-200B by 2028 figure and that bankers value the company two years forward."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reports multi-gigawatt TPU commitments plus a $50B infrastructure commitment, so Anthropic's compute obligations are very large. Anthropic only."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Some of the expanded capacity depends on commercial performance. This does not make the obligations small or freely cancellable."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Credible reports from before the post (e1, e2) show Anthropic's valuation resting on $190-200B of revenue in 2028. e3 shows very large Anthropic compute commitments. e4's contingency term softens the obligations but does not meet the contradiction condition. OpenAI's compute obligations are not evidenced in the packet, and the 'cannot afford' judgment is not tested.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-36854f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps the wrapper scope, 'at a loss', the 'which is why' causal link, and 'hundreds of millions every few months' for Harvey and Perplexity."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading splits the claim into three parts: losses on serving, frequent large raises by each named firm, and the losses causing the raises. That is a fair and ordinary reading. The one-year window is reasonable for an ongoing state he described."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Harvey's own announcement of a $160M round in December 2025. It speaks to fundraising cadence only."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Bloomberg reports a $200M Harvey round in March 2026, about 3.5 months later. It fits the cadence for Harvey."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "A $550M Harvey round in September 2026 supports the cadence. Harvey's own post-trained model cuts slightly against a pure-reseller picture. It says nothing about margins."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Perplexity's last financing was about a year earlier, and the Nvidia round was only in talks. So Perplexity did not raise every few months in the period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Harvey raised hundreds of millions every few months (e1-e3), so that part holds. Perplexity did not raise in that pattern during the period (e4), so that part is contradicted. The packet has no credible evidence of negative gross margins on resold tokens and nothing tying the raises to such losses, so the core causal mechanism is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-a60375"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 21891,
+  "output_tokens": 3190,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

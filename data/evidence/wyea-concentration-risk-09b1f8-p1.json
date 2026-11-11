@@ -1,0 +1,167 @@
+{
+ "packet_id": "wyea-concentration-risk-09b1f8-p1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-09b1f8",
+  "version": 1,
+  "content_hash": "2ca096e68cff01c59be615cc4d204fa8f223964f8271b1e250f0875b814b71ee"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-09b1f8",
+  "version": 1,
+  "content_hash": "213fde003b66e40ba0e740555918120f88b7a00afec1563db6d94f7bd49a70e8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic 2025 annual net loss 2026 losses",
+   "site.sec.gov/Archives/edgar Anthropic 2026 S-1 42, \"2025\"",
+   "\"OpenAI\" \"2025\" \"38.5\" \"Financial Times\"",
+   "site.reuters.com \"Anthropic\" \"42 billion\" \"2025\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/markets/stocks/articles/openai-2025-financials-leaked-38-121508294.html",
+    "used": true,
+    "why": "Fully read. Reports audited OpenAI figures independently verified by the Financial Times and distinguishes operating from net loss."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing read with targeted searches. Provides 2025 operating and net losses and identifies fair-value charges."
+   },
+   {
+    "url": "https://en.oninvest.com/article/openai-s-revenue-isn-t-keeping-up-with-its-expenses-ahead-of-its-ipo-they-totaled-34-billion-ft",
+    "used": true,
+    "why": "Fully read. Reports the Financial Times' different loss figure after excluding noncash items."
+   },
+   {
+    "url": "https://www.ft.com/content/23e54a28-6f63-4533-ab96-3756d9c88bad",
+    "used": false,
+    "why": "read_page returned HTTP 403; independent reporting of its verification was used instead."
+   },
+   {
+    "url": "https://www.benzinga.com/markets/private-markets/26/06/53236262/leaked-openai-financials-reveal-a-stunning-38-5-billion-loss",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T10:45:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-markets-stocks-articles-openai-2025-financials-le-b134d26d3e9b",
+   "source_snapshot_id": "dad1a3c0ffeefa1f711454a74b60dae48efe2c6da89c2238e7897f99fcea7a59",
+   "publisher": "Quartz, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/openai-2025-financials-leaked-38-121508294.html",
+   "locator": "Second article paragraph",
+   "receipt": {
+    "public_excerpt": "$20.92 billion",
+    "quote_hash": "3ae904dc84927d3c34a3c2a104868301af6a98a673741d6bdccafdeb8d364c06",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:04:27Z",
+   "relation": "context",
+   "explanation": "The same paragraph reports a $38.5 billion net loss and identifies a large conversion-related accounting charge. These figures favor the net-loss reading but cannot select the speaker's unstated basis.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Operating loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Management's Discussion and Analysis, Results of Operations, consolidated statements table",
+   "receipt": {
+    "public_excerpt": "consolidated statements of operations",
+    "quote_hash": "869f26ea7e3299ae6c2eeaa77d6ea7c2d360f2eb5a9d7292ffc8aa5ed554496b",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The referenced table reports 2025 net loss of $41,965 million and operating loss of $8,060 million, including a $34,308 million fair-value charge below operating income. The threshold therefore depends materially on which loss measure is intended.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Net loss",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "en-oninvest-com-article-openai-s-revenue-isn-t-keeping-up-with-its-70eb551852f1",
+   "source_snapshot_id": "291a40617a295f808d61bc0d409851b893705c3a9e9bf11b71f2302aeeeafe15",
+   "publisher": "Oninvest",
+   "source_type": "secondary_summary",
+   "url": "https://en.oninvest.com/article/openai-s-revenue-isn-t-keeping-up-with-its-expenses-ahead-of-its-ipo-they-totaled-34-billion-ft",
+   "locator": "Section: How much did OpenAI actually spend?",
+   "receipt": {
+    "public_excerpt": "$8 billion",
+    "quote_hash": "17b504875dc9c52e0a82b4007b45fc33b72181f26168449ed895ad115c801c70",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T10:16:28Z",
+   "relation": "context",
+   "explanation": "This differently adjusted loss measure falls below the threshold. It is not interchangeable with net loss and is included to show why the unspecified basis matters.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Loss excluding specified write-downs and other noncash items",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The claim does not identify its accounting basis.",
+  "A recurring annual-loss assertion cannot be established from a single year containing large noncash charges.",
+  "OpenAI's underlying financial statements were not available directly; their figures rely on reporting of independent verification."
+ ],
+ "packet_hash": "1add3087e0b926033434b96f80de5399b8762ca10d3f9cb07d8b89a7fb4752bb"
+}

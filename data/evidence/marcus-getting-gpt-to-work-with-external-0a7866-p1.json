@@ -1,0 +1,98 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-0a7866-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a7866",
+  "version": 2,
+  "content_hash": "2687957ce52677d54628f07eca7f750df70350474d7b6ebabd039f2778ab01d9"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a7866",
+  "version": 1,
+  "content_hash": "ded2fdf70a1380cc84b78533f8331746abb22821dc61dbe98f9c1cd5e43ae910"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"GPT\" \"Wolfram\" \"correct answer\" \"Aaronson\" integral",
+   "Davis Aaronson GPT4 \"correct answer\" \"misunderstood\" plugin",
+   "read_page: MotivatedOutput.pdf, find=This is a very small",
+   "read_page: ArbitraryOutput.pdf, find=correctly",
+   "read_page: scottaaronson.blog/?p=7460, find=integral"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+    "used": true,
+    "why": "Contains a clear misinterpretation of a probability and a second candidate whose tool output the authors did not verify."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "used": true,
+    "why": "Qualifies the divergent-integral example and describes a separate unit-conversion failure."
+   },
+   {
+    "url": "https://scottaaronson.blog/?p=7460",
+    "used": false,
+    "why": "Firsthand narrative describes rejection of a correct divergent integral, but the more detailed transcript complicates that account."
+   }
+  ],
+  "performed_at": "2026-10-29T06:54:23Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-motivatedoutput-pdf",
+   "source_snapshot_id": "aaa1b477e93b3b6af31409fed7e823222827e93bad33be830e34654e7afa9f68",
+   "publisher": "New York University; Scott Aaronson and Ernest Davis",
+   "source_type": "benchmark",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+   "locator": "Problem 14, page 25; related candidate in problem 13",
+   "receipt": {
+    "public_excerpt": "close to zero.",
+    "quote_hash": "cb4d9b3ea98f476197e74290703a3cdd0fd45bb5ef6c92d2f25e412e4b152e83",
+    "verified": "exact"
+   },
+   "event_date": "2023-08-02",
+   "available_at": "2023-08-15",
+   "retrieved_at": "2026-10-29T06:36:54Z",
+   "relation": "supports",
+   "explanation": "In problem 14, the correct probability is about 0.289, yet GPT-4 describes the returned fraction as near zero. Problem 13 is another candidate, but its authors explicitly leave the tool expression's correctness unchecked and the extracted expression is incomplete.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-arbitraryoutput-pdf",
+   "source_snapshot_id": "bfac9f70458ef442e565c9e75fda547932a9122de95d326d63603d2c77bc2b9a",
+   "publisher": "New York University; Ernest Davis and Scott Aaronson",
+   "source_type": "benchmark",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+   "locator": "Problem 10, page 13, GPT4+CI response; preceding GPT4+WA response",
+   "receipt": {
+    "public_excerpt": "error.",
+    "quote_hash": "cbca55aef31f83c9d7d00c20e2dd20562a9f12ee57441da5a26ce83d4129f439",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-12",
+   "available_at": "2024-09-17",
+   "retrieved_at": "2026-10-29T06:36:37Z",
+   "relation": "context",
+   "explanation": "The integral example does not cleanly establish rejection of a correct answer: CI returned an error, and the authors caution that WA's infinity output did not establish divergence. Problem 14's separate unit-conversion failure also does not alone establish misunderstanding or rejection.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "One clear qualifying case is documented; a second complete sequence was not verified.",
+  "The prime-probability candidate requires verification of the original tool output.",
+  "Edited records prevent establishing that fewer than two qualifying cases existed."
+ ],
+ "packet_hash": "1164046ada05acc3be281e976b3ad559a4aae27caaaccf5caa9a969d5fd28843"
+}

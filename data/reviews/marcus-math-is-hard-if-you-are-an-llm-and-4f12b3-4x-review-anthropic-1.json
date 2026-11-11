@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-math-is-hard-if-you-are-an-llm-and-4f12b3-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-4f12b3": "87e8ed8de483b34ded418f82b9a94d1926ec8582caac97992681d546e6c17d1d",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-577ed6": "c3ebd6305c9fadd320e9ac2fb5652987f7bc8edb5c6bcd7aedc8f3d3d1e88329",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-9c04f0": "7309e8f939e1fe20e1cf254cb4162bc77a6cddafa5da92a7a1d4daa1fe268e02",
+  "case:marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2": "767e2bcac6fa560b41405cd03413b020e93cfd9cfc496714d5cdc7d536020164"
+ },
+ "started_at": "2026-10-29T21:45:27Z",
+ "completed_at": "2026-10-29T21:46:38Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, endorsed by him."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition matches his statement. It is an evaluative judgement about whether the paper proves its title, so there is no binary test for it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly declines to impose its own reliability standard. Whether 'can' requires calculator-like exactness is a disputed standard that neither the speaker nor the paper sets."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "MathGLM preprint from 2023. It reports high but imperfect accuracy. That does not settle whether the title's claim is 'proven'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "Whether the paper 'proves' its title depends on what 'can' requires: occasional success or reliable exact computation. Neither the speaker nor the contract fixes that standard. The paper's accuracy figures can be checked, but they cannot settle this evaluative judgement, so it is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-4f12b3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'The LLM' refers back to MathGLM. The surrounding text goes on to generalise to pure LLMs, but the proposition faithfully keeps the narrower referent."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the referent as MathGLM is reasonable. Requiring mechanistic evidence is strict but defensible, because errors alone cannot separate a missing algorithm from one that is executed imperfectly."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Jelassi et al. study different transformers trained on addition. This says nothing about MathGLM's mechanism."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no MathGLM-specific mechanistic study or controlled study that either establishes or rules out a learned multiplication procedure. The only item covers other models. The evidence available does not settle whether MathGLM induced such an algorithm.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-577ed6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words describing Table 7."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "This is a compound claim: a performance decline, plus generalisation by similarity and no abstract representation. Dropping the 'because' link was correct."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'steadily' as an overall trend is fair. The contract treats the similarity and representation assertions as needing controlled evidence. That is somewhat strict for the word 'reliable', but defensible for 'generalizing by similarity'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "In Table 7, MathGLM-2B falls overall from 85.16% at 5 digits to 41.05% at 12, with a local rise from 8 to 9 digits. The task is mixed arithmetic, not only multiplication. The table does not test similarity dependence."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The decline part holds as an overall trend, though not strictly: accuracy rises from 8 to 9 digits. The support condition also requires evidence of similarity-based generalisation and of no abstract representation. The packet has none; the training mix even included longer numbers. Since only part of the compound claim is established, the claim as a whole remains unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-9c04f0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Splitting off the normative 'never trust' part is appropriate. The empirical part and its qualifier are preserved."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'really get' as held-out accuracy within the training distribution. The context, though, stresses problems where training coverage is sparse and a 'complete, abstract, reliable representation', which points to extrapolation. That reading discounts 'really' and is stretched against the speaker."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Goat, a fine-tuned LLaMA model, scores near-perfect on in-distribution held-out addition and subtraction. This would contradict the claim under the contract's reading, but not under the extrapolation sense the speaker intends."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Goat's extrapolation is limited: accuracy drops as test numbers move beyond the training range. This fits Marcus's concern but covers one model, so it does not establish 'never'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Garg et al. train a purpose-built transformer, not a pure LLM, to learn linear functions in context, and it is robust to some distribution shifts. Different setup, so context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Under the contract's reading, Goat's in-distribution results would contradict the claim. That reading is unfair to 'really get' in a passage about extrapolation and abstract representation. Under the speaker's sense, Goat's limited extrapolation fits the claim, but one model cannot establish a universal 'never' across pure LLMs. The packet does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-math-is-hard-if-you-are-an-llm-and-d0ce23-2"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 56583,
+  "output_tokens": 8294,
+  "cached_input_tokens": 28132,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,130 @@
+{
+ "packet_id": "marcus-how-not-to-test-gpt-3-1a2e80-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-1a2e80",
+  "version": 1,
+  "content_hash": "a32978a0262fa5383d107b21d628c24de76fbd258d526f839c02dcf584fd80f5"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-1a2e80",
+  "version": 1,
+  "content_hash": "2f12b85c7e9a4b3d775d5777088ff3ed248108435be2c4db35252c71a2fd1a80"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ChatGPT counting evaluation February 2023 counting letters objects Bang multitask",
+   "\"GPT-3\" \"counting\" \"2022\" BIG bench hard object counting chain thought",
+   "\"PAL\" \"object counting\" \"2022\" accuracy",
+   "\"counting\" \"large language models\" \"2022\" \"accuracy\" objects"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2210.09261v1",
+    "used": true,
+    "why": "Contemporary controlled counting results for InstructGPT, Codex, and PaLM, including substantial prompting improvements."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.10435v1",
+    "used": true,
+    "why": "Separates direct counting, step-by-step answers, and answers obtained through Python execution."
+   },
+   {
+    "url": "https://www.lesswrong.com/posts/AcDsTqA2vbbzmteuE/can-chatgpt-count",
+    "used": true,
+    "why": "Supplementary January 2023 demonstration of ChatGPT character-counting failures."
+   },
+   {
+    "url": "https://github.com/google/BIG-bench/blob/main/bigbench/benchmark_tasks/object_counting/README.md",
+    "used": false,
+    "why": "Useful task description, but the displayed numerical results concern GPT-2 and the current page does not establish their evaluation date."
+   },
+   {
+    "url": "https://doi.org/10.1145/3818606",
+    "used": false,
+    "why": "Later counting research does not establish the performance of the models in the observation window."
+   }
+  ],
+  "performed_at": "2026-10-29T07:12:37Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2210-09261v1",
+   "source_snapshot_id": "93e34451a5aaf9b2cc68600cf675d1180f9d9989bfbece2386a84e0dd9bddb70",
+   "publisher": "Suzgun et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2210.09261v1",
+   "locator": "Table 3, Object Counting row and caption",
+   "receipt": {
+    "public_excerpt": "Few-shot prompting performance",
+    "quote_hash": "58f29705d6fcfc2bb0db80d33941e92cf950c210094894373cb07409e3e86767",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-10-17",
+   "retrieved_at": "2026-10-29T07:03:14Z",
+   "relation": "supports",
+   "explanation": "Object-counting accuracy was 44.0%, 45.2%, and 51.2% with answer-only prompts for InstructGPT, Codex, and PaLM; step-by-step prompts raised these to 77.2%, 93.2%, and 83.2%. The Codex result exceeded the average human-rater score of 86.1%, materially limiting any claim of general counting incapacity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-10435v1",
+   "source_snapshot_id": "50aabc14a1a19adc361b027b5fc62b4066689c5eb59c158a838bbeda5cb3f6c5",
+   "publisher": "Gao et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.10435v1",
+   "locator": "Section 4, Algorithmic Tasks; Table 3",
+   "receipt": {
+    "public_excerpt": "reaching 96.7%",
+    "quote_hash": "94a66671bd0db603f701623e90c3cc9da47b37512b437092265ecfd91fa6c374",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-11-18",
+   "retrieved_at": "2026-10-29T07:07:40Z",
+   "relation": "supports",
+   "explanation": "The study's Codex baseline scored 37.6% with direct answers and 73.0% with step-by-step answers. The 96.7% result used generated programs and a Python interpreter, showing an effective workaround while leaving direct counting errors substantial.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "lesswrong-com-posts-acdstqa2vbbzmteue-can-chatgpt-count",
+   "source_snapshot_id": "52a2b0dfe03db975dae7cb576dec851ba23fa2168f0c08c13d7859af831aba7f",
+   "publisher": "p.b., LessWrong",
+   "source_type": "demonstration",
+   "url": "https://www.lesswrong.com/posts/AcDsTqA2vbbzmteuE/can-chatgpt-count",
+   "locator": "Main post, paragraph beginning “In my tests so far” and following transcript",
+   "receipt": {
+    "public_excerpt": "unable to count",
+    "quote_hash": "db296e4caee11234fb03f77b0dd7c7715bf5ac38e5a31988cf543e9c69c34906",
+    "verified": "exact"
+   },
+   "event_date": "2023-01-07",
+   "available_at": "2023-01-07",
+   "retrieved_at": "2026-10-29T07:02:13Z",
+   "relation": "supports",
+   "explanation": "The main post records several incorrect character counts, alongside a correct zero count. It corroborates failures in the contemporary chat interface but is an informal, selected demonstration rather than a representative accuracy estimate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No representative census covers every contemporary model and counting task.",
+  "The sources do not establish the separate historical assertion about who first thought to test counting."
+ ],
+ "packet_hash": "018eb7ba6d36472f9b65c54f77d85ef8c7d0cecd7a5f956befdedc8e24f92bcf"
+}

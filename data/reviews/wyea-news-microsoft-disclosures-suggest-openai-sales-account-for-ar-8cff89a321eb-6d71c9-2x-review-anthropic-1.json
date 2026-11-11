@@ -1,0 +1,113 @@
+{
+ "run_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9": "ca3f2b8306c1664f91413b40531148bc426914739b66bf39c269f9c03787afdd",
+  "case:wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340": "077b26e0437a404a169fa3119a0cc3db1a90be887e31a83f8aa48da0d2f75194"
+ },
+ "started_at": "2026-10-29T17:53:22Z",
+ "completed_at": "2026-10-29T17:53:50Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own executive-summary line on his newsletter. He also quotes Microsoft's disclosure, but he states the figure in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised proposition matches the statement, including the FY2026 qualifier and the $24.1B amount."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the figure as revenue Microsoft recognised from OpenAI commercial arrangements, including revenue share, matches the disclosure the speaker quoted. This is a fair, ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TechCrunch, available on the evaluation date, reports Microsoft's full FY2026 revenue from OpenAI as $24.1B. Same metric and period as the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent reporting from 2026-10-28 confirms Microsoft recorded $24.1B of FY2026 revenue from OpenAI commercial arrangements. That meets the support condition, and nothing in the packet gives a different figure.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-6d71c9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own executive-summary sentence. It rests on Bloomberg's analysis, but he states it firmly as his own conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the firm '70% or more' and 'more than 7%' wording and the source qualifier. The Bloomberg estimate he relies on is hedged ('likely about 70%'), but his own wording is firm."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract scores the percentages implied by the cited analysis. That is fair, even generous. The result depends on whether a rounded, assumption-based point estimate of about 70.9% counts as showing a 70% floor."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Bloomberg republication with the $24.1B numerator and a rough $34B AI-revenue estimate, which gives about 70.9%. Bloomberg itself hedges this as 'about 70%', firm only on 'more than half'."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft-reported FY2026 total revenue of $331.8B. With e1's numerator, the OpenAI share is about 7.26%."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Different metric (infrastructure consumption) with an unspecified period. Its 65–70% range and 'around 70%' framing weaken the idea of a firm floor."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The 'more than 7%' part holds: $24.1B of $331.8B, both company-reported, is about 7.26%. The '70% or more' part is not shown. The AI-revenue denominator is a rough Bloomberg estimate built on a growth assumption, and Bloomberg calls the result 'likely about 70%'. A point estimate of about 70.9% from rounded inputs does not establish a 70% floor.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-news-microsoft-disclosures-suggest-openai-sales-account-for-ar-8cff89a321eb-956340"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17808,
+  "output_tokens": 3002,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

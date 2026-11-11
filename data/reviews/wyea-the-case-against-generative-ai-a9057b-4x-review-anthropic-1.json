@@ -1,0 +1,203 @@
+{
+ "run_id": "wyea-the-case-against-generative-ai-a9057b-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-the-case-against-generative-ai-a9057b": "cbe00dcbee5423d58b4bf685a403e8209a7c5796de0dce3422373c7ddeb5d3b9",
+  "case:wyea-the-case-against-generative-ai-b42d05": "d88203c9befeb394909b9d97a630024a26d7c09cef9bde8a3979a1fea6d3d77d",
+  "case:wyea-the-case-against-generative-ai-b947a6": "957a2d74c218e28988daa820e4992e8fcc68c2926eb4eafa22ac97e0bff6c672",
+  "case:wyea-the-case-against-generative-ai-c5d9b3": "00c62e6bd520492d64cc740dbebc35cac650aef82b064e6a1079d2419d3543fe"
+ },
+ "started_at": "2026-10-29T18:12:09Z",
+ "completed_at": "2026-10-29T18:13:04Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own essay, written in his authorial voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps the 'regardless of added reasoning' qualifier and the 'every time' scope. It is a present-tense claim about current LLM reliability."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the claim as 'no guarantee of correct, repeatable performance' is the ordinary reading of 'cannot be trusted... every time'. It does not inflate the claim into 'everything fails'. Using the quarter before publication is a reasonable window."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's own disclosure, dated 2025-09-29, which is inside the window. Its flagship reasoning-capable model scores 61.4% on OSWorld, so it fails many tasks. This is a company disclosure, but it admits a limitation rather than claiming a success."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent preprint posted 2025-08-08, inside the window. Repeatability varied across LLMs and chain-of-thought prompts, so the outputs were not stable even with reasoning prompts."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The support condition needs nonzero task failures in reasoning-capable systems and variation across repeated runs despite reasoning enhancements. e1 shows a frontier model below perfect on real tasks, and e2 shows repeatability varying under chain-of-thought prompting. Nothing in the packet shows general correct, repeatable performance. The customer's zero-error result is narrow and does not meet the contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-a9057b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition captures both parts: errors grow with complexity or step count, and this is a fatal blow to agents. It treats them as one causal claim, which matches the statement."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'fatal blow' as 'agents cannot do useful autonomous work reliably' is a fair, ordinary reading. The result depends on that reading and on the speaker's broad definition of hallucination, neither of which he quantified."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Apple's study (June 2025, before publication) shows accuracy collapsing as complexity rises in controlled puzzles. It supports the complexity part only in that setting and says nothing about practical agents."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "With tools, reasoning models outperform non-reasoning models at every complexity level. This qualifies the claim that puzzle failures are an intrinsic limit, but it does not show reliable autonomous work."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Replication: some reported failures came from unsolvable test configurations, while failures around 8 disks persisted. The evidence is mixed on the complexity relationship, and the 'agent pairs' are puzzle elements, not AI agents."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The support condition is conjunctive. The packet partly backs complexity-related failure in puzzles (e1), but that finding is contested (e2, e3). No evidence shows that error accumulation prevents reliable, useful agent work, so the 'fatal' part is untested. Nothing establishes reliable agent performance either, so the contradiction condition is also unmet. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-b42d05"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, including 'my estimates'."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "Both thresholds and both horizons are kept, and so is the 'if my estimates are right' caveat. The 2025 figure is firm. The 2030 figure is qualified by his own estimate, not by an observable antecedent."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'burn' as net cash burn is fair. Treating the caveat as an epistemic qualifier rather than a testable antecedent is reasonable. The contract scores the whole claim only after 2030 and allows an early contradiction only from a 2025 shortfall."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CNBC (Feb 2026), citing unnamed sources, reports OpenAI burned $8B in 2025. That meets '$8B or more', so the early-contradiction rule is not triggered. It covers one year only and cannot settle the cumulative 2030 part."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "The reported 2025 burn of about $8B matches the first component and does not trigger the early contradiction. The cumulative figure has a deadline of 2030-12-31, which is after the evaluation date. Support requires both parts, so the forecast cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-b947a6"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own rhetorical question and his own answer, in his essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Not really, no' is a firm negative with a slight softener. 'Cannot really replace coders' is faithful. It is a present-capability observation with no horizon."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'replace' as practical substitution for substantive developer work is ordinary and fair. The scope of 'replace' and the observation window are evaluator choices, so the reading drives the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "METR randomized trial (Feb–Jun 2025): AI slowed experienced developers by 19%. It measures assisted productivity, not substitution."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "SWE-Lancer (Feb 2025): frontier models could not solve most real freelance tasks on their own. This bears on substitution but is from early in the period and may not represent the models available in September."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "TIME on the Stanford study: employment fell among young workers in exposed jobs, software included. That is an association, and the author does not claim causation. It does not show LLMs doing the displaced work."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The support condition requires representative evaluations and documented deployments. The packet has one early-2025 benchmark showing autonomous failure on most tasks and a productivity trial, but no deployment records and nothing on September-era models. The employment evidence is only an association. Nothing contradicts the claim, but nothing establishes it under the contract either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-the-case-against-generative-ai-c5d9b3"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31587,
+  "output_tokens": 5810,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

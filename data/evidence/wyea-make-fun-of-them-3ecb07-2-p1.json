@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-make-fun-of-them-3ecb07-2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-make-fun-of-them-3ecb07-2",
+  "version": 1,
+  "content_hash": "4c3e1002a8f624d8d8418ade22db1e79563f523a18db501bb81ca5ebb2883581"
+ },
+ "contract_ref": {
+  "id": "wyea-make-fun-of-them-3ecb07-2",
+  "version": 1,
+  "content_hash": "26a689b1db84bc51d27f6eb6eec29507a9d8d2a090d4730435c711e73822b4a1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Salesforce CRMArena Pro agents 58% 35% multi turn June 2025",
+   "site.arxiv.org agent reliability multi step workflows 2026 evaluation",
+   "site.arxiv.org \"Where Does Agent Reliability Come From?\"",
+   "site.metr.org \"Measuring\" \"Time\" \"2025\" agents"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2505.18878v1",
+    "used": true,
+    "why": "Read the original Salesforce paper, including its methods, failures and stronger workflow results."
+   },
+   {
+    "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+    "used": true,
+    "why": "Independent primary evaluation of multistep tasks. Only the original March 2025 discussion is used."
+   },
+   {
+    "url": "https://arxiv.org/html/2607.17044v1",
+    "used": true,
+    "why": "Primary evaluation and architectural ablations provide counterevidence to an unavoidable reliability barrier, with substantial vendor-study limitations."
+   },
+   {
+    "url": "https://www.salesforce.com/blog/why-generic-llm-agents-fall-short/?bc=OTH",
+    "used": false,
+    "why": "The original research paper is more direct than the company's later explanatory article."
+   }
+  ],
+  "performed_at": "2026-10-29T11:56:22Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2505-18878v1",
+   "source_snapshot_id": "bb7ab76bf8c2061443426dbace219017fbe8617ba97e501c334b47d6aa15d354",
+   "publisher": "Salesforce AI Research / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2505.18878v1",
+   "locator": "Results discussion, paragraph following the heading about acquiring information through clarification",
+   "receipt": {
+    "public_excerpt": "substantial decrease",
+    "quote_hash": "96a2a05c446953639b2b11b78eea141c6456b4c3d0195ce0196d7b01dc1b035d",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-24",
+   "retrieved_at": "2026-10-29T01:06:01Z",
+   "relation": "supports",
+   "explanation": "Supports the narrower reliability concern: overall success fell from approximately 58% to 35% when agents needed conversational clarification. The same paper reports over 83% success for some workflow-execution tasks, so its findings do not establish universal unworkability.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-blog-2025-03-19-measuring-ai-ability-to-complete-long-tasks",
+   "source_snapshot_id": "0ae4b9627fc865ad39d3993b61bdd1ed9a7823fe3cf19949e596c62fea8c616c",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks",
+   "locator": "Summary, paragraph beginning Current frontier AIs",
+   "receipt": {
+    "public_excerpt": "remote executive assistance.",
+    "quote_hash": "23349e2437e8b879e951fe4099d40c143a1315834f5706168f69da6fd242ef5c",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-19",
+   "retrieved_at": "2026-10-29T07:41:54Z",
+   "relation": "supports",
+   "explanation": "Supports contemporary concerns about sustained autonomous work. The study also finds high success on short tasks and improving capabilities; it does not establish an inherent ceiling.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2607-17044v1",
+   "source_snapshot_id": "b976416e9eb02ed851d57adb9453271a4c6ed3e79d1428333d965f0e4f26c73d",
+   "publisher": "Leni Inc. / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2607.17044v1",
+   "locator": "Section 7, Decomposing the Uplift",
+   "receipt": {
+    "public_excerpt": "structure is.",
+    "quote_hash": "109d00bcc82a002a7b4fd5e488598f971c0fc66f8ce365ff554c3432357df068",
+    "verified": "exact"
+   },
+   "event_date": "2026-04",
+   "available_at": "2026-07-19",
+   "retrieved_at": "2026-10-29T11:50:04Z",
+   "relation": "context",
+   "explanation": "The developer reports 91.25% success on SpreadsheetBench and 75.2% single-attempt success on GAIA, with gains from system architecture and specialized models. This challenges the inference from model fallibility to system impossibility, but independent replication and deployment-wide reliability are not established.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The evidence establishes important failures but not that model unreliability necessarily makes agents unworkable.",
+  "The strongest architectural counterexample examined is developer-reported and does not establish dependable performance across representative production workflows.",
+  "No task scope or practical reliability requirement is specified."
+ ],
+ "packet_hash": "310b1894fe87ad33abe9f8ca8391f46b234b1c47b0a202af5f4a8db41275fbbb"
+}

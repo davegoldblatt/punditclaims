@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-five-things-most-people-dont-seem-103fa6-2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-103fa6-2",
+  "version": 1,
+  "content_hash": "885feced8fc89b3021548aec9d2ec74a55de1076a3c32a19f6713acc7248b321"
+ },
+ "contract_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-103fa6-2",
+  "version": 1,
+  "content_hash": "1e0e7d1867b0476261c6095cd1988f07d77f8df5b518c7bdd51a37373e2edc68"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek R1 total training cost 294000 Nature 2025 V3 5.576 million",
+   "site.nature.com \"09422\" \"294\"",
+   "\"DeepSeek\" \"294,000\" \"Nature\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "used": true,
+    "why": "Primary V3 cost disclosure, useful for separating base-model costs from R1 training."
+   },
+   {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+    "used": true,
+    "why": "Later primary disclosure of the original R1 project's post-training compute."
+   },
+   {
+    "url": "https://epoch.ai/gradient-updates/what-went-into-training-deepseek-r1",
+    "used": false,
+    "why": "An assumption-dependent early estimate; the later primary disclosure is preferable."
+   },
+   {
+    "url": "https://www.nature.com/articles/d41586-025-03015-6",
+    "used": false,
+    "why": "The returned article body was a subscription preview and did not supply the needed cost detail."
+   }
+  ],
+  "performed_at": "2026-10-29T05:40:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2412-19437v1",
+   "source_snapshot_id": "134c7e306cb10e2d0bda4db09372b1afd89fba1e37bdfa9a36dab05ccab3ec88",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.19437v1",
+   "locator": "Section 1, training-cost discussion preceding the contributions",
+   "receipt": {
+    "public_excerpt": "Assuming the rental price of the H800 GPU is $2 per GPU hour, our total training costs amount to only $5.576M.",
+    "quote_hash": "2865ab0b001a7c020bf3f065debe43aae7753027f1da5f1b6bfef23b1637d674",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-27",
+   "retrieved_at": "2026-10-29T05:34:38Z",
+   "relation": "context",
+   "explanation": "This is a rental-equivalent compute estimate for V3's official training, excluding earlier research and ablation experiments. It is not the complete cost of training R1.",
+   "metric_scope": {
+    "company": "DeepSeek",
+    "metric": "DeepSeek-V3 official training compute cost at assumed GPU rental rates",
+    "currency": "USD",
+    "units": "millions of dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": "2024-12",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "static-content-springer-com-esm-art-3a10-1038-2fs41586-025-09422-z-fa67032a0622",
+   "source_snapshot_id": "bf091fcb87fc27d2d807622ce29e53084f5946e62a9feb15c427c9fc63d1704a",
+   "publisher": "DeepSeek-AI / Nature supplementary information",
+   "source_type": "company_disclosure",
+   "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09422-z/MediaObjects/41586_2025_9422_MOESM1_ESM.pdf",
+   "locator": "Section 2.4.4, Training Cost; Supplementary Table 4",
+   "receipt": {
+    "public_excerpt": "For the training of DeepSeek-R1-Zero, we employed 64*8 H800 GPUs,\nand the process required approximately 198 hours.",
+    "quote_hash": "1e56b744a44d0c7562263da9d85901d56d680a553859a82f47bf6262edf47938",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-09-17",
+   "retrieved_at": "2026-10-29T05:35:36Z",
+   "relation": "context",
+   "explanation": "The accompanying table reports $294,000 at assumed rental rates for R1-Zero, supervised-data creation and R1 training. This is useful evidence of inexpensive post-training, but excludes the base model and does not provide a matched predecessor comparison.",
+   "metric_scope": {
+    "company": "DeepSeek",
+    "metric": "Original R1 project's post-training compute cost at assumed GPU rental rates",
+    "currency": "USD",
+    "units": "dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": "2025-01",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis, which prevents a supported or contradicted money assessment under the required rules.",
+  "No matched complete-training cost records for R1 and a named, comparably capable predecessor were established.",
+  "The available primary figures cover different training components and should not be treated individually as R1's complete cost."
+ ],
+ "packet_hash": "851d6b9201672ce5ba460f2311847ed5518b58246f5ce15948f36ab1d4b28cc4"
+}

@@ -1,0 +1,138 @@
+{
+ "packet_id": "marcus-breaking-news-and-how-the-end-might-5595dd-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-5595dd",
+  "version": 2,
+  "content_hash": "881ed8e5a3a808f1419b0b5756167e06c4d99e6bc65e998fcddcb478b78f6b1a"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-5595dd",
+  "version": 1,
+  "content_hash": "b13234594b401377402c9422598e36c5320cb69d64624a9370537b2e11d18341"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI June 2026 commitments 1.4 trillion assets spending Reuters",
+   "OpenAI Anthropic June 2026 1.4 trillion commitments Reuters assets",
+   "Alphabet first quarter 2026 results capital expenditures assets Amazon",
+   "OpenAI spending commitments 600 billion 2030 Reuters February 2026",
+   "OpenAI 1.4 trillion commitments February 2026 CNBC 600 billion",
+   "Anthropic S-1 October 26 2026 sec cash flows"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/news/openai-recalibrates-growth-path-600-233121761.html",
+    "used": true,
+    "why": "Readable reporting on a future compute plan; used only to distinguish plans from realized expenditure and binding obligations."
+   },
+   {
+    "url": "https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html",
+    "used": false,
+    "why": "Read as the underlying reporting source, but it does not supply a matched three-part comparison."
+   },
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf",
+    "used": true,
+    "why": "Primary consolidated disclosure illustrates the importance of entity scope and distinguishing capital expenditure from net cash burn."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "Read successfully. Its half-year cash flows and later balance-sheet information do not complete the required matched quarter-end comparison."
+   },
+   {
+    "url": "https://openai.com/index/amazon-partnership/",
+    "used": false,
+    "why": "Potential primary commitment disclosure, but read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-10-29T02:28:41Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-recalibrates-growth-path-600-233121761-html",
+   "source_snapshot_id": "adf07181dce0aa8411e37f4ce481144cd7b5545e8023a8042d8364b295703563",
+   "publisher": "Investing.com, distributed by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-recalibrates-growth-path-600-233121761.html",
+   "locator": "Paragraph beginning 'The primary goal'",
+   "receipt": {
+    "public_excerpt": "$600 billion",
+    "quote_hash": "8537cbceeaa91395e5396178fdd0d19a522ff2a9efce456346e268d9e06b1c3f",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-20",
+   "available_at": "2026-02-20",
+   "retrieved_at": "2026-10-29T02:22:13Z",
+   "relation": "context",
+   "explanation": "This reports a compute-spending plan through 2030. It does not establish realized quarterly expenditure or the amount of legally binding commitments outstanding at quarter-end.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Planned cumulative compute spending through 2030",
+    "currency": "USD",
+    "units": "billions of dollars",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2030-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s2-q4cdn-com-299287126-files-doc-earnings-2026-q1-earnings-result-a-709c4265a90e",
+   "source_snapshot_id": "c1457fbd790a72bc990761cbbc06d980f48a4e0be874bddbcb65ddb3a620153c",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf",
+   "locator": "Opening financial highlights, free-cash-flow bullet; supplemental cash-flow table",
+   "receipt": {
+    "public_excerpt": "investments in artificial intelligence",
+    "quote_hash": "09bd54f4b67884be4a60ec8d75307fd6691eb6e32f05e4c0d67b3f777ec80a56",
+    "verified": "exact"
+   },
+   "event_date": "2026-03-31",
+   "available_at": "2026-04-29",
+   "retrieved_at": "2026-10-29T02:22:12Z",
+   "relation": "context",
+   "explanation": "Amazon reports $147.299 billion of property-and-equipment purchases net of sales and incentives over the trailing twelve months. This is consolidated capital expenditure over a different period, so it cannot directly settle the claim about OpenAI’s quarterly spending rank.",
+   "metric_scope": {
+    "company": "Amazon",
+    "metric": "Purchases of property and equipment, net of proceeds from sales and incentives",
+    "currency": "USD",
+    "units": "millions of dollars",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-04-01",
+    "period_end": "2026-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No comparable set of realized spending figures for all named providers.",
+  "No matched total-assets comparison for the private and public companies at the selected date.",
+  "No complete, consistently defined inventory of binding commitments.",
+  "The statement does not identify an accounting basis.",
+  "The compound claim requires separate stock and flow scopes."
+ ],
+ "packet_hash": "14dd6fb3e8f7facc360a1e6ad7c3351a902d67584312f78cdb18a5e4ec87a0e7"
+}

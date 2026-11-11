@@ -1,0 +1,215 @@
+{
+ "run_id": "marcus-ai-agents-have-so-far-mostly-been-3c3c51-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ai-agents-have-so-far-mostly-been-3c3c51": "d77be88666973ebcab037d87c0855644b6c5a99287a5797c30c77e05f0a175ce",
+  "case:marcus-ai-agents-have-so-far-mostly-been-452803": "e9f0db84b22bd3ac7639acdcb99a8ba0793fc08bb374390ad755c141419f47eb",
+  "case:marcus-ai-agents-have-so-far-mostly-been-5c92a3": "877849cd26a3f20c0b0b7296eb33b74ee3e1479eaef545c6ec83bf1a6e05dbbd",
+  "case:marcus-ai-agents-have-so-far-mostly-been-5f4295": "285512efe97d4d89d8250437e40b55f2ae408cc6bdc55e95ea1379654fe4c6c5"
+ },
+ "started_at": "2026-10-29T02:04:12Z",
+ "completed_at": "2026-10-29T02:05:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post. The quoted Fortune line is only the baseline he refers to. The claim that the sentiment grew is his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The language is firm (\"has only grown\") and describes a past trend from about late March to publication. The normalised wording matches it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading this as a net increase in customer disappointment from March to Aug 3, 2025, measured comparably, is fair and ordinary. Leaving out media volume alone is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Capgemini survey from April 2025 shows trust in fully autonomous agents falling against a 2024 baseline. That is a different measure, and it falls outside the March-to-August window."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company methodology note confirming the April 2025 fieldwork. It contains no later data point, so it cannot show a trend after March."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no comparable measurements of customer disappointment at both the March and late-July/August points. The Capgemini trust decline compares 2024 with April 2025, which is a different measure and period. The evidence neither confirms nor refutes growth over the stated interval.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-3c3c51"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion. The Zou study is cited only as backing for it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Firm causal claim: agents are grossly vulnerable as a consequence of superficial understanding. The normalisation keeps both the effect and the cause."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract maps \"superficial understanding\" onto agents reacting to surface features and failing to tell trusted from injected instructions. That is a fair, ordinary reading, but the result depends on it. No source tests the cause in Marcus's terms."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Large red-teaming preprint dated Jul 28, 2025: over 60k successful attacks across 22 frontier agents, and nearly all agents broke policy within 10-100 queries. This establishes gross vulnerability."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The same study shows successful attacks used spoofed system tags, fake reasoning and fake sessions. These are surface mimicry that fools agents about who is instructing them, which fits the contract's causal reading."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Expert analysis from June 2025: LLMs cannot reliably tell instructions apart by source. This is the contract's causal mechanism, though Willison frames it as architectural."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Large-scale tests in the period show that nearly all frontier agents can be made to violate policy with modest effort. Successful attacks exploit the agents' failure to tell genuine instructions from spoofed or injected text. Both parts of the support condition are met under the contract's reading. The causal link rests on how the attacks work, not on a direct test of \"understanding\".",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-452803"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence. The Solar-Lezama quote that follows belongs to someone else and is not part of the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation keeps the hedge \"seem to\". The statement reports an appearance, not a firm finding, so it is a hedged observation."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract scores hedged language on a plain reading and treats \"seem to\" as merely lowering the bar. Policy limits plain-reading scoring to firm language, so hedged claims should not be scored."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GitClear data for 2020-2024: code cloning rose and copy/paste lines exceeded moved lines in 2024. The source is a vendor, and the AI link is aggregate only, not line by line."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Trade-press coverage of the same GitClear study: duplicated blocks rose eightfold in 2024 and moved lines fell 39.9%."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "DORA 2024 reported a small self-reported quality gain from AI alongside lower delivery stability. It does not measure duplication."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "\"Seem to\" is an epistemic hedge, so policy does not score the claim. For context, the GitClear evidence does point to rising duplication and less refactoring in 2024, consistent with the claim. The claim is not adjudicated because of the hedge.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-5c92a3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assessment in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The core claim (\"none are reliable\") is firm. \"To my knowledge\" and the hedged narrow-use exception are kept. Neither expresses a probability about the main claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading \"reliable\" as consistently completing broad delegated tasks without frequent consequential errors is ordinary and fair. Using July 2025 to publication as the window is reasonable for describing a current state."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CMU benchmark summary from June 2025 shows low completion rates for older research configurations. It does not evaluate the July commercial agents."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "One user's tests of ChatGPT agent in July 2025 found frequent failures and freezes. It covers one provider and does not measure repeated-run rates."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Positive Tom's Guide tests of ChatGPT agent in July 2025, but the reviewer still had to step in. Isolated successes fit the narrow-use exception and do not show broad reliability."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The support condition needs broad, contemporaneous evaluations covering the major providers' agents. The packet has only one-off firsthand tests of ChatGPT agent and an older benchmark. Nothing shows any agent was broadly reliable, so the contradiction condition is not met either. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-5f4295"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33215,
+  "output_tokens": 5215,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

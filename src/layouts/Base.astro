@@ -1,0 +1,104 @@
+---
+// The page shell: head, synthetic-preview band, masthead, navigation, main,
+// footer. Every page carries the release it was built from in
+// <meta name="pc:release">, which scripts/check-dist.ts compares across the
+// whole build.
+import "../styles/global.css";
+import { release, FIXTURE_MODE } from "../lib/published.ts";
+import { SITE } from "../site.ts";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  // A page that should never be indexed even in production (search results, 404).
+  noindex?: boolean;
+}
+const { title, description = SITE.description, ogImage = "/og/site.png", noindex = false } = Astro.props;
+const r = release();
+const m = r.manifest;
+
+// With file-format output the build-time pathname ends in ".html"; the served
+// route does not.
+const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/index$/, "/") || "/";
+const canonical = `${SITE.origin}${path === "/" ? "/" : path}`;
+const indexable = !FIXTURE_MODE && SITE.originExplicit && m !== null && !noindex;
+const fullTitle = path === "/" ? `${SITE.name}: ${SITE.tagline.replace(/, with the evidence$/, "")}` : `${title} | ${SITE.name}`;
+const ogUrl = ogImage.startsWith("http") ? ogImage : `${SITE.origin}${ogImage}`;
+
+const nav = [
+  { href: "/", label: "Were they right?", match: (p: string) => p === "/" },
+  { href: "/explore", label: "Explore", match: (p: string) => p === "/explore" },
+  { href: "/register/checked", label: "All claims", match: (p: string) => p.startsWith("/claims/") || p.startsWith("/register/") || p.startsWith("/posts/") },
+  ...r.subjects.map((s) => ({ href: `/people/${s.id}`, label: s.name, match: (p: string) => p === `/people/${s.id}` || p.startsWith(`/people/${s.id}/`) })),
+  { href: "/changes", label: "Changes", match: (p: string) => p === "/changes" || p.startsWith("/changes/") },
+  { href: "/method", label: "Method", match: (p: string) => p === "/method" },
+  { href: "/coverage", label: "Coverage", match: (p: string) => p === "/coverage" },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {indexable ? null : <meta name="robots" content="noindex, nofollow" />}
+    <meta name="pc:release" content={m?.release_id ?? "none"} data-fixture={FIXTURE_MODE ? "true" : "false"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: changes`} href="/feed.xml" />
+    <link rel="alternate" type="application/json" title={`${SITE.name}: release`} href="/api/release.json" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="/fonts/SchibstedGrotesk-var.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    {FIXTURE_MODE && (
+      <div class="synthetic" role="note" aria-label="Synthetic preview" data-synthetic-banner data-pagefind-ignore>
+        <p class="wrap"><strong>Synthetic preview.</strong> Every record in this build is invented for testing the site. None of it describes {SITE.subjects}.</p>
+      </div>
+    )}
+    <header class="masthead" data-pagefind-ignore>
+      <div class="wrap mast">
+        <a class="wordmark" href="/"><b>{SITE.name}</b><span>{SITE.tagline}</span></a>
+        <form class="mast-search" role="search" action="/search" method="get">
+          <label class="sr-only" for="site-q">Search claims</label>
+          <input id="site-q" type="search" name="q" placeholder="Search claims" autocomplete="off" />
+        </form>
+      </div>
+      <nav class="wrap nav" aria-label="Main">
+        {nav.map((n) => <a href={n.href} aria-current={n.match(path) ? "page" : undefined}>{n.label}</a>)}
+        <a class="nav-search" href="/search" aria-current={path === "/search" ? "page" : undefined}>Search</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer" data-pagefind-ignore>
+      <div class="wrap">
+        <nav class="foot-links" aria-label="More">
+          <a href="/held" aria-current={path === "/held" ? "page" : undefined}>Held back</a>
+          <a href="/about" aria-current={path === "/about" ? "page" : undefined}>About</a>
+          <a href="/search" aria-current={path === "/search" ? "page" : undefined}>Search</a>
+          <a href="/api/release.json">Download the data (JSON)</a>
+          <a href="/feed.xml">RSS</a>
+        </nav>
+        {m ? (
+          <p>Updated {m.reference_date}. Deadlines are judged as of that date.</p>
+        ) : (
+          <p>Nothing is published yet.</p>
+        )}
+        <p>Every claim is checked by AI models from Anthropic and OpenAI. They can be wrong, even when they agree. Code MIT, data and text CC BY 4.0.</p>
+      </div>
+    </footer>
+  </body>
+</html>

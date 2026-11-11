@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-the-misguided-backlash-against-californias-c3bf59-a2",
+ "claim_revision_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "version": 2,
+  "content_hash": "3e82039848d5125661a4e0dd022f676c07e6da0d07219bb34c988babf8828d16"
+ },
+ "contract_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "version": 1,
+  "content_hash": "0dfedfd16b6bf7e243b908d4495583bf75154781b5225ebb3648280324799338"
+ },
+ "packet_ref": {
+  "id": "marcus-the-misguided-backlash-against-californias-c3bf59-p1",
+  "content_hash": "d84c5cbf481b241c9e078b641e9466f69f90bf7ad079f806dd934094ac1c5299"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-05-24",
+  "end": "2024-06-07",
+  "precision": "day"
+ },
+ "public_rationale": "TotalRecall's June 6, 2024 extraction example, preserved in documentation updated June 8, demonstrates access to screenshot-derived text in an unencrypted SQLite database [e1]. Independent testing published June 4 verified access to raw Recall data in Windows 11 build 26100.712 [e2]. These findings support the observation about the early Recall index [e1, e2]. Ars Technica also reported that disk encryption was generally on by default when signed into a Microsoft account, qualifying any suggestion that it necessarily required a separate manual choice [e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The finding applies to the tested early preview implementation, not later Recall releases.",
+  "An unencrypted SQLite database is not literally a plain-text document; database encryption and whole-disk encryption are distinct.",
+  "The evidence does not establish that disk encryption required explicit manual configuration.",
+  "The security labels are opinions, and the post's conflicting March 24 chronology remains unexplained."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-the-misguided-backlash-against-californias-c3bf59-2x-review-anthropic-1",
+  "marcus-the-misguided-backlash-against-californias-c3bf59-2x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-the-misguided-backlash-against-californias-3b63cd-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-the-misguided-backlash-against-californias-c3bf59",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "It has come out that the database indexing Microsoft Recall's screenshots is stored in plain text, except on systems explicitly set to encrypt everything, which Marcus calls bananas and Keystone Kops level security.",
+  "kind": "observation",
+  "conditions": [
+   "except on systems that are explicitly set to encrypt everything"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Two weeks later, it has already come out that the database that indexes the whole thing is in plain text (except on systems that are explicitly set to encrypt everything). That’s bananas. Keystone Kops level security.",
+   "locator": "paragraph 37",
+   "url": "https://garymarcus.substack.com/p/the-misguided-backlash-against-californias",
+   "date": "2024-06-07",
+   "document_title": "The misguided backlash against California’s SB-1047",
+   "observed_at": "2026-10-28T23:59:47Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Two weeks later, it has already come out",
+    "the database that indexes the whole thing is in plain text",
+    "except on systems that are explicitly set to encrypt everything"
+   ],
+   "our_interpretation": [
+    "Assess the early Recall implementation examined around the post date, not later redesigned releases.",
+    "Plain text means readable, unencrypted database contents, not that the SQLite file is literally a plain-text document.",
+    "Read the exception as referring to whole-disk encryption, which is distinct from encryption applied to the database itself.",
+    "Use May 24 through June 7, 2024, reflecting the post's recent two-week context. Its reference to March 24 conflicts with that context.",
+    "The descriptions bananas and Keystone Kops level security are opinions; the assessable proposition is the database's storage protection."
+   ],
+   "support_condition": "Direct technical examination of the relevant early Recall implementation establishes that its screenshot-derived text index was readable in an SQLite database without separate database encryption, while system-level disk encryption could protect the stored files.",
+   "contradiction_condition": "Direct examination establishes that the relevant early implementation independently encrypted its index database, or that the plaintext reports concerned a different product or materially different implementation."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "TotalRecall's June 6, 2024 extraction example, preserved in documentation updated June 8, demonstrates access to screenshot-derived text in an unencrypted SQLite database [e1]. Independent testing published June 4 verified access to raw Recall data in Windows 11 build 26100.712 [e2]. These findings support the observation about the early Recall index [e1, e2]. Ars Technica also reported that disk encryption was generally on by default when signed into a Microsoft account, qualifying any suggestion that it necessarily required a separate manual choice [e2].",
+  "limitations": [
+   "The finding applies to the tested early preview implementation, not later Recall releases.",
+   "An unencrypted SQLite database is not literally a plain-text document; database encryption and whole-disk encryption are distinct.",
+   "The evidence does not establish that disk encryption required explicit manual configuration.",
+   "The security labels are opinions, and the post's conflicting March 24 chronology remains unexplained."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "unencrypted SQLite database",
+    "locator": "Technical Details; see also the June 6 extraction example and changelog",
+    "url": "https://github.com/xaitax/TotalRecall/tree/main/totalrecall_original_2024",
+    "publisher": "Alexander Hagenah",
+    "event_date": "2024-06-06",
+    "available_at": "2024-06-08",
+    "explanation": "The preserved June documentation describes the unencrypted database and demonstrates extracting and searching its screenshot-derived text. Its June 6 example falls within the target period; June 8 is the documentation's stated FAQ update date."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Other Windows 11 24H2 versions",
+    "locator": "Section “Fundamentally breaks the promise of security in Windows,” testing instructions and subsequent encryption discussion",
+    "url": "https://arstechnica.com/ai/2024/06/windows-recall-demands-an-extraordinary-level-of-trust-that-microsoft-hasnt-earned",
+    "publisher": "Ars Technica",
+    "event_date": "2024-06-04",
+    "available_at": "2024-06-04",
+    "explanation": "The author tested build 26100.712 and independently verified access to raw Recall data. The article also explains that whole-disk encryption generally applied when signed into a Microsoft account or using BitLocker, qualifying any suggestion that it always required a separate manual choice."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "462c93c46e5778670f4a4de374ab1a91d8b849597eafdaa566c96e84a5094e54",
+ "supersedes_assessment_id": "marcus-the-misguided-backlash-against-californias-c3bf59-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:42:04Z"
+}

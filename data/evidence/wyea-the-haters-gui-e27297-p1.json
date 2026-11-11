@@ -1,0 +1,148 @@
+{
+ "packet_id": "wyea-the-haters-gui-e27297-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-haters-gui-e27297",
+  "version": 1,
+  "content_hash": "fb65a2532bd83ea0a87aa1e0a59c45d3b9ed8f735e0cec4a128d87c12ce42eee"
+ },
+ "contract_ref": {
+  "id": "wyea-the-haters-gui-e27297",
+  "version": 1,
+  "content_hash": "c43a1408b5d55a8a916dbd1a68f1d0534635c67adc383819c9b3bd0781b2a7e3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft Meta Google Apple Amazon Tesla AI profitability revenue costs 2025 quarter",
+   "site.microsoft.com investor FY 2025 Q3 earnings AI services 16 points",
+   "site.investor.atmeta.com 2025 first quarter results AI expenses",
+   "site.abc.xyz 2025 Q1 earnings AI revenue operating income",
+   "site.apple.com newsroom 2025 May second quarter results",
+   "site.ir.aboutamazon.com 2025 first quarter results AWS",
+   "site.ir.tesla.com 2025 Q1 update AI",
+   "Tesla Q1 2025 update pdf assets ir tesla",
+   "Alphabet 2025 Q1 results alphabet level activities 3.0 billion",
+   "Meta Q1 2025 earnings release pdf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q3",
+    "used": true,
+    "why": "Read relevant passages with read_page. Provides AI-attributed cloud growth but not AI-specific profit."
+   },
+   {
+    "url": "https://s2.q4cdn.com/299287126/files/doc_financials/2025/q1/AMZN-Q1-2025-Earnings-Release.pdf",
+    "used": true,
+    "why": "Read relevant passages with read_page. Demonstrates the distinction between cloud-segment operating income and AI-specific profitability."
+   },
+   {
+    "url": "https://www.apple.com/newsroom/2025/05/apple-reports-second-quarter-results/",
+    "used": false,
+    "why": "Read in full. Reports consolidated results without the AI-specific revenue and cost allocation needed here."
+   },
+   {
+    "url": "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-First-Quarter-2025-Results/",
+    "used": false,
+    "why": "The read_page extraction did not provide the requested segment passages."
+   },
+   {
+    "url": "https://abc.xyz/assets/34/fa/ee06f3de4338b99acffc5c229d9f/2025q1-alphabet-earnings-release.pdf",
+    "used": false,
+    "why": "read_page returned navigation rather than the financial release."
+   },
+   {
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q1/2025-q1-earnings-transcript.pdf",
+    "used": false,
+    "why": "read_page did not retrieve the requested Alphabet-level expense passage."
+   },
+   {
+    "url": "https://ir.tesla.com/",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search results did not establish a matched generative-AI income statement."
+   }
+  ],
+  "performed_at": "2026-10-29T21:39:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2025-earnings-fy-2025-q3",
+   "source_snapshot_id": "fbb21983549d27cfec167b7c8128cdf366ff4c29fdb5d7eb4b3275dc949aac67",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2025/earnings-fy-2025-q3",
+   "locator": "Amy Hood's prepared remarks, Intelligent Cloud results",
+   "receipt": {
+    "public_excerpt": "16 points from AI services.",
+    "quote_hash": "1d70cbcdbc1084963d3ce52e5f602083f66ab381053bef9508811d5d78f62bb9",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-04-30",
+   "retrieved_at": "2026-10-29T10:32:06Z",
+   "relation": "context",
+   "explanation": "Microsoft reports a material AI contribution to cloud revenue growth. This is revenue attribution, not a disclosure of AI profit or loss.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "AI contribution to Azure and other cloud services revenue growth",
+    "currency": null,
+    "units": "percentage points",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s2-q4cdn-com-299287126-files-doc-financials-2025-q1-amzn-q1-2025-ea-ac82f13620a6",
+   "source_snapshot_id": "a823c9b4eaa0e96aa67f4e31fd8e3f6c2476b20502306834129197442caf47ab",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://s2.q4cdn.com/299287126/files/doc_financials/2025/q1/AMZN-Q1-2025-Earnings-Release.pdf",
+   "locator": "First-page financial highlights",
+   "receipt": {
+    "public_excerpt": "AWS segment operating income",
+    "quote_hash": "af6543a3c575ddc788c53e9ca5b52bd50e4cd92e3100f697d4c316ef97df9eb7",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-05-01",
+   "retrieved_at": "2026-10-29T21:34:16Z",
+   "relation": "context",
+   "explanation": "AWS was profitable as a whole. Its mixed AI and non-AI business cannot establish whether Amazon's AI activities made profits or multibillion-dollar losses.",
+   "metric_scope": {
+    "company": "Amazon",
+    "metric": "AWS segment operating income",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No matched AI-specific revenue and expense accounts were obtained for the six companies.",
+  "Shared infrastructure, research and distribution costs cannot be allocated from the retrieved disclosures.",
+  "The claim supplies no accounting basis, which prevents a supported or contradicted financial score.",
+  "The size and period of the alleged losses remain underspecified."
+ ],
+ "packet_hash": "803fd9d07855ca0775dc233d79cd1b14e8d6a93878ba964547115b7f518f492b"
+}

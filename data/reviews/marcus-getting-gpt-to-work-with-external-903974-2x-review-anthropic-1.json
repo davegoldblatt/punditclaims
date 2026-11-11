@@ -1,0 +1,100 @@
+{
+ "run_id": "marcus-getting-gpt-to-work-with-external-903974-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-getting-gpt-to-work-with-external-903974": "758c2f12fd14dc062da444156f665a83115a502b1c2f4ed27ea5da38cf81329b",
+  "case:marcus-getting-gpt-to-work-with-external-c94be9": "5e45ffd1497b9b505c6a89c619799738902ccec430df4fa021203120caf47aeb"
+ },
+ "started_at": "2026-10-29T07:22:13Z",
+ "completed_at": "2026-10-29T07:22:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Sentence appears in Marcus's own newsletter post, which he co-wrote with Ernest Davis, and is presented as the authors' view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "Keeps the 'until those problems are addressed' antecedent and the 'will remain limited' modality. Neither the fundamental problems nor what counts as limited is defined."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract rightly finds no observable test for the antecedent or for 'limited'. Any scoring would depend on definitions the speaker never supplied."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "This is a conditional forecast with no deadline. Whether its antecedent has been met cannot be observed, and 'limited' has no threshold. Under policy, a conditional whose antecedent is unknown is not scored, and the packet has no evidence of the outcome.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-903974"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus co-wrote the post with Davis and states the claim in the authors' own voice. It describes the Davis–Aaronson tests."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the scope (the authors' 105-problem tests) and the student-relative wording on difficulty. It correctly treats the claim as a contrast between examples, not a measured rate."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (correct answers on demanding problems, substantive failures on elementary ones) is ordinary and fair. Difficulty is a qualitative call, and no students were tested."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Test report dated Aug 2023. It records correct answers on a 100-dimensional probability problem and a finite-field matrix problem, plus failures on elementary problems. It is the authors' own write-up, but the problems and answers can be checked."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Raw output log. Both systems answered 'No' on the Lake Michigan problem, reasoning as if the lake were a point. The correct answer is plainly yes, so this is a substantive failure on an easy problem."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The published test records show both sides of the contrast. GPT-4 with each plug-in solved advanced probability and linear algebra problems correctly, and failed elementary geometry reasoning such as the Lake Michigan question. The records are checkable primary data, not just the authors' assertion. No student comparison group exists, but the claim does not need one.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-c94be9"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 12933,
+  "output_tokens": 1780,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

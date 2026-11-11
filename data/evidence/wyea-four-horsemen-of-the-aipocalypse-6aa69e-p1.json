@@ -1,0 +1,118 @@
+{
+ "packet_id": "wyea-four-horsemen-of-the-aipocalypse-6aa69e-p1",
+ "claim_revision_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-6aa69e",
+  "version": 1,
+  "content_hash": "400cd765acb0831a7fb2ba7899680cc0bd62993f84dcc9fd9e24cd789d6a3658"
+ },
+ "contract_ref": {
+  "id": "wyea-four-horsemen-of-the-aipocalypse-6aa69e",
+  "version": 1,
+  "content_hash": "95079049879522969787a95a109ded643bf9b15509b3b62a3107d2e237fc4146"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia GPU shipments installation capacity warehouses 2026 April GPUs power",
+   "site.nvidianews.nvidia.com fourth quarter fiscal 2026 results infrastructure power",
+   "Nvidia GPUs warehouses installed power April 2026 Microsoft capacity",
+   "site.sec.gov/Archives/edgar/data/1045810/ \"2026\" \"data center capacity\"",
+   "site.sec.gov/Archives/edgar/data/1045810/ \"2026\" \"power\" \"infrastructure\"",
+   "site.cbre.com \"North America Data Center Trends H2 2025\"",
+   "\"NVIDIA\" \"January 25, 2026\" \"capacity\" power cooling"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+    "used": true,
+    "why": "Relevant passages read in full-text mode. Documents facility constraints but lacks a matched NVIDIA shipment comparison."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403. A readable mirror of the filing was used."
+   },
+   {
+    "url": "https://media.felix.fe.training/sec-filings/2026/02/25/000104581026000021/nvda-20260125.htm",
+    "used": true,
+    "why": "Relevant filing passages read. Establishes acknowledged infrastructure risks, not realized aggregate excess sales."
+   },
+   {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026/",
+    "used": false,
+    "why": "read_page did not return the requested financial-results passage."
+   },
+   {
+    "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+    "used": false,
+    "why": "read_page returned only a title and navigation text."
+   },
+   {
+    "url": "https://netl.doe.gov/sites/default/files/netl-file/25DCW_Williams.pdf",
+    "used": false,
+    "why": "Relevant passages read. Broad power projections do not establish compatible capacity for NVIDIA's actual quarterly sales."
+   },
+   {
+    "url": "https://www.techradar.com/computing/gpu/is-the-gpu-stock-crisis-down-to-real-shortages-or-has-the-market-been-manipulated-gamers-wont-like-the-theory-floated-by-one-analyst",
+    "used": false,
+    "why": "Search result relies on Zitron's interpretation and describes August 2026 purchases, outside the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T19:59:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "cbre-com-insights-books-north-america-data-center-trends-h2-2025",
+   "source_snapshot_id": "1ce89172c5ba640bb109b6c569b580912622a6b5fae7404d84f1b5a6bd8607a4",
+   "publisher": "CBRE",
+   "source_type": "independent_measurement",
+   "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+   "locator": "State of the Market, first bullet",
+   "receipt": {
+    "public_excerpt": "limit large-scale deployments",
+    "quote_hash": "ffb78e3126d9e4a675a7809ba2b88e3b16495907cabbbb160991cabd6189537e",
+    "verified": "exact"
+   },
+   "event_date": "2025-12",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T13:14:01Z",
+   "relation": "context",
+   "explanation": "CBRE documents real deployment constraints in North American primary markets. It does not measure worldwide NVIDIA GPU sales against compatible installation capacity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "media-felix-fe-training-sec-filings-2026-02-25-000104581026000021-n-4c6b963324fa",
+   "source_snapshot_id": "87dccb7f3c65d75dada4972e7db704c3b39fe6dc8121af3e590f2530c1554b8a",
+   "publisher": "NVIDIA; filing mirrored by Financial Edge",
+   "source_type": "filing",
+   "url": "https://media.felix.fe.training/sec-filings/2026/02/25/000104581026000021/nvda-20260125.htm",
+   "locator": "Form 10-K, Item 1A, Business disruptions risk discussion",
+   "receipt": {
+    "public_excerpt": "predictable energy.",
+    "quote_hash": "c64edba31fd68783deb4a9248a2493234c38008ecfba311ad9d50e1aea94c68d",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-25",
+   "available_at": "2026-02-25",
+   "retrieved_at": "2026-10-29T12:43:33Z",
+   "relation": "context",
+   "explanation": "The surrounding filing passage identifies power, water, land and permitting constraints as risks to customer expansion. A risk disclosure does not establish that actual GPU sales exceeded installation capacity.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matched dataset of GPU sales quantities and feasible installations was found for the target quarter.",
+  "Facility capacity reports do not identify the share compatible with the GPUs sold.",
+  "No independently verified aggregate warehouse backlog establishes excess sales after normal installation lead times."
+ ],
+ "packet_hash": "6c59a04cc85e73d077d27a0353ac86d04a258c93aab11e613ef59707102b6b9f"
+}

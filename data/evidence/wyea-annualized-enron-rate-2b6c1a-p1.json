@@ -1,0 +1,184 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-2b6c1a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-2b6c1a",
+  "version": 2,
+  "content_hash": "192817b2de0c5040e244c799a60b512d5ada09d2c1f3eb7a41e6a0e459e62356"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-2b6c1a",
+  "version": 1,
+  "content_hash": "a9766c40b597794130a1a0a151582bda5338c7ca6b8d5ab571e0c15c71dc4286"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft fiscal 2026 AI revenues Bloomberg OpenAI SEC estimate",
+   "Google Amazon Oracle AI revenue disclosed 2026 actual revenues",
+   "site.abc.xyz 2026 Q2 earnings AI revenue",
+   "site.oracle.com/news/announcement \"2026-09\" financial results",
+   "\"Microsoft’s AI Sales Mostly Come From OpenAI\" Bloomberg",
+   "\"Microsoft\" \"AI revenue\" \"34 billion\" Bloomberg August 2026 growth 123"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://news.bloomberglaw.com/artificial-intelligence/microsofts-ai-sales-mostly-come-from-openai-disclosures-show",
+    "used": false,
+    "why": "Despite the FULL TEXT label, the returned text visibly stops at a subscription preview. It does not contain the calculation."
+   },
+   {
+    "url": "https://www.bloomberglinea.com/negocios/microsoft-registra-us24100-millones-en-ventas-de-ia-procedentes-de-openai/",
+    "used": true,
+    "why": "Readable Bloomberg report in Spanish containing the estimate and its methodology."
+   },
+   {
+    "url": "https://thenextweb.com/news/microsoft-ai-revenue-openai-70-percent-dependence",
+    "used": true,
+    "why": "Readable reporting explicitly describes the growth assumption behind Bloomberg's estimate."
+   },
+   {
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026-report",
+    "used": true,
+    "why": "Primary disclosure of an AI run rate; useful for distinguishing available information from realized revenue."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403, preventing a complete review."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+    "used": false,
+    "why": "read_page returned only a title and navigation text."
+   }
+  ],
+  "performed_at": "2026-10-29T10:28:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "thenextweb-com-news-microsoft-ai-revenue-openai-70-percent-dependence",
+   "source_snapshot_id": "4b03b7b83f5bf17b6eaf1768aa10cd610f3904f396dbc53734d25e79203b09a2",
+   "publisher": "The Next Web",
+   "source_type": "news_report",
+   "url": "https://thenextweb.com/news/microsoft-ai-revenue-openai-70-percent-dependence",
+   "locator": "Section ‘How the 70% is built’",
+   "receipt": {
+    "public_excerpt": "the 123% rate",
+    "quote_hash": "5af749cd86d07cf633e9a1b9c33430c85b45cc16fa814bf9a614b66389c6e6ad",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-06",
+   "retrieved_at": "2026-10-29T10:17:58Z",
+   "relation": "contradicts",
+   "explanation": "The annual AI estimate was extrapolated using a growth assumption. The disclosed OpenAI revenue was then compared with that estimate, which challenges a literal reading that the total was calculated from the OpenAI revenue disclosure.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Estimated total realized AI revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "bloomberglinea-com-negocios-microsoft-registra-us24100-millones-en-a56573bbbcb8",
+   "source_snapshot_id": "c068abb6b6789502ef1424f184a2e7d603e6aa4326979d63937c92bde5cc3571",
+   "publisher": "Bloomberg Línea / Bloomberg",
+   "source_type": "news_report",
+   "url": "https://www.bloomberglinea.com/negocios/microsoft-registra-us24100-millones-en-ventas-de-ia-procedentes-de-openai",
+   "locator": "Paragraph following the explanation of Bloomberg's annual estimate",
+   "receipt": {
+    "public_excerpt": "en dos ocasiones.",
+    "quote_hash": "94ebb7140f4b5ae1170a7d8aec2df6b18a0dc7dd05f66c957fc1fe5feec071fc",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-08-05",
+   "retrieved_at": "2026-10-29T10:20:49Z",
+   "relation": "context",
+   "explanation": "Bloomberg describes two company disclosures of annualized AI business size and separately estimates FY2026 realized AI revenue. This supports the distinction between those measures but does not establish the absence of every earlier annual estimate.",
+   "metric_scope": {
+    "company": "Microsoft",
+    "metric": "Estimated total realized AI revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "aboutamazon-com-news-company-news-amazon-earnings-q2-2026-report",
+   "source_snapshot_id": "0b56d00255a13f588d3c3cfcb817b6ce3500c61a4fba399d8ac330138ee4567d",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026-report",
+   "locator": "Business highlights following the chief executive's statement",
+   "receipt": {
+    "public_excerpt": "$25 billion annual revenue run rate",
+    "quote_hash": "0181a5374f361ff6b57b3de19944db4d95cc9667a9cd720f2d571a17f04754a3",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-30",
+   "retrieved_at": "2026-10-29T09:50:28Z",
+   "relation": "context",
+   "explanation": "Amazon disclosed an AI run rate. That is material financial information, but it is not a realized annual AI revenue total and therefore does not refute the claim under its contextual reading.",
+   "metric_scope": {
+    "company": "Amazon",
+    "metric": "AWS AI annual revenue run rate",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "annualized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The Google and Oracle disclosure reviews were incomplete because accessible page text was unavailable.",
+  "The search did not establish that no other annual Microsoft AI estimate existed.",
+  "The source gives reason to qualify the claimed calculation method, but ‘calculated from’ may describe the broader reporting context."
+ ],
+ "packet_hash": "4aa45b4eff477ae3a37e6c48cb1735fbbadae071861ade5029af9070caaec76a"
+}

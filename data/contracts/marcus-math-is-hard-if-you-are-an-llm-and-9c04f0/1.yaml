@@ -1,0 +1,45 @@
+claim_id: marcus-math-is-hard-if-you-are-an-llm-and-9c04f0
+version: 1
+claim_revision_ref:
+  id: marcus-math-is-hard-if-you-are-an-llm-and-9c04f0
+  version: 2
+  content_hash: 7ab7706fcc7aa8cdf5e65e5e2e0194a87e068489c10fa7cd193286cc0e5d3cd4
+assessment_axis: historical_observation
+explicit_source_elements:
+  - performance on MathGLM steadily declines as the problems gets bigger
+  - discrepancy between it and a calculator steadily increasing
+  - generalizing by similarity
+  - doing better on cases that are in or near the training set
+  - never, ever getting to a complete, abstract, reliable representation
+evaluator_interpretation:
+  - Assess the MathGLM experiments discussed in the post, rather than later models.
+  - Read 'steadily declines' primarily as a consistent downward trend; separately report whether every successive digit length declines.
+  - Treat calculator performance as an ideal exact-arithmetic reference within the tested domain, not as a measured device benchmark.
+  - The similarity mechanism and absence of an abstract representation are separate empirical assertions. Error rates alone cannot establish them.
+  - Use September 2023, the reporting month of the paper discussed, as the target period.
+support_condition: The reported size-dependent results show the claimed decline, and controlled training-distance tests or analysis of the model's computations establish similarity dependence and failure to acquire the asserted reliable abstraction.
+contradiction_condition: Matched results overturn the downward trend, or model-specific analysis demonstrates a reliable multiplication procedure that generalizes independently of proximity to training examples. A local accuracy increase contradicts only a strictly monotonic reading.
+measurement_requirements: Separate multiplication-only scores from mixed arithmetic; inspect each digit length; control training exposure and problem difficulty when testing similarity.
+source_requirements: Original MathGLM tables and training methods, plus model-specific controlled or mechanistic analyses for the representation claim.
+metric_scope: null
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2023-09
+  end: 2023-09
+  precision: month
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - Steadily may mean an overall trend or strict monotonic decline.
+  - The surrounding discussion describes multiplication, whereas Table 7 measures mixed arithmetic.
+  - Near the training set has no specified distance measure.
+  - Never could concern the evaluated model or an unrestricted architectural limitation.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T17:42:16Z
+frozen_at: 2026-10-29T17:42:16Z
+policy_version: 2026-10-28.7
+content_hash: 5e02a34cbbd87e9e6e7ad16676d843ca2dc199ee1709c646de9e374758a29341

@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-please-dont-trust-your-chatbot-for-352372-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-please-dont-trust-your-chatbot-for-352372": "0cba116e46f6055e3f8f6d6ac03b832f02bd09e3e3534ef73da35e7c196fdbe7"
+ },
+ "started_at": "2026-11-10T01:51:10Z",
+ "completed_at": "2026-11-10T01:51:22Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, presented as his conclusion from the studies he cites. Not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful to his wording. It keeps the concession that LLMs work 'decently well', the 'lay public' scope, the hedge 'can easily', and the explanation about missing questions. Causal is a reasonable kind because of the 'because' clause. The harm part, though, is phrased as a possibility."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract is fair. It refuses to turn 'can easily' into a frequency claim and refuses to give 'LLMs' or 'decently well' a scope. Scoring would need a threshold and scope Marcus never supplied, so treating the claim as not_applicable is correct."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A real Nature Medicine abstract, available before the evaluation date. Models alone did well, but lay users helped by them did no better than controls. This fits Marcus's concern, but it does not show that missing questions caused the gap, and the claim is not scoreable anyway."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A real JAMA Network Open abstract on vignette-based reasoning stages. It does not test lay-user interviews or whether omitted questions cause bad advice."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement mixes descriptions of interview ability that he states without numbers with possibility language ('can easily give bad advice'). Under the policy, possibility language is not scored. The rest has no measurable scope or threshold for 'LLMs', 'decently well', or interview competence. The evidence is relevant context but cannot settle a claim with no fair binary criterion.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-352372"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10123,
+  "output_tokens": 1159,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

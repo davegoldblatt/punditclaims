@@ -1,0 +1,113 @@
+{
+ "packet_id": "wyea-where-are-all-the-data-centers-7397a2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-where-are-all-the-data-centers-7397a2",
+  "version": 1,
+  "content_hash": "23a3ba02ea42975a62308f58552b620c57eda6319d4d6c1c4f2da53ebed9f0a0"
+ },
+ "contract_ref": {
+  "id": "wyea-where-are-all-the-data-centers-7397a2",
+  "version": 1,
+  "content_hash": "ed0094fec00f8e7cab8199393ee991d362055fe679bc054c8e01ebba60c0f741"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2026 inference gross margin training compute spending",
+   "site.semianalysis.com \"Anthropic Subscriptions Offer\"",
+   "\"inference has overtaken training\" NVIDIA 2026 annual report"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial disclosure available before the freeze. Its functional expense categories and reporting periods do not directly match the claim's required measures."
+   },
+   {
+    "url": "https://www.crusoe.ai/resources/blog/the-new-equation-what-ai-leaders-need-to-know-about-infrastructure-in-2026",
+    "used": true,
+    "why": "Supplier commentary supporting an industry shift toward inference, but without an Anthropic-specific quarterly measurement."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets/",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000038/a2026-annualxreportxwebxfi.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403; the company-hosted PDF also exceeded the reader's size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T22:08:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Note 8, Supplemental Operating Expense Information, footnote 1",
+   "receipt": {
+    "public_excerpt": "personnel-related costs and allocated overhead costs",
+    "quote_hash": "bf1a001fb774c218bb374f57a59eebe55ac9bd6b1ef094eb0e37191e95bc37eb",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing's first-half revenue exceeds its reported cost of revenue, which cautions against a blanket inference-loss conclusion. However, free access and other costs appear in other expense categories, and these first-half figures do not establish the specified quarter's inference profit or physical training share.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Consolidated cost of revenue",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "crusoe-ai-resources-blog-the-new-equation-what-ai-leaders-need-to-k-89082591d366",
+   "source_snapshot_id": "550382c2d0f6da8c9b472545c5d8575ad5352874522ffddd25a30af45f392cdf",
+   "publisher": "Crusoe",
+   "source_type": "company_disclosure",
+   "url": "https://www.crusoe.ai/resources/blog/the-new-equation-what-ai-leaders-need-to-know-about-infrastructure-in-2026",
+   "locator": "Section 1, quotation attributed to Erwan Menard",
+   "receipt": {
+    "public_excerpt": "across all clouds consolidated.",
+    "quote_hash": "ff47d961a7a21923322b7d0d2b339d4606150923147c708de2d72f7ece6de761",
+    "verified": "exact"
+   },
+   "event_date": "2026",
+   "available_at": "2026-09-30",
+   "retrieved_at": "2026-10-29T21:59:20Z",
+   "relation": "context",
+   "explanation": "This supplier statement is consistent with the training-share component at an industry level. It supplies neither a measured Anthropic allocation nor a first-quarter result; the page displays both April 8 and September 30 dates, so the later date is used conservatively.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No matched inference profit measure for the target quarter on the speaker's unspecified accounting basis.",
+  "No comparable physical-compute allocation establishing Anthropic's training share in that quarter.",
+  "Hardware procurement does not by itself identify profit or the allocation of the whole compute fleet."
+ ],
+ "packet_hash": "30f3efc36877d8ed8535516c9d4232cb57f7c38ff8bc010824a7f6679e0413d2"
+}

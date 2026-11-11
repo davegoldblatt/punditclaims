@@ -1,0 +1,161 @@
+{
+ "run_id": "marcus-whats-wrong-with-googles-new-robot-668692-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-whats-wrong-with-googles-new-robot-668692": "be833e2a7f3aa34d38852f2182280eed0654fb931948235ef4fab0ae68387784",
+  "case:marcus-whats-wrong-with-googles-new-robot-730ea2": "51a8b852a5a51279d914ea073094cbe697441afa0f1b6d451ead6f17be94386d",
+  "case:marcus-whats-wrong-with-googles-new-robot-965b92": "ce639d3f18cfdf54333c1a1bfad198c1a4e85b20786948132d9fc5bf5e8b17dd"
+ },
+ "started_at": "2026-10-29T22:02:33Z",
+ "completed_at": "2026-10-29T22:03:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post. The Craddock tweets he quotes are not part of the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "It keeps both parts: edge cases are still the core problem, and the industry recognised this only recently. 'This reality' points to the point that edge cases cannot be enumerated, not just that rare cases exist."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is fair, and it correctly separates spotting rare cases from accepting that they cannot be enumerated. 'Last few years' and 'woken up' have no fixed boundary, so how those words are read decides the recency part."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dated March 2022 research treating long-tail scenarios as necessary to evaluating and improving AV planning. Supports the central-challenge part, not a ranking against every other obstacle."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Waymo's own 2016 blog on a team that invents rare scenarios to test. It shows early awareness of rare cases, but the method is enumeration, so it does not show earlier acceptance that enumeration fails. 2016 is also arguably within 'last few years'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The core-problem part is supported: 2022 research treats long-tail scenarios as central. The recency part is unresolved. Waymo's 2016 program shows earlier attention to rare cases, but it relies on enumeration, and the packet does not date when the industry accepted that edge cases cannot be exhausted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-whats-wrong-with-googles-new-robot-668692"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Covers only the first, unhedged part. The second part ('likely even more problematic' in robots) is hedged, cannot be scored, and is rightly left out."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Fair, ordinary plain reading: known and documented significant limitations, not uselessness."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "PaLM's April 2022 announcement acknowledges published research on LLM risks. This is a company disclosure, but it bears directly on whether the problems were recognised."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed AAAI 2022 paper documenting toxic output from language models."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "DeepMind's December 2021 taxonomy of 21 risks, with mitigation still incomplete. Background from before the target window."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent peer-reviewed research and PaLM's own developers recognised substantive LLM problems before the post. Nothing in the packet suggests the problems were absent or solved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-whats-wrong-with-googles-new-robot-730ea2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'no obvious way' and the comparison to verification that is routine in chips, drivers and aircraft. It also carries the side claim that such verification is routine in those fields."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as the absence of an established method giving comparable assurance for LLM behaviour is fair. The result depends on what counts as 'integrate', and on proving a negative."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "2020 robustness certification for small Transformers on a narrow property. It falls short of comparable assurance for LLM behaviour."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "May 2022 work using LLMs to write formal specifications. This links LLMs to formal methods but does not verify LLM behaviour."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Neither item shows comparable formal assurance for LLM behaviour by August 2022. But the packet lacks the comprehensive record the support condition requires, and it does not confirm the routine-use comparison. The packet admits these gaps.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-whats-wrong-with-googles-new-robot-965b92"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22483,
+  "output_tokens": 3430,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

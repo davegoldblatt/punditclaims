@@ -1,0 +1,121 @@
+{
+ "packet_id": "marcus-is-chatgpt-really-a-code-red-for-257f27-p1",
+ "claim_revision_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-257f27",
+  "version": 1,
+  "content_hash": "917fc948e12b5cca1a7d9abd1394a8657b50f3ad279bda209c91fa5ec453a17e"
+ },
+ "contract_ref": {
+  "id": "marcus-is-chatgpt-really-a-code-red-for-257f27",
+  "version": 1,
+  "content_hash": "3613c063a095feb39553a6460d0617929915b0b59e1ef174d1497bc122465c48"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2022 language models hallucination entity association summarization factual errors study"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://aclanthology.org/2022.emnlp-main.623/",
+    "used": true,
+    "why": "Primary research documenting factual inconsistency and entity errors in generated summaries."
+   },
+   {
+    "url": "https://arxiv.org/abs/2109.07958v1",
+    "used": true,
+    "why": "Primary benchmark showing recurring false answers, including imitation of existing misconceptions."
+   },
+   {
+    "url": "https://arxiv.org/abs/2211.08412v1",
+    "used": true,
+    "why": "Primary evaluation showing both factual discrimination and circumstances in which it fails."
+   },
+   {
+    "url": "https://arxiv.org/abs/2205.12854v1",
+    "used": false,
+    "why": "Relevant error taxonomy, but it does not independently settle the claimed cause."
+   }
+  ],
+  "performed_at": "2026-10-29T07:18:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "aclanthology-org-2022-emnlp-main-623",
+   "source_snapshot_id": "e02c150ecd2c4cf0283c32cc45ba8da61563347033852e7784db85d99a9a4321",
+   "publisher": "Association for Computational Linguistics",
+   "source_type": "peer_reviewed",
+   "url": "https://aclanthology.org/2022.emnlp-main.623",
+   "locator": "Abstract, opening sentence",
+   "receipt": {
+    "public_excerpt": "factually consistent with the input text",
+    "quote_hash": "d0627f72ed6255f4853cf8c9da39e245a9334402492dc6cccaa5a0958f9415e2",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-12-07",
+   "retrieved_at": "2026-10-29T07:10:09Z",
+   "relation": "context",
+   "explanation": "The study documents factual inconsistency and investigates removing erroneous entities from summaries. It supports the observed problem but does not isolate Marcus's proposed causal explanation across LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2109-07958v1",
+   "source_snapshot_id": "6a7cb916a5525ac62f38e905727d2ce36c36d1e5bb8eba20ffef84ede44647d3",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2109.07958v1",
+   "locator": "Abstract, results",
+   "receipt": {
+    "public_excerpt": "mimic popular misconceptions",
+    "quote_hash": "72445d64effaf7d3f1c1c4d02ffb98c8cc4c1b987d4709c0e1e0db4894f46b12",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-09-08",
+   "retrieved_at": "2026-10-29T02:22:02Z",
+   "relation": "context",
+   "explanation": "This establishes recurring false answers in earlier models. Its focus on imitating misconceptions also shows why false answers cannot automatically be attributed to combining otherwise correct facts.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2211-08412v1",
+   "source_snapshot_id": "c51b9788a9ef53c462612a5dd524a98d0230af3513d5520e8b62424b625e7b37",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2211.08412v1",
+   "locator": "Abstract, principal findings",
+   "receipt": {
+    "public_excerpt": "factually consistent summaries",
+    "quote_hash": "b842a52598a029b668b30cbac103c7c1634cb04d7e9aa1f2a2acc889933fd7e2",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-11-15",
+   "retrieved_at": "2026-10-29T07:09:41Z",
+   "relation": "context",
+   "explanation": "The models demonstrated meaningful factual discrimination, although the study also found failures when inconsistent summaries appeared verbatim in the input. This qualifies a blanket account of lost factual relationships without disproving recurring errors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The retrieved studies do not isolate combining or paraphrasing associations as the cause of the recurring errors.",
+  "No representative task distribution establishes how often this particular failure occurs across the claimed model class."
+ ],
+ "packet_hash": "2e6751a5616f51dbdf021f2d53cef9b298e289dfd978fbc032b34ba1b9386cd3"
+}

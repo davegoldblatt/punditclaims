@@ -1,0 +1,139 @@
+{
+ "assessment_id": "wyea-the-case-against-generative-ai-7d6ff9-a1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 2,
+  "content_hash": "f66f4b7b911207adf7c60d38c468c480a55927e50882e3a7c3465c3b2516e303"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "version": 1,
+  "content_hash": "3cf5b7e5dd4c94731d556b04c34df56ef1bfa0bfe108e2b754490d7dd2cdc614"
+ },
+ "packet_ref": {
+  "id": "wyea-the-case-against-generative-ai-7d6ff9-p1",
+  "content_hash": "0ce8ee3127d1130f3d2c1097ecd1382613ddaf28bea16bd889d576f5e90a8dad"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-07-01",
+  "end": "2025-09-29",
+  "precision": "day"
+ },
+ "public_rationale": "The narrower reliability concern holds: engineers reported limited ability to delegate work fully. The categorical inability claim goes further than the evidence permits: agents completed some substantive repository engineering tasks under executable tests. Neither finding establishes whole-job autonomy, and later research warns that benchmark scores can be inflated. The proposed inherent cause and blanket learning, adaptation, and context claims remain unproven.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e3"
+ ],
+ "limitations": [
+  "The mixed result concerns demonstrated task capability versus limited dependable delegation; it does not validate the full causal explanation.",
+  "Task performance is not equivalent to replacing an engineer.",
+  "The delegation evidence is a company survey with subjective responses.",
+  "The result depends on distinguishing engineering tasks from complete responsibility for an engineering job."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-case-against-generative-ai-773a61-4x-review-anthropic-1",
+  "wyea-the-case-against-generative-ai-773a61-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-case-against-generative-ai-7d6ff9",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLMs can write code but can't do software engineering, because software engineering is understanding, maintaining and executing code to produce functional software, and LLMs don't learn, can't adapt, and break down the more code and variables they are asked to look at at once.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In simple terms, LLMs are capable of writing code, but can’t do software engineering, because software engineering is the process of understanding, maintaining and executing code to produce functional software, and LLMs do not “learn,” cannot “adapt,” and (to paraphrase Brown), break down the more of your code and variables you ask them to look at at once.",
+   "locator": "paragraph 248",
+   "url": "https://www.wheresyoured.at/the-case-against-generative-ai",
+   "date": "2025-09-29",
+   "document_title": "The Case Against Generative AI",
+   "observed_at": "2026-10-28T22:26:50Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "capable of writing code",
+    "can’t do software engineering",
+    "understanding, maintaining and executing code to produce functional software",
+    "do not “learn,” cannot “adapt”",
+    "break down the more of your code and variables you ask them to look at at once"
+   ],
+   "our_interpretation": [
+    "Assess capabilities current in the quarter up to the post: July 1 through September 29, 2025. Technical capabilities have no standard reporting period, so this is an explicit evaluator-selected window.",
+    "Substantive repository maintenance, debugging, testing, and feature implementation count as engineering tasks. Success on them does not establish the ability to take responsibility for an entire engineering job.",
+    "The passage combines a categorical inability claim with narrower concerns about reliability and context handling. These components can receive different evidential assessments.",
+    "Learning and adaptation are read operationally as using codebase context and feedback, rather than requiring human-like understanding or automatic changes to model weights."
+   ],
+   "support_condition": "Controlled evaluations and deployment evidence show the asserted maintenance, adaptation, and context limitations. Supporting the complete causal claim would additionally require showing that those limitations prevent software engineering.",
+   "contradiction_condition": "Reproducible success on substantive repository engineering tasks contradicts categorical inability. Demonstrated adaptation or controlled absence of the asserted context degradation would contradict the corresponding limitations."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The narrower reliability concern holds: engineers reported limited ability to delegate work fully. The categorical inability claim goes further than the evidence permits: agents completed some substantive repository engineering tasks under executable tests. Neither finding establishes whole-job autonomy, and later research warns that benchmark scores can be inflated. The proposed inherent cause and blanket learning, adaptation, and context claims remain unproven.",
+  "limitations": [
+   "The mixed result concerns demonstrated task capability versus limited dependable delegation; it does not validate the full causal explanation.",
+   "Task performance is not equivalent to replacing an engineer.",
+   "The delegation evidence is a company survey with subjective responses.",
+   "The result depends on distinguishing engineering tasks from complete responsibility for an engineering job."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "contradicts",
+    "excerpt": "23.3% and 22.7%",
+    "locator": "Section 5, Results, discussion of Table 2",
+    "url": "https://arxiv.org/html/2509.16941v1",
+    "publisher": "SWE-Bench Pro authors via arXiv",
+    "event_date": "2025-09",
+    "available_at": "2025-09-21",
+    "explanation": "Agents successfully resolved a subset of repository-level maintenance and feature tasks under executable tests, contradicting literal inability to perform engineering tasks. The low success rates do not demonstrate reliable whole-job autonomy."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "“fully delegate” 0-20%",
+    "locator": "Key findings, Survey data",
+    "url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+    "publisher": "Anthropic",
+    "event_date": "2025-08",
+    "available_at": "2025-12-02",
+    "explanation": "The August survey supports the narrower concern that dependable delegation remained limited and human supervision mattered. It does not support categorical inability, inability to adapt, or an inherent permanent barrier."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "inflate benchmark performance",
+    "locator": "Abstract, following discussion of leakage and task-quality issues",
+    "url": "https://arxiv.org/abs/2609.08149",
+    "publisher": "SWE-Bench Pro Verified authors via arXiv",
+    "event_date": "2026-09",
+    "available_at": "2026-10-09",
+    "explanation": "The later analysis identifies leakage and task-quality problems in the benchmark. It limits confidence in interpreting reported scores, without supplying a corrected measurement of the particular September 2025 evaluations."
+   }
+  ],
+  "what_would_resolve": "Independent, corrected evaluations of the relevant 2025 systems that measure sustained maintenance, feedback-based adaptation, context-size effects, and required human intervention.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "443c6f2d0e7dfe569bf32bc91fa1139fa2635c728dc78fd4bd55f9b99881a2f4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T18:13:17Z"
+}

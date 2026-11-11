@@ -1,0 +1,83 @@
+{
+ "run_id": "marcus-breaking-news-us-banks-are-taking-8969ab-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-news-us-banks-are-taking-8969ab": "b60010f84be8338ee38def0b670908350ec1f6d892d2db2669207184470b3a70"
+ },
+ "started_at": "2026-10-29T02:36:07Z",
+ "completed_at": "2026-10-29T02:36:28Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, restating his own earlier warning. He is not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised claim keeps all three parts (rising use, incomplete understanding, security holes) and keeps 'in some cases' as a limit on scope. It is correctly typed as an observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The January 2025 endpoint and the retrospective reading are the evaluator's choices, and the contract flags them. Counting lab studies as 'cases already shown' and reading 'security holes' as vulnerabilities introduced into code are ordinary readings. The contract does not stretch the claim either way."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Stack Overflow's 2024 survey, published before the target period ended, reports actual use of AI tools rising from 44% to 62%. This covers AI use across development broadly, not code generation alone, but it fits 'increasingly'."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "CHI 2022 study: participants found Copilot code hard to understand and accepted it without understanding it. This fits the 'some cases' clause about incomplete understanding."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "CCS 2023 study: the AI assistant generated SQL vulnerable to injection, a participant copied it, and AI-assisted participants wrote more insecure solutions. This is a documented case of generated code introducing a vulnerability."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "USENIX 2023 study found minimal security impact in one C task. That limits claims about averages but does not refute a claim that holes were introduced in some cases."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "All three parts hold for the period up to January 2025. Reported AI tool use rose from 2023 to 2024 (e1). A peer-reviewed study shows developers accepting generated code they did not understand (e2). Another shows generated code introducing SQL injection vulnerabilities (e3). e4 qualifies the average effect but does not touch the limited 'some cases' claim. Caveat: the adoption measure covers AI use in development broadly, not code generation alone.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-news-us-banks-are-taking-8969ab"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27574,
+  "output_tokens": 2453,
+  "cached_input_tokens": 15839,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

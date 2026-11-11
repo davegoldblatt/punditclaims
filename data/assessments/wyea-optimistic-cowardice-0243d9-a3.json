@@ -1,0 +1,137 @@
+{
+ "assessment_id": "wyea-optimistic-cowardice-0243d9-a3",
+ "claim_revision_ref": {
+  "id": "wyea-optimistic-cowardice-0243d9",
+  "version": 1,
+  "content_hash": "989a802df46ca4fdabf25ce8fd02d2aad22da9aed0a0617f4e867050533ec38d"
+ },
+ "contract_ref": {
+  "id": "wyea-optimistic-cowardice-0243d9",
+  "version": 2,
+  "content_hash": "842de53e6697ca86198023f998aaebe00323c904d1f17e13912173e611a54a17"
+ },
+ "packet_ref": {
+  "id": "wyea-optimistic-cowardice-0243d9-p2",
+  "content_hash": "36d219020cfe17054d0c9eb1e15437b0d3cd27d43611f74f120ece369c817e05"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-03-24",
+  "precision": "day"
+ },
+ "public_rationale": "The susceptibility claim is supported for reused, published IMO problems: the November 7, 2024 FrontierMath paper explains that benchmark problems entering training data can inflate scores, while fresh IMO problems created after training avoid that exposure [e1]. This supports a vulnerability, without establishing that contamination caused OpenAI's results [e1]. A study released November 9, 2024 compared o1-mini on public IMO problems and less accessible competition problems and found no significant evidence of reliance on memorization [e2]. OpenAI's September 12, 2024 disclosure identifies its competition-math evaluation as AIME, leaving uncertainty about the IMO evaluation meant here [e3].",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The evidence does not establish contamination or score inflation in the particular OpenAI results discussed [e1, e2].",
+  "The supported scope is reuse of published problems; fresh problems created after training avoid the exposure described in e1 [e1].",
+  "The AIME disclosure does not establish which IMO problem set or protocol the claim concerns [e3]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-optimistic-cowardice-0243d9-1x-review-anthropic-1",
+  "wyea-optimistic-cowardice-0243d9-1x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-optimistic-cowardice-0243d9-1x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-optimistic-cowardice-0243d9",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "OpenAI's rising IMO scores are just another benchmark susceptible to exploitation.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "While that sounds impressive, it’s worth remembering that this is just another benchmark, and thus, is susceptible to the same kind of exploitation as any other benchmark.",
+   "locator": "paragraph 22",
+   "url": "https://www.wheresyoured.at/optimistic-cowardice",
+   "date": "2025-03-24",
+   "document_title": "The Phony Comforts of AI Optimism",
+   "observed_at": "2026-10-28T22:30:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "just another benchmark",
+    "susceptible to the same kind of exploitation as any other benchmark",
+    "If you know the answers ahead of time",
+    "you can optimize the model to answer these questions correctly",
+    "There’s no accusation that OpenAI — or any other vendor — has done this"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that evaluation on known IMO problems can reward prior exposure to their answers, rather than independently measuring mathematical ability.",
+    "The claim concerns susceptibility. It does not assert that OpenAI cheated, that contamination explains its improvements, or that every benchmark has equal exposure.",
+    "The target covers the previously published evaluations discussed by the post, through 2025-03-24. The passage supplies no starting date; none is imposed.",
+    "The assessment distinguishes reuse of published problems from testing on fresh problems created after training. The supported reading concerns the former.",
+    "The passage does not identify a particular IMO problem set or evaluation protocol. Evidence about AIME is treated as context, without substituting it for IMO."
+   ],
+   "support_condition": "Evidence establishes that published IMO problems used for model evaluation can be encountered during training or targeted preparation, allowing answer-specific familiarity to influence scores. Documentation establishing this vulnerability is sufficient; actual misconduct need not be demonstrated.",
+   "contradiction_condition": "Evidence establishes that the referenced evaluation used protected, previously unseen problems under a protocol that excluded prior answer exposure and answer-specific optimization. Failure to detect memorization in one model would not alone establish immunity."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The susceptibility claim is supported for reused, published IMO problems: the November 7, 2024 FrontierMath paper explains that benchmark problems entering training data can inflate scores, while fresh IMO problems created after training avoid that exposure [e1]. This supports a vulnerability, without establishing that contamination caused OpenAI's results [e1]. A study released November 9, 2024 compared o1-mini on public IMO problems and less accessible competition problems and found no significant evidence of reliance on memorization [e2]. OpenAI's September 12, 2024 disclosure identifies its competition-math evaluation as AIME, leaving uncertainty about the IMO evaluation meant here [e3].",
+  "limitations": [
+   "The evidence does not establish contamination or score inflation in the particular OpenAI results discussed [e1, e2].",
+   "The supported scope is reuse of published problems; fresh problems created after training avoid the exposure described in e1 [e1].",
+   "The AIME disclosure does not establish which IMO problem set or protocol the claim concerns [e3]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "inflated performance metrics",
+    "locator": "Section 1, Benchmark contamination in training data; related application to historical IMO materials in Section 5",
+    "url": "https://arxiv.org/html/2411.04872v1",
+    "publisher": "arXiv; FrontierMath research team",
+    "event_date": "2024-11-07",
+    "available_at": "2024-11-07",
+    "explanation": "Section 5 explicitly identifies contamination risks from historical competition collections, including IMO materials; applying that documented mechanism supports susceptibility when published problems are reused. Section 1 also explains that fresh problems created after training avoid this exposure, limiting the conclusion's scope."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "no significant evidence",
+    "locator": "Abstract; Sections 2 and 3 describe the o1-mini comparison",
+    "url": "https://arxiv.org/html/2411.06198v1",
+    "publisher": "arXiv; Leo Li, Ye Luo and Tingyou Pan",
+    "event_date": "2024-10",
+    "available_at": "2024-11-09",
+    "explanation": "The study compared public IMO problems with less accessible Chinese team-training problems and did not find a significant memorization advantage for o1-mini. This weighs against attributing actual performance to memorization, but does not establish that the benchmark cannot be exploited."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "performance on AIME",
+    "locator": "Evals, competition mathematics paragraph",
+    "url": "https://openai.com/index/learning-to-reason-with-llms",
+    "publisher": "OpenAI",
+    "event_date": "2024-09-12",
+    "available_at": "2024-09-12",
+    "explanation": "OpenAI names AIME in its contemporaneous disclosure. This flags uncertainty about Zitron's benchmark label and is not used as decisive evidence about IMO contamination."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "01f3a2f1cd9ed4f4d717edac2155aba0f02ceb76be7cc533d3ef69df5aa896a4",
+ "supersedes_assessment_id": "wyea-optimistic-cowardice-0243d9-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-10T02:19:02Z"
+}

@@ -1,0 +1,136 @@
+{
+ "assessment_id": "marcus-image-generation-still-crazy-after-aaf1c6-a1",
+ "claim_revision_ref": {
+  "id": "marcus-image-generation-still-crazy-after-aaf1c6",
+  "version": 2,
+  "content_hash": "dd5d13456b4f39437015874c3493eaa5fb7e68805eb4f688bf60792dae3c66e8"
+ },
+ "contract_ref": {
+  "id": "marcus-image-generation-still-crazy-after-aaf1c6",
+  "version": 1,
+  "content_hash": "f5be5dcd57a3add828836454a25485407d86a5af14715b396091e0104e0681de"
+ },
+ "packet_ref": {
+  "id": "marcus-image-generation-still-crazy-after-aaf1c6-p1",
+  "content_hash": "6ec34fc25c5c58c8860be556c0ed99832ed0a39e1471f54cfc24258772b7a150"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-05",
+  "end": "2025-06-25",
+  "precision": "day"
+ },
+ "public_rationale": "The claim has two parts. First, you cannot count on Imagen to interpret every prompt correctly. Second, this is because its language understanding is weak. Benchmark work from mid-2025 (OneIG-Bench) ranks Imagen 4 among the best at following prompts. It also says many models confuse which attribute belongs to which subject. But the readable text gives no failure rate for Imagen 4. On the cause, an August 2025 test found a Google image model that stated the correct clock time in text and then drew it wrong. That points to rendering or training-data bias rather than language understanding, but it involves a different model. The evidence fits the reliability part but does not settle the cause, so the claim stays unresolved.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The benchmark tables could not be read as text.",
+  "The clock tests involve other models, not Imagen 4.",
+  "'Can't count on' sets no failure rate."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-image-generation-still-crazy-after-91f5cf-4x-review-anthropic-1",
+  "marcus-image-generation-still-crazy-after-91f5cf-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-image-generation-still-crazy-after-91f5cf-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-image-generation-still-crazy-after-aaf1c6",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Even three years later, you can't count on Imagen to correctly interpret any given prompt, because its language understanding is still far from perfect.",
+  "kind": "causal",
+  "conditions": [
+   "even though fiddling with prompts can get you what you want"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The point is that you can’t count on the system to correctly interpret any given prompt, because the language understanding still is far from perfect. Even three years later.",
+   "locator": "paragraph 39",
+   "url": "https://garymarcus.substack.com/p/image-generation-still-crazy-after",
+   "date": "2025-06-25",
+   "document_title": "Image generation: Still crazy after all these years",
+   "observed_at": "2026-10-28T23:56:12Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "you can't count on the system to correctly interpret any given prompt",
+    "because the language understanding still is far from perfect",
+    "Even three years later",
+    "You can get what you want if you fiddle with prompts"
+   ],
+   "our_interpretation": [
+    "'The system' means Imagen 4, and more broadly the leading text-to-image models of mid-2025.",
+    "There are two parts. (1) Reliability: the models often get unusual prompts wrong, such as reversed roles, matching attributes to the right objects, or clock times. (2) Cause: these failures come from weak understanding of the prompt's language, not only from other limits such as rendering or training-data bias.",
+    "The period is mid-2025, when the post was written."
+   ],
+   "support_condition": "Controlled tests or benchmarks of Imagen 4 (or its peers) from about mid-2025 show frequent failures on unusual prompts, and the evidence links those failures to misreading the prompt rather than to other causes.",
+   "contradiction_condition": "Controlled tests show that Imagen 4 reliably follows unusual compositional prompts, or that its failures come from something other than language understanding (for example, it reads the prompt correctly but cannot draw it)."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The claim has two parts. First, you cannot count on Imagen to interpret every prompt correctly. Second, this is because its language understanding is weak. Benchmark work from mid-2025 (OneIG-Bench) ranks Imagen 4 among the best at following prompts. It also says many models confuse which attribute belongs to which subject. But the readable text gives no failure rate for Imagen 4. On the cause, an August 2025 test found a Google image model that stated the correct clock time in text and then drew it wrong. That points to rendering or training-data bias rather than language understanding, but it involves a different model. The evidence fits the reliability part but does not settle the cause, so the claim stays unresolved.",
+  "limitations": [
+   "The benchmark tables could not be read as text.",
+   "The clock tests involve other models, not Imagen 4.",
+   "'Can't count on' sets no failure rate."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "In the alignment dimension shown in Table 2, Imagen4 [17], GPT-4o [45] and Imagen3 [36] consistently outperform other models, with Imagen4 and GPT-4o showing superior alignment performance.",
+    "locator": "section 4.2.1 Semantic Alignment and Diversity",
+    "url": "https://arxiv.org/html/2506.07977v2",
+    "publisher": "arXiv / NeurIPS 2025 Datasets and Benchmarks (OneIG-Bench)",
+    "event_date": "2025",
+    "available_at": "2025-06-09",
+    "explanation": "Imagen 4 was among the best models at following prompts on this benchmark. That shows it was strong compared with its peers, but the readable text does not give its absolute failure rate."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "in multi-person generation tasks, many methods struggle to accurately fulfill requirements at the individual level and often exhibit confusion in assigning attributes to the correct subjects.",
+    "locator": "Appendix, discussion of Figure 7",
+    "url": "https://arxiv.org/html/2506.07977v2",
+    "publisher": "arXiv / NeurIPS 2025 Datasets and Benchmarks (OneIG-Bench)",
+    "event_date": "2025",
+    "available_at": "2025-06-09",
+    "explanation": "This fits the attribute-binding failures Marcus describes, but it is about 'many methods' and does not name Imagen 4."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "while the image generated had the hour hand placed perfectly, the minute hand was at 12, instead of the 6 that Google itself had specified.",
+    "locator": "paragraph 6",
+    "url": "https://officechai.com/ai/ai-image-models-still-cant-create-clocks-that-show-the-right-time",
+    "publisher": "OfficeChai",
+    "event_date": "2025-08",
+    "available_at": "2025-08-18",
+    "explanation": "A Google image model wrote out the right time in text but still drew the clock wrong. This suggests some failures come from drawing, not from misreading the prompt, which complicates the causal part. It is a different model (Gemini Flash image generation), so it is context only."
+   }
+  ],
+  "what_would_resolve": "A controlled study of Imagen 4 on unusual compositional prompts that reports failure rates and tests whether failures come from misreading the prompt or from drawing limits.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6285345f969531e0bf010b607ec73d6142e18725e4143951c26d1c239cd98f86",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:37:36Z"
+}

@@ -1,0 +1,181 @@
+{
+ "packet_id": "wyea-dead-money-ea79f0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-ea79f0",
+  "version": 1,
+  "content_hash": "851338ab995967e6ade13af39791bc61b45b7274041f70ef97f0759832cb4537"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-ea79f0",
+  "version": 1,
+  "content_hash": "556091490ad4958b3e688f029f6bc23d55c47800d5e7e79c3c0cc098d84979e0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic 2024 2025 operating expenses S-1 losses revenue",
+   "\"Anthropic\" \"2024\" \"3,366\" \"2025\"",
+   "\"Anthropic\" \"2024\" \"772%\" \"2025\"",
+   "OpenAI 2025 audited financials 34 billion 13.07 billion"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.ynetnews.com/business/article/bjsox0u9fl",
+    "used": true,
+    "why": "Full Reuters-attributed report supplies operating losses for both years, revenue growth and 2025 expenses."
+   },
+   {
+    "url": "https://fortune.com/2026/06/16/openai-financials-leaked-losses-revenue-profit/",
+    "used": true,
+    "why": "Full financial-results list supplies the OpenAI comparison inputs. Its prose incorrectly labels a loss ratio as an expense ratio, so calculations use the listed amounts."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary statements corroborate the direction and give exact annual figures; retained as GAAP context rather than relabeled as a press estimate."
+   },
+   {
+    "url": "https://www.midgardfinance.com/research/anthropic/",
+    "used": false,
+    "why": "Read in full, but the page states it was updated October 29, after the evaluation cutoff."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "ynetnews-com-business-article-bjsox0u9fl",
+   "source_snapshot_id": "c070015008977cfc71aec82f1a40675f45e3053dab2fd66f628c3357d191a32a",
+   "publisher": "Ynetnews, attributed to Reuters",
+   "source_type": "news_report",
+   "url": "https://www.ynetnews.com/business/article/bjsox0u9fl",
+   "locator": "Opening financial discussion, paragraph following the description of the filing",
+   "receipt": {
+    "public_excerpt": "operating loss",
+    "quote_hash": "c24c271fd3ba578c3f9776b439ba984da7f83246175a4ace56f175a73569d2d6",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-29",
+   "retrieved_at": "2026-10-29T10:37:29Z",
+   "relation": "contradicts",
+   "explanation": "The report says revenue increased twelvefold while operating losses rose from $2.98 billion to $8.06 billion. Thus the operating-loss-to-revenue ratio, and consequently the expense-to-revenue ratio, fell rather than deteriorated.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual operating-expense-to-revenue trend",
+    "currency": "USD",
+    "units": "USD expenses per USD revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "2024 operating loss: USD 2.98 billion.",
+     "2025 operating loss: USD 8.06 billion.",
+     "Reported 2025 revenue growth: approximately twelvefold."
+    ],
+    "formula": "(2025 operating loss / 2025 revenue) / (2024 operating loss / 2024 revenue) = (8.06 / 2.98) / 12 = approximately 0.225; expenses/revenue = 1 + operating loss/revenue.",
+    "rounding": "Approximate directional calculation from rounded reporting; no exact 2024 revenue is inferred."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "fortune-com-2026-06-16-openai-financials-leaked-losses-revenue-profit",
+   "source_snapshot_id": "be0fbe6336d7bf3b59e5e1726079f2e14212337ad7921680db56b5c3508ad322",
+   "publisher": "Fortune",
+   "source_type": "news_report",
+   "url": "https://fortune.com/2026/06/16/openai-financials-leaked-losses-revenue-profit",
+   "locator": "“OpenAI 2025 financials versus 2024” list and following profitability discussion",
+   "receipt": {
+    "public_excerpt": "expenses",
+    "quote_hash": "85f46c6b9a247d547d33d38bb124f8dde0b6cdfef5f1c631a3434a8c5cc51f80",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T02:26:40Z",
+   "relation": "supports",
+   "explanation": "Its financial-results list supplies OpenAI’s comparison inputs; combining these with e1 supports the 2025 ranking.",
+   "metric_scope": {
+    "company": "Anthropic and OpenAI",
+    "metric": "Comparative annual operating expenses per revenue dollar",
+    "currency": "USD",
+    "units": "USD expenses per USD revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Fortune: OpenAI expenses 34; revenue 13.07.",
+     "e1: Anthropic expenses 12.65; revenue approximately 4.6.",
+     "All inputs are USD billions."
+    ],
+    "formula": "34 / 13.07 = 2.6014; 12.65 / 4.6 = 2.75.",
+    "rounding": "Nearest cent."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Results of Operations annual tables; consolidated statements of operations F-7",
+   "receipt": {
+    "public_excerpt": "periods",
+    "quote_hash": "0a84c9b92d714fd468ee0c86572c9f942977c14caf2d551a15257e9be128a197",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The audited annual statements give expenses and revenue of $3,366 million and $386 million in 2024, versus $12,645 million and $4,585 million in 2025. They corroborate the improvement identified from the press-reported figures.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual operating-expense-to-revenue trend",
+    "currency": "USD",
+    "units": "USD expenses per USD revenue",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": true,
+   "derived": {
+    "inputs": [
+     "2024 expenses USD 3,366 million; revenue USD 386 million.",
+     "2025 expenses USD 12,645 million; revenue USD 4,585 million."
+    ],
+    "formula": "2024: 3366 / 386 = 8.7202; 2025: 12645 / 4585 = 2.7579.",
+    "rounding": "Nearest cent: 8.72 and 2.76."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [],
+ "packet_hash": "873104470076700f2c1f63f9cdf8ef5d1b92a387b5906af376b2e591e43b5b9e"
+}

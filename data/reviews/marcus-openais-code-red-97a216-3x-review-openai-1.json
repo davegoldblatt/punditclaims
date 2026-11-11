@@ -1,0 +1,179 @@
+{
+ "run_id": "marcus-openais-code-red-97a216-3x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openais-code-red-97a216": "0de38ac0ffdefc66084602378701291894e8b8389527fce055ffa19be55e67fd",
+  "case:marcus-openais-code-red-c3bc65": "439c72513731bf8516f42ac6b488d330ad1e67afd4d28360e6b125f2616162bf",
+  "case:marcus-openais-code-red-e0029e": "429b4c8c9cff767ac0e3565b3e1891ba3e480169f195d24281c0f52c00b5003f"
+ },
+ "started_at": "2026-10-29T08:00:26Z",
+ "completed_at": "2026-10-29T08:02:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states and endorses the causal claim in his own words."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalization preserves the asserted connection between losses, inability to self-finance, and investor dependence."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading the statement as dependence on outside funding under the current spending strategy is ordinary and fair. Calendar 2025 is a reasonable period; no specific runway or harsh financing terms are being scored."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Relevant quarterly loss reporting, but it does not establish the calendar-year result. Its extrapolation also mixes an after-tax figure with a subsequently changed ownership percentage."
+     },
+     {
+      "id": "e2",
+      "fits": false,
+      "relation": "context",
+      "note": "The source reports a projection, whereas the metadata labels it realized. It establishes expected losses, not the actual 2025 outcome."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporaneous reporting directly connects OpenAI's spending strategy to continual external fundraising."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "The surrounding report describes actual 2025 net losses. The adjusted $8B estimate is a separate accounting measure and should not be equated with audited net loss or cash burn."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "The CFO offers a company counterclaim about hypothetical break-even under different choices, not evidence of actual profitability or self-financing in 2025."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reported 2025 losses and contemporaneous reporting on continual fundraising support dependence on external capital under OpenAI's spending strategy. The CFO's hypothetical alternative does not establish that the actual strategy was self-financing. The evidence does not establish a precise runway or investor coercion, neither of which the contract requires.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-code-red-97a216"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus makes the conditional prediction himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The normalization preserves both the deterioration antecedent and the firm prediction about the next round."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "Deterioration and the comparison round remain undefined. Smaller funding or a lower valuation alone need not mean fundraising was harder, while a larger round need not mean it was easier. These proxies cannot independently settle his claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Company-reported user growth bears on the antecedent but neither establishes overall deterioration nor contradicts the conditional forecast."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A company disclosure of a larger round and valuation. Without an established antecedent and evidence of fundraising difficulty, it cannot contradict the forecast."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Provides the prior primary-round baseline, but does not resolve which previous transaction Marcus meant or how difficult it was."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Staged funding conditions are relevant but lack a comparable prior-round benchmark. Closing figures appear in a later update, not the February announcement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish continued deterioration, so the conditional forecast cannot be scored. Closing the next round alone does not meet the early-resolution rule, which also requires the antecedent. Larger funding and conditional commitments do not independently settle comparative difficulty.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-code-red-c3bc65"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus expresses the conditional risk himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The normalization preserves the conditional exposure to possible losses. This is a hedged conditional forecast, not a commitment that losses will occur."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": false,
+     "note": "The contract incorrectly makes a hedged risk statement scoreable once an antecedent occurs. Failure to realize a possible loss would not contradict the statement. The hedge alone determines non-adjudicability."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The March update reports a higher funding valuation. It bears on the proposed antecedent, not pension-fund losses, and cannot contradict a conditional possibility."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement describes potential losses conditional on weaker performance, rather than firmly predicting them. Policy excludes such hedged claims even if the antecedent later occurs. The packet also establishes neither pension-fund exposure and losses nor a subsequent break in OpenAI's trajectory.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openais-code-red-e0029e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25584,
+  "output_tokens": 2596,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 1034
+ },
+ "cost_usd": null
+}

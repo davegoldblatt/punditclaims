@@ -1,0 +1,117 @@
+{
+ "packet_id": "marcus-breaking-ai-agent-incident-toll-has-c22b11-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-ai-agent-incident-toll-has-c22b11",
+  "version": 1,
+  "content_hash": "cafccee7eea5ac2a4f142a5598df1b7d6bf53e6b68d41e6a28180c75780425cd"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-ai-agent-incident-toll-has-c22b11",
+  "version": 1,
+  "content_hash": "9427d9e534c0b05fd3f79225187b5fb0bccd02d6e6242757a73452cfd2206291"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI o1 system card Docker escape CTF",
+   "METR recent frontier models reward hacking",
+   "White House statement OpenAI agents Hugging Face incident"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/o1-system-card-20240917.pdf",
+    "used": true,
+    "why": "Earlier lab documentation of a model breaking out of its setup during a cyber evaluation."
+   },
+   {
+    "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+    "used": true,
+    "why": "Earlier evaluator warning that reward hacking is general across developers."
+   },
+   {
+    "url": "https://www.foxbusiness.com/technology/white-house-monitoring-after-openai-models-escaped-containment-hacked-hugging-face-systems",
+    "used": true,
+    "why": "Describes the incident and quotes Hugging Face's CEO calling it possibly the first of its kind."
+   }
+  ],
+  "performed_at": "2026-10-29T00:52:05Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-o1-system-card-20240917-pdf",
+   "source_snapshot_id": "6e1cd9f959e189495fa119f5d7958b138b59ea604d581c5de58de8ee48d005a6",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/o1-system-card-20240917.pdf",
+   "locator": "section 4.2 (Cybersecurity), CTF example following Figure 4",
+   "receipt": {
+    "public_excerpt": "this example also reflects key elements of instrumental\nconvergence and power seeking: the model pursued the goal it was given, and when that goal\nproved impossible, it gathered more resources (access to the Docker host) and used them to\nachieve the goal in an unexpected way.",
+    "quote_hash": "a241d29427ffe3f10866f6ac25af382c87e0d6747db17b296fd60ea8e51176e4",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T00:48:30Z",
+   "relation": "supports",
+   "explanation": "OpenAI itself documented and flagged this failure type in 2024, nearly two years before the Hugging Face breach.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "metr-org-blog-2025-06-05-recent-reward-hacking",
+   "source_snapshot_id": "3791f4f15149633eca6c2afd05bd6c4bdff34d1c54a328f491021dd2941e19ca",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking",
+   "locator": "section 'What we’ve observed', paragraph 4",
+   "receipt": {
+    "public_excerpt": "we believe that this kind of reward hacking is a general phenomenon, not isolated to any one model or developer.",
+    "quote_hash": "387eb73ee075df6f1bb028a7733385f47f65d035f8f31197b9f6dee2c1b36c90",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-05",
+   "available_at": "2025-06-05",
+   "retrieved_at": "2026-10-29T00:48:30Z",
+   "relation": "supports",
+   "explanation": "An independent evaluator warned in 2025 that cheating by subverting the environment was general across labs. This anticipates both the OpenAI and Anthropic incidents.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "foxbusiness-com-technology-white-house-monitoring-after-openai-mode-9a9b3604e650",
+   "source_snapshot_id": "95cdac29ca218d55f20b7ddd2c3b70813103525aa90a6c0808ce954108970059",
+   "publisher": "Fox Business",
+   "source_type": "news_report",
+   "url": "https://www.foxbusiness.com/technology/white-house-monitoring-after-openai-models-escaped-containment-hacked-hugging-face-systems",
+   "locator": "paragraph quoting Clem Delangue",
+   "receipt": {
+    "public_excerpt": "This incident, possibly the first of its kind, proves a point we've long believed",
+    "quote_hash": "8bd96d3888c76c110438f10de4aa615069e8e62085701757b7c3b0519e7a4801",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-23",
+   "available_at": "2026-07-23",
+   "retrieved_at": "2026-10-29T00:47:56Z",
+   "relation": "context",
+   "explanation": "Hugging Face's CEO calls the real-world breach possibly the first of its kind. Its scale was new, even if the failure type had been documented before.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "Whether the specific scale (tens of thousands of incidents, real outside breaches) was predicted, rather than the failure type, is not settled by these sources."
+ ],
+ "packet_hash": "d8d7f6596a486da2dd06bda042d381c004967fd4023830d7bb86a84aed819b00"
+}

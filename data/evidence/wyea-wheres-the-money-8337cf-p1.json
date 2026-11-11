@@ -1,0 +1,120 @@
+{
+ "packet_id": "wyea-wheres-the-money-8337cf-p1",
+ "claim_revision_ref": {
+  "id": "wyea-wheres-the-money-8337cf",
+  "version": 1,
+  "content_hash": "24277b61216c5e58222b5978b122036f44a8bcc8187a0c76dea9fef31014990f"
+ },
+ "contract_ref": {
+  "id": "wyea-wheres-the-money-8337cf",
+  "version": 1,
+  "content_hash": "fd77c0e577ea3ad305b38cfd30615bd140bd850d4ddcce974ac83e441bf73048"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek R1 January 2025 o1 benchmark performance pricing R1 1776 February 2025",
+   "site.perplexity.ai/hub/blog r1 1776",
+   "site.openai.com January 2025 o3-mini cost o1",
+   "DeepSeek R1 January 20 2025 \"$0.55\" \"$2.19\" official",
+   "site.arcprize.org/blog \"o3-mini\" \"R1\"",
+   "site.arcprize.org/blog \"R1-Zero and R1 Results and Analysis\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2501.12948v1",
+    "used": true,
+    "why": "Read successfully. Fixed January version preserves the contemporaneous developer claim about reasoning parity."
+   },
+   {
+    "url": "https://arcprize.org/blog/r1-zero-r1-results-analysis",
+    "used": true,
+    "why": "Read successfully. Independent, dated comparison includes both accuracy and task costs."
+   },
+   {
+    "url": "https://api-docs.deepseek.com/news/news250120",
+    "used": false,
+    "why": "read_page returned current API documentation instead of the historical release announcement."
+   },
+   {
+    "url": "https://www.perplexity.ai/hub/blog/open-sourcing-r1-1776",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://huggingface.co/perplexity-ai/r1-1776",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   },
+   {
+    "url": "https://openai.com/index/openai-o3-mini/",
+    "used": false,
+    "why": "Read successfully, but comparisons between OpenAI's own models do not independently establish rival substitutability."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": false,
+    "why": "Read the limitations section. Its comparison with DeepSeek-V3 does not directly establish a capability gap against OpenAI."
+   }
+  ],
+  "performed_at": "2026-10-29T22:30:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2501-12948v1",
+   "source_snapshot_id": "4331a8599deb09e40fb348b17d8378128ecc0e9016e577a49f82d2ebe817eacc",
+   "publisher": "DeepSeek-AI via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2501.12948v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "DeepSeek-R1 achieves performance comparable to OpenAI-o1-1217 on reasoning tasks.",
+    "quote_hash": "efda4613724d6933e3d21d1a7399b3dd2da843cfbc538681f754aa4b0120b0fc",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:05Z",
+   "relation": "supports",
+   "explanation": "The developer's technical report supports the narrower claim of an o1-class reasoning competitor. It does not establish equivalent capabilities across OpenAI's complete model range.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arcprize-org-blog-r1-zero-r1-results-analysis",
+   "source_snapshot_id": "4fe21fa926bdd726bde104ba7c9972f28848eb9cf886be395a10f0d14fec41e1",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/r1-zero-r1-results-analysis",
+   "locator": "Section R1-Zero removes the human bottleneck; comparison table and following discussion",
+   "receipt": {
+    "public_excerpt": "scoring 14% and 15% respectively.",
+    "quote_hash": "a0d0973b75ab2c8511b4a3c6d5c80f16ffe9f1f7e36ca98024c255c10178976d",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-29",
+   "retrieved_at": "2026-10-29T11:32:26Z",
+   "relation": "contradicts",
+   "explanation": "The table reports R1 at 15.8% and $0.06 per task, versus o1 at 20.5%, 31%, and 35% with higher compute settings and costs. This documents a real price advantage alongside a capability gap on this test, challenging broad interchangeability without resolving the full model-range claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The cited evaluations do not cover nearly all OpenAI offerings or practical capabilities.",
+  "No comprehensive matching-period evaluation of R1 1776 was obtained.",
+  "A single benchmark cannot establish how important remaining differences were across customer uses.",
+  "No supplied threshold determines when competition becomes almost complete commoditization."
+ ],
+ "packet_hash": "c32345642d534b714b4af324276b680876ec87df966a83f4666acd88fdbed5e4"
+}

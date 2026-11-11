@@ -1,0 +1,120 @@
+{
+ "packet_id": "marcus-rethinking-driverless-cars-6cd8fe-p1",
+ "claim_revision_ref": {
+  "id": "marcus-rethinking-driverless-cars-6cd8fe",
+  "version": 1,
+  "content_hash": "6339805bb3f09627b9014e088c314a8525f4f68ec282e15ac138a3cf91f200db"
+ },
+ "contract_ref": {
+  "id": "marcus-rethinking-driverless-cars-6cd8fe",
+  "version": 1,
+  "content_hash": "7a1b2064fb85262d43b760729abfcaf215cfa0c10d554ea572ac17474029903e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Cruise November 2023 1.5 workers vehicle remote assistance 10 billion loss",
+   "Cruise November 3 2023 New York Times 1.5 workers vehicles",
+   "GM 2023 third quarter Cruise EBIT adjusted 732 728 loss",
+   "site.sec.gov/Archives/edgar/data/1467858/ \"2023\" \"Cruise\" \"732\" \"increased\"",
+   "Kyle Vogt \"We are intentionally\" \"staffed\" Hacker News",
+   "\"Cruise\" \"intentionally over staffed\" \"news.ycombinator.com\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theregister.com/software/2023/11/07/cruise-confirms-driverless-taxis-need-regular-remote-help/1007169",
+    "used": true,
+    "why": "Fully readable reporting reproduces the staffing allegation and a response authenticated with Cruise. Primary staffing records were unavailable."
+   },
+   {
+    "url": "https://investor.gm.com/news-releases/news-release-details/gm-releases-2023-third-quarter-results/",
+    "used": true,
+    "why": "Read the primary quarterly financial disclosure and its segment reconciliation."
+   },
+   {
+    "url": "https://www.nytimes.com/2023/11/03/technology/cruise-general-motors-self-driving-cars.html",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotation or decisive evidence taken from it."
+   },
+   {
+    "url": "https://www.sfgate.com/tech/article/cruise-driverless-human-assistance-nyt-18467527.php",
+    "used": false,
+    "why": "read_page returned a client challenge rather than the article."
+   },
+   {
+    "url": "https://news.ycombinator.com/item?id=38145997",
+    "used": false,
+    "why": "read_page returned unrelated content, so the original CEO comment could not be verified through the required reader."
+   }
+  ],
+  "performed_at": "2026-10-29T18:19:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "theregister-com-software-2023-11-07-cruise-confirms-driverless-taxi-a5320f9fe288",
+   "source_snapshot_id": "105cc3ad7f3825e4f3fcbf86e24660a6180f5b92be49cd75ca9c739003b14524",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/software/2023/11/07/cruise-confirms-driverless-taxis-need-regular-remote-help/1007169",
+   "locator": "Staffing discussion following the paragraph reporting 1.5 remote-assistance employees per taxi",
+   "receipt": {
+    "public_excerpt": "intentionally over staffed",
+    "quote_hash": "585b8a68241eed618d969d16ce8cf57ff84c05cb7ccd0394de8e86b81acc96a1",
+    "verified": "exact"
+   },
+   "event_date": "2023-11",
+   "available_at": "2023-11-07",
+   "retrieved_at": "2026-10-29T03:07:29Z",
+   "relation": "context",
+   "explanation": "The report recounts the 1.5-workers-per-vehicle allegation and Cruise's explanation of deliberate overstaffing. It also reports that the count may include other fleet-support functions, and does not supply matched underlying counts or a precise staffing snapshot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "investor-gm-com-news-releases-news-release-details-gm-releases-2023-d27b773953ab",
+   "source_snapshot_id": "4deae8206a17479482f60cdc87b7b43d7893a89d8b74cfb2c83d086d5c71147a",
+   "publisher": "General Motors",
+   "source_type": "company_disclosure",
+   "url": "https://investor.gm.com/news-releases/news-release-details/gm-releases-2023-third-quarter-results",
+   "locator": "Supplemental Material, segment profit reconciliation, Cruise row, three months ended September 30, 2023",
+   "receipt": {
+    "public_excerpt": "segment profit (loss)",
+    "quote_hash": "f55f0c8522ad2853cd5ab3b6bf3baa69f7509603fc973765f0e910d61a0158a8",
+    "verified": "exact"
+   },
+   "event_date": "2023-09-30",
+   "available_at": "2023-10-24",
+   "retrieved_at": "2026-10-29T07:43:53Z",
+   "relation": "context",
+   "explanation": "The table reports Cruise's quarterly EBIT-adjusted loss of $732 million. This establishes a substantial loss on that specified basis, but it is not a cash-flow measure or a calculation of savings from remote assistance.",
+   "metric_scope": {
+    "company": "Cruise",
+    "metric": "EBIT-adjusted",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "non_gaap",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2023-07-01",
+    "period_end": "2023-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matched primary support-staff and vehicle counts were obtained.",
+  "The financial wording does not establish an accounting basis, preventing a supported or contradicted monetary score under the specified rules.",
+  "Company losses do not establish whether remote assistance saved money relative to onboard drivers.",
+  "The staffing report does not precisely date the underlying count."
+ ],
+ "packet_hash": "7e5b5d3889c906a597094e1490b2799539ecce405c2accc738eec726e19a523d"
+}

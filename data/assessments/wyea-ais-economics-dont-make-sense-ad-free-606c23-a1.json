@@ -1,0 +1,131 @@
+{
+ "assessment_id": "wyea-ais-economics-dont-make-sense-ad-free-606c23-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-606c23",
+  "version": 1,
+  "content_hash": "df5fb7e52b1b21a48c5908c1e7693ab589e9af2ec4f692d55aa077c94aca6c92"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-606c23",
+  "version": 1,
+  "content_hash": "af2782b5250f9ef0612cf1cd361d47db6861099a9008ae8678db37924310eeed"
+ },
+ "packet_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-606c23-p1",
+  "content_hash": "80c1c25268501bfeac4841913b77822383c2acd26ea5c640b0ccdb0dead26634"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-04-28",
+  "end": "2026-04-28",
+  "precision": "day"
+ },
+ "public_rationale": "The approximate arithmetic holds: monthly payments are $54.13 million, annual debt service is $649.58 million, and his formula gives 5.15% followed by -40.28%. But these are not gross margins. The formula deducts financing payments while retaining depreciation. Excluding financing and conservatively counting every stated pre-financing cost as a direct cost gives 21%. The payment calculation is supported; the gross-margin description is contradicted.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "This tests the supplied hypothetical premises, not actual data-center profitability.",
+  "The 5.19% figure is close enough to the recalculation given the passage's rounded inputs.",
+  "The outcome depends on assessing the express gross-margin claim as well as the arithmetic."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ais-economics-dont-make-sense-ad-free-5c61cf-4x-review-anthropic-1",
+  "wyea-ais-economics-dont-make-sense-ad-free-5c61cf-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ais-economics-dont-make-sense-ad-free-5c61cf-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ais-economics-dont-make-sense-ad-free-606c23",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "By his model, a debt-financed 100MW AI data center has about a 5% margin in year one and roughly -40% margin once principal payments begin.",
+  "kind": "observation",
+  "conditions": [
+   "theoretical model",
+   "6-year loan at 80% LTV, 6% interest",
+   "100% utilization"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "That’s a 5.19% gross margin, and you haven’t even started paying the principal. When that happens, you’re paying $54.1 million a month in loan payments, for a total of around $649 million a year for five more years, which comes out to around $1.48 billion, or a negative gross margin of around 40%.",
+   "locator": "paragraph 111",
+   "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense-ad-free",
+   "date": "2026-04-28",
+   "document_title": "AI's Economics Don't Make Sense [Ad Free]",
+   "observed_at": "2026-10-28T22:27:59Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "5.19% gross margin",
+    "$54.1 million a month in loan payments",
+    "around $649 million a year for five more years",
+    "negative gross margin of around 40%",
+    "100% utilization",
+    "$2.8 billion at a 6% interest rate",
+    "12-month-long grace period"
+   ],
+   "our_interpretation": [
+    "Assess the hypothetical model published on April 28, 2026, rather than the performance of an actual company.",
+    "Check both the numerical calculation and its description as gross margin. These are distinct, checkable parts of the quoted claim.",
+    "Use the stated annual revenue of $1.06 billion and costs before financing of $837.4 million, including $521 million of depreciation.",
+    "Interpret the remaining five years as 60 equal monthly payments, with a monthly interest rate of 6% divided by 12 and no additional fees.",
+    "Treat the percentages as approximate. The model's changing revenue rounding does not justify rejecting the approximately 5% claim.",
+    "For derived evidence, event_date identifies the published model being recomputed. The cited textbooks supply the calculation methods, not independently verified commercial inputs."
+   ],
+   "support_condition": "The stated loan terms reproduce approximately $54.1 million monthly payments, and a consistent calculation reproduces the claimed margins using the stated costs and revenue.",
+   "contradiction_condition": "The payments or margins materially differ on recalculation, or the claimed gross margins require deducting financing payments that do not belong in gross profit."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The approximate arithmetic holds: monthly payments are $54.13 million, annual debt service is $649.58 million, and his formula gives 5.15% followed by -40.28%. But these are not gross margins. The formula deducts financing payments while retaining depreciation. Excluding financing and conservatively counting every stated pre-financing cost as a direct cost gives 21%. The payment calculation is supported; the gross-margin description is contradicted.",
+  "limitations": [
+   "This tests the supplied hypothetical premises, not actual data-center profitability.",
+   "The 5.19% figure is close enough to the recalculation given the passage's rounded inputs.",
+   "The outcome depends on assessing the express gross-margin claim as well as the arithmetic."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Loan payments are made up of two components.",
+    "locator": "Section 6.8, Calculating Loan Payments and subsequent payment formula",
+    "url": "https://openstax.org/books/contemporary-mathematics/pages/6-8-the-basics-of-loans",
+    "publisher": "OpenStax",
+    "event_date": "2026-04-28",
+    "available_at": "2023-03-22",
+    "explanation": "Applying the textbook's amortization method to the supplied premises reproduces the debt payments and approximately reproduces both percentages under Zitron's formula. This is an evaluator calculation, not a textbook finding about data centers."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "Next, the cost of goods sold (COGS) is deducted from net sales in order to arrive at gross profit.",
+    "locator": "Section 5.1, Sales and Gross Profit",
+    "url": "https://openstax.org/books/principles-finance/pages/5-1-the-income-statement",
+    "publisher": "OpenStax",
+    "event_date": "2026-04-28",
+    "available_at": "2022-03-24",
+    "explanation": "Applying the ordinary gross-profit definition to the same hypothetical inputs excludes loan payments. Even treating all $837.4 million of pre-financing costs as direct costs gives 21%, so financing does not turn this model's gross margin into approximately -40%."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true
+ },
+ "public_payload_hash": "674fbb8dad3e6402eb0ed6bf5f0f2a169698007e82b0e0e39b28d09441fd541e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:25:58Z"
+}

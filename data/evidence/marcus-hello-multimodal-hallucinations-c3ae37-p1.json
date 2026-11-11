@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-hello-multimodal-hallucinations-c3ae37-p1",
+ "claim_revision_ref": {
+  "id": "marcus-hello-multimodal-hallucinations-c3ae37",
+  "version": 1,
+  "content_hash": "fa2242f3f22e29ebf8ed0a20994d5d6bb4ef37b274527cc0cfb888b5ca6b2d03"
+ },
+ "contract_ref": {
+  "id": "marcus-hello-multimodal-hallucinations-c3ae37",
+  "version": 1,
+  "content_hash": "3279233f28bb6e768279861b6579d61533698cd1d2e4c100974250b4a57cc65a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 large language models planning PlanBench obfuscated world models",
+   "Othello emergent world representations language models intervention 2023",
+   "\"On the Planning Abilities of Large Language Models\" arxiv",
+   "\"On the Planning Abilities\" site:arxiv.org/abs",
+   "\"Emergent World Representations\" site:arxiv.org/abs"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.15771v1",
+    "used": true,
+    "why": "Pre-post version of a controlled planning evaluation, including renamed domains and verifier assistance."
+   },
+   {
+    "url": "https://arxiv.org/html/2210.13382v3",
+    "used": true,
+    "why": "Pre-post research on learned world representations and interventions, with a narrower synthetic-model scope."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.14992v1",
+    "used": true,
+    "why": "Pre-post study combining LLM world-state prediction with planning; relevant to the mechanism but changes several factors together."
+   },
+   {
+    "url": "https://papers.neurips.cc/paper_files/paper/2023/hash/7a92bcdede88c7afd108072faf5485c8-Abstract-Datasets_and_Benchmarks.html",
+    "used": false,
+    "why": "Used the dated pre-post planning study instead of relying on a later conference page."
+   },
+   {
+    "url": "https://arxiv.org/abs/2409.13373",
+    "used": false,
+    "why": "Evaluates later models and cannot determine the condition of the 2023 models."
+   }
+  ],
+  "performed_at": "2026-10-29T07:00:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-15771v1",
+   "source_snapshot_id": "d1372b73eef3e971e1154de066cae5d426e8c61840513e10f7ba04c9c4f283a1",
+   "publisher": "Valmeekam and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.15771v1",
+   "locator": "Section 4, Evaluation of LLMs on the Blocksworld domain",
+   "receipt": {
+    "public_excerpt": "approximately 34% in the Blocksworld dataset.",
+    "quote_hash": "5ecfd926b2c1ab0c0935b13bd9a33e01e36bd252fc8043f9c07f0c1adc4bed20",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-25",
+   "retrieved_at": "2026-10-29T06:37:04Z",
+   "relation": "supports",
+   "explanation": "The study supports the planning-reliability concern and reports severe deterioration after renaming domain elements. It also finds benefits from external verification; neither result directly measures the absence of stable internal world models.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2210-13382v3",
+   "source_snapshot_id": "5558ed72f5d65c37ae331bd6b77653ec32251f0856a71677b00b380eefe28c23",
+   "publisher": "Li and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2210.13382v3",
+   "locator": "Section 1.1, discussion of probing and intervention",
+   "receipt": {
+    "public_excerpt": "an emergent world representation.",
+    "quote_hash": "9c2f3e7dd5e696bcf6672411b978c6814cc8e37f644a0e388bd92663c16e0f53",
+    "verified": "exact"
+   },
+   "event_date": "2022-10",
+   "available_at": "2023-01-25",
+   "retrieved_at": "2026-10-29T06:55:11Z",
+   "relation": "context",
+   "explanation": "The researchers identify a board-state representation and intervene on it to change predictions. This challenges a blanket architectural absence claim, but the synthetic Othello model does not establish stable general world models in contemporary conversational LLMs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2305-14992v1",
+   "source_snapshot_id": "2180e078baef6cbadd3c2e1d34db84157cba119c88d0456c106b2b2ffd119755",
+   "publisher": "Hao and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2305.14992v1",
+   "locator": "Abstract, final sentence",
+   "receipt": {
+    "public_excerpt": "33% relative improvement",
+    "quote_hash": "84730a148b0d222d907d84eed59303a40d91ec14a7a067761a3f2eafd796a5f0",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-24",
+   "retrieved_at": "2026-10-29T06:54:41Z",
+   "relation": "context",
+   "explanation": "The framework uses an LLM for world-state prediction alongside tree search and rewards, improving planning performance. This is relevant to the proposed mechanism, but the combined intervention does not isolate world-model stability as the cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No cited study isolates absent or unstable world representations as the cause of both planning and reasoning unreliability across representative 2023 LLMs.",
+  "The planning tests do not establish performance across all forms of reasoning.",
+  "The synthetic representation study has a narrower scope than the claim."
+ ],
+ "packet_hash": "621e71613b7efdae39d9d9b82f6ddc5c034956c9b77a2dafee47475c48db9b23"
+}

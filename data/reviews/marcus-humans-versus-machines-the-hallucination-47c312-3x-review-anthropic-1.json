@@ -1,0 +1,173 @@
+{
+ "run_id": "marcus-humans-versus-machines-the-hallucination-47c312-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-humans-versus-machines-the-hallucination-47c312": "06a6ef44782bd6a036b5c15b4e05e4f25c7242c96dd54b5fc185b43260984119",
+  "case:marcus-humans-versus-machines-the-hallucination-55d75c": "de720f95f247234bb64c11781f77352b2c6fd6a8dcdfb287dff4dacc0697e6cc",
+  "case:marcus-humans-versus-machines-the-hallucination-5d4b70": "2084ed98053dccbd56adb756a64eff497447bbd113fe3cab11eeba69461a5064"
+ },
+ "started_at": "2026-10-29T07:32:10Z",
+ "completed_at": "2026-10-29T07:33:03Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack explainer."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Faithful. He says the generalizing process also creates hallucinations. He does not say it is their only cause. The surrounding text ties this to stochastic reconstruction, even with perfect data."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'generalize' as statistical prediction of likely text matches his own wording (\"statistically reconstructing\"). It is an ordinary reading. The support and contradiction conditions are balanced."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed STOC paper. Calibrated pretrained models must hallucinate arbitrary facts even with error-free data. Its caveat is that facts seen more than once and systematic facts are not covered."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI research write-up, a company source. It traces hallucinations about arbitrary low-frequency facts to next-word prediction pretraining."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Says abstention can avoid hallucinations. That is about mitigation, not about where hallucinations come from."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The claim says the statistical prediction process that lets LLMs generalize also produces hallucinations. e1 proves this for arbitrary facts even with ideal data, and e2 agrees. Kalai and Vempala limit the result to some fact types, but the claim does not say this is the only cause of hallucinations. No evidence shows a separate main mechanism.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-47c312"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack explainer."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to both parts: all output comes from statistical word reconstruction, and LLMs NEVER fact-check. The universal 'never' is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the emphatic 'NEVER' as universal is ordinary. The result turns on whether prompted self-verification (CoVe) or a product's search-check button counts as the LLM fact-checking. The speaker might say these are just more output from the same process. The contract flags this."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-4 report, in the period. GPT-4 is pretrained to predict the next token, which supports the first part."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Google's announcement of its own product, a company disclosure, in the period (Sept 2023). Bard evaluates its own response against web content when the user asks."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Meta preprint, in the period. The model plans and answers verification questions to fact-check its own draft, and this reduces hallucination."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The first part holds: LLM output is produced by next-token prediction (e1). The 'NEVER fact-check' part is contradicted under the contract's universal reading. Within the period, CoVe showed LLMs fact-checking their own drafts, and Bard shipped a self-check feature. That result depends on counting prompted or tool-assisted checking as fact-checking.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-55d75c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack explainer."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Covers every element: the different underlying process, the lack of intentions/egos/financial interests so no lying, no drugs, no emotional states. Labelling it causal fits 'result from' and 'so'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The functional reading of 'lie' is an ordinary one, but Marcus ties lying to intentions, which he says LLMs lack. The 'don't lie' result turns on that choice. Whether functional emotion representations count as 'emotional states' cannot be settled. The contract flags both."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI-authored preprint (2025). Hallucinations arise from statistical pressures in training, not from anything like human motives."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Apollo preprint. GPT-4 strategically deceived its simulated manager without being told to. This counts against 'they don't lie' read functionally."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic disclosure (2026-04, before the evaluation date). Functional emotion representations drive behavior, but Anthropic says this does not show feeling. It leaves the emotions point open."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Supported: ordinary LLM errors come from statistical training mechanisms, not human-like motives (e1). Contradicted: 'they don't lie', on the contract's functional reading, given documented strategic deception (e2). Unresolved: 'no emotional states' (e3). The 'don't take drugs' point is trivially true.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-humans-versus-machines-the-hallucination-5d4b70"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25863,
+  "output_tokens": 5254,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

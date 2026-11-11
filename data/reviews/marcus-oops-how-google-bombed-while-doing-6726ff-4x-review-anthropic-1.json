@@ -1,0 +1,215 @@
+{
+ "run_id": "marcus-oops-how-google-bombed-while-doing-6726ff-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-oops-how-google-bombed-while-doing-6726ff": "c2dc8166e0ee84f65628c91eef12f123ab9a09ac89e4b0bd3a1a0457301a7071",
+  "case:marcus-oops-how-google-bombed-while-doing-bb9161": "46ba79562b8922a221fdfacef4a533ab10950e1bca3f3dadcea964d749cb8f47",
+  "case:marcus-oops-how-google-bombed-while-doing-d17e5e": "22502f308be47bf94d188baffbf588fc2e46d1bd427b3318955560ba09e5fd02",
+  "case:marcus-oops-how-google-bombed-while-doing-da8acd": "78880e4c4cf5bc277673e495ebaca401ee1997e2c96ecbecf63e9edf23490e5d"
+ },
+ "started_at": "2026-10-29T07:59:09Z",
+ "completed_at": "2026-10-29T08:00:00Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence on his Substack, in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps both the 'inherent' claim and the compression mechanism. In context, 'they' means scaled neural network models. Marcus says nearby that the problems may eventually be ironed out, so 'in their silicon blood' means a built-in tendency, not strict impossibility."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (a built-in tendency, compression as one cause, abstention not ruled out) is ordinary and fits the surrounding text. The support and contradiction conditions are balanced. The result depends on rejecting the strict 'impossible to remove' reading, which the speaker's own text supports rejecting."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ICML 2026 paper, available before the evaluation date. It formally ties confident hallucination to lossy compression under limited capacity and tests this on real data. This directly matches the stated mechanism."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Formal argument that hallucination cannot be fully eliminated in LLMs. It supports the 'inherent' part but not the compression mechanism."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Controlled study tracing reasoning hallucinations to path compression during training. Consistent with 'losing track of factual relations'. Synthetic setting."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Company research. It rejects inevitability because models can abstain, which the contract excludes from the claim. Its account (arbitrary facts cannot be learned from patterns, so hallucinations persist from pretraining) is broadly consistent with the plain reading."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under the fair plain reading, independent peer-reviewed work (e1) links hallucination to lossy compression under limited capacity and finds it persists. e2 and e3 add support for inherence and relational collapse. OpenAI's abstention point (e4) answers only the strict impossibility reading, which the contract and context exclude. Nothing in the packet shows hallucination disappearing with scale or being unrelated to how facts are stored. The caveat is that much of this work is theoretical or controlled, and other causes also play a part.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-6726ff"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition keeps both parts: about seven years and roughly $100B since 2016, and errors persisting. It is a retrospective observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'errors haven't gone away' as material driving errors still occurring is fair. The investment figure is loose, and the contract notes that the start date and definition are undefined. Reading it as about $100B over the period is an ordinary reading, though a looser 'total spent by now' reading would also be reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Regulatory recall filing for a June 2022 driverless Cruise collision tied to an ADS prediction limitation. It shows errors persisted late in the period, though the other vehicle was mostly at fault and this particular issue was remedied."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Oct 2022 estimate of about $75B spent in total, with no start date. It neither confirms nor refutes roughly $100B since 2016. The embedded Businessweek '$100 billion flop' framing has no stated period."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The errors part is supported: e1 documents a 2022 driverless-mode collision caused by a software prediction limitation. The investment part is not settled. The only figure (about $75B in total, no start date) does not match the 2016–2023 period, and no comparable estimate in the packet confirms or rules out roughly $100B. The support condition needs both parts, so the overall claim cannot be resolved on this packet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-bb9161"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words about his own book and the history since."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition captures the persistence claim but leaves out the specific chapter 5 attribution, which the contract restores. The 'blithely assume' clause is argument, and the contract correctly does not score it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'this risk' as neural networks blurring facts about individuals and relations is fair to the 2001 context. Treating 'persisted' as the problem still being documented up to the post is an ordinary, somewhat lenient reading. Whether the chapter 5 risk equals hallucination is a matter of interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent 2026 preprint, before the evaluation date. It says chapter 5 argued that distributed neural encodings collapse individuals into kinds, which is a risk of losing facts about specific entities."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed survey first posted in Feb 2022. It documents that deep-learning text generation is prone to hallucinate, before the post date."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "NPR, Feb 2023: Bard made a factual error in its first demo. This shows the problem was present at the post date."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "A third-party summary (e1) confirms that chapter 5 of the 2001 book argued that neural encodings lose track of individuals, which fits the risk Marcus describes. A 2022 survey (e2) and the February 2023 Bard error (e3) show neural generators still produced false content at the post date. The packet has no evidence for 2001 to the mid-2010s and none suggesting the problem was ever solved. The match between the chapter 5 risk and 'hallucination' is interpretive, but it is reasonable.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-d17e5e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own stated belief in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'I do actually think ... will eventually' is an emphatic expectation, not a hedge, so it is a scorable forecast. 'Possibly after fresh discoveries' is correctly kept as a qualifier on the path, and the 'soon' clause makes no commitment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Treating 'ironed out' as no longer a significant reliability problem is an ordinary reading. With no deadline, only early support is possible, which is consistent with the speaker's wording."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Nov 2025 benchmark: many frontier models have hallucination rates above 10%. This shows the early-resolution threshold had not been met, but it does not contradict an open-ended forecast."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI says, about itself, that hallucinations were reduced in GPT-5 but still occur and remain a fundamental challenge. No early resolution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is a firm forecast with no deadline ('eventually'). The packet shows hallucinations reduced but still significant in leading models as of late 2025, so the early-support rule has not been met. Because no deadline was stated, time passing cannot contradict the forecast. It stays open and unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-da8acd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 33726,
+  "output_tokens": 5712,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

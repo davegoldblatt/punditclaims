@@ -1,0 +1,191 @@
+{
+ "run_id": "wyea-ai-is-too-expensive-098caa-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ai-is-too-expensive-098caa": "e3fadce47b439a58165e17c48c1284ee04720aed9e39d038e0ed1cf737f74b9a",
+  "case:wyea-ai-is-too-expensive-176c49": "5634b95c385c06d4eec5c09ad92a42c5ceeb1695983a992d8564d11f0bb62896",
+  "case:wyea-ai-is-too-expensive-39f0b3": "8b23db346b2e8a5a245abff6a3c95057b1cf96ea68d3da2dd69245c83d2773d5",
+  "case:wyea-ai-is-too-expensive-51c48c": "0ffb73588f893c1a5b4b8d331c11706873aee463e5a4b99f9885062f4cdb4589"
+ },
+ "started_at": "2026-10-29T22:03:53Z",
+ "completed_at": "2026-10-29T22:04:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps both parts and the 'appear to' qualifier. 'Too expensive' is evaluative. Only the claim that costs scale linearly with revenue is checkable, and 'appear' softens it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'linearly' as a roughly stable serving-cost share of revenue is an ordinary reading. Not scoring 'too expensive' is right. The speaker named no provider, period or accounting basis, so the result depends on the evaluator's choices."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1, available before the cutoff. The 144%→72% ratio covers total compute, not serving cost alone. The cost-of-revenue lines are half-year figures with no matching revenue shown, and this is one provider, not a representative set."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence is one provider's broader compute ratio. The filing itself separates that from customer-serving cost, and no comparable serving-cost and revenue series across providers was found. The falling ratio leans against proportional scaling, but it measures a different metric for a single company, so it does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-098caa"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own summary sentence in his own article."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the exclusion of OpenAI and Anthropic, the 'do not appear' qualifier and the necessity clause. 'Revenues' follows his own wording."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'revenues' as realized cloud revenue while checking backlog separately is reasonable, since his argument relies on RPO. The scope (cloud vs company-wide), the comparison basis and the funding-necessity test are the evaluator's choices."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's Jan–Mar 2026 quarter. Backlog excluding OpenAI grew 26% YoY, but that figure still includes Anthropic and is backlog, not realized revenue."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AWS sales up 28% YoY. This is an aggregate figure; neither named customer is excluded."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Google Cloud revenue up 63%, with core GCP named among the drivers. Aggregate only; neither lab is excluded."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "All three providers report strong aggregate cloud growth, which sits uneasily with the claim. But no source separates out revenue from OpenAI and Anthropic, and no evidence addresses whether lab spending depended on hyperscaler funding. The packet cannot settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-176c49"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "He relays unnamed sources but adopts their account as fact ('In practice') to support his argument, so it counts as his claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'No progress' matches 'no actual movement'. 'Per sources' is kept as attribution, not a condition."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'no movement' as no substantive deployed step is a fair, ordinary reading of an absolute phrase. The May 1–19 window and the line drawn against ordinary coding assistance are evaluator choices."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "GitLab's customer story from its Feb–Apr quarter describes Zillow's AI pipeline engine and internal agents. This is a supplier account. It is vague on whether development stages are delegated to agents and gives no May implementation date."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Zillow's June account describes agents triaging bugs and proposing fixes, with humans approving. It is a company self-description and does not date the workflow to May 1–19."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both items point to some agent-driven workflow at Zillow around mid-2026, which leans against 'no actual movement'. But neither firmly dates the workflow to the May 1–19 window, and both are promotional company or supplier accounts. No independent workflow record confirms or refutes the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-39f0b3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's first-person account of his own conversations."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the interview-sample scope, 'every' and 'exceeded or nearing'. It drops the clause about extra operating expense and unclear reasons, which narrows the claim without distorting it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Limiting the population to his own interviewees is faithful. Reading 'nearing the edge' as little allocation left is an ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary report of Uber's CTO saying the AI budget was blown by April. Nothing shows Uber was in Zitron's sample, and it covers one company only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The interview sample is unidentified, and no budget or spending records exist for its members. The Uber report fits the theme but cannot confirm or refute a claim about every organization he spoke to.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ai-is-too-expensive-51c48c"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29650,
+  "output_tokens": 5299,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

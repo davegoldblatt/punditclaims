@@ -1,0 +1,135 @@
+{
+ "packet_id": "wyea-optimistic-cowardice-813620-p1",
+ "claim_revision_ref": {
+  "id": "wyea-optimistic-cowardice-813620",
+  "version": 1,
+  "content_hash": "5beb0c8a5178919322362913fdc9856e6492a27d21049f1489098b28c2458da0"
+ },
+ "contract_ref": {
+  "id": "wyea-optimistic-cowardice-813620",
+  "version": 1,
+  "content_hash": "94a3e6eb1b2739e9cf08c1296ed95f87ea022f3fb6db19ea5256a8b4b8d8c1d9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com introducing GPT-4.5 SimpleQA 37.1",
+   "GPT-4.5 system card pdf 37.1 SimpleQA",
+   "\"GPT-4.5\" \"37.1\" hallucination rate February 27 2025",
+   "GPT-4.5 SimpleQA confidently wrong hedged answers confidence 37.1 evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-gpt-4-5/",
+    "used": false,
+    "why": "Read the primary announcement. Its extracted text includes the SimpleQA chart headings but not the numerical chart values."
+   },
+   {
+    "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+    "used": false,
+    "why": "Read the hallucination section. It reports PersonQA, a different evaluation, which cannot settle the SimpleQA rate."
+   },
+   {
+    "url": "https://ca.finance.yahoo.com/news/openai-rolls-gpt-4-5-222056175.html",
+    "used": true,
+    "why": "Contemporary Reuters reporting supplies the exact reported rate in readable text."
+   },
+   {
+    "url": "https://www.abc.net.au/news/science/2025-03-20/openai-generative-ai-hallucinations-chatbot-gpt45-test/105041122",
+    "used": true,
+    "why": "Explicitly connects the rounded rate to SimpleQA."
+   },
+   {
+    "url": "https://openai.com/index/introducing-simpleqa/",
+    "used": true,
+    "why": "Primary grading documentation distinguishes incorrect answers from confidence."
+   }
+  ],
+  "performed_at": "2026-10-29T12:15:01Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "ca-finance-yahoo-com-news-openai-rolls-gpt-4-5-222056175-html",
+   "source_snapshot_id": "01b80393ab1ca435818f82000746a1679c3ffedc3a8389f56130c98368a78cd3",
+   "publisher": "Reuters, republished by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://ca.finance.yahoo.com/news/openai-rolls-gpt-4-5-222056175.html",
+   "locator": "Paragraph discussing hallucination rates",
+   "receipt": {
+    "public_excerpt": "At 37.1%, GPT-4.5's hallucination rate compares with the 61.8% shown by GPT-4o and 44% shown by its o1 reasoning model.",
+    "quote_hash": "6f68c8305620cd446ea8a4806eff453bd085b4cca967d2e34faeeb4e6a3a253a",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-02-27",
+   "retrieved_at": "2026-10-29T12:05:12Z",
+   "relation": "supports",
+   "explanation": "Supports the numerical component: the reported rate rounds to 37% and exceeds one-third. This is reporting of OpenAI's result, not an independent replication or a measurement of expressed confidence.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Reported hallucination rate: 37.1%"
+    ],
+    "formula": "round(37.1) = 37; 37.1 > 100/3",
+    "rounding": "Nearest whole percentage point."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "abc-net-au-news-science-2025-03-20-openai-generative-ai-hallucinati-d9666447f2c0",
+   "source_snapshot_id": "de250516bbb7d5b0b9a9d772ed44fdb645315f2e19bf837cf7aa0489433853c9",
+   "publisher": "Australian Broadcasting Corporation",
+   "source_type": "news_report",
+   "url": "https://www.abc.net.au/news/science/2025-03-20/openai-generative-ai-hallucinations-chatbot-gpt45-test/105041122",
+   "locator": "Section How OpenAI tested its models for hallucinations",
+   "receipt": {
+    "public_excerpt": "Then OpenAI ran GPT-4.5 through the quiz, finding it hallucinated 37 per cent of the time.",
+    "quote_hash": "ee20d8447fccf1214b51e13ee151e138e66500aafd097bce22a14c8a3b37c0b3",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-03-20",
+   "retrieved_at": "2026-10-29T06:38:40Z",
+   "relation": "supports",
+   "explanation": "The surrounding passage identifies the quiz as SimpleQA, confirming the evaluation associated with the rounded number. It does not report a separate confident-error rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-simpleqa",
+   "source_snapshot_id": "2f154715a4a9cad852b45faab5b445100aa3567cbd94650e1638236d6d183936",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-simpleqa",
+   "locator": "Using SimpleQA to compare language models, grading table, Incorrect row",
+   "receipt": {
+    "public_excerpt": "The predicted answer contradicts the ground-truth answer in any way, even if the contradiction is hedged.",
+    "quote_hash": "396902da04e9ec452bbd52f55f82553a0540bd8fdccab18b3704895881360450",
+    "verified": "exact"
+   },
+   "event_date": "2024-10-30",
+   "available_at": "2024-10-30",
+   "retrieved_at": "2026-10-29T02:31:24Z",
+   "relation": "context",
+   "explanation": "Incorrect answers can explicitly express uncertainty. This undermines the inference from an incorrect-answer rate to an equally large confident-error rate, but does not show what fraction of GPT-4.5's actual errors were hedged.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No response-level confidence analysis of the original GPT-4.5 SimpleQA run was found.",
+  "The primary announcement's numerical chart was not present in read_page text; the numeric evidence therefore relies on contemporary news reporting."
+ ],
+ "packet_hash": "b264c826ebe4de39837f4cf22ec34d4b3e361cd9443a5e094e60ad0c7432b961"
+}

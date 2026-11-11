@@ -1,0 +1,145 @@
+{
+ "assessment_id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32-a1",
+ "claim_revision_ref": {
+  "id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32",
+  "version": 1,
+  "content_hash": "3b4ffade005002f67da1801f6e807ab97745a0aea658cec966f6c3f41294e855"
+ },
+ "contract_ref": {
+  "id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32",
+  "version": 1,
+  "content_hash": "d8115027ec2e4f0b6091ae3d739fb383633628bec661aee4e524b6a9340124dc"
+ },
+ "packet_ref": {
+  "id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32-p1",
+  "content_hash": "8bf6acb84239cf7247b7edc6b1cd02b91f57cb368fb9e25544cbf70f505f6ce6"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Small changes can cause real performance failures, so Marcus's behavioral observation has support. The proposed general cause remains unsettled. Controlled studies find memorization and generalization operating together, and a later reanalysis weakens some perturbation-based evidence. These findings neither establish regurgitation as the general explanation nor show that training familiarity is unimportant.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "limitations": [
+  "Perturbation sensitivity is not a direct measurement of regurgitation.",
+  "The studies cover particular tasks and model families.",
+  "Study dates identify the reported research version; exact experiment execution dates are not supplied."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-openais-o3-and-tyler-cowens-misguided-cfde32-2x-review-anthropic-1",
+  "marcus-openais-o3-and-tyler-cowens-misguided-cfde32-2x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-openais-o3-and-tyler-cowens-misguided-cfde32",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs' jagged performance arises because they regurgitate training data with minor changes, doing well near prior data and often failing on subtly different cases.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The jaggedness (or pointillism) comes because LLMs are regurgitation-with-minor-changes machines. When a particular prompt is close enough to a bunch of prior data points, LLMs do well; when they subtle differ from prior cases in their databases they often fail.",
+   "locator": "paragraph 21",
+   "url": "https://garymarcus.substack.com/p/openais-o3-and-tyler-cowens-misguided",
+   "date": "2025-04-17",
+   "document_title": "OpenAI’s o3 and Tyler Cowen’s Misguided AGI Fantasy",
+   "observed_at": "2026-10-28T23:56:48Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The jaggedness (or pointillism) comes because",
+    "LLMs are regurgitation-with-minor-changes machines",
+    "close enough to a bunch of prior data points",
+    "they often fail"
+   ],
+   "our_interpretation": [
+    "The plain reading is that dependence on reproducing familiar training examples explains LLMs' uneven performance, including failures on small changes to familiar problems.",
+    "The claim concerns LLMs available when the post appeared. It does not require every unfamiliar prompt to fail.",
+    "Small changes must preserve the relevant reasoning demands; otherwise increased difficulty could explain reduced accuracy.",
+    "Perturbation failures support the behavioral description but do not alone establish the proposed cause."
+   ],
+   "support_condition": "Controlled studies using known training examples show that proximity to those examples reliably explains successes and failures, and that reliance on near-reproduction accounts for the uneven performance across representative models and tasks.",
+   "contradiction_condition": "Controlled studies show that the proposed dependence on near-reproduction does not generally explain the uneven performance, with successful generalization and failures better explained by other mechanisms."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Small changes can cause real performance failures, so Marcus's behavioral observation has support. The proposed general cause remains unsettled. Controlled studies find memorization and generalization operating together, and a later reanalysis weakens some perturbation-based evidence. These findings neither establish regurgitation as the general explanation nor show that training familiarity is unimportant.",
+  "limitations": [
+   "Perturbation sensitivity is not a direct measurement of regurgitation.",
+   "The studies cover particular tasks and model families.",
+   "Study dates identify the reported research version; exact experiment execution dates are not supplied."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "noticeable variance",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/html/2410.05229v1",
+    "publisher": "arXiv; Mirzadeh et al.",
+    "event_date": "2024-10",
+    "available_at": "2024-10-07",
+    "explanation": "The study reports sensitivity to numerical substitutions and irrelevant clauses, supporting the behavioral part of the claim. It presents replication of training reasoning as a hypothesis, rather than isolating that cause experimentally."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "both memorization and reasoning",
+    "locator": "Section 6, Distinguish Memorization from Reasoning",
+    "url": "https://arxiv.org/html/2410.23123v2",
+    "publisher": "arXiv; Xie et al.",
+    "event_date": "2025-03",
+    "available_at": "2025-03-04",
+    "explanation": "Controlled fine-tuning produces both memorization-related fragility and better performance on unseen puzzles, including different difficulty levels. This challenges the reduction to regurgitation, without establishing a general explanation for all LLM failures."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "MMLU shows weaker memorization",
+    "locator": "Section 1, Introduction",
+    "url": "https://arxiv.org/html/2407.14985v5",
+    "publisher": "arXiv; Wang et al.",
+    "event_date": "2025-03",
+    "available_at": "2025-03-02",
+    "explanation": "Using Pythia models and their known Pile training corpus, the study finds that reliance on memorization varies by task and that generalization contributes to reasoning improvements. Its distributional measure challenges a uniform regurgitation account but does not identify every internal mechanism."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "Controlling for this large-number effect",
+    "locator": "Abstract, version 3",
+    "url": "https://arxiv.org/abs/2605.28700",
+    "publisher": "arXiv; Długosz, Oliveira and Díaz-Rodríguez",
+    "event_date": "2026-09",
+    "available_at": "2026-09-01",
+    "explanation": "The reanalysis finds fewer statistically significant perturbation effects and identifies larger numerical values as a confound. This limits how strongly GSM-Symbolic can support the proposed cause; the later analysis is contextual evidence."
+   }
+  ],
+  "what_would_resolve": "Representative controlled studies that vary exposure and proximity to known training examples while holding task difficulty constant, and measure whether near-reproduction explains the resulting successes and failures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "20d04e7d4a55e5035d4e2f8ad94e6a56bb54780d7364b6189a750d1aea08af5b",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:50:33Z"
+}

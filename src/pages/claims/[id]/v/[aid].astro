@@ -1,0 +1,64 @@
+---
+// /claims/<claim-id>/v/<assessment-id>: one assessment version, readable for
+// good. A version that is not current says so at the top; a withdrawn one
+// carries its tombstone. An old link never presents an old verdict as current.
+// The assessment a claim page shows lives on that page (see assessmentPath in
+// src/lib/view.ts), so only the other versions get a page of their own.
+import Base from "../../../../layouts/Base.astro";
+import Statement from "../../../../components/Statement.astro";
+import Criteria from "../../../../components/Criteria.astro";
+import Assessment from "../../../../components/Assessment.astro";
+import Notices from "../../../../components/Notices.astro";
+import History from "../../../../components/History.astro";
+import RecordAside from "../../../../components/RecordAside.astro";
+import { release } from "../../../../lib/published.ts";
+import { KIND_LABEL } from "../../../../policy.ts";
+import { claimPath, day, hasVersionPage, isScreenedOut, personPath, VERSION_STATUS_TEXT, versionsOf } from "../../../../lib/view.ts";
+
+export function getStaticPaths() {
+  return release().claims.flatMap((c) => versionsOf(c).filter((a) => hasVersionPage(c, a.assessment_id)).map((a) => ({ params: { id: c.claim_id, aid: a.assessment_id } })));
+}
+const r = release();
+const m = r.manifest!;
+const c = r.claim(Astro.params.id!)!;
+const a = versionsOf(c).find((x) => x.assessment_id === Astro.params.aid)!;
+const person = r.subject(c.subject_id)!;
+const p = a.payload;
+const isCurrent = a.status === "current" || a.status === "under_review";
+const withdrawn = a.status === "withdrawn";
+---
+<Base title={`Assessment ${a.assessment_id}`} description={`Assessment ${a.assessment_id} of a claim by ${person.name} (${VERSION_STATUS_TEXT[a.status].toLowerCase()}), ${isScreenedOut(a) ? "not checked against evidence" : `evidence as of ${p.evaluation_as_of}`}.`}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/register/checked">All claims</a></li>
+        <li><a href={personPath(person.id)}>{person.name}</a></li>
+        <li><a href={claimPath(c.claim_id)}>Claim <code>{c.claim_id}</code></a></li>
+        <li aria-current="page">Assessment <code>{a.assessment_id}</code></li>
+      </ol>
+    </nav>
+    <div class="claim">
+      <article class="claim-main" data-version-page={a.assessment_id}>
+        <p class="byline"><a href={personPath(person.id)}>{person.name}</a>{" "}<span>{KIND_LABEL[p.kind]}</span>{" "}<span>Assessment {a.assessment_id}: {VERSION_STATUS_TEXT[a.status]}</span></p>
+        <h1 class:list={["prop", { "prop-long": p.normalized_proposition.length > 140 }]}>{p.normalized_proposition}</h1>
+        <p class="reading-note">Our reading of the claim as it stood in this assessment version. The speaker’s own words are quoted below.</p>
+        <p class="small">
+          Public {a.public_from ? <>from <time datetime={a.public_from}>{day(a.public_from)}</time></> : "from: not recorded"}
+          {a.public_until ? <> until <time datetime={a.public_until}>{day(a.public_until)}</time></> : isCurrent && a.public_from ? ", still current" : ""}.
+        </p>
+        {isCurrent && (
+          <div class="notice" role="note" data-notice="current">
+            <h2 class="notice-title">{a.status === "under_review" ? "The current assessment, under review" : "The current assessment"}</h2>
+            <p>This is the assessment the <a href={claimPath(c.claim_id)}>claim page</a> shows today, in release <code>{m.release_id}</code>.</p>
+          </div>
+        )}
+        <Notices claim={c} a={a} versionPage />
+        <Statement claim={c} a={a} personName={person.name} withdrawn={withdrawn} />
+        <Criteria claim={c} a={a} m={m} showNow={false} />
+        <Assessment claim={c} a={a} m={m} heading={isCurrent ? "Assessment" : "Assessment as recorded"} withdrawn={withdrawn} />
+        <History claim={c} events={r.eventsOf(c.claim_id)} currentId={a.assessment_id} mainId={a.assessment_id} />
+      </article>
+      <RecordAside claim={c} a={a} m={m} personName={person.name} />
+    </div>
+  </div>
+</Base>

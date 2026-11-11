@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-what-was-60-minutes-thinking-in-that-41beff-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-was-60-minutes-thinking-in-that-41beff",
+  "version": 1,
+  "content_hash": "86d665f1e1a56a7e7917c35208076ecd5769a9b3fee7e68b2489d4af1ca8cd03"
+ },
+ "contract_ref": {
+  "id": "marcus-what-was-60-minutes-thinking-in-that-41beff",
+  "version": 1,
+  "content_hash": "00aaec36e381ea877f1a095b48ac7895f7a1ea28ad4146cd3c829598b4d1b115"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2023 GPT-4 technical report hallucinations code reliability guarantees",
+   "site.arxiv.org 2023 ChatGPT code \"incorrect\" evaluating",
+   "2023 LLM factual guarantees formal verification code generation limitations guarantee",
+   "site.arxiv.org 2023 \"LLM\" \"Dafny\" verified code",
+   "site.arxiv.org 2023 \"guarantees\" \"hallucinations\" grounding"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v3",
+    "used": true,
+    "why": "The March 2023 report explicitly acknowledges fabrication and reasoning errors."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2305.01210v1",
+    "used": true,
+    "why": "Primary evaluation supplies concrete flawed-code examples that passed existing tests."
+   },
+   {
+    "url": "https://arxiv.org/abs/2305.14292v1",
+    "used": false,
+    "why": "Considered as a possible challenge: it reports improved grounding, not a general error-free guarantee."
+   },
+   {
+    "url": "https://arxiv.org/abs/2502.07728",
+    "used": false,
+    "why": "Later verification research does not establish a guarantee available during the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T09:33:13Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2303-08774v3",
+   "source_snapshot_id": "a6871dddcc57ae497ffd9dde942d00a7c946f54908c7aa47bf483be609ed8f5f",
+   "publisher": "OpenAI, via arXiv",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v3",
+   "locator": "Section 5, Limitations, page 10",
+   "receipt": {
+    "public_excerpt": "makes reasoning errors",
+    "quote_hash": "24794e24900edb20a5e7b29c061c6d455cfd39b67b70bb7c1945bdfadb34e259",
+    "verified": "exact"
+   },
+   "event_date": "2023-03",
+   "available_at": "2023-03-27",
+   "retrieved_at": "2026-10-29T02:09:58Z",
+   "relation": "supports",
+   "explanation": "The developer explicitly acknowledges factual fabrication in its contemporary model. The surrounding discussion recommends review and grounding appropriate to the application rather than claiming assured factual correctness.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2305-01210v1",
+   "source_snapshot_id": "b154394fbc8a825e3d7574168090367295d02615fad58dcf5e8b5d6b46547213",
+   "publisher": "arXiv; Jiawei Liu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2305.01210v1",
+   "locator": "Section 1, Insufficient testing, page 2",
+   "receipt": {
+    "public_excerpt": "logically flawed solution",
+    "quote_hash": "fe4b932e32fd432b8c5addcc6e5070e82bfc5625ee78eaefb911fc107da75fd3",
+    "verified": "exact"
+   },
+   "event_date": "2023-05",
+   "available_at": "2023-05-02",
+   "retrieved_at": "2026-10-29T09:26:06Z",
+   "relation": "supports",
+   "explanation": "The paper demonstrates a ChatGPT-generated sorting error missed by the original benchmark tests and exposed by additional inputs. This shows why successful test results did not guarantee correct generated code.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "A literature search cannot exhaustively prove that no unpublished or narrowly scoped guarantee existed."
+ ],
+ "packet_hash": "84ebb5b403f0fb539d27f606dd2489d585e552512f281554c14737dea97ee989"
+}

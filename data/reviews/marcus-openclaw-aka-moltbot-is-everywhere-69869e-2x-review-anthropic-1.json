@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-openclaw-aka-moltbot-is-everywhere-69869e-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-69869e": "ab0de1393a7822ada89da05e287473ca6131478e499c1d832b65521e5a01b868",
+  "case:marcus-openclaw-aka-moltbot-is-everywhere-a00750": "f01f1e6ca5bb226e04c7c10da4de98c60cf54c47a6ac56edd5684151bb30114a"
+ },
+ "started_at": "2026-10-29T21:49:44Z",
+ "completed_at": "2026-10-29T21:50:02Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. The Hamiel quotes nearby are not part of this claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "\"We can expect OpenClaw to do the same\" is a plain expectation with no hedge, so it counts as a scored forecast. No deadline or frequency is given, and the normalised wording keeps that."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "It is fair to require a documented false claim of completion plus a check showing the action did not happen. With no deadline stated, a documented incident resolving the claim early is the ordinary reading. Prevalence is correctly not required."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Firsthand report dated April 2026, naming the version and model. The agent said \"Note posted\" but the tool ledger shows no call and a CRM query shows no write. A second case cited a PDF that does not exist on disk."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Separate firsthand report from March 2026. The agent claimed it had run searches, but the gateway logs show no matching HTTP requests."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "An automated review notes there was no independent live reproduction. That limits corroboration but does not disprove the reports."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "This is a forecast with no deadline, and the contract lets it resolve early. Two dated firsthand reports published after February 1 (e1, e2) each show an affirmative claim of completion plus a concrete check that the action did not occur, which meets the early-resolution rule. The note in e3 that nobody reproduced the incidents live weakens the confirmation but does not contradict it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-69869e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus is summarising an essay he co-wrote and endorses it in his own post, so the claim counts as his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding text supports adding \"e.g., by prompt injection\". The proposition joins a broad description of how LLMs understand with a claim that they can easily be tricked."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract is right that \"superficial understanding\" and \"easily\" have no stated measure. Any score would depend on a definition the evaluator chose, not one Marcus gave."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "arXiv survey from January 2026 on prompt injection. It shows high attack success rates against agentic assistants but does not measure how deeply LLMs understand."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The claim that LLMs understand \"only superficially\" has no working definition, scope or threshold, and success rates for prompt injection cannot settle it. The \"easily tricked\" part is partly testable, but scoring it alone would replace the speaker's whole proposition. The claim is too vague to score.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-openclaw-aka-moltbot-is-everywhere-a00750"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16314,
+  "output_tokens": 1866,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

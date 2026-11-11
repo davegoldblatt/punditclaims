@@ -1,0 +1,34 @@
+---
+// Every place the claim was said. Repetitions are shown; the claim counts once.
+import type { PublicClaim } from "../lib/manifest.ts";
+import { ACCESS_TEXT, day } from "../lib/view.ts";
+
+interface Props { claim: PublicClaim }
+const { claim: c } = Astro.props;
+const occ = [...c.occurrences].sort((a, b) => a.statement_date.localeCompare(b.statement_date) || a.id.localeCompare(b.id));
+const n = occ.length;
+---
+<section class="section" aria-labelledby="occ-h">
+  <h2 id="occ-h">Where it was said <span class="count">({n})</span></h2>
+  <p class="small">{n === 1 ? "Said once in the posts we read." : `Said ${n} times in the posts we read. It counts as one claim.`}</p>
+  <ul class="receipts">
+    {occ.map((o) => (
+      <li>
+        <details class="rcpt">
+          <summary><span class="rcpt-head"><time datetime={o.statement_date}>{o.statement_date}</time>: {o.document.publisher}, {o.document.title}</span></summary>
+          <div class="rcpt-body">
+            <blockquote cite={o.document.url}><p>{o.excerpt}</p></blockquote>
+            <dl class="facts facts-2">
+              <div><dt>Where</dt><dd><a href={o.document.url} rel="noopener">{o.locator}</a></dd></div>
+              <div><dt>Published</dt><dd>{o.document.published_at ? day(o.document.published_at) : "date not known"}{o.document.date_uncertain && <span class="soft"> (uncertain: {o.document.date_provenance})</span>}</dd></div>
+              <div><dt>We read it</dt><dd><time datetime={o.observed_at}>{day(o.observed_at)}</time>, {o.observed_via === "archive" ? "archived copy" : "live page"}</dd></div>
+              <div><dt>Access</dt><dd>{ACCESS_TEXT[o.access_state]}</dd></div>
+              {o.receipts > 1 && <div><dt>Copies we saw with this passage</dt><dd>{o.receipts}</dd></div>}
+              {o.archive_url && <div><dt>Archive</dt><dd><a href={o.archive_url} rel="noopener">archived copy</a></dd></div>}
+            </dl>
+          </div>
+        </details>
+      </li>
+    ))}
+  </ul>
+</section>

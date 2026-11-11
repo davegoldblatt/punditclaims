@@ -1,0 +1,75 @@
+{
+ "packet_id": "marcus-grok-3-beta-in-shambles-f66fbf-p1",
+ "claim_revision_ref": {
+  "id": "marcus-grok-3-beta-in-shambles-f66fbf",
+  "version": 2,
+  "content_hash": "fd986f8d37703d8bb49e4faa44ffd02fdf276a430908edac69aed9f4482c6f46"
+ },
+ "contract_ref": {
+  "id": "marcus-grok-3-beta-in-shambles-f66fbf",
+  "version": 1,
+  "content_hash": "b0d94d23b17b27cc103dcd32afd82db1beac29c4d02a57599b10842a0aa1c8fa"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "earthquake Billings Montana February 2025",
+   "Grok 3 Deep Search Billings Montana earthquake hallucination Marcus",
+   "USGS FDSN event query: 2024-12-01 to 2025-02-20, 200 km radius of Billings, M>=2"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2024-12-01&endtime=2025-02-20&latitude=45.78&longitude=-108.50&maxradiuskm=200&minmagnitude=2",
+    "used": true,
+    "why": "The official USGS catalog for the area and period. It lists only mining explosions, no earthquakes."
+   },
+   {
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2024-08-01&endtime=2025-02-20&latitude=45.78&longitude=-108.50&maxradiuskm=300&minmagnitude=3.5&eventtype=earthquake",
+    "used": false,
+    "why": "The tool returned output identical to the first query and ignored the new parameters, so I do not rely on it."
+   },
+   {
+    "url": "https://www.kpax.com/news/montana-news/earthquake-reported-near-billings",
+    "used": false,
+    "why": "It covers an M4.1 quake near Melstone with no date in the results; that quake appears to be from another period."
+   },
+   {
+    "url": "https://garymarcus.substack.com/p/grok-3-beta-in-shambles",
+    "used": false,
+    "why": "The speaker's own post. I read it for context on what was claimed; not used as evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T06:50:49Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "earthquake-usgs-gov-fdsnws-event-1-query",
+   "source_snapshot_id": "e51193549b2c730d4bf51c45da33b69395ac1a00e25edf04c6426151497d7c69",
+   "publisher": "U.S. Geological Survey (ComCat FDSN event service)",
+   "source_type": "official_statistics",
+   "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2024-12-01&endtime=2025-02-20&latitude=45.78&longitude=-108.50&maxradiuskm=200&minmagnitude=2",
+   "locator": "CSV result, row 1 of 8 (all 8 rows have type 'mining explosion')",
+   "receipt": {
+    "public_excerpt": "2025-02-11T20:06:44.281Z,45.1103,-106.9599,0,3.5,ml,32,85,1.634,0.41,us,us7000pczr,2025-04-26T14:47:08.040Z,\"27 km NE of Ranchester, Wyoming\",mining explosion,5.81,1.789,0.039,88,reviewed,us,us",
+    "quote_hash": "67479d024bfe5d3332f3a325243205423681fe5552740702b6357f03ca236f2e",
+    "verified": "exact"
+   },
+   "event_date": "2025-02",
+   "available_at": "2025-04-26",
+   "retrieved_at": "2026-10-29T06:48:40Z",
+   "relation": "supports",
+   "explanation": "For 2024-12-01 to 2025-02-20, within 200 km of Billings at M2 or above, USGS lists only eight events. All are classified as mining explosions near Ranchester WY, Colstrip and Muddy MT, and none is an earthquake. This supports Marcus's finding that no recent Billings earthquake occurred.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "Grok's actual response, including the quake's stated date and magnitude, is documented only in Marcus's screenshots. No independent record of the exchange was found.",
+  "The precise window Grok's 'recent' quake referred to is not in the post text."
+ ],
+ "packet_hash": "d288f038d61762b24fcec7b3ca021d07964ef800128753fb3944018f46fef4ab"
+}

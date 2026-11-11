@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-concentration-risk-36e523-p1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-36e523",
+  "version": 1,
+  "content_hash": "58653a1775557827833b47936732a1dc3bf14060a1dea4d44c00815b74a433e3"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-36e523",
+  "version": 1,
+  "content_hash": "ebd23ba526b5e5aff08a85de6133299a50bd1b0a478c4616d590f7066be77587"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic largest customers revenue concentration 2026 startup cash financing",
+   "site.sec.gov/Archives/edgar Anthropic 2026 S-1 131651",
+   "\"OpenAI\" \"cash\" \"June\" \"2026\" revenue startup",
+   "site.openai.com \"2026\" \"revenue\" \"consumer\" enterprise",
+   "site.anthropic.com/news \"65 billion\" \"May 28, 2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary financial disclosure establishes concentration risk and provides liquidity information, but does not identify VC-dependent customer receipts or settle the counterfactual."
+   },
+   {
+    "url": "https://www.anthropic.com/news/series-h",
+    "used": true,
+    "why": "Primary disclosure of financing arrangements relevant to assessing alternative sources of funds."
+   },
+   {
+    "url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+    "used": false,
+    "why": "Search located a relevant revenue-mix disclosure, but read_page returned HTTP 403. No quotation or outcome finding relies on it."
+   },
+   {
+    "url": "https://ramp.com/data/ai-index",
+    "used": false,
+    "why": "Payment-panel statistics do not disclose either lab's complete finances or classify customers by dependence on venture funding."
+   }
+  ],
+  "performed_at": "2026-10-29T10:42:46Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / SEC",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, customer and distribution-channel concentration",
+   "receipt": {
+    "public_excerpt": "A substantial portion of our revenue",
+    "quote_hash": "6d8e76aec60777de04b215c9788e5cbf490e82447550f521426c497811c632a3",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "Anthropic acknowledges concentration risk. This later-period disclosure neither identifies the customers as VC-dependent startups nor establishes that their removal would threaten survival in the target quarter.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Customer revenue concentration",
+    "currency": null,
+    "units": "Share of total revenue",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-series-h",
+   "source_snapshot_id": "c1dc7377bfb4e8c7018dd9622ca23e7a253dae1b98dbac46d0685825f3caa6da",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/series-h",
+   "locator": "Series H announcement, investor paragraph",
+   "receipt": {
+    "public_excerpt": "previously committed investments",
+    "quote_hash": "d21086bbd2db2c2c419d44da51ed2816233d0f92f9f37c62c0cc8bdaf3ef646c",
+    "verified": "exact"
+   },
+   "event_date": "2026-05-28",
+   "available_at": "2026-05-28",
+   "retrieved_at": "2026-10-29T00:47:07Z",
+   "relation": "context",
+   "explanation": "The financing announcement identifies capital commitments that must be considered when evaluating survival dependence. These are investments, not customer revenue, and the passage does not establish when all funds became available.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Previously committed hyperscaler investments included in Series H",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2026-05-28",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No complete target-quarter revenue breakdown identifying VC-dependent AI startups for both labs.",
+  "No matched analysis of lost customer receipts, avoidable costs, liquidity and financing obligations.",
+  "No specified duration for the asserted survival dependence."
+ ],
+ "packet_hash": "b2168ad9adbd380a7374accd851b073ee5fc72bcf800d0d64db80e385555f1ce"
+}

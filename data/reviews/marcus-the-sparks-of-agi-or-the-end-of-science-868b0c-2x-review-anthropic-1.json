@@ -1,0 +1,125 @@
+{
+ "run_id": "marcus-the-sparks-of-agi-or-the-end-of-science-868b0c-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-sparks-of-agi-or-the-end-of-science-868b0c": "e01195f4d20ec4c531e90de0e015fdf56c6ccd305f6b51a14a8870d452aeb559",
+  "case:marcus-the-sparks-of-agi-or-the-end-of-science-b5bd34": "221b4a0ea4f2aafd111d8891798eb6c6576d621a5664bc67d5aa8ac2a5020f89"
+ },
+ "started_at": "2026-10-29T12:35:12Z",
+ "completed_at": "2026-10-29T12:35:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus says this in his own voice in his own post. It is not a quotation of anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the statement and keeps 'extraordinarily powerful' and 'multiple disclosed risks'. It is a firm description of the present, so observation is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading treats 'clear measure' as concrete safety evaluations and identifiable constraints, not a full guarantee. That is an ordinary, literal reading, and it allows a mixed result. The outcome depends on that reading: if 'clear' is read as requiring independently verifiable measures, the absence clause could hold."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "NewsGuard (independent, March 21, 2023) found deployed GPT-4 repeated false claims for 100 of 100 leading prompts, and the excerpt mentions strong exam results. This backs the powerful-yet-unreliable clauses."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's March 15 report gives quantified safety metrics and mitigations, which contradicts 'no clear measure' on the contract's reading. It also discloses jailbreaks and other risks, which supports the risk clause. It is a company disclosure."
+     },
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Bing's March 9 release notes document per-conversation and daily turn limits in the live preview. These are identifiable constraints. They do not show the system was adequately safe."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The deployment, capability, unreliability and disclosed-risk clauses hold: NewsGuard's test and OpenAI's own disclosures show this. The claim that there was no measure of safety or way to constrain the systems fails on the contract's reading: OpenAI published concrete safety metrics and Bing had documented turn limits in March 2023. The contract itself names this split as mixed.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-sparks-of-agi-or-the-end-of-science-868b0c"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus credits the training-data fact to Ernie Davis but states it as fact himself. The 'killing' consequence is his own claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'Destroys' fairly renders 'killing'. The wording assumes the premise that user experiments went into training rather than stating it separately, but the causal kind is right."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'killing' as making credible fresh-case testing unavailable is the ordinary literal sense of a firm word. A softer 'substantially undermines' reading might not be contradicted by the existence of one testing route, so the outcome depends on this reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's system card says production traffic, used with consent, fed safety training. That partly fits the premise but does not identify user experiments, and it says nothing about whether testing became impossible."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's March 1, 2023 policy, on a page updated in 2024: data sent through the API is not used for training unless the customer opts in. Researchers could therefore test new cases without those cases entering training. It is a company disclosure."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's March 14 announcement lets callers pin the gpt-4-0314 version. A fixed version plus newly written private cases gives a documented way to test generalisation. API access was limited by a waitlist."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "OpenAI's documentation from March 2023 shows that API data was excluded from training by default and that the GPT-4 version could be pinned. Researchers with access therefore had a workable way to test genuinely new cases, which meets the contract's contradiction condition. The premise is only partly backed (production traffic was used for safety training), and limited API access does not restore the claimed impossibility.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-sparks-of-agi-or-the-end-of-science-b5bd34"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 18963,
+  "output_tokens": 4314,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

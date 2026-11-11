@@ -1,0 +1,173 @@
+{
+ "run_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-when-it-comes-to-security-llms-are-3f9d5d": "3453e5415067b35672013361cce672185e117ae8965e3a75d083bf44799458db",
+  "case:marcus-when-it-comes-to-security-llms-are-94566d": "42d108f297420efd10ae38180693264fd3386dafe3c6d1ef88fb4d1639ae5c60",
+  "case:marcus-when-it-comes-to-security-llms-are-ee710a": "13906e5497f06985d4bc0024bedba5a6bb7b95d4dd38fd34acd7caa8f4879814"
+ },
+ "started_at": "2026-10-29T22:02:49Z",
+ "completed_at": "2026-10-29T22:03:33Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus describes the UCSD/Nanyang research in his own words and endorses its conclusion; quoted WIRED text is separate."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Collate and report information in a seriously nefarious way' plus surrounding context fairly maps to gathering and leaking personal information; the research qualifier is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Existence reading of 'can' and treating 'simple' as describing deployment are ordinary readings. Requiring external transmission is demanding but matches the context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Original paper shows the PII exfiltration prompt transferring to real agents (Mistral LeChat, ChatGLM) with good success rates."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "WIRED dates the disclosure to Oct 17 and describes the Markdown-image exfiltration. Mistral's later fix does not undercut the demonstration."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The named research demonstrates that obfuscated prompts made tested LLM agents extract PII and send it to attacker URLs through Markdown image requests, including on real products. Remediation came after the demonstration and does not contradict it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-it-comes-to-security-llms-are-3f9d5d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Self-quote from his 2023 essay, explicitly re-endorsed as 'Still true' in the 2024 post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful paraphrase. The claim is an evaluative degree claim ('little if any', 'do much') with no jurisdiction or measure."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The outcome depends on jurisdiction (the US election context versus worldwide) and on what counts as 'little'. Marcus supplied neither. The contract acknowledges this, but a worldwide scope leans against his US-focused context."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "EU general-purpose AI obligations were not yet applicable on Oct 17, 2024, which is consistent with a regulatory gap in the EU on that dimension."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "China's binding generative-AI measures, applicable since Aug 2023, impose content and security duties with enforcement. This contradicts only under a worldwide reading."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "US mandatory safety-test reporting for frontier developers is a reporting duty, not substantive guardrail regulation. It is earlier context."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence points both ways depending on jurisdiction: an EU gap, partial US reporting duties, and substantial Chinese rules. The packet admits it lacks a full inventory or any effectiveness measure. With no stated jurisdiction or threshold for 'little', the evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-it-comes-to-security-llms-are-94566d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. 'Stuffing' is rendered as integrating; the three named companies and jailbreak vulnerability are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Requiring each named example and a jailbreak link is fair. The evaluator chose the target quarter and whether model-level vulnerability suffices; the speaker did not."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Google DeepMind paper uses Gemini 1.5 Pro in robot navigation. This supports integration only, not vulnerability."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Partner company disclosure says Figure 02 uses OpenAI-developed models for conversation. This supports integration only; there is no jailbreak test."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "RoboPAIR jailbreaks LLM-controlled robots, but from other makers (NVIDIA, Clearpath, Unitree), not the named companies."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Teleoperation at Tesla's October event neither shows nor rules out LLM integration in Optimus."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Google and Figure integration is supported, but the packet has no Tesla LLM integration and no jailbreak evidence for any named company's robot setup. Nothing affirmatively contradicts the claim, so the evidence does not settle it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-when-it-comes-to-security-llms-are-ee710a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 28495,
+  "output_tokens": 4529,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,128 @@
+{
+ "assessment_id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b-a1",
+ "claim_revision_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b",
+  "version": 1,
+  "content_hash": "7059c8c15fdef20cd9d3af24fc5b9a32240628ac9afcaa9bdc618b6dc2dd8cd2"
+ },
+ "contract_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b",
+  "version": 1,
+  "content_hash": "16421339c552759fff3c069969b4e58d621d6235f07de1f710ea649c4f2f1a0f"
+ },
+ "packet_ref": {
+  "id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b-p1",
+  "content_hash": "97d60d4834427f477324f281d11dd4e95e40796351a61aed5716dc6b9dc3a537"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-01-01",
+  "end": "2026-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "Audits before the post show prominent AI benchmarks could be gamed with little effort. A July 2025 audit by researchers from Stanford, Berkeley, UK AISI and others found 'many agentic benchmarks' with flawed setup or scoring. SWE-bench Verified used too few tests, and TAU-bench counted empty responses as successes. 'The Leaderboard Illusion' (April 2025) found that providers testing many private variants, such as 27 by Meta before Llama 4, could pick their best score and bias Chatbot Arena rankings. An April 2026 Berkeley audit, used as context because it came after the post, exploited eight major agent benchmarks to near-perfect scores without solving any tasks.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "'Often' has no threshold. The evidence covers prominent benchmarks, not all benchmarks.",
+  "The strongest demonstration (Berkeley, April 2026) postdates the post and is context only."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-rumors-of-agis-arrival-have-been-0779c8-4x-review-anthropic-1",
+  "marcus-rumors-of-agis-arrival-have-been-0779c8-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-rumors-of-agis-arrival-have-been-0779c8-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-rumors-of-agis-arrival-have-been-0b1c6b",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "AI benchmarks are often easily gamed.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Moreover, benchmarks are often easily gamed.",
+   "locator": "paragraph 20",
+   "url": "https://garymarcus.substack.com/p/rumors-of-agis-arrival-have-been",
+   "date": "2026-02-17",
+   "document_title": "Rumors of AGI’s arrival have been greatly exaggerated",
+   "observed_at": "2026-10-28T23:53:54Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "benchmarks",
+    "often",
+    "easily gamed"
+   ],
+   "our_interpretation": [
+    "Plain reading: many widely used AI benchmarks and leaderboards have documented weaknesses that let scores be inflated without the matching capability. Examples are selective disclosure, test-set exposure, or graders that accept trivial or empty answers. These weaknesses are not rare, and exploiting them takes little effort.",
+    "He describes an ongoing state with no period. Evaluator uses documentation published from 2024 up to the post date of 2026-02-17. Later audits are context only."
+   ],
+   "support_condition": "Pre-post audits show several prominent benchmarks or leaderboards whose scores can be inflated by simple means or were distorted by gaming practices.",
+   "contradiction_condition": "Audits of prominent benchmarks before the post find them generally robust, with gaming rare or requiring great effort."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Audits before the post show prominent AI benchmarks could be gamed with little effort. A July 2025 audit by researchers from Stanford, Berkeley, UK AISI and others found 'many agentic benchmarks' with flawed setup or scoring. SWE-bench Verified used too few tests, and TAU-bench counted empty responses as successes. 'The Leaderboard Illusion' (April 2025) found that providers testing many private variants, such as 27 by Meta before Llama 4, could pick their best score and bias Chatbot Arena rankings. An April 2026 Berkeley audit, used as context because it came after the post, exploited eight major agent benchmarks to near-perfect scores without solving any tasks.",
+  "limitations": [
+   "'Often' has no threshold. The evidence covers prominent benchmarks, not all benchmarks.",
+   "The strongest demonstration (Berkeley, April 2026) postdates the post and is context only."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "many agentic benchmarks have issues in task setup or reward design. For example, SWE-bench Verified uses insufficient test cases, while TAU-bench counts empty responses as successful.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2507.02825",
+    "publisher": "arXiv (Zhu et al., incl. Stanford, Berkeley, UK AISI researchers)",
+    "event_date": "2025-07",
+    "available_at": "2025-07-03",
+    "explanation": "Many prominent benchmarks had flaws that allow inflated scores. One even credits empty responses, which shows gaming can be easy."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "the ability of these providers to choose the best score leads to biased Arena scores due to selective disclosure of performance results. At an extreme, we identify 27 private LLM variants tested by Meta in the lead-up to the Llama-4 release.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2504.20879",
+    "publisher": "arXiv (Singh et al.)",
+    "event_date": "2025-04",
+    "available_at": "2025-04-29",
+    "explanation": "The leading public leaderboard was distorted by best-of-many private testing, a simple way to game rankings."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "discovered that every single one can be exploited to achieve near-perfect scores without solving a single task. No reasoning. No capability. Just exploitation of how the score is computed.",
+    "locator": "Section 'The Benchmark Illusion'",
+    "url": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont",
+    "publisher": "UC Berkeley RDI",
+    "event_date": "2026-04",
+    "available_at": "2026-04-11",
+    "explanation": "Later confirmation that major benchmarks in use before the post were easy to exploit. It is dated after the post, so it is context only."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "3e84d203f10fc41f7955aedcba63fe4bca0747bec00449a3d7226b1e1eb53f35",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T08:09:09Z"
+}

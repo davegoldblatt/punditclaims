@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-seven-lies-in-four-sentences-c392e1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-c392e1",
+  "version": 1,
+  "content_hash": "d3e80b7729d195384764302cfea45e34563bedfef173a6d81bda653ba33734c3"
+ },
+ "contract_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-c392e1",
+  "version": 1,
+  "content_hash": "3f631c4e2fc431045d8b5b48d9434855208553ee2d2d2a8d0e2a715dede6e816"
+ },
+ "packet_ref": {
+  "id": "marcus-seven-lies-in-four-sentences-c392e1-p1",
+  "content_hash": "4c800927fe6ade3e3504fa556166333113d5f41d3e2fc110edb466d0e6dde041"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Next-token pretraining supports the analogy, but it does not establish why these particular falsehoods occurred or that this was the sole explanation. Google had already documented a feature that checked generated answers against web information, which complicates the blanket contrast with factual comparison. That feature also does not establish what an unaided model can do. The evidence does not settle the causal claim without choosing a scope Marcus did not specify.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Training descriptions establish design facts, not a complete causal explanation of errors.",
+  "A verification feature can exist and still fail.",
+  "Evidence about another assistant is relevant to the general wording but cannot diagnose the specific Bing episode."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-seven-lies-in-four-sentences-55debe-4x-review-anthropic-1",
+  "marcus-seven-lies-in-four-sentences-55debe-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-seven-lies-in-four-sentences-55debe-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-seven-lies-in-four-sentences-c392e1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs produce plausible falsehoods because they mimic existing sentences like autocomplete rather than checking what they say against the world.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "This all happens not because LLMs are smart, in the sense of being able to compare what they say with the world, but simply because they are good at making new sentences that sound old sentences, the essence of autocomplete.",
+   "locator": "paragraph 16",
+   "url": "https://garymarcus.substack.com/p/seven-lies-in-four-sentences",
+   "date": "2023-10-04",
+   "document_title": "Seven lies in four sentences",
+   "observed_at": "2026-10-29T00:03:08Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "This all happens",
+    "not because LLMs are smart",
+    "being able to compare what they say with the world",
+    "simply because",
+    "making new sentences that sound old sentences",
+    "the essence of autocomplete"
+   ],
+   "our_interpretation": [
+    "Autocomplete is read as learned next-token prediction, not literal copying of stored sentences.",
+    "The causal claim is that plausible language generation without effective factual verification explains the cited falsehoods.",
+    "Simply makes this stronger than the observation that next-token prediction is part of model training.",
+    "The relevant systems are those contemporary with the October 4, 2023 post.",
+    "A base model's learned behavior and a deployed assistant's search or verification tools must be distinguished. Marcus does not specify which level his denial of comparison covers.",
+    "Smart is assessed only through the factual-comparison capability he supplies, not as an unrestricted philosophical judgment."
+   ],
+   "support_condition": "Controlled evidence on relevant contemporary systems attributes plausible falsehoods to language prediction without effective factual verification, while adequately testing competing explanations.",
+   "contradiction_condition": "Controlled evidence refutes that causal attribution, or establishes factual-comparison behavior incompatible with the claim under its stated scope."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Next-token pretraining supports the analogy, but it does not establish why these particular falsehoods occurred or that this was the sole explanation. Google had already documented a feature that checked generated answers against web information, which complicates the blanket contrast with factual comparison. That feature also does not establish what an unaided model can do. The evidence does not settle the causal claim without choosing a scope Marcus did not specify.",
+  "limitations": [
+   "Training descriptions establish design facts, not a complete causal explanation of errors.",
+   "A verification feature can exist and still fail.",
+   "Evidence about another assistant is relevant to the general wording but cannot diagnose the specific Bing episode."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "predict the next token",
+    "locator": "Abstract, page 1",
+    "url": "https://arxiv.org/pdf/2303.08774v3",
+    "publisher": "OpenAI; arXiv",
+    "event_date": "2023-03",
+    "available_at": "2023-03-27",
+    "explanation": "This supports the factual premise behind the autocomplete analogy. The report also describes post-training alignment; the pretraining objective does not by itself establish an exclusive cause of hallucinations."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "double-check its answers.",
+    "locator": "Section Easily double-check responses and build on shared conversations",
+    "url": "https://blog.google/intl/en-in/google-bard-new-features-update-sept-2023",
+    "publisher": "Google",
+    "event_date": "2023-09-19",
+    "available_at": "2023-09-19",
+    "explanation": "Google describes checking generated responses against supporting or contradicting web information before Marcus's post. This challenges a blanket statement about deployed assistants lacking verification, but does not prove that a bare model independently checks reality or explain the cited Bing failure."
+   }
+  ],
+  "what_would_resolve": "Controlled evaluations of the relevant contemporary systems that distinguish learned generation, retrieval, and verification, together with sufficient records to test the cause of the cited failures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "140b5bd2cf987b495dd96eb82273c44fb12f4e49f4d226ea885357097fa97b8f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:23:18Z"
+}

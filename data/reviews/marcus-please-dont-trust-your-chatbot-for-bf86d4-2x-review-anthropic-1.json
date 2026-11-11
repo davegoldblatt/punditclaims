@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-please-dont-trust-your-chatbot-for-bf86d4-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-please-dont-trust-your-chatbot-for-bf86d4": "dfbb235829a38d706f8149db044173f53dcde88305623db9598becf95745f287",
+  "case:marcus-please-dont-trust-your-chatbot-for-f290cb": "a07bfdfd2796fd02cbad62ff7546b153a0a09d50da013421cf6e1fe0ec3fb2a2"
+ },
+ "started_at": "2026-10-29T08:04:21Z",
+ "completed_at": "2026-10-29T08:04:38Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his Substack post, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful restatement of a present-state adoption claim. There are no conditions or horizon to preserve."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Plain reading of 'large fraction' as a substantial minority, measured in US adults, is an ordinary reading that favours neither side. Counting health information-seeking as medical advice is a reasonable reading of the speaker's words."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "KFF nationally representative survey of US adults, fieldwork Feb 24–Mar 2 2026, published before the post. About 32% had used chatbots for health information in the past year, and 13% had uploaded medical data for advice."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "An independent representative survey available before the post found about one in three US adults intentionally using AI chatbots for health information or advice. That meets the contract's substantial-minority reading. The packet has no contrary representative data. Limits: US adults only, and the measure is health information broadly rather than advice narrowly.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-bf86d4"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The parenthetical is Marcus's own assertion within his recommendation sentence."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The causal parenthetical is correctly separated from the surrounding normative advice not to trust LLMs with our lives."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'illusion' as misleading, overstated certainty, with training as a contributing cause, is an ordinary plain reading. A stricter reading (confidence wholly meaningless, training as the sole cause) would be harder to support."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ICLR 2025 paper, available before the post. RLHF models show more verbalized overconfidence than pre-RLHF models, reward models favour high confidence regardless of quality, and calibrated reward training reduces calibration error."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "EMNLP 2023. RLHF worsens token-probability calibration, but elicited verbal confidence can be fairly well calibrated in some models. This limits an absolute reading but does not refute the contributing-cause reading."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "June 2026 preprint, before the evaluation date. Across six open-weight models, instruction tuning harms calibration and the chat format adds overconfidence. Supports training as one cause among others."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Controlled before-and-after and reward-intervention experiments (e1, e3) show that post-training raises expressed confidence beyond what correctness warrants. That meets the support condition. e2 shows confidence is not wholly uninformative, which the contract says limits only a universal reading. Proprietary medical chatbots were not tested directly.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-please-dont-trust-your-chatbot-for-f290cb"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14930,
+  "output_tokens": 1847,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

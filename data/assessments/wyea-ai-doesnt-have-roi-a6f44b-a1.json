@@ -1,0 +1,135 @@
+{
+ "assessment_id": "wyea-ai-doesnt-have-roi-a6f44b-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-doesnt-have-roi-a6f44b",
+  "version": 2,
+  "content_hash": "0e6cbc9fcb5f787ac74ecdd58867e1a6f2197b4f18dc1233a631779bfbbe925a"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-doesnt-have-roi-a6f44b",
+  "version": 1,
+  "content_hash": "1496284ba6ef0054c2758fbc3ea1d3326868efb3b9395adf40cb32b76b5c626e"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-doesnt-have-roi-a6f44b-p1",
+  "content_hash": "c8f18eac527d47bab056b04da52ea002786de89d51fa9babb08732f6abba7533"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The complexity concern holds in controlled experiments: accuracy can collapse as problems become harder. The claim that additional resources only expand attempted tasks does not hold under the stated technical reading. Compute allocation and model scaling can improve successful answers and reliable execution. This is a mixed finding about capabilities, not proof that data-center spending pays for itself.",
+ "evidence_ids": [
+  "e5",
+  "e6",
+  "e7"
+ ],
+ "counterevidence_ids": [
+  "e6",
+  "e7"
+ ],
+ "limitations": [
+  "The result depends on interpreting data-center investment through its compute-scaling mechanism.",
+  "Synthetic tasks do not establish reliability across production workflows.",
+  "The studies do not settle the claimed decline in economic value."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-doesnt-have-roi-a6f44b-4x-review-anthropic-1",
+  "wyea-ai-doesnt-have-roi-a6f44b-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-doesnt-have-roi-a6f44b",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLMs can speed up some things, but in a way that becomes less valuable and less accurate as tasks grow more complex, and more investment in AI data centers does not appear to do anything except expand the number of tasks an LLM can attempt.",
+  "kind": "observation",
+  "conditions": [
+   "some things",
+   "does not appear to"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Large Language Models can speed up some things in a way that becomes increasingly less-valuable and accurate with the complexity of the task, and more investment in AI data centers does not appear to do anything other than expand the number of tasks that an LLM can attempt.",
+   "locator": "paragraph 149",
+   "url": "https://www.wheresyoured.at/ai-doesnt-have-roi",
+   "date": "2026-06-02",
+   "document_title": "AI Doesn't Have ROI",
+   "observed_at": "2026-10-28T22:25:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "can speed up some things",
+    "increasingly less-valuable and accurate with the complexity of the task",
+    "more investment in AI data centers",
+    "does not appear to do anything other than expand the number of tasks that an LLM can attempt"
+   ],
+   "our_interpretation": [
+    "Assess two components separately: the effect of task complexity and whether additional computing resources can improve successful execution.",
+    "The plain reading of the second component excludes improvements in accuracy or reliability on a fixed task, not just greater throughput or a wider selection of attempted tasks.",
+    "Controlled compute and model-scaling experiments test the proposed technical mechanism. They are a proxy for the capabilities enabled by data-center investment, not a direct assessment of capital expenditure.",
+    "Less valuable means reduced useful completed work after errors and correction. Accuracy alone does not fully measure economic value."
+   ],
+   "support_condition": "Controlled comparisons show declining accuracy and useful completion as task complexity rises; additional computing resources only increase attempted volume or breadth without improving successful execution.",
+   "contradiction_condition": "Controlled evidence shows that additional computation improves accuracy or reliable execution on the same tasks. A robust reversal of the asserted complexity effect would separately contradict that component."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The complexity concern holds in controlled experiments: accuracy can collapse as problems become harder. The claim that additional resources only expand attempted tasks does not hold under the stated technical reading. Compute allocation and model scaling can improve successful answers and reliable execution. This is a mixed finding about capabilities, not proof that data-center spending pays for itself.",
+  "limitations": [
+   "The result depends on interpreting data-center investment through its compute-scaling mechanism.",
+   "Synthetic tasks do not establish reliability across production workflows.",
+   "The studies do not settle the claimed decline in economic value."
+  ],
+  "evidence": [
+   {
+    "id": "e5",
+    "relation": "supports",
+    "excerpt": "a complete accuracy collapse",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2506.06941",
+    "publisher": "Parshin Shojaee and colleagues, NeurIPS 2025; arXiv copy",
+    "event_date": "2025",
+    "available_at": "2025-11-20",
+    "explanation": "Controlled puzzle experiments support the accuracy component: tested models fail beyond sufficient complexity. They do not establish declining economic value across every real-world task."
+   },
+   {
+    "id": "e6",
+    "relation": "contradicts",
+    "excerpt": "adaptively allocating test-time compute",
+    "locator": "Section 5, discussion of compute-optimal search and Figure 4",
+    "url": "https://arxiv.org/html/2408.03314v1",
+    "publisher": "Charlie Snell and colleagues, arXiv",
+    "event_date": "2024",
+    "available_at": "2024-08-06",
+    "explanation": "The experiments show that computation and its allocation can improve final answer performance on a fixed problem distribution. This contradicts the technical reading that additional resources only increase attempted volume, although it does not measure data-center investment returns."
+   },
+   {
+    "id": "e7",
+    "relation": "contradicts",
+    "excerpt": "more reliable at executing the task",
+    "locator": "Section 3.1, Result 2",
+    "url": "https://arxiv.org/html/2509.09677v3",
+    "publisher": "Akshit Sinha and colleagues, ICLR 2026; arXiv copy",
+    "event_date": "2025",
+    "available_at": "2026-03-13",
+    "explanation": "Controlled experiments find improved reliable execution with larger models even when the task is not knowledge-constrained. This supports a capability gain beyond merely attempting more tasks, with limited generalization from synthetic tasks."
+   }
+  ],
+  "what_would_resolve": "Direct evidence linking additional data-center resources to controlled changes in task success and net economic value would resolve the remaining investment-specific uncertainty.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "e72b15b2e6dbab3388b72f0c178488ec8b046d608047d89383b366df35c5fc9f",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:18:46Z"
+}

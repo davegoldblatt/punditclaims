@@ -1,0 +1,145 @@
+{
+ "packet_id": "wyea-the-ai-haters-manifesto-a4a3ce-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-haters-manifesto-a4a3ce",
+  "version": 1,
+  "content_hash": "05eb3d8b4e77019415ce195824495297ffac56151d18d44098ffd109b839d57a"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-haters-manifesto-a4a3ce",
+  "version": 1,
+  "content_hash": "b0c7d5e0a454fc3adeca542be952d1c2da4872f3046bce6fcc5f52d4f4a1ad96"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI \"2026\" \"183%\" \"122%\"",
+   "OpenAI \"operating margin\" \"183\" 2026",
+   "OpenAI \"operating margin\" \"122\" 2026",
+   "OpenAI \"183%\" \"Q2\" \"2026\"",
+   "OpenAI second quarter 2026 \"12.3\" \"non-GAAP\"",
+   "\"OpenAI\" \"Second-Quarter Sales\" \"2026\"",
+   "\"Anthropic\" \"2026\" \"second quarter\" \"costs\"",
+   "site.sec.gov OpenAI 2026 operating margin registration"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://the-decoder.com/openai-burned-through-1-22-per-dollar-earned-even-after-stripping-out-stock-based-compensation/",
+    "used": false,
+    "why": "Read successfully and reports Q1's adjusted margin, but supplies no comparable Q2 measure."
+   },
+   {
+    "url": "https://www.theinformation.com/newsletters/the-briefing/anthropic-likely-generating-least-35-revenue-openai",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   },
+   {
+    "url": "https://www.livemint.com/global/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-11787131395011.html",
+    "used": false,
+    "why": "Accessible WSJ syndication reports deterioration but does not specify the claimed Q2 non-GAAP margin or its exclusions."
+   },
+   {
+    "url": "https://xenospectrum.com/en/openai-valuation-65x-revenue-multiple/",
+    "used": true,
+    "why": "Accessible secondary account identifies Q2 operating losses and explicitly distinguishes GAAP actuals from adjusted forecasts."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing read to check Anthropic's cost trend and the provenance of the accompanying news report. It cannot establish OpenAI's margin."
+   },
+   {
+    "url": "https://finance.yahoo.com/markets/article/anthropic-is-losing-80-billion-on-paper--and-just-made-money-where-it-counts-153336487.html",
+    "used": true,
+    "why": "Accessible report summarizing the filing's quarterly computing expenses."
+   }
+  ],
+  "performed_at": "2026-10-29T21:16:41Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "xenospectrum-com-en-openai-valuation-65x-revenue-multiple",
+   "source_snapshot_id": "cf238d9d77f95fcf4d3a3b3a4dd973c5fc72bd86f853bb5daa52ae1265767ed3",
+   "publisher": "XenoSpectrum",
+   "source_type": "secondary_summary",
+   "url": "https://xenospectrum.com/en/openai-valuation-65x-revenue-multiple",
+   "locator": "Opening paragraph; accounting distinction discussed in the first financial-analysis section",
+   "receipt": {
+    "public_excerpt": "OpenAI's operating loss reached $12.3 billion.",
+    "quote_hash": "cf0c3475ee0748bfd10a786578c2898e2d89df8c100bc6daccc496f2f55fa15a",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-08-30",
+   "retrieved_at": "2026-10-29T21:10:25Z",
+   "relation": "context",
+   "explanation": "This reports an operating-loss amount and later identifies the first-half actuals as GAAP-based. It does not establish the requested Q2 non-GAAP margin; combining it with an adjusted Q1 margin would mix bases.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Operating loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "finance-yahoo-com-markets-article-anthropic-is-losing-80-billion-on-b5bd49494bd6",
+   "source_snapshot_id": "20dc82ca9d61bbdfd4664e3a9f072805f533e6b1a8b48b24801b7bb7238dd4ac",
+   "publisher": "Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/markets/article/anthropic-is-losing-80-billion-on-paper--and-just-made-money-where-it-counts-153336487.html",
+   "locator": "Paragraph beginning 'The swing came from a simple mismatch.'",
+   "receipt": {
+    "public_excerpt": "rose",
+    "quote_hash": "c65cec4784840025fca395c8708c45d54a96a51bc47e87b254da1d9b7f3c9b38",
+    "verified": "exact"
+   },
+   "event_date": "2026-06",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-29T03:06:10Z",
+   "relation": "context",
+   "explanation": "The report, checked against Anthropic's filing, documents higher quarterly compute costs alongside improving profitability. It concerns a different company and metric from OpenAI's specified margin, and compute expenses alone are narrower than total operating costs.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Compute and infrastructure expenses, Q1-to-Q2 comparison",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "No retrieved source establishes -183% specifically on a non-GAAP basis using the same exclusions as -122%.",
+  "The cited operating-loss reporting raises a material accounting-basis mismatch.",
+  "The broad two-company cost clause lacks a specified accounting basis and comparison period."
+ ],
+ "packet_hash": "657c09e0cb5aa432a41bc929b402541b961b990846859c386b01b16dbf15d854"
+}

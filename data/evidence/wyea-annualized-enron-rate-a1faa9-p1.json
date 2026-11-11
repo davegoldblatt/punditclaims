@@ -1,0 +1,115 @@
+{
+ "packet_id": "wyea-annualized-enron-rate-a1faa9-p1",
+ "claim_revision_ref": {
+  "id": "wyea-annualized-enron-rate-a1faa9",
+  "version": 1,
+  "content_hash": "dec18b8d5adba237221c907a8dfa1e02b083e99820caab44fe861dd4b0a3ae1c"
+ },
+ "contract_ref": {
+  "id": "wyea-annualized-enron-rate-a1faa9",
+  "version": 1,
+  "content_hash": "489cabd3e93c3dcfc03527e19c133357311e5e5452ce9cda7102c2768c0a6fca"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Microsoft data center capacity misleading 2GW 5GW September 2026 Zitron",
+   "site.microsoft.com 2026 \"gigawatts\" \"capacity\" September",
+   "site.microsoft.com \"2026\" \"gigawatt\" \"quarter\"",
+   "\"Microsoft\" \"2 gigawatts\" \"September 10, 2026\"",
+   "\"AI compute\" \"capacity\" measurement inventory 2026 Epoch"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+    "used": true,
+    "why": "Read successfully. Establishes the wording of the relevant public capacity statement."
+   },
+   {
+    "url": "https://epoch.ai/latest/introducing-the-ai-chip-users-explorer",
+    "used": true,
+    "why": "Read successfully. Dated independent research demonstrates both public measurement efforts and substantial uncertainty."
+   },
+   {
+    "url": "https://www.microsoft.com/en-us/Investor/events/fy-2026/earnings-fy-2026-q2",
+    "used": false,
+    "why": "Read successfully, but the earlier statement is outside the selected current observation period."
+   },
+   {
+    "url": "https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.reuters.com/business/microsoft-plans-38-gigawatts-data-center-capacity-by-2032-bloomberg-news-reports-2026-09-10/",
+    "used": false,
+    "why": "read_page returned HTTP 401; attempted syndicated versions also returned access errors."
+   },
+   {
+    "url": "https://www.wheresyoured.at/wherere-all-the-ai-chips/",
+    "used": false,
+    "why": "Read only to identify which Microsoft statements the speaker meant. Not used as evidence that his allegation is correct."
+   }
+  ],
+  "performed_at": "2026-10-29T10:34:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "microsoft-com-en-us-investor-events-fy-2026-earnings-fy-2026-q4",
+   "source_snapshot_id": "787095dbc00524875b839362824192df7bc2fc42500bba6baff57a359611020b",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+   "locator": "Satya Nadella's opening remarks, AI platform and infrastructure discussion",
+   "receipt": {
+    "public_excerpt": "capacity",
+    "quote_hash": "99b80a30ae5a9be90c4dd91fe1cd8eb11b24f82e23de49b0b00d4db2ec1fa833",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-29",
+   "available_at": "2026-07-29",
+   "retrieved_at": "2026-10-29T09:55:38Z",
+   "relation": "context",
+   "explanation": "This is evidence of the July public representation, not independent verification of the underlying commissioning. Its reference to overall capacity means that an AI-only capacity estimate cannot by itself disprove the statement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "epoch-ai-latest-introducing-the-ai-chip-users-explorer",
+   "source_snapshot_id": "35dfb9590958357da0c660a5c4e3fca1519565d145df476963fe7a8ba252d145",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/latest/introducing-the-ai-chip-users-explorer",
+   "locator": "Introduction to the September 9, 2026 launch",
+   "receipt": {
+    "public_excerpt": "help clarify who actually uses",
+    "quote_hash": "f9372008e31148d1c453f8c339a1a3cd2112498a0a9a2dd3200ad1ebe003d2ec",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-09",
+   "available_at": "2026-09-09",
+   "retrieved_at": "2026-10-29T10:03:05Z",
+   "relation": "context",
+   "explanation": "Epoch published estimates for five major AI developers using disclosures, financial information and modeling, with uncertainty intervals. This shows that meaningful public estimates exist while also documenting limits; it neither supplies a complete operational census nor establishes Microsoft misrepresentation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No complete, independently verified operational AI-capacity inventory was obtained.",
+  "No matching commissioning record establishes that Microsoft's stated additions were materially false or misleading.",
+  "The original reporting behind the cited AI-specific capacity comparison could not be read.",
+  "The claim does not specify how accurate or comprehensive public estimates must be to count as firm understanding."
+ ],
+ "packet_hash": "84963f3c7923668c2f1b36d45412fef7a6ac991689cd6f02babef12b0e72bdd5"
+}

@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-92cbcb-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-92cbcb",
+  "version": 1,
+  "content_hash": "f33655cc1b6f77466086be32fcfadb6873e38d43605594e11ef09d1ea2017f09"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-92cbcb",
+  "version": 1,
+  "content_hash": "3a5584b639a23c236d358a7b80fb272bce3cee37bee6b4d9b5b0f8cd4c2526fe"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org illusion thinking tools Tower Hanoi o3 code execution 2025",
+   "\"A Comment On\" \"Agentic Gap\"",
+   "site.openai.com \"o4-mini\" \"99.5\" \"Python\"",
+   "\"Hanoi\" \"o3\" \"tools\" paper June 2025 thinking"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-o3-and-o4-mini/",
+    "used": true,
+    "why": "Primary launch report explicitly describes tool-use improvements and reports Python-enabled AIME results for two models."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2506.18957",
+    "used": true,
+    "why": "Primary experiment compares tool-restricted and tool-enabled puzzle solving and records both successes and failures."
+   },
+   {
+    "url": "https://x.ai/news/grok-4",
+    "used": false,
+    "why": "Its tool configuration combines Python and internet access; Heavy also changes inference compute. It is less useful for isolating symbolic execution."
+   },
+   {
+    "url": "https://arxiv.org/abs/2507.17699",
+    "used": false,
+    "why": "The reported experiments were published after the post, and their timing was not established as falling within the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T07:10:33Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-o3-and-o4-mini",
+   "source_snapshot_id": "d1b7388d2041dc5ab79a241ac7d97c3ce5b5353765a2e7ef60304cec26f0b2eb",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-o3-and-o4-mini",
+   "locator": "Section Continuing to scale reinforcement learning; numerical results in What's changed",
+   "receipt": {
+    "public_excerpt": "academic benchmarks",
+    "quote_hash": "f6fbd778dacbf77f880017ddb8ac2519e8ea5fb51bc4b071282552c06900df5d",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T07:02:17Z",
+   "relation": "supports",
+   "explanation": "OpenAI reports AIME 2025 Python-enabled pass@1 scores of 99.5% for o4-mini and 98.4% for o3, explicitly describing tool-use improvements. These are developer-reported results, and the page cautions against treating tool-enabled scores as unaided-model performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-pdf-2506-18957",
+   "source_snapshot_id": "0950cefce69cddd79b4831b0594ee8c5479838905516177fc35124c7a65c6f17",
+   "publisher": "Sheraz Khan, Subha Madhavan and Kannan Natarajan / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2506.18957",
+   "locator": "Section 2.2, A Comparative Analysis: The Emergence of a Reasoning Hierarchy",
+   "receipt": {
+    "public_excerpt": "correctly detects",
+    "quote_hash": "45124dbae583a9250a498c01cb5482d483a422a10e13ad053bd8ce950056597d",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-23",
+   "retrieved_at": "2026-10-29T07:03:11Z",
+   "relation": "supports",
+   "explanation": "The experiments report that o4-mini failed nontrivial River Crossing cases without tools but solved cases using Python, including through correction of a failed strategy. The same report records GPT-4o producing an invalid solution with Python at higher complexity, limiting any universal reading.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The records do not establish an average benefit across all generative models and tasks.",
+  "The puzzle evidence is a limited case study rather than a large controlled trial."
+ ],
+ "packet_hash": "c8d53a33047afcdb9bba845a53925afe1add30f4e430f00d8799e8b07691f9a8"
+}

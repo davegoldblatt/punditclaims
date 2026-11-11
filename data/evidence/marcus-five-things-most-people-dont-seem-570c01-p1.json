@@ -1,0 +1,121 @@
+{
+ "packet_id": "marcus-five-things-most-people-dont-seem-570c01-p1",
+ "claim_revision_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-570c01",
+  "version": 1,
+  "content_hash": "3ffc13b8505ade5798d52db6444b08bd231c3fd63a4e1bcaed57113dd4fd5b23"
+ },
+ "contract_ref": {
+  "id": "marcus-five-things-most-people-dont-seem-570c01",
+  "version": 1,
+  "content_hash": "cdb1bb01247e5a24e0e0bd07cf5c7e5a3d0092c5addf3a284275f47ca42a4f2c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek R1 hallucination January 2025 Vectara 14.3",
+   "DeepSeek R1 hallucination January 27 2025 SimpleQA reliability",
+   "\"DeepSeek-R1\" \"What is your name\" \"Claude\" github issue"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": true,
+    "why": "The developer explicitly documents continuing reliability limitations in R1."
+   },
+   {
+    "url": "https://www.theregister.com/software/2025/01/27/deepseek-r1-struggles-with-its-identity-and-more/393032?td=keepreading",
+    "used": true,
+    "why": "Contemporaneous reporting preserves the text of a false self-identification example."
+   },
+   {
+    "url": "https://github.com/deepseek-ai/DeepSeek-R1/issues/42",
+    "used": false,
+    "why": "The original January 22 issue confirms the reported problem, but its screenshot's model output is not present in the plain-text extraction."
+   },
+   {
+    "url": "https://www.vectara.com/blog/deepseek-r1-hallucinates-more-than-deepseek-v3",
+    "used": true,
+    "why": "Independent hallucination measurement, used only as context because testing within the target period is not established."
+   }
+  ],
+  "performed_at": "2026-10-29T05:40:52Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2501-12948v1",
+   "source_snapshot_id": "ca43eab91020a36e390e35d28edaedf2a6ac6bb407983bbcf88c3987c61e34c3",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.12948v1",
+   "locator": "Section 5, Prompting Engineering",
+   "receipt": {
+    "public_excerpt": "Few-shot prompting consistently degrades its performance.",
+    "quote_hash": "318ddcbaaa87fe13fd403105baacc5360b165999b119f594f23de6bb45c7cda7",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-22",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:10Z",
+   "relation": "supports",
+   "explanation": "DeepSeek reports prompt sensitivity in the released R1 model. This establishes a continuing reliability limitation, though it does not itself measure hallucinations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "theregister-com-software-2025-01-27-deepseek-r1-struggles-with-its-d3ad2546c7c7",
+   "source_snapshot_id": "ec99b7356964e70cf87bcbaaec7530bbf83bdffc5ea38f1400447b8f227f3082",
+   "publisher": "The Register",
+   "source_type": "news_report",
+   "url": "https://www.theregister.com/software/2025/01/27/deepseek-r1-struggles-with-its-identity-and-more/393032?td=keepreading",
+   "locator": "Paragraph discussing the January 22 GitHub issue and quoting the model's reasoning",
+   "receipt": {
+    "public_excerpt": "My official name is Claude, created by Anthropic.",
+    "quote_hash": "2c20ff1734c44d8fdd7f92a4fd3e4774ec2a440cf8c20083aec5b07bffbff529",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-22",
+   "available_at": "2025-01-27",
+   "retrieved_at": "2026-10-29T05:35:14Z",
+   "relation": "supports",
+   "explanation": "The report quotes R1 fabricating its identity in its reasoning trace. The original issue's screenshot was not available as plain text, so this item relies on the contemporaneous news transcription; it establishes an example, not a population failure rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "vectara-com-blog-deepseek-r1-hallucinates-more-than-deepseek-v3",
+   "source_snapshot_id": "d07e5a43372d0fdd84214da6fa9e942d80b112d7bf9d357114c5d8aeeeaf5812",
+   "publisher": "Vectara",
+   "source_type": "independent_measurement",
+   "url": "https://www.vectara.com/blog/deepseek-r1-hallucinates-more-than-deepseek-v3",
+   "locator": "Introduction, results paragraph; methodology follows under Measuring the hallucination rate",
+   "receipt": {
+    "public_excerpt": "The results were surprising: Deepseek-R1’s hallucination rate was 14.3% - much higher than its non-reasoning predecessor: Deepseek-V3.",
+    "quote_hash": "36939806dbed7d3844f9512d5bdfcbffe939ce49a7d2c9ee06d4519cd34546a7",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-30",
+   "retrieved_at": "2026-10-29T05:34:13Z",
+   "relation": "context",
+   "explanation": "A subsequent summarization evaluation found continuing hallucinations. The precise test dates are unspecified, so this is corroborating context rather than decisive evidence for the January 20–28 period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The release-period example does not establish the frequency of hallucination.",
+  "The independent quantitative study does not identify exact testing dates."
+ ],
+ "packet_hash": "be4a7d473ddb6adde56775c18cb8da525c18b96d38f9ade3978a1a93ca1b776a"
+}

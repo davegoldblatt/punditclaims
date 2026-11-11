@@ -1,0 +1,197 @@
+{
+ "run_id": "wyea-oai-business-d2b097-4x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-oai-business-d2b097": "6714110ce958ec2c2a7fb4b9b01e2839f35c60a289f2e3d141a58dc976751b54",
+  "case:wyea-oai-business-d6f2e1": "f698e7fea05e1105669b3378c429624a9812edbc0fed7809c7119a94a151f7d5",
+  "case:wyea-oai-business-fbd930": "fba17884004e858e855abdb018cb2d4989c636db181326cd6d650282f12e6783",
+  "case:wyea-oai-business-fc5341": "6c5ba21541fb937af6312a49ca116cbd4d5ac8347cb886b4f03b4561ea45101a"
+ },
+ "started_at": "2026-10-29T22:11:43Z",
+ "completed_at": "2026-10-29T22:12:41Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states and endorses this financing prediction."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The proposition preserves the antecedent, threshold and deadline. The metadata's likely modality understates the firm prediction: I believe introduces an unqualified outcome commitment here."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Repeat financing is a fair ordinary reading. Using the completed initial round's size and counting a qualifying first closing is reasonable. This assesses financing occurrence, without establishing counterfactual necessity."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's disclosure establishes the antecedent and $6.6 billion threshold, rather than the subsequent financing outcome."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "SoftBank's financial disclosure records a completed $10 billion investment on April 15, 2025, exceeding the threshold before the deadline. It was published before the evaluation cutoff."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "conclusive_event",
+    "outcome": "supported",
+    "rationale": "The initial $6.6 billion round occurred, and the subsequent $10 billion closing met the contract's early-resolution rule on April 15, 2025. These are company and investor disclosures. They establish the financing prediction under the fair plain reading, but do not prove that OpenAI lacked alternatives.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-d2b097"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The percentage is Zitron's own endorsed calculation from attributed reporting."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful as shorthand for the contextual approximate subscriber-to-user share. It should not imply a measured conversion probability or a permanent ceiling."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract fairly assesses the explicit calculation using reported consumer subscribers and monthly users, while acknowledging different dates and population coverage."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporaneous secondary reporting supplies roughly 10 million paying ChatGPT users in September, supporting the calculation's numerator."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Secondary reporting supplies 350 million monthly users of OpenAI tools in June, supporting the stated denominator. It does not establish synchronized populations."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The reported inputs yield 2.86%, which rounds to 3%, satisfying the contract's approximate-calculation criterion. The packet supplies no reliable refutation of those inputs. Support is limited to that calculation: inaccessible primary records, differing dates and population coverage prevent treating it as a directly measured conversion rate.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-d6f2e1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron endorses the slowdown inference himself."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The surrounding passage supports the model-access scope and both companies. The selected statement asserts a historical slowdown firmly."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Comparing growth rates before and after June is an ordinary reading of slowed growth. Requiring consistent product coverage and revenue measures is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The summary provides June total OpenAI revenue and a March API run rate. Neither establishes comparable model-access growth before and after June for both companies."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet lacks comparable model-access revenue observations and prior growth rates for both companies. Total OpenAI revenue and an isolated March API figure cannot establish or refute the claimed slowdown. No outcome can be inferred from repeated rounded figures alone.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-fbd930"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The plateau and revenue-comparison inferences are Zitron's own, although the financial inputs are attributed to reporting."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the tentative factual inference and both components. Highly suggests expresses uncertainty rather than an unqualified factual commitment."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract acknowledges uncertainty but proposes scoring the underlying propositions anyway. The policy excludes hedged claims; plain-reading provisions cannot remove this qualification."
+    },
+    "evidence": [
+     {
+      "id": "e11",
+      "fits": true,
+      "relation": "context",
+      "note": "The June comparison supplies background but lacks matched periods and a subsequent revenue series. Outselling does not establish a materially different revenue scale."
+     },
+     {
+      "id": "e12",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports OpenAI's unspecified dispute of financial estimates. This company response supplies no corrected figures and does not establish either revenue proposition."
+     },
+     {
+      "id": "e13",
+      "fits": true,
+      "relation": "context",
+      "note": "Reports company-disclosed API usage growth. Usage is a different metric and cannot establish revenue growth or the comparison with Microsoft."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The speaker qualifies both conclusions as suggested by the figures. Under the policy, this tentative language is not scored, even though the underlying financial questions are testable. The contextual counterevidence also supplies no comparable revenue series that would settle those questions. The case is intact, so abstention is unwarranted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-oai-business-fc5341"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26192,
+  "output_tokens": 2080,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 299
+ },
+ "cost_usd": null
+}

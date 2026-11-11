@@ -1,0 +1,131 @@
+{
+ "assessment_id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1",
+  "version": 1,
+  "content_hash": "b7651eaf749f1d39029016fd2f5d5b369c7d03c47971268f292ca8020d8e7c67"
+ },
+ "contract_ref": {
+  "id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1",
+  "version": 1,
+  "content_hash": "00c9f6887015c6aad521c162f28a823e56dbe477ffe09ffd736288ba16fe1ded"
+ },
+ "packet_ref": {
+  "id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-p1",
+  "content_hash": "16225f4ffe9253b85e163a9f5e242bc00b579bc98a416a3e7cde6ccbe707d176"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The experiments support a narrower mechanism: explicit world-state reasoning can improve consistency. They also show that language models can learn and use simple internal situation representations. Neither result settles whether inadequate cognitive models are a central cause of the broader failures Marcus describes. Calling the claim supported would overgeneralize the intervention results; calling it contradicted would treat limited representations as robust world understanding.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The strongest directly relevant experiments use constrained domains.",
+  "The causal claim has no stated robustness threshold.",
+  "Later research on different models is context only."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-1x-review-anthropic-1",
+  "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-1x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1-1x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-new-are-yann-lecuns-new-ideas-058eb1",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The core problem with large language models is that they lack cognitive models of the world.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "which is a different way of saying that the problem with large language models is a lack of cognitive models.",
+   "locator": "paragraph 73",
+   "url": "https://garymarcus.substack.com/p/how-new-are-yann-lecuns-new-ideas",
+   "date": "2022-09-25",
+   "document_title": "How New are Yann LeCun’s “New” Ideas?",
+   "observed_at": "2026-10-29T00:05:02Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "the problem with large language models",
+    "a lack of cognitive models",
+    "robust representations of *how events unfold over time*",
+    "systems like GPT-2"
+   ],
+   "our_interpretation": [
+    "Read in context, cognitive models means representations of entities, their relationships, and changes in their states that support reliable reasoning about unfolding events.",
+    "The claim identifies an important underlying cause of language-model failures. It does not explicitly say this is their only cause.",
+    "The relevant systems are language models available when the post appeared. Later experiments on different systems provide context, not direct evidence about those systems.",
+    "A limited internal representation does not by itself refute the contextual claim about robustness. Conversely, improving a few tasks with an external model does not establish the general causal diagnosis."
+   ],
+   "support_condition": "Controlled experiments on relevant language models show that missing or defective representations of unfolding events explain substantial reasoning failures, and that supplying or repairing those representations reliably remedies the failures across varied tasks.",
+   "contradiction_condition": "Experiments show that the relevant models already possess and use robust representations of unfolding events, while their alleged failures persist for independently established reasons; or controlled interventions undermine the proposed causal explanation."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The experiments support a narrower mechanism: explicit world-state reasoning can improve consistency. They also show that language models can learn and use simple internal situation representations. Neither result settles whether inadequate cognitive models are a central cause of the broader failures Marcus describes. Calling the claim supported would overgeneralize the intervention results; calling it contradicted would treat limited representations as robust world understanding.",
+  "limitations": [
+   "The strongest directly relevant experiments use constrained domains.",
+   "The causal claim has no stated robustness threshold.",
+   "Later research on different models is context only."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "coherence and accuracy",
+    "locator": "Abstract, final sentence; full paper sections 3–6",
+    "url": "https://arxiv.org/abs/2107.02794",
+    "publisher": "Nye, Tessler, Tenenbaum and Lake; arXiv / NeurIPS",
+    "event_date": "2021",
+    "available_at": "2021-12-15",
+    "explanation": "Adding a symbolic world model and consistency checks improves performance, supporting the proposed mechanism in limited domains. The intervention also adds reasoning and search, so it does not isolate absent cognitive models as the general cause of language-model failures."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "simple representations of meaning",
+    "locator": "Section 6, Conclusion, first sentence; section 5, Limitations",
+    "url": "https://ar5iv.labs.arxiv.org/html/2106.00737",
+    "publisher": "Li, Nye and Andreas; ACL 2021, ar5iv rendering",
+    "event_date": "2021",
+    "available_at": "2021-06-01",
+    "explanation": "Experiments on BART and T5 challenge an absolute absence of internal situation representations. The authors nevertheless leave open whether prediction errors arise from representation errors and whether the findings extend to richer worlds, so this does not refute the contextual robustness claim."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "a causal structure",
+    "locator": "Abstract, final sentence",
+    "url": "https://proceedings.mlr.press/v267/yehezkel-rohekar25a.html",
+    "publisher": "Proceedings of Machine Learning Research",
+    "event_date": "2025",
+    "available_at": "2025-07-19",
+    "explanation": "Later experiments connect legal move generation with inferred causal structure in game-trained GPT models. These are different systems and tasks, and the reported association does not establish Marcus's broad causal diagnosis."
+   }
+  ],
+  "what_would_resolve": "Controlled interventions on the relevant model generations that repair, remove, or supply event representations, with matched information and computation controls, and test whether the effects generalize across varied reasoning failures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "76b5519bf49b68e47d83f6f065c93c8d32b81b3592010ec3640849e69eb1127e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:42:39Z"
+}

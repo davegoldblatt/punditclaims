@@ -1,0 +1,100 @@
+---
+// The claims register: one group of claims (see src/lib/listing.ts), newest
+// statement first, split into numbered pages of PAGE_SIZE rows. Links at the
+// top switch between the groups; every group and page is a static page, so
+// every claim is reachable without JavaScript. When a whole group fits on one
+// page, URL-backed filters and search narrow it in the browser; on a longer
+// group they would only see one page, so they are left out and the site
+// search covers every claim. Each count shown carries data-count (a key) and
+// data-n (the number), which scripts/check-dist.ts reconciles with the release.
+import ClaimRow from "./ClaimRow.astro";
+import Pager from "./Pager.astro";
+import { CLAIM_KINDS, HORIZON_LABEL, HORIZON_STATES, KIND_LABEL } from "../policy.ts";
+import { sortedTopics, tally, topicLabel } from "../lib/view.ts";
+import { GROUP_LABEL, GROUP_NOTE, GROUP_TITLE, GROUPS, listPath, PAGE_SIZE, type Group, type Listing } from "../lib/listing.ts";
+
+interface Props { listing: Listing; subjects: { id: string; name: string }[]; heading?: string }
+const { listing: L, subjects, heading } = Astro.props;
+const { scope, group, page, pages, total, rows, counts } = L;
+const name = (id: string) => subjects.find((s) => s.id === id)?.name ?? id;
+const key = (g: Group) => `group.${scope ?? "all"}.${g}`;
+const shownGroups = GROUPS.filter((g) => counts[g] > 0 || g === "checked");
+const filterable = pages === 1 && total > 0;
+const by = { kind: tally(rows, (c) => c.kind), horizon: tally(rows, (c) => c.review.horizon_now), person: tally(rows, (c) => c.subject_id) };
+type Facet = { name: string; title: string; all: string; options: { value: string; label: string; n: number }[]; multi?: boolean };
+const facets: Facet[] = filterable ? [
+  ...(scope ? [] : [{ name: "person", title: "Person", all: "Both people", options: subjects.map((s) => ({ value: s.id, label: s.name, n: by.person.get(s.id) ?? 0 })) }]),
+  { name: "kind", title: "Kind of claim", all: "All kinds", options: CLAIM_KINDS.filter((v) => by.kind.get(v)).map((v) => ({ value: v, label: KIND_LABEL[v], n: by.kind.get(v) ?? 0 })) },
+  { name: "horizon", title: "Deadline", all: "Any deadline state", options: HORIZON_STATES.filter((v) => by.horizon.get(v)).map((v) => ({ value: v, label: HORIZON_LABEL[v], n: by.horizon.get(v) ?? 0 })) },
+  { name: "topic", title: "Topic", all: "All topics", multi: true, options: sortedTopics(rows).map(([v, n]) => ({ value: v, label: topicLabel(v), n })) },
+] : [];
+const listId = `register-${scope ?? "all"}`;
+const from = (page - 1) * PAGE_SIZE + 1;
+const to = from + rows.length - 1;
+const noun = (n: number) => (n === 1 ? "claim" : "claims");
+const fmt = (n: number) => n.toLocaleString("en-US");
+---
+<section class="section" aria-labelledby={`${listId}-h`} data-filter-root data-noun="claims" data-group={group} data-page={page}>
+  <h2 id={`${listId}-h`}>{heading ?? GROUP_TITLE[group]} <span class="count">(<span data-count={key(group)} data-n={total}>{fmt(total)}</span>)</span></h2>
+  <nav class="groups" aria-label="Which claims to list">
+    <ul class="chips">
+      {shownGroups.map((g) => (
+        <li><a href={listPath(scope, g)} aria-current={g === group ? (page === 1 ? "page" : "true") : undefined}>{GROUP_LABEL[g]} <span class="num" data-count={key(g)} data-n={counts[g]}>{fmt(counts[g])}</span></a></li>
+      ))}
+    </ul>
+  </nav>
+  <p class="small group-note">{GROUP_NOTE[group]}</p>
+  {filterable && (
+    <form class="filters" data-filters hidden aria-label="Filter and sort these claims" role="search">
+      <div class="field field-search">
+        <label for={`${listId}-q`}>Search these claims</label>
+        <input id={`${listId}-q`} type="search" name="q" autocomplete="off" placeholder="Words from a claim or quotation" />
+      </div>
+      <details class="filter-more" data-filter-more>
+        <summary>Filters and order<span class="soft" data-active-count></span></summary>
+        <div class="filter-grid">
+          {facets.map((f) => (
+            <div class="field">
+              <label for={`${listId}-${f.name}`}>{f.title}</label>
+              <select id={`${listId}-${f.name}`} name={f.name} data-facet={f.multi ? "multi" : "one"} data-title={f.title.toLowerCase()}>
+                <option value="" data-label={f.all}>{f.all} ({total})</option>
+                {f.options.map((o) => <option value={o.value} data-label={o.label}>{o.label} ({o.n})</option>)}
+              </select>
+            </div>
+          ))}
+          <div class="field field-sort">
+            <label for={`${listId}-sort`}>Order, newest first</label>
+            <select id={`${listId}-sort`} name="sort" data-title="order">
+              <option value="said">Date said</option>
+              <option value="changed">Last changed</option>
+            </select>
+          </div>
+          <div class="field field-actions"><button class="btn" type="button" data-clear>Clear filters</button></div>
+        </div>
+      </details>
+    </form>
+  )}
+  {total === 0 ? (
+    <p class="result-line">No claims here yet.</p>
+  ) : filterable ? (
+    <p class="result-line" aria-live="polite" data-result-line>Showing <b data-shown>{total}</b> of {total} {noun(total)}, <span data-order-text>newest first</span>.</p>
+  ) : (
+    <p class="result-line">{noun(total).charAt(0).toUpperCase() + noun(total).slice(1)} {fmt(from)} to {fmt(to)} of {fmt(total)}, newest first. Page {page} of {pages}.</p>
+  )}
+  {filterable && <p class="filter-note notice" data-note hidden></p>}
+  {filterable && <noscript><p class="small soft">Filters need JavaScript. Every claim is listed below, newest first.</p></noscript>}
+  <ol class="register" data-list id={listId}>
+    {rows.map((c) => <ClaimRow claim={c} personName={name(c.subject_id)} showPerson={!scope} />)}
+  </ol>
+  {filterable && (
+    <div class="empty" data-empty hidden>
+      <p><strong>No claims match.</strong> Remove a filter or change the search, or clear everything.</p>
+      <p><button class="btn" type="button" data-clear>Clear filters</button></p>
+    </div>
+  )}
+  <Pager page={page} pages={pages} href={(n) => listPath(scope, group, n)} label={`Pages of ${GROUP_TITLE[group].toLowerCase()}`} />
+</section>
+<script>
+  import { initFilters } from "../scripts/filters.ts";
+  for (const root of document.querySelectorAll<HTMLElement>("[data-filter-root]")) initFilters(root);
+</script>

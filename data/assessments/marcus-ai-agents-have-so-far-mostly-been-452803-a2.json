@@ -1,0 +1,129 @@
+{
+ "assessment_id": "marcus-ai-agents-have-so-far-mostly-been-452803-a2",
+ "claim_revision_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-452803",
+  "version": 1,
+  "content_hash": "84abf841264aca91fdca18eeb435f0ce7f1f76f416e9a6f34ab9809e3c9367ab"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-452803",
+  "version": 1,
+  "content_hash": "f7d5570730b7adba016f09c858a38914a17b1d810181ff177e09a175151b1b83"
+ },
+ "packet_ref": {
+  "id": "marcus-ai-agents-have-so-far-mostly-been-452803-p1",
+  "content_hash": "427f3a7cf56c66650b486167abc37f713ed9295ce072bc2d41288e55bb0031da"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01-01",
+  "end": "2025-08-03",
+  "precision": "day"
+ },
+ "public_rationale": "The vulnerability part is well supported. The large red-teaming study Marcus cites (Zou et al., July 2025) logged over 60,000 successful attacks on 22 frontier agents. Nearly all agents broke policy within 10–100 queries. On the cause, the study shows that successful attacks used fake system tags and fake reasoning text to trick agents about who was giving instructions. Simon Willison explains that LLMs cannot reliably tell where an instruction came from. Under the plain reading, that is agents failing to understand what they are really being asked, so the causal claim is supported too. Note that 'superficial understanding' is Marcus's own framing of a mechanism researchers describe in other terms.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The causal reading depends on treating the instruction-versus-data problem as a form of superficial understanding.",
+  "The red-teaming study tested simulated deployments, not live systems."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-ai-agents-have-so-far-mostly-been-3c3c51-4x-review-anthropic-1",
+  "marcus-ai-agents-have-so-far-mostly-been-3c3c51-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-ai-agents-have-so-far-mostly-been-3c3c51-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-ai-agents-have-so-far-mostly-been-452803",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Current AI agents are grossly vulnerable to cyberattacks because of their superficial understanding of their tasks.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "As a consequence of their superficial understanding of what they’re being asked, current agents are grossly vulnerable to cyberattacks.",
+   "locator": "paragraph 32",
+   "url": "https://garymarcus.substack.com/p/ai-agents-have-so-far-mostly-been",
+   "date": "2025-08-03",
+   "document_title": "AI Agents have, so far, mostly been a dud",
+   "observed_at": "2026-10-28T23:55:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "current agents",
+    "grossly vulnerable to cyberattacks",
+    "as a consequence of their superficial understanding of what they’re being asked"
+   ],
+   "our_interpretation": [
+    "'Current' means agents as of the post date; I use 2025 up to 2025-08-03.",
+    "Plain reading of 'grossly vulnerable': in realistic tests, attackers can reliably make most frontier agents break their rules.",
+    "Plain reading of the cause: the attacks work because agents respond to surface features of input (injected text, fake system tags, fake reasoning) and do not grasp who is actually instructing them or what the task really requires. Evidence that agents cannot tell trusted from untrusted instructions counts toward this."
+   ],
+   "support_condition": "Large-scale tests show most current agents can be made to violate policies with modest effort, and successful attacks exploit the agents' failure to tell genuine instructions from injected or spoofed text.",
+   "contradiction_condition": "Tests show current agents resist most attacks, or the main attacks succeed through causes unrelated to how agents interpret instructions (for example, ordinary software bugs in the surrounding system)."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The vulnerability part is well supported. The large red-teaming study Marcus cites (Zou et al., July 2025) logged over 60,000 successful attacks on 22 frontier agents. Nearly all agents broke policy within 10–100 queries. On the cause, the study shows that successful attacks used fake system tags and fake reasoning text to trick agents about who was giving instructions. Simon Willison explains that LLMs cannot reliably tell where an instruction came from. Under the plain reading, that is agents failing to understand what they are really being asked, so the causal claim is supported too. Note that 'superficial understanding' is Marcus's own framing of a mechanism researchers describe in other terms.",
+  "limitations": [
+   "The causal reading depends on treating the instruction-versus-data problem as a form of superficial understanding.",
+   "The red-teaming study tested simulated deployments, not live systems."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Participants submitted 1.8 million prompt-injection attacks, with over 60,000 successfully eliciting policy violations such as unauthorized data access, illicit financial actions, and regulatory noncompliance.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2507.20526v1",
+    "publisher": "arXiv (Zou et al.)",
+    "event_date": "2025-07-28",
+    "available_at": "2025-07-28",
+    "explanation": "Over 60,000 successful attacks across 22 frontier agents, and nearly all agents broke policy within 10–100 queries. That is gross vulnerability."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "This attack involves injecting text that mimics the model’s internal reasoning, often using tags like \"<think>\" or similar structures.",
+    "locator": "section on attack strategies, Faux Reasoning (Attacker 2 in Figure 8)",
+    "url": "https://arxiv.org/html/2507.20526v1",
+    "publisher": "arXiv (Zou et al.)",
+    "event_date": "2025-07-28",
+    "available_at": "2025-07-28",
+    "explanation": "Successful attacks work by imitating surface forms (fake system tags, fake reasoning) that fool agents about who is instructing them. This fits a shallow grasp of the request."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "LLMs are unable to reliably distinguish the importance of instructions based on where they came from.",
+    "locator": "section The problem is that LLMs follow instructions in content",
+    "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta",
+    "publisher": "Simon Willison's Weblog",
+    "event_date": "2025-06-16",
+    "available_at": "2025-06-16",
+    "explanation": "A leading practitioner explains that agents are exploitable because they cannot tell the user's instructions from injected ones, which is a failure to understand what they are actually being asked."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ea6beaf84dd23a01c5dbcdf7d04fd75ddb9e0255bb2450e4bce33a2b58ef3dd2",
+ "supersedes_assessment_id": "marcus-ai-agents-have-so-far-mostly-been-452803-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:06:39Z"
+}

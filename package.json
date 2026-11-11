@@ -1,0 +1,32 @@
+{
+  "name": "punditclaims",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Pundit Claims: a source-backed register of AI claims by Gary Marcus and Ed Zitron. Data is YAML and JSON in git; the site is a reader for one release manifest.",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist && node --no-warnings scripts/check-dist.ts",
+    "preview": "astro preview",
+    "validate": "node --no-warnings scripts/validate.ts",
+    "test": "node --test --test-reporter=spec tests/*.test.ts",
+    "astro": "astro",
+    "build:fixture": "PC_RELEASE=fixture npm run build",
+    "build:scale": "PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} node --no-warnings fixtures/release/build.ts && PC_RELEASE=fixture PC_FIXTURE_SCALE=${PC_FIXTURE_SCALE:-11000} npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.137.0",
+    "@resvg/resvg-js": "2.6.2",
+    "astro": "7.4.2",
+    "satori": "0.19.3",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "pagefind": "1.5.2"
+  }
+}

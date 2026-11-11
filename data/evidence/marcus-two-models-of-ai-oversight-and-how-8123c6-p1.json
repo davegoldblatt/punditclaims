@@ -1,0 +1,165 @@
+{
+ "packet_id": "marcus-two-models-of-ai-oversight-and-how-8123c6-p1",
+ "claim_revision_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-8123c6",
+  "version": 2,
+  "content_hash": "92b8327edf71438adb22e92e4ba863a1809e0f33494bc6f5b45e0af3597a808d"
+ },
+ "contract_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-8123c6",
+  "version": 1,
+  "content_hash": "7eceb2c6e789c4ae4bdb3af75fd9f2f1f7738cda6f5166edefaa498e3339efe8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI plugins March 2023 safety sandbox review plugin store",
+   "site.apple.com 2023 \"sandbox\" \"apps\" security May",
+   "site.apple.com/newsroom/2023/05 app store prevented fraudulent transactions app review",
+   "ChatGPT plugins review process May June 2023 approval safety",
+   "\"Apple Platform Security\" \"May 2022\" sandbox pdf",
+   "\"Applying a Systematic Evaluation\" \"June 07\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/chatgpt-plugins/",
+    "used": true,
+    "why": "Read with read_page. The launch announcement describes separate safeguards for hosted tools and third-party API integrations."
+   },
+   {
+    "url": "https://www.apple.com/newsroom/2023/05/app-store-stopped-more-than-2-billion-in-fraudulent-transactions-in-2022/",
+    "used": true,
+    "why": "Read with read_page. Describes Apple's review process contemporaneously; historical fraud totals are not used."
+   },
+   {
+    "url": "https://css.csail.mit.edu/6.5660/2024/readings/apple-security-may22.pdf",
+    "used": true,
+    "why": "Read with read_page. An MIT-hosted copy of Apple's May 2022 security guide supplies historical sandboxing context."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.10254v2",
+    "used": true,
+    "why": "Read with read_page. Includes an explicitly dated June 7, 2023 plugin interaction."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.10254",
+    "used": true,
+    "why": "Read with read_page to verify the cited version's July 26, 2024 availability."
+   },
+   {
+    "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/14-Iqbal-Applying-a-Systematic-Evaluation-to-OpenAIs-ChatGPT-Plugins.pdf",
+    "used": false,
+    "why": "read_page returned HTTP 403. The readable arXiv version was used instead."
+   },
+   {
+    "url": "https://developers.openai.com/plugins/plugin-guidelines",
+    "used": false,
+    "why": "Search results describe a newer ChatGPT and Codex directory. They do not establish the 2023 requirements."
+   }
+  ],
+  "performed_at": "2026-10-29T09:08:20Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-chatgpt-plugins",
+   "source_snapshot_id": "05e2d427b4c2337a2449fd3723b1799b067464acfc385da1af535384c027c8fa",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/chatgpt-plugins",
+   "locator": "Code interpreter description",
+   "receipt": {
+    "public_excerpt": "sandboxed, firewalled execution environment",
+    "quote_hash": "34880c6cb3623422fa260e28e46983e787ddeb4d272e7d8a339ebd085dd1ac32",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-23",
+   "available_at": "2023-03-23",
+   "retrieved_at": "2026-10-29T02:09:18Z",
+   "relation": "context",
+   "explanation": "OpenAI described concrete isolation for its code interpreter. This is material against treating all plugins as lacking safeguards, but it does not establish equivalent protection across third-party plugins or against Apple's controls.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "apple-com-newsroom-2023-05-app-store-stopped-more-than-2-billion-in-4c750ba5f0f4",
+   "source_snapshot_id": "2e89e3ccf213f715ba42bb04c9f3a9639d3de05753edc28f40236099a2af25d1",
+   "publisher": "Apple",
+   "source_type": "company_disclosure",
+   "url": "https://www.apple.com/newsroom/2023/05/app-store-stopped-more-than-2-billion-in-fraudulent-transactions-in-2022",
+   "locator": "App Review section, first process-description paragraph",
+   "receipt": {
+    "public_excerpt": "safety checks",
+    "quote_hash": "e80b6be549505cd03872fc69b89a1cad5faecb6df82f0529e1e337945789470f",
+    "verified": "exact"
+   },
+   "event_date": "2023-05-16",
+   "available_at": "2023-05-16",
+   "retrieved_at": "2026-10-29T09:03:30Z",
+   "relation": "context",
+   "explanation": "Apple described checks on every submission, including automated checks and human review. This establishes the Apple side of the comparison, but does not measure OpenAI's review rigor.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "css-csail-mit-edu-6-5660-2024-readings-apple-security-may22-pdf",
+   "source_snapshot_id": "9b714e32ab2bbf1707eb88e63d6f74dfef8abc82ac59fea554bb820304d103bd",
+   "publisher": "Apple; copy hosted by MIT",
+   "source_type": "company_disclosure",
+   "url": "https://css.csail.mit.edu/6.5660/2024/readings/apple-security-may22.pdf",
+   "locator": "Page 100, Security of runtime process in iOS and iPadOS, Sandboxing",
+   "receipt": {
+    "public_excerpt": "Sandboxing",
+    "quote_hash": "dbfeb65384d29672a5c2c1673de1d78553f40a1d361113c0f342083300e3fb96",
+    "verified": "exact"
+   },
+   "event_date": "2022-05",
+   "available_at": "2022-05-31",
+   "retrieved_at": "2026-10-29T09:04:13Z",
+   "relation": "context",
+   "explanation": "The guide explains Apple's device-level isolation boundary. It predates the target period and does not compare that boundary with remote plugin services; the availability date is a conservative month-end bound for the May 2022 edition.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e4",
+   "role": "context",
+   "document_id": "arxiv-org-html-2309-10254v2",
+   "source_snapshot_id": "7f6d2cb59310024900e6f8299ee6df2e8f20c26f308c52686286b91ef631c07d",
+   "publisher": "Umar Iqbal, Tadayoshi Kohno and Franziska Roesner via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.10254v2",
+   "locator": "Appendix C.1, Clinical Trial Radar interaction",
+   "receipt": {
+    "public_excerpt": "anonymize user input.",
+    "quote_hash": "e15a9a152a965b2b5d3bc2f6681a1657afd2f51f677d5108fbed58c87e0c98bc",
+    "verified": "exact"
+   },
+   "event_date": "2023-06-07",
+   "available_at": "2024-07-26",
+   "retrieved_at": "2026-10-29T09:03:52Z",
+   "relation": "context",
+   "explanation": "The researchers dated this interaction to June 7 and reported failure to follow the plugin's anonymization instructions. It substantiates a contemporary privacy concern, but supplies no matched Apple comparison.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No sufficiently complete contemporary account of OpenAI's plugin review and enforcement process was recovered for comparison with Apple's.",
+  "The sources do not establish a common security boundary across device apps, hosted tools and remote plugin APIs.",
+  "The record does not establish the magnitude or system-wide scope of the claimed sandboxing difference."
+ ],
+ "packet_hash": "64fb0a08de713576fd4a56b5474da0a9e7903db563bef58c3428837bd7819d2a"
+}

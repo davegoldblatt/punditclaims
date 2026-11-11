@@ -1,0 +1,123 @@
+{
+ "assessment_id": "marcus-this-one-important-fact-about-current-f263c7-a1",
+ "claim_revision_ref": {
+  "id": "marcus-this-one-important-fact-about-current-f263c7",
+  "version": 1,
+  "content_hash": "106a00e7a8bd55cf4764c54aa715cc405084a6e2543868175b08ec495ccc3c1c"
+ },
+ "contract_ref": {
+  "id": "marcus-this-one-important-fact-about-current-f263c7",
+  "version": 1,
+  "content_hash": "d8a694fd20274df8425a59f91442758aadf3a04d542477eac79bb3063bd8e355"
+ },
+ "packet_ref": {
+  "id": "marcus-this-one-important-fact-about-current-f263c7-p1",
+  "content_hash": "d37163926911fd68d443b1eab56ffce4cd1cabe38991d6e37f7f7c25d7cbc06a"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-01-01",
+  "end": "2024-08-01",
+  "precision": "day"
+ },
+ "public_rationale": "The reasoning experiments support a contribution from sensitivity to altered inputs. The driving filing documents a relevant failure and its software conditions, but does not establish a failure to generalize beyond training examples. Nor do the reasoning experiments fully separate unfamiliarity from increased difficulty. The evidence is consistent with Marcus's explanation, but does not settle the causal claim across both domains. An unproven component is not counterevidence, so a mixed verdict would be inappropriate.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The internal training data and model-level causes of the driving failure are unavailable in the cited filing.",
+  "This finding does not establish that outlier handling was irrelevant to the collision.",
+  "The cited reasoning study uses selected perturbations rather than a representative sample of all reasoning tasks."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-this-one-important-fact-about-current-7ad1f3-4x-review-anthropic-1",
+  "marcus-this-one-important-fact-about-current-7ad1f3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-this-one-important-fact-about-current-7ad1f3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-this-one-important-fact-about-current-f263c7",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Current machine learning techniques handle outliers poorly and so struggle with driverless cars and high-level reasoning in unusual circumstances.",
+  "kind": "causal",
+  "conditions": [
+   "in unusual circumstances"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The AI world pretty much divides into two groups: those who understand why current machine learning techniques suck at outliers, and therefore struggle at things like driverless cars and high-level reasoning in unusual circumstances — and those who don’t.",
+   "locator": "paragraph 17",
+   "url": "https://garymarcus.substack.com/p/this-one-important-fact-about-current",
+   "date": "2024-08-01",
+   "document_title": "This one important fact about current AI explains almost everything",
+   "observed_at": "2026-10-28T23:59:30Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "current machine learning techniques suck at outliers",
+    "and therefore struggle",
+    "driverless cars",
+    "high-level reasoning in unusual circumstances"
+   ],
+   "our_interpretation": [
+    "The assessable proposition is the causal explanation identified in the supplied normalization. The rhetorical division of the AI community is not treated as a separate population claim.",
+    "The plain reading is that poor handling of unusual inputs contributes to failures in both automated driving and reasoning. It need not be the sole cause.",
+    "A failure in an unusual situation is insufficient by itself: evidence must connect that failure to the system's handling of the unusual input.",
+    "I use 2024 through publication for the contemporary systems described. Earlier crashes can provide context but cannot establish a defect still present in that period."
+   ],
+   "support_condition": "Controlled reasoning evaluations and driving investigations connect unusual-input handling to failures in both domains, rather than merely documenting errors or crashes.",
+   "contradiction_condition": "Controlled evidence shows that the relevant failures persist independently of unusual inputs and are explained by other mechanisms, while the systems reliably handle the alleged outliers."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The reasoning experiments support a contribution from sensitivity to altered inputs. The driving filing documents a relevant failure and its software conditions, but does not establish a failure to generalize beyond training examples. Nor do the reasoning experiments fully separate unfamiliarity from increased difficulty. The evidence is consistent with Marcus's explanation, but does not settle the causal claim across both domains. An unproven component is not counterevidence, so a mixed verdict would be inappropriate.",
+  "limitations": [
+   "The internal training data and model-level causes of the driving failure are unavailable in the cited filing.",
+   "This finding does not establish that outlier handling was irrelevant to the collision.",
+   "The cited reasoning study uses selected perturbations rather than a representative sample of all reasoning tasks."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "perturbed questions significantly challenge all models",
+    "locator": "Section 5.3, General Performance Analysis",
+    "url": "https://arxiv.org/html/2401.09395v3",
+    "publisher": "arXiv; Hong and colleagues",
+    "event_date": "2024",
+    "available_at": "2024-06-26",
+    "explanation": "Controlled question alterations produced substantial performance declines, supporting the reasoning component. Section 6.1 acknowledges that some alterations increase reasoning difficulty, so the experiment does not isolate unfamiliarity as the sole mechanism."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "increased risk",
+    "locator": "Page 2, Description of the Safety Risk; pages 2–3, defect description and chronology",
+    "url": "https://static.nhtsa.gov/odi/rcl/2024/RCLRPT-24E049-1733.PDF",
+    "publisher": "NHTSA; submitted by Waymo LLC",
+    "event_date": "2024-05-21",
+    "available_at": "2024-06-10",
+    "explanation": "The filing connects a pole collision to a combination of mapping and perception conditions, including a low predicted damage score. It does not establish that the object was outside training coverage or isolate a machine-learning generalization failure from other software mechanisms."
+   }
+  ],
+  "what_would_resolve": "A driving investigation or controlled replay that isolates poor handling of unusual inputs as a cause, together with reasoning tests that hold task difficulty constant and establish the same causal connection.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "fe952fb71b94ef92db0a11a08820545566c6ea09612242b4db876e669da9c445",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T22:01:59Z"
+}

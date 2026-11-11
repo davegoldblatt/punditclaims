@@ -1,0 +1,75 @@
+{
+ "run_id": "marcus-openais-code-red-111356-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-openais-code-red-111356": "5701c28b6f2a5210069e2ebb3c9d1d7e62a03898d2544f2533101c31b023f21d",
+  "payload:marcus-openais-code-red-111356": "f73d10e9b987a42331f558293ea08a52b438e8b7e7918e74374467258292336f",
+  "case:marcus-openais-code-red-339082": "d489f1bb0bc884157826936efc8f4d1d2f488ae6ace965b23317b7948424175a",
+  "payload:marcus-openais-code-red-339082": "da70c41fda978882d3c927a0941c4da9cdd9e2932fa30535405a9f87be0ab75f",
+  "case:marcus-openais-code-red-6ad305": "c5259e6382bbbea905afcf030a9d9dcdf782851597cae6caea5f2761faf5d4e9",
+  "payload:marcus-openais-code-red-6ad305": "a2f3e0adc9369713921b439a490daf016b88a105a1181a197c93939fc0bcf8b3"
+ },
+ "started_at": "2026-10-29T08:02:17Z",
+ "completed_at": "2026-10-29T08:02:58Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "e1 explanation: \"Reuters also states that it could not independently verify the underlying report.\" Reuters wrote that it \"could not immediately verify the report\"; the payload changes what Reuters said."
+    ],
+    "verdict": "fail",
+    "note": "The excerpt, proposition, criteria, axis and the unresolved outcome are all fine. The rationale's use of the $8B full-year figure (about $0.667B a month) and the Microsoft point match the evidence. Two problems: the e1 explanation says Reuters could not 'independently' verify the report, but Reuters actually said 'immediately'. Also, 'late-year rate' in the rationale loosely describes the July–September quarter. Fix the e1 wording and consider saying 'selected-quarter rate'.",
+    "claim_id": "marcus-openais-code-red-111356"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is verbatim and the proposition is faithful. The capability component rests on e1: Artificial Analysis, 2025-11-18, Gemini 3 Pro leads its index, inside the Nov 1–Dec 3 period. The financial rationale accurately reflects the HSBC forecast's stated remedies and its uncertainty about commitment flexibility, and the limitations label it as reporting about an analyst forecast. Citations, dates and relations are correct. The unresolved outcome matches the reviews.",
+    "claim_id": "marcus-openais-code-red-339082"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": false,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": false,
+    "overclaims": [
+     "normalized_proposition: \"as shown by Altman's non-answer\" turns Marcus's \"a further sign of\" into proof, and drops \"complete\", which the contract tests."
+    ],
+    "verdict": "fail",
+    "note": "The proposition leaves out 'complete' (non-answer), even though the contract's test depends on that word, and it says the non-answer 'shows' trouble where Marcus only called it 'a further sign'. e1's available_at of 2025-11-03 is published as fact, but the packet says the transcript archive shows no reliable publication date and that date needs independent confirmation. The limitations don't disclose this. Otherwise the rationale (multiyear commitments compared with $13B projected revenue, and the growth-based answer) is supported, and the unresolved outcome matches the reviews.",
+    "claim_id": "marcus-openais-code-red-6ad305"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 29417,
+  "output_tokens": 3950,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

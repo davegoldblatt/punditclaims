@@ -1,0 +1,123 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-aadc40-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-aadc40",
+  "version": 1,
+  "content_hash": "2c8587d0dea0a123c37363d876be70d2861c188c3c35ab8ae344d18f57f5a880"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-aadc40",
+  "version": 1,
+  "content_hash": "ab4bdeb42555b97b9f61d773fe29057c0234bc4e4a314512d50146112746301b"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org DeepSeek R1 backtracking majority voting 2025",
+   "site.openai.com introducing o3 o4 mini python tools AIME without tools"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "used": true,
+    "why": "Primary account of conditional strategy changes and consensus or reranking across multiple samples."
+   },
+   {
+    "url": "https://x.ai/news/grok-4",
+    "used": true,
+    "why": "Contemporaneous description of parallel consideration of multiple hypotheses."
+   },
+   {
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "used": true,
+    "why": "Original DeepSeek report distinguishes learned exploration from explicitly programmed behavior."
+   },
+   {
+    "url": "https://arxiv.org/abs/2501.12948v1",
+    "used": false,
+    "why": "Read to verify the original report's January 22, 2025 publication date."
+   }
+  ],
+  "performed_at": "2026-10-29T07:10:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-learning-to-reason-with-llms",
+   "source_snapshot_id": "5485a3b506db8414b8c705e82b4b18b3e33855f5a626666d64b1ff5a9d83ac0a",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/learning-to-reason-with-llms",
+   "locator": "Chain of Thought section; Evals section for consensus and reranking",
+   "receipt": {
+    "public_excerpt": "try a different approach",
+    "quote_hash": "b7d00b659d439ccf4c62c562c4035d2e24ee152d7e1a42ae210a34069517b0f5",
+    "verified": "exact"
+   },
+   "event_date": "2024-09",
+   "available_at": "2024-09-12",
+   "retrieved_at": "2026-10-29T01:00:44Z",
+   "relation": "supports",
+   "explanation": "OpenAI describes conditional strategy changes in o1 and reports AIME evaluations using consensus among 64 samples and reranking 1,000 samples. These document revision and aggregation, without establishing that aggregation was the default chat configuration.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "x-ai-news-grok-4",
+   "source_snapshot_id": "2561b753b391d854226db11f58edbe5f3aa12b1cf3925bc123dc42e1d339a9a8",
+   "publisher": "xAI",
+   "source_type": "company_disclosure",
+   "url": "https://x.ai/news/grok-4",
+   "locator": "Grok 4 Heavy section, opening sentence",
+   "receipt": {
+    "public_excerpt": "multiple hypotheses at once",
+    "quote_hash": "3ff19010864441759c6c0598a6aa6cb3d9ac517a7eb253627ed0b219705bf7f0",
+    "verified": "exact"
+   },
+   "event_date": "2025-07-09",
+   "available_at": "2025-07-09",
+   "retrieved_at": "2026-10-29T06:08:24Z",
+   "relation": "supports",
+   "explanation": "The launch disclosure confirms parallel exploration of alternatives in Grok 4 Heavy before Marcus's post. It does not disclose a complete symbolic search implementation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2501-12948v1",
+   "source_snapshot_id": "ca43eab91020a36e390e35d28edaedf2a6ac6bb407983bbcf88c3987c61e34c3",
+   "publisher": "arXiv; DeepSeek-AI",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2501.12948v1",
+   "locator": "Section 2.2.4, Self-evolution Process of DeepSeek-R1-Zero",
+   "receipt": {
+    "public_excerpt": "not explicitly programmed",
+    "quote_hash": "310c1841c86eb8f435ecea565d618f20b2e44018319438b20acbf768470ea449",
+    "verified": "exact"
+   },
+   "event_date": "2025-01",
+   "available_at": "2025-01-22",
+   "retrieved_at": "2026-10-29T02:17:10Z",
+   "relation": "context",
+   "explanation": "The report describes reflection and exploration of alternatives as learned behaviors. This limits any inference that resembling classical search proves the model contains an explicitly programmed symbolic search procedure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The disclosures do not establish historical borrowing from symbolic-AI researchers.",
+  "They do not establish that every reasoning model uses an external symbolic search algorithm.",
+  "They do not substantiate a universal historical claim that earlier neural systems used only one feed-forward pass."
+ ],
+ "packet_hash": "3fff45899cdc854fc7abeedaf883eb16cd382530414e30a8f84f0339b324bb4f"
+}

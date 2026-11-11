@@ -1,0 +1,58 @@
+---
+// The record's identifiers, a copyable citation that names the assessment
+// version and evidence cutoff, the dispute link, and the JSON that holds this
+// claim (one part of the claims export).
+import type { PublicAssessment, PublicClaim, ReleaseManifest } from "../lib/manifest.ts";
+import { SITE } from "../site.ts";
+import { assessmentPath, citation, disputeUrl, topicLabel } from "../lib/view.ts";
+import { claimsPartOf, claimsPartPath, partCount } from "../lib/exports.ts";
+
+interface Props { claim: PublicClaim; a: PublicAssessment | null; m: ReleaseManifest; personName: string }
+const { claim: c, a, m, personName } = Astro.props;
+const cite = citation(m, c, a, SITE.origin, personName);
+const dispute = disputeUrl(SITE.repo, c.claim_id, a?.assessment_id ?? null);
+const part = claimsPartOf(m.claims, c.claim_id);
+const parts = partCount(m.claims.length);
+---
+<aside class="claim-aside" aria-label="Cite or dispute" data-pagefind-ignore>
+  <div class="aside-block">
+    <h2>Topics</h2>
+    <p class="small">{c.topic_tags.map(topicLabel).join(", ")}</p>
+  </div>
+  <details class="aside-block rcpt">
+    <summary>IDs and data</summary>
+    <dl class="facts">
+      <div><dt>Claim</dt><dd><code>{c.claim_id}</code>, revision {c.revision}</dd></div>
+      {a && <div><dt>Assessment version</dt><dd><a href={assessmentPath(c, a.assessment_id)}><code>{a.assessment_id}</code></a></dd></div>}
+      <div><dt>Update</dt><dd><code>{m.release_id}</code></dd></div>
+    </dl>
+    <p class="small">In <a href={claimsPartPath(part)}>part {part} of {parts} of the data</a> (JSON).</p>
+    {c.related.length > 0 && (
+      <>
+        <h3 class="h3">Related claims</h3>
+        <ul class="small">{c.related.map((r) => <li>{r.relation}: <a href={`/claims/${r.claim_id}`}>{r.claim_id}</a></li>)}</ul>
+      </>
+    )}
+  </details>
+  <div class="aside-block">
+    <h2 id="cite-h">Cite this</h2>
+    <p class="cite-text" id={`cite-${c.claim_id}`}>{cite}</p>
+    <button class="btn" type="button" data-copy={`cite-${c.claim_id}`} hidden>Copy citation</button><span class="copy-status" aria-live="polite" data-copy-status></span>
+  </div>
+  <div class="aside-block">
+    <h2>Think we got it wrong?</h2>
+    <p class="small"><a href={dispute} rel="noopener">Tell us on GitHub</a>. The form fills in this claim for you. You need a free GitHub account, and what you write is public.</p>
+  </div>
+</aside>
+<script>
+  for (const btn of document.querySelectorAll<HTMLButtonElement>("[data-copy]")) {
+    const src = document.getElementById(btn.dataset.copy ?? "");
+    const status = btn.parentElement?.querySelector<HTMLElement>("[data-copy-status]");
+    if (!src || !navigator.clipboard) continue;
+    btn.hidden = false;
+    btn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(src.textContent ?? ""); if (status) status.textContent = "Copied."; }
+      catch { if (status) status.textContent = "Copy failed. Select the text above instead."; }
+    });
+  }
+</script>

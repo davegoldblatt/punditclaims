@@ -1,0 +1,126 @@
+{
+ "assessment_id": "marcus-generative-ais-crippling-and-widespread-54c7de-a4",
+ "claim_revision_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-54c7de",
+  "version": 1,
+  "content_hash": "393fc9c415ad7a3a7f0764bf0582e0abe25a1c888b1dc7869f21edcf07eca72f"
+ },
+ "contract_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-54c7de",
+  "version": 2,
+  "content_hash": "93c50cca98705e75cd593ddbd45f18378466ca0c9668d1f807c56253aa08d380"
+ },
+ "packet_ref": {
+  "id": "marcus-generative-ais-crippling-and-widespread-54c7de-p2",
+  "content_hash": "e268519c0a814d67e8466e74eb18a1ae250e71fb94a42457cf8039863f572a52"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2025-06-28",
+  "precision": "day"
+ },
+ "public_rationale": "May 2025 tests documented frequent illegal moves in the tested o3 and o4-mini configurations, supporting the recurring-failure part of the claim [e1]. September 2023 tests of gpt-3.5-turbo-instruct reported a median game length of 44 moves and classified 0.3% of outputs as illegal, limiting generalization across models [e2]. Neither evaluation supplies the phase-specific first-illegal-move distribution and opening-to-middlegame quality comparison needed to establish the combined claim [e1][e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Game lengths alone do not establish the chess phase in which the first illegal move occurred [e1][e2].",
+  "The May evaluation stopped games at the first flagged illegal move, included two notation ambiguities, and reported inconsistent subsidiary counts [e1].",
+  "Extended legal play in one model does not establish stable move quality by phase or disprove recurring failures in other models [e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-generative-ais-crippling-and-widespread-3d27a5-4x-review-anthropic-1",
+  "marcus-generative-ais-crippling-and-widespread-3d27a5-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-generative-ais-crippling-and-widespread-3d27a5-3x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-generative-ais-crippling-and-widespread-54c7de",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "LLMs often get lost by the chess midgame, playing worse and making illegal moves.",
+  "kind": "observation",
+  "conditions": [
+   "by the midgame"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "So what happens? By the midgame, LLMs often get lost. Not only does the quality of play diminish deeper into the game, but LLMs start to make illegal moves.",
+   "locator": "paragraph 39",
+   "url": "https://garymarcus.substack.com/p/generative-ais-crippling-and-widespread",
+   "date": "2025-06-28",
+   "document_title": "Generative AI’s crippling and widespread failure to induce robust models of the world",
+   "observed_at": "2026-10-28T23:56:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "By the midgame",
+    "LLMs often get lost",
+    "quality of play diminish deeper into the game",
+    "start to make illegal moves"
+   ],
+   "our_interpretation": [
+    "The plain reading is a recurring pattern across relevant LLM games: deterioration in move quality and illegal moves appearing by the middlegame.",
+    "Often does not mean every model or every game. An isolated failure is insufficient.",
+    "Middlegame means the chess phase following the opening, not an evaluator-imposed move number.",
+    "Move quality and legality must be assessed separately. This claim does not require proving the proposed world-model explanation.",
+    "The target is the performance of relevant models as known by publication, including applicable earlier tests. There is no June-only cutoff."
+   ],
+   "support_condition": "Repeated-game evaluations show that illegal moves commonly occur by the middlegame and that independently scored move quality declines from the opening into later play across relevant models.",
+   "contradiction_condition": "Representative stage-specific evaluations show generally maintained or improved move quality and consistently legal play through the middlegame. An exceptional successful model alone does not refute often."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "May 2025 tests documented frequent illegal moves in the tested o3 and o4-mini configurations, supporting the recurring-failure part of the claim [e1]. September 2023 tests of gpt-3.5-turbo-instruct reported a median game length of 44 moves and classified 0.3% of outputs as illegal, limiting generalization across models [e2]. Neither evaluation supplies the phase-specific first-illegal-move distribution and opening-to-middlegame quality comparison needed to establish the combined claim [e1][e2].",
+  "limitations": [
+   "Game lengths alone do not establish the chess phase in which the first illegal move occurred [e1][e2].",
+   "The May evaluation stopped games at the first flagged illegal move, included two notation ambiguities, and reported inconsistent subsidiary counts [e1].",
+   "Extended legal play in one model does not establish stable move quality by phase or disprove recurring failures in other models [e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "illegal moves",
+    "locator": "Illegal moves; Longest game and (false) illegal move?",
+    "url": "https://blog.mathieuacher.com/GPTReasoningO3O4miniAndChess-copy",
+    "publisher": "Mathieu Acher",
+    "event_date": "2025-05",
+    "available_at": "2025-05-25",
+    "explanation": "Frequent illegal endings and reported median lengths around 15 moves support recurring early failures in these configurations. The study does not supply a controlled phase-specific decline in move quality, and its game-count summaries contain inconsistencies."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "the ability to play legal moves.",
+    "locator": "Conclusion about ability of gpt-3.5-turbo-instruct to play legal moves",
+    "url": "https://blog.mathieuacher.com/GPTsChessEloRatingLegalMoves",
+    "publisher": "Mathieu Acher",
+    "event_date": "2023-09",
+    "available_at": "2023-09-30",
+    "explanation": "For gpt-3.5-turbo-instruct, the report describes extended legal play, a median game length of 44 moves and 0.3% illegal outputs. This limits generalization across LLMs, but neither disproves often nor establishes stable move quality by phase."
+   }
+  ],
+  "what_would_resolve": "A reproducible evaluation of relevant models existing by June 28, 2025, with chess-phase labels, first-illegal-move distributions, notation errors reported separately, and engine-scored move quality by phase. The analysis should account for games stopped at the first illegal move.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "5a639feb2db10b724070ed798e29573f9aa87d5252de157ef5eebf46cc9b91a7",
+ "supersedes_assessment_id": "marcus-generative-ais-crippling-and-widespread-54c7de-a3",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-09T20:40:47Z"
+}

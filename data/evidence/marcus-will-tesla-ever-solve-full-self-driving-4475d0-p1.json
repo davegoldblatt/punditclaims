@@ -1,0 +1,103 @@
+{
+ "packet_id": "marcus-will-tesla-ever-solve-full-self-driving-4475d0-p1",
+ "claim_revision_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-4475d0",
+  "version": 2,
+  "content_hash": "47cc31b60553de753c0e39e68b965567e58fe30392e433d55c7cc0a929a6a5fa"
+ },
+ "contract_ref": {
+  "id": "marcus-will-tesla-ever-solve-full-self-driving-4475d0",
+  "version": 1,
+  "content_hash": "a1d661d2f2184f49cebf3586dca044feace92f30678c5015721c20bb53d85e95"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Tesla June 2022 full self driving requires active supervision level 2 NHTSA",
+   "site.waymo.com June 2022 fully autonomous service San Francisco Phoenix",
+   "site.tesla.com 2022 \"currently enabled features\" \"active driver supervision\"",
+   "site.sec.gov/Archives/edgar/data/1318605 2022 \"FSD\" \"driver\"",
+   "site.waymo.com \"2022\" \"June\" \"24/7\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://static.nhtsa.gov/odi/inv/2022/INOA-EA22002-3184.PDF",
+    "used": true,
+    "why": "Read successfully. Contemporary investigation describes Tesla's supervisory driving arrangement and unresolved safety questions."
+   },
+   {
+    "url": "https://waymo.com/blog/2022/03/taking-our-next-step-in-city-by-bay/",
+    "used": true,
+    "why": "Read successfully. Documents actual driverless progress and staged geographical expansion before the observation window."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017022000796/tsla-20211231.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.tesla.com/support/fsd",
+    "used": false,
+    "why": "The current support page cannot establish the exact June 2022 product state."
+   }
+  ],
+  "performed_at": "2026-10-29T09:55:12Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "static-nhtsa-gov-odi-inv-2022-inoa-ea22002-3184-pdf",
+   "source_snapshot_id": "6f59bd3dc7463620cf9f36b07b3701abd6d3dc03f11284cef5e41a5ad6e71dfc",
+   "publisher": "National Highway Traffic Safety Administration",
+   "source_type": "filing",
+   "url": "https://static.nhtsa.gov/odi/inv/2022/INOA-EA22002-3184.PDF",
+   "locator": "Detailed Summary, driver behavior discussion near the end",
+   "receipt": {
+    "public_excerpt": "this supervisory driving task",
+    "quote_hash": "7aa8e4f398634b1595f789d1f67fa6e16dd3b8dab69bdb8a5905df4fe410a684",
+    "verified": "exact"
+   },
+   "event_date": "2022-06-08",
+   "available_at": "2022-06-09",
+   "retrieved_at": "2026-10-29T03:44:08Z",
+   "relation": "supports",
+   "explanation": "NHTSA's investigation describes Tesla's Level 2 systems as dependent on driver supervision and expands examination of their safety risks. This supports a capability gap for Tesla, but does not measure its distance to unrestricted autonomy or establish Waymo's position.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "waymo-com-blog-2022-03-taking-our-next-step-in-city-by-bay",
+   "source_snapshot_id": "85dc7a9da574827b3c7ea8ce3b0c72da111860cad12b1ca01e07c86d42d59e24",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://waymo.com/blog/2022/03/taking-our-next-step-in-city-by-bay",
+   "locator": "Paragraph discussing Phoenix expansion",
+   "receipt": {
+    "public_excerpt": "expanding to another area",
+    "quote_hash": "2f954f2fb8e1ef4932d2bf10e09a18690bb566355c4f92b05ea2456215b31b1e",
+    "verified": "exact"
+   },
+   "event_date": "2022-03-30",
+   "available_at": "2022-03-30",
+   "retrieved_at": "2026-10-29T09:45:07Z",
+   "relation": "context",
+   "explanation": "The announcement describes existing driverless service in Phoenix's East Valley, employee driverless rides in San Francisco, and staged expansion. It demonstrates both useful autonomy and geographical limits, without measuring proximity to unrestricted operation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e6"
+ ],
+ "unresolved_gaps": [
+  "No comparable June 2022 evaluation measures remaining technical work for both companies.",
+  "The evidence establishes supervised or geographically restricted operation, but not the stronger claim about distance to unrestricted capability.",
+  "Company operating decisions do not reveal all internal capabilities or their maturity."
+ ],
+ "packet_hash": "e1002b768a716fd0dc63bc9211ef4351b153c2e47d7d9dbce723a8a07fe37342"
+}

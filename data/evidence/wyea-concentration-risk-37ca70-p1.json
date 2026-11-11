@@ -1,0 +1,124 @@
+{
+ "packet_id": "wyea-concentration-risk-37ca70-p1",
+ "claim_revision_ref": {
+  "id": "wyea-concentration-risk-37ca70",
+  "version": 2,
+  "content_hash": "691215e12ee0c03866dfbe3cf8f3db537e54192a8f0ad5172785f6324e552492"
+ },
+ "contract_ref": {
+  "id": "wyea-concentration-risk-37ca70",
+  "version": 1,
+  "content_hash": "d9e21a86c01f189185f98c400eeac09186e2b05d166732d81befc27cf6472217"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI July 2026 750 billion compute 2030 SB Energy",
+   "Anthropic 517 billion agreements September 2026 Information",
+   "\"How Anthropic Clinched $517 Billion\"",
+   "\"OpenAI\" \"750 billion\" \"July 22\" Reuters",
+   "site.datacenterdynamics.com \"Anthropic\" \"517\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-lifts-planned-compute-spending-144917731.html",
+    "used": true,
+    "why": "Fully read. Identifies the OpenAI figure as projected spending."
+   },
+   {
+    "url": "https://aistockwire.com/blog/anthropic-517-billion-compute-commitments-nasdaq-september-2026",
+    "used": true,
+    "why": "Fully read. Provides context about the estimated Anthropic total and missing public prices; later updates prevent treating it as a clean post-date snapshot."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-clinched-517-billion-compute-deals-11-months",
+    "used": false,
+    "why": "read_page returned HTTP 403. Search text was not admitted as evidence."
+   },
+   {
+    "url": "https://www.wsj.com/tech/openais-planned-cloud-spending-hits-750-billion-as-computing-efforts-ramp-up-6ac3f58a",
+    "used": false,
+    "why": "read_page returned HTTP 401."
+   },
+   {
+    "url": "https://www.datacenterdynamics.com/en/news/anthropic-signed-517bn-in-compute-agreements-in-past-11-months/",
+    "used": false,
+    "why": "read_page did not return the article body, despite its appearance in web results."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+    "used": false,
+    "why": "Potential primary evidence about SB Energy guarantees, but read_page returned HTTP 403. Guarantees would also require reconciliation to lab payment obligations."
+   }
+  ],
+  "performed_at": "2026-10-29T10:45:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "finance-yahoo-com-technology-ai-articles-openai-lifts-planned-compu-b4a992c43a62",
+   "source_snapshot_id": "82b0f9c2399f8dfc148332d97c1b37c0cd4445e23e86ffd761c18fcf97fa424d",
+   "publisher": "Blockspace, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-lifts-planned-compute-spending-144917731.html",
+   "locator": "First article paragraph",
+   "receipt": {
+    "public_excerpt": "$750 billion",
+    "quote_hash": "1b06abca12ea13cb4e9c455dc4be0252015632d6f700dcb3b119f0b45219aede",
+    "verified": "exact"
+   },
+   "event_date": "2026-07-22",
+   "available_at": "2026-07-22",
+   "retrieved_at": "2026-10-29T09:58:32Z",
+   "relation": "context",
+   "explanation": "This is a spending projection through 2030, not a reconciled stock of outstanding contracts on September 8. Reporting is used because the underlying WSJ article could not be read.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected cumulative compute expenditure through 2030",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": "2030-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "aistockwire-com-blog-anthropic-517-billion-compute-commitments-nasd-3650a2881f01",
+   "source_snapshot_id": "1bdfd3c0fe8c4ac1d95f7a727e6b395dda937c27abc98f3f0b0685996479ad1b",
+   "publisher": "AIStockWire",
+   "source_type": "secondary_summary",
+   "url": "https://aistockwire.com/blog/anthropic-517-billion-compute-commitments-nasdaq-september-2026",
+   "locator": "Section: What Anthropic has actually confirmed",
+   "receipt": {
+    "public_excerpt": "no price",
+    "quote_hash": "e5dacfadcfb1e96ca04a66e7b291868d0ef0a3ede59ac99fbe213f2df3d09eac",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-13",
+   "available_at": "2026-10-27",
+   "retrieved_at": "2026-10-29T10:35:53Z",
+   "relation": "context",
+   "explanation": "The article attributes a potential $517 billion total to The Information while identifying missing public contract prices. Its later, updated account cannot establish the combined September 8 total.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No complete, nonduplicative September 8 contract reconciliation was obtained.",
+  "The amount of incremental SB Energy obligations, and their overlap with OpenAI's projection, remains unverified.",
+  "The rounded figures 750 and 517 sum to 1,267 billion; that subtotal neither establishes the claimed threshold nor provides an upper bound.",
+  "Potential contract value is not necessarily binding minimum payments or eventual recognized revenue."
+ ],
+ "packet_hash": "34937c8b0811c57c8c1c40834ffa04a182c51973f98a78415cfc35a2ef6cda07"
+}

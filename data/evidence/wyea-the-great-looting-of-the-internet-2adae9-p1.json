@@ -1,0 +1,129 @@
+{
+ "packet_id": "wyea-the-great-looting-of-the-internet-2adae9-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-great-looting-of-the-internet-2adae9",
+  "version": 2,
+  "content_hash": "533c8f87bdd2ca702fd9c3f3a9c2e164aa39e87bbc11b9a10a7b008ac093c752"
+ },
+ "contract_ref": {
+  "id": "wyea-the-great-looting-of-the-internet-2adae9",
+  "version": 1,
+  "content_hash": "6803e0140b97158ddff5a0287e399741790e0b8f434debdd3fbc5daa83e2285d"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM trained exclusively scientific papers Galactica dataset Common Crawl",
+   "Galactica paper dataset Common Crawl 2022 106 billion",
+   "StarCoder 2023 trained trillion tokens GitHub repositories Wikipedia arxiv Common Crawl",
+   "\"LLaMA\" \"CommonCrawl\" \"67.0%\" 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.06161v2",
+    "used": true,
+    "why": "Documents StarCoder's training corpus and explicitly restricts it to The Stack."
+   },
+   {
+    "url": "https://github.com/bigcode-project/starcoder",
+    "used": true,
+    "why": "Documents code-generation applications and a coding-assistant release dated 2023-05-09."
+   },
+   {
+    "url": "https://arxiv.org/html/2302.13971v1",
+    "used": true,
+    "why": "Shows that the described Common Crawl-based mixture does fit a prominent named model family."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.09085v1",
+    "used": false,
+    "why": "Investigated as a possible counterexample, but its documentation explicitly includes filtered Common Crawl."
+   },
+   {
+    "url": "https://huggingface.co/bigcode/starcoder",
+    "used": false,
+    "why": "read_page returned insufficient model-card content; the paper and original repository provide usable primary documentation."
+   }
+  ],
+  "performed_at": "2026-10-29T13:07:44Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-06161v2",
+   "source_snapshot_id": "fe47a589085501485680fb8b0a2b50921d28d1c0049f929315c9d537b34286c5",
+   "publisher": "BigCode research collaboration, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.06161v2",
+   "locator": "Introduction; corroborated by section 3, Data Curation and Cleaning",
+   "receipt": {
+    "public_excerpt": "trained on permissively licensed data from The Stack",
+    "quote_hash": "76051b401bbcea2e5ed7edd1ca085c06c4e09157490c9368af3de71f0a3f1a35",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-12-13",
+   "retrieved_at": "2026-10-29T12:56:57Z",
+   "relation": "contradicts",
+   "explanation": "The methods restrict StarCoderBase's training set to The Stack's GitHub repositories; StarCoder adds Python fine-tuning from that corpus. This documented training recipe does not include Common Crawl.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-bigcode-project-starcoder",
+   "source_snapshot_id": "8521a23ab2ce8564ae47cc728d7e1387a2c3ff34bc65c3f2dce9af62aa63b70e",
+   "publisher": "BigCode",
+   "source_type": "company_disclosure",
+   "url": "https://github.com/bigcode-project/starcoder",
+   "locator": "Quickstart; dated coding-assistant announcement under News",
+   "receipt": {
+    "public_excerpt": "perform code generation",
+    "quote_hash": "80be38da6b37ba37170b34492ab703bc44305a44b23b068d0a3aaa3a9f12254e",
+    "verified": "exact"
+   },
+   "event_date": "2023-05-09",
+   "available_at": "2023-05-09",
+   "retrieved_at": "2026-10-29T12:56:46Z",
+   "relation": "contradicts",
+   "explanation": "The repository provides an application of the model and announces a coding assistant before Zitron's post. Together with e1, it establishes an application-level counterexample.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2302-13971v1",
+   "source_snapshot_id": "056c249511d63da66e43f2985cd224f347eb84bc04d336913e99ae6642f46628",
+   "publisher": "Meta AI, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2302.13971v1",
+   "locator": "Section 2.1, Pre-training Data, C4 subsection",
+   "receipt": {
+    "public_excerpt": "diverse pre-processed CommonCrawl datasets",
+    "quote_hash": "e87238ebc952b6f3a2dbe5f22b1d0b54c30685168d7ba73991635b8cd8eeb675",
+    "verified": "exact"
+   },
+   "event_date": "2023-02",
+   "available_at": "2023-02-27",
+   "retrieved_at": "2026-10-29T03:41:46Z",
+   "relation": "context",
+   "explanation": "LLaMA's documented mixture includes Common Crawl, C4, and other sources. This supports the broader observation about major models, but cannot establish the universal claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "This assessment does not reconstruct the complete training corpora of all four named product families.",
+  "The hedged assertions about total internet coverage and legality remain unquantified."
+ ],
+ "packet_hash": "79f6adce719eb12a9e529d0f876bcbc9e9baeb81b3b5af713f6783eaea603510"
+}

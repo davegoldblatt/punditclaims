@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-b47ab1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-b47ab1",
+  "version": 1,
+  "content_hash": "1a096dc4697c98cc2cb5f6d8f040fa0d372c7f5aa0823c806d139c2747b17cc7"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-b47ab1",
+  "version": 1,
+  "content_hash": "507a70debe1edc0689eacba74ac7979ca340fd83ab85f19d3b754640c287a7fe"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com introducing GPT-4.5 hallucinations reasoning pretraining scaling 2025",
+   "2025 pretraining scaling alone alignment base models evaluation reasoning hallucination GPT 4.5",
+   "site.arxiv.org 2025 \"pretraining\" \"alignment\" \"scaling\" base models"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/introducing-gpt-4-5/",
+    "used": true,
+    "why": "Describes an explicit pretraining-scaling advance and reports reasoning benchmarks, but also documents additional interventions."
+   },
+   {
+    "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+    "used": true,
+    "why": "Reports remaining hallucination and safety failures while describing supervised fine-tuning and reinforcement learning from human feedback."
+   },
+   {
+    "url": "https://arxiv.org/html/2507.06261v1",
+    "used": false,
+    "why": "The inspected Gemini report describes multiple training and inference changes, so it does not isolate pretraining scale."
+   },
+   {
+    "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+    "used": false,
+    "why": "Its observed failures concern models with several training interventions, not a controlled pretraining-only comparison."
+   }
+  ],
+  "performed_at": "2026-10-29T07:09:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-introducing-gpt-4-5",
+   "source_snapshot_id": "c69fa72f2c930ee685e73e1c65e9d59b65894b13edee4ea561a82ae7f60eb15f",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-gpt-4-5",
+   "locator": "Appendix, introductory paragraph and model evaluation scores",
+   "receipt": {
+    "public_excerpt": "shows meaningful improvements",
+    "quote_hash": "fd1c463e86906864ded20fd8566eb533e2d3f9f8227a27a5d1bbf892c85abc21",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-27",
+   "available_at": "2025-02-27",
+   "retrieved_at": "2026-10-29T02:27:02Z",
+   "relation": "context",
+   "explanation": "OpenAI reports reasoning improvements but remaining errors: GPT-4.5 scores 36.7% on AIME 2024 and 71.4% on GPQA. The same announcement describes architecture, optimization, and post-training changes, so the released model is not a clean pretraining-only experiment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "cdn-openai-com-gpt-4-5-system-card-2272025-pdf",
+   "source_snapshot_id": "a11d0dcb330b0eb3975e9273dcc51c0f247486207735cc6f875d4dbcced4c96d",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+   "locator": "Section 3.1.3, Hallucination Evaluations; training description in Section 1",
+   "receipt": {
+    "public_excerpt": "More work is needed",
+    "quote_hash": "16f36cd45db945716b0661f81201e056e6801f1967435f09cc2c0e09c5191020",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-27",
+   "available_at": "2025-02-27",
+   "retrieved_at": "2026-10-29T02:26:34Z",
+   "relation": "context",
+   "explanation": "The card reports a 19% PersonQA hallucination rate and imperfect jailbreak resistance. It also states that GPT-4.5 received supervised fine-tuning and reinforcement learning from human feedback, preventing these results from isolating pretraining scale alone.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The search did not locate a target-period evaluation isolating pretraining scaling across all three named problem classes.",
+  "Released-model failures cannot determine whether a failure originated in pretraining or a later intervention.",
+  "The claim leaves the coverage and reliability required for solved unspecified."
+ ],
+ "packet_hash": "312711df36baf2f63aceb80ed2016b859915d8fbb310dffbe98f7dc55eafd100"
+}

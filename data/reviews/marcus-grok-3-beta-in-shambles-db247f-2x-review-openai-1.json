@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-grok-3-beta-in-shambles-db247f-2x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-grok-3-beta-in-shambles-db247f": "2ffdf86ffa35b4a707ff18f4c35e6e55fc8612b98da1502ca4cae1776f48a0a4",
+  "case:marcus-grok-3-beta-in-shambles-f66fbf": "35cf5abbac1b85b7eaca9cd95cd0fa1e8f097de98533ac5b97bfdf46980427af"
+ },
+ "started_at": "2026-10-29T07:24:53Z",
+ "completed_at": "2026-10-29T07:26:16Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus states the training facts and his personal impression in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves the facility count, training duration, compute comparison and subjective qualification."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading two data centers as two facilities is ordinary and fair. Excluding the personal impression from grading is appropriate."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "This company disclosure identifies Colossus but does not establish the facility count. Its compute comparison uses a different baseline, so it does not contradict 15x Grok 2."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The report describes one repurposed facility expanded in two phases. Construction timelines do not establish months of continuous training."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The secondary summary supports approximately 15x Grok 2's compute. It also describes one expanded facility; aggregate GPU-hours do not establish continuous full-time operation for months."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The contract explicitly makes training in a single facility sufficient for contradiction, and e2 describes that arrangement. The 15x component has secondary support, while continuous full-time training for months remains unverified. The subjective impression is not graded.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-grok-3-beta-in-shambles-db247f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus endorses his account of the exchange and his qualified fact-checking conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalization preserves his uncertainty about the earthquake and his admission that the prompt may have been too terse."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract turns a qualified finding into categorical fabrication and assumes the exchange occurred as described. Its search bounds cannot identify the alleged quake without its date or magnitude."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The catalog supports absence of recorded earthquakes within the specified dates, radius and magnitude threshold. It does not establish what Grok said or whether those bounds cover the alleged event."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The earthquake conclusion is explicitly qualified and cannot be scored as a firm assertion under this policy. The catalog supports only a bounded absence finding. The firm account of Grok's response remains independently unverified; the contract cannot establish it by accepting Marcus's description.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-grok-3-beta-in-shambles-f66fbf"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 20094,
+  "output_tokens": 1588,
+  "cached_input_tokens": 7936,
+  "reasoning_tokens": 687
+ },
+ "cost_usd": null
+}

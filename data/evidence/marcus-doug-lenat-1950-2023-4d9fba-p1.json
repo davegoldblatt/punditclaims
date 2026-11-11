@@ -1,0 +1,82 @@
+{
+ "packet_id": "marcus-doug-lenat-1950-2023-4d9fba-p1",
+ "claim_revision_ref": {
+  "id": "marcus-doug-lenat-1950-2023-4d9fba",
+  "version": 2,
+  "content_hash": "9cfd19d7d21b68a00205a74381c051d31f271b0c42ce266743d908f7cfe037a1"
+ },
+ "contract_ref": {
+  "id": "marcus-doug-lenat-1950-2023-4d9fba",
+  "version": 1,
+  "content_hash": "3bfb40129b5bb104f7bc84e5b8ccd5f9e6dc7a7f13dfcc8456205f8ecfa51c12"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"2023\" \"commonsense\" \"training\" \"ChatGPT\" robustness spurious",
+   "\"An experimental study measuring the generalization\" commonsense Shen pdf",
+   "\"PromptBench\" \"2023\" adversarial prompts",
+   "\"2023\" \"commonsense\" \"paraphrases\" language models robustness"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2306.04528v1",
+    "used": true,
+    "why": "Contemporary controlled prompt study supports sensitivity to wording, but does not isolate training-corpus causes."
+   },
+   {
+    "url": "https://arxiv.org/abs/2306.04528v1",
+    "used": true,
+    "why": "Confirms the original June 2023 publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2303.16421v1",
+    "used": false,
+    "why": "The study documents commonsense weaknesses, but its explanation involving infrequent training examples is expressly tentative."
+   },
+   {
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/exsy.13243",
+    "used": false,
+    "why": "Potentially relevant training and generalization study, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.isi.edu/results/publications/14827/an-experimental-study-measuring-the-generalization-of-fine%E2%80%90tuned-language-representation-models-across-commonsense-reasoning-benchmarks/",
+    "used": false,
+    "why": "The institutional page supplies a truncated abstract without the results or sufficient methods to establish the training-data explanation."
+   }
+  ],
+  "performed_at": "2026-10-29T05:12:38Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2306-04528v1",
+   "source_snapshot_id": "55136f96610e63e6acec2d04c6c839fbdd21611c0806537e80230959610a978d",
+   "publisher": "arXiv; Kaijie Zhu and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2306.04528v1",
+   "locator": "Abstract; Sections 2.3 and 4",
+   "receipt": {
+    "public_excerpt": "vulnerable to adversarial prompts",
+    "quote_hash": "7b068ee5176e18a796d123ec51d7e1ea36df9e9be1f2c67f693c88f529183d28",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-06-07",
+   "retrieved_at": "2026-10-29T05:05:36Z",
+   "relation": "supports",
+   "explanation": "Tests include changed instruction wording with unchanged task samples, including Winograd-derived WNLI. This supports the wording component, but the study does not manipulate training corpora or establish that training-data quirks explain commonsense performance.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No verified evidence in this record isolates the claimed training-data dependence for contemporary commonsense performance.",
+  "PromptBench tests deliberately adversarial instructions across diverse tasks; it does not establish the full commonsense explanation.",
+  "Behavioral fragility alone cannot establish that successful answers are merely an illusion."
+ ],
+ "packet_hash": "63ae47dc6d3381367f2a1de3c6166fef38cc4a0a07b7d9d8d1909386809cf346"
+}

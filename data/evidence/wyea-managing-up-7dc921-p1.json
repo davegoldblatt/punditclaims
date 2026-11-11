@@ -1,0 +1,129 @@
+{
+ "packet_id": "wyea-managing-up-7dc921-p1",
+ "claim_revision_ref": {
+  "id": "wyea-managing-up-7dc921",
+  "version": 1,
+  "content_hash": "63bde8e54c469e667440997b81d11650dec61fe2974253245701c152b1f5f66c"
+ },
+ "contract_ref": {
+  "id": "wyea-managing-up-7dc921",
+  "version": 1,
+  "content_hash": "c2939740b400f2a31c7af4afec2738bdfd6cf2d1018324423bc2ca2b135629ee"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "ChatGPT performance drift March June 2023 GPT-4 study 2024 improvement regression",
+   "site.lmsys.org April 2024 GPT-4 turbo leaderboard improvement",
+   "site.lmsys.org/blog/2024 \"GPT-4\" \"Turbo\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2307.09009",
+    "used": true,
+    "why": "Original study of dated service versions; the accessible abstract documents both regressions and improvements."
+   },
+   {
+    "url": "https://hdsr.mitpress.mit.edu/pub/y95zitmz/release/2",
+    "used": false,
+    "why": "read_page returned HTTP 403. No quotation or finding is attributed to this inaccessible version."
+   },
+   {
+    "url": "https://www.lmsys.org/blog/2023-12-07-leaderboard/",
+    "used": true,
+    "why": "Original human-preference evaluation of successive model versions, including methodological qualifications."
+   },
+   {
+    "url": "https://www.lmsys.org/blog/2024-04-19-arena-hard/",
+    "used": true,
+    "why": "Contemporaneous original benchmark comparing April 2024 models with earlier versions."
+   },
+   {
+    "url": "https://epoch.ai/models/gpt-4-turbo-apr-2024",
+    "used": false,
+    "why": "The current page includes later benchmarks and rankings; its historical availability and measurement dates were not established."
+   }
+  ],
+  "performed_at": "2026-10-29T20:20:59Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2307-09009",
+   "source_snapshot_id": "e2d1febdd44962d7d3c94b0304adad33a6435e04496d03e624a0ab79002e4d67",
+   "publisher": "arXiv; Lingjiao Chen, Matei Zaharia and James Zou",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2307.09009",
+   "locator": "Abstract, code-generation finding",
+   "receipt": {
+    "public_excerpt": "more formatting mistakes",
+    "quote_hash": "2816cc5aadb3dea8410e0c71c22fee843cbf0617152ca7dbff8e273edcdd6726",
+    "verified": "exact"
+   },
+   "event_date": "2023-06",
+   "available_at": "2023-10-31",
+   "retrieved_at": "2026-10-29T06:45:28Z",
+   "relation": "supports",
+   "explanation": "This supports the regression component for particular service behaviors. The same abstract reports improvements on other tasks, so it does not establish a general decline or a slowing rate of improvement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "lmsys-org-blog-2023-12-07-leaderboard",
+   "source_snapshot_id": "c90630c0fa79d4c2f63eab149b1fdc895b0fe88165a13221c0f579c9d228292b",
+   "publisher": "LMSYS Org",
+   "source_type": "benchmark",
+   "url": "https://www.lmsys.org/blog/2023-12-07-leaderboard",
+   "locator": "Tracking Performance of Proprietary APIs - GPT-4-0314 vs 0613?",
+   "receipt": {
+    "public_excerpt": "user preference",
+    "quote_hash": "3889e4c1a680dc877801839bb788b49256ac645f313f7f79bd24654a9cecf54a",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-07",
+   "available_at": "2023-12-07",
+   "retrieved_at": "2026-10-29T07:58:08Z",
+   "relation": "supports",
+   "explanation": "Users preferred the earlier GPT-4 version, supporting a local service regression. The authors also identify changing users and comparison sets as possible explanations; their table places GPT-4 Turbo above the June version.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "lmsys-org-blog-2024-04-19-arena-hard",
+   "source_snapshot_id": "fe7991224238eb509a8e08a8e2f344570105452e4a04389f2d47d2f319441700",
+   "publisher": "LMSYS Org",
+   "source_type": "benchmark",
+   "url": "https://www.lmsys.org/blog/2024-04-19-arena-hard",
+   "locator": "Full Leaderboard with GPT-4-Turbo as judge, explanatory paragraph and following table",
+   "receipt": {
+    "public_excerpt": "against the baseline",
+    "quote_hash": "ad4c31c78708ce03dd36f788b43209e9a12e5d9472bb7bb45203cebbda8c363c",
+    "verified": "exact"
+   },
+   "event_date": "2024-04-19",
+   "available_at": "2024-04-19",
+   "retrieved_at": "2026-10-29T05:20:04Z",
+   "relation": "context",
+   "explanation": "The table scores April GPT-4 Turbo at 82.6 against 50.0 for the March 2023 baseline, showing improvement on this evaluation. The authors warn about model-judge bias; these comparisons do not measure whether progress was slowing.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative, consistently measured time series establishes a declining rate of improvement through April 2024.",
+  "The speaker supplies no rule for combining task-specific gains and losses into an overall trend.",
+  "API-version comparisons do not capture every change in the ChatGPT service."
+ ],
+ "packet_hash": "1e702a1357a63609467ce68bf59cae210eec3957c934ae464c34431b62876440"
+}

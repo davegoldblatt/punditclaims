@@ -1,0 +1,141 @@
+{
+ "packet_id": "marcus-humans-versus-machines-the-hallucination-d1a01e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-d1a01e",
+  "version": 2,
+  "content_hash": "d1b8294448c22412a89f006fa82e37e2ed799cb339eb43b8187bba3699ea943d"
+ },
+ "contract_ref": {
+  "id": "marcus-humans-versus-machines-the-hallucination-d1a01e",
+  "version": 1,
+  "content_hash": "fd6714d23df584fada08cf9d08285c9c43441f864ee355d1efdda46b6ee277a7"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Chain-of-Verification Reduces Hallucination in Large Language Models 2023",
+   "Large Language Models Cannot Self-Correct Reasoning Yet 2023 Huang",
+   "Language Models Sometimes Know When They Are Being Untruthful 2023"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2310.01798v2",
+    "used": true,
+    "why": "Primary experiments showing failures of intrinsic reasoning correction; this revision predates the post."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.01798v2",
+    "used": true,
+    "why": "Read to verify the cited revision's publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.11495v2",
+    "used": true,
+    "why": "Primary intervention testing whether models can verify their own factual output without external tools."
+   },
+   {
+    "url": "https://arxiv.org/abs/2309.11495v1",
+    "used": true,
+    "why": "Read the original abstract and submission history, including the second revision's date."
+   },
+   {
+    "url": "https://arxiv.org/abs/2207.05221v1",
+    "used": true,
+    "why": "Primary study of truth assessment and evaluation of models' own answers."
+   },
+   {
+    "url": "https://www.anthropic.com/research/language-models-mostly-know-what-they-know",
+    "used": false,
+    "why": "Duplicates the cited research abstract; the versioned paper provides a clearer historical record."
+   },
+   {
+    "url": "https://aclanthology.org/2023.findings-emnlp.68/",
+    "used": false,
+    "why": "Its trained external classifier probes internal representations. That is less direct evidence of the model's own checking ability than the selected studies."
+   }
+  ],
+  "performed_at": "2026-10-29T17:11:10Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2310-01798v2",
+   "source_snapshot_id": "c5c6f0e98b704f36c7378fae0151714637c3a9d7f0a12b674a6f7b31cca71d4d",
+   "publisher": "arXiv; Huang et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2310.01798v2",
+   "locator": "Section 3.2, Results, Intrinsic Self-Correction",
+   "receipt": {
+    "public_excerpt": "the accuracies of all models drop",
+    "quote_hash": "f9dd57b6b5137f12588d705f395c5ab73b3f50285f0ef7805d0fa3a1df541f97",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-03-14",
+   "retrieved_at": "2026-10-29T12:35:50Z",
+   "relation": "supports",
+   "explanation": "In the reported intrinsic-correction experiments, models had to judge their answers without ground-truth feedback, and accuracy fell. This supports unreliable reasoning and self-correction in those settings, not universal incapacity or the full explanation of factual hallucinations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2309-11495v2",
+   "source_snapshot_id": "729b3cc4493cf272e069b8f4d2724e82d1a714a5f220179c5781463830cf6814",
+   "publisher": "arXiv; Dhuliawala et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.11495v2",
+   "locator": "Section 4.3, CoVe improves performance on closed book QA; method in Section 3.3",
+   "receipt": {
+    "public_excerpt": "CoVe brings improvements",
+    "quote_hash": "c2309cbb8a381173e20514ca63e6f16753f4042bce646f8a3e8867b0098cb497",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-09-25",
+   "retrieved_at": "2026-10-29T07:17:04Z",
+   "relation": "contradicts",
+   "explanation": "The model generated verification questions, answered them using the model itself without external tools, and revised its response. The reported improvements contradict categorical inability under the stated behavioral reading, while leaving substantial errors.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2207-05221v1",
+   "source_snapshot_id": "8bfee6acb88aa639da1fc6949e46c623624bfefb2c0153c84b5d2830ed93fc6d",
+   "publisher": "arXiv; Kadavath et al.",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2207.05221v1",
+   "locator": "Abstract, second sentence",
+   "receipt": {
+    "public_excerpt": "well-calibrated",
+    "quote_hash": "b822bdbd050b1917eff0c1f1d8d5f8c6623cbe9fba95db791490a74616fbda93",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-07-11",
+   "retrieved_at": "2026-10-29T02:12:52Z",
+   "relation": "contradicts",
+   "explanation": "The study reports calibrated truth assessments under suitable formatting and evaluates models' assessments of their own proposed answers. This challenges the absolute absence of truth discrimination; it does not establish human-like knowledge or reliable checking in every setting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These experiments do not establish how much hallucination is caused by each of the three proposed limitations.",
+  "Behavioral experiments do not resolve philosophical meanings of knowledge.",
+  "The papers do not supply exact experiment dates; event dates use the year of the reported experimental record.",
+  "Prompted internal verification does not establish independent external fact-checking or automatic verification during ordinary generation."
+ ],
+ "packet_hash": "1c1e1d112094ca36995cbc80b9aac4fca0c01ec55aa3191d820d4f09bf764688"
+}

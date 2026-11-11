@@ -1,0 +1,127 @@
+{
+ "packet_id": "wyea-dead-money-4966f2-p1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-4966f2",
+  "version": 1,
+  "content_hash": "0f2e982dcba7c1c0a11c720605828b8be71ee654170b1fe9b293947d6e235825"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-4966f2",
+  "version": 1,
+  "content_hash": "5579d7fd06f94ab4c7a507b4f971c09849913139fba34a8fe83eff6b15da5e2f"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 audited financials 34 billion 13.07 billion",
+   "OpenAI losses 2025 34 billion Financial Times June 2026 audited",
+   "\"Anthropic\" \"2.75\" \"2.60\" -site:wheresyoured.at -site:reddit.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Full report gives OpenAI’s revenue and operating loss and states that the Financial Times reviewed the financial statements."
+   },
+   {
+    "url": "https://whbl.com/2026/09/28/exclusive-anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs/",
+    "used": true,
+    "why": "Independent Reuters reporting provides the Anthropic comparison inputs."
+   },
+   {
+    "url": "https://www.ft.com/content/e15b0d7e-ff6b-4f16-ba7a-4068feddb828",
+    "used": false,
+    "why": "read_page returned HTTP 403. The assessment consequently relies on accessible reporting of the independently reviewed records."
+   },
+   {
+    "url": "https://www.simplicity.finance/episode/the-ai-bubble-is-bleeding-cash-part-2-anthropic-s-receipts-ed-zitron-031bf952-ad51-4ae5-8a0a-247ebf90bb96",
+    "used": false,
+    "why": "Search result merely repeats Zitron’s comparison; excluded as independent confirmation."
+   }
+  ],
+  "performed_at": "2026-10-29T16:22:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Financial-results discussion, including revenue and loss-from-operations paragraphs",
+   "receipt": {
+    "public_excerpt": "expenses",
+    "quote_hash": "d23a7cb4eab4f5b358bc592de31bb236c6a346d31c1dbd6a69b8ac830e270990",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "supports",
+   "explanation": "Ars reports OpenAI revenue of $13.07 billion and operating loss of $20.92 billion, implying approximately $34 billion in operating costs. Combined with the Reuters inputs in e2, the resulting comparison supports the narrowly defined ranking.",
+   "metric_scope": {
+    "company": "Anthropic and OpenAI",
+    "metric": "Comparative annual operating expenses per revenue dollar",
+    "currency": "USD",
+    "units": "USD expenses per USD revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Ars Technica: OpenAI 2025 revenue USD 13.07 billion.",
+     "Ars Technica: OpenAI 2025 operating loss USD 20.92 billion.",
+     "e2, Reuters: Anthropic 2025 operating expenses USD 12.65 billion and revenue approximately USD 4.6 billion."
+    ],
+    "formula": "OpenAI expenses = 13.07 + 20.92 = 33.99 billion, approximately 34 billion; OpenAI ratio = 33.99 / 13.07 = 2.6006; Anthropic ratio = 12.65 / 4.6 = 2.75.",
+    "rounding": "Ratios rounded to cents: OpenAI 2.60; Anthropic 2.75. Computed costs inherit rounding in the reported inputs."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "whbl-com-2026-09-28-exclusive-anthropics-ipo-prospectus-shows-sweep-d3bb4fc41356",
+   "source_snapshot_id": "756b11d900bd579b112f2906bdd84547944580dc2b9e5d2590e8cbd00388d49f",
+   "publisher": "Reuters, syndicated by WHBL",
+   "source_type": "news_report",
+   "url": "https://whbl.com/2026/09/28/exclusive-anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs",
+   "locator": "Opening financial discussion; revenue paragraph and paragraph beginning “The AI lab spent”",
+   "receipt": {
+    "public_excerpt": "cost",
+    "quote_hash": "ebe083be66590cfc0ddddeae55817bfa8c9ad46254a7d6f2700f72969c444163",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-09-28",
+   "retrieved_at": "2026-10-29T16:11:49Z",
+   "relation": "context",
+   "explanation": "Supplies the Anthropic component of the derived comparison in e1. It does not independently measure OpenAI or establish the complete ranking.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Annual operating expenses and revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "b55bb5b0d700203a529c30d36ca16b1e610990e2b4636d6ee8ec46590a5ba981"
+}

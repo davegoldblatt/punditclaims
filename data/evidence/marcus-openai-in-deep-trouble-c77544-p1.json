@@ -1,0 +1,106 @@
+{
+ "packet_id": "marcus-openai-in-deep-trouble-c77544-p1",
+ "claim_revision_ref": {
+  "id": "marcus-openai-in-deep-trouble-c77544",
+  "version": 1,
+  "content_hash": "f0c61916359dff0cd4d351196856453475538a55ac2f062261b73e543f38e3f1"
+ },
+ "contract_ref": {
+  "id": "marcus-openai-in-deep-trouble-c77544",
+  "version": 1,
+  "content_hash": "6b02dafa2583f7fa68fb3dd2e80d0f7134176390f1e1927a823cee8684e19d4c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT 4.5 February 27 2025 $75 $150 API OpenAI pricing",
+   "site.anthropic.com news claude 3.7 sonnet $3 $15 February 2025",
+   "\"GPT-4.5\" \"$75\" site:azure.microsoft.com",
+   "\"GPT-4.5\" \"$75\" site:techcommunity.microsoft.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://community.openai.com/t/gpt-4-5-is-live-in-the-api/1131571",
+    "used": true,
+    "why": "Dated OpenAI announcement containing launch prices; read_page returned full text."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+    "used": true,
+    "why": "Contemporaneous competitor announcement with directly comparable input and output tariffs; read_page returned full text."
+   },
+   {
+    "url": "https://developers.openai.com/api/docs/models/gpt-4.5-preview",
+    "used": false,
+    "why": "Confirms the numerical prices, but the currently maintained page is less suitable for establishing historical availability than the dated announcement."
+   },
+   {
+    "url": "https://openai.com/index/introducing-gpt-4-5/",
+    "used": false,
+    "why": "The launch announcement corroborates high computational expense but does not supply the numerical tariff comparison."
+   }
+  ],
+  "performed_at": "2026-10-29T18:00:00Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "community-openai-com-t-gpt-4-5-is-live-in-the-api-1131571",
+   "source_snapshot_id": "b7a977cc5d212d92a0824a3788405bbafddc86419d185ebd819f4be61045c5e5",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://community.openai.com/t/gpt-4-5-is-live-in-the-api/1131571",
+   "locator": "Opening announcement by nikunj, third paragraph",
+   "receipt": {
+    "public_excerpt": "GPT-4.5 is very large and compute-intensive, so it’s not a replacement for GPT-4o.",
+    "quote_hash": "006d9f8be342e906b52358dcf2266a3a8a8321926dc5d3d0f08c26f5f77bd508",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-28",
+   "available_at": "2025-02-28",
+   "retrieved_at": "2026-10-29T17:46:18Z",
+   "relation": "supports",
+   "explanation": "The same paragraph lists standard input at $75 and output at $150 per million tokens. Against the contemporary Anthropic prices in e2, those are premiums of 25 times for input and 10 times for output.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "OpenAI announcement: GPT-4.5 standard input $75 per million tokens; output $150 per million tokens.",
+     "e2: Claude 3.7 Sonnet standard input $3 per million tokens; output $15 per million tokens."
+    ],
+    "formula": "Input premium = 75 / 3 = 25; output premium = 150 / 15 = 10.",
+    "rounding": "Exact ratios; no rounding."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-claude-3-7-sonnet",
+   "source_snapshot_id": "d0cd6a845a029eccbe32d3666791830dbeb7594632ce6fdd6aa0e4a304a25b94",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+   "locator": "Opening section, pricing paragraph",
+   "receipt": {
+    "public_excerpt": "Claude 3.7 Sonnet has the same price as its predecessors: $3 per million input tokens and $15 per million output tokens—which includes thinking tokens.",
+    "quote_hash": "4634b1a72b4136fbb7fb06eb4433bac9dd684b5247c69b526d5c0d4bc36e73e0",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-24",
+   "available_at": "2025-02-24",
+   "retrieved_at": "2026-10-29T01:07:45Z",
+   "relation": "context",
+   "explanation": "Provides the contemporary competitor tariff used in the comparison. It is context because it measures another company's model.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The cited prices do not establish OpenAI's actual training or inference costs.",
+  "Per-token prices do not measure the total cost of completing a task."
+ ],
+ "packet_hash": "2e432778db21809e821528a1931ba32e4e5f47102c577f73edd9e4f439a112f4"
+}

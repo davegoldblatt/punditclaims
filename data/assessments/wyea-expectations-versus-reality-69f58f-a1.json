@@ -1,0 +1,114 @@
+{
+ "assessment_id": "wyea-expectations-versus-reality-69f58f-a1",
+ "claim_revision_ref": {
+  "id": "wyea-expectations-versus-reality-69f58f",
+  "version": 2,
+  "content_hash": "3a7f7f35969cdcefa72081b302b786e4ae9915092344267c97261ff6e6a79885"
+ },
+ "contract_ref": {
+  "id": "wyea-expectations-versus-reality-69f58f",
+  "version": 1,
+  "content_hash": "7082eac11e46264579368c6ce14f83f87afc9ad774f7514af5a1db194b74cf8c"
+ },
+ "packet_ref": {
+  "id": "wyea-expectations-versus-reality-69f58f-p1",
+  "content_hash": "beb35cf21edcb456d00badd759428e66fa2a13aa672b9b2fa154306c0bdbd24a"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2024-04-23",
+  "end": "2024-05-13",
+  "precision": "day"
+ },
+ "public_rationale": "The available leak analysis does not establish the claimed role of Playwright. Buchanan found that the exposed component handled login and warned against inferring LAM's operation from it. That leaves the substantive implementation claim unsettled. It also prevents treating the leak as proof that LAM was merely scripted automation.",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [
+  "e1"
+ ],
+ "limitations": [
+  "The archived analysis covers a partial leak.",
+  "Using Playwright and using an AI model are compatible possibilities."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-expectations-versus-reality-69f58f-4x-review-anthropic-1",
+  "wyea-expectations-versus-reality-69f58f-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-expectations-versus-reality-69f58f",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "An alleged leak of the Rabbit R1's source code heavily suggests, and the author says others have confirmed, that Rabbit's Large Action Model is repurposing Playwright, software that automates actions in a virtual machine.",
+  "kind": "observation",
+  "conditions": [
+   "alleged leak",
+   "heavily suggests",
+   "I've confirmed this with others"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "An alleged leak of the Rabbit R1’s source code discovered by student Michael Golden heavily suggests — and I’ve confirmed this with others too — that Rabbit’s “Large Action Model” is actually repurposing Playwright, a piece of software that allows you to automate actions in a virtual machine",
+   "locator": "paragraph 28",
+   "url": "https://www.wheresyoured.at/expectations-versus-reality",
+   "date": "2024-05-13",
+   "document_title": "Expectations Versus Reality",
+   "observed_at": "2026-10-28T22:31:45Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "An alleged leak",
+    "heavily suggests",
+    "I’ve confirmed this with others too",
+    "Large Action Model",
+    "actually repurposing Playwright"
+   ],
+   "our_interpretation": [
+    "Assess whether the launch-period LAM used Playwright to perform users' requested app actions. Finding Playwright only in the login mechanism is insufficient.",
+    "The claim does not necessarily mean that no AI existed anywhere in Rabbit's system.",
+    "Use the launch and scrutiny period from April 23 through the May 13 post. The wording supplies no precise observation window.",
+    "The author's unnamed private confirmations cannot independently establish the technical claim."
+   ],
+   "support_condition": "Authenticated code, direct inspection or a dated technical disclosure establishes that the launch-period app-action mechanism repurposed Playwright.",
+   "contradiction_condition": "Authenticated implementation evidence establishes that the relevant app actions did not use Playwright and that the cited code concerned a separate function."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The available leak analysis does not establish the claimed role of Playwright. Buchanan found that the exposed component handled login and warned against inferring LAM's operation from it. That leaves the substantive implementation claim unsettled. It also prevents treating the leak as proof that LAM was merely scripted automation.",
+  "limitations": [
+   "The archived analysis covers a partial leak.",
+   "Using Playwright and using an AI model are compatible possibilities."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "how LAM does or doesn't work",
+    "locator": "DavidBuchanan314, Analysis issue #11, April 24 comment",
+    "url": "https://web.archive.org/web/20240424095544/https://github.com/rabbitscam/rabbitr1/issues/11",
+    "publisher": "David Buchanan (DavidBuchanan314), GitHub",
+    "event_date": "2024-04-24",
+    "available_at": "2024-04-24",
+    "explanation": "Buchanan's firsthand examination identifies the available code as the login-container component. This challenges the inference from the leak without proving what the separate action mechanism used."
+   }
+  ],
+  "what_would_resolve": "Authenticated launch-period action-service code or an independent inspection showing how requested actions were selected and executed, including Playwright's role.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "acab542f7e28a58a0a39670a69534bb1c6cbcc3786037dab23e804cfa5c1f4b8",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:46:32Z"
+}

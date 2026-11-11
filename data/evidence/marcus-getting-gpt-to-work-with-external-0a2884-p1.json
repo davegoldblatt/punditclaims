@@ -1,0 +1,76 @@
+{
+ "packet_id": "marcus-getting-gpt-to-work-with-external-0a2884-p1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a2884",
+  "version": 2,
+  "content_hash": "e7020b83462b23a6bf0c39a614c0bdd95494920a922b629a5072256b32d918a9"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a2884",
+  "version": 1,
+  "content_hash": "d9f5f74333a0a4b4eb15559ba1f25fdd7938773eabc7cf5fd621db8533081dcd"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 Code Interpreter Wolfram Alpha math science evaluation 2023 Davis plug-ins benchmark",
+   "GPT-4 Code Interpreter Wolfram plugin spatial reasoning confident incorrect answers 2023 evaluation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+    "used": true,
+    "why": "Primary study with dated tests, answer keys and scores for both systems."
+   },
+   {
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "used": false,
+    "why": "Read to inspect individual failures; the summary already supplies the decisive scores."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2309.08881",
+    "used": false,
+    "why": "A different selected problem collection; it does not measure the error frequency in the experiments described here."
+   }
+  ],
+  "performed_at": "2026-10-29T06:51:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cs-nyu-edu-davise-papers-gptplugintests-gpttestsummary-pdf",
+   "source_snapshot_id": "319b837ca0413f563bec9c41df3b4802972c5edb64e4a62a24b3ec11ea4f7e88",
+   "publisher": "New York University; Ernest Davis and Scott Aaronson",
+   "source_type": "preprint",
+   "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/GPTTestSummary.pdf",
+   "locator": "Section 1; tables 3–5; section 7",
+   "receipt": {
+    "public_excerpt": "combining several calculations of different kinds.",
+    "quote_hash": "7142bd0c586626fbd2e1c0e0feafa48d6d6d36eea1b6d190b15d6cb4d785f650",
+    "verified": "exact"
+   },
+   "event_date": "2023-08",
+   "available_at": "2023-08-14",
+   "retrieved_at": "2026-10-29T06:20:34Z",
+   "relation": "supports",
+   "explanation": "Both systems failed the pendulum and chemical-reaction problems. The spatial eclipse subset contained six wrong answers out of eight for GPT4+WA and five out of eight for GPT4+CI. These are repeated failures in the described collection.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Table 5 eclipse scores for GPT4+WA: 0, 1, 0, 0, 0, 0, 0, 1.",
+     "Table 5 eclipse scores for GPT4+CI: 0, 1, 1, 0, 0, 0, 0, 1.",
+     "Each zero in this subset is marked Wrong."
+    ],
+    "formula": "Wrong answers = 8 minus the sum of the eight scores: WA = 6; CI = 5.",
+    "rounding": "Exact integer counts."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No representative sampling or human difficulty study establishes a general error rate for all translation-intensive problems."
+ ],
+ "packet_hash": "fc8f4b71102b3cf3a9aa6659e944f967f2e516ae9afcc7a94d35295b227d25e3"
+}

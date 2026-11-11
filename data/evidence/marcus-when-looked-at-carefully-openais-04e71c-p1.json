@@ -1,0 +1,142 @@
+{
+ "packet_id": "marcus-when-looked-at-carefully-openais-04e71c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-04e71c",
+  "version": 1,
+  "content_hash": "73c99af4715e6269be9c35cafd3983545dda7e8f31148bdfb8f5963f38bc0bb2"
+ },
+ "contract_ref": {
+  "id": "marcus-when-looked-at-carefully-openais-04e71c",
+  "version": 1,
+  "content_hash": "fe6b76178db490a7dc8e1c0b58a44f1b9ceb4ab01fc496a02d7e0f7a0cea0c65"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "sign test independent observations assumptions NIST",
+   "OpenAI biological study 2024 experts threshold \"all five\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/signtest.htm",
+    "used": true,
+    "why": "Read in full. Explains the binomial sign-test framework and distinguishes one-sided and two-sided tests."
+   },
+   {
+    "url": "https://www-users.york.ac.uk/~mb55/yh_stats/sigtst.htm",
+    "used": true,
+    "why": "Read in full and searched for independence. Explicitly states the relevant assumption."
+   },
+   {
+    "url": "https://library.soton.ac.uk/sign-test",
+    "used": false,
+    "why": "Read successfully, but the older York source provides the needed assumption without relying on a page updated after the post."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+    "used": true,
+    "why": "Used with the response data to verify the five positive differences."
+   },
+   {
+    "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+    "used": true,
+    "why": "Shows task scores linked by participant identifier; the task comparisons are not five separately randomized experiments."
+   }
+  ],
+  "performed_at": "2026-10-29T09:38:30Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "itl-nist-gov-div898-software-dataplot-refman1-auxillar-signtest-htm",
+   "source_snapshot_id": "ef5ef1b3189c006813d85dc115563e6c1862f682ae60c29687e5b927e87e1a95",
+   "publisher": "National Institute of Standards and Technology",
+   "source_type": "secondary_summary",
+   "url": "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/signtest.htm",
+   "locator": "Note following the examples; see also Description",
+   "receipt": {
+    "public_excerpt": "the one sided and two sided tests.",
+    "quote_hash": "8eb8ea15fe921d8957acab04e619b95742641cb54376e551f72e4bca75cfaf38",
+    "verified": "exact"
+   },
+   "event_date": "2023-12-11",
+   "available_at": "2023-12-11",
+   "retrieved_at": "2026-10-29T09:30:23Z",
+   "relation": "context",
+   "explanation": "NIST describes sign testing through a binomial distribution with probability one-half and distinguishes test direction. Under independent fair signs, Marcus's one-sided arithmetic is correct.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Five independent signs",
+     "Probability 0.5 for each specified sign under the hypothetical null",
+     "One-sided significance threshold 0.05"
+    ],
+    "formula": "P(all five specified signs) = (0.5)^5 = 1/32 = 0.03125 < 0.05. Counting unanimity in either direction gives 2/32 = 0.0625.",
+    "rounding": "Exact values."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "www-users-york-ac-uk-mb55-yh-stats-sigtst-htm",
+   "source_snapshot_id": "55d50ed5bbced494a11ee3ab03844a091c1204aa8c8fef910fd30ef1ecb22bd2",
+   "publisher": "University of York, Martin Bland",
+   "source_type": "secondary_summary",
+   "url": "https://www-users.york.ac.uk/~mb55/yh_stats/sigtst.htm",
+   "locator": "Sign-test example, second step: checking assumptions",
+   "receipt": {
+    "public_excerpt": "the observations are independent",
+    "quote_hash": "d28fac5a2b71bc24b0229c555e8ec51ced38f6f3d4d2e7ab866a369282ac9086",
+    "verified": "exact"
+   },
+   "event_date": "2020-07-13",
+   "available_at": "2020-07-13",
+   "retrieved_at": "2026-10-29T09:30:34Z",
+   "relation": "context",
+   "explanation": "This identifies the assumption needed to turn the coin analogy into a significance test. Five positive differences alone do not establish that assumption.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "cdn-openai-com-building-an-early-warning-system-for-llm-aided-biolo-6f5ca4856018",
+   "source_snapshot_id": "73215b822d45956b98b3cb752f8bc1002b27fa7816e4b53b25a94089811eb734",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/responses.csv",
+   "locator": "Header and first two records; complete file repeats participant identifiers across five tasks",
+   "receipt": {
+    "public_excerpt": "0,ideation,7,2,1,6,0,23,2075",
+    "quote_hash": "f576d7f6e2be478bf5b0ccff0011614625935335f6cd74312f101fb23ba7de30",
+    "verified": "exact"
+   },
+   "event_date": "2024-01-31",
+   "available_at": "2024-01-31",
+   "retrieved_at": "2026-10-29T09:31:29Z",
+   "relation": "context",
+   "explanation": "The published data support the directional premise, but reuse participants across tasks. That makes independence a substantive question; repeated participants alone do not prove the numerical probability false.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Complete responses.csv",
+     "Complete https://cdn.openai.com/building-an-early-warning-system-for-llm-aided-biological-threat-creation/participants.csv",
+     "Join by id; select experts and accuracy >= 8"
+    ],
+    "formula": "Model-access minus internet-only threshold counts across the five tasks are 2, 3, 3, 3, and 4; all are positive.",
+    "rounding": "Exact integer differences."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The cited records do not establish that the five task-level signs satisfy the independent fair-trial model.",
+  "A validated joint null-distribution analysis is needed to assess the asserted study-level probability.",
+  "The distinction between illustrative arithmetic and a warranted significance conclusion materially affects the verdict."
+ ],
+ "packet_hash": "7d28e270902db5cc95dfb8e0dc289d00ecf8fcb044556db112174ed1f8b22a6a"
+}

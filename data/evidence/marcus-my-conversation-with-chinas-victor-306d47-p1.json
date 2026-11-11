@@ -1,0 +1,125 @@
+{
+ "packet_id": "marcus-my-conversation-with-chinas-victor-306d47-p1",
+ "claim_revision_ref": {
+  "id": "marcus-my-conversation-with-chinas-victor-306d47",
+  "version": 1,
+  "content_hash": "a56f34c87126d6f41875d15da8574db662d9b664b9dd43605fefdf2ff2ddf059"
+ },
+ "contract_ref": {
+  "id": "marcus-my-conversation-with-chinas-victor-306d47",
+  "version": 1,
+  "content_hash": "2a28d87aa2e65ca28cc0d403f18a0ad8c94a78c00efbdd4cc6f4ad3f4b159920"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DeepSeek V3 technical report FP8 training twice speed BF16 2024 2.788",
+   "DeepSeek V3 efficiency comparison Llama 3 405B H800 H100 training limitations January 2025",
+   "DeepSeek V3 efficiency claims comparison misleading MoE Llama 405b January 2025 training compute",
+   "site.epoch.ai DeepSeek efficiency Claude Sonnet cheaper Llama comparison January 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2412.19437v1",
+    "used": true,
+    "why": "Original technical report documents training resources, benchmark comparisons, and the exclusion of earlier research experiments."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.19437v1",
+    "used": true,
+    "why": "Verified the original report's publication date and version."
+   },
+   {
+    "url": "https://epoch.ai/gradient-updates/how-has-deepseek-improved-the-transformer-architecture",
+    "used": true,
+    "why": "Contemporary independent analysis estimates the compute reduction against a similarly performing model and explains the architectural changes."
+   },
+   {
+    "url": "https://metr.org/evaluations/deepseek-v3-report/",
+    "used": true,
+    "why": "Later independent testing provides a material limit on claims of broadly equivalent capability. Used only as context."
+   }
+  ],
+  "performed_at": "2026-10-29T17:31:34Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2412-19437v1",
+   "source_snapshot_id": "134c7e306cb10e2d0bda4db09372b1afd89fba1e37bdfa9a36dab05ccab3ec88",
+   "publisher": "DeepSeek-AI / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2412.19437v1",
+   "locator": "Abstract; resource scope explained in section 1, Introduction",
+   "receipt": {
+    "public_excerpt": "2.788M H800 GPU hours for its full training.",
+    "quote_hash": "48332b5d6b8a5bb1bedd5392aab337ca8433a376dca8e117bcbc7852c86b51bd",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2024-12-27",
+   "retrieved_at": "2026-10-29T05:34:38Z",
+   "relation": "supports",
+   "explanation": "The report documents the training resources of the December V3 model and compares its performance with leading models. Its resource total covers the official training stages and excludes earlier research and ablation experiments; the comparative magnitude is supplied by e2.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "epoch-ai-gradient-updates-how-has-deepseek-improved-the-transformer-architecture",
+   "source_snapshot_id": "814c3bb867724eb1e846bf666430520ad972ab812b608f4216529fc3a65bbd29",
+   "publisher": "Epoch AI; Ege Erdil",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/gradient-updates/how-has-deepseek-improved-the-transformer-architecture",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "ten times less training compute",
+    "quote_hash": "14ad9ba1a3bb92655e1fa40f8cbc4555374130be870a9cd19ff5be9e2017df1f",
+    "verified": "exact"
+   },
+   "event_date": "2024-12",
+   "available_at": "2025-01-17",
+   "retrieved_at": "2026-10-29T17:27:44Z",
+   "relation": "supports",
+   "explanation": "This independent calculation estimates an approximately tenfold training-compute advantage for the December V3 model against a similarly performing baseline. It relies on reported hardware hours and an assumed 40% hardware utilization, so it is an estimate rather than an independent measurement of the training run.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "metr-org-evaluations-deepseek-v3-report",
+   "source_snapshot_id": "a397f79408b1953faa22268dbc45299d36e7506e21490d80db6377eab5d6918b",
+   "publisher": "METR",
+   "source_type": "independent_measurement",
+   "url": "https://metr.org/evaluations/deepseek-v3-report",
+   "locator": "AI R&D-specific evaluation, Results",
+   "receipt": {
+    "public_excerpt": "DeepSeek-V3’s performance on RE-Bench",
+    "quote_hash": "2308984e867df03c3a57d700b2a3b5617ce074152e6e67a74c5b8ef2f7d39ce4",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-12",
+   "available_at": "2025-02-12",
+   "retrieved_at": "2026-10-29T17:28:18Z",
+   "relation": "context",
+   "explanation": "This later evaluation limits any inference that V3 matched leading models on every capability, particularly autonomous AI research tasks. The date identifies publication of the evaluation; exact testing dates are not supplied, and the item is not used as outcome evidence for the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "The cited analysis does not independently verify DeepSeek's training-resource records.",
+  "There is no controlled comparison covering all development work, hardware, and capabilities.",
+  "These results do not establish the size or timing of further efficiency gains beyond the demonstrated improvements."
+ ],
+ "packet_hash": "1008709e30cd0878f065e5fc4d438007f8bda0d8b4b05425e903e7f188ca9a1e"
+}

@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-stop-treating-ai-models-like-people-db97c6-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-stop-treating-ai-models-like-people-db97c6": "2181a0010a65c4ec6b49efaffc4e68cd33354c7a5ce9d0b8b60da9f14308ebcb"
+ },
+ "started_at": "2026-10-29T21:54:32Z",
+ "completed_at": "2026-10-29T21:54:47Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Co-authored by Luccioni and Marcus, published on Marcus's Substack under both names. The sentence is the authors' own assertion, not a quote of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful restatement of an unhedged present-tense claim about current AI: it does not decide to teach itself and does not hold consistent beliefs."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Narrowing to the chatbots discussed and reading beliefs behaviourally fits the surrounding text, which gives a contradictory-answers example. This is an ordinary plain reading. It leaves aside whether the systems have subjective beliefs, which cannot be tested."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "GPT-4 technical report (March 2023): pretraining plus RLHF, and it states the model does not learn from experience. This is a company disclosure, but it is the technical documentation the contract asks for."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Tests on the January 30, 2023 ChatGPT found inconsistent answers to paraphrased inputs, including paraphrases ChatGPT wrote itself. Its better negation consistency is a nuance; it does not show consistent positions."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Both support conditions are met. GPT-4's documentation describes training controlled from outside and states it does not learn from experience. A reproducible test of a dated ChatGPT version shows inconsistent answers to equivalent inputs. The flagged negation result does not establish consistent positions. Gaps: Bard is not directly tested, and whether the systems have subjective beliefs is out of scope.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-stop-treating-ai-models-like-people-db97c6"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9388,
+  "output_tokens": 1479,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

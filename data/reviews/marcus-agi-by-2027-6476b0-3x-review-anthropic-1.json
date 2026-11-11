@@ -1,0 +1,185 @@
+{
+ "run_id": "marcus-agi-by-2027-6476b0-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-agi-by-2027-6476b0": "e62b82f3907d3e8a9c9d3ab099e439ca66582b802e4e28af2011428daf42c8bc",
+  "case:marcus-agi-by-2027-82f7ed": "104038d8f1f0a701367efa98178b0b279e1d0ac80504973b4ec37cccaf3f7514",
+  "case:marcus-agi-by-2027-ecfc15": "a656276044349b7d7936399d20d80cf40b3b047ab1c7f148765ac820a89d3eb8"
+ },
+ "started_at": "2026-10-29T02:18:38Z",
+ "completed_at": "2026-10-29T02:19:30Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Both qualifiers ('on its own', 'as far as I know') are kept. 'As far as I know' limits the claim to known or documented cases. It is not a probability hedge about an outcome, so the observation can still be scored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as 'no documented case of unaided GPT-4 doing such work' is a fair and ordinary reading of 'on its own' plus 'as far as I know'. Leaving out tool-scaffolded systems follows the speaker's own words."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Peer-reviewed SWE-bench (Oct 2023): the best model solved 1.96%, and GPT-4 scored lower. Unaided GPT-4 could not do autonomous real-world software work."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dated 2024-06-04. Puts unscaffolded GPT-4 at about 2% on SWE-bench; only agent scaffolding raised it. Comes from the optimistic side of the debate."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Coscientist is GPT-4 inside a human-built tool and lab-automation system, optimising known reactions. That is not GPT-4 'on its own', so it does not meet the contradiction condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Evaluations before June 2024 show unaided GPT-4 failing at autonomous software tasks (about 2% on SWE-bench). The only counterexample, Coscientist, uses heavy scaffolding and falls outside 'on its own'. No benchmark measures science-fair-level original ideas, but no unaided case is documented, and the claim is limited to Marcus's knowledge. The contract's support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-agi-by-2027-6476b0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words, rebutting Aschenbrenner's label."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. The speaker's next sentence ('some things better, some worse') explains what 'not equivalent' means."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (an uneven profile, so not equivalent) comes from the speaker's own following sentence. It is ordinary and not stretched either way. Using exam percentiles as the measure is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Technical report: GPT-4 scored in the 6th–12th percentile on the AMC 10, a high-school competition. Percentiles are extrapolated, but it is still far below strong students."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Codeforces rating below the 5th percentile: a clear weakness in competitive programming."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Aschenbrenner concedes GPT-4 is uneven. This is an opinion from the comparison's author, not an evaluation, so it is context only."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "SAT Math at about the 89th percentile shows strength in one area. That fits an uneven profile; it does not show strength across all tasks with no weaknesses, so it does not contradict."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "OpenAI's own exam table shows GPT-4 far below capable students on the AMC 10 and Codeforces, while near the top on SAT and AP exams. That uneven profile meets the support condition. The contradiction condition (at or above level across the board, with no weaknesses) is not met. The data are OpenAI's own disclosure, but the weak scores cut against OpenAI's interest.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-agi-by-2027-82f7ed"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words about Aschenbrenner's graph."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful to 'every data point there is imaginary'. The universal 'every' is kept. The wording is polemical but firm."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "'Imaginary' could mean fabricated, or only that 'effective compute' is a constructed, unmeasured quantity. The contract picks 'not based on measurements or public estimates' and judges historical and projected points separately. That is a fair reading, but the result depends on it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The essay says it uses Epoch AI's public estimates for 2019–2023 raw compute. So the historical points rest on real-quantity estimates. Caveat from the packet's gap: the plotted values could not be checked."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The 2024–2027 points are a projected 3–6 OOM range with a 'best guess'. They are not measurements."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "The algorithmic-efficiency part of historical 'effective compute' rests partly on what the author calls a naive back-of-envelope estimate. This partly supports Marcus for the historical points too."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI did not disclose GPT-4's training compute, so the GPT-4 point must be an outside estimate."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The projected points (2024–2027) are assumptions, not measurements, so that part holds. The historical points rest on Epoch AI's public compute estimates plus rough efficiency estimates. They are estimates of real quantities, not imaginary, so 'every data point' fails for them. The graph's plotted values could not be checked directly.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-agi-by-2027-ecfc15"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 30754,
+  "output_tokens": 5551,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

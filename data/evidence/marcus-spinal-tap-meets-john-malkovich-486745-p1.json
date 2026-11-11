@@ -1,0 +1,121 @@
+{
+ "packet_id": "marcus-spinal-tap-meets-john-malkovich-486745-p1",
+ "claim_revision_ref": {
+  "id": "marcus-spinal-tap-meets-john-malkovich-486745",
+  "version": 2,
+  "content_hash": "104092bd7f07ab1bb8363732721d0889b7fb64dac917b48c4e68458ceeaa9c31"
+ },
+ "contract_ref": {
+  "id": "marcus-spinal-tap-meets-john-malkovich-486745",
+  "version": 1,
+  "content_hash": "be0124a1b5127a836717e9d8d28d84c85d6052856f697b7c648c0b16a4870488"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Good Seed Makes a Good Crop\" text-to-image diffusion seeds arXiv",
+   "InitNO initial noise optimization text-to-image \"not all random noises\" arXiv",
+   "GenEval benchmark scores Stable Diffusion 1.5 DALL-E 2 GPT-4o image generation comparison"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2501.09732",
+    "used": true,
+    "why": "A January 2025 study that searches over random noise to find better samples. That only makes sense if output quality varies from run to run."
+   },
+   {
+    "url": "https://arxiv.org/html/2504.02782v3",
+    "used": true,
+    "why": "A 2025 evaluation of GPT-4o image generation, covering both its high scores and its recurring failures."
+   },
+   {
+    "url": "https://arxiv.org/abs/2404.04650v1",
+    "used": true,
+    "why": "CVPR 2024 paper stating that not all random noises give images faithful to the prompt. Used as context because it is from 2024."
+   },
+   {
+    "url": "https://arxiv.org/abs/2405.14828",
+    "used": false,
+    "why": "Shows that seeds affect image quality and layout, but not correctness as directly. Not needed."
+   }
+  ],
+  "performed_at": "2026-10-29T08:04:29Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2501-09732",
+   "source_snapshot_id": "b8fa473995deeabe982bc703908d11047e579258bab15de2349a2472393515ed",
+   "publisher": "arXiv (Ma et al., Google / NYU / MIT)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2501.09732",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Specifically, we consider a search problem aimed at identifying better noises for the diffusion sampling process.",
+    "quote_hash": "047efeac39d30d9ecaba151cb59bc7552cd26d4e895ff61db0e9d03b4e920fac",
+    "verified": "exact"
+   },
+   "event_date": "2025-01-16",
+   "available_at": "2025-01-16",
+   "retrieved_at": "2026-10-29T08:02:47Z",
+   "relation": "supports",
+   "explanation": "The authors improve image models by trying many random noise starts and keeping the best ones. This shows the same prompt gives better or worse results depending on the run.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2504-02782v3",
+   "source_snapshot_id": "5cc24b12c3209ffab391a917c6d664e01f2880f880ff33b6fef30fea161c5022",
+   "publisher": "arXiv (Yan et al., GPT-ImgEval)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2504.02782v3",
+   "locator": "Section 4 Weakness Analysis, 'Failures in Complicated Scenes Generation'",
+   "receipt": {
+    "public_excerpt": "Although GPT-4o demonstrates remarkable capabilities in generating complex scenes, it still faces significant challenges in producing coherent multi-person scenarios and object-human interactions.",
+    "quote_hash": "9c646e337aa79865ab9781e2b818d244a23d7241098b8e9d254115d669037643",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-05-02",
+   "retrieved_at": "2026-10-29T08:02:16Z",
+   "relation": "supports",
+   "explanation": "ChatGPT's 2025 image generator is often good, but it still fails on object-human interactions, the kind of scene in the post. Its outputs are therefore sometimes right and sometimes wrong.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2404-04650v1",
+   "source_snapshot_id": "f8385e7843534e46c9b3f89b65ba17443dfe7ee9a5cae6b1fb46101fd199853c",
+   "publisher": "CVPR 2024 (Guo et al.)",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2404.04650v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Considering text prompts, not all random noises are effective in synthesizing semantically-faithful images.",
+    "quote_hash": "11b36b972a1b0dfaf89625fe58073e854857a5cb5b5eee9c0da286f07c8ad2a3",
+    "verified": "exact"
+   },
+   "event_date": "2024-04",
+   "available_at": "2024-04-06",
+   "retrieved_at": "2026-10-29T08:02:34Z",
+   "relation": "supports",
+   "explanation": "Says directly that, for a given prompt, some random starting points give faithful images and others do not. It predates the target period, so it is context only.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No study found that measured repeated runs of ChatGPT-5 or Grok on the exact unicycle prompt.",
+  "The 2025 noise-search study shows that automated checkers can pick out better samples, so the run-to-run variation can be screened after the fact. An ordinary user making a single request still cannot know the result in advance."
+ ],
+ "packet_hash": "b79f02d8e9826e7593a82c4c4564451e20493161fdbe06c7be14a7acad0a0799"
+}

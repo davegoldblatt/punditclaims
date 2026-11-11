@@ -1,0 +1,91 @@
+{
+ "packet_id": "wyea-longcon-501d82-p1",
+ "claim_revision_ref": {
+  "id": "wyea-longcon-501d82",
+  "version": 1,
+  "content_hash": "da5d9f68293886784c7888c39afd42bec6bcc3430cc36acab04553fe7079af6f"
+ },
+ "contract_ref": {
+  "id": "wyea-longcon-501d82",
+  "version": 1,
+  "content_hash": "ad3a3da070e88a094adc95bd38ea63175a48e64c74987ecb1777329da2e5da51"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI \"2024\" \"5 billion\" \"compute\" Reuters",
+   "OpenAI 2024 actual loss 2025 5 billion 3.7 billion Reuters cash burn",
+   "OpenAI 2024 compute spend \"5.8 billion\"",
+   "OpenAI 2024 compute 5 billion actual spending training inference 2025 Reuters Breakingviews March 31"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://epoch.ai/data-insights/openai-compute-spend",
+    "used": true,
+    "why": "Read in full. Separates compute categories and explains the projections and amortization assumptions underlying its estimate."
+   },
+   {
+    "url": "https://www.breakingviews.com/considered-view/openais-profit-trajectory-is-an-open-question/",
+    "used": false,
+    "why": "Search surfaced a $5 billion figure, but read_page returned HTTP 401, so it cannot be cited."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/openai-projections-imply-losses-tripling-to-14-billion-in-2026",
+    "used": false,
+    "why": "The underlying reporting could not be read; read_page returned HTTP 403."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": false,
+    "why": "Read in full, but its R&D and cost-of-revenue categories are broader than compute and cannot be substituted for compute spending."
+   }
+  ],
+  "performed_at": "2026-10-29T20:20:22Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-openai-compute-spend",
+   "source_snapshot_id": "afbaa716f63cc0628fdefbb6d25984d1006201855bba0b9ab4845ba7e6d514a3",
+   "publisher": "Epoch AI",
+   "source_type": "secondary_summary",
+   "url": "https://epoch.ai/data-insights/openai-compute-spend",
+   "locator": "Closing summary; methodology in “OpenAI’s overall compute expenses” and “Assumptions and limitations”",
+   "receipt": {
+    "public_excerpt": "OpenAI spent ~$7B on cloud compute last year—mostly R&D (research, experiments, training).",
+    "quote_hash": "b6a69523e24cfd37546c18c9ac7c2915465412d1b4970875189c978f0395cb51",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2025-10-10",
+   "retrieved_at": "2026-10-29T05:19:33Z",
+   "relation": "context",
+   "explanation": "This estimate is higher than the claim, but it includes an assumed research-cost amortization schedule. Epoch explicitly says the underlying investor figures rely partly on projections for the final quarter of 2024, so this is not decisive evidence of actual comparable spending.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "estimated total cloud compute costs incurred, with research amortization reversed",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "No verified full-year compute-cost reconciliation was found.",
+  "The accessible estimate relies partly on projections and an assumed amortization schedule.",
+  "The claim does not resolve whether research costs should be counted when incurred or when recognized as expenses."
+ ],
+ "packet_hash": "2892f67219f296be8b252617f3925db1fcdffea76268b6755984a14240e5ccdf"
+}

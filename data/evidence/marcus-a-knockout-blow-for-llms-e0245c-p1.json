@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-a-knockout-blow-for-llms-e0245c-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-e0245c",
+  "version": 1,
+  "content_hash": "fd1ffabc357c9df8972767152c87af68d2beb5ae20abc9faf2986b6ae80d3f7a"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-e0245c",
+  "version": 1,
+  "content_hash": "8c0fe4f3679a97e6e95030772829afbabc1ecd1e258ca2413e5c89fc39705636"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 Python code generation execution benchmark reasoning models reliability LiveCodeBench May",
+   "site.arxiv.org 2025 \"Python\" \"o3\" benchmark May",
+   "\"o3\" \"Claude\" \"BigCodeBench\" 2025 May",
+   "\"The Illusion of the Illusion of Thinking\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2505.11618v1",
+    "used": true,
+    "why": "Read the original version's Python-interpreter results. Directly tests whether generated and executed Python improves verifiable task solutions."
+   },
+   {
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "used": true,
+    "why": "Read the corrected commentary. Includes successful code-generation demonstrations, but these use Lua and occurred after the observation window."
+   },
+   {
+    "url": "https://machinelearning.apple.com/research/illusion-of-thinking",
+    "used": false,
+    "why": "Read successfully. Its puzzle-output failures do not directly establish the reliability of executing generated Python."
+   }
+  ],
+  "performed_at": "2026-10-29T01:08:17Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2505-11618v1",
+   "source_snapshot_id": "d59691fe0c3c81a305f75b313288554f499b2ce19d2010bace09795fb98e854c",
+   "publisher": "Quan et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2505.11618v1",
+   "locator": "Section 4.4, Result of using a code interpreter",
+   "receipt": {
+    "public_excerpt": "Conversely, for tracking tasks, CI generally degrades performance.",
+    "quote_hash": "9d8d53e4ae717eacde74fd3bd82156a7a4576804bf380b1b0bb5eaf910eeb9cf",
+    "verified": "exact"
+   },
+   "event_date": "2025-05",
+   "available_at": "2025-05-16",
+   "retrieved_at": "2026-10-29T01:01:31Z",
+   "relation": "supports",
+   "explanation": "Executed Python improved localization substantially but worsened tracking; the study attributes significant errors to generated algorithms and optimization inaccuracies. This supports the limited claim that adding Python does not assure dependable solutions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2506-09250v2",
+   "source_snapshot_id": "bb12d07c62a73d23ad0dce718206b5a0ce388c2db14fcae65e48b39bee4e6305",
+   "publisher": "A. Lawsen, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2506.09250v2",
+   "locator": "Section 5, Alternative Representations Restore Performance",
+   "receipt": {
+    "public_excerpt": "correctly implement the recursive algorithm",
+    "quote_hash": "feec8014efb703cb8d14ce9e8d50fc9f3334266c257ad66c243ba1b2e2cd3a7c",
+    "verified": "exact"
+   },
+   "event_date": "2025-06",
+   "available_at": "2025-06-16",
+   "retrieved_at": "2026-10-29T01:02:32Z",
+   "relation": "context",
+   "explanation": "Preliminary demonstrations found successful Hanoi solutions when models generated Lua functions. This cautions against treating puzzle-output failures as proof that code generation cannot help, but it concerns another language and later tests.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The decisive study covers spatiotemporal tasks rather than every Python application.",
+  "It reports numerical errors rather than a universal end-to-end success rate.",
+  "Exact experiment dates are not given; the event month records the contemporary results reported in the original May version."
+ ],
+ "packet_hash": "afde0a51edc82358e3fa21ffe1fbd92ea43d224fc7551ac7cb8475c40be08a25"
+}

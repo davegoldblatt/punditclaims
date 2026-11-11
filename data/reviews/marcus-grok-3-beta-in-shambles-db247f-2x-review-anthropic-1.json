@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-grok-3-beta-in-shambles-db247f-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-grok-3-beta-in-shambles-db247f": "2ffdf86ffa35b4a707ff18f4c35e6e55fc8612b98da1502ca4cae1776f48a0a4",
+  "case:marcus-grok-3-beta-in-shambles-f66fbf": "35cf5abbac1b85b7eaca9cd95cd0fa1e8f097de98533ac5b97bfdf46980427af"
+ },
+ "started_at": "2026-10-29T07:24:53Z",
+ "completed_at": "2026-10-29T07:25:20Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful restatement. The checkable factual parts are data centers, months of training, and 15x compute; 'feel awfully familiar' is impressionistic and correctly left ungraded."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'two new massive data centers' as two separate facilities is the ordinary reading of his words. The two-phase build-out reading is a generous stretch he did not supply. The 15x-vs-Grok-2 reading matches his wording."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "xAI company disclosure: trained on one Colossus supercluster. This cuts against two data centers. Its 10x figure is against prior state-of-the-art models, not Grok 2, so it is only context on the 15x figure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "News report: one repurposed Memphis facility, expanded in two phases over 122 and 92 days. This contradicts two new data centers but is consistent with a months-long massive build-out."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Secondary launch summary: about 15x Grok 2's compute and 200M GPU-hours, with pre-training done in early January. This supports 15x and a months-long run. It also describes a single Colossus data center."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "Partly holds: about 15x Grok 2 compute (e3, secondary) and months of training (e2, e3) are supported. The claim of two new massive data centers is contradicted: e1, e2 and e3 all describe one Colossus facility expanded in two phases. The 15x figure rests on a single secondary source and was not confirmed from a primary transcript.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-grok-3-beta-in-shambles-db247f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own first-person account in his Substack post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps his 'my bad?' admission and his hedged 'doesn't look like' finding. The Deep Search label follows from the post's context."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The checkable core is that no recent quake struck Billings. The window (Dec 2024 to Feb 19, 2025), 200 km radius and M2 floor are a reasonable reading of 'recent' and 'of that magnitude'. Grok's actual reply is taken as he described it, unverified."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "USGS catalog query for the contract window and area returns only eight mining explosions near Ranchester WY, Colstrip and Muddy MT, and no earthquakes. Available April 2025, before the evaluation date."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The official USGS catalog shows no earthquake of M2 or above within 200 km of Billings from Dec 2024 to Feb 20, 2025, only mining blasts. That meets the support condition and backs his finding that the reported quake did not happen. Grok's actual reply rests only on his screenshots and is not independently verified.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-grok-3-beta-in-shambles-f66fbf"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17291,
+  "output_tokens": 2756,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

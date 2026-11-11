@@ -1,0 +1,50 @@
+---
+// The Explore tool: search, filters, the answer for the cut, two charts, and
+// the matching claims, filtered in the browser over /api/explore.json
+// (src/scripts/explore.ts). On /explore it covers everyone. On a person's
+// page it is locked to that person (Dave 2026-10-30: person pages are
+// "same functionality of explore narrowed down to them"), so the person
+// filter is gone and the address never carries it.
+import { listPath } from "../lib/listing.ts";
+
+interface Props { person?: string }
+const { person } = Astro.props;
+---
+<div class="explore-tool" data-explore data-person={person}>
+  <form class="explore-form" data-explore-form hidden>
+    <div class="field field-search"><label for="xq">Search their words</label><input id="xq" type="search" name="q" autocomplete="off" placeholder="bubble, AGI, GPT-5, bankrupt" /></div>
+    <details class="explore-more" data-explore-more>
+      <summary data-filter-summary>{person ? "Filter by company, topic, kind, or year" : "Filter by person, company, topic, kind, or year"}</summary>
+      <div class="explore-filters">
+        {!person && <div class="field"><label for="x-person">Person</label><select id="x-person" name="person" data-any="Both people"></select></div>}
+        <div class="field"><label for="x-company">Company</label><select id="x-company" name="company" data-any="Any company"></select></div>
+        <div class="field"><label for="x-topic">Topic</label><select id="x-topic" name="topic" data-any="Any topic"></select></div>
+        <div class="field"><label for="x-kind">Kind</label><select id="x-kind" name="kind" data-any="Any kind"></select></div>
+        <div class="field"><label for="x-year">Year said</label><select id="x-year" name="year" data-any="Any year"></select></div>
+        <div class="field-actions"><button class="btn" type="button" data-clear>Clear</button></div>
+      </div>
+    </details>
+    <div class="switches">
+    <fieldset class="sortbar">
+      <legend>Sort</legend>
+      <div class="conf-options">
+        <input type="radio" name="xsort" id="xs-newest" value="newest" checked /><label for="xs-newest">Newest</label>
+        <input type="radio" name="xsort" id="xs-oldest" value="oldest" /><label for="xs-oldest">Oldest</label>
+        <input type="radio" name="xsort" id="xs-checked" value="checked" /><label for="xs-checked">Recently checked</label>
+      </div>
+    </fieldset>
+    </div>
+  </form>
+  <p class="result-line" data-status aria-live="polite">Loading the claims…</p>
+  <div class="explore-answers" data-answer aria-live="polite"></div>
+  <div data-charts></div>
+  <p class="result-line"><span data-result aria-live="polite"></span> <button class="linkish" type="button" data-copy-link hidden>Copy link to this cut</button><span class="copy-status" aria-live="polite" data-copy-link-status></span></p>
+  <ol class="register" data-rows></ol>
+  <p><button class="btn" type="button" data-more hidden>Show more</button></p>
+  <noscript><p>This list needs JavaScript. You can browse <a href={person ? listPath(person, "checked") : "/register/checked"}>every claim</a> instead.</p></noscript>
+</div>
+<script>
+  import { runExplore } from "../scripts/explore.ts";
+  const root = document.querySelector<HTMLElement>("[data-explore]");
+  if (root) runExplore(root);
+</script>

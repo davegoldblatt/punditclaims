@@ -1,0 +1,97 @@
+{
+ "packet_id": "marcus-math-is-hard-if-you-are-an-llm-and-62160b-2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-62160b-2",
+  "version": 1,
+  "content_hash": "c5cd024e1e17660989c7f120709d882a65bd45aa2706e715bd39ee2373a23093"
+ },
+ "contract_ref": {
+  "id": "marcus-math-is-hard-if-you-are-an-llm-and-62160b-2",
+  "version": 1,
+  "content_hash": "a84dcdc091d7569fdb8e9afad6efb60669c413961fe73490dbca8e7ca278b8a2"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "MathGLM 2023 Table 7 multiplication 2B",
+   "2023 language models multiplication generalization scratchpad length generalization arithmetic",
+   "MathGLM arxiv 2309 2023 arithmetic",
+   "Faith Fate Limits Transformers Compositionality arxiv 2023 multiplication"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2305.18654v1",
+    "used": true,
+    "why": "Primary contemporary experiments on multiplication and transfer beyond training complexity."
+   },
+   {
+    "url": "https://arxiv.org/html/2306.15400v1",
+    "used": true,
+    "why": "Material counterevidence showing improved arithmetic transfer, with explicit limits on what priming achieves."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.03241v2",
+    "used": false,
+    "why": "Reviewed the paper discussed in the post. Its digit-range analysis mixes operations and adds longer examples to training; the selected multiplication study more directly tests the criterion."
+   }
+  ],
+  "performed_at": "2026-10-29T07:23:34Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2305-18654v1",
+   "source_snapshot_id": "ad56f727619f7594d3821dedf25b1a976d1790b3d08c7b372e3c00523b1d9dc2",
+   "publisher": "arXiv; Dziri and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2305.18654v1",
+   "locator": "Figure 4 caption; sections 3.2 and 5",
+   "receipt": {
+    "public_excerpt": "poor generalization",
+    "quote_hash": "094e81248e2359cc62ca0161b600bd38ebeded136e881c688f769ca2ac89e96f",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-05-29",
+   "retrieved_at": "2026-10-29T07:18:48Z",
+   "relation": "supports",
+   "explanation": "The study reports poor transfer beyond training complexity after GPT3 fine-tuning, including multiplication. It also reports only 55% and 59% accuracy for ChatGPT and GPT4 on three-digit multiplication, supporting the observed reliability limitation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2306-15400v1",
+   "source_snapshot_id": "25a1d56f999fbc3424ace2613959afbbead38e21152c64abc447a460a37b23c8",
+   "publisher": "arXiv; Jelassi and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2306.15400v1",
+   "locator": "Section 6.3; sections 5.3 and A.3",
+   "receipt": {
+    "public_excerpt": "Primed APE models generalize.",
+    "quote_hash": "fe95d6fa1ad0960625a216bafecc559226061b982566687522cf5a2dfca0d32d",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-06-27",
+   "retrieved_at": "2026-10-29T07:18:50Z",
+   "relation": "context",
+   "explanation": "Specialized transformers reached 95% accuracy on 35-by-3-digit multiplication after training-set priming, demonstrating meaningful progress. However, priming supplied examples at target lengths, and the study found no transfer to omitted lengths; this does not satisfy the unseen-length contradiction condition.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The studies cannot establish that every contemporary LLM lacked an internal multiplication algorithm.",
+  "No agreed numerical threshold defines reliable abstraction.",
+  "Exact experiment dates are not reported; event dates use the studies' reporting year."
+ ],
+ "packet_hash": "4d692b1acf0d73df34495169bd108d133301f11aa00862ed34041c14cdb60bcf"
+}

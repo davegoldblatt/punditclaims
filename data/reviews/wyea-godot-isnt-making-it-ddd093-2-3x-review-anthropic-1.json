@@ -1,0 +1,155 @@
+{
+ "run_id": "wyea-godot-isnt-making-it-ddd093-2-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-godot-isnt-making-it-ddd093-2": "af7b1c42f1739258666ee3a20dc7f5090a006ecaf1d6525323805b56573c1981",
+  "case:wyea-godot-isnt-making-it-df862b": "0e4d686e37863939724b1bd8d4df2e9a560ee8fbb3c3e6700d462dedb1c63cd0",
+  "case:wyea-godot-isnt-making-it-f53615": "cd3693d553376fe85738a8db2a97a5c3f8c36ca19a5e391f4de114cf525df15c"
+ },
+ "started_at": "2026-10-29T22:07:51Z",
+ "completed_at": "2026-10-29T22:08:43Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron states the figure in his own voice as part of his summary. He relies on a press forecast but endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'On course to lose more than $2.7B this year' is a firm statement about the 2024 result. Scope, threshold and horizon are kept. The loss measure is not stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The speaker named no loss measure. GAAP net loss ($8.3B) and adjusted net loss (~$2.68B) fall on opposite sides of the threshold. Tying the claim to the cited press basis (cash burn) is reasonable and fair, but it makes the definition decisive."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Dated before the post. Shows the same forecast was circulating. It is not a realized result and does not define the measure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Audited S-1, available before the evaluation date. The 2024 GAAP net loss of $8.3B includes $5.4B of fair-value changes; the adjusted loss is reported just under $2.7B. Neither figure is on the cash-burn basis the contract requires."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "elapsed",
+    "outcome": "unresolved",
+    "rationale": "Calendar 2024 is over. The contract requires a realized loss on the same basis as the cited forecast, which was cash burn. The packet has no cash-burn result: the Reuters figure was not used as evidence. GAAP and adjusted net losses split around the threshold, so the packet does not settle the claim on the contracted basis.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-godot-isnt-making-it-ddd093-2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own assertion in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The firm parts describe the present. The 'may never go away' hedge is kept and is not scored. The 'great many' scope is kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'high reliability' as output usable without verification is an ordinary reading. The March baseline and the meaning of 'solved' are inferred, and they drive the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Vendor disclosure dated before the post. It shows lower hallucination rates on the same benchmarks (e.g. SimpleQA 0.61 to 0.44), though it notes contrary anecdotal reports. Not an independent finding."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Independent preregistered study from May 2024. Legal AI products hallucinated on 17–33% of queries, so users could not rely on them without checking. It also finds these tools hallucinate less than GPT-4."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The business-use part holds: independent testing found frequent hallucinations in specialized legal tools, which blocks unverified high-reliability work. The 'nowhere closer' part is contradicted by measured reductions on comparable evaluations. Those come from a vendor disclosure, with caveats, plus e2's comparison to GPT-4. The 'may never go away' clause is hedged and not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-godot-isnt-making-it-df862b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": false,
+     "kind_correct": false,
+     "proposed_kind": "forecast",
+     "note": "Combines a firm, open-ended sales forecast ('for now') with a hedged, conditional cost clause ('any issues will likely be costly'). The modality 'likely' and the implicit condition that issues occur make the main prediction unscorable. The drafted claim does not separate the firm part from the hedged part."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The support condition requires proof of material defect costs, which scores a 'likely' clause as if it were a firm commitment. 'For now' has no deadline, and no measure of 'costly' was given."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure: $11B of Blackwell revenue in a quarter that straddles the post. It shows continued sales but cannot split revenue before and after the post, and says nothing about defect costs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Company disclosure from before the post on a mask change that improved yields. Background on manufacturing risk, not evidence of costs after the post."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "The drafted claim and the contract both turn on the hedged, conditional clause that manufacturing or cooling issues will 'likely' be costly. Under policy that is not scored. The firm 'continue for now' part has no deadline, and the packet has no conclusive event for it either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-godot-isnt-making-it-f53615"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 24445,
+  "output_tokens": 5598,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

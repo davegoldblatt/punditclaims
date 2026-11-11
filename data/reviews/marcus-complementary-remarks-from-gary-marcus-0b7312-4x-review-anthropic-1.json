@@ -1,0 +1,191 @@
+{
+ "run_id": "marcus-complementary-remarks-from-gary-marcus-0b7312-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-complementary-remarks-from-gary-marcus-0b7312": "0a27a23ebddedb26c8aeb6675157c6cbcc17c66d2da7124d303a71b2c3e151d5",
+  "case:marcus-complementary-remarks-from-gary-marcus-3898fb": "08f78cc66d5c7c8b16c3d4a9ab3939f7f627441601304deb721c5e2bd9e755f4",
+  "case:marcus-complementary-remarks-from-gary-marcus-4fd0e9": "49e3d03df8ba80b808306dd73c1467a5a96e04a2318212e0df0430bade1b6381",
+  "case:marcus-complementary-remarks-from-gary-marcus-601bd9": "5be716605026541460cf2abd31aeb324e635fbca92ec43a41eb2b076d444b70e"
+ },
+ "started_at": "2026-10-29T06:49:00Z",
+ "completed_at": "2026-10-29T06:49:45Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own post, in the first person."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Reading 'we don't know' as a claim about public disclosure fits the context. Marcus is criticising the report as vague, not his own private knowledge."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract defines procedure as the operational method for generating and checking results. That is an ordinary reading of 'procedure' here. It is anchored to the Oct 6 release, so later disclosures cannot count against him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The original README's 'How the results were produced' section names a 'same procedure' but never describes its steps. It gives only average compute, a count of problems posed and the exceptions. This directly supports the claim that the procedure was not disclosed."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The reasoning summary describes the model's mathematical search, not the prompting, orchestration or verification workflow. It does not disclose the procedure, but by itself it cannot prove non-disclosure either."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The release's own section on how results were produced mentions a fixed procedure without saying what it was. It offers only compute, problem counts and exceptions. The reasoning summary shows mathematical exploration, not the generation and checking workflow. Only one of the ten summaries was inspected, but the contract says reasoning summaries alone do not describe the method. Under the support condition, the claim holds.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-complementary-remarks-from-gary-marcus-0b7312"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Restating 'we know nothing' as 'OpenAI disclosed nothing' about the failure rate and the training is faithful. Both parts are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating the two parts separately, with a mixed result possible, is fair. Requiring a defined unit and denominator before anything counts as a failure rate is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "A Sept 10 disclosure about the training of the earlier Navier–Stokes model. Nothing shows it is the same model as the October release, so under the rules it is context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only evidence item covers an earlier model's training and is not linked to the October release. The packet contains no item showing what the Oct 6 materials did or did not say about the failure rate or training. Neither part can be settled from this evidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-complementary-remarks-from-gary-marcus-3898fb"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own concluding sentence in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The scope ('initial report') and the qualifier ('almost nothing') are kept. 'Almost nothing' limits degree; it is not a hedge on probability, so the claim is scorable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "It is fair to read this as being about scientifically useful information on how the system works, its reliability, training and generality. If it were read narrowly as only about generality beyond math, the result would be supported, so the interpretation decides the outcome."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The original README gives about 4,000 problems posed, average compute, how results were selected, the exceptions, and Lean formalizations. That is substantive information about the evaluation, though it is not a failure rate."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "The Oct 6 announcement disclosed compute estimates, ten reasoning summaries and attempt statistics. This is incomplete but more than negligible."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Contemporaneous news report (Decrypt) confirming that no prompts were released and the model was unavailable. It also confirms that compute figures and summaries were released."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "mixed",
+    "rationale": "The claim holds for architecture, training, failure rate, prompts and generality beyond math, none of which were disclosed. It overstates on the evaluation itself: compute, attempt counts, selection, reasoning summaries and Lean verification were all disclosed. For a case like this, the contract expressly calls for a mixed result.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-complementary-remarks-from-gary-marcus-4fd0e9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The wording and the 'a lot of' scope are kept. The claim is evaluative but still describes the state of the discussion."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The contract takes 'a lot' to mean a substantial portion, not a majority, and needs a representative sample. That is demanding but ordinary and fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A Nature report that some celebrated and others objected. It does not measure how common uninformed praise was or what posters understood."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "No representative sample of the discussion before the post was found, and the main discussion pages could not be read. The Nature report shows mixed reactions but cannot show how much of the discussion was uninformed cheering. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-complementary-remarks-from-gary-marcus-601bd9"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 25138,
+  "output_tokens": 4724,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,197 @@
+{
+ "run_id": "marcus-llms-coding-agents-security-nightmare-147dcd-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-coding-agents-security-nightmare-147dcd": "8e0dde8d28e075a4092b8608074a19582db6df5fa9666baba09319021d15177c",
+  "case:marcus-llms-coding-agents-security-nightmare-64e0b0": "6731327ec83dbec27d1a882bdf64e1c4ca81f52fbe0931d085ff23d658aa7953",
+  "case:marcus-llms-coding-agents-security-nightmare-b75733": "9176d76c3265de6500a9971a3526446325d19b92e3948f983d2fcfb7174f7085",
+  "case:marcus-llms-coding-agents-security-nightmare-d37b11": "7667c38301e9e898daa5f5d8800a1275ff778b4f333f4bd0db37275d0247e692"
+ },
+ "started_at": "2026-10-29T21:44:54Z",
+ "completed_at": "2026-10-29T21:45:49Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus co-wrote this post with Nathan Hamiel and published it on his own Substack. The third-person 'Gary has written' reflects the co-authorship, and Marcus endorses the text."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. It keeps 'apparently inherent' as tentative and the coding qualifier. 'Asking for trouble' becomes 'risky', which is a fair paraphrase of a present-tense observation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (recurring fabricated dependencies or references that create real risk, not universal failure) is ordinary and fair. Treating inherence as tentative matches the speaker's hedge. The 2025 window up to the post date is a reasonable choice by the evaluator."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Trend Micro measured third-party models and was available 2025-06-05, inside the window. It found recurring invented package names in foundation models and coding agents, and links them to slopsquatting risk. It also found mostly clean outputs and large reductions from agents and validation, which limits severity but does not make the problem negligible."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Within the window, e1 records fabricated package names that recur on complex prompts and persist, at lower rates, in agents and in Cursor with validation. That is a credible supply-chain risk. Mostly clean outputs and the mitigation gains limit how severe the problem is, but they do not meet the contradiction condition of hallucinations being absent or negligible. The inherence clause is tentative and was not tested.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-147dcd"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are the co-authors' own words in Marcus's post. The sentence draws on Nvidia's framing but states it as the authors' conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'Leads to chaos' slightly hardens 'recipe for chaos', which describes conditions that produce harm. The pairing of agency and manipulability is kept. Causal is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads the metaphor as manipulation plus autonomous execution producing serious unauthorized actions. That is an ordinary reading in this security context, and it explicitly excludes inevitable industry-wide disaster."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "NVIDIA's technical account of attacks on third-party agents, available 2025-10-09, before the evaluation date. Injected issue text led a computer-use agent to run attacker code, and a malicious dependency installed by Cursor gave the attacker a reverse shell. Cursor blocked the direct attempt, and the report makes autonomy and weak isolation the key conditions."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "e1 traces attacker-controlled content through autonomous tool execution to remote code execution (a reverse shell) in two agents. That meets the support condition for the scoped causal claim. Cursor blocking the first route shows guardrails help only in part; it does not rule out the causal link. Nothing here measures industry-wide 'chaos', and the contract does not require it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-64e0b0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The co-authors state this in their own voice ('We are particularly worried') in Marcus's post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Revision 2 restores 'often' and the 'starting to use' scope. The worry framing is kept, but the testable core is the causal link from broad authority to serious vulnerabilities."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'often' as a recurring feature of mainstream default configurations, not a measured majority, is fair. Defining 'immense' through command execution or credential exposure is an ordinary security reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Original demonstration published 2025-08-12, before the post. Copilot could write workspace settings without approval, and prompt injection used that to turn on auto-approve and run commands, giving remote code execution."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Original report published 2025-07-28. In its default configuration, Gemini CLI's shell tool plus injected repository text allowed silent arbitrary execution and theft of credentials. It was fixed before the post, and the attack failed on the other tools tested."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "GitHub's own disclosure that its cloud coding agent restricts internet access by default. This shows some mainstream products limit authority, but it is a different product and setup from e1."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Records that this specific Copilot flaw was patched in August 2025. That limits how long the flaw lasted, not the causal mechanism."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two mainstream developer agents (Copilot in VS Code and Gemini CLI) had default capabilities that injected content turned into arbitrary command execution or credential theft. That meets the support condition. Default restrictions in one product (e3) and the fixes (e2, e4) do not show that ordinary configurations reliably prevent misuse. How common risky permissions actually are remains unmeasured.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-b75733"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are the co-authors' own words in Marcus's post, summarizing exploits from Nvidia's talk."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Can' here is a firm statement about what current systems are capable of, not a hedge on the speaker's confidence. 'Anything' is kept. The drafter tagged the modality as 'could', but the proposition itself is faithful."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "An informed reader takes 'anything... can spell trouble' to mean any content that reaches the prompt is a possible attack channel, not that every string is exploitable. The contract adopts that reading and asks for demonstrations across several channels, which is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Pillar's demonstration, available 2025-03-18. Hidden instructions in a project rules file made Cursor silently insert an attacker's script during an ordinary request. The same route worked in Copilot."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Invariant Labs, available 2025-05-26. A malicious public GitHub issue reached a Claude agent's context through the GitHub MCP integration and led it to leak private repository data. The attack depends on the user choosing 'Always Allow'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Inside the window, malicious instructions reached development agents through two separate ordinary channels (rules files and public issues) and caused unauthorized actions. Nothing in the packet shows a general separation of external content from instructions. Two examples do not prove the literal 'anything', but the contract does not require that, and the permission dependencies are noted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-d37b11"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27608,
+  "output_tokens": 5897,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

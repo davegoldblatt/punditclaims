@@ -1,0 +1,134 @@
+{
+ "packet_id": "marcus-ai-literacy-hallucinations-and-the-663c38-p1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-literacy-hallucinations-and-the-663c38",
+  "version": 2,
+  "content_hash": "cd4df02d773a319ada02748993871e8373517384f0049cd3b4101666ec2920d9"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-literacy-hallucinations-and-the-663c38",
+  "version": 1,
+  "content_hash": "2a7887df6e703df88c3bcf2209f62dabd24292b0ee87202490dfce3fbe38bde3"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"Charlotin\" \"112\"",
+   "\"Charlotin\" \"112 cases\"",
+   "\"Charlotin\" \"May 24, 2025\"",
+   "\"Charlotin\" \"May\" \"2025\" \"19\" database 112",
+   "\"112 cases so far\" \"Winfield\"",
+   "ChatGPT launched November 30 2022 Reuters December 2022 million users",
+   "Wayback CDX lookup for damiencharlotin.com/hallucinations/ captures from 20250523 through 20250525"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://web.archive.org/web/20250525004121/https://www.damiencharlotin.com/hallucinations/",
+    "used": true,
+    "why": "Historical primary database snapshot read with read_page. It displays 112 entries, but its capture is May 25 at 00:41:21 UTC, so it is context for the precise May 24 publication-time total."
+   },
+   {
+    "url": "https://web.archive.org/web/20250523031132/https://www.damiencharlotin.com/hallucinations/",
+    "used": false,
+    "why": "Read with read_page. This earlier version is not a publication-time snapshot and cannot settle the exact endpoint count."
+   },
+   {
+    "url": "https://web.archive.org/cdx/search/cdx?url=damiencharlotin.com/hallucinations/&from=20250523&to=20250525&output=json&filter=statuscode:200",
+    "used": false,
+    "why": "Read to locate exact archive timestamps. The returned captures did not include May 24 UTC."
+   },
+   {
+    "url": "https://openai.com/blog/chatgpt",
+    "used": true,
+    "why": "Primary launch announcement read with read_page; supplies the explicitly chosen starting-date proxy."
+   },
+   {
+    "url": "https://openai.com/index/chatgpt/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the readable original blog URL was used instead."
+   },
+   {
+    "url": "https://bsky.app/profile/scotinoz.bsky.social",
+    "used": false,
+    "why": "Search surfaced a repost mentioning 112 cases, but read_page did not return the passage. It cannot be quoted or relied upon."
+   },
+   {
+    "url": "https://www.damiencharlotin.com/hallucinations/",
+    "used": false,
+    "why": "The current total and backfilled entries cannot establish the database’s publication-time state."
+   }
+  ],
+  "performed_at": "2026-10-29T02:13:19Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "web-archive-org-web-20250525004121-https-www-damiencharlotin-com-hallucinations",
+   "source_snapshot_id": "7da31f4f5b33b36256407aa9949c009a87e6b830c1f9cd620e08cba4058bf36e",
+   "publisher": "Damien Charlotin, preserved by the Internet Archive",
+   "source_type": "independent_measurement",
+   "url": "https://web.archive.org/web/20250525004121/https://www.damiencharlotin.com/hallucinations",
+   "locator": "Introductory database description; dated case rows for May and April 2025",
+   "receipt": {
+    "public_excerpt": "While seeking to be exhaustive (112 cases identified so far), it is a work in progress and will expand as new examples emerge.",
+    "quote_hash": "499ea703b8f44eebd9b6886133fa690787a5afedf5244e3eb2a7ebc4717e2afb",
+    "verified": "exact"
+   },
+   "event_date": "2025-05-25",
+   "available_at": "2025-05-25",
+   "retrieved_at": "2026-10-29T02:09:17Z",
+   "relation": "context",
+   "explanation": "The nearby snapshot strongly corroborates the claimed total and contains more May than April decision entries. Its timestamp does not establish the exact state at the post’s publication, and the counts do not establish representativeness or an error rate per AI use.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "May rows: Garner; Versant Funding; Bauche; Beenshoof; Keaau Development; Fox; Bandla; Ramirez; Case No. 72079-11-24; Jamisson Roriz; Newbern; Neusom; Raven Investigations; Israel v. Ibrahim Mahajneh; Qamar; Lacey; Harris; Ko; Rotonde.",
+     "April rows: Gustafson; Moales; Anonymous; Benjamin; Nichols; Coomer; Brown; Ferris; Sims; Bischoff; Bevins; Shekartz; Daniel Jaiyong An; Ayinde; Dehghani."
+    ],
+    "formula": "Count database rows by the displayed decision month: May = 19; April = 15.",
+    "rounding": "None; integer counts. These are counts in the May 25 snapshot, not independently verified publication-time counts."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-blog-chatgpt",
+   "source_snapshot_id": "743b566fdd173180503f6a3b1fbdc638508c7b593090cef011f2ea8d8da84ce2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/blog/chatgpt",
+   "locator": "Introducing ChatGPT, publication date November 30, 2022, opening paragraph",
+   "receipt": {
+    "public_excerpt": "We’ve trained a model called ChatGPT which interacts in a conversational way.",
+    "quote_hash": "74e92f7c4d5eedd00dfee9479fa89521d3ec7f46882e4d414f6556e1dc38b598",
+    "verified": "exact"
+   },
+   "event_date": "2022-11-30",
+   "available_at": "2022-11-30",
+   "retrieved_at": "2026-10-29T02:02:16Z",
+   "relation": "context",
+   "explanation": "The announcement supplies a transparent starting-date proxy for the weekly calculation. Assuming 112 entries at publication, the arithmetic yields about 0.87 per week; the launch date itself does not establish when ChatGPT became popular.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Assumed publication-time total: 112, corroborated by e1’s nearby snapshot.",
+     "Starting-date proxy: 2022-11-30.",
+     "Post date: 2025-05-24.",
+     "Elapsed interval: 906 days."
+    ],
+    "formula": "112 / (906 / 7) = 0.8653421634 cases per week.",
+    "rounding": "0.87 cases per week, rounded to two decimal places; conditional on the assumed endpoint total."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No retrieved snapshot or revision record fixes the database total at the exact publication time on May 24.",
+  "The nearby snapshot supports the numerical comparison, but its May 25 capture falls outside the target period for the endpoint total.",
+  "The database does not establish whether May was representative or whether underlying incidents per AI use increased; Marcus explicitly qualified the comparison."
+ ],
+ "packet_hash": "1a730cc8cfb01c402f7efcab0df5d580f75a30f47de3d7858e05a05e9148cf0f"
+}

@@ -1,0 +1,131 @@
+{
+ "packet_id": "wyea-brokenomics-612117-p2",
+ "claim_revision_ref": {
+  "id": "wyea-brokenomics-612117",
+  "version": 1,
+  "content_hash": "14e8f98546bb8134aa293ff70535d8eb569d84806f67a4fd9d59f505f8604ed8"
+ },
+ "contract_ref": {
+  "id": "wyea-brokenomics-612117",
+  "version": 2,
+  "content_hash": "398c694368bbea1ca77bde631a2e6c70d86ce5d8040a20edc6a677bc4177a4b5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Zitron OpenAI Anthropic $358 billion revenue 2029 compute commitments $1.1 trillion",
+   "OpenAI Anthropic revenue growth slowing 2026 annualized revenue September October",
+   "Anthropic IPO prospectus filed third quarter revenue $16.8 billion"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://thenextweb.com/news/anthropic-ipo-filing-nasdaq-ant-s-1",
+    "used": true,
+    "why": "Reports Anthropic's S-1 figures (published 2026-10-26) and the reported Q3 revenue. These bear on whether a growth slowdown occurred."
+   },
+   {
+    "url": "https://sacra.com/c/anthropic/",
+    "used": false,
+    "why": "Secondary estimate site whose publication date is unclear. The same figures are available from the dated TNW report."
+   },
+   {
+    "url": "https://www.axios.com/2026/09/29/scoop-openais-annual-recurring-revenue-nears-70b",
+    "used": false,
+    "why": "Could not be read (HTTP 403)."
+   },
+   {
+    "url": "https://aiweekly.co/alerts/ed-zitron-ai-compute-buildout-demands-2t-revenue-by-2030",
+    "used": false,
+    "why": "A summary of the speaker's own writing, so it cannot serve as evidence."
+   }
+  ],
+  "performed_at": "2026-10-31T19:35:14Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "thenextweb-com-news-anthropic-ipo-filing-nasdaq-ant-s-1",
+   "source_snapshot_id": "4509f8330b8b4a2523d0f28ffd59923914209a2299564b918d1e327359d99268",
+   "publisher": "The Next Web",
+   "source_type": "news_report",
+   "url": "https://thenextweb.com/news/anthropic-ipo-filing-nasdaq-ant-s-1",
+   "locator": "section 'The numbers', paragraph 1",
+   "receipt": {
+    "public_excerpt": "Revenue in the first half of 2026 was $16.3bn, up 1,300% from $1.16bn a year earlier. Most of it came in the second quarter. Revenue reached $11.6bn that quarter",
+    "quote_hash": "af177895d0606541fa40b64f739dcc4c75d28f569718b63159d1c902685605be",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-31T19:32:24Z",
+   "relation": "context",
+   "explanation": "This is Anthropic's S-1 revenue as reported in the press. It implies Q1 2026 revenue of about $4.7bn and Q2 of $11.6bn. It sets the baseline for judging whether growth later slowed.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "recognized revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_condition",
+   "document_id": "thenextweb-com-news-anthropic-ipo-filing-nasdaq-ant-s-1",
+   "source_snapshot_id": "4509f8330b8b4a2523d0f28ffd59923914209a2299564b918d1e327359d99268",
+   "publisher": "The Next Web",
+   "source_type": "news_report",
+   "url": "https://thenextweb.com/news/anthropic-ipo-filing-nasdaq-ant-s-1",
+   "locator": "section 'The numbers', paragraph 3",
+   "receipt": {
+    "public_excerpt": "Revenue for the third quarter is left blank in the filing. The FT reported earlier this month that Anthropic had told investors it reached $16.8bn in Q3.",
+    "quote_hash": "bdc50ec0cc6dae5f9af248af68128538cf8b821838d015609b46f0afdaa71427",
+    "verified": "exact"
+   },
+   "event_date": "2026-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-31T19:32:24Z",
+   "relation": "context",
+   "explanation": "Quarter-on-quarter growth fell from roughly 147% (Q1 to Q2) to roughly 45% (Q2 to Q3), while revenue kept rising quickly. Whether that counts as the 'slowdown' the speaker meant is unclear, so the condition is unknown.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "recognized revenue (reported by FT, not in filing)",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": false,
+   "derived": {
+    "inputs": [
+     "H1 2026 revenue $16.3bn",
+     "Q2 2026 revenue $11.6bn",
+     "Q3 2026 revenue $16.8bn (FT via TNW)"
+    ],
+    "formula": "Q1 = 16.3 - 11.6 = 4.7; Q2 growth = 11.6/4.7 - 1; Q3 growth = 16.8/11.6 - 1",
+    "rounding": "Q2 growth about 147%, Q3 growth about 45%, rounded to whole percent"
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No 2029 revenue or compute-payment data exists yet; the revenue deadline has not arrived.",
+  "'Slowdown' is undefined. Anthropic's sequential growth decelerated in Q3 2026, but revenue still rose about 45% in one quarter. The search summary indicated OpenAI's run-rate growth was still strong, and no primary source on OpenAI was read.",
+  "The undated 'fatal' prediction cannot be settled by any fixed date."
+ ],
+ "packet_hash": "4043287919fc6c281b7bd94c97e040f1e79d69e39b12828c1ccf8fd495a2fc40"
+}

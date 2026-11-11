@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1",
+  "version": 2,
+  "content_hash": "b382a5f1a07f6500dec9e911f94ae96b4a78e4bd4a5bd3ef1d0c3acc555956e8"
+ },
+ "contract_ref": {
+  "id": "marcus-a-new-ai-scaling-law-shell-game-72c4f1",
+  "version": 1,
+  "content_hash": "76b0671ba69879ae5837477c5d4c85562fba0eb7e14d0801312c1edac00c7302"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arxiv.org 2024 o1 inference time compute scaling overthinking accuracy cost November",
+   "2024 o1 test time compute scaling reliability inference budget evaluation November 24",
+   "site.github.com/hughbzhang/o1_inference_scaling_laws \"Sep\" \"2024\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2411.03590v1",
+    "used": true,
+    "why": "Contemporary primary experiments examine o1-preview accuracy, reasoning tokens, ensembling and inference costs."
+   },
+   {
+    "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/tree/5452b73",
+    "used": true,
+    "why": "The dated repository snapshot reports an o1-mini inference-budget experiment and saturation."
+   },
+   {
+    "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/commits/master/",
+    "used": true,
+    "why": "Confirms that the selected repository snapshot was committed on September 23, 2024."
+   },
+   {
+    "url": "https://arxiv.org/html/2408.03314v1",
+    "used": false,
+    "why": "Reports nonuniform inference returns, but uses a different model and predates the selected o1 observation window."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.21187",
+    "used": false,
+    "why": "Later overthinking research does not directly establish the state of the o1 systems described in this post."
+   }
+  ],
+  "performed_at": "2026-10-29T02:14:49Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2411-03590v1",
+   "source_snapshot_id": "c8eec5505ffa8130e433a1d50af774164c3cbda5d7e951c4534894ebbba9426a",
+   "publisher": "Nori et al., Microsoft and OpenAI, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2411.03590v1",
+   "locator": "Abstract; sections 4.3–4.5",
+   "receipt": {
+    "public_excerpt": "resource-intensive",
+    "quote_hash": "bdda51d29935659bb42d8b526148c9faabfa1d1052e9122f11b086af0759109d",
+    "verified": "exact"
+   },
+   "event_date": "2024-11",
+   "available_at": "2024-11-06",
+   "retrieved_at": "2026-10-29T02:03:30Z",
+   "relation": "supports",
+   "explanation": "The study measures token usage and inference costs and finds that additional ensembling raises costs. It also finds consistent ensembling gains on its medical benchmarks, limiting any interpretation that extra inference is generally ineffective.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "github-com-hughbzhang-o1-inference-scaling-laws-tree-5452b73",
+   "source_snapshot_id": "6dc48f751bd3f5c8a4d9f906dfc04b845e9016a12402596ec50fc8e0948b1eb3",
+   "publisher": "Hugh Zhang, GitHub",
+   "source_type": "independent_measurement",
+   "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/tree/5452b73",
+   "locator": "Majority Vote / Self Consistency",
+   "receipt": {
+    "public_excerpt": "past the initial gains.",
+    "quote_hash": "a8fb42cb6d6c45bd6f999d460dc8b7043442a40e17d3661d9b76c90bfeed0158",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-23",
+   "available_at": "2024-09-23",
+   "retrieved_at": "2026-10-29T02:06:06Z",
+   "relation": "supports",
+   "explanation": "The experiment increases sampling within o1-mini on the same AIME questions and reports saturation after initial gains. This supports the limited claim that spending more inference compute does not assure continuing accuracy improvements.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "github-com-hughbzhang-o1-inference-scaling-laws-tree-5452b73",
+   "source_snapshot_id": "6dc48f751bd3f5c8a4d9f906dfc04b845e9016a12402596ec50fc8e0948b1eb3",
+   "publisher": "Hugh Zhang, GitHub",
+   "source_type": "independent_measurement",
+   "url": "https://github.com/hughbzhang/o1_inference_scaling_laws/tree/5452b73",
+   "locator": "Majority Vote / Self Consistency, cost discussion",
+   "receipt": {
+    "public_excerpt": "expensive!",
+    "quote_hash": "ee7c6f20e8901aa181e3eedfba05221eede12df19769ca3ead6083f6f79e6ffc",
+    "verified": "exact"
+   },
+   "event_date": "2024-09-23",
+   "available_at": "2024-09-23",
+   "retrieved_at": "2026-10-29T02:06:06Z",
+   "relation": "context",
+   "explanation": "The experimenter regarded the absolute expense as modest. This is material against reading Marcus as claiming prohibitive cost, but does not negate the added cost of additional computation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No direct GPU-hour telemetry was obtained; the evidence measures tokens and inference costs.",
+  "The saturation experiment uses o1-mini and majority voting, not controlled extension of the unreleased full o1 model's internal reasoning."
+ ],
+ "packet_hash": "9f185f8e14979c3d3dd4da5bd567ab5904a47d48d324ecefa8defa2a6e1a440d"
+}

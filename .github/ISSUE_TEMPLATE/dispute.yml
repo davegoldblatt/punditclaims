@@ -1,0 +1,60 @@
+# Reader disputes. Claim pages link here with claim_id and assessment_id
+# filled in through the query string (the keys match the field ids below).
+# A dispute is untrusted input: it enters a queue, the editor triages it, and
+# it cannot change the site, run code, or reach credentials by itself.
+name: Dispute a record
+description: Challenge a claim, our reading of it, its evidence, or its assessment.
+title: "Dispute: "
+labels: ["dispute"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to dispute one record on Pundit Claims. This issue is public, so do not include private information.
+
+        What happens next: the editor triages disputes. A dispute enters a review queue and is checked under the published rules. It does not change the record by itself. Each dispute ends as upheld, rejected, or still under review, with a reason. A dispute is never shown on the site as a finding.
+
+        For privacy, rights, or safety problems with quoted text, do not use this form. Use the private route described on the site's About page.
+  - type: input
+    id: claim_id
+    attributes:
+      label: Claim id
+      description: The id at the end of the claim page address, /claims/<claim id>. The link on the claim page fills this in.
+    validations:
+      required: true
+  - type: input
+    id: assessment_id
+    attributes:
+      label: Assessment version
+      description: The assessment id shown on the claim page under "Record". The link on the claim page fills this in.
+    validations:
+      required: true
+  - type: textarea
+    id: contested
+    attributes:
+      label: What you dispute
+      description: Copy the exact passage from the claim page that you think is wrong. It can be the quotation, our reading of the claim, the criteria, an evidence item, or the assessment.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: What the record should say instead, and why.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Supporting source
+      description: A link to a public primary source that supports the correction, with the page or section if you can.
+      placeholder: https://
+    validations:
+      required: true
+  - type: checkboxes
+    id: understood
+    attributes:
+      label: Before you submit
+      options:
+        - label: I understand this issue is public, and that a dispute is reviewed under the published rules rather than applied automatically.
+          required: true

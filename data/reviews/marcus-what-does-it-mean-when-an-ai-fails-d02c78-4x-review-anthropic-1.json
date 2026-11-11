@@ -1,0 +1,197 @@
+{
+ "run_id": "marcus-what-does-it-mean-when-an-ai-fails-d02c78-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-d02c78": "816486a9892946449e4737e99b58d6d16bbf184d413143ef935e77016f1b9c6d",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-d5182b": "04d94feb3c2bca36e7bf4bfdc5304c3b54791a6ead5cb235f7223280f9df8326",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e02fad": "255f5a2fd214d6a6a2c435d3b2546bf7bb70cba1c57c033a0e3533cf591f113b",
+  "case:marcus-what-does-it-mean-when-an-ai-fails-e6235f": "cbeb53ea26fa16fed8acefcdc943ed72999c5f1992c5e3b4dcdf33530c06ee3a"
+ },
+ "started_at": "2026-10-29T12:44:12Z",
+ "completed_at": "2026-10-29T12:45:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, speaking for himself and Davis."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 'so far as I can tell' qualifier, the time scope and the concession about specific examples. The qualifier is an epistemic caveat, not a probability hedge, so the factual assertion still stands."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Taking the six categories from the context is fair. So is the plain reading that the problems persist without every test failing. Requiring all six categories matches 'still all'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The InstructGPT paper from March 2022 records continuing simple mistakes. This partly supports persistent reliability problems, but it does not map onto all six categories, and it is the developer's own evaluation."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Google's own disclosure of aggregate BIG-bench gains. It shows progress but does not show any whole category was resolved."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e1 shows reliability failures continued in 2022 models, and e2 shows progress without resolving any category. Neither establishes persistent failures across all six categories, and neither shows any category was resolved. The packet does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-d02c78"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "This is broadly faithful. 'Anyone' compresses 'Ernie and me (or anyone else who cares to try)', and the 'and so' causal link is preserved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "It fairly separates the behavioural part (easy to break) from the causal part (a lack of comprehension). Because genuine comprehension has no independent measure, the result depends on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "TruthfulQA (v2, May 2022) finds substantial untruthfulness in GPT-3-era models. This supports the behavioural part only. It uses adversarial questions and does not measure how easy failures are to find or what causes them."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The InstructGPT paper reports simple mistakes alongside improvements. This supports the behavioural part only, and it is the developer's own report."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence supports continued fallibility in contemporary models. It does not measure how easily ordinary users could break them, and it gives no independent measure of comprehension or evidence that missing comprehension causes the failures. The causal claim stays unsettled.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-d5182b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own offer of a bet, in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "A bet with 'will' is a firm forecast. Both antecedents (unrestricted access, same architecture with more data) and the one-day window are kept. Dropping 'and so forth' is minor."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Requiring both antecedents and the named testers fairly reflects his words. Not counting rate-limited public access as unrestricted is reasonable. 'Lots' and 'unrestricted' are undefined, so interpretation matters."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's March 2023 launch disclosure describes a staged, rate-limited rollout. It does not show that Marcus and Davis got unrestricted access, and it says nothing about architecture."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "Neither antecedent is established: there is no record of unrestricted access for Marcus and Davis, and the architecture condition is unverified. The deadline only starts once qualifying access exists, and there is no first-day testing record. A conditional with an unknown antecedent is not scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e02fad"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps 'such as they are' and 'primarily'. 'Primarily' sets the scope of the claim; it is not a probability hedge. This is a causal claim about where the gains come from."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'larger sets of data' as training-data quantity, not parameter count, is the ordinary literal reading. Requiring an accounting across model generations fits 'primarily'."
+    },
+    "evidence": [
+     {
+      "id": "e9",
+      "fits": true,
+      "relation": "supports",
+      "note": "Chinchilla (March 2022) shows that more training tokens produce substantial gains. This partly supports the claim, but the paper finds tokens and model size matter in equal proportion and does not apportion the overall gains."
+     },
+     {
+      "id": "e10",
+      "fits": true,
+      "relation": "context",
+      "note": "Kaplan et al. (2020) treat model size, data and compute as distinct contributors to loss. It does not apportion the downstream gains."
+     },
+     {
+      "id": "e11",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "OpenAI's own disclosure credits InstructGPT's gains to RLHF fine-tuning rather than more pretraining data. This counts against the claim for one successor only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "More data clearly helped (e9), but other factors also matter: model size (e9, e10) and training methods such as RLHF (e11). No source divides the gains across model generations among these factors, so the packet cannot show whether data quantity was the primary cause.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-does-it-mean-when-an-ai-fails-e6235f"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 64742,
+  "output_tokens": 6822,
+  "cached_input_tokens": 32993,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

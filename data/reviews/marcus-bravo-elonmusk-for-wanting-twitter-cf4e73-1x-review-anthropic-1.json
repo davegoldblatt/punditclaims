@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-bravo-elonmusk-for-wanting-twitter-cf4e73": "1f780bd01c443fa9e7501253f86e84e2b0545fe078f50a2b938fe1d2b701c030"
+ },
+ "started_at": "2026-10-29T23:25:14Z",
+ "completed_at": "2026-10-29T23:25:47Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his signed open letter on his Substack."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation keeps both clauses and correctly takes 'they' to mean LLMs. The first clause is close to a definition. The second, 'no way of reasoning about truth', is a firm but philosophically vague claim about LLMs themselves, in a passage arguing that something other than deep learning is needed."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract counts LLMs given retrieved external evidence (e.g. Wikipedia) as having a way to reason about truth. But Marcus's point is that LLMs themselves lack a reference standard, and that one must come from outside. Treating an externally supplied standard as refuting him stretches his words against him. The contract itself flags this as unspecified, and the result depends on it."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "FEVER (2018) shows that benchmark verification uses external evidence and human labels. That shows how accuracy is measured in practice. It does not test the conceptual clause or what LLMs can do."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "ReAct (Oct 2022): PaLM-540B with Wikipedia retrieval scored 60.9 on FEVER versus 56.3 for chain-of-thought. This would contradict the claim only under the contract's tool-inclusive reading. On the speaker's reading the standard is supplied from outside, and the result is modest and not shown to be reliable."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "RARR (Oct 2022) says checking text against retrieved sources does not settle whether the sources are trustworthy or address misinformation. This qualifies how much e2 can show."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The first clause is close to a definition. The second, that LLMs have 'no way of reasoning about truth', names no measure. The contract's reading makes it testable only by counting retrieval-augmented systems, where the reference standard Marcus says is needed comes from outside. That is not a fair ordinary reading of his words. On the speaker's own terms, 'reasoning about truth' is too vague to score against these benchmarks.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-bravo-elonmusk-for-wanting-twitter-cf4e73"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11708,
+  "output_tokens": 3168,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

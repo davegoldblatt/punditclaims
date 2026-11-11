@@ -1,0 +1,126 @@
+{
+ "assessment_id": "marcus-why-is-bing-so-reckless-763920-a1",
+ "claim_revision_ref": {
+  "id": "marcus-why-is-bing-so-reckless-763920",
+  "version": 1,
+  "content_hash": "b9981d1f6b18e271aef67e428fdf3271fb29f12a7c7e5184b04ad70f0448d48b"
+ },
+ "contract_ref": {
+  "id": "marcus-why-is-bing-so-reckless-763920",
+  "version": 1,
+  "content_hash": "6b2793ecfe2df3b1d2c1cac7525d7f65e071ac3d05720e9e039e4cde39a6683a"
+ },
+ "packet_ref": {
+  "id": "marcus-why-is-bing-so-reckless-763920-p1",
+  "content_hash": "8df9833c6b7e3c98515742d497232ac269bbdc8f879a9a65b9a4514c41fd3266"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-02-20",
+  "precision": "day"
+ },
+ "public_rationale": "Controlled experiments document reinforcement-learning agents failing to transfer after small environmental changes, including a shifted Breakout paddle. That supports the statement that such changes may cause failure. Other experiments show that broader training can improve generalization, so the result does not imply inevitable brittleness. Neither source establishes the suggested causal explanation for Bing.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The cited Breakout experiment tests A3C, not the specific DQN attribution in the surrounding passage.",
+  "Game and control experiments do not directly establish how Bing's RLHF behaved.",
+  "Robustness depends on the method and training conditions."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-why-is-bing-so-reckless-351e84-4x-review-anthropic-1",
+  "marcus-why-is-bing-so-reckless-351e84-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-why-is-bing-so-reckless-763920",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Reinforcement learning is notoriously finicky and may stop working when circumstances change slightly.",
+  "kind": "observation",
+  "conditions": [
+   "when circumstances change slightly"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The thing about reinforcement learning is that it is notoriously finicky; change the circumstances sligthly, and it may no longer work.",
+   "locator": "paragraph 32",
+   "url": "https://garymarcus.substack.com/p/why-is-bing-so-reckless",
+   "date": "2023-02-20",
+   "document_title": "Why *is* Bing so reckless?",
+   "observed_at": "2026-10-29T00:04:11Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "reinforcement learning",
+    "notoriously finicky",
+    "change the circumstances sligthly",
+    "it may no longer work"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that established reinforcement-learning methods can suffer substantial performance losses under small changes to their training circumstances.",
+    "May describes an empirically demonstrable vulnerability, not a prediction that every changed environment defeats every agent.",
+    "No longer work means substantial failure at the learned task, not necessarily complete failure on every trial.",
+    "The target is the experimental record available by February 20, 2023; no single reporting quarter applies.",
+    "This assessment does not establish that RLHF failed in Bing or that every language-model update requires complete retraining."
+   ],
+   "support_condition": "Controlled pre-post experiments show trained reinforcement-learning agents losing substantial task performance after small environmental changes.",
+   "contradiction_condition": "The apparent examples fail replication or involve materially different tasks rather than small changes, and reliable evidence does not establish the claimed vulnerability."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Controlled experiments document reinforcement-learning agents failing to transfer after small environmental changes, including a shifted Breakout paddle. That supports the statement that such changes may cause failure. Other experiments show that broader training can improve generalization, so the result does not imply inevitable brittleness. Neither source establishes the suggested causal explanation for Bing.",
+  "limitations": [
+   "The cited Breakout experiment tests A3C, not the specific DQN attribution in the surrounding passage.",
+   "Game and control experiments do not directly establish how Bing's RLHF behaved.",
+   "Robustness depends on the method and training conditions."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "A3C has failed",
+    "locator": "Section 5.2, Zero-Shot Generalization, discussion of Table 1",
+    "url": "https://ar5iv.labs.arxiv.org/html/1706.04317",
+    "publisher": "arXiv, rendered by ar5iv",
+    "event_date": "2017",
+    "available_at": "2017-06-14",
+    "explanation": "The experiment includes shifting the Breakout paddle upward by a few pixels and reports poor transfer by A3C. It supports the general brittleness claim, although this specific comparison tests A3C rather than the DQN named in the surrounding post."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "similar environments.",
+    "locator": "Results, paragraph discussing A2C and PPO interpolation",
+    "url": "https://bairblog.github.io/2019/03/18/rl-generalization",
+    "publisher": "Berkeley Artificial Intelligence Research",
+    "event_date": "2019",
+    "available_at": "2019-03-18",
+    "explanation": "The authors report that training across varied environments can produce successful generalization. This limits any universal reading of brittleness without contradicting Marcus's narrower statement that failure may occur."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "30de1312440aed47637c04d37bceb134f1f2b4429c15204d33c14ce5c4f71c7e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:55:09Z"
+}

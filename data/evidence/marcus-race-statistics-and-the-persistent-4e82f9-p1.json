@@ -1,0 +1,125 @@
+{
+ "packet_id": "marcus-race-statistics-and-the-persistent-4e82f9-p1",
+ "claim_revision_ref": {
+  "id": "marcus-race-statistics-and-the-persistent-4e82f9",
+  "version": 2,
+  "content_hash": "dd8dd9f3c979df36fb400577766b26ca980988887a9c0d4bac4fb3950593e59b"
+ },
+ "contract_ref": {
+  "id": "marcus-race-statistics-and-the-persistent-4e82f9",
+  "version": 1,
+  "content_hash": "0c18794b6acfd54e42d6a88674308217ba066638f3dcfabd347f57f6194bbfc0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "DALL-E 3 improving image generation better captions spatial relations limitations 2023 paper",
+   "\"DALL-E 3\" \"spatial awareness\"",
+   "\"Improving Image Generation with Better Captions\" \"October\" 2023",
+   "DALL-E 3 system card October 3 2023 pdf"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/dall-e-3-system-card/",
+    "used": true,
+    "why": "Dated primary disclosure of improvements over DALL-E 2."
+   },
+   {
+    "url": "https://cdn.openai.com/papers/dall-e-3.pdf",
+    "used": false,
+    "why": "read_page rejected the PDF because it exceeded its size limit. A readable reproduction was located."
+   },
+   {
+    "url": "https://studylib.es/doc/9417253/dall-e-3",
+    "used": true,
+    "why": "Readable reproduction of OpenAI's technical paper, including its limitations section."
+   },
+   {
+    "url": "https://openai.com/index/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise/",
+    "used": true,
+    "why": "Primary explanation of improvements through training on better captions; published after the post but before the evaluation date."
+   }
+  ],
+  "performed_at": "2026-10-29T07:50:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-dall-e-3-system-card",
+   "source_snapshot_id": "f51d771c755512b51d62c9a54fcf06489e01e31f874f2f25fdae8aaf65602c02",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/dall-e-3-system-card",
+   "locator": "Abstract, second sentence",
+   "receipt": {
+    "public_excerpt": "improving caption fidelity and image quality.",
+    "quote_hash": "77a5f3dc6da708bd4c9bd474849800793c4a47f18572b8f32dcd216d4681eefa",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-03",
+   "available_at": "2023-10-03",
+   "retrieved_at": "2026-10-29T07:44:05Z",
+   "relation": "supports",
+   "explanation": "Supports the improvement component of the claim. It does not quantify 'vastly' or establish the causal explanation for remaining failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "studylib-es-doc-9417253-dall-e-3",
+   "source_snapshot_id": "c188b94525a49a7bd0f6395f29a2f50b51ce9492c1886b965b421edcbc72b5c7",
+   "publisher": "OpenAI; reproduced by StudyLib",
+   "source_type": "company_disclosure",
+   "url": "https://studylib.es/doc/9417253/dall-e-3",
+   "locator": "Improving Image Generation with Better Captions, section 5.1",
+   "receipt": {
+    "public_excerpt": "object placement\nand spatial awareness.",
+    "quote_hash": "f4de5eb9d08d5230dd25822a40b191ce0fe70aa7a72b2a66f7bcee7214406f96",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2023-10-19",
+   "retrieved_at": "2026-10-29T07:42:21Z",
+   "relation": "context",
+   "explanation": "Corroborates persistent relational failures in the release-era model. The report does not isolate the absence of world models as their cause, and its evaluation dates are not precise enough to place inside the target window.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "openai-com-index-dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise",
+   "source_snapshot_id": "f9035e6a5b30271cc471789913e21e34413750c378a421c065778d5de41a03f2",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/dall-e-3-is-now-available-in-chatgpt-plus-and-enterprise",
+   "locator": "Research section",
+   "receipt": {
+    "public_excerpt": "these improved captions",
+    "quote_hash": "04d640e1b595390e5bc9661848d07d414cd550b2554eb23ef23b60a8c420031b",
+    "verified": "exact"
+   },
+   "event_date": "2023-10",
+   "available_at": "2023-10-19",
+   "retrieved_at": "2026-10-29T07:43:28Z",
+   "relation": "context",
+   "explanation": "Provides a concrete alternative contribution to improvement: caption quality. It qualifies the tentative emphasis on dataset size without establishing that size made no contribution.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No located controlled comparison isolates explicit world modeling as the cause of the remaining compositional failures.",
+  "No located disclosure quantifies the contribution of training-set size relative to caption quality and other changes.",
+  "The cited technical paper does not provide a dated, matched failure-rate comparison for canonical and noncanonical prompts within the target window."
+ ],
+ "packet_hash": "f6c05769a02100567f44ac7cdd59988cf58a8aa8a2f62ef27ddb17e0b9dee134"
+}

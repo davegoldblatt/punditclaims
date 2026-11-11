@@ -1,0 +1,101 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2",
+  "version": 2,
+  "content_hash": "916022cee6cc1efa93562b7a82a5418d31c2908ba761a4d53310588b0d8e542e"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-3662d2",
+  "version": 1,
+  "content_hash": "2a12dbdbdee34ea8614dd66853007a7d8ff61ea1a8bd9bbaa7ecde5a91798b40"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "2025 code generation familiar novel problems training similarity perturbations benchmark",
+   "code generation \"2025\" \"perturbations\" \"memorization\"",
+   "code generation novel problems memorization 2025 LiveCodeBench Pro OJBench"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2506.11928v1",
+    "used": true,
+    "why": "Contemporaneous expert analysis of generated-code failures on demanding competitive-programming tasks."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.02296v1",
+    "used": false,
+    "why": "Read the original perturbation study. Its limited model coverage and inferred training overlap do not establish the full claim; the revised study is included as qualified context."
+   },
+   {
+    "url": "https://arxiv.org/html/2503.02296v2",
+    "used": true,
+    "why": "The September revision supplies relevant controlled rewriting evidence and qualifications, but its new experiments fall outside the observation window."
+   },
+   {
+    "url": "https://arxiv.org/abs/2403.07974",
+    "used": false,
+    "why": "Relevant contamination-aware benchmark identified in search, but its original experiments predate the selected period."
+   }
+  ],
+  "performed_at": "2026-10-29T17:23:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2506-11928v1",
+   "source_snapshot_id": "bbb6a044c1a0105cc9fd2969814fce332af6871570ea65cea6bcab26abf6caba",
+   "publisher": "Zheng et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2506.11928v1",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "implementation precision and tool augmentation, not superior reasoning.",
+    "quote_hash": "a3142375e9232bd287cff76cca38f979bf0f69dc37371d5acb4a988b87e94220",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-13",
+   "available_at": "2025-06-13",
+   "retrieved_at": "2026-10-29T05:35:34Z",
+   "relation": "supports",
+   "explanation": "The study reports incorrect algorithmic reasoning and substantial failures on challenging programming problems, supporting the error component. It does not directly measure similarity to the models' actual training examples, so it cannot establish the full dependence claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2503-02296v2",
+   "source_snapshot_id": "72b398e0681b1a6d1897ea3f59a2af42a0127df9e1c13d4e93a88a55ee87ea6a",
+   "publisher": "Zhang et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2503.02296v2",
+   "locator": "Section 5.1.1, Additional Findings",
+   "receipt": {
+    "public_excerpt": "persists on more difficult ones.",
+    "quote_hash": "1136a1bcf826f82747c2627dc1bcb08435e84c87b2f8168c7c06401705f251a4",
+    "verified": "exact"
+   },
+   "event_date": "2025-09",
+   "available_at": "2025-09-30",
+   "retrieved_at": "2026-10-29T17:07:14Z",
+   "relation": "context",
+   "explanation": "Controlled code rewriting finds task-dependent failures, but also substantially lower measured memorization for larger models on simpler tasks. This later evaluation qualifies a blanket dependence claim; it is context because the new experiments were reported after the target period.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The contemporaneous failure evidence does not identify the frontier models' actual training examples.",
+  "No cited contemporaneous study establishes substantial similarity dependence across the full implied model population while separating novelty from difficulty.",
+  "The later rewriting study gives a qualified, task-dependent picture rather than settling the July observation."
+ ],
+ "packet_hash": "3326f2ff7b35997ba79ea0544aaa525309386c0496ce9e1288627490cfca0e25"
+}

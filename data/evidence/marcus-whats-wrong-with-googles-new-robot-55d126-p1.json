@@ -1,0 +1,75 @@
+{
+ "packet_id": "marcus-whats-wrong-with-googles-new-robot-55d126-p1",
+ "claim_revision_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-55d126",
+  "version": 1,
+  "content_hash": "0322c891d7c46ee5b9a930a1312433aa701ef3cfe7fe2f3df33ec648361d238d"
+ },
+ "contract_ref": {
+  "id": "marcus-whats-wrong-with-googles-new-robot-55d126",
+  "version": 1,
+  "content_hash": "5791fbfe77a6dc813e54e9973fbe586234aea9be2e7d145a49e4f115534d4f57"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "\"PaLM-SayCan\" \"0%\"",
+   "\"SayCan\" \"Table 6\" \"0%\"",
+   "\"SayCan\" \"drawer\" \"0%\"",
+   "\"SayCan\" \"restock the coke and pepsi\" \"0.0\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2204.01691v2",
+    "used": true,
+    "why": "Appendix E.3 and Table 8 contain the relevant PaLM-SayCan drawer-task result."
+   },
+   {
+    "url": "https://say-can.github.io/assets/palm_saycan.pdf",
+    "used": false,
+    "why": "read_page could not read the PDF because it exceeded the size limit."
+   },
+   {
+    "url": "https://pages.cs.wisc.edu/~jphanna/teaching/25spring_cs639/resources/saycan.pdf",
+    "used": false,
+    "why": "The mirrored PDF also exceeded the reader's size limit."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v205/ichter23a/ichter23a.pdf",
+    "used": false,
+    "why": "Later proceedings version; also exceeded the reader's size limit."
+   }
+  ],
+  "performed_at": "2026-10-29T09:36:50Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2204-01691v2",
+   "source_snapshot_id": "36af27fbdd7e9cfeb3fa0d923fda03637fa6d46f6d6e7f6001e8156c1d5d1ef7",
+   "publisher": "arXiv; Michael Ahn and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2204.01691v2",
+   "locator": "Appendix E.3, Table 8, first task row",
+   "receipt": {
+    "public_excerpt": "Table. 8.",
+    "quote_hash": "707dc3f88e1bf505ceebc17e5f723d02c56f280595cb24d53cdc554d12672a6d",
+    "verified": "exact"
+   },
+   "event_date": "2022-08-16",
+   "available_at": "2022-08-16",
+   "retrieved_at": "2026-10-29T07:02:51Z",
+   "relation": "supports",
+   "explanation": "The task of restocking both coke and pepsi into the drawer has planning rate 1.0 and execution rate 0.0. This is a PaLM-SayCan task result, distinct from the zero-scoring baselines elsewhere in the paper.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "read_page reproduces the sentence identifying Table 8 but omits the table cells. The numerical row was checked in the same page's HTML table through the web tool; reviewers should verify that row directly."
+ ],
+ "packet_hash": "c663a37dc582d54dc4c05bccd3642beb5cc6f5b4e66b5e8a0bb55fad56fce6ec"
+}

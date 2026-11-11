@@ -1,0 +1,50 @@
+## Verdict
+
+The exploration direction answers the owner’s request; making exploration depend on retrospective significance ratings does not. Ship useful ways to inspect consequential arguments first, and treat importance as an explicit, contestable editorial judgment rather than a second measure of correctness.
+
+## Wrong or unsupported statements
+
+I recomputed counts from the specified [manifest](data/releases/20261029T170018Z-80c62152e5a8/manifest.json). These check out: **5,075 published records; Marcus’s 600 settled, 530 supported (88% rounded); 56 settled predictions, 52 supported and four contradicted; 12 tags; lowercase exact-target counts 430/362/107/38**. The bubble and copyright verdicts also match.
+
+- **“Every topic … 76 to 93% supported” is wrong.** Marcus’s financing category is **7/11 = 63.6%**; his range is **63.6–93.2%**, grouping settled records by tag. Pooling both people lowers financing to **7/12 = 58.3%**.
+- **365 “deadlines” overstates the field.** That is the count of nonempty `original_horizon_text`, including “someday,” “soon,” and “ever.” Only **325** belong to forecast kinds; nonempty text does not establish a deadline.
+- **The examples blur quotations and classifications.** The hallucinations record is a **supported forecast**, including “aren’t going away, anytime soon,” not an observation. The bubble’s July 28 date appears in the normalized proposition; the quotation says “within the next 12 months.”
+- **The illustrative Zitron result is not live data.** He has **four settled records and zero settled predictions**, not three OpenAI predictions. I found no published forecast matching the owner’s Anthropic-bankruptcy example; keep that example hypothetical.
+- **Repetition is not currently available as proposed.** All **5,075** records have exactly **one occurrence and zero related records**. Those fields cannot identify repeated propositions yet.
+- **The legacy “54 clusters / 27% / worst cluster” is unsupported by this release.** The [import manifest](research/legacy-manifests/marcus-claims-dataset.json) quarantines **2,218** rows and documents substring-clustering and grading errors. Reproduce those historical figures separately before citing them.
+- **“The site already does this” overstates implementation.** [Register.astro](src/components/Register.astro:22) enables DOM-based filters only for single-page groups, currently **≤100 records**. There is no equivalent whole-corpus JSON facet index.
+- **The workload estimates lack a defined cohort.** This release contains **393 source URLs with checkable published claims**, **639 with any published claim**, and **669 across published and held records**. “About 680,” four thesis calls, and the five-hour bottleneck need a workload calculation and run measurements.
+- **The research summaries overreach.** Luu reports **4/59 rated predictions**, alternatively **7/62**, not every Kurzweil prediction. [Luu](https://danluu.com/futurist-predictions/) PunditTracker’s **25-call** threshold is supported; “refused to publish raw hit rates” is not established by its cited methodology. It explicitly avoided retrospective boldness ratings without contemporaneous evidence. [PunditTracker FAQ](https://ritholtz.com/2013/02/pundit-tracker/)
+- **Several generalizations are unmeasured.** “Many … easy,” “boldest-sounding … often,” and “matches what readers mean” have no supplied measurement. Forer studied personal validation of personality descriptions, not acceptance of all vague factual claims. [Forer](https://pubmed.ncbi.nlm.nih.gov/18110193/) Similar-looking bars can communicate similarity; suppressing them is an editorial choice, not an established visualization rule.
+
+## Findings
+
+1. **High — Importance, difficulty, specificity, and prominence are different constructs.** A routine observation can concern enormous harm; a precise prediction can be trivial. The rubric supplies neither anchors nor a reproducible combination rule. Use separate attributes: consequence scope with concrete anchors; explicit commitments; source prominence with a locator; and unknown where evidence is insufficient. Keep reader relevance selectable through entities and topics. Full Fact considers reach, repetition, harm, novelty, and audience interest; Liu, Gwizdka, and Lease explicitly find checkworthiness subjective and multidimensional. [Full Fact](https://fullfact.org/blog/2025/apr/how-does-the-full-fact-team-choose-what-to-fact-check/), [Liu et al.](https://arxiv.org/abs/2412.08185)
+
+2. **High — The denominator reflects processing and writing style.** Marcus has **600 settled and 1,684 held**; Zitron **four settled and 589 held**. Neither is a representative sample of forecasting skill. Repeated statements and extraction into many atomic premises can dominate counts. Show coverage alongside results, distinguish statements from recurring propositions, and preserve dates and conditions when linking repetitions. Do not manufacture comparable headline answers from unequal completion. A thesis’s supported premises also do not establish that its central conclusion was right.
+
+3. **High — Two vendors do not remove conflicts or hindsight.** Anthropic and OpenAI both have interests in the subject matter; agreement can preserve shared errors. “Lower tier wins” gives either model a visibility veto and systematically demotes ambiguous claims. Retain both ratings and disagreement, permit abstention, and audit disagreement by subject and target using a stratified human-reviewed sample. Titles, repetition, numeric precision, and dramatic language can game the rubric. Mask author identity where feasible. Omit historical boldness unless dated external evidence establishes the relevant consensus; hiding the outcome field cannot erase model knowledge.
+
+4. **High — Thesis assignment is computationally workable but semantically fragile.** Ten thousand claims require roughly **20,000 classification decisions**, though batching reduces calls. One provider’s proposed taxonomy anchors the other; long contexts, overlapping theses, label drift, and forced single membership create omissions. Freeze a codebook with inclusion/exclusion examples and stable IDs; permit multiple memberships, “none,” and “uncertain.” Preserve polarity and conditionality. Publish assignment coverage and disagreement rates, inspect a sample, and never silently discard disputed assignments. Fifteen to forty theses should emerge from usefulness, not a quota.
+
+5. **High — Lead with exploration and retain one scoped answer per person.** Readers may want to retrieve a remembered statement, compare arguments, or understand change; those are distinct tasks in Brehmer and Munzner’s visualization taxonomy. [Brehmer–Munzner](https://www.cs.ubc.ca/labs/imager/tr/2013/MultiLevelTaskTypology/) Lead with company/topic entry points and concrete records, then the existing answer with its denominator. The proposed second answer embeds an unvalidated selection model. Its rule still counts mixed as half and requires ten settled records; neither convention establishes forecasting skill. Hart’s selective-exposure findings also support keeping active filters and exclusions conspicuous. [Hart et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4797953/)
+
+6. **High — “The big calls” needs an outcome-independent selection contract.** Include consequential observations, causal assertions, unresolved claims, and unscored hedges as well as predictions. Freeze eligibility before examining verdicts; retrospectively selected records must say so. Use identical rules per person, fixed slots, one card per linked proposition, and date-descending order with ID tie-breaks. Never impose equal numbers of hits and misses. Each card needs exact words, date, commitments, why selected, assessment/cutoff, and an evidence link. “What was known then” needs dated sources, not a model’s consensus sentence. Link the complete eligible set.
+
+7. **Medium — Explore should prioritize questions over taxonomy.** Ship search, person, entity, existing topic, kind, and outcome; put year and horizon state under additional filters. Support multiple entities and an unmapped category. Defer significance and theses. Show counts and readable records before elaborate charts; any comparison needs a common scale and denominators. Crucially, an outcome filter must not turn the answer into “Mostly right” merely because the reader selected supported claims: retain the parent cohort’s summary or suppress that answer. Keep held counts separate wherever their metadata cannot support equivalent filtering.
+
+## Answers to the open questions
+
+1. **Lower tier wins?** No. Preserve disagreement; it is uncertainty, not evidence of low importance.
+2. **Historical boldness without leakage?** Not reliably. Require contemporaneous evidence or show unknown.
+3. **One answer or two?** One scoped answer per person, secondary to exploration.
+4. **Include hedged big calls?** Yes, visibly unscored, preserving their conditions and excluding them from settled denominators.
+5. **Does “Headline call” overclaim?** Yes. Reserve “headline” for demonstrable source placement; otherwise use “Selected claims” with selection reasons.
+
+## Smallest version that ships
+
+Build `/explore` from the frozen release with URL-backed search, entity/topic/person/kind/outcome filters, counts, and paginated claim rows. Add a reviewed, deterministic alias table that preserves raw targets and allows multiple entities.
+
+On the homepage, lead with saved cuts such as **company finances**, **capabilities and reliability**, and **safety and policy**, plus company links. Keep the existing answer below, with prominent completion counts. This lets readers reach consequential financial arguments without first commissioning a universal importance scale.
+
+Use subscription CLIs for implementation; add **no corpus-wide model classification dependency**. Verify facet counts, URL round-trips, empty states, and mobile performance; run the required tests, validation, and build. Record the design decision and reconcile policy wording before release.

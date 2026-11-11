@@ -1,0 +1,167 @@
+{
+ "run_id": "marcus-rumors-of-agis-arrival-have-been-6f5c93-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-rumors-of-agis-arrival-have-been-6f5c93": "2fb228507bc1f0861b9778b4735fb04c4f0463333e958b7317fc101545a835f4",
+  "case:marcus-rumors-of-agis-arrival-have-been-723913": "d00457491d23feec22b96cc98783324db21bea5c34d4a889ca269abf057d3f77",
+  "case:marcus-rumors-of-agis-arrival-have-been-981d53": "f24ebac563ba6409382f2323c9d511a208e96ffc3efc0bd5e4ed545815781569"
+ },
+ "started_at": "2026-10-29T21:50:39Z",
+ "completed_at": "2026-10-29T21:51:07Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own Substack essay. The Gu et al. citation is his supporting example, not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'As a result' plus 'producing' makes a causal claim: benchmark-focused training causes fragility outside the test. The drafter leaves out the medical examples, but the core causal claim is kept intact."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Asking for controlled or other credible causal evidence is a fair standard for a causal claim. Separating benchmark stress tests from real clinical deployment is a reasonable reading of 'real-world settings'."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Gu et al. document the failure modes Marcus describes: fragility when the test is altered, and fluent but flawed reasoning. But they alter the evaluation inputs, not the training, so the study cannot show benchmark-focused training is the cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A controlled study showing that contamination inflates translation scores. It does not test whether models degrade under modest real-world shifts."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The symptoms Marcus describes are documented in Gu et al., and contamination is shown to inflate scores. No item compares matched systems trained with and without benchmark-focused optimisation, so the causal link is neither established nor refuted. There is no counterevidence either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-rumors-of-agis-arrival-have-been-6f5c93"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his own essay."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'in recent years' and the accompanying point about financial stakes. Revision 2 rightly treats 'as' as linking the trends in time rather than as a cause."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'more often' as a rise in how common the practice is matches the ordinary meaning. Separating benchmark material found on the web from material actually used in training is a fair requirement."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows benchmark overlap in Common Crawl rising from 2020 to 2023. That is a rising risk of contamination, not a measured rise in actual training on benchmarks across successive models."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Finds widespread semantic duplicates of benchmarks in one training corpus (Olmo3). One snapshot of one model family cannot show a trend over time."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows contamination is widespread and that it was rising in web data. No comparable measurement across model generations shows training on benchmarks becoming more common, and nothing measures the financial stakes. Nothing contradicts the claim either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-rumors-of-agis-arrival-have-been-723913"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence, citing two 2023 papers."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'even state-of-the-art', 'reliably', 'small fraction' and 'typical occupations'. Leaving out the citations and the benchmark contrast is acceptable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The claim is in the present tense in a 2026 essay, so judging it against capabilities current at publication is fair. Defining 'reliably' as consistent work of professional standard is the ordinary reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Eloundou et al. measure exposure to AI, not reliable completion of tasks, and the paper predates the systems current in 2026."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Felten et al.'s exposure index deliberately says nothing about whether AI replaces or assists workers. It cannot show a share of tasks reliably completed."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Remote Labor Index: the best agent fully automated only 2.5% of tasks, which is consistent with the claim. But the sampled remote projects are not representative of the tasks in typical occupations."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "OpenAI's own disclosure: GPT-5.2 beat or tied experts on 70.9% of comparisons on selected, well-specified GDPval tasks. That is a win-or-tie rate, not a measure of reliable, representative task completion."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The papers Marcus cites measure exposure, not reliable performance. Of the evaluations from the period, the Remote Labor Index points to a small share and OpenAI's GDPval figure points to strong results, but neither is a representative occupational measure with a reliability threshold. The contract's conditions are not met either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-rumors-of-agis-arrival-have-been-981d53"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26468,
+  "output_tokens": 3009,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

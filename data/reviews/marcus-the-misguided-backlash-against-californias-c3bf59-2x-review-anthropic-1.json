@@ -1,0 +1,107 @@
+{
+ "run_id": "marcus-the-misguided-backlash-against-californias-c3bf59-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-misguided-backlash-against-californias-c3bf59": "fc42eea80acec0e78fb653a528ec9bcf6f2f59dc981c1874842de301d603d143",
+  "case:marcus-the-misguided-backlash-against-californias-e945d0": "c99fd2d13204cc8afa7688887ed571596c034240f391b137b741f30ad5a8b0e7"
+ },
+ "started_at": "2026-10-29T12:30:54Z",
+ "completed_at": "2026-10-29T12:31:13Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post. The quoted tweet is not part of the claim; the claim is his prose describing what came out."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps his 'explicitly set to encrypt everything' exception and labels the epithets as his opinion. The proposition is an observation about the early Recall index database."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'plain text' as unencrypted, readable SQLite contents is the ordinary informed reading. Restricting to the early preview build and treating the exception as disk encryption is fair. The March 24 date conflict does not affect the storage fact."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The researcher's preserved June 2024 tool documentation says Recall stored data in an unencrypted SQLite database and shows OCR text being extracted from it. The June 6 example falls in the period."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Ars Technica independently tested build 26100.712 and confirmed raw Recall data was easy to view. It says disk encryption is usually on by default with a Microsoft account. That fits the contract's disk-encryption distinction and only slightly qualifies 'explicitly set'."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Direct examinations of the early Recall build (e1, and e2 as context) show the OCR text index sat in a readable SQLite database with no separate database encryption. Disk encryption was the only protection. That matches the claim. The point in e2 that disk encryption is often on by default only slightly qualifies 'explicitly set' and does not contradict the main observation.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-misguided-backlash-against-californias-c3bf59"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Universal observation about the companies covered by SB-1047's stronger rules: each valued at billion-dollar scale. The scope matches the wording."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Taking 'valued' as equity valuation of at least US$1B, as of the post date, is a fair ordinary reading. The result still depends on who counts as covered and on the valuation basis, neither of which the speaker supplied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Epoch AI's research on training costs addresses resource intensity, not company valuations or which companies the bill covers. It cannot support or contradict the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet does not establish which companies were covered or give contemporaneous valuations for them. The only item is training-cost context. No covered company is shown to be below US$1B, and full coverage is not shown either. The evidence does not settle the universal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-misguided-backlash-against-californias-e945d0"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 15455,
+  "output_tokens": 2047,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

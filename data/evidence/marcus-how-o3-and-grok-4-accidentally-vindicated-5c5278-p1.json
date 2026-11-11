@@ -1,0 +1,99 @@
+{
+ "packet_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-5c5278-p1",
+ "claim_revision_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-5c5278",
+  "version": 2,
+  "content_hash": "6e8cb9b9d292de8be29b71e2e953abff0dfcfdc76d126cdd98813839b81a89d3"
+ },
+ "contract_ref": {
+  "id": "marcus-how-o3-and-grok-4-accidentally-vindicated-5c5278",
+  "version": 1,
+  "content_hash": "4d32e4e9129c1449f18979044025aafac0679102b33822d04916954c5d55bde9"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com o3 o4 mini system card hallucinations PersonQA 33 16",
+   "site.openai.com \"o3\" \"without tools\" \"83\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": true,
+    "why": "Original dated system card contains directly comparable o3 and o1 hallucination and accuracy results."
+   },
+   {
+    "url": "https://openai.com/index/introducing-o3-and-o4-mini/",
+    "used": true,
+    "why": "Original launch disclosure reports task advantages, tool capabilities, and expert comparisons."
+   },
+   {
+    "url": "https://openai.com/index/o3-o4-mini-system-card/",
+    "used": false,
+    "why": "read_page returned HTTP 403; the directly accessible PDF was used instead."
+   },
+   {
+    "url": "https://techcrunch.com/2025/04/18/openais-new-reasoning-ai-models-hallucinate-more/?_hsmi=108074994",
+    "used": false,
+    "why": "Secondary reporting was unnecessary once the primary system card was obtained."
+   }
+  ],
+  "performed_at": "2026-10-29T17:15:11Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-2221c875-02dc-4789-800b-e7758f3722c1-o3-and-o4-m-13538e7fc907",
+   "source_snapshot_id": "9fbc1e73c72b62c114bcdb288387a014320e349c9b08f04b016b1ba74e485b51",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "locator": "Section 3.3, 'Hallucinations', and Table 4",
+   "receipt": {
+    "public_excerpt": "Specifically, o3 tends to make more\nclaims overall, leading to more accurate claims as well as more inaccurate/hallucinated claims.",
+    "quote_hash": "15aadf5efc7cf59ac06420b773a4803a5a05bbc1f928e794fbfbf853a5799616",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:00:32Z",
+   "relation": "supports",
+   "explanation": "Table 4 reports hallucination rates of 0.33 for o3 versus 0.16 for o1 on PersonQA, and 0.51 versus 0.44 on SimpleQA. It also reports higher o3 accuracy on both tests, qualifying any broader inference that o3 is simply worse at factual answering.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-introducing-o3-and-o4-mini",
+   "source_snapshot_id": "d1b7388d2041dc5ab79a241ac7d97c3ce5b5353765a2e7ef60304cec26f0b2eb",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/introducing-o3-and-o4-mini",
+   "locator": "Section 'What’s changed', opening o3 paragraph",
+   "receipt": {
+    "public_excerpt": "It sets a new SOTA on benchmarks including Codeforces, SWE-bench (without building a custom model-specific scaffold), and MMMU.",
+    "quote_hash": "581b35dfc34de15a47eae4f683c523433c736204f920f2a14c36fac904b47b45",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-16",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T07:02:17Z",
+   "relation": "supports",
+   "explanation": "The launch report describes broad task advances and 20% fewer major errors than o1 in external expert evaluations. It introduces full tool access for these reasoning models and reports strong tool-enabled mathematics results, supporting substantial advantages on some tasks.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1"
+ ],
+ "unresolved_gaps": [
+  "The cited evaluations do not establish hallucination rates across all real-world uses.",
+  "They do not isolate how much of o3's broader task improvement comes from code execution."
+ ],
+ "packet_hash": "066b2c4a1cbfffc95f8b426b98933d569bf1447710097ec5c094e26a24804ddd"
+}

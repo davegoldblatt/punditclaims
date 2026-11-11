@@ -1,0 +1,119 @@
+{
+ "run_id": "marcus-one-genai-image-ten-errors-31b9b9-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-one-genai-image-ten-errors-31b9b9": "5b69353f31f131bf460b13d7afffd54a49e5931524b4001a720e1b2943bbf4e6",
+  "case:marcus-one-genai-image-ten-errors-c5349e": "2fe77f0af5e6c8cf16558e06f03c004552946fc4290bd35bb0d56dba8c354a33"
+ },
+ "started_at": "2026-10-29T07:59:06Z",
+ "completed_at": "2026-10-29T07:59:33Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack essay, stated as his own summary of the essay's lesson."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Matches the statement: current systems are good at local coherence (words, pixels) but not at aligning outputs with global comprehension. The scope 'current systems' is kept and no hedge is added or dropped."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading uses behavioural proxies: fluency and image quality stand for local coherence, and factual, explanatory and spatial consistency stand for global alignment. That is an ordinary, fair reading of a broad general claim, and it is not stretched either way. The January 2024 window and the behavioural reading of 'global comprehension' are evaluator choices, and the contract flags them."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2024 primary research on LLMs. It reports fluent, convincing explanations that are often inconsistent across related inputs, and measures this across several datasets. This covers the language side."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2024 primary research. Diffusion models handle simple prompts but get confused by multiple objects or spatial relations. This covers the image compositional side."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2024 primary research. It reports high-quality images alongside a struggle to follow spatial-layout instructions, so it covers both halves of the contrast for images."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "January 2024 primary research. The abstract says LMs generally lack a globally coherent world model and produce incorrect content. The improvements it reports do not show the problem was solved, so overall it supports the claim rather than counting against it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Several contemporary primary studies covering both text and image generation describe fluent or high-quality surface output alongside recurring failures of consistency, composition and spatial layout. No item in the packet shows reliable global consistency. The contract's general-weakness reading is met, though the evidence is a sample of studies, not a census of models.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-one-genai-image-ten-errors-31b9b9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own item in the answer key of his own post."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The core matches: the painting is not really in Michelangelo's style despite the prompt. But the drafter calls it a 'Midjourney' image, and neither the quoted context nor the packet identifies the generator, so the proposition adds an unverified detail. The contract targets 'the particular image', which is correct."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Testing for an overall stylistic resemblance across several features is a fair, ordinary reading. Style resemblance is an aesthetic judgment with no threshold, so the result depends on the evaluator's interpretation, and the contract flags this."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "A February 2024 blog post. It reports trouble tracing where the image came from and repeats one reader's 'not Michelangelo in style' remark. That is only a lay echo, not a documented comparison, and it misdates the repost to 2023."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no authenticated image or prompt record and no documented comparison with Michelangelo's paintings. Its only item is provenance context plus a lay viewer's echo of the judgment. Neither the support condition nor the contradiction condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-one-genai-image-ten-errors-c5349e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 17998,
+  "output_tokens": 2725,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

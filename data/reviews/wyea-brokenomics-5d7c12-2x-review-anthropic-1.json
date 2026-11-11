@@ -1,0 +1,119 @@
+{
+ "run_id": "wyea-brokenomics-5d7c12-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-brokenomics-5d7c12": "3337729e17ec29604dea51638f90198cb9a2ad967abf8001558296654571530f",
+  "case:wyea-brokenomics-612117": "f478cc2f6d85835a0382073dd9c4108528bc14b8b9aae9c95edfe88b8e4ede9e"
+ },
+ "started_at": "2026-10-31T19:44:23Z",
+ "completed_at": "2026-10-31T19:45:06Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter. He frames the 'helpful with research' view as others' and rejects it, so the hallucination claim is his."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Firm universal language ('any', 'absolutely', 'certain'), with no hedge. Reading it as every AI research answer containing a hallucination is faithful. It is a general claim about current AI, so observation is the right kind."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (every answer has at least one false or fabricated element) is the ordinary reading of 'any... will absolutely'. Treating news and fact questions as research is reasonable, but long deep-research reports are not directly tested."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "BBC study, Feb 2025: 9% of answers had no issues of any kind, so those contained no hallucinations. The universal claim fails, though high issue rates back the broader warning."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "Only 19% of answers citing BBC content introduced factual errors, so most did not. This contradicts 'any... absolutely'."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "EBU/BBC study via participant VRT: 20% of answers had major accuracy issues. It counts only significant or major issues, so minor errors elsewhere are not ruled out. Context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "The claim is a firm universal. Independent journalist-reviewed evaluations in the period found a meaningful share of AI answers free of any issues (9%), and most answers without introduced factual errors. The universal is contradicted, though the high error rates support the speaker's broader caution. Untested: specialised deep-research reports.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-5d7c12"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words and his own calculation in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "It bundles a necessity claim ($358B by 2029) with a firm conditional forecast ('would be fatal' if growth slows). The antecedent and the 2029 horizon are kept. 'Fatal' has no date."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'any slowdown' as a sustained slowdown off the 2029 path. That is narrower than 'any', but it is a reasonable charitable reading. The speaker gave no measure for 'slowdown' or a date for 'fatal', so the reading decides whether the condition is met."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1 figures via TNW: H1 2026 revenue $16.3bn, Q2 $11.6bn. This is the baseline for growth. It is not outcome evidence."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "FT-reported Q3 revenue of $16.8bn implies quarterly growth fell from about 147% to about 45%. Whether that is the 'slowdown' meant is unclear, and no failure event followed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "unresolved",
+    "rationale": "The 2029 revenue deadline is after the evaluation date. No insolvency, distressed sale or compute default appears in the evidence, so the early-resolution rule is not met. The antecedent is ambiguous: Anthropic decelerated but still grew fast, and there is no OpenAI data. Not scorable yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-brokenomics-612117"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 40675,
+  "output_tokens": 4214,
+  "cached_input_tokens": 22015,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

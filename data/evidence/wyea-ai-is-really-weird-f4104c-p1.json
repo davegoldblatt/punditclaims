@@ -1,0 +1,96 @@
+{
+ "packet_id": "wyea-ai-is-really-weird-f4104c-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-really-weird-f4104c",
+  "version": 1,
+  "content_hash": "b201a6ea4038856d2631b6920fcb8709e002bb351b1eca03254dbc81e6bb0fcb"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-really-weird-f4104c",
+  "version": 1,
+  "content_hash": "0510f9a9c592e0ab41bddd3646c74c5b58f9cfeb20af808e739f929b544cd005"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com engineering agents simple loop 2026 March",
+   "site.anthropic.com \"harness design\" \"Mar 24, 2026\"",
+   "site.anthropic.com \"Building a C compiler\" \"2026\" \"loop\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "used": true,
+    "why": "Dated technical documentation describes the model-plus-harness architecture and adaptive execution."
+   },
+   {
+    "url": "https://www.anthropic.com/engineering/building-c-compiler",
+    "used": true,
+    "why": "A concrete implementation describes Claude instances working through an execution harness and shared codebase."
+   },
+   {
+    "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+    "used": false,
+    "why": "Read successfully and consistent with the other examples, but another example from the same vendor does not establish market-wide coverage."
+   }
+  ],
+  "performed_at": "2026-10-29T16:03:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-engineering-building-c-compiler",
+   "source_snapshot_id": "de9d9e6358973b5f38665795fb585cf40c11c03f6b3a22ac739da9c95f3f96bf",
+   "publisher": "Anthropic",
+   "source_type": "demonstration",
+   "url": "https://www.anthropic.com/engineering/building-c-compiler",
+   "locator": "Running Claude in parallel",
+   "receipt": {
+    "public_excerpt": "a new Claude Code session",
+    "quote_hash": "be36208dba7e16b18585b9a143a7fe9aae1515ef0d2c8d2878673eee29d03290",
+    "verified": "exact"
+   },
+   "event_date": "2026-02",
+   "available_at": "2026-02-05",
+   "retrieved_at": "2026-10-29T03:55:33Z",
+   "relation": "supports",
+   "explanation": "This implementation supports the architectural core of Zitron's description: language-model sessions connected to development tools and an execution environment. It establishes an example, not the meaning of the whole category.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-engineering-demystifying-evals-for-ai-agents",
+   "source_snapshot_id": "55419e1f89d0b0489a48333e8cd7792fdbc3c28807d2bd4e4b280550a859811d",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "locator": "Introduction, second paragraph",
+   "receipt": {
+    "public_excerpt": "modifying state",
+    "quote_hash": "1ec2cde8c888eaa84278c4a4f8d04d30ead496619393cd81c06cd17a19fddce0",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-09",
+   "available_at": "2026-01-09",
+   "retrieved_at": "2026-10-29T15:54:51Z",
+   "relation": "context",
+   "explanation": "The documentation identifies adaptive execution across multiple turns as important agent behavior. This qualifies the shorthand without disproving it if chatbot includes a language model running inside such a loop.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The inspected implementations establish one vendor's architecture, not representative coverage of the category.",
+  "The source does not specify whether chatbot is an architectural shorthand or a claim of complete functional equivalence.",
+  "The evidence supports shared components but does not settle whether those components adequately define an agent."
+ ],
+ "packet_hash": "ca3ed43775739963caf61611460ea7cf713ee4579264d146fb577564fb3c200a"
+}

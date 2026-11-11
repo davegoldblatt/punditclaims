@@ -1,0 +1,89 @@
+{
+ "packet_id": "marcus-noam-chomsky-and-gpt-3-f648bc-p1",
+ "claim_revision_ref": {
+  "id": "marcus-noam-chomsky-and-gpt-3-f648bc",
+  "version": 1,
+  "content_hash": "ee5e9456c1bae3baea7524b27fadd8094ae0eb790781414d8348c839ad8ed9a6"
+ },
+ "contract_ref": {
+  "id": "marcus-noam-chomsky-and-gpt-3-f648bc",
+  "version": 1,
+  "content_hash": "8e881be2216a6898518fcba9850d90c02cce79c24379bcfdfbe731f86f3732f5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Direct lookup: TruthfulQA (arXiv 2109.07958) on why false answers arise",
+   "Direct lookup: InstructGPT paper (arXiv 2203.02155) on hallucination reduction without grounding"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Attributes false answers to imitating the training distribution; partial fit with the causal story."
+   },
+   {
+    "url": "https://arxiv.org/pdf/2203.02155",
+    "used": true,
+    "why": "Shows text-only fine-tuning reduced but did not remove hallucination; bears on 'no capacity to avoid'."
+   }
+  ],
+  "performed_at": "2026-10-29T07:29:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2109-07958",
+   "source_snapshot_id": "223855e8ead0b33318f2f1cb1369b15a3b6f01b4293f03c0706241535264358a",
+   "publisher": "ACL 2022 (Lin, Hilton, Evans), via arXiv",
+   "source_type": "peer_reviewed",
+   "url": "https://arxiv.org/abs/2109.07958",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "However, this result is expected if false answers are learned from the training distribution.",
+    "quote_hash": "a949dbe336f5064e45eacc5e09ba9e2d437512578527606dff820ab660e6b399",
+    "verified": "exact"
+   },
+   "event_date": "2021-09",
+   "available_at": "2021-09-08",
+   "retrieved_at": "2026-10-29T02:20:23Z",
+   "relation": "context",
+   "explanation": "Links falsehoods to imitating training text, which partly fits Marcus's word-statistics story. It does not test whether grounding in the world is the missing factor.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2203-02155",
+   "source_snapshot_id": "eb5bfba5a13cc895c3af37adbbb80b0ab41c8ce6a4f16f91e0747fc7d52de5cc",
+   "publisher": "arXiv (OpenAI authors)",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/pdf/2203.02155",
+   "locator": "Section 1 Introduction, summary of findings",
+   "receipt": {
+    "public_excerpt": "InstructGPT models make up information not present in the input about half as often as GPT-3 (a\n21% vs. 41% hallucination rate, respectively).",
+    "quote_hash": "f834513cdfc31bd33af389e8409b584ab0ffefa8bf4cfc3396643c7e6591310e",
+    "verified": "exact"
+   },
+   "event_date": "2022-03",
+   "available_at": "2022-03-04",
+   "retrieved_at": "2026-10-29T06:43:12Z",
+   "relation": "context",
+   "explanation": "Human-feedback fine-tuning, with no grounding in the world, halved fabrication but left it at 21%. This fits 'cannot reliably avoid' and also shows some capacity to reduce errors, so the causal story stays unsettled.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No controlled study available isolates text-only training, as against world grounding, as the cause of misinformation in GPT-3.",
+  "Whether 'no capacity to avoid' means 'never' or 'not reliably' changes how e2 bears on the claim."
+ ],
+ "packet_hash": "b3898373fa2d15c4f04611daca7b2770b2e1f92d8bcd464b96d27c62f69574e0"
+}

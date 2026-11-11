@@ -1,0 +1,121 @@
+{
+ "assessment_id": "marcus-how-not-to-test-gpt-3-f4f449-a1",
+ "claim_revision_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-f4f449",
+  "version": 2,
+  "content_hash": "f4b504e74960ee52aa7c7d0d3e97b856057867305fdd513be2122b7e0b316f5e"
+ },
+ "contract_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-f4f449",
+  "version": 1,
+  "content_hash": "f1c2120a9fbd00055d4e79e07abb3237299c8073bec01420ca240986ec9cb915"
+ },
+ "packet_ref": {
+  "id": "marcus-how-not-to-test-gpt-3-f4f449-p1",
+  "content_hash": "4ec123136f6f79c4c19c707859beff3c013144ff1a6b4026a61ccfdf8f5a87bb"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2020-06",
+  "end": "2023-02-17",
+  "precision": "day"
+ },
+ "public_rationale": "OpenAI's own InstructGPT paper (March 2022) shows the pattern Marcus describes. Human raters preferred the newer, fine-tuned GPT-3 models overall, and they were more truthful. Yet they did worse than the original GPT-3 on several public benchmarks: SQuAD, DROP, HellaSwag and WMT French-to-English translation. OpenAI calls this an 'alignment tax.' So the core claim, better overall but not across the board, holds. The aside that unimproved versions are never released was not checked.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Rests mainly on one developer's documentation of one model family.",
+  "The release-practice aside is not tested."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-how-not-to-test-gpt-3-daeb87-3x-review-anthropic-1",
+  "marcus-how-not-to-test-gpt-3-daeb87-3x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-how-not-to-test-gpt-3-f4f449",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Large language models and other machine-learning-based AIs, such as machine translation systems, improve overall over time (since unimproved versions aren't released), but they don't improve across the board.",
+  "kind": "observation",
+  "conditions": [
+   "large language models and other machine-learning-based AIs such as machine translation systems",
+   "if they haven't improved, they aren't released"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Large language models and other machine learning based Ais such as machine translation systems do improve overall over time --- if they haven’t improved, they aren’t released --- but they don’t improve across the board.",
+   "locator": "paragraph 36",
+   "url": "https://garymarcus.substack.com/p/how-not-to-test-gpt-3",
+   "date": "2023-02-17",
+   "document_title": "How Not to Test GPT-3",
+   "observed_at": "2026-10-29T00:04:14Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Large language models and other machine learning based AIs such as machine translation systems",
+    "do improve overall over time",
+    "if they haven't improved, they aren't released",
+    "they don't improve across the board"
+   ],
+   "our_interpretation": [
+    "Main proposition: newer released versions of ML systems tend to do better overall, yet do worse than older versions on some tasks or items.",
+    "The aside 'if they haven't improved, they aren't released' is a generalization about release practice. It is hard to test and is treated as secondary.",
+    "Target period: the GPT-3 era up to the post date (mid-2020 to 2023-02-17), since he describes an ongoing state without naming a period."
+   ],
+   "support_condition": "Documented cases where a newer released model improves overall but regresses on specific tasks compared with its predecessor.",
+   "contradiction_condition": "Evidence that successive released versions improved uniformly on every measured task, or did not improve overall."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "OpenAI's own InstructGPT paper (March 2022) shows the pattern Marcus describes. Human raters preferred the newer, fine-tuned GPT-3 models overall, and they were more truthful. Yet they did worse than the original GPT-3 on several public benchmarks: SQuAD, DROP, HellaSwag and WMT French-to-English translation. OpenAI calls this an 'alignment tax.' So the core claim, better overall but not across the board, holds. The aside that unimproved versions are never released was not checked.",
+  "limitations": [
+   "Rests mainly on one developer's documentation of one model family.",
+   "The release-practice aside is not tested."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "During RLHF fine-tuning, we observe performance regressions compared\nto GPT-3 on certain public NLP datasets, notably SQuAD (Rajpurkar et al., 2018), DROP (Dua et al.,\n2019), HellaSwag (Zellers et al., 2019), and WMT 2015 French to English translation",
+    "locator": "Section 1 Introduction, main findings",
+    "url": "https://arxiv.org/pdf/2203.02155",
+    "publisher": "OpenAI (arXiv)",
+    "event_date": "2022-03",
+    "available_at": "2022-03-04",
+    "explanation": "The newer GPT-3 variant got worse than GPT-3 on several benchmarks, including machine translation. Improvement was not across the board."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2203.02155",
+    "publisher": "OpenAI (arXiv)",
+    "event_date": "2022-03",
+    "available_at": "2022-03-04",
+    "explanation": "The same model improved overall, by human preference and truthfulness, while still showing some regressions. This is the 'better overall, not across the board' pattern Marcus describes."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "63b848ef4aa18be77a7802a3b76ac8957c56d50b28094adb779d9bc2b312070e",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:33:28Z"
+}

@@ -1,0 +1,49 @@
+---
+// Plain-word notices for states that are not findings: withdrawn, under
+// review, review due, operational staleness, and "this is not the current
+// version". Each keeps the prior dated record readable.
+import type { PublicAssessment, PublicClaim } from "../lib/manifest.ts";
+import { assessmentPath, claimPath, day, isScreenedOut } from "../lib/view.ts";
+
+interface Props { claim: PublicClaim; a: PublicAssessment | null; versionPage?: boolean }
+const { claim: c, a, versionPage = false } = Astro.props;
+const n = a?.notice ?? null;
+const current = c.current;
+const replacedBy = a?.superseded_by ?? null;
+---
+{a?.status === "withdrawn" && (
+  <div class="notice" role="note" data-notice="withdrawn">
+    <h2 class="notice-title">Verdict withdrawn{n ? ` on ${day(n.since)}` : ""}</h2>
+    {n && <p>{n.text}</p>}
+    <p>{current
+      ? <>There is a newer verdict: <a href={claimPath(c.claim_id)}>read it</a>.</>
+      : <>There is no current verdict for this claim. The old one stays here so old links still work.</>}</p>
+  </div>
+)}
+{a?.status === "superseded" && versionPage && (
+  <div class="notice" role="note" data-notice="superseded">
+    <h2 class="notice-title">An older version</h2>
+    <p>This version was replaced{a.public_until ? ` on ${day(a.public_until)}` : ""}{replacedBy && <> by <a href={assessmentPath(c, replacedBy)}>a newer version</a></>}. {current ? <a href={claimPath(c.claim_id)}>Read the current verdict</a> : "There is no current verdict."}</p>
+  </div>
+)}
+{a?.status === "under_review" && (
+  <div class="notice" role="note" data-notice="under-review">
+    <h2 class="notice-title">Under review{n ? ` since ${day(n.since)}` : ""}</h2>
+    {n && <p>{n.text}</p>}
+    <p>This isn’t a new verdict. The one below stands until a new check is done.</p>
+  </div>
+)}
+{n?.kind === "operational_stale" && a?.status !== "withdrawn" && (
+  <div class="notice" role="note" data-notice="stale">
+    <h2 class="notice-title">Review overdue{` since ${day(n.since)}`}</h2>
+    <p>{n.text}</p>
+    <p>This is a delay on our side, not news about the claim.</p>
+  </div>
+)}
+{!versionPage && c.review.review_due && (
+  <div class="notice" role="note" data-notice="review-due">
+    <h2 class="notice-title">Review due</h2>
+    {c.review.triggers.length > 0 && <p>Why: {c.review.triggers.join("; ")}.</p>}
+    <p>The verdict below{a && !isScreenedOut(a) ? <> uses evidence up to {a.payload.evaluation_as_of}</> : null} and stands until the new check is done. A deadline passing doesn’t decide the outcome by itself.</p>
+  </div>
+)}

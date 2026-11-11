@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-scaling-is-over-the-bubble-may-be-39c944-p1",
+ "claim_revision_ref": {
+  "id": "marcus-scaling-is-over-the-bubble-may-be-39c944",
+  "version": 1,
+  "content_hash": "ed0159e2b12dae7d062c7b3f9f047eadd39b459099f342f09b58dae077898641"
+ },
+ "contract_ref": {
+  "id": "marcus-scaling-is-over-the-bubble-may-be-39c944",
+  "version": 1,
+  "content_hash": "6e0256e0bba7b6e167a1437178235b2d88936ad72c2bba81a16fd916881d5818"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia April 4 2025 year to date 31. S&P 500 13.7",
+   "\"Nvidia\" \"April 4, 2025\" \"year\" \"31\"",
+   "\"Nvidia\" \"April 4, 2025\" \"30\"",
+   "\"Nvidia\" \"April 4\" \"2025\" \"year to date\" \"30\"",
+   "\"S&P 500\" \"April 4, 2025\" \"13.7\"",
+   "Nvidia April 4 2025 \"30%\" stock"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://finance.yahoo.com/news/bank-america-gives-eye-popping-180300143.html",
+    "used": true,
+    "why": "Full contemporaneous article states Nvidia's April 4 closing price and year-to-date decline."
+   },
+   {
+    "url": "https://www.morganstanley.com/campaigns/wealth-management/move-report/move-report2025apr4",
+    "used": true,
+    "why": "Dated market report gives the S&P 500's matching year-to-date price decline."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/886982/000095017025051857/nvdadi19_prelim.htm",
+    "used": false,
+    "why": "Potential historical-price filing, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.letsassemble.com/hubfs/JPMorgan%20Guide%20to%20the%20Markets%20as%20of%204-4-25.pdf",
+    "used": false,
+    "why": "The targeted read did not locate Nvidia data."
+   }
+  ],
+  "performed_at": "2026-10-29T18:16:00Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-news-bank-america-gives-eye-popping-180300143-html",
+   "source_snapshot_id": "25d275e7fe4ffb91840ad11359c26138744c847e1274f454d5208604eda8cd63",
+   "publisher": "TheStreet, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/bank-america-gives-eye-popping-180300143.html",
+   "locator": "Near the end, following the 'More Nvidia' links",
+   "receipt": {
+    "public_excerpt": "down roughly 30% year-to-date.",
+    "quote_hash": "b0e9a56e9d663042267e22e792877251dfb97cefb32f624e6dcafccae0bfb9e0",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-04",
+   "available_at": "2025-04-06",
+   "retrieved_at": "2026-10-29T18:05:53Z",
+   "relation": "supports",
+   "explanation": "The reported decline is close to one third, though it is not literally 33.33%. Financial reporting is used because the historical-price filing could not be read.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "morganstanley-com-campaigns-wealth-management-move-report-move-report2025apr4",
+   "source_snapshot_id": "310a89b26d558dd07a718550a0d00521a4f5abf2a923d236fd79445c2b0f5d44",
+   "publisher": "Morgan Stanley Wealth Management, using Bloomberg market data",
+   "source_type": "secondary_summary",
+   "url": "https://www.morganstanley.com/campaigns/wealth-management/move-report/move-report2025apr4",
+   "locator": "What Happened in the Markets?, first paragraph",
+   "receipt": {
+    "public_excerpt": "lost 13.7%",
+    "quote_hash": "404ffa5591612827d94c0104d677e2c82fb6175287ef692a8626d6f5c4f8a815",
+    "verified": "exact"
+   },
+   "event_date": "2025-04-04",
+   "available_at": "2025-04-04",
+   "retrieved_at": "2026-10-29T18:05:23Z",
+   "relation": "supports",
+   "explanation": "The matching broad-market decline was substantially smaller. Nvidia's approximately 30% decline was about 2.2 times as large.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: Nvidia year-to-date decline approximately 30%",
+     "e2: S&P 500 year-to-date decline 13.7%"
+    ],
+    "formula": "30 / 13.7 = approximately 2.19; 30 - 13.7 = approximately 16.3 percentage points",
+    "rounding": "Ratio rounded to one decimal place in the explanation; precision limited by the approximate Nvidia figure."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [],
+ "packet_hash": "ca56a40b5828fad857c1cc3b8bf389b72899dcd531215c12b833ae09bb1e1569"
+}

@@ -1,0 +1,89 @@
+{
+ "run_id": "wyea-credit-crunch-01fbb9-4x-final-anthropic-2",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:wyea-credit-crunch-01fbb9": "cc5c68928e2e42def953cde132939153279d537dc9b83e7cba2853947c20740c",
+  "payload:wyea-credit-crunch-01fbb9": "f54b56a458cc701e5241f0531db7910cae08a8d8fe36e6668d9a39464f30cbd3",
+  "case:wyea-credit-crunch-0e40e4": "ee5063610336238fa9cd2ba9597497fce09302affd6f2676798c3b77b565f065",
+  "payload:wyea-credit-crunch-0e40e4": "7ccadcff2d71c033b62575dab88c71861b8a94da04f4f946e1f00892e0ce024c",
+  "case:wyea-credit-crunch-11d459": "77ff0f10b1bed254fa91f2b256e0e011ccaa2dac05bd7bad7c9971be11ea920d",
+  "payload:wyea-credit-crunch-11d459": "d6f0b889c0ea453bf9267377cb756dae3c243b9158cc5d8ecbe7bebf02669bd9",
+  "case:wyea-credit-crunch-14ee80": "67523f461046161ff90441494f6573be424e9ecdd9d3720f43a13aafcba89a12",
+  "payload:wyea-credit-crunch-14ee80": "32f85c5706dd93c48041ef4a04e5e61d0347d95fc0263b018507057dae9008f5"
+ },
+ "started_at": "2026-10-29T17:46:58Z",
+ "completed_at": "2026-10-29T17:47:58Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is the full sentence, unaltered. The proposition reasonably reads 'demand' as AI demand. The rationale's Goldman $300B and $70B Q2 figures, S&P's Aug 27 negative-FOCF forecast and Microsoft's July 29 capacity statement all match the evidence context and dates. The e1 excerpt fragment ('$1.1 trillion in 2027.') is accurate but uninformative next to its explanation. Axis, horizon and unresolved outcome match the reviews.",
+    "claim_id": "wyea-credit-crunch-01fbb9"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "SB Energy's August 17 announcement says planned capacity will come online in phases beginning in 2028 and that NVIDIA will invest $1.5 billion in SB Energy [e1]."
+    ],
+    "verdict": "fail",
+    "note": "The source says planned capacity 'is expected to come online in phases beginning in 2028'. The rationale reports it as saying capacity 'will come online', which drops the source's hedge. The NVIDIA $1.5B investment is supported. Excerpt, proposition, the NVIDIA-backstop condition, the no-deadline caveat and the open_horizon/unresolved outcome are fine. Fix: restore 'is expected to'.",
+    "claim_id": "wyea-credit-crunch-0e40e4"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is the full sentence. The proposition is a fair paraphrase, and the universal 'any'/'guaranteed' elements appear in the speaker criteria. The Nebius Oct 22 facility (Term SOFR+2.75%, mixed uses) and the Digi Power X Oct 13 conditional $200M commitment (no rate, not closed) are described accurately. Limitations correctly note the unverified backstops and the universal-guarantee issue. Outcome matches the reviews.",
+    "claim_id": "wyea-credit-crunch-11d459"
+   },
+   {
+    "excerpt_matches": false,
+    "proposition_faithful": false,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The report also does not establish that their purchases created an illusion of broad demand or lacked genuine downstream customers [e1]."
+    ],
+    "verdict": "fail",
+    "note": "The speaker said 'the illusion of massive demand'. The proposition and rationale change this to 'broad' demand, which shifts the meaning from scale to breadth. The public excerpt also stops before 'leaving very little left for the rest of the world and creating the illusion of massive demand', so the illusion clause the proposition relies on is not visible. The Bloomberg single-supplier, fiscal-year 70% estimate is described correctly. Outcome matches the reviews.",
+    "claim_id": "wyea-credit-crunch-14ee80"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 36531,
+  "output_tokens": 6641,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

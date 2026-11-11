@@ -1,0 +1,108 @@
+{
+ "packet_id": "marcus-agi-versus-broad-shallow-intelligence-9e6c99-p1",
+ "claim_revision_ref": {
+  "id": "marcus-agi-versus-broad-shallow-intelligence-9e6c99",
+  "version": 2,
+  "content_hash": "d244c3d5fb5b72d387f10ddbecf5250984df7988b1deeafca7e77086630b3b1d"
+ },
+ "contract_ref": {
+  "id": "marcus-agi-versus-broad-shallow-intelligence-9e6c99",
+  "version": 1,
+  "content_hash": "d347ce47c11c5489c95b75974892edc94be4e405a1e32c812d9e09bc8a4ffbe1"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM reliability simple tasks 2024 larger more instructable less reliable Nature",
+   "\"LLMs\" \"2024\" \"GSM-Symbolic\" accuracy",
+   "site.anthropic.com \"Claude 3.5 Sonnet\" \"2024\" \"reasoning\"",
+   "\"Larger and more instructable\" \"pmc\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nature.com/articles/s41586-024-07930-y",
+    "used": true,
+    "why": "read_page returned the abstract, marked FULL TEXT. It reports a relevant empirical investigation of reliability, but does not settle representative answer frequency in January 2025."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41586-024-07930-y.pdf",
+    "used": false,
+    "why": "read_page could not retrieve the PDF because it exceeded the tool's size limit."
+   },
+   {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446866/",
+    "used": false,
+    "why": "read_page returned HTTP 403; no quotations were taken from search results."
+   },
+   {
+    "url": "https://www.anthropic.com/research/claude-3-5-sonnet",
+    "used": true,
+    "why": "Original company evaluation reports substantial task success, providing a counterweight to a broad low-success interpretation."
+   },
+   {
+    "url": "https://arxiv.org/abs/2410.05229v1",
+    "used": false,
+    "why": "Read, but its mathematical perturbation tests do not establish representative trustworthiness across ordinary uses."
+   }
+  ],
+  "performed_at": "2026-10-29T02:10:20Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "nature-com-articles-s41586-024-07930-y",
+   "source_snapshot_id": "6da82049672c5a7b7740e8a6cc33fff2e26586906bea812d146cd64d2ae8e109",
+   "publisher": "Nature; Zhou and colleagues",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-024-07930-y",
+   "locator": "Abstract, second sentence",
+   "receipt": {
+    "public_excerpt": "However, larger and more instructable large language models may have become less reliable.",
+    "quote_hash": "71b9663f77cfd8070255092759431448ac79a47abf9603b00aaae8b7c28fc512",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-25",
+   "retrieved_at": "2026-10-29T02:05:51Z",
+   "relation": "context",
+   "explanation": "The abstract reports plausible wrong answers, difficulties supervising errors and remaining sensitivity to phrasing. Those findings inform the reliability concern, but do not establish that dependable answers were rare across ordinary January 2025 uses.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-claude-3-5-sonnet",
+   "source_snapshot_id": "b48f24e0257a30b3a4eb8ebc51bf47782c0c2dfbf7e98a1e3035b6f30ef988c5",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/claude-3-5-sonnet",
+   "locator": "Frontier intelligence at 2x the speed",
+   "receipt": {
+    "public_excerpt": "In an internal agentic coding evaluation, Claude 3.5 Sonnet solved 64% of problems, outperforming Claude 3 Opus which solved 38%.",
+    "quote_hash": "efb726944b165e68de37f69aa71dc64d3278c1c9d25c4ab5c3b2e35f49cf784b",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-06-21",
+   "retrieved_at": "2026-10-29T02:06:23Z",
+   "relation": "context",
+   "explanation": "The company reports successful solutions on a majority of its selected coding problems. This weighs against treating successful answers as universally rare, but an internal, tool-assisted coding evaluation does not measure general trustworthiness or the January snapshot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No recovered evaluation measures both linguistic appropriateness and dependability across a representative mix of ordinary tasks for the target snapshot.",
+  "The evidence does not establish a population-wide frequency corresponding to 'rarely trustworthy'.",
+  "The claim does not specify how task stakes, model selection or human checking affect trustworthiness.",
+  "The recovered sources do not settle the universal wording about appropriate language."
+ ],
+ "packet_hash": "aea9adcae719feb3be91034299683c0da6406a762d3dd5c9c40837e8dec78bd9"
+}

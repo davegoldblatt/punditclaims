@@ -1,0 +1,9 @@
+# List prices used to estimate API spend before and after each call, in US
+# dollars per million tokens. An estimate is labelled as one. A model missing
+# here cannot run under a spend ceiling: the run stops rather than guess.
+# Anthropic: from Anthropic's published model table (cached 2026-10-06).
+# OpenAI gpt-6-astra: third-party listings of OpenAI's pricing page, checked
+# 2026-10-28; the higher of two reported rates is used so estimates err high.
+claude-opus-5-5: { input: "4.00", output: "20.00", source: "Anthropic model table, 2026-10-06" }
+claude-sonnet-5-5: { input: "2.00", output: "10.00", source: "Anthropic model table, 2026-10-06" }
+gpt-6-astra: { input: "10.00", output: "50.00", long_context_input: "20.00", long_context_threshold_tokens: 272000, source: "third-party listings of OpenAI pricing, 2026-10-28; unverified on openai.com" }

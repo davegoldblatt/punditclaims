@@ -1,0 +1,143 @@
+{
+ "assessment_id": "wyea-reality-check-d20345-a1",
+ "claim_revision_ref": {
+  "id": "wyea-reality-check-d20345",
+  "version": 1,
+  "content_hash": "faac18810e97596c9b18d934c035f978f861b930b53f778fd06334d9a4977914"
+ },
+ "contract_ref": {
+  "id": "wyea-reality-check-d20345",
+  "version": 1,
+  "content_hash": "fe88a29b4628d37f7e730784f01353b329ba507a4469698981904d6cae1451ea"
+ },
+ "packet_ref": {
+  "id": "wyea-reality-check-d20345-p1",
+  "content_hash": "3c205851424c04cb321b968821677815139da02b394ec49f2c500c7031bdc02b"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-04-16",
+  "end": "2025-04-28",
+  "precision": "day"
+ },
+ "public_rationale": "The specific factual part holds. OpenAI's own o3 system card shows o3 hallucinating on 33% of PersonQA answers vs 16% for o1, and 51% vs 44% on SimpleQA. OpenAI says o3 makes more inaccurate claims and that it does not know why. 'Extremely expensive' is a loose judgment. o3 launched at $10 per million input tokens and $40 per million output tokens. TechCrunch called that relatively low given its performance. The ARC Prize had earlier called the o3 preview's compute cost steep. The cost wording is arguable, but the core claim that o3 hallucinates more is backed by OpenAI's own data.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The expense part is subjective and is weighed less than the hallucination part.",
+  "The hallucination comparison rests on OpenAI's internal benchmarks."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "wyea-reality-check-c08c11-3x-review-anthropic-1",
+  "wyea-reality-check-c08c11-3x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-reality-check-d20345",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "OpenAI's o3 reasoning model is extremely expensive and hallucinates more than predecessors.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Oh you mean the new and extremely expensive reasoning model that hallucinates more somehow?",
+   "locator": "paragraph 44",
+   "url": "https://www.wheresyoured.at/reality-check",
+   "date": "2025-04-28",
+   "document_title": "Reality Check",
+   "observed_at": "2026-10-28T22:30:09Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "o-3",
+    "new and extremely expensive reasoning model",
+    "hallucinates more somehow"
+   ],
+   "our_interpretation": [
+    "'Hallucinates more' is read as: o3 has higher hallucination rates than OpenAI's earlier reasoning model o1 on OpenAI's own published evaluations.",
+    "'Extremely expensive' has no stated measure. The plain reading is that o3 cost a lot to use at launch, both per token and in high-compute settings. This is a judgment and is weighed less than the hallucination part.",
+    "Target period: o3's public release (2025-04-16) to the post date."
+   ],
+   "support_condition": "OpenAI's own evaluations show o3 hallucinating more than o1, and o3's price or compute cost is high compared with typical models.",
+   "contradiction_condition": "OpenAI's evaluations show o3 hallucinating the same as or less than o1, or o3's pricing was clearly cheap compared with other models."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The specific factual part holds. OpenAI's own o3 system card shows o3 hallucinating on 33% of PersonQA answers vs 16% for o1, and 51% vs 44% on SimpleQA. OpenAI says o3 makes more inaccurate claims and that it does not know why. 'Extremely expensive' is a loose judgment. o3 launched at $10 per million input tokens and $40 per million output tokens. TechCrunch called that relatively low given its performance. The ARC Prize had earlier called the o3 preview's compute cost steep. The cost wording is arguable, but the core claim that o3 hallucinates more is backed by OpenAI's own data.",
+  "limitations": [
+   "The expense part is subjective and is weighed less than the hallucination part.",
+   "The hallucination comparison rests on OpenAI's internal benchmarks."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "PersonQA accuracy (higher is better) 0.59 0.36 0.47\nhallucination rate (lower is better) 0.33 0.48 0.16",
+    "locator": "Section 3.3, Table 4",
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "publisher": "OpenAI",
+    "event_date": "2025-04-16",
+    "available_at": "2025-04-16",
+    "explanation": "OpenAI's own table shows o3 hallucinating on 33% of PersonQA answers vs 16% for o1, and 51% vs 44% on SimpleQA. So o3 hallucinates more than its predecessor."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "o3 tends to make more\nclaims overall, leading to more accurate claims as well as more inaccurate/hallucinated claims.",
+    "locator": "Section 3.3, paragraph after evaluation list",
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "publisher": "OpenAI",
+    "event_date": "2025-04-16",
+    "available_at": "2025-04-16",
+    "explanation": "OpenAI says o3 makes more hallucinated claims and that the cause is unclear, which matches 'hallucinates more somehow'."
+   },
+   {
+    "id": "e3",
+    "relation": "contradicts",
+    "excerpt": "OpenAI is charging developers a relatively low price for o3, given its improved performance, at $10 per million input tokens",
+    "locator": "paragraph on API availability and pricing",
+    "url": "https://techcrunch.com/2025/04/16/openai-launches-a-pair-of-ai-reasoning-models-o3-and-o4-mini",
+    "publisher": "TechCrunch",
+    "event_date": "2025-04-16",
+    "available_at": "2025-04-16",
+    "explanation": "Gives o3's launch price of $10/$40 per million tokens. The reporter calls this relatively low given o3's performance, which cuts against 'extremely expensive'."
+   },
+   {
+    "id": "e4",
+    "relation": "context",
+    "excerpt": "such generality comes at a steep cost, and wouldn't quite be economical yet",
+    "locator": "section after results, paragraph beginning 'Of course'",
+    "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+    "publisher": "ARC Prize",
+    "event_date": "2024-12-20",
+    "available_at": "2024-12-20",
+    "explanation": "The benchmark operator described the o3 preview as having a steep cost. This was before the April release, and the page was edited later, so it is context only."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9c13d1bc67abff09c4b4f91db3914a69a3e327306f4461bf336de37b2570a4d4",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T18:02:43Z"
+}

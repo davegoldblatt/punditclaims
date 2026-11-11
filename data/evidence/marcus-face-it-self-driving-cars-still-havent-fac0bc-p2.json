@@ -1,0 +1,104 @@
+{
+ "packet_id": "marcus-face-it-self-driving-cars-still-havent-fac0bc-p2",
+ "claim_revision_ref": {
+  "id": "marcus-face-it-self-driving-cars-still-havent-fac0bc",
+  "version": 1,
+  "content_hash": "6093425de852c0fb01e150d842064c864b385ae4b9bc88290c0d0ff529d96038"
+ },
+ "contract_ref": {
+  "id": "marcus-face-it-self-driving-cars-still-havent-fac0bc",
+  "version": 2,
+  "content_hash": "015011852be1cdd340c31caf068467aa733090218a19aa3bc18a735d78dbbd5a"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.waymo.com \"novel\" \"long tail\" training",
+   "site.waymo.com \"unseen\" \"2023\" scenarios",
+   "autonomous driving training data long tail unseen scenarios open world 2023 paper",
+   "site.waymo.com/blog \"long tail\"",
+   "site.waymo.com/blog \"never\" \"seen\" \"2023\"",
+   "site.waymo.com \"world model\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2407.00959",
+    "used": true,
+    "why": "Read with read_page. Primary research describes rare or unseen training inputs as a continuing problem, but does not establish the unlimited assertion."
+   },
+   {
+    "url": "https://blog.waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/",
+    "used": true,
+    "why": "Read with read_page. Operator documentation describes preparing for rare scenarios through simulation, which limits what can be inferred from an unfamiliar road encounter."
+   },
+   {
+    "url": "https://arxiv.org/abs/2412.02689",
+    "used": false,
+    "why": "Read with read_page. The revised abstract reports bounded data-scaling and generalization experiments. These do not settle whether novel situations will always remain."
+   },
+   {
+    "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Learning_From_All_Vehicles_CVPR_2022_paper.pdf",
+    "used": false,
+    "why": "Read with read_page. The extracted passage interleaves PDF columns, making a clean quotation unreliable. The later research provides clearer relevant text."
+   }
+  ],
+  "performed_at": "2026-11-09T19:51:26Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2407-00959",
+   "source_snapshot_id": "a80f72f40f6cc8215d3f39dac5899d2e70e94d1ff94b66701552c9c90fffa3e3",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2407.00959",
+   "locator": "Abstract, second sentence",
+   "receipt": {
+    "public_excerpt": "rare or unseen inputs",
+    "quote_hash": "0e2b55190692b93a5900d8f9ce96e931e510ed33c7da9b5b67552b64657887a9",
+    "verified": "exact"
+   },
+   "event_date": "2024-07-01",
+   "available_at": "2024-07-01",
+   "retrieved_at": "2026-11-09T19:37:48Z",
+   "relation": "context",
+   "explanation": "The authors identify unseen inputs as a continuing issue for the models they discuss. This is consistent with Marcus's concern, but does not establish what happens at every training-data volume.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "blog-waymo-com-blog-2026-02-the-waymo-world-model-a-new-frontier-fo-e107c9e8cf68",
+   "source_snapshot_id": "a85c195cda4e901e86cc32701b04b2f12bf9a267b9a89bc96e081754d26a63bc",
+   "publisher": "Waymo",
+   "source_type": "company_disclosure",
+   "url": "https://blog.waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation",
+   "locator": "Closing paragraph before Acknowledgements",
+   "receipt": {
+    "public_excerpt": "rare and complex scenarios.",
+    "quote_hash": "5472cb54bce5afad2016e91216dd6eac52b3ca5b5c3bdc216740da7e79c3f8f7",
+    "verified": "exact"
+   },
+   "event_date": "2026-02-06",
+   "available_at": "2026-02-06",
+   "retrieved_at": "2026-11-09T19:37:48Z",
+   "relation": "context",
+   "explanation": "Waymo describes preparing for rare situations before encountering them on roads. This counters an inference that every unfamiliar road event must fall outside training coverage, but does not show that training can eliminate all future novelty.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The reviewed evidence does not establish that materially new driving situations must persist at every possible training-data volume.",
+  "No reviewed source establishes exhaustive coverage of future public-road situations.",
+  "The speaker supplies no threshold for distinguishing a materially new situation from a variation already covered by training."
+ ],
+ "packet_hash": "437c27edbb3c69f48a37749a22af2c866948f0fd88cf7e6b748c2f4aede55e8b"
+}

@@ -1,0 +1,135 @@
+{
+ "assessment_id": "wyea-ais-economics-dont-make-sense-b79382-a2",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-b79382",
+  "version": 2,
+  "content_hash": "3ca187fe07dc5d02c271aefb10b6c1dbb54e1aab34b59ef9fc9fded768213db7"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-b79382",
+  "version": 1,
+  "content_hash": "b9fad5948458490a068f4cde2f2146d814b0667972623f9f40163942c9b5acb5"
+ },
+ "packet_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-b79382-p1",
+  "content_hash": "96e17634eedefdf47a9fa347d3f6549a8d7b350101ffd19d43e399e3b663a795"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2026-04-28",
+  "precision": "day"
+ },
+ "public_rationale": "The April 2024–November 2025 study supports the narrower observation that expenditure on some frontier workloads rose: overall benchmarking costs stayed flat or increased, while costs at a given performance level fell [e8]. Its authors suggest larger models and longer reasoning traces as an explanation; this does not establish reasoning-token growth as the cause [e8]. The broad conclusion that comparable inference became more expensive does not hold in these measurements: the study reports falling fixed-performance costs, and the coding analysis published September 17, 2025 also finds falling expenditure at fixed benchmark scores [e8, e9].",
+ "evidence_ids": [
+  "e8",
+  "e9",
+  "e10"
+ ],
+ "counterevidence_ids": [
+  "e9"
+ ],
+ "limitations": [
+  "The studies do not establish an industry-wide trend across production workloads or providers' internal inference costs [e8, e9].",
+  "The frontier-cost study does not isolate reasoning-token growth from model size or demand for higher performance [e8]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ais-economics-dont-make-sense-b79382-4x-review-anthropic-1",
+  "wyea-ais-economics-dont-make-sense-b79382-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ais-economics-dont-make-sense-605574-4x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ais-economics-dont-make-sense-b79382",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "Although prices for some models might have come down, newer reasoning models burn far more tokens, so the cost of inference has gotten higher over time.",
+  "kind": "causal",
+  "conditions": [
+   "while prices for some models might have come down"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "while prices for some models might have come down, newer “reasoning” models burn way more tokens, which means the cost of inference has, somehow, gotten higher over time.",
+   "locator": "paragraph 22",
+   "url": "https://www.wheresyoured.at/ais-economics-dont-make-sense",
+   "date": "2026-04-28",
+   "document_title": "AI's Economics Don't Make Sense",
+   "observed_at": "2026-10-28T22:25:44Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "prices for some models might have come down",
+    "newer “reasoning” models burn way more tokens",
+    "which means the cost of inference has, somehow, gotten higher over time"
+   ],
+   "our_interpretation": [
+    "The ordinary reading concerns the total cost of performing work with newer reasoning models, rather than the price of one token.",
+    "The claim combines a mechanism, increased token use, with a broad historical cost conclusion.",
+    "Comparable-task evidence must distinguish running increasingly capable frontier models from achieving a fixed level of performance.",
+    "The historical endpoint is publication. No starting date is supplied, so the lower bound remains unspecified.",
+    "API expenditure can measure inference expense paid by an application, but does not establish model providers' internal costs."
+   ],
+   "support_condition": "Comparable-task measurements show that increased reasoning-token use raised total inference expenditure across newer frontier models despite lower prices elsewhere.",
+   "contradiction_condition": "Measurements including reasoning-token consumption show falling expenditure to achieve comparable performance. If frontier expenditure rises while fixed-performance costs fall, the compound claim warrants a mixed assessment."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The April 2024–November 2025 study supports the narrower observation that expenditure on some frontier workloads rose: overall benchmarking costs stayed flat or increased, while costs at a given performance level fell [e8]. Its authors suggest larger models and longer reasoning traces as an explanation; this does not establish reasoning-token growth as the cause [e8]. The broad conclusion that comparable inference became more expensive does not hold in these measurements: the study reports falling fixed-performance costs, and the coding analysis published September 17, 2025 also finds falling expenditure at fixed benchmark scores [e8, e9].",
+  "limitations": [
+   "The studies do not establish an industry-wide trend across production workloads or providers' internal inference costs [e8, e9].",
+   "The frontier-cost study does not isolate reasoning-token growth from model size or demand for higher performance [e8]."
+  ],
+  "evidence": [
+   {
+    "id": "e8",
+    "relation": "supports",
+    "excerpt": "reasoning traces.",
+    "locator": "Section 6, 'Inference Costs Are Falling, but Overall Benchmarking Costs are Increasing'",
+    "url": "https://arxiv.org/html/2511.23455v2",
+    "publisher": "arXiv — Gundlach, Lynch, Mertens and Thompson",
+    "event_date": "2025-11",
+    "available_at": "2026-03-23",
+    "explanation": "The study's April 2024–November 2025 data show increasing frontier expenditure alongside longer reasoning and larger models. This supports the cost-escalation mechanism for frontier workloads, although its causal attribution is observational."
+   },
+   {
+    "id": "e9",
+    "relation": "contradicts",
+    "excerpt": "a halving time",
+    "locator": "Section 'The Aider Polyglot data'",
+    "url": "https://www.lesswrong.com/posts/ifSBamvobbyB9KWjK/inference-costs-for-hard-coding-tasks-halve-roughly-every",
+    "publisher": "Håvard Tveit Ihle / LessWrong",
+    "event_date": "2025",
+    "available_at": "2025-09-17",
+    "explanation": "The analysis finds falling total inference expenditure at fixed benchmark scores, with halving times measured in months. This contradicts an unqualified rise in the cost of comparable performance, while remaining compatible with more spending on the frontier."
+   },
+   {
+    "id": "e10",
+    "relation": "context",
+    "excerpt": "test-time scaling",
+    "locator": "Section 'Why application inference costs exploded'",
+    "url": "https://blog.kilo.ai/p/future-ai-spend-100k-per-dev",
+    "publisher": "Kilo Code",
+    "event_date": "2025-08-08",
+    "available_at": "2025-08-08",
+    "explanation": "Zitron's linked source describes rising application spending from more tokens, larger contexts and reasoning. It does not provide a controlled historical comparison holding completed work and quality constant."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "f3e2b3e3eb8eef10a6a7652aa53b1910a2ba1fe5cffec8e792d410d9c2b5cd5e",
+ "supersedes_assessment_id": "wyea-ais-economics-dont-make-sense-b79382-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:34:03Z"
+}

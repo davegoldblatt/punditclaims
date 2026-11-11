@@ -1,0 +1,86 @@
+---
+// The whole record at a glance: one lane per person, one column per week,
+// each column as tall as the number of claims first said that week, split by
+// outcome. Columns link to that person's year in Explore. A few dated AI
+// releases are marked for orientation. Drawn at build time as SVG with
+// attribute geometry (the site's CSP blocks inline styles); colors come from
+// the stylesheet. Scrolls sideways on narrow screens rather than shrinking.
+import type { PublicClaim } from "../lib/manifest.ts";
+import { OUTCOME_LABEL } from "../policy.ts";
+
+interface Props { live: PublicClaim[]; subjects: { id: string; name: string }[]; referenceDate: string }
+const { live, subjects, referenceDate } = Astro.props;
+const ORDER = ["supported", "mixed", "contradicted", "unresolved", "not_adjudicable"] as const;
+type O = (typeof ORDER)[number];
+const DAY = 86_400_000, WEEK = 7 * DAY;
+const at = (d: string) => Date.parse(d.length === 4 ? `${d}-01-01` : d.length === 7 ? `${d}-01` : d.slice(0, 10));
+const start = (() => { const t = Math.min(...live.map((c) => at(c.first_statement_date))); const d = new Date(t); return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1); })();
+const end = at(referenceDate);
+const weeks = Math.ceil((end - start) / WEEK) + 1;
+const W = 1200, LEFT = 120, RIGHT = 12, LANE = 130, GAP = 34, TOP = 34, AXIS = 26;
+const colW = (W - LEFT - RIGHT) / weeks;
+const xOf = (t: number) => LEFT + ((t - start) / WEEK) * colW;
+
+// Releases everyone in the argument remembers, for orientation only.
+const EVENTS = [
+  { date: "2022-11-30", label: "ChatGPT" },
+  { date: "2023-03-14", label: "GPT-4" },
+  { date: "2023-11-17", label: "Altman fired" },
+  { date: "2024-05-13", label: "GPT-4o" },
+  { date: "2024-09-12", label: "o1" },
+  { date: "2025-01-20", label: "DeepSeek R1" },
+  { date: "2025-08-07", label: "GPT-5" },
+].filter((e) => at(e.date) >= start && at(e.date) <= end);
+
+const lanes = subjects.map((s, i) => {
+  const cols = new Map<number, Record<O, number>>();
+  for (const c of live) {
+    if (c.subject_id !== s.id) continue;
+    const w = Math.floor((at(c.first_statement_date) - start) / WEEK);
+    const x = cols.get(w) ?? { supported: 0, mixed: 0, contradicted: 0, unresolved: 0, not_adjudicable: 0 };
+    x[c.current!.payload.outcome as O]++;
+    cols.set(w, x);
+  }
+  return { s, y0: TOP + i * (LANE + GAP), cols, total: live.filter((c) => c.subject_id === s.id).length };
+});
+const max = Math.max(1, ...lanes.flatMap((l) => [...l.cols.values()].map((x) => ORDER.reduce((a, k) => a + x[k], 0))));
+const H = TOP + lanes.length * (LANE + GAP) - GAP + AXIS;
+const unit = LANE / max;
+const years: number[] = [];
+for (let y = new Date(start).getUTCFullYear() + 1; Date.UTC(y, 0, 1) <= end; y++) years.push(y);
+const fmtDate = (t: number) => new Date(t).toISOString().slice(0, 10);
+---
+<figure class="record" aria-labelledby="record-cap">
+  <div class="record-scroll">
+    <svg viewBox={`0 0 ${W} ${H}`} class="record-svg" role="img" aria-labelledby="record-cap">
+      {years.map((y) => { const x = xOf(Date.UTC(y, 0, 1)); return (
+        <g class="rec-year"><line x1={x} x2={x} y1={TOP - 6} y2={H - AXIS + 4} /><text x={x + 4} y={H - 6}>{y}</text></g>
+      ); })}
+      {EVENTS.map((e, i) => { const x = xOf(at(e.date)); return (
+        <g class="rec-event"><line x1={x} x2={x} y1={i % 2 ? 18 : 6} y2={H - AXIS} /><text x={x + 3} y={i % 2 ? 26 : 14}>{e.label}</text></g>
+      ); })}
+      {lanes.map((l) => (
+        <g>
+          <text class="rec-name" x="0" y={l.y0 + LANE - 4}>{l.s.name}</text>
+          <line class="rec-base" x1={LEFT} x2={W - RIGHT} y1={l.y0 + LANE} y2={l.y0 + LANE} />
+          {[...l.cols].map(([w, x]) => {
+            const t = start + w * WEEK;
+            const n = ORDER.reduce((a, k) => a + x[k], 0);
+            let y = l.y0 + LANE;
+            const tip = `${l.s.name}, week of ${fmtDate(t)}: ${n} claim${n === 1 ? "" : "s"}. ${ORDER.filter((k) => x[k]).map((k) => `${x[k]} ${OUTCOME_LABEL[k].toLowerCase()}`).join(", ")}.`;
+            return (
+              <a href={`/explore?person=${l.s.id}&year=${new Date(t).getUTCFullYear()}`}>
+                <title>{tip}</title>
+                {ORDER.filter((k) => x[k]).map((k) => { const h = x[k] * unit; y -= h; return <rect class={`seg-${k}`} x={(LEFT + w * colW).toFixed(1)} y={y.toFixed(1)} width={Math.max(1, colW - 1).toFixed(1)} height={h.toFixed(1)} />; })}
+              </a>
+            );
+          })}
+        </g>
+      ))}
+    </svg>
+  </div>
+  <figcaption id="record-cap">
+    <ul class="chart-key">{ORDER.map((k) => <li data-o={k}><i aria-hidden="true"></i>{OUTCOME_LABEL[k]}</li>)}</ul>
+    Every claim, by the week it was said. Taller columns mean more claims. Click a column to see that year.
+  </figcaption>
+</figure>

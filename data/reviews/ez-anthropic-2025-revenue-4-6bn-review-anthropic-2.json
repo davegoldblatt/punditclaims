@@ -1,0 +1,63 @@
+{
+ "run_id": "ez-anthropic-2025-revenue-4-6bn-review-anthropic-2",
+ "kind": "assessment_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-4",
+ "prompt_hash": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+ "rubric_version": "policy-2026-10-28.5",
+ "input_hashes": {
+  "claim": "74922a3b2efa03022f6e5ada290d7fbdceefe7a6c1baff5d0aa51b5f99b8a44d",
+  "contract": "5db16a7148bc77a7b38c1d86abf08b4519a6ddb9a2a9f31d1138e35faa8db854",
+  "packet": "00257eac5d68b87addf028285692e360a7cfd34ba7593fbdbc1e2e4c5261dded",
+  "prompt": "f9ab6bbe6d0bab48d64dca7c49e5b2c22d36d4b97387b43492add3887f5a6886",
+  "case": "958f080f5ec3bdbd13eb6139b3084a6528665722ec44a6465c75037e53b169dd"
+ },
+ "started_at": "2026-10-28T23:51:54Z",
+ "completed_at": "2026-10-28T23:52:07Z",
+ "status": "ok",
+ "output": {
+  "attribution": {
+   "speaker_is_subject": true,
+   "endorsed": true,
+   "note": "Zitron states the figure in his own voice in his own newsletter. He credits the leaked S-1 reporting to Reuters, but he asserts the number as fact and endorses it."
+  },
+  "semantics": {
+   "proposition_faithful": true,
+   "conditions_preserved": true,
+   "kind_correct": true,
+   "proposed_kind": "observation",
+   "note": "This is a historical claim about 2025 revenue. The normalisation keeps the period, the company and the amount. The separate figure of over $8B in losses is not part of this claim."
+  },
+  "contract": {
+   "fair_to_speaker": true,
+   "interpretation_determines_result": false,
+   "note": "Reading the figure as GAAP revenue follows from the S-1 he names. Rounding to one decimal matches how he wrote $4.6B. A reading as a run rate would not fit 'in 2025' and would not change the result here."
+  },
+  "evidence": [
+   {
+    "id": "s1-2025-revenue",
+    "fits": true,
+    "relation": "supports",
+    "note": "Filed S-1 statement of operations: FY2025 revenue $4,585M, the audited column, available 2026-10-26, before the evaluation date. 4,585/1,000 = 4.585, which rounds to 4.6. Small locator error: the table falls between the F-7 and F-8 footers, so it is on F-8, not F-7. The figure is unaffected. It is a company filing, but the annual figures are audited."
+   }
+  ],
+  "counterevidence_considered": true,
+  "axis": "historical_observation",
+  "horizon_state": "not_applicable",
+  "outcome": "supported",
+  "rationale": "The audited S-1 statement of operations reports Anthropic's FY2025 revenue as $4,585M. That is $4.585B, which rounds to the $4.6B Zitron stated. The packet has no conflicting figure. The page locator is slightly off, but the figure itself is unaffected.",
+  "abstain": false,
+  "abstain_reason": null
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 8726,
+  "output_tokens": 1253,
+  "cached_input_tokens": 2607,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

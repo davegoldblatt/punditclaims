@@ -1,0 +1,173 @@
+{
+ "run_id": "marcus-the-biggest-advance-in-ai-since-the-692820-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-the-biggest-advance-in-ai-since-the-692820": "5f82e72c20410cd81ab2e2a608fc5f7acb787c14d2da90765721b9007122e2c5",
+  "case:marcus-the-biggest-advance-in-ai-since-the-721d0d": "6c7af8bd112c82a39c74d08f7ece8a62b01a01b2c0072a806db97988109e9dc9",
+  "case:marcus-the-biggest-advance-in-ai-since-the-9cfb77": "94865d044829bc5e4338b754803bd59d3f4e9df5ad2f4e244852bd865ed2e436",
+  "case:marcus-the-biggest-advance-in-ai-since-the-a6b814": "8e4d2bffbfe06b870c7dfb4765bd3b919e49c4d15cf2f41c83cd8d2780cefb9a"
+ },
+ "started_at": "2026-10-29T12:27:08Z",
+ "completed_at": "2026-10-29T12:27:56Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post, stated in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "This captures the core claim that Anthropic went neurosymbolic with Claude Code. It rightly leaves aside the 25-year priority claim and the 'exactly' framing."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The result depends on what 'neurosymbolic' means, but Marcus supplies a broad meaning himself: classical techniques alongside neural nets, and calling code counts as symbolic AI. Using his definition is fair and is not stretched."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "Source-based study of the March 31 leaked implementation, available April 14. It shows the model's tool requests passing through an explicit deny-first rule engine before tools execute."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Under Marcus's own broad definition, the leaked implementation combines a neural model with explicit rule processing and tool execution, as an independent source-based study documents. Whether the narrower sense of the label applies is not tested. No counterevidence was found.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-biggest-advance-in-ai-since-the-692820"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the specific 3,167-line count, the name print.ts, the claim that it is central, and the 'proves it' link to Claude Code not being a pure LLM."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Marcus did not say whether he meant the file or a function inside it, and the outcome turns on that. Allowing a function reading is charitable but reasonable, since his branch and nesting figures match reports about the main function."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Independent count puts the print.ts file at 5,594 lines, which challenges a literal file reading. It gives no length for a 3,167-line component and has unversioned later edits."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The file is reportedly 5,594 lines, not 3,167, but the contract also accepts a central function of that length, and no reproducible measurement of such a component was obtained. Centrality is also unmeasured. The packet does not settle the numerical or architectural commitments.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-biggest-advance-in-ai-since-the-721d0d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A faithful, plain restatement. 'Not even close' adds emphasis, not a separate measurable commitment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "An ordinary reader would take this to be about the whole Claude Code application, and that reading is fair. Requiring substantive non-model execution paths is a reasonable test."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Source study of the leaked v2.1.88 implementation. It documents a programmatic loop with model calls, permission gating, tool execution and results fed back."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The leaked implementation runs a programmatic agent loop with permission checks and tool execution outside neural inference. So the application is not a pure LLM or pure deep learning. No counterevidence was presented.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-biggest-advance-in-ai-since-the-9cfb77"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own forecast in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unqualified 'will' with only 'in time' as the horizon. This is a firm forecast with no deadline, and the 'other three' are correctly identified from his 2020 paper."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The support condition follows the 2020 paper's own sense of the terms. It rightly flags that today's LLM uses of 'reasoning' and 'world model' mean something different. With no deadline, the forecast cannot be contradicted."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The 2020 paper that defines the four-part agenda. It sets the criteria but says nothing about the outcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This is an open-ended forecast with no deadline. No event meeting the early-resolution rule, documented adoption of all three components by leading developers, appears in the packet, so the forecast cannot be scored yet.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-the-biggest-advance-in-ai-since-the-a6b814"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 43634,
+  "output_tokens": 5277,
+  "cached_input_tokens": 23515,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

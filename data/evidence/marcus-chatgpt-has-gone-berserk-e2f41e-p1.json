@@ -1,0 +1,107 @@
+{
+ "packet_id": "marcus-chatgpt-has-gone-berserk-e2f41e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-chatgpt-has-gone-berserk-e2f41e",
+  "version": 1,
+  "content_hash": "8511671ef48c698919276bfb0f0a9096de1598449af8a50182b8824514ed7faf"
+ },
+ "contract_ref": {
+  "id": "marcus-chatgpt-has-gone-berserk-e2f41e",
+  "version": 1,
+  "content_hash": "0964ad3d91a9903c7d8c42312f7b6c7661998363f3347a36d10dac9f0006e9e5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM safety guarantees certified adversarial prompts 2023 Kumar smoothing",
+   "\"certifying\" \"LLM\" \"2023\" Kumar safety",
+   "site.arxiv.org generative language model safety guarantees 2023 certified",
+   "\"Certifying LLM Safety against Adversarial Prompting\" arxiv",
+   "\"language models\" \"safety guarantees\" \"2023\" formal"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2309.02705v3",
+    "used": true,
+    "why": "Establishes that the inspected version was submitted on February 12, 2024, before Marcus's post."
+   },
+   {
+    "url": "https://arxiv.org/html/2309.02705v3",
+    "used": true,
+    "why": "Contains the implemented erase-and-check method, its conditional guarantee, experiments, and limitations."
+   },
+   {
+    "url": "https://arxiv.org/abs/2310.19737v1",
+    "used": true,
+    "why": "Establishes the October 30, 2023 publication date of the independent critique."
+   },
+   {
+    "url": "https://arxiv.org/html/2310.19737v1",
+    "used": true,
+    "why": "Demonstrates why the defense must not be described as providing unrestricted protection."
+   },
+   {
+    "url": "https://openreview.net/pdf?id=9Ik05cycLq",
+    "used": false,
+    "why": "The later conference version was replaced with a version explicitly available before the post."
+   }
+  ],
+  "performed_at": "2026-10-29T03:09:08Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2309-02705v3",
+   "source_snapshot_id": "52a854fd3f7daa56c15881c843e95d9dc0deacf4f1fcde0ed5aa83bacf208b4d",
+   "publisher": "Aounon Kumar and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2309.02705v3",
+   "locator": "Abstract; Section 1, Safety Certificate; Sections 4–6",
+   "receipt": {
+    "public_excerpt": "a certain size.",
+    "quote_hash": "db0da31bc553b837fdb456499d906ee3c005d6abdf7c23b487db9b88211dda70",
+    "verified": "exact"
+   },
+   "event_date": "2024-02-12",
+   "available_at": "2024-02-12",
+   "retrieved_at": "2026-10-29T02:58:19Z",
+   "relation": "contradicts",
+   "explanation": "The paper implements a filter around LLM inputs and establishes protection against bounded token additions when the underlying filter detects the original harmful prompt. That is an engineered, conditional safety guarantee, although it does not certify all prompts or all generated content.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2310-19737v1",
+   "source_snapshot_id": "d52ce823c1af7dcdc322c946908fbba4f8629edf41deb354cdcc41dc39a2d131",
+   "publisher": "Leo Schwinn and colleagues via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2310.19737v1",
+   "locator": "Section 3.3, Circumventing a defense",
+   "receipt": {
+    "public_excerpt": "core assumption",
+    "quote_hash": "6b781c14dfc96d5877c85553d07c9ce881400baaef6e039aa362f20bc36c0db6",
+    "verified": "exact"
+   },
+   "event_date": "2023-10-30",
+   "available_at": "2023-10-30",
+   "retrieved_at": "2026-10-29T03:04:51Z",
+   "relation": "context",
+   "explanation": "The authors demonstrate a bypass using an input outside the defense's restrictive harmful-instruction assumption. This is material evidence against calling the method generally safe; it does not establish failure of the bounded guarantee when its stated assumptions hold.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The wording does not settle whether Marcus intended to exclude conditional guarantees and mean comprehensive safety.",
+  "The cited research does not demonstrate unrestricted safety or a verified commercial deployment."
+ ],
+ "packet_hash": "0eb1fc3899f20f4eca305d3f3c69af2e70222ca9403b1048a2f44fb0d2c4ec0d"
+}

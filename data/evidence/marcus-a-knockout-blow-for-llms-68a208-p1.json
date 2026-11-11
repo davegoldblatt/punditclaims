@@ -1,0 +1,145 @@
+{
+ "packet_id": "marcus-a-knockout-blow-for-llms-68a208-p1",
+ "claim_revision_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-68a208",
+  "version": 2,
+  "content_hash": "0b85bfb7ae61f3a6b9eff037a6ced6fbb85e9610f397ea1e390bb0cf43e06d3c"
+ },
+ "contract_ref": {
+  "id": "marcus-a-knockout-blow-for-llms-68a208",
+  "version": 1,
+  "content_hash": "85b9cd30b431e9442dab8b54ffe8ca3afb036791bb8d20f8d9b05a40c8c42e67"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "WILDS benchmark in the wild distribution shifts substantially degrade performance 2021",
+   "SCAN generalization systematic compositional skills recurrent neural networks 2018 Lake Baroni",
+   "CLIP natural distribution shift robustness closes gap 2021",
+   "site.nature.com human-like systematic generalization meta-learning neural networks 2023 Lake Baroni",
+   "site.proceedings.mlr.press learning transferable visual models natural language supervision radford21a"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://proceedings.mlr.press/v139/koh21a.html",
+    "used": true,
+    "why": "Read in full with read_page. Peer-reviewed comparisons across ten datasets directly address performance under distribution shifts."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v139/koh21a/koh21a.pdf",
+    "used": false,
+    "why": "Read relevant passages with read_page to check comparison methods and results. The abstract supplies the quoted finding."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v80/lake18a.html",
+    "used": true,
+    "why": "Read in full with read_page. Controlled recurrent-network experiments distinguish easier generalization from systematic compositional generalization."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v80/lake18a/lake18a.pdf",
+    "used": false,
+    "why": "Read relevant experimental passages with read_page. Used to inspect the study; the evidence item quotes its readable abstract."
+   },
+   {
+    "url": "https://www.nature.com/articles/s41586-023-06668-3",
+    "used": true,
+    "why": "Read relevant passages and publication information with read_page, marked FULL TEXT. Provides an important successful neural-network generalization result."
+   },
+   {
+    "url": "https://openai.com/index/clip/",
+    "used": false,
+    "why": "Potential robustness counterevidence, but read_page returned HTTP 403. Not cited."
+   },
+   {
+    "url": "https://proceedings.mlr.press/v139/radford21a",
+    "used": false,
+    "why": "Search identified a primary CLIP paper. The assessment uses the more directly relevant systematic-generalization counterexample instead."
+   },
+   {
+    "url": "https://ai.stanford.edu/blog/wilds/",
+    "used": false,
+    "why": "read_page could not connect. The peer-reviewed paper was accessible."
+   }
+  ],
+  "performed_at": "2026-10-29T02:07:27Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "proceedings-mlr-press-v139-koh21a-html",
+   "source_snapshot_id": "4e11190a80e1f22ef7ae1b31cd468bb7230f00880cdee32ea821be6d4edd3398",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v139/koh21a.html",
+   "locator": "Abstract, sentence 4",
+   "receipt": {
+    "public_excerpt": "On each dataset, we show that standard training yields substantially lower out-of-distribution than in-distribution performance.",
+    "quote_hash": "db7f65272d02a3de5f6fabe6614a8383e6382832a1e4110483826f17af58dfab",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-07-24",
+   "retrieved_at": "2026-10-29T02:02:19Z",
+   "relation": "supports",
+   "explanation": "WILDS compares within-distribution and shifted performance across ten datasets covering varied applications. The consistent substantial gaps support the claimed recurring weakness.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "proceedings-mlr-press-v80-lake18a-html",
+   "source_snapshot_id": "469c44740efc2a4a569421ab89925043d7c19537abba6afcefe5884dec3cd93f",
+   "publisher": "Proceedings of Machine Learning Research",
+   "source_type": "peer_reviewed",
+   "url": "https://proceedings.mlr.press/v80/lake18a.html",
+   "locator": "Abstract, sentence 6",
+   "receipt": {
+    "public_excerpt": "However, when generalization requires systematic compositional skills (as in the \"dax\" example above), RNNs fail spectacularly.",
+    "quote_hash": "742949e66c7d36ae8108bbde7b8ab62c1ab2bfd82c58753fd4fa1544f14b739f",
+    "verified": "exact"
+   },
+   "event_date": "2018",
+   "available_at": "2018-07-15",
+   "retrieved_at": "2026-10-29T02:02:19Z",
+   "relation": "supports",
+   "explanation": "The study tests several recurrent-network variants and reports successful generalization when training and test commands differ little, followed by failures on systematic compositional tests. It supports the distinction Marcus describes in a controlled setting.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "nature-com-articles-s41586-023-06668-3",
+   "source_snapshot_id": "a16e08b5f307a84ff3de91d6fcd19a3cc9c2c9f9406c7dfbcf4e78481832d735",
+   "publisher": "Nature",
+   "source_type": "peer_reviewed",
+   "url": "https://www.nature.com/articles/s41586-023-06668-3",
+   "locator": "Abstract, final sentence",
+   "receipt": {
+    "public_excerpt": "Our results show how a standard neural network architecture, optimized for its compositional skills, can mimic human systematic generalization in a head-to-head comparison.",
+    "quote_hash": "a6c25df9cfdf25062f9d9538d2df8d40748b1c86f47ef7c6e7ecc9ac4c7c104b",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-10-25",
+   "retrieved_at": "2026-10-29T02:02:48Z",
+   "relation": "context",
+   "explanation": "Meta-learning produces successful systematic generalization and improves performance on several compositional benchmarks. This limits any categorical reading of neural-network incapacity, but a successful exception does not refute the stated tendency.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "These studies do not estimate the frequency of failure across every neural architecture and possible distribution shift.",
+  "Benchmarks selected to study distribution shifts are not a random sample of all deployment conditions."
+ ],
+ "packet_hash": "316b5d1a800b3b0d26fea2e1d937d3f2961fc84c7097bfe052a4a76df3593d65"
+}

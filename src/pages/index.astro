@@ -1,0 +1,114 @@
+---
+// Home: the answer to "were they right?" for each person as one picture, a
+// way to look a claim up, and their predictions that came due. The other
+// views of the record (the week-by-week timeline, charts by cut) live on /explore. The full register lives
+// under /register/. With no release, an honest empty state and no numbers.
+import Base from "../layouts/Base.astro";
+import ClaimRow from "../components/ClaimRow.astro";
+import WhatHappened from "../components/WhatHappened.astro";
+import ConfidenceSwitch from "../components/ConfidenceSwitch.astro";
+import OutcomeChips from "../components/OutcomeChips.astro";
+import KindSwitch from "../components/KindSwitch.astro";
+import { release } from "../lib/published.ts";
+import { PHOTOS, SITE } from "../site.ts";
+import { claimPath, day, shownAssessment } from "../lib/view.ts";
+import { OUTCOME_LABEL } from "../policy.ts";
+import { SAVED_CUTS } from "../lib/cuts.ts";
+import { ENTITIES, entitiesOf } from "../lib/entities.ts";
+import { listingsFor, listPath } from "../lib/listing.ts";
+
+const r = release();
+const m = r.manifest;
+const counts = r.counts;
+const name = (id: string) => r.subject(id)?.name ?? id;
+const withdrawn = [...r.withdrawn].sort((a, b) => b.last_substantive_change_at.localeCompare(a.last_substantive_change_at));
+const first = m ? listingsFor(r.live, null)[0] : null;
+const cannot = first?.counts.uncheckable ?? 0;
+const SETTLED = new Set(["supported", "mixed", "contradicted"]);
+const byCompany = new Map<string, number>();
+for (const c of r.live) for (const e of entitiesOf(c)) byCompany.set(e, (byCompany.get(e) ?? 0) + 1);
+const companies = ENTITIES.filter((e) => (byCompany.get(e.id) ?? 0) >= 25).sort((a, b) => (byCompany.get(b.id) ?? 0) - (byCompany.get(a.id) ?? 0)).slice(0, 8);
+// The calls: predictions that named a deadline and that the evidence has
+// settled, newest first. A repeated quotation shows once.
+const seen = new Set<string>();
+const calls = r.live
+  .filter((c) => (c.kind === "forecast" || c.kind === "conditional_forecast") && c.original_horizon_text && SETTLED.has(c.current!.payload.outcome))
+  .sort((a, b) => b.first_statement_date.localeCompare(a.first_statement_date) || a.claim_id.localeCompare(b.claim_id))
+  .filter((c) => { const k = c.current!.payload.statement.excerpt; if (seen.has(k)) return false; seen.add(k); return true; })
+  .slice(0, 8);
+// The deadline as the speaker wrote it, without the extractor's notes in brackets.
+const deadline = (c: (typeof calls)[number]) => c.original_horizon_text!.replace(/\s*\([^)]*\)\s*$/, "");
+---
+<Base title="Claims">
+  <div class="wrap" data-release-state={m ? "published" : "none"}>
+    <header class="page-head home-head">
+      <p class="kicker">What {SITE.subjects} said about {SITE.topic}, and what happened.</p>
+      <h1 id="answer-h">So, were they right?</h1>
+    </header>
+    {m && first ? (
+      <>
+        <section class="answer" aria-labelledby="answer-h">
+          <ConfidenceSwitch />
+          <KindSwitch />
+          <OutcomeChips />
+          <div class="answer-grid">
+            {r.subjects.map((x) => <WhatHappened subjectId={x.id} name={x.name} live={r.live.filter((c) => c.subject_id === x.id)} heldRecords={r.held.filter((h) => h.subject_id === x.id)} />)}
+          </div>
+          <p class="answer-foot">As of {m.reference_date}. Each square is one claim: hover to read it, click to see what happened. <a href="/method#answer">How we work out the answer</a>.{r.subjects.filter((x) => PHOTOS[x.id]).map((x) => <> Photo of {x.name}: <a href={PHOTOS[x.id].source_url} rel="noopener">{PHOTOS[x.id].credit}</a>, <a href={PHOTOS[x.id].license_url} rel="noopener">{PHOTOS[x.id].license}</a>{PHOTOS[x.id].note ? `, ${PHOTOS[x.id].note}` : ""}.</>)}</p>
+        </section>
+        <section class="section lookup" aria-labelledby="lookup-h">
+          <h2 id="lookup-h">Look up a claim, or cut the data</h2>
+          <form class="search-form" role="search" action="/search" method="get">
+            <div class="field"><label for="home-q">Search by their words or a topic</label><input id="home-q" type="search" name="q" placeholder="GPT-5, bubble, AGI by 2027" autocomplete="off" /></div>
+            <button class="btn" type="submit">Search</button>
+          </form>
+          <p class="cuts-row"><span class="k">Cut the data </span>{SAVED_CUTS.map((x) => <a href={x.href}>{x.label}</a>)}</p>
+          <p class="cuts-row"><span class="k">By company </span>{companies.map((e) => <a href={`/explore?company=${e.id}`}>{e.name}</a>)}<a href="/explore">Explore everything</a></p>
+        </section>
+        {calls.length > 0 && (
+          <section class="section" aria-labelledby="calls-h">
+            <h2 id="calls-h">Predictions that came due</h2>
+            <p class="small soft">Newest first. <a href="/watchlist">See the predictions still open</a>.</p>
+            <ol class="calls">
+              {calls.map((c) => { const p = c.current!.payload; return (
+                <li data-o={p.outcome}>
+                  <p class="call-verdict">{OUTCOME_LABEL[p.outcome]}</p>
+                  <div class="call-body">
+                    <blockquote cite={p.statement.url}><p><span>“{p.statement.excerpt}”</span></p></blockquote>
+                    <p class="call-meta">{name(c.subject_id)}, <time datetime={c.first_statement_date}>{c.first_statement_date}</time>. Deadline: “{deadline(c)}”. <a href={claimPath(c.claim_id)}>What happened</a></p>
+                  </div>
+                </li>
+              ); })}
+            </ol>
+          </section>
+        )}
+        {withdrawn.length > 0 && (
+          <section class="section" aria-labelledby="withdrawn-h">
+            <h2 id="withdrawn-h">Withdrawn assessments <span class="count">(<span data-count="counts.withdrawn" data-n={withdrawn.length}>{withdrawn.length}</span>)</span></h2>
+            <p class="small">These claims have no current assessment, so they are not in the register or its counts. Their pages keep the full history.</p>
+            <ul class="timeline">
+              {withdrawn.map((c) => {
+                const a = shownAssessment(c);
+                return (
+                  <li>
+                    <time datetime={c.last_substantive_change_at}>{day(c.last_substantive_change_at)}</time>
+                    <div>
+                      <p><a href={claimPath(c.claim_id)}>{c.normalized_proposition}</a></p>
+                      <p class="small soft">{name(c.subject_id)}. {a?.notice ? a.notice.text : "Assessment withdrawn."}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+      </>
+    ) : (
+      <div class="notice" role="note" data-empty-release>
+        <h2 class="notice-title">Nothing is published yet</h2>
+        <p>No release has passed every check, so there are no claims to show and no counts. When the first release is published, this page will list each claim with its quotation, its evidence, and its assessment.</p>
+        <p>Until then, read <a href="/method">how records are checked</a> and <a href="/about">why this register exists</a>.</p>
+      </div>
+    )}
+  </div>
+</Base>

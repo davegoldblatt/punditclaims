@@ -1,0 +1,77 @@
+{
+ "run_id": "wyea-ais-economics-dont-make-sense-ad-free-fcfcce-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-ais-economics-dont-make-sense-ad-free-fcfcce": "60b5fc0dfb80b7e24c983d795f94feeea2afb1dbb984dca4c8e5e377adfd1034"
+ },
+ "started_at": "2026-10-29T17:24:34Z",
+ "completed_at": "2026-10-29T17:24:45Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own newsletter post, stated in his voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Unhedged present-tense statement about LLMs. The normalisation repeats it word for word. The next sentences make clear he means users cannot guarantee actions or outcomes."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading treats 'inherently unpredictable' as practical unreliability: users cannot guarantee outcomes, even on repeated tasks. It does not read it as mathematical impossibility of determinism. That is the ordinary reading, and his next sentences support it. Using the April 2026 window is an evaluator choice, but a reasonable one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 2026 preprint. Repeated runs of the same task with the same model can flip between success and failure. This is direct evidence of unreliable execution under controlled repetition."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "April 2026 repeated-generation study using Gemini 2.5 Flash. Meaning stayed largely consistent, but key quantitative details varied. This supports a limited claim of practical unpredictability, not total randomness."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "September 2025, so before the target window. Shows deterministic inference is possible with special kernels, which cuts against an absolute reading. Determinism does not mean correct or successful outcomes. It also shows default inference varied even at temperature 0."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "On the fair plain reading (users cannot reliably guarantee outcomes), two April 2026 studies show outcomes and key details varying across repeated, identical runs. The only counterevidence (e3) predates the window and shows only that output can be made repeatable, not that tasks reliably succeed. That meets the contract's support condition, and nothing meets its contradiction condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-ais-economics-dont-make-sense-ad-free-fcfcce"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11476,
+  "output_tokens": 1123,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

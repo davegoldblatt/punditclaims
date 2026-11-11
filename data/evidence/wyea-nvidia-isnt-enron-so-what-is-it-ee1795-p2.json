@@ -1,0 +1,132 @@
+{
+ "packet_id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795-p2",
+ "claim_revision_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795",
+  "version": 2,
+  "content_hash": "f67c2966f56c665e64d787ca2e5d3ee7fd41a423b7251e6f2487c89f3edd1212"
+ },
+ "contract_ref": {
+  "id": "wyea-nvidia-isnt-enron-so-what-is-it-ee1795",
+  "version": 2,
+  "content_hash": "818f7e306b90f7f736aed0f3e1b843179d6c50650ff46f11736608d1ee56eb07"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic AWS spending 2025 through September $2.66 billion",
+   "Anthropic S-1 prospectus 2025 revenue compute costs Amazon Web Services Google Cloud",
+   "Anthropic S-1 full-year 2025 revenue net loss compute expense 2025",
+   "Anthropic S-1 quarterly revenue Q2 2025 Q3 2025 compute and infrastructure expense quarter"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.wheresyoured.at/costs/",
+    "used": false,
+    "why": "Speaker's own reporting; cannot be cited as evidence he was right."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": false,
+    "why": "Primary S-1, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.kadoa.com/companies/ipos/anthropic",
+    "used": true,
+    "why": "Reproduces S-1 quarterly revenue and compute figures and says each is checked against the filing."
+   },
+   {
+    "url": "https://officechai.com/ai/anthropics-s1-says-that-it-is-now-making-5-2x-more-times-revenue-per-compute-since-q1-2025/",
+    "used": false,
+    "why": "Consistent quarterly ratios, but less precise than Kadoa."
+   },
+   {
+    "url": "https://cmsinvestments.substack.com/p/anthropics-s-1-the-numbers-that-matter",
+    "used": false,
+    "why": "Rounded quarterly figures that match Kadoa; notes the S-1 gives no cost split by supplier."
+   },
+   {
+    "url": "https://fortune.com/2026/10/26/anthropics-s1-ipo-reveals-the-inner-workings-of-its-fast-evolving-compute-strategy/",
+    "used": false,
+    "why": "Covers 2026 compute and commitments, not 2025 AWS spend."
+   }
+  ],
+  "performed_at": "2026-10-31T20:25:29Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "kadoa-com-companies-ipos-anthropic",
+   "source_snapshot_id": "aa4cc1ea0c0c436f2e1f601782eedae1c3d16031b901462dd0b0651313934eeb",
+   "publisher": "Kadoa (summary of Anthropic S-1)",
+   "source_type": "secondary_summary",
+   "url": "https://www.kadoa.com/companies/ipos/anthropic",
+   "locator": "section Costs and losses, quarterly table",
+   "receipt": {
+    "public_excerpt": "Q1 2025 376 944 218 24 125 (935)\n\nQ2 2025 787 1,390 320 96 181 (1,200)\n\nQ3 2025 1,382 2,047 489 202 233 (3,089)",
+    "quote_hash": "53d95ca7c334b5afee0d925c8d7ce5fa6a7dc31278580cd43b11b997d372cc6d",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-31T20:17:06Z",
+   "relation": "supports",
+   "explanation": "S-1 quarterly revenue for Q1 to Q3 2025 adds up to $2,545M, matching his $2.55B revenue estimate. Compute and infrastructure expense for the period was $4,381M in total, with no split by supplier, so the $2.66B AWS figure is neither confirmed nor ruled out.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "revenue and compute and infrastructure expense",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Q1 2025 revenue 376",
+     "Q2 2025 revenue 787",
+     "Q3 2025 revenue 1,382",
+     "Q1 2025 compute 944",
+     "Q2 2025 compute 1,390",
+     "Q3 2025 compute 2,047"
+    ],
+    "formula": "revenue = 376+787+1382 = 2,545; compute = 944+1390+2047 = 4,381 (USD millions)",
+    "rounding": "to nearest $0.01B: revenue $2.55B (2.545 rounds to 2.55 under round-half-up); compute $4.38B"
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "kadoa-com-companies-ipos-anthropic",
+   "source_snapshot_id": "aa4cc1ea0c0c436f2e1f601782eedae1c3d16031b901462dd0b0651313934eeb",
+   "publisher": "Kadoa",
+   "source_type": "secondary_summary",
+   "url": "https://www.kadoa.com/companies/ipos/anthropic",
+   "locator": "section About the data",
+   "receipt": {
+    "public_excerpt": "Every number on this page comes from Anthropic's S-1 filed on 26 Oct 2026.",
+    "quote_hash": "8be4fa20f772b3741f867e0aba2ac8b68a1aae53e3e3a8a644fff3cc8b30588e",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-26",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-31T20:17:06Z",
+   "relation": "context",
+   "explanation": "Shows where e1's figures come from: the S-1 itself, which could not be read directly.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No source independent of the speaker reports Anthropic's AWS-specific spending for January to September 2025. The S-1 reports only total compute and infrastructure expense, not a split by supplier.",
+  "The primary S-1 on sec.gov could not be read (HTTP 403); figures come from a secondary reproduction."
+ ],
+ "packet_hash": "97082969f01032ef8c061951f5712134be483f20087218d6bc6c779e4163ae2c"
+}

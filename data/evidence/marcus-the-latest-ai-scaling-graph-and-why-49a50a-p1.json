@@ -1,0 +1,105 @@
+{
+ "packet_id": "marcus-the-latest-ai-scaling-graph-and-why-49a50a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-latest-ai-scaling-graph-and-why-49a50a",
+  "version": 1,
+  "content_hash": "fe1dded78e1f3ea446726498e7453f0aceb958084a28e66805d21929295936ea"
+ },
+ "contract_ref": {
+  "id": "marcus-the-latest-ai-scaling-graph-and-why-49a50a",
+  "version": 1,
+  "content_hash": "83f69eabb3ec894a40e24691f9231786be84e5286362b1172084de5160c969db"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.arcprize.org o3 April 16 2025 ARC AGI 2 human",
+   "site.arcprize.org \"Analyzing o3 and o4-mini\"",
+   "GPT-3 arithmetic two digit addition accuracy 2020 language models few shot learners",
+   "\"GPT-3\" \"15 seconds\" task failure"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arcprize.org/blog/analyzing-o3-with-arc-agi",
+    "used": true,
+    "why": "Primary evaluation documents failures by released o3, but the cited result does not pair individual failures with human times."
+   },
+   {
+    "url": "https://arxiv.org/html/2005.14165v4",
+    "used": true,
+    "why": "The original GPT-3 research documents arithmetic errors, but does not establish a 15-second human baseline."
+   },
+   {
+    "url": "https://arxiv.org/abs/2005.14165",
+    "used": true,
+    "why": "Verified submission history and the publication date of version four."
+   },
+   {
+    "url": "https://arxiv.org/html/2505.11831v1",
+    "used": false,
+    "why": "Read human timing passages, but the aggregate timing results were not matched to the particular o3 failures."
+   },
+   {
+    "url": "https://github.com/METR/eval-analysis-public",
+    "used": false,
+    "why": "Read the repository documentation, but did not obtain a dated task-level record matching both named models to the required human times."
+   }
+  ],
+  "performed_at": "2026-10-29T08:31:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "arcprize-org-blog-analyzing-o3-with-arc-agi",
+   "source_snapshot_id": "b4df2d783f61f6523b916a64a3a316d3faae87b024dd3b4b0e906f53e5df9e69",
+   "publisher": "ARC Prize Foundation",
+   "source_type": "benchmark",
+   "url": "https://arcprize.org/blog/analyzing-o3-with-arc-agi",
+   "locator": "Opening results summary",
+   "receipt": {
+    "public_excerpt": "Despite recent gains, ARC-AGI-2 remains unsolved by the best version of o3, with scores below 3%.",
+    "quote_hash": "1ab130922f50dbc7d9d9cde55691877e39d0bc4043fa29318150b1b18d542ec6",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-22",
+   "retrieved_at": "2026-10-29T02:29:50Z",
+   "relation": "context",
+   "explanation": "This establishes substantial failures by released o3 in the evaluated configurations. It does not itself establish the human duration of a matching failed task, and high-reasoning evaluation coverage was incomplete.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "arxiv-org-html-2005-14165v4",
+   "source_snapshot_id": "e923343ca54b9f63f9762239f0d134172ae421f6f698929897c43f4d91bac9cc",
+   "publisher": "OpenAI researchers via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2005.14165v4",
+   "locator": "Section 3.9.1, Arithmetic",
+   "receipt": {
+    "public_excerpt": "GPT-3 also achieves 29.2% accuracy at 2 digit multiplication, an especially computationally intensive operation.",
+    "quote_hash": "92b2d2ce36b9668ebc906b4c2bad71657c97a21f74eb7c37d5d24a53115605f1",
+    "verified": "exact"
+   },
+   "event_date": "2020",
+   "available_at": "2020-07-22",
+   "retrieved_at": "2026-10-29T07:00:15Z",
+   "relation": "context",
+   "explanation": "The primary report establishes GPT-3 arithmetic failures. It supplies no matched human timing, so treating these as demonstrated 15-second counterexamples would add an unsupported assumption.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No retrieved record pairs a GPT-3 failure with a demonstrated human completion time of 15 seconds or less.",
+  "The retrieved o3 scores and human timing summaries were not linked at the failed-task level.",
+  "Failures under one configuration do not establish impossibility under every conceivable tool or prompting setup."
+ ],
+ "packet_hash": "041fcdc48c8738da52730221c2798755a57acbd9e3ff4df2a85fbc021ef5f015"
+}

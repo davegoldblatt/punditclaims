@@ -1,0 +1,127 @@
+{
+ "packet_id": "marcus-alphaproof-alphageometry-chatgpt-a113d8-p1",
+ "claim_revision_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-a113d8",
+  "version": 1,
+  "content_hash": "8c3461cf17a697b5c927f788824eaf9ea79e9f873804312d8160c5c208238dfe"
+ },
+ "contract_ref": {
+  "id": "marcus-alphaproof-alphageometry-chatgpt-a113d8",
+  "version": 1,
+  "content_hash": "75ec8b77ddb5e6641b4cc9bcd52a27d346fbc72df74e36b1b2b2a0962e09600c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.deepmind.google 2024 IMO AlphaProof AlphaGeometry manually translated formal mathematical language",
+   "\"AlphaProof\" \"neural\" \"Lean\" \"arxiv\" 2025",
+   "\"AlphaProof Paper\" \"Julian Schrittwieser\"",
+   "\"AlphaProof\" \"Olympiad-level formal\" arxiv"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+    "used": false,
+    "why": "read_page returned an unrelated promotional fragment rather than the announcement body."
+   },
+   {
+    "url": "https://www.julian.ac/blog/2025/11/13/alphaproof-paper/",
+    "used": true,
+    "why": "Read in full. A system developer explains the neural model, Lean environment, search and actual 2024 proofs, explicitly dating the work to the period ending July 2024."
+   },
+   {
+    "url": "https://arxiv.org/html/2502.03544v1",
+    "used": true,
+    "why": "Read architecture and IMO-result passages. Useful corroboration of the neural-symbolic design; later technical details are kept as context."
+   },
+   {
+    "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/imo-2024-solutions/index.html",
+    "used": true,
+    "why": "Read in full. Primary collection identifies the published proofs and explains inspection of Lean proof states."
+   },
+   {
+    "url": "https://research.google/pubs/olympiad-level-formal-mathematical-reasoning-with-reinforcement-learning/",
+    "used": false,
+    "why": "Read in full. Corroborates the result, but the developer's detailed account and proof artifacts provide sufficient evidence."
+   }
+  ],
+  "performed_at": "2026-10-29T03:32:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "julian-ac-blog-2025-11-13-alphaproof-paper",
+   "source_snapshot_id": "73b5a0eeb0b634cbb88cb715bde28fb756650ebeb6f2eb3f98cbe47ad0c6afe7",
+   "publisher": "Julian Schrittwieser, AlphaProof coauthor",
+   "source_type": "demonstration",
+   "url": "https://www.julian.ac/blog/2025/11/13/alphaproof-paper",
+   "locator": "IMO Proofs, first paragraph",
+   "receipt": {
+    "public_excerpt": "resulting in proofs",
+    "quote_hash": "dd26e310fe0bf2ede28e222943c46c7cbb4678cd7d7d995c4ef5ba47a0bc28bb",
+    "verified": "exact"
+   },
+   "event_date": "2024-07",
+   "available_at": "2025-11-13",
+   "retrieved_at": "2026-10-29T03:26:07Z",
+   "relation": "supports",
+   "explanation": "The developer's account connects the actual IMO proofs to a transformer that proposes Lean tactics, search over proof states and automatic formal verification. It explicitly identifies the described work as ending in July 2024.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2502-03544v1",
+   "source_snapshot_id": "deb4fdf193769689f833c07d9a7fd10801b3a2a06e7ae9b7e1e7ea8dc5bdac63",
+   "publisher": "Google DeepMind authors via arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2502.03544v1",
+   "locator": "Section 7.2, Inference setup, The analysis string",
+   "receipt": {
+    "public_excerpt": "neuro-symbolic interface",
+    "quote_hash": "202139ce6a167448bf1f9b26ca81e7cfe3fab0795a90f2896c38362d1807f2ba",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-05",
+   "available_at": "2025-02-05",
+   "retrieved_at": "2026-10-29T01:09:39Z",
+   "relation": "context",
+   "explanation": "The paper explicitly describes interaction between a language model and a symbolic deduction engine. This later architecture description is contextual; it is not used to assume that every reported improvement was present in July 2024.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "storage-googleapis-com-deepmind-media-deepmind-com-blog-imo-2024-so-187af2fd73ab",
+   "source_snapshot_id": "2c1fb289946a4cb08d075da3767705debfac805b2343803d73bb38a1bc9bb6e3",
+   "publisher": "Google DeepMind",
+   "source_type": "demonstration",
+   "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/imo-2024-solutions/index.html",
+   "locator": "IMO 2024 Solutions, opening paragraph",
+   "receipt": {
+    "public_excerpt": "proofs found",
+    "quote_hash": "1ec4a6b5704142cb9d4f7ec962e69dfb99a5e65beab10f54aee7b78ad02094b1",
+    "verified": "exact"
+   },
+   "event_date": "2024-07",
+   "available_at": "2024-07-25",
+   "retrieved_at": "2026-10-29T03:24:50Z",
+   "relation": "supports",
+   "explanation": "The primary solution collection supplies proof artifacts from the demonstration and explains how intermediate Lean proof states can be inspected. It corroborates that the systems produced concrete mathematical outputs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The proof artifacts were inspected through their documentation, not independently re-executed.",
+  "The evidence does not isolate each component's causal contribution or establish superiority over every alternative architecture."
+ ],
+ "packet_hash": "bd9410a648adcc9d0170ce17e66e2107f4c3f9bd92d1b9236d616c1736b26467"
+}

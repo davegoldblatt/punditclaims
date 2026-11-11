@@ -1,0 +1,160 @@
+# Every known failure this project must never repeat, from the legacy Marcus
+# analysis and from the specification. Each entry names the test that proves
+# it. An entry with `covered_by: null` is open work owned by `ticket`; the
+# release builder refuses a production release while any entry is open.
+- id: robust-bust
+  source: legacy (claude/claude_do_clustering.py substring match; claim_1865)
+  scenario: A regulation recommendation containing "robust enforcement" lands in the bubble cluster because "bust" is a substring of "robust".
+  expect: Topic matching uses whole words; a recommendation is normative and is never scored as a bubble forecast.
+  covered_by: tests/rules.test.ts#robust-bust
+  ticket: DAV-405
+- id: historical-pause
+  source: legacy (outputs/chatgpt/scripts/chatgpt_correctness_refine_precision.py)
+  scenario: '"GPT-5 is on pause" (2023) is marked contradicted because GPT-5 shipped later.'
+  expect: An observation is judged on the period it describes; a later release is context only.
+  covered_by: tests/rules.test.ts#historical-pause
+  ticket: DAV-405
+- id: conditional-disappointment
+  source: legacy (same refinement script)
+  scenario: '"If the model disappoints, valuations may suffer" is scored as a forecast that the model will disappoint.'
+  expect: A conditional keeps its antecedent; if the antecedent did not happen, the conditional is neither confirmed nor falsified.
+  covered_by: tests/rules.test.ts#conditional-disappointment
+  ticket: DAV-405
+- id: normative-deadline
+  source: specification
+  scenario: '"Companies should do X by December" is scored as "companies will do X by December".'
+  expect: A recommendation is normative and is recorded as not adjudicable.
+  covered_by: tests/rules.test.ts#normative-deadline
+  ticket: DAV-405
+- id: financial-period
+  source: specification
+  scenario: An accurate statement about 2025 expenses is contradicted by a better 2026 quarter.
+  expect: Evidence from another period is context only.
+  covered_by: tests/rules.test.ts#financial-period
+  ticket: DAV-405
+- id: financial-metric
+  source: specification
+  scenario: Financing, cash, operating income, net income, revenue, run rate, or valuation stands in for another.
+  expect: Decisive evidence measures the contract's metric, basis, and period.
+  covered_by: tests/rules.test.ts#financial-metric
+  ticket: DAV-405
+- id: future-horizon
+  source: specification
+  scenario: A forecast is scored before its deadline because the event has not happened yet.
+  expect: Not-due forecasts stay unresolved; an early result needs a conclusive event the contract allows.
+  covered_by: tests/rules.test.ts#future-horizon
+  ticket: DAV-405
+- id: duplicates
+  source: specification
+  scenario: Repeated statements inflate the claim count, or a page edit creates a new authored occurrence.
+  expect: Repetitions are occurrences of one claim; changed conditions are a new claim; an unrelated page edit adds a receipt.
+  covered_by: tests/capture.test.ts#duplicates
+  ticket: DAV-410
+- id: deadline-review
+  source: specification
+  scenario: A deadline passes and the claim is marked contradicted, or stays "review due" forever after a completed review.
+  expect: Expiry queues a review only; a completed review clears the trigger even when the outcome stays unresolved.
+  covered_by: tests/gate.test.ts#deadline-review
+  ticket: DAV-413
+- id: invalidation
+  source: specification
+  scenario: A verified conflict cannot be shown because the replacement assessment is held, or an unverified dispute withdraws a verdict.
+  expect: A narrow invalidation release flags or withdraws on verified receipts only and never carries a new verdict.
+  covered_by: tests/gate.test.ts#invalidation
+  ticket: DAV-414
+- id: attribution
+  source: specification
+  scenario: A quoted opponent or a reader comment becomes the author's claim.
+  expect: A subject's claim rests only on statements the subject endorsed.
+  covered_by: tests/data.test.ts#attribution
+  ticket: DAV-405
+- id: hindsight
+  source: specification
+  scenario: A packet dated March uses evidence published in June.
+  expect: Every evidence item was available on or before the packet's cutoff.
+  covered_by: tests/rules.test.ts#hindsight
+  ticket: DAV-405
+- id: source-access
+  source: specification
+  scenario: A paywall preview or an edited page stands in for the full original text.
+  expect: A preview is never complete context; only full access can ground a quotation; versions are immutable.
+  covered_by: tests/schema.test.ts#source-access
+  ticket: DAV-405
+- id: injection
+  source: specification
+  scenario: Source text or a dispute tells the model to change the verdict, the policy, or the tools.
+  expect: Untrusted text is data in a delimited block; models have no tools; code decides publication.
+  covered_by: tests/gate.test.ts#injection
+  ticket: DAV-412
+- id: binding
+  source: specification
+  scenario: Final prose or a citation is edited after review and still publishes.
+  expect: Any change to the public payload invalidates the final-text pass.
+  covered_by: tests/gate.test.ts#binding
+  ticket: DAV-414
+- id: outages
+  source: specification
+  scenario: A timeout, malformed output, one provider checking itself, or a missing credential publishes a verdict.
+  expect: Each holds the affected update with its own reason.
+  covered_by: tests/gate.test.ts#outages
+  ticket: DAV-414
+- id: snapshot-consistency
+  source: specification
+  scenario: HTML, search, feeds, exports, and counts disagree, or a fixture reaches production.
+  expect: Every surface reads one manifest; fixture ids fail the production loader. The built site is checked against the manifest by scripts/check-dist.ts (DAV-421).
+  covered_by: tests/published.test.ts#snapshot-consistency
+  ticket: DAV-414
+- id: history
+  source: specification
+  scenario: A correction or withdrawal breaks an old link or rewrites when something was public.
+  expect: Old versions stay readable with tombstones; history comes from activation receipts.
+  covered_by: tests/gate.test.ts#history
+  ticket: DAV-413
+- id: interpretation-determines
+  source: specification
+  scenario: An evaluator's operationalisation of a vague phrase decides a scored result.
+  expect: When the interpretation determines the result, the outcome is unresolved or not adjudicable.
+  covered_by: tests/rules.test.ts#interpretation-determines
+  ticket: DAV-405
+- id: prospective-label
+  source: specification
+  scenario: Criteria written after the outcome was public are labelled prospective.
+  expect: Prospective requires the contract to freeze before every decisive item became public.
+  covered_by: tests/rules.test.ts#prospective-label
+  ticket: DAV-405
+- id: statement-is-not-proof
+  source: cross-vendor audit 2026-10-28 (F03)
+  scenario: The speaker's own statement, or the author's later assertion, counts as evidence that the claim came true.
+  expect: Only outcome evidence that is not the author's own statement decides an outcome.
+  covered_by: tests/rules.test.ts#statement-is-not-proof
+  ticket: DAV-405
+- id: hedged-modality
+  source: cross-vendor audit 2026-10-28 (F07); legacy claim_1267 ("2025 could well be the year…" scored contradicted)
+  scenario: A "could", "may", or "likely" forecast is scored as if it were categorical.
+  expect: Hedged and probabilistic forecasts are recorded and shown with what happened, not scored.
+  covered_by: tests/rules.test.ts#hedged-modality
+  ticket: DAV-405
+- id: financial-units-and-currency
+  source: cross-vendor audit 2026-10-28 (F01)
+  scenario: Annual USD billions are compared with quarterly EUR millions, or an unknown accounting basis is scored.
+  expect: Decisive financial evidence matches currency, units, basis, and the exact period, or is derived with stated inputs.
+  covered_by: tests/rules.test.ts#financial-units-and-currency
+  ticket: DAV-405
+- id: quoting-cap
+  source: cross-vendor audit 2026-10-28 (F16)
+  scenario: Many short excerpts reconstruct a substantial part of one article.
+  expect: The per-source cap check works when a deployment turns it on. Policy .5 turns it off by owner decision (full quotations on every claim).
+  covered_by: tests/rules.test.ts#quoting cap per source
+  ticket: DAV-405
+- id: binding-statement
+  source: cross-vendor audit of the full-corpus plan, 2026-10-28 (F7)
+  scenario: A statement's source version, span, quotation, or locator changes after review, or the policy version or final-check inputs differ, and the old review still counts.
+  expect: Every review and final-text check is bound to a digest of the whole case (claim, contract, packet, statement receipts, policy version, prompt); any change holds the record.
+  covered_by: tests/gate.test.ts#binding covers the statement, the policy, and the final check
+  ticket: DAV-414
+- id: plain-reading
+  source: owner decision 2026-10-28 (policy .6)
+  scenario: A firm claim with no measure is scored on an unstated or stretched reading, or a hedged claim is scored on a plain reading, or the page hides that a plain reading was used.
+  expect: Scored only with a stated plain reading, only for firm language, and the page says so.
+  covered_by: tests/rules.test.ts#plain-reading
+  ticket: DAV-430

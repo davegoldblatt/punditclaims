@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-oops-how-google-bombed-while-doing-e303fd-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-oops-how-google-bombed-while-doing-e303fd": "f5c638c61cf36613959a870acb64dbebaebaa87ffff5fda647106fa6971e98e1"
+ },
+ "started_at": "2026-10-29T07:59:14Z",
+ "completed_at": "2026-10-29T07:59:29Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own first-person sentence in his Substack post; not quoting anyone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The normalised wording matches his sentence: the date, the chatbot hallucination as cause and $100 billion as cost. Causal is the right kind because 'cost' asserts causation."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading treats 'cost' as a market-value drop, with the error as a material contributor rather than the only cause. That matches the ordinary reading of the time; contemporaneous headlines framed it the same way. The result depends on this reading, because a sole-cause reading would not be settled by this evidence."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "BBC, same day: shares fell more than 7%, about $100bn off market value. The headline ties the drop to the Bard ad error, and the report also notes the disappointing presentation."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "AP via CBS, same day: confirms about $100bn wiped out and that the presentation included inaccurate information, but puts most of the cause on fear of Microsoft and ChatGPT. This weighs against the error being the sole cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Two same-day reports confirm a roughly $100bn fall in Alphabet's market value on Feb 8, 2023. BBC links the fall directly to Bard's factual error, which meets the contract's material-contributor test. AP names other drivers, mainly Microsoft's competitive threat and a weak presentation, so the full $100bn cannot be put on the hallucination alone. Under the frozen contract the claim is supported, with that limit.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-oops-how-google-bombed-while-doing-e303fd"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9339,
+  "output_tokens": 1466,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,118 @@
+{
+ "packet_id": "wyea-the-case-against-generative-ai-a42fdf-p1",
+ "claim_revision_ref": {
+  "id": "wyea-the-case-against-generative-ai-a42fdf",
+  "version": 1,
+  "content_hash": "47c7d70b849e50bbe8975acbb08278eceee6742ad8887dfabeacbb0404d20dcb"
+ },
+ "contract_ref": {
+  "id": "wyea-the-case-against-generative-ai-a42fdf",
+  "version": 1,
+  "content_hash": "425801cd463ac06f1e1aaaa72f5826e0b9db87cb02b5f50b6df30caa63b90d81"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "LLM reliability benchmark September 2025 instruction following repeated tasks",
+   "LLM reliability September 2025 benchmark GDPval paper September 25",
+   "LLM agent reliability benchmark \"September\" \"2025\" repeated",
+   "SWE bench pro September 2025 23 percent scale ai",
+   "\"Holistic Agent Leaderboard\" arxiv 2025"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://scale.com/blog/swe-bench-pro",
+    "used": true,
+    "why": "Dated primary benchmark report with low completion rates on complex software tasks and explicit guidance to retain human review."
+   },
+   {
+    "url": "https://arxiv.org/abs/2509.16941v1",
+    "used": false,
+    "why": "Read the original September version to check the benchmark's scope and provenance. Its findings duplicate the cited benchmark report."
+   },
+   {
+    "url": "https://arxiv.org/html/2509.16941v1",
+    "used": false,
+    "why": "Read failure-analysis passages to check the original study. Not counted as independent corroboration of the same benchmark."
+   },
+   {
+    "url": "https://openai.com/index/gdpval/",
+    "used": true,
+    "why": "Contemporaneous primary evaluation provides material qualification: models can produce valuable work, while its one-shot comparisons do not establish repeated-task reliability."
+   },
+   {
+    "url": "https://peterkirgis.github.io/research/hal",
+    "used": false,
+    "why": "Read the research summary, but did not rely on it for a dated quantitative reliability estimate."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+    "used": false,
+    "why": "Read relevant capability claims. A selected long-running demonstration does not establish general reliability, and publication was on the same day as the post."
+   },
+   {
+    "url": "https://hal.cs.princeton.edu/reliability/",
+    "used": false,
+    "why": "Search results describe later model evaluations. They cannot directly establish the September 2025 state."
+   }
+  ],
+  "performed_at": "2026-10-29T12:54:04Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "scale-com-blog-swe-bench-pro",
+   "source_snapshot_id": "9e6c3a20bec7a5b48662941f21f8c53112df9c5314e5ba1cf1351be6ead0cfaa",
+   "publisher": "Scale AI Research",
+   "source_type": "benchmark",
+   "url": "https://scale.com/blog/swe-bench-pro",
+   "locator": "Results: SWE-Bench Verified vs. SWE-Bench Pro; private commercial subset",
+   "receipt": {
+    "public_excerpt": "17.8% resolution",
+    "quote_hash": "e28419a07817800c103555b2222fd85a1955c50480f80107e0121da947e5fa90",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-19",
+   "available_at": "2025-09-19",
+   "retrieved_at": "2026-10-29T12:46:16Z",
+   "relation": "supports",
+   "explanation": "The September benchmark report found that leading models completed only a small minority of complex private-codebase tasks under the tested setup. This supports the warning against assuming correct autonomous completion of such work.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-gdpval",
+   "source_snapshot_id": "443ed4c4a59c44c298029c20c457144a155efce43028099049da2656b0090890",
+   "publisher": "OpenAI",
+   "source_type": "benchmark",
+   "url": "https://openai.com/index/gdpval",
+   "locator": "Early results, opening sentence",
+   "receipt": {
+    "public_excerpt": "approaching the quality",
+    "quote_hash": "66d5389ae69e3436a99c63906d343d0782c961d8ca60173f3c919fc8a6ca1d62",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-25",
+   "available_at": "2025-09-25",
+   "retrieved_at": "2026-10-29T12:45:15Z",
+   "relation": "context",
+   "explanation": "GDPval supplies a material qualification: models produced competitive work across professional tasks. Its expert-preference comparisons and one-shot design do not establish consistent correctness over repeated runs.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evidence does not estimate reliability across the entire distribution of user requests.",
+  "These cited results do not measure repeated-run consistency for identical tasks.",
+  "No acceptable failure threshold was supplied by the speaker."
+ ],
+ "packet_hash": "f8d17ea7b95e3021bb44e83428dcd968c9b3432b0561d16080206f9bc1daa5cb"
+}

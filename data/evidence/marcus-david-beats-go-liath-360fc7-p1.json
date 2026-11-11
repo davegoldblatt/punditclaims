@@ -1,0 +1,110 @@
+{
+ "packet_id": "marcus-david-beats-go-liath-360fc7-p1",
+ "claim_revision_ref": {
+  "id": "marcus-david-beats-go-liath-360fc7",
+  "version": 1,
+  "content_hash": "268fcbac8a7c5819b70a298ac77bdb7a1c450a23169198dba172d017304c4bb0"
+ },
+ "contract_ref": {
+  "id": "marcus-david-beats-go-liath-360fc7",
+  "version": 1,
+  "content_hash": "600450c1ee67d92cf95b01b909d59c0ee6a6925f043b2099e06388abe5602741"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.far.ai 2023 February human Go Pelrine passing cyclic 14 15",
+   "\"adversarial\" \"Go\" \"passing\" \"cyclic\" 2023 February",
+   "\"goattack\" \"github.com\" website",
+   "\"Human transfer\" \"The cycle attack\" \"2023\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://goattack.far.ai/human-evaluation",
+    "used": false,
+    "why": "read_page extracted only the title; the dated source underlying the page was read instead."
+   },
+   {
+    "url": "https://raw.githubusercontent.com/AlignmentResearch/KataGoVisualizer/c399a5f5eb8f64beb70c307629758f4f1001393f/sgf-viewer/src/content.ts",
+    "used": true,
+    "why": "Fixed February 17, 2023 revision documents Pelrine's learning, unaided execution, and repeated wins."
+   },
+   {
+    "url": "https://api.github.com/repos/AlignmentResearch/KataGoVisualizer/commits?path=sgf-viewer/src/content.ts&until=2023-02-19T00%3A00%3A00Z&per_page=1",
+    "used": true,
+    "why": "Verified the source revision's February 17 publication timestamp."
+   },
+   {
+    "url": "https://raw.githubusercontent.com/AlignmentResearch/KataGoVisualizer/c399a5f5eb8f64beb70c307629758f4f1001393f/sgf-viewer/public/sgfs/human_vs_kata100k/humanattack-KataGo-100kvisits.sgfs",
+    "used": true,
+    "why": "The associated game record dates a successful human demonstration to January 22, 2023."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.00241v2",
+    "used": true,
+    "why": "The January paper explicitly distinguishes the cyclic attack from the earlier passing attack."
+   },
+   {
+    "url": "https://arxiv.org/html/2211.00241v3",
+    "used": false,
+    "why": "Corroborates human transfer, but the earlier version suffices to establish the distinction between attacks."
+   }
+  ],
+  "performed_at": "2026-10-29T03:22:43Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e8",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-alignmentresearch-katagovisualizer-c399a5-146e53ba55cd",
+   "source_snapshot_id": "cadde66b0b34d232e00ed299568a65c963c6093bbffd34f567d4a600f8d14e71",
+   "publisher": "AlignmentResearch / FAR AI research team",
+   "source_type": "demonstration",
+   "url": "https://raw.githubusercontent.com/AlignmentResearch/KataGoVisualizer/c399a5f5eb8f64beb70c307629758f4f1001393f/sgf-viewer/src/content.ts",
+   "locator": "Human exploits KataGo, description; subsequent Human exploits a top KGS bot entry",
+   "receipt": {
+    "public_excerpt": "no algorithmic assistance was used in this or any of the following examples.",
+    "quote_hash": "a38bec7167b454ffd5410a78182278dce47b3926275d6e12dcea275c43f82afe",
+    "verified": "exact"
+   },
+   "event_date": "2023-01",
+   "available_at": "2023-02-17",
+   "retrieved_at": "2026-10-29T03:17:32Z",
+   "relation": "supports",
+   "explanation": "The surrounding description identifies Pelrine as learning the cyclic attack from game records and executing it against several configurations. The same source records fourteen wins in fifteen games against JBXKata005.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e9",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2211-00241v2",
+   "source_snapshot_id": "9958b1915a8011bfb4c906874fe859f0aa7923b8424820e7cfd3e909c0808d2f",
+   "publisher": "Wang et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2211.00241v2",
+   "locator": "Section 5, Evaluation",
+   "receipt": {
+    "public_excerpt": "it does not use the pass-trick",
+    "quote_hash": "721303b53eeba3d15ffc1aa6aa95d5b1eb5901175ca615c26896e38e9663258c",
+    "verified": "exact"
+   },
+   "event_date": "2023-01",
+   "available_at": "2023-01-09",
+   "retrieved_at": "2026-10-29T03:18:47Z",
+   "relation": "contradicts",
+   "explanation": "The paper explicitly distinguishes the successful cyclic attack from the passing trick described in Marcus's preceding paragraphs. Thus the human victory does not demonstrate transfer of that same specific strategy.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e9"
+ ],
+ "unresolved_gaps": [
+  "The records establish learning from generated games, but do not establish that Gleave personally taught Pelrine."
+ ],
+ "packet_hash": "b2f0cf3c89f4569f2e9f6b053e29e15513b5d59be83a0ad9336768d6dbcb3a90"
+}

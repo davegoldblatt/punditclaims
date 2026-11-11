@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-new-ways-to-corrupt-llms-4eedf4-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-new-ways-to-corrupt-llms-4eedf4": "55baad6a90069dd9ad2ed1bfbacb99d22b59c72cc44e6e59aeb5751156e8df37"
+ },
+ "started_at": "2026-11-09T20:39:44Z",
+ "completed_at": "2026-11-09T20:40:01Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He cites the Gonen/Smith research, but the explanation of the mechanism is his own assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "The proposition faithfully keeps the 'these kinds of errors' scope and the words-versus-concepts contrast. 'Probably' hedges only the parenthetical examples, not the main claim. The claim explains why the errors happen, so it is causal rather than an observation, which matches the contract's causal axis."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading is ordinary and fair. Requiring experiments that separate word associations from conceptual ones follows from Marcus's own 'words (rather than concepts)' contrast. The result depends on how that undefined distinction is made operational, as the contract itself flags."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "The original semantic-leakage study (v3, May 2025) shows that leakage occurs across models. It establishes the errors exist but does not test whether their cause is lexical or conceptual, so it cannot support the contested mechanism."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "This follow-up was available 2026-10-20, before the cutoff. It shows leakage persists without attribution to the person, which rules out the coherent-profile explanation. It frames the cause as a concept being present in context and does not separate words from concepts."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic disclosure (March 2025) of language-independent features in Claude 3.5 Haiku on an antonym task. It concerns a different task and does not address the cause of semantic leakage, so it is general context only."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Marcus's firm causal claim is that semantic-leakage errors come from indirect word correlations rather than concepts or real-world correlations. The packet confirms leakage happens (e1) and that it does not depend on attributing the concept to a person (e2). No experiment in it separates lexical from conceptual causes, as the support and contradiction conditions require. e3 concerns another task. The evidence does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-new-ways-to-corrupt-llms-4eedf4"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 11748,
+  "output_tokens": 1638,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-report-from-the-vatican-f211dd-p1",
+ "claim_revision_ref": {
+  "id": "marcus-report-from-the-vatican-f211dd",
+  "version": 2,
+  "content_hash": "2e4d92f83e7349aa24634ed543d1ad5c5fc06d9429c32ee80819556657a6e962"
+ },
+ "contract_ref": {
+  "id": "marcus-report-from-the-vatican-f211dd",
+  "version": 1,
+  "content_hash": "e431809f2a913be14600c5487ac03c04fb3500de6edac1a49c993dadc1e47a4c"
+ },
+ "evaluation_as_of": "2026-11-09",
+ "search_record": {
+  "queries": [
+   "OpenAI Anthropic spending revenue losses 2026 October financial",
+   "OpenAI 2026 \"third quarter\" \"loss\" revenue spending",
+   "OpenAI October 2026 revenue cash burn first half 2026 Reuters",
+   "\"Anthropic\" \"operating profit\" \"October 26, 2026\"",
+   "OpenAI \"12.3\" \"2026\" operating loss second quarter WSJ"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary filing distinguishes accounting measures and was also checked against the reported quarterly operating profit."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+    "used": true,
+    "why": "Provides a concise report of the quarterly operating income verified in the filing."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-surpasses-openai-q2-revenue-121706311.html",
+    "used": false,
+    "why": "Readable secondary reporting, but it does not provide a matching cash-spending measure or resolve the claim's accounting basis."
+   },
+   {
+    "url": "https://archive.ph/qGG7c",
+    "used": false,
+    "why": "The located Wall Street Journal report could not be read; the request timed out."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403; its later quarterly period would also differ from the chosen target period."
+   }
+  ],
+  "performed_at": "2026-11-10T00:01:36Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e5",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Page 156, Non-GAAP Financial Measures",
+   "receipt": {
+    "public_excerpt": "operating loss",
+    "quote_hash": "f9fb27abb809ee5a3708ccb651d242438ebf0e78568ecd91da2209a24f6b2a72",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-26",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The filing explicitly distinguishes adjusted operating results from other accounting results. Selecting one of these measures as Marcus's intended spending measure would require an additional interpretation.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Definition of adjusted operating income or loss",
+    "currency": "USD",
+    "units": null,
+    "accounting_basis": "non_gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "finance-yahoo-com-technology-live-anthropic-ipo-live-updates-fronti-2e5602dc7b26",
+   "source_snapshot_id": "c0f8d3cd94e3cc4f71c0c1d7890051ac2c757f650125e1ccac592c2785114400",
+   "publisher": "Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+   "locator": "October 26, 15:53 UTC update by Jared Blikre",
+   "receipt": {
+    "public_excerpt": "$974 million",
+    "quote_hash": "b6cbd587be610a099b92a90957e3baa6e654f6916c40cdef4227318a93eed5d0",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-29T00:50:38Z",
+   "relation": "context",
+   "explanation": "Anthropic's positive quarterly operating income is material counterevidence to treating every agent seller as operating at a substantial loss. Operating income does not directly establish total cash spending or net income, so this remains context.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Operating income",
+    "currency": "USD",
+    "units": "millions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e6"
+ ],
+ "unresolved_gaps": [
+  "The claim supplies no accounting basis, preventing a supported or contradicted score under the money rules.",
+  "The full set of companies is not identified.",
+  "No matched spending-versus-revenue dataset was established for every intended company."
+ ],
+ "packet_hash": "4702330ede43f0aabaf80084ab1967aee3090c6189d353952f67b4f29af8ff9c"
+}

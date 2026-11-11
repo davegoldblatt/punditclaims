@@ -1,0 +1,132 @@
+{
+ "packet_id": "wyea-why-are-we-still-doing-this-26b90f-p1",
+ "claim_revision_ref": {
+  "id": "wyea-why-are-we-still-doing-this-26b90f",
+  "version": 1,
+  "content_hash": "867f00d526223c0d2a9eb75cb3ccb5c4a272e6221478ada7db5d9af1a1cb4772"
+ },
+ "contract_ref": {
+  "id": "wyea-why-are-we-still-doing-this-26b90f",
+  "version": 1,
+  "content_hash": "e29bb58eff902572434fcea05c87969dffb3783a53f5718b72c3c820dd16d949"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Claude Pro \"$163\" compute",
+   "\"Claude\" \"163\" \"$20\"",
+   "Claude Pro \"163\" compute usage subscription -site:reddit.com"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://she-llac.com/claude-limits",
+    "used": true,
+    "why": "Original independent measurement directly linked by the post; read in full, including limits, token weights, calculations and methodological caveats."
+   },
+   {
+    "url": "https://www.anthropic.com/news/claude-opus-4-5",
+    "used": true,
+    "why": "Primary source for the API prices used in the calculation."
+   },
+   {
+    "url": "https://aihola.com/article/claude-subscription-api-value-analysis",
+    "used": false,
+    "why": "Search located a summary, but the original measurement was available and preferable."
+   },
+   {
+    "url": "https://yeekal.com/ai/claude-ai-subscription-limits-reverse-engineered/",
+    "used": false,
+    "why": "Later secondary account of the same measurement; unnecessary for establishing the original result."
+   }
+  ],
+  "performed_at": "2026-10-29T22:21:56Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "she-llac-com-claude-limits",
+   "source_snapshot_id": "fde53ad88aebb3c93a7f7c56d21248a2794e154ef51e2a737b444da4c868e954",
+   "publisher": "she-llac",
+   "source_type": "independent_measurement",
+   "url": "https://she-llac.com/claude-limits",
+   "locator": "Findings: two subscription tables; Credits: model weights; Forensics: measurement method",
+   "receipt": {
+    "public_excerpt": "Compared to API pricing, all plans come out looking fantastic.",
+    "quote_hash": "ddef64bd7a0d514b88ebf74e22a9d6d323fb646b177293e62b39f39cfab694e1",
+    "verified": "exact"
+   },
+   "event_date": "2026-01",
+   "available_at": "2026-01-25",
+   "retrieved_at": "2026-10-29T09:47:29Z",
+   "relation": "supports",
+   "explanation": "The tables report a $20 Pro plan, five million weekly credits and approximately $163 of monthly API-equivalent capacity. The author derives limits from usage responses and token weights from collected observations; this is a capacity estimate, not a disclosure of Anthropic's costs.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "API-price value of monthly included Claude Pro usage capacity",
+    "currency": "USD",
+    "units": "USD per subscriber-month",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Pro weekly allowance: 5,000,000 credits, source Findings table.",
+     "Average month: 52/12 weeks, the source's monthly conversion convention.",
+     "Opus output weight: 10/3 credits per token, source Credits table.",
+     "Opus API output price: USD 25 per million tokens, source examples and e2."
+    ],
+    "formula": "(5,000,000 × 52/12) ÷ (10/3) × (25/1,000,000) = USD 162.50 per average month.",
+    "rounding": "Rounded to the nearest whole dollar, with the half-dollar rounded upward: USD 163."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-news-claude-opus-4-5",
+   "source_snapshot_id": "903a44766cb359392ef9320f2bc5029f7ace3f6162cd21935c58f5edac839607",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "locator": "Opening section, model availability and pricing paragraph",
+   "receipt": {
+    "public_excerpt": "$5/$25 per million tokens",
+    "quote_hash": "9f9cc02eada8c7027fb2a51ad77eb42bb613df84ad9a484e02cbd32aa17a9ec6",
+    "verified": "exact"
+   },
+   "event_date": "2025-11-24",
+   "available_at": "2025-11-24",
+   "retrieved_at": "2026-10-29T08:55:27Z",
+   "relation": "context",
+   "explanation": "This establishes the retail API pricing used by the independent calculation. It does not measure subscription capacity or Anthropic's internal cost and is therefore context only.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "Claude Opus 4.5 API list price",
+    "currency": "USD",
+    "units": "USD per million input or output tokens",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-11-24",
+    "period_end": "2025-11-24",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The measurement was not independently replicated in the retrieved sources.",
+  "The author describes limited retained notes for deriving token weights.",
+  "The result does not establish actual infrastructure expense or unchanged limits through March."
+ ],
+ "packet_hash": "30bd8530dbcc3f9a6065ec174fda8340073c450b7a00de5ebec718ac6dd3b5fe"
+}

@@ -1,0 +1,191 @@
+{
+ "run_id": "wyea-let-ai-burn-afe890-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-let-ai-burn-afe890": "54674aa0b99bd9180260397d88ebe72e5d5871bd4b0fea3cb20797c06337d7f5",
+  "case:wyea-let-ai-burn-c19e2d": "d515aeb578ac828d85a37f5388bb64ec90566bcbe2a8dbd43d67b7acd3e3b5ee",
+  "case:wyea-let-ai-burn-c35f2b": "ee67283fae40fc015d44f23d32ec80c4636c000d7dfac41ba5a37c7e0dcafba5",
+  "case:wyea-let-ai-burn-c65a07": "db306c288adf6a2da5fa258db2c400362863963d9becaae89fa1f91faed29e2e"
+ },
+ "started_at": "2026-10-29T17:50:43Z",
+ "completed_at": "2026-10-29T17:51:25Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, stated as his assertion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures the inference that demand can't be large plus the 50% / $448B figures. It leaves out the Microsoft-flat and Amazon-20% sub-claims, which is acceptable for this proposition."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Zitron named no hyperscaler set, date, or attribution method, so the March 31, 2026 date and the MSFT/AMZN/GOOGL set were chosen by the evaluator. That choice is reasonable. With the accounting basis unknown and no threshold for 'not large', the result depends on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's own disclosure: $627B RPO, with 26% growth excluding OpenAI. It excludes only one customer at one company, so it does not reconcile the combined 50% / $448B figure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Amazon filing reports about $364B of long-term obligations at March 31, 2026. It gives no breakdown by customer."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Alphabet release reports Google Cloud backlog above $460B. Backlog is a different measure from RPO, and there is no customer attribution."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The filings give each company's total obligations but none attributes amounts to OpenAI and Anthropic together, so neither the $448B figure nor the 50% share can be reconciled. The 'not large' demand claim has no threshold, and the contract bars a score while the accounting basis is unknown. The evidence available by the cutoff does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-let-ai-burn-afe890"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own firm prediction in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "Keeps the antecedent (capex cuts, then waning GPU demand), the firm 'will', the causal chain, and the claim that no bailout can reverse it. No deadline was stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'kill revenues' as severe declines and 'depression' as a sustained contraction is fair and ordinary. Requiring a documented trigger before scoring preserves the conditional."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA's own August 2026 call describes a supply-constrained outlook and rising hyperscaler capex. That suggests the antecedent had not occurred, but it is a company forecast, not proof."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "This conditional forecast has no deadline. No evidence shows its antecedent (broad hyperscaler capex cuts followed by waning NVIDIA GPU demand) happening by the cutoff; NVIDIA reports supply constraints instead. With the antecedent unmet or unknown, the forecast is not scored, and no early-resolution event has occurred.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-let-ai-burn-c19e2d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own estimates in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "Keeps both hedges: 'I estimate' on compute and 'will likely' on revenue. The 'minor economic presence' and rest-of-industry parts are qualitative and have no measure."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": false,
+     "note": "The contract scores the revenue figure even though Zitron hedged it with 'will likely'. Under policy, probabilistic language is not scored. The economic-presence assertions also have no denominator."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Anthropic S-1 shows $16.3B revenue for H1 2026, unaudited. That covers one company for a partial period, so it cannot settle the combined full-year figures."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "not_due",
+    "outcome": "not_adjudicable",
+    "rationale": "The revenue figure carries a 'will likely' hedge, so it is not scored. The compute estimate covers calendar 2026, which had not ended by 2026-10-28, and the early-resolution rule is not met. The 'minor presence' claims have no measure. Nothing in this claim can be scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-let-ai-burn-c35f2b"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The dark fiber and railroad lines are rhetoric. The core observation, one main use lacking meaningful unsubsidized demand, is captured, including the exclusion of subsidies and circular financing."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading the claim as data-center GPUs used mainly for generative AI, with 'meaningful demand' meaning recurring purchases that cover costs, is fair and ordinary. The thresholds and the Q1 2026 window were chosen by the evaluator, so interpretation decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "NVIDIA blog (company material) on GPU use for simulation. It shows the capability exists but not how large that alternative demand is."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Ramp's independent payment data for March 2026 shows half of businesses pay for AI. It does not show whether prices cover costs or are free of circular financing."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has neither workload-share data nor service-level cost and financing data. Evidence of paid adoption and of alternative uses challenges a literal reading but does not show whether demand is unsubsidized and substantial. The evidence available by the cutoff does not settle the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-let-ai-burn-c65a07"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31109,
+  "output_tokens": 4635,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,137 @@
+{
+ "packet_id": "wyea-tss-bf5563-p2",
+ "claim_revision_ref": {
+  "id": "wyea-tss-bf5563",
+  "version": 2,
+  "content_hash": "5deb8b0605101c80f7d7f80dedeb1f0dde041fadea5082132815ddebe19090ca"
+ },
+ "contract_ref": {
+  "id": "wyea-tss-bf5563",
+  "version": 2,
+  "content_hash": "eeb1d229219b846718f431336c690dbdb05000a95b8d87d43999effaac521f19"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GitHub Copilot 2024 probabilistic code generation correctness limitations research semantic understanding",
+   "site.github.blog 2024 how GitHub Copilot works predicts code",
+   "site.github.blog 2024 \"predict\" \"tokens\" Copilot",
+   "2024 language models code understanding execution reasoning CRUXEval January",
+   "site.github.blog \"2024\" \"probabilistic\" code"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2107.03374v1",
+    "used": true,
+    "why": "Original Codex research explains prediction-based generation and its limitations. Earlier model evidence is context."
+   },
+   {
+    "url": "https://arxiv.org/abs/2401.03065v1",
+    "used": true,
+    "why": "Primary evaluation of models predicting program inputs and outputs, relevant to the distinction between plausible code and behavioral analysis."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.01006v1",
+    "used": true,
+    "why": "The June 2024 version provides relevant counterevidence about learning program semantics, without relying on its later revision."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.11326",
+    "used": false,
+    "why": "Measures generated solutions on LeetCode. Correct solutions alone do not settle the claim about the generator's analysis or understanding."
+   },
+   {
+    "url": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-is-getting-better-at-understanding-your-code/",
+    "used": false,
+    "why": "read_page returned only the author information, leaving no usable technical passage."
+   },
+   {
+    "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions",
+    "used": false,
+    "why": "The search result concerned current documentation; a historical version establishing the target-period behavior was not obtained."
+   }
+  ],
+  "performed_at": "2026-11-10T01:43:51Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2107-03374v1",
+   "source_snapshot_id": "b6b3e0712457ce1a2d3c5c1c4e3a83d30b8d35253f5faf528e23aa183bf9d955",
+   "publisher": "Chen et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2107.03374v1",
+   "locator": "Appendix on security risks, paragraph beginning 'Finally, the Codex model itself'",
+   "receipt": {
+    "public_excerpt": "may suggest insecure or otherwise bad code.",
+    "quote_hash": "4f0f3c940d26d13ba922ab7d228f746998a75984afa2a8e377fc9023f15c671d",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-07-07",
+   "retrieved_at": "2026-11-10T01:40:50Z",
+   "relation": "context",
+   "explanation": "The paper describes next-token prediction and acknowledges insecure suggestions, supporting the narrower concern that generation does not guarantee correctness. It studies earlier models and does not establish that 2024 generators lack substantive program analysis.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2401-03065v1",
+   "source_snapshot_id": "6b504fcd08981333aed3463dc3e06381e122d07f85a22d6aab5d88aca65d02d5",
+   "publisher": "Gu et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2401.03065v1",
+   "locator": "Abstract, sentence reporting GPT-4 results",
+   "receipt": {
+    "public_excerpt": "75% and 81%",
+    "quote_hash": "b981876a82fd67bce62317cb2b9aa7b476a4ad330bf345e4c5c718a3f49d51b7",
+    "verified": "exact"
+   },
+   "event_date": "2024-01",
+   "available_at": "2024-01-05",
+   "retrieved_at": "2026-11-10T01:40:17Z",
+   "relation": "context",
+   "explanation": "Predicting program inputs and outputs tests behavior beyond whether generated code looks plausible. These earlier model results are material counterevidence to a blanket denial of code reasoning, but do not directly measure the target-period Copilot configuration.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2406-01006v1",
+   "source_snapshot_id": "aaf0729165e77897faa419469fbe928b05b68052b51526b4ecf82ab5f4580d6a",
+   "publisher": "Ding et al., arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2406.01006v1",
+   "locator": "Version 1 abstract, sentence reporting benchmark results",
+   "receipt": {
+    "public_excerpt": "54.5% on CRUXEval-I",
+    "quote_hash": "eb5d41092dec925553e94112c209adc4f6fe528ae17bb728ae5e6634fa781ca6",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-06-03",
+   "retrieved_at": "2026-11-10T01:40:17Z",
+   "relation": "context",
+   "explanation": "The researchers trained a code model to represent execution behavior and evaluated code generation and input prediction. This challenges an unrestricted surface-plausibility account, but a research model is not direct evidence about Copilot, and the abstract does not date the experiments precisely.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No matched evaluation was obtained that isolates the generator in the relevant mid-2024 Copilot configuration and distinguishes surface plausibility from substantive behavioral analysis.",
+  "Prediction-based training and insecure outputs do not establish an absence of learned program semantics.",
+  "The speaker supplies no test for 'merely'; treating it solely as a description of probabilistic generation would materially narrow the claim."
+ ],
+ "packet_hash": "ad22ea351b05c80b40019d2602b5535b0803ae610efe61b20d0609b44e07aebc"
+}

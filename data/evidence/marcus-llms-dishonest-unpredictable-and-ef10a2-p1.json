@@ -1,0 +1,94 @@
+{
+ "packet_id": "marcus-llms-dishonest-unpredictable-and-ef10a2-p1",
+ "claim_revision_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-ef10a2",
+  "version": 1,
+  "content_hash": "5ed61bd829bb7967d270c8a399588b9964468f3b1aab657cf4a4e21f89475d0f"
+ },
+ "contract_ref": {
+  "id": "marcus-llms-dishonest-unpredictable-and-ef10a2",
+  "version": 1,
+  "content_hash": "f6192019a781151279bf16474ffc8bf2d5c92f7e87c22e4c0d47ee4601c2504c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com research agentic misalignment June 2025 emergency alert",
+   "site.anthropic.com \"Constitutional Classifiers\" \"4.4%\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/research/agentic-misalignment",
+    "used": true,
+    "why": "Directly tests harmful behavior and explicit instructions against it across models."
+   },
+   {
+    "url": "https://www.anthropic.com/research/constitutional-classifiers",
+    "used": true,
+    "why": "Material qualification: safeguards substantially improved resistance, although failures remained."
+   },
+   {
+    "url": "https://arxiv.org/abs/2404.02151",
+    "used": false,
+    "why": "Read as independent corroboration of jailbreak vulnerability; the more directly relevant June experiment is sufficient."
+   }
+  ],
+  "performed_at": "2026-10-29T07:25:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-agentic-misalignment",
+   "source_snapshot_id": "ccf69cd46e07f040e3aa662779e70dc19c6d89af3f3ff514a61eb21d0d1b8338",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/agentic-misalignment",
+   "locator": "Highlights; third paragraph",
+   "receipt": {
+    "public_excerpt": "disobeyed direct commands",
+    "quote_hash": "61c81ed79208f54d21a509445ea10140cdb17333faa18a3cbb3f45388a06c720",
+    "verified": "exact"
+   },
+   "event_date": "2025-06-20",
+   "available_at": "2025-06-20",
+   "retrieved_at": "2026-10-29T07:02:17Z",
+   "relation": "supports",
+   "explanation": "The report documents harmful behavior despite explicit prohibitions. Adding safety instructions reduced failures but did not prevent them, supporting the contextual reading of unreliable enforcement.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-constitutional-classifiers",
+   "source_snapshot_id": "4316eaa4c2b535f412e44e950ffc58bb9d9a8a8e11840415d2c60bcb45beb53d",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/constitutional-classifiers",
+   "locator": "Opening summary; Results from automated evaluations",
+   "receipt": {
+    "public_excerpt": "An updated version achieved similar robustness on synthetic evaluations",
+    "quote_hash": "2673c6a5e4c61683e4d80f5c9e02f70653f529f3125109a4ce9dc1c0ba213f43",
+    "verified": "exact"
+   },
+   "event_date": "2025-02-03",
+   "available_at": "2025-02-03",
+   "retrieved_at": "2026-10-29T03:24:44Z",
+   "relation": "context",
+   "explanation": "Anthropic reports reducing attack success from 86% without classifiers to 4.4% with them in its synthetic evaluation. This materially limits any reading that humans have no effective control, while leaving the reliable-enforcement claim intact.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The evaluations do not establish ordinary deployment failure rates or cover every possible system architecture.",
+  "Exact experimental run dates are not disclosed; evidence dates identify the dated findings."
+ ],
+ "packet_hash": "f1d97a71823911b45f2daa0ff35c80f19640218fb74a02d0ab0b92fbb4e6e182"
+}

@@ -1,0 +1,65 @@
+{
+ "run_id": "marcus-sorry-but-funsearch-probably-isnt-d351d3-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-sorry-but-funsearch-probably-isnt-d351d3": "510f3223513dea6d447a0833da2a36dc074e64c1c716328ad4c1610028e9c1c8"
+ },
+ "started_at": "2026-10-29T21:53:48Z",
+ "completed_at": "2026-10-29T21:53:56Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own Substack post as one of his points under 'In reality'. It is his assertion, not a quotation of someone else."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording matches the statement: the LLM did not solve the problem alone and had a narrow, prescribed role inside a larger system. It is a factual claim about how the system was built."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is ordinary and fair: the LLM generates a designated part of a program, inside a search and evaluation process specified separately. The contract rightly does not stretch the claim to mean the LLM's contribution was trivial."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "This is the original Nature paper (2023-12-14). It describes a supplied algorithm skeleton in which the LLM evolves only the 'priority' function, while separate evaluators run and score candidates and a programs database selects them. That meets the support condition."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The original paper shows the LLM working inside a human-supplied program skeleton, generating only the 'priority' function. Separate evaluators and a programs database score and select its outputs. The cap-set result therefore came from the full system, not from the LLM solving the problem end to end. This matches Marcus's description, and the packet contains no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-sorry-but-funsearch-probably-isnt-d351d3"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 7724,
+  "output_tokens": 833,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

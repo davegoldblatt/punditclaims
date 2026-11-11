@@ -1,0 +1,106 @@
+{
+ "run_id": "wyea-costs-9f9b2a-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-costs-9f9b2a": "010ac51083f00306317e47608f3aba53d5878c23bb211b47d3a19e9a6b56bc52",
+  "case:wyea-costs-b512d9": "77d0492a1502df5b8f9d0e28064444352d951bd9cdd847802b1f76b93f8d24a5"
+ },
+ "started_at": "2026-10-31T19:44:23Z",
+ "completed_at": "2026-10-31T19:44:55Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'that I can see', 'seems' and the two-year data scope. It is a retrospective observation about his AWS data."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'burns' as compute spending is a fair ordinary reading, since the post is about AWS bills. But read as operating cash burn, the 2025 figures fall. The S-1 line covers all cloud providers, not just AWS, so it is only a stand-in for his data."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "S-1, filed before the evaluation date. Compute spending rose every quarter from Q1 to Q3 2025 ($944M, $1.39B, $2.05B). This covers only the 2025 part of his window."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Annual totals only: 2024 $2.5B, 2025 $7.3B. A rise between years cannot rule out a dip within 2024, and the 2025 total includes Q4, which is outside his window."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Operating cash burn fell from 2024 to 2025, which the filing ties to prepayments and payment timing. Under the contract's reading, cash flow is a different metric. It would cut against him only if 'burn' means cash burn."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The 2025 quarters back the claim: compute spending rose each quarter Q1–Q3. For 2024 there is only an annual figure, so a period of reduction inside 2024 cannot be ruled out, and the support condition is not fully met. Nothing shows compute spending falling. The drop in cash burn is a different metric under this contract. The evidence by the cutoff does not settle the whole window.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-9f9b2a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the 104% / $6.48M figures and the 'never returned' part. The hedged aside that AWS is the 'minority' of Cursor's compute costs is rightly left unscored."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Taking May 2025 as the baseline and allowing a rounding band is a fair reading. The contract also rightly requires sources independent of his post."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. Every source found traces back to the speaker's own post, and neither Anysphere nor Amazon has confirmed or disputed the figures. Without independent billing data, the claim cannot be checked.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-costs-b512d9"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16809,
+  "output_tokens": 2786,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

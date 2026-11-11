@@ -1,0 +1,209 @@
+{
+ "run_id": "marcus-ai-agents-have-so-far-mostly-been-8603b3-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-ai-agents-have-so-far-mostly-been-8603b3": "c88e1723857bac9ccb043638395a51d72e7384061e0c4cd66ddafcc1bd774e33",
+  "case:marcus-ai-agents-have-so-far-mostly-been-9a2d36": "cc4c189fe7806462f403a44ad2126a55da108c4b00aa0e84b894e244755f15be",
+  "case:marcus-ai-agents-have-so-far-mostly-been-a29037": "3dab1b59c6ba5dc726e96b0cafbd10f9b0e38d14ecd9b586ccdd5eb6fc5d41a0",
+  "case:marcus-ai-agents-have-so-far-mostly-been-ab9cd9": "d2e0d80f50a7c657827568297404d368e5e28e13603acac72f523c1ea3d1dfef"
+ },
+ "started_at": "2026-10-29T02:04:34Z",
+ "completed_at": "2026-10-29T02:05:30Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his Substack post. He is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised wording keeps the hedge ('perhaps'). The only checkable part, the 1% share, is framed as a guess ('if I had to guess maybe 1%, probably less'). 'Wildly underfunded' is a value judgement."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract applies a plain reading and scores the 1% figure, but the speaker gave it as an explicit guess. Under the policy, plain readings apply only to firm language. Category and denominator are also undefined."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "PitchBook total for AI venture funding (Jan–Sep 2025), via Bloomberg/SCMP. Denominator only; it gives no neurosymbolic figure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "A single company announcing its own $25M round. It cannot measure the sector's share."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Market-research page with undisclosed methods and apparent errors, covering 2024–2025. It is not decisive under the contract's source rules."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The only quantitative part is hedged as a guess ('if I had to guess maybe 1%'), so policy says not to score it. The rest ('wildly underfunded') is a value judgement. Even if it were scored, the packet has no credible tally of neurosymbolic funding as a share of the total, so the result would be unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-8603b3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "'Can and sometimes does lead to catastrophe' is a firm claim that such outcomes exist. The normalised wording keeps the multi-step mechanism and 'sometimes'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (documented incidents of multi-step agent errors cascading into serious damage, more than one) is ordinary and fair. Counting destroyed data as catastrophe is reasonable."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Ars Technica, July 2025: Gemini CLI treated a failed command as a success, then ran a chain of moves that destroyed the user's files. A clear cascading multi-step error."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Fortune, July 2025: Replit's agent ran unauthorized commands during a code freeze and wiped a live database. The data was later recovered, which tempers how severe it was."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Before the post, two separate reputably reported incidents (Gemini CLI and Replit, July 2025) show LLM agents compounding errors across multiple steps until data was destroyed or wiped. That meets 'sometimes does'. The Replit data was recovered and its 'production' status was questioned, but the Gemini case alone involved real data loss through a cascading chain.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-9a2d36"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus summarises The Information's report but explicitly adopts the view as 'what I have been saying all along', so he endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A firm present-tense claim. The normalised wording matches it."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'pure scaling' as scaling pretraining (size, data, compute) is the ordinary meaning. The period of late 2024 to the post date fits the reports he refers to. 'No AGI reached' is trivially met."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters (Nov 2024, read via a blog reprint): Sutskever says results from scaling pretraining have plateaued, and sources report disappointing outcomes at the labs."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "METR: agent time horizons kept doubling or accelerating, but this progress mixes in reasoning and tool use. It does not isolate pure scaling, so it does not directly contradict."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Reputable reporting (Reuters, citing Sutskever and lab sources) says pretraining scale-ups were giving plateauing or disappointing gains in late 2024. No AGI had been reached. METR's continued progress comes from mixed methods, not pure scaling, so it does not cut against the pretraining reading. The support is thin (one reported statement, no compute-normalised data), but it meets the contract's support condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-a29037"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "causal",
+     "note": "'LLMs aren't getting us there' judges the direction of the LLM approach: it is not leading to robust AI. The surrounding text ('doubt that LLMs will ever yield the substrate') confirms this. It is more than a present-state observation. The requirement sentence is definitional."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract cuts the claim down to 'agents were not yet reliable in mid-2025', a much weaker point almost everyone would grant. 'Not getting us there' is not the same as 'not there yet'. That reading is stretched in the speaker's favour."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CRMArena-Pro (May 2025): leading agents reach about 35% on multi-turn tasks. Supports only the narrow present-state reading, not the claim about where LLMs are heading."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "TheAgentCompany v2 (May 2025): the best agent completes 30% of tasks. Again only shows the present state."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "METR: 80% horizons are about 5x shorter than 50% ones, but reliability is improving steadily. That cuts somewhat against the trajectory reading without settling it."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows LLM agents were not robust in mid-2025, but that is the contract's narrowed reading, not what the speaker committed to. His claim is that the LLM path is not leading to robust, trustworthy AI. The packet does not settle that, and METR's improving reliability trend points somewhat the other way. Unresolved on a fair reading.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-ai-agents-have-so-far-mostly-been-ab9cd9"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31534,
+  "output_tokens": 6233,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,110 @@
+{
+ "assessment_id": "wyea-dead-money-514ad4-a1",
+ "claim_revision_ref": {
+  "id": "wyea-dead-money-514ad4",
+  "version": 1,
+  "content_hash": "709fb85bbef2c0ec92be5f1ca758c165b5cc04451196fe204d8a2fbc47bfd5b2"
+ },
+ "contract_ref": {
+  "id": "wyea-dead-money-514ad4",
+  "version": 1,
+  "content_hash": "557e523a9958201474f3cd383d869d1cbbff591ae4555fb3d8c8601c89ee64bf"
+ },
+ "packet_ref": {
+  "id": "wyea-dead-money-514ad4-p1",
+  "content_hash": "7f9c8a2decf47b4eea747d6d75841bbfe8a1e00259c499625e86c3d77ab9e9e4"
+ },
+ "axis": "forecast_outcome",
+ "outcome": "not_adjudicable",
+ "horizon_state": "not_due",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The forecast concerns 2027, and neither annual growth condition can yet be established. Goldman supplies another forecast, not an outcome or evidence that an antecedent happened. The conditional-forecast rule therefore prevents scoring either branch. No decisive early event was found.",
+ "evidence_ids": [
+  "e1"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "This is a temporary condition-based hold, not a finding that the forecast is inherently uncheckable.",
+  "The two branches must be evaluated separately.",
+  "The upper total has an arithmetic ambiguity."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-dead-money-514ad4-4x-review-anthropic-1",
+  "wyea-dead-money-514ad4-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-dead-money-514ad4",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "AI data center debt issuance in 2027 will be about $739 billion if non-hyperscaler debt stays flat, or about $939 billion if it grows 67.6%.",
+  "kind": "conditional_forecast",
+  "conditions": [
+   "if other AI debt stays flat: $739B",
+   "if growth matches hyperscaler debt growth of 67.6%: $939B"
+  ],
+  "original_horizon_text": "in 2027",
+  "statement": {
+   "excerpt": "If we assume that other AI-related debt stays flat on the year, that puts us at $739 billion in AI data center debt in 2027, and if we assume growth matches hyperscaler debt issuance growth (around 67.6%), the number grows to around $939 billion in debt.",
+   "locator": "paragraph 68",
+   "url": "https://www.wheresyoured.at/dead-money",
+   "date": "2026-09-29",
+   "document_title": "Dead Money",
+   "observed_at": "2026-10-28T22:23:56Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "other AI-related debt stays flat on the year",
+    "$739 billion",
+    "in 2027",
+    "growth matches hyperscaler debt issuance growth",
+    "around 67.6%",
+    "around $939 billion"
+   ],
+   "our_interpretation": [
+    "The surrounding discussion makes this annual debt issuance, not the outstanding debt stock.",
+    "Treat the two totals as separate conditional scenarios, not as an unconditional range.",
+    "Other AI debt means issuance outside the five named hyperscalers: Meta, Alphabet, Amazon, Microsoft, and Oracle.",
+    "Both scenarios also rely on the surrounding $419 billion hyperscaler issuance estimate.",
+    "The stated inputs do not exactly reproduce the upper total: 419 + (570 - 250) × 1.676 = 955.32, in billions. Preserve the published $939 billion target and flag the discrepancy rather than silently correcting it."
+   ],
+   "support_condition": "For each branch whose antecedent is documented, calendar-2027 gross issuance is approximately the stated branch total, using the same issuer and financing coverage as the 2026 baseline.",
+   "contradiction_condition": "A documented branch antecedent holds, but complete, comparable calendar-2027 issuance differs materially from that branch's stated total."
+  },
+  "axis": "forecast_outcome",
+  "outcome": "not_adjudicable",
+  "horizon_state": "not_due",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The forecast concerns 2027, and neither annual growth condition can yet be established. Goldman supplies another forecast, not an outcome or evidence that an antecedent happened. The conditional-forecast rule therefore prevents scoring either branch. No decisive early event was found.",
+  "limitations": [
+   "This is a temporary condition-based hold, not a finding that the forecast is inherently uncheckable.",
+   "The two branches must be evaluated separately.",
+   "The upper total has an arithmetic ambiguity."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "$420bn",
+    "locator": "From Compute Constraint to Systems Constraint, first paragraph; endnote 4",
+    "url": "https://www.goldmansachs.com/what-we-do/investment-banking/insights/articles/navigating-a-system-of-ai-bottlenecks",
+    "publisher": "Goldman Sachs",
+    "event_date": "2026-09-15",
+    "available_at": "2026-10-19",
+    "explanation": "Goldman's forecast is close to the hyperscaler input used in the post. It remains a forecast, excludes SPV data-center financings, and cannot establish either conditional annual outcome."
+   }
+  ],
+  "what_would_resolve": "Complete, comparable 2026 and 2027 issuance totals split between hyperscalers and other AI borrowers, establishing which condition held and the corresponding total.",
+  "retrospective": false
+ },
+ "public_payload_hash": "9ca47a65444e1a8bad1c9d0d27fd8311ba8c2f37bbf8b63b0432b4953a30a532",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T17:38:42Z"
+}

@@ -1,0 +1,129 @@
+{
+ "assessment_id": "marcus-five-quick-updates-about-that-apple-0e24e7-a1",
+ "claim_revision_ref": {
+  "id": "marcus-five-quick-updates-about-that-apple-0e24e7",
+  "version": 2,
+  "content_hash": "7f174ddd8186bce4d9414c718c730b571d2885d2d2386713c03d069adb157b39"
+ },
+ "contract_ref": {
+  "id": "marcus-five-quick-updates-about-that-apple-0e24e7",
+  "version": 1,
+  "content_hash": "568b9b47f5766923849f33323f77b37defd4baaa239c049ef580dda98a980db7"
+ },
+ "packet_ref": {
+  "id": "marcus-five-quick-updates-about-that-apple-0e24e7-p1",
+  "content_hash": "84d87d545b40c2db212d4b2715854d000b46d67402f4ef1cacd4255d84320cc5"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-06-01",
+  "end": "2025-06-17",
+  "precision": "day"
+ },
+ "public_rationale": "The empirical description matches the original paper: it reports collapse around the cited Hanoi complexity and failures even with a supplied algorithm. That supports a challenge to the tested models' reasoning reliability. It does not establish that all deep reasoning is absent or that future LLM-only AGI is impossible.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Support applies to the reported experiments and their challenge to reasoning reliability.",
+  "Alternative output formats test different capabilities and weaken sweeping conclusions.",
+  "The ancillary historical date is unverified."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-five-quick-updates-about-that-apple-0e24e7-4x-review-anthropic-1",
+  "marcus-five-quick-updates-about-that-apple-0e24e7-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-five-quick-updates-about-that-apple-0e24e7-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-five-quick-updates-about-that-apple-0e24e7",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "The Apple paper challenged the idea that LLMs can reason on any deep level and showed that they broke down on moderately complex versions of basic algorithms such as Tower of Hanoi with 8 discs, which casts serious doubt on whether LLMs on their own could ever achieve AGI.",
+  "kind": "observation",
+  "conditions": [
+   "as shown by the Apple paper",
+   "moderately complex versions of basic algorithms (e.g., Tower of Hanoi with 8 discs)",
+   "LLMs on their own",
+   "casting serious doubt (not asserting impossibility)"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "The core of the paper challenged the idea that LLMs can reason on any deep level, and showed that they broke down on moderately complex versions of basic algorithms (since Tower of Hanoi with 8 discs, first solved with classical techniques around 1957) — casting serious doubt into whether LLMs on their own could ever achieve AGI.",
+   "locator": "paragraph 2",
+   "url": "https://garymarcus.substack.com/p/five-quick-updates-about-that-apple",
+   "date": "2025-06-17",
+   "document_title": "Five quick updates about that Apple reasoning paper that people can’t stop talking about",
+   "observed_at": "2026-10-28T23:56:17Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "The core of the paper challenged",
+    "broke down on moderately complex versions of basic algorithms",
+    "Tower of Hanoi with 8 discs",
+    "LLMs on their own",
+    "casting serious doubt"
+   ],
+   "our_interpretation": [
+    "Assess the findings reported in the Apple paper discussed in June 2025, as available by the post date.",
+    "The plain reading is that the experiments exposed substantial reasoning limitations in the tested models. Casting doubt on AGI is an inference, not a forecast that AGI is impossible.",
+    "Moderately complex means relatively small instances of familiar algorithmic puzzles, including approximately eight Hanoi discs; it does not mean the paper's formally named medium-complexity regime.",
+    "The parenthetical reference to 1957 is ancillary historical background and is not independently resolved by this assessment."
+   ],
+   "support_condition": "The paper reports substantial failure on the specified puzzle tasks around the stated complexity, including failures in executing supplied algorithms.",
+   "contradiction_condition": "The paper reports reliable success at that complexity, or does not report the algorithmic failures attributed to it."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The empirical description matches the original paper: it reports collapse around the cited Hanoi complexity and failures even with a supplied algorithm. That supports a challenge to the tested models' reasoning reliability. It does not establish that all deep reasoning is absent or that future LLM-only AGI is impossible.",
+  "limitations": [
+   "Support applies to the reported experiments and their challenge to reasoning reliability.",
+   "Alternative output formats test different capabilities and weaken sweeping conclusions.",
+   "The ancillary historical date is unverified."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Through extensive experimentation across diverse puzzles, we show that frontier LRMs face a complete accuracy collapse beyond certain complexities.",
+    "locator": "Abstract; Figure 7 caption; section 4.4 and Figure 8",
+    "url": "https://arxiv.org/html/2506.06941v1",
+    "publisher": "Apple researchers, arXiv",
+    "event_date": "2025-06-07",
+    "available_at": "2025-06-07",
+    "explanation": "Figure 7 reports near-zero intermediate-solution accuracy for Hanoi at eight or more discs. Section 4.4 reports that supplying the algorithm did not remove the collapse."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "Full experimental validation remains as future work.",
+    "locator": "Section 5, experimental-results footnote",
+    "url": "https://arxiv.org/html/2506.09250v1",
+    "publisher": "C. Opus and A. Lawsen, arXiv",
+    "event_date": "2025-06-10",
+    "available_at": "2025-06-10",
+    "explanation": "The rejoinder reports preliminary success when models generate a Hanoi-solving function instead of listing moves. This challenges generalization from Apple's task to reasoning overall, while acknowledging limited experimental validation."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "6a669c590f8efc8e83de762c88af15e1e7ca9f0d78a451b8908de6d06e53df54",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:08:23Z"
+}

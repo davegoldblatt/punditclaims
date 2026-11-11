@@ -1,0 +1,57 @@
+---
+// What the claim commits the speaker to: kind, conditions, the original
+// horizon as written, and the resolution test, split into what came from the
+// speaker and what is this site's interpretation.
+import type { PublicAssessment, PublicClaim, ReleaseManifest } from "../lib/manifest.ts";
+import { HORIZON_LABEL, KIND_LABEL } from "../policy.ts";
+
+interface Props { claim: PublicClaim; a: PublicAssessment; m: ReleaseManifest; showNow?: boolean }
+const { claim: c, a, m, showNow = true } = Astro.props;
+const p = a.payload;
+const condFor = (text: string) => c.conditions.find((x) => x.text === text);
+const ungraded = p.axis === "not_applicable";
+---
+<section class="section" aria-labelledby="commit-h">
+  <h2 id="commit-h">How we judged it</h2>
+  <dl class="facts facts-2">
+    <div><dt>Kind of claim</dt><dd>{KIND_LABEL[p.kind]}</dd></div>
+    <div>
+      <dt>Deadline</dt>
+      <dd>{p.original_horizon_text ? <>“{p.original_horizon_text}”</> : "None given. We don’t add one."}</dd>
+    </div>
+    {showNow && (c.review.horizon_now === "not_due" || c.review.horizon_now === "elapsed") && (
+      <div>
+        <dt>As of {m.reference_date}</dt>
+        <dd>{HORIZON_LABEL[c.review.horizon_now]}</dd>
+      </div>
+    )}
+  </dl>
+  {p.conditions.length > 0 && (
+    <>
+      <h3 class="h3">Conditions</h3>
+      <ul>
+        {p.conditions.map((t) => {
+          const k = condFor(t);
+          return <li>{t}{k && <span class="soft small"> ({k.from_source ? "their words" : "our reading"})</span>}</li>;
+        })}
+      </ul>
+    </>
+  )}
+  {p.criteria.our_interpretation.length > 0 && (
+    <>
+      <h3 class="h3">Where we had to interpret</h3>
+      <ul>{p.criteria.our_interpretation.map((x) => <li>{x}</li>)}</ul>
+    </>
+  )}
+  {ungraded ? (
+    <p class="small">We don’t grade claims like this. We only check the quote and who said it.</p>
+  ) : (
+    <div class="tests small">
+      <p><strong>Right if:</strong> {p.criteria.support_condition}</p>
+      <p><strong>Wrong if:</strong> {p.criteria.contradiction_condition}</p>
+      <p class="soft">{p.retrospective
+        ? "We wrote this test after the outcome was known."
+        : "We wrote this test before the deadline, while the outcome was unknown."}</p>
+    </div>
+  )}
+</section>

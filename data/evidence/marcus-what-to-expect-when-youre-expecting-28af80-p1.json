@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-what-to-expect-when-youre-expecting-28af80-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-28af80",
+  "version": 1,
+  "content_hash": "955c37a97487816de038e590a0fb47d73a502a5213035a495f4b71fc8bf7698d"
+ },
+ "contract_ref": {
+  "id": "marcus-what-to-expect-when-youre-expecting-28af80",
+  "version": 1,
+  "content_hash": "8d7160194f3eb6ead44bdba58e6af8c18152157e45d73f3995ee9147ff3f437e"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report architecture model size not included limitations hallucinations 2023",
+   "GPT-4 world models abstract reasoning understanding independent study limitations 2023 2024",
+   "GPT-4 world simulation world models state changes 59.9 accuracy paper 2024"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Primary disclosure explicitly compares the training process with previous GPT models."
+   },
+   {
+    "url": "https://arxiv.org/html/2311.09247v3",
+    "used": true,
+    "why": "Controlled abstraction tests identify the original-generation text model and document both successes and failures."
+   },
+   {
+    "url": "https://arxiv.org/abs/2311.09247",
+    "used": true,
+    "why": "Verifies publication and revision dates."
+   },
+   {
+    "url": "https://arxiv.org/html/2406.06485v1",
+    "used": true,
+    "why": "Relevant world-simulation study, retained only as context because its appendix identifies a later preview model."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.06485",
+    "used": true,
+    "why": "Verifies the world-simulation paper's publication date."
+   }
+  ],
+  "performed_at": "2026-10-29T09:28:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Training process",
+   "receipt": {
+    "public_excerpt": "within guardrails",
+    "quote_hash": "9c968592114369432a31f691f18519f93942e1bfb6fbffdef67ae7b3008d63c0",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "supports",
+   "explanation": "The section states that GPT-4, like previous GPT models, was trained to predict subsequent words and then aligned through human-feedback training. This meets the broad training-approach interpretation of the condition.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2311-09247v3",
+   "source_snapshot_id": "c203c6f2bdd2e6d9ee79845d71e7e06f41e40d68caebc6ec1b9a3bda0b24b0f3",
+   "publisher": "Melanie Mitchell, Alessandro B. Palmarini, and Arseny Moskvichev / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2311.09247v3",
+   "locator": "Abstract; section 4 identifies gpt-4-0613 and its November 2023 testing",
+   "receipt": {
+    "public_excerpt": "robust abstraction",
+    "quote_hash": "1fe4a3f47fb6b5c031331fa53c51ec67aa8affd30cef1696cc49976244b0adb1",
+    "verified": "exact"
+   },
+   "event_date": "2023-11",
+   "available_at": "2023-12-11",
+   "retrieved_at": "2026-10-29T02:09:43Z",
+   "relation": "supports",
+   "explanation": "The text-only GPT-4 solved about one-third of the full ConceptARC tasks, documenting substantial failures despite detailed prompting and supporting the seams component. Its successful solutions also caution against equating below-human robustness with an absence of all understanding.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2406-06485v1",
+   "source_snapshot_id": "36e88b18553f8ce3a71e4e1d92c98e67e7fa07dca2b4b9870b4b9f8784328343",
+   "publisher": "Ruoyao Wang and colleagues / arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2406.06485v1",
+   "locator": "Section 4, Results; appendix A identifies gpt-4-0125-preview",
+   "receipt": {
+    "public_excerpt": "at most 49.7%",
+    "quote_hash": "418f20f6ff8d344c766d50d5e90bec9179f5c2a9ecf912a71744b9bf51c436eb",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-06-10",
+   "retrieved_at": "2026-10-29T07:33:06Z",
+   "relation": "context",
+   "explanation": "This study directly tests simulation of world changes, but uses a later preview model. It therefore supplies context rather than decisive evidence about the original GPT-4.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The original-generation evaluation establishes limited abstraction robustness, not the general absence of world understanding.",
+  "The more directly relevant world-simulation study tests a different model version.",
+  "The speaker supplies no threshold separating imperfect understanding from no real understanding."
+ ],
+ "packet_hash": "aedc8a58326d83d95f86a036595cfe216079e1dad47e7802665b4f5c77766483"
+}

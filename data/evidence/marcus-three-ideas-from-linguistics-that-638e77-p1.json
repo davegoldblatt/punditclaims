@@ -1,0 +1,135 @@
+{
+ "packet_id": "marcus-three-ideas-from-linguistics-that-638e77-p1",
+ "claim_revision_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-638e77",
+  "version": 1,
+  "content_hash": "2e0bdd1699cb03dd940f71b26a729efb145db4d582db053dab7c7112b82c0a2d"
+ },
+ "contract_ref": {
+  "id": "marcus-three-ideas-from-linguistics-that-638e77",
+  "version": 1,
+  "content_hash": "7f909eb3ce1f4ace4b4f8f112b113b5249fcdad5093150ecba9104c092a37ea5"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-3 TruthfulQA WebGPT hallucinations human feedback factual accuracy paper",
+   "\"GPT-3\" \"world models\" \"causal\" grounding hallucination study",
+   "\"GPT-3\" \"2025\" \"2026\" grounding hallucinations controlled study"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/abs/2109.07958",
+    "used": true,
+    "why": "Primary benchmark report covering GPT-3 and false answers; it does not identify the proposed causal mechanism."
+   },
+   {
+    "url": "https://openai.com/index/webgpt/",
+    "used": false,
+    "why": "read_page returned HTTP 403. The accessible research paper was used instead."
+   },
+   {
+    "url": "https://arxiv.org/abs/2112.09332",
+    "used": true,
+    "why": "Verified the WebGPT study's identity and version dates."
+   },
+   {
+    "url": "https://arxiv.org/html/2112.09332v1",
+    "used": true,
+    "why": "Primary GPT-3 remediation study combining browsing, training, and answer selection."
+   },
+   {
+    "url": "https://arxiv.org/abs/2203.02155",
+    "used": true,
+    "why": "Verified the InstructGPT study's methods and publication date."
+   },
+   {
+    "url": "https://arxiv.org/html/2203.02155v1",
+    "used": true,
+    "why": "Primary evidence that human-feedback training improved truthfulness and reduced unsupported additions."
+   }
+  ],
+  "performed_at": "2026-10-29T08:55:18Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-abs-2109-07958",
+   "source_snapshot_id": "223855e8ead0b33318f2f1cb1369b15a3b6f01b4293f03c0706241535264358a",
+   "publisher": "arXiv; Stephanie Lin, Jacob Hilton, and Owain Evans",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2109.07958",
+   "locator": "Abstract",
+   "receipt": {
+    "public_excerpt": "Models generated many false answers",
+    "quote_hash": "72445d64effaf7d3f1c1c4d02ffb98c8cc4c1b987d4709c0e1e0db4894f46b12",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2022-05-08",
+   "retrieved_at": "2026-10-29T02:20:23Z",
+   "relation": "supports",
+   "explanation": "The evaluation includes GPT-3 and supports the narrower observation that language models produce false answers. Its deliberately challenging questions and focus on imitated misconceptions do not establish a general fabrication rate or the absence of a cognitive model as its cause.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-html-2112-09332v1",
+   "source_snapshot_id": "dbe92eaa273832dba304d89396c59ad6ee4ad0b59c823867ef9f88638c780f44",
+   "publisher": "arXiv; Reiichiro Nakano and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2112.09332v1",
+   "locator": "Section 6.1, discussion of truthfulness",
+   "receipt": {
+    "public_excerpt": "fewer imitative falsehoods than GPT-3.",
+    "quote_hash": "6a0274ec75d5add0e542327cf1c7001d239847bae8ab39f13b582dfef451db5d",
+    "verified": "exact"
+   },
+   "event_date": "2021",
+   "available_at": "2021-12-17",
+   "retrieved_at": "2026-10-29T08:50:19Z",
+   "relation": "context",
+   "explanation": "The GPT-3-based intervention improved truthfulness but still sometimes relied on unreliable sources. Browsing, training, and answer selection changed together, so this is evidence of partial remediation rather than an isolated test of Marcus's causal explanation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-html-2203-02155v1",
+   "source_snapshot_id": "acf509b6f0a50af240e00d3d1a92e7fa656bee807312df45692a68d280b39be9",
+   "publisher": "arXiv; Long Ouyang and colleagues",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2203.02155v1",
+   "locator": "Introduction, summary of findings",
+   "receipt": {
+    "public_excerpt": "InstructGPT models show improvements in truthfulness over GPT-3.",
+    "quote_hash": "459b8662ccd748d433ac4c1434959274ce29eebb2f96a983397ef03f13f72062",
+    "verified": "exact"
+   },
+   "event_date": "2022",
+   "available_at": "2022-03-04",
+   "retrieved_at": "2026-10-29T04:12:12Z",
+   "relation": "context",
+   "explanation": "Human-feedback training improved truthful answering and reduced unsupported additions on closed-domain tasks, without introducing an explicit external world-model module. These modified models provide counterweight to a strong reading of remediation difficulty, but improvement does not demonstrate a reliable general fix.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No located study independently establishes that GPT-3 lacks the relevant representations and that this absence causes its factual errors.",
+  "The remediation studies change several factors or model training, leaving the claimed mechanism unidentified.",
+  "The claim supplies no standard for deciding when remediation is sufficiently easy or reliable."
+ ],
+ "packet_hash": "fd4f532e64324441d62b87ffa7d85c2c26967399e2f8c5e513303f6424cf1b65"
+}

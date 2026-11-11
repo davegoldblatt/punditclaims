@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-reality-check-bf1f14-p1",
+ "claim_revision_ref": {
+  "id": "wyea-reality-check-bf1f14",
+  "version": 1,
+  "content_hash": "19d3a5ddf35d903c9bfb4dd0a466cf09bf09d3a4aa505c3780ece6f0b862667c"
+ },
+ "contract_ref": {
+  "id": "wyea-reality-check-bf1f14",
+  "version": 1,
+  "content_hash": "cd7e12f643a3c91a521e57340286c91f1537a67ba4cafdf15c42700c1f43ddf0"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.openai.com April 2025 o3 o4 mini hallucinations system card",
+   "site.epoch.ai \"2025\" \"inference\" \"cost\" April",
+   "site.hai.stanford.edu \"2025 AI Index\" \"April 7\" \"280\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+    "used": true,
+    "why": "Read successfully. Contains April model hallucination evaluations and the publication date."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-1/",
+    "used": true,
+    "why": "Read successfully. Contains contemporaneous coding results, evaluation qualifications, and release date."
+   },
+   {
+    "url": "https://epoch.ai/data-insights/llm-inference-price-trends",
+    "used": true,
+    "why": "Read successfully. Provides relevant price evidence while explicitly identifying its API-price methodology."
+   },
+   {
+    "url": "https://openai.com/index/o3-o4-mini-system-card/",
+    "used": false,
+    "why": "The landing page returned HTTP 403; its readable original PDF was used instead."
+   }
+  ],
+  "performed_at": "2026-10-29T20:44:35Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cdn-openai-com-pdf-2221c875-02dc-4789-800b-e7758f3722c1-o3-and-o4-m-13538e7fc907",
+   "source_snapshot_id": "9fbc1e73c72b62c114bcdb288387a014320e349c9b08f04b016b1ba74e485b51",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "locator": "Section 3.3, Hallucinations; accompanying Table 4",
+   "receipt": {
+    "public_excerpt": "inaccurate/hallucinated claims.",
+    "quote_hash": "15aadf5efc7cf59ac06420b773a4803a5a05bbc1f928e794fbfbf853a5799616",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-16",
+   "retrieved_at": "2026-10-29T01:00:32Z",
+   "relation": "supports",
+   "explanation": "OpenAI's April release evaluation documents continuing factual fabrication. Table 4 reports substantial hallucination rates on the tested factual-question datasets, supporting the hallucination and factual-reliability components without establishing failure rates for every use.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "openai-com-index-gpt-4-1",
+   "source_snapshot_id": "d02b070064478921e4913c1b2a14795e8302af2f4d256d228c40ecfdd48f09d5",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-1",
+   "locator": "Coding section, paragraph beginning 'On SWE-bench Verified'",
+   "receipt": {
+    "public_excerpt": "completes 54.6% of tasks",
+    "quote_hash": "4e9707abcb629bd4aa538220be73e655f843f58f93799dbd291745fb8b2d4764",
+    "verified": "exact"
+   },
+   "event_date": "2025-04",
+   "available_at": "2025-04-14",
+   "retrieved_at": "2026-10-29T05:34:22Z",
+   "relation": "contradicts",
+   "explanation": "Successful resolution of a substantial portion of tested repository issues contradicts the broad reading of little useful task capability. This is a developer-reported benchmark; the appendix says 23 of 500 problems were omitted because they could not run on its infrastructure.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "epoch-ai-data-insights-llm-inference-price-trends",
+   "source_snapshot_id": "9f99c387b0c7620384a525b15e4677a293a63d825f037e2c6ce1ec17fc2b4ef1",
+   "publisher": "Epoch AI",
+   "source_type": "independent_measurement",
+   "url": "https://epoch.ai/data-insights/llm-inference-price-trends",
+   "locator": "Opening paragraph; methodology under 'Learn more about this graph'",
+   "receipt": {
+    "public_excerpt": "inference price",
+    "quote_hash": "e948f4eb12dcbb5db20b180864f5c5c696f91238f4faa96d0d1b2f2cce32eedc",
+    "verified": "exact"
+   },
+   "event_date": "2025-03",
+   "available_at": "2025-03-12",
+   "retrieved_at": "2026-10-29T00:37:26Z",
+   "relation": "context",
+   "explanation": "The study measures falling customer API prices at fixed benchmark performance. It predates the target window and does not establish provider operating costs or whether a particular April workload remained expensive.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative April operating-cost dataset establishes the expense clause under a defined workload and value comparison.",
+  "The practical-capability counterexample is developer-reported and does not measure whole-job replacement.",
+  "Factual-question error rates cannot be generalized to every model and task."
+ ],
+ "packet_hash": "64025d21eacaf7ef04ec70660b07ceb3b79c5339e5a1e5b2fb9a419b010c903c"
+}

@@ -1,0 +1,125 @@
+{
+ "packet_id": "marcus-gpt-4s-successes-and-gpt-4s-failures-c7bac3-p1",
+ "claim_revision_ref": {
+  "id": "marcus-gpt-4s-successes-and-gpt-4s-failures-c7bac3",
+  "version": 2,
+  "content_hash": "12f430d43f46e00895a9145a569c2e0a0b87da820884907b0f581e3bb5a970dd"
+ },
+ "contract_ref": {
+  "id": "marcus-gpt-4s-successes-and-gpt-4s-failures-c7bac3",
+  "version": 1,
+  "content_hash": "a650564c760b3334f62b898caee0028fb782e4236df4b630f4b9a0d80e139a34"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 technical report March 2023 architecture model size hardware training compute dataset construction",
+   "site.theverge.com 2023/3/15 GPT-4 OpenAI closed source science",
+   "\"GPT-4\" \"March 15, 2023\" \"predict\" failures"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/pdf/2303.08774v1",
+    "used": true,
+    "why": "Contains the original scaling, evaluation, and calibration results relevant to the limits of the claimed inability."
+   },
+   {
+    "url": "https://openai.com/index/gpt-4-research/",
+    "used": true,
+    "why": "Launch-day account of predictive methods, partial explanations, and remaining uncertainty."
+   },
+   {
+    "url": "https://www.theverge.com/2023/3/15/23640180/openai-gpt-4-launch-closed-research-ilya-sutskever-interview",
+    "used": false,
+    "why": "Documents concerns about research access, but does not validate the asserted causal effect."
+   },
+   {
+    "url": "https://arxiv.org/abs/2303.12712",
+    "used": false,
+    "why": "Search identified a later research publication. It cannot establish what outside researchers publicly knew at the post's publication."
+   }
+  ],
+  "performed_at": "2026-10-29T06:52:22Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Section Predictable scaling",
+   "receipt": {
+    "public_excerpt": "We developed infrastructure and optimization that have very predictable behavior across multiple scales.",
+    "quote_hash": "6f0b9ea12cfcd6fcfaf8b95f23f2d0aa9bc56b5904ba9998dc0cb120583b9b93",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "context",
+   "explanation": "The launch account reports successful advance predictions of training loss and coding benchmark performance, alongside a partial explanation separating pretraining capabilities from later behavioral tuning. These company results qualify a blanket claim of ignorance but do not demonstrate independent prediction of individual failures.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "openai-com-index-gpt-4-research",
+   "source_snapshot_id": "ca8aae6b5c27661ffa087f6663b78adc9224779afabc073ca4112841a0620fce",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/gpt-4-research",
+   "locator": "Section Predictable scaling, paragraph discussing inverse scaling",
+   "receipt": {
+    "public_excerpt": "Some capabilities are still hard to predict.",
+    "quote_hash": "f2edb4c4ec977fcf99b76e5e3143451567e9b1992d1e38eaa69e7943c8066b47",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-14",
+   "available_at": "2023-03-14",
+   "retrieved_at": "2026-10-29T02:04:53Z",
+   "relation": "context",
+   "explanation": "OpenAI acknowledged remaining predictive uncertainty. It did not attribute that uncertainty to what it withheld from outside researchers.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "arxiv-org-pdf-2303-08774v1",
+   "source_snapshot_id": "9e98a41bb13ec6bb4e5bc68455eefe15beaa3126e7b2b8b86b8ae93e03049532",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://arxiv.org/pdf/2303.08774v1",
+   "locator": "Figure 8 caption",
+   "receipt": {
+    "public_excerpt": "The\npost-training hurts calibration significantly.",
+    "quote_hash": "f3bfc4a16cbc201c4c570e7f198978e2caa231fa679647064f11ea78d8a5df47",
+    "verified": "exact"
+   },
+   "event_date": "2023-03-15",
+   "available_at": "2023-03-15",
+   "retrieved_at": "2026-10-29T02:10:53Z",
+   "relation": "context",
+   "explanation": "The report compares model confidence with correctness before and after post-training, providing a limited explanation of unreliable confidence. This is evidence of partial understanding, not a test of whether disclosure would enable reliable external failure prediction.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No located study isolates nondisclosure as the cause of the claimed explanatory and predictive limitations.",
+  "The public results do not establish that outside researchers could reproduce the predictions without privileged access.",
+  "The evidence does not validate a general method for predicting individual GPT-4 failures at publication."
+ ],
+ "packet_hash": "471dddb1f19a62695deead08c9ce6eefecbdd96517bc847048b986b0754cb967"
+}

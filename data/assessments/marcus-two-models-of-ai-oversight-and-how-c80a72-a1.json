@@ -1,0 +1,141 @@
+{
+ "assessment_id": "marcus-two-models-of-ai-oversight-and-how-c80a72-a1",
+ "claim_revision_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-c80a72",
+  "version": 2,
+  "content_hash": "caf6b58019e4be753a697ccc86d31765152e29a8b2913b0e450aed8411f81316"
+ },
+ "contract_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-c80a72",
+  "version": 1,
+  "content_hash": "4c8ecf07e730504919beb1056eff4c3d4b3b3c9c8f250214580b03db0a5229e3"
+ },
+ "packet_ref": {
+  "id": "marcus-two-models-of-ai-oversight-and-how-c80a72-p1",
+  "content_hash": "5ec97ff71fb9f1f2eefbf167b5d21e10f9e380be5baf1efcfe216c22d3b4eae2"
+ },
+ "axis": "historical_observation",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-03-23",
+  "end": "2023-06-08",
+  "precision": "day"
+ },
+ "public_rationale": "The ordinary capability-and-risk reading is supported. OpenAI documented browsing, workspace file operations, and security concerns. A May demonstration showed malicious webpage instructions abusing delegated access to extract private email. Safeguards and a reported fix matter: this does not establish unrestricted access, universal vulnerability, or a completed credential-phishing attack.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "Support concerns the ecosystem's capabilities and attack mechanisms, not every individual plugin.",
+  "OpenAI's fraudulent-email finding explicitly concerned configurations without safeguards.",
+  "The file capability was sandboxed, and the demonstrated email attack was reported mitigated.",
+  "The phishing example is supported as a risk mechanism, not as a verified historical victimization."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-two-models-of-ai-oversight-and-how-16523e-4x-review-anthropic-1",
+  "marcus-two-models-of-ai-oversight-and-how-16523e-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-two-models-of-ai-oversight-and-how-16523e-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-two-models-of-ai-oversight-and-how-c80a72",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "ChatGPT plugins open a wide range of security problems, since they can access the internet, read and write files, and impersonate people (e.g., to phish for credentials), all of which would alarm any security professional.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Meanwhile, ChatGPT plugins (produced by OpenAI, which they have a close tie with) open a wide range of security problems: those plugins can access the internet, read and write files, and impersonate people (e.g., to phish for credentials), all alarms to any security professional.",
+   "locator": "paragraph 19",
+   "url": "https://garymarcus.substack.com/p/two-models-of-ai-oversight-and-how",
+   "date": "2023-06-08",
+   "document_title": "Two models of AI oversight - and how things could go deeply wrong",
+   "observed_at": "2026-10-29T00:03:36Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "ChatGPT plugins",
+    "open a wide range of security problems",
+    "access the internet",
+    "read and write files",
+    "impersonate people (e.g., to phish for credentials)",
+    "all alarms to any security professional"
+   ],
+   "our_interpretation": [
+    "The claim concerns capabilities and security risks across the plugin ecosystem, not a requirement that every plugin possess every capability.",
+    "File access includes files in the code interpreter's workspace and connected services; it does not imply unrestricted access to a user's computer.",
+    "Impersonation includes malicious use of a person's delegated authority or deceptive communications. Phishing is an example of the risk, not an assertion of a named successful credential theft.",
+    "The reference to any security professional is rhetorical emphasis rather than a literal survey claim.",
+    "For this ongoing observation, use the current plugin release period, March 23 through June 8, 2023."
+   ],
+   "support_condition": "Contemporaneous documentation establishes internet and file capabilities, and documentation or demonstrations establish concrete risks of deceptive communications, unauthorized use of delegated authority, or sensitive-data exposure.",
+   "contradiction_condition": "The named capabilities were unavailable in the relevant period, or the purported attacks concerned unrelated products and the claimed mechanisms were technically excluded by the released architecture."
+  },
+  "axis": "historical_observation",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The ordinary capability-and-risk reading is supported. OpenAI documented browsing, workspace file operations, and security concerns. A May demonstration showed malicious webpage instructions abusing delegated access to extract private email. Safeguards and a reported fix matter: this does not establish unrestricted access, universal vulnerability, or a completed credential-phishing attack.",
+  "limitations": [
+   "Support concerns the ecosystem's capabilities and attack mechanisms, not every individual plugin.",
+   "OpenAI's fraudulent-email finding explicitly concerned configurations without safeguards.",
+   "The file capability was sandboxed, and the demonstrated email attack was reported mitigated.",
+   "The phishing example is supported as a risk mechanism, not as a verified historical victimization."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "We support uploading files to the current conversation workspace and downloading the results of your work.",
+    "locator": "Code interpreter description",
+    "url": "https://openai.com/index/chatgpt-plugins",
+    "publisher": "OpenAI",
+    "event_date": "2023-03-23",
+    "available_at": "2023-03-23",
+    "explanation": "The launch documentation establishes browsing and file-processing capabilities and reports fraudulent-email and prompt-injection findings without safeguards. It also describes sandboxing, network controls, and a GET-only browser, which limit the claim's scope."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "ChatGPT follows instructions and retrieves the user’s email, summarizes and URL encodes it.",
+    "locator": "Proof of Concept Exploit",
+    "url": "https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection.",
+    "publisher": "Johann Rehberger, Embrace The Red",
+    "event_date": "2023-05-19",
+    "available_at": "2023-05-28",
+    "explanation": "The demonstration used webpage instructions to misuse a connected user's authority and extract private email; the page links its May 19 public demonstration. It also reports that Zapier added authenticated confirmation, so the exploit is not evidence that this exact path remained open on June 8."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "Hijacking an account can result in multiple harms to the user, including stealing of private data and impersonation of the user.",
+    "locator": "Section IV-B, Hijack user account",
+    "url": "https://arxiv.org/html/2309.10254v1",
+    "publisher": "Umar Iqbal, Tadayoshi Kohno, and Franziska Roesner; arXiv",
+    "event_date": "2023-09-19",
+    "available_at": "2023-09-19",
+    "explanation": "The researchers explain phishing and misuse of delegated authorization as plugin attack mechanisms. Their analysis spans June 6 through July 31, so this general discussion is context rather than proof of a specific pre-June 8 phishing incident."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "a47821285953afb0d9d339939c60d19214de6ae795fe2b752c68454f44ba08b1",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:44:16Z"
+}

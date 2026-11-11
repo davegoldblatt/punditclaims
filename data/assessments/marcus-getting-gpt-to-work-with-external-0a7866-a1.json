@@ -1,0 +1,125 @@
+{
+ "assessment_id": "marcus-getting-gpt-to-work-with-external-0a7866-a1",
+ "claim_revision_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a7866",
+  "version": 2,
+  "content_hash": "2687957ce52677d54628f07eca7f750df70350474d7b6ebabd039f2778ab01d9"
+ },
+ "contract_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a7866",
+  "version": 1,
+  "content_hash": "ded2fdf70a1380cc84b78533f8331746abb22821dc61dbe98f9c1cd5e43ae910"
+ },
+ "packet_ref": {
+  "id": "marcus-getting-gpt-to-work-with-external-0a7866-p1",
+  "content_hash": "1164046ada05acc3be281e976b3ad559a4aae27caaaccf5caa9a969d5fd28843"
+ },
+ "axis": "historical_observation",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2023-06",
+  "end": "2023-08",
+  "precision": "month"
+ },
+ "public_rationale": "The matrix-probability example clearly supports misunderstanding a correct result. Other candidates are less secure: the prime-probability tool expression was left unchecked, and the divergent-integral transcript reports tool errors rather than an unambiguous correct answer. The evidence therefore does not yet establish several qualifying cases, but it also does not disprove their existence.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "A 2024 transcript revision supplies important qualifications about the 2023 tests.",
+  "A correct intermediate result followed by failure is not automatically rejection or misunderstanding.",
+  "Missing calls limit both confirmation and contradiction."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-getting-gpt-to-work-with-external-0a2884-4x-review-anthropic-1",
+  "marcus-getting-gpt-to-work-with-external-0a2884-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-getting-gpt-to-work-with-external-0a2884-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-getting-gpt-to-work-with-external-0a7866",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "In a few test cases GPT-4 set up the calculations correctly and the plug-in returned the correct answer, but GPT-4 then either misunderstood or refused to accept that answer.",
+  "kind": "observation",
+  "conditions": [
+   "in a few cases"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "In a few cases GPT-4 set up the calculations correctly and the plug-in returned the correct answer, but then GPT-4 either misunderstood or refused to accept that answer.",
+   "locator": "paragraph 15",
+   "url": "https://garymarcus.substack.com/p/getting-gpt-to-work-with-external",
+   "date": "2023-10-23",
+   "document_title": "Getting GPT to work with external tools is harder than you think",
+   "observed_at": "2026-10-29T00:02:53Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "In a few cases",
+    "set up the calculations correctly",
+    "the plug-in returned the correct answer",
+    "misunderstood or refused to accept that answer"
+   ],
+   "our_interpretation": [
+    "A few requires at least two distinct test cases.",
+    "Each qualifying case must contain the complete sequence: correct setup, correct tool result, then mistaken interpretation or rejection.",
+    "A tool error, an incorrect setup, or inability to complete a unit conversion does not by itself meet that sequence.",
+    "The claim concerns the June–August 2023 experiment."
+   ],
+   "support_condition": "At least two distinct cases verify all three stages of the claimed sequence.",
+   "contradiction_condition": "A sufficiently complete review establishes that fewer than two cases satisfy the sequence."
+  },
+  "axis": "historical_observation",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The matrix-probability example clearly supports misunderstanding a correct result. Other candidates are less secure: the prime-probability tool expression was left unchecked, and the divergent-integral transcript reports tool errors rather than an unambiguous correct answer. The evidence therefore does not yet establish several qualifying cases, but it also does not disprove their existence.",
+  "limitations": [
+   "A 2024 transcript revision supplies important qualifications about the 2023 tests.",
+   "A correct intermediate result followed by failure is not automatically rejection or misunderstanding.",
+   "Missing calls limit both confirmation and contradiction."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "close to zero.",
+    "locator": "Problem 14, page 25; related candidate in problem 13",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/MotivatedOutput.pdf",
+    "publisher": "New York University; Scott Aaronson and Ernest Davis",
+    "event_date": "2023-08-02",
+    "available_at": "2023-08-15",
+    "explanation": "In problem 14, the correct probability is about 0.289, yet GPT-4 describes the returned fraction as near zero. Problem 13 is another candidate, but its authors explicitly leave the tool expression's correctness unchecked and the extracted expression is incomplete."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "error.",
+    "locator": "Problem 10, page 13, GPT4+CI response; preceding GPT4+WA response",
+    "url": "https://cs.nyu.edu/~davise/papers/GPTPlugInTests/ArbitraryOutput.pdf",
+    "publisher": "New York University; Ernest Davis and Scott Aaronson",
+    "event_date": "2023-07-12",
+    "available_at": "2024-09-17",
+    "explanation": "The integral example does not cleanly establish rejection of a correct answer: CI returned an error, and the authors caution that WA's infinity output did not establish divergence. Problem 14's separate unit-conversion failure also does not alone establish misunderstanding or rejection."
+   }
+  ],
+  "what_would_resolve": "Verify the complete original tool output for the prime-probability example, or locate another distinct transcript showing a correct setup and correct result followed by misinterpretation or rejection.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9c9f35da93b8118a5533fb299966ca8f185fbc04671293649ca159279a7d5b2d",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T07:23:59Z"
+}

@@ -1,0 +1,172 @@
+{
+ "run_id": "marcus-dall-es-new-guardrails-fast-furious-6241ce-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-dall-es-new-guardrails-fast-furious-6241ce": "1cdb5a752d317b9f837beda7a68fdb10ef3713410d1a58d8dbb2ecb4f18967cd",
+  "case:marcus-dall-es-new-guardrails-fast-furious-773ec1": "3a087505874090074b598d194bb161e29fbb649a79e0886706d6248da1269382",
+  "case:marcus-dall-es-new-guardrails-fast-furious-8dabb1": "3fe2012ab530e4034111220630eba30b1cc04dd2ca1d27421f1319559cdfeb1b",
+  "case:marcus-dall-es-new-guardrails-fast-furious-9b2ca8": "4c8c496f50693cf803f15c6a1061900f428562dfd5f8761015625a277689ca3c"
+ },
+ "started_at": "2026-10-29T06:52:39Z",
+ "completed_at": "2026-10-29T06:53:11Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus co-wrote the post and states the finding in the authors' own voice. The tests were Conrad's, but Marcus endorses the conclusion."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The proposition matches the statement: Bing was inconsistent in how it described copyright, trademark and originality. 'Decidedly mixed' is fairly read as replies that contradicted each other."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (conflicting chat replies on originality and usage rights in early January 2024) is ordinary and fair. Requiring a source independent of the co-authors is appropriate."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet contains no evidence items. The only records of the chats are the authors' own post and Conrad's follow-up, both excluded because they are not independent. Chat replies from that time cannot be reproduced now. Nothing independent confirms or contradicts the inconsistency, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dall-es-new-guardrails-fast-furious-6241ce"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in a post he co-wrote, stated in the authors' voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps every part: single examples can be filtered, but too many examples and erratic systems prevent reliable results. Causal is a reasonable kind, though the claim is loose and has no thresholds."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Asking for controlled evidence that isolates the two stated causes is demanding but fits a causal claim. The observation window is the evaluator's choice. 'Too many', 'erratic' and 'reliably' have no thresholds, so the result depends on interpretation."
+    },
+    "evidence": [
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "NIST release dated Jan 4, 2024. It says chatbots stay vulnerable and defenses lack robust assurances, but it does not isolate prompt diversity or erratic behaviour as causes."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Peer-reviewed paper published Dec 2023. A general defense cut jailbreak success from about 67% to 19% and left failures behind. This neither establishes reliable generalization nor isolates the claimed causes."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both items show guardrails still failing around the post date. e4 shows a general defense that cuts attacks substantially, which goes beyond filtering single examples, but it still leaves failures. Neither item isolates the causes Marcus names (too many examples, erratic systems). The evidence does not settle the causal claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dall-es-new-guardrails-fast-furious-773ec1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in a post he co-wrote."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'generally' qualifier is kept. Paraphrasing whack-a-mole as patching failures one by one instead of solving the problem in general is fair."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The reading of whack-a-mole as fixes that fail to generalize is ordinary. The period and the prevalence standard are evaluator choices, since 'generally' names no population or threshold."
+    },
+    "evidence": [
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "NTU release dated Dec 28, 2023. It describes a repeating cycle of disclosed bypasses followed by developer patches. That fits the metaphor, but it gives no dated update histories across builders to show how common the pattern is."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The only item describes the patch-and-bypass cycle in general terms. It does not trace dated fixes to later related bypasses across several builders, and it does not separate narrow patches from broader safety improvements. Nothing contradicts the claim. Under the contract, a general account of an arms race does not show prevalence, so the claim is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dall-es-new-guardrails-fast-furious-8dabb1"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The claim appears in the co-written post in the authors' own voice, reporting Conrad's tests. Marcus endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'apparent' qualifier is kept, and so is the ordering after the new filters. The target (Bing running DALL-E 3) is correct."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'apparent infringement' as a recognizable character without needing a court ruling is fair. The filter dates and the January window are inferred because the speaker supplied none."
+    },
+    "evidence": [
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "Tom's Hardware report dated Jan 6, 2024, from its own tests. Bing gave Mario and Sonic for neutral prompts. Nothing shows these tests came after the described filter changes."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e5 independently confirms that Bing produced recognizable copyrighted characters in early January 2024. It cannot show those outputs came after the new filters, and that ordering is the core of the claim. No authenticated records from after the filter change are in the packet, and nothing contradicts the claim. The outcome is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-dall-es-new-guardrails-fast-furious-9b2ca8"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 22624,
+  "output_tokens": 3572,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

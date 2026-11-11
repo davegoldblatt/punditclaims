@@ -1,0 +1,276 @@
+{
+ "packet_id": "marcus-the-month-generative-ai-lost-its-362eef-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-month-generative-ai-lost-its-362eef",
+  "version": 2,
+  "content_hash": "9c6a35620e100ee48e534c03e7d4b69e4f8ca4f72d62d962a7ad5af9f089fa45"
+ },
+ "contract_ref": {
+  "id": "marcus-the-month-generative-ai-lost-its-362eef",
+  "version": 1,
+  "content_hash": "01a4e5d4958309cd56dee334f855f90c7aa806ca70e062d5ad211656dd16a729"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Nvidia Oracle CoreWeave Microsoft Cerebras June 26 2026 stock month decline",
+   "\"June 26, 2026\" \"Nvidia\" \"Oracle\" stocks month",
+   "\"June 26, 2026\" \"Cerebras\" stock 32",
+   "\"June 26, 2026\" \"month\" \"Oracle\" \"22%\"",
+   "Nvidia Oracle CoreWeave Microsoft Softbank Cerebras May 26 June 26 2026 share prices",
+   "\"Nvidia\" \"May 26, 2026\" \"June 26, 2026\" stock",
+   "NVDA June 26 2026 historical stock price 195",
+   "NVDA May 26 June 26 2026 return statmuse"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://sg.finance.yahoo.com/quote/NVDA/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable May and June price rows and explicit split-adjustment convention."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/ORCL/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable price table covering both endpoints and the June 26 trading range."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/CRWV/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable price table covering both endpoints."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/MSFT/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable price table covering both endpoints."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/9984.T/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable SoftBank Group prices permit separate monthly and daily comparisons."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/CBRS/history/?period1=1779667200&period2=1782518400",
+    "used": true,
+    "why": "Readable prices show sensitivity to the monthly baseline and intraday endpoint."
+   },
+   {
+    "url": "https://chartexchange.com/symbol/nasdaq-nvda/historical",
+    "used": false,
+    "why": "Read as a cross-check; its endpoint prices agree with the cited Nvidia table."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/NVDA/history/?period1=1779667200&period2=1782518400",
+    "used": false,
+    "why": "The US page returned 2024 rows despite the requested 2026 dates."
+   },
+   {
+    "url": "https://www.statmuse.com/money/ask/nvda-stock-return-from-may-26-2026-to-june-26-2026",
+    "used": false,
+    "why": "Its headline return and adjusted prices do not provide the same closing-price convention used here."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/cbrs/history/",
+    "used": false,
+    "why": "The readable table did not reach the target period."
+   }
+  ],
+  "performed_at": "2026-10-29T08:34:40Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "sg-finance-yahoo-com-quote-nvda-history",
+   "source_snapshot_id": "81f7183e127f2bf52536b276783353013ebe91cfcfc2ce3acefb3cc345728d69",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://sg.finance.yahoo.com/quote/NVDA/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical data, May 26 and June 26 rows, Close column",
+   "receipt": {
+    "public_excerpt": "Closing price adjusted for splits.",
+    "quote_hash": "8326eda948c27b1d5a91b5bef8e8513174d5224a0eae6ab094de17cd33032738",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:28:56Z",
+   "relation": "supports",
+   "explanation": "The closing-price decline is 10.39%, satisfying the stated lower bound of over 8%. The quoted sentence identifies the price convention; the calculation uses the located table rows.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Nvidia May 26 close: USD 214.86",
+     "Nvidia June 26 close: USD 192.53"
+    ],
+    "formula": "100 × (192.53 / 214.86 − 1)",
+    "rounding": "Two decimal places: −10.39%."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-quote-orcl-history",
+   "source_snapshot_id": "975d130528717592b850d95d724c96dea99070919bdba7e6d1915a7fae86eeca",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/ORCL/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical Data, May 26 and June 26 rows",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:24:49Z",
+   "relation": "context",
+   "explanation": "Oracle fell 23.07% between the closes, close to but not a precise reproduction of about 22%. Its June 26 trading range permits a decline around 22% against the May 26 close, so this does not establish a contradiction to an unidentified intraday snapshot.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Oracle May 26 close: USD 193.06",
+     "Oracle June 26 close: USD 148.53",
+     "Oracle June 26 low and high: USD 148.00 and USD 153.54"
+    ],
+    "formula": "100 × (148.53 / 193.06 − 1)",
+    "rounding": "Two decimal places: −23.07%."
+   }
+  },
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-crwv-history",
+   "source_snapshot_id": "125c5d3e80c96c3d4099cf670ddacd2c2aacdbb878f57edeebb601002cd9bbb7",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/CRWV/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical Data, May 26 and June 26 rows",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:24:51Z",
+   "relation": "contradicts",
+   "explanation": "CoreWeave's closing-price decline was 8.79%, materially larger than a bit over 4%. Even its June 26 high remained more than 7% below the May 26 close.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "CoreWeave May 26 close: USD 105.89",
+     "CoreWeave June 26 close: USD 96.58",
+     "CoreWeave June 26 high: USD 98.09"
+    ],
+    "formula": "Close return = 100 × (96.58 / 105.89 − 1); return at high = 100 × (98.09 / 105.89 − 1).",
+    "rounding": "Two decimal places: −8.79% and −7.37%."
+   }
+  },
+  {
+   "id": "e4",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-msft-history",
+   "source_snapshot_id": "f2e1cb37d47eb77b3e8118d1256f6127242fdc045237e6d3f583051c3697c7a5",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/MSFT/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical Data, May 26 and June 26 rows, Close column",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:25:28Z",
+   "relation": "supports",
+   "explanation": "Microsoft's 10.35% closing-price decline rounds to the stated 10%.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Microsoft May 26 close: USD 416.03",
+     "Microsoft June 26 close: USD 372.97"
+    ],
+    "formula": "100 × (372.97 / 416.03 − 1)",
+    "rounding": "Two decimal places: −10.35%; nearest whole percentage: −10%."
+   }
+  },
+  {
+   "id": "e5",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-9984-t-history",
+   "source_snapshot_id": "66f375ffe440dbb10985d94c3c7ff7d3ab6cfc3d09badeae88be94ac4295e470",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/9984.T/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical Data, May 26, June 25 and June 26 rows, Close column",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:25:30Z",
+   "relation": "contradicts",
+   "explanation": "SoftBank Group fell 20.60% over the specified month, not about 12%. Its daily fall was 12.53%, making a daily reading of Marcus's standalone SoftBank sentence materially more plausible.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "SoftBank Group May 26 close: JPY 7,841",
+     "June 25 close: JPY 7,118",
+     "June 26 close: JPY 6,226"
+    ],
+    "formula": "Monthly return = 100 × (6226 / 7841 − 1); daily return = 100 × (6226 / 7118 − 1).",
+    "rounding": "Two decimal places: −20.60% monthly and −12.53% daily."
+   }
+  },
+  {
+   "id": "e6",
+   "role": "context",
+   "document_id": "finance-yahoo-com-quote-cbrs-history",
+   "source_snapshot_id": "f164ba9bb170bea32a16a4ac52973b933eb2cc0e466a06697557741eddb41c47",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/CBRS/history?period1=1779667200&period2=1782518400",
+   "locator": "Historical Data, May 26, May 27 and June 26 rows",
+   "receipt": {
+    "public_excerpt": "Close price adjusted for splits.",
+    "quote_hash": "6783d255a684cf918354eea55bd91ebd1bc438f8733073fa6accd3349189fe04",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-26",
+   "available_at": "2026-06-26",
+   "retrieved_at": "2026-10-29T08:25:33Z",
+   "relation": "context",
+   "explanation": "Cerebras fell 24.87% between the specified closes, but 32% is compatible with an intraday June 26 price against May 26 or a May 27 closing baseline. The missing snapshot prevents treating the closing-price discrepancy alone as a settled error.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Cerebras May 26 close: USD 241.71",
+     "May 27 close: USD 266.90",
+     "June 26 close: USD 181.59",
+     "June 26 low and high: USD 160.81 and USD 184.03"
+    ],
+    "formula": "May 26 close comparison = 100 × (181.59 / 241.71 − 1); May 27 close comparison = 100 × (181.59 / 266.90 − 1).",
+    "rounding": "Two decimal places: −24.87% and −31.96%, respectively."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e3",
+  "e5"
+ ],
+ "unresolved_gaps": [
+  "No original chart or timestamp establishes the precise comparison Marcus used.",
+  "Oracle and Cerebras cannot be resolved at the stated precision from daily closing prices alone.",
+  "SoftBank's sentence does not explicitly repeat the monthly period."
+ ],
+ "packet_hash": "864257a660bd19d48c98e63d22453d5ef535f2053561317cd49d9d65f8f63922"
+}

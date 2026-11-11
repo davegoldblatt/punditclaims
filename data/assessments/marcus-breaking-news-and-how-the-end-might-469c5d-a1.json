@@ -1,0 +1,147 @@
+{
+ "assessment_id": "marcus-breaking-news-and-how-the-end-might-469c5d-a1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-469c5d",
+  "version": 2,
+  "content_hash": "745c13282f315f01dc90ad53594b424a4b046d376ed664cc96dd685b4b2cbfc8"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-469c5d",
+  "version": 1,
+  "content_hash": "c2997e90b4e32544ad9bc236040d184f5a5d97c9a9660f22be6abad862f6ce7b"
+ },
+ "packet_ref": {
+  "id": "marcus-breaking-news-and-how-the-end-might-469c5d-p1",
+  "content_hash": "641601d6382c57a4e4d90facda2bf7971b33b17fe1b994f21e8669d6835106c3"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2025-01",
+  "end": "2026-06-10",
+  "precision": "day"
+ },
+ "public_rationale": "Anthropic's engineering write-up says agents use about 4 times more tokens than chats, and multi-agent systems about 15 times more. It describes a lead agent spawning sub-agents that search repeatedly, then evaluate quality and refine their queries. That matches Marcus's mechanism: several model instances run in the background many times, checking results, which drives cost. GitHub's move to usage-based billing was explained by agent sessions costing far more to serve than chat queries. The core causal claim holds.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The main evidence is one provider's description of its own system.",
+  "Some agents use a single model in a loop rather than 'multiple' models.",
+  "The GitHub reasoning comes from trade press coverage of the company's announcement."
+ ],
+ "drafter": {
+  "provider": "anthropic",
+  "model": "claude-opus-5-5"
+ },
+ "reviewer_run_ids": [
+  "marcus-breaking-news-and-how-the-end-might-36968e-4x-review-anthropic-1",
+  "marcus-breaking-news-and-how-the-end-might-36968e-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-breaking-news-and-how-the-end-might-36968e-4x-final-openai-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-breaking-news-and-how-the-end-might-469c5d",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "AI agents tend to be more expensive because they tend to run multiple large language models in the background many times until they get answers that by some criteria seem correct.",
+  "kind": "causal",
+  "conditions": [
+   "tend to",
+   "by some criteria"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "And the reason that those tend to be more expensive is that they tend (with the help of some good old fashioned AI that nobody wants to talk about) to run multiple large language models in the background many times until they get the answers that by some criteria seem to correct.",
+   "locator": "paragraph 36",
+   "url": "https://garymarcus.substack.com/p/breaking-news-and-how-the-end-might",
+   "date": "2026-06-10",
+   "document_title": "Breaking news, and how the end might begin",
+   "observed_at": "2026-10-28T22:29:30Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "agents tend to be more expensive",
+    "run multiple large language models in the background many times",
+    "until they get the answers that by some criteria seem to correct",
+    "with the help of some good old fashioned AI"
+   ],
+   "our_interpretation": [
+    "Plain reading: agents cost more than single chat queries mainly because they make many repeated model calls (often several models or sub-agents in loops) and check results before finishing, which uses far more tokens.",
+    "The separate hyperbole about 'a million times or billion times' is outside the exact words being graded.",
+    "The claim describes current practice. I read it as agent systems from 2025 up to the post date."
+   ],
+   "support_condition": "Credible technical or provider sources show that agents make many repeated or parallel model calls, often several models or sub-agents with checking steps, and that this repeated use drives much higher token use and cost than chat.",
+   "contradiction_condition": "Credible sources show that agents' higher cost comes mainly from something other than repeated model calls (for example, higher per-token prices alone), or that agents do not typically use many more model calls or tokens than chat."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Anthropic's engineering write-up says agents use about 4 times more tokens than chats, and multi-agent systems about 15 times more. It describes a lead agent spawning sub-agents that search repeatedly, then evaluate quality and refine their queries. That matches Marcus's mechanism: several model instances run in the background many times, checking results, which drives cost. GitHub's move to usage-based billing was explained by agent sessions costing far more to serve than chat queries. The core causal claim holds.",
+  "limitations": [
+   "The main evidence is one provider's description of its own system.",
+   "Some agents use a single model in a loop rather than 'multiple' models.",
+   "The GitHub reasoning comes from trade press coverage of the company's announcement."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "In our data, agents typically use about 4× more tokens than chat interactions, and multi-agent systems use about 15× more tokens than chats.",
+    "locator": "section on token usage, paragraph beginning 'There is a downside'",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "publisher": "Anthropic",
+    "event_date": "2025-06-13",
+    "available_at": "2025-06-13",
+    "explanation": "Provider data shows agents, and especially multi-agent systems, use several times more tokens than chat, which drives cost."
+   },
+   {
+    "id": "e2",
+    "relation": "supports",
+    "excerpt": "the lead agent analyzes it, develops a strategy, and spawns subagents to explore different aspects simultaneously. As shown in the diagram above, the subagents act as intelligent filters by iteratively using search tools",
+    "locator": "section Architecture overview for Research, paragraph 2",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "publisher": "Anthropic",
+    "event_date": "2025-06-13",
+    "available_at": "2025-06-13",
+    "explanation": "Describes the mechanism Marcus named: several model instances run in the background, repeatedly, in a coordinated loop."
+   },
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "Subagents also plan, then use interleaved thinking after tool results to evaluate quality, identify gaps, and refine their next query.",
+    "locator": "section Guide the thinking process",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "publisher": "Anthropic",
+    "event_date": "2025-06-13",
+    "available_at": "2025-06-13",
+    "explanation": "Shows agents repeatedly check and refine their outputs, matching 'until they get the answers that by some criteria seem correct'."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "a short chat query and an autonomous coding session of several hours cost the end user the same, while the actual cost differs significantly.",
+    "locator": "paragraph 3",
+    "url": "https://itdaily.com/news/cloud/github-copilot-to-bill-based-on-token-consumption-starting-in-june",
+    "publisher": "ITdaily",
+    "event_date": "2026-04-27",
+    "available_at": "2026-06-02",
+    "explanation": "Reports GitHub's reasoning that long agent sessions cost far more to serve than chat queries."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "4a519f13375bca21bc2595f0056f6c397318100065c559aa59fd1a75ca04c217",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:39:48Z"
+}

@@ -1,0 +1,77 @@
+{
+ "run_id": "marcus-partial-regurgitation-and-how-llms-97b315-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-partial-regurgitation-and-how-llms-97b315": "51cf308b470f94c1bc698cd5c6f00ef2bbe9a70f2dcdb89cafe2ff1951d8c878"
+ },
+ "started_at": "2026-10-29T08:03:42Z",
+ "completed_at": "2026-10-29T08:03:56Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "These are Marcus's own words in his own Substack post, published 2024-05-23. He is not quoting anyone."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The causal structure is kept: clustering leads to pastiche and paraphrase. The draft drops 'pretty much automatically' and shortens 'conceptually little', but these are small changes. The wording is firm and generic about LLMs, not hedged. Parts are rhetorical ('understanding even less'), but the core is a testable causal claim."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading is an ordinary one: similarity-based representations cause much close paraphrasing and little conceptual transfer. Asking for controlled studies is a high bar, but it suits a mechanistic causal claim. No thresholds are imposed. The contract reads understanding as behaviour, which is fair."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Carlini et al. (v3 dated 2023) measure verbatim memorisation against duplication, model scale and prompt length. This shows regurgitation exists, but it does not test the clustering mechanism, close paraphrase, or conceptual transfer."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "ROME (NeurIPS 2022) locates factual recall in mid-layer modules and reports that edits generalise. This weighs somewhat against a paraphrase-only account, but it does not test the claimed mechanism or measure conceptual contribution."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "This Nature Communications paper (2026-01-29, before the cutoff) finds that LLMs memorise by combining similar sequences ('mosaic memory'), mostly at the level of syntax. It partly fits the idea of similarity-driven regurgitation, but it does not show clustering causes widespread paraphrase or limited understanding."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The contract needs controlled studies showing that grouping similar material causes substantial close paraphrase and limited conceptual transfer, or studies that directly refute this. The packet covers memorisation (e1, e3) and factual-recall mechanisms (e2). None tests the full causal chain or settles the claim either way, and the packet's own stated gaps say the same. The result is unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-partial-regurgitation-and-how-llms-97b315"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10868,
+  "output_tokens": 1455,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

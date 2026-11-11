@@ -1,0 +1,126 @@
+{
+ "assessment_id": "marcus-oops-how-google-bombed-while-doing-c61755-a1",
+ "claim_revision_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-c61755",
+  "version": 1,
+  "content_hash": "785e3b91f0387e00e60201fbc961d08db3264dee5b259fae0ac7b7ef22d24ddd"
+ },
+ "contract_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-c61755",
+  "version": 1,
+  "content_hash": "4cf573b451452b9be3940cc5887d762aeb7cf89b750c0bda3e82e1e4a3953f83"
+ },
+ "packet_ref": {
+  "id": "marcus-oops-how-google-bombed-while-doing-c61755-p1",
+  "content_hash": "b206bdc57b17e701ffd93915a2b5ee127270ca71ee1e17bade6154b9f115c644"
+ },
+ "axis": "causal_assessment",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2023-02-09",
+  "precision": "day"
+ },
+ "public_rationale": "Early TruthfulQA results support Marcus's concern: larger models in the tested families were generally less truthful. But research available before his post also found that larger Gopher models performed better on TruthfulQA's multiple-choice task, including evaluation variants. Thus the no-improvement pattern held in some settings and failed in others. The evidence supports a narrower, model-dependent claim, not the broad statement as written. The separate claim that scaling increased apparent authority remains unestablished by a direct measure.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The supporting and opposing studies use different model families and partly different evaluation formats.",
+  "Multiple-choice accuracy measures recognition of truthful answers, not directly the truthfulness of generated writing.",
+  "The authority component remains unsettled; mixed does not mean both halves were fully measured.",
+  "No post-February 2023 model improvements are used to judge the historical claim."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-oops-how-google-bombed-while-doing-c61755-1x-review-anthropic-1",
+  "marcus-oops-how-google-bombed-while-doing-c61755-1x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-oops-how-google-bombed-while-doing-c61755",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Scaling neural network models has made their output more authoritative-sounding but not more truthful.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Scaling neural network models—making them bigger—has made their faux writing more and more authoritative-sounding, but not more and more truthful.",
+   "locator": "paragraph 17",
+   "url": "https://garymarcus.substack.com/p/oops-how-google-bombed-while-doing",
+   "date": "2023-02-09",
+   "document_title": "Oops! How Google bombed, while doing pretty much exactly the same thing as Microsoft did, with similar results",
+   "observed_at": "2026-10-29T00:04:23Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Scaling neural network models—making them bigger",
+    "more and more authoritative-sounding",
+    "not more and more truthful"
+   ],
+   "our_interpretation": [
+    "This describes effects observed by February 9, 2023, rather than forecasting the effects of future scaling. No beginning date is supplied.",
+    "The context concerns language models generating text, rather than every kind of neural network.",
+    "The ordinary reading is that increasing model size had improved apparent authority without a corresponding improvement in factual truthfulness.",
+    "Truthfulness means giving factually correct answers. Authoritative-sounding means appearing confident or convincing; fluency or resemblance to human writing is only indirect evidence.",
+    "Within-family comparisons across parameter counts are the most relevant tests. Improvements caused solely by different training objectives or prompting do not establish a size effect.",
+    "A mixed outcome is appropriate if the no-improvement pattern holds for some tested model families but other comparable tests show gains. An unmeasured authority component remains explicitly unsettled."
+   ],
+   "support_condition": "Controlled size comparisons show increasingly authoritative output without increasing factual truthfulness. Evidence limited to particular model families supports only that part of the generalization.",
+   "contradiction_condition": "Comparable size-controlled evaluations show factual truthfulness improving with model size, or direct evaluations show that apparent authority does not increase."
+  },
+  "axis": "causal_assessment",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Early TruthfulQA results support Marcus's concern: larger models in the tested families were generally less truthful. But research available before his post also found that larger Gopher models performed better on TruthfulQA's multiple-choice task, including evaluation variants. Thus the no-improvement pattern held in some settings and failed in others. The evidence supports a narrower, model-dependent claim, not the broad statement as written. The separate claim that scaling increased apparent authority remains unestablished by a direct measure.",
+  "limitations": [
+   "The supporting and opposing studies use different model families and partly different evaluation formats.",
+   "Multiple-choice accuracy measures recognition of truthful answers, not directly the truthfulness of generated writing.",
+   "The authority component remains unsettled; mixed does not mean both halves were fully measured.",
+   "No post-February 2023 model improvements are used to judge the historical claim."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "The largest models were generally the least truthful.",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2109.07958",
+    "publisher": "arXiv; Stephanie Lin, Jacob Hilton, and Owain Evans",
+    "event_date": "2021",
+    "available_at": "2021-09-08",
+    "explanation": "TruthfulQA found the claimed absence of truthfulness gains in its initial model-family comparisons. This supports a restricted version of Marcus's statement, not a universal scaling rule or the separate authority claim."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "find scale consistently improves\nperformance in all settings.",
+    "locator": "Appendix D.10, TruthfulQA, paragraph preceding Figure A17",
+    "url": "https://arxiv.org/pdf/2112.11446",
+    "publisher": "arXiv; Jack W. Rae and colleagues, DeepMind",
+    "event_date": "2021",
+    "available_at": "2022-01-21",
+    "explanation": "Gopher's within-family tests found improved TruthfulQA multiple-choice accuracy with increasing size, including alternative evaluation setups. This contradicts a general absence of truthfulness gains, although answer selection does not directly measure the truthfulness of freely generated prose."
+   }
+  ],
+  "what_would_resolve": "Matched comparisons of pre-post-date model families across sizes, measuring both generated-answer truthfulness and human-rated apparent authority under the same prompts and training conditions.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ebd76c177efd9623f8003b6784ec75d1be54af056b599ec1e81f7a8dd0bbfaee",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:48:30Z"
+}

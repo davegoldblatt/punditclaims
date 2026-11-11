@@ -1,0 +1,127 @@
+{
+ "assessment_id": "marcus-horse-rides-astronaut-af6c21-a1",
+ "claim_revision_ref": {
+  "id": "marcus-horse-rides-astronaut-af6c21",
+  "version": 2,
+  "content_hash": "e2baa3eb0a81fa09a30bfe8b945f2b7792dbb78c2783c006d070e311ed35957a"
+ },
+ "contract_ref": {
+  "id": "marcus-horse-rides-astronaut-af6c21",
+  "version": 1,
+  "content_hash": "7545ef356ea3bc312f483a510f0673b2a7b1709f669a960d3e68ad09fda688d2"
+ },
+ "packet_ref": {
+  "id": "marcus-horse-rides-astronaut-af6c21-p1",
+  "content_hash": "fd61113c9797d3f9aca719b450f673bde8a2db7fe1b23b9016e4b6235640e6c7"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": null,
+  "end": "2022-05-28",
+  "precision": "day"
+ },
+ "public_rationale": "The DALL-E 2 failure component holds: its own paper reports color-binding problems with stacked cubes. The broader dismissal overlooks an identified difference in Imagen's language encoder and evidence of improved alignment on challenging prompts. That is a principled reason to expect relevant differences. It does not demonstrate that Imagen solved compositionality, so the stronger reading of 'profoundly different' remains unsettled.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "Mixed applies to the supported prior-failure component and the challenged dismissal of relevant architectural differences.",
+  "The comparative evidence comes from the model developers.",
+  "The result depends on treating demonstrated improvement as relevant, rather than requiring complete elimination of the failures."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-horse-rides-astronaut-2b3e87-4x-review-anthropic-1",
+  "marcus-horse-rides-astronaut-2b3e87-4x-review-openai-1"
+ ],
+ "final_text_run_id": null,
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-horse-rides-astronaut-af6c21",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "There is no principled reason to think that Imagen's architecture is profoundly and relevantly different from other architectures, such as DALL-E 2, that have already been shown to have similar problems.",
+  "kind": "observation",
+  "conditions": [
+   "no principled reason to think",
+   "profoundly and relevantly different"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Finally, there is no principled reason to think that the Imagen architecture is profoundly and relevantly different from other architectures like DALL-E 2 that have already been shown to have similar problems.",
+   "locator": "paragraph 100",
+   "url": "https://garymarcus.substack.com/p/horse-rides-astronaut",
+   "date": "2022-05-28",
+   "document_title": "Horse rides astronaut",
+   "observed_at": "2026-10-29T00:05:21Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "no principled reason to think",
+    "Imagen architecture",
+    "profoundly and relevantly different",
+    "DALL-E 2",
+    "already been shown to have similar problems"
+   ],
+   "our_interpretation": [
+    "Assess architectural relevance to compositional prompt following, rather than whether the architectures differ in any respect.",
+    "A principled relevant difference means an identified design difference with experimental evidence that it improves the relevant abilities. It need not eliminate every error.",
+    "Separately assess the factual component that DALL-E 2 already exhibited related failures.",
+    "The historical window covers the architectures and demonstrations available through the post date; 'already' supplies no lower bound."
+   ],
+   "support_condition": "Published evidence supports the stated prior failures in DALL-E 2 and shows no identified architectural difference with demonstrated relevance to compositional prompt following.",
+   "contradiction_condition": "Published architectural comparisons and experiments provide a reason to expect materially different prompt-following performance, or disprove the claimed prior DALL-E 2 failures."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The DALL-E 2 failure component holds: its own paper reports color-binding problems with stacked cubes. The broader dismissal overlooks an identified difference in Imagen's language encoder and evidence of improved alignment on challenging prompts. That is a principled reason to expect relevant differences. It does not demonstrate that Imagen solved compositionality, so the stronger reading of 'profoundly different' remains unsettled.",
+  "limitations": [
+   "Mixed applies to the supported prior-failure component and the challenged dismissal of relevant architectural differences.",
+   "The comparative evidence comes from the model developers.",
+   "The result depends on treating demonstrated improvement as relevant, rather than requiring complete elimination of the failures."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "worse at binding attributes to objects",
+    "locator": "Section 7, Limitations and Risks; Figure 14",
+    "url": "https://arxiv.org/html/2204.06125v1",
+    "publisher": "OpenAI researchers via arXiv",
+    "event_date": "2022-04",
+    "available_at": "2022-04-13",
+    "explanation": "The DALL-E 2 paper documents difficulty assigning the correct colors to stacked cubes. This supports the component asserting that DALL-E 2 had already exhibited similar problems."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "Human raters strongly prefer Imagen over other methods",
+    "locator": "DrawBench section; Related Work explains architectural differences",
+    "url": "https://imagen.research.google/",
+    "publisher": "Google Research, Brain Team",
+    "event_date": "2022-05",
+    "available_at": "2022-05-23",
+    "explanation": "The project describes Imagen's larger pretrained language encoder and omission of DALL-E 2's latent prior, alongside better DrawBench alignment. Together with the original paper's encoder comparison, this provides a principled reason to expect relevant performance differences, although it does not establish a complete solution."
+   }
+  ],
+  "what_would_resolve": "A specified meaning of 'profoundly different' and matched evaluations isolating the architectural differences on the particular compositional failures would resolve the remaining ambiguity.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "9afc51097c502406f0a191afb6ef4eb3f5a28c495582d6a62556daec79c5b61d",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T21:43:28Z"
+}

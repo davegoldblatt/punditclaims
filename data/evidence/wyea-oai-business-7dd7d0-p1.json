@@ -1,0 +1,125 @@
+{
+ "packet_id": "wyea-oai-business-7dd7d0-p1",
+ "claim_revision_ref": {
+  "id": "wyea-oai-business-7dd7d0",
+  "version": 1,
+  "content_hash": "783aaf50f66d83e334059bb0a94a9b3c879150295a008e43be39ddd1ba785fd8"
+ },
+ "contract_ref": {
+  "id": "wyea-oai-business-7dd7d0",
+  "version": 1,
+  "content_hash": "632917efa445430769afc14ca0529c93310cfd80c4df87103747cd71a56f6766"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI September 2024 3.7 billion 5 billion losses New York Times expenses",
+   "OpenAI September 27 2024 CNBC 5 billion losses 3.7 billion revenue",
+   "site.cnbc.com \"OpenAI, the creator\" \"confirmed\" \"2024/09/27\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+    "used": true,
+    "why": "Read in full. Independently confirms the forecast inputs, while noting CNBC did not inspect the financial documents."
+   },
+   {
+    "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+    "used": true,
+    "why": "Read in full. Explains an exclusion from the reported loss estimate."
+   }
+  ],
+  "performed_at": "2026-10-29T11:59:16Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "cnbc-com-2024-09-27-openai-sees-5-billion-loss-this-year-on-3point7-9437e7cf32e6",
+   "source_snapshot_id": "5dcdb740be1dafcb832346f53fc5568d66e42583be24be25dd264b625eb5a6ba",
+   "publisher": "CNBC",
+   "source_type": "news_report",
+   "url": "https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html",
+   "locator": "First body paragraph",
+   "receipt": {
+    "public_excerpt": "$3.7 billion in revenue",
+    "quote_hash": "8df5b2fd936ead1e27b965c519b87880eeb5628f8e83cef4706b8033347f3343",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-27",
+   "retrieved_at": "2026-10-29T02:03:27Z",
+   "relation": "supports",
+   "explanation": "The reported estimates imply $8.7 billion of expenses on their loss basis and an expense-to-revenue ratio of 2.35135. This supports the arithmetic reading, not a claim about realized expenditure.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Estimated 2024 expenses per dollar of revenue, inferred from the cited loss estimate",
+    "currency": "USD",
+    "units": "USD of expenses per USD of revenue",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Projected calendar-2024 revenue: USD 3.7 billion",
+     "Projected calendar-2024 loss: approximately USD 5 billion"
+    ],
+    "formula": "(3.7 + 5.0) / 3.7 = 2.351351...",
+    "rounding": "Nearest USD 0.01 of expenses per USD 1 of revenue: USD 2.35."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "finance-yahoo-com-news-openai-sees-5-billion-loss-170306927-html",
+   "source_snapshot_id": "a6b55647389acc1c597b73b58fad8f63aae5fa820be691e9569ce71349ac3b65",
+   "publisher": "Fortune, via Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/news/openai-sees-5-billion-loss-170306927.html",
+   "locator": "Paragraph beginning 'But OpenAI'",
+   "receipt": {
+    "public_excerpt": "doesn't include equity-based compensation",
+    "quote_hash": "873fd1387f36ac9de9727944e090f9c1f78d74636a7a7ba8ad72941a15bcc58f",
+    "verified": "exact"
+   },
+   "event_date": "2024",
+   "available_at": "2024-09-30",
+   "retrieved_at": "2026-10-29T11:19:24Z",
+   "relation": "context",
+   "explanation": "The forecast excludes equity-based compensation. The derived ratio must retain that limitation and cannot be described as an all-in accounting expense ratio.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Projected annual loss excluding equity-based compensation",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2024-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The cited forecasts do not establish realized spending during a particular month or quarter."
+ ],
+ "packet_hash": "9703c22336b7c940f40670c8cd17f9ed221b8a0cce796f3de1a822b45baa98d1"
+}

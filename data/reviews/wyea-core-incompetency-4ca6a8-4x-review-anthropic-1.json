@@ -1,0 +1,185 @@
+{
+ "run_id": "wyea-core-incompetency-4ca6a8-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-core-incompetency-4ca6a8": "271c8c6909cf10f3aad7b7ddc6aad5a049833d20f80641218b23a223370766bf",
+  "case:wyea-core-incompetency-97632e": "4582cf7f792f669687e9276b7111b1b3d4d8a6e7b6bb63d4f0a020b9734c77a8",
+  "case:wyea-core-incompetency-9c73e0": "d184955a29f537e2f7e2cd6892e83ebd592ff700b36d6315bfae8116fe0f0d83",
+  "case:wyea-core-incompetency-aeca15": "8d96b44033f3ccd1a1a462aecf62cbf6c8121fd4cee30c1cca250187bf4b7dad"
+ },
+ "started_at": "2026-10-29T17:34:14Z",
+ "completed_at": "2026-10-29T17:35:01Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the revenue and loss figures and the hedged growth/capex clauses. The growth clause uses 'may', so it is hedged and not scored. Only the historical figures can be adjudicated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Reading 'lost' as reported net loss is the ordinary reading. Leaving the hedged, unquantified growth and capex language unscored is fair. The figures match under either rounding, so the interpretation does not change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "S-1/A filed before the post reports FY2024 revenue of $1,915.4M and net loss of $863.4M, matching $1.9B and $863M."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Later 10-K repeats the same FY2024 figures and shows positive operating income. Context on the metric only; it does not contradict the net-loss figure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "CoreWeave's audited FY2024 revenue (about $1.915B) and net loss (about $863M) match the stated figures. The clauses about 'explosive growth' that 'may not materialize' and 'unfathomable' capex are hedged or unquantified, so they are not scored and do not change the result.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-4ca6a8"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Literally a report of his own search. In context it asserts that public evidence of meaningful compute capacity is lacking, and the contract tests that reading."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Testing the public evidence instead of his private search is the ordinary reading. 'Any meaningful compute capacity at all' is strong wording, so counting a documented commercial operating HPC deployment as meaningful is fair. A stricter scale threshold could change the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "contradicts",
+      "note": "June 2024 investor-day disclosure: a 16 MW Austin HPC facility commissioned for CoreWeave was up and running. Public before the post. It is a company statement, but it shows public evidence existed."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "contradicted",
+    "rationale": "Months before the post, Core Scientific publicly reported a 16 MW HPC deployment operating commercially for CoreWeave. The article itself also cites $24.3M of 2024 HPC hosting revenue. Under the contract's reading this is meaningful operating capacity, so the claim that there was little proof of any is contradicted. The capacity is small next to the 500 MW plan.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-97632e"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalised text drops the firm claim that burdensome loans are 'the only way' to pay for the buildouts. The contract restores it, but the proposition omits it. 'Does not appear' qualifies the revenue assessment."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Comparing debt service against customer cash and operating costs is a reasonable ordinary reading. But the speaker named no coverage measure, and whether customer advances count as revenue decides the result."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "S-1/A liquidity section. It says future investment may need debt and/or equity, and the packet summary cites operating cash flow and debt-service figures. There is no matched schedule, and the equity reference is forward-looking."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no matched schedule of customer receipts, operating costs and debt service, and it does not settle whether advances count as revenue. The filing's mention of possible equity financing is prospective, so it does not clearly refute the 'only way' claim. The evidence does not settle the claim either way.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-9c73e0"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words, endorsed."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Captures both the lack-of-product-market-fit observation and the claim that CoreWeave's future depends on enormous growth. The oil-company analogy is rhetorical and has no threshold."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'meaningful product-market fit' as sustained paid use with retention is an ordinary reading, but the speaker supplied no measure. Restricting the test to the Q4 2024 window decides which evidence counts."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Ramp Q1 2024 data shows high repeat spending on OpenAI. This bears on paid traction, but it falls before the target quarter and comes from a selected population."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Menlo Ventures' 2024 enterprise survey shows real deployment. It is an annual, investor-sponsored usage share and does not measure retention or customer value in the target quarter."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Both items suggest real paid adoption, but neither covers the target quarter or measures retention and realised value as the contract requires. No sensitivity analysis shows how much industry growth CoreWeave needs to remain viable. The packet does not settle either part.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-core-incompetency-aeca15"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 27150,
+  "output_tokens": 5031,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

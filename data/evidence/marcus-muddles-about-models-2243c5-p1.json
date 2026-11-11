@@ -1,0 +1,146 @@
+{
+ "packet_id": "marcus-muddles-about-models-2243c5-p1",
+ "claim_revision_ref": {
+  "id": "marcus-muddles-about-models-2243c5",
+  "version": 1,
+  "content_hash": "46e347d100d5e4fbcee2608c4e23db01a8ae36f774e368a0c121a7795a7bce45"
+ },
+ "contract_ref": {
+  "id": "marcus-muddles-about-models-2243c5",
+  "version": 1,
+  "content_hash": "6ec2e89a8d9088e633008dd928bb67a9422a3ca82a8544dd143aa476864d7373"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "GPT-4 chess illegal moves 2023 September evaluation",
+   "site:nicholas.carlini.com 2023 chess language models illegal",
+   "Grant Slatton GPT 3.5 chess 2023 99.7 legal 150",
+   "\"GPTsChessEloRatingLegalMoves\" \"September 30\" 2023 94"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2308.15118v1",
+    "used": true,
+    "why": "Original experiment with a specified GPT-3.5 model and 1,000 baseline games."
+   },
+   {
+    "url": "https://arxiv.org/abs/2308.15118v1",
+    "used": true,
+    "why": "Verified August 29, 2023 publication."
+   },
+   {
+    "url": "https://raw.githubusercontent.com/adamkarvonen/chess_gpt_eval/a44ae93/README.md",
+    "used": true,
+    "why": "Version-fixed contemporary experiment reporting strong GPT-3.5-turbo-instruct performance and acknowledging measurement uncertainty."
+   },
+   {
+    "url": "https://github.com/adamkarvonen/chess_gpt_eval/commits/master/README.md",
+    "used": true,
+    "why": "Verified that the cited repository revision existed on September 24, 2023."
+   },
+   {
+    "url": "https://www.davidchudzicki.com/posts/gpt4-can-play-chess/",
+    "used": true,
+    "why": "Contemporary recorded demonstration of legal GPT-4 play, with prompt dependence."
+   },
+   {
+    "url": "https://blog.mathieuacher.com/GPTsChessEloRatingLegalMoves/",
+    "used": false,
+    "why": "The page carries a September 30 date but includes later additions. Its detailed numerical findings were not used without establishing their timing."
+   },
+   {
+    "url": "https://github.com/acherm/acherm.github.io/commits/master/_posts/2023-09-30-GPTsChessEloRatingLegalMoves.md",
+    "used": false,
+    "why": "Read to investigate revisions; the history includes substantial drafting after October 5."
+   },
+   {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/16q81fh/",
+    "used": false,
+    "why": "read_page returned HTTP 403; used the original repository instead."
+   }
+  ],
+  "performed_at": "2026-10-29T17:37:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "arxiv-org-html-2308-15118v1",
+   "source_snapshot_id": "2260a207525b518859da68bbf02cfba9305dfbb5864ec3115cac0fe81cd25e53",
+   "publisher": "arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2308.15118v1",
+   "locator": "Section 2.3, Baseline Performance",
+   "receipt": {
+    "public_excerpt": "every four moves.",
+    "quote_hash": "877d24cd9dab0827b4c3dd863539d8f4e157226a42c538f3dbb89afcaae3e7ac",
+    "verified": "exact"
+   },
+   "event_date": "2023",
+   "available_at": "2023-08-29",
+   "retrieved_at": "2026-10-29T03:40:45Z",
+   "relation": "supports",
+   "explanation": "The study tested gpt-3.5-turbo-0301 in 1,000 baseline games and found recurring legality failures. Its metric records move positions involving an illegal attempt, with retries allowed.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "raw-githubusercontent-com-adamkarvonen-chess-gpt-eval-a44ae93-readme-md",
+   "source_snapshot_id": "7e09c9e62526b3bc04d8988fbe6a59ffbd5c43fd01f052a1502ae06a8e6e334a",
+   "publisher": "Adam Karvonen / GitHub",
+   "source_type": "independent_measurement",
+   "url": "https://raw.githubusercontent.com/adamkarvonen/chess_gpt_eval/a44ae93/README.md",
+   "locator": "Results, first paragraph; legality figures immediately below",
+   "receipt": {
+    "public_excerpt": "150 games",
+    "quote_hash": "c3f7ac5bcd2bb41df5cc5aed5a081a499c154cb8668150428d001c2e73d73c59",
+    "verified": "exact"
+   },
+   "event_date": "2023-09",
+   "available_at": "2023-09-24",
+   "retrieved_at": "2026-10-29T17:31:06Z",
+   "relation": "contradicts",
+   "explanation": "The report gives an illegal-move rate below 0.1% across 8,205 moves for GPT-3.5-turbo-instruct, possibly zero, while acknowledging inadequate recording and state validation. This challenges the broad recurring-failure claim for that variant, though it is not a precise verified error estimate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "davidchudzicki-com-posts-gpt4-can-play-chess",
+   "source_snapshot_id": "ceb80f9addefe4c9e32cc1c64252f594a6981b06bd0dd0d587da46153f9beb64",
+   "publisher": "David Chudzicki",
+   "source_type": "demonstration",
+   "url": "https://www.davidchudzicki.com/posts/gpt4-can-play-chess",
+   "locator": "Section 'But it does make illegal moves for some prompts...'",
+   "receipt": {
+    "public_excerpt": "plays legally",
+    "quote_hash": "3100e2b75a5f1c3b7fb1befe277c1e2e86c0d3529994f2a7db2c9a0285202c22",
+    "verified": "exact"
+   },
+   "event_date": "2023-07-29",
+   "available_at": "2023-07-29",
+   "retrieved_at": "2026-10-29T07:28:48Z",
+   "relation": "context",
+   "explanation": "A recorded GPT-4 game shows sustained legal play. The same report describes an early illegal move under a different prompt, so it illustrates variability rather than a reliable population failure rate.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No common evaluation establishes one failure rate across all contemporary GPT variants.",
+  "The strongest completion-model counterexample acknowledges recording and validation problems.",
+  "Behavioral evaluations do not establish whether an internal representation of chess rules exists."
+ ],
+ "packet_hash": "a84f9bc0e0ee51b315327f66b1f1edfb36b542307ab5bce6541d1d67baa9c3c9"
+}

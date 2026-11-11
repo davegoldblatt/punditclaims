@@ -1,0 +1,136 @@
+{
+ "assessment_id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635-a1",
+ "claim_revision_ref": {
+  "id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635",
+  "version": 2,
+  "content_hash": "9b392c7f31eb2081da29446d6fbaf32a57010d9e23d3559d76abee53ea038b93"
+ },
+ "contract_ref": {
+  "id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635",
+  "version": 1,
+  "content_hash": "e659c3da06b7d0dc7a3f55c522d4da41a9ab55c3f39e7e652591e3ce3938ff7b"
+ },
+ "packet_ref": {
+  "id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635-p1",
+  "content_hash": "de92fed92d7b66f922fbacda8a7786281e5200ffd11c62bbf368865d7dcef619"
+ },
+ "axis": "causal_assessment",
+ "outcome": "supported",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "The July 2026 study supports the proposed capability through simulated web-comment injection, realistic data filtering, and controlled training tests. It addresses training contamination directly. The adverse audit of a particular propaganda campaign limits claims about observed deployment, but does not negate this capability.",
+ "evidence_ids": [
+  "e1",
+  "e2",
+  "e3"
+ ],
+ "counterevidence_ids": [
+  "e3"
+ ],
+ "limitations": [
+  "The decisive study is a preprint using sandboxed injections and models up to 1.3 billion parameters.",
+  "It does not document a successful live attack against a deployed frontier model.",
+  "Instruction tuning reduced some effects; ingestion and success depend on the pipeline and content.",
+  "Experimental execution dates were not specified; event dates use the reported study year."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-ai-bot-swarms-threaten-to-undermine-130fd3-4x-review-anthropic-1",
+  "marcus-ai-bot-swarms-threaten-to-undermine-130fd3-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-ai-bot-swarms-threaten-to-undermine-130fd3-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-ai-bot-swarms-threaten-to-undermine-d3b635",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "If swarms flood the web with duplicative, crawler-targeted content, they can execute 'LLM grooming', poisoning the training data that future AI models (and citizens) rely on.",
+  "kind": "causal",
+  "conditions": [
+   "swarms flood the web with duplicative, crawler-targeted content"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "If swarms flood the web with duplicative, crawler-targeted content, they can execute “LLM grooming,” poisoning the training data that future AI models (and citizens) rely on.",
+   "locator": "paragraph 5",
+   "url": "https://garymarcus.substack.com/p/ai-bot-swarms-threaten-to-undermine",
+   "date": "2026-01-23",
+   "document_title": "AI bot swarms threaten to undermine democracy",
+   "observed_at": "2026-10-28T23:54:16Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "If swarms flood the web",
+    "duplicative, crawler-targeted content",
+    "can execute “LLM grooming”",
+    "poisoning the training data",
+    "future AI models"
+   ],
+   "our_interpretation": [
+    "This is a conditional capability claim, not a forecast that a particular campaign will succeed.",
+    "The ordinary reading is that coordinated publication of repeated malicious narratives can contaminate subsequently collected training data and affect model behavior.",
+    "‘Duplicative’ permits repeated narratives with wording variations; it does not require every document to be byte-identical.",
+    "The parenthetical reference to citizens describes downstream reliance on information. It does not specify a measurable human persuasion effect."
+   ],
+   "support_condition": "Experiments or traced campaigns establish a feasible route from crawler-targeted web publication through training-data collection and filtering to changed trained-model behavior.",
+   "contradiction_condition": "Evidence establishes that the proposed publication route cannot produce training contamination or behavioral effects under representative conditions. Failure of one campaign alone does not disprove a capability claim."
+  },
+  "axis": "causal_assessment",
+  "outcome": "supported",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The July 2026 study supports the proposed capability through simulated web-comment injection, realistic data filtering, and controlled training tests. It addresses training contamination directly. The adverse audit of a particular propaganda campaign limits claims about observed deployment, but does not negate this capability.",
+  "limitations": [
+   "The decisive study is a preprint using sandboxed injections and models up to 1.3 billion parameters.",
+   "It does not document a successful live attack against a deployed frontier model.",
+   "Instruction tuning reduced some effects; ingestion and success depend on the pipeline and content.",
+   "Experimental execution dates were not specified; event dates use the reported study year."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "poison inclusion at practical scale.",
+    "locator": "Section 7; supporting experiments in Sections 4–5",
+    "url": "https://arxiv.org/html/2607.15267v1",
+    "publisher": "arXiv; University of Washington and Allen Institute for Artificial Intelligence researchers",
+    "event_date": "2026",
+    "available_at": "2026-07-16",
+    "explanation": "Sandboxed comment injection and crawl-data analysis establish a feasible path through extraction and filtering. Separate controlled training experiments find shifts toward attacker-preferred answers, including with less conspicuous repeated content."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "250 documents",
+    "locator": "Results",
+    "url": "https://www.anthropic.com/research/small-samples-poison",
+    "publisher": "Anthropic",
+    "event_date": "2025",
+    "available_at": "2025-10-09",
+    "explanation": "Supports susceptibility once malicious documents enter training. It tests a gibberish-producing backdoor and directly inserts documents, so it alone would not establish the claimed web-publication pathway."
+   },
+   {
+    "id": "e3",
+    "relation": "context",
+    "excerpt": "little evidence to support the grooming theory.",
+    "locator": "Research note Summary",
+    "url": "https://misinforeview.hks.harvard.edu/article/llms-grooming-or-data-voids-llm-powered-chatbot-references-to-kremlin-disinformation-reflect-information-gaps-not-manipulation",
+    "publisher": "Harvard Kennedy School Misinformation Review",
+    "event_date": "2025-04-22",
+    "available_at": "2025-10-15",
+    "explanation": "This audit found limited evidence for successful grooming in a specific Kremlin-disinformation case. It cautions against claiming documented real-world success, but does not disprove the experimental capability."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "c4428e695805aaefc446fb15e1e3b7cc349a939aeadaeac4bd386bec9ecdc491",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T02:07:03Z"
+}

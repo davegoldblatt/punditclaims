@@ -1,0 +1,121 @@
+{
+ "assessment_id": "wyea-the-ai-industry-is-lying-to-you-8b2799-a2",
+ "claim_revision_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "version": 2,
+  "content_hash": "3b9a7a0b1003f3ec9c3d9fe3e86a4fbcb3226449f276ce8c3badf0048f5f308c"
+ },
+ "contract_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "version": 1,
+  "content_hash": "5629cf378a51d24dc9d173710a9851fe4e417ed631ce6c346118422aa11f21eb"
+ },
+ "packet_ref": {
+  "id": "wyea-the-ai-industry-is-lying-to-you-8b2799-p1",
+  "content_hash": "ec2f945d71f4d229f5847e7f39f7ddaeaf119c483d90dc5b662e9b60d0623aa7"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": null,
+ "public_rationale": "Meta's initial trial of AI-suggested patches found reviews took over 5% longer [e1]. A second trial, ending December 18, 2024, found no statistically significant review-time regression after suggestions were shown only to authors [e1]. Sonar's October 2025 survey found that 38% of developers reported greater review effort for AI-generated code and 27% reported less [e2]. These findings show variation in review burdens, but neither establishes nor refutes the full claimed causal chain from verbosity and standards failures to substantially longer reviews and then skimming or LLM delegation [e1][e2].",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "limitations": [
+  "Meta studied targeted patches in 2024, not representative March 2026 generated implementations; statistical nonsignificance does not establish equivalent review times [e1].",
+  "Sonar measured self-reported effort, not matched review duration or observed reviewer behavior [e2].",
+  "Neither item measures representative verbosity or compliance with actual local standards, or connects those properties to skimming or LLM delegation [e1][e2]."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-the-ai-industry-is-lying-to-you-505dbd-4x-review-anthropic-1",
+  "wyea-the-ai-industry-is-lying-to-you-505dbd-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-the-ai-industry-is-lying-to-you-8b2799-2x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-the-ai-industry-is-lying-to-you-8b2799",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "LLM-based code is often verbose and rarely aligns with in-house coding guidelines and standards, guaranteeing it takes far longer to review, which means reviewers will either skim-read it or feed it into another LLM.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "LLM-based code is often verbose, and rarely aligns with in-house coding guidelines and standards, guaranteeing that it’ll take far longer to chew through, which naturally means that those burdened with reviewing it will either skim-read it or feed it into another LLM to work out what the hell to do.",
+   "locator": "paragraph 127",
+   "url": "https://www.wheresyoured.at/the-ai-industry-is-lying-to-you",
+   "date": "2026-03-24",
+   "document_title": "The AI Industry Is Lying To You",
+   "observed_at": "2026-10-28T22:26:15Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "often verbose",
+    "rarely aligns with in-house coding guidelines and standards",
+    "guaranteeing that it’ll take far longer to chew through",
+    "reviewing it will either skim-read it or feed it into another LLM"
+   ],
+   "our_interpretation": [
+    "The plain reading is a broad causal claim about professional review of LLM-generated code as of publication.",
+    "'Often' requires recurring prevalence, and 'rarely aligns' means compliance is uncommon. Neither supplies a precise frequency.",
+    "'Far longer' concerns materially greater review time for comparable work, not simply more total review work because more code is produced.",
+    "The proposed causal chain must connect verbosity and standards failures to review time and then to skimming or LLM delegation.",
+    "A small study of targeted patches can test inevitability in that setting, but cannot establish the prevalence of problems across contemporary generated code."
+   ],
+   "support_condition": "Representative comparisons must find frequent verbosity, uncommon compliance with actual local standards and substantially longer review for comparable changes, with evidence that these problems cause reviewers to skim or delegate review.",
+   "contradiction_condition": "Representative comparisons showing ordinary compliance and no substantial review penalty would contradict the general claim. Comparable observed workflows preserving thorough human review would rebut the claimed inevitable downstream behavior."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "Meta's initial trial of AI-suggested patches found reviews took over 5% longer [e1]. A second trial, ending December 18, 2024, found no statistically significant review-time regression after suggestions were shown only to authors [e1]. Sonar's October 2025 survey found that 38% of developers reported greater review effort for AI-generated code and 27% reported less [e2]. These findings show variation in review burdens, but neither establishes nor refutes the full claimed causal chain from verbosity and standards failures to substantially longer reviews and then skimming or LLM delegation [e1][e2].",
+  "limitations": [
+   "Meta studied targeted patches in 2024, not representative March 2026 generated implementations; statistical nonsignificance does not establish equivalent review times [e1].",
+   "Sonar measured self-reported effort, not matched review duration or observed reviewer behavior [e2].",
+   "Neither item measures representative verbosity or compliance with actual local standards, or connects those properties to skimming or LLM delegation [e1][e2]."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "regressions",
+    "locator": "Abstract, Safety Trial; full paper section VII-A",
+    "url": "https://arxiv.org/abs/2507.13499",
+    "publisher": "arXiv; Meta researchers",
+    "event_date": "2024-12-18",
+    "available_at": "2025-07-17",
+    "explanation": "Meta's initial experiment found longer reviews; a second trial ending December 18, 2024 found no statistically significant regression after changing how suggested patches appeared. This challenges inevitability, but concerns targeted patches and an earlier workflow rather than the full March 2026 claim."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "less effort",
+    "locator": "Page 10, comparison of AI-generated and human-written code review; page 4, fieldwork dates",
+    "url": "https://www.sonarsource.com/state-of-code-developer-survey-report.pdf",
+    "publisher": "Sonar",
+    "event_date": "2025-10",
+    "available_at": "2026-01-08",
+    "explanation": "The survey reports greater review effort for 38% of developers and less effort for 27%. It supports review burdens for a substantial group while showing variation; self-reported effort does not establish review duration or the claimed causal mechanism."
+   }
+  ],
+  "what_would_resolve": "Representative workplace comparisons matching tasks, languages, change sizes, models and reviewer experience, with separate measurements of verbosity, local-standard compliance, active review time and actual reviewer behavior. These comparisons must test the proposed causal links. Documented comparable workflows preserving thorough human review would test the claimed inevitable downstream behavior.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "7671909a329a42d2853f17c180f7c4973c38273765e0551e927a8510faabd352",
+ "supersedes_assessment_id": "wyea-the-ai-industry-is-lying-to-you-8b2799-a1",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T23:52:52Z"
+}

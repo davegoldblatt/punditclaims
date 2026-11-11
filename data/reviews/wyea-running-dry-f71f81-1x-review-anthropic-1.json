@@ -1,0 +1,71 @@
+{
+ "run_id": "wyea-running-dry-f71f81-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-running-dry-f71f81": "185a390873019037e0b4ef0cb5ab071009a6306ff0facb873ed1a963432084cd"
+ },
+ "started_at": "2026-11-10T02:05:41Z",
+ "completed_at": "2026-11-10T02:05:56Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own words in his newsletter; 'as I said at the time' restates his earlier claim, not someone else's."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Context shows 'this quarter' means Anthropic's Q2 2026. The normalisation keeps both parts: the quarter was an anomaly, and the cause was unrestricted employee token spending. 'Unlimited' is a fair paraphrase of 'as much as they want'."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (unrestricted employee token spend was a material cause of Q2's unusual results) is the ordinary reading of firm causal language. It rightly says correlation alone is not enough to support the claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Fortune, Aug 2026: Uber encouraged heavy Claude Code use, overspent its AI budget early in the year, and later moved to efficiency measures. It does not link this to Anthropic's Q2 revenue or margins, and it places the overspend in the year's first months."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary summary of the S-1/A, dated before the evaluation date: Q2 operating income of $974m against a Q3 loss of $567m. It explains Q3's decline by short-term compute, donation charges and price cuts. It neither confirms nor rules out token-maxxing as Q2's cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "e2 suggests Q2 was unusually favourable, but it attributes the Q3 deterioration to compute procurement, donation charges and pricing, not to token-spend policies. e1 describes Uber's heavy use and later pullback but gives no link to Anthropic's Q2 results. No evidence breaks down Q2 revenue or margins by customer spending policy. The packet neither establishes nor rules out the claimed cause.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-running-dry-f71f81"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 10304,
+  "output_tokens": 1540,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

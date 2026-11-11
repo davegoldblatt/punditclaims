@@ -1,0 +1,87 @@
+{
+ "run_id": "marcus-llms-dishonest-unpredictable-and-9dec2f-4x-final-anthropic-1",
+ "kind": "batch_final_text",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "final-text-batch-1",
+ "prompt_hash": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "7495162260a2b274894e88f4ddb85bc6bddb875112ea8427a4eb02fcfd795ae9",
+  "case:marcus-llms-dishonest-unpredictable-and-9dec2f": "73ed5dcc944875b8aed40ce5093a65b45dd72ae5184aabfe99c5af9a85607962",
+  "payload:marcus-llms-dishonest-unpredictable-and-9dec2f": "d90a6a1817a65afa37fbda99b3de0c406f367d7798c538f3f8ea0c12ca3defae",
+  "case:marcus-llms-dishonest-unpredictable-and-ce086f": "a23f9303557e6cc500bc4cc1c370043c3afcdf4290cc3f9f1a4ce366410f4144",
+  "payload:marcus-llms-dishonest-unpredictable-and-ce086f": "3a74621d2223e968b85ad8ffb290c932db1a365eec9cfd73f79497c2ec81926d",
+  "case:marcus-llms-dishonest-unpredictable-and-d138ff": "cb6cb9f3f6c79b668878e3d50db157da86015869dbe7a6b93a0f4e56b22a4ce7",
+  "payload:marcus-llms-dishonest-unpredictable-and-d138ff": "b078e52f53e29ccc563ff8677c15d35e7c196d7d3314a9d96f56b24f83623952",
+  "case:marcus-llms-dishonest-unpredictable-and-d1de0e": "15b9adb4604cd8b65c9c9a3726b9a487891c4ff21e12bda00ada443534d79295",
+  "payload:marcus-llms-dishonest-unpredictable-and-d1de0e": "bbe87500957c7389ea823864aca2b08343af143618efac1bbae87b423ea25305"
+ },
+ "started_at": "2026-10-29T21:46:08Z",
+ "completed_at": "2026-10-29T21:46:42Z",
+ "status": "ok",
+ "output": {
+  "checks": [
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": false,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [
+     "The decisive study was a preprint and used automated judging with imperfect agreement against human labels."
+    ],
+    "verdict": "fail",
+    "note": "The excerpt, proposition, criteria, outcome and citations are all fine. The problem is one limitation: it says AbstentionBench used automated judging with imperfect agreement against human labels. Nothing in the frozen evidence for e1 (its abstract, explanation or quoted context) says this, so the claim is unsupported. The other limitations hold up: the abstract does show that prompting improves abstention. The rationale's point about calibration success in some settings is supported by e2 and e3.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-9dec2f"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is exact. The criteria make the narrowing to safety in autonomous roles visible. The rationale's narrower point, failures across models from multiple developers in sensitive autonomous scenarios, matches the e1 abstract ('models from all developers', 16 models). e1's dates are stated correctly: June 2025 event, October 2025 availability. The limitation treating it as later retrospective context is accurate. Unresolved matches the agreed assessment, and what_would_resolve is consistent with the contract.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-ce086f"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The excerpt is exact. The proposition leaves out 'at least to some degree', but that hedge appears in from_speaker. The o3 rates (51% SimpleQA, 33% PersonQA), the eight labs in Phare and the benchmarks 'designed to elicit hallucinations' all match the evidence. Variation by model and by prompting is supported. The limitations correctly say the evidence does not show error rates with browsing enabled. Dates, publishers and excerpts are correct.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-d138ff"
+   },
+   {
+    "excerpt_matches": true,
+    "proposition_faithful": true,
+    "conditions_shown": true,
+    "rationale_supported_by_evidence": true,
+    "outcome_matches_reviews": true,
+    "citations_correct": true,
+    "overclaims": [],
+    "verdict": "pass",
+    "note": "The proposition keeps 'people' and 'when', as the revision intended. The criteria show the investor reading and the June 2025 window. The rationale correctly shows backing for both a logic-based alternative (e1, 10 June 2025) and an LLM developer (e2, 31 March 2025, before the window). It does not claim the alternative meets the obey-instructions standard. Unresolved matches the agreed assessment. Excerpts and dates are correct.",
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-d1de0e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31685,
+  "output_tokens": 3777,
+  "cached_input_tokens": 1390,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

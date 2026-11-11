@@ -1,0 +1,113 @@
+{
+ "run_id": "marcus-getting-gpt-to-work-with-external-0ab0f2-2x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-getting-gpt-to-work-with-external-0ab0f2": "0233b8e40e8771b7d493487ef567b7785a18b0579fc7c35f6ce7e585430badb7",
+  "case:marcus-getting-gpt-to-work-with-external-6ad253": "e338ccb9714ed9e1743cd0da89ac81e9b08f6c0c1fbfee8d060d156775450bb9"
+ },
+ "started_at": "2026-10-29T17:10:35Z",
+ "completed_at": "2026-10-29T17:10:57Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus published this in his own voice on his Substack. The post is co-written with Ernest Davis (\"one of us (Ernie)\"), and Marcus endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Limiting 'the tools' to Code Interpreter and Wolfram Alpha matches the context. This is a present-tense observation about the testing the post describes."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'understand' as observable tool use and 'not reliably' as repeated consequential failures is the ordinary reading. Anchoring to the June–August 2023 tests matches the post."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Davis and Aaronson's test report, available 2023-08-14. It records that GPT-4 struggled to write usable Wolfram queries, made useless plug-in calls, and bypassed the plug-ins, causing avoidable errors. Davis also co-wrote the post, but this is a primary test record, not the claim restating itself."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Recorded output for Problem 21. GPT4+CI chose Monte Carlo sampling for a vanishingly small probability, got 0, and claimed zero error. That is a misuse of Code Interpreter in both method choice and reading the result."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Primary records from the 2023 testing show repeated failures in tool use with both plug-ins: Wolfram query problems, useless calls, skipping the tools, and a Monte Carlo misuse. No contrary evidence is in the packet. A representative misuse rate is not established, but the claim only says GPT-4 used the tools unreliably, which the records support.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-0ab0f2"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus wrote this in his own voice in a post on his Substack, co-written with Davis. He endorses it."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "\"There is no question\" is firm language. The claim is causal: the plug-ins substantially extend GPT-4's math and science problem-solving."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'significantly' as a substantial practical gain over a GPT-4 baseline from the same period is an ordinary reading. It requires neither a statistical test nor gains on every subject."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "AutoGen paper, available 2023-10-03, testing 120 matched level-5 MATH problems. Code Interpreter scored 48.3%, Wolfram 45%, and plain GPT-4 30%: a substantial gain for both plug-ins. The product configurations were not fully controlled."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Kumar and Kats, available 2023-09-16, ran repeated trials with and without Code Interpreter on 13 math and electromagnetism problems. They found large gains, which covers the science part for Code Interpreter. Wolfram is not tested here."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Studies from 2023 that compare against plain GPT-4 show substantial gains on the same problems: on MATH for both plug-ins, and on electromagnetism problems for Code Interpreter. That meets the support condition. Caveats are the small samples and uncontrolled product settings. The packet contains no counterevidence.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-getting-gpt-to-work-with-external-6ad253"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 16972,
+  "output_tokens": 2276,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

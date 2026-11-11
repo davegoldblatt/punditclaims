@@ -1,0 +1,128 @@
+{
+ "packet_id": "wyea-credit-crunch-148670-p1",
+ "claim_revision_ref": {
+  "id": "wyea-credit-crunch-148670",
+  "version": 2,
+  "content_hash": "66f46cfae612c5d0ce3035ea49efde31abc52cb73b8a741b343c45084e3f5ca4"
+ },
+ "contract_ref": {
+  "id": "wyea-credit-crunch-148670",
+  "version": 1,
+  "content_hash": "5b09aa0ddf85161c764aeadec4631187ca8366a0ce44f40e9686b19acfaf13e6"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "hyperscalers assets June 30 2026 property equipment Exxon Chevron Berkshire",
+   "site.amazon.com 2026 second quarter results property equipment cash flow",
+   "Alphabet Microsoft Meta Amazon June 30 2026 property assets",
+   "ExxonMobil Chevron Berkshire June 2026 total assets",
+   "hyperscalers 2026 assets Exxon Berkshire",
+   "2026 GPU resale prices older A100 demand depreciation"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026-report",
+    "used": true,
+    "why": "Primary disclosure attributes increased property and equipment purchases to AI. It does not establish a stock-of-assets ranking."
+   },
+   {
+    "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000093/xom-20260630.htm",
+    "used": false,
+    "why": "The balance sheet was readable, but this individual comparator does not establish a complete, consistently measured Fortune 500 ranking."
+   },
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.microsoft.com/investor/reports/ar26/",
+    "used": false,
+    "why": "The returned text did not expose the requested balance-sheet figures."
+   },
+   {
+    "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/",
+    "used": false,
+    "why": "read_page did not return the requested property figures."
+   },
+   {
+    "url": "https://www.amcompute.com/gpu-resale-index",
+    "used": true,
+    "why": "Independent resale observations distinguish older GPUs from H100 servers. The August observations are outside the target quarter and do not identify a post-hype market."
+   }
+  ],
+  "performed_at": "2026-10-29T19:57:25Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "aboutamazon-com-news-company-news-amazon-earnings-q2-2026-report",
+   "source_snapshot_id": "0b56d00255a13f588d3c3cfcb817b6ce3500c61a4fba399d8ac330138ee4567d",
+   "publisher": "Amazon",
+   "source_type": "company_disclosure",
+   "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026-report",
+   "locator": "Financial highlights, paragraph on free cash flow and purchases of property and equipment",
+   "receipt": {
+    "public_excerpt": "This increase primarily reflects investments in artificial intelligence.",
+    "quote_hash": "0467d884a06b1d492e058d348b74e48f4ffa25fcee696c82e53762f44c81868d",
+    "verified": "exact"
+   },
+   "event_date": "2026-06-30",
+   "available_at": "2026-07-30",
+   "retrieved_at": "2026-10-29T09:50:28Z",
+   "relation": "context",
+   "explanation": "Amazon attributes its increased property and equipment purchases to AI. This concerns spending over a trailing year, not the comparative stock or intensity of assets claimed by Zitron.",
+   "metric_scope": {
+    "company": "Amazon",
+    "metric": "Purchases of property and equipment, net of proceeds from sales and incentives",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "amcompute-com-gpu-resale-index",
+   "source_snapshot_id": "ee07ec118d5674fcccecffe2cdbac38aaf077b9d82f4745c8aef6f5d83a7df26",
+   "publisher": "American Compute",
+   "source_type": "independent_measurement",
+   "url": "https://www.amcompute.com/gpu-resale-index",
+   "locator": "Monthly readings, August 2026",
+   "receipt": {
+    "public_excerpt": "used HGX H100 servers held their price.",
+    "quote_hash": "d3b361371dc0a9bcdf8b433f6b8fb48b8330735cc2ddc57c8efdfec48d44b5d5",
+    "verified": "exact"
+   },
+   "event_date": "2026-08",
+   "available_at": "2026-10-01",
+   "retrieved_at": "2026-10-29T12:48:33Z",
+   "relation": "context",
+   "explanation": "The index reports different resale performance across GPU generations. It neither identifies a period outside the hype cycle nor measures the target quarter, so it cannot settle the value-dependence assertion.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "A complete, consistently measured comparison of the hyperscalers, all three named comparators and the Fortune 500 was not established.",
+  "The source supplies neither an asset-burden metric nor its accounting basis.",
+  "The reviewed investor material does not settle whether alternative businesses qualify as comparable new hypergrowth engines.",
+  "No independently defined end of the hype cycle and corresponding GPU-value observations were established.",
+  "Several primary balance-sheet pages could not be retrieved in usable form."
+ ],
+ "packet_hash": "c139b0926d544e7a6914d18ce3db4f378619c4ab8f37a08d75bbb5ed0c8c41f2"
+}

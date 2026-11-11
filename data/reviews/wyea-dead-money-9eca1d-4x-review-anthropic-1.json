@@ -1,0 +1,215 @@
+{
+ "run_id": "wyea-dead-money-9eca1d-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:wyea-dead-money-9eca1d": "970d823bad41c4cbcf919ec8eaef96ecbaf124602f98163b933e616bdd5751e1",
+  "case:wyea-dead-money-a54502": "a317f7249d31b89b31d1dfc2051ea9582ce4c3ab23d779c0d248f205a31fe5ec",
+  "case:wyea-dead-money-a60375": "c931b863c1e7d33337b6d3a7e9530b7f612712cb209098a3080a2c0c6876ef82",
+  "case:wyea-dead-money-a7fbfe": "3b7e3b62f0a41cb1d9cae087c40a4a8133e8563c6ea1b9a7b12d5a07f3abd720"
+ },
+ "started_at": "2026-10-29T17:38:08Z",
+ "completed_at": "2026-10-29T17:38:56Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own newsletter text. He cites Reuters' S-1 reporting for the figures but states the conclusion in his own voice."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the year, the opex and revenue figures, and the $2.75 ratio. It is a factual claim about 2025."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Testing the stated figures at their stated precision, and computing the ratio from his rounded inputs, is an ordinary and fair reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Reuters, Sept 28 2026, citing the prospectus: nearly $4.6B 2025 revenue and $12.65B operating expenses. The roughly $8B operating loss it reports is consistent."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "The audited S-1, available Oct 26, shows $12.645B opex and $4.585B revenue. This backs the rounded amounts. The unrounded ratio is about $2.76, a trivial gap. It is a company filing, so it corroborates rather than independently verifies."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Independent Reuters reporting matches both figures at the stated precision. The audited filing corroborates them, and 12.65/4.6 = 2.75. The unrounded $2.76 is within rounding and does not count as a material difference.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-9eca1d"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own analytical sentence in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The draft softens 'price of goods… skyrocketing' to 'hardware costs rise', and 'taking forever' to 'delayed'. It also drops 'any debt'. The contract restores the original elements."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (sharp, broad increases in financing and equipment costs, plus material delays) is ordinary. The September window comes from 'now'. The comparison baseline is inferred, not supplied."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "CNBC, Sept 27: Treasury yields at highs, borrowing costs poised to rise. Not a comparable series of AI data center debt pricing."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Cushman & Wakefield: costs up 21% per MW and labor straining timelines. It covers all data centers, over an annual interval, with no schedule-slippage records."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Announced server price hikes for early-2027 shipments. Unverified by Reuters, and not September prices."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Supplier note on the industrial IT market: mixed September prices. Not an AI-server basket."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The evidence shows rising rates and cost pressure but no comparable September financing-cost series. It has no matched equipment price basket and no representative schedule-delay records. 'Skyrocketing' across all three elements cannot be confirmed or refuted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-a54502"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own claim in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "Keeps the scope to wrapper businesses, the loss-making resale mechanism, the 'which is why' causal link, the named firms, and the amount and frequency."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'at a loss' as negative service margins that force repeated raises is a fair reading of a causal claim. The quarter window and the population are evaluator choices."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Harvey's own disclosure of a $550M raise on Sept 9 2026. It shows scale, not cause."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Harvey's own disclosure of a $200M raise in March 2026. Together with e1, it shows repeated large raises."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Secondary summary of Bloomberg reporting: Harvey's gross margin was about -50% in June, and the company says it is now positive. Mixed and unverified."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Perplexity rounds from 2025. Older than the target period, and shows nothing about cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Harvey did raise hundreds of millions twice in six months and reportedly had negative margins in June. But there is no comparable margin data for the startup population, and Perplexity's current margins are unknown. Nothing shows the raises were needed because of token losses.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-a60375"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Zitron's own sentence in his newsletter."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "An unhedged 'will' that assumes a collapse and says ignorance or optimism will worsen it. 'Everybody' is rhetorical. No deadline."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Requiring a sector-wide breakdown with real losses, plus evidence of the worsening mechanism, matches his words. 'Collapse' and 'much worse' have no thresholds."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Semafor, Oct 15: CDS costs up, CoreWeave yields above 15%, a debt deal faltering. Shows market stress, not a collapse or widespread defaults."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline was given and the early-resolution rule has not been met. By the cutoff the evidence shows credit stress but no sector-wide collapse with realized losses, and no causal finding. Absence so far is not failure.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "wyea-dead-money-a7fbfe"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34172,
+  "output_tokens": 4704,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

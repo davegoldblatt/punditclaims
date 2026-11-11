@@ -1,0 +1,56 @@
+claim_id: wyea-wheres-the-money-0fed67
+version: 1
+claim_revision_ref:
+  id: wyea-wheres-the-money-0fed67
+  version: 1
+  content_hash: 601a0cc949f30b114165864b4091fe4bbbf9e007157b194b2e928ecce84fe3ce
+assessment_axis: historical_observation
+explicit_source_elements:
+  - a billion dollars more than the entirety of its revenue
+  - before any other costs
+  - $3 billion
+  - $2 billion
+  - "2024"
+evaluator_interpretation:
+  - The surrounding passage explicitly adds model-training and model-running compute costs. Assess that combined amount, rather than inference alone.
+  - Compare those costs with total calendar-2024 revenue, not subscription revenue or annualized revenue.
+  - Read the $1 billion difference as approximate.
+  - Separately identified research compute must be reconciled with training compute before adding it; it must not be silently omitted or double-counted.
+  - Require completed-year estimates or results, rather than treating forecasts as realized spending.
+support_condition: Comparable completed-year figures show that 2024 training and inference compute costs exceeded total revenue by approximately $1 billion.
+contradiction_condition: Comparable completed-year figures show no excess, or an excess materially different from approximately $1 billion.
+measurement_requirements: Training and inference compute expense and realized total revenue for the same company and calendar year, with research amortization and cloud credits treated consistently.
+source_requirements: Prefer financial disclosures or records. Independent reporting and transparent estimates are acceptable if their definitions and status as forecasts or results are clear.
+metric_scope:
+  company: OpenAI
+  metric: Training and inference compute expenses minus total revenue
+  currency: USD
+  units: billions
+  accounting_basis: estimate
+  fiscal_or_calendar: calendar
+  period_start: 2024-01-01
+  period_end: 2024-12-31
+  stock_or_flow: flow
+  annualized_or_realized: realized
+  gross_or_net: net
+original_horizon: null
+horizon_interval: null
+target_period:
+  start: 2024-01-01
+  end: 2024-12-31
+  precision: year
+condition_status: not_applicable
+early_resolution_rule: null
+interpretation_determines_result: true
+plain_reading: true
+ambiguity_flags:
+  - Running the software could mean inference alone, but the explicit surrounding arithmetic includes training.
+  - The boundary between training compute and separately reported research compute is unclear.
+  - The source estimates included projections for part of 2024.
+  - No numerical tolerance is supplied for the approximate difference.
+retrospective_or_prospective: retrospective
+outcome_known_at_freeze: false
+written_at: 2026-10-29T22:25:44Z
+frozen_at: 2026-10-29T22:25:44Z
+policy_version: 2026-10-28.7
+content_hash: eacd7285931654f5a55b818dabf1e099dc1492242cef8a69976ab2405868cb9a

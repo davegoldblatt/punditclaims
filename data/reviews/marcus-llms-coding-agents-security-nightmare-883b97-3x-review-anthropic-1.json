@@ -1,0 +1,167 @@
+{
+ "run_id": "marcus-llms-coding-agents-security-nightmare-883b97-3x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-coding-agents-security-nightmare-883b97": "a0f3f9e3f9a9b236d1e87ceac45c71148f8c1cecd8a5f17dfeeb825fb1d2de1d",
+  "case:marcus-llms-coding-agents-security-nightmare-bdb56f": "a05ef17942f1905032d575e076a56a81f752a1a268246026a67b9dfb3d85e7bd",
+  "case:marcus-llms-coding-agents-security-nightmare-fedd64": "0f2f29dbfacee7d77f0eb3b9cfdd225d14c261da84237faabfb4f4a60bbcc2c7"
+ },
+ "started_at": "2026-10-29T07:53:22Z",
+ "completed_at": "2026-10-29T07:53:59Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's co-authored post, published under his name and written in his own voice. It does not quote anyone else here."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "causal",
+     "note": "The proposition keeps 'multiple', the report frequency and 'simply from' unreliability. The sentence is a historical claim that names a cause, so treating it as causal is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Counting temporary deletion as a loss and reading 'simply' as the main cause are ordinary readings. Asking for a dated series of reports and for technical evidence of the cause fits the speaker's specific claims."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Lemkin's dated firsthand report of a Replit agent deleting a production database before the post. It was later restored, which still counts as a loss under the contract. This is a firsthand report, not a company disclosure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "A separate, dated user report (March 2025) of an agent deleting databases. Unverified and without logs, but it backs the 'multiple' part."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Replit confirms the deletion and full restore, and says development changes could previously reach production. This adds an architectural factor but does not show a materially different cause."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "causal_assessment",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Two separate deletion reports from before the post back the 'multiple' part. Nothing in the packet shows new reports every day or two, and no postmortem shows inherent LLM unreliability as the main cause. e3 points to an architectural factor but does not establish a different cause. The two key parts are neither supported nor contradicted.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-883b97"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Will find it hard to resist' is an unhedged prediction about developer behaviour, so it is scored. The proposition keeps 'many', 'far more' and the convenience motive. No deadline is stated."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (many developers granting materially excessive access for convenience or productivity) is fair. Requiring evidence of both excess and motive is demanding but matches 'far more than they should' and 'lured by'."
+    },
+    "evidence": [
+     {
+      "id": "e6",
+      "fits": true,
+      "relation": "context",
+      "note": "METR survey of 349 technical workers: about 40% allowed unrestricted command execution on low-stakes projects. Broad access on low-stakes work does not establish excess or the motive, so it is only weak relevance."
+     },
+     {
+      "id": "e7",
+      "fits": true,
+      "relation": "context",
+      "note": "1Password survey: 40% report agents keeping access after tasks end. It covers AI agents in general, not coding tools, and does not measure the convenience motive."
+     },
+     {
+      "id": "e8",
+      "fits": true,
+      "relation": "context",
+      "note": "One user routinely uses permission bypass to avoid repeated confirmations. An anecdote cannot show how widespread this is."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline, and the early-resolution rule is not met. No study in the packet measures both materially excessive coding-agent permissions and a convenience motive. The surveys show broad access but not that it was excessive or why it was granted, and the GitHub issue is one person. No evidence contradicts the claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-bdb56f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his co-authored post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "forecast",
+     "note": "'Many others won't be' stopped is an unhedged prediction. 'Even a thousand' patches is emphasis that the proposition keeps. The target, attacks or vulnerabilities in AI coding tools, matches the context. No deadline."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The plain reading (many attack variants keep succeeding despite extensive patching) is fair. Asking for evidence on the thousand-patch figure is strict for what is probably rhetoric, but the contract allows that reading."
+    },
+    "evidence": [
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "IDEsaster (Dec 2025): over 30 vulnerabilities and 24 CVEs, with every tested AI coding tool vulnerable. Shows many attack variants, but these are controlled tests and say nothing about patch counts."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "supports",
+      "note": "IDEsaster 2.0 (May 2026): new attack paths found after about 30 patches across 12 vendors. Supports variants recurring after fixes, though the earlier patches did stop those particular attacks."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "unresolved",
+    "rationale": "No deadline. The IDEsaster research shows many variants and new attack paths after vendors patched, which fits the forecast's direction. It does not show attacks left unstopped in the field or anything about extensive patching at scale, so the early-resolution rule is not met. There is no general defence on record either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-coding-agents-security-nightmare-fedd64"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 26060,
+  "output_tokens": 3916,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

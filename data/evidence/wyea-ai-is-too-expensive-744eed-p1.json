@@ -1,0 +1,172 @@
+{
+ "packet_id": "wyea-ai-is-too-expensive-744eed-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-is-too-expensive-744eed",
+  "version": 1,
+  "content_hash": "66df0ab440454cb3b7a29fa85004767817e680d884598ed8a44a2edd1e4b9a7a"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-is-too-expensive-744eed",
+  "version": 1,
+  "content_hash": "269a5d033c3821b6cece8317bf16207c2d4c68607b9c7586c96bae4bf7a322a8"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "Anthropic OpenAI 2025 2024 losses gross margin 40% 33% 2026 Information",
+   "OpenAI 2025 2024 net loss 2026 Financial Times 20.92 8.78",
+   "Anthropic 2024 2025 losses gross margin negative 94 40 January 2026",
+   "site:the-decoder.com Anthropic \"94\" \"2026\"",
+   "site:the-decoder.com OpenAI \"33\" \"40\" \"2026\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "used": true,
+    "why": "Primary audited historical financial statements; retained as context because their GAAP basis differs from the contract's press-estimate basis."
+   },
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Accessible reporting on audited OpenAI statements and Financial Times verification. The documents originated with Zitron, so this is not wholly independent corroboration."
+   },
+   {
+    "url": "https://the-decoder.com/anthropics-revenue-surge-reportedly-fuels-talk-of-trillion-dollar-valuation/",
+    "used": true,
+    "why": "Accessible secondary reporting identifies Anthropic's improving gross-margin trend. It does not measure net losses."
+   },
+   {
+    "url": "https://www.theinformation.com/articles/anthropic-lowers-profit-margin-projection-revenue-skyrockets",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.ft.com/content/e15b0d7e-ff6b-4f16-ba7a-4068feddb828",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://the-decoder.com/openai-adds-111-billion-to-its-cash-burn-forecast-as-ai-costs-spiral-beyond-projections/",
+    "used": false,
+    "why": "Read successfully, but adjusted gross margins and cash-burn forecasts do not supply comparable realized net losses."
+   }
+  ],
+  "performed_at": "2026-10-29T19:36:09Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "sec-gov-archives-edgar-data-2130357-000162828026067168-anthropicpbc-sx1-htm",
+   "source_snapshot_id": "36b82028d5a230722286cd0780d91697a54a810ff639c0f588f88cfee25bde19",
+   "publisher": "Anthropic, PBC / U.S. Securities and Exchange Commission",
+   "source_type": "filing",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "locator": "Risk Factors, page 64; following paragraph gives annual net losses; audit opinions at F-2 and F-4",
+   "receipt": {
+    "public_excerpt": "history of net losses",
+    "quote_hash": "e9a9f83d3b36bfd63584c12a7b488d383ac7bfb134707181784d280f266ccfce",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-10-26",
+   "retrieved_at": "2026-10-28T22:46:59Z",
+   "relation": "context",
+   "explanation": "The following paragraph reports net losses of $8.3 billion in 2024 and $42.0 billion in 2025, including substantial financing-related fair-value charges. These audited GAAP figures support the direction of an accounting-loss reading but do not establish the cited press-estimate measure.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "annual net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "gaap",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section Gotta spend money to make money, first paragraph",
+   "receipt": {
+    "public_excerpt": "net loss",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The article reports increased accounting losses and explains that a large nonrecurring accounting charge contributed to the increase. It describes audited statements, rather than the earlier gross-margin estimates, and attributes their acquisition to Zitron and separate review to the Financial Times.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "annual reported net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "the-decoder-com-anthropics-revenue-surge-reportedly-fuels-talk-of-t-72f9bbb124d9",
+   "source_snapshot_id": "19a1a129c00c55069028f4701b61f26000e6bb4eb15be99e4d2ddb7e9181dd97",
+   "publisher": "The Decoder",
+   "source_type": "secondary_summary",
+   "url": "https://the-decoder.com/anthropics-revenue-surge-reportedly-fuels-talk-of-trillion-dollar-valuation",
+   "locator": "Second body paragraph",
+   "receipt": {
+    "public_excerpt": "improved sharply",
+    "quote_hash": "3f45132b9b7ae82e96f22c68eef33d2c653d93b8a42246d0227bf8d0c8ca95d1",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-04-19",
+   "retrieved_at": "2026-10-29T19:29:34Z",
+   "relation": "context",
+   "explanation": "The paragraph reports Anthropic gross margins moving from minus 94% in 2024 to plus 40% in 2025. This challenges the suggestion of a shared falling-margin trend, but gross margins do not determine absolute net losses.",
+   "metric_scope": {
+    "company": "Anthropic",
+    "metric": "gross profit margin",
+    "currency": null,
+    "units": "percent",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2024-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No matched realized annual net-loss estimates for both companies were verified on the contract's basis.",
+  "The speaker does not reconcile net losses, operating losses, cash burn and gross margins.",
+  "The underlying Information reports and Financial Times verification could not be read."
+ ],
+ "packet_hash": "208db0c937d284cf41642d5feed0d979d519349d534028ba518e66f6e1febb20"
+}

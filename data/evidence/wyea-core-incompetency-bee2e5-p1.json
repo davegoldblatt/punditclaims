@@ -1,0 +1,119 @@
+{
+ "packet_id": "wyea-core-incompetency-bee2e5-p1",
+ "claim_revision_ref": {
+  "id": "wyea-core-incompetency-bee2e5",
+  "version": 1,
+  "content_hash": "ae66898a7ab0a0383347bb3971c01463b47f82ffd3d5d1f8e2ddfec4ac4e6ffb"
+ },
+ "contract_ref": {
+  "id": "wyea-core-incompetency-bee2e5",
+  "version": 1,
+  "content_hash": "af6ead1c889e707205415182a5c039cc1da55e2d9c58dcae549a9412f2ba796c"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "site.investors.coreweave.com 2025 initial public offering 1.5 billion proceeds",
+   "CoreWeave IPO closed March 31 2025 net proceeds 1.4 billion",
+   "CoreWeave 10-Q May 15 2025 000176962825000014 filing date"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering",
+    "used": true,
+    "why": "Primary disclosure of the offering price and issuer and selling-shareholder allocations."
+   },
+   {
+    "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q1/2d317ca7-60bc-4378-b05c-6274241c68d5.pdf",
+    "used": true,
+    "why": "The subsequent quarterly filing confirms completion and reports net proceeds."
+   }
+  ],
+  "performed_at": "2026-10-29T10:48:32Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_condition",
+   "document_id": "coreweave-com-news-coreweave-announces-pricing-of-initial-public-offering",
+   "source_snapshot_id": "e848b5f9b86409d3eda6f4686162620fe3ca1b37c56d83c8f916953e9c32b803",
+   "publisher": "CoreWeave",
+   "source_type": "company_disclosure",
+   "url": "https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering",
+   "locator": "Opening summary and first release paragraph",
+   "receipt": {
+    "public_excerpt": "$1.5B",
+    "quote_hash": "1386d92d85623a3ce5b8225c27707eedf6454ef0f6e92b4560037f535a9a932c",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-27",
+   "available_at": "2025-03-27",
+   "retrieved_at": "2026-10-29T10:40:21Z",
+   "relation": "contradicts",
+   "explanation": "The release specifies 36,590,000 issuer shares at $40, implying $1.4636 billion of gross issuer proceeds before the over-allotment option. The entire initial offering was only $1.5 billion, materially below approximately $4 billion.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "gross IPO proceeds available to the issuer",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "unknown",
+    "period_start": null,
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "36,590,000 shares offered by CoreWeave",
+     "$40 public offering price per share"
+    ],
+    "formula": "36,590,000 × 40 / 1,000,000,000 = 1.4636",
+    "rounding": "No rounding; USD billions, excluding the over-allotment option."
+   }
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "s205-q4cdn-com-133937190-files-doc-financials-2025-q1-2d317ca7-60bc-83e6cef0fae5",
+   "source_snapshot_id": "1c88086072570c35b95f02ef349c187aa8c5224e9d65a98df334d86850bf7044",
+   "publisher": "CoreWeave, Inc.",
+   "source_type": "filing",
+   "url": "https://s205.q4cdn.com/133937190/files/doc_financials/2025/q1/2d317ca7-60bc-4378-b05c-6274241c68d5.pdf",
+   "locator": "Management's Discussion and Analysis, Recent Developments, Initial Public Offering",
+   "receipt": {
+    "public_excerpt": "$1.4 billion",
+    "quote_hash": "56f0ffe6234a50ace0cbfc2a2d26e8c6f48a6f3568bd179bb632ea9343cf75a9",
+    "verified": "exact"
+   },
+   "event_date": "2025-03-31",
+   "available_at": "2025-05-15",
+   "retrieved_at": "2026-10-29T10:40:58Z",
+   "relation": "context",
+   "explanation": "The filing confirms the IPO completed and reports $1.4 billion net proceeds, plus a subsequent $68 million net over-allotment receipt. Net proceeds are kept separate from the gross-proceeds condition.",
+   "metric_scope": {
+    "company": "CoreWeave",
+    "metric": "net IPO proceeds",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "fiscal",
+    "period_start": "2025-01-01",
+    "period_end": "2025-03-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": false,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The approximately $4 billion IPO assumed by the forecast did not occur.",
+  "The counterfactual sufficiency of that larger capital raise is not established by the smaller completed offering."
+ ],
+ "packet_hash": "f8bbdb8cf52dd7b43e5f647beb76a41c33627eff4481221fa008653162f32cee"
+}

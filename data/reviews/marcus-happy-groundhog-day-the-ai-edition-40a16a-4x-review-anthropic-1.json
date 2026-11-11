@@ -1,0 +1,227 @@
+{
+ "run_id": "marcus-happy-groundhog-day-the-ai-edition-40a16a-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-happy-groundhog-day-the-ai-edition-40a16a": "3424556ca2b575605a733a820176f046fe5ddd3d170760e8e9525ed5f15bd260",
+  "case:marcus-happy-groundhog-day-the-ai-edition-889f4f": "c19fdf3bdcb6e8688b0cf9da01f05f1e0e0c552682616fddab9034b8a1f01589",
+  "case:marcus-happy-groundhog-day-the-ai-edition-d1ccc9": "19e34f369684e2dd4a2ef4ca500853502f35debfa94c410cc07823f8d4bf19d9",
+  "case:marcus-happy-groundhog-day-the-ai-edition-d7f85a": "ceeafc884b5fe0929843b501c4f7f4b1969630f4c1c1791be7ba5ddff1b89549"
+ },
+ "started_at": "2026-10-29T17:11:26Z",
+ "completed_at": "2026-10-29T17:12:08Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post, stated as his view."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The 'hit a wall' gloss comes from Marcus's own definition in the previous sentence, so it is acceptable. The claim pairs progress elsewhere with the core problems remaining unsolved."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The core problems are taken from his context: abstraction, compositionality and type-token. The contract requires the whole named set and gives no threshold for 'solved'. The result depends on whether one unsolved problem is enough, which the speaker did not settle. This is a strict reading but a defensible one."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dated 2022 scale study. It shows compositional generalisation remained limited, with some gains from prompting. This covers only one of the named problems."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Imagen in 2022 shows major progress in image generation, which supports the 'other dimensions' part. It says nothing about the core problems."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows unreliable entity tracking in GPT-2 and GPT-3. This is not a direct test of individual-versus-kind knowledge."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "InstructGPT in 2022 shows progress in following instructions, which supports progress elsewhere. It does not bear on the core problems."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "Progress on other dimensions is well supported (e2, e4). Compositionality remaining unsolved is supported (e1). The packet has no direct evidence on abstraction or the type-token distinction, and e3 is only indirect. The support condition requires the named capabilities, including individual-versus-kind, to be shown unreliable, so the packet does not settle the claim under this contract. Nothing meets the contradiction condition either.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-happy-groundhog-day-the-ai-edition-40a16a"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'A lot of things' becomes 'many concerns', which keeps the claim from meaning every concern. The context names compositionality, abstraction and silly errors."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "Plain reading: several of the named concerns still showed recurring failures in 2022 to early 2023. This is an ordinary reading and fair to him."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Fodor and Pylyshyn (1988) establishes that the compositionality and systematicity concern is old. It does not show what modern models can do."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Controlled 2022 COGS experiments show T5 failing compositional generalisation, beyond what lexical difficulty explains."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "BIG-bench (2022) finds the strongest models well below expert humans across many tasks and model families, while noting gains from scale."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "supports",
+      "note": "Finds the compositionality gap in GPT-3 does not shrink with scale. Prompting narrows it, which is a qualification."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The historical concern is documented (e1). Contemporary controlled evaluations show compositional failures persisting (e2, e4) and broad errors across model families (e3). Gains from scale and prompting count as improvement, not a solution. Several named concerns persisted, which meets the support condition.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-happy-groundhog-day-the-ai-edition-889f4f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "A comparison between two neural-network revivals as of February 2023. 'Has more staying power' describes a present property, so treating it as an observation is reasonable."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The contract reads 'collapsed' as a substantial retreat and 'staying power' as sustained research and adoption by the post date. That is an ordinary, fair reading and does not require survival beyond February 2023."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "An expert history (2016) dates the decline in popularity from the mid-1990s to 2007, which supports the earlier collapse. It also notes that research continued."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "ACM's 2019 statement calls deep learning the dominant paradigm, used by billions. This is an institutional statement, not an audit."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Microsoft's January 2023 earnings remarks report actual use of AI products, such as Copilot. This is a company disclosure."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The earlier wave saw a substantial retreat in popularity from the mid-1990s to 2007 (e1). By early 2023 the current wave had been sustained for many years with broad actual adoption (e2, e3). Both parts of the support condition are met, and no evidence shows a comparable retreat of the current wave.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-happy-groundhog-day-the-ai-edition-d1ccc9"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own assertion in his own post."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "'Silly errors certainly do' refers back to 'still looms large', so 'still make silly errors' is faithful. 'Widespread' abstraction problems are kept."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "'Widespread' means recurring across several models and tasks, and 'silly errors' means elementary objective errors. This is an ordinary, fair plain reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "Razeghi (2022) finds arithmetic errors and strong dependence on term frequency across GPT-J and GPT-Neo sizes, showing elementary errors and fragile transfer."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Dasgupta (2022): 7B and 70B models are above chance on abstract reasoning but have many imperfections, and do worse on abstract content. These errors resemble human ones, which qualifies the claim."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Controlled 2022 evaluations show elementary arithmetic errors across several models and sizes (e1). They also show recurring weakness in applying rules to abstract or unfamiliar content across model sizes and three tasks (e2). Above-chance performance and human-like errors qualify the claim but do not show reliable abstraction. The support condition is met.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-happy-groundhog-day-the-ai-edition-d7f85a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 34823,
+  "output_tokens": 4801,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

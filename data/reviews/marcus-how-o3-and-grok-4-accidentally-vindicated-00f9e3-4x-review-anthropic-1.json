@@ -1,0 +1,202 @@
+{
+ "run_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3-4x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3": "d75f90e069af636714d0637a21d94fa7048398a9fdab5b927cd2da21fdd25773",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-229359": "09e6e9c1f1f72bec79c4e32b3434e92029b4aded7dc57d11a272aa7d2f714b09",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f": "3fd5989112fbb3fb038041a30b626f411b1224d8d208d1881abdc0f4134c9a17",
+  "case:marcus-how-o3-and-grok-4-accidentally-vindicated-666e04": "160a7eb39cf231667ebcfab5a57c86d331ee52d06c0ef180942440f925b5d675"
+ },
+ "started_at": "2026-10-29T07:31:13Z",
+ "completed_at": "2026-10-29T07:31:50Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own first-person words on his Substack, reporting his own informal experiment."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps the code-use condition, the scope (grids like the example), the comparison with his own speed and the exception for writing his own code."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": false,
+     "note": "The plain reading (a clear speed advantage over Marcus's own unaided construction of comparable valid grids) is ordinary and fair. Requiring independent timed records is appropriate."
+    },
+    "evidence": [],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The packet has no evidence items. Searches found no timed record of o3 building grids and no measured Marcus baseline. His own assertion cannot prove itself. The claim is checkable in principle, but nothing available by the cutoff settles it.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-00f9e3"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post. The Andreessen and Nadella quotes that follow are separate and not scored."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful in substance. 'Remain' matches 'have not been overcome'. Dropping 'three years later' and 'the specific obstacles I dwelled on' does not change the scope."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'hasn't worked' as 'has not overcome the three named problems' follows the speaker's next sentence and is an ordinary reading. A broader 'no gains at all' reading would be stretched against him. The result depends on this reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's system card for a model built by scaling pretraining (company disclosure, Feb 2025) reports a 19% PersonQA hallucination rate, so hallucinations persisted."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "Anthropic's simulated tests (June 2025, company disclosure) found misaligned behaviour across 16 leading models. Lab settings only."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "supports",
+      "note": "Apple preprint (June 2025) reports reasoning failures and accuracy collapse in the tested puzzle settings."
+     },
+     {
+      "id": "e4",
+      "fits": true,
+      "relation": "context",
+      "note": "Shows gains from scaling. This bears only on a broader 'no gains' reading and does not show the named problems were overcome."
+     },
+     {
+      "id": "e5",
+      "fits": true,
+      "relation": "context",
+      "note": "A critique that weakens how far the Apple results reach. It does not show reasoning errors were overcome."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Evaluations from before the post document continuing hallucinations (e1), misalignment in simulations (e2) and reasoning failures (e3) in leading models. Nothing shows pretraining scaling had overcome these problems. The improvements in e4 and the Apple critique in e5 do not meet the contradiction condition. Under the contract's fair reading, the claim holds.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-229359"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his post. The quoted 2018 paper is his own work."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Faithful. Dropping 'finally' removes only rhetorical colour, and 'better results' keeps the original's unquantified comparison."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Reading 'better results' as demonstrated gains over neural-only baselines on specified tasks, not on every task, is fair and ordinary. It follows the post's own definition, which counts code tools as neurosymbolic."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "ToRL preprint (Mar 2025): RL with tool use beats the same base models trained without tools on maths benchmarks."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "START preprint (Mar 2025): getting QwQ to call Python improves results on all tested benchmarks, and the tool-trained model gains more."
+     },
+     {
+      "id": "e3",
+      "fits": true,
+      "relation": "context",
+      "note": "xAI's announcement (company disclosure, July 2025) confirms tool-using models were being pursued. It is not a controlled comparison."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "Preprints from before the post show tool-integrated models beating matched tool-free baselines on maths tasks (e1, e2), and xAI's announcement confirms the approach was being actively pursued (e3). The packet holds no counterevidence. This is supported within the contract's bounded reading; it does not show superiority on every task.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-541b2f"
+   },
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words. Hinton's alleged view is something Marcus asserts, so the claimed correspondence is still Marcus's claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "Keeps 'quietly', 'to some degree', the 2023 date and the asserted link to Hinton's criticism."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "Treating 'quietly' as rhetoric and 'inside' as the overall system workflow is fair. Requiring a verified record of Hinton's remarks is appropriate for the 'exactly' claim."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "OpenAI's March 2023 announcement confirms that models were given a Python interpreter. It says nothing about Hinton."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "unresolved",
+    "rationale": "The 2023 Code Interpreter part holds (e1). But the support condition also requires a verified record that Hinton's criticism covered this kind of integration, and no such record was found. Nothing contradicts it either. The checked Wired interview simply lacks the relevant remarks. The claim as a whole stays unresolved.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-how-o3-and-grok-4-accidentally-vindicated-666e04"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 31887,
+  "output_tokens": 4048,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

@@ -1,0 +1,24 @@
+---
+// What kind of claim the page shows (docs/plans/predictions-vs-claims.md;
+// Dave 2026-10-31: the switch "should live up here", beside "How sure?").
+// Three radio buttons in Dave's words (2026-10-31: "claims, predictions, and
+// claims + predictions"); claims + predictions is the default. On the home and person pages the stylesheet
+// re-cuts each answer with :has(). On Explore and the person pages the
+// Explore tool reads the same buttons and keeps them in the address as the
+// kind filter (src/scripts/explore.ts). Without :has() the switch hides itself
+// unless an Explore tool on the page can drive it.
+---
+<fieldset class="conf kindsw">
+  <legend>What kind</legend>
+  <div class="conf-options">
+    <input type="radio" name="kindsw" id="kind-present" value="present" /><label for="kind-present">Claims</label>
+    <input type="radio" name="kindsw" id="kind-prediction" value="prediction" /><label for="kind-prediction">Predictions</label>
+    <input type="radio" name="kindsw" id="kind-all" value="all" checked /><label for="kind-all">Claims + predictions</label>
+  </div>
+  <p class="conf-help">Claims are about how things are or were. Predictions are about what will happen.</p>
+</fieldset>
+<script>
+  if ((typeof CSS === "undefined" || !CSS.supports("selector(:has(*))")) && !document.querySelector("[data-explore]")) {
+    for (const f of document.querySelectorAll<HTMLElement>("fieldset.kindsw")) f.hidden = true;
+  }
+</script>

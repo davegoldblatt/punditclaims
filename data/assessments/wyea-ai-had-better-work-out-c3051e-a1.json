@@ -1,0 +1,127 @@
+{
+ "assessment_id": "wyea-ai-had-better-work-out-c3051e-a1",
+ "claim_revision_ref": {
+  "id": "wyea-ai-had-better-work-out-c3051e",
+  "version": 1,
+  "content_hash": "d3f7283bdf40c9e5bfc02cc0bd7f14c9c0086a48dd42733946c165ddfa36c30c"
+ },
+ "contract_ref": {
+  "id": "wyea-ai-had-better-work-out-c3051e",
+  "version": 1,
+  "content_hash": "0e891582d5c6d6e0e354cbe2e0efb082e809bda8352b5f887ad3777103d30b55"
+ },
+ "packet_ref": {
+  "id": "wyea-ai-had-better-work-out-c3051e-p1",
+  "content_hash": "6b079458d455a8a4d0a3b03db3238b8a977b82966425996c06146d6f161729e5"
+ },
+ "axis": "historical_observation",
+ "outcome": "mixed",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-10-28",
+ "target_period": {
+  "start": "2026-01-26",
+  "end": "2026-07-26",
+  "precision": "day"
+ },
+ "public_rationale": "The revenue figures hold: three direct customers supplied 44% of first-half FY2027 revenue, and one supplied 16% of Q2 revenue. The receivables claim is wrong. NVIDIA disclosed five customers accounting for 70% of receivables at July 26; the largest three accounted for 49%. The filing establishes substantial concentration, but not the stated three-customer receivables figure.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [
+  "e2"
+ ],
+ "limitations": [
+  "The filing labels the financial statements unaudited.",
+  "Direct customers may be intermediaries serving several ultimate buyers.",
+  "The supplied schema has only one contract metric_scope object; this claim combines revenue flows with a receivable stock. Component scopes are recorded separately on the evidence items.",
+  "The secondary article is used only for the revenue total corroborated by the filing; its receivables wording is not relied upon."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "wyea-ai-had-better-work-out-bcb3a4-4x-review-anthropic-1",
+  "wyea-ai-had-better-work-out-bcb3a4-4x-review-openai-1"
+ ],
+ "final_text_run_id": "wyea-ai-had-better-work-out-bcb3a4-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "wyea-ai-had-better-work-out-c3051e",
+  "subject_id": "ed-zitron",
+  "normalized_proposition": "NVIDIA has a revenue concentration problem, with 44% of first-half FY2027 revenue from three customers and 70% of Q2 receivables from three customers.",
+  "kind": "observation",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "NVIDIA already has its own revenue concentration problem — 44% of its first half FY2027 revenues came from three customers, and in Q2 FY2027, 70% of its accounts receivables were from three customers, with 16% of its revenues coming from one.",
+   "locator": "paragraph 73",
+   "url": "https://www.wheresyoured.at/ai-had-better-work-out",
+   "date": "2026-10-20",
+   "document_title": "AI Had Better Work Out",
+   "observed_at": "2026-10-28T22:23:47Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "44% of its first half FY2027 revenues",
+    "three customers",
+    "in Q2 FY2027, 70% of its accounts receivables",
+    "three customers",
+    "16% of its revenues coming from one"
+   ],
+   "our_interpretation": [
+    "The 16% figure refers to second-quarter FY2027 revenue, consistent with the sentence's immediate context.",
+    "Customers means NVIDIA's disclosed direct customers, not necessarily the ultimate users of its chips.",
+    "Accounts receivable is measured at the second-quarter closing date; revenue is measured over the specified half-year or quarter.",
+    "Revenue concentration problem is treated as a description of the numerical concentration, not a separately measurable claim about an unacceptable level of risk.",
+    "This compound claim combines revenue flows and a receivable stock. The contract's stock_or_flow field describes the main revenue component; the receivable component is identified separately in the measurement requirements and evidence scope."
+   ],
+   "support_condition": "The FY2027 second-quarter filing reports three direct customers totaling 44% of first-half revenue, three customers totaling 70% of quarter-end receivables, and one customer supplying 16% of second-quarter revenue.",
+   "contradiction_condition": "The same-period disclosure reports a materially different percentage or customer count for any component. Correct revenue figures alongside an incorrect receivables figure warrant a mixed outcome."
+  },
+  "axis": "historical_observation",
+  "outcome": "mixed",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-10-28",
+  "rationale": "The revenue figures hold: three direct customers supplied 44% of first-half FY2027 revenue, and one supplied 16% of Q2 revenue. The receivables claim is wrong. NVIDIA disclosed five customers accounting for 70% of receivables at July 26; the largest three accounted for 49%. The filing establishes substantial concentration, but not the stated three-customer receivables figure.",
+  "limitations": [
+   "The filing labels the financial statements unaudited.",
+   "Direct customers may be intermediaries serving several ultimate buyers.",
+   "The supplied schema has only one contract metric_scope object; this claim combines revenue flows with a receivable stock. Component scopes are recorded separately on the evidence items.",
+   "The secondary article is used only for the revenue total corroborated by the filing; its receivables wording is not relied upon."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "supports",
+    "excerpt": "Nvidia generates 44% of its sales from just three customers",
+    "locator": "First article paragraph; reporting period specified in the following paragraph",
+    "url": "https://mbiz.heraldcorp.com/article/10872762",
+    "publisher": "The Herald Business",
+    "event_date": "2026-07-26",
+    "available_at": "2026-09-14",
+    "explanation": "The article identifies first-half FY2027 shares of 16%, 15%, and 13%. Those shares match the primary filing's revenue disclosure and support the 44% component."
+   },
+   {
+    "id": "e2",
+    "relation": "contradicts",
+    "excerpt": "Five direct customers accounted for\n22%, 14%, 13%, 11%, and 10% of our accounts receivable balance as of July 26, 2026.",
+    "locator": "Note 7 — Supplemental Financial Statement Information, customer-concentration paragraph",
+    "url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+    "publisher": "NVIDIA",
+    "event_date": "2026-07-26",
+    "available_at": "2026-08-27",
+    "explanation": "The five disclosed receivables shares total 70%; the largest three total 49%. The filing's separate revenue disclosure also confirms the 16% Q2 customer share and the 16%, 15%, and 13% first-half shares, so the error concerns receivables rather than those revenue figures."
+   }
+  ],
+  "what_would_resolve": null,
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ce89918fd3f13fa980aa92169bafd11106f0dee2287dafd50a31760e177555ef",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-10-29T12:58:04Z"
+}

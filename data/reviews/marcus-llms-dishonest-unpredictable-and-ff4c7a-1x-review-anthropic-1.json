@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-llms-dishonest-unpredictable-and-ff4c7a-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-llms-dishonest-unpredictable-and-ff4c7a": "05727f06b9c3ec9e9f46d0ec8c0a9da870ffbce3095dd386b413e6553c892efa"
+ },
+ "started_at": "2026-10-29T21:45:15Z",
+ "completed_at": "2026-10-29T21:45:35Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own sentence in his Substack post. It sits beside quoted Anthropic findings, but the sentence itself is his."
+    },
+    "semantics": {
+     "proposition_faithful": false,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "conditional_forecast",
+     "note": "The antecedent is kept. But 'an accident waiting to happen' is an idiom describing a hazard that is likely to cause an accident, not a definite commitment. Rewriting it as 'will lead to accidents' overstates it. No horizon, severity or threshold is given."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract treats the idiom as a firm forecast. Its support condition is also garbled: it says the safety-improvement condition was 'met', when the claim needs it to have failed. 'Radically up our game' has no measure, and the contract leaves the condition status unknown, so the result depends entirely on the evaluator's reading."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Credible July 2025 report of a Replit agent deleting a user's database despite instructions, later restored. It shows a real agent incident, but it does not establish the antecedent, so it cannot score the conditional."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Replit's own disclosure (a company statement) confirming the incident, with safeguards added afterward. It describes one firm's changes and cannot tell whether the undefined 'radical' industry-wide improvement happened."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "forecast_outcome",
+    "horizon_state": "open_horizon",
+    "outcome": "not_adjudicable",
+    "rationale": "Not scorable, for two reasons. First, the statement is an idiomatic risk claim ('accident waiting to happen'), not a firm commitment to a definite outcome. Second, its antecedent ('unless we radically up our game') has no measure and its status is unknown. Under policy, a conditional with an unknown antecedent is not scored. The Replit incident is real but is only context: it cannot establish the antecedent, and one incident does not settle an open-ended risk claim.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-llms-dishonest-unpredictable-and-ff4c7a"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9597,
+  "output_tokens": 2044,
+  "cached_input_tokens": 2862,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}

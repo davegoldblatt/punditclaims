@@ -1,0 +1,126 @@
+{
+ "packet_id": "wyea-ais-economics-dont-make-sense-ad-free-409833-p1",
+ "claim_revision_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-409833",
+  "version": 1,
+  "content_hash": "e0d0afbd49f4707ef283db5b8c0c649386c1425c85867bbc8385e503557ea64d"
+ },
+ "contract_ref": {
+  "id": "wyea-ais-economics-dont-make-sense-ad-free-409833",
+  "version": 1,
+  "content_hash": "11f9b962dd197bd9bf4a18681a1b835860cce17f3282649774c7c2a3ced65e79"
+ },
+ "evaluation_as_of": "2026-10-28",
+ "search_record": {
+  "queries": [
+   "OpenAI 2025 revenue net loss 2026 13 billion 8 billion Oracle 300 billion",
+   "OpenAI 2025 audited financial statements June 2026 Financial Times loss 19 billion",
+   "OpenAI Oracle 300 billion five years 2027 Reuters September 2025",
+   "OpenAI 2025 revenue 13 billion losses 8 billion February 2026 Reuters"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+    "used": true,
+    "why": "Read in full. Reports historical financial statements and describes Financial Times corroboration; used with explicit limits on provenance and accounting comparability."
+   },
+   {
+    "url": "https://www.ft.com/content/e15b0d7e-ff6b-4f16-ba7a-4068feddb828",
+    "used": false,
+    "why": "read_page returned HTTP 403; the underlying corroboration could not be inspected directly."
+   },
+   {
+    "url": "https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal/",
+    "used": true,
+    "why": "Read in full. Establishes that the reported major contract begins in 2027, but provides no annual payment schedule."
+   },
+   {
+    "url": "https://static.newsfilter.io/b230c686973747aaa00e0401c877cfb3.html",
+    "used": false,
+    "why": "Read the Reuters syndication. Its spending figure is insufficiently defined to treat as total expenses or net loss."
+   }
+  ],
+  "performed_at": "2026-10-29T10:24:48Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arstechnica-com-ai-2026-06-leaked-financial-docs-show-openai-is-los-9868db45791b",
+   "source_snapshot_id": "fffdcf16159c2d34b22dd78f8cd65d9ddef0b03f7abb414bbb47e61b338c3994",
+   "publisher": "Ars Technica",
+   "source_type": "news_report",
+   "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
+   "locator": "Section Gotta spend money to make money, first paragraph",
+   "receipt": {
+    "public_excerpt": "nearly $39 billion",
+    "quote_hash": "24822cd5fbe5975fdbabf94cc7659143c9480b8972a9ad629e5f3662847a5156",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2026-06-16",
+   "retrieved_at": "2026-10-29T03:25:33Z",
+   "relation": "context",
+   "explanation": "The report describes audited statements showing substantial losses and $13.07 billion of 2025 revenue, while noting a large nonrecurring accounting charge. It supports the loss component, but does not measure the complete revenue-to-Oracle-payment comparison.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Reported net loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "company_reported",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "net"
+   },
+   "audited": true,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "techcrunch-com-2025-09-10-openai-and-oracle-reportedly-ink-historic-836ea4564f5a",
+   "source_snapshot_id": "4079470f5e26ddac5d9cdf965fa29b21bc4c88a01fa10818377df39f543a08c4",
+   "publisher": "TechCrunch",
+   "source_type": "news_report",
+   "url": "https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal",
+   "locator": "Second body paragraph",
+   "receipt": {
+    "public_excerpt": "OpenAI would start purchasing this compute in 2027.",
+    "quote_hash": "afedd42d734228f9c9c6f6f8fc3ab0b9f26723959b2df62930ce8d81ddaba6e5",
+    "verified": "exact"
+   },
+   "event_date": "2025-09-10",
+   "available_at": "2025-09-10",
+   "retrieved_at": "2026-10-29T09:45:50Z",
+   "relation": "context",
+   "explanation": "Reporting attributed to the Wall Street Journal describes a roughly five-year, $300 billion agreement beginning in 2027. This does not establish the payments currently due or their later annual distribution.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Reported multiyear Oracle compute purchase commitment",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "unknown",
+    "period_start": "2027",
+    "period_end": null,
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "gross"
+   },
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No inspected source supplies Oracle's annual payment schedule or current invoices.",
+  "The financial statement reporting includes substantial noncash charges; these cannot be treated as recurring cash requirements.",
+  "The original statements and Financial Times verification were not directly available for inspection."
+ ],
+ "packet_hash": "7c47da9ecdd20818bedea610d2987964e7977f50e6a6281557dbe4468e574e05"
+}
