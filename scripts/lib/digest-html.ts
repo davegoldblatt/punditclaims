@@ -6,11 +6,13 @@
 // red for the three outcomes. Two placeholders stay for the routine to fill:
 // <!--NOTE--> (the morning note) and <!--NEEDS--> (what needs Dave).
 
+import { leftOutSentence, type LeftOut, type People } from "./traffic.ts";
+
 export type Person = { id: string; name: string; published: number; held: number; answer: string; settled: number; supported: number; mixed: number; contradicted: number; pct: { supported: number; mixed: number; contradicted: number }; settledChange: number | null; answerWas: string | null };
 export type Example = { person: string; quote: string; said: string; now: string; was: string | null; url: string };
 export type Post = { person: string; title: string; date: string; url: string; isNew: boolean };
 export type WaitLine = { text: string; count: number | null };
-export type Traffic = { connected: boolean; people: null | { pageviews: number; visits: number; pages: { path: string; views: number }[]; referrers: { host: string; views: number }[] }; days: { date: string; pageViews: number; requests: number; uniques: number }[]; notes: string[] };
+export type Traffic = { connected: boolean; people: null | People; left_out?: LeftOut | null; days: { date: string; pageViews: number; requests: number; uniques: number }[]; notes: string[] };
 export type DigestForHtml = {
   generated_at: string;
   site: string;
@@ -81,7 +83,7 @@ export function renderHtml(d: DigestForHtml): string {
   else {
     if (t.people) {
       parts.push(tiles(`${tile(num(t.people.pageviews), t.people.pageviews === 1 ? "page view" : "page views", ACCENT)}${tile(num(t.people.visits), t.people.visits === 1 ? "visit" : "visits")}`));
-      parts.push(meta("Real visitors since yesterday, bots left out."));
+      parts.push(meta(`Real visitors since yesterday, bots left out.${t.left_out ? ` ${esc(leftOutSentence(t.left_out))}` : ""}`));
       for (const x of t.people.pages) parts.push(row(`<div style="font:400 15px/1.4 ${UI};${NUMS}color:${INK};">${esc(x.path)} <span style="color:${SOFT};">${num(x.views)}</span></div>`));
       if (t.people.referrers.length) parts.push(meta(`Came from: ${t.people.referrers.map((r) => `${esc(r.host)} ${num(r.views)}`).join(" &middot; ")}`));
     }

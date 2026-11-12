@@ -25,6 +25,7 @@ import { pcts } from "../src/lib/split.ts";
 import { OUTCOME_LABEL, type Outcome } from "../src/policy.ts";
 import { CONFIG, joinNames } from "../src/config.ts";
 import { renderHtml, type DigestForHtml, type Example, type Post, type Traffic } from "./lib/digest-html.ts";
+import { leftOutSentence, splitSweeps } from "./lib/traffic.ts";
 
 const SITE = (process.env.PC_SITE_ORIGIN || "https://punditclaims.ai").replace(/\/+$/, "");
 const OUT = ".runs/digest";
@@ -315,13 +316,24 @@ async function readTraffic(since: Date): Promise<Traffic> {
     const accountId = zone?.account?.id;
     if (!accountId) throw new Error("the token cannot see the site's account");
     const v = { account: accountId, start: stamp(since), end: stamp(new Date()), hosts };
+    // By 15-minute window, so a program sweeping the site can be left out
+    // (scripts/lib/traffic.ts says how one is told apart from people).
+    const LIMIT = 10000;
+    const f = "{datetime_geq: $start, datetime_lt: $end, requestHost_in: $hosts, bot: 0}";
     const d = await gql(`query($account: String!, $start: Time!, $end: Time!, $hosts: [String!]) { viewer { accounts(filter: {accountTag: $account}) {
-      total: rumPageloadEventsAdaptiveGroups(limit: 1, filter: {datetime_geq: $start, datetime_lt: $end, requestHost_in: $hosts, bot: 0}) { count sum { visits } }
-      pages: rumPageloadEventsAdaptiveGroups(limit: 8, orderBy: [count_DESC], filter: {datetime_geq: $start, datetime_lt: $end, requestHost_in: $hosts, bot: 0}) { count dimensions { requestPath } }
-      refs: rumPageloadEventsAdaptiveGroups(limit: 6, orderBy: [count_DESC], filter: {datetime_geq: $start, datetime_lt: $end, requestHost_in: $hosts, bot: 0}) { count dimensions { refererHost } } } } }`, v);
+      windows: rumPageloadEventsAdaptiveGroups(limit: 500, filter: ${f}) { count sum { visits } dimensions { datetimeFifteenMinutes } }
+      pages: rumPageloadEventsAdaptiveGroups(limit: ${LIMIT}, filter: ${f}) { count dimensions { datetimeFifteenMinutes requestPath } }
+      refs: rumPageloadEventsAdaptiveGroups(limit: ${LIMIT}, filter: ${f}) { count dimensions { datetimeFifteenMinutes refererHost } } } } }`, v);
     const acc = d.viewer.accounts[0];
-    const total = acc?.total?.[0];
-    if (total && total.count > 0) out.people = { pageviews: total.count, visits: total.sum.visits, pages: acc.pages.map((x: any) => ({ path: x.dimensions.requestPath, views: x.count })), referrers: acc.refs.filter((x: any) => x.dimensions.refererHost && !hosts.includes(x.dimensions.refererHost)).map((x: any) => ({ host: x.dimensions.refererHost, views: x.count })) };
+    const split = splitSweeps(
+      (acc?.windows ?? []).map((x: any) => ({ window: x.dimensions.datetimeFifteenMinutes, loads: x.count, visits: x.sum.visits })),
+      (acc?.pages ?? []).map((x: any) => ({ window: x.dimensions.datetimeFifteenMinutes, path: x.dimensions.requestPath, loads: x.count })),
+      (acc?.refs ?? []).map((x: any) => ({ window: x.dimensions.datetimeFifteenMinutes, host: x.dimensions.refererHost ?? "", loads: x.count })),
+      hosts,
+    );
+    out.people = split.people;
+    out.left_out = split.left_out;
+    if ((acc?.pages?.length ?? 0) >= LIMIT || (acc?.refs?.length ?? 0) >= LIMIT) out.notes.push("There were too many page loads to read every one, so the page list, the sources and the automated loads left out may be incomplete.");
   } catch (e) { out.notes.push(`Could not read real-visitor numbers: ${(e as Error).message}`); }
   return out;
 }
@@ -346,7 +358,7 @@ function render(f: { generated_at: string; since: string; first_run: boolean; no
   const t = d.traffic;
   if (!t.connected) L.push("- Not connected yet: Dave needs to make a read-only Cloudflare analytics token, so there are no traffic numbers.");
   else {
-    if (t.people) { L.push(`- Real visitors (bots left out) since the last email: ${t.people.pageviews} page view${t.people.pageviews === 1 ? "" : "s"} in ${t.people.visits} visit${t.people.visits === 1 ? "" : "s"}.`); for (const x of t.people.pages) L.push(`  - ${x.path}: ${x.views}`); if (t.people.referrers.length) L.push(`- Where they came from: ${t.people.referrers.map((r) => `${r.host} ${r.views}`).join(", ")}.`); }
+    if (t.people) { L.push(`- Real visitors (bots left out) since the last email: ${t.people.pageviews} page view${t.people.pageviews === 1 ? "" : "s"} in ${t.people.visits} visit${t.people.visits === 1 ? "" : "s"}.`); for (const x of t.people.pages) L.push(`  - ${x.path}: ${x.views}`); if (t.left_out) L.push(`- ${leftOutSentence(t.left_out)} These are not in the counts above.`); if (t.people.referrers.length) L.push(`- Where they came from: ${t.people.referrers.map((r) => `${r.host} ${r.views}`).join(", ")}.`); }
     if (t.days.length) L.push(`- Everything Cloudflare served, bots included, by day: ${t.days.map((x) => `${x.date} ${x.pageViews} page loads from ${x.uniques} unique visitors`).join("; ")}.`);
   }
   for (const n of t.notes) L.push(`- ${n}`);
