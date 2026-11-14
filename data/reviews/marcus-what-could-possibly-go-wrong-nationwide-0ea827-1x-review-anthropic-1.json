@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-what-could-possibly-go-wrong-nationwide-0ea827-1x-review-anthropic-1",
+ "kind": "batch_review",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": "claude-opus-5-5",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-what-could-possibly-go-wrong-nationwide-0ea827": "344541ddae906748708d9277454a02fa20680dd000f2616c1c8ba936067fa732"
+ },
+ "started_at": "2026-11-14T15:33:43Z",
+ "completed_at": "2026-11-14T15:34:05Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "Marcus's own words in his own Substack post. The other people quoted in the context are not part of the claim."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": false,
+     "proposed_kind": "rhetoric",
+     "note": "The wording is close and the ambiguous 'this' is kept. But 'in fairness, we don't know if' is an epistemic hedge: it raises two possible causes rather than asserting a fact. In a rhetorical post, it works as insinuation, not as a checkable observation."
+    },
+    "contract": {
+     "fair_to_speaker": false,
+     "interpretation_determines_result": true,
+     "note": "The contract supplies two things the speaker did not: that 'we' means public knowledge, and that both referents should be scored separately. The result turns on which referent is chosen: Microsoft's denial contradicts that reading, while the FAA's ongoing investigation partly supports the other. A plain reading should not be applied to hedged language."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "context",
+      "note": "Microsoft's own statement on Nov 13, before the post, ruling out cyber and AI causes for its outage. It would contradict the claim only under the Microsoft reading, which the speaker did not clearly adopt. It is a company disclosure."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "context",
+      "note": "Contemporaneous report of the FAA briefing: no evidence of a cyberattack or AI interference, overloaded switches named as the cause, SMART ruled out, and the investigation still ongoing. This is mixed for the FAA reading and does not settle a hedged statement."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "not_applicable",
+    "horizon_state": "not_applicable",
+    "outcome": "not_adjudicable",
+    "rationale": "The statement says the cause is unknown and offers two possibilities. That is hedged, possibility-style language used rhetorically, so it is not scored. The contract's public-knowledge reading and its split by referent are the evaluator's choices, and they decide the result: Microsoft's denial contradicts one reading, and the FAA's open investigation partly supports the other. Because it rests on a hedge and an ambiguous referent, the claim cannot be fairly scored.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-what-could-possibly-go-wrong-nationwide-0ea827"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 9256,
+  "output_tokens": 2334,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": null
+ },
+ "cost_usd": null
+}
