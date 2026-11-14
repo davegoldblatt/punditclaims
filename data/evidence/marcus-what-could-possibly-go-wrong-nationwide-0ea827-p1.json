@@ -1,0 +1,127 @@
+{
+ "packet_id": "marcus-what-could-possibly-go-wrong-nationwide-0ea827-p1",
+ "claim_revision_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-nationwide-0ea827",
+  "version": 2,
+  "content_hash": "f43fe36c28a2b64185a0ca35f0e32b557bf312074bfd5745c9524c36a65e4899"
+ },
+ "contract_ref": {
+  "id": "marcus-what-could-possibly-go-wrong-nationwide-0ea827",
+  "version": 1,
+  "content_hash": "d75bdcddc44c5551b5a6bf733a9e94196d6659270290398aed522b3cab15a395"
+ },
+ "evaluation_as_of": "2026-11-14",
+ "search_record": {
+  "queries": [
+   "FAA nationwide ground stop November 13 2026 cause SMART",
+   "Microsoft outage November 2026 November 13 cause",
+   "site.faa.gov \"November\" \"2026\" \"ground stop\"",
+   "\"What could possibly go wrong?\" \"Nationwide FAA\"",
+   "site.microsoft.com \"November 13, 2026\" \"outage\" \"AI\"",
+   "Microsoft November 13 2026 outage \"not related\" \"cyberattack\"",
+   "site.transportation.gov November 13 2026 SMART \"possible\"",
+   "site.x.com MSFT365Status \"2026\" \"malicious\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://x.com/Microsoft/status/2121282013600907325",
+    "used": true,
+    "why": "Readable primary statement explicitly addressing both proposed causes before the post."
+   },
+   {
+    "url": "https://avweb.com/aviation-news/faa-nationwide-ground-stop-lifts-smart-ai/",
+    "used": true,
+    "why": "Readable contemporaneous reporting of the government briefing, including remaining uncertainty and the exclusion of SMART."
+   },
+   {
+    "url": "https://www.faa.gov/newsroom/faa-statement-nationwide-ground-stop",
+    "used": false,
+    "why": "Read successfully, but its preliminary investigation notice was less informative than the subsequent briefing."
+   },
+   {
+    "url": "https://www.transportation.gov/briefing-room/icymi-us-transportation-secretary-sean-p-duffy-announces-lifting-nationwide-ground",
+    "used": false,
+    "why": "Relevant primary briefing record, but read_page returned HTTP 403."
+   },
+   {
+    "url": "https://apnews.com/article/ca395c0f1e51af784b6d70afb6554f6a",
+    "used": false,
+    "why": "read_page returned HTTP 403; Microsoft's readable primary statement was available."
+   },
+   {
+    "url": "https://apnews.com/article/f81b0904331dafad6133f291e5f531a8",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.aa.com.tr/en/science-technology/microsoft-says-global-outage-caused-by-technical-issue-not-cyberattack-or-ai/4124741",
+    "used": false,
+    "why": "read_page found no article text."
+   },
+   {
+    "url": "https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/",
+    "used": false,
+    "why": "Read successfully, but the November 14 update could postdate Marcus's publication. The November 13 briefing report avoids that timing uncertainty."
+   }
+  ],
+  "performed_at": "2026-11-14T15:24:58Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "x-com-microsoft-status-2121282013600907325",
+   "source_snapshot_id": "83e54983f825767a8ec7993703b405ac9815c3937944a36dfbf3a592be7060d2",
+   "publisher": "Microsoft",
+   "source_type": "company_disclosure",
+   "url": "https://x.com/Microsoft/status/2121282013600907325",
+   "locator": "Second paragraph, first sentence; November 13 statement",
+   "receipt": {
+    "public_excerpt": "not related to cyber or AI / agents.",
+    "quote_hash": "23532b8653acc5e119f135db408fc71cfe8cd86e9d56ab9ef200a1f97ef7f4a3",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-13",
+   "available_at": "2026-11-13",
+   "retrieved_at": "2026-11-14T15:23:01Z",
+   "relation": "contradicts",
+   "explanation": "Microsoft publicly excluded both cyber activity and AI involvement before Marcus's post. This contradicts the claim under the Microsoft reading of 'this'.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "avweb-com-aviation-news-faa-nationwide-ground-stop-lifts-smart-ai",
+   "source_snapshot_id": "2b5a50b1f5cc447c70f1d7abb672922156a941c168b9db774c9385dd6cf2edc1",
+   "publisher": "AVweb",
+   "source_type": "news_report",
+   "url": "https://avweb.com/aviation-news/faa-nationwide-ground-stop-lifts-smart-ai",
+   "locator": "Section 'Officials Address AI Concerns', final paragraph",
+   "receipt": {
+    "public_excerpt": "remained under investigation.",
+    "quote_hash": "c1a06283efc437944d5b0edc0bc066575d7b64009881faba9faef6391fd77833",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-13",
+   "available_at": "2026-11-13",
+   "retrieved_at": "2026-11-14T15:22:49Z",
+   "relation": "supports",
+   "explanation": "The briefing report supports qualified uncertainty about the FAA outage's underlying cause. It also reports that Duffy excluded SMART, so it does not support treating every suggested AI mechanism as still open.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e1",
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "The text does not establish which outage 'this' denotes.",
+  "The FAA evidence supports an unfinished investigation, but does not establish that an LLM failure remained a live explanation.",
+  "The primary government briefing page could not be read; the FAA assessment relies on contemporaneous reporting."
+ ],
+ "packet_hash": "4639eebb941c11af696477b21f694dbb322f1a8680393989380c1c8c6389dff1"
+}

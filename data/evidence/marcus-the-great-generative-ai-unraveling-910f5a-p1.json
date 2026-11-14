@@ -1,0 +1,129 @@
+{
+ "packet_id": "marcus-the-great-generative-ai-unraveling-910f5a-p1",
+ "claim_revision_ref": {
+  "id": "marcus-the-great-generative-ai-unraveling-910f5a",
+  "version": 1,
+  "content_hash": "c12bd07b8b6d81c15c1604b372d7d76a278a24e96f4ec5bad33b75a6a187e2f0"
+ },
+ "contract_ref": {
+  "id": "marcus-the-great-generative-ai-unraveling-910f5a",
+  "version": 1,
+  "content_hash": "8e083ab2caadd688aa03c6898a10c4dff73c59e588c661fbde12ead89d6a6117"
+ },
+ "evaluation_as_of": "2026-11-14",
+ "search_record": {
+  "queries": [
+   "instruction following benchmark 2026 IFBench independent models",
+   "site.artificialanalysis.ai \"IFBench\" \"2026\" November",
+   "instruction following November 2026 benchmark models failures",
+   "site.artificialanalysis.ai \"November 13, 2026\" \"instruction\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2607.27912v1",
+    "used": true,
+    "why": "Primary experiment showing difficulty with nested constraints, but conducted before the target snapshot."
+   },
+   {
+    "url": "https://benchgap.net/b/ifbench/current",
+    "used": true,
+    "why": "Provides a November 13 snapshot, but aggregates results and includes estimated scores."
+   },
+   {
+    "url": "https://benchlm.ai/benchmarks/ifbench",
+    "used": true,
+    "why": "Clarifies that the underlying leaderboard results were not independently run."
+   },
+   {
+    "url": "https://artificialanalysis.ai/evaluations/ifbench",
+    "used": false,
+    "why": "Independent evaluation page was readable, but its displayed results lacked a publication or measurement date establishing the November 13 snapshot."
+   },
+   {
+    "url": "https://llmleaderboard.com/benchmarks/ifbench",
+    "used": false,
+    "why": "The reader returned only a fragment about one model, insufficient for a general assessment."
+   }
+  ],
+  "performed_at": "2026-11-14T15:29:02Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2607-27912v1",
+   "source_snapshot_id": "b3c7a72d7b34f595e36a59715f8b3cd5b53c444732f8a653733cad03db05f160",
+   "publisher": "Yuetian Mao and Chunyang Chen, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2607.27912v1",
+   "locator": "Section 5.2.1, Overall Performance",
+   "receipt": {
+    "public_excerpt": "GPT-5.5 and Claude Opus 4.6 lead at every depth.",
+    "quote_hash": "178b908bf2e02ca1ea5748d9cd1767ee1b107f1dcb110c90eb495f0806ef1c3c",
+    "verified": "exact"
+   },
+   "event_date": "2026-07",
+   "available_at": "2026-07-30",
+   "retrieved_at": "2026-11-14T15:24:15Z",
+   "relation": "context",
+   "explanation": "The experiment reports overall complete-prompt accuracy of 53.7% and 42.8% for its leading models, with worse results at greater constraint depth. This establishes a specific difficulty in an earlier model evaluation, not the broad November claim.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "benchgap-net-b-ifbench-current",
+   "source_snapshot_id": "7576e61a4f93fa6325731502a9538b114a4bdb0ebf79ee2a4dcb6e67ad1fcabc",
+   "publisher": "benchgap",
+   "source_type": "secondary_summary",
+   "url": "https://benchgap.net/b/ifbench/current",
+   "locator": "IFBench leaderboard introduction",
+   "receipt": {
+    "public_excerpt": "As of 2026-11-13, the highest measured score on IFBench is 89.2% by Flint.",
+    "quote_hash": "7bb0717923aac50c7693538b9fe38a5a4c38a084f8905bf3ec3a0fd33db8d707",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-13",
+   "available_at": "2026-11-13",
+   "retrieved_at": "2026-11-14T15:25:02Z",
+   "relation": "context",
+   "explanation": "This dated snapshot shows substantial success alongside remaining failures on one constraint benchmark. Its underlying reported scores do not establish independently measured performance across ordinary instructions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "benchlm-ai-benchmarks-ifbench",
+   "source_snapshot_id": "ace8c2566b681a564e8e94e9b8458bca210f575acf058e7292fe1d894b0922ef",
+   "publisher": "BenchLM",
+   "source_type": "secondary_summary",
+   "url": "https://benchlm.ai/benchmarks/ifbench",
+   "locator": "Should you trust a IFBench score?",
+   "receipt": {
+    "public_excerpt": "All 58 results are lab-reported. None was run by the benchmark or an independent evaluator.",
+    "quote_hash": "9730c49edb259f0b410f9d7673893b631a30cae2719bd1c92fd1f0ca8a6dcf9c",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-13",
+   "available_at": "2026-11-13",
+   "retrieved_at": "2026-11-14T15:23:40Z",
+   "relation": "context",
+   "explanation": "This is the provenance warning for the source used by benchgap. It prevents treating that snapshot as an independent confirmation or refutation.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No dated, representative independent evaluation located establishes overall instruction-following reliability for systems available on November 13.",
+  "The evidence does not supply an ordinary-use baseline that distinguishes poor performance from occasional failure on difficult instructions."
+ ],
+ "packet_hash": "595eaba667d9ef1bd35003d55a5900fb1122ef10f05832035e4f45c5b6029aa6"
+}
