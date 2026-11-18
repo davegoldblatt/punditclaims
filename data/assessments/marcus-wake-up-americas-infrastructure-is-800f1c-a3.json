@@ -1,0 +1,118 @@
+{
+ "assessment_id": "marcus-wake-up-americas-infrastructure-is-800f1c-a3",
+ "claim_revision_ref": {
+  "id": "marcus-wake-up-americas-infrastructure-is-800f1c",
+  "version": 2,
+  "content_hash": "bf360196e30d92a3a3c80c293e34d12084e3b13c30d2ad3c51c43ff37a2b1a54"
+ },
+ "contract_ref": {
+  "id": "marcus-wake-up-americas-infrastructure-is-800f1c",
+  "version": 1,
+  "content_hash": "c6fb43acc306db9ca3903c38ef8269317d7a26b0fb0c71fe9c7256f928e2ec97"
+ },
+ "packet_ref": {
+  "id": "marcus-wake-up-americas-infrastructure-is-800f1c-p1",
+  "content_hash": "fa69ebba6f83ca8ecfa670203927e652adb2cfe3da608179cd5381c48be6165b"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-11-17",
+ "target_period": null,
+ "public_rationale": "Agents recognized a security risk but still shipped insecure code in 90 of 434 triggered runs in the reported experiments [e3]. The benchmark version revised September 21, 2026 also found security weaknesses, but its tasks were selected from cases where human programmers had committed vulnerable implementations [e4]. These findings support security concerns. They do not establish a general increase in risk relative to ordinary human development or a contribution to serious cybersecurity or infrastructure failures [e3, e4].",
+ "evidence_ids": [
+  "e3",
+  "e4"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "Vulnerabilities do not by themselves establish successful exploitation or operational failure.",
+  "The benchmark does not provide a representative comparison with ordinary human development.",
+  "The packet contains no incident investigation tracing the recent infrastructure failures to this coding workflow."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-wake-up-americas-infrastructure-is-800f1c-4x-review-anthropic-1",
+  "marcus-wake-up-americas-infrastructure-is-800f1c-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-wake-up-americas-infrastructure-is-800f1c-2x-final-anthropic-2",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-wake-up-americas-infrastructure-is-800f1c",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Vibe coding is a recipe for disaster, and Marcus names it as one vector in the rise of cybersecurity and infrastructure issues.",
+  "kind": "causal",
+  "conditions": [
+   "as one of at least three vectors in rising cybersecurity and infrastructure issues"
+  ],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "First, vibe coding is a recipe for disaster.",
+   "locator": "paragraph 17",
+   "url": "https://garymarcus.substack.com/p/wake-up-americas-infrastructure-is",
+   "date": "2026-11-17",
+   "document_title": "Wake up! America’s infrastructure is melting. And AI appears to be partly responsible.",
+   "observed_at": "2026-11-17T17:44:01Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "vibe coding is a recipe for disaster",
+    "three key vectors in the rise of cybersecurity and infrastructure isses",
+    "vulnerable code written by people who lack sufficient experience"
+   ],
+   "our_interpretation": [
+    "Read recipe for disaster as a serious causal risk, not a prediction that every application must fail.",
+    "Read vibe coding as delegating substantial coding decisions to AI without competent review.",
+    "In context, the claim extends beyond the existence of vulnerabilities: it identifies this practice as contributing to rising cybersecurity and infrastructure failures.",
+    "Do not require attribution of every outage mentioned in the post, but require evidence connecting the coding practice to serious failures rather than merely showing insecure output."
+   ],
+   "support_condition": "Comparative security research and incident investigations establish that insufficiently reviewed AI-generated code materially increases exploitable vulnerabilities and contributes to serious cybersecurity or infrastructure failures.",
+   "contradiction_condition": "Strong comparative evidence and relevant incident investigations establish that the claimed increase in security risk and contribution to failures does not hold."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-11-17",
+  "rationale": "Agents recognized a security risk but still shipped insecure code in 90 of 434 triggered runs in the reported experiments [e3]. The benchmark version revised September 21, 2026 also found security weaknesses, but its tasks were selected from cases where human programmers had committed vulnerable implementations [e4]. These findings support security concerns. They do not establish a general increase in risk relative to ordinary human development or a contribution to serious cybersecurity or infrastructure failures [e3, e4].",
+  "limitations": [
+   "Vulnerabilities do not by themselves establish successful exploitation or operational failure.",
+   "The benchmark does not provide a representative comparison with ordinary human development.",
+   "The packet contains no incident investigation tracing the recent infrastructure failures to this coding workflow."
+  ],
+  "evidence": [
+   {
+    "id": "e3",
+    "relation": "supports",
+    "excerpt": "ships insecure code.",
+    "locator": "Section 7, discussion of the awareness–action gap",
+    "url": "https://arxiv.org/html/2606.23130v4",
+    "publisher": "Junquan Deng, Zhiyu Fan and Ruijie Meng / arXiv",
+    "event_date": "2026",
+    "available_at": "2026-09-14",
+    "explanation": "The study reports vulnerabilities in 91% of 200 audited deployed applications and investigates recurring agent failure mechanisms. It supports the security-risk component, but does not establish that this workflow caused the rise in infrastructure failures described by Marcus."
+   },
+   {
+    "id": "e4",
+    "relation": "supports",
+    "excerpt": "all agents perform poorly",
+    "locator": "Abstract",
+    "url": "https://arxiv.org/abs/2512.03262",
+    "publisher": "Songwen Zhao and colleagues / ICML 2026, arXiv version",
+    "event_date": "2026",
+    "available_at": "2026-09-21",
+    "explanation": "The benchmark finds a large gap between functional and secure solutions. Its tasks were selected from cases where human programmers also produced vulnerable implementations, so it does not by itself establish a general causal disadvantage or realized infrastructure damage."
+   }
+  ],
+  "what_would_resolve": "Comparative security studies accounting for task difficulty, developer expertise, review and safeguards, together with incident investigations establishing or refuting a material contribution from insufficiently reviewed AI-generated code to serious failures.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "cc4a99bb4adabdb307fb273f91252ca59e2237748935bdb1a0dcb084e4af77df",
+ "supersedes_assessment_id": "marcus-wake-up-americas-infrastructure-is-800f1c-a2",
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-18T17:41:57Z"
+}
