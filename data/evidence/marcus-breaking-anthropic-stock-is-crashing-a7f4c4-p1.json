@@ -1,0 +1,82 @@
+{
+ "packet_id": "marcus-breaking-anthropic-stock-is-crashing-a7f4c4-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-anthropic-stock-is-crashing-a7f4c4",
+  "version": 1,
+  "content_hash": "34b35fc31b26d70f68baec8c34f2210523c814f9c0c609562a92cc3f187ace38"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-anthropic-stock-is-crashing-a7f4c4",
+  "version": 1,
+  "content_hash": "a2c45ee12deed7090642d5e3cbea929e6f51f0d347bb23028866dcd713093d90"
+ },
+ "evaluation_as_of": "2026-11-21",
+ "search_record": {
+  "queries": [
+   "Anthropic ANT November 20 2026 opening stock 88",
+   "ANT November 20 2026 opened 88.50 88 stock opening price",
+   "site.nasdaq.com \"ANT\" \"89.86\"",
+   "\"ANT\" \"opened at $89.86\" \"97.17\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.nasdaq.com/market-activity/stocks/ant/historical",
+    "used": false,
+    "why": "The page reader timed out."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/ant/history/",
+    "used": false,
+    "why": "The page returned HTTP 404."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/ANT/history/",
+    "used": true,
+    "why": "The readable daily historical table gives the November 20 open as $89.86 and the November 19 close as $97.17."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/ant/",
+    "used": false,
+    "why": "Its readable overview corroborates the same opening and previous-close figures, but the historical table is more directly dated."
+   }
+  ],
+  "performed_at": "2026-11-21T16:27:28Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-quote-ant-history",
+   "source_snapshot_id": "8bd4189d70ad9d11a90acd7eec9adc2d0f9617bcf71d26e4f7dd59ecaa2e7cfe",
+   "publisher": "Yahoo Finance",
+   "source_type": "independent_measurement",
+   "url": "https://finance.yahoo.com/quote/ANT/history",
+   "locator": "Historical Data, November 20 row; columns Date, Open, High, Low, Close, Adj Close, Volume",
+   "receipt": {
+    "public_excerpt": "2026 89.86",
+    "quote_hash": "f10081d51c1a60152c3b2d480725cbadee2f1927b04aab6779481366c674cfbc",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-20",
+   "available_at": "2026-11-20",
+   "retrieved_at": "2026-11-21T16:23:50Z",
+   "relation": "context",
+   "explanation": "The opening price was $89.86. The preceding session's close in the same table was $97.17, giving a 7.52% opening decline; the numerical outcome is known, but its classification depends on the undefined approximations.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "November 20 opening price: USD 89.86, historical table",
+     "November 19 closing price: USD 97.17, historical table"
+    ],
+    "formula": "100 × (89.86 / 97.17 − 1) = −7.522898013790269%",
+    "rounding": "−7.52%, rounded to two decimal places"
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "The record establishes the actual opening price, but the speaker supplied no tolerance that distinguishes an acceptable approximation from a failed target."
+ ],
+ "packet_hash": "ed6f3d1d532243d822438e6bf10290c5daef8766ead9aab009a7449888c6b220"
+}
