@@ -1,0 +1,116 @@
+{
+ "packet_id": "marcus-breaking-jensen-is-back-and-the-market-0cef9e-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-jensen-is-back-and-the-market-0cef9e",
+  "version": 1,
+  "content_hash": "ced516586ab05cb6a444f1f3a15b649e21ffd8f488c7e485a6d0a34d9e506227"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-jensen-is-back-and-the-market-0cef9e",
+  "version": 1,
+  "content_hash": "5dbc95c706af92993d05dbe2b824fc3a8b9da573b9492f3c2a5b71c9eda8e802"
+ },
+ "evaluation_as_of": "2026-11-23",
+ "search_record": {
+  "queries": [
+   "NVDA historical stock price November 23 2026 all time high",
+   "site.nasdaq.com NVDA November 23 2026 166 peak",
+   "site.reuters.com November 23 2026 Nvidia shares record high third"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://stockscan.io/stocks/NVDA/price-history",
+    "used": true,
+    "why": "Readable contemporaneous price and peak figures permit a contextual calculation, but the page contains differing current-price figures and describes dividend adjustments."
+   },
+   {
+    "url": "https://finance.yahoo.com/quote/NVDA/history/",
+    "used": false,
+    "why": "The read_page output showed an October 28 quote and 2024 historical rows, not the November 23 data advertised in search."
+   },
+   {
+    "url": "https://stockanalysis.com/stocks/nvda/history/?period=daily",
+    "used": false,
+    "why": "The readable historical table ended October 28, 2026, so it could not establish the target-date price."
+   },
+   {
+    "url": "https://apnews.com/article/39d4b34ffaa867b4e669893b5fd5028f",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.axios.com/2026/11/23/nvidia-stock-jensen-huang",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
+    "used": false,
+    "why": "read_page returned HTTP 403; the Reuters search result was not used as evidence."
+   },
+   {
+    "url": "https://www.investing.com/equities/nvidia-corp-historical-data",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   },
+   {
+    "url": "https://www.marketbeat.com/stocks/NASDAQ/NVDA/Chart/",
+    "used": false,
+    "why": "read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-11-23T20:35:53Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "stockscan-io-stocks-nvda-price-history",
+   "source_snapshot_id": "03cd41f1c4d534c258cd2aac52df58a579aa7c8d7670cb0bd7e20011ee699153",
+   "publisher": "Stockscan",
+   "source_type": "independent_measurement",
+   "url": "https://stockscan.io/stocks/NVDA/price-history",
+   "locator": "Nvidia Corp Stock (NVDA) Price History, second paragraph",
+   "receipt": {
+    "public_excerpt": "Nvidia Corp all-time high stock price is $243.37, occurred on October 06, 2026.",
+    "quote_hash": "8f48e4b84db171bba8fd5f85bfba79cb2ca140941559d9b4578b1524a054724a",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-23",
+   "available_at": "2026-11-23",
+   "retrieved_at": "2026-11-23T20:33:09Z",
+   "relation": "context",
+   "explanation": "The page's November 23 narrative price of $166.39 and stated peak of $243.37 imply a 31.63% decline, numerically consistent with about a third. This remains context because timing and adjustment comparability are not established, and the required monetary basis is unknown.",
+   "metric_scope": {
+    "company": "NVIDIA Corporation",
+    "metric": "Percentage decline in NVDA share price from its prior all-time peak",
+    "currency": "USD",
+    "units": "percent, calculated from USD per share",
+    "accounting_basis": "unknown",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-11-23",
+    "period_end": "2026-11-23",
+    "stock_or_flow": "stock",
+    "annualized_or_realized": "not_applicable",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "Stockscan narrative: November 23, 2026 closing price $166.39.",
+     "Stockscan stated all-time high: $243.37 on October 6, 2026."
+    ],
+    "formula": "100 × (1 − 166.39 / 243.37) = 31.63085014586844%",
+    "rounding": "Rounded to two decimal places: 31.63%."
+   }
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No reporting or accounting basis is supplied by the claim; the monetary scoring rule bars a definitive verdict with accounting_basis unknown.",
+  "No verified price timestamp matches the remarks.",
+  "Stockscan's narrative gives $166.39 while its chart gives C166.17; neither is independently verified as the relevant quote.",
+  "The readable source describes split and dividend adjustments, without establishing the split-only comparison specified in the contract."
+ ],
+ "packet_hash": "5cbb55947b422ad238e0617896478bf05b07c8ee37506e16f8e8cdaa2f2ac0b6"
+}
