@@ -1,0 +1,136 @@
+{
+ "packet_id": "wyea-defective-accelerationism-1cca2a-p1",
+ "claim_revision_ref": {
+  "id": "wyea-defective-accelerationism-1cca2a",
+  "version": 2,
+  "content_hash": "9f2514862ba08639f201f932f0085a61456e602ce3818504c968c54dcf3df019"
+ },
+ "contract_ref": {
+  "id": "wyea-defective-accelerationism-1cca2a",
+  "version": 1,
+  "content_hash": "95a6fb9368f5e44b68fcf3e48a1e17de0dbc21b30b992eefdc35f0cc8a71c3ae"
+ },
+ "evaluation_as_of": "2026-11-24",
+ "search_record": {
+  "queries": [
+   "OpenAI Q3 2026 \"10.9 billion\" \"10 billion\"",
+   "OpenAI November 2026 Q3 Reuters revenue 10 billion 10.9 expenses"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.theinformation.com/articles/openai-revenue-jumps-10-billion-third-quarter/",
+    "used": false,
+    "why": "The page reader returned HTTP 403."
+   },
+   {
+    "url": "https://www.investing.com/news/stock-market-news/openai-posts-steep-losses-even-as-quarterly-revenue-rises-to-10-billion-wsj-reports-5017353",
+    "used": false,
+    "why": "The Reuters syndication returned HTTP 403."
+   },
+   {
+    "url": "https://tollbit.forbes.com/sites/jonmarkman/2026/11/11/openai-revenue-hits-10-billion-in-q3-as-loss-per-dollar-falls-to-109/",
+    "used": false,
+    "why": "The page reader returned HTTP 403."
+   },
+   {
+    "url": "https://qz.com/openai-revenue-operating-loss-10-billion-third-quarter-111126",
+    "used": true,
+    "why": "Readable reporting explicitly identifies realized revenue for the three months ended in September."
+   },
+   {
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-revenue-hits-10-billion-132414139.html",
+    "used": true,
+    "why": "Readable Forbes syndication identifies the adjusted operating-loss figure and its reporting basis."
+   }
+  ],
+  "performed_at": "2026-11-24T19:52:31Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "qz-com-openai-revenue-operating-loss-10-billion-third-quarter-111126",
+   "source_snapshot_id": "3c4263ab7b836c40e5e9a1ce744675398effb041d900e79f490195b3388fd1fc",
+   "publisher": "Quartz",
+   "source_type": "news_report",
+   "url": "https://qz.com/openai-revenue-operating-loss-10-billion-third-quarter-111126",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "$10 billion",
+    "quote_hash": "3d65d56da687a4b55e3d0005b70f67ad22a85b6635c0e37b2ad20a8add61f786",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-11-11",
+   "retrieved_at": "2026-11-17T18:01:29Z",
+   "relation": "supports",
+   "explanation": "This supports the reported $10 billion quarterly revenue figure. It is secondary reporting attributed to Bloomberg, not a public company financial statement.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Q3 revenue",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "finance-yahoo-com-technology-ai-articles-openai-revenue-hits-10-bil-bbdf53d0a3cc",
+   "source_snapshot_id": "e98b8f0000125fcf883e6bc3c07194bd8c8c6f9123f3cf7697f579dba9b8aa79",
+   "publisher": "Forbes, syndicated by Yahoo Finance",
+   "source_type": "news_report",
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-revenue-hits-10-billion-132414139.html",
+   "locator": "Opening paragraph",
+   "receipt": {
+    "public_excerpt": "$10.9 billion",
+    "quote_hash": "70384a0a2a32c047590b06ec5472901385eea942d00605f9c709373048426ff7",
+    "verified": "exact"
+   },
+   "event_date": "2026-09",
+   "available_at": "2026-11-11",
+   "retrieved_at": "2026-11-24T19:47:41Z",
+   "relation": "contradicts",
+   "explanation": "The report corroborates the loss amount, with the qualification that it is adjusted. Combined with e1, it implies $20.9 billion of costs on that basis, so $11 billion covers about 52.6%, contradicting the less-than-half inference.",
+   "metric_scope": {
+    "company": "OpenAI",
+    "metric": "Q3 implied operating costs from reported revenue and adjusted operating loss",
+    "currency": "USD",
+    "units": "billions",
+    "accounting_basis": "estimate",
+    "fiscal_or_calendar": "calendar",
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-30",
+    "stock_or_flow": "flow",
+    "annualized_or_realized": "realized",
+    "gross_or_net": "not_applicable"
+   },
+   "audited": null,
+   "derived": {
+    "inputs": [
+     "e1: Q3 revenue of $10 billion",
+     "e2: Q3 adjusted operating loss of $10.9 billion",
+     "The claim's $11 billion comparison amount"
+    ],
+    "formula": "Implied costs = 10 + 10.9 = 20.9; half = 20.9 / 2 = 10.45; coverage = 11 / 20.9 × 100 = 52.6316%.",
+    "rounding": "Dollar calculations retain the precision implied by the reported inputs; coverage rounds to 52.6%."
+   }
+  }
+ ],
+ "material_counterevidence": [
+  "e2"
+ ],
+ "unresolved_gaps": [
+  "No public underlying financial statement was retrieved.",
+  "The sources do not provide a reconciliation from adjusted operating costs to total expenses or cash outflows."
+ ],
+ "packet_hash": "c2bda593c3e97302da7285c022e0bafda751212422d7ed3342b5e578d67a8c20"
+}
