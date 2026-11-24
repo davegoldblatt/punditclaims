@@ -1,0 +1,71 @@
+{
+ "run_id": "marcus-breaking-jensen-is-back-and-the-market-0cef9e-1x-review-openai-1",
+ "kind": "batch_review",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": "gpt-6-astra",
+ "via": "cli-login",
+ "prompt_version": "review-batch-1",
+ "prompt_hash": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+ "rubric_version": "policy-2026-10-28.7",
+ "input_hashes": {
+  "prompt": "c2c9120f28db739f8e454134baf92876fe2a3b2170fa25c25fb6ceddeb11eabc",
+  "case:marcus-breaking-jensen-is-back-and-the-market-0cef9e": "65723f09d8bea4c637b0110efaf8518fafb3886f1d097c64ee1c1165731672fc"
+ },
+ "started_at": "2026-11-24T19:55:39Z",
+ "completed_at": "2026-11-24T19:56:02Z",
+ "status": "ok",
+ "output": {
+  "reviews": [
+   {
+    "attribution": {
+     "speaker_is_subject": true,
+     "endorsed": true,
+     "note": "The supplied statement attributes the endorsed stock-price observation to Marcus."
+    },
+    "semantics": {
+     "proposition_faithful": true,
+     "conditions_preserved": true,
+     "kind_correct": true,
+     "proposed_kind": "observation",
+     "note": "The normalisation preserves the current comparison with Nvidia's peak. Treating a third as approximate is faithful to ordinary speech."
+    },
+    "contract": {
+     "fair_to_speaker": true,
+     "interpretation_determines_result": true,
+     "note": "The closing-price comparison and approximate tolerance are fair ordinary readings. The speaker did not specify quotation time or distinguish closing from intraday peaks."
+    },
+    "evidence": [
+     {
+      "id": "e1",
+      "fits": true,
+      "relation": "supports",
+      "note": "The readable market-data page establishes the November 23 close of $165.05, with matching adjusted close. Together with e2, it yields a 31.01% decline."
+     },
+     {
+      "id": "e2",
+      "fits": true,
+      "relation": "supports",
+      "note": "The dated page supplies the required historical record-close benchmark of $239.24 on a split-adjusted basis. Its November 20 decline is context only, not contrary evidence for November 23."
+     }
+    ],
+    "counterevidence_considered": true,
+    "axis": "historical_observation",
+    "horizon_state": "not_applicable",
+    "outcome": "supported",
+    "rationale": "The comparable closing prices imply a decline of 31.01%, within the contract's reasonable 30%–37% approximation. Both sources were available by the cutoff. The exact live quotation remains unknown, so support is specific to the fair daily closing-price interpretation.",
+    "abstain": false,
+    "abstain_reason": null,
+    "claim_id": "marcus-breaking-jensen-is-back-and-the-market-0cef9e"
+   }
+  ]
+ },
+ "error": null,
+ "usage": {
+  "input_tokens": 14871,
+  "output_tokens": 612,
+  "cached_input_tokens": 0,
+  "reasoning_tokens": 232
+ },
+ "cost_usd": null
+}
