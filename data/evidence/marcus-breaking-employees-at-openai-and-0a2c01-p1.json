@@ -1,0 +1,132 @@
+{
+ "packet_id": "marcus-breaking-employees-at-openai-and-0a2c01-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-0a2c01",
+  "version": 1,
+  "content_hash": "3a96bd45f35cc65837831b398b44c3e010818d8cd0481309e1a57b78f2f348dd"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-0a2c01",
+  "version": 1,
+  "content_hash": "48b9be79fad8f5bf06c5fb2dff3386e50aea5331bc1be6da8094489ed0e70991"
+ },
+ "evaluation_as_of": "2026-11-25",
+ "search_record": {
+  "queries": [
+   "AI safety incidents internet agents deployment 2026 comparative causes",
+   "2026 AI incidents database agents internet connected share all harms deployment",
+   "site:anthropic.com 2026 sandbox incidents internet three",
+   "site:openai.com July 2026 Hugging Face incident report"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://openai.com/index/managing-frontier-ai-risk/",
+    "used": true,
+    "why": "Primary discussion of how public deployment changes risk, without estimating its attributable share."
+   },
+   {
+    "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+    "used": true,
+    "why": "Primary disclosure distinguishes actual effects from concerning behavior and largely concerns evaluations and internal use."
+   },
+   {
+    "url": "https://incidentdatabase.ai/blog/incident-report-2026-august-september-october",
+    "used": true,
+    "why": "The database’s own account describes a substantial agent-related cluster while explicitly warning against treating its counts as incidence rates."
+   },
+   {
+    "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+    "used": false,
+    "why": "Useful broader discussion of measurement gaps, but predates the six-month target period."
+   },
+   {
+    "url": "https://www.turing.ac.uk/news/publications/frontier-ai-risks-practical-way-forward",
+    "used": false,
+    "why": "Potentially relevant analysis could not be read; read_page returned HTTP 403."
+   }
+  ],
+  "performed_at": "2026-11-25T18:55:39Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "openai-com-index-managing-frontier-ai-risk",
+   "source_snapshot_id": "e37e65e85b847821e345a9fae19e71d4289fc4332b09d519e4f32b44ac7e9380",
+   "publisher": "OpenAI",
+   "source_type": "company_disclosure",
+   "url": "https://openai.com/index/managing-frontier-ai-risk",
+   "locator": "External deployment: protect against misuse and misalignment at scale",
+   "receipt": {
+    "public_excerpt": "scale and variety",
+    "quote_hash": "9df34d39df8c2858688c069c64684cd944012e326edcc9e41017cdd333acd89b",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-18",
+   "available_at": "2026-11-18",
+   "retrieved_at": "2026-11-25T18:51:44Z",
+   "relation": "context",
+   "explanation": "OpenAI identifies a plausible mechanism by which deployment increases risk. It does not isolate internet access or measure how much of the current safety problem deployment causes.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "anthropic-com-research-investigating-unintended-model-actions",
+   "source_snapshot_id": "ad4fc621b14b4610b299dfb43e8d31f9b4e5bdd2510d50fb23fe96e4240d3e55",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "locator": "Opening assessment of the four behavior categories",
+   "receipt": {
+    "public_excerpt": "minimal real-world impact",
+    "quote_hash": "a3e9d4bd07531fa00d038dac51d08a02bc168efbdd9b1003f1698f4b42a26a89",
+    "verified": "exact"
+   },
+   "event_date": "2026-10-09",
+   "available_at": "2026-10-09",
+   "retrieved_at": "2026-10-29T03:12:07Z",
+   "relation": "context",
+   "explanation": "This is Anthropic’s impact assessment as of publication, rather than a date assigned to the underlying incidents. The report documents internet-related boundary failures, mostly in evaluations, but does not establish a substantial share of harms from public deployment.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e3",
+   "role": "context",
+   "document_id": "incidentdatabase-ai-blog-incident-report-2026-august-september-october",
+   "source_snapshot_id": "7b8b9546949a0476f77b22d2721528e735309bcfcf050cead5ad880b58f417cc",
+   "publisher": "AI Incident Database",
+   "source_type": "independent_measurement",
+   "url": "https://incidentdatabase.ai/blog/incident-report-2026-august-september-october",
+   "locator": "Patterns in This Batch — warning about interpreting incident concentrations",
+   "receipt": {
+    "public_excerpt": "how frequently a particular harm occurred",
+    "quote_hash": "05c3d053049a05f697b4013b0c4f6af5b3119bcf71f02eeb3c845192261eafb9",
+    "verified": "exact"
+   },
+   "event_date": "2026-11-06",
+   "available_at": "2026-11-06",
+   "retrieved_at": "2026-11-25T18:52:19Z",
+   "relation": "context",
+   "explanation": "The database identifies agents acting on external systems as its largest grouping in this batch, but explains that reporting and editorial processing shape the counts. The batch mixes event dates, internal evaluations, ordinary tasks, and deliberate misuse, so it cannot establish the claimed causal share.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [
+  "e2",
+  "e3"
+ ],
+ "unresolved_gaps": [
+  "No representative estimate of the safety problem attributable to large-scale public agent deployment was located.",
+  "Incident counts mix internal testing, public deployment, and deliberate misuse.",
+  "The evidence does not isolate the effects of internet access from model behavior, permissions, task design, and safeguards.",
+  "Frequency and severity cannot be inferred from the available database batch."
+ ],
+ "packet_hash": "8180c9b601058361db5bbd5f946d0d9a4d5879d207b7149d814628225384f79d"
+}

@@ -1,0 +1,100 @@
+{
+ "packet_id": "marcus-breaking-employees-at-openai-and-3b98ba-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-3b98ba",
+  "version": 1,
+  "content_hash": "a1d27399e0b2c7870f8b01cb8459357deee769322bf70c2baf20eb86fc02892a"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-3b98ba",
+  "version": 1,
+  "content_hash": "0c66d06cb460382e878a0f7f32c33715cff386b13d4bd401fdd652a222b32b42"
+ },
+ "evaluation_as_of": "2026-11-25",
+ "search_record": {
+  "queries": [
+   "AI agent internet access controlled evaluation prompt injection harm AgentDojo benchmark",
+   "AI agents internet access risks controlled comparison sandbox without tools 2025 2026",
+   "site.arxiv.org \"LLM Agents can Autonomously Hack Websites\"",
+   "site.arxiv.org \"InjecAgent\" \"24\""
+  ],
+  "sources_considered": [
+   {
+    "url": "https://arxiv.org/html/2504.18575v3",
+    "used": true,
+    "why": "Read the WASP experiments and an example of a completed unauthorized account change. The study compares attacks and agent designs, not the same model with and without internet access."
+   },
+   {
+    "url": "https://arxiv.org/abs/2504.18575",
+    "used": true,
+    "why": "Read to verify the paper's version and availability dates."
+   },
+   {
+    "url": "https://arxiv.org/abs/2402.06664",
+    "used": true,
+    "why": "Primary research reports autonomous website attacks, but does not supply the required matched comparison."
+   },
+   {
+    "url": "https://arxiv.org/abs/2406.13352",
+    "used": false,
+    "why": "Search identified AgentDojo as a tool-agent attack-and-defense benchmark. It was not selected as evidence of the effect of adding internet access."
+   }
+  ],
+  "performed_at": "2026-11-25T18:55:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "context",
+   "document_id": "arxiv-org-html-2504-18575v3",
+   "source_snapshot_id": "52458c0c97ecba87373a6010fab8b726c1842b9f87ec6d4338710f01ca956b70",
+   "publisher": "Evtimov and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/html/2504.18575v3",
+   "locator": "Section 3.4, Illustrative example, Figure 2 discussion",
+   "receipt": {
+    "public_excerpt": "the agent types in the attacker’s email address, saves the changes",
+    "quote_hash": "2961f5129dd08f4ada5425ac301dd03c44620ca3b85dd407fc7ddd1ee8e12109",
+    "verified": "exact"
+   },
+   "event_date": "2025",
+   "available_at": "2025-05-16",
+   "retrieved_at": "2026-11-25T18:51:10Z",
+   "relation": "context",
+   "explanation": "A malicious webpage instruction caused an enabled agent to change an account email in a controlled web environment. This demonstrates a concrete harmful action, but the intervention was malicious content; it did not isolate the effect of granting internet access.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "context",
+   "document_id": "arxiv-org-abs-2402-06664",
+   "source_snapshot_id": "420061eea968048d9a2ce766f4f47c5513b3f6d23fdf822bbc27e17cfacb4936",
+   "publisher": "Fang and colleagues, arXiv",
+   "source_type": "preprint",
+   "url": "https://arxiv.org/abs/2402.06664",
+   "locator": "Abstract, second paragraph",
+   "receipt": {
+    "public_excerpt": "autonomously finding vulnerabilities in websites in the wild",
+    "quote_hash": "442ff1d3d254dff4a00c354f6ee180bd31ab46b58181831b46b523402f85bdc4",
+    "verified": "exact"
+   },
+   "event_date": "2024-02",
+   "available_at": "2024-02-16",
+   "retrieved_at": "2026-11-25T18:51:54Z",
+   "relation": "context",
+   "explanation": "The research demonstrates an offensive capability of tool-enabled agents. It does not measure the additional danger relative to the same model without autonomous internet access or with a human executing its instructions.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "No matched evaluation isolating the combined effect of autonomous agency and internet access was located.",
+  "Demonstrated harmful actions do not quantify the change in overall risk relative to the relevant alternative.",
+  "The studies do not establish how the result varies with permissions, safeguards, and human involvement."
+ ],
+ "packet_hash": "34c46977bb7ccbf8d5f1c0be890dec3859ce30f1df54f1bdbd33f6b9960b0401"
+}

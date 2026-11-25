@@ -1,0 +1,91 @@
+{
+ "packet_id": "marcus-breaking-employees-at-openai-and-e3792f-p1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-e3792f",
+  "version": 2,
+  "content_hash": "fd417ddf7dec0d7860b3fcc432b1af6c01563017d12c8077c6c005e637a4a26a"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-e3792f",
+  "version": 1,
+  "content_hash": "f9f5dc144fe9be58f7ca7b9b6a3681b713c539bf491a77c6f51f773bef38d4d0"
+ },
+ "evaluation_as_of": "2026-11-25",
+ "search_record": {
+  "queries": [
+   "site.anthropic.com research mapping mind language model features steering 2024",
+   "site.anthropic.com constitutional classifiers 2025 jailbreak 4.4 86"
+  ],
+  "sources_considered": [
+   {
+    "url": "https://www.anthropic.com/research/mapping-mind-language-model",
+    "used": true,
+    "why": "Primary research reports interpretable internal features and interventions that change model behavior."
+   },
+   {
+    "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
+    "used": true,
+    "why": "Primary research reports comparative improvements in preventing successful jailbreaks."
+   },
+   {
+    "url": "https://www.anthropic.com/research/constitutional-classifiers",
+    "used": false,
+    "why": "Read the earlier experiments and subsequent red-team update. The next-generation study supplies a more recent comparison and explicitly acknowledges remaining vulnerabilities."
+   }
+  ],
+  "performed_at": "2026-11-25T18:55:07Z"
+ },
+ "evidence_items": [
+  {
+   "id": "e1",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-mapping-mind-language-model",
+   "source_snapshot_id": "b170cab5f334508c8661004c609fedf4bc5e02bbe05a308d9d177c35933a8558",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/mapping-mind-language-model",
+   "locator": "Paragraph beginning Importantly, following the discussion of distances between features",
+   "receipt": {
+    "public_excerpt": "artificially amplifying or suppressing them",
+    "quote_hash": "c68da3b79b7d47508fcba6ec6737e18815f22843933905eaf39f38a920a598cd",
+    "verified": "exact"
+   },
+   "event_date": "2024-05-21",
+   "available_at": "2024-05-21",
+   "retrieved_at": "2026-10-29T02:08:26Z",
+   "relation": "contradicts",
+   "explanation": "The study maps interpretable features in Claude 3 Sonnet and changes behavior by intervening on them. That is demonstrated progress in understanding internal representations, although the authors acknowledge incomplete coverage and do not establish comprehensive safety control.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  },
+  {
+   "id": "e2",
+   "role": "evidence_of_outcome",
+   "document_id": "anthropic-com-research-next-generation-constitutional-classifiers",
+   "source_snapshot_id": "57fc0f2dde9623e8a6385f7b44f9623c3ef1b6b7a6e2b40c00f766ef954d95f9",
+   "publisher": "Anthropic",
+   "source_type": "company_disclosure",
+   "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
+   "locator": "New approaches, paragraph describing the exchange classifier",
+   "receipt": {
+    "public_excerpt": "cut successful jailbreaking attempts by more than half",
+    "quote_hash": "68ceaf7221e40b692518a27eb57d153a4f5338fa9da91fa61ba77f4beaa5cc19",
+    "verified": "exact"
+   },
+   "event_date": "2026-01-09",
+   "available_at": "2026-01-09",
+   "retrieved_at": "2026-10-29T17:49:46Z",
+   "relation": "contradicts",
+   "explanation": "A changed classifier design reduced successful attacks in a comparative evaluation. This is a technical advance in controlling harmful outputs, even though it does not eliminate jailbreaks or establish control over every kind of autonomous behavior.",
+   "metric_scope": null,
+   "audited": null,
+   "derived": null
+  }
+ ],
+ "material_counterevidence": [],
+ "unresolved_gaps": [
+  "These studies do not determine whether safety progress has kept pace with capability progress."
+ ],
+ "packet_hash": "8021c610e25df799b33b3dfb839bea82bbb6dce17f5f3614afc0ed9961bbbdfc"
+}
