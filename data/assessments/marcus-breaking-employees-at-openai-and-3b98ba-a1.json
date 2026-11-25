@@ -1,0 +1,120 @@
+{
+ "assessment_id": "marcus-breaking-employees-at-openai-and-3b98ba-a1",
+ "claim_revision_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-3b98ba",
+  "version": 1,
+  "content_hash": "a1d27399e0b2c7870f8b01cb8459357deee769322bf70c2baf20eb86fc02892a"
+ },
+ "contract_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-3b98ba",
+  "version": 1,
+  "content_hash": "0c66d06cb460382e878a0f7f32c33715cff386b13d4bd401fdd652a222b32b42"
+ },
+ "packet_ref": {
+  "id": "marcus-breaking-employees-at-openai-and-3b98ba-p1",
+  "content_hash": "34c46977bb7ccbf8d5f1c0be890dec3859ce30f1df54f1bdbd33f6b9960b0401"
+ },
+ "axis": "causal_assessment",
+ "outcome": "unresolved",
+ "horizon_state": "not_applicable",
+ "evaluation_as_of": "2026-11-25",
+ "target_period": {
+  "start": "2022-12-25",
+  "end": "2026-11-24",
+  "precision": "day"
+ },
+ "public_rationale": "The studies demonstrate credible mechanisms of harm: a web agent made an unauthorized account change, and an autonomous agent found website vulnerabilities. These findings make the concern plausible. They do not isolate the causal increase from giving the same model autonomous internet access. The available experiments therefore do not settle the comparative claim under the stated criteria.",
+ "evidence_ids": [
+  "e1",
+  "e2"
+ ],
+ "counterevidence_ids": [],
+ "limitations": [
+  "The evidence includes controlled demonstrations and preprints, not representative measurements of deployed harm.",
+  "WASP uses a simulated web environment.",
+  "A narrower claim that internet-enabled agents can perform harmful actions is established by the cited demonstration."
+ ],
+ "drafter": {
+  "provider": "openai",
+  "model": "gpt-6-astra"
+ },
+ "reviewer_run_ids": [
+  "marcus-breaking-employees-at-openai-and-0a2c01-4x-review-anthropic-1",
+  "marcus-breaking-employees-at-openai-and-0a2c01-4x-review-openai-1"
+ ],
+ "final_text_run_id": "marcus-breaking-employees-at-openai-and-0a2c01-4x-final-anthropic-1",
+ "policy_version": "2026-10-28.7",
+ "public_payload": {
+  "claim_id": "marcus-breaking-employees-at-openai-and-3b98ba",
+  "subject_id": "gary-marcus",
+  "normalized_proposition": "Turning LLMs into agents with internet access has made them fundamentally more dangerous.",
+  "kind": "causal",
+  "conditions": [],
+  "original_horizon_text": null,
+  "statement": {
+   "excerpt": "Turning them into agents with internet access has made them fundamentally more dangerous.",
+   "locator": "paragraph 6",
+   "url": "https://garymarcus.substack.com/p/breaking-employees-at-openai-and",
+   "date": "2026-11-24",
+   "document_title": "BREAKING: Employees at OpenAI and Anthropic are panicking",
+   "observed_at": "2026-11-25T18:43:51Z"
+  },
+  "criteria": {
+   "from_speaker": [
+    "Turning them into agents",
+    "with internet access",
+    "has made them fundamentally more dangerous"
+   ],
+   "our_interpretation": [
+    "The ordinary reading is that adding autonomous action through internet-connected tools materially increases potential harm compared with otherwise comparable text-only use.",
+    "Fundamentally is read as a meaningful change in the ability to cause harm, not as a specified numerical increase or a claim that harm is inevitable.",
+    "The causal treatment combines agency and internet access. Evidence must distinguish its effect from differences in model capability or attack instructions.",
+    "The surrounding retrospective discussion supplies late 2022 through publication as the relevant period."
+   ],
+   "support_condition": "Controlled comparisons or causal demonstrations establish additional harmful actions or consequences attributable to granting autonomous internet-connected access to otherwise comparable models.",
+   "contradiction_condition": "Representative controlled comparisons show no material additional danger from granting that access under the relevant conditions."
+  },
+  "axis": "causal_assessment",
+  "outcome": "unresolved",
+  "horizon_state": "not_applicable",
+  "evaluation_as_of": "2026-11-25",
+  "rationale": "The studies demonstrate credible mechanisms of harm: a web agent made an unauthorized account change, and an autonomous agent found website vulnerabilities. These findings make the concern plausible. They do not isolate the causal increase from giving the same model autonomous internet access. The available experiments therefore do not settle the comparative claim under the stated criteria.",
+  "limitations": [
+   "The evidence includes controlled demonstrations and preprints, not representative measurements of deployed harm.",
+   "WASP uses a simulated web environment.",
+   "A narrower claim that internet-enabled agents can perform harmful actions is established by the cited demonstration."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "relation": "context",
+    "excerpt": "the agent types in the attacker’s email address, saves the changes",
+    "locator": "Section 3.4, Illustrative example, Figure 2 discussion",
+    "url": "https://arxiv.org/html/2504.18575v3",
+    "publisher": "Evtimov and colleagues, arXiv",
+    "event_date": "2025",
+    "available_at": "2025-05-16",
+    "explanation": "A malicious webpage instruction caused an enabled agent to change an account email in a controlled web environment. This demonstrates a concrete harmful action, but the intervention was malicious content; it did not isolate the effect of granting internet access."
+   },
+   {
+    "id": "e2",
+    "relation": "context",
+    "excerpt": "autonomously finding vulnerabilities in websites in the wild",
+    "locator": "Abstract, second paragraph",
+    "url": "https://arxiv.org/abs/2402.06664",
+    "publisher": "Fang and colleagues, arXiv",
+    "event_date": "2024-02",
+    "available_at": "2024-02-16",
+    "explanation": "The research demonstrates an offensive capability of tool-enabled agents. It does not measure the additional danger relative to the same model without autonomous internet access or with a human executing its instructions."
+   }
+  ],
+  "what_would_resolve": "Controlled evaluations of the same models and tasks with and without autonomous internet access, measuring harmful actions and consequences while accounting for safeguards and human execution.",
+  "retrospective": true,
+  "plain_reading": true
+ },
+ "public_payload_hash": "ba8253235a3f8aaad8025c68dc4f692b58c067be0f5cca80bda04b23791160ff",
+ "supersedes_assessment_id": null,
+ "next_review_due_at": null,
+ "conclusive_event": null,
+ "recorded_at": "2026-11-25T18:57:58Z"
+}
